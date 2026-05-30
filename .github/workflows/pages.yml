@@ -47,10 +47,9 @@ jobs:
 
       - name: Export static site
         env:
-          # Project Pages: …/poslusnehlasim/ — po zapnutí vlastní domény změň na ""
-          SVEJK_BASE_PATH: /${{ github.event.repository.name }}
-          SVEJK_PAGES_CNAME: ""
-        run: ./run-svejk.sh export-pages --obdobi 2025 --out site --cname ""
+          SVEJK_BASE_PATH: ""
+          SVEJK_PAGES_CNAME: www.poslusnehlasim.cz
+        run: ./run-svejk.sh export-pages --obdobi 2025 --out site --cname www.poslusnehlasim.cz
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
