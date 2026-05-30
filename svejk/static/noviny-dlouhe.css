@@ -3,7 +3,7 @@
   --red:#c23a2b; --blue:#283c6e; --terra:#cf5a31;
   --shadow:rgba(40,30,15,.28);
   --page-fade:620ms;
-  --nav-h:72px;
+  --nav-h:80px;
 }
 *{ box-sizing:border-box; }
 html{
@@ -256,9 +256,14 @@ body.is-turning{ pointer-events:none; }
 .edition-meta{ display:none; }
 .edition-now{
   font-family:'Anton',sans-serif; text-transform:uppercase;
-  letter-spacing:.08em; font-size:10px; color:var(--terra);
-  text-align:center; line-height:1.2; max-width:38vw;
+  letter-spacing:.05em;
+  font-size:clamp(16px, 4.8vw, 20px);
+  color:var(--terra);
+  text-align:center; line-height:1.2;
+  max-width:46vw;
   overflow-wrap:anywhere;
+  flex:1 1 auto;
+  padding:0 4px;
 }
 
 /* ---------- desktop (721px+) ---------- */
