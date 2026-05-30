@@ -60,6 +60,26 @@ def list_subscribers(api_key: str, list_id: int) -> dict[str, Any]:
     return api_request(api_key, "GET", f"/lists/{list_id}/subscribers")
 
 
+def add_subscriber(
+    api_key: str,
+    list_id: int,
+    email: str,
+    *,
+    source: str = "poslusnehlasim",
+) -> dict[str, Any]:
+    return api_request(
+        api_key,
+        "POST",
+        f"/lists/{list_id}/subscribe",
+        payload={
+            "subscriber_data": {"email": email, "source": source},
+            "trigger_autoresponders": True,
+            "update_existing": True,
+            "resubscribe": True,
+        },
+    )
+
+
 def send_campaign(
     *,
     api_key: str,

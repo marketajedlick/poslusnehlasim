@@ -25,13 +25,14 @@ class NewsletterConfig:
     """Veřejná konfigurace pro šablonu (bez API klíče)."""
 
     form_action: str
+    subscribe_api_url: str
     privacy_url: str
     site_url: str
     feed_url: str
 
     @property
     def enabled(self) -> bool:
-        return bool(self.form_action)
+        return bool(self.form_action or self.subscribe_api_url)
 
     @classmethod
     def from_env(cls) -> NewsletterConfig:
@@ -43,8 +44,10 @@ class NewsletterConfig:
             form_action = f"{form_action}{sep}source=poslusnehlasim"
         site = _site_url()
         feed = f"{site}/feed.xml"
+        subscribe_api_url = (os.environ.get("SVEJK_SUBSCRIBE_API_URL") or "").strip()
         return cls(
             form_action=form_action,
+            subscribe_api_url=subscribe_api_url,
             privacy_url="https://ecomail.cz/gdpr",
             site_url=site,
             feed_url=feed,

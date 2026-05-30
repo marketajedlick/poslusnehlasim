@@ -3,11 +3,12 @@
           <p class="subscribe-gloss">Do sněmovny sám nemusíš, nech mi tu email a pošleme ti nové vydání.</p>
           <form
             class="subscribe-form"
-            action="{{ newsletter.form_action }}"
+            action="{{ newsletter.form_action or '#' }}"
             method="post"
             novalidate
+            {% if newsletter.subscribe_api_url %}data-subscribe-api="{{ newsletter.subscribe_api_url }}"{% endif %}
           >
-            <input type="text" name="honeypot" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
+            <input type="text" name="website" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
             <div class="subscribe-row">
               <input
                 class="subscribe-input"

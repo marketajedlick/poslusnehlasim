@@ -65,13 +65,30 @@ python3 -m http.server -d site 8765
 ### Jednorázové nastavení
 
 1. Založ účet na Ecomailu a vytvoř seznam kontaktů pro odběr.
-2. V Ecomailu: **Kontakty → (tvůj seznam) → Formuláře** — zkopíruj URL pro vlastní HTML formulář (POST).
+2. V Ecomailu: **Kontakty → (tvůj seznam) → Formuláře** — URL pro vlastní HTML formulář je už v kódu.
 3. V GitHub **Settings → Secrets → Actions** přidej:
-   - `ECOMAIL_FORM_ACTION` — celá URL z formuláře (jde do HTML, bez API klíče)
-   - `ECOMAIL_API_KEY` — z Ecomail → Nastavení → Integrace → API (jen CI, nikdy do kódu)
-   - `ECOMAIL_LIST_ID` — číslo seznamu (v URL Ecomailu nebo v detailu seznamu)
+   - `ECOMAIL_API_KEY` — z Ecomail → Nastavení → Integrace → API (jen CI + worker, nikdy do kódu)
    - `ECOMAIL_FROM_EMAIL` — ověřená odesílací adresa pro kampaně z CI
+   - `SVEJK_SUBSCRIBE_API_URL` — URL Cloudflare Workeru (viz níže)
 4. Po dalším deployi se na konci každého vydání zobrazí blok **Odběr novinek**.
+
+### Odběr z webu (Cloudflare Worker)
+
+Veřejný Ecomail formulář vyžaduje robotcheck — skryté odeslání kontakt neuloží. Proto odběr jde přes **Ecomail API** v malém workeru:
+
+```bash
+cd workers
+npm install -g wrangler   # jednorázově
+wrangler login
+wrangler secret put ECOMAIL_API_KEY
+wrangler deploy
+```
+
+URL z výstupu `wrangler deploy` (např. `https://poslusnehlasim-subscribe.xxx.workers.dev`) dej do GitHub Secret **`SVEJK_SUBSCRIBE_API_URL`** a znovu deployni web.
+
+Bez workeru se po odeslání otevře malé okno s Ecomail robotcheckem — dokončíš ho tam, pak se zavře a uvidíš potvrzení.
+
+**Double opt-in:** nový kontakt může být v Ecomailu nejdřív v sekci **Nepotvrzení** — musí kliknout na potvrzovací e-mail.
 
 ### Jak lidé dostanou e-mail
 

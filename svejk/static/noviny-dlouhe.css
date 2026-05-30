@@ -311,10 +311,6 @@ body.is-turning{ pointer-events:none; }
   text-align:center;
 }
 .subscribe--success .subscribe-gloss{ display:none; }
-.subscribe-hidden-frame{
-  position:absolute; width:0; height:0; border:0;
-  opacity:0; pointer-events:none; clip:rect(0,0,0,0);
-}
 
 /* ---------- nav (mobile) ---------- */
 .edition-nav{
