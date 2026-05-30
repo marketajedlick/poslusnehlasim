@@ -128,6 +128,14 @@
   </div>
 </div>
 
+<iframe
+  name="buttondown-subscribe"
+  class="subscribe-hidden-frame"
+  title=""
+  tabindex="-1"
+  aria-hidden="true"
+></iframe>
+
 <script>
   (function(){
     const FADE = 620;
@@ -333,7 +341,7 @@
 (function () {
   if (location.protocol === "file:") return;
 
-  const POPUP_NAME = "ecomail-subscribe";
+  const FRAME_NAME = "buttondown-subscribe";
 
   function showSuccess(form) {
     const row = form.querySelector(".subscribe-row");
@@ -349,22 +357,7 @@
     if (successEl) successEl.hidden = false;
   }
 
-  function submitViaPopup(form) {
-    const popup = window.open("about:blank", POPUP_NAME, "width=420,height=520,noopener");
-    if (!popup) return false;
-    form.target = POPUP_NAME;
-    HTMLFormElement.prototype.submit.call(form);
-    form.removeAttribute("target");
-    const timer = setInterval(function () {
-      if (popup.closed) {
-        clearInterval(timer);
-        showSuccess(form);
-      }
-    }, 500);
-    return true;
-  }
-
-  document.addEventListener("submit", async function (e) {
+  document.addEventListener("submit", function (e) {
     const form = e.target.closest(".subscribe-form");
     if (!form || form.classList.contains("subscribe-form--success")) return;
     e.preventDefault();
@@ -380,26 +373,11 @@
     const btn = form.querySelector(".subscribe-btn");
     if (btn) btn.disabled = true;
 
-    const apiUrl = form.dataset.subscribeApi;
-    if (apiUrl) {
-      try {
-        const res = await fetch(apiUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: email,
-            website: form.querySelector(".subscribe-hp")?.value || "",
-          }),
-        });
-        if (res.ok) {
-          showSuccess(form);
-          return;
-        }
-      } catch (_) {}
-    }
+    form.target = FRAME_NAME;
+    HTMLFormElement.prototype.submit.call(form);
+    form.removeAttribute("target");
 
-    if (submitViaPopup(form)) return;
-    if (btn) btn.disabled = false;
+    showSuccess(form);
   });
 })();
 </script>

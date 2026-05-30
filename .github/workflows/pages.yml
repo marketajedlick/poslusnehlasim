@@ -50,8 +50,7 @@ jobs:
           SVEJK_BASE_PATH: ""
           SVEJK_PAGES_CNAME: poslusnehlasim.cz
           SVEJK_SITE_URL: https://poslusnehlasim.cz
-          ECOMAIL_FORM_ACTION: https://poslusnehlasim.ecomailapp.cz/public/subscribe/2/2bb287d15897fe2f9d89c882af9a3a8b
-          SVEJK_SUBSCRIBE_API_URL: ${{ secrets.SVEJK_SUBSCRIBE_API_URL }}
+          BUTTONDOWN_USERNAME: marketa
         run: ./run-svejk.sh export-pages --obdobi 2025 --out site --cname poslusnehlasim.cz
 
       - name: Restore newsletter state
@@ -60,18 +59,15 @@ jobs:
           path: processed/newsletter-state.json
           key: newsletter-state-v1
 
-      - name: Notify newsletter (Ecomail)
+      - name: Notify newsletter (Buttondown)
         continue-on-error: true
         env:
-          ECOMAIL_API_KEY: ${{ secrets.ECOMAIL_API_KEY }}
-          ECOMAIL_LIST_ID: "2"
-          ECOMAIL_FROM_EMAIL: ${{ secrets.ECOMAIL_FROM_EMAIL }}
-          ECOMAIL_FROM_NAME: Poslušně hlásím
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
           SVEJK_SITE_URL: https://poslusnehlasim.cz
           SVEJK_BASE_PATH: ""
         run: |
-          if [ -z "$ECOMAIL_API_KEY" ]; then
-            echo "ECOMAIL_API_KEY není nastaven — přeskočeno"
+          if [ -z "$BUTTONDOWN_API_KEY" ]; then
+            echo "BUTTONDOWN_API_KEY není nastaven — přeskočeno"
             exit 0
           fi
           ./run-svejk.sh newsletter-notify --obdobi 2025 || echo "Newsletter notify selhal — deploy pokračuje"

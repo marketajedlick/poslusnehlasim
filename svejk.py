@@ -350,18 +350,14 @@ def cmd_newsletter_notify(args: argparse.Namespace) -> int:
 
 
 def cmd_newsletter_subscribers(_args: argparse.Namespace) -> int:
-    from svejk.newsletter.api import api_key_from_env, list_id_from_env, list_subscribers
+    from svejk.newsletter.api import api_key_from_env, list_subscribers
 
     api_key = api_key_from_env()
-    list_id = list_id_from_env()
     if not api_key:
-        print("Chyba: ECOMAIL_API_KEY není nastaven", file=sys.stderr)
-        return 1
-    if not list_id:
-        print("Chyba: ECOMAIL_LIST_ID není nastaven", file=sys.stderr)
+        print("Chyba: BUTTONDOWN_API_KEY není nastaven", file=sys.stderr)
         return 1
     try:
-        data = list_subscribers(api_key, list_id)
+        data = list_subscribers(api_key)
     except RuntimeError as e:
         print(f"Chyba: {e}", file=sys.stderr)
         return 1
@@ -573,7 +569,7 @@ def main() -> int:
 
     p_nwl = sub.add_parser(
         "newsletter-notify",
-        help="Po novém vydání rozeslat e-mail přes Ecomail API (volitelné)",
+        help="Po novém vydání rozeslat e-mail přes Buttondown API (volitelné)",
     )
     p_nwl.add_argument("--obdobi", type=int, default=2025)
     p_nwl.add_argument(
@@ -595,7 +591,7 @@ def main() -> int:
 
     sub.add_parser(
         "newsletter-subscribers",
-        help="Seznam odběratelů z Ecomail API (vyžaduje ECOMAIL_API_KEY a ECOMAIL_LIST_ID)",
+        help="Seznam odběratelů z Buttondown API (vyžaduje BUTTONDOWN_API_KEY)",
     ).set_defaults(func=cmd_newsletter_subscribers)
 
     p_serve = sub.add_parser("serve", help="Spusť web")

@@ -1,4 +1,4 @@
-"""RSS kanál nových vydání (pro automatizaci v Ecomailu nebo čtečky)."""
+"""RSS kanál nových vydání (pro Buttondown automatizaci nebo čtečky)."""
 
 from __future__ import annotations
 
