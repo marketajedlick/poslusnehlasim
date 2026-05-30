@@ -1,0 +1,18 @@
+{
+  "datum": "06.05.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "stanovisko-vladni-koalice-ke-sjezdu-sudetonemeck",
+    "novela-z-o-statni-socialni-podpore",
+    "novela-z-stavebni-zakon",
+    "novela-z-o-socialnich-sluzbach"
+  ],
+  "stats": {
+    "pocet_hlas": 22,
+    "minuty": 1269,
+    "end_cas": "22:00",
+    "proslo": 6,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  }
+}

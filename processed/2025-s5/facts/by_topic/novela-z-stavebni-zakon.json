@@ -1,0 +1,38 @@
+{
+  "slug": "novela-z-stavebni-zakon",
+  "nazev": "Novela z. - stavební zákon",
+  "datum": "30.01.2026",
+  "verdikt": "zamiteno",
+  "predmet_lidsky": "stavebním zákoně",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "Sněmovna úpravu neschválila — kdo staví nebo řeší papíry u úřadu, pokračuje podle dnešních pravidel.",
+      "source": "manual",
+      "note": "z glosy / TEMA_PRAVIDLA"
+    },
+    {
+      "text": "největších staveb se oslabuje možnost účinné obrany, lidem zůstane v zásadě jen správní žaloba. Pro ilustraci toho zájmu, který stojí v logice toho předlož",
+      "source": "steno",
+      "steno_id": "2025_5_01486",
+      "citace": "e oslabuje možnost účinné obrany, lidem zůstane v zásadě jen správní žaloba. Pro ilustraci toho zájmu, který stojí v logice toho předloženého zákona a který"
+    },
+    {
+      "text": "Původní analýza například počítala s jednorázovými náklady 100 000 korun na vytvoření jednoho pracovního místa. Opravdu si nyní mysl",
+      "source": "steno",
+      "steno_id": "2025_5_01554",
+      "citace": "íklad počítala s jednorázovými náklady 100 000 korun na vytvoření jednoho pracovního místa. Opravdu si nyní myslíme, že dnes v roce"
+    },
+    {
+      "text": "A pracovala s průměrným platem státního zaměstnance ve výši 37 000 korun. Podle Českého statistického úřadu průměrná mzda ve veřejné",
+      "source": "steno",
+      "steno_id": "2025_5_01554",
+      "citace": "ným platem státního zaměstnance ve výši 37 000 korun. Podle Českého statistického úřadu průměrná mzda ve veřejné správě ve třetím čt"
+    }
+  ],
+  "publikovat": false,
+  "priorita": 0,
+  "nadpis": "Stavba si počká",
+  "pocet_hlasovani": 9,
+  "proslo": false
+}

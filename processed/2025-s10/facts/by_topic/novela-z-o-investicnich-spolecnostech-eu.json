@@ -1,0 +1,34 @@
+{
+  "slug": "novela-z-o-investicnich-spolecnostech-eu",
+  "nazev": "Novela z. o investičních společnostech - EU",
+  "datum": "12.03.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "dohledu nad investičními fondy a společnostmi",
+  "koho": [
+    "Investiční společnosti spravují peníze investorů a nakupují za ně cenné papíry."
+  ],
+  "fakty": [
+    {
+      "text": "Poslanci sjednotili pravidla dohledu a povinností vůči klientům podle evropských norem.",
+      "source": "manual",
+      "note": "z glosy / TEMA_PRAVIDLA"
+    },
+    {
+      "text": "ouladu s tím, jak máme tady účetní období, to znamená buďto od 1. ledna 2027, případně od 1. ledna 2028. A chtěl bych upozornit na jednu",
+      "source": "steno",
+      "steno_id": "2025_10_01580",
+      "citace": "me tady účetní období, to znamená buďto od 1. ledna 2027, případně od 1. ledna 2028. A chtěl bych upozornit na jednu záležitost, která t"
+    },
+    {
+      "text": "účetní období, to znamená buďto od 1. ledna 2027, případně od 1. ledna 2028. A chtěl bych upozornit na jednu záležitost, která tady zaz",
+      "source": "steno",
+      "steno_id": "2025_10_01580",
+      "citace": "namená buďto od 1. ledna 2027, případně od 1. ledna 2028. A chtěl bych upozornit na jednu záležitost, která tady zazněla. Prosím vás, Ev"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Investice mají přísnější dohled",
+  "pocet_hlasovani": 2,
+  "proslo": true
+}

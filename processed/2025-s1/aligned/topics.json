@@ -1,0 +1,216 @@
+{
+  "obdobi": 2025,
+  "schuze": 1,
+  "topics": [
+    {
+      "slug": "navrh-na-stanoveni-poctu-mistopredsedu-ps",
+      "nazev": "Návrh na stanovení počtu místopředsedů PS",
+      "bod": "10",
+      "datum": "05.11.2025",
+      "vote_cisla": [
+        9,
+        10
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 2,
+      "pocet_prijato": 2,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Návrh na stanovení počtu místopředsedů PS",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-stanoveni-poctu-overovatelu-ps",
+      "nazev": "Návrh na stanovení počtu ověřovatelů PS",
+      "bod": "12",
+      "datum": "05.11.2025",
+      "vote_cisla": [
+        11
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Návrh na stanovení počtu ověřovatelů PS",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-nominaci-overovatelu-ps",
+      "nazev": "Návrh na nominaci ověřovatelů PS",
+      "bod": "13",
+      "datum": "05.11.2025",
+      "vote_cisla": [
+        12,
+        13
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 2,
+      "pocet_prijato": 2,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Návrh na nominaci ověřovatelů PS",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-zrizeni-vyboru-ps",
+      "nazev": "Návrh na zřízení výborů PS",
+      "bod": "14",
+      "datum": "05.11.2025",
+      "vote_cisla": [
+        14
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na zřízení výborů PS",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-stanoveni-poctu-clenu-vyboru-ps",
+      "nazev": "Návrh na stanovení počtu členů výborů PS",
+      "bod": "15",
+      "datum": "05.11.2025",
+      "vote_cisla": [
+        15
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na stanovení počtu členů výborů PS",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-terminu-2-schuze-ps",
+      "nazev": "Návrh termínu 2. schůze PS",
+      "bod": "17",
+      "datum": "05.11.2025",
+      "vote_cisla": [
+        16,
+        17,
+        18
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 3,
+      "pocet_prijato": 3,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Návrh termínu 2. schůze PS",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "inf-o-ustaveni-volebni-komise-ps-a-volbe-clenu",
+      "nazev": "Inf. o ustavení volební komise PS a volbě členů",
+      "bod": "3",
+      "datum": "03.11.2025",
+      "vote_cisla": [
+        1
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Inf. o ustavení volební komise PS a volbě členů",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "nav-na-zrizeni-miv-a-stanoveni-poctu-clenu",
+      "nazev": "Náv. na zřízení MIV a stanovení počtu členů",
+      "bod": "4",
+      "datum": "03.11.2025",
+      "vote_cisla": [
+        2
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Náv. na zřízení MIV a stanovení počtu členů",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-ustaveni-miv",
+      "nazev": "Návrh na ustavení MIV",
+      "bod": "6",
+      "datum": "05.11.2025",
+      "vote_cisla": [
+        3
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Návrh na ustavení MIV",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-potvrzeni-predsedy-miv",
+      "nazev": "Návrh na potvrzení předsedy MIV",
+      "bod": "7",
+      "datum": "05.11.2025",
+      "vote_cisla": [
+        4,
+        5
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 2,
+      "pocet_prijato": 2,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Návrh na potvrzení předsedy MIV",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "inf-miv-o-overeni-platnosti-volby-poslancu",
+      "nazev": "Inf. MIV o ověření platnosti volby poslanců",
+      "bod": "8",
+      "datum": "05.11.2025",
+      "vote_cisla": [
+        6
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Inf. MIV o ověření platnosti volby poslanců",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-volbu-predsedy-ps",
+      "nazev": "Návrh na volbu předsedy PS",
+      "bod": "9",
+      "datum": "05.11.2025",
+      "vote_cisla": [
+        7,
+        8
+      ],
+      "steno_ids": [],
+      "proslo": false,
+      "pocet_hlasovani": 2,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 1,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na volbu předsedy PS",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    }
+  ]
+}

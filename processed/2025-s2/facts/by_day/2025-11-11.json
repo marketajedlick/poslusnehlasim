@@ -1,0 +1,16 @@
+{
+  "datum": "11.11.2025",
+  "den": "úterý",
+  "topic_slugs": [
+    "nav-zasedaciho-poradku-poslancu-v-jedn-sale-ps",
+    "navrh-na-stanoveni-poctu-poslancu-ve-stalych-del"
+  ],
+  "stats": {
+    "pocet_hlas": 31,
+    "minuty": 162,
+    "end_cas": "16:46",
+    "proslo": 29,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  }
+}

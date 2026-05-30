@@ -1,0 +1,503 @@
+{
+  "obdobi": 2025,
+  "schuze": 2,
+  "topics": [
+    {
+      "slug": "nav-zasedaciho-poradku-poslancu-v-jedn-sale-ps",
+      "nazev": "Náv. zasedacího pořádku poslanců v jedn. sále PS",
+      "bod": "1",
+      "datum": "11.11.2025",
+      "vote_cisla": [
+        4
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Náv. zasedacího pořádku poslanců v jedn. sále PS",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-zrizeni-stale-komise-pro-kontrolu-vz",
+      "nazev": "Návrh na zřízení Stálé komise pro kontrolu VZ",
+      "bod": "10",
+      "datum": "11.11.2025",
+      "vote_cisla": [
+        28
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na zřízení Stálé komise pro kontrolu VZ",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-zrizeni-sk-fau",
+      "nazev": "Návrh na zřízení SK FAÚ",
+      "bod": "11",
+      "datum": "11.11.2025",
+      "vote_cisla": [
+        29
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Návrh na zřízení SK FAÚ",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-zrizeni-sk-nukib",
+      "nazev": "Návrh na zřízení SK NÚKIB",
+      "bod": "12",
+      "datum": "11.11.2025",
+      "vote_cisla": [
+        30
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Návrh na zřízení SK NÚKIB",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-zrizeni-sk-uzsi",
+      "nazev": "Návrh na zřízení SK ÚZSI",
+      "bod": "13",
+      "datum": "11.11.2025",
+      "vote_cisla": [
+        31
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Návrh na zřízení SK ÚZSI",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-stanoveni-poctu-poslancu-ve-stalych-del",
+      "nazev": "Návrh na stanovení počtu poslanců ve stálých delegacích",
+      "bod": "14",
+      "datum": "11.11.2025",
+      "vote_cisla": [
+        32
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Návrh na stanovení počtu poslanců ve stálých delegacích",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "nav-na-potvrzeni-predsedu-vyboru-ps",
+      "nazev": "Náv. na potvrzení předsedů výborů PS",
+      "bod": "17",
+      "datum": "14.11.2025",
+      "vote_cisla": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 14,
+      "pocet_prijato": 14,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Náv. na potvrzení předsedů výborů PS",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "zmeny-ve-slozeni-organu-ps",
+      "nazev": "změny ve složení orgánů PS",
+      "bod": "18",
+      "datum": "14.11.2025",
+      "vote_cisla": [
+        55,
+        56
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 2,
+      "pocet_prijato": 2,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Přesadili lidi ve výborech. Personálka ve velkém.",
+      "tema_vysvetleni": "Změny ve složení sněmovních orgánů — kdo sedí v kterém výboru."
+    },
+    {
+      "slug": "zmena-usn-ps-c-13-ze-dne-5-11-2025",
+      "nazev": "změna usn. PS č. 13 ze dne 5. 11. 2025",
+      "bod": "2",
+      "datum": "11.11.2025",
+      "vote_cisla": [
+        5
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: změna usn. PS č. 13 ze dne 5. 11. 2025",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-ustaveni-nebo-volbu-clenu-stalych-komis",
+      "nazev": "Návrh na ustavení nebo volbu členů stálých komisí PS",
+      "bod": "20",
+      "datum": "14.11.2025",
+      "vote_cisla": [
+        57,
+        58,
+        59,
+        60
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 4,
+      "pocet_prijato": 4,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na ustavení nebo volbu členů stálých komisí PS",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-volbu-clenu-nebo-ustaveni-sk-gibs",
+      "nazev": "Návrh na volbu členů nebo ustavení SK GIBS",
+      "bod": "21",
+      "datum": "14.11.2025",
+      "vote_cisla": [
+        61
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na volbu členů nebo ustavení SK GIBS",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-volbu-clenu-nebo-ustaveni-sk-kpo",
+      "nazev": "Návrh na volbu členů nebo ustavení SK KPO",
+      "bod": "22",
+      "datum": "14.11.2025",
+      "vote_cisla": [
+        62
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na volbu členů nebo ustavení SK KPO",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-volbu-clenu-nebo-ustaveni-sk-ceu",
+      "nazev": "Návrh na volbu členů nebo ustavení SK CEÚ",
+      "bod": "23",
+      "datum": "14.11.2025",
+      "vote_cisla": [
+        63
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na volbu členů nebo ustavení SK CEÚ",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-volbu-clenu-nebo-ustaveni-sk-bis",
+      "nazev": "Návrh na volbu členů nebo ustavení SK BIS",
+      "bod": "24",
+      "datum": "14.11.2025",
+      "vote_cisla": [
+        64
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na volbu členů nebo ustavení SK BIS",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-volbu-clenu-nebo-ustaveni-sk-nbu",
+      "nazev": "Návrh na volbu členů nebo ustavení SK NBÚ",
+      "bod": "25",
+      "datum": "14.11.2025",
+      "vote_cisla": [
+        65
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na volbu členů nebo ustavení SK NBÚ",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-volbu-clenu-nebo-ustaveni-sk-vz",
+      "nazev": "Návrh na volbu členů nebo ustavení SK VZ",
+      "bod": "26",
+      "datum": "14.11.2025",
+      "vote_cisla": [
+        66
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na volbu členů nebo ustavení SK VZ",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-volbu-clenu-nebo-ustaveni-sk-fau",
+      "nazev": "Návrh na volbu členů nebo ustavení SK FAÚ",
+      "bod": "27",
+      "datum": "14.11.2025",
+      "vote_cisla": [
+        67
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na volbu členů nebo ustavení SK FAÚ",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-volbu-clenu-nebo-ustaveni-sk-nukib",
+      "nazev": "Návrh na volbu členů nebo ustavení SK NÚKIB",
+      "bod": "28",
+      "datum": "14.11.2025",
+      "vote_cisla": [
+        68
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na volbu členů nebo ustavení SK NÚKIB",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-volbu-clenu-nebo-ustaveni-sk-uzsi",
+      "nazev": "Návrh na volbu členů nebo ustavení SK ÚZSI",
+      "bod": "29",
+      "datum": "14.11.2025",
+      "vote_cisla": [
+        69
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na volbu členů nebo ustavení SK ÚZSI",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "nav-na-ustaveni-vyboru-ps",
+      "nazev": "Náv. na ustavení výborů PS",
+      "bod": "3",
+      "datum": "14.11.2025",
+      "vote_cisla": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        54
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 17,
+      "pocet_prijato": 17,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Náv. na ustavení výborů PS",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-volbu-clenu-do-stalych-delegaci-parlame",
+      "nazev": "Návrh na volbu členů do stálých delegací Parlamentu",
+      "bod": "30",
+      "datum": "14.11.2025",
+      "vote_cisla": [
+        70,
+        71,
+        72,
+        73,
+        74,
+        75
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 6,
+      "pocet_prijato": 6,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na volbu členů do stálých delegací Parlamentu",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-zrizeni-stalych-komisi-ps",
+      "nazev": "Návrh na zřízení stálých komisí PS",
+      "bod": "4",
+      "datum": "11.11.2025",
+      "vote_cisla": [
+        22
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na zřízení stálých komisí PS",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-zrizeni-sk-gibs-a-zpusobu-jejiho-ustave",
+      "nazev": "Návrh na zřízení SK GIBS a způsobu jejího ustavení nebo volby",
+      "bod": "5",
+      "datum": "11.11.2025",
+      "vote_cisla": [
+        23
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na zřízení SK GIBS a způsobu jejího ustavení nebo volb…",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-zrizeni-sk-kpo",
+      "nazev": "Návrh na zřízení SK KPO",
+      "bod": "6",
+      "datum": "11.11.2025",
+      "vote_cisla": [
+        24
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Návrh na zřízení SK KPO",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-ustaveni-sk-ceu",
+      "nazev": "Návrh na ustavení SK CEÚ",
+      "bod": "7",
+      "datum": "11.11.2025",
+      "vote_cisla": [
+        25
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Návrh na ustavení SK CEÚ",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-zrizeni-stale-komise-pro-kontrolu-bis",
+      "nazev": "Návrh na zřízení Stálé komise pro kontrolu BIS",
+      "bod": "8",
+      "datum": "11.11.2025",
+      "vote_cisla": [
+        26
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na zřízení Stálé komise pro kontrolu BIS",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-zrizeni-stale-komise-pro-kontrolu-nbu",
+      "nazev": "Návrh na zřízení stálé komise pro kontrolu NBÚ",
+      "bod": "9",
+      "datum": "11.11.2025",
+      "vote_cisla": [
+        27
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na zřízení stálé komise pro kontrolu NBÚ",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "priklad-tema",
+  "nazev": "Novela z. o …",
+  "datum": "26.05.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "lidský popis předmětu (bez „novela z.“)",
+  "koho": [
+    "Koho se to týká? Lidí, které …"
+  ],
+  "fakty": [
+    {
+      "text": "Konkrétní věta s číslem nebo datem.",
+      "source": "manual",
+      "note": "ověřeno z tisku / stena"
+    },
+    {
+      "text": "Další ověřený fakt.",
+      "source": "steno",
+      "steno_id": "2025_20_00142",
+      "citace": "úryvek ze stenoprotokolu"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Titulek výsledku",
+  "pocet_hlasovani": 1,
+  "proslo": true
+}

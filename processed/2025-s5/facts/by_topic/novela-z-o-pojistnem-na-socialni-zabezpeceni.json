@@ -1,0 +1,40 @@
+{
+  "slug": "novela-z-o-pojistnem-na-socialni-zabezpeceni",
+  "nazev": "Novela z. o pojistném na sociální zabezpečení",
+  "datum": "16.01.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky",
+  "koho": [
+    "Koho se to týká? Živnostníků a dalších, kdo platí zálohy na sociálním pojištění sami — ne běžných zaměstnanců na výplatní pásce."
+  ],
+  "fakty": [
+    {
+      "text": "Od ledna klesne minimální záloha z 5 720 na 5 005 korun měsíčně (ušetříte zhruba 715 korun); přeplatek vám stát vrátí.",
+      "source": "manual",
+      "note": "z glosy / TEMA_PRAVIDLA"
+    },
+    {
+      "text": "e zvýšení odvodové zátěže o dalších 715 korun měsíčně, tedy 8 580 korun ročně. Pokud sečteme zvýšení sociálních odvodů, ke kterému",
+      "source": "steno",
+      "steno_id": "2025_5_00940",
+      "citace": "átěže o dalších 715 korun měsíčně, tedy 8 580 korun ročně. Pokud sečteme zvýšení sociálních odvodů, ke kterému došlo v důsledku daň"
+    },
+    {
+      "text": "minimální zálohy na sociální pojistné, která od ledna činí 5 720 korun, bude v co nejkratší době zásadně zmírněno na nezbytné mini",
+      "source": "steno",
+      "steno_id": "2025_5_00940",
+      "citace": "sociální pojistné, která od ledna činí 5 720 korun, bude v co nejkratší době zásadně zmírněno na nezbytné minimum dané růstem prům"
+    },
+    {
+      "text": "hodné, aby vláda hledala rozpočtově neutrální řešení, které sníží minimální zálohy, ale současně nezatne do státního rozpočtu sekyru 7 miliard. A to je právě to, a je to škoda tohoto tisku, že si neklade",
+      "source": "steno",
+      "steno_id": "2025_5_00946",
+      "citace": "dala rozpočtově neutrální řešení, které sníží minimální zálohy, ale současně nezatne do státního rozpočtu sekyru 7 miliard. A to je právě to, a je to škoda tohoto tisku, že si neklade větší ambice a s"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Živnostníci ušetří na odvodech",
+  "pocet_hlasovani": 3,
+  "proslo": true
+}

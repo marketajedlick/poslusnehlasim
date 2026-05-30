@@ -1,0 +1,50 @@
+{
+  "obdobi": 2025,
+  "schuze": 19,
+  "topics": [
+    {
+      "slug": "novela-z-o-statni-socialni-podpore",
+      "nazev": "Novela z. o státní sociální podpoře",
+      "bod": "1",
+      "datum": "15.05.2026",
+      "vote_cisla": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 5,
+      "pocet_prijato": 2,
+      "pocet_zamitnuto": 3,
+      "kategorie": "substantivni",
+      "tema_svejk": "Posun digitalizace dávek státní sociální podpory — úřady nestihly systém k 1. 7. 2026.",
+      "tema_vysvetleni": "Technická novela k reformě sociálních dávek — posun termínů u úřadu práce."
+    },
+    {
+      "slug": "novela-z-o-socialnich-sluzbach",
+      "nazev": "Novela z. o sociálních službách",
+      "bod": "2",
+      "datum": "15.05.2026",
+      "vote_cisla": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 7,
+      "pocet_prijato": 3,
+      "pocet_zamitnuto": 4,
+      "kategorie": "substantivni",
+      "tema_svejk": "Sociální služby — posun převodu péče a dávek OZP z ÚP na ÚSSZ na rok 2028.",
+      "tema_vysvetleni": "Novela sociálních služeb — péče, dávky pro hendikepované, průkazy OZP."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "datum": "12.03.2026",
+  "den": "čtvrtek",
+  "topic_slugs": [
+    "novela-z-o-investicnich-spolecnostech-eu",
+    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2",
+    "navrh-pravidel-hospodareni-poslaneckych-klubu-pr"
+  ],
+  "stats": {
+    "pocet_hlas": 17,
+    "minuty": 173,
+    "end_cas": "12:59",
+    "proslo": 14,
+    "zamitnuto": 1,
+    "dlouha_debata": false
+  }
+}

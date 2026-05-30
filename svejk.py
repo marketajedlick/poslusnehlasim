@@ -27,31 +27,56 @@ import argparse
 import json
 from pathlib import Path
 
-try:
-    from svejk.config import HLIDAC_TOKEN
-    from svejk.db import Bod, Schuze, StavZapisu, Zapisek, get_session, init_db
-    from svejk.generate import generate_for_bod, generate_pending
-    from svejk.ingest import ingest_schuze
-except ModuleNotFoundError as e:
-    if e.name in ("sqlalchemy", "fastapi", "uvicorn", "jinja2"):
-        raise SystemExit(
-            "Chybi balicek '{}'. Nainstaluj zavislosti:\n\n"
-            "  ./run-svejk.sh db init\n\n"
-            "Nebo rucne:\n"
-            "  python3.12 -m venv .venv\n"
-            "  source .venv/bin/activate\n"
-            "  pip install -r requirements-svejk.txt\n".format(e.name)
-        ) 
-    raise
+from svejk.config import HLIDAC_TOKEN
+
+
+def _require_db():
+    """SQLite/ORM vrstva — volitelná; build a export-pages ji nepotřebují."""
+    try:
+        from svejk.db import Bod, Schuze, StavZapisu, Zapisek, get_session, init_db
+    except ModuleNotFoundError as e:
+        if e.name == "svejk.db":
+            raise SystemExit(
+                "Příkaz vyžaduje modul svejk.db (lokální admin DB), který v tomto repu není.\n"
+                "Pro GitHub Pages použij: build, export-pages, timeline."
+            ) from e
+        raise
+    return Bod, Schuze, StavZapisu, Zapisek, get_session, init_db
+
+
+def _require_ingest():
+    try:
+        from svejk.ingest import ingest_schuze
+    except ModuleNotFoundError as e:
+        if e.name in ("svejk.ingest", "svejk.db"):
+            raise SystemExit(
+                "Příkaz ingest není v tomto repu k dispozici (chybí svejk.ingest / svejk.db)."
+            ) from e
+        raise
+    return ingest_schuze
+
+
+def _require_generate():
+    try:
+        from svejk.generate import generate_for_bod, generate_pending
+    except ModuleNotFoundError as e:
+        if e.name in ("svejk.generate", "svejk.db"):
+            raise SystemExit(
+                "Příkaz generate není v tomto repu k dispozici (chybí svejk.generate / svejk.db)."
+            ) from e
+        raise
+    return generate_for_bod, generate_pending
 
 
 def cmd_db_init(_: argparse.Namespace) -> int:
+    *_, init_db = _require_db()
     init_db()
     print("Databáze inicializována.")
     return 0
 
 
 def cmd_ingest(args: argparse.Namespace) -> int:
+    ingest_schuze = _require_ingest()
     try:
         result = ingest_schuze(
             args.obdobi,
@@ -68,6 +93,7 @@ def cmd_ingest(args: argparse.Namespace) -> int:
 
 
 def cmd_generate(args: argparse.Namespace) -> int:
+    generate_for_bod, generate_pending = _require_generate()
     try:
         if args.bod_id:
             result = generate_for_bod(
@@ -220,6 +246,7 @@ def cmd_timeline(args: argparse.Namespace) -> int:
 
 def cmd_seed(args: argparse.Namespace) -> int:
     """Demo data bez API — pro lokální test webu."""
+    Bod, Schuze, StavZapisu, Zapisek, get_session, init_db = _require_db()
     init_db()
     with get_session() as session:
         schuze = Schuze(cislo_schuze=args.schuze, obdobi=args.obdobi, datum_od="2026-05-26", datum_do="2026-05-28")
@@ -344,6 +371,7 @@ def cmd_audit(args: argparse.Namespace) -> int:
 def cmd_status(_: argparse.Namespace) -> int:
     from sqlalchemy import func, select
 
+    Bod, Schuze, _, Zapisek, get_session, init_db = _require_db()
     init_db()
     with get_session() as session:
         schuze_count = session.scalar(select(func.count()).select_from(Schuze)) or 0

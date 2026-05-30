@@ -1,0 +1,97 @@
+{
+  "obdobi": 2025,
+  "schuze": 3,
+  "topics": [
+    {
+      "slug": "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026",
+      "nazev": "Vl. n. z. o státním rozpočtu ČR na rok 2026",
+      "bod": "1",
+      "datum": "26.11.2025",
+      "vote_cisla": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 4,
+      "pocet_prijato": 2,
+      "pocet_zamitnuto": 2,
+      "kategorie": "substantivni",
+      "tema_svejk": "Státní rozpočet — kolik smí vláda utratit příští rok.",
+      "tema_vysvetleni": "Hlasování o státním rozpočtu — daně, silnice, školy, armáda."
+    },
+    {
+      "slug": "novela-z-o-sbirce-zakonu-a-mezinarodnich-smluv",
+      "nazev": "Novela z. o Sbírce zákonů a mezinárodních smluv",
+      "bod": "2",
+      "datum": "26.11.2025",
+      "vote_cisla": [
+        9,
+        10,
+        11
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 3,
+      "pocet_prijato": 3,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Novela z. o Sbírce zákonů a mezinárodních smluv",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "n-na-potvrzeni-platnosti-usneseni-kterymi-ps-upr",
+      "nazev": "N. na potvrzení platnosti usnesení, kterými PS upravila své vnitřní p",
+      "bod": "3",
+      "datum": "26.11.2025",
+      "vote_cisla": [
+        12,
+        13
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 2,
+      "pocet_prijato": 2,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: N. na potvrzení platnosti usnesení, kterými PS upravila své …",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-volbu-clena-narodni-rozpoctove-rady",
+      "nazev": "Návrh na volbu člena Národní rozpočtové rady",
+      "bod": "6",
+      "datum": "26.11.2025",
+      "vote_cisla": [
+        18
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na volbu člena Národní rozpočtové rady",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-na-potvrzeni-predsedy-vyboru-poslanecke-sn",
+      "nazev": "Návrh na potvrzení předsedy výboru Poslanecké sněmovny",
+      "bod": "7",
+      "datum": "26.11.2025",
+      "vote_cisla": [
+        17
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "personalka",
+      "tema_svejk": "Hlasovali o: Návrh na potvrzení předsedy výboru Poslanecké sněmovny",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    }
+  ]
+}

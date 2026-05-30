@@ -1,0 +1,16 @@
+{
+  "datum": "22.04.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "novela-z-o-statni-socialni-podpore",
+    "novela-z-o-socialnich-sluzbach"
+  ],
+  "stats": {
+    "pocet_hlas": 25,
+    "minuty": 476,
+    "end_cas": "18:28",
+    "proslo": 7,
+    "zamitnuto": 3,
+    "dlouha_debata": false
+  }
+}

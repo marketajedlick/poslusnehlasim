@@ -1,0 +1,29 @@
+{
+  "slug": "navrh-pravidel-hospodareni-poslaneckych-klubu-pr",
+  "nazev": "Návrh Pravidel hospodaření poslaneckých klubů pro rok 2026",
+  "datum": "12.03.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "návrh Pravidel hospodaření poslaneckých klubů pro rok 2026",
+  "koho": [
+    "Občana se to netýká — to platí daňový poplatník, ale ne u pokladny v obchodě."
+  ],
+  "fakty": [
+    {
+      "text": "rok 2026 s výší příspěvku měsíčně. Pevná částka na kluby je 27 000 korun, variabilní částka na člena klubu vládní strany 5 845 korun",
+      "source": "steno",
+      "steno_id": "2025_10_01488",
+      "citace": "pěvku měsíčně. Pevná částka na kluby je 27 000 korun, variabilní částka na člena klubu vládní strany 5 845 korun a variabilní částka"
+    },
+    {
+      "text": "7 000 korun, variabilní částka na člena klubu vládní strany 5 845 korun a variabilní částka na člena klubu nevládní strany 7 599 ko",
+      "source": "steno",
+      "steno_id": "2025_10_01488",
+      "citace": "lní částka na člena klubu vládní strany 5 845 korun a variabilní částka na člena klubu nevládní strany 7 599 korun, koeficient 1,3."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 1,
+  "proslo": true
+}

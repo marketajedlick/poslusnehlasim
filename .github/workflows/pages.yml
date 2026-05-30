@@ -38,9 +38,9 @@ jobs:
           HLIDAC_TOKEN: ${{ secrets.HLIDAC_TOKEN }}
         run: |
           if [ -z "$HLIDAC_TOKEN" ]; then
-            echo "HLIDAC_TOKEN není nastaven — přeskočeno stahování, použij committed processed/"
+            echo "HLIDAC_TOKEN není nastaven — používám committed processed/facts"
           else
-            ./run-svejk.sh build --obdobi 2025 --vsechny-schuze --preskocit-hotove -q \
+            ./run-svejk.sh build --obdobi 2025 --vsechny-schuze -q \
               || ./run-svejk.sh build --obdobi 2025 --vsechny-schuze --only align,extract,compose -q
           fi
 

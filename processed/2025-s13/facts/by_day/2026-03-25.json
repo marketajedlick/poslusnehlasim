@@ -1,0 +1,16 @@
+{
+  "datum": "25.03.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "novela-z-o-pojistnem-na-socialni-zabezpeceni",
+    "novela-z-o-pojistnem-na-verejne-zdravotni-pojist"
+  ],
+  "stats": {
+    "pocet_hlas": 57,
+    "minuty": 534,
+    "end_cas": "19:44",
+    "proslo": 29,
+    "zamitnuto": 12,
+    "dlouha_debata": false
+  }
+}

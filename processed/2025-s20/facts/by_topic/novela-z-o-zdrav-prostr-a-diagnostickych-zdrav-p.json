@@ -1,0 +1,22 @@
+{
+  "slug": "novela-z-o-zdrav-prostr-a-diagnostickych-zdrav-p",
+  "nazev": "Novela z. o zdrav. prostř. a diagnostických zdrav. prostř. in vitro -",
+  "datum": "26.05.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "hlášení nedostatku zkumavek v nemocnicích",
+  "koho": [
+    "Koho se to týká? Lidí, co chodí na odběry v nemocnici, a sester v laboratoři."
+  ],
+  "fakty": [
+    {
+      "text": "Nemocnice dostanou včas vědět, když hrozí nedostatek zkumavek — méně zrušených termínů a kratší čekání v chodbě.",
+      "source": "manual",
+      "note": "z glosy / TEMA_PRAVIDLA"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Nemocnice uvidí docházející zkumavky",
+  "pocet_hlasovani": 1,
+  "proslo": true
+}

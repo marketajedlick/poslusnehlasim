@@ -1,0 +1,18 @@
+{
+  "datum": "27.05.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "novela-z-o-investicnich-spolecnostech-eu",
+    "novela-z-o-doplnkovem-penzijnim-sporeni",
+    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem",
+    "novela-z-o-rostlinolekarske-peci-eu"
+  ],
+  "stats": {
+    "pocet_hlas": 45,
+    "minuty": 744,
+    "end_cas": "21:30",
+    "proslo": 16,
+    "zamitnuto": 24,
+    "dlouha_debata": false
+  }
+}

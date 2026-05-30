@@ -1,0 +1,28 @@
+{
+  "slug": "novela-z-o-zdrav-prostr-a-diagnostickych-zdrav-p",
+  "nazev": "Novela z. o zdrav. prostř. a diagnostických zdrav. prostř. in vitro -",
+  "datum": "24.03.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "hlášení nedostatku zkumavek v nemocnicích",
+  "koho": [
+    "Koho se to týká? Lidí, co chodí na odběry v nemocnici, a sester v laboratoři."
+  ],
+  "fakty": [
+    {
+      "text": "Nemocnice dostanou včas vědět, když hrozí nedostatek zkumavek — méně zrušených termínů a kratší čekání v chodbě.",
+      "source": "manual",
+      "note": "z glosy / TEMA_PRAVIDLA"
+    },
+    {
+      "text": "oblém. Takže chceme tam i zvyšovat rodičovský příspěvek na 420 000 korun. Chceme zavést jeho pravidelnou valorizaci, chceme zvýšit s",
+      "source": "steno",
+      "steno_id": "2025_13_00172",
+      "citace": "tam i zvyšovat rodičovský příspěvek na 420 000 korun. Chceme zavést jeho pravidelnou valorizaci, chceme zvýšit slevy na poplatníka a"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Nemocnice uvidí docházející zkumavky",
+  "pocet_hlasovani": 2,
+  "proslo": true
+}

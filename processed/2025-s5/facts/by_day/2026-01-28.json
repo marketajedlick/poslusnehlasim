@@ -1,0 +1,16 @@
+{
+  "datum": "28.01.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "novela-z-o-pojistnem-na-verejne-zdravotni-pojist",
+    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2"
+  ],
+  "stats": {
+    "pocet_hlas": 59,
+    "minuty": 585,
+    "end_cas": "20:44",
+    "proslo": 35,
+    "zamitnuto": 6,
+    "dlouha_debata": false
+  }
+}

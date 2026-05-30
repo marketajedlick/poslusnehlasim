@@ -1,0 +1,22 @@
+{
+  "slug": "novela-z-o-investicnich-spolecnostech-eu",
+  "nazev": "Novela z. o investičních společnostech - EU",
+  "datum": "27.05.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "dohledu nad investičními fondy a společnostmi",
+  "koho": [
+    "Investiční společnosti spravují peníze investorů a nakupují za ně cenné papíry."
+  ],
+  "fakty": [
+    {
+      "text": "Poslanci sjednotili pravidla dohledu a povinností vůči klientům podle evropských norem.",
+      "source": "manual",
+      "note": "z glosy / TEMA_PRAVIDLA"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Investice mají přísnější dohled",
+  "pocet_hlasovani": 5,
+  "proslo": true
+}

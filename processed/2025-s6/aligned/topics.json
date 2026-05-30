@@ -1,0 +1,71 @@
+{
+  "obdobi": 2025,
+  "schuze": 6,
+  "topics": [
+    {
+      "slug": "navrh-zakona-o-statnich-zamestnancich",
+      "nazev": "Návrh zákona o státních zaměstnancích",
+      "bod": "1",
+      "datum": "29.01.2026",
+      "vote_cisla": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "steno_ids": [
+        "2025_6_00042",
+        "2025_6_00043",
+        "2025_6_00044",
+        "2025_6_00045",
+        "2025_6_00046",
+        "2025_6_00047",
+        "2025_6_00048",
+        "2025_6_00049",
+        "2025_6_00050",
+        "2025_6_00051"
+      ],
+      "proslo": false,
+      "pocet_hlasovani": 6,
+      "pocet_prijato": 2,
+      "pocet_zamitnuto": 4,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Návrh zákona o státních zaměstnancích",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    },
+    {
+      "slug": "navrh-zakona-o-statnich-zamestnancich-souvisejic",
+      "nazev": "Návrh zákona o státních zaměstnancích - související",
+      "bod": "2",
+      "datum": "29.01.2026",
+      "vote_cisla": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "steno_ids": [
+        "2025_6_00042",
+        "2025_6_00043",
+        "2025_6_00044",
+        "2025_6_00045",
+        "2025_6_00046",
+        "2025_6_00047",
+        "2025_6_00048",
+        "2025_6_00049",
+        "2025_6_00050",
+        "2025_6_00051"
+      ],
+      "proslo": false,
+      "pocet_hlasovani": 5,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 4,
+      "kategorie": "substantivni",
+      "tema_svejk": "Hlasovali o: Návrh zákona o státních zaměstnancích - související",
+      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+    }
+  ]
+}

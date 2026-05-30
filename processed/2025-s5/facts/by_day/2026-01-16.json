@@ -1,0 +1,16 @@
+{
+  "datum": "16.01.2026",
+  "den": "pátek",
+  "topic_slugs": [
+    "novela-z-o-pojistnem-na-socialni-zabezpeceni",
+    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem"
+  ],
+  "stats": {
+    "pocet_hlas": 21,
+    "minuty": 259,
+    "end_cas": "13:34",
+    "proslo": 8,
+    "zamitnuto": 8,
+    "dlouha_debata": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "novela-z-o-pojistnem-na-verejne-zdravotni-pojist",
+  "nazev": "Novela z. o pojistném na veřejné zdravotní pojištění",
+  "datum": "25.03.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky",
+  "koho": [
+    "Koho se to týká? Živnostníků a dalších, kdo platí zálohy na sociálním pojištění sami — ne běžných zaměstnanců na výplatní pásce."
+  ],
+  "fakty": [
+    {
+      "text": "Od ledna klesne minimální záloha z 5 720 na 5 005 korun měsíčně (ušetříte zhruba 715 korun); přeplatek vám stát vrátí.",
+      "source": "manual",
+      "note": "z glosy / TEMA_PRAVIDLA"
+    },
+    {
+      "text": "VZP přijde zhruba o třináct set až čtrnáct set, o 1 300 až 1 400 korun, které by mohly být ve fondu prevence například a mohli by",
+      "source": "steno",
+      "steno_id": "2025_13_00316",
+      "citace": "třináct set až čtrnáct set, o 1 300 až 1 400 korun, které by mohly být ve fondu prevence například a mohli by z něho čerpat na růz"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Živnostníci ušetří na odvodech",
+  "pocet_hlasovani": 5,
+  "proslo": true
+}

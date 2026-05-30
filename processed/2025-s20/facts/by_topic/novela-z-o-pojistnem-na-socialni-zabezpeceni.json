@@ -1,0 +1,22 @@
+{
+  "slug": "novela-z-o-pojistnem-na-socialni-zabezpeceni",
+  "nazev": "Novela z. o pojistném na sociální zabezpečení",
+  "datum": "26.05.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky",
+  "koho": [
+    "Koho se to týká? Živnostníků a dalších, kdo platí zálohy na sociálním pojištění sami — ne běžných zaměstnanců na výplatní pásce."
+  ],
+  "fakty": [
+    {
+      "text": "Od ledna klesne minimální záloha z 5 720 na 5 005 korun měsíčně (ušetříte zhruba 715 korun); přeplatek vám stát vrátí.",
+      "source": "manual",
+      "note": "z glosy / TEMA_PRAVIDLA"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Živnostníci ušetří na odvodech",
+  "pocet_hlasovani": 1,
+  "proslo": true
+}
