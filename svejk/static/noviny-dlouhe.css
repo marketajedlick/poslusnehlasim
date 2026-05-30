@@ -3,7 +3,7 @@
   --red:#c23a2b; --blue:#283c6e; --terra:#cf5a31;
   --shadow:rgba(40,30,15,.28);
   --page-fade:620ms;
-  --nav-h:88px;
+  --nav-h:96px;
 }
 *{ box-sizing:border-box; }
 html{
@@ -255,26 +255,27 @@ body.is-turning{ pointer-events:none; }
   font-family:'Anton',sans-serif; text-transform:uppercase; letter-spacing:.08em;
   font-size:13px; color:var(--ink); text-decoration:none;
   min-height:44px; min-width:44px; justify-content:center;
-  padding:8px; border-radius:4px;
+  padding:6px; border-radius:4px;
+  flex-shrink:0;
   transition:background .15s, color .15s;
 }
 .edition-arrow:hover{ background:rgba(207,90,49,.12); color:var(--terra); }
 .edition-arrow.disabled{ opacity:.28; pointer-events:none; }
-.edition-glyph{ font-size:26px; line-height:1; letter-spacing:0; }
+.edition-glyph{ font-size:22px; line-height:1; letter-spacing:0; }
 .edition-meta{ display:none; }
 .edition-now{
   display:flex; flex-direction:column; align-items:center; justify-content:center;
-  flex:1 1 auto; min-width:0; max-width:52vw;
-  padding:2px 6px; text-align:center;
+  flex:1 1 auto; min-width:0; max-width:58vw;
+  padding:4px 8px; text-align:center;
 }
 .edition-now-day{
   font-family:'Anton',sans-serif; color:var(--terra);
-  font-size:clamp(30px, 10vw, 40px); line-height:1; letter-spacing:-.02em;
+  font-size:clamp(42px, 14vw, 56px); line-height:.95; letter-spacing:-.02em;
 }
 .edition-now-sub{
   font-family:'Oswald',sans-serif; font-weight:600; text-transform:uppercase;
-  font-size:clamp(10px, 2.9vw, 13px); letter-spacing:.08em;
-  color:var(--ink); margin-top:4px; line-height:1.15;
+  font-size:clamp(13px, 4vw, 17px); letter-spacing:.06em;
+  color:var(--ink); margin-top:5px; line-height:1.2;
   overflow-wrap:anywhere;
 }
 
