@@ -36,7 +36,7 @@ def _redirect_html(target: str) -> str:
         f'<link rel="canonical" href="{target}" />\n'
         "<title>Přesměrování…</title>\n"
         "</head>\n"
-        f'<body><p><a href="{target}">Pokračovat</a></p></body>\n'
+        f'<body></body>\n'
         "</html>\n"
     )
 
@@ -115,10 +115,12 @@ def run_export_pages(
         resolved = resolve_edition(obdobi, edition.datum_unl)
         if not resolved:
             continue
-        target = edition_pages_href(resolved.obdobi, resolved.schuze, resolved.datum_unl, base)
+        html = _render_edition_html(resolved, obdobi, base=base, css_href=css_href)
+        if html is None:
+            continue
         short = out / "noviny" / str(obdobi) / f"{edition.datum_unl}.html"
         short.parent.mkdir(parents=True, exist_ok=True)
-        short.write_text(_redirect_html(target), encoding="utf-8")
+        short.write_text(html, encoding="utf-8")
         written.append(str(short.relative_to(out)))
 
     latest = editions[-1]
