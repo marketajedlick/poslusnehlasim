@@ -73,7 +73,7 @@ jobs:
 
       - name: Save newsletter state
         uses: actions/cache/save@v4
-        if: ${{ secrets.BUTTONDOWN_API_KEY != '' }}
+        if: success()
         with:
           path: processed/newsletter-state.json
           key: newsletter-state-v1
