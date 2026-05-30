@@ -434,6 +434,10 @@ def build_den_content(
             dopad_fallback=dopad,
             mean_from_dopad=_mean_z_dopadu,
         )
+        # Pod nadpisem = švejkovská pointa; „Co to znamená“ = věcnější glosa.
+        pod_nadpisem, co_znamena = mean, short_lead
+        if not pod_nadpisem:
+            pod_nadpisem, co_znamena = short_lead, mean
         items_meta[str(num)] = {"pocet_hlasovani": ph, "slug": slug}
         content.items.append(
             DenItem(
@@ -441,8 +445,8 @@ def build_den_content(
                 kick=_kick_z_fact(fact),
                 nadpis=nadpis,
                 nadpis_radky=split_nadpis_radky(nadpis),
-                lead=short_lead,
-                mean=mean,
+                lead=pod_nadpisem,
+                mean=co_znamena,
                 dopad=dopad,
                 parliament_lead=parliament_lead,
                 verdikt=fact.get("verdikt", "schvaleno"),
