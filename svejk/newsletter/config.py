@@ -14,35 +14,33 @@ def _site_url() -> str:
     return (base + path).rstrip("/") or base
 
 
+DEFAULT_BUTTONDOWN_USERNAME = "poslusnehlasim"
+
+
 @dataclass(frozen=True)
 class NewsletterConfig:
     """Veřejná konfigurace pro šablonu (bez API klíče)."""
 
-    enabled: bool
     username: str
     form_action: str
     privacy_url: str
     site_url: str
     feed_url: str
 
+    @property
+    def enabled(self) -> bool:
+        return bool(self.username)
+
     @classmethod
     def from_env(cls) -> NewsletterConfig:
-        username = (os.environ.get("BUTTONDOWN_USERNAME") or "").strip()
+        username = (
+            os.environ.get("BUTTONDOWN_USERNAME") or DEFAULT_BUTTONDOWN_USERNAME
+        ).strip()
         site = _site_url()
         feed = f"{site}/feed.xml"
-        if username:
-            return cls(
-                enabled=True,
-                username=username,
-                form_action=f"https://buttondown.email/api/emails/embed-subscribe/{username}",
-                privacy_url="https://buttondown.com/legal/privacy",
-                site_url=site,
-                feed_url=feed,
-            )
         return cls(
-            enabled=False,
-            username="",
-            form_action="",
+            username=username,
+            form_action=f"https://buttondown.email/api/emails/embed-subscribe/{username}",
             privacy_url="https://buttondown.com/legal/privacy",
             site_url=site,
             feed_url=feed,

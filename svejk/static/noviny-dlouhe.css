@@ -265,22 +265,26 @@ body.is-turning{ pointer-events:none; }
 .subscribe{
   width:100%; max-width:100%; margin:20px auto 0;
   padding:0 8px calc(24px + env(safe-area-inset-bottom, 0px));
+  display:flex; flex-direction:column; align-items:center;
+  text-align:center;
 }
 .subscribe-gloss{
   margin:0 0 14px;
   font-family:'Old Standard TT',serif; font-style:italic;
   font-size:17px; line-height:1.45; color:var(--ink-soft);
-  max-width:48ch;
+  max-width:48ch; text-align:center;
 }
-.subscribe-form{ margin:0; }
+.subscribe-form{
+  margin:0; width:100%; max-width:22rem;
+  display:flex; flex-direction:column; align-items:center;
+}
 .subscribe-hp{
   position:absolute; left:-9999px; width:1px; height:1px; opacity:0;
 }
 .subscribe-row{
   display:flex; flex-direction:column; gap:10px; align-items:stretch;
-  max-width:22rem;
+  width:100%; max-width:22rem; margin:0 auto;
 }
-.subscribe-row--disabled{ opacity:.45; pointer-events:none; }
 .subscribe-input{
   width:100%;
   font-family:'Old Standard TT',serif; font-size:17px;
