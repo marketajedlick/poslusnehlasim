@@ -21,18 +21,19 @@
               />
               <button class="subscribe-btn" type="submit">Poslušně odebírat</button>
             </div>
-            <div class="subscribe-turnstile">
-              <div
-                class="subscribe-turnstile-mount"
-                data-sitekey="0x4AAAAAABrWC8POBFndQnsz"
-                data-theme="light"
-                data-size="flexible"
-              ></div>
-            </div>
             <div class="subscribe-success" hidden>
               <p class="subscribe-success-title">Poslušně hlásím — jsi zapsaný.</p>
               <p class="subscribe-success-note">Do emailu ti přijde potvrzení odběru. Bez kliknutí v něm to ještě nejede — koukni i do spamu.</p>
             </div>
             <p class="subscribe-status" role="status" aria-live="polite" hidden></p>
           </form>
+          <div class="subscribe-frame-panel" hidden>
+            <p class="subscribe-frame-hint">Poslušně hlásím: dokončí poslední krok v rámečku níže.</p>
+            <iframe
+              name="buttondown-subscribe"
+              class="subscribe-frame"
+              title="Potvrzení odběru newsletteru"
+            ></iframe>
+            <button type="button" class="subscribe-done">Hotovo — poslal jsem to</button>
+          </div>
         </section>
