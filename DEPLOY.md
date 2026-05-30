@@ -87,9 +87,17 @@ npx wrangler@4 deploy
 
 URL z výstupu `wrangler deploy` (např. `https://poslusnehlasim-subscribe.xxx.workers.dev`) dej do GitHub Secret **`SVEJK_SUBSCRIBE_API_URL`** a znovu deployni web.
 
-Bez workeru funguje vlastní formulář přes Ecomail XHR (`email=…` + hlavička `X-Requested-With`). Cloudflare worker je volitelný (secret `SVEJK_SUBSCRIBE_API_URL`).
+Bez workeru funguje režim **`custom`** (vlastní formulář + Ecomail XHR). Výchozí je **`widget`** — oficiální embed snippet z Ecomailu (script + `#f-2-…` div).
 
-Alternativa: v GitHub Secrets přidej `CLOUDFLARE_API_TOKEN` a `CLOUDFLARE_ACCOUNT_ID` — workflow `.github/workflows/subscribe-worker.yml` worker nasadí sám.
+```bash
+# výchozí: Ecomail widget (design z editoru v Ecomailu)
+SVEJK_SUBSCRIBE_MODE=widget
+
+# vlastní oranžový formulář ve stylu webu
+SVEJK_SUBSCRIBE_MODE=custom
+```
+
+Cloudflare worker je volitelný (`SVEJK_SUBSCRIBE_MODE=worker` + secret `SVEJK_SUBSCRIBE_API_URL`).
 
 **Double opt-in:** nový kontakt může být v Ecomailu nejdřív v sekci **Nepotvrzení** — musí kliknout na potvrzovací e-mail.
 

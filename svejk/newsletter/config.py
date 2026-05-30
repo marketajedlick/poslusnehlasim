@@ -50,14 +50,22 @@ class NewsletterConfig:
     embed_mount_id: str
     embed_account: str
     embed_widget_js: str
+    subscribe_mode: str
 
     @property
     def enabled(self) -> bool:
         return bool(self.form_action or self.subscribe_api_url)
 
     @property
+    def use_widget(self) -> bool:
+        """Oficiální Ecomail widget (script + mount div)."""
+        return self.subscribe_mode == "widget" and bool(self.embed_widget_id)
+
+    @property
     def use_custom_form(self) -> bool:
-        """Vlastní formulář s odesláním na Ecomail (XHR) nebo volitelně worker API."""
+        """Vlastní formulář ve stylu webu (XHR na Ecomail nebo worker API)."""
+        if self.subscribe_mode == "widget":
+            return False
         return bool(self.form_action or self.subscribe_api_url)
 
     @classmethod
@@ -71,6 +79,9 @@ class NewsletterConfig:
         site = _site_url()
         feed = f"{site}/feed.xml"
         subscribe_api_url = (os.environ.get("SVEJK_SUBSCRIBE_API_URL") or "").strip()
+        subscribe_mode = os.environ.get("SVEJK_SUBSCRIBE_MODE", "widget").strip().lower()
+        if subscribe_mode not in ("widget", "custom", "worker"):
+            subscribe_mode = "widget"
         show_raw = os.environ.get("SVEJK_SHOW_SUBSCRIBE", "").strip().lower()
         if not show_raw:
             show_subscribe = bool(form_action or subscribe_api_url)
@@ -91,4 +102,5 @@ class NewsletterConfig:
             embed_mount_id=mount_id,
             embed_account=account,
             embed_widget_js=embed_widget_js,
+            subscribe_mode=subscribe_mode,
         )

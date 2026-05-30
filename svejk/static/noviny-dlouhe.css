@@ -320,6 +320,11 @@ body.is-turning{ pointer-events:none; }
 .subscribe--success .subscribe-gloss{ display:none; }
 .subscribe-embed{
   width:100%; max-width:22rem;
+  margin:0 auto;
+}
+.subscribe-embed .ec-v-form-regular,
+.subscribe-embed .ec-v-form-step{
+  font-family:'Old Standard TT',serif;
 }
 .subscribe-fallback{
   margin:0; width:100%; max-width:22rem;
