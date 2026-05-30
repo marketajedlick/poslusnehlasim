@@ -25,15 +25,16 @@ Co typicky upravovat v `facts/by_topic/<slug>.json`:
 | pole | účel |
 |------|------|
 | `nadpis` | titulek v novinách (krátký, chytlavý) |
-| `lead` | volitelně, švejkovský úvodní text pod nadpisem (jinak listy + `aligned`) |
-| `mean` | volitelně, **krátké** „Co to znamená“ (1-2 věty; jinak pointa z `tema_vysvetleni` / listy) |
-| `koho` | kontrola v `review`; na web jen pokud není kratší `mean` |
+| `lead` | volitelně, švejkovská glosa pod nadpisem (jinak listy) |
+| `pointa` | volitelně, pointa hned za glossou (jinak z `tema_vysvetleni` / listy) |
+| `mean` | volitelně, věcné „Co to znamená“ (jinak občanská glosa / `koho`+`fakty`) |
+| `koho` | kontrola v `review`; na web přes `mean` |
 | `fakty` | 1-3 věty pro `review` / lead ze stena |
 | `publikovat` | `false` = vynechat z vydání |
 
 V `facts/by_day/YYYY-MM-DD.json` volitelně `"zaver": "…"`, vlastní závěr (jinak vtipný závěr z `listy` / `mix.py`, např. utopence u dlouhé schůze).
 
-**Články:** lead z listy a kurátorského `tema_vysvetleni`; **Co to znamená** max. ~160 znaků. U mnoha hlasování přesnější kotva z hlasování.
+**Články:** pod nadpisem švejkovská glosa + pointa; **Co to znamená** jen věcné vysvětlení (bez vtipu). U mnoha hlasování přesnější kotva z hlasování.
 
 **Pomlčky:** ve výstupech nepoužívej em pomlčku (`—`) ani en pomlčku (`–`); místo toho čárka nebo ASCII `-`. Compose při nálezu dlouhé pomlčky spadne.
 
