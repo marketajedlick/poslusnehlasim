@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Náhled — admin{% endblock %}
+
+{% block content %}
+<h2>Náhled zápisu #{{ zapisek.id }}</h2>
+
+<div class="admin-grid">
+  <div class="admin-preview">
+    {% include "zapisek.html" %}
+  </div>
+  <aside class="admin-side">
+    <h3>Původní stenozáznam</h3>
+    <pre class="surovy">{{ bod.surovy_text[:8000] }}{% if bod.surovy_text|length > 8000 %}
+
+[… zkráceno, celkem {{ bod.surovy_text|length }} znaků …]{% endif %}</pre>
+  </aside>
+</div>
+
+<form class="edit-form" method="post" action="/admin/zapisy/{{ zapisek.id }}/ulozit">
+  <h3>Upravit a uložit</h3>
+  <label>Švejkův komentář
+    <textarea name="svejk_text" rows="8">{{ zapisek.svejk_text }}</textarea>
+  </label>
+  <label>Faktické shrnutí
+    <textarea name="fakticke_shrnuti" rows="6">{{ zapisek.fakticke_shrnuti }}</textarea>
+  </label>
+  <label class="checkbox">
+    <input type="checkbox" name="schvalit" value="1"> Uložit a schválit
+  </label>
+  <div class="actions">
+    <button type="submit">Uložit</button>
+  </div>
+</form>
+
+<div class="actions">
+  <form method="post" action="/admin/zapisy/{{ zapisek.id }}/schvalit" style="display:inline">
+    <button type="submit" class="btn-ok">Schválit</button>
+  </form>
+  <form method="post" action="/admin/zapisy/{{ zapisek.id }}/zamitnout" style="display:inline">
+    <button type="submit" class="btn-no">Zamítnout</button>
+  </form>
+  <a href="/admin">← Zpět</a>
+</div>
+{% endblock %}

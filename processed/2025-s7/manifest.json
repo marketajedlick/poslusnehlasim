@@ -1,0 +1,40 @@
+{
+  "obdobi": 2025,
+  "schuze": 7,
+  "steps": {
+    "fetch": {
+      "done": true,
+      "votes": 91,
+      "steno": 980,
+      "hlidac_token_used": true,
+      "fetched_at": "2026-05-30T09:42:25.025497+00:00"
+    },
+    "align": {
+      "done": true,
+      "topics": 6
+    },
+    "extract": {
+      "done": true,
+      "topics_written": 6,
+      "with_concrete_facts": 5,
+      "days": 4
+    },
+    "compose": {
+      "done": true,
+      "days": 4,
+      "files": [
+        "/Users/marketa/Desktop/something_fun/processed/2025-s7/out/noviny-dlouhe/2026-02-10.md",
+        "/Users/marketa/Desktop/something_fun/processed/2025-s7/out/noviny-dlouhe/2026-02-11.md",
+        "/Users/marketa/Desktop/something_fun/processed/2025-s7/out/noviny-dlouhe/2026-02-12.md",
+        "/Users/marketa/Desktop/something_fun/processed/2025-s7/out/noviny-dlouhe/2026-02-13.md"
+      ],
+      "html_files": [
+        "/Users/marketa/Desktop/something_fun/processed/2025-s7/out/noviny-dlouhe/2026-02-10.html",
+        "/Users/marketa/Desktop/something_fun/processed/2025-s7/out/noviny-dlouhe/2026-02-11.html",
+        "/Users/marketa/Desktop/something_fun/processed/2025-s7/out/noviny-dlouhe/2026-02-12.html",
+        "/Users/marketa/Desktop/something_fun/processed/2025-s7/out/noviny-dlouhe/2026-02-13.html"
+      ]
+    }
+  },
+  "built_at": "2026-05-30T11:32:38.973764+00:00"
+}

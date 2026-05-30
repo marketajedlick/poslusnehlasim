@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Švejk do sněmovny{% endblock %}
+
+{% block content %}
+{% if not zapisek %}
+<section class="empty">
+  <h2>Zatím nic schváleného</h2>
+  <p>Redakce ještě neodklikla první zápis. Spusť pipeline lokálně a schval v <a href="/admin">adminu</a>.</p>
+</section>
+{% else %}
+{% include "zapisek.html" %}
+{% endif %}
+{% endblock %}

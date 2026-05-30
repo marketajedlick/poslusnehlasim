@@ -1,0 +1,36 @@
+{
+  "obdobi": 2025,
+  "schuze": 1,
+  "steps": {
+    "fetch": {
+      "done": true,
+      "votes": 20,
+      "steno": 0,
+      "hlidac_token_used": false,
+      "fetched_at": "2026-05-30T09:26:08.837189+00:00"
+    },
+    "align": {
+      "done": true,
+      "topics": 12
+    },
+    "extract": {
+      "done": true,
+      "topics_written": 7,
+      "with_concrete_facts": 0,
+      "days": 2
+    },
+    "compose": {
+      "done": true,
+      "days": 2,
+      "files": [
+        "/Users/marketa/Desktop/something_fun/processed/2025-s1/out/noviny-dlouhe/2025-11-03.md",
+        "/Users/marketa/Desktop/something_fun/processed/2025-s1/out/noviny-dlouhe/2025-11-05.md"
+      ],
+      "html_files": [
+        "/Users/marketa/Desktop/something_fun/processed/2025-s1/out/noviny-dlouhe/2025-11-03.html",
+        "/Users/marketa/Desktop/something_fun/processed/2025-s1/out/noviny-dlouhe/2025-11-05.html"
+      ]
+    }
+  },
+  "built_at": "2026-05-30T11:32:38.760057+00:00"
+}

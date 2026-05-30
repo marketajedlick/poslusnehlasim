@@ -1,0 +1,124 @@
+:root {
+  --bg: #f7f3eb;
+  --text: #1a1a1a;
+  --muted: #666;
+  --svejk-bg: #fff8e7;
+  --svejk-border: #c9a227;
+  --fakta-bg: #fff;
+  --cisla-bg: #eef4f8;
+  --accent: #8b4513;
+  --wrap: 720px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 1.25rem; }
+
+.site-header {
+  background: #2c1810;
+  color: #f7f3eb;
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+}
+
+.site-header h1 { margin: 0; font-size: 1.5rem; }
+.site-header a { color: inherit; text-decoration: none; }
+.tagline { margin: 0.25rem 0 0; opacity: 0.85; font-size: 0.95rem; }
+
+.site-footer {
+  margin: 3rem auto 2rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.layer {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+}
+
+.layer-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--muted);
+}
+
+.svejk {
+  background: var(--svejk-bg);
+  border-left: 4px solid var(--svejk-border);
+}
+
+.svejk-text {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+}
+
+.fakta { background: var(--fakta-bg); border: 1px solid #ddd; }
+.cisla { background: var(--cisla-bg); }
+
+.meta { color: var(--muted); font-size: 0.9rem; }
+.meta-list { margin: 1rem 0 0; padding-left: 1.25rem; font-size: 0.95rem; }
+.muted { color: var(--muted); }
+
+.admin-list { list-style: none; padding: 0; }
+.admin-list li { padding: 0.5rem 0; border-bottom: 1px solid #ddd; }
+.badge {
+  font-size: 0.75rem;
+  background: #ffe082;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+}
+
+@media (max-width: 900px) {
+  .admin-grid { grid-template-columns: 1fr; }
+}
+
+.surovy {
+  background: #222;
+  color: #eee;
+  padding: 1rem;
+  font-size: 0.75rem;
+  max-height: 400px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.edit-form textarea {
+  width: 100%;
+  font-family: inherit;
+  padding: 0.5rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.actions { margin: 1.5rem 0; }
+button, .btn-ok, .btn-no {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+button, .btn-ok { background: var(--accent); color: #fff; }
+.btn-no { background: #c62828; color: #fff; }
+
+.empty { text-align: center; padding: 3rem 0; }

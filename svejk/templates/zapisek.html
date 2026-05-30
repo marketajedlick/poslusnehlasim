@@ -1,0 +1,54 @@
+<article class="zapisek">
+  <header class="zapisek-header">
+    <p class="meta">
+      Schůze {{ schuze.cislo_schuze }}/{{ schuze.obdobi }}
+      {% if schuze.datum_od %} · {{ schuze.datum_od }}{% endif %}
+    </p>
+    <h2>{{ bod.nazev }}</h2>
+  </header>
+
+  <section class="layer svejk">
+    <div class="layer-label">🍺 Švejk říká</div>
+    <div class="svejk-text">{{ zapisek.svejk_text | replace('\n', '<br>') | safe }}</div>
+  </section>
+
+  <section class="layer fakta">
+    <div class="layer-label">📋 Co se reálně stalo</div>
+    <div class="fakta-text">{{ zapisek.fakticke_shrnuti | replace('\n', '<br>') | safe }}</div>
+    <ul class="meta-list">
+      {% if statistiky.pocet_projevu %}
+      <li>{{ statistiky.pocet_projevu }} projevů, {{ statistiky.pocet_slov }} slov, {{ statistiky.pocet_recniku }} řečníků</li>
+      {% endif %}
+      {% if statistiky.hlasovani %}
+      <li>Hlasování č. {{ statistiky.hlasovani.cislo }}: {{ statistiky.hlasovani.vysledek }}
+        ({{ statistiky.hlasovani.pro }} pro, {{ statistiky.hlasovani.proti }} proti)</li>
+      {% endif %}
+      {% if bod.zdroj_url %}
+      <li><a href="{{ bod.zdroj_url }}" target="_blank" rel="noopener">Původní stenozáznam</a></li>
+      {% endif %}
+    </ul>
+  </section>
+
+  <section class="layer cisla">
+    <div class="layer-label">🔢 Čísla, která nelze nahackovat</div>
+    {% if statistiky.proti_strane %}
+    <h3>Hlasoval jinak než většina klubu</h3>
+    <ul>
+      {% for p in statistiky.proti_strane %}
+      <li><strong>{{ p.jmeno }}</strong> ({{ p.klub }}) — hlas {{ p.hlas }}, klub většinou {{ p.klub_vetsina }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% if statistiky.omluveni_bez_úcasti %}
+    <h3>Omluveni během schůze</h3>
+    <ul>
+      {% for o in statistiky.omluveni_bez_úcasti %}
+      <li>{{ o.jmeno }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% if not statistiky.proti_strane and not statistiky.omluveni_bez_úcasti %}
+    <p class="muted">Pro tento bod nejsou k dispozici individuální hlasovací data.</p>
+    {% endif %}
+  </section>
+</article>

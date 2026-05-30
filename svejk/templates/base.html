@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Švejk do sněmovny{% endblock %}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1><a href="/">Švejk do sněmovny</a></h1>
+      <p class="tagline">Co se ve Sněmovně reálně děje — a co o tom říká Švejk</p>
+    </div>
+  </header>
+  <main class="wrap">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer wrap">
+    <p>Data: <a href="https://www.hlidacstatu.cz" target="_blank" rel="noopener">Hlídač státu</a> · Humor ≠ fakta · MVP</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+name: Build and deploy GitHub Pages
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+  schedule:
+    # Po–Pá večer a ráno (UTC) — po jednání PS
+    - cron: "30 20 * * 1-5"
+    - cron: "0 4 * * 1-6"
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-svejk.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements-svejk.txt
+
+      - name: Build data pipeline
+        env:
+          HLIDAC_TOKEN: ${{ secrets.HLIDAC_TOKEN }}
+        run: |
+          if [ -z "$HLIDAC_TOKEN" ]; then
+            echo "HLIDAC_TOKEN není nastaven — přeskočeno stahování, použij committed processed/"
+          else
+            ./run-svejk.sh build --obdobi 2025 --vsechny-schuze --preskocit-hotove -q \
+              || ./run-svejk.sh build --obdobi 2025 --vsechny-schuze --only align,extract,compose -q
+          fi
+
+      - name: Export static site
+        env:
+          SVEJK_BASE_PATH: ""
+          SVEJK_PAGES_CNAME: poslusnehlasim.cz
+        run: ./run-svejk.sh export-pages --obdobi 2025 --out site
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
