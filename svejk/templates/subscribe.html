@@ -23,5 +23,11 @@
             </div>
             <p class="subscribe-success" hidden>Poslušně hlásím — jsi zapsaný.</p>
           </form>
+          {% if newsletter.embed_script_url %}
+          <div class="subscribe-embed" aria-label="Ecomail formulář odběru">
+            <div id="{{ newsletter.embed_anchor_id }}"></div>
+            <script src="{{ newsletter.embed_script_url }}" async></script>
+          </div>
+          {% endif %}
         </section>
         {% endif %}

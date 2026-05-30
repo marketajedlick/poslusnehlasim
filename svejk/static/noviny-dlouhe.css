@@ -12,7 +12,7 @@ html{
 }
 body{
   margin:0;
-  background:#c9bda3;
+  background:#c9bda3 !important;
   font-family:'Old Standard TT',serif;
   color:var(--ink);
   overflow-x:clip;
@@ -311,6 +311,15 @@ body.is-turning{ pointer-events:none; }
   text-align:center;
 }
 .subscribe--success .subscribe-gloss{ display:none; }
+.subscribe-embed{
+  margin-top:20px; width:100%; max-width:28rem;
+}
+.subscribe-embed .ec-v-form-holder{
+  max-width:100% !important;
+  border-radius:2px !important;
+  box-shadow:none !important;
+  background:var(--paper) !important;
+}
 
 /* ---------- nav (mobile) ---------- */
 .edition-nav{
