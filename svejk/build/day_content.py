@@ -16,13 +16,13 @@ from svejk.build.witty import (
     mean_vysvetleni,
     nadpis_z_clanku,
 )
+from svejk.mix import _hash_seed
 from svejk.listy import (
     _dnesni_ucet,
     _format_koho_veta,
     _glosa_je_nedostatecna,
     _shrnuti_radka,
     _vysledek_dne,
-    _zaverecna_veta,
 )
 from svejk.noviny import _new_state
 from svejk.paths import SchuzePaths
@@ -235,6 +235,83 @@ def _nadpis_kratce(nadpis: str) -> str:
     if len(t) <= 55:
         return f"„{t}“"
     return f"„{t[:52]}…“"
+
+
+def _zaver_obsahovy_hook(items: list[DenItem], stats: dict[str, Any]) -> str:
+    """Krátký odkaz na články dne (pro švejkovský závěr)."""
+    if not items:
+        proslo = int(stats.get("proslo") or 0)
+        zam = int(stats.get("zamitnuto") or 0)
+        if proslo or zam:
+            return (
+                f"ve sněmovně prošlo {proslo} "
+                f"{'věc' if proslo == 1 else 'věci'} a padlo {zam} "
+                f"{'návrh' if zam == 1 else 'návrhů'}"
+            )
+        return "sněmovna asi jen klokotala"
+
+    if len(items) == 1:
+        return f"celé vydání stojí na {_nadpis_kratce(items[0].nadpis)}"
+
+    if len(items) == 2:
+        return (
+            f"program se točil kolem {_nadpis_kratce(items[0].nadpis)} "
+            f"a {_nadpis_kratce(items[1].nadpis)}"
+        )
+
+    return (
+        f"ve vydání jsou {len(items)} body, "
+        f"od {_nadpis_kratce(items[0].nadpis)} "
+        f"po {_nadpis_kratce(items[-1].nadpis)}"
+    )
+
+
+def zaver_svejkovsky(
+    content: DenContent,
+    day: dict[str, Any],
+    stats: dict[str, Any],
+    *,
+    state: dict,
+) -> str:
+    """Švejkovská závěrečná glosa, mírně podle délky schůze a obsahu dne."""
+    override = (day.get("zaver") or "").strip()
+    if override:
+        if override.lower().startswith("poslušně"):
+            return override
+        return f"Poslušně hlásím, {override[0].lower()}{override[1:]}"
+
+    hook = _zaver_obsahovy_hook(content.items, stats)
+    if int(stats.get("zamitnuto") or 0) > int(stats.get("proslo") or 0) and int(
+        stats.get("zamitnuto") or 0
+    ) > 0:
+        hook = f"víc návrhů padlo než prošlo, přesto {hook}"
+
+    minuty = int(stats.get("minuty") or 0)
+    if minuty >= 360 or stats.get("dlouha_debata"):
+        sablony = (
+            "že poslanci jednali tak dlouho, že v hospodě byste mezitím stihli "
+            "utopence, klobásu i jedno kolo navíc, zatímco {obsah}.",
+            "že schůze v sále trvala déle než večerní menu v hospodě, a {obsah}.",
+            "že kdybyste po zahájení šli na jedno pivo, vrátili byste se až večer, "
+            "a mezitím {obsah}.",
+        )
+    elif minuty < 120:
+        sablony = (
+            "že to byla krátká schůze, kdo odskočil na pivo a utopence, "
+            "přišel by už na závěrečnou, ale {obsah}.",
+            "že než by výčepní stihl natočit druhé pivo, v sále už bylo po jednání, "
+            "přestože {obsah}.",
+        )
+    else:
+        sablony = (
+            "že dnes ve sněmovně {obsah}, což je na jeden den docela úctyhodné.",
+            "že {obsah}, a výčepní by to vyprávěl v hospodě do pozdní noci.",
+            "že poslanci dnes {obsah}, a člověk by řekl, že to ještě stihne do večerních zpráv.",
+        )
+
+    seed = f"zs|{content.datum}|{hook}|{minuty}|{stats.get('proslo')}|{stats.get('zamitnuto')}"
+    telo = sablony[_hash_seed(seed) % len(sablony)].format(obsah=hook)
+    return f"Poslušně hlásím, {telo}"
 
 
 def zaver_z_obsahu(content: DenContent, day: dict[str, Any]) -> str:
@@ -470,7 +547,7 @@ def build_den_content(
             else f"Poslušně hlásím, {override[0].lower()}{override[1:]}"
         )
     else:
-        zaver = _zaverecna_veta(stats, state=state)
+        zaver = zaver_svejkovsky(content, day, stats, state=state)
     content.zaver = zaver
     content.zaver_key, content.zaver_body = split_zaver(zaver)
     _sanitize_den_content(content)
