@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
-{% block title %}Admin — Švejk do sněmovny{% endblock %}
+{% block title %}Admin, Švejk do sněmovny{% endblock %}
 
 {% block content %}
-<h2>Redakce — čekající zápisy</h2>
+<h2>Redakce, čekající zápisy</h2>
 {% if not items %}
 <p class="muted">Nic nečeká na schválení.</p>
 {% else %}
@@ -11,7 +11,7 @@
   {% for item in items %}
   <li>
     <a href="/admin/zapisy/{{ item.zapisek.id }}">
-      Schůze {{ item.schuze.cislo_schuze }}/{{ item.schuze.obdobi }} — {{ item.bod.nazev }}
+      Schůze {{ item.schuze.cislo_schuze }}/{{ item.schuze.obdobi }}, {{ item.bod.nazev }}
     </a>
     <span class="badge">čeká</span>
   </li>

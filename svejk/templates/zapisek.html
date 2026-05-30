@@ -35,7 +35,7 @@
     <h3>Hlasoval jinak než většina klubu</h3>
     <ul>
       {% for p in statistiky.proti_strane %}
-      <li><strong>{{ p.jmeno }}</strong> ({{ p.klub }}) — hlas {{ p.hlas }}, klub většinou {{ p.klub_vetsina }}</li>
+      <li><strong>{{ p.jmeno }}</strong> ({{ p.klub }}), hlas {{ p.hlas }}, klub většinou {{ p.klub_vetsina }}</li>
       {% endfor %}
     </ul>
     {% endif %}
