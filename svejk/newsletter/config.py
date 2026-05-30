@@ -47,7 +47,10 @@ class NewsletterConfig:
         feed = f"{site}/feed.xml"
         subscribe_api_url = (os.environ.get("SVEJK_SUBSCRIBE_API_URL") or "").strip()
         show_raw = os.environ.get("SVEJK_SHOW_SUBSCRIBE", "").strip().lower()
-        show_subscribe = show_raw in ("1", "true", "yes")
+        if not show_raw:
+            show_subscribe = bool(form_action or subscribe_api_url)
+        else:
+            show_subscribe = show_raw in ("1", "true", "yes")
         return cls(
             form_action=form_action,
             subscribe_api_url=subscribe_api_url,

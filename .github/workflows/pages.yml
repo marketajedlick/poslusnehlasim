@@ -51,6 +51,7 @@ jobs:
           SVEJK_PAGES_CNAME: poslusnehlasim.cz
           SVEJK_SITE_URL: https://poslusnehlasim.cz
           ECOMAIL_FORM_ACTION: https://poslusnehlasim.ecomailapp.cz/public/subscribe/2/2bb287d15897fe2f9d89c882af9a3a8b
+          SVEJK_SHOW_SUBSCRIBE: "1"
           SVEJK_SUBSCRIBE_API_URL: ${{ secrets.SVEJK_SUBSCRIBE_API_URL }}
         run: ./run-svejk.sh export-pages --obdobi 2025 --out site --cname poslusnehlasim.cz
 
