@@ -400,7 +400,7 @@ def build_den_content(
         dnesni_ucet=_dnesni_ucet(stats, state=state),
         proslo=int(stats.get("proslo") or 0),
         zamitnuto=int(stats.get("zamitnuto") or 0),
-        board_stats=board_stats_line(stats),
+        board_stats="",
         result_note=_result_note(stats, state=state),
     )
 

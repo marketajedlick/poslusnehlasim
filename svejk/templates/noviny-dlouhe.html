@@ -84,9 +84,6 @@
             <span class="bcolon">:</span>
             <div class="bteam r"><span class="bnum">{{ content.zamitnuto }}</span><span class="blbl">{{ zamitnuto_label }}</span></div>
           </div>
-          {% if content.board_stats %}
-          <div class="board-stats">{{ content.board_stats }}</div>
-          {% endif %}
           {% if content.result_note or content.dnesni_ucet %}
           <div class="board-note">{{ content.result_note or content.dnesni_ucet }}</div>
           {% endif %}
