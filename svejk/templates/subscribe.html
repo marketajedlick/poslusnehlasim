@@ -1,12 +1,13 @@
         {% if newsletter.show_subscribe %}
         <section class="subscribe" aria-label="Odběr novinek">
           <p class="subscribe-gloss">Do sněmovny sám nemusíš, nech mi tu email a pošleme ti nové vydání.</p>
+          {% if newsletter.use_custom_form %}
           <form
             class="subscribe-form"
-            action="{{ newsletter.form_action or '#' }}"
+            action="#"
             method="post"
             novalidate
-            {% if newsletter.subscribe_api_url %}data-subscribe-api="{{ newsletter.subscribe_api_url }}"{% endif %}
+            data-subscribe-api="{{ newsletter.subscribe_api_url }}"
           >
             <input type="text" name="website" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
             <div class="subscribe-row">
@@ -21,9 +22,10 @@
               />
               <button class="subscribe-btn" type="submit">Poslušně odebírat</button>
             </div>
-            <p class="subscribe-success" hidden>Poslušně hlásím — jsi zapsaný.</p>
+            <p class="subscribe-error" hidden role="alert"></p>
+            <p class="subscribe-success" hidden>Poslušně hlásím — jsi zapsaný. Zkontroluj e-mail pro potvrzení.</p>
           </form>
-          {% if newsletter.embed_widget_id %}
+          {% elif newsletter.embed_widget_id %}
           <div class="subscribe-embed" aria-label="Ecomail formulář odběru">
             <div id="{{ newsletter.embed_mount_id }}"></div>
             <script>
@@ -36,6 +38,10 @@
               }(window,document,'script','ecmwidget','{{ newsletter.embed_widget_js }}'));
             </script>
           </div>
+          {% elif newsletter.form_action %}
+          <p class="subscribe-fallback">
+            <a class="subscribe-btn subscribe-btn--link" href="{{ newsletter.form_action }}" rel="noopener">Poslušně odebírat</a>
+          </p>
           {% endif %}
         </section>
         {% endif %}

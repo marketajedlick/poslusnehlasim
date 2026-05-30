@@ -333,39 +333,31 @@
 (function () {
   if (location.protocol === "file:") return;
 
-  const POPUP_NAME = "ecomail-subscribe";
-
   function showSuccess(form) {
     const row = form.querySelector(".subscribe-row");
     const emailInput = form.querySelector('input[name="email"]');
     const successEl = form.querySelector(".subscribe-success");
+    const errorEl = form.querySelector(".subscribe-error");
     if (emailInput) {
       emailInput.value = "";
       emailInput.disabled = true;
     }
     if (row) row.hidden = true;
+    if (errorEl) errorEl.hidden = true;
     form.classList.add("subscribe-form--success");
     form.closest(".subscribe")?.classList.add("subscribe--success");
     if (successEl) successEl.hidden = false;
   }
 
-  function submitViaPopup(form) {
-    const popup = window.open("about:blank", POPUP_NAME, "width=420,height=520");
-    if (!popup) return false;
-    form.target = POPUP_NAME;
-    form.submit();
-    form.removeAttribute("target");
-    const timer = setInterval(function () {
-      if (popup.closed) {
-        clearInterval(timer);
-        showSuccess(form);
-      }
-    }, 500);
-    return true;
+  function showError(form, message) {
+    const errorEl = form.querySelector(".subscribe-error");
+    if (!errorEl) return;
+    errorEl.textContent = message;
+    errorEl.hidden = false;
   }
 
   document.addEventListener("submit", function (e) {
-    const form = e.target.closest(".subscribe-form");
+    const form = e.target.closest(".subscribe-form[data-subscribe-api]");
     if (!form || form.classList.contains("subscribe-form--success")) return;
     e.preventDefault();
     if (form.querySelector(".subscribe-hp")?.value) return;
@@ -379,14 +371,14 @@
 
     const btn = form.querySelector(".subscribe-btn");
     const apiUrl = form.dataset.subscribeApi;
+    if (!apiUrl) return;
 
-    if (!apiUrl) {
-      if (btn) btn.disabled = true;
-      if (!submitViaPopup(form) && btn) btn.disabled = false;
-      return;
+    if (btn) {
+      btn.disabled = true;
+      btn.dataset.label = btn.textContent;
+      btn.textContent = "Odesílám…";
     }
 
-    if (btn) btn.disabled = true;
     fetch(apiUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -400,10 +392,18 @@
           showSuccess(form);
           return;
         }
-        if (!submitViaPopup(form) && btn) btn.disabled = false;
+        showError(form, "Odběr se nepodařil odeslat. Zkus to znovu za chvíli.");
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = btn.dataset.label || "Poslušně odebírat";
+        }
       })
       .catch(function () {
-        if (!submitViaPopup(form) && btn) btn.disabled = false;
+        showError(form, "Odběr teď nejde odeslat. Zkontroluj připojení a zkus to znovu.");
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = btn.dataset.label || "Poslušně odebírat";
+        }
       });
   });
 })();

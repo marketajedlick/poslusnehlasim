@@ -1,0 +1,41 @@
+name: Deploy subscribe worker
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "workers/**"
+      - ".github/workflows/subscribe-worker.yml"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Deploy Cloudflare Worker
+        working-directory: workers
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          ECOMAIL_API_KEY: ${{ secrets.ECOMAIL_API_KEY }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID chybí — worker se nenasadí."
+            echo "Viz DEPLOY.md → Odběr z webu (Cloudflare Worker)."
+            exit 0
+          fi
+          if [ -z "$ECOMAIL_API_KEY" ]; then
+            echo "ECOMAIL_API_KEY chybí — worker bez klíče nedává smysl."
+            exit 0
+          fi
+          npm exec wrangler@4 secret put ECOMAIL_API_KEY <<< "$ECOMAIL_API_KEY"
+          npm exec wrangler@4 deploy
+          echo ""
+          echo "→ URL workeru zkopíruj z výstupu výše a ulož do GitHub Secret SVEJK_SUBSCRIBE_API_URL"
+          echo "→ Pak spusť workflow Build and deploy GitHub Pages (nebo push na main)."

@@ -310,9 +310,25 @@ body.is-turning{ pointer-events:none; }
   letter-spacing:.06em; font-size:15px; color:var(--ink);
   text-align:center;
 }
+.subscribe-error{
+  margin:10px 0 0;
+  font-family:'Old Standard TT',serif;
+  font-size:15px; line-height:1.4;
+  color:var(--red);
+  text-align:center;
+}
 .subscribe--success .subscribe-gloss{ display:none; }
 .subscribe-embed{
-  margin-top:20px; width:100%; max-width:28rem;
+  width:100%; max-width:22rem;
+}
+.subscribe-fallback{
+  margin:0; width:100%; max-width:22rem;
+}
+.subscribe-btn--link{
+  display:inline-block;
+  text-decoration:none;
+  text-align:center;
+  box-sizing:border-box;
 }
 
 /* ---------- nav (mobile) ---------- */
