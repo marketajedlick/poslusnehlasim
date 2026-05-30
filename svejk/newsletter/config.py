@@ -14,14 +14,16 @@ def _site_url() -> str:
     return (base + path).rstrip("/") or base
 
 
-DEFAULT_BUTTONDOWN_USERNAME = "marketa"
+DEFAULT_ECOMAIL_FORM_ACTION = (
+    "https://poslusnehlasim.ecomailapp.cz/public/subscribe/2/2bb287d15897fe2f9d89c882af9a3a8b"
+)
+DEFAULT_ECOMAIL_LIST_ID = "2"
 
 
 @dataclass(frozen=True)
 class NewsletterConfig:
     """Veřejná konfigurace pro šablonu (bez API klíče)."""
 
-    username: str
     form_action: str
     privacy_url: str
     site_url: str
@@ -29,19 +31,21 @@ class NewsletterConfig:
 
     @property
     def enabled(self) -> bool:
-        return bool(self.username)
+        return bool(self.form_action)
 
     @classmethod
     def from_env(cls) -> NewsletterConfig:
-        username = (
-            os.environ.get("BUTTONDOWN_USERNAME") or DEFAULT_BUTTONDOWN_USERNAME
+        form_action = (
+            os.environ.get("ECOMAIL_FORM_ACTION") or DEFAULT_ECOMAIL_FORM_ACTION
         ).strip()
+        if form_action and "source=" not in form_action:
+            sep = "&" if "?" in form_action else "?"
+            form_action = f"{form_action}{sep}source=poslusnehlasim"
         site = _site_url()
         feed = f"{site}/feed.xml"
         return cls(
-            username=username,
-            form_action=f"https://buttondown.com/api/emails/embed-subscribe/{username}",
-            privacy_url="https://buttondown.com/legal/privacy",
+            form_action=form_action,
+            privacy_url="https://ecomail.cz/gdpr",
             site_url=site,
             feed_url=feed,
         )

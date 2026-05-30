@@ -1,4 +1,4 @@
-"""Buttondown REST API (https://api.buttondown.com/v1)."""
+"""Ecomail REST API (https://api2.ecomailapp.cz)."""
 
 from __future__ import annotations
 
@@ -8,16 +8,23 @@ import urllib.error
 import urllib.request
 from typing import Any
 
-API_BASE = "https://api.buttondown.com/v1"
+from svejk.newsletter.config import DEFAULT_ECOMAIL_LIST_ID
+
+API_BASE = "https://api2.ecomailapp.cz"
 
 
 def api_key_from_env() -> str:
-    return (os.environ.get("BUTTONDOWN_API_KEY") or "").strip()
+    return (os.environ.get("ECOMAIL_API_KEY") or "").strip()
+
+
+def list_id_from_env() -> int | None:
+    raw = (os.environ.get("ECOMAIL_LIST_ID") or DEFAULT_ECOMAIL_LIST_ID).strip()
+    return int(raw) if raw.isdigit() else None
 
 
 def _headers(api_key: str) -> dict[str, str]:
     return {
-        "Authorization": f"Token {api_key}",
+        "key": api_key,
         "Content-Type": "application/json",
     }
 
@@ -46,17 +53,39 @@ def api_request(
             return json.loads(raw) if raw.strip() else {}
     except urllib.error.HTTPError as e:
         err_body = e.read().decode("utf-8", errors="replace")[:500]
-        raise RuntimeError(f"Buttondown API {e.code}: {err_body}") from e
+        raise RuntimeError(f"Ecomail API {e.code}: {err_body}") from e
 
 
-def list_subscribers(api_key: str) -> dict[str, Any]:
-    return api_request(api_key, "GET", "/subscribers")
+def list_subscribers(api_key: str, list_id: int) -> dict[str, Any]:
+    return api_request(api_key, "GET", f"/lists/{list_id}/subscribers")
 
 
-def send_email(*, api_key: str, subject: str, body: str) -> dict[str, Any]:
-    return api_request(
+def send_campaign(
+    *,
+    api_key: str,
+    list_id: int,
+    subject: str,
+    html_body: str,
+    from_name: str,
+    from_email: str,
+    reply_to: str,
+) -> dict[str, Any]:
+    created = api_request(
         api_key,
         "POST",
-        "/emails",
-        payload={"subject": subject, "body": body, "status": "sent"},
+        "/campaigns",
+        payload={
+            "title": subject,
+            "from_name": from_name,
+            "from_email": from_email,
+            "reply_to": reply_to,
+            "subject": subject,
+            "html_text": html_body,
+            "recepient_lists": [list_id],
+        },
     )
+    campaign_id = created.get("id")
+    if not campaign_id:
+        raise RuntimeError(f"Ecomail API: chybí id kampaně v odpovědi: {created!r}")
+    sent = api_request(api_key, "POST", f"/campaigns/{campaign_id}/send")
+    return {"id": campaign_id, "send": sent}

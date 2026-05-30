@@ -60,31 +60,33 @@ python3 -m http.server -d site 8765
 
 ## Newsletter (odběr + e-mail při novém vydání)
 
-**E-maily odběratelů nejsou v gitu.** Ukládá je [Buttondown](https://buttondown.com) (double opt-in, GDPR). Web má jen formulář a RSS.
+**E-maily odběratelů nejsou v gitu.** Ukládá je [Ecomail](https://ecomail.cz) (double opt-in, GDPR). Web má jen formulář a RSS.
 
 ### Jednorázové nastavení
 
-1. Založ účet na Buttondown, vyber username (např. `poslusnehlasim`).
-2. V GitHub **Settings → Secrets → Actions** přidej:
-   - `BUTTONDOWN_USERNAME` — stejný username (veřejný, jde do HTML formuláře)
-   - `BUTTONDOWN_API_KEY` — z Buttondown → Settings → API (jen CI, nikdy do kódu)
-3. Po dalším deployi se na konci každého vydání zobrazí blok **Odběr novinek**.
+1. Založ účet na Ecomailu a vytvoř seznam kontaktů pro odběr.
+2. V Ecomailu: **Kontakty → (tvůj seznam) → Formuláře** — zkopíruj URL pro vlastní HTML formulář (POST).
+3. V GitHub **Settings → Secrets → Actions** přidej:
+   - `ECOMAIL_FORM_ACTION` — celá URL z formuláře (jde do HTML, bez API klíče)
+   - `ECOMAIL_API_KEY` — z Ecomail → Nastavení → Integrace → API (jen CI, nikdy do kódu)
+   - `ECOMAIL_LIST_ID` — číslo seznamu (v URL Ecomailu nebo v detailu seznamu)
+   - `ECOMAIL_FROM_EMAIL` — ověřená odesílací adresa pro kampaně z CI
+4. Po dalším deployi se na konci každého vydání zobrazí blok **Odběr novinek**.
 
 ### Jak lidé dostanou e-mail
 
-**Varianta A (doporučená): RSS automatizace**
+**Varianta A (doporučená): automatizace v Ecomailu**
 
-1. Po exportu existuje `https://poslusnehlasim.cz/feed.xml`.
-2. V Buttondown: **Automations → RSS-to-email** → URL feedu výše.
-3. Při každém novém vydání na webu Buttondown pošle e-mail odběratelům (bez ruční práce).
+Nastav uvítací sérii nebo automatizaci na nové kontakty ze seznamu. Případně RSS trigger, pokud ho v Ecomailu používáš.
 
 **Varianta B: CI po deployi**
 
-Workflow po `export-pages` spustí `newsletter-notify`, pokud je `BUTTONDOWN_API_KEY`. Stav posledního odeslání je v `processed/newsletter-state.json` (jen ID vydání, žádné e-maily).
+Workflow po `export-pages` spustí `newsletter-notify`, pokud je `ECOMAIL_API_KEY`. Stav posledního odeslání je v `processed/newsletter-state.json` (jen ID vydání, žádné e-maily).
 
 ```bash
 # náhled bez odeslání
-BUTTONDOWN_API_KEY=… ./run-svejk.sh newsletter-notify --obdobi 2025 --dry-run
+ECOMAIL_API_KEY=… ECOMAIL_LIST_ID=… ECOMAIL_FROM_EMAIL=… \
+  ./run-svejk.sh newsletter-notify --obdobi 2025 --dry-run
 
 # vynutit znovu (test)
 ./run-svejk.sh newsletter-notify --obdobi 2025 --force
@@ -93,7 +95,7 @@ BUTTONDOWN_API_KEY=… ./run-svejk.sh newsletter-notify --obdobi 2025 --dry-run
 Lokální export s formulářem:
 
 ```bash
-export BUTTONDOWN_USERNAME=tvuj-username
+export ECOMAIL_FORM_ACTION='https://tvujucet.ecomailapp.cz/public/subscribe/…'
 export SVEJK_SITE_URL=https://poslusnehlasim.cz
 ./run-svejk.sh export-pages --obdobi 2025 --out site
 ```
