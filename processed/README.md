@@ -25,13 +25,15 @@ Co typicky upravovat v `facts/by_topic/<slug>.json`:
 | pole | účel |
 |------|------|
 | `nadpis` | titulek v novinách (krátký, chytlavý) |
-| `koho` | jedna věta „Koho se to týká? …“ |
-| `fakty` | 1–3 konkrétní věty (`{"text": "…", "source": "steno"|"manual"}`) — z `review` / stenoprotokolu |
+| `lead` | volitelně — švejkovský úvodní text pod nadpisem (jinak listy + `aligned`) |
+| `mean` | volitelně — **krátké** „Co to znamená“ (1–2 věty; jinak pointa z `tema_vysvetleni` / listy) |
+| `koho` | kontrola v `review`; na web jen pokud není kratší `mean` |
+| `fakty` | 1–3 věty pro `review` / lead ze stena |
 | `publikovat` | `false` = vynechat z vydání |
 
-V `facts/by_day/YYYY-MM-DD.json` volitelně `"zaver": "…"` — vlastní závěr (jinak se odvodí z článků na stránce).
+V `facts/by_day/YYYY-MM-DD.json` volitelně `"zaver": "…"` — vlastní závěr (jinak vtipný závěr z `listy` / `mix.py`, např. utopence u dlouhé schůze).
 
-**Závěr** novin už není hospodský mix (utopence) — shrnuje nadpisy článků na stejné stránce. **Články** preferují věty ze stena, když je `tema_vysvetleni` obecné; u mnoha hlasování přesnější úvodní kotva.
+**Články:** lead z listy a kurátorského `tema_vysvetleni`; **Co to znamená** max. ~160 znaků. U mnoha hlasování přesnější kotva z hlasování.
 
 `review` ukáže návrhy vět ze stena a náhled závěru dne.
 

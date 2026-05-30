@@ -9,12 +9,19 @@ from pathlib import Path
 from typing import Any
 
 from svejk.build.io import read_json
+from svejk.build.witty import (
+    glosa_generic,
+    lead_z_clanku,
+    mean_z_clanku,
+    nadpis_z_clanku,
+)
 from svejk.listy import (
     _dnesni_ucet,
     _format_koho_veta,
     _glosa_je_nedostatecna,
     _shrnuti_radka,
     _vysledek_dne,
+    _zaverecna_veta,
 )
 from svejk.noviny import _new_state
 from svejk.paths import SchuzePaths
@@ -398,13 +405,33 @@ def build_den_content(
         num += 1
         topic = topics.get(slug)
         parliament_lead = parliament_lead_z_fact(fact, topic)
-        short_lead = _lead_kratky(fact, topic)
-        nadpis = fact.get("nadpis") or slug
+        nadpis = nadpis_z_clanku(fact, topic)
         ph = int(fact.get("pocet_hlasovani") or 0)
         has_steno_lead = any((f.get("source") or "") == "steno" for f in (fact.get("fakty") or []))
         vysv = (topic.get("tema_vysvetleni") or "").strip() if topic else ""
-        if ph > 3 and not has_steno_lead and (not vysv or _glosa_je_nedostatecna(vysv)):
-            short_lead = parliament_lead
+
+        def _lead_fallback() -> str:
+            lead = _lead_kratky(fact, topic)
+            if ph > 3 and not has_steno_lead and (not vysv or glosa_generic(vysv)):
+                return parliament_lead
+            return lead
+
+        use_poslusne = num == 1
+        short_lead = lead_z_clanku(
+            fact,
+            topic,
+            state=state,
+            use_poslusne=use_poslusne,
+            fallback=_lead_fallback,
+        )
+        mean = mean_z_clanku(
+            fact,
+            topic,
+            short_lead,
+            state=state,
+            dopad_fallback=dopad,
+            mean_from_dopad=_mean_z_dopadu,
+        )
         items_meta[str(num)] = {"pocet_hlasovani": ph, "slug": slug}
         content.items.append(
             DenItem(
@@ -413,7 +440,7 @@ def build_den_content(
                 nadpis=nadpis,
                 nadpis_radky=split_nadpis_radky(nadpis),
                 lead=short_lead,
-                mean=_mean_z_dopadu(dopad, short_lead),
+                mean=mean,
                 dopad=dopad,
                 parliament_lead=parliament_lead,
                 verdikt=fact.get("verdikt", "schvaleno"),
@@ -421,8 +448,15 @@ def build_den_content(
             )
         )
 
-    day_for_zaver = {**day, "items_meta": items_meta}
-    zaver = zaver_z_obsahu(content, day_for_zaver)
+    override = (day.get("zaver") or "").strip()
+    if override:
+        zaver = (
+            override
+            if override.lower().startswith("poslušně")
+            else f"Poslušně hlásím, {override[0].lower()}{override[1:]}"
+        )
+    else:
+        zaver = _zaverecna_veta(stats, state=state)
     content.zaver = zaver
     content.zaver_key, content.zaver_body = split_zaver(zaver)
 
