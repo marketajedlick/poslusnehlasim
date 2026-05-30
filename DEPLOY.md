@@ -69,7 +69,8 @@ python3 -m http.server -d site 8765
 3. V GitHub **Settings → Secrets → Actions** přidej:
    - `ECOMAIL_API_KEY` — z Ecomail → Nastavení → Integrace → API (jen CI + worker, nikdy do kódu)
    - `ECOMAIL_FROM_EMAIL` — ověřená odesílací adresa pro kampaně z CI
-   - `SVEJK_SUBSCRIBE_API_URL` — URL Cloudflare Workeru (viz níže)
+   - `CLOUDFLARE_API_TOKEN` a `CLOUDFLARE_ACCOUNT_ID` — pro worker odběru (doporučeno, nové e-maily bez robotchecku)
+   - `SVEJK_SUBSCRIBE_API_URL` — volitelně ručně, jinak ho CI doplní z `wrangler deploy`
 4. Po dalším deployi se na konci každého vydání zobrazí blok **Odběr novinek**.
 
 ### Odběr z webu (Cloudflare Worker)

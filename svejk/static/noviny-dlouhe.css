@@ -317,6 +317,9 @@ body.is-turning{ pointer-events:none; }
   color:var(--red);
   text-align:center;
 }
+.subscribe-hint{
+  color:var(--ink-soft);
+}
 .subscribe--success .subscribe-gloss{ display:none; }
 .subscribe-embed{
   width:100%; max-width:22rem;

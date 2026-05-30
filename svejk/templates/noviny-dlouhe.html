@@ -379,19 +379,60 @@
     });
   }
 
+  function showHostedHint(form) {
+    const errorEl = form.querySelector(".subscribe-error");
+    if (!errorEl) return;
+    errorEl.textContent = "Otevřeli jsme odběr v novém okně. Dokonč ho tam (Ecomail může poslat potvrzovací e-mail).";
+    errorEl.hidden = false;
+    errorEl.classList.add("subscribe-hint");
+    const btn = form.querySelector(".subscribe-btn");
+    resetBtn(btn);
+  }
+
+  function openHostedSubscribe(formAction, email) {
+    const w = window.open("", "ecomail-subscribe", "width=520,height=680,noopener");
+    if (!w) return false;
+    const doc = w.document;
+    doc.open();
+    doc.write(
+      '<!DOCTYPE html><html lang="cs"><body>' +
+      '<form id="ec-sub" method="post" action="' + formAction.replace(/"/g, "&quot;") + '">' +
+      '<input type="hidden" name="email" value="' + email.replace(/"/g, "&quot;") + '">' +
+      '</form><script>document.getElementById("ec-sub").submit();<\/script></body></html>'
+    );
+    doc.close();
+    return true;
+  }
+
   function submitViaEcomail(form, email, btn, formAction) {
     return fetch(formAction, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({ email: email }).toString(),
       credentials: "omit",
+      redirect: "manual",
     })
       .then(function (res) {
+        if (res.type === "opaqueredirect" || res.status === 302 || res.status === 301) {
+          if (openHostedSubscribe(formAction, email)) {
+            showHostedHint(form);
+            return null;
+          }
+          showError(form, "Povol vyskakovací okna a zkus odběr znovu.");
+          resetBtn(btn);
+          return null;
+        }
         const ct = (res.headers.get("content-type") || "").toLowerCase();
         if (ct.includes("application/json")) {
           return res.json();
         }
         return res.text().then(function (html) {
+          if (/robotcheck/i.test(html)) {
+            if (openHostedSubscribe(formAction, email)) {
+              return { hosted: true };
+            }
+            return { success: false, message: "Povol vyskakovací okna a zkus odběr znovu." };
+          }
           if (/registrov[aá]n/i.test(html)) {
             return { success: true, already: true };
           }
@@ -406,6 +447,11 @@
         });
       })
       .then(function (data) {
+        if (data === null) return;
+        if (data && data.hosted) {
+          showHostedHint(form);
+          return;
+        }
         if (data && data.success) {
           showSuccess(form);
           return;
@@ -444,6 +490,10 @@
       : submitViaEcomail(form, email, btn, formAction);
 
     done.catch(function () {
+      if (!apiUrl && formAction && openHostedSubscribe(formAction, email)) {
+        showHostedHint(form);
+        return;
+      }
       showError(form, "Odběr teď nejde odeslat. Zkontroluj připojení a zkus to znovu.");
       resetBtn(btn);
     });
