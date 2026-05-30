@@ -65,48 +65,9 @@ def _fakty_z_glosy(gloss: str) -> list[dict[str, Any]]:
 
 
 def _fakty_z_steno(steno_text: str, steno_id: str) -> list[dict[str, Any]]:
-    """Regex: částky, data, povinnosti."""
-    out: list[dict[str, Any]] = []
-    if not steno_text or steno_text.strip().lower() == "neautorizováno!":
-        return out
+    from svejk.build.steno_text import fakty_z_steno_text
 
-    patterns = [
-        (
-            r"(\d{1,2}\s*\d{3})\s*(?:korun|Kč)",
-            "částka",
-        ),
-        (
-            r"od\s+(?:1\.\s*)?ledna(?:\s+\d{4})?",
-            "datum",
-        ),
-        (
-            r"k\s+1\.\s*\d{1,2}\.\s*\d{4}",
-            "datum",
-        ),
-        (
-            r"(?:klesne|sníží|zvýší|zůstane)\s+[^.]{10,80}\.",
-            "změna",
-        ),
-    ]
-    seen: set[str] = set()
-    for pat, _kind in patterns:
-        for m in re.finditer(pat, steno_text, re.I):
-            start = max(0, m.start() - 40)
-            end = min(len(steno_text), m.end() + 80)
-            citace = steno_text[start:end].strip()
-            citace = re.sub(r"\s+", " ", citace)[:200]
-            veta = re.sub(r"\s+", " ", steno_text[max(0, m.start() - 60) : m.end() + 60]).strip()
-            if len(veta) > 20 and veta not in seen:
-                seen.add(veta)
-                out.append(
-                    {
-                        "text": veta[:300],
-                        "source": "steno",
-                        "steno_id": steno_id,
-                        "citace": citace,
-                    }
-                )
-    return out[:2]
+    return fakty_z_steno_text(steno_text, steno_id, limit=3)
 
 
 def _priorita(koho: list[str], fakty: list[dict]) -> int:
@@ -157,17 +118,19 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
         koho = _koho_z_glosy(gloss) if gloss and not _glosa_je_nedostatecna(gloss) else []
         fakty = _fakty_z_glosy(gloss) if gloss else []
 
+        steno_parts: list[dict] = []
         for sid in topic.get("steno_ids") or []:
             rec = steno_by_id.get(sid)
             if rec:
-                fakty.extend(_fakty_z_steno(rec.get("text") or "", sid))
+                steno_parts.extend(_fakty_z_steno(rec.get("text") or "", sid))
+        # steno má přednost před obecnou glosou
+        fakty = steno_parts + [f for f in fakty if f.get("source") != "steno"]
 
-        # dedupe fakty by text prefix
         seen_f: set[str] = set()
         uniq_f: list[dict] = []
         for f in fakty:
-            key = f["text"][:60].lower()
-            if key not in seen_f:
+            key = (f.get("text") or "")[:60].lower()
+            if key and key not in seen_f:
                 seen_f.add(key)
                 uniq_f.append(f)
         fakty = uniq_f[:4]

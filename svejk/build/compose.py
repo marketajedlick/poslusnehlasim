@@ -31,12 +31,16 @@ def render_den_markdown(
 
     prvni = True
     for item in content.items:
-        lead = item.parliament_lead
+        intro = (item.lead or item.parliament_lead).strip()
+        if prvni and item.parliament_lead and "hlasován" in item.parliament_lead.lower():
+            intro = item.parliament_lead.strip()
+        lead = intro
         if prvni:
-            lead = f"Poslušně hlásím, že {lead[0].lower()}{lead[1:]}"
+            lead = f"Poslušně hlásím, že {intro[0].lower()}{intro[1:]}"
             state["poslusne_count"] = 1
             prvni = False
 
+        co_znamena = item.mean.strip() if item.mean else item.dopad
         lines.extend(
             [
                 f"## {item.nadpis}",
@@ -45,7 +49,7 @@ def render_den_markdown(
                 "",
                 "### Co to znamená?",
                 "",
-                item.dopad,
+                co_znamena,
                 "",
             ]
         )

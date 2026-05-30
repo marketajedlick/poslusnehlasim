@@ -46,7 +46,7 @@ class HlidacClient:
 
     BASE = "https://api.hlidacstatu.cz/api/v2/datasety/stenozaznamy-psp"
 
-    def __init__(self, token: str, rate_limit_s: float = 0.26):
+    def __init__(self, token: str, rate_limit_s: float = 1.0):
         self.token = token
         self.rate_limit_s = rate_limit_s
         self._last_request = 0.0
@@ -57,14 +57,33 @@ class HlidacClient:
             time.sleep(self.rate_limit_s - elapsed)
         self._last_request = time.monotonic()
 
-    def _request(self, url: str) -> dict[str, Any]:
-        self._wait()
-        req = urllib.request.Request(
-            url,
-            headers={"Authorization": f"Token {self.token}"},
-        )
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return json.loads(resp.read())
+    def _request(self, url: str, *, max_retries: int = 8) -> dict[str, Any]:
+        last_err: urllib.error.HTTPError | None = None
+        for attempt in range(max_retries):
+            self._wait()
+            req = urllib.request.Request(
+                url,
+                headers={"Authorization": f"Token {self.token}"},
+            )
+            try:
+                with urllib.request.urlopen(req, timeout=60) as resp:
+                    return json.loads(resp.read())
+            except urllib.error.HTTPError as e:
+                last_err = e
+                if e.code == 429:
+                    retry_after = e.headers.get("Retry-After")
+                    try:
+                        wait = float(retry_after) if retry_after else 0.0
+                    except ValueError:
+                        wait = 0.0
+                    if wait <= 0:
+                        wait = min(120.0, 5.0 * (2**attempt))
+                    time.sleep(wait)
+                    continue
+                raise
+        if last_err:
+            raise last_err
+        raise RuntimeError("request failed without HTTPError")
 
     @staticmethod
     def steno_id(obdobi: int, schuze: int, poradi: int) -> str:

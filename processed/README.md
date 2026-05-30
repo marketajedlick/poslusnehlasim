@@ -1,5 +1,40 @@
 # Processed schůze (file-based build)
 
+## Doladění textů (raw → export)
+
+Pipeline: **raw** (`votes.jsonl`, volitelně `steno.jsonl`) → **aligned** (`topics.json`) → **facts** (`by_topic/*.json`, ručně) → **compose** → **export-pages**.
+
+```bash
+# přehled jednoho dne: UNL hlasy vs. glosa vs. co jde na web
+./run-svejk.sh review --schuze 20 --den 28.5
+
+# jedno téma do hloubky
+./run-svejk.sh review --schuze 20 --slug novela-z-stavebni-zakon
+
+# všechna slabá témata schůze
+./run-svejk.sh review --schuze 20 --audit
+
+# po úpravě facts přegenerovat noviny + lokální náhled
+./run-svejk.sh build --schuze 20 --only compose --den 28.5
+./run-svejk.sh export-pages --obdobi 2025 --out site --cname ""
+python3 -m http.server -d site 8765
+```
+
+Co typicky upravovat v `facts/by_topic/<slug>.json`:
+
+| pole | účel |
+|------|------|
+| `nadpis` | titulek v novinách (krátký, chytlavý) |
+| `koho` | jedna věta „Koho se to týká? …“ |
+| `fakty` | 1–3 konkrétní věty (`{"text": "…", "source": "steno"|"manual"}`) — z `review` / stenoprotokolu |
+| `publikovat` | `false` = vynechat z vydání |
+
+V `facts/by_day/YYYY-MM-DD.json` volitelně `"zaver": "…"` — vlastní závěr (jinak se odvodí z článků na stránce).
+
+**Závěr** novin už není hospodský mix (utopence) — shrnuje nadpisy článků na stejné stránce. **Články** preferují věty ze stena, když je `tema_vysvetleni` obecné; u mnoha hlasování přesnější úvodní kotva.
+
+`review` ukáže návrhy vět ze stena a náhled závěru dne.
+
 Jedna schůze = složka `{obdobi}-s{cislo}/`, např. `2025-s20/`.
 
 ```bash
@@ -8,6 +43,9 @@ HLIDAC_TOKEN=… ./run-svejk.sh build --obdobi 2025 --vsechny-schuze
 
 # jen stáhnout suroviny (UNL + steno), bez novin
 HLIDAC_TOKEN=… ./run-svejk.sh build --obdobi 2025 --vsechny-schuze --only fetch
+
+# po HTTP 429 (Too Many Requests) — znovu stejný příkaz; steno.jsonl se **nesmaže**, pokračuje od posledního pořadí
+# pomalejší API: HLIDAC_RATE_LIMIT_S=1.5 HLIDAC_TOKEN=… ./run-svejk.sh build --schuze 20 --only fetch
 
 # pokračovat po přerušení (přeskočí schůze s hotovým fetch)
 HLIDAC_TOKEN=… ./run-svejk.sh build --obdobi 2025 --vsechny-schuze --only fetch --preskocit-hotove

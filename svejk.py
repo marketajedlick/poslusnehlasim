@@ -354,6 +354,49 @@ def cmd_validate(args: argparse.Namespace) -> int:
     return 1 if report.chyby else 0
 
 
+def cmd_review(args: argparse.Namespace) -> int:
+    from svejk.paths import SchuzePaths
+    from svejk.review import (
+        audit_weak_facts,
+        format_audit_report,
+        format_day_review,
+        format_topic_review,
+        review_day,
+        review_topic,
+    )
+
+    paths = SchuzePaths.create(args.obdobi, args.schuze)
+    weak: list = []
+    topics: list = []
+
+    if args.slug:
+        tr = review_topic(paths, args.slug)
+        if not tr:
+            print(f"Chyba: chybí facts pro slug {args.slug}", file=sys.stderr)
+            return 1
+        topics = [tr]
+        text = format_topic_review(tr, show_votes=args.votes)
+    elif args.audit:
+        weak = audit_weak_facts(paths)
+        text = format_audit_report(weak, paths)
+    elif args.den:
+        topics = review_day(paths, args.den)
+        text = format_day_review(paths, args.den, show_votes=args.votes)
+    else:
+        print("Chyba: uveď --den, --slug nebo --audit.", file=sys.stderr)
+        return 1
+
+    print(text)
+    if args.out:
+        args.out.parent.mkdir(parents=True, exist_ok=True)
+        args.out.write_text(text, encoding="utf-8")
+        print(f"Ulozeno: {args.out}", file=sys.stderr)
+    if args.audit:
+        return 1 if weak else 0
+    has_warn = any(i.level == "warn" for t in topics for i in t.issues)
+    return 1 if has_warn else 0
+
+
 def cmd_audit(args: argparse.Namespace) -> int:
     from svejk.audit import audit_obdobi, format_audit_report
 
@@ -494,6 +537,28 @@ def main() -> int:
     p_serve.set_defaults(func=cmd_serve)
 
     sub.add_parser("status", help="Stav DB").set_defaults(func=cmd_status)
+
+    p_review = sub.add_parser(
+        "review",
+        help="Porovnání raw / aligned / facts / export (doladění textů)",
+    )
+    p_review.add_argument("--schuze", type=int, required=True)
+    p_review.add_argument("--obdobi", type=int, default=2025)
+    p_review.add_argument("--den", help="Den (DD.MM.RRRR nebo YYYY-MM-DD)")
+    p_review.add_argument("--slug", help="Jedno téma podle slug")
+    p_review.add_argument(
+        "--audit",
+        action="store_true",
+        help="Seznam všech publikovaných témat se varováními",
+    )
+    p_review.add_argument(
+        "--votes",
+        type=int,
+        default=5,
+        help="Kolik řádků raw hlasování ukázat (default 5)",
+    )
+    p_review.add_argument("-o", "--out", type=Path, help="Uložit report")
+    p_review.set_defaults(func=cmd_review)
 
     p_audit = sub.add_parser("audit", help="Inventar temat bez obcanskych glos")
     p_audit.add_argument("--obdobi", type=int, default=2025)

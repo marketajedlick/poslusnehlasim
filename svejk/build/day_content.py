@@ -12,9 +12,9 @@ from svejk.build.io import read_json
 from svejk.listy import (
     _dnesni_ucet,
     _format_koho_veta,
+    _glosa_je_nedostatecna,
     _shrnuti_radka,
     _vysledek_dne,
-    _zaverecna_veta,
 )
 from svejk.noviny import _new_state
 from svejk.paths import SchuzePaths
@@ -141,26 +141,55 @@ def _kick_z_fact(fact: dict[str, Any]) -> str:
 
 
 def _lead_kratky(fact: dict[str, Any], topic: dict[str, Any] | None) -> str:
-    if topic:
-        vysv = (topic.get("tema_vysvetleni") or "").strip()
-        if vysv:
-            part = re.split(r"\s*[—–]\s*", vysv, maxsplit=1)[0].strip()
-            if part.endswith("."):
-                return part
-            first = re.split(r"(?<=[.!?])\s+", part, maxsplit=1)[0].strip()
-            if first:
-                return first if first.endswith(".") else f"{first}."
-
     fakty = fact.get("fakty") or []
+    vysv = (topic.get("tema_vysvetleni") or "").strip() if topic else ""
+    tema_generic = not vysv or _glosa_je_nedostatecna(vysv)
+
+    steno_fakty = [f for f in fakty if (f.get("source") or "") == "steno"]
+    if tema_generic and steno_fakty:
+        t = (steno_fakty[0].get("text") or "").strip()
+        if t:
+            return t if t.endswith((".", "!", "?")) else f"{t}."
+
+    if vysv and not tema_generic:
+        part = re.split(r"\s*[—–]\s*", vysv, maxsplit=1)[0].strip()
+        first = re.split(r"(?<=[.!?])\s+", part, maxsplit=1)[0].strip()
+        if first:
+            return first if first.endswith((".", "!", "?")) else f"{first}."
+
     if fakty:
         t = (fakty[0].get("text") or "").strip()
         if t:
-            return t if t.endswith(".") else f"{t}."
+            return t if t.endswith((".", "!", "?")) else f"{t}."
 
     predmet = (fact.get("predmet_lidsky") or "").strip()
     if predmet:
         p = predmet[0].upper() + predmet[1:]
-        return p if p.endswith(".") else f"{p}."
+        return p if p.endswith((".", "!", "?")) else f"{p}."
+
+    return lead_z_fact(fact)
+
+
+def parliament_lead_z_fact(fact: dict[str, Any], topic: dict[str, Any] | None) -> str:
+    """Kotva z hlasování — u maratonu přesnější než „schválili změny v …“."""
+    n = int(fact.get("pocet_hlasovani") or 0)
+    predmet = (fact.get("predmet_lidsky") or "bod programu").strip()
+    verdikt = fact.get("verdikt", "schvaleno")
+    prijato = int((topic or {}).get("pocet_prijato") or 0)
+    zamitnuto = int((topic or {}).get("pocet_zamitnuto") or 0)
+
+    if n > 3:
+        if verdikt == "schvaleno" and zamitnuto > prijato and prijato > 0:
+            return (
+                f"Po {n} hlasováních o {predmet} většina pozměňovacích návrhů padla, "
+                f"na závěr ale něco prošlo."
+            )
+        if verdikt == "schvaleno" and zamitnuto > prijato:
+            return f"Po {n} hlasováních o {predmet} na závěr procedurálně něco prošlo."
+        if verdikt == "zamiteno":
+            return f"{n}× hlasovali o {predmet} — návrh neprošel."
+        if verdikt == "odlozeno":
+            return f"Po {n} hlasováních o {predmet} to poslanci odložili."
 
     return lead_z_fact(fact)
 
@@ -172,6 +201,77 @@ def _mean_z_dopadu(dopad: str, lead: str) -> str:
         rest = dopad.replace(lead.rstrip("."), "", 1).strip(" .")
         return rest or dopad
     return dopad
+
+
+def _verdikt_fráze_zaver(item: DenItem, pocet_hlasovani: int) -> str:
+    v = item.verdikt
+    if pocet_hlasovani > 5:
+        if v == "schvaleno":
+            return f"po {pocet_hlasovani} hlasováních na závěr něco prošlo"
+        if v == "zamiteno":
+            return f"{pocet_hlasovani}× se hlasovalo a návrh neprošel"
+        if v == "odlozeno":
+            return "debata skončila odkladem"
+    if v == "schvaleno":
+        return "návrh prošel"
+    if v == "zamiteno":
+        return "návrh neprošel"
+    if v == "odlozeno":
+        return "věc se odložila"
+    return "bod je v článku výše rozepsaný"
+
+
+def _nadpis_kratce(nadpis: str) -> str:
+    t = (nadpis or "").strip()
+    if len(t) <= 55:
+        return f"„{t}“"
+    return f"„{t[:52]}…“"
+
+
+def zaver_z_obsahu(content: DenContent, day: dict[str, Any]) -> str:
+    override = (day.get("zaver") or "").strip()
+    if override:
+        if override.lower().startswith("poslušně"):
+            return override
+        return f"Poslušně hlásím, {override[0].lower()}{override[1:]}"
+
+    items = content.items
+    meta: dict[int, dict[str, Any]] = day.get("items_meta") or {}
+
+    if not items:
+        proslo = content.proslo
+        zam = content.zamitnuto
+        if proslo or zam:
+            return (
+                f"Poslušně hlásím, že dnes ve sněmovně "
+                f"{proslo} {'věc' if proslo == 1 else 'věci'} prošly a {zam} "
+                f"{'návrh' if zam == 1 else 'návrhů'} padlo — v tomto vydání bez detailního článku."
+            )
+        return "Poslušně hlásím, že dnešní vydání je prázdné — sněmovna asi jen klokotala."
+
+    if len(items) == 1:
+        it = items[0]
+        ph = int((meta.get(str(it.num)) or {}).get("pocet_hlasovani") or 0)
+        vf = _verdikt_fráze_zaver(it, ph)
+        return (
+            f"Poslušně hlásím, že dnešní vydání stojí na jednom bodu — "
+            f"{_nadpis_kratce(it.nadpis)}: {vf}; zbytek najdete v textu výše."
+        )
+
+    if len(items) == 2:
+        a, b = items[0], items[1]
+        return (
+            f"Poslušně hlásím, že dnes byly na programu dva hlavní body — "
+            f"{_nadpis_kratce(a.nadpis)} a {_nadpis_kratce(b.nadpis)}; "
+            f"obojí je rozepsané v článcích výše."
+        )
+
+    prvni = items[0].nadpis
+    posledni = items[-1].nadpis
+    return (
+        f"Poslušně hlásím, že dnešní vydání shrnuje {len(items)} bodů programu "
+        f"od {_nadpis_kratce(prvni)} po {_nadpis_kratce(posledni)} — detaily jsou v textech výše."
+    )
 
 
 def split_zaver(text: str) -> tuple[str, str]:
@@ -283,6 +383,7 @@ def build_den_content(
     )
 
     num = 0
+    items_meta: dict[str, dict[str, Any]] = {}
     for slug in slugs:
         fp = paths.facts_by_topic / f"{slug}.json"
         if not fp.is_file():
@@ -295,9 +396,16 @@ def build_den_content(
             continue
 
         num += 1
-        parliament_lead = lead_z_fact(fact)
-        short_lead = _lead_kratky(fact, topics.get(slug))
+        topic = topics.get(slug)
+        parliament_lead = parliament_lead_z_fact(fact, topic)
+        short_lead = _lead_kratky(fact, topic)
         nadpis = fact.get("nadpis") or slug
+        ph = int(fact.get("pocet_hlasovani") or 0)
+        has_steno_lead = any((f.get("source") or "") == "steno" for f in (fact.get("fakty") or []))
+        vysv = (topic.get("tema_vysvetleni") or "").strip() if topic else ""
+        if ph > 3 and not has_steno_lead and (not vysv or _glosa_je_nedostatecna(vysv)):
+            short_lead = parliament_lead
+        items_meta[str(num)] = {"pocet_hlasovani": ph, "slug": slug}
         content.items.append(
             DenItem(
                 num=num,
@@ -313,7 +421,8 @@ def build_den_content(
             )
         )
 
-    zaver = _zaverecna_veta(stats, state=state)
+    day_for_zaver = {**day, "items_meta": items_meta}
+    zaver = zaver_z_obsahu(content, day_for_zaver)
     content.zaver = zaver
     content.zaver_key, content.zaver_body = split_zaver(zaver)
 
