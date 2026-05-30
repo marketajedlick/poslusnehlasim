@@ -60,6 +60,7 @@ jobs:
           key: newsletter-state-v1
 
       - name: Notify newsletter (Buttondown)
+        continue-on-error: true
         env:
           BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
           SVEJK_SITE_URL: https://poslusnehlasim.cz
@@ -69,7 +70,7 @@ jobs:
             echo "BUTTONDOWN_API_KEY není nastaven — přeskočeno"
             exit 0
           fi
-          ./run-svejk.sh newsletter-notify --obdobi 2025
+          ./run-svejk.sh newsletter-notify --obdobi 2025 || echo "Newsletter notify selhal — deploy pokračuje"
 
       - name: Save newsletter state
         uses: actions/cache/save@v4
