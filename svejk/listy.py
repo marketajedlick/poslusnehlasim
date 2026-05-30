@@ -66,7 +66,7 @@ NADPIS_VYSLEDEK: dict[str, dict[str, str]] = {
         "zamitli": "Odvody pro živnostníky zůstávají",
     },
     "stavebn": {
-        "schvalili": "Stavba půjde snáz",
+        "schvalili": "Stavba půjde snáz, snad, někdy",
         "zamitli": "Stavba si počká",
     },
     "penzijniho_sporeni": {
