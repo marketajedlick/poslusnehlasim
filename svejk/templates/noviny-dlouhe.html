@@ -139,12 +139,22 @@
     function fit(){
       const stage = document.getElementById('stage');
       if (!stage) return;
+      if (window.matchMedia('(max-width: 720px)').matches){
+        stage.style.transform = 'none';
+        return;
+      }
       stage.style.transform = 'scale(' + Math.min(1, (window.innerWidth - 32) / 840) + ')';
+    }
+
+    function probeWidth(){
+      return window.matchMedia('(max-width: 720px)').matches
+        ? Math.min(window.innerWidth - 20, 840) + 'px'
+        : '840px';
     }
 
     function measureSheet(html){
       const probe = document.createElement('div');
-      probe.style.cssText = 'position:absolute;left:-9999px;top:0;width:840px;visibility:hidden;pointer-events:none';
+      probe.style.cssText = 'position:absolute;left:-9999px;top:0;width:' + probeWidth() + ';visibility:hidden;pointer-events:none';
       probe.innerHTML = '<div class="sheet-shape">' + html + '</div>';
       document.body.appendChild(probe);
       const h = probe.offsetHeight;
