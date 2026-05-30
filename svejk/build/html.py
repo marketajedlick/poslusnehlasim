@@ -7,7 +7,7 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from svejk.build.day_content import DenContent, datum_design
-from svejk.build.nav import edition_nav
+from svejk.build.nav import edition_nav, list_obdobi_editions
 from svejk.paths import SchuzePaths
 
 _TEMPLATES = Path(__file__).resolve().parent.parent / "templates"
@@ -76,9 +76,13 @@ def render_den_html(
         base_path=base_path,
     )
     svejk_svg = _SVEJK_SVG.read_text(encoding="utf-8") if _SVEJK_SVG.is_file() else ""
+    ob = obdobi if obdobi is not None else paths.obdobi
+    dup_day = sum(1 for e in list_obdobi_editions(ob) if e.datum_unl == content.datum) > 1
     tpl = _jinja_env().get_template("noviny-dlouhe.html")
     return tpl.render(
         content=content,
+        schuze=paths.schuze,
+        dup_day=dup_day,
         datum_design=datum_design(content.datum, content.den),
         proslo_label=_proslo_board_label(content.proslo),
         zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
