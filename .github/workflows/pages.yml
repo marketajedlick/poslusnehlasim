@@ -33,22 +33,24 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements-svejk.txt
 
-      - name: Build data pipeline
+      - name: Refresh data from Hlídač (cron / ručně)
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         env:
           HLIDAC_TOKEN: ${{ secrets.HLIDAC_TOKEN }}
         run: |
           if [ -z "$HLIDAC_TOKEN" ]; then
             echo "HLIDAC_TOKEN není nastaven — používám committed processed/facts"
-          else
-            ./run-svejk.sh build --obdobi 2025 --vsechny-schuze -q \
-              || ./run-svejk.sh build --obdobi 2025 --vsechny-schuze --only align,extract,compose -q
+            exit 0
           fi
+          ./run-svejk.sh build --obdobi 2025 --vsechny-schuze -q \
+            || ./run-svejk.sh build --obdobi 2025 --vsechny-schuze --only align,extract,compose -q
 
       - name: Export static site
         env:
-          SVEJK_BASE_PATH: ""
-          SVEJK_PAGES_CNAME: poslusnehlasim.cz
-        run: ./run-svejk.sh export-pages --obdobi 2025 --out site
+          # Project Pages: …/poslusnehlasim/ — po zapnutí vlastní domény změň na ""
+          SVEJK_BASE_PATH: /${{ github.event.repository.name }}
+          SVEJK_PAGES_CNAME: ""
+        run: ./run-svejk.sh export-pages --obdobi 2025 --out site --cname ""
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

@@ -15,11 +15,14 @@
 
 1. **Settings → Secrets → Actions:** `HLIDAC_TOKEN` (už máš) — cron stahuje nová stena a přegeneruje noviny.
 2. **Settings → Pages → Build and deployment:** Source = **GitHub Actions** (ne „Deploy from branch“).
-3. Po prvním úspěšném workflow uvidíš URL typu `https://marketajedlick.github.io/poslusnehlasim/`; s vlastní doménou pak `https://poslusnehlasim.cz`.
+3. Mezitím web běží na `https://marketajedlick.github.io/poslusnehlasim/` (workflow má `SVEJK_BASE_PATH: /poslusnehlasim`).
+4. Po zapnutí DNS na vlastní doménu v workflow změň `SVEJK_BASE_PATH` na `""` a `SVEJK_PAGES_CNAME` na `poslusnehlasim.cz`.
+
+Push na `main` jen exportuje z `processed/facts` (~1 min). Stažení z Hlídače běží při **cron** nebo **workflow_dispatch**.
 
 ## Doména poslusnehlasim.cz
 
-Workflow při exportu vytvoří `site/CNAME` s obsahem `poslusnehlasim.cz`. U registrátora domény nastav **jednu** z variant (podle toho, co podporuješ):
+Po přepnutí DNS v workflow zapni `SVEJK_PAGES_CNAME: poslusnehlasim.cz` (soubor `site/CNAME`). U registrátora domény nastav **jednu** z variant (podle toho, co podporuješ):
 
 ### Varianta A — apex domény (`poslusnehlasim.cz`)
 
