@@ -304,8 +304,8 @@ body.is-turning{ pointer-events:none; }
 .subscribe-btn:hover{ filter:brightness(1.05); }
 .subscribe-btn:disabled{ cursor:default; opacity:.7; }
 .subscribe-turnstile{
-  position:absolute; width:0; height:0; overflow:hidden;
-  clip:rect(0,0,0,0); white-space:nowrap;
+  display:flex; justify-content:center; width:100%;
+  min-height:65px; margin:10px 0 0;
 }
 .subscribe-status{
   margin:12px 0 0; font-size:15px; line-height:1.45;

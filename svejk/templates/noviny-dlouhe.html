@@ -230,6 +230,7 @@
       finalizeTop();
       if (pageSlot) pageSlot.style.minHeight = '';
       applyNav(page.navEl);
+      window.initSubscribeTurnstile?.(frontSheet);
       document.title = page.title;
       history.pushState({ href: page.url }, '', new URL(page.url, location.href).pathname);
     }
@@ -333,10 +334,34 @@
 (function () {
   if (location.protocol === "file:") return;
 
-  const TURNSTILE_SITEKEY = "0x4AAAAAABrWC8POBFndQnsz";
-  let widgetId = null;
-  let pendingToken = null;
-  let activeMount = null;
+  if (!document.querySelector('script[data-subscribe-turnstile="1"]')) {
+    const script = document.createElement("script");
+    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+    script.async = true;
+    script.defer = true;
+    script.dataset.subscribeTurnstile = "1";
+    script.onload = function () { window.initSubscribeTurnstile?.(); };
+    document.head.appendChild(script);
+  }
+
+  function initSubscribeTurnstile(root) {
+    if (!window.turnstile) return;
+    (root || document).querySelectorAll(".subscribe-turnstile-mount").forEach(function (mount) {
+      if (mount.dataset.widgetId) {
+        try { window.turnstile.remove(mount.dataset.widgetId); } catch (_) {}
+        delete mount.dataset.widgetId;
+        mount.innerHTML = "";
+      }
+      const id = window.turnstile.render(mount, {
+        sitekey: mount.dataset.sitekey,
+        theme: mount.dataset.theme || "light",
+        size: mount.dataset.size || "flexible",
+      });
+      mount.dataset.widgetId = String(id);
+    });
+  }
+  window.initSubscribeTurnstile = initSubscribeTurnstile;
+  if (window.turnstile) initSubscribeTurnstile();
 
   function setStatus(form, message, kind) {
     const statusEl = form.querySelector(".subscribe-status");
@@ -355,69 +380,21 @@
     setStatus(form, "", "");
   }
 
+  function resetTurnstile(form) {
+    const mount = form.querySelector(".subscribe-turnstile-mount");
+    if (!mount || !window.turnstile || !mount.dataset.widgetId) return;
+    window.turnstile.reset(mount.dataset.widgetId);
+  }
+
   function isSubscribeSuccess(res, text) {
-    if (res.ok || res.status === 201) return true;
+    if (/Verify Your Subscription/i.test(text)) return false;
+    if (res.ok) return true;
     if (!text) return false;
     try {
       const data = JSON.parse(text);
       if (data && (data.email || data.email_address || data.id)) return true;
     } catch (_) {}
-    return /thank you for subscribing|you.?re subscribed|subscription confirmed|check your (inbox|email)/i.test(text);
-  }
-
-  function loadTurnstile() {
-    if (window.turnstile) return Promise.resolve();
-    return new Promise(function (resolve, reject) {
-      const existing = document.querySelector('script[data-subscribe-turnstile="1"]');
-      if (existing) {
-        existing.addEventListener("load", function () { resolve(); }, { once: true });
-        existing.addEventListener("error", reject, { once: true });
-        return;
-      }
-      const script = document.createElement("script");
-      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-      script.async = true;
-      script.defer = true;
-      script.dataset.subscribeTurnstile = "1";
-      script.onload = function () { resolve(); };
-      script.onerror = reject;
-      document.head.appendChild(script);
-    });
-  }
-
-  function ensureWidget(mount) {
-    if (!mount || !window.turnstile) return null;
-    if (activeMount !== mount) {
-      if (widgetId != null) {
-        window.turnstile.remove(widgetId);
-        widgetId = null;
-      }
-      activeMount = mount;
-    }
-    if (widgetId != null) return widgetId;
-    widgetId = window.turnstile.render(mount, {
-      sitekey: TURNSTILE_SITEKEY,
-      size: "invisible",
-      callback: function (token) {
-        if (pendingToken) pendingToken(token);
-      },
-      "error-callback": function () {
-        if (pendingToken) pendingToken(null);
-      },
-    });
-    return widgetId;
-  }
-
-  function requestTurnstileToken(mount) {
-    return loadTurnstile().then(function () {
-      const id = ensureWidget(mount);
-      if (id == null) throw new Error("turnstile");
-      return new Promise(function (resolve) {
-        pendingToken = resolve;
-        window.turnstile.reset(id);
-        window.turnstile.execute(id);
-      });
-    });
+    return /thank you for subscribing|thanks for subscribing|you.?re subscribed|subscription confirmed|check your (inbox|email)|almost done/i.test(text);
   }
 
   document.addEventListener("submit", function (e) {
@@ -434,28 +411,22 @@
       return;
     }
 
+    const token = form.querySelector('[name="cf-turnstile-response"]')?.value;
+    if (!token) {
+      setStatus(form, "Počkej chvíli — ověřujeme, že nejsi robot, a zkus to znovu.", "wait");
+      return;
+    }
+
     btn.disabled = true;
     setStatus(form, "Poslušně hlásím, odesílám…", "wait");
 
-    const mount = form.querySelector(".subscribe-turnstile");
-    requestTurnstileToken(mount)
-      .then(function (token) {
-        if (!token) throw new Error("turnstile");
-        const body = new URLSearchParams();
-        body.set("email", email);
-        body.set("tag", "poslusnehlasim");
-        body.set("embed", "1");
-        body.set("cf-turnstile-response", token);
-        return fetch(form.action, {
-          method: "POST",
-          headers: {
-            Accept: "application/json, text/html;q=0.9, */*;q=0.8",
-            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-          },
-          body: body.toString(),
-          credentials: "omit",
-        });
-      })
+    const body = new URLSearchParams(new FormData(form));
+
+    fetch(form.action, {
+      method: "POST",
+      body: body,
+      credentials: "omit",
+    })
       .then(function (res) {
         return res.text().then(function (text) {
           return { res: res, text: text };
@@ -465,18 +436,17 @@
         if (isSubscribeSuccess(payload.res, payload.text)) {
           showSuccess(form);
           form.reset();
-          if (widgetId != null && window.turnstile) window.turnstile.reset(widgetId);
+          resetTurnstile(form);
           return;
         }
         throw new Error("http-" + payload.res.status);
       })
       .catch(function () {
         setStatus(form, "Nepodařilo se to odeslat. Zkus to znovu za chvíli.", "error");
-        if (widgetId != null && window.turnstile) window.turnstile.reset(widgetId);
+        resetTurnstile(form);
       })
       .finally(function () {
         btn.disabled = false;
-        pendingToken = null;
       });
   });
 })();

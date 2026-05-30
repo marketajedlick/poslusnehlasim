@@ -40,7 +40,7 @@ class NewsletterConfig:
         feed = f"{site}/feed.xml"
         return cls(
             username=username,
-            form_action=f"https://buttondown.email/api/emails/embed-subscribe/{username}",
+            form_action=f"https://buttondown.com/api/emails/embed-subscribe/{username}",
             privacy_url="https://buttondown.com/legal/privacy",
             site_url=site,
             feed_url=feed,
