@@ -23,10 +23,18 @@
             </div>
             <p class="subscribe-success" hidden>Poslušně hlásím — jsi zapsaný.</p>
           </form>
-          {% if newsletter.embed_script_url %}
+          {% if newsletter.embed_widget_id %}
           <div class="subscribe-embed" aria-label="Ecomail formulář odběru">
-            <div id="{{ newsletter.embed_anchor_id }}"></div>
-            <script src="{{ newsletter.embed_script_url }}" async></script>
+            <div id="{{ newsletter.embed_mount_id }}"></div>
+            <script>
+              (function (w,d,s,o,f,js,fjs) {
+                w['ecm-widget']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};
+                js=d.createElement(s), fjs=d.getElementsByTagName(s)[0];
+                js.id='{{ newsletter.embed_widget_id }}';
+                js.dataset.a='{{ newsletter.embed_account }}';
+                js.src=f; js.async=1; fjs.parentNode.insertBefore(js,fjs);
+              }(window,document,'script','ecmwidget','{{ newsletter.embed_widget_js }}'));
+            </script>
           </div>
           {% endif %}
         </section>

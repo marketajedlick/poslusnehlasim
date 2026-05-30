@@ -19,16 +19,21 @@ DEFAULT_ECOMAIL_FORM_ACTION = (
     "https://poslusnehlasim.ecomailapp.cz/public/subscribe/2/2bb287d15897fe2f9d89c882af9a3a8b"
 )
 DEFAULT_ECOMAIL_LIST_ID = "2"
+DEFAULT_ECOMAIL_WIDGET_JS = "https://d70shl7vidtft.cloudfront.net/widget.js"
 
 
-def _embed_script_url(form_action: str) -> str:
-    """URL inline embed skriptu z hostovaného formuláře (/public/subscribe/LIST/HASH)."""
+def _parse_subscribe_form(form_action: str) -> tuple[str, str, str]:
+    """Vrátí (widget_id, mount_id, account) z URL /public/subscribe/LIST/HASH."""
     base_url = form_action.split("?", 1)[0]
-    m = re.match(r"(https?://[^/]+)/public/subscribe/(\d+)/([a-f0-9]+)", base_url)
+    m = re.match(
+        r"https?://([^.]+)\.ecomailapp\.cz/public/subscribe/(\d+)/([a-f0-9]+)",
+        base_url,
+    )
     if not m:
-        return ""
-    host, list_id, form_hash = m.group(1), m.group(2), m.group(3)
-    return f"{host}/form.js?list={list_id}&hash={form_hash}"
+        return "", "", ""
+    account, list_id, form_hash = m.group(1), m.group(2), m.group(3)
+    widget_id = f"{list_id}-{form_hash}"
+    return widget_id, f"f-{widget_id}", account
 
 
 @dataclass(frozen=True)
@@ -41,8 +46,10 @@ class NewsletterConfig:
     site_url: str
     feed_url: str
     show_subscribe: bool
-    embed_script_url: str
-    embed_anchor_id: str
+    embed_widget_id: str
+    embed_mount_id: str
+    embed_account: str
+    embed_widget_js: str
 
     @property
     def enabled(self) -> bool:
@@ -64,12 +71,10 @@ class NewsletterConfig:
             show_subscribe = bool(form_action or subscribe_api_url)
         else:
             show_subscribe = show_raw in ("1", "true", "yes")
-        embed_script_url = (
-            os.environ.get("ECOMAIL_EMBED_SCRIPT") or _embed_script_url(form_action)
+        widget_id, mount_id, account = _parse_subscribe_form(form_action)
+        embed_widget_js = (
+            os.environ.get("ECOMAIL_WIDGET_JS") or DEFAULT_ECOMAIL_WIDGET_JS
         ).strip()
-        embed_anchor_id = (
-            os.environ.get("ECOMAIL_EMBED_ID") or "ecf-1"
-        ).strip() or "ecf-1"
         return cls(
             form_action=form_action,
             subscribe_api_url=subscribe_api_url,
@@ -77,6 +82,8 @@ class NewsletterConfig:
             site_url=site,
             feed_url=feed,
             show_subscribe=show_subscribe,
-            embed_script_url=embed_script_url,
-            embed_anchor_id=embed_anchor_id,
+            embed_widget_id=widget_id,
+            embed_mount_id=mount_id,
+            embed_account=account,
+            embed_widget_js=embed_widget_js,
         )

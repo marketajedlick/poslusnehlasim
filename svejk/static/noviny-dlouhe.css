@@ -314,12 +314,6 @@ body.is-turning{ pointer-events:none; }
 .subscribe-embed{
   margin-top:20px; width:100%; max-width:28rem;
 }
-.subscribe-embed .ec-v-form-holder{
-  max-width:100% !important;
-  border-radius:2px !important;
-  box-shadow:none !important;
-  background:var(--paper) !important;
-}
 
 /* ---------- nav (mobile) ---------- */
 .edition-nav{
