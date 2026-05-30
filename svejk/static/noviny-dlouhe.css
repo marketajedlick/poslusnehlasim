@@ -89,8 +89,16 @@ body.is-turning{ pointer-events:none; }
   font-family:'Oswald',sans-serif; font-weight:600; text-transform:uppercase;
   letter-spacing:.10em; font-size:10px; color:var(--ink); padding:4px 2px 7px;
 }
-.titleblock{ flex:1; min-width:0; }
-.svejk{ display:none; }
+.titleblock{ flex:1; min-width:0; position:relative; }
+.svejk{
+  display:block;
+  position:absolute; right:-2px; top:-4px;
+  height:clamp(70px, 22vw, 96px);
+  z-index:0; pointer-events:none; opacity:.55;
+}
+.svejk svg{ height:100%; width:auto; display:block; fill:var(--terra); }
+.titleblock > .eyebrow,
+.titleblock > .mast{ position:relative; z-index:1; }
 .eyebrow{
   font-family:'Oswald',sans-serif; font-weight:600; text-transform:uppercase;
   letter-spacing:.18em; font-size:10px; color:var(--terra);
