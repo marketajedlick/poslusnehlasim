@@ -3,7 +3,7 @@
   --red:#c23a2b; --blue:#283c6e; --terra:#cf5a31;
   --shadow:rgba(40,30,15,.28);
   --page-fade:620ms;
-  --nav-h:80px;
+  --nav-h:88px;
 }
 *{ box-sizing:border-box; }
 html{
@@ -255,15 +255,19 @@ body.is-turning{ pointer-events:none; }
 .edition-glyph{ font-size:26px; line-height:1; letter-spacing:0; }
 .edition-meta{ display:none; }
 .edition-now{
-  font-family:'Anton',sans-serif; text-transform:uppercase;
-  letter-spacing:.05em;
-  font-size:clamp(16px, 4.8vw, 20px);
-  color:var(--terra);
-  text-align:center; line-height:1.2;
-  max-width:46vw;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  flex:1 1 auto; min-width:0; max-width:52vw;
+  padding:2px 6px; text-align:center;
+}
+.edition-now-day{
+  font-family:'Anton',sans-serif; color:var(--terra);
+  font-size:clamp(30px, 10vw, 40px); line-height:1; letter-spacing:-.02em;
+}
+.edition-now-sub{
+  font-family:'Oswald',sans-serif; font-weight:600; text-transform:uppercase;
+  font-size:clamp(10px, 2.9vw, 13px); letter-spacing:.08em;
+  color:var(--ink); margin-top:4px; line-height:1.15;
   overflow-wrap:anywhere;
-  flex:1 1 auto;
-  padding:0 4px;
 }
 
 /* ---------- desktop (721px+) ---------- */
@@ -393,7 +397,9 @@ body.is-turning{ pointer-events:none; }
   .edition-arrow{ min-height:0; min-width:0; padding:6px 10px; border-radius:3px; }
   .edition-meta{ display:inline; font-size:11px; color:var(--ink-soft); letter-spacing:.14em; }
   .edition-now{
-    font-size:12px; letter-spacing:.12em; white-space:nowrap;
-    max-width:none; padding:0 4px;
+    flex-direction:row; flex-wrap:nowrap; align-items:baseline; gap:10px;
+    max-width:none; white-space:nowrap;
   }
+  .edition-now-day{ font-size:26px; }
+  .edition-now-sub{ font-size:12px; margin-top:0; letter-spacing:.1em; }
 }

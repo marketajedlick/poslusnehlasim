@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 
 from svejk.build.day_content import build_den_content
-from svejk.build.html import render_den_html, static_css_path
+from svejk.build.html import css_asset_version, render_den_html, static_css_path
 from svejk.build.nav import (
     clear_edition_cache,
     edition_pages_href,
@@ -89,7 +89,7 @@ def run_export_pages(
     static_dir = out / "static"
     static_dir.mkdir()
     shutil.copy2(_CSS, static_dir / "noviny-dlouhe.css")
-    css_href = static_css_path(base)
+    css_href = static_css_path(base, version=css_asset_version())
 
     editions = list_obdobi_editions(obdobi)
     if not editions:

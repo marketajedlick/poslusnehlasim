@@ -110,7 +110,10 @@
   </span>
   {% endif %}
 
-  <span class="edition-now">{{ datum_design }}</span>
+  <span class="edition-now" title="{{ datum_design }}">
+    <span class="edition-now-day">{{ content.cal_day }}</span>
+    <span class="edition-now-sub">{{ content.cal_den }} · {{ content.cal_month }}</span>
+  </span>
 
   {% if nav.next %}
   <a class="edition-arrow next" href="{{ nav.next.href }}" title="{{ nav.next.title }}" aria-label="Novější vydání: {{ nav.next.title }}">

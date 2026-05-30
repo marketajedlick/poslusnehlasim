@@ -16,10 +16,18 @@ _CSS = _STATIC / "noviny-dlouhe.css"
 _SVEJK_SVG = _STATIC / "svejk.svg"
 
 
-def static_css_path(base_path: str = "") -> str:
+def static_css_path(base_path: str = "", *, version: str | None = None) -> str:
     base = base_path.rstrip("/")
     path = "/static/noviny-dlouhe.css"
+    if version:
+        path = f"{path}?v={version}"
     return f"{base}{path}" if base else path
+
+
+def css_asset_version() -> str:
+    import hashlib
+
+    return hashlib.sha256(_CSS.read_bytes()).hexdigest()[:10]
 
 
 def _proslo_board_label(n: int) -> str:
