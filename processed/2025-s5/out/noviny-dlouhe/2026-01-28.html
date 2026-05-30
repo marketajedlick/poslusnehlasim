@@ -29,7 +29,7 @@ body{
   color:var(--ink);
   overflow-x:clip;
   max-width:100%;
-  padding:8px 8px calc(var(--nav-h) + env(safe-area-inset-bottom, 0px) + 12px);
+  padding:calc(var(--nav-h) + env(safe-area-inset-top, 0px) + 12px) 8px 8px;
 }
 
 .stagewrap,
@@ -165,8 +165,8 @@ body.is-turning{ pointer-events:none; }
   font-size:clamp(36px, 10vw, 48px);
   line-height:1; color:var(--paper);
 }
-.bteam.l .bnum{ color:var(--terra); }
-.bteam.r .bnum{ color:var(--paper-3); }
+.bteam.l .bnum{ color:var(--paper); }
+.bteam.r .bnum{ color:var(--terra); }
 .blbl{
   font-family:'Oswald',sans-serif; font-weight:600; text-transform:uppercase;
   letter-spacing:.06em; font-size:clamp(10px, 2.8vw, 13px); line-height:1.15;
@@ -268,7 +268,7 @@ body.is-turning{ pointer-events:none; }
 /* ---------- nav (mobile) ---------- */
 .edition-nav{
   position:fixed;
-  left:8px; right:8px; bottom:calc(8px + env(safe-area-inset-bottom, 0px));
+  left:8px; right:8px; top:calc(8px + env(safe-area-inset-top, 0px));
   display:flex; align-items:center; justify-content:space-between;
   gap:8px; z-index:100;
   padding:8px 10px;
@@ -307,7 +307,7 @@ body.is-turning{ pointer-events:none; }
 
 /* ---------- desktop (721px+) ---------- */
 @media (min-width: 721px){
-  body{ padding:46px 16px 60px; }
+  body{ padding:calc(72px + env(safe-area-inset-top, 0px)) 16px 46px; }
 
   .stagewrap{ width:840px; max-width:840px; }
   .stack{ width:840px; max-width:840px; }
@@ -424,7 +424,8 @@ body.is-turning{ pointer-events:none; }
   .edition-nav{
     left:50%; right:auto; width:auto;
     transform:translateX(-50%);
-    bottom:22px;
+    top:calc(18px + env(safe-area-inset-top, 0px));
+    bottom:auto;
     justify-content:flex-start;
     gap:18px; padding:10px 18px; border-radius:4px;
     backdrop-filter:blur(4px);
@@ -442,6 +443,29 @@ body.is-turning{ pointer-events:none; }
 
 </head>
 <body>
+
+<nav class="edition-nav" aria-label="Vydání deníku">
+  
+  <a class="edition-arrow prev" href="2026-01-16.html" title="Pátek 16 / 01 / 2026" aria-label="Starší vydání: Pátek 16 / 01 / 2026">
+    <span class="edition-glyph" aria-hidden="true">←</span>
+    <span class="edition-meta">16 / 01</span>
+  </a>
+  
+
+  <span class="edition-now" title="Středa 28 / 01 / 2026">
+    <span class="edition-now-day">28</span>
+    <span class="edition-now-sub">Středa · ledna 2026</span>
+  </span>
+
+  
+  <a class="edition-arrow next" href="../../../2025-s6/out/noviny-dlouhe/2026-01-29.html" title="Čtvrtek 29 / 01 / 2026" aria-label="Novější vydání: Čtvrtek 29 / 01 / 2026">
+    <span class="edition-meta">29 / 01</span>
+    <span class="edition-glyph" aria-hidden="true">→</span>
+  </a>
+  
+</nav>
+
+
 <div class="stagewrap" id="stage">
   <div class="stack">
     <div class="sheet-back b1"></div>
@@ -561,29 +585,6 @@ body.is-turning{ pointer-events:none; }
     </div>
   </div>
 </div>
-
-
-<nav class="edition-nav" aria-label="Vydání deníku">
-  
-  <a class="edition-arrow prev" href="2026-01-16.html" title="Pátek 16 / 01 / 2026" aria-label="Starší vydání: Pátek 16 / 01 / 2026">
-    <span class="edition-glyph" aria-hidden="true">←</span>
-    <span class="edition-meta">16 / 01</span>
-  </a>
-  
-
-  <span class="edition-now" title="Středa 28 / 01 / 2026">
-    <span class="edition-now-day">28</span>
-    <span class="edition-now-sub">Středa · ledna 2026</span>
-  </span>
-
-  
-  <a class="edition-arrow next" href="../../../2025-s6/out/noviny-dlouhe/2026-01-29.html" title="Čtvrtek 29 / 01 / 2026" aria-label="Novější vydání: Čtvrtek 29 / 01 / 2026">
-    <span class="edition-meta">29 / 01</span>
-    <span class="edition-glyph" aria-hidden="true">→</span>
-  </a>
-  
-</nav>
-
 
 <script>
   (function(){

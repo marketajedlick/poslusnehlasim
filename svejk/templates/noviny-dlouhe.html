@@ -16,6 +16,37 @@
 {% endif %}
 </head>
 <body>
+{% if nav %}
+<nav class="edition-nav" aria-label="Vydání deníku">
+  {% if nav.prev %}
+  <a class="edition-arrow prev" href="{{ nav.prev.href }}" title="{{ nav.prev.title }}" aria-label="Starší vydání: {{ nav.prev.title }}">
+    <span class="edition-glyph" aria-hidden="true">←</span>
+    <span class="edition-meta">{{ nav.prev.label }}</span>
+  </a>
+  {% else %}
+  <span class="edition-arrow prev disabled" aria-hidden="true">
+    <span class="edition-glyph">←</span>
+  </span>
+  {% endif %}
+
+  <span class="edition-now" title="{{ datum_design }}{% if dup_day %} · schůze {{ schuze }}{% endif %}">
+    <span class="edition-now-day">{{ content.cal_day }}</span>
+    <span class="edition-now-sub">{{ content.cal_den }} · {{ content.cal_month }}{% if dup_day %} · s{{ schuze }}{% endif %}</span>
+  </span>
+
+  {% if nav.next %}
+  <a class="edition-arrow next" href="{{ nav.next.href }}" title="{{ nav.next.title }}" aria-label="Novější vydání: {{ nav.next.title }}">
+    <span class="edition-meta">{{ nav.next.label }}</span>
+    <span class="edition-glyph" aria-hidden="true">→</span>
+  </a>
+  {% else %}
+  <span class="edition-arrow next disabled" aria-hidden="true">
+    <span class="edition-glyph">→</span>
+  </span>
+  {% endif %}
+</nav>
+{% endif %}
+
 <div class="stagewrap" id="stage">
   <div class="stack">
     <div class="sheet-back b1"></div>
@@ -96,37 +127,6 @@
     </div>
   </div>
 </div>
-
-{% if nav %}
-<nav class="edition-nav" aria-label="Vydání deníku">
-  {% if nav.prev %}
-  <a class="edition-arrow prev" href="{{ nav.prev.href }}" title="{{ nav.prev.title }}" aria-label="Starší vydání: {{ nav.prev.title }}">
-    <span class="edition-glyph" aria-hidden="true">←</span>
-    <span class="edition-meta">{{ nav.prev.label }}</span>
-  </a>
-  {% else %}
-  <span class="edition-arrow prev disabled" aria-hidden="true">
-    <span class="edition-glyph">←</span>
-  </span>
-  {% endif %}
-
-  <span class="edition-now" title="{{ datum_design }}{% if dup_day %} · schůze {{ schuze }}{% endif %}">
-    <span class="edition-now-day">{{ content.cal_day }}</span>
-    <span class="edition-now-sub">{{ content.cal_den }} · {{ content.cal_month }}{% if dup_day %} · s{{ schuze }}{% endif %}</span>
-  </span>
-
-  {% if nav.next %}
-  <a class="edition-arrow next" href="{{ nav.next.href }}" title="{{ nav.next.title }}" aria-label="Novější vydání: {{ nav.next.title }}">
-    <span class="edition-meta">{{ nav.next.label }}</span>
-    <span class="edition-glyph" aria-hidden="true">→</span>
-  </a>
-  {% else %}
-  <span class="edition-arrow next disabled" aria-hidden="true">
-    <span class="edition-glyph">→</span>
-  </span>
-  {% endif %}
-</nav>
-{% endif %}
 
 <script>
   (function(){
