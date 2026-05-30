@@ -1,33 +1,33 @@
-        <section class="subscribe" aria-labelledby="subscribe-heading">
-          <p class="subscribe-gloss" id="subscribe-heading">Do sněmovny sám nemusíš, nech mi tu email a pošleme ti nové vydání.</p>
-          {% if newsletter.enabled %}
-          <form
-            class="subscribe-form"
-            action="{{ newsletter.form_action }}"
-            method="post"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <input type="hidden" name="tag" value="poslusnehlasim" />
-            <input type="text" name="honeypot" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
-            <div class="subscribe-row">
-              <input
-                id="subscribe-email"
-                class="subscribe-input"
-                type="email"
-                name="email"
-                required
-                autocomplete="email"
-                aria-label="E-mail pro odběr novinek"
-                placeholder="vas@email.cz"
-              />
-              <button class="subscribe-btn" type="submit">Poslušně odebírat</button>
-            </div>
-          </form>
-          {% else %}
-          <div class="subscribe-row subscribe-row--disabled" aria-hidden="true">
-            <input class="subscribe-input" type="email" disabled placeholder="vas@email.cz" tabindex="-1" />
-            <button class="subscribe-btn" type="button" disabled>Poslušně odebírat</button>
-          </div>
-          {% endif %}
-        </section>
+<section class="subscribe" aria-labelledby="subscribe-heading">
+  <p class="subscribe-gloss" id="subscribe-heading">Do sněmovny sám nemusíš, nech mi tu email a pošleme ti nové vydání.</p>
+  {% if newsletter.enabled %}
+  <form
+    class="subscribe-form"
+    action="{{ newsletter.form_action }}"
+    method="post"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <input type="hidden" name="tag" value="poslusnehlasim" />
+    <input type="text" name="honeypot" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
+    <div class="subscribe-row">
+      <input
+        id="subscribe-email"
+        class="subscribe-input"
+        type="email"
+        name="email"
+        required
+        autocomplete="email"
+        aria-label="E-mail pro odběr novinek"
+        placeholder="vas@email.cz"
+      />
+      <button class="subscribe-btn" type="submit">Poslušně odebírat</button>
+    </div>
+  </form>
+  {% else %}
+  <div class="subscribe-row subscribe-row--disabled" aria-hidden="true">
+    <input class="subscribe-input" type="email" disabled placeholder="vas@email.cz" tabindex="-1" />
+    <button class="subscribe-btn" type="button" disabled>Poslušně odebírat</button>
+  </div>
+  {% endif %}
+</section>

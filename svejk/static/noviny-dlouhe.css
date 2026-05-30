@@ -263,8 +263,8 @@ body.is-turning{ pointer-events:none; }
 
 /* ---------- subscribe ---------- */
 .subscribe{
-  margin-top:24px; padding:20px 0 0;
-  border-top:1px solid rgba(33,28,20,.14);
+  width:100%; max-width:100%; margin:20px auto 0;
+  padding:0 8px calc(24px + env(safe-area-inset-bottom, 0px));
 }
 .subscribe-gloss{
   margin:0 0 14px;
@@ -277,11 +277,12 @@ body.is-turning{ pointer-events:none; }
   position:absolute; left:-9999px; width:1px; height:1px; opacity:0;
 }
 .subscribe-row{
-  display:flex; flex-wrap:wrap; gap:10px; align-items:stretch;
+  display:flex; flex-direction:column; gap:10px; align-items:stretch;
+  max-width:22rem;
 }
 .subscribe-row--disabled{ opacity:.45; pointer-events:none; }
 .subscribe-input{
-  flex:1 1 12rem; min-width:0;
+  width:100%;
   font-family:'Old Standard TT',serif; font-size:17px;
   padding:10px 12px; border:2px solid rgba(33,28,20,.25);
   background:var(--paper); color:var(--ink);
@@ -291,10 +292,10 @@ body.is-turning{ pointer-events:none; }
   outline:2px solid var(--terra); outline-offset:2px;
 }
 .subscribe-btn{
+  width:100%;
   font-family:'Anton',sans-serif; text-transform:uppercase; letter-spacing:.08em;
   font-size:14px; padding:10px 18px; border:0; border-radius:2px;
   background:var(--terra); color:var(--paper); cursor:pointer;
-  flex:0 0 auto;
 }
 .subscribe-btn:hover{ filter:brightness(1.05); }
 .subscribe-btn:disabled{ cursor:default; }
@@ -460,7 +461,7 @@ body.is-turning{ pointer-events:none; }
   .verdict .q{ font-size:38px; line-height:1.18; padding-left:74px; }
   .verdict .sign{ letter-spacing:.26em; font-size:11px; margin:18px 0 0 74px; }
 
-  .subscribe{ margin-top:28px; padding-top:24px; }
+  .subscribe{ width:840px; max-width:840px; margin-top:28px; padding:0 0 36px; }
   .subscribe-gloss{ font-size:18px; max-width:none; }
   .subscribe-input{ font-size:18px; padding:12px 14px; }
   .subscribe-btn{ font-size:15px; padding:12px 22px; }
