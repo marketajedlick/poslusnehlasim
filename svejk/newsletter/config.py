@@ -14,7 +14,7 @@ def _site_url() -> str:
     return (base + path).rstrip("/") or base
 
 
-DEFAULT_BUTTONDOWN_USERNAME = "poslusnehlasim"
+DEFAULT_BUTTONDOWN_USERNAME = "marketa"
 
 
 @dataclass(frozen=True)

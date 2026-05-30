@@ -50,7 +50,7 @@ jobs:
           SVEJK_BASE_PATH: ""
           SVEJK_PAGES_CNAME: poslusnehlasim.cz
           SVEJK_SITE_URL: https://poslusnehlasim.cz
-          BUTTONDOWN_USERNAME: ${{ secrets.BUTTONDOWN_USERNAME }}
+          BUTTONDOWN_USERNAME: marketa
         run: ./run-svejk.sh export-pages --obdobi 2025 --out site --cname poslusnehlasim.cz
 
       - name: Restore newsletter state
