@@ -11,7 +11,6 @@ from svejk.build.day_content import (
     build_den_content,
     dopad_z_fact,
     parliament_lead_z_fact,
-    zaver_z_obsahu,
     _lead_kratky,
     _mean_z_dopadu,
 )
