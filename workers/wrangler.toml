@@ -1,0 +1,10 @@
+name = "poslusnehlasim-subscribe"
+main = "subscribe.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+ALLOWED_ORIGIN = "https://poslusnehlasim.cz"
+ECOMAIL_LIST_ID = "2"
+
+# Secrets (wrangler secret put ECOMAIL_API_KEY):
+# ECOMAIL_API_KEY

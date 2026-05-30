@@ -1,14 +1,14 @@
+        {% if newsletter.enabled %}
         <section class="subscribe" aria-label="Odběr novinek">
           <p class="subscribe-gloss">Do sněmovny sám nemusíš, nech mi tu email a pošleme ti nové vydání.</p>
           <form
             class="subscribe-form"
-            action="{{ newsletter.form_action }}"
+            action="{{ newsletter.form_action or '#' }}"
             method="post"
             novalidate
+            {% if newsletter.subscribe_api_url %}data-subscribe-api="{{ newsletter.subscribe_api_url }}"{% endif %}
           >
-            <input type="hidden" name="tag" value="poslusnehlasim" />
-            <input type="hidden" name="embed" value="1" />
-            <input type="text" name="honeypot" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
+            <input type="text" name="website" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
             <div class="subscribe-row">
               <input
                 class="subscribe-input"
@@ -24,3 +24,4 @@
             <p class="subscribe-success" hidden>Poslušně hlásím — jsi zapsaný.</p>
           </form>
         </section>
+        {% endif %}
