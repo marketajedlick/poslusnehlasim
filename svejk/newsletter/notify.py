@@ -4,14 +4,13 @@ from __future__ import annotations
 
 import json
 import os
-import urllib.error
-import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 from svejk.build.io import read_json
 from svejk.build.nav import Edition, list_obdobi_editions
+from svejk.newsletter.api import send_email
 from svejk.newsletter.config import NewsletterConfig
 from svejk.paths import SchuzePaths, processed_root
 
@@ -77,24 +76,6 @@ def _build_email_body(edition: Edition, *, site_url: str, base_path: str) -> tup
     return subject, body
 
 
-def _buttondown_send(*, api_key: str, subject: str, body: str) -> dict[str, Any]:
-    payload = json.dumps(
-        {"subject": subject, "body": body, "status": "sent"},
-        ensure_ascii=False,
-    ).encode("utf-8")
-    req = urllib.request.Request(
-        "https://api.buttondown.email/v1/emails",
-        data=payload,
-        method="POST",
-        headers={
-            "Authorization": f"Api-Key {api_key}",
-            "Content-Type": "application/json",
-        },
-    )
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        return json.loads(resp.read().decode("utf-8"))
-
-
 def run_newsletter_notify(
     obdobi: int,
     *,
@@ -131,12 +112,8 @@ def run_newsletter_notify(
         result["skipped_send"] = True
         return result
 
-    try:
-        sent = _buttondown_send(api_key=api_key, subject=subject, body=body)
-        result["buttondown"] = {"id": sent.get("id"), "status": sent.get("status")}
-    except urllib.error.HTTPError as e:
-        err_body = e.read().decode("utf-8", errors="replace")[:500]
-        raise RuntimeError(f"Buttondown API {e.code}: {err_body}") from e
+    sent = send_email(api_key=api_key, subject=subject, body=body)
+    result["buttondown"] = {"id": sent.get("id"), "status": sent.get("status")}
 
     save_state(
         {

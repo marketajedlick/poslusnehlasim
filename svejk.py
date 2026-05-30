@@ -349,6 +349,22 @@ def cmd_newsletter_notify(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_newsletter_subscribers(_args: argparse.Namespace) -> int:
+    from svejk.newsletter.api import api_key_from_env, list_subscribers
+
+    api_key = api_key_from_env()
+    if not api_key:
+        print("Chyba: BUTTONDOWN_API_KEY není nastaven", file=sys.stderr)
+        return 1
+    try:
+        data = list_subscribers(api_key)
+    except RuntimeError as e:
+        print(f"Chyba: {e}", file=sys.stderr)
+        return 1
+    print(json.dumps(data, ensure_ascii=False, indent=2))
+    return 0
+
+
 def cmd_serve(args: argparse.Namespace) -> int:
     import uvicorn
     uvicorn.run("svejk.app:app", host=args.host, port=args.port, reload=args.reload)
@@ -572,6 +588,11 @@ def main() -> int:
         help="Odeslat i když už je v newsletter-state.json",
     )
     p_nwl.set_defaults(func=cmd_newsletter_notify)
+
+    sub.add_parser(
+        "newsletter-subscribers",
+        help="Seznam odběratelů z Buttondown API (vyžaduje BUTTONDOWN_API_KEY)",
+    ).set_defaults(func=cmd_newsletter_subscribers)
 
     p_serve = sub.add_parser("serve", help="Spusť web")
     p_serve.add_argument("--host", default="127.0.0.1")
