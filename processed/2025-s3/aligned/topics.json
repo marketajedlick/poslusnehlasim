@@ -19,8 +19,8 @@
       "pocet_prijato": 2,
       "pocet_zamitnuto": 2,
       "kategorie": "substantivni",
-      "tema_svejk": "Státní rozpočet — kolik smí vláda utratit příští rok.",
-      "tema_vysvetleni": "Hlasování o státním rozpočtu — daně, silnice, školy, armáda."
+      "tema_svejk": "Státní rozpočet, kolik smí vláda utratit příští rok.",
+      "tema_vysvetleni": "Hlasování o státním rozpočtu, daně, silnice, školy, armáda."
     },
     {
       "slug": "novela-z-o-sbirce-zakonu-a-mezinarodnich-smluv",
@@ -39,7 +39,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela z. o Sbírce zákonů a mezinárodních smluv",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "n-na-potvrzeni-platnosti-usneseni-kterymi-ps-upr",
@@ -57,7 +57,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: N. na potvrzení platnosti usnesení, kterými PS upravila své …",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-volbu-clena-narodni-rozpoctove-rady",
@@ -74,7 +74,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu člena Národní rozpočtové rady",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-potvrzeni-predsedy-vyboru-poslanecke-sn",
@@ -91,7 +91,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na potvrzení předsedy výboru Poslanecké sněmovny",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     }
   ]
 }

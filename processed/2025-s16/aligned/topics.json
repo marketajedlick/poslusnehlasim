@@ -519,7 +519,7 @@
       "pocet_zamitnuto": 14,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Stanovisko vládní koalice ke sjezdu Sudetoněmeckého landsman…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "novela-z-o-statni-socialni-podpore",
@@ -536,8 +536,8 @@
       "pocet_prijato": 2,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "Posun digitalizace dávek státní sociální podpory — úřady nestihly systém k 1. 7. 2026.",
-      "tema_vysvetleni": "Technická novela k reformě sociálních dávek — posun termínů u úřadu práce."
+      "tema_svejk": "Posun digitalizace dávek státní sociální podpory, úřady nestihly systém k 1. 7. 2026.",
+      "tema_vysvetleni": "Technická novela k reformě sociálních dávek, posun termínů u úřadu práce."
     },
     {
       "slug": "novela-z-stavebni-zakon",
@@ -554,7 +554,7 @@
       "pocet_prijato": 2,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "Stavební zákon — další kolo.",
+      "tema_svejk": "Stavební zákon, další kolo.",
       "tema_vysvetleni": "Hlasování o pozměňovacích návrzích ke stavebnímu zákonu. Dlouhodobě se týká každého, kdo staví nebo rekonstruuje."
     },
     {
@@ -571,8 +571,8 @@
       "pocet_prijato": 1,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "Sociální služby — posun převodu péče a dávek OZP z ÚP na ÚSSZ na rok 2028.",
-      "tema_vysvetleni": "Novela sociálních služeb — péče, dávky pro hendikepované, průkazy OZP."
+      "tema_svejk": "Sociální služby, posun převodu péče a dávek OZP z ÚP na ÚSSZ na rok 2028.",
+      "tema_vysvetleni": "Novela sociálních služeb, péče, dávky pro hendikepované, průkazy OZP."
     }
   ]
 }

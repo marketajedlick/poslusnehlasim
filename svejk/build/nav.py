@@ -1,4 +1,4 @@
-"""Navigace mezi vydáními — chronologicky přes celé období."""
+"""Navigace mezi vydáními, chronologicky přes celé období."""
 
 from __future__ import annotations
 

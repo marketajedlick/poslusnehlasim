@@ -1,4 +1,4 @@
-"""Kombinatoricky generator svejkovskych frazi — tisice variant bez API."""
+"""Kombinatoricky generator svejkovskych frazi, tisice variant bez API."""
 
 from __future__ import annotations
 
@@ -33,16 +33,16 @@ SLOTS: dict[str, tuple[str, ...]] = {
         "S pocitem, že večer bude zase pozdě",
     ),
     "start_c": (
-        "Program schválen — první zázrak dne.",
+        "Program schválen, první zázrak dne.",
         "Pořad prošel. Organizace zvládnuta.",
-        "Organizace bez potíží — podezřele klidný začátek.",
+        "Organizace bez potíží, podezřele klidný začátek.",
         "Schválili program. Samotné rozcvičení demokracie jim jde.",
         "První úspěch dne. Často i poslední.",
-        "Exemplárně klidné ráno — na sněmovní poměry.",
+        "Exemplárně klidné ráno, na sněmovní poměry.",
         "Kasární disciplína, co se týče papírování.",
         "Definitivně zahájeno. Optimisticky.",
         "Odhad: do večera to zase skřípne.",
-        "Pak ale přijde realita — a ta bývá jiná.",
+        "Pak ale přijde realita, a ta bývá jiná.",
     ),
     # uvod clanku
     "intro_a": (
@@ -54,7 +54,7 @@ SLOTS: dict[str, tuple[str, ...]] = {
         "Glosa vychází z",
     ),
     "intro_b": (
-        "co se ve sněmovně skutečně dělo — ne z projevů, ale z hlasování.",
+        "co se ve sněmovně skutečně dělo, ne z projevů, ale z hlasování.",
         "hlasovacích dat, ne z řečí u mikrofonu.",
         "tlačítek, ne slibů. Čísla nelžou.",
         "UNL záznamů. Projevy někdy ano, tlačítka spíš ne.",
@@ -64,11 +64,11 @@ SLOTS: dict[str, tuple[str, ...]] = {
     "intro_c": (
         " Tomu se nechce věřit, ale je to tak.",
         " I když se tomu nechce věřit.",
-        " Kdo by to čekal — kromě pravidelných diváků.",
+        " Kdo by to čekal, kromě pravidelných diváků.",
         " Standardní provoz demokracie.",
         "",
     ),
-    # debata / porad — uvod
+    # debata / porad, uvod
     "dp_open": (
         "{cas} se sněmovna zasekla na pořadu dne.",
         "{cas} celý blok visel na jednom: co vlastně projednávat.",
@@ -76,17 +76,17 @@ SLOTS: dict[str, tuple[str, ...]] = {
         "{cas} místo zákonů zase pořad dne.",
         "{cas} formální maraton o tom, co bude na programu.",
         "{cas} procedurální kolotoč na celé dopoledne.",
-        "{cas} hlasování o hlasování — meta-demokracie.",
+        "{cas} hlasování o hlasování, meta-demokracie.",
         "{cas} program dne na programu dne.",
         "{cas} tlačítka místo obsahu.",
         "{cas} zaseknutí na pořadu, klasika.",
     ),
     "dp_stat": (
-        "Za {hod} hodin mluvili víc než rozhodovali — pak {celkem}× hlasovali, *o čem* budou mluvit. {zamitnuto}× ne.",
+        "Za {hod} hodin mluvili víc než rozhodovali, pak {celkem}× hlasovali, *o čem* budou mluvit. {zamitnuto}× ne.",
         "{hod} hodin debaty, {celkem}× hlasování o pořadu, {zamitnuto}× zamítnuto.",
-        "{hod} hodin bez výsledku, pak {celkem}× hlasování — {zamitnuto}× ne.",
+        "{hod} hodin bez výsledku, pak {celkem}× hlasování, {zamitnuto}× ne.",
         "Formálně {hod} hodin, pak {celkem}× tlačítek, {zamitnuto}× zamítnuto.",
-        "Celých {hod} hodin řečí — {celkem}× hlasování, {zamitnuto}× ne.",
+        "Celých {hod} hodin řečí, {celkem}× hlasování, {zamitnuto}× ne.",
         "{hod} hodin mluvili, {celkem}× rozhodovali o pořadu, {zamitnuto}× zamítli.",
     ),
     "deb_open": (
@@ -98,18 +98,18 @@ SLOTS: dict[str, tuple[str, ...]] = {
         "{cas} konference bez závěrů.",
     ),
     "deb_stat": (
-        " Celých {hod} hodin — a žádné rozhodnutí.",
+        " Celých {hod} hodin, a žádné rozhodnutí.",
         " {hod} hodin bez hlasování.",
-        " {hod} hodin — nic nepadlo.",
+        " {hod} hodin, nic nepadlo.",
         " {hod} hodin produktivity blíží se nule.",
     ),
     # vaty
     "vata_debata": (
-        " Tomu se skoro nechce věřit, ale celé hodiny mluvili — a nehlasovali.",
+        " Tomu se skoro nechce věřit, ale celé hodiny mluvili, a nehlasovali.",
         " Ano, doopravdy: hodiny řečí a nula rozhodnutí.",
         " Sněmovna v režimu rozhlasového pořadu. Jen bez moderátora.",
         " Hodiny řečí, nula produktivity.",
-        " Mluvili jako na akademické konferenci — jen bez závěrů.",
+        " Mluvili jako na akademické konferenci, jen bez závěrů.",
         " Celý blok bez jediného rozhodnutí.",
         " Čistá konsternace.",
         " Absolutní nula produktivity, jak se říká v odborné literatuře.",
@@ -120,11 +120,11 @@ SLOTS: dict[str, tuple[str, ...]] = {
         " Hlasování o tom, *o čem* se bude hlasovat.",
         " Blokování jako sportovní disciplína.",
         " Formální ping-pong mezi koalicí a opozicí.",
-        " Demokracie v akci — pomalu.",
+        " Demokracie v akci, pomalu.",
     ),
     "vata_porad_kratka": (
         " Krátká hádka o pořadu.",
-        " Rychlé hlasování — na sněmovní poměry rekord.",
+        " Rychlé hlasování, na sněmovní poměry rekord.",
         " Pár tlačítek a program hotový.",
     ),
     "porad_open": (
@@ -136,16 +136,16 @@ SLOTS: dict[str, tuple[str, ...]] = {
         "{cas} procedurální cvičení.",
     ),
     "porad_stat": (
-        " {celkem}× hlasovali, {zamitnuto}× zamítli — opozice blokovala, koalice protlačila.",
+        " {celkem}× hlasovali, {zamitnuto}× zamítli, opozice blokovala, koalice protlačila.",
         " {celkem}× hlasování, {zamitnuto}× ne.",
         " {celkem}× hlasovali o pořadu, {zamitnuto}× zamítli.",
-        " {celkem}× tlačítek — {zamitnuto}× zamítnuto.",
+        " {celkem}× tlačítek, {zamitnuto}× zamítnuto.",
     ),
     "porad_tail": (
         " Koalice program protlačila.",
         " Opozice blokovala, koalice vyhrála.",
         " Program nakonec prošel. Kdo by čekal.",
-        " Formálně hotovo — obsahově teprve začíná.",
+        " Formálně hotovo, obsahově teprve začíná.",
         " Standardní den ve sněmovně.",
         " Koalice neuhnula. Opozice protestovala.",
     ),
@@ -157,32 +157,32 @@ SLOTS: dict[str, tuple[str, ...]] = {
         " U nás v kasárnách by se o tom dohodli rychleji.",
     ),
     "hint": (
-        " Opozice chtěla protáhnout {temata}. Koalice řekla ne — běžné.",
+        " Opozice chtěla protáhnout {temata}. Koalice řekla ne, běžné.",
         " Opozice tlačila na {temata}. Koalice neuhnula.",
-        " {temata} — to chtěla opozice. Koalice jinak.",
+        " {temata}, to chtěla opozice. Koalice jinak.",
         " Hlavní téma sporu: {temata}. Výsledek? Koalice.",
         " Opozice prosazovala {temata}. Nepovedlo se.",
         " Spor o {temata}. Koalice držela linii.",
     ),
     # law
     "law_uvod": (
-        "Ve {cas} konečně něco padlo — ne jen další hádka o pořadu.",
+        "Ve {cas} konečně něco padlo, ne jen další hádka o pořadu.",
         "V {cas} další kolo hlasování.",
         "Krátce po {cas} padlo další rozhodnutí.",
-        "Po {cas} zase tlačítka — demokracie v praxi.",
+        "Po {cas} zase tlačítka, demokracie v praxi.",
         "V {cas} přišlo na řadu další hlasování.",
         "Od {cas} poslanci hlasovali znovu.",
         "Kolem {cas} konečně hlasování o obsahu.",
         "V {cas} obsah místo procedury.",
         "Po {cas} přestali mluvit a začali tlačit.",
-        "Ve {cas} další bod — tentokrát skutečný.",
+        "Ve {cas} další bod, tentokrát skutečný.",
         "V {cas} konečně zákon, ne pořad.",
         "Po {cas} rozhodnutí, které něco znamená.",
     ),
     "law_poslusne": (
         "Poslušně hlásím, ve {cas} konečně hlasovali o něčem, co není jen pořad dne.",
         "Poslušně hlásím, v {cas} konečně padlo rozhodnutí o obsahu.",
-        "Poslušně hlásím, ve {cas} hlasovali o zákonu — ne o pořadu.",
+        "Poslušně hlásím, ve {cas} hlasovali o zákonu, ne o pořadu.",
         "Poslušně hlásím, v {cas} konečně obsah místo procedury.",
     ),
     "schvaleno": (
@@ -204,24 +204,24 @@ SLOTS: dict[str, tuple[str, ...]] = {
     "law_cizi": (
         " Typický sněmovní tempo.",
         " Faktum pro občana, jak se patří.",
-        " Obsahový vrchol dne — relativně.",
+        " Obsahový vrchol dne, relativně.",
         " Konečně něco pro občana.",
     ),
     # skupiny hlasovani
     "interpelace": (
-        "{cas} {pocet}× hlasovali o interpelacích — ministr odpovídal, poslancům nestačilo.{zamitnuto}",
+        "{cas} {pocet}× hlasovali o interpelacích, ministr odpovídal, poslancům nestačilo.{zamitnuto}",
         "{cas} interpelace: {pocet}× hlasování.{zamitnuto} Ministr mluvil, opozice nebyla spokojená.",
-        "{cas} {pocet}× se ptali ministrů — hlasovalo se, jestli odpovědi stačily.{zamitnuto}",
+        "{cas} {pocet}× se ptali ministrů, hlasovalo se, jestli odpovědi stačily.{zamitnuto}",
         "{cas} {pocet}× interpelace. Ministr odpovídal, sál nebyl spokojený.{zamitnuto}",
     ),
     "personalka": (
-        "{cas} personálka ve velkém — {pocet} hlasování o funkcích. Třeba {ukazka}.",
+        "{cas} personálka ve velkém, {pocet} hlasování o funkcích. Třeba {ukazka}.",
         "{cas} dosazování do výborů: {pocet}× hlasování. {ukazka}.",
         "{cas} {pocet}× volili a jmenovali. {ukazka}.",
         "{cas} {pocet}× hlasování o obsazení postů. {ukazka}.",
     ),
     "generic_law": (
-        "{cas} {pocet}× technické body — občana přímo netankují.",
+        "{cas} {pocet}× technické body, občana přímo netankují.",
         "{cas} procedurální hlasování, {pocet}×. Suché, ale nutné.",
         "{cas} {pocet}× technické body. Poslanci se baví.",
     ),
@@ -230,12 +230,12 @@ SLOTS: dict[str, tuple[str, ...]] = {
         "Kolem {cas} poslanci schůzi ukončili a rozešli se domů.{extra}",
         "Ve {cas} to zabalili.{extra}",
         "Schůze skončila kolem {cas}.{extra}",
-        "V {cas} poslední tlačítko — a domů.{extra}",
+        "V {cas} poslední tlačítko, a domů.{extra}",
         "Poslušně hlásím, kolem {cas} šli domů.{extra}",
         "V {cas} zhaslo světlo v sále.{extra}",
     ),
     "end_poslusne": (
-        "Poslušně hlásím, kolem {cas} to zabalili — den odpracován.{extra}",
+        "Poslušně hlásím, kolem {cas} to zabalili, den odpracován.{extra}",
         "Poslušně hlásím, ve {cas} končí jednání.{extra}",
     ),
     "end_extra": (
@@ -249,45 +249,45 @@ SLOTS: dict[str, tuple[str, ...]] = {
     "end_odchod": (
         " Polovina poslanců už dávno chyběla.",
         " V sále zůstala sotva polovina.",
-        " Odcházeli postupně — jak kadeti po večerce.",
+        " Odcházeli postupně, jak kadeti po večerce.",
         " Plné obsazení u nich spíš volný pojem.",
     ),
-    # temata — glosy
+    # temata, glosy
     "stavebni_ne": (
         "Stavební zákon zůstává v dalším kole dohadů. Kdo staví, ať je trpělivý.",
-        "Stavební novela zase neprošla — stavebníci si zvyknou čekat.",
+        "Stavební novela zase neprošla, stavebníci si zvyknou čekat.",
         "Stavební zákon visí ve vzduchu. Permice taky někdy.",
-        "Hlasovalo se o stavebním zákonu — tentokrát bez výsledku.",
+        "Hlasovalo se o stavebním zákonu, tentokrát bez výsledku.",
         "Stavebníci musejí počkat. Sněmovna taky.",
     ),
     "stavebni_ano": (
         "Stavební novela prošla. Stavební úřady se těší.",
-        "Hlasovalo se o stavebním zákonu — pro každého, kdo stavěl nebo boural.",
-        "Stavební zákon schválen — jasnější pravidla na obzoru.",
+        "Hlasovalo se o stavebním zákonu, pro každého, kdo stavěl nebo boural.",
+        "Stavební zákon schválen, jasnější pravidla na obzoru.",
     ),
     "penze": (
-        "Nejdřív penze ne, pak penze jo — typická sněmovní logika.",
+        "Nejdřív penze ne, pak penze jo, typická sněmovní logika.",
         "Penze: zamítnuto, pak schváleno. Konzistentní jako počasí.",
-        "Hlasování o penzích — pendlování mezi ano a ne.",
+        "Hlasování o penzích, pendlování mezi ano a ne.",
         "Penze prošly až napodruhé. U nás v kasárnách by to bylo rychlejší.",
     ),
-    # noviny — krátké nadpisy
+    # noviny, krátké nadpisy
     "headline_dne_dva": (
-        "{a} — a {b}",
+        "{a}, a {b}",
         "{a}. Navíc {b}.",
         "Hlavně {a}, pak {b}.",
-        "{a} — k tomu {b}.",
+        "{a}, k tomu {b}.",
     ),
     "headline_dne_jeden": (
-        "{a} — zbytek procedura.",
+        "{a}, zbytek procedura.",
         "Den patřil tématu: {a}.",
         "{a}. Jinak klidnější den.",
     ),
     "headline_dne_prazdny": (
         "Procedura, procedura a domů.",
-        "Den bez velkých zákonů — poslanci si oddechli.",
+        "Den bez velkých zákonů, poslanci si oddechli.",
         "Mluvili o pořadu, zákonů málo.",
-        "Formální den — obsah přijde jindy.",
+        "Formální den, obsah přijde jindy.",
     ),
     "start_kratka": (
         "{cas} Zahájení jednání.",
@@ -295,10 +295,10 @@ SLOTS: dict[str, tuple[str, ...]] = {
         "{cas} Další den, další kladívko.",
         "{cas} Formální start.",
     ),
-    # listy — hospodský formát
+    # listy, hospodský formát
     "listy_ucet": (
         "{pocet} hlasování, {minuty} minut v sále a v {konec} bylo po všem.",
-        "{pocet} hlasování za {minuty} minut — v {konec} bylo po jednání.",
+        "{pocet} hlasování za {minuty} minut, v {konec} bylo po jednání.",
     ),
     "listy_zaver": (
         "že dneska to byla tak krátká schůze, že kdyby si člověk odskočil na jedno pivo a utopence, přišel by už na závěrečnou.",
@@ -306,15 +306,15 @@ SLOTS: dict[str, tuple[str, ...]] = {
     ),
     "listy_zaver_dlouhy": (
         "že poslanci jednali tak dlouho, že v hospodě byste mezitím stihli utopence, klobásu i jedno kolo navíc.",
-        "že kdybyste po zahájení šli na jedno pivo, vrátili byste se až na večerní závěrečnou — a to v sále.",
-        "že schůze trvala déle než večerní menu v hospodě — od utopence po poslední kolo.",
+        "že kdybyste po zahájení šli na jedno pivo, vrátili byste se až na večerní závěrečnou, a to v sále.",
+        "že schůze trvala déle než večerní menu v hospodě, od utopence po poslední kolo.",
     ),
     # leady se skládají v listy.py ze zdrojových dat (svejk, hlasování)
     "listy_lead_statni_socialni_podpo": (),
     "listy_lead_socialnich_sluzb": (),
     "listy_lead_obecne": (),
     "listy_pointa_socialnich_sluzb": (
-        "Úředníci si tak můžou nechat cedulky na dveřích — stěhování se odkládá.",
+        "Úředníci si tak můžou nechat cedulky na dveřích, stěhování se odkládá.",
     ),
     "listy_pointa_obecne": (
         "",
@@ -376,7 +376,7 @@ def compose(
             used.add(text)
             return text
 
-    # fallback — posledni pokus bez deduplikace
+    # fallback, posledni pokus bez deduplikace
     rng = random.Random(_hash_seed(seed, "fb"))
     parts = {n: rng.choice(SLOTS[n]) for n in slot_names}
     parts.update(fixed)

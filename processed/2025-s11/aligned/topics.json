@@ -62,7 +62,7 @@
       "pocet_zamitnuto": 2,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Žádost o udělení souhlasu s trestním stíháním poslance Andre…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "zadost-o-udeleni-souhlasu-s-trestnim-stihanim-po-2",
@@ -123,7 +123,7 @@
       "pocet_zamitnuto": 1,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Žádost o udělení souhlasu s trestním stíháním poslance Tomia…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "sloucena-rozprava-k-bodum-1-a-2",
@@ -290,7 +290,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Sloučená rozprava k bodům 1 a 2",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     }
   ]
 }

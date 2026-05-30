@@ -43,7 +43,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Vl. n. z. o účetnictví - EU",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "vl-n-z-o-ucetnictvi-souvisejici-eu",
@@ -158,7 +158,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Vl. n. z. o účetnictví - související - EU",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "novela-z-o-investicnich-spolecnostech-eu",
@@ -205,7 +205,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela z. o investičních společnostech - EU",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "vl-n-z-kterym-se-meni-nektere-z-v-souv-se-smlouv",
@@ -269,7 +269,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Vl. n. z., kterým se mění některé z. v souv. se smlouvami o …",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "novela-z-o-rostlinolekarske-peci-eu",
@@ -336,7 +336,7 @@
       "pocet_prijato": 3,
       "pocet_zamitnuto": 1,
       "kategorie": "substantivni",
-      "tema_svejk": "EU pravidla pro postřiky — prošlo bez velkého povyku.",
+      "tema_svejk": "EU pravidla pro postřiky, prošlo bez velkého povyku.",
       "tema_vysvetleni": "Technická novela o rostlinolékařské péči."
     },
     {
@@ -402,7 +402,7 @@
       "pocet_zamitnuto": 1,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela z. o silničním provozu - EU",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "novela-ustav-z-ustava-cr",
@@ -422,7 +422,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela ústav. z. - Ústava ČR",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "novela-z-o-statnich-svatcich",
@@ -467,7 +467,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela z. o státních svátcích",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026",
@@ -1337,8 +1337,8 @@
       "pocet_prijato": 9,
       "pocet_zamitnuto": 120,
       "kategorie": "substantivni",
-      "tema_svejk": "Státní rozpočet — kolik smí vláda utratit příští rok.",
-      "tema_vysvetleni": "Hlasování o státním rozpočtu — daně, silnice, školy, armáda."
+      "tema_svejk": "Státní rozpočet, kolik smí vláda utratit příští rok.",
+      "tema_vysvetleni": "Hlasování o státním rozpočtu, daně, silnice, školy, armáda."
     },
     {
       "slug": "navrh-rozpoctu-sfa-na-rok-2026",
@@ -2085,7 +2085,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Návrh rozpočtu SFA na rok 2026",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "rozpocet-sfdi-na-rok-2026",
@@ -2145,7 +2145,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Rozpočet SFDI na rok 2026",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-rozpoctu-sfpi-na-rok-2026",
@@ -2892,7 +2892,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Návrh rozpočtu SFPI na rok 2026",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-",
@@ -2956,8 +2956,8 @@
       "pocet_prijato": 2,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "Veřejné rozpočty — limity výdajů, výjimky pro obranu a velké stavby.",
-      "tema_vysvetleni": "Novela rozpočtových zákonů — pravidla pro státní výdaje."
+      "tema_svejk": "Veřejné rozpočty, limity výdajů, výjimky pro obranu a velké stavby.",
+      "tema_vysvetleni": "Novela rozpočtových zákonů, pravidla pro státní výdaje."
     },
     {
       "slug": "navrh-rozpoctu-szif-na-rok-2026",
@@ -3704,7 +3704,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Návrh rozpočtu SZIF na rok 2026",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "dotacni-programy-zemedelstvi-pro-rok-2026",
@@ -3757,7 +3757,7 @@
       "pocet_zamitnuto": 1,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Dotační programy zemědělství pro rok 2026",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "rozpocet-sfzp-na-rok-2026",
@@ -3837,7 +3837,7 @@
       "pocet_zamitnuto": 1,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Rozpočet SFŽP na rok 2026",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem",
@@ -3928,7 +3928,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Přesadili lidi ve výborech. Personálka ve velkém.",
-      "tema_vysvetleni": "Změny ve složení sněmovních orgánů — kdo sedí v kterém výboru."
+      "tema_vysvetleni": "Změny ve složení sněmovních orgánů, kdo sedí v kterém výboru."
     },
     {
       "slug": "navrh-na-volbu-clenu-a-nahradniku-spravni-rady-v",
@@ -4028,7 +4028,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu členů a náhradníků Správní rady VZP",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-volbu-clenu-rady-ceskeho-rozhlasu",
@@ -4128,7 +4128,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu členů Rady Českého rozhlasu",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-volbu-clena-rady-ceske-televize",
@@ -4232,7 +4232,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu člena Rady České televize",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "vl-n-z-o-sprave-dat-a-o-rizenem-pristupu-k-datum",
@@ -4278,7 +4278,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Vl. n. z. o správě dat a o řízeném přístupu k datům - EU",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-volbu-ochrance-prav-deti",
@@ -4420,7 +4420,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu ochránce práv dětí",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "vl-n-z-o-digitalni-ekonomice-eu",
@@ -4574,7 +4574,7 @@
       "pocet_zamitnuto": 2,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Vl.n.z. o digitální ekonomice - EU",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-rocnich-odmen-za-cinnost-clenu-kontrolni-r",
@@ -4620,7 +4620,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh ročních odměn za činnost členů kontrolní rady Grantové…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-pravidel-hospodareni-poslaneckych-klubu-pr",
@@ -4642,7 +4642,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Návrh Pravidel hospodaření poslaneckých klubů pro rok 2026",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-potvrzeni-predsedu-vyboru-ps",
@@ -4713,7 +4713,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na potvrzení předsedů výborů PS",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2",
@@ -4804,7 +4804,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Přesadili lidi ve výborech. Personálka ve velkém.",
-      "tema_vysvetleni": "Změny ve složení sněmovních orgánů — kdo sedí v kterém výboru."
+      "tema_vysvetleni": "Změny ve složení sněmovních orgánů, kdo sedí v kterém výboru."
     }
   ]
 }

@@ -25,28 +25,30 @@ Co typicky upravovat v `facts/by_topic/<slug>.json`:
 | pole | účel |
 |------|------|
 | `nadpis` | titulek v novinách (krátký, chytlavý) |
-| `lead` | volitelně — švejkovský úvodní text pod nadpisem (jinak listy + `aligned`) |
-| `mean` | volitelně — **krátké** „Co to znamená“ (1–2 věty; jinak pointa z `tema_vysvetleni` / listy) |
+| `lead` | volitelně, švejkovský úvodní text pod nadpisem (jinak listy + `aligned`) |
+| `mean` | volitelně, **krátké** „Co to znamená“ (1-2 věty; jinak pointa z `tema_vysvetleni` / listy) |
 | `koho` | kontrola v `review`; na web jen pokud není kratší `mean` |
-| `fakty` | 1–3 věty pro `review` / lead ze stena |
+| `fakty` | 1-3 věty pro `review` / lead ze stena |
 | `publikovat` | `false` = vynechat z vydání |
 
-V `facts/by_day/YYYY-MM-DD.json` volitelně `"zaver": "…"` — vlastní závěr (jinak vtipný závěr z `listy` / `mix.py`, např. utopence u dlouhé schůze).
+V `facts/by_day/YYYY-MM-DD.json` volitelně `"zaver": "…"`, vlastní závěr (jinak vtipný závěr z `listy` / `mix.py`, např. utopence u dlouhé schůze).
 
 **Články:** lead z listy a kurátorského `tema_vysvetleni`; **Co to znamená** max. ~160 znaků. U mnoha hlasování přesnější kotva z hlasování.
+
+**Pomlčky:** ve výstupech nepoužívej em pomlčku (`—`) ani en pomlčku (`–`); místo toho čárka nebo ASCII `-`. Compose při nálezu dlouhé pomlčky spadne.
 
 `review` ukáže návrhy vět ze stena a náhled závěru dne.
 
 Jedna schůze = složka `{obdobi}-s{cislo}/`, např. `2025-s20/`.
 
 ```bash
-# celé období — všechny schůze 1–20 (dlouhé: steno z Hlídače)
+# celé období, všechny schůze 1-20 (dlouhé: steno z Hlídače)
 HLIDAC_TOKEN=… ./run-svejk.sh build --obdobi 2025 --vsechny-schuze
 
 # jen stáhnout suroviny (UNL + steno), bez novin
 HLIDAC_TOKEN=… ./run-svejk.sh build --obdobi 2025 --vsechny-schuze --only fetch
 
-# po HTTP 429 (Too Many Requests) — znovu stejný příkaz; steno.jsonl se **nesmaže**, pokračuje od posledního pořadí
+# po HTTP 429 (Too Many Requests), znovu stejný příkaz; steno.jsonl se **nesmaže**, pokračuje od posledního pořadí
 # pomalejší API: HLIDAC_RATE_LIMIT_S=1.5 HLIDAC_TOKEN=… ./run-svejk.sh build --schuze 20 --only fetch
 
 # pokračovat po přerušení (přeskočí schůze s hotovým fetch)
@@ -67,17 +69,17 @@ HLIDAC_TOKEN=… ./run-svejk.sh build --schuze 20 --obdobi 2025
 
 Struktura:
 
-- `raw/votes.jsonl` — hlasování z UNL
-- `raw/steno.jsonl` — stenozáznamy z Hlídače
-- `aligned/topics.json` — párování témat
-- `facts/by_topic/*.json` — fakta k bodům (ručně editovatelná)
-- `facts/by_day/*.json` — index dnů
-- `out/noviny-dlouhe/*.md` — hotové noviny (markdown)
-- `out/noviny-dlouhe/*.html` — stejný obsah ve designu varianta C (letterpress)
+- `raw/votes.jsonl`, hlasování z UNL
+- `raw/steno.jsonl`, stenozáznamy z Hlídače
+- `aligned/topics.json`, párování témat
+- `facts/by_topic/*.json`, fakta k bodům (ručně editovatelná)
+- `facts/by_day/*.json`, index dnů
+- `out/noviny-dlouhe/*.md`, hotové noviny (markdown)
+- `out/noviny-dlouhe/*.html`, stejný obsah ve designu varianta C (letterpress)
 
 Proměnná `SVEJK_PROCESSED_DIR` přepíše výchozí `processed/` v kořeni projektu.
 
-Web: `GET /noviny/{obdobi}/{schuze}/{den}` — např. `/noviny/2025/19/15.05.2026`
+Web: `GET /noviny/{obdobi}/{schuze}/{den}`, např. `/noviny/2025/19/15.05.2026`
 
 Krátká URL `/noviny/2025/15.05.2026` přesměruje na schůzi (u duplicitního data vybere novější schůzi).
 
@@ -97,6 +99,6 @@ Statický web pro **poslusnehlasim.cz**:
 Výstup: `site/index.html`, `site/noviny/2025/{schuze}/{den}.html`, `site/static/`.
 
 Deploy: GitHub Actions workflow `.github/workflows/pages.yml` (push na `main` + cron).
-V repo Settings → Pages → Source: **GitHub Actions**. Secret: `HLIDAC_TOKEN` (volitelné — build dat).
+V repo Settings → Pages → Source: **GitHub Actions**. Secret: `HLIDAC_TOKEN` (volitelné, build dat).
 
 Vlastní doména: soubor `site/CNAME` (`poslusnehlasim.cz`), DNS u registrátora → GitHub Pages.

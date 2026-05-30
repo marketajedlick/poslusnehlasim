@@ -1,4 +1,4 @@
-"""Krátký hospodský formát — Poslušně hlásím z poslanecké sněmovny."""
+"""Krátký hospodský formát, Poslušně hlásím z poslanecké sněmovny."""
 
 from __future__ import annotations
 
@@ -131,7 +131,7 @@ ZAKAZANE_VETY = (
     "dotčení občané",
 )
 
-# metaforické pointy — nepoužívat
+# metaforické pointy, nepoužívat
 NEKREATIVNI_POINTA = (
     "stěhovací krabice",
     "ve skladu",
@@ -202,7 +202,7 @@ def _nadpis_bodu(blok: BlokDne) -> str:
 
 
 def _lidsky_nadpis(nazev: str) -> str:
-    """Zpětná kompatibilita — pro interní odkazy použij _nadpis_bodu(blok)."""
+    """Zpětná kompatibilita, pro interní odkazy použij _nadpis_bodu(blok)."""
     t = nazev.lower()
     for klicova, _ in LIDSKY_NADPIS:
         if any(k in t for k in klicova):
@@ -269,7 +269,7 @@ def _skore_legislativy(veta: str) -> int:
 
 
 def _veta_je_pouze_uradni(veta: str) -> bool:
-    """Úřednická věta bez osobního dopadu — do „Co to znamená?“ nepatří."""
+    """Úřednická věta bez osobního dopadu, do „Co to znamená?“ nepatří."""
     if _skore_osloveni(veta) > 0:
         return False
     if any(
@@ -295,8 +295,8 @@ def _humanizovat_lead(lead: str) -> str:
     v = re.sub(r"\bZměna prošla\b", "Návrh prošel", v, flags=re.I)
     v = re.sub(r"\bzměna prošla\b", "návrh prošel", v, flags=re.I)
     v = re.sub(
-        r"poslanci odložili změnu —",
-        "poslanci změnu odložili —",
+        r"poslanci odložili změnu -",
+        "poslanci změnu odložili -",
         v,
         flags=re.I,
     )
@@ -525,7 +525,7 @@ DOPAD_KLIC = (
     "korun", "čeká", "termín", "sjednot", "dohled", "pokrač", "neschvál", "pravidl",
 )
 
-# odhad dopadu — bez konkrétních dat z návrhu nepoužívat
+# odhad dopadu, bez konkrétních dat z návrhu nepoužívat
 ODHAD_DOPADU = (
     "může zkrátit",
     "může prodloužit",
@@ -541,7 +541,7 @@ ODHAD_DOPADU = (
     "může zkrátit nebo prodloužit",
 )
 
-# měřitelný nebo popsaný fakt — ne spekulace
+# měřitelný nebo popsaný fakt, ne spekulace
 KONKRETNI_DOPAD = (
     "od ledna",
     "k 1.",
@@ -562,7 +562,7 @@ KONKRETNI_DOPAD = (
     "sjednotili pravidla",
 )
 
-# lidský předmět schválení — ne zkrácený název zákona
+# lidský předmět schválení, ne zkrácený název zákona
 PREDMET_LIDSKY: dict[str, str] = {
     "pojistn": "zálohách na sociálním pojištění pro živnostníky",
     "penzijniho_sporeni": "doplňkovém penzijním spoření",
@@ -583,7 +583,7 @@ ZAKAZANE_LEAD_KONCE = (
 
 
 def _predmet_z_nazvu(nazev: str) -> str:
-    """Významová část názvu zákona — ne celý legislativní titulek."""
+    """Významová část názvu zákona, ne celý legislativní titulek."""
     key = _topic_key(nazev)
     if key in PREDMET_LIDSKY:
         return PREDMET_LIDSKY[key]
@@ -596,7 +596,7 @@ def _predmet_z_nazvu(nazev: str) -> str:
         r"^novela\s+z\.?\s*o\s+",
         r"^novela o\s+",
         r"^zákon,?\s*kterým se (?:mění|doplňuje)\s+",
-        r"^vl\.?\s*n\.?\s*z\.?\s*[-–]?\s*",
+        r"^vl\.?\s*n\.?\s*z\.?\s*[--]?\s*",
         r"^vl\.?\s*n\.?\s*z\.?\s+o\s+",
         r"^změna\s+z\.?\s*",
         r"^změna\s+zákona\s+",
@@ -604,11 +604,11 @@ def _predmet_z_nazvu(nazev: str) -> str:
     for _ in range(4):
         pred = t
         for pat in vzory:
-            t = re.sub(pat, "", t, flags=re.I).strip(" .–—-")
-        t = re.sub(r"\(změna\s+z\.[^)]+\)", "", t, flags=re.I).strip(" .–—-")
+            t = re.sub(pat, "", t, flags=re.I).strip(" .---")
+        t = re.sub(r"\(změna\s+z\.[^)]+\)", "", t, flags=re.I).strip(" .---")
         if t == pred:
             break
-    t = re.sub(r"\s*[-–]\s*eu\s*$", "", t, flags=re.I).strip(" .–—-")
+    t = re.sub(r"\s*[--]\s*eu\s*$", "", t, flags=re.I).strip(" .---")
     if len(t) > 70:
         t = _zkrat_nazev(t)
     if re.match(r"^(novela|změna)\s+z\.?", t, re.I):
@@ -622,8 +622,8 @@ def _glosa_je_nedostatecna(gloss: str) -> bool:
     low = gloss.lower()
     if any(m in low for m in GENERIC_GLOSA_MARKERS):
         return True
-    if "—" in gloss[:90]:
-        label = gloss.split("—", 1)[0].strip()
+    if "-" in gloss[:90]:
+        label = gloss.split("-", 1)[0].strip()
         if len(label.split()) <= 3 and len(gloss.split()) < 22:
             return True
     return False
@@ -682,7 +682,7 @@ def _text_ma_koho(text: str) -> bool:
 
 
 def _dopad_je_publikovatelny(text: str) -> bool:
-    """Koho musí být vždy; dopad jen pokud je konkrétní — jinak jen koho a konec."""
+    """Koho musí být vždy; dopad jen pokud je konkrétní, jinak jen koho a konec."""
     if not text or len(text.split()) < 6:
         return False
     if not _text_ma_koho(text):
@@ -731,7 +731,7 @@ def _bod_je_publikovatelny(blok: BlokDne, lead: str, dopad: str) -> bool:
 
 
 def _verdikt_bloku(blok: BlokDne) -> str:
-    """schválili / zamítli / odložili / hlasovali / řešili — podle dat, ne synonyma."""
+    """schválili / zamítli / odložili / hlasovali / řešili, podle dat, ne synonyma."""
     t = _zdrojovy_text(blok).lower()
     if any(
         w in t
@@ -755,7 +755,7 @@ def _lead_schvaleni(blok: BlokDne, *, poslusne: str, jadro: str) -> str:
     if jadro and re.match(r"^(schválili|schvalili)\b", jadro, re.I):
         return f"{poslusne}poslanci {jadro[0].lower()}{jadro[1:]}."
     if jadro and len(jadro.split()) >= 6:
-        return f"{poslusne}poslanci schválili změnu — {jadro[0].lower()}{jadro[1:]}."
+        return f"{poslusne}poslanci schválili změnu, {jadro[0].lower()}{jadro[1:]}."
     return ""
 
 
@@ -783,12 +783,12 @@ def _lead_z_faktů(blok: BlokDne, *, use_poslusne: bool, state: dict) -> str:
         if "nestihl" in _zdrojovy_text(blok).lower():
             lead = (
                 f"{poslusne}stát chtěl spustit nové dávky{kdy}, "
-                "ale úřady na to ještě nemají připravené počítače — poslanci to posunuli."
+                "ale úřady na to ještě nemají připravené počítače, poslanci to posunuli."
             )
         elif jadro:
             lead = (
                 f"{poslusne}stát byl připraven měnit dávky dřív, než software, "
-                "který je má spočítat — poslanci změnu odložili."
+                "který je má spočítat, poslanci změnu odložili."
             )
         else:
             lead = f"{poslusne}poslanci odložili změny dávek."
@@ -841,7 +841,7 @@ def _lead_z_faktů(blok: BlokDne, *, use_poslusne: bool, state: dict) -> str:
         if "nestihl" in _zdrojovy_text(blok).lower() and predmet:
             lead = f"poslanci odložili změny v {predmet}."
         elif jadro:
-            lead = f"poslanci odložili změnu — {jadro[0].lower()}{jadro[1:]}."
+            lead = f"poslanci odložili změnu, {jadro[0].lower()}{jadro[1:]}."
         else:
             lead = ""
     else:
@@ -941,7 +941,7 @@ def _pointa_je_uvěřitelna(text: str) -> bool:
 
 
 def _pointa_jednou(blok: BlokDne, lead: str, dopad: str, *, state: dict) -> str:
-    """Nejvýše jedna pointa za den — jen uvěřitelná, navázaná na realitu."""
+    """Nejvýše jedna pointa za den, jen uvěřitelná, navázaná na realitu."""
     if state.get("pointa_pouzita"):
         return ""
     key = _topic_key(blok.nazev)
@@ -1010,7 +1010,7 @@ def _dnesni_ucet(stats: dict, *, state: dict) -> str:
 
 
 def _shrnuti_radka(stats: dict, *, state: dict) -> str:
-    """Faktické shrnutí dne — bez opakování titulků z článku."""
+    """Faktické shrnutí dne, bez opakování titulků z článku."""
     if stats["proslo"] and stats["minuty"] and stats["minuty"] < 120:
         p = stats["proslo"]
         if p == 1:
@@ -1139,7 +1139,7 @@ def render_schuze_listy(osa: SchuzeCasovaOsa) -> str:
     if not osa.dny:
         return ""
     state = _new_state()
-    parts = [f"# Schůze {osa.cislo}/{osa.obdobi} — {HLAVICKA_LISTU}", ""]
+    parts = [f"# Schůze {osa.cislo}/{osa.obdobi}, {HLAVICKA_LISTU}", ""]
     for i, day in enumerate(osa.dny):
         if i > 0:
             parts.extend(["---", ""])

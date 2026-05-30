@@ -1,4 +1,4 @@
-"""Novinove shrnuti schuze ve stylu Svejka — rozsireny text z casove osy."""
+"""Novinove shrnuti schuze ve stylu Svejka, rozsireny text z casove osy."""
 
 from __future__ import annotations
 
@@ -24,7 +24,7 @@ def _glosuj_fakt(vysv: str, core: str, *, zamitnuto: bool, state: dict, seed: st
         return obcansky
 
     if zamitnuto:
-        return "Návrh neprošel — pro vás se zatím nic nemění."
+        return "Návrh neprošel, pro vás se zatím nic nemění."
     return ""
 
 
@@ -185,7 +185,7 @@ def _odstavec_start(blok: BlokDne, den: str, datum: str, *, state: dict) -> str:
         )
     if hash(seed) % 3 == 0:
         return compose_template(
-            "{den} {cas} — sněmovna znovu usedla. {start_b}. {start_c}",
+            "{den} {cas}, sněmovna znovu usedla. {start_b}. {start_c}",
             ("start_b", "start_c"),
             seed=seed + "|den",
             state=state,
@@ -193,7 +193,7 @@ def _odstavec_start(blok: BlokDne, den: str, datum: str, *, state: dict) -> str:
             den=den.capitalize(),
         )
     return compose_template(
-        "{start_a} v {cas} — {start_b}. {start_c}",
+        "{start_a} v {cas}, {start_b}. {start_c}",
         ("start_a", "start_b", "start_c"),
         seed=seed,
         state=state,
@@ -338,7 +338,7 @@ def _odstavec_law_group(kat: str, group: list[BlokDne], *, state: dict) -> str:
             c = _core_text(b)
             if c.startswith("Hlasovali o:"):
                 n = c.removeprefix("Hlasovali o:").strip()
-                for sep in (" - ", " – ", ","):
+                for sep in (" - ", ", ", ","):
                     n = n.split(sep)[0]
                 nazvy.append(n[:45])
             elif "Dozimetr" in c:
@@ -411,7 +411,7 @@ def _odstavec_end(blok: BlokDne, *, state: dict) -> str:
 def _perex_dne(day: DenSchuze) -> str:
     shr = day.shrnuti.replace("Ve zkratce:", "Shrnutí dne:")
     shr = shr.replace(" Tomu se skoro nechce věřit.", "")
-    return f"*{day.den.capitalize()} {day.datum}* — {shr}"
+    return f"*{day.den.capitalize()} {day.datum}*, {shr}"
 
 
 def _iter_odstavce(bloky: list[BlokDne], state: dict):
@@ -454,7 +454,7 @@ def render_den_noviny(day: DenSchuze, *, state: dict | None = None) -> str:
     if state is None:
         state = _new_state()
     lines = [
-        f"## {day.den.capitalize()} — den ve sněmovně",
+        f"## {day.den.capitalize()}, den ve sněmovně",
         "",
         _perex_dne(day),
         "",
@@ -474,7 +474,7 @@ def render_schuze_noviny(osa: SchuzeCasovaOsa) -> str:
 
     od = _datum_cesky(osa.dny[0].datum)
     do = _datum_cesky(osa.dny[-1].datum)
-    rozsah = od if len(osa.dny) == 1 else f"{od} – {do}"
+    rozsah = od if len(osa.dny) == 1 else f"{od}, {do}"
 
     state = _new_state()
     intro = compose_template(
@@ -523,7 +523,7 @@ def _nadpis_zakonu(nazev: str) -> str:
 
 def _meta_radek(blok: BlokDne) -> str:
     if blok.cas_do and blok.cas_do != blok.cas_od:
-        cas = f"{blok.cas_od}–{blok.cas_do}"
+        cas = f"{blok.cas_od}-{blok.cas_do}"
     else:
         cas = blok.cas_od
     cast = ""
@@ -541,7 +541,7 @@ def _meta_radek(blok: BlokDne) -> str:
 
 
 def _headline_z_bloku(blok: BlokDne) -> str:
-    """Krátký titulek — z názvu zákona, ne celá glosa."""
+    """Krátký titulek, z názvu zákona, ne celá glosa."""
     return _nadpis_zakonu(blok.nazev)
 
 
@@ -559,7 +559,7 @@ def _kratka_zprava_porad(blok: BlokDne) -> str:
     cas = blok.cas_od
     if pm and pm[0] > 1:
         celkem, zamitnuto, _ = pm
-        return f"{cas} Pořad dne — {celkem}× hlasování, {zamitnuto}× zamítnuto."
+        return f"{cas} Pořad dne, {celkem}× hlasování, {zamitnuto}× zamítnuto."
     return f"{cas} Pořad schůze schválen."
 
 
@@ -592,8 +592,8 @@ def _telo_zakona(blok: BlokDne) -> str:
             text = vety[0] if len(vety) == 1 else f"{vety[0]} {vety[1]}"
             return _capitalize(text)
     if blok.proslo:
-        return "Prošlo — podrobnosti v názvu návrhu."
-    return "Neprošlo — pro vás se zatím nic nemění."
+        return "Prošlo, podrobnosti v názvu návrhu."
+    return "Neprošlo, pro vás se zatím nic nemění."
 
 
 def _stories_z_items(items: list) -> list[tuple[BlokDne, str]]:
@@ -647,7 +647,7 @@ def _sekce_nadpis_law_group(kat: str) -> str:
 
 
 def render_den_noviny_dlouhe(day: DenSchuze, *, state: dict | None = None) -> str:
-    """Krátký hospodský přehled — lidské titulky, bez technického hlášení."""
+    """Krátký hospodský přehled, lidské titulky, bez technického hlášení."""
     from svejk.listy import render_den_listy
 
     return render_den_listy(day, state=state)
@@ -704,9 +704,9 @@ def render_den_noviny_kratke(day: DenSchuze, *, state: dict | None = None) -> st
             od = group[0].cas_od
             pocet = sum(b.pocet_hlasovani for b in group)
             if kat == "interpelace":
-                kratke.append(f"{od} {pocet}× interpelace — ministr odpovídal.")
+                kratke.append(f"{od} {pocet}× interpelace, ministr odpovídal.")
             else:
-                kratke.append(f"{od} Personálka — {pocet}× hlasování o funkcích.")
+                kratke.append(f"{od} Personálka, {pocet}× hlasování o funkcích.")
             i += 1
         elif typ == "end":
             kratke.append(_kratka_zprava_end(items[i][1]))
@@ -745,7 +745,7 @@ def render_schuze_noviny_kratke(osa: SchuzeCasovaOsa) -> str:
         return ""
     state = _new_state()
     lines = [
-        f"# Schůze {osa.cislo}/{osa.obdobi} — {HLAVICKA_LISTU}",
+        f"# Schůze {osa.cislo}/{osa.obdobi}, {HLAVICKA_LISTU}",
         "",
     ]
     for i, day in enumerate(osa.dny):

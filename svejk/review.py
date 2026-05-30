@@ -1,4 +1,4 @@
-"""Porovnání raw dat, aligned témat a exportních textů — pro ruční doladění facts/."""
+"""Porovnání raw dat, aligned témat a exportních textů, pro ruční doladění facts/."""
 
 from __future__ import annotations
 
@@ -18,6 +18,7 @@ from svejk.build.day_content import (
 from svejk.build.steno_text import nejlepsi_vety
 from svejk.build.io import iter_jsonl, read_json
 from svejk.listy import _glosa_je_nedostatecna
+from svejk.text_norm import ma_dlouhou_pomlcku
 from svejk.obcansky import GENERIC_GLOSA_MARKERS, glosa_pro_obcana
 from svejk.paths import SchuzePaths
 
@@ -83,11 +84,11 @@ def _issues_for_topic(
         return issues
 
     if not fakty:
-        issues.append(ReviewIssue("warn", "no_fakty", "Chybí konkrétní věty ve fakty[] — doplnit z tema_vysvetleni nebo stena."))
+        issues.append(ReviewIssue("warn", "no_fakty", "Chybí konkrétní věty ve fakty[], doplnit z tema_vysvetleni nebo stena."))
     if vysv and _glosa_je_nedostatecna(vysv):
-        issues.append(ReviewIssue("warn", "generic_tema", "tema_vysvetleni je obecné — přepsat v aligned nebo doplnit facts."))
+        issues.append(ReviewIssue("warn", "generic_tema", "tema_vysvetleni je obecné, přepsat v aligned nebo doplnit facts."))
     elif vysv and not fakty:
-        issues.append(ReviewIssue("info", "tema_ready", "V aligned je použitelné tema_vysvetleni — zkopíruj do fakty[]."))
+        issues.append(ReviewIssue("info", "tema_ready", "V aligned je použitelné tema_vysvetleni, zkopíruj do fakty[]."))
 
     gloss = glosa_pro_obcana(fact.get("nazev", ""), vysv, proslo=fact.get("proslo", True))
     if gloss and _glosa_je_nedostatecna(gloss):
@@ -102,18 +103,28 @@ def _issues_for_topic(
             ReviewIssue(
                 "warn",
                 "generic_parliament",
-                "Úvodní věta je generická („schválili změny v …“) — upravit fakty nebo nadpis.",
+                "Úvodní věta je generická („schválili změny v …“), upravit fakty nebo nadpis.",
             )
         )
 
     if export_mean and export_lead and export_mean.strip() == export_lead.strip():
         issues.append(ReviewIssue("warn", "duplicate", "Lead a „Co to znamená“ jsou stejné."))
 
+    for label, txt in (("lead", export_lead), ("mean", export_mean)):
+        if txt and ma_dlouhou_pomlcku(txt):
+            issues.append(
+                ReviewIssue(
+                    "warn",
+                    "dlouha_pomlcka",
+                    f"Export {label} obsahuje zakázanou dlouhou pomlčku (—/–), použij čárku nebo -.",
+                )
+            )
+
     if koho and not fakty and len(export_mean) < 120:
-        issues.append(ReviewIssue("warn", "thin_body", "Jen řádek Koho — chybí konkrétní dopad (částky, termíny)."))
+        issues.append(ReviewIssue("warn", "thin_body", "Jen řádek Koho, chybí konkrétní dopad (částky, termíny)."))
 
     if nadpis and nadpis.lower().startswith("změna "):
-        issues.append(ReviewIssue("info", "fallback_title", "Nadpis vypadá jako automatický fallback — zvaž ruční nadpis."))
+        issues.append(ReviewIssue("info", "fallback_title", "Nadpis vypadá jako automatický fallback, zvaž ruční nadpis."))
 
     return issues
 
@@ -274,7 +285,7 @@ def format_topic_review(
                 break
     elif steno_ids:
         lines.append("")
-        lines.append(f"  (steno_ids={len(steno_ids)}, ale chybí raw/steno.jsonl — spusť fetch)")
+        lines.append(f"  (steno_ids={len(steno_ids)}, ale chybí raw/steno.jsonl, spusť fetch)")
 
     lines.extend(_wrap("EXPORT lead (na stránce)", tr.export_lead))
     lines.extend(_wrap("EXPORT mean (Co to znamená)", tr.export_mean))
@@ -339,7 +350,7 @@ def format_audit_report(weak: list[TopicReview], paths: SchuzePaths) -> str:
         warns = [i for i in tr.issues if i.level == "warn"]
         codes = ", ".join(i.code for i in warns)
         lines.append(f"  {tr.datum}  {tr.slug}")
-        lines.append(f"    {codes}  —  {tr.nazev[:55]}")
+        lines.append(f"    {codes}, {tr.nazev[:55]}")
     lines.append("")
     lines.append("Detail jednoho tématu:  ./run-svejk.sh review --schuze N --slug <slug>")
     lines.append("")

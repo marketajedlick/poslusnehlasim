@@ -94,7 +94,7 @@ def run_export_pages(
     editions = list_obdobi_editions(obdobi)
     if not editions:
         raise FileNotFoundError(
-            f"Žádná vydání v {processed_root()}/{obdobi}-s* — spusť build pro období {obdobi}."
+            f"Žádná vydání v {processed_root()}/{obdobi}-s*, spusť build pro období {obdobi}."
         )
 
     written: list[str] = []

@@ -28,7 +28,7 @@
       "pocet_zamitnuto": 7,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela z. o cenách",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "vl-n-z-o-vstupu-a-pobytu-cizincu",
@@ -45,7 +45,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Vl. n. z. o vstupu a pobytu cizinců",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "n-casoveho-harm-projednavani-vladniho-navrhu-st-",
@@ -450,7 +450,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: N. časového harm. projednávání vládního návrhu st. závěrečné…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "odpoved-na-pisemnou-interpelaci-e-sramkove-na-a-",
@@ -466,7 +466,7 @@
       "pocet_prijato": 1,
       "pocet_zamitnuto": 0,
       "kategorie": "interpelace",
-      "tema_svejk": "Interpelace — ministr odpovídal, poslanci nebyli spokojeni.",
+      "tema_svejk": "Interpelace, ministr odpovídal, poslanci nebyli spokojeni.",
       "tema_vysvetleni": "Hlasovalo se, jestli jsou odpovědi ministrů dostačující."
     },
     {
@@ -483,7 +483,7 @@
       "pocet_prijato": 1,
       "pocet_zamitnuto": 0,
       "kategorie": "interpelace",
-      "tema_svejk": "Interpelace — ministr odpovídal, poslanci nebyli spokojeni.",
+      "tema_svejk": "Interpelace, ministr odpovídal, poslanci nebyli spokojeni.",
       "tema_vysvetleni": "Hlasovalo se, jestli jsou odpovědi ministrů dostačující."
     },
     {
@@ -500,7 +500,7 @@
       "pocet_prijato": 1,
       "pocet_zamitnuto": 0,
       "kategorie": "interpelace",
-      "tema_svejk": "Interpelace — ministr odpovídal, poslanci nebyli spokojeni.",
+      "tema_svejk": "Interpelace, ministr odpovídal, poslanci nebyli spokojeni.",
       "tema_vysvetleni": "Hlasovalo se, jestli jsou odpovědi ministrů dostačující."
     },
     {
@@ -517,7 +517,7 @@
       "pocet_prijato": 1,
       "pocet_zamitnuto": 0,
       "kategorie": "interpelace",
-      "tema_svejk": "Interpelace — ministr odpovídal, poslanci nebyli spokojeni.",
+      "tema_svejk": "Interpelace, ministr odpovídal, poslanci nebyli spokojeni.",
       "tema_vysvetleni": "Hlasovalo se, jestli jsou odpovědi ministrů dostačující."
     },
     {
@@ -536,7 +536,7 @@
       "pocet_prijato": 3,
       "pocet_zamitnuto": 0,
       "kategorie": "interpelace",
-      "tema_svejk": "Interpelace — ministr odpovídal, poslanci nebyli spokojeni.",
+      "tema_svejk": "Interpelace, ministr odpovídal, poslanci nebyli spokojeni.",
       "tema_vysvetleni": "Hlasovalo se, jestli jsou odpovědi ministrů dostačující."
     },
     {
@@ -556,7 +556,7 @@
       "pocet_zamitnuto": 2,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela z. - trestní zákoník",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "novela-z-o-cenach-2",
@@ -574,7 +574,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela z. o cenách",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "n-z-kterym-se-zrusuje-nominacni-zakon",
@@ -594,7 +594,7 @@
       "pocet_zamitnuto": 3,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: N. z., kterým se zrušuje nominační zákon",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "novela-z-o-statni-socialni-podpore",
@@ -612,8 +612,8 @@
       "pocet_prijato": 3,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "Posun digitalizace dávek státní sociální podpory — úřady nestihly systém k 1. 7. 2026.",
-      "tema_vysvetleni": "Technická novela k reformě sociálních dávek — posun termínů u úřadu práce."
+      "tema_svejk": "Posun digitalizace dávek státní sociální podpory, úřady nestihly systém k 1. 7. 2026.",
+      "tema_vysvetleni": "Technická novela k reformě sociálních dávek, posun termínů u úřadu práce."
     },
     {
       "slug": "novela-z-o-socialnich-sluzbach",
@@ -631,8 +631,8 @@
       "pocet_prijato": 3,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "Sociální služby — posun převodu péče a dávek OZP z ÚP na ÚSSZ na rok 2028.",
-      "tema_vysvetleni": "Novela sociálních služeb — péče, dávky pro hendikepované, průkazy OZP."
+      "tema_svejk": "Sociální služby, posun převodu péče a dávek OZP z ÚP na ÚSSZ na rok 2028.",
+      "tema_vysvetleni": "Novela sociálních služeb, péče, dávky pro hendikepované, průkazy OZP."
     },
     {
       "slug": "novela-z-o-statnich-svatcich",
@@ -650,7 +650,7 @@
       "pocet_zamitnuto": 1,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela z. o státních svátcích",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "novela-z-o-spotrebitelskem-uveru",
@@ -668,7 +668,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela z. o spotřebitelském úvěru",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-",
@@ -685,8 +685,8 @@
       "pocet_prijato": 1,
       "pocet_zamitnuto": 1,
       "kategorie": "substantivni",
-      "tema_svejk": "Veřejné rozpočty — limity výdajů, výjimky pro obranu a velké stavby.",
-      "tema_vysvetleni": "Novela rozpočtových zákonů — pravidla pro státní výdaje."
+      "tema_svejk": "Veřejné rozpočty, limity výdajů, výjimky pro obranu a velké stavby.",
+      "tema_vysvetleni": "Novela rozpočtových zákonů, pravidla pro státní výdaje."
     },
     {
       "slug": "novela-z-o-volbach-do-zastupitelstev-obci",
@@ -704,7 +704,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela z. o volbách do zastupitelstev obcí",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-narizeni-rady-postupy-financovani-a-vyuziv",
@@ -721,7 +721,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh nařízení Rady - postupy financování a využívání diverz…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "sml-mezi-cr-a-sr-o-preshranicni-spol-v-oblasti-z",
@@ -738,7 +738,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Sml. mezi ČR a SR o přeshraniční spol. v oblasti zdravotnick…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-zakona-o-statnich-zamestnancich",
@@ -755,7 +755,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Návrh zákona o státních zaměstnancích",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "potvrzeni-trvani-stavu-legislativni-nouze",
@@ -1005,7 +1005,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Potvrzení trvání stavu legislativní nouze",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "posouzeni-podminek-pro-projednani-st-163-ve-zkra",
@@ -1705,7 +1705,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Posouzení podmínek pro projednání ST 163 ve zkráceném jednán…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     }
   ]
 }

@@ -386,8 +386,8 @@
       "pocet_prijato": 2,
       "pocet_zamitnuto": 4,
       "kategorie": "substantivni",
-      "tema_svejk": "Státní rozpočet — kolik smí vláda utratit příští rok.",
-      "tema_vysvetleni": "Hlasování o státním rozpočtu — daně, silnice, školy, armáda."
+      "tema_svejk": "Státní rozpočet, kolik smí vláda utratit příští rok.",
+      "tema_vysvetleni": "Hlasování o státním rozpočtu, daně, silnice, školy, armáda."
     },
     {
       "slug": "novela-z-o-jednacim-radu-ps",
@@ -614,7 +614,7 @@
       "pocet_zamitnuto": 1,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela z. o jednacím řádu PS",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "sml-mezi-cr-a-sr-o-preshranicni-spol-v-oblasti-z",
@@ -649,7 +649,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Sml. mezi ČR a SR o přeshraniční spol. v oblasti zdravotnick…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-statniho-zaverecneho-uctu-ceske-republiky-",
@@ -1053,7 +1053,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Návrh státního závěrečného účtu České republiky za rok 2024",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-casoveho-harmonogramu-projednavani-zakona-",
@@ -1434,8 +1434,8 @@
       "pocet_prijato": 1,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "Státní rozpočet — kolik smí vláda utratit příští rok.",
-      "tema_vysvetleni": "Hlasování o státním rozpočtu — daně, silnice, školy, armáda."
+      "tema_svejk": "Státní rozpočet, kolik smí vláda utratit příští rok.",
+      "tema_vysvetleni": "Hlasování o státním rozpočtu, daně, silnice, školy, armáda."
     },
     {
       "slug": "navrh-usneseni-poslanecke-snemovny-k-odsouzeni-t",
@@ -1990,7 +1990,7 @@
       "pocet_zamitnuto": 7,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Návrh usnesení Poslanecké sněmovny k odsouzení týrání zvířat",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     }
   ]
 }

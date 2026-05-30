@@ -12,6 +12,7 @@ from svejk.listy import (
     _pointa_jednou,
 )
 from svejk.obcansky import GENERIC_GLOSA_MARKERS
+from svejk.text_norm import bez_dlouhych_pomlc
 from svejk.timeline import BlokDne
 
 _MEAN_MAX_LEN = 160
@@ -40,8 +41,8 @@ def blok_z_fact_topic(fact: dict[str, Any], topic: dict[str, Any] | None) -> Blo
         cas_od="12:00",
         cas_do="",
         typ="law",
-        svejk=(t.get("tema_svejk") or "").strip(),
-        vysvetleni=(t.get("tema_vysvetleni") or "").strip(),
+        svejk=bez_dlouhych_pomlc((t.get("tema_svejk") or "").strip()),
+        vysvetleni=bez_dlouhych_pomlc((t.get("tema_vysvetleni") or "").strip()),
         nazev=(fact.get("nazev") or "").strip(),
         pocet_hlasovani=int(fact.get("pocet_hlasovani") or 0),
         pocet_prijato=int(t.get("pocet_prijato") or 0),
@@ -58,11 +59,8 @@ def vysv_je_witty(vysv: str) -> bool:
         return False
     if any(m in low for m in _WITTY_MARKERS):
         return True
-    for sep in (" — ", " – "):
-        if sep in vysv:
-            right = vysv.split(sep, 1)[1].strip()
-            if right and len(right) < 120:
-                return True
+    if ", " in vysv and len(vysv.split(", ", 1)[-1]) < 120:
+        return True
     return False
 
 
@@ -70,7 +68,8 @@ def _prvni_veta(text: str) -> str:
     t = (text or "").strip()
     if not t:
         return ""
-    part = re.split(r"\s*[—–]\s*", t, maxsplit=1)[0].strip()
+    t = bez_dlouhych_pomlc(t)
+    part = re.split(r"\s*-\s*", t, maxsplit=1)[0].strip()
     v = re.split(r"(?<=[.!?])\s+", part, maxsplit=1)[0].strip()
     if v and not v.endswith((".", "!", "?")):
         v += "."
@@ -102,17 +101,17 @@ def mean_z_vysvetleni(vysv: str, lead: str) -> str:
         return "Vás doma to netankuje, to je spíš věc pro sestry."
 
     if "715" in vysv and "míň důchod" in low:
-        return "úspora cca 715 Kč měsíčně. Míň odvodů, míň důchod — to už je jiná kapitola."
+        return "úspora cca 715 Kč měsíčně. Míň odvodů, míň důchod, to už je jiná kapitola."
 
-    for sep in (" — ", " – "):
-        if sep in vysv:
-            right = vysv.split(sep, 1)[1].strip()
-            if right and any(m in right.lower() for m in _WITTY_MARKERS + ("spíš",)):
-                if "netankuje" in right.lower():
-                    return "Vás doma to netankuje, to je spíš věc pro sestry."
-                if not right.endswith((".", "!", "?")):
-                    right += "."
-                return _zkrat_mean(right)
+    vysv = bez_dlouhych_pomlc(vysv)
+    if ", " in vysv:
+        right = vysv.split(", ", 1)[1].strip()
+        if right and any(m in right.lower() for m in _WITTY_MARKERS + ("spíš",)):
+            if "netankuje" in right.lower():
+                return "Vás doma to netankuje, to je spíš věc pro sestry."
+            if not right.endswith((".", "!", "?")):
+                right += "."
+            return _zkrat_mean(right)
 
     vety = re.split(r"(?<=[.!?])\s+", vysv.strip())
     tail = [v for v in vety[1:] if v.strip()]

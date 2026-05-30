@@ -22,8 +22,8 @@
       "pocet_prijato": 0,
       "pocet_zamitnuto": 1,
       "kategorie": "substantivni",
-      "tema_svejk": "Životní a existenční minimum — hranice chudoby pro dávky.",
-      "tema_vysvetleni": "Novela minima — od toho se odvíjí sociální dávky."
+      "tema_svejk": "Životní a existenční minimum, hranice chudoby pro dávky.",
+      "tema_vysvetleni": "Novela minima, od toho se odvíjí sociální dávky."
     },
     {
       "slug": "vl-n-z-o-nekterych-povinn-souvisejicich-s-opravo",
@@ -45,7 +45,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Vl.n.z. o některých povinn. souvisejících s opravou výrobku …",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "vl-n-z-o-ekodesignu-vyrobku-eu",
@@ -76,7 +76,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Vl. n. z. o ekodesignu výrobků - EU",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "novela-z-o-doplnkovem-penzijnim-sporeni",
@@ -130,7 +130,7 @@
       "pocet_prijato": 2,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "Penze — třikrát ne, pak jo. Typická sněmovní logika.",
+      "tema_svejk": "Penze, třikrát ne, pak jo. Typická sněmovní logika.",
       "tema_vysvetleni": "Návrh o penzijním spoření nejdřív zamítli, pak jiné varianty prošly."
     },
     {
@@ -170,7 +170,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Vl. n. z., kterým se mění některé z. v souv. se smlouvami o …",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "novela-z-o-mezinarodni-justicni-spolupraci-ve-ve",
@@ -194,7 +194,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela z. o mezinárodní justiční spolupráci ve věcech trestn…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "novela-z-o-zdrav-prostr-a-diagnostickych-zdrav-p",
@@ -268,8 +268,8 @@
       "pocet_prijato": 2,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": " Poslušně hlásím, schválili pravidla pro laboratorní testy — diagnostiku v zkumavce.",
-      "tema_vysvetleni": "Výrobci musí hlásit, když dochází soupravy na odběry. Vás doma to netankuje — spíš nemocnice, ať vědí, že došly zkumavky."
+      "tema_svejk": " Poslušně hlásím, schválili pravidla pro laboratorní testy, diagnostiku v zkumavce.",
+      "tema_vysvetleni": "Výrobci musí hlásit, když dochází soupravy na odběry. Vás doma to netankuje, spíš nemocnice, ať vědí, že došly zkumavky."
     },
     {
       "slug": "novela-z-o-pojistnem-na-socialni-zabezpeceni",
@@ -406,7 +406,7 @@
       "pocet_zamitnuto": 8,
       "kategorie": "substantivni",
       "tema_svejk": "Živnostníkům klesnou odvody na sociálním pojištění.",
-      "tema_vysvetleni": "Minimální záloha klesne z 5 720 Kč na 5 005 Kč měsíčně — ušetří cca 715 korun. Platí od ledna, přeplatek vrátí. Zaměstnanec? To se vás netýká. Míň odvodů, míň důchod."
+      "tema_vysvetleni": "Minimální záloha klesne z 5 720 Kč na 5 005 Kč měsíčně, ušetří cca 715 korun. Platí od ledna, přeplatek vrátí. Zaměstnanec? To se vás netýká. Míň odvodů, míň důchod."
     },
     {
       "slug": "novela-z-o-pojistnem-na-verejne-zdravotni-pojist",
@@ -461,7 +461,7 @@
       "pocet_zamitnuto": 2,
       "kategorie": "substantivni",
       "tema_svejk": "Živnostníkům klesnou odvody na sociálním pojištění.",
-      "tema_vysvetleni": "Minimální záloha klesne z 5 720 Kč na 5 005 Kč měsíčně — ušetří cca 715 korun. Platí od ledna, přeplatek vrátí. Zaměstnanec? To se vás netýká. Míň odvodů, míň důchod."
+      "tema_vysvetleni": "Minimální záloha klesne z 5 720 Kč na 5 005 Kč měsíčně, ušetří cca 715 korun. Platí od ledna, přeplatek vrátí. Zaměstnanec? To se vás netýká. Míň odvodů, míň důchod."
     },
     {
       "slug": "navrh-na-odvolani-predsedy-dozorci-rady-statniho",
@@ -519,7 +519,7 @@
       "pocet_zamitnuto": 1,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na odvolání předsedy Dozorčí rady Státního zemědělskéh…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-odvolani-clenu-dozorci-rady-statniho-ze",
@@ -593,7 +593,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na odvolání členů dozorčí rady Státního zemědělského i…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-odvolani-clenu-dozorci-rady-statniho-fo",
@@ -659,7 +659,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na odvolání členů dozorčí rady Státního fondu podpory …",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "vl-n-z-o-urc-provozoven-za-ucel-shrom-dukazu-v-t",
@@ -693,7 +693,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Vl. n. z. o urč. provozoven za účel shrom. důkazů v trestním…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-odvolani-clenu-dozorci-rady-vinarskeho-",
@@ -767,7 +767,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na odvolání členů dozorčí rady Vinařského fondu",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-volbu-predsedy-dozorci-rady-szif",
@@ -845,7 +845,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu předsedy dozorčí rady SZIF",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-volbu-clenu-dozorci-rady-statniho-zemed",
@@ -923,7 +923,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu členů dozorčí rady Státního zemědělského inte…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-volbu-clenu-dozorci-rady-statniho-fondu",
@@ -1001,7 +1001,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu členů dozorčí rady Státního fondu podpory inv…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-volbu-clenu-dozorci-rady-vinarskeho-fon",
@@ -1079,7 +1079,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu členů dozorčí rady Vinařského fondu",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "vl-n-z-ke-snizeni-nakladu-na-zavadeni-siti-el-ko",
@@ -1105,7 +1105,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Vl. n. z. ke snížení nákladů na zavádění sítí el. komunikací…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "vl-n-z-ke-snizeni-nakl-na-zavadeni-siti-el-komun",
@@ -1131,7 +1131,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Vl. n. z. ke snížení nákl.na zavádění sítí el. komunikací - …",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-zrizeni-vysetrovaci-komise-poslanecke-s",
@@ -1309,7 +1309,7 @@
       "pocet_zamitnuto": 1,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na zřízení vyšetřovací komise Poslanecké sněmovny ke k…",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "novela-z-o-ochrane-spotrebitele-eu",
@@ -1337,7 +1337,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela z. o ochraně spotřebitele - EU",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     }
   ]
 }

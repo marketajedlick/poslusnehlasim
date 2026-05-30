@@ -86,7 +86,7 @@ def _fetch_steno_to_jsonl(
     if verbose:
         if existing:
             print(
-                f"Stahuji steno schuze {schuze}/{obdobi} — pokracuji od por. {start_poradi} "
+                f"Stahuji steno schuze {schuze}/{obdobi}, pokracuji od por. {start_poradi} "
                 f"({existing} jiz v {path.name})...",
                 file=sys.stderr,
                 flush=True,
@@ -106,7 +106,7 @@ def _fetch_steno_to_jsonl(
         if verbose and (count == 1 or count % 10 == 0):
             tema = (record.tema or "(bez tematu)")[:55]
             print(
-                f"  [{existing + count}] por. {record.poradi} ({time.monotonic() - t0:.0f}s) — {tema}",
+                f"  [{existing + count}] por. {record.poradi} ({time.monotonic() - t0:.0f}s), {tema}",
                 file=sys.stderr,
                 flush=True,
             )
@@ -139,7 +139,7 @@ def run_fetch(
         write_jsonl(paths.steno_jsonl, [])
     elif not HLIDAC_TOKEN:
         if verbose:
-            print("HLIDAC_TOKEN chybí — steno.jsonl bude prázdný.", flush=True)
+            print("HLIDAC_TOKEN chybí, steno.jsonl bude prázdný.", flush=True)
         write_jsonl(paths.steno_jsonl, [])
     else:
         rate = float(os.environ.get("HLIDAC_RATE_LIMIT_S", "1.0"))

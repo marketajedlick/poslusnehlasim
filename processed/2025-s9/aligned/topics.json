@@ -43,8 +43,8 @@
       "pocet_prijato": 2,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "Životní a existenční minimum — hranice chudoby pro dávky.",
-      "tema_vysvetleni": "Novela minima — od toho se odvíjí sociální dávky."
+      "tema_svejk": "Životní a existenční minimum, hranice chudoby pro dávky.",
+      "tema_vysvetleni": "Novela minima, od toho se odvíjí sociální dávky."
     },
     {
       "slug": "novela-z-o-davce-statni-socialni-pomoci",
@@ -87,7 +87,7 @@
       "pocet_prijato": 2,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "Dávka státní sociální pomoci — pomoc lidem v nouzi.",
+      "tema_svejk": "Dávka státní sociální pomoci, pomoc lidem v nouzi.",
       "tema_vysvetleni": "Novela dávek SSP."
     }
   ]

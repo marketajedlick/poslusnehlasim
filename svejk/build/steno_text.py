@@ -1,4 +1,4 @@
-"""Úryvky a věty ze stenoprotokolu — celé věty, ne useknuté regex okno."""
+"""Úryvky a věty ze stenoprotokolu, celé věty, ne useknuté regex okno."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-"""Casova osa schuze — pravidlova vrstva ve stylu Svejka z hlasovacich dat."""
+"""Casova osa schuze, pravidlova vrstva ve stylu Svejka z hlasovacich dat."""
 
 from __future__ import annotations
 
@@ -49,91 +49,91 @@ class SchuzeCasovaOsa:
 TEMA_PRAVIDLA: list[tuple[list[str], str, str]] = [
     (
         ["in vitro", "diagnostick", "zdrav. prost"],
-        " Poslušně hlásím, schválili pravidla pro laboratorní testy — diagnostiku v zkumavce.",
+        " Poslušně hlásím, schválili pravidla pro laboratorní testy, diagnostiku v zkumavce.",
         "Výrobci musí hlásit, když dochází soupravy na odběry. "
-        "Vás doma to netankuje — spíš nemocnice, ať vědí, že došly zkumavky.",
+        "Vás doma to netankuje, spíš nemocnice, ať vědí, že došly zkumavky.",
     ),
     (
         ["pojistn", "sociální zabezpe"],
         "Živnostníkům klesnou odvody na sociálním pojištění.",
-        "Minimální záloha klesne z 5 720 Kč na 5 005 Kč měsíčně — ušetří cca 715 korun. "
+        "Minimální záloha klesne z 5 720 Kč na 5 005 Kč měsíčně, ušetří cca 715 korun. "
         "Platí od ledna, přeplatek vrátí. Zaměstnanec? To se vás netýká. Míň odvodů, míň důchod.",
     ),
     (
         ["státní sociální podpo", "statni socialni podpo"],
-        "Posun digitalizace dávek státní sociální podpory — úřady nestihly systém k 1. 7. 2026.",
-        "Technická novela k reformě sociálních dávek — posun termínů u úřadu práce.",
+        "Posun digitalizace dávek státní sociální podpory, úřady nestihly systém k 1. 7. 2026.",
+        "Technická novela k reformě sociálních dávek, posun termínů u úřadu práce.",
     ),
     (
         ["sociálních služb", "socialnich sluzb"],
-        "Sociální služby — posun převodu péče a dávek OZP z ÚP na ÚSSZ na rok 2028.",
-        "Novela sociálních služeb — péče, dávky pro hendikepované, průkazy OZP.",
+        "Sociální služby, posun převodu péče a dávek OZP z ÚP na ÚSSZ na rok 2028.",
+        "Novela sociálních služeb, péče, dávky pro hendikepované, průkazy OZP.",
     ),
     (
         ["státním rozpočtu", "státní rozpočet", "rozpočtu čr na rok"],
-        "Státní rozpočet — kolik smí vláda utratit příští rok.",
-        "Hlasování o státním rozpočtu — daně, silnice, školy, armáda.",
+        "Státní rozpočet, kolik smí vláda utratit příští rok.",
+        "Hlasování o státním rozpočtu, daně, silnice, školy, armáda.",
     ),
     (
         ["veřejných rozpočt", "verejnych rozpoct"],
-        "Veřejné rozpočty — limity výdajů, výjimky pro obranu a velké stavby.",
-        "Novela rozpočtových zákonů — pravidla pro státní výdaje.",
+        "Veřejné rozpočty, limity výdajů, výjimky pro obranu a velké stavby.",
+        "Novela rozpočtových zákonů, pravidla pro státní výdaje.",
     ),
     (
         ["důvěry vládě", "důvěru vládě"],
-        "Vláda dostala důvěru sněmovny — může vládnout.",
+        "Vláda dostala důvěru sněmovny, může vládnout.",
         "Hlasování o důvěře vládě.",
     ),
     (
         ["nedůvěry vládě", "nedůvěru vládě"],
-        "Hlasovalo se o pádu vlády — nedůvěra.",
-        "Nedůvěra vládě — opozice chtěla svrhnout kabinet.",
+        "Hlasovalo se o pádu vlády, nedůvěra.",
+        "Nedůvěra vládě, opozice chtěla svrhnout kabinet.",
     ),
     (
         ["životním a existenčním minimu", "životní minimum"],
-        "Životní a existenční minimum — hranice chudoby pro dávky.",
-        "Novela minima — od toho se odvíjí sociální dávky.",
+        "Životní a existenční minimum, hranice chudoby pro dávky.",
+        "Novela minima, od toho se odvíjí sociální dávky.",
     ),
     (
         ["dávce státní sociální pomoci"],
-        "Dávka státní sociální pomoci — pomoc lidem v nouzi.",
+        "Dávka státní sociální pomoci, pomoc lidem v nouzi.",
         "Novela dávek SSP.",
     ),
     (
         ["stavebn"],
-        "Stavební zákon — další kolo.",
+        "Stavební zákon, další kolo.",
         "Hlasování o pozměňovacích návrzích ke stavebnímu zákonu. "
         "Dlouhodobě se týká každého, kdo staví nebo rekonstruuje.",
     ),
     (
         ["penzijn"],
-        "Penze — třikrát ne, pak jo. Typická sněmovní logika.",
+        "Penze, třikrát ne, pak jo. Typická sněmovní logika.",
         "Návrh o penzijním spoření nejdřív zamítli, pak jiné varianty prošly.",
     ),
     (
         ["interpelac"],
-        "Interpelace — ministr odpovídal, poslanci nebyli spokojeni.",
+        "Interpelace, ministr odpovídal, poslanci nebyli spokojeni.",
         "Hlasovalo se, jestli jsou odpovědi ministrů dostačující.",
     ),
     (
         ["investiční společnost"],
-        "EU finance — prošlo jak vagón munice do Budějovic. Exemplárně.",
+        "EU finance, prošlo jak vagón munice do Budějovic. Exemplárně.",
         "Technická úprava pravidel pro investiční společnosti. Běžného člověka se netýká.",
     ),
     (
         ["rostlinolékař"],
-        "EU pravidla pro postřiky — prošlo bez velkého povyku.",
+        "EU pravidla pro postřiky, prošlo bez velkého povyku.",
         "Technická novela o rostlinolékařské péči.",
     ),
     (
         ["orgánů poslanecké", "orgánů ps"],
         "Přesadili lidi ve výborech. Personálka ve velkém.",
-        "Změny ve složení sněmovních orgánů — kdo sedí v kterém výboru.",
+        "Změny ve složení sněmovních orgánů, kdo sedí v kterém výboru.",
     ),
     (
         ["dozimetr"],
         "Dosadili lidi do komise Dozimetr.",
-        "Personální volba — kdo bude ve vyšetřovací komisi kolem kauzy Dozimetr.",
+        "Personální volba, kdo bude ve vyšetřovací komisi kolem kauzy Dozimetr.",
     ),
 ]
 
@@ -171,7 +171,7 @@ def tema_z_nazvu(nazev: str) -> TemaSvejka:
     short = nazev[:60] + ("…" if len(nazev) > 60 else "") if nazev else "organizační hlasování"
     return TemaSvejka(
         svejk=f"Hlasovali o: {short}",
-        vysvetleni="Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu.",
+        vysvetleni="Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu.",
     )
 
 
@@ -202,7 +202,7 @@ def _minutes_between(cas1: str, cas2: str) -> int:
 
 
 def _promluvy_minuty(day_votes: list[Vote]) -> int:
-    """Součet mezer mezi hlasováními >= 30 min — odhad času promluv."""
+    """Součet mezer mezi hlasováními >= 30 min, odhad času promluv."""
     if len(day_votes) < 2:
         return 0
     return sum(
@@ -268,7 +268,7 @@ def _porad_svejk(prijato: int, zamitnuto: int, celkem: int) -> tuple[str, str]:
             "Poslanci se shodli, co se bude projednávat.",
         )
     return (
-        f"Pořad schůze — {celkem} hlasování, {zamitnuto}× zamítnuto.",
+        f"Pořad schůze, {celkem} hlasování, {zamitnuto}× zamítnuto.",
         "Hádali se, co patří na program dne.",
     )
 
@@ -326,7 +326,7 @@ def build_den(votes: list[Vote], datum_unl: str) -> DenSchuze:
         gap_min = _minutes_between(v1.cas, v2.cas)
         if gap_min >= 90:
             hod = max(1, gap_min // 60)
-            vysv = "Poslanci debatovali — k hlasování se dlouho nedostali."
+            vysv = "Poslanci debatovali, k hlasování se dlouho nedostali."
             if v2.nazev.strip():
                 short = v2.nazev.strip()
                 if len(short) > 80:
@@ -340,7 +340,7 @@ def build_den(votes: list[Vote], datum_unl: str) -> DenSchuze:
                     svejk=(
                         f"{hod} hodin seděli a nula hlasování. "
                         f"{hint}"
-                        "Čistá konsternace — celý den dohadů a pořád nic."
+                        "Čistá konsternace, celý den dohadů a pořád nic."
                     ),
                     vysvetleni=vysv,
                 )
@@ -358,7 +358,7 @@ def build_den(votes: list[Vote], datum_unl: str) -> DenSchuze:
                     "Odpoledne mluvili, večer teprve hlasovali. "
                     "Typická sněmovní úspora času."
                 ),
-                vysvetleni="Většinu dne proběhla debata — hlasování až večer.",
+                vysvetleni="Většinu dne proběhla debata, hlasování až večer.",
             )
         )
 
@@ -414,7 +414,7 @@ def build_den(votes: list[Vote], datum_unl: str) -> DenSchuze:
         proslo = last_v.vysledek == "A"
         svejk = tema.svejk
         if not proslo:
-            svejk = f"{tema.svejk} Tentokrát ne — poslanci to smetli ze stolu."
+            svejk = f"{tema.svejk} Tentokrát ne, poslanci to smetli ze stolu."
         elif len(group) > 1 and zamitnuto:
             svejk = f"{tema.svejk} Po {len(group)}× hlasování nakonec prošlo."
         bloky.append(
@@ -466,8 +466,8 @@ def build_den(votes: list[Vote], datum_unl: str) -> DenSchuze:
 def render_den(day: DenSchuze) -> str:
     lines = [f"## {day.den.capitalize()} ({day.datum})", ""]
     for b in day.bloky:
-        cas = f"{b.cas_od}–{b.cas_do}" if b.cas_do else b.cas_od + ("+" if b.typ == "end" else "")
-        lines.append(f"{cas} — {b.svejk}")
+        cas = f"{b.cas_od}-{b.cas_do}" if b.cas_do else b.cas_od + ("+" if b.typ == "end" else "")
+        lines.append(f"{cas}, {b.svejk}")
         if b.vysvetleni:
             lines.append(f"({b.vysvetleni})")
         lines.append("")
@@ -477,7 +477,7 @@ def render_den(day: DenSchuze) -> str:
 
 
 def render_cela_schuze(osa: SchuzeCasovaOsa) -> str:
-    parts = [f"# Schůze {osa.cislo}/{osa.obdobi} — Švejk glosuje", ""]
+    parts = [f"# Schůze {osa.cislo}/{osa.obdobi}, Švejk glosuje", ""]
     for day in osa.dny:
         parts.append(render_den(day))
         parts.append("")
@@ -501,7 +501,7 @@ def render_fakticke_dny(
             if v.je_porad_schuze or not v.nazev.strip():
                 continue
             lines.append(
-                f"  {v.cas[:5]} — {v.nazev[:120]} — {v.vysledek_label} ({v.pro}:{v.proti})"
+                f"  {v.cas[:5]}, {v.nazev[:120]}, {v.vysledek_label} ({v.pro}:{v.proti})"
             )
         porad = [v for v in day_votes if v.je_porad_schuze]
         if porad:

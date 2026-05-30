@@ -11,6 +11,7 @@ from svejk.build.html import render_den_html
 from svejk.build.io import read_json
 from svejk.noviny import HLAVICKA_LISTU, _datum_cesky, _new_state
 from svejk.paths import SchuzePaths
+from svejk.text_norm import ma_dlouhou_pomlcku
 
 
 def render_den_markdown(
@@ -84,18 +85,20 @@ def run_compose(
         state = _new_state()
         content = build_den_content(day_path, paths, state=state)
         md_out = paths.noviny_dlouhe_md(datum)
-        md_out.write_text(
-            render_den_markdown(content, paths, day_path, state=state) + "\n",
-            encoding="utf-8",
-        )
+        md_body = render_den_markdown(content, paths, day_path, state=state) + "\n"
+        md_out.write_text(md_body, encoding="utf-8")
         written_md.append(str(md_out))
 
         html_out = paths.noviny_dlouhe_html(datum)
-        html_out.write_text(
-            render_den_html(content, paths, day_path),
-            encoding="utf-8",
-        )
+        html_body = render_den_html(content, paths, day_path)
+        html_out.write_text(html_body, encoding="utf-8")
         written_html.append(str(html_out))
+
+        for out_path, body in ((md_out, md_body), (html_out, html_body)):
+            if ma_dlouhou_pomlcku(body):
+                raise ValueError(
+                    f"Zakázaná dlouhá pomlčka (—/–) ve výstupu {out_path.name}, oprav zdrojové texty."
+                )
 
     if den:
         from svejk.timeline import normalize_day
@@ -109,7 +112,7 @@ def run_compose(
         return {"days": 1, "files": written_md, "html_files": written_html}
 
     if not paths.facts_by_day.is_dir():
-        raise FileNotFoundError(f"Chybí {paths.facts_by_day} — spusť extract")
+        raise FileNotFoundError(f"Chybí {paths.facts_by_day}, spusť extract")
 
     for day_path in sorted(paths.facts_by_day.glob("*.json")):
         day = read_json(day_path)

@@ -101,7 +101,7 @@ def run_build_obdobi(
     preskocit_hotove: bool = False,
     verbose: bool = True,
 ) -> dict[str, Any]:
-    """Build pro všechny schůze v období (např. 1–20 u ps2025)."""
+    """Build pro všechny schůze v období (např. 1-20 u ps2025)."""
     analyzer = SchuzeAnalyzer(PSP_DATA_DIR, PSP_ORGAN_ID)
     cisla = schuze_list if schuze_list is not None else analyzer.list_schuze_cisla(obdobi)
     cisla = [c for c in cisla if schuze_od <= c <= schuze_do]
@@ -116,7 +116,7 @@ def run_build_obdobi(
         paths = SchuzePaths.create(obdobi, cislo)
         if preskocit_hotove and _schuze_ma_hotovy_fetch(paths):
             if verbose:
-                print(f"=== Schůze {cislo}/{obdobi} — přeskočeno (už staženo) ===", flush=True)
+                print(f"=== Schůze {cislo}/{obdobi}, přeskočeno (už staženo) ===", flush=True)
             vysledky.append({"schuze": cislo, "skipped": True, "root": str(paths.root)})
             continue
 
@@ -152,7 +152,7 @@ def run_build_obdobi(
     if verbose:
         print(
             f"\nObdobí {obdobi}: {summary['ok']} OK, "
-            f"{summary['skipped']} přeskočeno, {summary['failed']} chyb — "
+            f"{summary['skipped']} přeskočeno, {summary['failed']} chyb, "
             f"{obdobi_manifest}",
             flush=True,
         )

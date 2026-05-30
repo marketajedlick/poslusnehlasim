@@ -51,8 +51,8 @@
       "pocet_prijato": 8,
       "pocet_zamitnuto": 28,
       "kategorie": "substantivni",
-      "tema_svejk": "Veřejné rozpočty — limity výdajů, výjimky pro obranu a velké stavby.",
-      "tema_vysvetleni": "Novela rozpočtových zákonů — pravidla pro státní výdaje."
+      "tema_svejk": "Veřejné rozpočty, limity výdajů, výjimky pro obranu a velké stavby.",
+      "tema_vysvetleni": "Novela rozpočtových zákonů, pravidla pro státní výdaje."
     },
     {
       "slug": "novela-ustav-z-ustava-cr",
@@ -69,7 +69,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela ústav. z. - Ústava ČR",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     }
   ]
 }

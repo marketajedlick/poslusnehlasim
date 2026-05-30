@@ -16,8 +16,8 @@
       "pocet_prijato": 1,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": " Poslušně hlásím, schválili pravidla pro laboratorní testy — diagnostiku v zkumavce.",
-      "tema_vysvetleni": "Výrobci musí hlásit, když dochází soupravy na odběry. Vás doma to netankuje — spíš nemocnice, ať vědí, že došly zkumavky."
+      "tema_svejk": " Poslušně hlásím, schválili pravidla pro laboratorní testy, diagnostiku v zkumavce.",
+      "tema_vysvetleni": "Výrobci musí hlásit, když dochází soupravy na odběry. Vás doma to netankuje, spíš nemocnice, ať vědí, že došly zkumavky."
     },
     {
       "slug": "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem",
@@ -60,7 +60,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Přesadili lidi ve výborech. Personálka ve velkém.",
-      "tema_vysvetleni": "Změny ve složení sněmovních orgánů — kdo sedí v kterém výboru."
+      "tema_vysvetleni": "Změny ve složení sněmovních orgánů, kdo sedí v kterém výboru."
     },
     {
       "slug": "volba-cl-vk-dozimetr",
@@ -82,7 +82,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Dosadili lidi do komise Dozimetr.",
-      "tema_vysvetleni": "Personální volba — kdo bude ve vyšetřovací komisi kolem kauzy Dozimetr."
+      "tema_vysvetleni": "Personální volba, kdo bude ve vyšetřovací komisi kolem kauzy Dozimetr."
     },
     {
       "slug": "navrh-na-volbu-clenu-a-nahradniku-spravni-rady-v",
@@ -230,7 +230,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu členů a náhradníků Správní rady VZP",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-volbu-verejneho-ochrance-prav",
@@ -378,7 +378,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu veřejného ochránce práv",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-jmenovani-clena-kontrolni-rady-grantove",
@@ -412,7 +412,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na jmenování člena kontrolní rady Grantové agentury ČR",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-jmenovani-clenu-kr-ta-cr",
@@ -540,7 +540,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na jmenování členů KR TA ČR",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-volbu-clena-rady-ceskeho-rozhlasu",
@@ -604,7 +604,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu člena Rady Českého rozhlasu",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "navrh-na-volbu-clenu-nejvyssiho-kontrolniho-urad",
@@ -740,7 +740,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu členů Nejvyššího kontrolního úřadu",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "odpoved-na-pisemnou-interpelaci-g-svarovske-na-a",
@@ -756,7 +756,7 @@
       "pocet_prijato": 1,
       "pocet_zamitnuto": 0,
       "kategorie": "interpelace",
-      "tema_svejk": "Interpelace — ministr odpovídal, poslanci nebyli spokojeni.",
+      "tema_svejk": "Interpelace, ministr odpovídal, poslanci nebyli spokojeni.",
       "tema_vysvetleni": "Hlasovalo se, jestli jsou odpovědi ministrů dostačující."
     },
     {
@@ -776,7 +776,7 @@
       "pocet_prijato": 3,
       "pocet_zamitnuto": 1,
       "kategorie": "interpelace",
-      "tema_svejk": "Interpelace — ministr odpovídal, poslanci nebyli spokojeni.",
+      "tema_svejk": "Interpelace, ministr odpovídal, poslanci nebyli spokojeni.",
       "tema_vysvetleni": "Hlasovalo se, jestli jsou odpovědi ministrů dostačující."
     },
     {
@@ -794,7 +794,7 @@
       "pocet_prijato": 0,
       "pocet_zamitnuto": 2,
       "kategorie": "interpelace",
-      "tema_svejk": "Interpelace — ministr odpovídal, poslanci nebyli spokojeni.",
+      "tema_svejk": "Interpelace, ministr odpovídal, poslanci nebyli spokojeni.",
       "tema_vysvetleni": "Hlasovalo se, jestli jsou odpovědi ministrů dostačující."
     },
     {
@@ -811,7 +811,7 @@
       "pocet_prijato": 0,
       "pocet_zamitnuto": 1,
       "kategorie": "interpelace",
-      "tema_svejk": "Interpelace — ministr odpovídal, poslanci nebyli spokojeni.",
+      "tema_svejk": "Interpelace, ministr odpovídal, poslanci nebyli spokojeni.",
       "tema_vysvetleni": "Hlasovalo se, jestli jsou odpovědi ministrů dostačující."
     },
     {
@@ -828,7 +828,7 @@
       "pocet_prijato": 1,
       "pocet_zamitnuto": 0,
       "kategorie": "interpelace",
-      "tema_svejk": "Interpelace — ministr odpovídal, poslanci nebyli spokojeni.",
+      "tema_svejk": "Interpelace, ministr odpovídal, poslanci nebyli spokojeni.",
       "tema_vysvetleni": "Hlasovalo se, jestli jsou odpovědi ministrů dostačující."
     },
     {
@@ -846,7 +846,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Živnostníkům klesnou odvody na sociálním pojištění.",
-      "tema_vysvetleni": "Minimální záloha klesne z 5 720 Kč na 5 005 Kč měsíčně — ušetří cca 715 korun. Platí od ledna, přeplatek vrátí. Zaměstnanec? To se vás netýká. Míň odvodů, míň důchod."
+      "tema_vysvetleni": "Minimální záloha klesne z 5 720 Kč na 5 005 Kč měsíčně, ušetří cca 715 korun. Platí od ledna, přeplatek vrátí. Zaměstnanec? To se vás netýká. Míň odvodů, míň důchod."
     },
     {
       "slug": "novela-z-stavebni-zakon",
@@ -905,7 +905,7 @@
       "pocet_prijato": 1,
       "pocet_zamitnuto": 43,
       "kategorie": "substantivni",
-      "tema_svejk": "Stavební zákon — další kolo.",
+      "tema_svejk": "Stavební zákon, další kolo.",
       "tema_vysvetleni": "Hlasování o pozměňovacích návrzích ke stavebnímu zákonu. Dlouhodobě se týká každého, kdo staví nebo rekonstruuje."
     },
     {
@@ -925,7 +925,7 @@
       "pocet_prijato": 1,
       "pocet_zamitnuto": 3,
       "kategorie": "substantivni",
-      "tema_svejk": "Penze — třikrát ne, pak jo. Typická sněmovní logika.",
+      "tema_svejk": "Penze, třikrát ne, pak jo. Typická sněmovní logika.",
       "tema_vysvetleni": "Návrh o penzijním spoření nejdřív zamítli, pak jiné varianty prošly."
     },
     {
@@ -947,7 +947,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela z. o investičních společnostech - EU",
-      "tema_vysvetleni": "Technická nebo procedurální věc — dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "novela-z-o-rostlinolekarske-peci-eu",
@@ -963,7 +963,7 @@
       "pocet_prijato": 1,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "EU pravidla pro postřiky — prošlo bez velkého povyku.",
+      "tema_svejk": "EU pravidla pro postřiky, prošlo bez velkého povyku.",
       "tema_vysvetleni": "Technická novela o rostlinolékařské péči."
     }
   ]
