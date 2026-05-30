@@ -29,6 +29,7 @@ class NewsletterConfig:
     privacy_url: str
     site_url: str
     feed_url: str
+    show_subscribe: bool
 
     @property
     def enabled(self) -> bool:
@@ -45,10 +46,13 @@ class NewsletterConfig:
         site = _site_url()
         feed = f"{site}/feed.xml"
         subscribe_api_url = (os.environ.get("SVEJK_SUBSCRIBE_API_URL") or "").strip()
+        show_raw = os.environ.get("SVEJK_SHOW_SUBSCRIBE", "").strip().lower()
+        show_subscribe = show_raw in ("1", "true", "yes")
         return cls(
             form_action=form_action,
             subscribe_api_url=subscribe_api_url,
             privacy_url="https://ecomail.cz/gdpr",
             site_url=site,
             feed_url=feed,
+            show_subscribe=show_subscribe,
         )
