@@ -87,7 +87,7 @@ npx wrangler@4 deploy
 
 URL z výstupu `wrangler deploy` (např. `https://poslusnehlasim-subscribe.xxx.workers.dev`) dej do GitHub Secret **`SVEJK_SUBSCRIBE_API_URL`** a znovu deployni web.
 
-Bez workeru funguje režim **`custom`** (vlastní formulář + Ecomail XHR). Výchozí je **`widget`** — oficiální embed snippet z Ecomailu (script + `#f-2-…` div).
+Bez workeru funguje režim **`custom`** (vlastní formulář + Ecomail XHR). Výchozí je **`custom`** — oranžový formulář ve stylu webu (XHR bez preflight, funguje v prohlížeči). **`widget`** = embed snippet z Ecomailu.
 
 ```bash
 # výchozí: Ecomail widget (design z editoru v Ecomailu)

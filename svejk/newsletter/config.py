@@ -79,9 +79,9 @@ class NewsletterConfig:
         site = _site_url()
         feed = f"{site}/feed.xml"
         subscribe_api_url = (os.environ.get("SVEJK_SUBSCRIBE_API_URL") or "").strip()
-        subscribe_mode = os.environ.get("SVEJK_SUBSCRIBE_MODE", "widget").strip().lower()
+        subscribe_mode = os.environ.get("SVEJK_SUBSCRIBE_MODE", "custom").strip().lower()
         if subscribe_mode not in ("widget", "custom", "worker"):
-            subscribe_mode = "widget"
+            subscribe_mode = "custom"
         show_raw = os.environ.get("SVEJK_SHOW_SUBSCRIBE", "").strip().lower()
         if not show_raw:
             show_subscribe = bool(form_action or subscribe_api_url)

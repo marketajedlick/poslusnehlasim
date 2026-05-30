@@ -382,13 +382,29 @@
   function submitViaEcomail(form, email, btn, formAction) {
     return fetch(formAction, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "X-Requested-With": "XMLHttpRequest",
-      },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({ email: email }).toString(),
+      credentials: "omit",
     })
-      .then(function (res) { return res.json(); })
+      .then(function (res) {
+        const ct = (res.headers.get("content-type") || "").toLowerCase();
+        if (ct.includes("application/json")) {
+          return res.json();
+        }
+        return res.text().then(function (html) {
+          if (/registrov[aá]n/i.test(html)) {
+            return { success: true, already: true };
+          }
+          if (/alert-danger[^>]*>([^<]+)/i.test(html)) {
+            const m = html.match(/alert-danger[^>]*>([^<]+)/i);
+            return { success: false, message: m ? m[1].trim() : "" };
+          }
+          if (/D[eě]kujeme|success/i.test(html)) {
+            return { success: true };
+          }
+          return { success: false, message: "" };
+        });
+      })
       .then(function (data) {
         if (data && data.success) {
           showSuccess(form);
