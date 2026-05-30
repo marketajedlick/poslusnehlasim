@@ -263,34 +263,23 @@ body.is-turning{ pointer-events:none; }
 
 /* ---------- subscribe ---------- */
 .subscribe{
-  margin-top:28px; padding:22px 20px 20px;
-  border:2px solid rgba(33,28,20,.18);
-  background:rgba(232,220,191,.55);
+  margin-top:24px; padding:20px 0 0;
+  border-top:1px solid rgba(33,28,20,.14);
 }
-.subscribe-title{
-  font-family:'Oswald',sans-serif; font-weight:600; text-transform:uppercase;
-  letter-spacing:.12em; font-size:13px; margin:0 0 10px; color:var(--ink);
+.subscribe-gloss{
+  margin:0 0 14px;
+  font-family:'Old Standard TT',serif; font-style:italic;
+  font-size:17px; line-height:1.45; color:var(--ink-soft);
+  max-width:48ch;
 }
-.subscribe-lead{
-  margin:0 0 16px; font-size:16px; line-height:1.45; color:var(--ink-soft);
-  max-width:52ch;
-}
-.subscribe-wait{
-  margin:0 0 12px; font-size:15px; line-height:1.4; color:var(--ink-soft);
-}
-.subscribe-wait code{ font-size:.9em; }
 .subscribe-form{ margin:0; }
 .subscribe-hp{
   position:absolute; left:-9999px; width:1px; height:1px; opacity:0;
 }
-.subscribe-label{
-  display:block;
-  font-family:'Oswald',sans-serif; font-weight:600; text-transform:uppercase;
-  letter-spacing:.1em; font-size:11px; margin-bottom:8px; color:var(--ink-soft);
-}
 .subscribe-row{
   display:flex; flex-wrap:wrap; gap:10px; align-items:stretch;
 }
+.subscribe-row--disabled{ opacity:.45; pointer-events:none; }
 .subscribe-input{
   flex:1 1 12rem; min-width:0;
   font-family:'Old Standard TT',serif; font-size:17px;
@@ -308,10 +297,7 @@ body.is-turning{ pointer-events:none; }
   flex:0 0 auto;
 }
 .subscribe-btn:hover{ filter:brightness(1.05); }
-.subscribe-note{
-  margin:14px 0 0; font-size:13px; line-height:1.4; color:var(--ink-soft);
-}
-.subscribe-note a{ color:var(--blue); }
+.subscribe-btn:disabled{ cursor:default; }
 
 /* ---------- nav (mobile) ---------- */
 .edition-nav{
@@ -474,8 +460,8 @@ body.is-turning{ pointer-events:none; }
   .verdict .q{ font-size:38px; line-height:1.18; padding-left:74px; }
   .verdict .sign{ letter-spacing:.26em; font-size:11px; margin:18px 0 0 74px; }
 
-  .subscribe{ margin-top:32px; padding:28px 30px 24px; }
-  .subscribe-lead{ font-size:17px; max-width:none; }
+  .subscribe{ margin-top:28px; padding-top:24px; }
+  .subscribe-gloss{ font-size:18px; max-width:none; }
   .subscribe-input{ font-size:18px; padding:12px 14px; }
   .subscribe-btn{ font-size:15px; padding:12px 22px; }
 
