@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#c9bda3" />
+<style>.stagewrap,.stack{width:100%;max-width:100%;margin:0 auto}@media(min-width:721px){.stagewrap,.stack{width:840px;max-width:840px}}</style>
 <title>Poslušně hlásím — {{ datum_design }}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -127,7 +129,9 @@
   (function(){
     const FADE = 620;
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mobile = window.matchMedia('(max-width: 720px)');
     const canFetch = location.protocol !== 'file:';
+    const usePageTurn = canFetch && !mobile.matches && !reduced;
 
     const pageTop = document.getElementById('page-top');
     const pageSlot = document.getElementById('page-slot');
@@ -136,25 +140,9 @@
     const frontSheet = document.getElementById('page-front-sheet');
     let turning = false;
 
-    function fit(){
-      const stage = document.getElementById('stage');
-      if (!stage) return;
-      if (window.matchMedia('(max-width: 720px)').matches){
-        stage.style.transform = 'none';
-        return;
-      }
-      stage.style.transform = 'scale(' + Math.min(1, (window.innerWidth - 32) / 840) + ')';
-    }
-
-    function probeWidth(){
-      return window.matchMedia('(max-width: 720px)').matches
-        ? Math.min(window.innerWidth - 20, 840) + 'px'
-        : '840px';
-    }
-
     function measureSheet(html){
       const probe = document.createElement('div');
-      probe.style.cssText = 'position:absolute;left:-9999px;top:0;width:' + probeWidth() + ';visibility:hidden;pointer-events:none';
+      probe.style.cssText = 'position:absolute;left:-9999px;top:0;width:840px;visibility:hidden;pointer-events:none';
       probe.innerHTML = '<div class="sheet-shape">' + html + '</div>';
       document.body.appendChild(probe);
       const h = probe.offsetHeight;
@@ -238,7 +226,6 @@
       applyNav(page.navEl);
       document.title = page.title;
       history.pushState({ href: page.url }, '', new URL(page.url, location.href).pathname);
-      fit();
     }
 
     function swapStack(page, done){
@@ -275,9 +262,9 @@
       });
     }
 
-    async function navigateStack(href, direction){
+    async function navigateStack(href){
       if (!href || turning) return;
-      if (!canFetch || !pageTop){
+      if (!usePageTurn || !pageTop){
         location.href = href;
         return;
       }
@@ -306,25 +293,26 @@
       const link = e.target.closest('.edition-arrow.prev:not(.disabled), .edition-arrow.next:not(.disabled)');
       if (!link || !link.href) return;
       e.preventDefault();
-      navigateStack(link.href, link.classList.contains('next') ? 'next' : 'prev');
+      navigateStack(link.href);
     });
 
     document.addEventListener('keydown', (e) => {
+      if (!usePageTurn) return;
       if (e.target && ['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) return;
       const prev = document.querySelector('.edition-arrow.prev:not(.disabled)');
       const next = document.querySelector('.edition-arrow.next:not(.disabled)');
       if (e.key === 'ArrowLeft' && prev?.href){
         e.preventDefault();
-        navigateStack(prev.href, 'prev');
+        navigateStack(prev.href);
       }
       if (e.key === 'ArrowRight' && next?.href){
         e.preventDefault();
-        navigateStack(next.href, 'next');
+        navigateStack(next.href);
       }
     });
 
     window.addEventListener('popstate', async () => {
-      if (!canFetch || turning) return;
+      if (!usePageTurn || turning) return;
       try {
         commitPage(await fetchPage(history.state?.href || location.href));
       } catch {
@@ -332,10 +320,7 @@
       }
     });
 
-    window.addEventListener('resize', fit);
-    if (document.fonts?.ready) document.fonts.ready.then(fit);
-    fit();
-    history.replaceState({ href: location.href }, '', location.href);
+    if (usePageTurn) history.replaceState({ href: location.href }, '', location.href);
   })();
 </script>
 </body>
