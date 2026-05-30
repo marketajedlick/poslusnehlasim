@@ -128,6 +128,14 @@
   </div>
 </div>
 
+<iframe
+  name="buttondown-subscribe"
+  class="subscribe-hidden-frame"
+  title=""
+  tabindex="-1"
+  aria-hidden="true"
+></iframe>
+
 <script>
   (function(){
     const FADE = 620;
@@ -335,23 +343,18 @@
 
   const FRAME_NAME = "buttondown-subscribe";
 
-  function setStatus(form, message, kind) {
-    const statusEl = form.querySelector(".subscribe-status");
-    if (!statusEl) return;
-    statusEl.hidden = !message;
-    statusEl.textContent = message || "";
-    statusEl.className = "subscribe-status" + (kind ? " subscribe-status--" + kind : "");
-  }
-
   function showSuccess(form) {
+    const row = form.querySelector(".subscribe-row");
+    const emailInput = form.querySelector('input[name="email"]');
     const successEl = form.querySelector(".subscribe-success");
-    const verify = form.querySelector(".subscribe-verify");
-    form.classList.remove("subscribe-form--pending");
+    if (emailInput) {
+      emailInput.value = "";
+      emailInput.disabled = true;
+    }
+    if (row) row.hidden = true;
     form.classList.add("subscribe-form--success");
     form.closest(".subscribe")?.classList.add("subscribe--success");
     if (successEl) successEl.hidden = false;
-    if (verify) verify.setAttribute("aria-hidden", "true");
-    setStatus(form, "", "");
   }
 
   document.addEventListener("submit", function (e) {
@@ -360,9 +363,6 @@
     e.preventDefault();
     if (form.querySelector(".subscribe-hp")?.value) return;
 
-    const verify = form.querySelector(".subscribe-verify");
-    const frame = form.querySelector(".subscribe-frame");
-    const btn = form.querySelector(".subscribe-btn");
     const emailInput = form.querySelector('input[name="email"]');
     const email = emailInput?.value?.trim() || "";
     if (!email) {
@@ -370,30 +370,14 @@
       return;
     }
 
-    btn.disabled = true;
-    form.classList.add("subscribe-form--pending");
-    if (verify) verify.setAttribute("aria-hidden", "false");
-    if (frame) frame.dataset.loads = "0";
-    setStatus(form, "Poslušně hlásím, odesílám…", "wait");
-
-    if (frame && !frame.dataset.ready) {
-      frame.dataset.ready = "1";
-      frame.addEventListener("load", function () {
-        if (!form.classList.contains("subscribe-form--pending")) return;
-        const loads = Number(frame.dataset.loads || "0") + 1;
-        frame.dataset.loads = String(loads);
-        if (loads >= 2) {
-          showSuccess(form);
-          return;
-        }
-        setStatus(form, "Potvrď čtvereček níže — a pak tlačítko v ověření.", "wait");
-        btn.disabled = false;
-      });
-    }
+    const btn = form.querySelector(".subscribe-btn");
+    if (btn) btn.disabled = true;
 
     form.target = FRAME_NAME;
     HTMLFormElement.prototype.submit.call(form);
     form.removeAttribute("target");
+
+    showSuccess(form);
   });
 })();
 </script>
