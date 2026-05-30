@@ -41,6 +41,31 @@ def _redirect_html(target: str) -> str:
     )
 
 
+def _render_edition_html(
+    edition,
+    obdobi: int,
+    *,
+    base: str,
+    css_href: str,
+) -> str | None:
+    paths = SchuzePaths.create(edition.obdobi, edition.schuze)
+    d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
+    day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
+    if not day_path.is_file():
+        return None
+    content = build_den_content(day_path, paths)
+    return render_den_html(
+        content,
+        paths,
+        day_path,
+        inline_css=False,
+        css_href=css_href,
+        link_mode="pages",
+        obdobi=obdobi,
+        base_path=base,
+    )
+
+
 def run_export_pages(
     obdobi: int,
     out_dir: Path | str,
@@ -74,22 +99,9 @@ def run_export_pages(
 
     written: list[str] = []
     for edition in editions:
-        paths = SchuzePaths.create(edition.obdobi, edition.schuze)
-        d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
-        day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
-        if not day_path.is_file():
+        html = _render_edition_html(edition, obdobi, base=base, css_href=css_href)
+        if html is None:
             continue
-        content = build_den_content(day_path, paths)
-        html = render_den_html(
-            content,
-            paths,
-            day_path,
-            inline_css=False,
-            css_href=css_href,
-            link_mode="pages",
-            obdobi=obdobi,
-            base_path=base,
-        )
         dest = out / "noviny" / str(edition.obdobi) / str(edition.schuze) / f"{edition.datum_unl}.html"
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(html, encoding="utf-8")
@@ -111,7 +123,11 @@ def run_export_pages(
 
     latest = editions[-1]
     latest_href = edition_pages_href(latest.obdobi, latest.schuze, latest.datum_unl, base)
-    (out / "index.html").write_text(_redirect_html(latest_href), encoding="utf-8")
+    latest_html = _render_edition_html(latest, obdobi, base=base, css_href=css_href)
+    if latest_html is None:
+        (out / "index.html").write_text(_redirect_html(latest_href), encoding="utf-8")
+    else:
+        (out / "index.html").write_text(latest_html, encoding="utf-8")
 
     page_count = sum(1 for p in written if p.endswith(".html") and p.count("/") >= 3)
     return {

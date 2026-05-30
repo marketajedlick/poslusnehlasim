@@ -48,8 +48,8 @@ jobs:
       - name: Export static site
         env:
           SVEJK_BASE_PATH: ""
-          SVEJK_PAGES_CNAME: www.poslusnehlasim.cz
-        run: ./run-svejk.sh export-pages --obdobi 2025 --out site --cname www.poslusnehlasim.cz
+          SVEJK_PAGES_CNAME: poslusnehlasim.cz
+        run: ./run-svejk.sh export-pages --obdobi 2025 --out site --cname poslusnehlasim.cz
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
