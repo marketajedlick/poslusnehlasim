@@ -1,4 +1,4 @@
-"""Vtipné leady, krátké „Co to znamená“ a napojení na listy."""
+"""Švejkovský lead + pointa pod nadpisem; věcné vysvětlení v „Co to znamená“."""
 
 from __future__ import annotations
 
@@ -10,12 +10,13 @@ from svejk.listy import (
     _lead_veta,
     _nadpis_bodu,
     _pointa_jednou,
+    _prekryvaji,
 )
 from svejk.obcansky import GENERIC_GLOSA_MARKERS
 from svejk.text_norm import bez_dlouhych_pomlc
 from svejk.timeline import BlokDne
 
-_MEAN_MAX_LEN = 160
+_VYSVETLENI_MAX_LEN = 280
 
 _GENERIC_VYSV = (
     "technická nebo procedurální",
@@ -51,6 +52,13 @@ def blok_z_fact_topic(fact: dict[str, Any], topic: dict[str, Any] | None) -> Blo
     )
 
 
+def glosa_generic(vysv: str) -> bool:
+    if not vysv:
+        return True
+    low = vysv.lower()
+    return any(g in low for g in GENERIC_GLOSA_MARKERS + _GENERIC_VYSV)
+
+
 def vysv_je_witty(vysv: str) -> bool:
     if not (vysv or "").strip():
         return False
@@ -76,7 +84,7 @@ def _prvni_veta(text: str) -> str:
     return v
 
 
-def _zkrat_mean(text: str, *, max_len: int = _MEAN_MAX_LEN) -> str:
+def _zkrat(text: str, *, max_len: int = _VYSVETLENI_MAX_LEN) -> str:
     t = (text or "").strip()
     if not t or len(t) <= max_len:
         return t
@@ -92,7 +100,7 @@ def _zkrat_mean(text: str, *, max_len: int = _MEAN_MAX_LEN) -> str:
     return t[: max_len - 1].rstrip() + "…"
 
 
-def mean_z_vysvetleni(vysv: str, lead: str) -> str:
+def _pointa_z_vysvetleni(vysv: str, glosa: str) -> str:
     if not vysv_je_witty(vysv):
         return ""
 
@@ -101,39 +109,50 @@ def mean_z_vysvetleni(vysv: str, lead: str) -> str:
         return "Vás doma to netankuje, to je spíš věc pro sestry."
 
     if "715" in vysv and "míň důchod" in low:
-        return "úspora cca 715 Kč měsíčně. Míň odvodů, míň důchod, to už je jiná kapitola."
+        return "Míň odvodů, míň důchod, to už je jiná kapitola."
 
     vysv = bez_dlouhych_pomlc(vysv)
+    vety = re.split(r"(?<=[.!?])\s+", vysv.strip())
+    tail = [v for v in vety[1:] if v.strip()]
+    skip = ("platí od ledna", "přeplatek vrátí", "zaměstnanec?")
+    for v in tail:
+        if any(s in v.lower() for s in skip):
+            continue
+        if any(m in v.lower() for m in _WITTY_MARKERS + ("spíš", "jiná kapitola")):
+            t = v if v.endswith((".", "!", "?")) else f"{v}."
+            if glosa and not _prekryvaji(t, glosa, prag=0.45):
+                return t
     if ", " in vysv:
         right = vysv.split(", ", 1)[1].strip()
         if right and any(m in right.lower() for m in _WITTY_MARKERS + ("spíš",)):
             if "netankuje" in right.lower():
                 return "Vás doma to netankuje, to je spíš věc pro sestry."
-            if not right.endswith((".", "!", "?")):
-                right += "."
-            return _zkrat_mean(right)
-
-    vety = re.split(r"(?<=[.!?])\s+", vysv.strip())
-    tail = [v for v in vety[1:] if v.strip()]
-    skip = ("platí od ledna", "přeplatek vrátí")
-    picked = [v for v in tail if not any(s in v.lower() for s in skip)]
-    if not picked and len(vety) >= 2:
-        picked = [vety[-1]]
-    if picked:
-        text = " ".join(picked)
-        if lead and lead.rstrip(".") in text:
-            text = text.replace(lead.rstrip("."), "", 1).strip(" .")
-        return _zkrat_mean(text)
+            t = right if right.endswith((".", "!", "?")) else f"{right}."
+            if glosa and not _prekryvaji(t, glosa, prag=0.45):
+                return t
     return ""
 
 
-def nadpis_z_clanku(fact: dict[str, Any], topic: dict[str, Any] | None) -> str:
-    if (fact.get("nadpis") or "").strip():
-        return fact["nadpis"].strip()
-    return _nadpis_bodu(blok_z_fact_topic(fact, topic)) or fact.get("slug", "")
+def _pointa_pod_nadpis(
+    fact: dict[str, Any],
+    topic: dict[str, Any] | None,
+    glosa: str,
+    *,
+    state: dict,
+) -> str:
+    if (fact.get("pointa") or "").strip():
+        return fact["pointa"].strip()
+
+    vysv = (topic or {}).get("tema_vysvetleni") or ""
+    p = _pointa_z_vysvetleni(vysv, glosa)
+    if p:
+        return p
+
+    blok = blok_z_fact_topic(fact, topic)
+    return (_pointa_jednou(blok, glosa, "", state=state) or "").strip()
 
 
-def lead_z_clanku(
+def _glosa_svejkova(
     fact: dict[str, Any],
     topic: dict[str, Any] | None,
     *,
@@ -148,17 +167,6 @@ def lead_z_clanku(
     vysv = (topic or {}).get("tema_vysvetleni") or ""
     listy_lead = _lead_veta(blok, state=state, use_poslusne=use_poslusne)
     if listy_lead:
-        low = listy_lead.lower()
-        if vysv_je_witty(vysv) and (
-            "schválili změny v " in low or "zamítli změny v " in low
-        ):
-            first = _prvni_veta(vysv)
-            if first:
-                if use_poslusne and state.get("poslusne_count", 0) < 1:
-                    state["poslusne_count"] = state.get("poslusne_count", 0) + 1
-                    body = first[0].lower() + first[1:]
-                    return f"Poslušně hlásím, že {body}"
-                return first
         return listy_lead
 
     if vysv_je_witty(vysv):
@@ -173,6 +181,86 @@ def lead_z_clanku(
     return fallback()
 
 
+def lead_svejkovsky(
+    fact: dict[str, Any],
+    topic: dict[str, Any] | None,
+    *,
+    state: dict,
+    use_poslusne: bool,
+    fallback: Callable[[], str],
+) -> str:
+    """Pod nadpisem: švejkovská glosa a případná pointa."""
+    glosa = _glosa_svejkova(
+        fact, topic, state=state, use_poslusne=use_poslusne, fallback=fallback
+    )
+    if not glosa:
+        return ""
+
+    pointa = _pointa_pod_nadpis(fact, topic, glosa, state=state)
+    if not pointa or _prekryvaji(pointa, glosa, prag=0.5):
+        return glosa
+    return f"{glosa.rstrip()} {pointa}"
+
+
+def _faktualni_z_vysvetleni(vysv: str, glosa: str) -> str:
+    if not vysv or glosa_generic(vysv):
+        return ""
+    vysv = bez_dlouhych_pomlc(vysv)
+    first = _prvni_veta(vysv)
+    if not first:
+        return ""
+    if glosa and _prekryvaji(first, glosa, prag=0.55):
+        return ""
+    if vysv_je_witty(vysv) and any(m in first.lower() for m in _WITTY_MARKERS):
+        return ""
+    return first
+
+
+def mean_vysvetleni(
+    fact: dict[str, Any],
+    topic: dict[str, Any] | None,
+    svejk_lead: str,
+    *,
+    dopad_fallback: str,
+    mean_from_dopad: Callable[[str, str], str],
+) -> str:
+    """Co to znamená: jen věcné vysvětlení, bez švejkovské pointy."""
+    if (fact.get("mean") or "").strip():
+        return _zkrat(fact["mean"].strip())
+
+    vysv = (topic or {}).get("tema_vysvetleni") or ""
+    factual = _faktualni_z_vysvetleni(vysv, svejk_lead)
+    if factual:
+        return _zkrat(factual)
+
+    blok = blok_z_fact_topic(fact, topic)
+    listy_mean = _co_to_znamena(blok, svejk_lead)
+    if listy_mean:
+        return _zkrat(listy_mean)
+
+    return _zkrat(mean_from_dopad(dopad_fallback, svejk_lead))
+
+
+def nadpis_z_clanku(fact: dict[str, Any], topic: dict[str, Any] | None) -> str:
+    if (fact.get("nadpis") or "").strip():
+        return fact["nadpis"].strip()
+    return _nadpis_bodu(blok_z_fact_topic(fact, topic)) or fact.get("slug", "")
+
+
+# zpětná kompatibilita pro review / staré importy
+def lead_z_clanku(
+    fact: dict[str, Any],
+    topic: dict[str, Any] | None,
+    *,
+    state: dict,
+    use_poslusne: bool,
+    fallback: Callable[[], str],
+) -> str:
+    return lead_svejkovsky(
+        fact, topic, state=state, use_poslusne=use_poslusne, fallback=fallback
+    )
+
+
 def mean_z_clanku(
     fact: dict[str, Any],
     topic: dict[str, Any] | None,
@@ -182,26 +270,10 @@ def mean_z_clanku(
     dopad_fallback: str,
     mean_from_dopad: Callable[[str, str], str],
 ) -> str:
-    if (fact.get("mean") or "").strip():
-        return _zkrat_mean(fact["mean"].strip())
-
-    vysv = (topic or {}).get("tema_vysvetleni") or ""
-    witty = mean_z_vysvetleni(vysv, lead)
-    if witty:
-        return witty
-
-    blok = blok_z_fact_topic(fact, topic)
-    listy_mean = _co_to_znamena(blok, lead)
-    if listy_mean:
-        pt = _pointa_jednou(blok, lead, listy_mean, state=state)
-        text = f"{listy_mean} {pt}".strip() if pt else listy_mean
-        return _zkrat_mean(text)
-
-    return _zkrat_mean(mean_from_dopad(dopad_fallback, lead))
-
-
-def glosa_generic(vysv: str) -> bool:
-    if not vysv:
-        return True
-    low = vysv.lower()
-    return any(g in low for g in GENERIC_GLOSA_MARKERS + _GENERIC_VYSV)
+    return mean_vysvetleni(
+        fact,
+        topic,
+        lead,
+        dopad_fallback=dopad_fallback,
+        mean_from_dopad=mean_from_dopad,
+    )

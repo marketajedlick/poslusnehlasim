@@ -12,8 +12,8 @@ from svejk.build.io import read_json
 from svejk.text_norm import bez_dlouhych_pomlc
 from svejk.build.witty import (
     glosa_generic,
-    lead_z_clanku,
-    mean_z_clanku,
+    lead_svejkovsky,
+    mean_vysvetleni,
     nadpis_z_clanku,
 )
 from svejk.listy import (
@@ -419,25 +419,20 @@ def build_den_content(
             return lead
 
         use_poslusne = num == 1
-        short_lead = lead_z_clanku(
+        svejk_lead = lead_svejkovsky(
             fact,
             topic,
             state=state,
             use_poslusne=use_poslusne,
             fallback=_lead_fallback,
         )
-        mean = mean_z_clanku(
+        vysvetleni = mean_vysvetleni(
             fact,
             topic,
-            short_lead,
-            state=state,
+            svejk_lead,
             dopad_fallback=dopad,
             mean_from_dopad=_mean_z_dopadu,
         )
-        # Pod nadpisem = švejkovská pointa; „Co to znamená“ = věcnější glosa.
-        pod_nadpisem, co_znamena = mean, short_lead
-        if not pod_nadpisem:
-            pod_nadpisem, co_znamena = short_lead, mean
         items_meta[str(num)] = {"pocet_hlasovani": ph, "slug": slug}
         content.items.append(
             DenItem(
@@ -445,8 +440,8 @@ def build_den_content(
                 kick=_kick_z_fact(fact),
                 nadpis=nadpis,
                 nadpis_radky=split_nadpis_radky(nadpis),
-                lead=pod_nadpisem,
-                mean=co_znamena,
+                lead=svejk_lead,
+                mean=vysvetleni,
                 dopad=dopad,
                 parliament_lead=parliament_lead,
                 verdikt=fact.get("verdikt", "schvaleno"),
