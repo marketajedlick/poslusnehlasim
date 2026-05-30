@@ -57,8 +57,8 @@ class NewsletterConfig:
 
     @property
     def use_custom_form(self) -> bool:
-        """Vlastní formulář jen s API workerem; jinak Ecomail widget (robotcheck)."""
-        return bool(self.subscribe_api_url)
+        """Vlastní formulář s odesláním na Ecomail (XHR) nebo volitelně worker API."""
+        return bool(self.form_action or self.subscribe_api_url)
 
     @classmethod
     def from_env(cls) -> NewsletterConfig:

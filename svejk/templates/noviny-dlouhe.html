@@ -356,8 +356,52 @@
     errorEl.hidden = false;
   }
 
+  function resetBtn(btn) {
+    if (!btn) return;
+    btn.disabled = false;
+    btn.textContent = btn.dataset.label || "Poslušně odebírat";
+  }
+
+  function submitViaWorker(form, email, btn, apiUrl) {
+    return fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: email,
+        website: form.querySelector(".subscribe-hp")?.value || "",
+      }),
+    }).then(function (res) {
+      if (res.ok) {
+        showSuccess(form);
+        return;
+      }
+      throw new Error("worker");
+    });
+  }
+
+  function submitViaEcomail(form, email, btn, formAction) {
+    return fetch(formAction, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "X-Requested-With": "XMLHttpRequest",
+      },
+      body: new URLSearchParams({ email: email }).toString(),
+    })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data && data.success) {
+          showSuccess(form);
+          return;
+        }
+        const msg = (data && data.message) ? String(data.message) : "";
+        showError(form, msg || "Odběr se nepodařil. Zkontroluj e-mail a zkus to znovu.");
+        resetBtn(btn);
+      });
+  }
+
   document.addEventListener("submit", function (e) {
-    const form = e.target.closest(".subscribe-form[data-subscribe-api]");
+    const form = e.target.closest(".subscribe-form[data-form-action], .subscribe-form[data-subscribe-api]");
     if (!form || form.classList.contains("subscribe-form--success")) return;
     e.preventDefault();
     if (form.querySelector(".subscribe-hp")?.value) return;
@@ -371,7 +415,7 @@
 
     const btn = form.querySelector(".subscribe-btn");
     const apiUrl = form.dataset.subscribeApi;
-    if (!apiUrl) return;
+    const formAction = form.dataset.formAction;
 
     if (btn) {
       btn.disabled = true;
@@ -379,32 +423,14 @@
       btn.textContent = "Odesílám…";
     }
 
-    fetch(apiUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: email,
-        website: form.querySelector(".subscribe-hp")?.value || "",
-      }),
-    })
-      .then(function (res) {
-        if (res.ok) {
-          showSuccess(form);
-          return;
-        }
-        showError(form, "Odběr se nepodařil odeslat. Zkus to znovu za chvíli.");
-        if (btn) {
-          btn.disabled = false;
-          btn.textContent = btn.dataset.label || "Poslušně odebírat";
-        }
-      })
-      .catch(function () {
-        showError(form, "Odběr teď nejde odeslat. Zkontroluj připojení a zkus to znovu.");
-        if (btn) {
-          btn.disabled = false;
-          btn.textContent = btn.dataset.label || "Poslušně odebírat";
-        }
-      });
+    const done = apiUrl
+      ? submitViaWorker(form, email, btn, apiUrl)
+      : submitViaEcomail(form, email, btn, formAction);
+
+    done.catch(function () {
+      showError(form, "Odběr teď nejde odeslat. Zkontroluj připojení a zkus to znovu.");
+      resetBtn(btn);
+    });
   });
 })();
 </script>

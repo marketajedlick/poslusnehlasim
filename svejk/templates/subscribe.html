@@ -4,10 +4,11 @@
           {% if newsletter.use_custom_form %}
           <form
             class="subscribe-form"
-            action="#"
+            action="{{ newsletter.form_action or '#' }}"
             method="post"
             novalidate
-            data-subscribe-api="{{ newsletter.subscribe_api_url }}"
+            data-form-action="{{ newsletter.form_action }}"
+            {% if newsletter.subscribe_api_url %}data-subscribe-api="{{ newsletter.subscribe_api_url }}"{% endif %}
           >
             <input type="text" name="website" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
             <div class="subscribe-row">
@@ -25,19 +26,6 @@
             <p class="subscribe-error" hidden role="alert"></p>
             <p class="subscribe-success" hidden>Poslušně hlásím — jsi zapsaný. Zkontroluj e-mail pro potvrzení.</p>
           </form>
-          {% elif newsletter.embed_widget_id %}
-          <div class="subscribe-embed" aria-label="Ecomail formulář odběru">
-            <div id="{{ newsletter.embed_mount_id }}"></div>
-            <script>
-              (function (w,d,s,o,f,js,fjs) {
-                w['ecm-widget']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};
-                js=d.createElement(s), fjs=d.getElementsByTagName(s)[0];
-                js.id='{{ newsletter.embed_widget_id }}';
-                js.dataset.a='{{ newsletter.embed_account }}';
-                js.src=f; js.async=1; fjs.parentNode.insertBefore(js,fjs);
-              }(window,document,'script','ecmwidget','{{ newsletter.embed_widget_js }}'));
-            </script>
-          </div>
           {% elif newsletter.form_action %}
           <p class="subscribe-fallback">
             <a class="subscribe-btn subscribe-btn--link" href="{{ newsletter.form_action }}" rel="noopener">Poslušně odebírat</a>
