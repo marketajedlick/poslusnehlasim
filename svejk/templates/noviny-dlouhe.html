@@ -344,23 +344,15 @@
   }
 
   function showSuccess(form) {
-    const section = form.closest(".subscribe");
     const successEl = form.querySelector(".subscribe-success");
-    const panel = section?.querySelector(".subscribe-frame-panel");
+    const verify = form.querySelector(".subscribe-verify");
+    form.classList.remove("subscribe-form--pending");
     form.classList.add("subscribe-form--success");
-    if (section) section.classList.add("subscribe--success");
+    form.closest(".subscribe")?.classList.add("subscribe--success");
     if (successEl) successEl.hidden = false;
-    if (panel) panel.hidden = true;
+    if (verify) verify.setAttribute("aria-hidden", "true");
     setStatus(form, "", "");
   }
-
-  document.addEventListener("click", function (e) {
-    const done = e.target.closest(".subscribe-done");
-    if (!done) return;
-    const section = done.closest(".subscribe");
-    const form = section?.querySelector(".subscribe-form");
-    if (form) showSuccess(form);
-  });
 
   document.addEventListener("submit", function (e) {
     const form = e.target.closest(".subscribe-form");
@@ -368,10 +360,8 @@
     e.preventDefault();
     if (form.querySelector(".subscribe-hp")?.value) return;
 
-    const section = form.closest(".subscribe");
-    const panel = section?.querySelector(".subscribe-frame-panel");
-    const frame = section?.querySelector(".subscribe-frame");
-    const doneBtn = section?.querySelector(".subscribe-done");
+    const verify = form.querySelector(".subscribe-verify");
+    const frame = form.querySelector(".subscribe-frame");
     const btn = form.querySelector(".subscribe-btn");
     const emailInput = form.querySelector('input[name="email"]');
     const email = emailInput?.value?.trim() || "";
@@ -381,15 +371,22 @@
     }
 
     btn.disabled = true;
+    form.classList.add("subscribe-form--pending");
+    if (verify) verify.setAttribute("aria-hidden", "false");
+    if (frame) frame.dataset.loads = "0";
     setStatus(form, "Poslušně hlásím, odesílám…", "wait");
-    if (panel) panel.hidden = false;
-    if (doneBtn) doneBtn.hidden = true;
 
     if (frame && !frame.dataset.ready) {
       frame.dataset.ready = "1";
       frame.addEventListener("load", function () {
-        setStatus(form, "Dokončí v rámečku níže. Pak klikni na Hotovo.", "wait");
-        if (doneBtn) doneBtn.hidden = false;
+        if (!form.classList.contains("subscribe-form--pending")) return;
+        const loads = Number(frame.dataset.loads || "0") + 1;
+        frame.dataset.loads = String(loads);
+        if (loads >= 2) {
+          showSuccess(form);
+          return;
+        }
+        setStatus(form, "Potvrď čtvereček níže — a pak tlačítko v ověření.", "wait");
         btn.disabled = false;
       });
     }
