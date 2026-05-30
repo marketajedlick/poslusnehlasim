@@ -350,10 +350,10 @@
   }
 
   function submitViaPopup(form) {
-    const popup = window.open("about:blank", POPUP_NAME, "width=420,height=520,noopener");
+    const popup = window.open("about:blank", POPUP_NAME, "width=420,height=520");
     if (!popup) return false;
     form.target = POPUP_NAME;
-    HTMLFormElement.prototype.submit.call(form);
+    form.submit();
     form.removeAttribute("target");
     const timer = setInterval(function () {
       if (popup.closed) {
@@ -364,7 +364,7 @@
     return true;
   }
 
-  document.addEventListener("submit", async function (e) {
+  document.addEventListener("submit", function (e) {
     const form = e.target.closest(".subscribe-form");
     if (!form || form.classList.contains("subscribe-form--success")) return;
     e.preventDefault();
@@ -378,28 +378,33 @@
     }
 
     const btn = form.querySelector(".subscribe-btn");
-    if (btn) btn.disabled = true;
-
     const apiUrl = form.dataset.subscribeApi;
-    if (apiUrl) {
-      try {
-        const res = await fetch(apiUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: email,
-            website: form.querySelector(".subscribe-hp")?.value || "",
-          }),
-        });
+
+    if (!apiUrl) {
+      if (btn) btn.disabled = true;
+      if (!submitViaPopup(form) && btn) btn.disabled = false;
+      return;
+    }
+
+    if (btn) btn.disabled = true;
+    fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: email,
+        website: form.querySelector(".subscribe-hp")?.value || "",
+      }),
+    })
+      .then(function (res) {
         if (res.ok) {
           showSuccess(form);
           return;
         }
-      } catch (_) {}
-    }
-
-    if (submitViaPopup(form)) return;
-    if (btn) btn.disabled = false;
+        if (!submitViaPopup(form) && btn) btn.disabled = false;
+      })
+      .catch(function () {
+        if (!submitViaPopup(form) && btn) btn.disabled = false;
+      });
   });
 })();
 </script>

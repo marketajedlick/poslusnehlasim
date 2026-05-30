@@ -78,11 +78,12 @@ Veřejný Ecomail formulář vyžaduje robotcheck — skryté odeslání kontakt
 
 ```bash
 cd workers
-npm install -g wrangler   # jednorázově
-wrangler login
-wrangler secret put ECOMAIL_API_KEY
-wrangler deploy
+npx wrangler@4 login
+npx wrangler@4 secret put ECOMAIL_API_KEY
+npx wrangler@4 deploy
 ```
+
+(Pozor: `pip install wrangler` v conda je jiný balíček — vždy `npx wrangler@4`.)
 
 URL z výstupu `wrangler deploy` (např. `https://poslusnehlasim-subscribe.xxx.workers.dev`) dej do GitHub Secret **`SVEJK_SUBSCRIBE_API_URL`** a znovu deployni web.
 
