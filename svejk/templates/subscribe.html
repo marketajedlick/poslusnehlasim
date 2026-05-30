@@ -1,26 +1,31 @@
-<section class="subscribe" aria-labelledby="subscribe-heading">
-  <p class="subscribe-gloss" id="subscribe-heading">Do sněmovny sám nemusíš, nech mi tu email a pošleme ti nové vydání.</p>
-  <form
-    class="subscribe-form"
-    action="{{ newsletter.form_action }}"
-    method="post"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <input type="hidden" name="tag" value="poslusnehlasim" />
-    <input type="text" name="honeypot" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
-    <div class="subscribe-row">
-      <input
-        id="subscribe-email"
-        class="subscribe-input"
-        type="email"
-        name="email"
-        required
-        autocomplete="email"
-        aria-label="E-mail pro odběr novinek"
-        placeholder="vas@email.cz"
-      />
-      <button class="subscribe-btn" type="submit">Poslušně odebírat</button>
-    </div>
-  </form>
-</section>
+        <section class="subscribe" aria-label="Odběr novinek">
+          <p class="subscribe-gloss">Do sněmovny sám nemusíš, nech mi tu email a pošleme ti nové vydání.</p>
+          <form
+            class="subscribe-form"
+            action="{{ newsletter.form_action }}"
+            method="post"
+            novalidate
+          >
+            <input type="hidden" name="tag" value="poslusnehlasim" />
+            <input type="hidden" name="embed" value="1" />
+            <input type="text" name="honeypot" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
+            <div class="subscribe-row">
+              <input
+                class="subscribe-input"
+                type="email"
+                name="email"
+                required
+                autocomplete="email"
+                aria-label="E-mail pro odběr novinek"
+                placeholder="vas@email.cz"
+              />
+              <button class="subscribe-btn" type="submit">Poslušně odebírat</button>
+            </div>
+            <div class="subscribe-turnstile" aria-hidden="true"></div>
+            <div class="subscribe-success" hidden>
+              <p class="subscribe-success-title">Poslušně hlásím — jsi zapsaný.</p>
+              <p class="subscribe-success-note">Do emailu ti přijde potvrzení odběru. Bez kliknutí v něm to ještě nejede — koukni i do spamu.</p>
+            </div>
+            <p class="subscribe-status" role="status" aria-live="polite" hidden></p>
+          </form>
+        </section>
