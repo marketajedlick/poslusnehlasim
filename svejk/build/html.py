@@ -13,6 +13,7 @@ from svejk.paths import SchuzePaths
 _TEMPLATES = Path(__file__).resolve().parent.parent / "templates"
 _STATIC = Path(__file__).resolve().parent.parent / "static"
 _CSS = _STATIC / "noviny-dlouhe.css"
+_SVEJK_SVG = _STATIC / "svejk.svg"
 
 
 def static_css_path(base_path: str = "") -> str:
@@ -21,20 +22,20 @@ def static_css_path(base_path: str = "") -> str:
     return f"{base}{path}" if base else path
 
 
-def _proslo_label(n: int) -> str:
+def _proslo_board_label(n: int) -> str:
     if n == 1:
-        return "věc<br/>schválili"
+        return "věc schválili"
     if 2 <= n <= 4:
-        return "věci<br/>schválili"
-    return "věcí<br/>schválili"
+        return "věci schválili"
+    return "věcí schválili"
 
 
-def _zamitnuto_label(n: int) -> str:
+def _zamitnuto_board_label(n: int) -> str:
     if n == 1:
-        return "návrh<br/>zamítli"
+        return "návrh zamítli"
     if 2 <= n <= 4:
-        return "návrhy<br/>zamítli"
-    return "návrhů<br/>zamítli"
+        return "návrhy zamítli"
+    return "návrhů zamítli"
 
 
 def _jinja_env() -> Environment:
@@ -66,12 +67,14 @@ def render_den_html(
         obdobi=obdobi,
         base_path=base_path,
     )
+    svejk_svg = _SVEJK_SVG.read_text(encoding="utf-8") if _SVEJK_SVG.is_file() else ""
     tpl = _jinja_env().get_template("noviny-dlouhe.html")
     return tpl.render(
         content=content,
         datum_design=datum_design(content.datum, content.den),
-        proslo_label=_proslo_label(content.proslo),
-        zamitnuto_label=_zamitnuto_label(content.zamitnuto),
+        proslo_label=_proslo_board_label(content.proslo),
+        zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
+        svejk_svg=svejk_svg,
         inline_css=inline_css,
         css=css,
         css_href=css_href,

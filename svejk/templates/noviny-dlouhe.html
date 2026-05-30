@@ -6,7 +6,7 @@
 <title>Poslušně hlásím — {{ datum_design }}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 {% if inline_css %}
 <style>{{ css | safe }}</style>
 {% else %}
@@ -28,23 +28,50 @@
         <div class="sheet-shape" id="page-front-sheet">
             <div class="grain"></div>
             <div class="pad">
-        <div class="top">
-          <span class="e">Poslušně hlásím — deník sněmovny</span>
-          <span class="d">{{ datum_design }}</span>
+        <div class="head">
+          <div class="cal">
+            <div class="cal-wd">{{ content.cal_den }}</div>
+            <div class="cal-day">{{ content.cal_day }}</div>
+            <div class="cal-mo">{{ content.cal_month }}</div>
+          </div>
+          <div class="titleblock">
+            {% if svejk_svg %}
+            <div class="svejk">{{ svejk_svg | safe }}</div>
+            {% endif %}
+            <div class="eyebrow">deník sněmovny</div>
+            <h1 class="mast">POSLUŠNĚ <span class="terra">HLÁSÍM</span></h1>
+          </div>
         </div>
-        <h1 class="mast">POSLUŠNĚ <span class="terra">HLÁSÍM</span></h1>
-        <p class="lede"><b>Dnešní účet —</b> {{ content.dnesni_ucet }}</p>
         <hr class="hr" />
+
+        <div class="board">
+          <div class="board-kick">Výsledek dne · stav zápasu</div>
+          <div class="board-main">
+            <div class="bteam l"><span class="blbl">{{ proslo_label }}</span><span class="bnum">{{ content.proslo }}</span></div>
+            <span class="bcolon">:</span>
+            <div class="bteam r"><span class="bnum">{{ content.zamitnuto }}</span><span class="blbl">{{ zamitnuto_label }}</span></div>
+          </div>
+          {% if content.board_stats %}
+          <div class="board-stats">{{ content.board_stats }}</div>
+          {% endif %}
+          {% if content.result_note or content.dnesni_ucet %}
+          <div class="board-note">{{ content.result_note or content.dnesni_ucet }}</div>
+          {% endif %}
+        </div>
 
         {% for item in content.items %}
         <div class="item{% if item.variant %} {{ item.variant }}{% endif %}">
           <div class="numcol">
+            <div class="kick">{{ item.kick }}</div>
             <div class="num">{{ "%02d"|format(item.num) }}</div>
             <span class="stamp{% if item.verdikt != 'schvaleno' %} {{ item.verdikt }}{% endif %}">{{ item.stamp }}</span>
           </div>
           <div>
-            <div class="kick">{{ item.kick }}</div>
-            <h2 class="h">{{ item.nadpis }}</h2>
+            <h2 class="h">
+              {% for line in item.nadpis_radky %}
+              <span class="hl">{{ line }}</span>
+              {% endfor %}
+            </h2>
             <p class="p">{{ item.lead }}</p>
             {% if item.mean %}
             <p class="mean"><b>Co to znamená — </b>{{ item.mean }}</p>
@@ -53,26 +80,12 @@
         </div>
         {% endfor %}
 
-        <div class="res">
-          <div class="cell">
-            <span class="n">{{ content.proslo }}</span>
-            <span class="l">{{ proslo_label|safe }}</span>
-          </div>
-          <div class="cell">
-            <span class="n">{{ content.zamitnuto }}</span>
-            <span class="l">{{ zamitnuto_label|safe }}</span>
-          </div>
-          {% if content.result_note %}
-          <p class="note">{{ content.result_note }}</p>
-          {% endif %}
-        </div>
-
         <div class="verdict">
           <span class="qm">„</span>
           <p class="q">
             {% if content.zaver_key %}<span class="key">{{ content.zaver_key }}</span> {% endif %}{{ content.zaver_body or content.zaver }}
           </p>
-          <div class="sign">— Redakce sněmovního deníku —</div>
+          <div class="sign">— Váš dobrý voják Švejk —</div>
         </div>
             </div>
             <div class="dogear"></div>
@@ -229,7 +242,6 @@
         under.style.opacity = '1';
         under.removeAttribute('aria-hidden');
       }
-      // nejdřív vykreslit spodní list, pak teprve mizí horní
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           if (!pageTop || reduced){

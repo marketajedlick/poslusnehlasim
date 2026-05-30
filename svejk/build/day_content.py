@@ -38,12 +38,28 @@ _VERDIKT_STAMP = {
     "odlozeno": "Odloženo",
 }
 
+_MESICE_GEN = (
+    "ledna",
+    "února",
+    "března",
+    "dubna",
+    "května",
+    "června",
+    "července",
+    "srpna",
+    "září",
+    "října",
+    "listopadu",
+    "prosince",
+)
+
 
 @dataclass
 class DenItem:
     num: int
     kick: str
     nadpis: str
+    nadpis_radky: list[str]
     lead: str
     mean: str
     dopad: str
@@ -60,10 +76,14 @@ class DenItem:
 class DenContent:
     datum: str
     den: str
+    cal_den: str
+    cal_day: str
+    cal_month: str
     dnesni_ucet: str
     items: list[DenItem] = field(default_factory=list)
     proslo: int = 0
     zamitnuto: int = 0
+    board_stats: str = ""
     result_note: str = ""
     zaver: str = ""
     zaver_key: str = "Poslušně hlásím,"
@@ -169,6 +189,41 @@ def datum_design(datum_unl: str, den: str) -> str:
     return f"{den.capitalize()} {d.day:02d} / {d.month:02d} / {d.year}"
 
 
+def calendar_parts(datum_unl: str, den: str) -> tuple[str, str, str]:
+    d = datetime.strptime(datum_unl, "%d.%m.%Y")
+    return den.capitalize(), str(d.day), f"{_MESICE_GEN[d.month - 1]} {d.year}"
+
+
+def board_stats_line(stats: dict[str, Any]) -> str:
+    parts: list[str] = []
+    hlas = int(stats.get("pocet_hlas") or 0)
+    if hlas:
+        parts.append(f"{hlas} hlasování")
+    minuty = int(stats.get("minuty") or 0)
+    if minuty:
+        parts.append(f"{minuty} minut v sále")
+    end = (stats.get("end_cas") or "").strip()
+    if end:
+        parts.append(f"konec ve {end}")
+    return " · ".join(parts)
+
+
+def split_nadpis_radky(nadpis: str, *, max_lines: int = 2) -> list[str]:
+    text = (nadpis or "").strip()
+    if not text:
+        return [""]
+    for sep in (" — ", " – ", " - "):
+        if sep in text:
+            parts = [p.strip() for p in text.split(sep, 1) if p.strip()]
+            if len(parts) <= max_lines:
+                return parts
+    words = text.split()
+    if len(words) <= 4:
+        return [text]
+    mid = len(words) // 2
+    return [" ".join(words[:mid]), " ".join(words[mid:])]
+
+
 def _result_note(stats: dict[str, Any], *, state: dict) -> str:
     if stats.get("dlouha_debata"):
         return "Nejdřív se dlouho hádali o pořadu dne; zákony prošly až po dohadování."
@@ -213,12 +268,17 @@ def build_den_content(
     slugs = day.get("topic_slugs") or []
     topics = _topics_by_slug(paths)
 
+    cal_den, cal_day, cal_month = calendar_parts(datum, den_cap)
     content = DenContent(
         datum=datum,
         den=den_cap,
+        cal_den=cal_den,
+        cal_day=cal_day,
+        cal_month=cal_month,
         dnesni_ucet=_dnesni_ucet(stats, state=state),
         proslo=int(stats.get("proslo") or 0),
         zamitnuto=int(stats.get("zamitnuto") or 0),
+        board_stats=board_stats_line(stats),
         result_note=_result_note(stats, state=state),
     )
 
@@ -237,11 +297,13 @@ def build_den_content(
         num += 1
         parliament_lead = lead_z_fact(fact)
         short_lead = _lead_kratky(fact, topics.get(slug))
+        nadpis = fact.get("nadpis") or slug
         content.items.append(
             DenItem(
                 num=num,
                 kick=_kick_z_fact(fact),
-                nadpis=fact.get("nadpis") or slug,
+                nadpis=nadpis,
+                nadpis_radky=split_nadpis_radky(nadpis),
                 lead=short_lead,
                 mean=_mean_z_dopadu(dopad, short_lead),
                 dopad=dopad,
