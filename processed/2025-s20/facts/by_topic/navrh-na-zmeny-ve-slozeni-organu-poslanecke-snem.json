@@ -7,9 +7,34 @@
   "koho": [
     "Občana se netýká, leda že zná někoho z poslanců osobně."
   ],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Jako první otevřeme bod číslo 107.Návrh na změny ve složení orgánů Poslanecké sněmovny A já poprosím, aby se slova ujal předseda volební komise pan poslanec Martin Kolovratník.",
+      "source": "steno",
+      "steno_id": "2025_20_00307",
+      "citace": "Jako první otevřeme bod číslo 107.Návrh na změny ve složení orgánů Poslanecké sněmovny A já poprosím, aby se slova ujal předseda volební komise pan poslanec Martin Kolovratník."
+    },
+    {
+      "text": "Je 14 hodin, bohužel vás musím přerušit a musím přerušit nejenom vás, ale přerušíme i bod, který jsme právě projednávali a sice návrh zákona o státní zaměstnancích, ke kterému se vrátíme později, protože je 14 hodin a v tuhletu chvíli jsou pevně zařazené volební body.",
+      "source": "steno",
+      "steno_id": "2025_20_00307",
+      "citace": "Je 14 hodin, bohužel vás musím přerušit a musím přerušit nejenom vás, ale přerušíme i bod, který jsme právě projednávali a sice návrh zákona o státní zaměstnancích, ke kterému se vrátíme později, prot"
+    },
+    {
+      "text": "Následně, protože tato volba nebyla realizována tady na plénu, tak jsme ještě vyhlásili jednu lhůtu na žádost kolegů z poslaneckého klubu KDU-ČSL, ta druhá lhůta byla do 26.",
+      "source": "steno",
+      "steno_id": "2025_20_00308",
+      "citace": "Následně, protože tato volba nebyla realizována tady na plénu, tak jsme ještě vyhlásili jednu lhůtu na žádost kolegů z poslaneckého klubu KDU-ČSL, ta druhá lhůta byla do 26."
+    },
+    {
+      "text": "Ten jsme promítli do usnesení volební komise per rollam číslo 73 ze 14.",
+      "source": "steno",
+      "steno_id": "2025_20_00308",
+      "citace": "Ten jsme promítli do usnesení volební komise per rollam číslo 73 ze 14."
+    }
+  ],
   "publikovat": true,
-  "priorita": 1,
+  "priorita": 2,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 2,
   "proslo": true
