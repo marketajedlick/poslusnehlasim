@@ -303,6 +303,19 @@ def calendar_parts(datum_unl: str, den: str) -> tuple[str, str, str]:
     return den.capitalize(), str(d.day), f"{_MESICE_GEN[d.month - 1]} {d.year}"
 
 
+def _kapitalizuj_prvni_pismeno(text: str) -> str:
+    for i, c in enumerate(text):
+        if c.isalpha():
+            return text[:i] + c.upper() + text[i + 1 :]
+    return text
+
+
+def _kapitalizuj_segmenty(text: str, *, sep: str = " · ") -> str:
+    if not (text or "").strip():
+        return text
+    return sep.join(_kapitalizuj_prvni_pismeno(p.strip()) for p in text.split(sep) if p.strip())
+
+
 def board_stats_line(stats: dict[str, Any]) -> str:
     parts: list[str] = []
     hlas = int(stats.get("pocet_hlas") or 0)
@@ -314,7 +327,7 @@ def board_stats_line(stats: dict[str, Any]) -> str:
     end = (stats.get("end_cas") or "").strip()
     if end:
         parts.append(f"konec ve {end}")
-    return " · ".join(parts)
+    return _kapitalizuj_segmenty(" · ".join(parts))
 
 
 def split_nadpis_radky(nadpis: str, *, max_lines: int = 2) -> list[str]:
@@ -468,7 +481,12 @@ def build_den_content(
 def _sanitize_den_content(content: DenContent) -> None:
     content.dnesni_ucet = bez_dlouhych_pomlc(content.dnesni_ucet)
     content.board_stats = bez_dlouhych_pomlc(content.board_stats)
-    content.result_note = bez_dlouhych_pomlc(content.result_note)
+    content.result_note = _kapitalizuj_prvni_pismeno(
+        bez_dlouhych_pomlc(content.result_note)
+    )
+    content.dnesni_ucet = _kapitalizuj_prvni_pismeno(
+        bez_dlouhych_pomlc(content.dnesni_ucet)
+    )
     content.zaver = bez_dlouhych_pomlc(content.zaver)
     content.zaver_key = bez_dlouhych_pomlc(content.zaver_key)
     content.zaver_body = bez_dlouhych_pomlc(content.zaver_body)
