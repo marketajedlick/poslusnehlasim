@@ -8,6 +8,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from svejk.build.day_content import DenContent, datum_design
 from svejk.build.nav import edition_nav, list_obdobi_editions
+from svejk.newsletter.config import NewsletterConfig
 from svejk.paths import SchuzePaths
 
 _TEMPLATES = Path(__file__).resolve().parent.parent / "templates"
@@ -91,4 +92,5 @@ def render_den_html(
         css=css,
         css_href=css_href,
         nav=nav,
+        newsletter=NewsletterConfig.from_env(),
     )

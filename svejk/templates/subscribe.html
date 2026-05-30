@@ -1,0 +1,37 @@
+        <section class="subscribe" aria-labelledby="subscribe-heading">
+          <h3 class="subscribe-title" id="subscribe-heading">Odběr novinek</h3>
+          <p class="subscribe-lead">Až vyjde nové vydání, dostanete e-mail s odkazem. Adresu <strong>neukládáme do tohoto webu</strong> ani do gitu — jen u provozovatele newsletteru (Buttondown, EU, double opt-in).</p>
+          {% if newsletter.enabled %}
+          <form
+            class="subscribe-form"
+            action="{{ newsletter.form_action }}"
+            method="post"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <input type="hidden" name="tag" value="poslusnehlasim" />
+            <input type="text" name="honeypot" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
+            <label class="subscribe-label" for="subscribe-email">E-mail</label>
+            <div class="subscribe-row">
+              <input
+                id="subscribe-email"
+                class="subscribe-input"
+                type="email"
+                name="email"
+                required
+                autocomplete="email"
+                placeholder="vas@email.cz"
+              />
+              <button class="subscribe-btn" type="submit">Odebírat</button>
+            </div>
+          </form>
+          {% else %}
+          <p class="subscribe-wait">Formulář odběru se zapne po nastavení <code>BUTTONDOWN_USERNAME</code> při exportu webu. Mezitím můžete sledovat <a href="{{ newsletter.feed_url }}">RSS</a>.</p>
+          {% endif %}
+          <p class="subscribe-note">
+            <a href="{{ newsletter.feed_url }}">RSS / nová vydání</a>
+            {% if newsletter.enabled %}
+            · <a href="{{ newsletter.privacy_url }}" rel="noopener">Soukromí a odhlášení</a>
+            {% endif %}
+          </p>
+        </section>

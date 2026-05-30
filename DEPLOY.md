@@ -57,3 +57,43 @@ Lokální test exportu:
 ./run-svejk.sh export-pages --obdobi 2025 --out site
 python3 -m http.server -d site 8765
 ```
+
+## Newsletter (odběr + e-mail při novém vydání)
+
+**E-maily odběratelů nejsou v gitu.** Ukládá je [Buttondown](https://buttondown.com) (double opt-in, GDPR). Web má jen formulář a RSS.
+
+### Jednorázové nastavení
+
+1. Založ účet na Buttondown, vyber username (např. `poslusnehlasim`).
+2. V GitHub **Settings → Secrets → Actions** přidej:
+   - `BUTTONDOWN_USERNAME` — stejný username (veřejný, jde do HTML formuláře)
+   - `BUTTONDOWN_API_KEY` — z Buttondown → Settings → API (jen CI, nikdy do kódu)
+3. Po dalším deployi se na konci každého vydání zobrazí blok **Odběr novinek**.
+
+### Jak lidé dostanou e-mail
+
+**Varianta A (doporučená): RSS automatizace**
+
+1. Po exportu existuje `https://poslusnehlasim.cz/feed.xml`.
+2. V Buttondown: **Automations → RSS-to-email** → URL feedu výše.
+3. Při každém novém vydání na webu Buttondown pošle e-mail odběratelům (bez ruční práce).
+
+**Varianta B: CI po deployi**
+
+Workflow po `export-pages` spustí `newsletter-notify`, pokud je `BUTTONDOWN_API_KEY`. Stav posledního odeslání je v `processed/newsletter-state.json` (jen ID vydání, žádné e-maily).
+
+```bash
+# náhled bez odeslání
+BUTTONDOWN_API_KEY=… ./run-svejk.sh newsletter-notify --obdobi 2025 --dry-run
+
+# vynutit znovu (test)
+./run-svejk.sh newsletter-notify --obdobi 2025 --force
+```
+
+Lokální export s formulářem:
+
+```bash
+export BUTTONDOWN_USERNAME=tvuj-username
+export SVEJK_SITE_URL=https://poslusnehlasim.cz
+./run-svejk.sh export-pages --obdobi 2025 --out site
+```

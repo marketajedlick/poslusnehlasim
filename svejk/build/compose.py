@@ -2,11 +2,14 @@
 
 from __future__ import annotations
 
+import re
 from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 from svejk.build.day_content import DenContent, build_den_content, vysledek_radky
+from svejk.cislo_slovy import nahrad_cisla_v_textu
+from svejk.text_norm import bez_dlouhych_pomlc
 from svejk.build.html import render_den_html
 from svejk.build.io import read_json
 from svejk.noviny import HLAVICKA_LISTU, _datum_cesky, _new_state
@@ -24,7 +27,7 @@ def render_den_markdown(
     lines = [
         f"# {HLAVICKA_LISTU}",
         "",
-        f"**{content.den.capitalize()} {_datum_cesky(content.datum)}**",
+        f"**{content.den.capitalize()} {nahrad_cisla_v_textu(_datum_cesky(content.datum))}**",
         "",
         f"**Dnešní účet:** {content.dnesni_ucet}",
         "",
@@ -37,7 +40,8 @@ def render_den_markdown(
             intro = item.parliament_lead.strip()
         lead = intro
         if prvni:
-            lead = f"Poslušně hlásím, že {intro[0].lower()}{intro[1:]}"
+            if not re.match(r"^poslušně\s+hlásím", intro, re.I):
+                lead = f"Poslušně hlásím, že {intro[0].lower()}{intro[1:]}"
             state["poslusne_count"] = 1
             prvni = False
 
@@ -58,7 +62,7 @@ def render_den_markdown(
     lines.append("## Výsledek dne")
     lines.append("")
     for radek in vysledek_radky(content, paths, day_path):
-        lines.append(radek)
+        lines.append(nahrad_cisla_v_textu(bez_dlouhych_pomlc(radek)))
     lines.append("")
     lines.append(f"**{content.zaver}**")
 

@@ -9,14 +9,22 @@ from pathlib import Path
 from typing import Any
 
 from svejk.build.io import read_json
+from svejk.cislo_slovy import (
+    krat_hlasovali,
+    krat_se_hlasovalo,
+    n_hlasovani,
+    nahrad_cisla_v_textu,
+    po_hlasovanich,
+    po_hlasovanich_cap,
+)
 from svejk.text_norm import bez_dlouhych_pomlc
 from svejk.build.witty import (
     glosa_generic,
     lead_svejkovsky,
     mean_vysvetleni,
     nadpis_z_clanku,
+    zaver_glosa_dne,
 )
-from svejk.mix import _hash_seed
 from svejk.listy import (
     _dnesni_ucet,
     _format_koho_veta,
@@ -113,7 +121,7 @@ def lead_z_fact(fact: dict[str, Any]) -> str:
         lead = f"poslanci řešili {predmet or 'bod programu'}."
 
     if n > 1 and verdikt == "schvaleno":
-        lead = f"Po {n}× hlasování {lead[0].lower()}{lead[1:]}"
+        lead = f"{po_hlasovanich_cap(n)} {lead[0].lower()}{lead[1:]}"
     return lead.strip().capitalize()
 
 
@@ -190,15 +198,15 @@ def parliament_lead_z_fact(fact: dict[str, Any], topic: dict[str, Any] | None) -
     if n > 3:
         if verdikt == "schvaleno" and zamitnuto > prijato and prijato > 0:
             return (
-                f"Po {n} hlasováních o {predmet} většina pozměňovacích návrhů padla, "
+                f"{po_hlasovanich_cap(n)} o {predmet} většina pozměňovacích návrhů padla, "
                 f"na závěr ale něco prošlo."
             )
         if verdikt == "schvaleno" and zamitnuto > prijato:
-            return f"Po {n} hlasováních o {predmet} na závěr procedurálně něco prošlo."
+            return f"{po_hlasovanich_cap(n)} o {predmet} na závěr procedurálně něco prošlo."
         if verdikt == "zamiteno":
-            return f"{n}× hlasovali o {predmet}, návrh neprošel."
+            return f"{krat_hlasovali(n)} o {predmet}, návrh neprošel."
         if verdikt == "odlozeno":
-            return f"Po {n} hlasováních o {predmet} to poslanci odložili."
+            return f"{po_hlasovanich_cap(n)} o {predmet} to poslanci odložili."
 
     return lead_z_fact(fact)
 
@@ -216,9 +224,9 @@ def _verdikt_fráze_zaver(item: DenItem, pocet_hlasovani: int) -> str:
     v = item.verdikt
     if pocet_hlasovani > 5:
         if v == "schvaleno":
-            return f"po {pocet_hlasovani} hlasováních na závěr něco prošlo"
+            return f"{po_hlasovanich(pocet_hlasovani)} na závěr něco prošlo"
         if v == "zamiteno":
-            return f"{pocet_hlasovani}× se hlasovalo a návrh neprošel"
+            return f"{krat_se_hlasovalo(pocet_hlasovani)} a návrh neprošel"
         if v == "odlozeno":
             return "debata skončila odkladem"
     if v == "schvaleno":
@@ -235,83 +243,6 @@ def _nadpis_kratce(nadpis: str) -> str:
     if len(t) <= 55:
         return f"„{t}“"
     return f"„{t[:52]}…“"
-
-
-def _zaver_obsahovy_hook(items: list[DenItem], stats: dict[str, Any]) -> str:
-    """Krátký odkaz na články dne (pro švejkovský závěr)."""
-    if not items:
-        proslo = int(stats.get("proslo") or 0)
-        zam = int(stats.get("zamitnuto") or 0)
-        if proslo or zam:
-            return (
-                f"ve sněmovně prošlo {proslo} "
-                f"{'věc' if proslo == 1 else 'věci'} a padlo {zam} "
-                f"{'návrh' if zam == 1 else 'návrhů'}"
-            )
-        return "sněmovna asi jen klokotala"
-
-    if len(items) == 1:
-        return f"celé vydání stojí na {_nadpis_kratce(items[0].nadpis)}"
-
-    if len(items) == 2:
-        return (
-            f"program se točil kolem {_nadpis_kratce(items[0].nadpis)} "
-            f"a {_nadpis_kratce(items[1].nadpis)}"
-        )
-
-    return (
-        f"ve vydání jsou {len(items)} body, "
-        f"od {_nadpis_kratce(items[0].nadpis)} "
-        f"po {_nadpis_kratce(items[-1].nadpis)}"
-    )
-
-
-def zaver_svejkovsky(
-    content: DenContent,
-    day: dict[str, Any],
-    stats: dict[str, Any],
-    *,
-    state: dict,
-) -> str:
-    """Švejkovská závěrečná glosa, mírně podle délky schůze a obsahu dne."""
-    override = (day.get("zaver") or "").strip()
-    if override:
-        if override.lower().startswith("poslušně"):
-            return override
-        return f"Poslušně hlásím, {override[0].lower()}{override[1:]}"
-
-    hook = _zaver_obsahovy_hook(content.items, stats)
-    if int(stats.get("zamitnuto") or 0) > int(stats.get("proslo") or 0) and int(
-        stats.get("zamitnuto") or 0
-    ) > 0:
-        hook = f"víc návrhů padlo než prošlo, přesto {hook}"
-
-    minuty = int(stats.get("minuty") or 0)
-    if minuty >= 360 or stats.get("dlouha_debata"):
-        sablony = (
-            "že poslanci jednali tak dlouho, že v hospodě byste mezitím stihli "
-            "utopence, klobásu i jedno kolo navíc, zatímco {obsah}.",
-            "že schůze v sále trvala déle než večerní menu v hospodě, a {obsah}.",
-            "že kdybyste po zahájení šli na jedno pivo, vrátili byste se až večer, "
-            "a mezitím {obsah}.",
-        )
-    elif minuty < 120:
-        sablony = (
-            "že to byla krátká schůze, kdo odskočil na pivo a utopence, "
-            "přišel by už na závěrečnou, ale {obsah}.",
-            "že než by výčepní stihl natočit druhé pivo, v sále už bylo po jednání, "
-            "přestože {obsah}.",
-        )
-    else:
-        sablony = (
-            "že dnes ve sněmovně {obsah}, což je na jeden den docela úctyhodné.",
-            "že {obsah}, a výčepní by to vyprávěl v hospodě do pozdní noci.",
-            "že poslanci dnes {obsah}, a člověk by řekl, že to ještě stihne do večerních zpráv.",
-        )
-
-    seed = f"zs|{content.datum}|{hook}|{minuty}|{stats.get('proslo')}|{stats.get('zamitnuto')}"
-    telo = sablony[_hash_seed(seed) % len(sablony)].format(obsah=hook)
-    return f"Poslušně hlásím, {telo}"
 
 
 def zaver_z_obsahu(content: DenContent, day: dict[str, Any]) -> str:
@@ -397,7 +328,7 @@ def board_stats_line(stats: dict[str, Any]) -> str:
     parts: list[str] = []
     hlas = int(stats.get("pocet_hlas") or 0)
     if hlas:
-        parts.append(f"{hlas} hlasování")
+        parts.append(n_hlasovani(hlas))
     minuty = int(stats.get("minuty") or 0)
     if minuty:
         parts.append(f"{minuty} minut v sále")
@@ -547,7 +478,14 @@ def build_den_content(
             else f"Poslušně hlásím, {override[0].lower()}{override[1:]}"
         )
     else:
-        zaver = zaver_svejkovsky(content, day, stats, state=state)
+        zaver = zaver_glosa_dne(
+            content.items,
+            datum=content.datum,
+            proslo=content.proslo,
+            zamitnuto=content.zamitnuto,
+            stats=stats,
+            state=state,
+        )
     content.zaver = zaver
     content.zaver_key, content.zaver_body = split_zaver(zaver)
     _sanitize_den_content(content)
@@ -555,26 +493,29 @@ def build_den_content(
     return content
 
 
+def _sanitize_text_export(text: str) -> str:
+    return nahrad_cisla_v_textu(bez_dlouhych_pomlc(text))
+
+
 def _sanitize_den_content(content: DenContent) -> None:
-    content.dnesni_ucet = bez_dlouhych_pomlc(content.dnesni_ucet)
-    content.board_stats = bez_dlouhych_pomlc(content.board_stats)
+    content.board_stats = _sanitize_text_export(content.board_stats)
     content.result_note = _kapitalizuj_prvni_pismeno(
-        bez_dlouhych_pomlc(content.result_note)
+        _sanitize_text_export(content.result_note)
     )
     content.dnesni_ucet = _kapitalizuj_prvni_pismeno(
-        bez_dlouhych_pomlc(content.dnesni_ucet)
+        _sanitize_text_export(content.dnesni_ucet)
     )
-    content.zaver = bez_dlouhych_pomlc(content.zaver)
-    content.zaver_key = bez_dlouhych_pomlc(content.zaver_key)
-    content.zaver_body = bez_dlouhych_pomlc(content.zaver_body)
+    content.zaver = _sanitize_text_export(content.zaver)
+    content.zaver_key = _sanitize_text_export(content.zaver_key)
+    content.zaver_body = _sanitize_text_export(content.zaver_body)
     for item in content.items:
-        item.kick = bez_dlouhych_pomlc(item.kick)
-        item.nadpis = bez_dlouhych_pomlc(item.nadpis)
-        item.nadpis_radky = [bez_dlouhych_pomlc(x) for x in item.nadpis_radky]
-        item.lead = bez_dlouhych_pomlc(item.lead)
-        item.mean = bez_dlouhych_pomlc(item.mean)
-        item.dopad = bez_dlouhych_pomlc(item.dopad)
-        item.parliament_lead = bez_dlouhych_pomlc(item.parliament_lead)
+        item.kick = _sanitize_text_export(item.kick)
+        item.nadpis = _sanitize_text_export(item.nadpis)
+        item.nadpis_radky = [_sanitize_text_export(x) for x in item.nadpis_radky]
+        item.lead = _sanitize_text_export(item.lead)
+        item.mean = _sanitize_text_export(item.mean)
+        item.dopad = _sanitize_text_export(item.dopad)
+        item.parliament_lead = _sanitize_text_export(item.parliament_lead)
 
 
 def vysledek_radky(content: DenContent, paths: SchuzePaths, day_path: Path) -> list[str]:

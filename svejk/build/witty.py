@@ -12,6 +12,7 @@ from svejk.listy import (
     _pointa_jednou,
     _prekryvaji,
 )
+from svejk.mix import _hash_seed
 from svejk.obcansky import GENERIC_GLOSA_MARKERS
 from svejk.text_norm import bez_dlouhych_pomlc
 from svejk.timeline import BlokDne
@@ -70,6 +71,28 @@ def vysv_je_witty(vysv: str) -> bool:
     if ", " in vysv and len(vysv.split(", ", 1)[-1]) < 120:
         return True
     return False
+
+
+def _strip_poslusne_prefix(text: str) -> str:
+    t = (text or "").strip()
+    while True:
+        m = re.match(r"^poslušně\s+hlásím,?\s*že\s*", t, re.I)
+        if not m:
+            break
+        t = t[m.end() :].strip()
+    return t
+
+
+def _lead_jednou_poslusne(lead: str, *, use_poslusne: bool) -> str:
+    t = (lead or "").strip()
+    if not t:
+        return t
+    inner = _strip_poslusne_prefix(t)
+    if not inner:
+        return t
+    if use_poslusne:
+        return f"Poslušně hlásím, že {inner[0].lower()}{inner[1:]}"
+    return inner[0].upper() + inner[1:]
 
 
 def _prvni_veta(text: str) -> str:
@@ -161,21 +184,28 @@ def _glosa_svejkova(
     fallback: Callable[[], str],
 ) -> str:
     if (fact.get("lead") or "").strip():
-        return fact["lead"].strip()
+        lead = fact["lead"].strip()
+        if use_poslusne and re.search(r"poslušně\s+hlásím", lead, re.I):
+            if state.get("poslusne_count", 0) < 1:
+                state["poslusne_count"] = state.get("poslusne_count", 0) + 1
+            return _lead_jednou_poslusne(lead, use_poslusne=True)
+        return lead
 
     blok = blok_z_fact_topic(fact, topic)
     vysv = (topic or {}).get("tema_vysvetleni") or ""
     listy_lead = _lead_veta(blok, state=state, use_poslusne=use_poslusne)
     if listy_lead:
-        return listy_lead
+        if use_poslusne and state.get("poslusne_count", 0) < 1:
+            state["poslusne_count"] = state.get("poslusne_count", 0) + 1
+            return _lead_jednou_poslusne(listy_lead, use_poslusne=True)
+        return listy_lead.strip()
 
     if vysv_je_witty(vysv):
         first = _prvni_veta(vysv)
         if first:
             if use_poslusne and state.get("poslusne_count", 0) < 1:
                 state["poslusne_count"] = state.get("poslusne_count", 0) + 1
-                body = first[0].lower() + first[1:]
-                return f"Poslušně hlásím, že {body}"
+                return _lead_jednou_poslusne(first, use_poslusne=True)
             return first
 
     return fallback()
@@ -277,3 +307,255 @@ def mean_z_clanku(
         dopad_fallback=dopad_fallback,
         mean_from_dopad=mean_from_dopad,
     )
+
+
+_TEMA_Z_CLANKU: tuple[tuple[tuple[str, ...], str], ...] = (
+    (("zkumav", "laborator", "odběr"), "docházející zkumavky v nemocnicích"),
+    (("živnost", "záloh", "odvod", "pojist"), "levnější zálohy pro živnostníky"),
+    (("stavebn", "stavba", "územní plán"), "změny ve stavebním zákoně"),
+    (("důchod", "penzij", "penze"), "pravidla penzí a důchodů"),
+    (("energ", "elektr", "plyn"), "energetiku a sítě"),
+    (("doprav", "silnic", "železn"), "dopravu a infrastrukturu"),
+    (("výbor", "personál", "komis"), "personálku a obsazení funkcí"),
+)
+
+
+def _tema_z_clanku(nadpis: str, lead: str, kick: str) -> str:
+    blob = f"{nadpis} {lead} {kick}".lower()
+    for keys, tema in _TEMA_Z_CLANKU:
+        if any(k in blob for k in keys):
+            return tema
+    t = (nadpis or "bod programu").strip()
+    if not t:
+        return "bod programu"
+    if len(t) > 50:
+        return t[0].lower() + t[1:47] + "…"
+    return t[0].lower() + t[1:]
+
+
+def _pointa_z_leadu(lead: str) -> str:
+    lead = (lead or "").strip()
+    if not lead:
+        return ""
+    vety = re.split(r"(?<=[.!?])\s+", lead)
+    for v in reversed(vety):
+        v = v.strip()
+        if not v or v.lower().startswith("poslušně hlásím"):
+            continue
+        low = v.lower()
+        if any(
+            m in low
+            for m in _WITTY_MARKERS + ("spíš", "jiná kapitola", "netankuje", "kapitola")
+        ):
+            return v if v.endswith((".", "!", "?")) else f"{v}."
+    if len(vety) >= 2:
+        tail = vety[-1].strip()
+        if tail and len(tail) < 110 and not tail.lower().startswith("poslušně"):
+            return tail if tail.endswith((".", "!", "?")) else f"{tail}."
+    return ""
+
+
+def _spojene_pointy(pointy: list[str]) -> str:
+    clean = [p.strip() for p in pointy if (p or "").strip()]
+    if not clean:
+        return ""
+    if len(clean) == 1:
+        return clean[0].rstrip(".")
+    a, b = clean[0].rstrip("."), clean[1].rstrip(".")
+    return f"{a}; {b[0].lower()}{b[1:]}"
+
+
+def _profil_dne(motivy: list[str]) -> str | None:
+    ml = " ".join(motivy).lower()
+    if "zkumav" in ml and ("živnost" in ml or "záloh" in ml):
+        return "zkumavky_zivnostnici"
+    return None
+
+
+def _verdikt_den_clause(
+    items: list[Any],
+    *,
+    proslo: int,
+    zamitnuto: int,
+) -> str:
+    if zamitnuto > proslo and zamitnuto > 0:
+        return "víc návrhů padlo než prošlo"
+    if proslo and not zamitnuto and items and all(
+        getattr(it, "verdikt", "") == "schvaleno" for it in items
+    ):
+        return "co je ve vydání, prošlo"
+    if proslo or zamitnuto:
+        return f"ve sněmovně prošlo {proslo} a padlo {zamitnuto}"
+    return "shrnutí sedí s články výše"
+
+
+def _glosa_zkumavky_zivnostnici(pointy: list[str], *, datum: str) -> str:
+    sablony = (
+        "že dnes ve sněmovně schválili hlídání docházejících zkumavek "
+        "i levnější zálohy pro živnostníky; sestřičkám přijde včas zásoba, "
+        "živnostníkům míň z peněženky, a čtenáři, co není ani jedno, "
+        "může klidně zůstat u piva.",
+        "že program spojil nemocniční sklad a živnostenský účet: zkumavky "
+        "mají hlásit dřív, než dojdou, a OSVČ ušetří na zálohách; "
+        "doma vás to netankuje, pokud nejste sestra i živnostník najednou.",
+        "že ve vydání jsou zkumavky v nemocnicích a levnější zálohy pro živnostníky; "
+        "jedno vás doma netankuje, u druhého platí, že míň odvodů znamená míň důchod.",
+    )
+    seed = f"zg-zk|{datum}|{_spojene_pointy(pointy)}"
+    return sablony[_hash_seed(seed) % len(sablony)]
+
+
+def _glosa_jeden(
+    item: Any,
+    motiv: str,
+    pointy: list[str],
+    *,
+    datum: str,
+    proslo: int,
+    zamitnuto: int,
+    stats: dict[str, Any],
+) -> str:
+    v = _verdikt_den_clause([item], proslo=proslo, zamitnuto=zamitnuto)
+    p = _spojene_pointy(pointy)
+    maraton = int(stats.get("minuty") or 0) >= 360
+
+    if p:
+        sablony = (
+            f"že dnešní vydání stojí na {motiv}; {v}. {p}",
+            f"že celý den se točil kolem {motiv}, {v}, a řekl bych: {p}",
+        )
+    else:
+        sablony = (
+            f"že dnešní vydání má jediného hrdinu, {motiv}; {v}, zbytek je v textu výše.",
+            f"že celá stránka je jedna kapitola, {motiv}; {v}.",
+        )
+    telo = sablony[_hash_seed(f"zg-1|{datum}|{motiv}") % len(sablony)]
+    if maraton:
+        telo += " Schůze trvala do večera, glosa je aspoň kratší."
+    return telo
+
+
+def _glosa_dva(
+    motivy: list[str],
+    pointy: list[str],
+    items: list[Any],
+    *,
+    datum: str,
+    proslo: int,
+    zamitnuto: int,
+) -> str:
+    m0, m1 = motivy[0], motivy[1]
+    v = _verdikt_den_clause(items, proslo=proslo, zamitnuto=zamitnuto)
+    p = _spojene_pointy(pointy)
+
+    if p:
+        sablony = (
+            f"že dnes ve sněmovně řešili {m0} i {m1}; {v}. {p}",
+            f"že program spojil {m0} a {m1}, {v}, a na závěr: {p}",
+        )
+    else:
+        sablony = (
+            f"že poslanci v jednom dni proběhli {m0} i {m1}; {v}, detaily jsou v článcích výše.",
+            f"že dnešní vydání táhne dvěma směry, {m0} a {m1}; {v}.",
+        )
+    return sablony[_hash_seed(f"zg-2|{datum}|{m0}|{m1}|{p}") % len(sablony)]
+
+
+def _glosa_vic(
+    motivy: list[str],
+    items: list[Any],
+    *,
+    datum: str,
+    proslo: int,
+    zamitnuto: int,
+    stats: dict[str, Any],
+) -> str:
+    n = len(items)
+    m0, m_last = motivy[0], motivy[-1]
+    v = _verdikt_den_clause(items, proslo=proslo, zamitnuto=zamitnuto)
+    pointy = [_pointa_z_leadu(getattr(it, "lead", "")) for it in items[:2]]
+    p = _spojene_pointy([x for x in pointy if x])
+
+    sablony = (
+        f"že vydání shrnuje {n} bodů od {m0} po {m_last}; {v}.",
+        f"že dnes ve sněmovně proběhlo {n} témat, od {m0} po {m_last}; {v}, zbytek je v textech výše.",
+    )
+    if p and n >= 2:
+        sablony = (
+            f"že vydání má {n} bodů, nejdřív {m0}, nakonec {m_last}; {v}. {p}",
+            sablony[0].rstrip(".") + f" {p}",
+        )
+    telo = sablony[_hash_seed(f"zg-n|{datum}|{n}|{m0}") % len(sablony)]
+    if int(stats.get("minuty") or 0) >= 360:
+        telo += " Jednání se protáhlo, glosa už ne."
+    return telo
+
+
+def zaver_glosa_dne(
+    items: list[Any],
+    *,
+    datum: str,
+    proslo: int,
+    zamitnuto: int,
+    stats: dict[str, Any],
+    state: dict,
+) -> str:
+    """Závěrečná glosa dne: shrnutí obsahu stránky ve švejkovském tónu."""
+    del state  # rezervováno pro budoucí variace
+    if not items:
+        if proslo or zamitnuto:
+            return (
+                "Poslušně hlásím, že dnes ve sněmovně "
+                f"{proslo} {'věc' if proslo == 1 else 'věci'} prošly a {zamitnuto} "
+                f"{'návrh' if zamitnuto == 1 else 'návrhů'} padlo, v tomto vydání bez článků."
+            )
+        return (
+            "Poslušně hlásím, že dnešní vydání je prázdné, "
+            "sněmovna asi jen klokotala."
+        )
+
+    motivy = [
+        _tema_z_clanku(
+            getattr(it, "nadpis", ""),
+            getattr(it, "lead", ""),
+            getattr(it, "kick", ""),
+        )
+        for it in items
+    ]
+    pointy = [_pointa_z_leadu(getattr(it, "lead", "")) for it in items]
+
+    profil = _profil_dne(motivy)
+    if profil == "zkumavky_zivnostnici":
+        telo = _glosa_zkumavky_zivnostnici(pointy, datum=datum)
+    elif len(items) == 1:
+        telo = _glosa_jeden(
+            items[0],
+            motivy[0],
+            pointy,
+            datum=datum,
+            proslo=proslo,
+            zamitnuto=zamitnuto,
+            stats=stats,
+        )
+    elif len(items) == 2:
+        telo = _glosa_dva(
+            motivy,
+            pointy,
+            items,
+            datum=datum,
+            proslo=proslo,
+            zamitnuto=zamitnuto,
+        )
+    else:
+        telo = _glosa_vic(
+            motivy,
+            items,
+            datum=datum,
+            proslo=proslo,
+            zamitnuto=zamitnuto,
+            stats=stats,
+        )
+
+    if not telo.startswith("že "):
+        telo = f"že {telo[0].lower()}{telo[1:]}" if telo else "že shrnutí je v článcích výše."
+    return f"Poslušně hlásím, {telo}"

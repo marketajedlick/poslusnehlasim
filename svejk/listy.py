@@ -5,6 +5,7 @@ from __future__ import annotations
 import re
 import unicodedata
 
+from svejk.cislo_slovy import po_hlasovanich_cap
 from svejk.mix import SLOTS, _hash_seed, pick_slot, re_sub_space
 from svejk.noviny import HLAVICKA_LISTU, _datum_cesky, _law_kategorie, _new_state, _zkrat_nazev
 from svejk.obcansky import GENERIC_GLOSA_MARKERS, glosa_pro_obcana, ma_glosu
@@ -829,7 +830,7 @@ def _lead_z_faktů(blok: BlokDne, *, use_poslusne: bool, state: dict) -> str:
         lead = _lead_schvaleni(blok, poslusne="", jadro=jadro)
         if lead and blok.pocet_zamitnuto > 0 and blok.pocet_hlasovani > 1:
             lead = (
-                f"Po {blok.pocet_hlasovani}× hlasování "
+                f"{po_hlasovanich_cap(blok.pocet_hlasovani)} "
                 f"{lead[0].lower()}{lead[1:]}"
             )
         if lead and poslusne:

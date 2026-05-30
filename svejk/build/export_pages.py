@@ -16,6 +16,8 @@ from svejk.build.nav import (
     list_obdobi_editions,
     resolve_edition,
 )
+from svejk.newsletter.config import NewsletterConfig
+from svejk.newsletter.feed import write_feed_xml
 from svejk.paths import SchuzePaths, processed_root
 
 _STATIC = Path(__file__).resolve().parent.parent / "static"
@@ -132,10 +134,16 @@ def run_export_pages(
         (out / "index.html").write_text(latest_html, encoding="utf-8")
 
     page_count = sum(1 for p in written if p.endswith(".html") and p.count("/") >= 3)
+
+    cfg = NewsletterConfig.from_env()
+    feed_path = write_feed_xml(obdobi, out / "feed.xml", config=cfg, base_path=base)
+
     return {
         "obdobi": obdobi,
-        "files": len(written) + 1,
+        "files": len(written) + 2,
         "pages": page_count,
         "latest": latest_href,
+        "feed": str(feed_path.relative_to(out)),
+        "newsletter": cfg.enabled,
         "out_dir": str(out),
     }

@@ -49,7 +49,34 @@ jobs:
         env:
           SVEJK_BASE_PATH: ""
           SVEJK_PAGES_CNAME: poslusnehlasim.cz
+          SVEJK_SITE_URL: https://poslusnehlasim.cz
+          BUTTONDOWN_USERNAME: ${{ secrets.BUTTONDOWN_USERNAME }}
         run: ./run-svejk.sh export-pages --obdobi 2025 --out site --cname poslusnehlasim.cz
+
+      - name: Restore newsletter state
+        uses: actions/cache/restore@v4
+        with:
+          path: processed/newsletter-state.json
+          key: newsletter-state-v1
+
+      - name: Notify newsletter (Buttondown)
+        env:
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+          SVEJK_SITE_URL: https://poslusnehlasim.cz
+          SVEJK_BASE_PATH: ""
+        run: |
+          if [ -z "$BUTTONDOWN_API_KEY" ]; then
+            echo "BUTTONDOWN_API_KEY není nastaven — přeskočeno"
+            exit 0
+          fi
+          ./run-svejk.sh newsletter-notify --obdobi 2025
+
+      - name: Save newsletter state
+        uses: actions/cache/save@v4
+        if: ${{ secrets.BUTTONDOWN_API_KEY != '' }}
+        with:
+          path: processed/newsletter-state.json
+          key: newsletter-state-v1
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

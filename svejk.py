@@ -328,6 +328,27 @@ def cmd_export_pages(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_newsletter_notify(args: argparse.Namespace) -> int:
+    from svejk.newsletter.notify import run_newsletter_notify
+
+    try:
+        result = run_newsletter_notify(
+            args.obdobi,
+            dry_run=args.dry_run,
+            force=args.force,
+            base_path=(args.base_path or "").rstrip("/"),
+        )
+    except (ValueError, OSError, FileNotFoundError, RuntimeError) as e:
+        print(f"Chyba: {e}", file=sys.stderr)
+        return 1
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    if result.get("notified"):
+        print("Newsletter odeslán.", file=sys.stderr)
+    elif result.get("skipped"):
+        print(f"Přeskočeno: {result.get('reason', '?')}", file=sys.stderr)
+    return 0
+
+
 def cmd_serve(args: argparse.Namespace) -> int:
     import uvicorn
     uvicorn.run("svejk.app:app", host=args.host, port=args.port, reload=args.reload)
@@ -529,6 +550,28 @@ def main() -> int:
         help="Doména do souboru CNAME (prázdné = nevytvářet)",
     )
     p_export.set_defaults(func=cmd_export_pages)
+
+    p_nwl = sub.add_parser(
+        "newsletter-notify",
+        help="Po novém vydání rozeslat e-mail přes Buttondown API (volitelné)",
+    )
+    p_nwl.add_argument("--obdobi", type=int, default=2025)
+    p_nwl.add_argument(
+        "--base-path",
+        default="",
+        help="Stejný prefix jako při export-pages (github.io/repo)",
+    )
+    p_nwl.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Jen náhled subject/body, bez API",
+    )
+    p_nwl.add_argument(
+        "--force",
+        action="store_true",
+        help="Odeslat i když už je v newsletter-state.json",
+    )
+    p_nwl.set_defaults(func=cmd_newsletter_notify)
 
     p_serve = sub.add_parser("serve", help="Spusť web")
     p_serve.add_argument("--host", default="127.0.0.1")

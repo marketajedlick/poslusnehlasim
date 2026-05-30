@@ -7,7 +7,6 @@ from typing import Any
 
 from svejk.build.align import run_align
 from svejk.build.compose import run_compose
-from svejk.build.export_pages import run_export_pages
 from svejk.build.extract import run_extract
 from svejk.build.fetch import run_fetch
 from svejk.build.io import read_json, write_json
@@ -159,4 +158,4 @@ def run_build_obdobi(
     return summary
 
 
-__all__ = ["run_build", "run_build_obdobi", "run_export_pages", "STEPS", "SchuzePaths"]
+__all__ = ["run_build", "run_build_obdobi", "STEPS", "SchuzePaths"]
