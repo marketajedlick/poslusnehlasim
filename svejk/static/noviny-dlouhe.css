@@ -305,10 +305,11 @@ body.is-turning{ pointer-events:none; }
 .subscribe-btn:disabled{ cursor:default; opacity:.7; }
 .subscribe-form--success .subscribe-row{ display:none; }
 .subscribe-success{
-  margin:0; padding:0;
+  margin:8px 0 0; padding:0;
   font-family:'Anton',sans-serif; text-transform:uppercase;
-  letter-spacing:.06em; font-size:15px; color:var(--ink);
-  text-align:center;
+  letter-spacing:.06em; font-size:22px; line-height:1.35;
+  color:var(--ink); text-align:center;
+  max-width:28ch;
 }
 .subscribe-error{
   margin:10px 0 0;
@@ -498,6 +499,7 @@ body.is-turning{ pointer-events:none; }
   .subscribe-gloss{ font-size:18px; max-width:none; }
   .subscribe-input{ font-size:18px; padding:12px 14px; }
   .subscribe-btn{ font-size:15px; padding:12px 22px; }
+  .subscribe-success{ font-size:26px; max-width:none; }
 
   .edition-nav{
     left:50%; right:auto; width:auto;
