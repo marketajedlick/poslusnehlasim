@@ -7,8 +7,14 @@ const CORS = {
 
 export default {
   async fetch(request, env) {
-    const origin = env.ALLOWED_ORIGIN || "https://poslusnehlasim.cz";
-    const headers = { ...CORS, "Access-Control-Allow-Origin": origin };
+    const allowed = (env.ALLOWED_ORIGIN || "https://poslusnehlasim.cz")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const requestOrigin = request.headers.get("Origin") || "";
+    const corsOrigin =
+      requestOrigin && allowed.includes(requestOrigin) ? requestOrigin : allowed[0];
+    const headers = { ...CORS, "Access-Control-Allow-Origin": corsOrigin };
 
     if (request.method === "OPTIONS") {
       return new Response(null, { headers });

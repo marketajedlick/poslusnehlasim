@@ -1,28 +1,13 @@
         {% if newsletter.show_subscribe %}
         <section class="subscribe" aria-label="Odběr novinek">
-          {% if newsletter.use_widget %}
-          <div class="subscribe-embed" aria-label="Ecomail formulář odběru">
-            <script>
-              (function (w,d,s,o,f,js,fjs) {
-                w['ecm-widget']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};
-                js=d.createElement(s), fjs=d.getElementsByTagName(s)[0];
-                js.id='{{ newsletter.embed_widget_id }}';
-                js.dataset.a='{{ newsletter.embed_account }}';
-                js.src=f; js.async=1; fjs.parentNode.insertBefore(js,fjs);
-              }(window,document,'script','ecmwidget','{{ newsletter.embed_widget_js }}'));
-            </script>
-            <div id="{{ newsletter.embed_mount_id }}"></div>
-          </div>
-          {% else %}
-          <p class="subscribe-gloss">Do sněmovny sám nemusíš, nech mi tu email a pošleme ti nové vydání.</p>
           {% if newsletter.use_custom_form %}
+          <p class="subscribe-gloss">Do sněmovny sám nemusíš, nech mi tu email a pošleme ti nové vydání.</p>
           <form
             class="subscribe-form"
-            action="{{ newsletter.form_action or '#' }}"
+            action="#"
             method="post"
             novalidate
-            data-form-action="{{ newsletter.form_action }}"
-            {% if newsletter.subscribe_api_url %}data-subscribe-api="{{ newsletter.subscribe_api_url }}"{% endif %}
+            data-subscribe-api="{{ newsletter.subscribe_api_url }}"
           >
             <input type="text" name="website" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
             <div class="subscribe-row">
@@ -40,11 +25,22 @@
             <p class="subscribe-error" hidden role="alert"></p>
             <p class="subscribe-success" hidden>Poslušně hlásím, jsi zapsaný.</p>
           </form>
+          {% elif newsletter.use_widget %}
+          <div class="subscribe-embed" aria-label="Ecomail formulář odběru">
+            <script>
+              (function (w,d,s,o,f,js,fjs) {
+                w['ecm-widget']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
+                js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+                js.id = '2-2bb287d15897fe2f9d89c882af9a3a8b'; js.dataset.a = 'poslusnehlasim'; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
+              }(window, document, 'script', 'ecmwidget', 'https://d70shl7vidtft.cloudfront.net/widget.js'));
+            </script>
+            <div id="f-2-2bb287d15897fe2f9d89c882af9a3a8b"></div>
+          </div>
           {% elif newsletter.form_action %}
+          <p class="subscribe-gloss">Do sněmovny sám nemusíš, nech mi tu email a pošleme ti nové vydání.</p>
           <p class="subscribe-fallback">
             <a class="subscribe-btn subscribe-btn--link" href="{{ newsletter.form_action }}" rel="noopener">Poslušně odebírat</a>
           </p>
-          {% endif %}
           {% endif %}
         </section>
         {% endif %}
