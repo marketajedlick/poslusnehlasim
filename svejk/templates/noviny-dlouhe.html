@@ -362,6 +362,55 @@
     btn.textContent = btn.dataset.label || "Poslušně odebírat";
   }
 
+  function postToEcomailSameTab(formAction, email) {
+    var postForm = document.createElement("form");
+    postForm.method = "post";
+    postForm.action = formAction;
+    postForm.style.display = "none";
+    var input = document.createElement("input");
+    input.type = "hidden";
+    input.name = "email";
+    input.value = email;
+    postForm.appendChild(input);
+    document.body.appendChild(postForm);
+    postForm.submit();
+  }
+
+  function submitViaApi(form, apiUrl) {
+    var emailInput = form.querySelector('input[name="email"]');
+    var email = emailInput?.value?.trim() || "";
+    var btn = form.querySelector(".subscribe-btn");
+
+    if (btn) {
+      btn.disabled = true;
+      btn.dataset.label = btn.textContent;
+      btn.textContent = "Odesílám…";
+    }
+
+    return fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: email,
+        website: form.querySelector(".subscribe-hp")?.value || "",
+      }),
+    })
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (data) {
+          if (res.ok && data.ok !== false) {
+            showSuccess(form);
+            return;
+          }
+          showError(form, "Odběr se nepodařil odeslat. Zkus to znovu za chvíli.");
+          resetBtn(btn);
+        });
+      })
+      .catch(function () {
+        showError(form, "Odběr teď nejde odeslat. Zkontroluj připojení a zkus to znovu.");
+        resetBtn(btn);
+      });
+  }
+
   function parseEcomailHtml(html) {
     if (/registrov[aá]n/i.test(html)) return { ok: true };
     if (/D[eě]kujeme|alert-success|subscribeForm .success/i.test(html)) return { ok: true };
@@ -390,7 +439,7 @@
     })
       .then(function (res) {
         if (res.type === "opaqueredirect" || res.status === 301 || res.status === 302) {
-          showSuccess(form);
+          postToEcomailSameTab(formAction, email);
           return;
         }
         if (!res.ok) {
@@ -415,22 +464,7 @@
   }
 
   document.addEventListener("submit", function (e) {
-    const hostedForm = e.target.closest(".subscribe-form--hosted");
-    if (hostedForm) {
-      e.preventDefault();
-      if (hostedForm.querySelector(".subscribe-hp")?.value) return;
-      if (hostedForm.classList.contains("subscribe-form--success")) return;
-      const emailInput = hostedForm.querySelector('input[name="email"]');
-      const email = emailInput?.value?.trim() || "";
-      if (!email) {
-        emailInput?.focus();
-        return;
-      }
-      submitHosted(hostedForm);
-      return;
-    }
-
-    const form = e.target.closest(".subscribe-form[data-subscribe-api]");
+    const form = e.target.closest(".subscribe-form");
     if (!form || form.classList.contains("subscribe-form--success")) return;
     e.preventDefault();
     if (form.querySelector(".subscribe-hp")?.value) return;
@@ -442,36 +476,14 @@
       return;
     }
 
-    const btn = form.querySelector(".subscribe-btn");
-    const apiUrl = form.dataset.subscribeApi;
-    if (!apiUrl) return;
-
-    if (btn) {
-      btn.disabled = true;
-      btn.dataset.label = btn.textContent;
-      btn.textContent = "Odesílám…";
+    var apiUrl = form.dataset.subscribeApi;
+    if (apiUrl) {
+      submitViaApi(form, apiUrl);
+      return;
     }
-
-    fetch(apiUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: email,
-        website: form.querySelector(".subscribe-hp")?.value || "",
-      }),
-    })
-      .then(function (res) {
-        if (res.ok) {
-          showSuccess(form);
-          return;
-        }
-        showError(form, "Odběr se nepodařil odeslat. Zkus to znovu za chvíli.");
-        resetBtn(btn);
-      })
-      .catch(function () {
-        showError(form, "Odběr teď nejde odeslat. Zkontroluj připojení a zkus to znovu.");
-        resetBtn(btn);
-      });
+    if (form.dataset.formAction || form.classList.contains("subscribe-form--hosted")) {
+      submitHosted(form);
+    }
   });
 })();
 </script>

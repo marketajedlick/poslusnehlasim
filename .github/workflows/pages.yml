@@ -77,7 +77,13 @@ jobs:
           ECOMAIL_FORM_ACTION: https://poslusnehlasim.ecomailapp.cz/public/subscribe/2/2bb287d15897fe2f9d89c882af9a3a8b
           SVEJK_SHOW_SUBSCRIBE: "1"
           SVEJK_SUBSCRIBE_API_URL: ${{ steps.subscribe_worker.outputs.url || secrets.SVEJK_SUBSCRIBE_API_URL }}
-        run: ./run-svejk.sh export-pages --obdobi 2025 --out site --cname poslusnehlasim.cz
+          ECOMAIL_API_KEY: ${{ secrets.ECOMAIL_API_KEY }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -n "$ECOMAIL_API_KEY" ] && [ -z "$SVEJK_SUBSCRIBE_API_URL" ] && [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::warning::Odběr: bez Cloudflare Workeru neprojdou všechny nové e-maily. Přidej CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID do GitHub Secrets (viz DEPLOY.md)."
+          fi
+          ./run-svejk.sh export-pages --obdobi 2025 --out site --cname poslusnehlasim.cz
 
       - name: Restore newsletter state
         uses: actions/cache/restore@v4
