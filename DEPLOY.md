@@ -73,46 +73,32 @@ python3 -m http.server -d site 8765
    - `SVEJK_SUBSCRIBE_API_URL` — volitelně ručně, jinak ho CI doplní z `wrangler deploy`
 4. Po dalším deployi se na konci každého vydání zobrazí blok **Odběr novinek**.
 
-### Odběr z webu (Cloudflare Worker)
+### Odběr z webu (Cloudflare Pages API)
 
-Veřejný Ecomail formulář vyžaduje robotcheck — skryté odeslání kontakt neuloží. Proto odběr jde přes **Ecomail API** v malém workeru:
+Veřejný Ecomail formulář vyžaduje robotcheck — skryté odeslání kontakt neuloží. Proto odběr jde přes **Ecomail API** na Cloudflare Pages (`workers/subscribe.js`):
 
 ```bash
 cd workers
+cp subscribe.js public/_worker.js
 npx wrangler@4 login
-npx wrangler@4 secret put ECOMAIL_API_KEY
-npx wrangler@4 deploy
+npx wrangler pages secret put ECOMAIL_API_KEY --project-name=poslusnehlasim-odebir
+npx wrangler pages deploy public --project-name=poslusnehlasim-odebir --branch=main
 ```
 
 (Pozor: `pip install wrangler` v conda je jiný balíček — vždy `npx wrangler@4`.)
 
-URL z výstupu `wrangler deploy` (např. `https://poslusnehlasim-subscribe.xxx.workers.dev`) dej do GitHub Secret **`SVEJK_SUBSCRIBE_API_URL`** a znovu deployni web.
+Produkční URL: **`https://poslusnehlasim-odebir.pages.dev`** (volitelně v GitHub Secret `SVEJK_SUBSCRIBE_API_URL`).
 
-**Důležité:** Adresa `*.workers.dev` musí být **zapnutá** (Enabled). Jinak `curl` vrátí `SSL handshake failure` a odběr z webu nefunguje.
-
-**Dashboard:** Cloudflare → Workers & Pages → *poslusnehlasim-subscribe* → **Settings → Domains & Routes** → u řádku `workers.dev` klikni **Enable** (ne „Enable Cloudflare Access“ — to je něco jiného).
-
-**Nebo API** (token s oprávněním Workers Scripts Edit):
-
-```bash
-curl -X POST \
-  "https://api.cloudflare.com/client/v4/accounts/TVŮJ_ACCOUNT_ID/workers/scripts/poslusnehlasim-subscribe/subdomain" \
-  -H "Authorization: Bearer TVŮJ_CLOUDFLARE_API_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"enabled": true}'
-```
+> **Proč ne workers.dev?** Na některých účtech je Production URL zapnutá, ale HTTPS certifikát pro `*.workers.dev` nefunguje (curl: SSL handshake failure), zatímco HTTP ano. Pages má spolehlivé HTTPS — proto používáme `*.pages.dev`.
 
 Ověření:
 
 ```bash
-# HTTPS musí vrátit HTTP 405 (ne SSL chybu):
-curl -I https://poslusnehlasim-subscribe.poslusnehlasim.workers.dev
-
-# HTTP funguje dřív než HTTPS — pokud vidíš 405 jen tady, certifikát se ještě vystavuje:
-curl -I http://poslusnehlasim-subscribe.poslusnehlasim.workers.dev
+curl -I https://poslusnehlasim-odebir.pages.dev
+# → HTTP/2 405 (ne SSL chyba)
 ```
 
-CI po každém deployi workers.dev route zapíná automaticky.
+CI nasazuje Pages projekt `poslusnehlasim-odebir` automaticky.
 
 Bez workeru funguje režim **`custom`** (vlastní formulář + Ecomail XHR). Výchozí je **`custom`** — oranžový formulář ve stylu webu (XHR bez preflight, funguje v prohlížeči). **`widget`** = embed snippet z Ecomailu.
 

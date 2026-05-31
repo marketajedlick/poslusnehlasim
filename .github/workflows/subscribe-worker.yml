@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Deploy Cloudflare Worker
+      - name: Deploy subscribe API (Cloudflare Pages)
         working-directory: workers
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -28,38 +28,28 @@ jobs:
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
-            echo "CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID chybí — worker se nenasadí."
+            echo "CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID chybí — API odběru se nenasadí."
             echo "Viz DEPLOY.md → Odběr z webu (Cloudflare Worker)."
             exit 0
           fi
           if [ -z "$ECOMAIL_API_KEY" ]; then
-            echo "ECOMAIL_API_KEY chybí — worker bez klíče nedává smysl."
+            echo "ECOMAIL_API_KEY chybí — API bez klíče nedává smysl."
             exit 0
           fi
-          npm exec wrangler@4 secret put ECOMAIL_API_KEY <<< "$ECOMAIL_API_KEY"
+          PROJECT=poslusnehlasim-odebir
+          npx wrangler@4 pages project create "$PROJECT" --production-branch=main 2>/dev/null || true
+          cp subscribe.js public/_worker.js
+          npm exec wrangler@4 pages secret put ECOMAIL_API_KEY --project-name="$PROJECT" <<< "$ECOMAIL_API_KEY"
           if [ -n "$ECOMAIL_FROM_EMAIL" ]; then
-            npm exec wrangler@4 secret put ECOMAIL_FROM_EMAIL <<< "$ECOMAIL_FROM_EMAIL"
-            npm exec wrangler@4 secret put NOTIFY_EMAIL <<< "${NOTIFY_EMAIL:-$ECOMAIL_FROM_EMAIL}"
+            npm exec wrangler@4 pages secret put ECOMAIL_FROM_EMAIL --project-name="$PROJECT" <<< "$ECOMAIL_FROM_EMAIL"
+            npm exec wrangler@4 pages secret put NOTIFY_EMAIL --project-name="$PROJECT" <<< "${NOTIFY_EMAIL:-$ECOMAIL_FROM_EMAIL}"
           fi
-          DEPLOY_OUTPUT=$(npm exec wrangler@4 deploy 2>&1)
+          DEPLOY_OUTPUT=$(npm exec wrangler@4 pages deploy public --project-name="$PROJECT" --branch=main 2>&1)
           echo "$DEPLOY_OUTPUT"
-          WORKER_URL=$(echo "$DEPLOY_OUTPUT" | grep -oE 'https://[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+\.workers\.dev' | head -1)
+          URL="https://${PROJECT}.pages.dev"
           echo ""
-          echo "→ URL workeru: ${WORKER_URL:-?}"
+          echo "→ URL API odběru: $URL"
           echo "→ Ulož do GitHub Secret SVEJK_SUBSCRIBE_API_URL a spusť deploy webu."
-          echo ""
-          echo "Zapínám workers.dev route (jinak SSL handshake failure)…"
-          API_RESPONSE=$(curl -sS -X POST \
-            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/scripts/poslusnehlasim-subscribe/subdomain" \
-            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-            -H "Content-Type: application/json" \
-            -d '{"enabled": true}')
-          echo "$API_RESPONSE"
-          if ! echo "$API_RESPONSE" | grep -qE '"success"[[:space:]]*:[[:space:]]*true'; then
-            echo "::warning::Nepodařilo se zapnout workers.dev — v dashboardu: Worker → Settings → Domains & Routes → Enable u workers.dev"
-          elif [ -n "$WORKER_URL" ]; then
-            sleep 5
-            if ! curl -4 -sfI "$WORKER_URL" >/dev/null 2>&1; then
-              echo "::warning::Worker běží (HTTP OK), ale HTTPS ještě neodpovídá — v dashboardu zkontroluj Domains & Routes u workers.dev; může trvat pár minut."
-            fi
+          if ! curl -4 -sfI "$URL" >/dev/null 2>&1; then
+            echo "::warning::Pages deploy hotov, ale HTTPS ještě neodpovídá — zkus za chvíli: curl -I $URL"
           fi

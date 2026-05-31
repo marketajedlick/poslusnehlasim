@@ -1,11 +1,10 @@
-name = "poslusnehlasim-subscribe"
-main = "subscribe.js"
+name = "poslusnehlasim-odebir"
 compatibility_date = "2024-01-01"
-workers_dev = true
+pages_build_output_dir = "public"
 
 [vars]
 ALLOWED_ORIGIN = "https://poslusnehlasim.cz,https://www.poslusnehlasim.cz"
 ECOMAIL_LIST_ID = "2"
 
-# Secrets (wrangler secret put ECOMAIL_API_KEY):
-# ECOMAIL_API_KEY
+# Secrets (wrangler pages secret put … --project-name=poslusnehlasim-odebir):
+# ECOMAIL_API_KEY, ECOMAIL_FROM_EMAIL, NOTIFY_EMAIL

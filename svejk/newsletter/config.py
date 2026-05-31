@@ -21,7 +21,7 @@ DEFAULT_ECOMAIL_FORM_ACTION = (
 DEFAULT_ECOMAIL_LIST_ID = "2"
 DEFAULT_ECOMAIL_WIDGET_JS = "https://d70shl7vidtft.cloudfront.net/widget.js"
 DEFAULT_SUBSCRIBE_API_URL = (
-    "https://poslusnehlasim-subscribe.poslusnehlasim.workers.dev"
+    "https://poslusnehlasim-odebir.pages.dev"
 )
 
 
