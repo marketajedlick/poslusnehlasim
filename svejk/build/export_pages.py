@@ -16,6 +16,7 @@ from svejk.build.nav import (
     list_obdobi_editions,
     resolve_edition,
 )
+from svejk.build.seo import write_llms_txt, write_robots_txt, write_sitemap_xml
 from svejk.newsletter.config import NewsletterConfig
 from svejk.newsletter.feed import write_feed_xml
 from svejk.paths import SchuzePaths, processed_root
@@ -127,16 +128,36 @@ def run_export_pages(
 
     latest = editions[-1]
     latest_href = edition_pages_href(latest.obdobi, latest.schuze, latest.datum_unl, base)
-    latest_html = _render_edition_html(latest, obdobi, base=base, css_href=css_href)
-    if latest_html is None:
-        (out / "index.html").write_text(_redirect_html(latest_href), encoding="utf-8")
+    cfg = NewsletterConfig.from_env()
+    site = cfg.site_url.rstrip("/")
+    paths = SchuzePaths.create(latest.obdobi, latest.schuze)
+    d = datetime.strptime(latest.datum_unl, "%d.%m.%Y")
+    day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
+    if not day_path.is_file():
+        (out / "index.html").write_text(_redirect_html(f"{site}{latest_href}"), encoding="utf-8")
     else:
-        (out / "index.html").write_text(latest_html, encoding="utf-8")
+        content = build_den_content(day_path, paths)
+        index_html = render_den_html(
+            content,
+            paths,
+            day_path,
+            inline_css=False,
+            css_href=css_href,
+            link_mode="pages",
+            obdobi=obdobi,
+            base_path=base,
+            canonical_url=f"{site}/",
+        )
+        (out / "index.html").write_text(index_html, encoding="utf-8")
 
     page_count = sum(1 for p in written if p.endswith(".html") and p.count("/") >= 3)
 
-    cfg = NewsletterConfig.from_env()
     feed_path = write_feed_xml(obdobi, out / "feed.xml", config=cfg, base_path=base)
+    robots_path = write_robots_txt(out, site_url=site)
+    sitemap_path = write_sitemap_xml(out, editions, site_url=site, base_path=base)
+    llms_path, llms_full_path = write_llms_txt(
+        out, list(editions), site_url=site, base_path=base, obdobi=obdobi
+    )
 
     return {
         "obdobi": obdobi,
@@ -144,6 +165,10 @@ def run_export_pages(
         "pages": page_count,
         "latest": latest_href,
         "feed": str(feed_path.relative_to(out)),
+        "robots": str(robots_path.relative_to(out)),
+        "sitemap": str(sitemap_path.relative_to(out)),
+        "llms": str(llms_path.relative_to(out)),
+        "llms_full": str(llms_full_path.relative_to(out)),
         "newsletter": cfg.enabled,
         "out_dir": str(out),
     }

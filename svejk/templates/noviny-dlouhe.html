@@ -6,6 +6,19 @@
 <meta name="theme-color" content="#c9bda3" />
 <style>.stagewrap,.stack{width:100%;max-width:100%;margin:0 auto}@media(min-width:721px){.stagewrap,.stack{width:840px;max-width:840px}}</style>
 <title>Poslušně hlásím · {{ datum_design }}</title>
+<meta name="description" content="{{ meta_description }}" />
+<link rel="canonical" href="{{ canonical_url }}" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:site_name" content="Poslušně hlásím" />
+<meta property="og:title" content="Poslušně hlásím · {{ datum_design }}" />
+<meta property="og:description" content="{{ meta_description }}" />
+<meta property="og:url" content="{{ canonical_url }}" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Poslušně hlásím · {{ datum_design }}" />
+<meta name="twitter:description" content="{{ meta_description }}" />
+<script type="application/ld+json">{{ article_json_ld | safe }}</script>
+<link rel="alternate" type="text/plain" title="Informace pro AI (llms.txt)" href="{{ newsletter.site_url }}/llms.txt" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />

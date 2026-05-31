@@ -64,6 +64,8 @@ def render_den_html(
     link_mode: str = "file",
     obdobi: int | None = None,
     base_path: str = "",
+    canonical_url: str = "",
+    meta_description: str = "",
 ) -> str:
     _ = day_path
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
@@ -79,6 +81,33 @@ def render_den_html(
     svejk_svg = _SVEJK_SVG.read_text(encoding="utf-8") if _SVEJK_SVG.is_file() else ""
     ob = obdobi if obdobi is not None else paths.obdobi
     dup_day = sum(1 for e in list_obdobi_editions(ob) if e.datum_unl == content.datum) > 1
+    cfg = NewsletterConfig.from_env()
+    if not meta_description:
+        from svejk.build.seo import meta_description as _meta_description
+
+        raw = (content.dnesni_ucet or "").strip()
+        if not raw and content.items:
+            raw = content.items[0].nadpis
+        meta_description = _meta_description(raw) if raw else (
+            f"Deník z Poslanecké sněmovny — {datum_design(content.datum, content.den)}."
+        )
+    if not canonical_url:
+        from svejk.build.nav import edition_pages_href
+
+        href = edition_pages_href(
+            ob, paths.schuze, content.datum, base_path
+        )
+        canonical_url = f"{cfg.site_url.rstrip('/')}{href}"
+    title = f"Poslušně hlásím · {datum_design(content.datum, content.den)}"
+    from svejk.build.seo import article_json_ld as _article_json_ld
+
+    json_ld = _article_json_ld(
+        headline=title,
+        description=meta_description,
+        url=canonical_url,
+        date_unl=content.datum,
+        site_url=cfg.site_url,
+    )
     tpl = _jinja_env().get_template("noviny-dlouhe.html")
     return tpl.render(
         content=content,
@@ -92,5 +121,8 @@ def render_den_html(
         css=css,
         css_href=css_href,
         nav=nav,
-        newsletter=NewsletterConfig.from_env(),
+        newsletter=cfg,
+        canonical_url=canonical_url,
+        meta_description=meta_description,
+        article_json_ld=json_ld,
     )
