@@ -387,13 +387,17 @@
             showSuccess(form);
             return;
           }
+          notifyFailedSubscribe(email, apiUrl);
           showError(form, "Odběr se nepodařil odeslat. Zkus to znovu za chvíli.");
           resetBtn(btn);
         });
       })
       .catch(function () {
-        showError(form, "Odběr teď nejde odeslat. Zkontroluj připojení a zkus to znovu.");
-        resetBtn(btn);
+        if (form.dataset.formAction) {
+          submitHosted(form);
+          return;
+        }
+        showSetupError(form, btn, email);
       });
   }
 
@@ -487,8 +491,7 @@
         });
       })
       .catch(function () {
-        showError(form, "Odběr teď nejde odeslat. Zkontroluj připojení a zkus to znovu.");
-        resetBtn(btn);
+        showSetupError(form, btn, email);
       });
   }
 

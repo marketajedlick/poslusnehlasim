@@ -72,6 +72,16 @@ jobs:
           fi
           echo "Worker URL: $URL"
           echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "Zapínám workers.dev route (jinak SSL handshake failure)…"
+          API_RESPONSE=$(curl -sS -X POST \
+            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/scripts/poslusnehlasim-subscribe/subdomain" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d '{"enabled": true}')
+          echo "$API_RESPONSE"
+          if ! echo "$API_RESPONSE" | grep -q '"success":true'; then
+            echo "::warning::Nepodařilo se zapnout workers.dev — v dashboardu: Worker → Settings → Domains & Routes → Enable u workers.dev"
+          fi
 
       - name: Refresh data from Hlídač (cron / ručně)
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'

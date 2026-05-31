@@ -88,6 +88,24 @@ npx wrangler@4 deploy
 
 URL z výstupu `wrangler deploy` (např. `https://poslusnehlasim-subscribe.xxx.workers.dev`) dej do GitHub Secret **`SVEJK_SUBSCRIBE_API_URL`** a znovu deployni web.
 
+**Důležité:** Adresa `*.workers.dev` musí být **zapnutá** (Enabled). Jinak `curl` vrátí `SSL handshake failure` a odběr z webu nefunguje.
+
+**Dashboard:** Cloudflare → Workers & Pages → *poslusnehlasim-subscribe* → **Settings → Domains & Routes** → u řádku `workers.dev` klikni **Enable** (ne „Enable Cloudflare Access“ — to je něco jiného).
+
+**Nebo API** (token s oprávněním Workers Scripts Edit):
+
+```bash
+curl -X POST \
+  "https://api.cloudflare.com/client/v4/accounts/TVŮJ_ACCOUNT_ID/workers/scripts/poslusnehlasim-subscribe/subdomain" \
+  -H "Authorization: Bearer TVŮJ_CLOUDFLARE_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"enabled": true}'
+```
+
+Ověření: `curl -I https://poslusnehlasim-subscribe.poslusnehlasim.workers.dev` → HTTP **405** (ne SSL chyba).
+
+CI po každém deployi workers.dev route zapíná automaticky.
+
 Bez workeru funguje režim **`custom`** (vlastní formulář + Ecomail XHR). Výchozí je **`custom`** — oranžový formulář ve stylu webu (XHR bez preflight, funguje v prohlížeči). **`widget`** = embed snippet z Ecomailu.
 
 ```bash

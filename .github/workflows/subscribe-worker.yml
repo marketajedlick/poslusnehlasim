@@ -45,3 +45,14 @@ jobs:
           echo ""
           echo "→ URL workeru zkopíruj z výstupu výše a ulož do GitHub Secret SVEJK_SUBSCRIBE_API_URL"
           echo "→ Pak spusť workflow Build and deploy GitHub Pages (nebo push na main)."
+          echo ""
+          echo "Zapínám workers.dev route (jinak SSL handshake failure)…"
+          API_RESPONSE=$(curl -sS -X POST \
+            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/scripts/poslusnehlasim-subscribe/subdomain" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d '{"enabled": true}')
+          echo "$API_RESPONSE"
+          if ! echo "$API_RESPONSE" | grep -q '"success":true'; then
+            echo "::warning::Nepodařilo se zapnout workers.dev — v dashboardu: Worker → Settings → Domains & Routes → Enable u workers.dev"
+          fi
