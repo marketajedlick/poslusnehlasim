@@ -319,20 +319,9 @@ body.is-turning{ pointer-events:none; }
   text-align:center;
 }
 .subscribe-hint{
-  margin:10px 0 0;
-  font-family:'Old Standard TT',serif;
-  font-size:15px; line-height:1.4;
   color:var(--ink-soft);
-  text-align:center;
 }
 .subscribe--success .subscribe-gloss{ display:none; }
-.subscribe-frame{
-  width:100%; max-width:22rem; height:min(320px, 50vh);
-  margin:12px auto 0; padding:0; border:0;
-  border:2px solid rgba(33,28,20,.14);
-  border-radius:2px; background:var(--paper);
-}
-.subscribe-frame[hidden]{ display:none; }
 
 /* ---------- nav (mobile) ---------- */
 .edition-nav{

@@ -375,16 +375,12 @@
     var emailInput = form.querySelector('input[name="email"]');
     var email = emailInput?.value?.trim() || "";
     var btn = form.querySelector(".subscribe-btn");
-    var hintEl = form.querySelector(".subscribe-hint");
-    var frame = form.parentElement?.querySelector('iframe[name="ecomail-subscribe-frame"]');
 
     if (btn) {
       btn.disabled = true;
       btn.dataset.label = btn.textContent;
       btn.textContent = "Odesílám…";
     }
-    if (hintEl) hintEl.hidden = true;
-    if (frame) frame.hidden = true;
 
     fetch(formAction, {
       method: "POST",
@@ -394,28 +390,7 @@
     })
       .then(function (res) {
         if (res.type === "opaqueredirect" || res.status === 301 || res.status === 302) {
-          if (!frame) {
-            showError(form, "Odběr vyžaduje ověření — zkus to znovu za chvíli.");
-            resetBtn(btn);
-            return;
-          }
-          if (hintEl) hintEl.hidden = false;
-          frame.hidden = false;
-          frame.dataset.pending = "1";
-          var postForm = document.createElement("form");
-          postForm.method = "post";
-          postForm.action = formAction;
-          postForm.target = "ecomail-subscribe-frame";
-          postForm.style.display = "none";
-          var input = document.createElement("input");
-          input.type = "hidden";
-          input.name = "email";
-          input.value = email;
-          postForm.appendChild(input);
-          document.body.appendChild(postForm);
-          postForm.submit();
-          postForm.remove();
-          resetBtn(btn);
+          showSuccess(form);
           return;
         }
         if (!res.ok) {
@@ -497,19 +472,6 @@
         showError(form, "Odběr teď nejde odeslat. Zkontroluj připojení a zkus to znovu.");
         resetBtn(btn);
       });
-  });
-
-  document.querySelectorAll('iframe[name="ecomail-subscribe-frame"]').forEach(function (frame) {
-    frame.addEventListener("load", function () {
-      if (frame.dataset.pending !== "1") return;
-      delete frame.dataset.pending;
-      var form = frame.parentElement?.querySelector(".subscribe-form--hosted");
-      if (!form) return;
-      var hintEl = form.querySelector(".subscribe-hint");
-      if (hintEl) hintEl.hidden = true;
-      frame.hidden = true;
-      showSuccess(form);
-    });
   });
 })();
 </script>
