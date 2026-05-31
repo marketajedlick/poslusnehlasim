@@ -58,20 +58,12 @@ class NewsletterConfig:
 
     @property
     def use_widget(self) -> bool:
-        """Inline Ecomail widget (bez popup, funguje i pro nové e-maily)."""
-        if self.subscribe_mode == "custom" and self.subscribe_api_url:
-            return False
-        if self.subscribe_mode == "widget":
-            return True
-        if self.subscribe_api_url:
-            return False
-        return True
+        """Ecomail widget otevírá popup — nepoužíváme."""
+        return False
 
     @property
     def use_custom_form(self) -> bool:
-        """Vlastní formulář jen s worker API (Ecomail REST, bez robotchecku)."""
-        if self.subscribe_mode == "widget":
-            return False
+        """Vlastní formulář s worker API (Ecomail REST, bez robotchecku)."""
         return bool(self.subscribe_api_url)
 
     @classmethod

@@ -321,23 +321,11 @@ body.is-turning{ pointer-events:none; }
   color:var(--ink-soft);
 }
 .subscribe--success .subscribe-gloss{ display:none; }
-.subscribe-embed{
-  width:100%; max-width:22rem;
-  margin:0 auto;
+.subscribe-frame{
+  width:100%; max-width:22rem; min-height:280px;
+  margin:12px auto 0; border:0; background:var(--paper);
 }
-.subscribe-embed .ec-v-form-regular,
-.subscribe-embed .ec-v-form-step{
-  font-family:'Old Standard TT',serif;
-}
-.subscribe-fallback{
-  margin:0; width:100%; max-width:22rem;
-}
-.subscribe-btn--link{
-  display:inline-block;
-  text-decoration:none;
-  text-align:center;
-  box-sizing:border-box;
-}
+.subscribe-frame[hidden]{ display:none; }
 
 /* ---------- nav (mobile) ---------- */
 .edition-nav{

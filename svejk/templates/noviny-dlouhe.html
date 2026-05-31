@@ -363,6 +363,29 @@
   }
 
   document.addEventListener("submit", function (e) {
+    const iframeForm = e.target.closest(".subscribe-form--iframe");
+    if (iframeForm) {
+      if (iframeForm.querySelector(".subscribe-hp")?.value) {
+        e.preventDefault();
+        return;
+      }
+      const emailInput = iframeForm.querySelector('input[name="email"]');
+      const email = emailInput?.value?.trim() || "";
+      if (!email) {
+        e.preventDefault();
+        emailInput?.focus();
+        return;
+      }
+      const frame = iframeForm.parentElement?.querySelector('iframe[name="ecomail-subscribe-frame"]');
+      if (frame) frame.hidden = false;
+      const btn = iframeForm.querySelector(".subscribe-btn");
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Odesílám…";
+      }
+      return;
+    }
+
     const form = e.target.closest(".subscribe-form[data-subscribe-api]");
     if (!form || form.classList.contains("subscribe-form--success")) return;
     e.preventDefault();
