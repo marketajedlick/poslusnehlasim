@@ -20,6 +20,9 @@ DEFAULT_ECOMAIL_FORM_ACTION = (
 )
 DEFAULT_ECOMAIL_LIST_ID = "2"
 DEFAULT_ECOMAIL_WIDGET_JS = "https://d70shl7vidtft.cloudfront.net/widget.js"
+DEFAULT_SUBSCRIBE_API_URL = (
+    "https://poslusnehlasim-subscribe.poslusnehlasim.workers.dev"
+)
 
 
 def _parse_subscribe_form(form_action: str) -> tuple[str, str, str]:
@@ -76,7 +79,9 @@ class NewsletterConfig:
             form_action = f"{form_action}{sep}source=poslusnehlasim"
         site = _site_url()
         feed = f"{site}/feed.xml"
-        subscribe_api_url = (os.environ.get("SVEJK_SUBSCRIBE_API_URL") or "").strip()
+        subscribe_api_url = (
+            os.environ.get("SVEJK_SUBSCRIBE_API_URL") or DEFAULT_SUBSCRIBE_API_URL
+        ).strip()
         subscribe_mode = os.environ.get("SVEJK_SUBSCRIBE_MODE", "").strip().lower()
         if subscribe_mode not in ("widget", "custom", "worker", ""):
             subscribe_mode = ""

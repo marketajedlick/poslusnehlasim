@@ -405,6 +405,49 @@
     return { ok: false, message: "" };
   }
 
+  function notifyFailedSubscribe(email, apiUrl) {
+    if (!apiUrl || !email) return;
+    fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: email, notify_failed: true }),
+    }).catch(function () {});
+  }
+
+  function showSetupError(form, btn, email) {
+    showError(form, "Odběr se právě nastavuje, zkus to za pár minut znovu.");
+    resetBtn(btn);
+    notifyFailedSubscribe(email, form.dataset.subscribeApi);
+  }
+
+  function tryWorkerSubscribe(form, email, btn) {
+    var apiUrl = form.dataset.subscribeApi;
+    if (!apiUrl) {
+      showSetupError(form, btn, email);
+      return;
+    }
+    fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: email,
+        website: form.querySelector(".subscribe-hp")?.value || "",
+      }),
+    })
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (data) {
+          if (res.ok && data.ok !== false) {
+            showSuccess(form);
+            return;
+          }
+          showSetupError(form, btn, email);
+        });
+      })
+      .catch(function () {
+        showSetupError(form, btn, email);
+      });
+  }
+
   function submitHosted(form) {
     var formAction = form.dataset.formAction || form.action;
     var emailInput = form.querySelector('input[name="email"]');
@@ -425,8 +468,7 @@
     })
       .then(function (res) {
         if (res.type === "opaqueredirect" || res.status === 301 || res.status === 302) {
-          showError(form, "Odběr se právě nastavuje — zkus to za pár minut znovu.");
-          resetBtn(btn);
+          tryWorkerSubscribe(form, email, btn);
           return;
         }
         if (!res.ok) {

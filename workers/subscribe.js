@@ -39,6 +39,11 @@ export default {
       return json({ ok: false, error: "misconfigured" }, 500, headers);
     }
 
+    if (body.notify_failed) {
+      await notifyAdmin(env, email);
+      return json({ ok: true }, 200, headers);
+    }
+
     const res = await fetch(
       `https://api2.ecomailapp.cz/lists/${env.ECOMAIL_LIST_ID}/subscribe`,
       {
@@ -58,12 +63,40 @@ export default {
 
     if (!res.ok) {
       const text = await res.text();
+      await notifyAdmin(env, email);
       return json({ ok: false, error: text.slice(0, 200) }, 502, headers);
     }
 
     return json({ ok: true }, 200, headers);
   },
 };
+
+async function notifyAdmin(env, failedEmail) {
+  const to = (env.NOTIFY_EMAIL || env.ECOMAIL_FROM_EMAIL || "").trim();
+  const from = (env.ECOMAIL_FROM_EMAIL || to).trim();
+  if (!to || !from || !env.ECOMAIL_API_KEY) return;
+
+  const safe = failedEmail.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  await fetch("https://api2.ecomailapp.cz/transactional/send-message", {
+    method: "POST",
+    headers: {
+      key: env.ECOMAIL_API_KEY,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      message: {
+        subject: "Neúspěšný odběr novinek",
+        from_name: "Poslušně hlásím",
+        from_email: from,
+        reply_to: failedEmail,
+        text: `E-mail ${failedEmail} se nepodařilo zapsat do odběru novinek.`,
+        html: `<p>E-mail <strong>${safe}</strong> se nepodařilo zapsat do odběru novinek.</p>`,
+        to: [{ email: to }],
+        options: { click_tracking: false, open_tracking: false },
+      },
+    }),
+  });
+}
 
 function json(data, status, headers) {
   return new Response(JSON.stringify(data), {
