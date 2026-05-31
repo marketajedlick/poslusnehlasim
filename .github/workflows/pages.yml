@@ -78,17 +78,18 @@ jobs:
             echo "::warning::Pages deploy hotov, ale HTTPS ještě neodpovídá — zkus za chvíli: curl -I $URL"
           fi
 
-      - name: Refresh data from Hlídač (cron / ručně)
-        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
-        env:
-          HLIDAC_TOKEN: ${{ secrets.HLIDAC_TOKEN }}
-        run: |
-          if [ -z "$HLIDAC_TOKEN" ]; then
-            echo "HLIDAC_TOKEN není nastaven — používám committed processed/facts"
-            exit 0
-          fi
-          ./run-svejk.sh build --obdobi 2025 --vsechny-schuze -q \
-            || ./run-svejk.sh build --obdobi 2025 --vsechny-schuze --only align,extract,compose -q
+
+     # - name: Refresh data from Hlídač (cron / ručně)
+     #   if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+     #   env:
+     #     HLIDAC_TOKEN: ${{ secrets.HLIDAC_TOKEN }}
+     #   run: |
+     #     if [ -z "$HLIDAC_TOKEN" ]; then
+    #        echo "HLIDAC_TOKEN není nastaven — používám committed processed/facts"
+     #       exit 0
+     #     fi
+    #      ./run-svejk.sh build --obdobi 2025 --vsechny-schuze -q \
+     #       || ./run-svejk.sh build --obdobi 2025 --vsechny-schuze --only align,extract,compose -q
 
       - name: Export static site
         env:
