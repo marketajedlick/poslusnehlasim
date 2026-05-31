@@ -10,8 +10,8 @@
             data-subscribe-api="{{ newsletter.subscribe_api_url }}"
             {% else %}
             action="{{ newsletter.form_action }}"
-            target="ecomail-subscribe-frame"
             novalidate
+            data-form-action="{{ newsletter.form_action }}"
             {% endif %}
           >
             <input type="text" name="website" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
@@ -27,6 +27,7 @@
               />
               <button class="subscribe-btn" type="submit">Poslušně odebírat</button>
             </div>
+            <p class="subscribe-hint" hidden>Dokončete ověření níže.</p>
             <p class="subscribe-error" hidden role="alert"></p>
             <p class="subscribe-success" hidden>Poslušně hlásím, jsi zapsaný.</p>
           </form>
@@ -35,8 +36,7 @@
             name="ecomail-subscribe-frame"
             class="subscribe-frame"
             title="Ověření odběru"
-            tabindex="-1"
-            aria-hidden="true"
+            hidden
           ></iframe>
           {% endif %}
         </section>
