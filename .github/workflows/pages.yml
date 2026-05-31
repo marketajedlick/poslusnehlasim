@@ -79,8 +79,13 @@ jobs:
             -H "Content-Type: application/json" \
             -d '{"enabled": true}')
           echo "$API_RESPONSE"
-          if ! echo "$API_RESPONSE" | grep -q '"success":true'; then
+          if ! echo "$API_RESPONSE" | grep -qE '"success"[[:space:]]*:[[:space:]]*true'; then
             echo "::warning::Nepodařilo se zapnout workers.dev — v dashboardu: Worker → Settings → Domains & Routes → Enable u workers.dev"
+          else
+            sleep 5
+            if ! curl -4 -sfI "$URL" >/dev/null 2>&1; then
+              echo "::warning::Worker běží (HTTP OK), ale HTTPS ještě neodpovídá — v dashboardu zkontroluj Domains & Routes u workers.dev; může trvat pár minut."
+            fi
           fi
 
       - name: Refresh data from Hlídač (cron / ručně)

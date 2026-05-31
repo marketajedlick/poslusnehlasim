@@ -102,7 +102,15 @@ curl -X POST \
   -d '{"enabled": true}'
 ```
 
-Ověření: `curl -I https://poslusnehlasim-subscribe.poslusnehlasim.workers.dev` → HTTP **405** (ne SSL chyba).
+Ověření:
+
+```bash
+# HTTPS musí vrátit HTTP 405 (ne SSL chybu):
+curl -I https://poslusnehlasim-subscribe.poslusnehlasim.workers.dev
+
+# HTTP funguje dřív než HTTPS — pokud vidíš 405 jen tady, certifikát se ještě vystavuje:
+curl -I http://poslusnehlasim-subscribe.poslusnehlasim.workers.dev
+```
 
 CI po každém deployi workers.dev route zapíná automaticky.
 
