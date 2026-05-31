@@ -363,26 +363,27 @@
   }
 
   document.addEventListener("submit", function (e) {
-    const iframeForm = e.target.closest(".subscribe-form--iframe");
-    if (iframeForm) {
-      if (iframeForm.querySelector(".subscribe-hp")?.value) {
+    const hostedForm = e.target.closest(".subscribe-form--hosted");
+    if (hostedForm) {
+      if (hostedForm.querySelector(".subscribe-hp")?.value) {
         e.preventDefault();
         return;
       }
-      const emailInput = iframeForm.querySelector('input[name="email"]');
+      const emailInput = hostedForm.querySelector('input[name="email"]');
       const email = emailInput?.value?.trim() || "";
       if (!email) {
         e.preventDefault();
         emailInput?.focus();
         return;
       }
-      const frame = iframeForm.parentElement?.querySelector('iframe[name="ecomail-subscribe-frame"]');
-      if (frame) frame.hidden = false;
-      const btn = iframeForm.querySelector(".subscribe-btn");
+      const frame = hostedForm.parentElement?.querySelector('iframe[name="ecomail-subscribe-frame"]');
+      const btn = hostedForm.querySelector(".subscribe-btn");
       if (btn) {
         btn.disabled = true;
+        btn.dataset.label = btn.textContent;
         btn.textContent = "Odesílám…";
       }
+      if (frame) frame.dataset.pending = "1";
       return;
     }
 
@@ -428,6 +429,20 @@
         showError(form, "Odběr teď nejde odeslat. Zkontroluj připojení a zkus to znovu.");
         resetBtn(btn);
       });
+  });
+
+  document.querySelectorAll('iframe[name="ecomail-subscribe-frame"]').forEach(function (frame) {
+    var ignoreFirst = true;
+    frame.addEventListener("load", function () {
+      if (ignoreFirst) {
+        ignoreFirst = false;
+        return;
+      }
+      if (frame.dataset.pending !== "1") return;
+      delete frame.dataset.pending;
+      var form = frame.parentElement?.querySelector(".subscribe-form--hosted");
+      if (form) showSuccess(form);
+    });
   });
 })();
 </script>

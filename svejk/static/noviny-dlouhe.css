@@ -322,10 +322,11 @@ body.is-turning{ pointer-events:none; }
 }
 .subscribe--success .subscribe-gloss{ display:none; }
 .subscribe-frame{
-  width:100%; max-width:22rem; min-height:280px;
-  margin:12px auto 0; border:0; background:var(--paper);
+  position:absolute;
+  width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0);
+  white-space:nowrap; border:0;
 }
-.subscribe-frame[hidden]{ display:none; }
 
 /* ---------- nav (mobile) ---------- */
 .edition-nav{

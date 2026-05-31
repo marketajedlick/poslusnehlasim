@@ -1,13 +1,18 @@
         {% if newsletter.show_subscribe %}
         <section class="subscribe" aria-label="Odběr novinek">
           <p class="subscribe-gloss">Do sněmovny sám nemusíš, nech mi tu email a pošleme ti nové vydání.</p>
-          {% if newsletter.use_custom_form %}
           <form
-            class="subscribe-form"
-            action="#"
+            class="subscribe-form{% if newsletter.form_action and not newsletter.subscribe_api_url %} subscribe-form--hosted{% endif %}"
             method="post"
+            {% if newsletter.subscribe_api_url %}
+            action="#"
             novalidate
             data-subscribe-api="{{ newsletter.subscribe_api_url }}"
+            {% else %}
+            action="{{ newsletter.form_action }}"
+            target="ecomail-subscribe-frame"
+            novalidate
+            {% endif %}
           >
             <input type="text" name="website" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
             <div class="subscribe-row">
@@ -25,33 +30,13 @@
             <p class="subscribe-error" hidden role="alert"></p>
             <p class="subscribe-success" hidden>Poslušně hlásím, jsi zapsaný.</p>
           </form>
-          {% elif newsletter.form_action %}
-          <form
-            class="subscribe-form subscribe-form--iframe"
-            method="post"
-            action="{{ newsletter.form_action }}"
-            target="ecomail-subscribe-frame"
-            novalidate
-          >
-            <input type="text" name="website" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
-            <div class="subscribe-row">
-              <input
-                class="subscribe-input"
-                type="email"
-                name="email"
-                required
-                autocomplete="email"
-                aria-label="E-mail pro odběr novinek"
-                placeholder="vas@email.cz"
-              />
-              <button class="subscribe-btn" type="submit">Poslušně odebírat</button>
-            </div>
-          </form>
+          {% if newsletter.form_action and not newsletter.subscribe_api_url %}
           <iframe
             name="ecomail-subscribe-frame"
             class="subscribe-frame"
-            title="Dokončení odběru"
-            hidden
+            title="Ověření odběru"
+            tabindex="-1"
+            aria-hidden="true"
           ></iframe>
           {% endif %}
         </section>
