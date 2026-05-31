@@ -39,7 +39,6 @@ jobs:
 
       - name: Deploy subscribe worker (Ecomail API)
         id: subscribe_worker
-        continue-on-error: true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -52,9 +51,17 @@ jobs:
           fi
           cd workers
           printf '%s' "$ECOMAIL_API_KEY" | npx wrangler@4 secret put ECOMAIL_API_KEY
+          set +e
           DEPLOY_OUTPUT=$(npx wrangler@4 deploy 2>&1)
+          DEPLOY_STATUS=$?
+          set -e
           echo "$DEPLOY_OUTPUT"
           URL=$(echo "$DEPLOY_OUTPUT" | grep -oE 'https://[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+\.workers\.dev' | head -1)
+          if [ -z "$URL" ]; then
+            echo "::error::Worker deploy selhal (exit $DEPLOY_STATUS). Zkontroluj CLOUDFLARE_API_TOKEN a CLOUDFLARE_ACCOUNT_ID."
+            exit 1
+          fi
+          echo "Worker URL: $URL"
           echo "url=$URL" >> "$GITHUB_OUTPUT"
 
       - name: Refresh data from Hlídač (cron / ručně)
@@ -80,8 +87,8 @@ jobs:
           ECOMAIL_API_KEY: ${{ secrets.ECOMAIL_API_KEY }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
-          if [ -n "$ECOMAIL_API_KEY" ] && [ -z "$SVEJK_SUBSCRIBE_API_URL" ] && [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "::warning::Odběr: bez Cloudflare Workeru neprojdou všechny nové e-maily. Přidej CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID do GitHub Secrets (viz DEPLOY.md)."
+          if [ -n "$ECOMAIL_API_KEY" ] && [ -z "$SVEJK_SUBSCRIBE_API_URL" ]; then
+            echo "::warning::Odběr běží bez worker API — nové e-maily nemusí projít. Zkontroluj deploy krok „Deploy subscribe worker“."
           fi
           ./run-svejk.sh export-pages --obdobi 2025 --out site --cname poslusnehlasim.cz
 
