@@ -468,7 +468,7 @@
       submitViaApi(form, apiUrl);
       return;
     }
-    if (form.dataset.formAction || form.classList.contains("subscribe-form--hosted")) {
+    if (form.dataset.formAction) {
       submitHosted(form);
     }
   });

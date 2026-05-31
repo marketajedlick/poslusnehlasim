@@ -1,6 +1,7 @@
 name = "poslusnehlasim-subscribe"
 main = "subscribe.js"
 compatibility_date = "2024-01-01"
+workers_dev = true
 
 [vars]
 ALLOWED_ORIGIN = "https://poslusnehlasim.cz,https://www.poslusnehlasim.cz"
