@@ -23,6 +23,8 @@ from svejk.paths import SchuzePaths, processed_root
 
 _STATIC = Path(__file__).resolve().parent.parent / "static"
 _CSS = _STATIC / "noviny-dlouhe.css"
+_FAVICON_PNG = _STATIC / "svejk-terra.png"
+_FAVICON_SVG = _STATIC / "svejk.svg"
 
 
 def _base_path() -> str:
@@ -92,6 +94,12 @@ def run_export_pages(
     static_dir = out / "static"
     static_dir.mkdir()
     shutil.copy2(_CSS, static_dir / "noviny-dlouhe.css")
+    if _FAVICON_SVG.is_file():
+        shutil.copy2(_FAVICON_SVG, static_dir / "favicon.svg")
+    if _FAVICON_PNG.is_file():
+        shutil.copy2(_FAVICON_PNG, static_dir / "favicon.png")
+        shutil.copy2(_FAVICON_PNG, static_dir / "apple-touch-icon.png")
+        shutil.copy2(_FAVICON_PNG, out / "favicon.ico")
     css_href = static_css_path(base, version=css_asset_version())
 
     editions = list_obdobi_editions(obdobi)

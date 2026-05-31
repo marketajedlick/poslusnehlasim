@@ -15,6 +15,7 @@ _TEMPLATES = Path(__file__).resolve().parent.parent / "templates"
 _STATIC = Path(__file__).resolve().parent.parent / "static"
 _CSS = _STATIC / "noviny-dlouhe.css"
 _SVEJK_SVG = _STATIC / "svejk.svg"
+_FAVICON_PNG = _STATIC / "svejk-terra.png"
 
 
 def static_css_path(base_path: str = "", *, version: str | None = None) -> str:
@@ -23,6 +24,16 @@ def static_css_path(base_path: str = "", *, version: str | None = None) -> str:
     if version:
         path = f"{path}?v={version}"
     return f"{base}{path}" if base else path
+
+
+def static_favicon_paths(base_path: str = "") -> dict[str, str]:
+    base = base_path.rstrip("/")
+    prefix = f"{base}/static" if base else "/static"
+    return {
+        "favicon_svg": f"{prefix}/favicon.svg",
+        "favicon_png": f"{prefix}/favicon.png",
+        "apple_touch_icon": f"{prefix}/apple-touch-icon.png",
+    }
 
 
 def css_asset_version() -> str:
@@ -71,6 +82,7 @@ def render_den_html(
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
     if css_href is None:
         css_href = static_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
     nav = edition_nav(
         paths,
         content.datum,
@@ -125,4 +137,5 @@ def render_den_html(
         canonical_url=canonical_url,
         meta_description=meta_description,
         article_json_ld=json_ld,
+        **favicons,
     )
