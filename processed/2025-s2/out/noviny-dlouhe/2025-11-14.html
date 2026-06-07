@@ -4,11 +4,28 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#c9bda3" />
+<link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
+<link rel="icon" type="image/png" href="/static/favicon.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/static/apple-touch-icon.png" />
 <style>.stagewrap,.stack{width:100%;max-width:100%;margin:0 auto}@media(min-width:721px){.stagewrap,.stack{width:840px;max-width:840px}}</style>
 <title>Poslušně hlásím · Pátek 14 / 11 / 2025</title>
+<meta name="description" content="Čtyřicet tři hlasování, sto čtyřicet šest minut v sále a ve dvanáct hodin třicet devět minut bylo po všem." />
+<link rel="canonical" href="https://poslusnehlasim.cz/noviny/2025/2/14.11.2025.html" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:site_name" content="Poslušně hlásím" />
+<meta property="og:title" content="Poslušně hlásím · Pátek 14 / 11 / 2025" />
+<meta property="og:description" content="Čtyřicet tři hlasování, sto čtyřicet šest minut v sále a ve dvanáct hodin třicet devět minut bylo po všem." />
+<meta property="og:url" content="https://poslusnehlasim.cz/noviny/2025/2/14.11.2025.html" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Poslušně hlásím · Pátek 14 / 11 / 2025" />
+<meta name="twitter:description" content="Čtyřicet tři hlasování, sto čtyřicet šest minut v sále a ve dvanáct hodin třicet devět minut bylo po všem." />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Poslušně hlásím · Pátek 14 / 11 / 2025", "description": "Čtyřicet tři hlasování, sto čtyřicet šest minut v sále a ve dvanáct hodin třicet devět minut bylo po všem.", "url": "https://poslusnehlasim.cz/noviny/2025/2/14.11.2025.html", "datePublished": "2025-11-14", "inLanguage": "cs", "isAccessibleForFree": true, "isPartOf": {"@type": "WebSite", "name": "Poslušně hlásím", "url": "https://poslusnehlasim.cz/"}}</script>
+<link rel="alternate" type="text/plain" title="Informace pro AI (llms.txt)" href="https://poslusnehlasim.cz/llms.txt" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="alternate" type="application/rss+xml" title="Poslušně hlásím, nová vydání" href="https://poslusnehlasim.cz/feed.xml" />
 
 <style>:root{
   --paper:#f0e6cf; --paper-2:#e8dcbf; --paper-3:#ded0ad; --ink:#211c14; --ink-soft:#5a503e;
@@ -24,7 +41,7 @@ html{
 }
 body{
   margin:0;
-  background:#c9bda3;
+  background:#c9bda3 !important;
   font-family:'Old Standard TT',serif;
   color:var(--ink);
   overflow-x:clip;
@@ -190,6 +207,7 @@ body.is-turning{ pointer-events:none; }
   margin-top:16px;
   padding-top:14px;
   border-top:1px solid rgba(240,230,207,.22);
+  white-space:pre-line;
 }
 
 /* ---------- items (mobile) ---------- */
@@ -271,6 +289,174 @@ body.is-turning{ pointer-events:none; }
   font-family:'Anton',sans-serif; text-transform:uppercase;
   letter-spacing:.18em; font-size:9px; color:var(--paper-3);
   margin:14px 0 0 36px;
+}
+
+/* ---------- subscribe ---------- */
+.subscribe{
+  margin-top:24px; padding:20px 0 0;
+  border-top:1px solid rgba(33,28,20,.14);
+  display:flex; flex-direction:column; align-items:center;
+  text-align:center;
+}
+.subscribe-gloss{
+  margin:0 0 14px;
+  font-family:'Old Standard TT',serif; font-style:italic;
+  font-size:17px; line-height:1.45; color:var(--ink-soft);
+  max-width:48ch; text-align:center;
+}
+.subscribe-form{
+  margin:0; width:100%; max-width:22rem;
+  display:flex; flex-direction:column; align-items:center;
+}
+.subscribe-hp{
+  position:absolute; left:-9999px; width:1px; height:1px; opacity:0;
+}
+.subscribe-row{
+  display:flex; flex-direction:column; gap:10px; align-items:stretch;
+  width:100%; max-width:22rem; margin:0 auto;
+}
+.subscribe-input{
+  width:100%;
+  font-family:'Old Standard TT',serif; font-size:17px;
+  padding:10px 12px; border:2px solid rgba(33,28,20,.25);
+  background:var(--paper); color:var(--ink);
+  border-radius:2px;
+}
+.subscribe-input:focus{
+  outline:2px solid var(--terra); outline-offset:2px;
+}
+.subscribe-btn{
+  width:100%;
+  font-family:'Anton',sans-serif; text-transform:uppercase; letter-spacing:.08em;
+  font-size:14px; padding:10px 18px; border:0; border-radius:2px;
+  background:var(--terra); color:var(--paper); cursor:pointer;
+}
+.subscribe-btn:hover{ filter:brightness(1.05); }
+.subscribe-btn:disabled{ cursor:default; opacity:.7; }
+.subscribe-form--success .subscribe-row{ display:none; }
+.subscribe-success{
+  margin:8px 0 0; padding:0;
+  font-family:'Anton',sans-serif; text-transform:uppercase;
+  letter-spacing:.06em; font-size:22px; line-height:1.35;
+  color:var(--ink); text-align:center;
+  max-width:28ch;
+}
+.subscribe-error{
+  margin:10px 0 0;
+  font-family:'Old Standard TT',serif;
+  font-size:15px; line-height:1.4;
+  color:var(--red);
+  text-align:center;
+}
+.subscribe-hint{
+  color:var(--ink-soft);
+}
+.subscribe--success .subscribe-gloss{ display:none; }
+
+/* ---------- archive (chips on archiv page, link on editions) ---------- */
+.archive-link{
+  margin-top:24px; padding:20px 0 0;
+  border-top:1px solid rgba(33,28,20,.14);
+  display:flex; justify-content:center;
+  text-align:center;
+}
+.archive-chip{
+  flex:0 0 auto;
+  display:inline-flex; flex-direction:column; align-items:center; justify-content:center;
+  width:42px; height:42px;
+  border:2px solid rgba(33,28,20,.28);
+  border-radius:50%;
+  background:var(--paper);
+  color:var(--ink);
+  text-decoration:none;
+  transition:background .15s, border-color .15s, color .15s;
+}
+.archive-chip:hover{
+  border-color:var(--terra);
+  background:rgba(207,90,49,.08);
+  color:var(--terra);
+}
+.archive-chip.is-current{
+  border-color:var(--terra);
+  background:var(--terra);
+  color:var(--paper);
+  pointer-events:none;
+}
+.archive-chip-day{
+  font-family:'Oswald',sans-serif; font-weight:600;
+  font-size:14px; line-height:1; letter-spacing:.02em;
+}
+.archive-chip-sub{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:7px; line-height:1; letter-spacing:.02em;
+  margin-top:2px; opacity:.85;
+}
+.archive-all{
+  margin-top:12px;
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--terra); text-decoration:none;
+  border-bottom:1px solid rgba(207,90,49,.35);
+  padding-bottom:1px;
+}
+.archive-all:hover{ border-bottom-color:var(--terra); }
+
+/* ---------- archiv page ---------- */
+body.archiv-page{
+  padding:calc(24px + env(safe-area-inset-top, 0px)) 16px 32px;
+}
+.archiv-wrap{
+  width:100%; max-width:640px; margin:0 auto;
+  background:var(--paper);
+  border:1.5px solid rgba(33,28,20,.22);
+  box-shadow:0 10px 28px var(--shadow);
+  padding:24px 18px 28px;
+}
+.archiv-head{
+  text-align:center;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(33,28,20,.14);
+  margin-bottom:20px;
+}
+.archiv-title{
+  margin:0 0 8px;
+  font-family:'Anton',sans-serif; text-transform:uppercase;
+  letter-spacing:.06em; font-size:clamp(22px, 6vw, 32px);
+  color:var(--ink);
+}
+.archiv-gloss{
+  margin:0 0 14px;
+  font-family:'Old Standard TT',serif; font-style:italic;
+  font-size:17px; line-height:1.45; color:var(--ink-soft);
+}
+.archiv-latest{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--terra); text-decoration:none;
+  border-bottom:1px solid rgba(207,90,49,.35);
+  padding-bottom:1px;
+}
+.archiv-latest:hover{ border-bottom-color:var(--terra); }
+.archiv-months{ display:flex; flex-direction:column; gap:18px; }
+.archiv-month-label{
+  margin:0 0 10px;
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.archiv-month-chips{
+  display:flex; flex-wrap:wrap; gap:8px;
+}
+.archiv-legend{
+  margin:24px 0 0;
+  padding-top:18px;
+  border-top:1px solid rgba(33,28,20,.14);
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:11px; letter-spacing:.08em;
+  color:var(--ink-soft); text-align:center;
+}
+.archiv-legend-mark{
+  font-weight:600; color:var(--ink);
 }
 
 /* ---------- nav (mobile) ---------- */
@@ -434,6 +620,18 @@ body.is-turning{ pointer-events:none; }
   .verdict .q{ font-size:38px; line-height:1.18; padding-left:74px; }
   .verdict .sign{ letter-spacing:.26em; font-size:11px; margin:18px 0 0 74px; }
 
+  .archive-link{ margin-top:28px; padding-top:24px; }
+  .archive-chip{ width:46px; height:46px; }
+  .archive-chip-day{ font-size:15px; }
+
+  .archiv-wrap{ padding:32px 28px 36px; }
+
+  .subscribe{ margin-top:28px; padding-top:24px; }
+  .subscribe-gloss{ font-size:18px; max-width:none; }
+  .subscribe-input{ font-size:18px; padding:12px 14px; }
+  .subscribe-btn{ font-size:15px; padding:12px 22px; }
+  .subscribe-success{ font-size:26px; max-width:none; }
+
   .edition-nav{
     left:50%; right:auto; width:auto;
     transform:translateX(-50%);
@@ -537,7 +735,7 @@ body.is-turning{ pointer-events:none; }
             <div class="bteam r"><span class="bnum">0</span><span class="blbl">návrhů zamítli</span></div>
           </div>
           
-          <div class="board-note">Čtyřicet tři hlasování, 146 minut v sále a v 12:39 bylo po všem.</div>
+          <div class="board-note">Čtyřicet tři hlasování, sto čtyřicet šest minut v sále a ve dvanáct hodin třicet devět minut bylo po všem.</div>
           
         </div>
 
@@ -565,10 +763,41 @@ body.is-turning{ pointer-events:none; }
         <div class="verdict">
           <span class="qm">„</span>
           <p class="q">
-            <span class="key">Poslušně hlásím,</span> že dnes ve sněmovně celé vydání stojí na „Prošlo to“, což je na jeden den docela úctyhodné.
+            <span class="key">Poslušně hlásím,</span> že celá stránka je jedna kapitola, personálku a obsazení funkcí; co je ve vydání, prošlo.
           </p>
           <div class="sign">- Váš dobrý voják Švejk -</div>
         </div>
+
+        
+        
+        <section class="subscribe" aria-label="Odběr novinek">
+          <p class="subscribe-gloss">Do sněmovny sám nemusíš, nech mi tu email a pošleme ti nové vydání.</p>
+          <form
+            class="subscribe-form"
+            action="#"
+            method="post"
+            novalidate
+            data-subscribe-api="https://poslusnehlasim-odebir.pages.dev"
+            data-form-action="https://poslusnehlasim.ecomailapp.cz/public/subscribe/2/2bb287d15897fe2f9d89c882af9a3a8b?source=poslusnehlasim"
+          >
+            <input type="text" name="website" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
+            <div class="subscribe-row">
+              <input
+                class="subscribe-input"
+                type="email"
+                name="email"
+                required
+                autocomplete="email"
+                aria-label="E-mail pro odběr novinek"
+                placeholder="vas@email.cz"
+              />
+              <button class="subscribe-btn" type="submit">Poslušně odebírat</button>
+            </div>
+            <p class="subscribe-error" hidden role="alert"></p>
+            <p class="subscribe-success" hidden>Poslušně hlásím, e-mail je zapsán.</p>
+          </form>
+        </section>
+        
             </div>
             <div class="dogear"></div>
           </div>
@@ -777,6 +1006,196 @@ body.is-turning{ pointer-events:none; }
 
     if (usePageTurn) history.replaceState({ href: location.href }, '', location.href);
   })();
+</script>
+<script>
+(function () {
+  if (location.protocol === "file:") return;
+
+  function showSuccess(form) {
+    const row = form.querySelector(".subscribe-row");
+    const emailInput = form.querySelector('input[name="email"]');
+    const successEl = form.querySelector(".subscribe-success");
+    const errorEl = form.querySelector(".subscribe-error");
+    if (emailInput) {
+      emailInput.value = "";
+      emailInput.disabled = true;
+    }
+    if (row) row.hidden = true;
+    if (errorEl) errorEl.hidden = true;
+    form.classList.add("subscribe-form--success");
+    form.closest(".subscribe")?.classList.add("subscribe--success");
+    if (successEl) successEl.hidden = false;
+  }
+
+  function showError(form, message) {
+    const errorEl = form.querySelector(".subscribe-error");
+    if (!errorEl) return;
+    errorEl.textContent = message;
+    errorEl.hidden = false;
+  }
+
+  function resetBtn(btn) {
+    if (!btn) return;
+    btn.disabled = false;
+    btn.textContent = btn.dataset.label || "Poslušně odebírat";
+  }
+
+  function submitViaApi(form, apiUrl) {
+    var emailInput = form.querySelector('input[name="email"]');
+    var email = emailInput?.value?.trim() || "";
+    var btn = form.querySelector(".subscribe-btn");
+
+    if (btn) {
+      btn.disabled = true;
+      btn.dataset.label = btn.textContent;
+      btn.textContent = "Odesílám…";
+    }
+
+    return fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: email,
+        website: form.querySelector(".subscribe-hp")?.value || "",
+      }),
+    })
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (data) {
+          if (res.ok && data.ok !== false) {
+            showSuccess(form);
+            return;
+          }
+          notifyFailedSubscribe(email, apiUrl);
+          showError(form, "Odběr se nepodařil odeslat. Zkus to znovu za chvíli.");
+          resetBtn(btn);
+        });
+      })
+      .catch(function () {
+        if (form.dataset.formAction) {
+          submitHosted(form);
+          return;
+        }
+        showSetupError(form, btn, email);
+      });
+  }
+
+  function parseEcomailHtml(html) {
+    if (/registrov[aá]n/i.test(html)) return { ok: true };
+    if (/D[eě]kujeme|alert-success|subscribeForm .success/i.test(html)) return { ok: true };
+    var m = html.match(/alert-danger[^>]*>([^<]+)/i);
+    if (m) return { ok: false, message: m[1].trim() };
+    return { ok: false, message: "" };
+  }
+
+  function notifyFailedSubscribe(email, apiUrl) {
+    if (!apiUrl || !email) return;
+    fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: email, notify_failed: true }),
+    }).catch(function () {});
+  }
+
+  function showSetupError(form, btn, email) {
+    showError(form, "Odběr se právě nastavuje, zkus to za pár minut znovu.");
+    resetBtn(btn);
+    notifyFailedSubscribe(email, form.dataset.subscribeApi);
+  }
+
+  function tryWorkerSubscribe(form, email, btn) {
+    var apiUrl = form.dataset.subscribeApi;
+    if (!apiUrl) {
+      showSetupError(form, btn, email);
+      return;
+    }
+    fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: email,
+        website: form.querySelector(".subscribe-hp")?.value || "",
+      }),
+    })
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (data) {
+          if (res.ok && data.ok !== false) {
+            showSuccess(form);
+            return;
+          }
+          showSetupError(form, btn, email);
+        });
+      })
+      .catch(function () {
+        showSetupError(form, btn, email);
+      });
+  }
+
+  function submitHosted(form) {
+    var formAction = form.dataset.formAction || form.action;
+    var emailInput = form.querySelector('input[name="email"]');
+    var email = emailInput?.value?.trim() || "";
+    var btn = form.querySelector(".subscribe-btn");
+
+    if (btn) {
+      btn.disabled = true;
+      btn.dataset.label = btn.textContent;
+      btn.textContent = "Odesílám…";
+    }
+
+    fetch(formAction, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ email: email }).toString(),
+      redirect: "manual",
+    })
+      .then(function (res) {
+        if (res.type === "opaqueredirect" || res.status === 301 || res.status === 302) {
+          tryWorkerSubscribe(form, email, btn);
+          return;
+        }
+        if (!res.ok) {
+          showError(form, "Odběr se nepodařil odeslat. Zkus to znovu za chvíli.");
+          resetBtn(btn);
+          return;
+        }
+        return res.text().then(function (html) {
+          var parsed = parseEcomailHtml(html);
+          if (parsed.ok) {
+            showSuccess(form);
+            return;
+          }
+          showError(form, parsed.message || "Odběr se nepodařil. Zkontroluj e-mail a zkus to znovu.");
+          resetBtn(btn);
+        });
+      })
+      .catch(function () {
+        showSetupError(form, btn, email);
+      });
+  }
+
+  document.addEventListener("submit", function (e) {
+    const form = e.target.closest(".subscribe-form");
+    if (!form || form.classList.contains("subscribe-form--success")) return;
+    e.preventDefault();
+    if (form.querySelector(".subscribe-hp")?.value) return;
+
+    const emailInput = form.querySelector('input[name="email"]');
+    const email = emailInput?.value?.trim() || "";
+    if (!email) {
+      emailInput?.focus();
+      return;
+    }
+
+    var apiUrl = form.dataset.subscribeApi;
+    if (apiUrl) {
+      submitViaApi(form, apiUrl);
+      return;
+    }
+    if (form.dataset.formAction) {
+      submitHosted(form);
+    }
+  });
+})();
 </script>
 </body>
 </html>

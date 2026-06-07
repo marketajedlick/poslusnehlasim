@@ -221,9 +221,7 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
         ]
         proslo = sum(1 for v in zakony if v.get("vysledek") == "A")
         zamitnuto = sum(1 for v in zakony if v.get("vysledek") == "R")
-        pocet_hlas = sum(
-            1 for v in day_votes if v.get("je_porad_schuze") or (v.get("nazev") or "").strip()
-        )
+        pocet_hlas = len(zakony)
         times = [v.get("cas", "") for v in day_votes if v.get("cas")]
         start = times[0][:5] if times else ""
         end = times[-1][:5] if times else ""

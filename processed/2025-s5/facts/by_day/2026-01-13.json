@@ -5,16 +5,16 @@
     "navrh-na-prispevek-na-uhradu-volebnich-nakladu-z",
     "porad-a-distancovani-5-schuze"
   ],
-  "dnesni_ucet": "Třicet čtyři hlasování za dvě hodiny.\nNejdřív peníze stranám, pak začala debata o důvěře.",
-  "zaver": "že sněmovna nejdřív rozdělila volební miliony a teprve pak otevřela třídenní přednášku vlády.",
+  "dnesni_ucet": "Jedno hlasování, sto osmdesát tři pro, nula proti.\nDůvěra čekala za výplatou stran a distancem od Okamury.",
+  "zaver": "že si strany nejdřív rozdělily volební miliony, distanc od předsedy padl a vláda pak dostala třídenní přednášku místo hlasování.",
   "vysledek": [
-    "* jeden zákon schválili — příspěvky na volební náklady, 183 pro, nula proti",
-    "* osm návrhů na změnu pořadu zamítli",
+    "* příspěvky na volební náklady prošly 183:0, občana to netrefí",
+    "* opozice chtěla distanc od Okamurových slov o Ukrajině, koalice to smetla ze stolu",
     "* debata o důvěře začala, hlasování až ve čtvrtek",
-    "* spor o distanc od slov předsedy Okamury o Ukrajině"
+    "* Fiala: důvěra není formalita, jen formalita trvala celé dopoledne"
   ],
   "stats": {
-    "pocet_hlas": 34,
+    "pocet_hlas": 1,
     "minuty": 118,
     "end_cas": "13:00",
     "proslo": 1,
