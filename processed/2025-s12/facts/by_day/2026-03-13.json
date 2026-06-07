@@ -1,13 +1,23 @@
 {
   "datum": "13.03.2026",
   "den": "pátek",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "novela-z-o-podpore-bydleni"
+  ],
+  "dnesni_ucet": "Pořad schválili 85 proti 38, pak šlo jen o poradenství v bydlení.\nNovela prošla první čtení, opozice chtěla celý zákon zahodit.",
+  "zaver": "že mimořádná schůze sice začala debatou o NATO a ruském zákonu, ale odpoledne sněmovna nechala novelu podpory bydlení žít dál.",
+  "vysledek": [
+    "* novela zákona o podpoře bydlení v první čtení",
+    "* návrh na zamítnutí padl 27:86",
+    "* přikázání garančnímu výboru 126:0",
+    "* lhůta ve výborech zkrácena na 30 dní, 80:40"
+  ],
   "stats": {
-    "pocet_hlas": 6,
+    "pocet_hlas": 1,
     "minuty": 293,
     "end_cas": "13:54",
-    "proslo": 2,
-    "zamitnuto": 3,
+    "proslo": 1,
+    "zamitnuto": 0,
     "dlouha_debata": false
   }
 }

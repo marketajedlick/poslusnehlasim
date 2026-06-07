@@ -1,42 +1,50 @@
 {
   "slug": "zadost-o-udeleni-souhlasu-s-trestnim-stihanim-po-2",
-  "nazev": "Žádost o udělení souhlasu s trestním stíháním poslance Tomia Okamury v",
+  "nazev": "Žádost o udělení souhlasu s trestním stíháním poslance Tomia Okamury",
   "datum": "05.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "žádost o udělení souhlasu s trestním stíháním poslance Tomia Okamury v",
+  "predmet_lidsky": "souhlasu s trestním stíháním Tomia Okamury za protiimigrační plakát",
   "koho": [
-    "Občana se to netýká, spíš politici a justice."
+    "Koho se to týká? Spíš politiku a svobodu slova. Soud chtěl posoudit, jestli plakát Stop migračnímu paktu EU podněcuje nenávist vůči migrantům a Romům."
   ],
   "fakty": [
     {
-      "text": "Hluk v sále.",
+      "text": "Obvodní soud pro Prahu 1 žádá souhlas se stíháním ve věci sp. zn. 1T 95/2025.",
       "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_11_00022",
-      "citace": "(Hluk v sále.)"
+      "steno_id": "2025_11_00033",
+      "citace": "Žádost Obvodního soudu pro Prahu 1 o vyslovení souhlasu s trestním stíháním poslance Tomia Okamury v rámci řízení vedeného pod spisovou značkou 1T 95/2025."
     },
     {
-      "text": "(Hluk pokračuje.) Můžu poprosit tady na pravé straně, aby byl klid, aby bylo jasné, jak to v této chvíli povedeme.",
+      "text": "Hrozí mi kvůli tomu za názor 3 roky vězení.",
       "source": "steno",
-      "steno_id": "2025_11_00022",
-      "citace": "(Hluk pokračuje.) Můžu poprosit tady na pravé straně, aby byl klid, aby bylo jasné, jak to v této chvíli povedeme."
+      "steno_id": "2025_11_00005",
+      "citace": "Hrozí mi kvůli tomu za názor 3 roky vězení."
     },
     {
-      "text": "V této chvíli tedy projednáváme 1.Žádost o udělení souhlasu s trestním stíháním poslance Andreje Babiše ve věci sp.",
+      "text": "Plakát nesl název Stop migračnímu paktu EU, trestní oznámení podal Jiří Pospíšil ze SPOLU.",
       "source": "steno",
-      "steno_id": "2025_11_00022",
-      "citace": "V této chvíli tedy projednáváme 1.Žádost o udělení souhlasu s trestním stíháním poslance Andreje Babiše ve věci sp."
+      "steno_id": "2025_11_00005",
+      "citace": "Žádost o moje vydání za pravdivý protiimigrační plakát s názvem Stop migračnímu paktu EU, na základě trestního oznámení poslance Jiřího Pospíšila z koalice SPOLU."
     },
     {
-      "text": "Já poprosím vlevo i vpravo, jestli projednáváte něco, co nesouvisí s touto žádostí, tak jestli můžete na chodbu, koneckonců můžete na chodbu, i když budete projednávat něco, co souvisí s touto žádostí a nejste přihlášeni.",
+      "text": "Hlasování číslo 9, pro 104, proti 82. Návrh usnesení byl přijat.",
       "source": "steno",
-      "steno_id": "2025_11_00026",
-      "citace": "Já poprosím vlevo i vpravo, jestli projednáváte něco, co nesouvisí s touto žádostí, tak jestli můžete na chodbu, koneckonců můžete na chodbu, i když budete projednávat něco, co souvisí s touto žádostí"
+      "steno_id": "2025_11_00208",
+      "citace": "V hlasování číslo 9 bylo přihlášeno 186 poslanců, pro hlasovalo 104, proti 82. Návrh usnesení byl schválen."
+    },
+    {
+      "text": "Jde o podněcování k nenávisti, aby soud posoudil, zda jde o trestný čin.",
+      "source": "steno",
+      "steno_id": "2025_11_00009",
+      "citace": "Proč má být vydán Tomio Okamura? No, prostě proto, aby soud posoudil, zda jde o podněcování k nenávisti."
     }
   ],
   "publikovat": true,
   "priorita": 2,
-  "nadpis": "Prošlo to",
-  "pocet_hlasovani": 2,
+  "nadpis": "Okamuru bez soudu",
+  "lead": "Stejný výsledek u Okamury, 104 hlasů pro, 82 proti, sněmovna nevydala předsedu SPD k soudu za plakát Stop migračnímu paktu EU.",
+  "pointa": "Okamura mluvil o třech letech vězení za názor a citoval Johna Boka. Richterová připomněla, že jde o podněcování k nenávisti, ne o běžnou volební kampani.",
+  "mean": "Bez souhlasu sněmovny soud nemůže posoudit, jestli šlo o trestný čin verbálního charakteru. Okamura si tak ponechá imunitu, dokud sněmovna nepřistoupí na vydání.",
+  "pocet_hlasovani": 1,
   "proslo": true
 }
