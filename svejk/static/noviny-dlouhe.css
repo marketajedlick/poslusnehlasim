@@ -178,6 +178,7 @@ body.is-turning{ pointer-events:none; }
   margin-top:16px;
   padding-top:14px;
   border-top:1px solid rgba(240,230,207,.22);
+  white-space:pre-line;
 }
 
 /* ---------- items (mobile) ---------- */
