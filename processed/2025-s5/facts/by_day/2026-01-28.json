@@ -2,9 +2,16 @@
   "datum": "28.01.2026",
   "den": "středa",
   "topic_slugs": [
-    "novela-z-o-pojistnem-na-verejne-zdravotni-pojist",
-    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2",
-    "navrh-na-odvolani-clenu-dr-sfdi"
+    "navrh-na-odvolani-clenu-spravni-rady-vseobecne-z",
+    "novela-z-o-pojistnem-na-verejne-zdravotni-pojist"
+  ],
+  "dnesni_ucet": "Padesát devět hlasování za téměř deset hodin.\nDopoledne personálka VZP, odpoledne osm miliard mezi pojišťovnami.",
+  "zaver": "že středa byla obsazovací den ve zdravotnictví — nejdřív kdo sedí ve správní radě, pak kam tečou miliardy.",
+  "vysledek": [
+    "* třicet pět věcí schválili",
+    "* šest návrhů zamítli",
+    "* odvolání správní rady VZP, 144 pro",
+    "* přerozdělení téměř 8 miliard z přebytků VZP"
   ],
   "stats": {
     "pocet_hlas": 59,
@@ -12,6 +19,6 @@
     "end_cas": "20:44",
     "proslo": 35,
     "zamitnuto": 6,
-    "dlouha_debata": false
+    "dlouha_debata": true
   }
 }

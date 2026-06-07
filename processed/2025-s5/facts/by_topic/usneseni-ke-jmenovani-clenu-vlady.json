@@ -1,0 +1,32 @@
+{
+  "slug": "usneseni-ke-jmenovani-clenu-vlady",
+  "nazev": "Usnesení ke jmenování členů vlády",
+  "datum": "16.01.2026",
+  "verdikt": "zamiteno",
+  "predmet_lidsky": "usneseních, kterými chtěl Marian Jurečka zablokovat jmenování ministrů vlády",
+  "koho": [
+    "Koho se to týká? Spíš politické hry o personální obsazení vlády. Občana to zasáhne jen nepřímo."
+  ],
+  "fakty": [
+    {
+      "text": "V hlasování číslo 54 bylo přihlášeno 183 poslanců, pro hlasovalo 82, proti 101. Návrh byl zamítnut.",
+      "source": "steno",
+      "steno_id": "2025_5_00915",
+      "citace": "V hlasování číslo 54 bylo přihlášeno 183 poslanců, pro hlasovalo 82, proti 101. Návrh byl zamítnut."
+    },
+    {
+      "text": "Zahajuji hlasování a ptám se, kdo je pro takové usnesení?",
+      "source": "steno",
+      "steno_id": "2025_5_00915",
+      "citace": "Zahajuji hlasování a ptám se, kdo je pro takové usnesení?"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Jurečka brzdil ministry",
+  "lead": "Marian Jurečka zkoušel přes usnesení zablokovat jmenování ministrů. Osm z deseti návrhů padlo těsně — 82 pro, 101 proti.",
+  "pointa": "Skopeček četl výsledky hlasování jedno po druhém. Koalice většinu bodů zamítla, personálka vlády pokračovala.",
+  "mean": "Pátek po důvěře nebyl klidný: opozice chtěla ještě zabrzdit obsazení rezortů. Deset procedurálních hlasování ukázalo, že i po schválené důvěře se hraje o každé jmenování zvlášť.",
+  "pocet_hlasovani": 10,
+  "proslo": false
+}

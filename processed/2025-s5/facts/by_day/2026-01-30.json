@@ -1,13 +1,23 @@
 {
   "datum": "30.01.2026",
   "den": "pátek",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "novela-z-stavebni-zakon"
+  ],
+  "dnesni_ucet": "Třicet hlasování za devět hodin.\nVečer stavební zákon do koše — 31 pro, 86 proti.",
+  "zaver": "že páteční stavba skončila dřív, než začala — prvé čtení koaliční novely zamítli.",
+  "vysledek": [
+    "* tři věci schválili",
+    "* šest návrhů zamítli",
+    "* stavební zákon v prvém čtení padl",
+    "* dopoledne dvacet hlasování o pořadu schůze"
+  ],
   "stats": {
     "pocet_hlas": 30,
     "minuty": 563,
     "end_cas": "18:29",
     "proslo": 3,
     "zamitnuto": 6,
-    "dlouha_debata": false
+    "dlouha_debata": true
   }
 }

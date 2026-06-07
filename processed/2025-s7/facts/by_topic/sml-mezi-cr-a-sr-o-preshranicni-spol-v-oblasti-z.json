@@ -7,9 +7,34 @@
   "koho": [
     "Smlouva se Slovenskem, když vám na dovolené nebo u hranice přijede záchranka, kdo platí a kdo pomůže."
   ],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "července 2025/sněmovní tisk 3/ - prvé čtení Předložený návrh uvede ministr zdravotnictví Adam Vojtěch.",
+      "source": "steno",
+      "steno_id": "2025_7_00214",
+      "citace": "července 2025/sněmovní tisk 3/ - prvé čtení Předložený návrh uvede ministr zdravotnictví Adam Vojtěch."
+    },
+    {
+      "text": "A na základě rozhodnutí dnešního hlasování otvírám bod 43.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Rámcová smlouva mezi Českou republikou a Slovenskou republikou o přeshraniční spolupráci v oblasti zdravotnické záchranné služby podepsaná v Praze dne 4.",
+      "source": "steno",
+      "steno_id": "2025_7_00214",
+      "citace": "A na základě rozhodnutí dnešního hlasování otvírám bod 43.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Rámcová smlouva mezi Českou republikou a Sloven"
+    },
+    {
+      "text": "Už je 30, takže stejně by sem přišel, pozdravil, zase by odešel, tak jsem mu ušetřil cestu.",
+      "source": "steno",
+      "steno_id": "2025_7_00214",
+      "citace": "Už je 30, takže stejně by sem přišel, pozdravil, zase by odešel, tak jsem mu ušetřil cestu."
+    },
+    {
+      "text": "Děkuji za slovo, vážený pane předsedající, vážené paní poslankyně, vážení páni poslanci, dovolte mi představit vám vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu Rámcová smlouva mezi Českou republikou a Slovenskou republikou o přeshraniční spolupráci v oblasti Zdravotnické záchranné s",
+      "source": "steno",
+      "steno_id": "2025_7_00215",
+      "citace": "Děkuji za slovo, vážený pane předsedající, vážené paní poslankyně, vážení páni poslanci, dovolte mi představit vám vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu Rám"
+    }
+  ],
   "publikovat": true,
-  "priorita": 1,
+  "priorita": 2,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 2,
   "proslo": true

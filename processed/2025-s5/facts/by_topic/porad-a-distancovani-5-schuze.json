@@ -1,0 +1,38 @@
+{
+  "slug": "porad-a-distancovani-5-schuze",
+  "nazev": "Boj o pořad schůze a distancování od Okamury",
+  "datum": "13.01.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "pořadu první schůze a distancování sněmovny od slov předsedy Tomia Okamury o Ukrajině",
+  "koho": [
+    "Koho se to týká? Spíš pozorovatele politiky. Jde o pořad jednání a rétoriku předsedy sněmovny, ne o zákon pro občany."
+  ],
+  "fakty": [
+    {
+      "text": "navrhuji zařadit rovněž jménem všech opozičních stran nový bod s názvem Poslanecká sněmovna se distancuje od slov předsedy Tomia Okamury týkajících se Ukrajiny pronesených v jeho novoročním projevu",
+      "source": "steno",
+      "steno_id": "2025_5_00013",
+      "citace": "navrhuji zařadit rovněž jménem všech opozičních stran nový bod s názvem Poslanecká sněmovna se distancuje od slov předsedy Tomia Okamury týkajících se Ukrajiny"
+    },
+    {
+      "text": "musel reagovat na to, co jako ministr, který má na starost bezpečnost České republiky, pojmenoval velmi správně, a to je nutnost pomoci Ukrajině ve válce proti Rusku",
+      "source": "steno",
+      "steno_id": "2025_5_00017",
+      "citace": "musel reagovat na to, co jako ministr, který má na starost bezpečnost České republiky, pojmenoval velmi správně, a to je nutnost pomoci Ukrajině ve válce proti Rusku"
+    },
+    {
+      "text": "to, že nová vláda předstupuje před Sněmovnu a žádá o naši důvěru, to není nějaký rituál nebo není to jenom nějaká povinná formalita, je to vážné rozhodnutí",
+      "source": "steno",
+      "steno_id": "2025_5_00086",
+      "citace": "to, že nová vláda předstupuje před Sněmovnu a žádá o naši důvěru, to není nějaký rituál nebo není to jenom nějaká povinná formalita, je to vážné rozhodnutí"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Pořad před důvěrou",
+  "lead": "Ještě než vláda začala žádat o důvěru, opozice chtěla do pořadu distanc od Okamurových slov o Ukrajině. Koalice to třikrát zamítla.",
+  "pointa": "Rakušan navrhl distancování, Bartoš připomněl videa s generálem Zunou. Fiala pak řekl, že důvěra není formalita.",
+  "mean": "První den páté schůze ukázal, že hlasování o vládě bude jen vrcholem sporu, který začal už u tabule s pořadem jednání. Ukrajina, předseda sněmovny a tón debaty dominovaly dřív než jakýkoli zákon.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

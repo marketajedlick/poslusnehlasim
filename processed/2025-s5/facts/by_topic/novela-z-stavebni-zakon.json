@@ -1,40 +1,38 @@
 {
   "slug": "novela-z-stavebni-zakon",
-  "nazev": "Novela z. - stavební zákon",
+  "nazev": "Novela stavebního zákona",
   "datum": "30.01.2026",
   "verdikt": "zamiteno",
-  "predmet_lidsky": "stavebním zákoně",
-  "koho": [],
+  "predmet_lidsky": "novelě stavebního zákona a zrychlení povolování staveb",
+  "koho": [
+    "Koho se to týká? Stavebníků, obcí i investorů — kdo čeká na povolení domu, haly nebo silnice."
+  ],
   "fakty": [
     {
-      "text": "4.Návrh poslanců Andreje Babiše, Karla Havlíčka, Tomia Okamury, Petra Macinky, Aleny Schillerové, Zuzany Schwarz Bařtipánové, Radima Fialy, Borise Šťastného, Vojtěcha Krňanského a Marie Pošarové na vydání zákona, kterým se mění zákon č.",
+      "text": "nefunkční novela bývalé vlády Petra Fialy i přes 10 novelizací do roku 2025 nepomohla českému stavebnictví a zpackaná digitalizace stavebního řízení Ivana Bartoše stavebním úřadům",
       "source": "steno",
-      "steno_id": "2025_5_01465",
-      "citace": "4.Návrh poslanců Andreje Babiše, Karla Havlíčka, Tomia Okamury, Petra Macinky, Aleny Schillerové, Zuzany Schwarz Bařtipánové, Radima Fialy, Borise Šťastného, Vojtěcha Krňanského a Marie Pošarové na vy"
-    },
-    {
-      "text": "283/2021 Sb., stavební zákon, ve znění pozdějších předpisů, a některé další související zákony/sněmovní tisk 67/ - prvé čtení Stanovisko vlády bylo doručeno jako sněmovní tisk 67/1.",
-      "source": "steno",
-      "steno_id": "2025_5_01465",
-      "citace": "283/2021 Sb., stavební zákon, ve znění pozdějších předpisů, a některé další související zákony/sněmovní tisk 67/ - prvé čtení Stanovisko vlády bylo doručeno jako sněmovní tisk 67/1."
-    },
-    {
-      "text": "Já tedy otvírám bod, návrh poslanců Andreje Babiše, Karla Havlíčka, Tomia Okamury, Petra Macinky, Aleny Schillerové, Zuzany Schwarz Bařtipánové, Radima Fialy, Borise Šťastného, Vojtěcha Krňanského, Marie Pošarové...",
-      "source": "steno",
-      "steno_id": "2025_5_01465",
-      "citace": "Já tedy otvírám bod, návrh poslanců Andreje Babiše, Karla Havlíčka, Tomia Okamury, Petra Macinky, Aleny Schillerové, Zuzany Schwarz Bařtipánové, Radima Fialy, Borise Šťastného, Vojtěcha Krňanského, Ma"
-    },
-    {
-      "text": "V sále je hluk.",
-      "source": "steno",
-      "kind": "scene",
       "steno_id": "2025_5_01466",
-      "citace": "(V sále je hluk.)"
+      "citace": "nefunkční novela bývalé vlády Petra Fialy i přes 10 novelizací do roku 2025 nepomohla českému stavebnictví a zpackaná digitalizace stavebního řízení Ivana Bartoše"
+    },
+    {
+      "text": "rychlost ale nesmí být vykoupena ztrátou kvality, právní jistoty a ochrany veřejného zájmu",
+      "source": "steno",
+      "steno_id": "2025_5_01472",
+      "citace": "rychlost ale nesmí být vykoupena ztrátou kvality, právní jistoty a ochrany veřejného zájmu"
+    },
+    {
+      "text": "Česká republika dlouhodobě patří mezi státy s nejpomalejšími a nejsložitějšími povolovacími procesy",
+      "source": "steno",
+      "steno_id": "2025_5_01472",
+      "citace": "Česká republika dlouhodobě patří mezi státy s nejpomalejšími a nejsložitějšími povolovacími procesy"
     }
   ],
-  "publikovat": false,
-  "priorita": 0,
+  "publikovat": true,
+  "priorita": 3,
   "nadpis": "Stavba si počká",
+  "lead": "Koaliční novela stavebního zákona v prvém čtení padla — 31 pro, 86 proti. Havlíčkův tým sliboval zrychlení, opozice právní jistotu.",
+  "pointa": "Mrázová útočila na Fialu a Bartoše, Kučera připomněl pomalé povolování, ale rychlost ne za cenu chaosu.",
+  "mean": "Páteční večer patřil stavebnímu zákonu, který koalice chtěla protlačit zkráceně. Sněmovna ho v prvém čtení zamítla a stavební úřady zůstávají u starých pravidel.",
   "pocet_hlasovani": 9,
   "proslo": false
 }

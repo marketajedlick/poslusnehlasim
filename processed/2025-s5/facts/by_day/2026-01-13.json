@@ -1,13 +1,24 @@
 {
   "datum": "13.01.2026",
   "den": "úterý",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "navrh-na-prispevek-na-uhradu-volebnich-nakladu-z",
+    "porad-a-distancovani-5-schuze"
+  ],
+  "dnesni_ucet": "Třicet čtyři hlasování za dvě hodiny.\nNejdřív peníze stranám, pak začala debata o důvěře.",
+  "zaver": "že sněmovna nejdřív rozdělila volební miliony a teprve pak otevřela třídenní přednášku vlády.",
+  "vysledek": [
+    "* jeden zákon schválili — příspěvky na volební náklady, 183 pro, nula proti",
+    "* osm návrhů na změnu pořadu zamítli",
+    "* debata o důvěře začala, hlasování až ve čtvrtek",
+    "* spor o distanc od slov předsedy Okamury o Ukrajině"
+  ],
   "stats": {
     "pocet_hlas": 34,
     "minuty": 118,
     "end_cas": "13:00",
     "proslo": 1,
     "zamitnuto": 0,
-    "dlouha_debata": false
+    "dlouha_debata": true
   }
 }

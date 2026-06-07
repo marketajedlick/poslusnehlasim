@@ -3,40 +3,36 @@
   "nazev": "Novela z. o pojistném na veřejné zdravotní pojištění",
   "datum": "28.01.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky",
+  "predmet_lidsky": "přerozdělení přebytků Všeobecné zdravotní pojišťovny mezi zdravotní pojišťovny",
   "koho": [
-    "Koho se to týká? Živnostníků a dalších, kdo platí zálohy na sociálním pojištění sami, ne běžných zaměstnanců na výplatní pásce."
+    "Koho se to týká? Systému veřejného zdravotního pojištění a pojištěnců — jde o přesun zhruba 8 miliard korun mezi pojišťovnami, ne o jednu konkrétní skupinu občanů."
   ],
   "fakty": [
     {
-      "text": "Velký hluk v sále.",
+      "text": "pan ministr navrhuje jednorázové přerozdělení téměř 8 miliard korun, to je opravdu hodně peněz v rámci systému veřejného zdravotního pojištění v roce 2026",
       "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_5_01009",
-      "citace": "(Velký hluk v sále.)"
+      "steno_id": "2025_5_01193",
+      "citace": "pan ministr navrhuje jednorázové přerozdělení téměř 8 miliard korun, to je opravdu hodně peněz v rámci systému veřejného zdravotního pojištění v roce 2026"
     },
     {
-      "text": "Přejdeme tedy k dalšímu tisku a jedná se o 2.Návrh poslance Adama Vojtěcha na vydání zákona, kterým se mění zákon č.",
-      "source": "steno",
-      "steno_id": "2025_5_01009",
-      "citace": "Přejdeme tedy k dalšímu tisku a jedná se o 2.Návrh poslance Adama Vojtěcha na vydání zákona, kterým se mění zákon č."
-    },
-    {
-      "text": "2 Upozorňuji, že je navrženo, abychom s návrhem zákona vyslovili souhlas již v prvém čtení.",
-      "source": "steno",
-      "steno_id": "2025_5_01009",
-      "citace": "2 Upozorňuji, že je navrženo, abychom s návrhem zákona vyslovili souhlas již v prvém čtení."
-    },
-    {
-      "text": "Ta navrhovaná částka, která je v tom návrhu, tedy 7,9 miliardy zhruba, odpovídá rozdílu mezi ziskem za tuto skupinu pojištěnců, kteří měli poměrně nízké náklady do září 2025, kdy vlastně VZP měla zhruba 10,5 miliardy korun zisk za tuto skupinu pojištěnců, zaměstnanecké zdravotní pojišťovny asi 2,6 miliardy.",
+      "text": "Ta navrhovaná částka, která je v tom návrhu, tedy 7,9 miliardy zhruba, odpovídá rozdílu mezi ziskem za tuto skupinu pojištěnců",
       "source": "steno",
       "steno_id": "2025_5_01010",
-      "citace": "Ta navrhovaná částka, která je v tom návrhu, tedy 7,9 miliardy zhruba, odpovídá rozdílu mezi ziskem za tuto skupinu pojištěnců, kteří měli poměrně nízké náklady do září 2025, kdy vlastně VZP měla zhru"
+      "citace": "Ta navrhovaná částka, která je v tom návrhu, tedy 7,9 miliardy zhruba, odpovídá rozdílu mezi ziskem za tuto skupinu pojištěnců"
+    },
+    {
+      "text": "kdy vlastně VZP měla zhruba 10,5 miliardy korun zisk za tuto skupinu pojištěnců, zaměstnanecké zdravotní pojišťovny asi 2,6 miliardy",
+      "source": "steno",
+      "steno_id": "2025_5_01010",
+      "citace": "kdy vlastně VZP měla zhruba 10,5 miliardy korun zisk za tuto skupinu pojištěnců, zaměstnanecké zdravotní pojišťovny asi 2,6 miliardy"
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Živnostníci ušetří na odvodech",
+  "priorita": 3,
+  "nadpis": "Osm miliard z VZP",
+  "lead": "Ministr Vojtěch chce jednorázově přerozdělit téměř 8 miliard z přebytků VZP. Opozice tvrdí, že jde o neférový přesun ve prospěch zaměstnaneckých pojišťoven.",
+  "pointa": "Šebelová mluvila o hodně penězích v jednom roce. Vojtěch vysvětloval rozdíl zisků VZP a ostatních pojišťoven.",
+  "mean": "Středeční odpoledne patřilo zdravotní politice v číslech: miliardy z přebytků Všeobecné pojišťovny mají podle vlády stabilizovat systém, podle kritiků zvýhodnit konkurenci.",
   "pocet_hlasovani": 2,
   "proslo": true
 }

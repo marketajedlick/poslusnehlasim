@@ -1,0 +1,38 @@
+{
+  "slug": "navrh-na-odvolani-clenu-spravni-rady-vseobecne-z",
+  "nazev": "Odvolání členů Správní rady VZP",
+  "datum": "28.01.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "obsazení správní rady Všeobecné zdravotní pojišťovny",
+  "koho": [
+    "Koho se to týká? Řízení největší zdravotní pojišťovny. Pro občana je to personální spor nahoře, ne změna péče přes noc."
+  ],
+  "fakty": [
+    {
+      "text": "Návrh na odvolání členů a náhradníků Správní rady Všeobecné zdravotní pojišťovny České republiky",
+      "source": "steno",
+      "steno_id": "2025_5_01222",
+      "citace": "Návrh na odvolání členů a náhradníků Správní rady Všeobecné zdravotní pojišťovny České republiky"
+    },
+    {
+      "text": "Hlasování číslo 86, přihlášeno 176 poslanců, pro 144, proti nikdo.",
+      "source": "steno",
+      "steno_id": "2025_5_01222",
+      "citace": "Hlasování číslo 86, přihlášeno 176 poslanců, pro 144, proti nikdo."
+    },
+    {
+      "text": "Prosím, aby se slova ujal předseda volební komise poslanec Martin Kolovratník.",
+      "source": "steno",
+      "steno_id": "2025_5_01222",
+      "citace": "Prosím, aby se slova ujal předseda volební komise poslanec Martin Kolovratník."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Výměna ve správě VZP",
+  "lead": "Sněmovna odvolala členy správní rady VZP — 144 hlasů, nikdo proti. Pak následovala dlouhá volba nových jmen.",
+  "pointa": "Kolovratník vedl volební komisi u personálního maratonu. Odvolání bylo jednohlasné, obsazení už jedno po druhém.",
+  "mean": "Středa začala personálkou u největší pojišťovny: nejdřív ven starí členové správní rady, pak desítky hlasování o tom, kdo usedne na jejich místo.",
+  "pocet_hlasovani": 1,
+  "proslo": true
+}
