@@ -52,6 +52,7 @@ _VERDIKT_STAMP = {
     "schvaleno": "Schváleno",
     "zamiteno": "Zamítnuto",
     "odlozeno": "Odloženo",
+    "debata": "Debata",
 }
 
 _MESICE_GEN = (
@@ -117,6 +118,8 @@ def lead_z_fact(fact: dict[str, Any]) -> str:
         lead = f"poslanci zamítli změny v {predmet}." if predmet else "poslanci změnu zamítli."
     elif verdikt == "odlozeno":
         lead = f"poslanci odložili změny v {predmet}." if predmet else "poslanci změnu odložili."
+    elif verdikt == "debata":
+        lead = f"poslanci debatovali o {predmet}." if predmet else "poslanci debatovali bez hlasování."
     else:
         lead = f"poslanci řešili {predmet or 'bod programu'}."
 
@@ -235,6 +238,8 @@ def _verdikt_fráze_zaver(item: DenItem, pocet_hlasovani: int) -> str:
         return "návrh neprošel"
     if v == "odlozeno":
         return "věc se odložila"
+    if v == "debata":
+        return "bez hlasování o zákonu"
     return "bod je v článku výše rozepsaný"
 
 
@@ -405,7 +410,7 @@ def build_den_content(
         cal_den=cal_den,
         cal_day=cal_day,
         cal_month=cal_month,
-        dnesni_ucet=_dnesni_ucet(stats, state=state),
+        dnesni_ucet=(day.get("dnesni_ucet") or "").strip() or _dnesni_ucet(stats, state=state),
         proslo=int(stats.get("proslo") or 0),
         zamitnuto=int(stats.get("zamitnuto") or 0),
         board_stats="",
