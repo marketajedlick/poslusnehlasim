@@ -1,0 +1,23 @@
+{
+  "datum": "29.05.2026",
+  "den": "pátek",
+  "topic_slugs": [
+    "novela-z-o-podpore-bydleni-debata-3-cteni"
+  ],
+  "dnesni_ucet": "Bydlení bez finále, čtyři hlasování padla.\nSchůze přerušena na středu.",
+  "zaver": "že pátek ráno sněmovna nerozhodla o podpoře bydlení, čtyři pozměňovací návrhy padly a kluby schůzi přesunuly na třetí června.",
+  "vysledek": [
+    "* třetí čtení novely o podpoře bydlení bez finálního hlasování",
+    "* Hřib navrhl odložit bod o rok, procedurální návrh neprošel",
+    "* čtyři hlasování o pozměňovacích návrzích zamítnuto",
+    "* schůze přerušena na 3. 6. v 14:11"
+  ],
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 301,
+    "end_cas": "14:11",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  }
+}

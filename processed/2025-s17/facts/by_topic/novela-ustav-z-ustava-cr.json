@@ -3,14 +3,41 @@
   "nazev": "Novela ústav. z. - Ústava ČR",
   "datum": "06.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "novela ústav. z. - Ústava ČR",
+  "predmet_lidsky": "rozšíření pravomocí Nejvyššího kontrolního úřadu nad hospodařením České televize a Českého rozhlasu",
   "koho": [
-    "Občana se to netýká každý den, ale dotkne se to demokracie jako celku."
+    "Koho se to týká? Každého, kdo platí koncesionářské poplatky. NKÚ by mohl kontrolovat, jak veřejnoprávní média utrácí miliardy z poplatků."
   ],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Kordová Marvanová představila senátní návrh na kontrolu hospodaření ČT a ČRo.",
+      "source": "steno",
+      "steno_id": "2025_17_00041",
+      "citace": "Cílem je rozšířit omezený rozsah ústavních kompetencí Nejvyššího kontrolního úřadu a posílit kontrolu hospodaření České televize a Českého rozhlasu."
+    },
+    {
+      "text": "Jakob mluvil o médiích místo ústavy, Babka ho pokáral za obstrukci.",
+      "source": "steno",
+      "steno_id": "2025_17_00071",
+      "citace": "My tady projednáváme rozšíření pravomocí Nejvyššího kontrolního úřadu, aby se mohl podívat na to, jak se hospodaří v České televizi a v Českém rozhlase."
+    },
+    {
+      "text": "Benda varoval před pozměňovacím návrhem Malé, Okamury a Šťastného.",
+      "source": "steno",
+      "steno_id": "2025_17_00081",
+      "citace": "V čl. 1 se slova zřízených zákonem vypouštějí. Jsme si vědomi, co toto znamená?"
+    },
+    {
+      "text": "Hlasování číslo 5 v 16:12, sedmdesát jedna hlasů pro, šestnáct proti.",
+      "source": "votes",
+      "citace": "Hlasování číslo 5, pro 71, proti 16."
+    }
+  ],
   "publikovat": true,
-  "priorita": 1,
-  "nadpis": "Prošlo to",
+  "priorita": 3,
+  "nadpis": "NKÚ může kontrolovat ČT",
+  "lead": "Ve středu odpoledne sněmovna schválila senátní novelu ústavy, která rozšiřuje pravomoci Nejvyššího kontrolního úřadu nad hospodařením České televize a Českého rozhlasu, sedmdesát jedna hlasů proti šestnácti.",
+  "pointa": "Kordová Marvanová hájila kontrolu poplatků, Jakob spojil ústavu s obavami o média, Benda kritizoval koaliční pozměňovací návrh. Opozice celé dopoledne bránila pořadu kvůli rozpočtovým zákonům.",
+  "mean": "Ústava by umožnila NKÚ hlouběji zkoumat smlouvy a výdaje veřejnoprávních médií. Senát návrh poslal podruhé, sněmovna ho v druhém čtení přijala.",
   "pocet_hlasovani": 1,
   "proslo": true
 }

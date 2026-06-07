@@ -1,14 +1,23 @@
 {
   "datum": "15.05.2026",
   "den": "pátek",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-"
+  ],
+  "dnesni_ucet": "Rozpočtové brzdy padly ve třetím čtení.\nŠedesát osm proti devadesáti.",
+  "zaver": "že pátek skončil zamítnutím vládní novely rozpočtových zákonů, koalice chtěla rozvolnit fiskální limity a opozice varovala před schodkem přes čtyři sta miliard.",
+  "vysledek": [
+    "* rozpočtové zákony zamítnuty 68:90 ve 13:10",
+    "* třicet šest hlasování o pozměňovacích návrzích, osm prošlo",
+    "* Jakob obhajoval rezervu a silnější roli Národní rozpočtové rady",
+    "* Vlček řekl, že vláda vypíná rozpočtová pravidla"
+  ],
   "stats": {
-    "pocet_hlas": 0,
+    "pocet_hlas": 1,
     "minuty": 188,
     "end_cas": "13:20",
     "proslo": 0,
-    "zamitnuto": 0,
+    "zamitnuto": 1,
     "dlouha_debata": false
-  },
-  "dnesni_ucet": "Pátek plný procedurálních hlasování.\nMeritní body bez jednoznačného výsledku."
+  }
 }

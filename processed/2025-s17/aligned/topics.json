@@ -47,12 +47,52 @@
       ],
       "steno_ids": [],
       "proslo": false,
-      "pocet_hlasovani": 36,
+      "pocet_hlasovani": 37,
       "pocet_prijato": 8,
-      "pocet_zamitnuto": 28,
+      "pocet_zamitnuto": 29,
       "kategorie": "substantivni",
       "tema_svejk": "Veřejné rozpočty, limity výdajů, výjimky pro obranu a velké stavby.",
       "tema_vysvetleni": "Novela rozpočtových zákonů, pravidla pro státní výdaje."
+    },
+    {
+      "slug": "novela-z-o-podpore-bydleni",
+      "nazev": "Novela z. o podpoře bydlení",
+      "bod": "2",
+      "datum": "03.06.2026",
+      "vote_cisla": [
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        46,
+        47,
+        48,
+        49
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 25,
+      "pocet_prijato": 13,
+      "pocet_zamitnuto": 12,
+      "kategorie": "substantivni",
+      "tema_svejk": "Podpora bydlení, kontaktní místa obcí, podpůrná opatření pro lidi v bytové nouzi.",
+      "tema_vysvetleni": "Novela upravuje zákon o podpoře bydlení a spolupráci samospráv s úřady."
     },
     {
       "slug": "novela-ustav-z-ustava-cr",
@@ -68,8 +108,8 @@
       "pocet_prijato": 1,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "Hlasovali o: Novela ústav. z. - Ústava ČR",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_svejk": "Kontrola NKÚ nad hospodařením České televize a Českého rozhlasu.",
+      "tema_vysvetleni": "Senátní novela ústavy rozšiřuje pravomoci Nejvyššího kontrolního úřadu nad veřejnoprávními médii."
     }
   ]
 }

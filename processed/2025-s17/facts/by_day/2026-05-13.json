@@ -1,14 +1,23 @@
 {
   "datum": "13.05.2026",
   "den": "středa",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "vl-n-z-verejne-rozpocty-debata-3-cteni"
+  ],
+  "dnesni_ucet": "Celý den debata o rozpočtových brzdách.\nFinální hlasování až v pátek.",
+  "zaver": "že středa patřila maratonu o rozpočtových zákonech ve třetím čtení, opozice mluvila o zadlužení dětí a kluby večer schůzi přesunuly na pátek.",
+  "vysledek": [
+    "* třetí čtení rozpočtových zákonů od rána do večera",
+    "* Hřib kritizoval Motoristy za podporu Babišovy fiskální politiky",
+    "* večer debata o ústavě a jednacím řádu",
+    "* schůze přerušena v 22:27, pokračování v pátek"
+  ],
   "stats": {
     "pocet_hlas": 0,
-    "minuty": 0,
-    "end_cas": "09:25",
+    "minuty": 810,
+    "end_cas": "22:27",
     "proslo": 0,
     "zamitnuto": 0,
-    "dlouha_debata": false
-  },
-  "dnesni_ucet": "Schůze skončila dřív než začala.\nMeritní hlasování nepadlo."
+    "dlouha_debata": true
+  }
 }

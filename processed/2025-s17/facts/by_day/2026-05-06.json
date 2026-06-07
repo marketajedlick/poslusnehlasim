@@ -4,13 +4,20 @@
   "topic_slugs": [
     "novela-ustav-z-ustava-cr"
   ],
+  "dnesni_ucet": "Ústavní novela o kontrole ČT a ČRo.\nDopoledne maraton o rozpočtových brzdách.",
+  "zaver": "že středa skončila schválením senátní novely ústavy o kontrole hospodaření České televize a Českého rozhlasu, zatímco rozpočtové zákony zůstaly na další dny.",
+  "vysledek": [
+    "* senátní novela ústavy o NKÚ a veřejnoprávních médiích schválena 71:16",
+    "* dopoledne devět hodin debaty o rozpočtových zákonech bez hlasování",
+    "* Jakob obstruoval u ústavy, Benda kritizoval koaliční pozměňovací návrh",
+    "* pořad schválen až v 15:57, ústava prošla v 16:12"
+  ],
   "stats": {
     "pocet_hlas": 1,
     "minuty": 429,
     "end_cas": "16:12",
     "proslo": 1,
     "zamitnuto": 0,
-    "dlouha_debata": false
-  },
-  "dnesni_ucet": "Ústavní novela v prvním čtení.\nJeden zákon, nikdo proti."
+    "dlouha_debata": true
+  }
 }

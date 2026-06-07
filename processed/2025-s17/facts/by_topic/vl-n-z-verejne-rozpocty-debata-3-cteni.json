@@ -1,0 +1,44 @@
+{
+  "slug": "vl-n-z-verejne-rozpocty-debata-3-cteni",
+  "nazev": "Debata o rozpočtových pravidlech ve třetím čtení",
+  "datum": "13.05.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "třetím čtení vládního návrhu, kterým se mění zákony v oblasti veřejných rozpočtů",
+  "koho": [
+    "Koho se to týká? Každého daňového poplatníka. Jde o limity výdajů státu, výjimky pro obranu a schodek rozpočtu."
+  ],
+  "fakty": [
+    {
+      "text": "Hřib řekl, že vláda chce zadlužit děti a obejít parlamentní kontrolu.",
+      "source": "steno",
+      "steno_id": "2025_17_00107",
+      "citace": "Vláda se nás bude snažit přesvědčit, že máme zadlužit naše děti a děti našich dětí způsobem, který bude obcházet jakoukoliv parlamentní kontrolu."
+    },
+    {
+      "text": "Murová popsala pozměňovací návrhy Schillerové k rozpočtové odpovědnosti.",
+      "source": "steno",
+      "steno_id": "2025_17_00142",
+      "citace": "Ministryně Schillerová ji po nástupu nové vlády převzala a doplnila o své úpravy, které máme v pozměňovacích návrzích."
+    },
+    {
+      "text": "Svobodová řekla, že Piráti zákon nepodpoří kvůli zadlužení.",
+      "source": "steno",
+      "steno_id": "2025_17_00157",
+      "citace": "Ten zákon tak, jak stojí, bude umožňovat zadlužení Česka do budoucna. Je to pro nás nepřijatelné."
+    },
+    {
+      "text": "Večer Jurečka navrhl přerušit schůzi, pokračovat až v pátek.",
+      "source": "steno",
+      "steno_id": "2025_17_00386",
+      "citace": "Dohodli jsme se, že bychom toto jednání v tento okamžik přerušili a začali bychom v pátek v 10 hodin."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Maraton o rozpočtových brzdách",
+  "lead": "Ve středu celý den trvala debata o rozpočtových zákonech ve třetím čtení. Schillerová hájila rozvolnění fiskálních pravidel, opozice mluvila o zadlužení dětí a večer kluby schůzi přesunuly na pátek.",
+  "pointa": "Hřib útočil na Motoristy za podporu Babiše, Kovářová kritizovala výjimky z limitů výdajů. Po jednání o ústavě a jednacím řádu koalice s opozicí dohodla pokračování až patnáctého května.",
+  "mean": "Zákon má upravit limity státních výdajů podle evropských pravidel. Ve třetím čtení šlo hlavně o pozměňovací návrhy ministryně financí, finální hlasování přišlo až v pátek.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}
