@@ -3,13 +3,11 @@
   "nazev": "Náv. zasedacího pořádku poslanců v jedn. sále PS",
   "datum": "11.11.2025",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "náv. zasedacího pořádku poslanců v jedn. sále PS",
-  "koho": [
-    "Kdo kde sedí v sále, jako rozdělení míst v kasárnách, jen dražší stoličky."
-  ],
+  "predmet_lidsky": "zasedacího pořádku poslanců",
+  "koho": [],
   "fakty": [],
-  "publikovat": true,
-  "priorita": 1,
+  "publikovat": false,
+  "priorita": 0,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
   "proslo": true

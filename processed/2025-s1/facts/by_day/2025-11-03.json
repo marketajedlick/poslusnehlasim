@@ -1,14 +1,21 @@
 {
   "datum": "03.11.2025",
   "den": "pondělí",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "nav-na-zrizeni-miv-a-stanoveni-poctu-clenu"
+  ],
+  "dnesni_ucet": "Hymna, Brabcova rezignace, mandátový výbor.\nUstavující den bez zákonů.",
+  "zaver": "že pondělí patřilo jen ustavující proceduře: Brabec odešel, Sněmovna zřídila mandátový a imunitní výbor se šestnácti členy.",
+  "vysledek": [
+    "* mandátový a imunitní výbor zřízen 193:0",
+    "* volební komise ustavena 191:0"
+  ],
   "stats": {
-    "pocet_hlas": 0,
+    "pocet_hlas": 2,
     "minuty": 3,
     "end_cas": "15:13",
-    "proslo": 0,
+    "proslo": 2,
     "zamitnuto": 0,
     "dlouha_debata": false
-  },
-  "dnesni_ucet": "První schůze nového období, jen formalita.\nOvěřovatelé schváleni, zákon nepadl."
+  }
 }

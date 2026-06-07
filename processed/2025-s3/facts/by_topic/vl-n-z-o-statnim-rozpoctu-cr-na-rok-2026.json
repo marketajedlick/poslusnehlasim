@@ -3,14 +3,48 @@
   "nazev": "Vl. n. z. o státním rozpočtu ČR na rok 2026",
   "datum": "26.11.2025",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "o státním rozpočtu ČR na rok 2026",
+  "predmet_lidsky": "státním rozpočtu na rok 2026 v prvním čtení",
   "koho": [
-    "Kdo čeká na opravu silnice nebo vyšší plat sestře, ten ví, proč se o tom hádají celé dny."
+    "Koho se to týká? Všech. Rozpočet určuje, kolik stát utratí za zdravotnictví, obranu, školství i dávky."
   ],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Zbyněk Stanjura hájil rozpočet daty Evropské komise, Schillerová mluvila o opakovaných lžích o stavu země.",
+      "source": "steno",
+      "steno_id": "2025_3_00026",
+      "citace": "Stokrát opakovaná lež se nestane pravdou, i kdyby to bylo 101-,102-,105krát řečeno."
+    },
+    {
+      "text": "Debata o rozpočtu začala ještě před schválením pořadu dne, přestávka od 14 do 15.15 hodin.",
+      "source": "steno",
+      "steno_id": "2025_3_00026",
+      "citace": "Debata o rozpočtu už začala před schválením programu, ale to vůbec nevadí."
+    },
+    {
+      "text": "Závěrečné hlasování číslo 8: sto pět pro, šedesát čtyři proti, návrh v prvním čtení prošel.",
+      "source": "votes",
+      "citace": "Hlasování číslo 8, přihlášeno 180, pro 105, proti 64."
+    },
+    {
+      "text": "Předtím padly dva návrhy opozice: 67 proti 105 a 39 proti 35 se 80 zdrželými.",
+      "source": "votes",
+      "citace": "Hlasování číslo 6, pro 67, proti 105. Hlasování číslo 7, pro 39, proti 35."
+    }
+  ],
   "publikovat": true,
-  "priorita": 1,
-  "nadpis": "Stát ví, kolik smí utratit",
+  "priorita": 3,
+  "nadpis": "Rozpočet v prvním čtení",
+  "lead": "Středa patřila maratonu o státním rozpočtu 2026. Od deseti hodin do půlnoci debatovali ministři i opozice, ve 22:02 první čtení prošlo sto pěti hlasy proti šedesáti čtyřem.",
+  "pointa": "Schillerová a Stanjura si vyměnili útoky na čísla, Okamura protáhl pořad dne přestávkou na organizační výbor. Dva opoziční návrhy padly těsně i výrazně.",
+  "mean": "První čtení schvaluje zásady rozpočtu na příští rok. Konkrétní částky a pozměňovací návrhy přijdou ve druhém čtení, tentokrát šlo o obecný souhlas s vládním návrhem.",
   "pocet_hlasovani": 4,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 105,
+    "pritomno_min": 180,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 33381
 }

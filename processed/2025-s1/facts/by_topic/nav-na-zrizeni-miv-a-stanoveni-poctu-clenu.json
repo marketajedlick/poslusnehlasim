@@ -3,12 +3,35 @@
   "nazev": "Náv. na zřízení MIV a stanovení počtu členů",
   "datum": "03.11.2025",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "náv. na zřízení MIV a stanovení počtu členů",
-  "koho": [],
-  "fakty": [],
-  "publikovat": false,
-  "priorita": 0,
-  "nadpis": "Prošlo to",
+  "predmet_lidsky": "zřízení mandátového a imunitního výboru",
+  "koho": [
+    "Občana se to netýká, jde o ustavující proceduru nového období."
+  ],
+  "fakty": [
+    {
+      "text": "Richard Brabec na ustavující schůzi rezignoval na mandát po dvanácti letech v Sněmovně.",
+      "source": "steno",
+      "steno_id": "2025_1_00002",
+      "citace": "Tímto podle čl. 24 Ústavy a § 6 odst. c) jednacího řádu rezignuji na mandát poslance Poslanecké sněmovny Parlamentu České republiky."
+    },
+    {
+      "text": "Mandátový a imunitní výbor má šestnáct členů, hlasování číslo 2: 193 pro, nikdo proti.",
+      "source": "votes",
+      "citace": "Hlasování číslo 2, přihlášeno 194 poslanců, pro 193, proti žádný."
+    },
+    {
+      "text": "Taťána Malá požádala o minutu ticha na památku kardinála Dominika Duky.",
+      "source": "steno",
+      "steno_id": "2025_1_00017",
+      "citace": "Chtěla bych vás požádat, abychom jako Sněmovna vzdali úctu kardinálovi a emeritnímu pražskému arcibiskupovi Dominiku Dukovi."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Ustavující den",
+  "lead": "Pondělní ustavující schůze desátého období začala hymnou a Brabcovou rezignací, večer sněmovna zřídila mandátový a imunitní výbor se šestnácti členy, sto devadesát tři hlasů proti nule.",
+  "pointa": "Richard Brabec se rozloučil po dvanácti letech, poslanec Vlastimil Válek pak na půdě složil slib. Procedurální den bez meritního zákonu.",
+  "mean": "Ustavující schůze jen nastavuje kostru Sněmovny: výbory, ověřovatele a volební komisi. Na zákony se čeká až na dalších schůzích.",
   "pocet_hlasovani": 1,
   "proslo": true
 }

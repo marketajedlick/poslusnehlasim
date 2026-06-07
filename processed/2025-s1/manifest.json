@@ -5,9 +5,10 @@
     "fetch": {
       "done": true,
       "votes": 20,
-      "steno": 0,
-      "hlidac_token_used": true,
-      "fetched_at": "2026-06-07T11:39:54.729542+00:00"
+      "steno": 254,
+      "hlidac_token_used": false,
+      "psp_steno_used": true,
+      "fetched_at": "2026-06-07T19:13:58.769232+00:00"
     },
     "align": {
       "done": true,
@@ -16,7 +17,7 @@
     "extract": {
       "done": true,
       "topics_written": 7,
-      "with_concrete_facts": 0,
+      "with_concrete_facts": 7,
       "days": 2
     },
     "compose": {
@@ -32,5 +33,5 @@
       ]
     }
   },
-  "built_at": "2026-06-07T14:02:48.018690+00:00"
+  "built_at": "2026-06-07T19:15:31.260011+00:00"
 }

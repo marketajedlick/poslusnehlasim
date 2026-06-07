@@ -2,16 +2,24 @@
   "datum": "05.11.2025",
   "den": "středa",
   "topic_slugs": [
-    "navrh-terminu-2-schuze-ps",
-    "navrh-na-stanoveni-poctu-mistopredsedu-ps"
+    "navrh-na-volbu-predsedy-ps",
+    "navrh-na-stanoveni-poctu-mistopredsedu-ps",
+    "navrh-terminu-2-schuze-ps"
+  ],
+  "dnesni_ucet": "Okamura předsedou, Barták a Nacher místopředsedy.\nDruhé kolo v pátek, Benda protestoval proti diktátu.",
+  "zaver": "že středa do půlnoci zvolila Tomia Okamuru předsedou, dvě místopředsedská křesla obsadili Barták s Nacherem a zbytek volby přesunula na pátek.",
+  "vysledek": [
+    "* Tomio Okamura zvolen předsedou (116 hlasů v 1. kole)",
+    "* návrh na Fialu zamítnut 18:136",
+    "* čtyři místopředsedové schváleni, zvoleni Barták a Nacher",
+    "* druhé kolo místopředsedů přesunuto na 14. 11."
   ],
   "stats": {
-    "pocet_hlas": 2,
+    "pocet_hlas": 16,
     "minuty": 709,
     "end_cas": "20:57",
-    "proslo": 2,
-    "zamitnuto": 0,
-    "dlouha_debata": false
-  },
-  "dnesni_ucet": "Druhá schůze: termín dalšího jednání a počet místopředsedů.\nDva organizační body, občana netrefí."
+    "proslo": 15,
+    "zamitnuto": 1,
+    "dlouha_debata": true
+  }
 }

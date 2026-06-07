@@ -5,13 +5,20 @@
     "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026",
     "novela-z-o-sbirce-zakonu-a-mezinarodnich-smluv"
   ],
+  "dnesni_ucet": "Celý den rozpočet 2026, první čtení ve 22:02.\nPo půlnoci eLegislativa a personální body.",
+  "zaver": "že středa skončila až po půlnoci schválením rozpočtu v prvním čtení a novely o eLegislativě, mezitím se několik hodin hádali o pořad dne i čísla ve stenozáznamu.",
+  "vysledek": [
+    "* rozpočet 2026 v prvním čtení 105:64",
+    "* novela o Sbírce zákonů prošla 172:0",
+    "* dva opoziční návrhy k rozpočtu zamítnuty",
+    "* personální body večer bez dramatu"
+  ],
   "stats": {
-    "pocet_hlas": 2,
+    "pocet_hlas": 11,
     "minuty": 798,
     "end_cas": "23:20",
-    "proslo": 2,
-    "zamitnuto": 0,
-    "dlouha_debata": false
-  },
-  "dnesni_ucet": "Večer do půlnoci schválili rozpočet na rok 2026.\nNovela sbírky zákonů prošla v prvním čtení."
+    "proslo": 9,
+    "zamitnuto": 2,
+    "dlouha_debata": true
+  }
 }

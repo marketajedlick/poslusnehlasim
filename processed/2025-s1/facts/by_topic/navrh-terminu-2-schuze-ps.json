@@ -3,14 +3,43 @@
   "nazev": "Návrh termínu 2. schůze PS",
   "datum": "05.11.2025",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "návrh termínu 2. schůze PS",
+  "predmet_lidsky": "termínu a pořadu 2. schůze",
   "koho": [
     "Občana se to netýká."
   ],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Taťána Malá navrhla zařadit volbu místopředsedů na pátek 14. listopadu jako bod 17.",
+      "source": "steno",
+      "steno_id": "2025_1_00247",
+      "citace": "Zařadit nový bod Návrh na volbu místopředsedů Poslanecké sněmovny, a to jako bod 17 na pátek 14. 11."
+    },
+    {
+      "text": "Marek Benda protestoval proti formulaci „po dohodě klubů“, šlo podle něj o diktát koalice.",
+      "source": "steno",
+      "steno_id": "2025_1_00251",
+      "citace": "Neříkejte po dohodě předsedů poslaneckých klubů, když je to diktát, který jste opozici sdělili."
+    },
+    {
+      "text": "Hlasování číslo 18 o vyřazení neprojednaného bodu: sto devatenáct pro, čtyřicet osm proti.",
+      "source": "votes",
+      "citace": "Hlasování číslo 18, přihlášeno 194, pro 119, proti 48."
+    }
+  ],
   "publikovat": true,
-  "priorita": 1,
-  "nadpis": "Prošlo to",
+  "priorita": 2,
+  "nadpis": "Druhé kolo v pátek",
+  "lead": "Těsně před půlnocí schůze přesunula druhé kolo volby místopředsedů na pátek 14. listopadu, sto devatenáct hlasů proti čtyřiceti osmi. Benda Okamurovi vyčítal, že jde o koaliční diktát, ne dohodu.",
+  "pointa": "Malá prosadila změnu pořadu, Richterová pak zpochybnila hlasování kvůli chybné kartě. Schůze skončila ve dvacet tři hodin padesát sedm minut.",
+  "mean": "Termín další schůze určuje, kdy se Sněmovna zase sejde. Tentokrát šlo hlavně o to, kdy doplní zbývající místopředsedy.",
   "pocet_hlasovani": 3,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 48,
+    "pritomno_min": 194,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 1795
 }

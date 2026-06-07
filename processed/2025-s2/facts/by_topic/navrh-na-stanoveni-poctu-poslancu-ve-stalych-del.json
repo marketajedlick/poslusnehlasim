@@ -3,13 +3,11 @@
   "nazev": "Návrh na stanovení počtu poslanců ve stálých delegacích",
   "datum": "11.11.2025",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "návrh na stanovení počtu poslanců ve stálých delegacích",
-  "koho": [
-    "Občana se to netýká."
-  ],
+  "predmet_lidsky": "počtu poslanců ve stálých delegacích",
+  "koho": [],
   "fakty": [],
-  "publikovat": true,
-  "priorita": 1,
+  "publikovat": false,
+  "priorita": 0,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
   "proslo": true

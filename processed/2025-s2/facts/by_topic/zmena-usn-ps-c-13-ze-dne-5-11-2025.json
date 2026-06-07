@@ -3,12 +3,43 @@
   "nazev": "změna usn. PS č. 13 ze dne 5. 11. 2025",
   "datum": "11.11.2025",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "změna usn. PS č. 13 ze dne 5. 11. 2025",
-  "koho": [],
-  "fakty": [],
-  "publikovat": false,
-  "priorita": 0,
-  "nadpis": "Prošlo to",
+  "predmet_lidsky": "změně počtu členů výboru pro evropské záležitosti",
+  "koho": [
+    "Koho zajímá evropská politika a rozdělení míst ve výborech."
+  ],
+  "fakty": [
+    {
+      "text": "Richterová kritizovala, že u evropského výboru koalice nejdřív slíbila poměr 10:10, pak ho změnila.",
+      "source": "steno",
+      "steno_id": "2025_2_00006",
+      "citace": "Protože tam ty počty seděly půl na půl, 10 poslanců za vznikající koalici, 10 poslanců za nás, za opozici."
+    },
+    {
+      "text": "Hlasování číslo 5: sto čtyřicet devět pro, jeden proti, změna usnesení prošla.",
+      "source": "votes",
+      "citace": "Hlasování číslo 5, přihlášeno 189, pro 149, proti 1."
+    },
+    {
+      "text": "Kolovratník se v rozpravě ptal, proč Piráti ve vedení byli se čtyřmi poslanci, ale SPD s dvaceti ne.",
+      "source": "steno",
+      "steno_id": "2025_2_00016",
+      "citace": "Paní Richterová byla ve vedení Sněmovny a SPD nebylo. Tak se chci zeptat kolegyně, jestli by to vysvětlila."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Evropský výbor na půl",
+  "lead": "Úterní dopoledne začalo sporem o výbor pro evropské záležitosti. Piráti tvrdili, že koalice porušila slib rovného poměru deset ku deseti, změna usnesení stejně prošla sto čtyřiceti devíti hlasy.",
+  "pointa": "Richterová mluvila o třicetiletých zvyklostech poměrného zastoupení, Kolovratník ji popálil srovnáním s minulým obdobím Pirátů a SPD.",
+  "mean": "Počty ve výborech určují, kdo má většinu při projednávání zákonů. Evropský výbor sleduje agendu EU, tentokrát šlo o symbolické vyrovnání sil.",
   "pocet_hlasovani": 1,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 1,
+    "pritomno_min": 189,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 1973
 }

@@ -41,13 +41,27 @@ class StenoRecord:
         )
 
 
+def normalize_hlidac_token(token: str) -> str:
+    """Očistí token a ověří, že jde o ASCII (urllib vyžaduje latin-1 v hlavičkách)."""
+    cleaned = token.strip().strip('"').strip("'")
+    if not cleaned:
+        raise ValueError("HLIDAC_TOKEN je prázdný.")
+    if not cleaned.isascii():
+        bad = [c for c in cleaned if ord(c) > 127][:5]
+        raise ValueError(
+            "HLIDAC_TOKEN obsahuje znaky mimo ASCII "
+            f"({bad!r}). Zkopíruj token z hlidacstatu.cz — bez diakritiky a mezer navíc."
+        )
+    return cleaned
+
+
 class HlidacClient:
     """REST klient pro stenozáznamy PSP."""
 
     BASE = "https://api.hlidacstatu.cz/api/v2/datasety/stenozaznamy-psp"
 
     def __init__(self, token: str, rate_limit_s: float = 1.0):
-        self.token = token
+        self.token = normalize_hlidac_token(token)
         self.rate_limit_s = rate_limit_s
         self._last_request = 0.0
 

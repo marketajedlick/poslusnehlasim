@@ -5,10 +5,44 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "návrh na zřízení SK NÚKIB",
   "koho": [],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Já si dovolím na základě dohody poslaneckých klubů ANO, SPD a Motoristé sobě navrhnout zřídit: za prvé stálou komisi Poslanecké sněmovny pro práci Kanceláře Poslanecké sněmovny, tato by měla být ustavena podle zásady poměrného zastoupení a měla by mít 13 členů; za druhé navrhujeme zřídit stálou komisi Poslanecké sněmov",
+      "source": "steno",
+      "steno_id": "2025_2_00112",
+      "citace": "Já si dovolím na základě dohody poslaneckých klubů ANO, SPD a Motoristé sobě navrhnout zřídit: za prvé stálou komisi Poslanecké sněmovny pro práci Kanceláře Poslanecké sněmovny, tato by měla být ustav"
+    },
+    {
+      "text": "Poslankyně Malá: Ano.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_2_00113",
+      "citace": "(Poslankyně Malá: Ano.)"
+    },
+    {
+      "text": "1 zákona (č.) 341/2001 Sb., o Generální inspekci bezpečnostních sborů a o změně souvisejících zákonů, zřizuje Poslanecká sněmovna zvláštní kontrolní orgán pro kontrolu činnosti Generální inspekce bezpečnostních sborů skládající se z poslanců určených Poslaneckou sněmovnou.",
+      "source": "steno",
+      "steno_id": "2025_2_00113",
+      "citace": "1 zákona (č.) 341/2001 Sb., o Generální inspekci bezpečnostních sborů a o změně souvisejících zákonů, zřizuje Poslanecká sněmovna zvláštní kontrolní orgán pro kontrolu činnosti Generální inspekce bezp"
+    },
+    {
+      "text": "Jenom jsem se, paní předsedkyně, chtěl ubezpečit, i ta stálá komise Poslanecké sněmovny pro rodinu a rovné příležitosti také 13 členů?",
+      "source": "steno",
+      "steno_id": "2025_2_00113",
+      "citace": "Jenom jsem se, paní předsedkyně, chtěl ubezpečit, i ta stálá komise Poslanecké sněmovny pro rodinu a rovné příležitosti také 13 členů?"
+    }
+  ],
   "publikovat": false,
-  "priorita": 0,
+  "priorita": 2,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 191,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": false
+  },
+  "steno_slov": 2335
 }

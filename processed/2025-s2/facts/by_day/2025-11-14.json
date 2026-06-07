@@ -2,15 +2,21 @@
   "datum": "14.11.2025",
   "den": "pátek",
   "topic_slugs": [
-    "zmeny-ve-slozeni-organu-ps"
+    "volba-mistopredsedu-2-kolo"
+  ],
+  "dnesni_ucet": "Skopeček třetím místopředsedou, Richterová 30 hlasů.\nJedno křeslo ve vedení zůstává prázdné.",
+  "zaver": "že pátek doplnil vedení Sněmovny o Jana Skopečka, Olga Richterová ve druhém kole tajné volby neuspěla a čtvrté místopředsednické křeslo zůstalo volné.",
+  "vysledek": [
+    "* Jan Skopeček zvolen místopředsedou 121:30 proti Richterové",
+    "* předsedové výborů potvrzeni, Hayato Okamura nehlasoval pro Vondráčka",
+    "* návrhy na body o ženách ve vedení zamítnuty"
   ],
   "stats": {
-    "pocet_hlas": 1,
+    "pocet_hlas": 36,
     "minuty": 146,
     "end_cas": "12:39",
-    "proslo": 1,
+    "proslo": 36,
     "zamitnuto": 0,
     "dlouha_debata": false
-  },
-  "dnesni_ucet": "Páteční přeskládání výborů a orgánů sněmovny.\nPersonálka uvnitř parlamentu, ne státu."
+  }
 }

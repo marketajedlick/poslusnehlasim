@@ -5,10 +5,44 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "návrh na stanovení počtu ověřovatelů PS",
   "koho": [],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Budeme hlasovat o následujícím návrhu usnesení: „Poslanecká sněmovna zřizuje mandátový a imunitní výbor a stanoví počet jeho členů na 16.“ Zahajuji hlasování.",
+      "source": "steno",
+      "steno_id": "2025_1_00013",
+      "citace": "Budeme hlasovat o následujícím návrhu usnesení: „Poslanecká sněmovna zřizuje mandátový a imunitní výbor a stanoví počet jeho členů na 16.“ Zahajuji hlasování."
+    },
+    {
+      "text": "Znamená to tedy, že jsme zřídili mandátový a imunitní výbor a stanovili počet jeho členů na 16.",
+      "source": "steno",
+      "steno_id": "2025_1_00013",
+      "citace": "Znamená to tedy, že jsme zřídili mandátový a imunitní výbor a stanovili počet jeho členů na 16."
+    },
+    {
+      "text": "Hlasování číslo 2, přihlášeno 194 poslanců a poslankyň, pro 193, proti žádný.",
+      "source": "steno",
+      "steno_id": "2025_1_00013",
+      "citace": "Hlasování číslo 2, přihlášeno 194 poslanců a poslankyň, pro 193, proti žádný."
+    },
+    {
+      "text": "číslo 9",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_1_00180",
+      "citace": "(číslo 9)"
+    }
+  ],
   "publikovat": false,
-  "priorita": 0,
+  "priorita": 3,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 1,
+    "pritomno_min": 191,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 1431
 }

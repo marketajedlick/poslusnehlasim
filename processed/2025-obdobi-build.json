@@ -1,115 +1,115 @@
 {
   "obdobi": 2025,
   "schuze_celkem": 21,
-  "ok": 21,
+  "ok": 0,
   "skipped": 0,
-  "failed": 0,
+  "failed": 21,
   "vysledky": [
     {
       "schuze": 1,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s1"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 2,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s2"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 3,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s3"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 4,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s4"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 5,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 6,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s6"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 7,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s7"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 8,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s8"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 9,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s9"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 10,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 11,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s11"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 12,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s12"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 13,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s13"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 14,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s14"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 15,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s15"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 16,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s16"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 17,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s17"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 18,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s18"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 19,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s19"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 20,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s20"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     },
     {
       "schuze": 21,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s21"
+      "ok": false,
+      "error": "'latin-1' codec can't encode character '\\u016f' in position 8: ordinal not in range(256)"
     }
   ],
-  "built_at": "2026-06-07T14:02:49.304600+00:00"
+  "built_at": "2026-06-07T18:54:32.956586+00:00"
 }

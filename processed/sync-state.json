@@ -12,11 +12,164 @@
       "count": 4,
       "max_cislo": 4,
       "last_datum": "14.05.2026",
-      "steno_count": 0,
-      "last_steno_poradi": 0,
-      "last_steno_datum": "",
-      "synced_at": "2026-06-07T12:11:44.407961+00:00"
+      "steno_count": 17,
+      "last_steno_poradi": 17,
+      "last_steno_datum": "2026-05-14",
+      "synced_at": "2026-06-07T14:51:24.531607+00:00"
+    },
+    "4": {
+      "count": 1,
+      "max_cislo": 1,
+      "last_datum": "27.11.2025",
+      "steno_count": 32,
+      "last_steno_poradi": 32,
+      "last_steno_datum": "2025-11-27",
+      "synced_at": "2026-06-07T12:14:05.960002+00:00"
+    },
+    "5": {
+      "count": 159,
+      "max_cislo": 159,
+      "last_datum": "30.01.2026",
+      "steno_count": 1850,
+      "last_steno_poradi": 1850,
+      "last_steno_datum": "2026-01-30",
+      "synced_at": "2026-06-07T12:45:15.261629+00:00"
+    },
+    "6": {
+      "count": 13,
+      "max_cislo": 13,
+      "last_datum": "29.01.2026",
+      "steno_count": 196,
+      "last_steno_poradi": 196,
+      "last_steno_datum": "2026-01-29",
+      "synced_at": "2026-06-07T12:48:32.261446+00:00"
+    },
+    "7": {
+      "count": 91,
+      "max_cislo": 91,
+      "last_datum": "13.02.2026",
+      "steno_count": 980,
+      "last_steno_poradi": 980,
+      "last_steno_datum": "2026-02-13",
+      "synced_at": "2026-06-07T13:04:58.168006+00:00"
+    },
+    "8": {
+      "count": 4,
+      "max_cislo": 4,
+      "last_datum": "04.02.2026",
+      "steno_count": 475,
+      "last_steno_poradi": 475,
+      "last_steno_datum": "2026-02-04",
+      "synced_at": "2026-06-07T13:12:55.734829+00:00"
+    },
+    "9": {
+      "count": 6,
+      "max_cislo": 6,
+      "last_datum": "13.02.2026",
+      "steno_count": 71,
+      "last_steno_poradi": 71,
+      "last_steno_datum": "2026-02-13",
+      "synced_at": "2026-06-07T13:14:07.187391+00:00"
+    },
+    "10": {
+      "count": 263,
+      "max_cislo": 263,
+      "last_datum": "12.03.2026",
+      "steno_count": 1775,
+      "last_steno_poradi": 1775,
+      "last_steno_datum": "2026-03-12",
+      "synced_at": "2026-06-07T13:43:59.796815+00:00"
+    },
+    "11": {
+      "count": 9,
+      "max_cislo": 9,
+      "last_datum": "05.03.2026",
+      "steno_count": 212,
+      "last_steno_poradi": 212,
+      "last_steno_datum": "2026-03-05",
+      "synced_at": "2026-06-07T13:47:34.570087+00:00"
+    },
+    "12": {
+      "count": 7,
+      "max_cislo": 7,
+      "last_datum": "13.03.2026",
+      "steno_count": 114,
+      "last_steno_poradi": 114,
+      "last_steno_datum": "2026-03-13",
+      "synced_at": "2026-06-07T13:49:29.405678+00:00"
+    },
+    "13": {
+      "count": 111,
+      "max_cislo": 111,
+      "last_datum": "25.03.2026",
+      "steno_count": 597,
+      "last_steno_poradi": 597,
+      "last_steno_datum": "2026-03-25",
+      "synced_at": "2026-06-07T13:59:31.112446+00:00"
+    },
+    "14": {
+      "count": 194,
+      "max_cislo": 194,
+      "last_datum": "24.04.2026",
+      "steno_count": 1635,
+      "last_steno_poradi": 1635,
+      "last_steno_datum": "2026-04-24",
+      "synced_at": "2026-06-07T14:26:58.373469+00:00"
+    },
+    "15": {
+      "count": 1,
+      "max_cislo": 1,
+      "last_datum": "16.04.2026",
+      "steno_count": 56,
+      "last_steno_poradi": 56,
+      "last_steno_datum": "2026-04-16",
+      "synced_at": "2026-06-07T14:27:55.047271+00:00"
+    },
+    "16": {
+      "count": 71,
+      "max_cislo": 71,
+      "last_datum": "06.05.2026",
+      "steno_count": 544,
+      "last_steno_poradi": 544,
+      "last_steno_datum": "2026-05-06",
+      "synced_at": "2026-06-07T14:37:03.683824+00:00"
+    },
+    "17": {
+      "count": 70,
+      "max_cislo": 70,
+      "last_datum": "29.05.2026",
+      "steno_count": 836,
+      "last_steno_poradi": 836,
+      "last_steno_datum": "2026-06-03",
+      "synced_at": "2026-06-07T14:51:07.207415+00:00"
+    },
+    "19": {
+      "count": 14,
+      "max_cislo": 14,
+      "last_datum": "15.05.2026",
+      "steno_count": 66,
+      "last_steno_poradi": 66,
+      "last_steno_datum": "2026-05-15",
+      "synced_at": "2026-06-07T14:52:31.156099+00:00"
+    },
+    "20": {
+      "count": 368,
+      "max_cislo": 368,
+      "last_datum": "29.05.2026",
+      "steno_count": 1902,
+      "last_steno_poradi": 1902,
+      "last_steno_datum": "2026-06-05",
+      "synced_at": "2026-06-07T15:10:13.667705+00:00"
+    },
+    "21": {
+      "count": 10,
+      "max_cislo": 10,
+      "last_datum": "02.06.2026",
+      "steno_count": 147,
+      "last_steno_poradi": 147,
+      "last_steno_datum": "2026-06-02",
+      "synced_at": "2026-06-07T15:12:41.982902+00:00"
     }
   },
-  "updated_at": "2026-06-07T12:11:44.407973+00:00"
+  "updated_at": "2026-06-07T18:51:39.919128+00:00"
 }

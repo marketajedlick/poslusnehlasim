@@ -1,0 +1,37 @@
+{
+  "slug": "ustaveni-vyboru-debata",
+  "nazev": "Debata o ustavení výborů Poslanecké sněmovny",
+  "datum": "11.11.2025",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "složení parlamentních výborů",
+  "koho": [
+    "Koho zajímá, kdo bude v jakém výboru rozhodovat o zákonech."
+  ],
+  "fakty": [
+    {
+      "text": "Richterová obvinila koalici, že porušuje třicetiletý zvyk poměrného zastoupení ve vedení výborů.",
+      "source": "steno",
+      "steno_id": "2025_2_00014",
+      "citace": "Odmítáme přístup, kdy má Sněmovna přestat reprezentovat poměrným způsobem voliče a jejich vůli."
+    },
+    {
+      "text": "Hubert Lang Hřibovi vyčítal, že mluví jako pražský primátor, ne jako poslanec.",
+      "source": "steno",
+      "steno_id": "2025_2_00024",
+      "citace": "Všechna vaše vystoupení se pořád odkazujete na Magistrát hlavního města Prahy, pane kolego."
+    },
+    {
+      "text": "Dvaceti devíti hlasováními sněmovna postupně ustavila všechny výbory, většinou bez jediného proti.",
+      "source": "votes",
+      "citace": "Hlasování číslo 6 až 32, všechna přijata s převahou nad 180 hlasy pro."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Výbory na hraně",
+  "lead": "Úterý patřilo maratonu výborů a hlasité debatě. Piráti tvrdili, že koalice maří poměrné zastoupení, Lang Hřibovi připomněl, že už není primátorem. Přesto všech devětadvacet hlasování o výborech prošlo.",
+  "pointa": "Kolovratník s Richterovou si vyměnili faktické poznámky o minulém období, Hřib hájil zkušenosti z Prahy. Večer přišly stálé komise a delegace.",
+  "mean": "Výbory připravují zákony před plénem. Kdo v nich sedí, určuje, jaké téma dostane prostor a kdo má většinu při hlasování.",
+  "pocet_hlasovani": 0,
+  "proslo": true
+}

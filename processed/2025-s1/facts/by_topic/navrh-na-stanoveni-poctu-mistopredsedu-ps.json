@@ -3,14 +3,49 @@
   "nazev": "Návrh na stanovení počtu místopředsedů PS",
   "datum": "05.11.2025",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "návrh na stanovení počtu místopředsedů PS",
+  "predmet_lidsky": "počtu místopředsedů a jejich volbě",
   "koho": [
     "Kolik bude místopředsedů sněmovny, kdo zvedá kladívko, když předseda není."
   ],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Sněmovna schválila čtyři místopředsedy, hlasování číslo 9: sto padesát sedm pro, jeden proti.",
+      "source": "votes",
+      "citace": "Hlasování číslo 9, přihlášeno 194, pro 157, proti 1."
+    },
+    {
+      "text": "V prvním kole tajné volby získal Jiří Barták 113 hlasů, Patrik Nacher 98 hlasů.",
+      "source": "steno",
+      "steno_id": "2025_1_00224",
+      "citace": "Jiří Barták získal 113 hlasů a stává se místopředsedou Poslanecké sněmovny. Patrik Nacher získal 98 hlasů a stává se místopředsedou."
+    },
+    {
+      "text": "Zdeněk Hřib kritizoval, že na lístku není žádná žena, Šebelová protestovala proti označení „polovina populace“.",
+      "source": "steno",
+      "steno_id": "2025_1_00187",
+      "citace": "My jsme tedy za Piráty nominovali do volby místopředsedkyni Sněmovny dosavadní místopředsedkyni Olgu Richterovou."
+    },
+    {
+      "text": "Nacher po zvolení ukázal znakovou řeč, druhé kolo dvou zbývajících míst odložili na pátek 14. listopadu.",
+      "source": "steno",
+      "steno_id": "2025_1_00228",
+      "citace": "Já jsem se to naučil za těch 15 minut. Děkuju za podporu."
+    }
+  ],
   "publikovat": true,
-  "priorita": 1,
-  "nadpis": "Prošlo to",
+  "priorita": 3,
+  "nadpis": "Dva místopředsedové",
+  "lead": "Večer sněmovna schválila čtyři místopředsedy a v tajné volbě prosadila Jiřího Bartáka a Patrika Nachera. Debata o ženách ve vedení skončila odložením druhého kola na pátek.",
+  "pointa": "Hřib a Šebelová kritizovali mužskou kandidátku, Okamura druhé kolo přerušil do dohody klubů. Nacher po zvolení předvedl znakovou řeč u pultu.",
+  "mean": "Místopředsedové zastupují předsedu při řízení schůzí. Čtyři místa mají odpovídat poměru sil klubů, dvě zůstávají otevřená až do listopadu.",
   "pocet_hlasovani": 2,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 1,
+    "pritomno_min": 178,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 11154
 }

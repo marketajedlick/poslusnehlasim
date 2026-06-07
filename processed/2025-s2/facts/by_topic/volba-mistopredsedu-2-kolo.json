@@ -1,0 +1,44 @@
+{
+  "slug": "volba-mistopredsedu-2-kolo",
+  "nazev": "Druhé kolo volby místopředsedů Poslanecké sněmovny",
+  "datum": "14.11.2025",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "druhé kolo volby místopředsedů",
+  "koho": [
+    "Kdo sleduje, kdo pomáhá řídit jednání Sněmovny."
+  ],
+  "fakty": [
+    {
+      "text": "Olga Richterová v projevu apelovala na 505 000 pirátských voličů, Skopeček získal 121 hlasů, ona 30.",
+      "source": "steno",
+      "steno_id": "2025_2_00214",
+      "citace": "Olga Richterová získala 30 hlasů, nestává se místopředsedkyní Sněmovny. Jan Skopeček získal 121 hlasů a je zvolen místopředsedou Sněmovny."
+    },
+    {
+      "text": "Kateřina Stojanová a Eva Šrámková navrhly body o rovném zastoupení žen ve vedení, sněmovna je nezařadila.",
+      "source": "steno",
+      "steno_id": "2025_2_00163",
+      "citace": "Navrhujeme naši předsedkyni poslaneckého klubu Olgu Richterovou jako budoucí místopředsedkyni Poslanecké sněmovny."
+    },
+    {
+      "text": "Jedno místopředsednické křeslo zůstává prázdné, nová volba přijde na další schůzi.",
+      "source": "steno",
+      "steno_id": "2025_2_00216",
+      "citace": "Jedno místo místopředsedy zůstává neobsazené."
+    },
+    {
+      "text": "Koaliční poslanci při Richterové projevu část schůze opustili, Nacher pak použil gong omylem.",
+      "source": "steno",
+      "steno_id": "2025_2_00210",
+      "citace": "Koaliční poslanci ve velkém počtu odcházejí ze sálu."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Skopeček třetí, Richterová ne",
+  "lead": "Páteční druhé kolo doplnilo vedení Sněmovny: Jan Skopeček získal sto dvacet jedna hlasů, Olga Richterová jen třicet. Jedno křeslo místopředsedy zůstává volné.",
+  "pointa": "Richterová mluvila o půl milionu voličů a diktátu Andreje Babiše, část koalice mezitím opustila sál. Nacher se omluvil za předčasný gong před tajnou volbou.",
+  "mean": "Místopředsedové zastupují předsedu u řízení schůzí. Po Bartákovi, Nacherovi a Skopečkovi chybí ještě jeden člověk do čtyřčlenného týmu.",
+  "pocet_hlasovani": 0,
+  "proslo": true
+}

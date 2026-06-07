@@ -5,9 +5,10 @@
     "fetch": {
       "done": true,
       "votes": 75,
-      "steno": 0,
+      "steno": 279,
       "hlidac_token_used": false,
-      "fetched_at": "2026-05-30T09:26:08.838904+00:00"
+      "psp_steno_used": true,
+      "fetched_at": "2026-06-07T19:14:09.530887+00:00"
     },
     "align": {
       "done": true,
@@ -16,7 +17,7 @@
     "extract": {
       "done": true,
       "topics_written": 9,
-      "with_concrete_facts": 0,
+      "with_concrete_facts": 9,
       "days": 2
     },
     "compose": {
@@ -32,5 +33,5 @@
       ]
     }
   },
-  "built_at": "2026-06-07T14:02:48.076691+00:00"
+  "built_at": "2026-06-07T19:15:31.602323+00:00"
 }
