@@ -203,6 +203,24 @@ def cmd_sync(args: argparse.Namespace) -> int:
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     if summary.get("errors"):
         return 1
+    if getattr(args, "fail_if_pending", False):
+        if summary.get("check_only"):
+            pending = int(summary.get("would_update") or 0)
+        else:
+            pending = int(summary.get("updated") or 0)
+        unl_changed = bool(summary.get("unl", {}).get("changed"))
+        if pending > 0 or unl_changed:
+            schuze = [
+                r["schuze"]
+                for r in summary.get("vysledky", [])
+                if r.get("action") in ("would_update", "update")
+            ]
+            print(
+                f"Nová data PSP: pending={pending}, unl_changed={unl_changed}, "
+                f"schůze={schuze}",
+                file=sys.stderr,
+            )
+            return 1
     return 0
 
 
@@ -595,6 +613,11 @@ def main() -> int:
         "--skip-steno",
         action="store_true",
         help="Nestahovat steno z Hlídače",
+    )
+    p_sync.add_argument(
+        "--fail-if-pending",
+        action="store_true",
+        help="Ukončit s chybou, pokud jsou nová data (pro CI notifikace)",
     )
     p_sync.add_argument("-q", "--quiet", action="store_true")
     p_sync.set_defaults(func=cmd_sync)

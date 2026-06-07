@@ -1,0 +1,47 @@
+name: Check new PSP data
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Před sync crony (sync běží 05:00 a 21:00 UTC)
+    - cron: "30 4 * * *"
+    - cron: "30 20 * * 1-5"
+
+concurrency:
+  group: check-psp-data
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-svejk.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements-svejk.txt
+
+      - name: Restore steno cache
+        uses: actions/cache/restore@v4
+        with:
+          path: processed/*/raw/steno.jsonl
+          key: steno-v1-${{ hashFiles('processed/sync-state.json') }}
+          restore-keys: |
+            steno-v1-
+
+      - name: Check for new PSP data
+        env:
+          HLIDAC_TOKEN: ${{ secrets.HLIDAC_TOKEN }}
+          HLIDAC_RATE_LIMIT_S: "1.0"
+        run: |
+          if [ -z "$HLIDAC_TOKEN" ]; then
+            echo "::warning::HLIDAC_TOKEN není nastaven — kontrola uvidí jen změny v UNL hlasování."
+          fi
+          ./run-svejk.sh sync --obdobi 2025 --check-only --fail-if-pending -q

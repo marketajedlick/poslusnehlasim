@@ -20,6 +20,23 @@
 
 Push na `main` jen exportuje z `processed/facts` (~1 min). Stažení z Hlídače běží při **cron** nebo **workflow_dispatch**.
 
+### E-mail při nových datech z PSP (pro tebe)
+
+Dva workflow ti pošlou **GitHub notifikaci** (selhání jobu), pokud máš u repa zapnuté watch / e-mail u Actions:
+
+| Workflow | Kdy | Co znamená selhání |
+|----------|-----|-------------------|
+| **Check new PSP data** (`data-check.yml`) | denně 05:30 a 21:30 CET (před sync) | Na PSP / Hlídači jsou nová data, která ještě nejsou lokálně |
+| **Sync PSP data** (`sync.yml`) | po stažení a commitu | Sync právě stáhl nová data do repa — je třeba doplnit `facts` a `compose` |
+
+Lokální kontrola bez zápisu:
+
+```bash
+HLIDAC_TOKEN=… ./run-svejk.sh sync --obdobi 2025 --check-only --fail-if-pending
+```
+
+V **GitHub → Settings → Notifications** zapni e-maily u „Actions“ a u tohoto repozitáře „Watch → All activity“ (nebo aspoň failures).
+
 ## Doména poslusnehlasim.cz
 
 Po přepnutí DNS v workflow zapni `SVEJK_PAGES_CNAME: poslusnehlasim.cz` (soubor `site/CNAME`). U registrátora domény nastav **jednu** z variant (podle toho, co podporuješ):

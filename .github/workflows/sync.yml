@@ -57,6 +57,7 @@ jobs:
           key: steno-v1-${{ hashFiles('processed/sync-state.json') }}
 
       - name: Commit synced data
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -67,9 +68,17 @@ jobs:
           git add processed/2025-s*/manifest.json
           if git diff --staged --quiet; then
             echo "Žádné změny k commitu."
+            echo "committed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git commit \
             -m "sync: aktualizace dat PSP (UNL + processed)" \
             -m "Automatický sync z workflow Sync PSP data."
           git push
+          echo "committed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Notifikace — nová data stažena
+        if: steps.commit.outputs.committed == 'true'
+        run: |
+          echo "::error::Sync stáhl nová data PSP. Zkontroluj facts, doplň texty a spusť compose."
+          exit 1

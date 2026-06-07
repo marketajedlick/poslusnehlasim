@@ -1,0 +1,25 @@
+{
+  "datum": "14.01.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "debata-duvery-streda",
+    "premier-chybi-v-debate-duvery"
+  ],
+  "dnesni_ucet": "Středa uprostřed třídenní debaty, nula hlasování.\nPremiér chyběl, řečníci ne.",
+  "zaver": "že středa patřila ministrům a opozici, premiér mezitím chyběl v sále, sněmovna nic nehlasovala a tabule zůstala na nule, hlasování až zítra večer.",
+  "vysledek": [
+    "* stav dne nula:nula, meritní hlasování až ve čtvrtek večer",
+    "* skoro osmdesát tisíc slov ve stenoprotokolu, nula hlasů v tabulce",
+    "* premiér žádal o důvěru, přitom hodinu a půl nepřítomen",
+    "* Šťastný: my jsme rádi, že tady není",
+    "* šedesát čtyři řečníků ve frontě, debata ani nezačala"
+  ],
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 0,
+    "end_cas": "",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  }
+}

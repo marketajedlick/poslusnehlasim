@@ -1,0 +1,39 @@
+{
+  "slug": "debata-duvery-streda",
+  "nazev": "Debata o důvěře vládě — středa",
+  "datum": "14.01.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "žádosti vlády Andreje Babiše o vyslovení důvěry",
+  "koho": [
+    "Koho se to týká? Celé republiky — bez důvěry vláda nemůže normálně vládnout, ale dnes se jen mluvilo."
+  ],
+  "fakty": [
+    {
+      "text": "Protože máme 64 řečníků přihlášených do rozpravy, která ani nezačala, tak já bych si dovolil pokračovat.",
+      "source": "steno",
+      "steno_id": "2025_5_00113",
+      "citace": "Protože máme 64 řečníků přihlášených do rozpravy, která ani nezačala, tak já bych si dovolil pokračovat."
+    },
+    {
+      "text": "My ve skutečnosti hlasujeme dnes o tom, zda věříme, že vládnutí a vláda Andreje Babiše a jeho koaličních partnerů prospěje této zemi. Jedním slovem nevěříme.",
+      "source": "steno",
+      "steno_id": "2025_5_00114",
+      "citace": "My ve skutečnosti hlasujeme dnes o tom, zda věříme, že vláda prospěje této zemi. Jedním slovem nevěříme."
+    },
+    {
+      "text": "Znalec vyčíslil škodu na životním prostředí na zhruba 2,2 miliardy korun bez DPH. A té kontaminované sutě je 88 tun.",
+      "source": "steno",
+      "steno_id": "2025_5_00106",
+      "citace": "Znalec vyčíslil škodu na životním prostředí na zhruba 2,2 miliardy korun bez DPH."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Řeč bez hlasování",
+  "lead": "Středa uprostřed třídenní debaty o důvěře. Šedesát čtyři řečníků ve frontě, skoro osmdesát tisíc slov ve stenoprotokolu, tabule zůstala na nule. Rakušan řekl jedním slovem nevěříme, meritní hlasování až zítra večer.",
+  "pointa": "Ministři mluvili o programovém prohlášení, opozice o kauzách a azbestu v Milovicích. Sněmovna celý den nic nehlasovala.",
+  "mean": "Druhý den debaty patřil ministrům a opozičním projevům. Sněmovna nic nehlasovala, jen mluvila o programovém prohlášení a kauzách. Hlasování o důvěře bylo naplánované na čtvrtek.",
+  "pocet_hlasovani": 0,
+  "proslo": false,
+  "steno_slov": 78023
+}
