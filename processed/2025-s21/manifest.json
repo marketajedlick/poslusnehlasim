@@ -4,10 +4,14 @@
   "steps": {
     "compose": {
       "done": true,
-      "days": 0,
-      "files": [],
-      "html_files": []
+      "days": 1,
+      "files": [
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s21/out/noviny-dlouhe/2026-06-02.md"
+      ],
+      "html_files": [
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s21/out/noviny-dlouhe/2026-06-02.html"
+      ]
     }
   },
-  "built_at": "2026-06-07T14:02:49.304404+00:00"
+  "built_at": "2026-06-07T18:33:16.915700+00:00"
 }

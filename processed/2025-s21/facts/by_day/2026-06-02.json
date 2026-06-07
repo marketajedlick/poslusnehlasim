@@ -1,0 +1,24 @@
+{
+  "datum": "02.06.2026",
+  "den": "úterý",
+  "topic_slugs": [
+    "novela-z-o-statni-socialni-podpore",
+    "novela-z-o-sprave-voleb",
+    "n-z-kterym-se-meni-nektere-zakony-na-useku-vnitr"
+  ],
+  "dnesni_ucet": "Rodičák na 400 tisíc od ledna 2027, spor o valorizaci.\nTři body mimořádné schůze za tři a půl hodiny.",
+  "zaver": "že sněmovna v prvním čtení posvětila navýšení rodičáku na čtyři sta tisíc korun pro děti od ledna 2027, ale pravidelnou valorizaci Pirátům neodbouchla.",
+  "vysledek": [
+    "* rodičák 400 000 / 800 000 Kč v prvním čtení schválen 155:0",
+    "* senátní novela o správě voleb schválena v prvním čtení 155:0",
+    "* digitalizační balíček vnitra přikázán výboru, Bendův návrh na ÚPV padl 62:1"
+  ],
+  "stats": {
+    "pocet_hlas": 10,
+    "minuty": 219,
+    "end_cas": "17:39",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  }
+}

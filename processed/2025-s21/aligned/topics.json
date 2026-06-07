@@ -1,0 +1,61 @@
+{
+  "obdobi": 2025,
+  "schuze": 21,
+  "topics": [
+    {
+      "slug": "novela-z-o-statni-socialni-podpore",
+      "nazev": "Novela z. o státní sociální podpoře",
+      "bod": "1",
+      "datum": "02.06.2026",
+      "vote_cisla": [
+        4,
+        5
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 2,
+      "pocet_prijato": 2,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Navýšení rodičovského příspěvku na 400 000 Kč od 1. 1. 2027, spor o valorizaci.",
+      "tema_vysvetleni": "Vládní novela v prvním čtení zvyšuje rodičák o 50 000 korun, debata o pravidelné valorizaci a superdávce."
+    },
+    {
+      "slug": "novela-z-o-sprave-voleb",
+      "nazev": "Novela z. o správě voleb",
+      "bod": "2",
+      "datum": "02.06.2026",
+      "vote_cisla": [
+        6,
+        7
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 2,
+      "pocet_prijato": 2,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Senátní novela o správě voleb schválena v prvním čtení, QR kódy pro nevidomé voliče.",
+      "tema_vysvetleni": "Rychlé první čtení kvůli podzimním volbám, návrat k samostatným lístkům do Senátu."
+    },
+    {
+      "slug": "n-z-kterym-se-meni-nektere-zakony-na-useku-vnitr",
+      "nazev": "N. z., kterým se mění některé zákony na úseku vnitřní správy",
+      "bod": "3",
+      "datum": "02.06.2026",
+      "vote_cisla": [
+        8,
+        9,
+        10
+      ],
+      "steno_ids": [],
+      "proslo": true,
+      "pocet_hlasovani": 3,
+      "pocet_prijato": 2,
+      "pocet_zamitnuto": 1,
+      "kategorie": "substantivni",
+      "tema_svejk": "Odklady eLegislativy a atestací spisovek, spor Pirátů o lobbistickou stopu.",
+      "tema_vysvetleni": "Poslanecký balíček odkládá digitalizační termíny a snižuje strop kompenzací České pošty na 1,5 miliardy."
+    }
+  ]
+}
