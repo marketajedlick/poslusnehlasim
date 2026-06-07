@@ -4,6 +4,14 @@
   "topic_slugs": [
     "stanovisko-vladni-koalice-ke-sjezdu-sudetonemeck"
   ],
+  "dnesni_ucet": "Mimořádná schůze bez opozice v sále.\nUsnesení proti sjezdu v Brně prošlo.",
+  "zaver": "že čtvrtek koalice na mimořádné schůzi schválila usnesení proti sjezdu Sudetoněmeckého landsmanšaftu v Brně, opozice v sále chyběla a hlasovalo se sedmdesát tři proti nule.",
+  "vysledek": [
+    "* usnesení proti sjezdu v Brně schváleno 73:0 ve 14:24",
+    "* schůzi svolalo padesát sedm poslanců, opozice chyběla",
+    "* Rajchl citoval prohlášení spolku Lidice Memory",
+    "* debata pokračovala po přerušení ze šestnácté schůze"
+  ],
   "stats": {
     "pocet_hlas": 1,
     "minuty": 51,
@@ -11,6 +19,5 @@
     "proslo": 1,
     "zamitnuto": 0,
     "dlouha_debata": false
-  },
-  "dnesni_ucet": "Čtvrtek s jedním zákonem v prvním čtení.\nProšel bez jediného hlasu proti."
+  }
 }

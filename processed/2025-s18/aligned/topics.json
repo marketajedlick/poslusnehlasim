@@ -11,14 +11,31 @@
         3,
         4
       ],
-      "steno_ids": [],
+      "steno_ids": [
+        "2025_18_00002",
+        "2025_18_00003",
+        "2025_18_00004",
+        "2025_18_00005",
+        "2025_18_00006",
+        "2025_18_00007",
+        "2025_18_00008",
+        "2025_18_00009",
+        "2025_18_00010",
+        "2025_18_00011",
+        "2025_18_00012",
+        "2025_18_00013",
+        "2025_18_00014",
+        "2025_18_00015",
+        "2025_18_00016",
+        "2025_18_00017"
+      ],
       "proslo": true,
       "pocet_hlasovani": 2,
       "pocet_prijato": 2,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "Hlasovali o: Stanovisko vládní koalice ke sjezdu Sudetoněmeckého landsman…",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_svejk": "Usnesení proti sjezdu Sudetoněmeckého landsmanšaftu v Brně, česko-německá deklarace.",
+      "tema_vysvetleni": "Mimořádná schůze koalice po přerušení debaty na s16, opozice v sále chyběla."
     }
   ]
 }
