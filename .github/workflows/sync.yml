@@ -69,10 +69,7 @@ jobs:
             echo "Žádné změny k commitu."
             exit 0
           fi
-          git commit -m "$(cat <<'EOF'
-sync: aktualizace dat PSP (UNL + processed)
-
-Automatický sync z workflow Sync PSP data.
-EOF
-)"
+          git commit \
+            -m "sync: aktualizace dat PSP (UNL + processed)" \
+            -m "Automatický sync z workflow Sync PSP data."
           git push
