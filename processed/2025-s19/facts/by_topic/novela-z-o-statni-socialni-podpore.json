@@ -3,14 +3,40 @@
   "nazev": "Novela z. o státní sociální podpoře",
   "datum": "15.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "státní sociální podpoře",
+  "predmet_lidsky": "odložení digitalizace dávek státní sociální podpory na Úřadu práce",
   "koho": [
-    "Pokud chodíte na Úřad práce pro příspěvek na bydlení nebo přídavek na dítě, nemusíte se zatím bát, že by se vám všechno přes noc přeházelo."
+    "Koho se to týká? Rodiny čekající na příspěvek na bydlení, přídavek na dítě nebo další dávky z Úřadu práce."
   ],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Juchelka řekl, že úřad nestihne digitalizaci k 1. červenci kvůli superdávce.",
+      "source": "steno",
+      "steno_id": "2025_19_00014",
+      "citace": "Cílem návrhu je oddálení náběhu digitalizace a souvisejících změn ve způsobu administrace dávek státní sociální podpory, ke kterému má dojít k 1. červenci tohoto roku."
+    },
+    {
+      "text": "Hřib a Richterová chtěli navýšit rodičák na 420 000 a valorizaci.",
+      "source": "steno",
+      "steno_id": "2025_19_00003",
+      "citace": "Navrhujeme, aby to bylo 420 000 a hlavně aby se nastavila pravidelná valorizace."
+    },
+    {
+      "text": "Pozměňovací návrhy Pirátů a Blišťanové k rodičáku padly.",
+      "source": "votes",
+      "citace": "Hlasování číslo 4 až 6, všechna zamítnuta."
+    },
+    {
+      "text": "Finální hlasování číslo 7 v 09:48, sto dvacet osm hlasů pro.",
+      "source": "votes",
+      "citace": "Hlasování číslo 7, pro 128, proti nikdo."
+    }
+  ],
   "publikovat": true,
-  "priorita": 1,
-  "nadpis": "Dávky se mění",
-  "pocet_hlasovani": 5,
+  "priorita": 2,
+  "nadpis": "Dávky se digitalizují později",
+  "lead": "V pátek ráno sněmovna ve třetím čtení schválila odklad digitalizace dávek státní sociální podpory, sto dvacet osm hlasů proti nule. Piráti místo toho tlačili rodičák na 420 000, koalice jejich návrhy zamítla.",
+  "pointa": "Juchelka hájil technickou novelu kvůli kapacitám IT po superdávce. Martínková Španihelová mluvila o valorizaci rodičovského příspěvku, Jurečka apeloval na shodu o péči.",
+  "mean": "Dávky z Úřadu práce se zatím nebudou převádět do plně digitálního režimu podle původního harmonogramu. Směr digitalizace zůstává, mění se tempo.",
+  "pocet_hlasovani": 1,
   "proslo": true
 }
