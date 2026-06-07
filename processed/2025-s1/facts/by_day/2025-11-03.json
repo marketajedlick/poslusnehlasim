@@ -4,17 +4,17 @@
   "topic_slugs": [
     "nav-na-zrizeni-miv-a-stanoveni-poctu-clenu"
   ],
-  "dnesni_ucet": "Hymna, Brabec rezignoval, mandátový výbor.\nUstavující den bez zákonů.",
-  "zaver": "že pondělí patřilo jen ustavující proceduře: Brabec odešel, Sněmovna zřídila mandátový a imunitní výbor se šestnácti členy.",
+  "dnesni_ucet": "Hymna, Brabec odešel, mandátový výbor.\nPrvní den jen organizace, bez zákonů.",
+  "zaver": "že pondělí byl jen rozjezd: Brabec odešel, sněmovna si zřídila mandátový výbor se šestnácti členy.",
   "vysledek": [
-    "* mandátový a imunitní výbor zřízen 193:0",
-    "* volební komise ustavena 191:0"
+    "* mandátový a imunitní výbor zřízen, sto devadesát tři pro, nikdo proti",
+    "* volební komise ustavena, sto devadesát jedna pro, nikdo proti"
   ],
   "stats": {
-    "pocet_hlas": 2,
+    "pocet_hlas": 0,
     "minuty": 3,
     "end_cas": "15:13",
-    "proslo": 2,
+    "proslo": 0,
     "zamitnuto": 0,
     "dlouha_debata": false
   }

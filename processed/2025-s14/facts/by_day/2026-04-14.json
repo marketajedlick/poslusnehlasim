@@ -5,13 +5,13 @@
     "porad-14-schuze",
     "novela-z-o-cenach"
   ],
-  "dnesni_ucet": "Legislativní nouze kvůli cenám benzínu, večer boj o pořad.\nZkrácené jednání prošlo, první čtení stovkou hlasů.",
-  "zaver": "že sněmovna potvrdila legislativní nouzi kvůli regulaci cen pohonných hmot, večer vybojovala pořad čtyřiceti čtyřmi hlasováními a schválila první čtení zákona o cenách.",
+  "dnesni_ucet": "Zrychlené projednávání kvůli cenám benzínu, večer boj o pořad.\nZkrácená debata prošla, první kolo stovkou hlasů.",
+  "zaver": "že sněmovna schválila zrychlené projednávání kvůli cenám benzínu, večer po čtyřiceti čtyřech hlasech o pořadu dala zelenou prvnímu kolu zákona o cenách.",
   "vysledek": [
-    "* legislativní nouze potvrzena kvůli zákonu o cenách pohonných hmot",
-    "* pořad schválen po čtyřiceti čtyřech procedurálních hlasech",
-    "* zkrácené jednání schváleno 79:51",
-    "* první čtení zákona o cenách 100:0, druhé čtení večer padlo 64:89"
+    "* zrychlené projednávání potvrzeno kvůli zákonu o cenách benzínu",
+    "* pořad schválen po čtyřiceti čtyřech hlasech o pořadu",
+    "* zkrácená debata schváleno 79:51",
+    "* první kolo zákona o cenách 100:0, druhé kolo večer padlo 64:89"
   ],
   "stats": {
     "pocet_hlas": 2,

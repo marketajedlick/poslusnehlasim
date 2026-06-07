@@ -4,13 +4,13 @@
   "topic_slugs": [
     "novela-z-trestni-zakonik"
   ],
-  "dnesni_ucet": "Dopoledne harmonogram závěrečného účtu, večer trestní zákoník.\nTřetí čtení novely padlo, sedmi desítkami hlasů.",
-  "zaver": "že úterý večer sněmovna nenatáhla třetí čtení novely trestního zákoníku, přestože druhé čtení předtím prošlo bez odporu.",
+  "dnesni_ucet": "Dopoledne harmonogram závěrečného účtu, večer trestní zákoník.\nFinální hlasování o zákonu padlo, sedmi desítkami hlasů.",
+  "zaver": "že úterý večer sněmovna nerozhodla o finálním hlasování o trestním zákoníku, přestože druhé kolo předtím prošlo hladce.",
   "vysledek": [
     "* harmonogram státního závěrečného účtu schválen 142:0",
-    "* trestní zákoník ve druhém čtení 154:0",
-    "* třetí čtení novely zamítnuto, jen 67 hlasů pro",
-    "* 37 hlasování o pořadu před meritními body"
+    "* trestní zákoník ve druhém kole 154:0",
+    "* finální hlasování o zákonu zamítnuto, jen 67 hlasů pro",
+    "* 37 hlasování o pořadu před zákony"
   ],
   "stats": {
     "pocet_hlas": 1,

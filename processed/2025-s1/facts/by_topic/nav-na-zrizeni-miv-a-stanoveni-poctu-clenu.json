@@ -5,11 +5,11 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "zřízení mandátového a imunitního výboru",
   "koho": [
-    "Občana se to netýká, jde o ustavující proceduru nového období."
+    "Občana se to netýká, jde o rozjezd nové sněmovny."
   ],
   "fakty": [
     {
-      "text": "Richard Brabec na ustavující schůzi rezignoval na mandát po dvanácti letech v Sněmovně.",
+      "text": "Richard Brabec při rozjezdu sněmovny rezignoval na mandát po dvanácti letech v Sněmovně.",
       "source": "steno",
       "steno_id": "2025_1_00002",
       "citace": "Tímto podle čl. 24 Ústavy a § 6 odst. c) jednacího řádu rezignuji na mandát poslance Poslanecké sněmovny Parlamentu České republiky."
@@ -28,10 +28,10 @@
   ],
   "publikovat": true,
   "priorita": 2,
-  "nadpis": "Ustavující den",
-  "lead": "Pondělní ustavující schůze desátého období začala hymnou a rezignací Richarda Brabce, večer sněmovna zřídila mandátový a imunitní výbor se šestnácti členy, sto devadesát tři hlasů proti nule.",
-  "pointa": "Richard Brabec se rozloučil po dvanácti letech, poslanec Vlastimil Válek pak na půdě složil slib. Procedurální den bez meritního zákonu.",
-  "mean": "Ustavující schůze jen nastavuje kostru Sněmovny: výbory, ověřovatele a volební komisi. Na zákony se čeká až na dalších schůzích.",
+  "nadpis": "Rozjezd sněmovny",
+  "lead": "Pondělní první schůze desátého období začala hymnou a rezignací Richarda Brabce, večer sněmovna zřídila mandátový a imunitní výbor se šestnácti členy, sto devadesát tři hlasů proti nule.",
+  "pointa": "Richard Brabec se rozloučil po dvanácti letech, poslanec Vlastimil Válek pak na půdě složil slib. Jen organizace, žádné zákony.",
+  "mean": "První den po volbách jen nastavuje kostru Sněmovny: výbory, ověřovatele a volební komisi. Na zákony se čeká až na dalších schůzích.",
   "pocet_hlasovani": 1,
   "proslo": true
 }

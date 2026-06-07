@@ -7,6 +7,7 @@ from collections import defaultdict
 from datetime import datetime
 from typing import Any
 
+from svejk.build.align import _vote_kategorie
 from svejk.build.io import iter_jsonl, read_json, write_json
 from svejk.listy import (
     KDO_KLIC,
@@ -115,6 +116,27 @@ def _nadpis_fallback(nazev: str, proslo: bool) -> str:
     return _nadpis_bodu(b)
 
 
+def _den_zakon_stats(day_votes: list[dict]) -> tuple[int, int, int]:
+    """Počty pro tabuli stavu zápasu: jen zákony, jedno skóre na téma (poslední hlasování)."""
+    groups: dict[tuple[str, str], list] = defaultdict(list)
+    for v in day_votes:
+        if v.get("je_porad_schuze"):
+            continue
+        nazev = (v.get("nazev") or "").strip()
+        if not nazev or _vote_kategorie(nazev) != "substantivni":
+            continue
+        groups[(v.get("bod") or "", nazev)].append(v)
+    proslo = zamitnuto = 0
+    for group in groups.values():
+        group.sort(key=lambda x: (x.get("datum", ""), x.get("cas", "")))
+        vysledek = group[-1].get("vysledek")
+        if vysledek == "A":
+            proslo += 1
+        elif vysledek == "R":
+            zamitnuto += 1
+    return proslo, zamitnuto, proslo + zamitnuto
+
+
 def run_extract(paths: SchuzePaths) -> dict[str, Any]:
     paths.ensure_dirs()
     aligned = read_json(paths.topics_json)
@@ -214,14 +236,7 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
     days = sorted({v["datum"] for v in votes if v.get("datum")})
     for datum in days:
         day_votes = [v for v in votes if v.get("datum") == datum]
-        zakony = [
-            v
-            for v in day_votes
-            if not v.get("je_porad_schuze") and (v.get("nazev") or "").strip()
-        ]
-        proslo = sum(1 for v in zakony if v.get("vysledek") == "A")
-        zamitnuto = sum(1 for v in zakony if v.get("vysledek") == "R")
-        pocet_hlas = len(zakony)
+        proslo, zamitnuto, pocet_hlas = _den_zakon_stats(day_votes)
         times = [v.get("cas", "") for v in day_votes if v.get("cas")]
         start = times[0][:5] if times else ""
         end = times[-1][:5] if times else ""
@@ -250,7 +265,7 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
                 "den": ["pondělí", "úterý", "středa", "čtvrtek", "pátek", "sobota", "neděle"][d.weekday()],
                 "topic_slugs": [x["slug"] for x in slug_meta],
                 "stats": {
-                    "pocet_hlas": pocet_hlas or len(zakony),
+                    "pocet_hlas": pocet_hlas,
                     "minuty": minuty,
                     "end_cas": end,
                     "proslo": proslo,

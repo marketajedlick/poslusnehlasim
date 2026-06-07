@@ -6,18 +6,18 @@
     "porad-a-distancovani-5-schuze"
   ],
   "dnesni_ucet": "Strany si schválily peníze za říjnové volby, sto osmdesát tři pro,\nnikdo proti, o důvěře vlády se začalo zatím jenom mluvit.",
-  "zaver": "že si strany nejdřív vyplatily volební kampaně a teprve pak začala třídenní debata o tom, zda vláda získá důvěru.",
+  "zaver": "že si strany nejdřív vyplatily volební kampaně a teprve pak začala třídenní debata o důvěře vládě.",
   "vysledek": [
-    "* příspěvky na volební náklady prošly 183:0, občana to netrefí",
+    "* příspěvky na volební náklady prošly, sto osmdesát tři pro, nikdo proti, občana to netrefí",
     "* opozice chtěla distanc od Okamurových slov o Ukrajině, koalice to smetla ze stolu",
     "* debata o důvěře začala, hlasování až ve čtvrtek",
     "* Fiala: důvěra není formalita, jen formalita trvala celé dopoledne"
   ],
   "stats": {
-    "pocet_hlas": 1,
+    "pocet_hlas": 0,
     "minuty": 118,
     "end_cas": "13:00",
-    "proslo": 1,
+    "proslo": 0,
     "zamitnuto": 0,
     "dlouha_debata": false
   }

@@ -45,7 +45,31 @@ def _law_kategorie(blok: BlokDne) -> str:
     t = (blok.nazev + " " + blok.svejk + " " + blok.vysvetleni).lower()
     if "interpelac" in t:
         return "interpelace"
-    if any(k in t for k in ("dosadili", "výbor", "personál", "volbu", "jmenování", "komis", " rady ", "volba ", "volby ")):
+    if any(
+        k in t
+        for k in (
+            "dosadili",
+            "výbor",
+            " miv",
+            "miv ",
+            "mandátov",
+            "imunitní",
+            "personál",
+            "volbu",
+            "volbě",
+            "volební komis",
+            "ověřovatel",
+            "místopředsed",
+            "jmenování",
+            "komis",
+            " rady ",
+            "volba ",
+            "volby ",
+            "náv. na zřízení",
+            "příspěvek na volební",
+            "termín schůze",
+        )
+    ):
         return "personalka"
     return "substantivni"
 
