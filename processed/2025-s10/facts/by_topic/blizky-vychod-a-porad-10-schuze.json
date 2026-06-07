@@ -1,0 +1,44 @@
+{
+  "slug": "blizky-vychod-a-porad-10-schuze",
+  "nazev": "Debata o Blízkém východě a boj o pořad",
+  "datum": "03.03.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "krizi na Blízkém východě a pořadu desáté schůze",
+  "koho": [
+    "Koho se to týká? Spíš pozorovatele politiky a lidí sledujících dopady války na ceny energií."
+  ],
+  "fakty": [
+    {
+      "text": "Hřib navrhl bod Jste ohroženi na životě, stiskněte jedničku.",
+      "source": "steno",
+      "steno_id": "2025_10_00015",
+      "citace": "Jste ohroženi na životě? Stiskněte jedničku. Navrhoval bych to jako první bod dneska."
+    },
+    {
+      "text": "Bezpečnost obyvatel nemůže zůstat jen u slov, řekl Hřib po projevu prezidenta.",
+      "source": "steno",
+      "steno_id": "2025_10_00013",
+      "citace": "Ta bezpečnost našich obyvatel nemůže zůstat jenom u slov, protože pokud chceme být důvěryhodným partnerem v NATO a zajistit tu ochranu našich občanů, tak se musíme vážně bavit o investicích do obrany."
+    },
+    {
+      "text": "Rakušan nechtěl obstruovat, ale chtěl projednat program schůze.",
+      "source": "steno",
+      "steno_id": "2025_10_00080",
+      "citace": "V rámci principu moderní Sněmovny neobstruovat, nemluvit dlouhé hodiny, ale vyjadřovat se pouze k programu schůze."
+    },
+    {
+      "text": "Desítky hlasování o změnách pořadu před večerními zákony.",
+      "source": "steno",
+      "steno_id": "2025_10_00080",
+      "citace": "Čeká nás teď opravdu dlouhé hlasování, uvidíme, na čem se domluvíme."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Blízký východ a pořad",
+  "lead": "Úvod desáté schůze patřil krizi na Blízkém východě a hlasování o pořadu. Hřib chtěl bod o krizové lince pro Čechy v ohrožení, koalice většinu opozičních návrhů smetla.",
+  "pointa": "Prezident Pavel mluvil o konstruktivitě, pak přišly desítky procedurálních hlasování. Večer teprve prošly ústava, rozpočtová pravidla a data.",
+  "mean": "Dopoledne a odpoledne se řešilo, co vůbec sněmovna projedná a jak reaguje na válku na Blízkém východě. Meritní zákony přišly až večer.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

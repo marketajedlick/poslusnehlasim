@@ -1,8 +1,10 @@
 {
   "datum": "04.03.2026",
   "den": "středa",
-  "topic_slugs": [],
-  "dnesni_ucet": "Krátké dopoledne, jen schválení pořadu.\nStátní rozpočet se řeší ve druhém čtení bez hlasování.",
+  "topic_slugs": [
+    "statni-rozpocet-2026-debata-2-cteni"
+  ],
+  "dnesni_ucet": "Celý den druhé čtení rozpočtu, bez hlasování.\nTOP 09 chtělo schodek snížit o 64 miliard.",
   "zaver": "že středa patřila rozpočtu ve druhém čtení, meritní hlasování přijde později.",
   "vysledek": [
     "* jen procedurální hlasování o pořadu",
@@ -12,10 +14,10 @@
   ],
   "stats": {
     "pocet_hlas": 0,
-    "minuty": 10,
-    "end_cas": "09:50",
+    "minuty": 780,
+    "end_cas": "23:03",
     "proslo": 0,
     "zamitnuto": 0,
-    "dlouha_debata": false
+    "dlouha_debata": true
   }
 }

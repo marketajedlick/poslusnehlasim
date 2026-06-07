@@ -1,0 +1,44 @@
+{
+  "slug": "statni-rozpocet-2026-debata-2-cteni",
+  "nazev": "Debata o státním rozpočtu 2026 ve druhém čtení",
+  "datum": "04.03.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "státním rozpočtu na rok 2026 ve druhém čtení",
+  "koho": [
+    "Koho se to týká? Všech. Rozpočet určuje, kolik stát utratí za zdravotnictví, obranu, školství i dávky."
+  ],
+  "fakty": [
+    {
+      "text": "Dneska máme mít před sebou druhé čtení rozpočtu, ať se slyšíme.",
+      "source": "steno",
+      "steno_id": "2025_10_00195",
+      "citace": "Dneska máme mít před sebou druhé čtení rozpočtu, ať se slyšíme."
+    },
+    {
+      "text": "TOP 09 snižuje schodek 310 miliard o 64 miliard a posiluje obranu i zdravotnictví.",
+      "source": "steno",
+      "steno_id": "2025_10_00228",
+      "citace": "Poslanci TOP 09 předložili soubor pozměňovacích návrhů, které snižují plánovaný schodek, který naplánovala tato vláda na 310 miliard, tak tento schodek 310 miliard snižuje o 64 miliard."
+    },
+    {
+      "text": "Bartoš navrhuje bod Jste ohroženi na životě, stiskněte jedničku kvůli krizi na Blízkém východě.",
+      "source": "steno",
+      "steno_id": "2025_10_00240",
+      "citace": "My jsme včera s Piráty navrhovali zařadit na jednání Sněmovny bod s názvem Jste ohroženi na životě, stiskněte jedničku."
+    },
+    {
+      "text": "Kršková kritizuje snížení rozpočtu obrany, zatímco ostatní země výdaje navyšují.",
+      "source": "steno",
+      "steno_id": "2025_10_00331",
+      "citace": "Za největší slabinu návrhu státního rozpočtu na rok 2026 považuji snížení rozpočtu Ministerstva obrany."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Druhé čtení rozpočtu",
+  "lead": "Celý den sněmovna debatovala o státním rozpočtu ve druhém čtení, bez meritního hlasování. TOP 09 chtělo schodek 310 miliard snížit o 64 miliard, Bartoš tlačil na krizovou linku pro Čechy na Blízkém východě.",
+  "pointa": "Desítky řečníků představovalo pozměňovací návrhy od probačních programů po horskou službu. Babiš hájil kulturu, Černochová obranu, jednání skončilo až před půlnocí.",
+  "mean": "Druhé čtení je fáze, kdy poslanci ladí konkrétní položky. Hlasování o rozpočtu přijde až v dalších dnech, tentokrát šlo čistě o řečnickou přestřelku o prioritách státu.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

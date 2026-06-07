@@ -1,0 +1,44 @@
+{
+  "slug": "porad-13-schuze",
+  "nazev": "Boj o pořad třinácté schůze",
+  "datum": "24.03.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "pořadu třinácté schůze před večerními zákony",
+  "koho": [
+    "Koho se to týká? Spíš pozorovatele politiky. Jde o to, co se kdy projedná, ne o zákon pro občany."
+  ],
+  "fakty": [
+    {
+      "text": "Krňanský prosadil bod o přeplatcích Hřiba, 167 hlasů pro, jásot v sále.",
+      "source": "steno",
+      "steno_id": "2025_13_00082",
+      "citace": "V hlasování číslo 30 bylo přihlášeno 175 poslanců, pro hlasovalo 167 (proti 3). Návrh byl přijat. (Velký jásot a potlesk v sále.)"
+    },
+    {
+      "text": "Hřib řekl, že přeplatky vrátil a bude hlasovat pro projednání.",
+      "source": "steno",
+      "steno_id": "2025_13_00081",
+      "citace": "Jakmile mi poslali tedy údaje, kam se to má vrátit, tak jsem jim všechno do koruny vrátil."
+    },
+    {
+      "text": "Pořad schválen až po čtyřiceti čtyřech hlasováních o změnách.",
+      "source": "steno",
+      "steno_id": "2025_13_00082",
+      "citace": "V hlasování číslo 45 bylo přihlášeno 175 poslanců, pro hlasovalo 96. (Proti 6.) Návrh byl přijat a já konstatuji, že jsme schválili pořad schůze."
+    },
+    {
+      "text": "Foldyna navrhl bod Zaseli jsme Kosovo a sklidili jsme Ukrajinu.",
+      "source": "steno",
+      "steno_id": "2025_13_00082",
+      "citace": "Nyní budeme hlasovat návrh pana poslance Foldyny, který zní Zaseli jsme Kosovo a sklidili jsme Ukrajinu."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Pořad před půlnocí",
+  "lead": "Večer třinácté schůze patřil tabuli: čtyřicet čtyři hlasování o tom, co se kdy projedná. ANO prosadilo bod o přeplatcích Hřiba, většina opozičních návrhů padla.",
+  "pointa": "Hřib přeplatky vrátil a slíbil hlasovat pro, Foldyna chtěl Kosovo a Ukrajinu. Teprve po devatenácté hodině přišlo minimum, penze a zkumavky.",
+  "mean": "Sněmovna si nejdřív musela dohodnout pořad. Hodiny hlasování o procedurálních bodech oddálily meritní body až na pozdní večer.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

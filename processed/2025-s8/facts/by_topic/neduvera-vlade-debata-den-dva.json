@@ -1,0 +1,44 @@
+{
+  "slug": "neduvera-vlade-debata-den-dva",
+  "nazev": "Debata o nedůvěře vládě — druhý den",
+  "datum": "04.02.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "návrhu na vyslovení nedůvěry vládě Andreje Babiše ve druhém dni debaty",
+  "koho": [
+    "Koho se to týká? Celé republiky. Když vláda padne, musí prezident sestavit novou, dokud ne, vláda dál vládne."
+  ],
+  "fakty": [
+    {
+      "text": "Bartoš ráno obhajoval stanovisko Pirátů, vláda prý zdržuje práci sama.",
+      "source": "steno",
+      "steno_id": "2025_8_00079",
+      "citace": "Já bych si dovolil vystoupit se stanoviskem klubu Pirátů, které v té věci, proč byla schůze svolaná, se příliš nemění."
+    },
+    {
+      "text": "Jurečka: při debatě sedí jen jeden ministr, ostatní členové vlády chybí.",
+      "source": "steno",
+      "steno_id": "2025_8_00107",
+      "citace": "Jediný, který tady sedíte, všichni ostatní členové vlády tady při projednávání návrhu vyslovit nedůvěru vládě nejsou."
+    },
+    {
+      "text": "Skopeček: schůze by nevznikla, kdyby se vláda chovala aspoň trochu standardně.",
+      "source": "steno",
+      "steno_id": "2025_8_00347",
+      "citace": "Žádná mimořádná schůze a hlasování o nedůvěře vládě nebylo, neexistovalo, kdyby se nová vládní koalice chovala alespoň trochu normálně či standardně."
+    },
+    {
+      "text": "Poslanci schválili pokračování po 21. hodině, 139 pro, 1 proti.",
+      "source": "steno",
+      "steno_id": "2025_8_00328",
+      "citace": "Hlasování číslo 3, přihlášeno 144 poslanců, pro 139, proti 1. Tento návrh byl přijat."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Druhý den o nedůvěře",
+  "lead": "Středa patřila závěrečnému kolu řečí před hlasováním. Jurečka si všiml, že u pultu sedí jen jeden ministr, Bartoš znovu mluvil o esemeskách Macinky a střetu zájmů.",
+  "pointa": "Skopeček odmítl, že by schůze byla zbytečná, vláda prý dělá botu za botou. Večer poslanci prodloužili jednání po devatenácté hodině, 139 hlasů pro.",
+  "mean": "Druhý den debaty už neotevíral nová témata, spíš bilancoval včerejší výpady ministrů. Hlasování o pádu vlády mělo přijít až večer.",
+  "pocet_hlasovani": 1,
+  "proslo": false
+}

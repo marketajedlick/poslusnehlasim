@@ -2,6 +2,7 @@
   "datum": "24.03.2026",
   "den": "úterý",
   "topic_slugs": [
+    "porad-13-schuze",
     "novela-z-o-zivotnim-a-existencnim-minimu",
     "novela-z-o-doplnkovem-penzijnim-sporeni",
     "novela-z-o-zdrav-prostr-a-diagnostickych-zdrav-p"
@@ -20,6 +21,6 @@
     "end_cas": "21:10",
     "proslo": 2,
     "zamitnuto": 1,
-    "dlouha_debata": false
+    "dlouha_debata": true
   }
 }
