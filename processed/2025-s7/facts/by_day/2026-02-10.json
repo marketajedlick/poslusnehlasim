@@ -1,13 +1,24 @@
 {
   "datum": "10.02.2026",
   "den": "úterý",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "porad-7-schuze"
+  ],
+  "dnesni_ucet": "Čtyřicet dva hlasování za čtyři hodiny.\nNejdřív pořad, pak rozpočet v debatách, večer jednací řád.",
+  "zaver": "že sedmá schůze začala hlasováním o pořadu, ne zákonem. Koalice většinu procedurálních návrhů zamítla, večer se otevřel jednací řád.",
+  "vysledek": [
+    "* čtyřicet dva hlasování o pořadu sedmé schůze",
+    "* opozice chtěla odvolat Okamuru, řešit střet zájmů premiéra nebo ochranu ČT a ČRo",
+    "* koalice většinu návrhů zamítla",
+    "* debata o rozpočtu se schodkem 310 miliard začala, zákon v meritě nepadl",
+    "* večer začala novela jednacího řádu"
+  ],
   "stats": {
     "pocet_hlas": 42,
     "minuty": 244,
     "end_cas": "18:05",
     "proslo": 0,
     "zamitnuto": 0,
-    "dlouha_debata": false
+    "dlouha_debata": true
   }
 }

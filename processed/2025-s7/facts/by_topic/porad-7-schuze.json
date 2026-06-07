@@ -1,0 +1,44 @@
+{
+  "slug": "porad-7-schuze",
+  "nazev": "Boj o pořad sedmé schůze",
+  "datum": "10.02.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "pořadu sedmé schůze před rozpočtem na rok 2026",
+  "koho": [
+    "Koho se to týká? Spíš pozorovatele politiky. Jde o to, co se kdy projedná, ne o zákon pro občany."
+  ],
+  "fakty": [
+    {
+      "text": "Nemá smysl si tady na nic hrát, protože vláda tady bude předkládat rozpočet, kterým nás paní Schillerová chce zadlužit 310 miliardami korun za jeden jediný rok.",
+      "source": "steno",
+      "steno_id": "2025_7_00005",
+      "citace": "Nemá smysl si tady na nic hrát, protože vláda tady bude předkládat rozpočet, kterým nás paní Schillerová chce zadlužit 310 miliardami korun za jeden jediný rok."
+    },
+    {
+      "text": "Já vystupuji k bodu, pro něj jsme sebrali jako Piráti, TOP 09, ODS, STAN a KDU-ČSL 92 podpisů z 80 potřebných pro zařazení bodu a pro projednání odvolání Tomia Okamury z funkce předsedy Poslanecké sněmovny.",
+      "source": "steno",
+      "steno_id": "2025_7_00011",
+      "citace": "Já vystupuji k bodu, pro něj jsme sebrali jako Piráti, TOP 09, ODS, STAN a KDU-ČSL 92 podpisů pro zařazení bodu odvolání Tomia Okamury z funkce předsedy."
+    },
+    {
+      "text": "Mohli bychom se tady zabývat mnoha záležitostmi s přednostním právem, ale my tak činit nebudeme. Budeme navrhovat konkrétní body, které chceme projednat.",
+      "source": "steno",
+      "steno_id": "2025_7_00013",
+      "citace": "Mohli bychom se tady zabývat mnoha záležitostmi s přednostním právem, ale my tak činit nebudeme."
+    },
+    {
+      "text": "Navrhuji, aby bod střetu zájmů Andreje Babiše byl bodem druhým v pořadí a jasná ochrana nezávislosti České televize a Českého rozhlasu jako bod třetí.",
+      "source": "steno",
+      "steno_id": "2025_7_00019",
+      "citace": "Navrhuji, aby bod střetu zájmů Andreje Babiše byl bodem druhým v pořadí a jasná ochrana nezávislosti České televize a Českého rozhlasu jako bod třetí."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Pořad před rozpočtem",
+  "lead": "Úvod sedmé schůze patřil tabuli: čtyřicet dva hlasování o tom, co se kdy projedná. Opozice chtěla odvolat Okamuru nebo řešit střet zájmů premiéra, koalice většinu návrhů zamítla.",
+  "pointa": "Hřib mluvil o schodku 310 miliard, Kupka o nelegálním rozpočtu. Večer se začalo jednacím řádem, zákon v meritě ještě nepadl.",
+  "mean": "První den sedmé schůze ukázal, že hlavní bitva bude o rozpočet na rok 2026. Hodiny se ale utratily hlasováním o pořadu: kdo chce distanc, kdo střet zájmů, kdo ochranu médií. Koalice si většinu procedurálních bodů pohlídala.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

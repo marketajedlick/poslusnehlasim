@@ -2,7 +2,17 @@
   "datum": "11.02.2026",
   "den": "středa",
   "topic_slugs": [
-    "sml-mezi-cr-a-sr-o-preshranicni-spol-v-oblasti-z"
+    "sml-mezi-cr-a-sr-o-preshranicni-spol-v-oblasti-z",
+    "navrh-statniho-zaverecneho-uctu-ceske-republiky-",
+    "navrh-casoveho-harmonogramu-projednavani-zakona-"
+  ],
+  "dnesni_ucet": "Šestnáct hlasování do oběda, večer rozpočet.\nDopoledne záchranka, účet a kalendář, po půlnoci první čtení rozpočtu.",
+  "zaver": "že dopoledne sněmovna uzavřela formální kroky před rozpočtem a večer otevřela debatu, která skončila až po půlnoci.",
+  "vysledek": [
+    "* smlouva se Slovenskem o záchranné službě prošla prvním čtením, 141 a 146 hlasů",
+    "* závěrečný účet za rok 2024 schválen, 113 pro, nula proti",
+    "* harmonogram rozpočtu na rok 2026 schválen, 127 pro",
+    "* večer začala debata o rozpočtu, hlasování až ve čtvrtek po půlnoci"
   ],
   "stats": {
     "pocet_hlas": 16,

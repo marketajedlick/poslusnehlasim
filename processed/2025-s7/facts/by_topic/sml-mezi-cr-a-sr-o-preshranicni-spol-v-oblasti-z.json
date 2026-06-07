@@ -3,39 +3,30 @@
   "nazev": "Sml. mezi ČR a SR o přeshraniční spol. v oblasti zdravotnické záchrann",
   "datum": "11.02.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "sml. mezi ČR a SR o přeshraniční spol. v oblasti zdravotnické záchrann",
+  "predmet_lidsky": "souhlasu s rámcovou smlouvou se Slovenskem o přeshraniční záchranné službě",
   "koho": [
-    "Smlouva se Slovenskem, když vám na dovolené nebo u hranice přijede záchranka, kdo platí a kdo pomůže."
+    "Koho se to týká? Lidí u hranic a na cestách. Když u Slováků nebo u nás zavolá záchranka, má jasněji, kdo pomůže a kdo platí."
   ],
   "fakty": [
     {
-      "text": "července 2025/sněmovní tisk 3/ - prvé čtení Předložený návrh uvede ministr zdravotnictví Adam Vojtěch.",
-      "source": "steno",
-      "steno_id": "2025_7_00214",
-      "citace": "července 2025/sněmovní tisk 3/ - prvé čtení Předložený návrh uvede ministr zdravotnictví Adam Vojtěch."
-    },
-    {
-      "text": "A na základě rozhodnutí dnešního hlasování otvírám bod 43.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Rámcová smlouva mezi Českou republikou a Slovenskou republikou o přeshraniční spolupráci v oblasti zdravotnické záchranné služby podepsaná v Praze dne 4.",
-      "source": "steno",
-      "steno_id": "2025_7_00214",
-      "citace": "A na základě rozhodnutí dnešního hlasování otvírám bod 43.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Rámcová smlouva mezi Českou republikou a Sloven"
-    },
-    {
-      "text": "Už je 30, takže stejně by sem přišel, pozdravil, zase by odešel, tak jsem mu ušetřil cestu.",
-      "source": "steno",
-      "steno_id": "2025_7_00214",
-      "citace": "Už je 30, takže stejně by sem přišel, pozdravil, zase by odešel, tak jsem mu ušetřil cestu."
-    },
-    {
-      "text": "Děkuji za slovo, vážený pane předsedající, vážené paní poslankyně, vážení páni poslanci, dovolte mi představit vám vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu Rámcová smlouva mezi Českou republikou a Slovenskou republikou o přeshraniční spolupráci v oblasti Zdravotnické záchranné s",
+      "text": "Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu Rámcová smlouva mezi Českou republikou a Slovenskou republikou o přeshraniční spolupráci v oblasti zdravotnické záchranné služby.",
       "source": "steno",
       "steno_id": "2025_7_00215",
-      "citace": "Děkuji za slovo, vážený pane předsedající, vážené paní poslankyně, vážení páni poslanci, dovolte mi představit vám vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu Rám"
+      "citace": "Vládní návrh k vyslovení souhlasu s Rámcovou smlouvou mezi ČR a SR o přeshraniční spolupráci v oblasti zdravotnické záchranné služby."
+    },
+    {
+      "text": "V hlasování číslo 56 bylo přihlášeno 158 poslanců, pro 141, proti 0. Návrh byl přijat.",
+      "source": "steno",
+      "steno_id": "2025_7_00230",
+      "citace": "Hlasování číslo 56, přihlášeno 158 poslanců, pro 141, proti nikdo. Hlasování číslo 57, pro 146, proti nikdo."
     }
   ],
   "publikovat": true,
   "priorita": 2,
-  "nadpis": "Prošlo to",
+  "nadpis": "Záchranka přes hranici",
+  "lead": "Sněmovna schválila smlouvu se Slovenskem o spolupráci záchranných služeb, 141 hlasů pro, nikdo proti.",
+  "pointa": "Ministr Vojtěch představil rámcovou smlouvu podepsanou v Praze. Dva hlasovací kroky prošly bez odporu.",
+  "mean": "Jde o technickou, ale praktickou dohodu: při zásahu u hranic má být jasné, jak česká a slovenská záchranná služba spolupracují. Pro občana to znamená spíš jistotu při nehodě na cestách než velkou politickou změnu.",
   "pocet_hlasovani": 2,
   "proslo": true
 }

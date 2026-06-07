@@ -83,6 +83,7 @@ class DenItem:
     parliament_lead: str
     verdikt: str
     variant: str = ""
+    has_custom_lead: bool = False
 
     @property
     def stamp(self) -> str:
@@ -440,6 +441,7 @@ def build_den_content(
 
         num += 1
         topic = topics.get(slug)
+        has_custom_lead = bool((fact.get("lead") or "").strip())
         parliament_lead = parliament_lead_z_fact(fact, topic)
         nadpis = nadpis_z_clanku(fact, topic)
         ph = int(fact.get("pocet_hlasovani") or 0)
@@ -478,6 +480,7 @@ def build_den_content(
                 mean=vysvetleni,
                 dopad=dopad,
                 parliament_lead=parliament_lead,
+                has_custom_lead=has_custom_lead,
                 verdikt=fact.get("verdikt", "schvaleno"),
                 variant="i2" if num % 2 == 0 else "",
             )

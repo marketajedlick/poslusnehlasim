@@ -36,7 +36,12 @@ def render_den_markdown(
     prvni = True
     for item in content.items:
         intro = (item.lead or item.parliament_lead).strip()
-        if prvni and item.parliament_lead and "hlasován" in item.parliament_lead.lower():
+        if (
+            prvni
+            and not item.has_custom_lead
+            and item.parliament_lead
+            and "hlasován" in item.parliament_lead.lower()
+        ):
             intro = item.parliament_lead.strip()
         lead = intro
         if prvni:

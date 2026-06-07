@@ -2,39 +2,37 @@
   "slug": "navrh-usneseni-poslanecke-snemovny-k-odsouzeni-t",
   "nazev": "Návrh usnesení Poslanecké sněmovny k odsouzení týrání zvířat",
   "datum": "12.02.2026",
-  "verdikt": "zamiteno",
-  "predmet_lidsky": "návrh usnesení Poslanecké sněmovny k odsouzení týrání zvířat",
-  "koho": [],
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "usnesení, kterým sněmovna odsuzuje týrání zvířat a slibuje tvrdší ochranu",
+  "koho": [
+    "Koho se to týká? Majitelů psů a koček, chovatelů i lidí, kteří hlásí týrání. Usnesení samo zákony nemění, ale slibuje legislativu."
+  ],
   "fakty": [
     {
-      "text": "90/1995 Sb., o jednacím řádu Poslanecké sněmovny, ve znění pozdějších předpisů /sněmovní tisk 72/ Jedná se o prvé čtení.",
+      "text": "Při kontrole množírny koček v Brně, kde desítky zvířat žily v otřesných podmínkách, byly veterinární inspektorky fyzicky napadeny a jedna z nich byla kopnuta do hlavy.",
       "source": "steno",
-      "steno_id": "2025_7_00067",
-      "citace": "90/1995 Sb., o jednacím řádu Poslanecké sněmovny, ve znění pozdějších předpisů /sněmovní tisk 72/ Jedná se o prvé čtení."
+      "steno_id": "2025_7_00607",
+      "citace": "Při kontrole množírny koček v Brně byly veterinární inspektorky fyzicky napadeny a jedna z nich byla kopnuta do hlavy."
     },
     {
-      "text": "Tak, prosím, mám tady další omluvu, od 18.10 se z pracovních důvodů omlouvá pan poslanec a předseda klubu Marek Benda.",
+      "text": "Hlasování číslo 67, přítomno 140 poslanců, pro hlasovalo 139, proti žádný. Návrh byl přijat.",
       "source": "steno",
-      "steno_id": "2025_7_00067",
-      "citace": "Tak, prosím, mám tady další omluvu, od 18.10 se z pracovních důvodů omlouvá pan poslanec a předseda klubu Marek Benda."
+      "steno_id": "2025_7_00691",
+      "citace": "Hlasování číslo 67, přítomno 140 poslanců, pro hlasovalo 139, proti žádný. Návrh byl přijat."
     },
     {
-      "text": "Nyní tedy budeme projednávat Návrh poslanců Radka Vondráčka, Andreje Babiše, Tomia Okamury, Petra Macinky, Marka Bendy, Taťány Malé, Radima Fialy a Borise Šťastného na vydání zákona, kterým se mění zákon č.",
+      "text": "Já bych si ještě ráda dovolila opravdu všem naposledy poděkovat, protože jsme jako Poslanecká sněmovna opravdu dali důrazný symbol, že opravdu týrání zvířat do naší společnosti nepatří.",
       "source": "steno",
-      "steno_id": "2025_7_00067",
-      "citace": "Nyní tedy budeme projednávat Návrh poslanců Radka Vondráčka, Andreje Babiše, Tomia Okamury, Petra Macinky, Marka Bendy, Taťány Malé, Radima Fialy a Borise Šťastného na vydání zákona, kterým se mění zá"
-    },
-    {
-      "text": "Potlesk zleva.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_7_00068",
-      "citace": "(Potlesk zleva.)"
+      "steno_id": "2025_7_00706",
+      "citace": "Dali jsme důrazný symbol, že týrání zvířat do naší společnosti nepatří."
     }
   ],
-  "publikovat": false,
-  "priorita": 0,
-  "nadpis": "Zůstává po staru",
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Týrání zvířat odsouzeno",
+  "lead": "Sněmovna schválila koaliční usnesení proti týrání zvířat, 139 hlasů pro, nikdo proti. Debata byla shodná, hlasování o doplnění už ne.",
+  "pointa": "Okamura i Šebestyán mluvili o tvrdších trestech a vstupu policie. Opoziční návrhy na policejní útvar nebo mysliveckou novelu většinou padly.",
+  "mean": "Šlo o politický slib, ne o hotový zákon. Hlavní text prošel jednohlasně, jeden doplněný bod o péči o toulavé kočky taky. Samotná ochrana zvířat se má teprve propsat do novely zákona.",
   "pocet_hlasovani": 10,
-  "proslo": false
+  "proslo": true
 }

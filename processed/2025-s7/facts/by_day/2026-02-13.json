@@ -1,7 +1,17 @@
 {
   "datum": "13.02.2026",
   "den": "pátek",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "novela-z-o-jednacim-radu-ps"
+  ],
+  "dnesni_ucet": "Patnáct hlasování za hodinu a půl.\nRáno pořad, pak jednací řád a předčasný konec schůze.",
+  "zaver": "že sněmovna dokončila první čtení novely jednacího řádu a schůzi ukončila dřív, než se čekalo.",
+  "vysledek": [
+    "* většina návrhů na změnu pořadu zamítnuta",
+    "* novela jednacího řádu prošla prvním čtením a míří do výborů",
+    "* návrh na prodloužení lhůty o dvacet dní padl, 57 proti 77",
+    "* schůze ukončena předčasně, 117 proti 6"
+  ],
   "stats": {
     "pocet_hlas": 15,
     "minuty": 80,

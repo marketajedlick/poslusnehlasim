@@ -3,37 +3,24 @@
   "nazev": "Návrh státního závěrečného účtu České republiky za rok 2024",
   "datum": "11.02.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "návrh státního závěrečného účtu České republiky za rok 2024",
-  "koho": [],
+  "predmet_lidsky": "státního závěrečného účtu za rok 2024",
+  "koho": [
+    "Koho se to týká? Spíš účetní uzávěrku státu. Občana to zasáhne jen nepřímo, ukazuje ale, kolik stát loni utratil a jak dopadl."
+  ],
   "fakty": [
     {
-      "text": "července 2025/sněmovní tisk 3/ - prvé čtení Předložený návrh uvede ministr zdravotnictví Adam Vojtěch.",
+      "text": "V hlasování číslo 58 bylo přihlášeno 164 poslanců, pro 113, proti 0. Návrh byl přijat.",
       "source": "steno",
-      "steno_id": "2025_7_00214",
-      "citace": "července 2025/sněmovní tisk 3/ - prvé čtení Předložený návrh uvede ministr zdravotnictví Adam Vojtěch."
-    },
-    {
-      "text": "A na základě rozhodnutí dnešního hlasování otvírám bod 43.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Rámcová smlouva mezi Českou republikou a Slovenskou republikou o přeshraniční spolupráci v oblasti zdravotnické záchranné služby podepsaná v Praze dne 4.",
-      "source": "steno",
-      "steno_id": "2025_7_00214",
-      "citace": "A na základě rozhodnutí dnešního hlasování otvírám bod 43.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Rámcová smlouva mezi Českou republikou a Sloven"
-    },
-    {
-      "text": "Už je 30, takže stejně by sem přišel, pozdravil, zase by odešel, tak jsem mu ušetřil cestu.",
-      "source": "steno",
-      "steno_id": "2025_7_00214",
-      "citace": "Už je 30, takže stejně by sem přišel, pozdravil, zase by odešel, tak jsem mu ušetřil cestu."
-    },
-    {
-      "text": "Děkuji za slovo, vážený pane předsedající, vážené paní poslankyně, vážení páni poslanci, dovolte mi představit vám vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu Rámcová smlouva mezi Českou republikou a Slovenskou republikou o přeshraniční spolupráci v oblasti Zdravotnické záchranné s",
-      "source": "steno",
-      "steno_id": "2025_7_00215",
-      "citace": "Děkuji za slovo, vážený pane předsedající, vážené paní poslankyně, vážení páni poslanci, dovolte mi představit vám vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu Rám"
+      "steno_id": "2025_7_00240",
+      "citace": "V hlasování číslo 58 bylo přihlášeno 164 poslanců, pro 113, proti 0. Návrh byl přijat."
     }
   ],
-  "publikovat": false,
-  "priorita": 0,
-  "nadpis": "Prošlo to",
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Účet za rok 2024",
+  "lead": "Sněmovna schválila státní závěrečný účet za rok 2024, 113 hlasů pro, nikdo proti.",
+  "pointa": "Formální krok před rozpočtem na letošní rok. Část poslanců se zdržela, ale návrh prošel bez jediného hlasu proti.",
+  "mean": "Závěrečný účet uzavírá minulý rok: kolik stát utratil a jak sedí čísla. Není to debata o tom, kam půjdou peníze v roce 2026, ale nutná kontrola za rok 2024.",
   "pocet_hlasovani": 1,
   "proslo": true
 }
