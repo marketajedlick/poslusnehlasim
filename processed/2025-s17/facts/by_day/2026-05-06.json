@@ -5,11 +5,12 @@
     "novela-ustav-z-ustava-cr"
   ],
   "stats": {
-    "pocet_hlas": 2,
+    "pocet_hlas": 1,
     "minuty": 429,
     "end_cas": "16:12",
     "proslo": 1,
     "zamitnuto": 0,
     "dlouha_debata": false
-  }
+  },
+  "dnesni_ucet": "Ústavní novela v prvním čtení.\nJeden zákon, nikdo proti."
 }

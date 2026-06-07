@@ -4,17 +4,38 @@
   "datum": "05.03.2026",
   "verdikt": "schvaleno",
   "predmet_lidsky": "sloučená rozprava k bodům 1 a 2",
-  "koho": [],
+  "koho": [
+    "Pro občana stejné jako normální debata, jen kratší procedura."
+  ],
   "fakty": [
     {
-      "text": "necké sněmovny. Dnes rozhodujeme o tom, zda Česká republika zůstane státem, ve kterém politická moc nepřepisuje pravidla spravedlnosti. Rozhodujeme o tom, jestli platí jednoduchá věta, kterou sna",
+      "text": "V této chvíli Sloučená rozprava k bodům 1 a 2 Máme tedy otevřenou sloučenou všeobecnou rozpravu a začneme přednostními právy.",
       "source": "steno",
-      "steno_id": "2025_11_00050",
-      "citace": "rozhodujeme o tom, zda Česká republika zůstane státem, ve kterém politická moc nepřepisuje pravidla spravedlnosti. Rozhodujeme o tom, jestli platí jednoduchá věta, kterou snad všichni slýcháme o"
+      "steno_id": "2025_11_00034",
+      "citace": "V této chvíli Sloučená rozprava k bodům 1 a 2 Máme tedy otevřenou sloučenou všeobecnou rozpravu a začneme přednostními právy."
+    },
+    {
+      "text": "Obrací se na poslankyni Válkovou.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_11_00035",
+      "citace": "(Obrací se na poslankyni Válkovou.)"
+    },
+    {
+      "text": "(Předsedající: Já poprosím vždycky mým prostřednictvím, tudíž nemluvíte přímo k panu nebo k paní poslankyni.) Dobře.",
+      "source": "steno",
+      "steno_id": "2025_11_00035",
+      "citace": "(Předsedající: Já poprosím vždycky mým prostřednictvím, tudíž nemluvíte přímo k panu nebo k paní poslankyni.) Dobře."
+    },
+    {
+      "text": "(Poslankyně Válková opouští sál.) To je škoda, že utíkáte, paní předsedkyně, mě by fakt odpověď zajímala.",
+      "source": "steno",
+      "steno_id": "2025_11_00035",
+      "citace": "(Poslankyně Válková opouští sál.) To je škoda, že utíkáte, paní předsedkyně, mě by fakt odpověď zajímala."
     }
   ],
-  "publikovat": false,
-  "priorita": 0,
+  "publikovat": true,
+  "priorita": 2,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
   "proslo": true

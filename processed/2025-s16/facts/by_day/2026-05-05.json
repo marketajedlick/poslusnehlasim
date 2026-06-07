@@ -3,11 +3,12 @@
   "den": "úterý",
   "topic_slugs": [],
   "stats": {
-    "pocet_hlas": 47,
+    "pocet_hlas": 0,
     "minuty": 550,
     "end_cas": "23:12",
     "proslo": 0,
-    "zamitnuto": 14,
+    "zamitnuto": 0,
     "dlouha_debata": false
-  }
+  },
+  "dnesni_ucet": "Úterý bez schváleného zákona.\nČtrnáct návrhů na pořad nebo proceduru padlo."
 }

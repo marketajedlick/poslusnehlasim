@@ -5,11 +5,12 @@
     "posouzeni-podminek-pro-projednani-st-163-ve-zkra"
   ],
   "stats": {
-    "pocet_hlas": 49,
+    "pocet_hlas": 1,
     "minuty": 561,
     "end_cas": "23:22",
-    "proslo": 4,
-    "zamitnuto": 1,
+    "proslo": 1,
+    "zamitnuto": 0,
     "dlouha_debata": false
-  }
+  },
+  "dnesni_ucet": "Posouzení podmínek pro projednání senátního tisku.\nJeden meritní bod, zbytek procedura."
 }

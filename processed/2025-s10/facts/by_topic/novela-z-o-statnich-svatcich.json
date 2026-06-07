@@ -5,7 +5,34 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "státních svátcích",
   "koho": [],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "přikázán",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_10_00135",
+      "citace": "(přikázán)"
+    },
+    {
+      "text": "Konstatuji, že tento návrh byl (přikázán) k projednání ústavně-právním výboru jako garančním výboru.",
+      "source": "steno",
+      "steno_id": "2025_10_00135",
+      "citace": "Konstatuji, že tento návrh byl (přikázán) k projednání ústavně-právním výboru jako garančním výboru."
+    },
+    {
+      "text": "Otvírám tedy další bod, kterým je 5.Návrh poslance Andreje Babiše na vydání zákona, kterým se mění zákon č.",
+      "source": "steno",
+      "steno_id": "2025_10_00135",
+      "citace": "Otvírám tedy další bod, kterým je 5.Návrh poslance Andreje Babiše na vydání zákona, kterým se mění zákon č."
+    },
+    {
+      "text": "Potlesk koaličních poslanců.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_10_00136",
+      "citace": "(Potlesk koaličních poslanců.)"
+    }
+  ],
   "publikovat": false,
   "priorita": 0,
   "nadpis": "Prošlo to",

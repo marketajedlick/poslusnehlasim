@@ -6,11 +6,12 @@
     "navrh-na-stanoveni-poctu-poslancu-ve-stalych-del"
   ],
   "stats": {
-    "pocet_hlas": 31,
+    "pocet_hlas": 2,
     "minuty": 162,
     "end_cas": "16:46",
-    "proslo": 29,
+    "proslo": 2,
     "zamitnuto": 0,
     "dlouha_debata": false
-  }
+  },
+  "dnesni_ucet": "Poslanci si rozdělili místa v sále a delegace do výborů.\nDva body programu, oba bez odporu."
 }

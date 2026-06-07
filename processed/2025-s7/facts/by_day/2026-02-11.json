@@ -6,7 +6,7 @@
     "navrh-statniho-zaverecneho-uctu-ceske-republiky-",
     "navrh-casoveho-harmonogramu-projednavani-zakona-"
   ],
-  "dnesni_ucet": "Šestnáct hlasování do oběda, večer rozpočet.\nDopoledne záchranka, účet a kalendář, po půlnoci první čtení rozpočtu.",
+  "dnesni_ucet": "Záchranka se Slovenskem, účet za 2024, kalendář rozpočtu.\nVečer debata o schodku 310 miliard, hlasování až po půlnoci.",
   "zaver": "že dopoledne sněmovna uzavřela formální kroky před rozpočtem a večer otevřela debatu, která skončila až po půlnoci.",
   "vysledek": [
     "* smlouva se Slovenskem o záchranné službě prošla prvním čtením, 141 a 146 hlasů",
@@ -15,10 +15,10 @@
     "* večer začala debata o rozpočtu, hlasování až ve čtvrtek po půlnoci"
   ],
   "stats": {
-    "pocet_hlas": 16,
+    "pocet_hlas": 3,
     "minuty": 126,
     "end_cas": "11:11",
-    "proslo": 4,
+    "proslo": 3,
     "zamitnuto": 0,
     "dlouha_debata": false
   }

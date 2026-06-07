@@ -7,9 +7,35 @@
   "koho": [
     "Dotkne se vás, když jedete po silnici, stavíte nebo farmáříte; jinak spíš suché číslo v tabulce."
   ],
-  "fakty": [],
-  "publikovat": true,
-  "priorita": 1,
+  "fakty": [
+    {
+      "text": "A jdeme k bodu číslo 58.Rozpočet Státního fondu dopravní infrastruktury na rok 2026 a střednědobý výhled na roky 2027 a 2028/sněmovní tisk 91/ Tento materiál uvede ministr dopravy Ivan Bednárik.",
+      "source": "steno",
+      "steno_id": "2025_10_01378",
+      "citace": "A jdeme k bodu číslo 58.Rozpočet Státního fondu dopravní infrastruktury na rok 2026 a střednědobý výhled na roky 2027 a 2028/sněmovní tisk 91/ Tento materiál uvede ministr dopravy Ivan Bednárik."
+    },
+    {
+      "text": "Od 20.00 z osobních důvodů se omlouvá pan poslanec Patrik Nacher.",
+      "source": "steno",
+      "steno_id": "2025_10_01378",
+      "citace": "Od 20.00 z osobních důvodů se omlouvá pan poslanec Patrik Nacher."
+    },
+    {
+      "text": "A prosím, aby se i tady ke stolku zpravodajů přesunul zpravodaj hospodářského výboru, pan poslanec Martin Kolovratník.",
+      "source": "steno",
+      "steno_id": "2025_10_01378",
+      "citace": "A prosím, aby se i tady ke stolku zpravodajů přesunul zpravodaj hospodářského výboru, pan poslanec Martin Kolovratník."
+    },
+    {
+      "text": "V sále je velký hluk.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_10_01379",
+      "citace": "(V sále je velký hluk.)"
+    }
+  ],
+  "publikovat": false,
+  "priorita": 2,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
   "proslo": true

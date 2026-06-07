@@ -7,10 +7,29 @@
   "koho": [],
   "fakty": [
     {
-      "text": "at, aby byla garance, že se bavíme skutečně o transpozici a zůstane to tak až do třetího čtení. Díky.",
+      "text": "zákon o silničním provozu",
       "source": "steno",
-      "steno_id": "2025_10_01536",
-      "citace": ", že se bavíme skutečně o transpozici a zůstane to tak až do třetího čtení. Díky."
+      "kind": "scene",
+      "steno_id": "2025_10_01523",
+      "citace": "(zákon o silničním provozu)"
+    },
+    {
+      "text": "361/2000 Sb., o provozu na pozemních komunikacích a o změnách některých zákonů (zákon o silničním provozu), ve znění pozdějších předpisů, a další související zákony/sněmovní tisk 83/ - prvé čtení Z pověření vlády předložený návrh uvede ministr dopravy Ivan Bednárik.",
+      "source": "steno",
+      "steno_id": "2025_10_01523",
+      "citace": "361/2000 Sb., o provozu na pozemních komunikacích a o změnách některých zákonů (zákon o silničním provozu), ve znění pozdějších předpisů, a další související zákony/sněmovní tisk 83/ - prvé čtení Z po"
+    },
+    {
+      "text": "Takže budeme hlasovat o dalším návrhu, který zazněl v obecné rozpravě, a to byl návrh na prodloužení lhůty na projednání ve výborech o 60 dnů na 120 dnů.",
+      "source": "steno",
+      "steno_id": "2025_10_01523",
+      "citace": "Takže budeme hlasovat o dalším návrhu, který zazněl v obecné rozpravě, a to byl návrh na prodloužení lhůty na projednání ve výborech o 60 dnů na 120 dnů."
+    },
+    {
+      "text": "Návrh zákona stanoví základní pravidla směřující ke splnění povinnosti České republiky zajistit, aby 27 kategorií dat vztahujících se k poskytování vybraných služeb inteligentních dopravních systémů bylo dostupných a prostřednictvím vnitrostátních přístupových míst rovněž přístupných.",
+      "source": "steno",
+      "steno_id": "2025_10_01524",
+      "citace": "Návrh zákona stanoví základní pravidla směřující ke splnění povinnosti České republiky zajistit, aby 27 kategorií dat vztahujících se k poskytování vybraných služeb inteligentních dopravních systémů b"
     }
   ],
   "publikovat": false,

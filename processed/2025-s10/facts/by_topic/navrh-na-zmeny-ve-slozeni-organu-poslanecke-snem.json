@@ -3,27 +3,36 @@
   "nazev": "Návrh na změny ve složení orgánů Poslanecké sněmovny",
   "datum": "06.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "návrh na změny ve složení orgánů Poslanecké sněmovny",
+  "predmet_lidsky": "změnách ve složení orgánů sněmovny a souvisejících volbách",
   "koho": [
-    "Občana se netýká, leda že zná někoho z poslanců osobně."
+    "Koho se to týká? Politické strany a orgány sněmovny. Občana na ulici to netrefí."
   ],
   "fakty": [
     {
-      "text": "h rodin. Je to konkrétní návrh, který může lidem ušetřit až 35 000 korun ročně. Je to konkrétní způsob, jak učinit daňovou zátěž pře",
+      "text": "Hlasování číslo 70, pro 168, proti nikdo. Návrh byl přijat.",
       "source": "steno",
-      "steno_id": "2025_10_00796",
-      "citace": "étní návrh, který může lidem ušetřit až 35 000 korun ročně. Je to konkrétní způsob, jak učinit daňovou zátěž předvídatelnější, jde o"
+      "steno_id": "2025_10_00713",
+      "citace": "Hlasování číslo 70, pro 168, proti nikdo. Návrh byl přijat."
     },
     {
-      "text": "it na program schůze ten legislativní balíček Pirátů, který sníží daně pro více než 90 procent českých rodin. Je to konkrétní návrh, který může lidem ušetřit až 35 000 k",
+      "text": "Hlasování číslo 72, pro 117, proti 33. Návrh byl přijat.",
       "source": "steno",
-      "steno_id": "2025_10_00796",
-      "citace": "ten legislativní balíček Pirátů, který sníží daně pro více než 90 procent českých rodin. Je to konkrétní návrh, který může lidem ušetřit až 35 000 korun ročně. Je to ko"
+      "steno_id": "2025_10_00713",
+      "citace": "Hlasování číslo 72, pro 117, proti 33. Návrh byl přijat."
+    },
+    {
+      "text": "Hlasování číslo 75, pro 120, proti 11. Návrh byl přijat.",
+      "source": "steno",
+      "steno_id": "2025_10_00713",
+      "citace": "Hlasování číslo 75, pro 120, proti 11. Návrh byl přijat."
     }
   ],
   "publikovat": true,
   "priorita": 2,
-  "nadpis": "Prošlo to",
-  "pocet_hlasovani": 2,
+  "nadpis": "Personálka sněmovny",
+  "lead": "Páteční dopoledne patřilo volbám do orgánů: VZP, Český rozhlas, Česká televize i ochránce práv dětí. Všechno prošlo.",
+  "pointa": "U správy VZP bylo 33 hlasů proti, u ochránce dětí 11. Jinak klidná personálka bez velkého příběhu.",
+  "mean": "Sněmovna si obsadila výbory a rady, které dohlížejí na instituce od pojišťovny po média. Jde o moc uvnitř parlamentu, ne o zákon pro lidi.",
+  "pocet_hlasovani": 1,
   "proslo": true
 }

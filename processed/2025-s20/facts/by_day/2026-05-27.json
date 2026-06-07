@@ -8,11 +8,12 @@
     "novela-z-o-rostlinolekarske-peci-eu"
   ],
   "stats": {
-    "pocet_hlas": 45,
+    "pocet_hlas": 4,
     "minuty": 744,
     "end_cas": "21:30",
-    "proslo": 16,
-    "zamitnuto": 24,
+    "proslo": 4,
+    "zamitnuto": 0,
     "dlouha_debata": true
-  }
+  },
+  "dnesni_ucet": "Investice, penze, orgány sněmovny, postřiky.\nČtyři zákony v prvním čtení, nikdo proti."
 }

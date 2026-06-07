@@ -5,30 +5,22 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "dohledu nad investičními fondy a společnostmi",
   "koho": [
-    "Investiční společnosti spravují peníze investorů a nakupují za ně cenné papíry."
+    "Koho se to týká? Investorů a firem spravujících fondy. Běžný spořitel to pocítí spíš nepřímo."
   ],
   "fakty": [
     {
-      "text": "Poslanci sjednotili pravidla dohledu a povinností vůči klientům podle evropských norem.",
-      "source": "manual",
-      "note": "z glosy / TEMA_PRAVIDLA"
-    },
-    {
-      "text": "ouladu s tím, jak máme tady účetní období, to znamená buďto od 1. ledna 2027, případně od 1. ledna 2028. A chtěl bych upozornit na jednu",
+      "text": "Hlasování číslo 261, pro 117, proti nikdo. S návrhem zákona byl vysloven souhlas.",
       "source": "steno",
-      "steno_id": "2025_10_01580",
-      "citace": "me tady účetní období, to znamená buďto od 1. ledna 2027, případně od 1. ledna 2028. A chtěl bych upozornit na jednu záležitost, která t"
-    },
-    {
-      "text": "účetní období, to znamená buďto od 1. ledna 2027, případně od 1. ledna 2028. A chtěl bych upozornit na jednu záležitost, která tady zaz",
-      "source": "steno",
-      "steno_id": "2025_10_01580",
-      "citace": "namená buďto od 1. ledna 2027, případně od 1. ledna 2028. A chtěl bych upozornit na jednu záležitost, která tady zazněla. Prosím vás, Ev"
+      "steno_id": "2025_10_01569",
+      "citace": "Hlasování číslo 261, pro 117, proti nikdo. S návrhem zákona byl vysloven souhlas."
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Investice mají přísnější dohled",
+  "priorita": 3,
+  "nadpis": "Investice pod dohledem",
+  "lead": "Novela o investičních společnostech prošla v prvním čtení, 117 hlasů pro, nikdo proti.",
+  "pointa": "Čtvrtek přinesl balík EU novel, od účetnictví po silniční provoz. Investiční zákon byl jeden z vrcholů.",
+  "mean": "Stát zpřísňuje pravidla pro fondy a investiční firmy podle EU. Cílem je ochrana investorů, ne nová daň.",
   "pocet_hlasovani": 2,
   "proslo": true
 }

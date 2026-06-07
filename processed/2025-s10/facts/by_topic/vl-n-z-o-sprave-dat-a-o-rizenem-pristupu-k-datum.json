@@ -1,23 +1,26 @@
 {
   "slug": "vl-n-z-o-sprave-dat-a-o-rizenem-pristupu-k-datum",
-  "nazev": "Vl. n. z. o správě dat a o řízeném přístupu k datům - EU",
+  "nazev": "Vládní návrh zákona o správě dat a o řízeném přístupu k datům",
   "datum": "03.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "o správě dat a o řízeném přístupu k datům",
+  "predmet_lidsky": "správě dat a řízenému přístupu k datům",
   "koho": [
-    "Občana se to dotkne, až bude něco řešit online místo na přepážce."
+    "Koho se to týká? Úřadů a firem, které pracují se státními daty. Občan to pocítí při digitálních službách."
   ],
   "fakty": [
     {
-      "text": "cích, ono to tak je většinou, že když šejkové oznámí, že se zvýší cena za barel, tak v Dolní Lhotě odpoledne už je zvýšená cena benzínu o 10 korun. Na to reagujeme rychle, na to snížení bohužel tak ne, ale j",
+      "text": "Hlasování číslo 53, pro 128, proti nikdo. S návrhem zákona byl vysloven souhlas.",
       "source": "steno",
-      "steno_id": "2025_10_00216",
-      "citace": "většinou, že když šejkové oznámí, že se zvýší cena za barel, tak v Dolní Lhotě odpoledne už je zvýšená cena benzínu o 10 korun. Na to reagujeme rychle, na to snížení bohužel tak ne, ale já nechci to z"
+      "steno_id": "2025_10_00194",
+      "citace": "Hlasování číslo 53, pro 128, proti nikdo. S návrhem zákona byl vysloven souhlas."
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Prošlo to",
+  "priorita": 1,
+  "nadpis": "Stát si řídí data",
+  "lead": "Poslední bod večerního maratonu: zákon o správě dat prošel v prvním čtení, 128 hlasů pro, nikdo proti.",
+  "pointa": "Po hodinách debaty o Blízkém východu a pořadu schůze sněmovna k zákonům usedla až po osmé hodině večer.",
+  "mean": "Stát chce mít přehled o datech, která sdílí mezi úřady. Cílem je jednodušší digitální služby, ne nová daň pro občana.",
   "pocet_hlasovani": 2,
   "proslo": true
 }

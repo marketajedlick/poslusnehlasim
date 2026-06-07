@@ -4,7 +4,7 @@
   "topic_slugs": [
     "porad-7-schuze"
   ],
-  "dnesni_ucet": "Čtyřicet dva hlasování za čtyři hodiny.\nNejdřív pořad, pak rozpočet v debatách, večer jednací řád.",
+  "dnesni_ucet": "Sedmá schůze začala bojem o pořad, ne zákonem.\nOpoziční body smetli, rozpočet se jen rozehřál.",
   "zaver": "že sedmá schůze začala hlasováním o pořadu, ne zákonem. Koalice většinu procedurálních návrhů zamítla, večer se otevřel jednací řád.",
   "vysledek": [
     "* čtyřicet dva hlasování o pořadu sedmé schůze",
@@ -14,7 +14,7 @@
     "* večer začala novela jednacího řádu"
   ],
   "stats": {
-    "pocet_hlas": 42,
+    "pocet_hlas": 0,
     "minuty": 244,
     "end_cas": "18:05",
     "proslo": 0,

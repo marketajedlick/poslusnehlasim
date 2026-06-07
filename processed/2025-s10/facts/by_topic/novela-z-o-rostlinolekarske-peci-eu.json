@@ -3,14 +3,30 @@
   "nazev": "Novela z. o rostlinolékařské péči - EU",
   "datum": "10.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "rostlinolékařské péči",
+  "predmet_lidsky": "rostlinolékařské péči a evidenci postřiků",
   "koho": [
-    "Koho se to týká? Hlavně farmářů a podnikatelů v zemědělství, běžný občan v bytě to prakticky neřeší."
+    "Koho se to týká? Hlavně farmářů a podnikatelů v zemědělství. Běžný občan v bytě to prakticky neřeší."
   ],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Stěžejním cílem návrhu je zajištění souladu s evropskými nařízeními v oblasti statistiky používání přípravků na ochranu rostlin.",
+      "source": "steno",
+      "steno_id": "2025_10_00902",
+      "citace": "Stěžejním cílem návrhu je zajištění souladu s evropskými nařízeními v oblasti statistiky používání přípravků na ochranu rostlin."
+    },
+    {
+      "text": "Hlasování číslo 100, pro 146, proti nikdo. S návrhem zákona byl vysloven souhlas.",
+      "source": "steno",
+      "steno_id": "2025_10_00901",
+      "citace": "Hlasování číslo 100, pro 146, proti nikdo. S návrhem zákona byl vysloven souhlas."
+    }
+  ],
   "publikovat": true,
-  "priorita": 1,
+  "priorita": 2,
   "nadpis": "Postřiky mají nová pravidla",
-  "pocet_hlasovani": 4,
+  "lead": "Novela o rostlinolékařské péči prošla v prvním čtení, 146 hlasů pro, nikdo proti. Farmáři budou lépe evidovat postřiky podle EU.",
+  "pointa": "Předtím padla digitální ekonomika, 68 hlasů proti. Zemědělský zákon šel hladce.",
+  "mean": "Česko musí sladit pravidla s Bruselem. Stát chce přehled o pesticidech v praxi, ne novou daň pro občana.",
+  "pocet_hlasovani": 2,
   "proslo": true
 }

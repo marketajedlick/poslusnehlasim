@@ -5,7 +5,7 @@
     "navrh-zakona-o-statnich-zamestnancich",
     "mimoradna-schuze-statni-zakon"
   ],
-  "dnesni_ucet": "Dvanáct hlasování za osm hodin.\nVečer padl zákon o státních zaměstnancích — 65 pro, 96 proti.",
+  "dnesni_ucet": "Mimořádná schůze místo interpelací.\nReforma státních zaměstnanců v prvním čtení padla.",
   "zaver": "že mimořádná schůze sice projednala velkou reformu úřadů, ale sněmovna ji v prvém čtení zastavila.",
   "vysledek": [
     "* oba návrhy o státních zaměstnancích v prvém čtení zamítli",
@@ -14,11 +14,11 @@
     "* debata o přes 70 000 zaměstnancích státu a analýzách dopadů"
   ],
   "stats": {
-    "pocet_hlas": 12,
+    "pocet_hlas": 1,
     "minuty": 470,
     "end_cas": "16:51",
-    "proslo": 3,
-    "zamitnuto": 8,
+    "proslo": 0,
+    "zamitnuto": 1,
     "dlouha_debata": true
   }
 }

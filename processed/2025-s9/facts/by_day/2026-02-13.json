@@ -5,20 +5,20 @@
     "novela-z-o-zivotnim-a-existencnim-minimu",
     "novela-z-o-davce-statni-socialni-pomoci"
   ],
-  "dnesni_ucet": "Šest hlasování za dvě hodiny.\nMimořádná schůze o superdávce, oba zákony bez jediného hlasu proti.",
-  "zaver": "že sněmovna na žádost 87 poslanců prodloužila přechod na superdávku a odkladila novelu minima, opozice nevetovala, ale chce dopady sledovat.",
+  "dnesni_ucet": "Mimořádná schůze kvůli přechodu na superdávku,\ndva zákony v prvním čtení, nikdo proti.",
+  "zaver": "že sněmovna na žádost osmdesát sedm poslanců prodloužila přechod na superdávku a odkladila novelu minima, opozice nevetovala, ale chce dopady sledovat.",
   "vysledek": [
     "* mimořádná devátá schůze kvůli přechodu na superdávku",
     "* novela minima schválena v prvním čtení, účinnost posunuta z května na červenec",
-    "* přechodné období superdávky prodlouženo o tři měsíce, 130 pro, nula proti",
-    "* přes 413 tisíc žádostí už v systému",
+    "* přechodné období superdávky prodlouženo o tři měsíce, sto třicet pro, nula proti",
+    "* přes čtyři sta třináct tisíc žádostí už v systému",
     "* Piráti a Starostové nevetovali, chtějí data a úpravy definice zranitelnosti"
   ],
   "stats": {
-    "pocet_hlas": 6,
+    "pocet_hlas": 2,
     "minuty": 115,
     "end_cas": "10:56",
-    "proslo": 4,
+    "proslo": 2,
     "zamitnuto": 0,
     "dlouha_debata": false
   }

@@ -5,7 +5,7 @@
     "navrh-na-odvolani-clenu-spravni-rady-vseobecne-z",
     "novela-z-o-pojistnem-na-verejne-zdravotni-pojist"
   ],
-  "dnesni_ucet": "Padesát devět hlasování za téměř deset hodin.\nDopoledne personálka VZP, odpoledne osm miliard mezi pojišťovnami.",
+  "dnesni_ucet": "Personálka ve zdravotnictví: nová správa VZP.\nOdpoledne osm miliard přesunuli mezi pojišťovnami.",
   "zaver": "že středa byla obsazovací den ve zdravotnictví — nejdřív kdo sedí ve správní radě, pak kam tečou miliardy.",
   "vysledek": [
     "* třicet pět věcí schválili",
@@ -14,11 +14,11 @@
     "* přerozdělení téměř 8 miliard z přebytků VZP"
   ],
   "stats": {
-    "pocet_hlas": 59,
+    "pocet_hlas": 2,
     "minuty": 585,
     "end_cas": "20:44",
-    "proslo": 35,
-    "zamitnuto": 6,
+    "proslo": 2,
+    "zamitnuto": 0,
     "dlouha_debata": true
   }
 }

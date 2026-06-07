@@ -2,18 +2,23 @@
   "datum": "11.03.2026",
   "den": "středa",
   "topic_slugs": [
-    "rozpocet-sfzp-na-rok-2026",
-    "navrh-rozpoctu-sfa-na-rok-2026",
-    "navrh-rozpoctu-sfpi-na-rok-2026",
-    "navrh-rozpoctu-szif-na-rok-2026",
-    "rozpocet-sfdi-na-rok-2026"
+    "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026",
+    "rozpocet-sfzp-na-rok-2026"
+  ],
+  "dnesni_ucet": "Státní rozpočet prošel 178:1,\nrozpočet životního prostředí koalice zamítla.",
+  "zaver": "že rozpočtový maraton skončil vítězstvím vlády, ale fond životního prostředí padl.",
+  "vysledek": [
+    "* státní rozpočet v prvním čtení 178:1",
+    "* rozpočty SFA, SFDI, SFPI, SZIF a zemědělské dotace prošly",
+    "* rozpočet SFŽP zamítnut 58:89",
+    "* přes sto dílčích hlasování k pozměňovacím návrhům"
   ],
   "stats": {
-    "pocet_hlas": 143,
+    "pocet_hlas": 1,
     "minuty": 700,
     "end_cas": "20:44",
-    "proslo": 15,
-    "zamitnuto": 122,
-    "dlouha_debata": false
+    "proslo": 1,
+    "zamitnuto": 1,
+    "dlouha_debata": true
   }
 }

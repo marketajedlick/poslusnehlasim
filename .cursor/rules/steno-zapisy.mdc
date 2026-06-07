@@ -52,6 +52,14 @@ Schůze má pevnou kostru. Rozeznávej rutinu od odchylky — **odchylky jsou te
 | „budu stručný" + vysoký `pocet_slov` | řečník se neovládl | klasická ironie |
 | eskalace tónu napříč řečníky | gradace hlasitosti | stejný den, stejná koalice, jiná patra |
 
+## Dnešní účet a počty hlasování
+
+- Do `dnesni_ucet`, `stats.pocet_hlas` a sportovního skóre počítej jen **meritní hlasování** (zákony, usnesení s obsahem). `je_porad_schuze: true` **nepočítej** jako hlasování dne.
+- Boj o pořad může být samostatný článek (distanc, ukrajina, absurdita), ale ne jako „třicet hlasování za dvě hodiny".
+- **Zákony a usnesení jsou jádro dne.** Procedura je kulisa.
+- `dnesni_ucet` a `zaver` piš **vtipně**: ironie, kontrast, absurdita. Suchý výčet hlasování není rubrika.
+- `dnesni_ucet` vždy na **dvě řádky** (`\n` v JSON), text rovnoměrně rozdělen mezi první a druhou řádku.
+
 ## Co NENÍ zajímavé (přeskakuj)
 
 - Procedurální hlasování (ověřovatelé, schválení pořadu — `je_porad_schuze: true`)

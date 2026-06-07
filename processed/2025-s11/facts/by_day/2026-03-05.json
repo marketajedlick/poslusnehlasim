@@ -3,14 +3,16 @@
   "den": "čtvrtek",
   "topic_slugs": [
     "zadost-o-udeleni-souhlasu-s-trestnim-stihanim-po",
-    "zadost-o-udeleni-souhlasu-s-trestnim-stihanim-po-2"
+    "zadost-o-udeleni-souhlasu-s-trestnim-stihanim-po-2",
+    "sloucena-rozprava-k-bodum-1-a-2"
   ],
   "stats": {
-    "pocet_hlas": 7,
+    "pocet_hlas": 3,
     "minuty": 610,
     "end_cas": "19:13",
     "proslo": 3,
-    "zamitnuto": 3,
+    "zamitnuto": 0,
     "dlouha_debata": false
-  }
+  },
+  "dnesni_ucet": "Mimořádná schůze: souhlas se stíháním Babiše a Okamury.\nObě žádosti prošly, debata trvala do večera."
 }

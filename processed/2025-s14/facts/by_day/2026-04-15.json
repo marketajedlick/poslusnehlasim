@@ -5,11 +5,12 @@
     "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-"
   ],
   "stats": {
-    "pocet_hlas": 20,
+    "pocet_hlas": 1,
     "minuty": 942,
     "end_cas": "16:00",
-    "proslo": 7,
-    "zamitnuto": 8,
+    "proslo": 1,
+    "zamitnuto": 0,
     "dlouha_debata": false
-  }
+  },
+  "dnesni_ucet": "Pravidla veřejných výdajů prošla v prvním čtení.\nDlouhá debata, několik pozměňováků padlo."
 }

@@ -1,23 +1,38 @@
 {
   "slug": "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-",
-  "nazev": "Vl.n.z., kt. se mění některé z. v oblasti veřejných rozpočtů",
+  "nazev": "Vládní návrh zákona, kterým se mění některé zákony v oblasti veřejných rozpočtů",
   "datum": "03.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": ", kt. se mění některé z. v oblasti veřejných rozpočtů",
+  "predmet_lidsky": "pravidel veřejných rozpočtů a rozpočtové odpovědnosti",
   "koho": [
-    "Kdo jezdí po rozbitých silnicích, ten chápe, proč se o tom hádají celé dopoledne."
+    "Koho se to týká? Státu a obcí. Jde o to, jak se plánují a kontrolují veřejné výdaje."
   ],
   "fakty": [
     {
-      "text": "tátu může dát stanovisko, které (nesrozumitelné) převládá a zvýší v daném roce výdaje o 10 procent. Vyvraťte mně, paní zpravodajko, jestli ten příklad, který j",
+      "text": "Starostové a nezávislí nemůžeme podpořit projednání tohoto návrhu v režimu § 90 a uplatníme veto k tomuto projednání.",
       "source": "steno",
-      "steno_id": "2025_10_00188",
-      "citace": "isko, které (nesrozumitelné) převládá a zvýší v daném roce výdaje o 10 procent. Vyvraťte mně, paní zpravodajko, jestli ten příklad, který já jsem uvedl, je pra"
+      "steno_id": "2025_10_00168",
+      "citace": "Nemůžeme podpořit projednání v režimu § 90 a uplatníme veto k tomuto projednání."
+    },
+    {
+      "text": "Vláda se snaží vykostit zákon o rozpočtové odpovědnosti a vymlouvá se u toho na směrnici z Evropské unie.",
+      "source": "steno",
+      "steno_id": "2025_10_00178",
+      "citace": "Vláda se snaží vykostit zákon o rozpočtové odpovědnosti a vymlouvá se na směrnici z EU."
+    },
+    {
+      "text": "Hlasování číslo 51, pro 149, proti nikdo. S návrhem zákona byl vysloven souhlas.",
+      "source": "steno",
+      "steno_id": "2025_10_00161",
+      "citace": "Hlasování číslo 51, pro 149, proti nikdo. S návrhem zákona byl vysloven souhlas."
     }
   ],
   "publikovat": true,
   "priorita": 2,
-  "nadpis": "Pravidla výdajů prošla",
+  "nadpis": "Rozpočtová pravidla prošla",
+  "lead": "Vláda prosadila změny veřejných rozpočtů v prvním čtení, 149 hlasů pro, nikdo proti. Starostové předem avizovali veto k režimu § 90.",
+  "pointa": "Sedmihradská mluvila o transpozici EU, Činčila z ODS varoval před oslabením rozpočtové odpovědnosti.",
+  "mean": "Zákon má sladit české rozpočtování s pravidly EU. Opozice říká, že vláda pod záminkou Bruselu mění pravidla, která drží stát v rozpočtové kondici.",
   "pocet_hlasovani": 2,
   "proslo": true
 }

@@ -5,11 +5,12 @@
     "novela-z-stavebni-zakon"
   ],
   "stats": {
-    "pocet_hlas": 47,
+    "pocet_hlas": 1,
     "minuty": 793,
     "end_cas": "22:59",
-    "proslo": 6,
-    "zamitnuto": 26,
+    "proslo": 1,
+    "zamitnuto": 0,
     "dlouha_debata": false
-  }
+  },
+  "dnesni_ucet": "Stavební zákon konečně v prvním čtení.\nProšel bez jediného hlasu proti."
 }

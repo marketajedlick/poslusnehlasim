@@ -5,7 +5,32 @@
   "verdikt": "zamiteno",
   "predmet_lidsky": "dotační programy zemědělství pro rok 2026",
   "koho": [],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "252/1997 Sb., o zemědělství, ve znění pozdějších předpisů/sněmovní tisk 96/ Tento materiál uvede ministr zemědělství Martin Šebestyán a já ho poprosím, aby se ujal slova.",
+      "source": "steno",
+      "steno_id": "2025_10_01430",
+      "citace": "252/1997 Sb., o zemědělství, ve znění pozdějších předpisů/sněmovní tisk 96/ Tento materiál uvede ministr zemědělství Martin Šebestyán a já ho poprosím, aby se ujal slova."
+    },
+    {
+      "text": "V hlasování číslo 242 bylo přihlášeno 164 poslanců, pro hlasovalo 92, proti 12.",
+      "source": "steno",
+      "steno_id": "2025_10_01430",
+      "citace": "V hlasování číslo 242 bylo přihlášeno 164 poslanců, pro hlasovalo 92, proti 12."
+    },
+    {
+      "text": "Tím jsme se vypořádali s bodem číslo 60.",
+      "source": "steno",
+      "steno_id": "2025_10_01430",
+      "citace": "Tím jsme se vypořádali s bodem číslo 60."
+    },
+    {
+      "text": "Návrh rozpočtu dotačních programů zemědělství pro rok 2026 odpovídá možnostem rozpočtu kapitoly ministerstva, přičemž zachovává kontinuitu s předešlými roky v poměru přidělených peněžních prostředků pro jednotlivé programy.",
+      "source": "steno",
+      "steno_id": "2025_10_01431",
+      "citace": "Návrh rozpočtu dotačních programů zemědělství pro rok 2026 odpovídá možnostem rozpočtu kapitoly ministerstva, přičemž zachovává kontinuitu s předešlými roky v poměru přidělených peněžních prostředků p"
+    }
+  ],
   "publikovat": false,
   "priorita": 0,
   "nadpis": "Zůstává po staru",

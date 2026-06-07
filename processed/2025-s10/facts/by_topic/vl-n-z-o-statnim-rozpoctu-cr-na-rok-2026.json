@@ -1,39 +1,32 @@
 {
   "slug": "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026",
-  "nazev": "Vl.n.z. o státním rozpočtu ČR na rok 2026",
+  "nazev": "Vládní návrh zákona o státním rozpočtu ČR na rok 2026",
   "datum": "11.03.2026",
-  "verdikt": "zamiteno",
-  "predmet_lidsky": "o státním rozpočtu ČR na rok 2026",
-  "koho": [],
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "státním rozpočtu na rok 2026",
+  "koho": [
+    "Koho se to týká? Všech. Rozpočet určuje, kolik stát utratí za zdravotnictví, obranu, školství i dávky."
+  ],
   "fakty": [
     {
-      "text": "no, se jedná o minimální částku této rezervy ve výši 7 283 511 440 korun. Každý pozměňovací návrh, který by některou z těchto zmíněn",
+      "text": "Hlasování číslo 110, pro 178, proti 1. S návrhem zákona byl vysloven souhlas.",
       "source": "steno",
-      "steno_id": "2025_10_00220",
-      "citace": "ální částku této rezervy ve výši 7 283 511 440 korun. Každý pozměňovací návrh, který by některou z těchto zmíněných zásad nerespekto"
+      "steno_id": "2025_10_00219",
+      "citace": "Hlasování číslo 110, pro 178, proti 1. S návrhem zákona byl vysloven souhlas."
     },
     {
-      "text": "am byly. My, Piráti jsme předložili prorodinný balíček. Ten sníží daně 90 procentům rodin. Navrhli jsme také valorizaci rodičovského příspěvku, ale vl",
+      "text": "Hlasování číslo 239, pro 142, proti nikdo. Návrh usnesení byl schválen.",
       "source": "steno",
-      "steno_id": "2025_10_00224",
-      "citace": "jsme předložili prorodinný balíček. Ten sníží daně 90 procentům rodin. Navrhli jsme také valorizaci rodičovského příspěvku, ale vláda tyhle návrhy ani"
-    },
-    {
-      "text": "je. My jsme sice jako Piráti prosadili to jeho navýšení na 350 000 korun v minulém období, ale bylo to stále málo, ani tu inflaci to",
-      "source": "steno",
-      "steno_id": "2025_10_00226",
-      "citace": "o Piráti prosadili to jeho navýšení na 350 000 korun v minulém období, ale bylo to stále málo, ani tu inflaci to nepokrylo, to víme."
-    },
-    {
-      "text": "mo v oblasti kulturní aktivity, podpora živého umění o 189 450 000 korun, 189 milionů, to znamená celkový nárůst v oblasti Ministers",
-      "source": "steno",
-      "steno_id": "2025_10_00238",
-      "citace": "í aktivity, podpora živého umění o 189 450 000 korun, 189 milionů, to znamená celkový nárůst v oblasti Ministerstva kultury vyšel o"
+      "steno_id": "2025_10_01378",
+      "citace": "Hlasování číslo 239, pro 142, proti nikdo. Návrh usnesení byl schválen."
     }
   ],
-  "publikovat": false,
-  "priorita": 0,
-  "nadpis": "Rozpočet musí počkat",
-  "pocet_hlasovani": 129,
-  "proslo": false
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Rozpočet prošel",
+  "lead": "Státní rozpočet prošel v prvním čtení, 178 hlasů pro, jeden proti. Večer padly i rozpočty většiny fondů.",
+  "pointa": "Den trval do večera a přinesl přes sto dílčích hlasování k pozměňovacím návrhům. Meritní body ale prošly.",
+  "mean": "Schodek kolem 310 miliard dělí politiku na dvě poloviny. Rozpočet říká, kam peníze půjdou, od armády po školství.",
+  "pocet_hlasovani": 2,
+  "proslo": true
 }

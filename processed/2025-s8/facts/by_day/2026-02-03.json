@@ -4,7 +4,7 @@
   "topic_slugs": [
     "neduvera-vlade-debata"
   ],
-  "dnesni_ucet": "Dvě hlasování za čtyři hodiny.\nCelý den debata o nedůvěře, večer jednání do devatenácti hodin.",
+  "dnesni_ucet": "Mimořádná schůze, celý den debata o nedůvěře.\nMeritní hlasování až zítra, večer jednání do devatenácti hodin.",
   "zaver": "že osmá schůze začala dvoudenní přednáškou o nedůvěře vládě, meritní hlasování až ve středu večer.",
   "vysledek": [
     "* mimořádná schůze kvůli návrhu opozice na nedůvěru",
@@ -14,10 +14,10 @@
     "* hlasování o nedůvěře až ve středu"
   ],
   "stats": {
-    "pocet_hlas": 2,
+    "pocet_hlas": 0,
     "minuty": 261,
     "end_cas": "15:22",
-    "proslo": 1,
+    "proslo": 0,
     "zamitnuto": 0,
     "dlouha_debata": true
   }

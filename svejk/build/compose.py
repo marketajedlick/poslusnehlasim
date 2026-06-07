@@ -39,7 +39,7 @@ def render_den_markdown(
     lines = [
         f"# {HLAVICKA_LISTU}",
         "",
-        f"**{content.den.capitalize()} {nahrad_cisla_v_textu(_datum_cesky(content.datum))}**",
+        f"**{content.den.capitalize()} {nahrad_cisla_v_textu(_datum_cesky(content.datum))}** · s{paths.schuze}",
         "",
         *_dnesni_ucet_radky(content.dnesni_ucet),
         "",

@@ -5,7 +5,33 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "o digitální ekonomice",
   "koho": [],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Silný hluk v sále.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_10_00632",
+      "citace": "(Silný hluk v sále.)"
+    },
+    {
+      "text": "2 Upozorňuji, že je navrženo, abychom s návrhem zákona vyslovili souhlas již v prvém čtení.",
+      "source": "steno",
+      "steno_id": "2025_10_00632",
+      "citace": "2 Upozorňuji, že je navrženo, abychom s návrhem zákona vyslovili souhlas již v prvém čtení."
+    },
+    {
+      "text": "(Silný hluk v sále.) Prosím o klid v jednacím sále.",
+      "source": "steno",
+      "steno_id": "2025_10_00632",
+      "citace": "(Silný hluk v sále.) Prosím o klid v jednacím sále."
+    },
+    {
+      "text": "Omlouvám se, ale jsem domluven, že za mě převezme tento bod jiný člen vlády, pan Igor Červený.",
+      "source": "steno",
+      "steno_id": "2025_10_00633",
+      "citace": "Omlouvám se, ale jsem domluven, že za mě převezme tento bod jiný člen vlády, pan Igor Červený."
+    }
+  ],
   "publikovat": false,
   "priorita": 0,
   "nadpis": "Prošlo to",

@@ -6,11 +6,12 @@
     "novela-z-o-statni-socialni-podpore"
   ],
   "stats": {
-    "pocet_hlas": 13,
+    "pocet_hlas": 2,
     "minuty": 57,
     "end_cas": "09:58",
-    "proslo": 5,
-    "zamitnuto": 7,
+    "proslo": 2,
+    "zamitnuto": 0,
     "dlouha_debata": false
-  }
+  },
+  "dnesni_ucet": "Ranní dohra sociálních zákonů.\nDávky i služby prošly prvním čtením."
 }

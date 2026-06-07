@@ -1,23 +1,26 @@
 {
   "slug": "rozpocet-sfzp-na-rok-2026",
-  "nazev": "Rozpočet SFŽP na rok 2026",
+  "nazev": "Rozpočet Státního fondu životního prostředí na rok 2026",
   "datum": "11.03.2026",
-  "verdikt": "schvaleno",
-  "predmet_lidsky": "rozpočet SFŽP na rok 2026",
+  "verdikt": "zamiteno",
+  "predmet_lidsky": "rozpočtu Státního fondu životního prostředí na rok 2026",
   "koho": [
-    "Občana se to netýká u pokladny, spíš dotace a projekty."
+    "Koho se to týká? Projektů na životní prostředí, obcí a firem čerpajících dotace ze SFŽP."
   ],
   "fakty": [
     {
-      "text": "nak na tyto finanční prostředky nemohli dosáhnout. Je to až 40 000 korun. *** Neprošlo jazykovou korekturou, neautorizováno! Takže j",
+      "text": "Hlasování číslo 245, pro 58, proti 89. Návrh nebyl přijat.",
       "source": "steno",
-      "steno_id": "2025_10_01471",
-      "citace": "prostředky nemohli dosáhnout. Je to až 40 000 korun. *** Neprošlo jazykovou korekturou, neautorizováno! Takže jen pro připomenutí,"
+      "steno_id": "2025_10_01378",
+      "citace": "Hlasování číslo 245, pro 58, proti 89. Návrh nebyl přijat."
     }
   ],
   "publikovat": true,
   "priorita": 2,
-  "nadpis": "Prošlo to",
-  "pocet_hlasovani": 2,
-  "proslo": true
+  "nadpis": "Rozpočet životního prostředí padl",
+  "lead": "Jediný výrazný výprask dne: rozpočet fondu životního prostředí koalice zamítla, 58 pro, 89 proti.",
+  "pointa": "Ostatní fondy, státní rozpočet i zemědělské dotace prošly. SFŽP zůstal sám na ocet.",
+  "mean": "Fond platí deštníky, čističky a zelené projekty. Bez schváleného rozpočtu hrozí zdržení dotací, i když státní rozpočet už stojí.",
+  "pocet_hlasovani": 1,
+  "proslo": false
 }

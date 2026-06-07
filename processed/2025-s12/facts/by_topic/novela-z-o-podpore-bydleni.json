@@ -7,28 +7,30 @@
   "koho": [],
   "fakty": [
     {
-      "text": "adenství. Já bych jenom chtěla v té souvislosti říct, že my od 1. ledna 2026 už na některých kontaktních místech toto poradenství vlastn",
+      "text": "zákon o podpoře bydlení",
       "source": "steno",
-      "steno_id": "2025_12_00059",
-      "citace": "nom chtěla v té souvislosti říct, že my od 1. ledna 2026 už na některých kontaktních místech toto poradenství vlastně poskytujeme. Sice"
+      "kind": "scene",
+      "steno_id": "2025_12_00022",
+      "citace": "(zákon o podpoře bydlení)"
     },
     {
-      "text": "é mají dva dospělé a dvě děti, třeba tady v Praze s příjmem 55 000 korun, kteří přijdou a řeknou, já jsem oprávněný ze zákona, abyst",
+      "text": "175/2025 Sb., o poskytování některých opatření v podpoře bydlení (zákon o podpoře bydlení)/sněmovní tisk 82/ - prvé čtení Z pověření vlády předložený návrh uvede ministryně pro místní rozvoj Zuzana Mrázová.",
       "source": "steno",
-      "steno_id": "2025_12_00063",
-      "citace": "dvě děti, třeba tady v Praze s příjmem 55 000 korun, kteří přijdou a řeknou, já jsem oprávněný ze zákona, abyste mi poskytli služby"
+      "steno_id": "2025_12_00022",
+      "citace": "175/2025 Sb., o poskytování některých opatření v podpoře bydlení (zákon o podpoře bydlení)/sněmovní tisk 82/ - prvé čtení Z pověření vlády předložený návrh uvede ministryně pro místní rozvoj Zuzana Mr"
     },
     {
-      "text": "di ve středních městech, které budou mít příjem někde 35 až 40 000 korun a říkají, my jsme ti, kterým máte zajistit ten servis. A já",
+      "text": "Nyní tedy přistoupíme k jedinému bodu pořadu, kterým je 1.Vládní návrh zákona, kterým se mění zákon č.",
       "source": "steno",
-      "steno_id": "2025_12_00063",
-      "citace": "ech, které budou mít příjem někde 35 až 40 000 korun a říkají, my jsme ti, kterým máte zajistit ten servis. A já si kladu otázku jak"
+      "steno_id": "2025_12_00022",
+      "citace": "Nyní tedy přistoupíme k jedinému bodu pořadu, kterým je 1.Vládní návrh zákona, kterým se mění zákon č."
     },
     {
-      "text": "životního minima podle aktuálních částek je pro jednotlivce 7 776 korun, pro samoživitelku s jedním dítětem je to 11 120 korun, u d",
+      "text": "Stále silný hluk v sále. Poslanci hlasitě diskutují.",
       "source": "steno",
-      "steno_id": "2025_12_00065",
-      "citace": "le aktuálních částek je pro jednotlivce 7 776 korun, pro samoživitelku s jedním dítětem je to 11 120 korun, u dvou dospělých 13 616"
+      "kind": "scene",
+      "steno_id": "2025_12_00023",
+      "citace": "(Stále silný hluk v sále. Poslanci hlasitě diskutují.)"
     }
   ],
   "publikovat": false,

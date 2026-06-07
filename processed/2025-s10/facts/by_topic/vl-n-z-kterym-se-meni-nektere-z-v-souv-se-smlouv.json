@@ -7,10 +7,30 @@
   "koho": [],
   "fakty": [
     {
-      "text": "tátu může dát stanovisko, které (nesrozumitelné) převládá a zvýší v daném roce výdaje o 10 procent. Vyvraťte mně, paní zpravodajko, jestli ten příklad, který j",
+      "text": "opravuje:",
       "source": "steno",
-      "steno_id": "2025_10_00188",
-      "citace": "isko, které (nesrozumitelné) převládá a zvýší v daném roce výdaje o 10 procent. Vyvraťte mně, paní zpravodajko, jestli ten příklad, který já jsem uvedl, je pra"
+      "kind": "scene",
+      "steno_id": "2025_10_00161",
+      "citace": "(opravuje:)"
+    },
+    {
+      "text": "Hlasování číslo 49, přihlášeno 140 poslanců, (opravuje:) 141 poslanců, pro 100, proti 9.",
+      "source": "steno",
+      "steno_id": "2025_10_00161",
+      "citace": "Hlasování číslo 49, přihlášeno 140 poslanců, (opravuje:) 141 poslanců, pro 100, proti 9."
+    },
+    {
+      "text": "Poslanecká sněmovna souhlasí s pokračováním jednání o sněmovním tisku 78 tak, aby s ním mohl být vysloven souhlas již v prvním čtení.",
+      "source": "steno",
+      "steno_id": "2025_10_00161",
+      "citace": "Poslanecká sněmovna souhlasí s pokračováním jednání o sněmovním tisku 78 tak, aby s ním mohl být vysloven souhlas již v prvním čtení."
+    },
+    {
+      "text": "Hluk v sále, paní poslankyně vyčkává.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_10_00162",
+      "citace": "(Hluk v sále, paní poslankyně vyčkává.)"
     }
   ],
   "publikovat": false,

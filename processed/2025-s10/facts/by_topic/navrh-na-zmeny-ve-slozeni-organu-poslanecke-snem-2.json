@@ -3,27 +3,24 @@
   "nazev": "Návrh na změny ve složení orgánů Poslanecké sněmovny",
   "datum": "12.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "návrh na změny ve složení orgánů Poslanecké sněmovny",
+  "predmet_lidsky": "změnách ve složení orgánů sněmovny",
   "koho": [
-    "Občana se netýká, leda že zná někoho z poslanců osobně."
+    "Koho se to týká? Politických stran. Jde o obsazení výborů a komisí."
   ],
   "fakty": [
     {
-      "text": "h rodin. Je to konkrétní návrh, který může lidem ušetřit až 35 000 korun ročně. Je to konkrétní způsob, jak učinit daňovou zátěž pře",
+      "text": "Hlasování číslo 249, pro 121, proti nikdo. Návrh byl přijat.",
       "source": "steno",
-      "steno_id": "2025_10_00796",
-      "citace": "étní návrh, který může lidem ušetřit až 35 000 korun ročně. Je to konkrétní způsob, jak učinit daňovou zátěž předvídatelnější, jde o"
-    },
-    {
-      "text": "it na program schůze ten legislativní balíček Pirátů, který sníží daně pro více než 90 procent českých rodin. Je to konkrétní návrh, který může lidem ušetřit až 35 000 k",
-      "source": "steno",
-      "steno_id": "2025_10_00796",
-      "citace": "ten legislativní balíček Pirátů, který sníží daně pro více než 90 procent českých rodin. Je to konkrétní návrh, který může lidem ušetřit až 35 000 korun ročně. Je to ko"
+      "steno_id": "2025_10_01487",
+      "citace": "Hlasování číslo 249, pro 121, proti nikdo. Návrh byl přijat."
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Prošlo to",
-  "pocet_hlasovani": 2,
+  "priorita": 1,
+  "nadpis": "Orgány přeskládány",
+  "lead": "Změny ve složení orgánů sněmovny prošly 121 hlasy, nikdo proti.",
+  "pointa": "Dopoledne personálka, odpoledne balík evropských novel.",
+  "mean": "Strany si rozdělily místa ve výborech. Kdo sedí ve kterém výboru, určuje, kdo vidí jaké zákony jako první.",
+  "pocet_hlasovani": 1,
   "proslo": true
 }

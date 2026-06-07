@@ -3,11 +3,12 @@
   "den": "pondělí",
   "topic_slugs": [],
   "stats": {
-    "pocet_hlas": 2,
+    "pocet_hlas": 0,
     "minuty": 3,
     "end_cas": "15:13",
-    "proslo": 2,
+    "proslo": 0,
     "zamitnuto": 0,
     "dlouha_debata": false
-  }
+  },
+  "dnesni_ucet": "První schůze nového období, jen formalita.\nOvěřovatelé schváleni, zákon nepadl."
 }

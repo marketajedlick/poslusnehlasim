@@ -3,11 +3,12 @@
   "den": "úterý",
   "topic_slugs": [],
   "stats": {
-    "pocet_hlas": 41,
+    "pocet_hlas": 0,
     "minuty": 425,
     "end_cas": "21:13",
-    "proslo": 2,
-    "zamitnuto": 2,
+    "proslo": 0,
+    "zamitnuto": 0,
     "dlouha_debata": false
-  }
+  },
+  "dnesni_ucet": "Úterý bez meritního hlasování.\nSněmovna řešila hlavně pořad a proceduru."
 }

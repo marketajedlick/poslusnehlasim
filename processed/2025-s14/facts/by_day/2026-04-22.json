@@ -6,11 +6,12 @@
     "novela-z-o-socialnich-sluzbach"
   ],
   "stats": {
-    "pocet_hlas": 25,
+    "pocet_hlas": 2,
     "minuty": 476,
     "end_cas": "18:28",
-    "proslo": 7,
-    "zamitnuto": 3,
+    "proslo": 2,
+    "zamitnuto": 0,
     "dlouha_debata": false
-  }
+  },
+  "dnesni_ucet": "Sociální dávky a sociální služby v prvním čtení.\nOba zákony prošly, nikdo proti."
 }

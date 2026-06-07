@@ -4,7 +4,7 @@
   "topic_slugs": [
     "novela-z-stavebni-zakon"
   ],
-  "dnesni_ucet": "Třicet hlasování za devět hodin.\nVečer stavební zákon do koše — 31 pro, 86 proti.",
+  "dnesni_ucet": "Dopoledne boj o pořad schůze.\nStavební zákon v prvním čtení padl, 86 proti.",
   "zaver": "že páteční stavba skončila dřív, než začala — prvé čtení koaliční novely zamítli.",
   "vysledek": [
     "* tři věci schválili",
@@ -13,11 +13,11 @@
     "* dopoledne dvacet hlasování o pořadu schůze"
   ],
   "stats": {
-    "pocet_hlas": 30,
+    "pocet_hlas": 1,
     "minuty": 563,
     "end_cas": "18:29",
-    "proslo": 3,
-    "zamitnuto": 6,
+    "proslo": 0,
+    "zamitnuto": 1,
     "dlouha_debata": true
   }
 }

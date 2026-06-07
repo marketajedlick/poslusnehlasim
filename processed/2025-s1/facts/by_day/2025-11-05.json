@@ -6,11 +6,12 @@
     "navrh-na-stanoveni-poctu-mistopredsedu-ps"
   ],
   "stats": {
-    "pocet_hlas": 16,
+    "pocet_hlas": 2,
     "minuty": 709,
     "end_cas": "20:57",
-    "proslo": 15,
-    "zamitnuto": 1,
+    "proslo": 2,
+    "zamitnuto": 0,
     "dlouha_debata": false
-  }
+  },
+  "dnesni_ucet": "Druhá schůze: termín dalšího jednání a počet místopředsedů.\nDva organizační body, občana netrefí."
 }

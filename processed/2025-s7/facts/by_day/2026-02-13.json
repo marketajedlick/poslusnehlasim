@@ -4,7 +4,7 @@
   "topic_slugs": [
     "novela-z-o-jednacim-radu-ps"
   ],
-  "dnesni_ucet": "Patnáct hlasování za hodinu a půl.\nRáno pořad, pak jednací řád a předčasný konec schůze.",
+  "dnesni_ucet": "Ráno zase boj o pořad jednání.\nNovela jednacího řádu prošla prvním čtením a schůze skončila dřív.",
   "zaver": "že sněmovna dokončila první čtení novely jednacího řádu a schůzi ukončila dřív, než se čekalo.",
   "vysledek": [
     "* většina návrhů na změnu pořadu zamítnuta",
@@ -13,11 +13,11 @@
     "* schůze ukončena předčasně, 117 proti 6"
   ],
   "stats": {
-    "pocet_hlas": 15,
+    "pocet_hlas": 1,
     "minuty": 80,
     "end_cas": "13:04",
-    "proslo": 3,
-    "zamitnuto": 1,
+    "proslo": 1,
+    "zamitnuto": 0,
     "dlouha_debata": false
   }
 }
