@@ -135,50 +135,6 @@ _ORD_GEN = (
     "třicátého prvního",
 )
 
-_ORD_FEM_NOM = (
-    "",
-    "první",
-    "druhá",
-    "třetí",
-    "čtvrtá",
-    "pátá",
-    "šestá",
-    "sedmá",
-    "osmá",
-    "devátá",
-    "desátá",
-    "jedenáctá",
-    "dvanáctá",
-    "třináctá",
-    "čtrnáctá",
-    "patnáctá",
-    "šestnáctá",
-    "sedmnáctá",
-    "osmnáctá",
-    "devatenáctá",
-    "dvacátá",
-    "jednadvacátá",
-    "dvaadvacátá",
-    "třiadvacátá",
-    "čtyřiadvacátá",
-    "pětadvacátá",
-    "šestadvacátá",
-    "sedmadvacátá",
-    "osmadvacátá",
-    "devětadvacátá",
-    "třicátá",
-    "třicátá první",
-)
-
-
-def schuze_slovy(n: int) -> str:
-    """Řadová číslovka ve ženském rodě: „pátá schůze“, „osmá schůze“."""
-    n = int(n)
-    if 1 <= n < len(_ORD_FEM_NOM):
-        return f"{_ORD_FEM_NOM[n]} schůze"
-    return f"{n}. schůze"
-
-
 _ORD_LOC = (
     "",
     "prvnímu",

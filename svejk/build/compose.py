@@ -29,16 +29,9 @@ def render_den_markdown(
         "",
         f"**{content.den.capitalize()} {nahrad_cisla_v_textu(_datum_cesky(content.datum))}**",
         "",
+        f"**Dnešní účet:** {content.dnesni_ucet}",
+        "",
     ]
-    if content.schuze_label:
-        lines.append(f"*{content.schuze_label[0].upper()}{content.schuze_label[1:]}*")
-        lines.append("")
-    lines.extend(
-        [
-            f"**Dnešní účet:** {content.dnesni_ucet}",
-            "",
-        ]
-    )
 
     prvni = True
     for item in content.items:
