@@ -1,0 +1,44 @@
+{
+  "slug": "mimoradna-schuze-statni-zakon",
+  "nazev": "Mimořádná schůze místo interpelací",
+  "datum": "29.01.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "mimořádné schůzi svolané místo čtvrtečních interpelací",
+  "koho": [
+    "Koho se to týká? Každého, kdo čeká, že ve čtvrtek sněmovna kontroluje ministry — ten den šla debata o pořadu a rychlém projednávání zákonů."
+  ],
+  "fakty": [
+    {
+      "text": "V prosinci vládní většina nesvolala jednání Poslanecké sněmovny. Nestihly se třeba projednat některé tisky, které tam platily",
+      "source": "steno",
+      "steno_id": "2025_6_00003",
+      "citace": "V prosinci vládní většina nesvolala jednání Poslanecké sněmovny. Nestihly se třeba projednat některé tisky, které tam platily"
+    },
+    {
+      "text": "z jednacího řádu jasně vyplývá, že ve čtvrtek se máme zejména věnovat interpelacím na členy vlády a na pana premiéra. A vy v této době svoláte mimořádnou schůzi, která znamená jediné, že dnes interpelace nebudou",
+      "source": "steno",
+      "steno_id": "2025_6_00009",
+      "citace": "z jednacího řádu jasně vyplývá, že ve čtvrtek se máme zejména věnovat interpelacím na členy vlády. A vy svoláte mimořádnou schůzi, která znamená jediné, že dnes interpelace nebudou"
+    },
+    {
+      "text": "návrh nesplňuje desetidenní lhůtu před zahájením schůze. To už pak nejde zhojit",
+      "source": "steno",
+      "steno_id": "2025_6_00045",
+      "citace": "návrh nesplňuje desetidenní lhůtu před zahájením schůze. To už pak nejde zhojit"
+    },
+    {
+      "text": "Pracovali jsme na té normě 2,5 roku transparentně a velmi otevřeně",
+      "source": "steno",
+      "steno_id": "2025_6_00053",
+      "citace": "Pracovali jsme na té normě 2,5 roku transparentně a velmi otevřeně"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Čtvrtek bez interpelací",
+  "lead": "Koalice svolala mimořádnou schůzi na den vyhrazený pro interpelace. Rakušan kritizoval prosincové mlčení sněmovny, Jakob řekl, že dnes se ministry neptají.",
+  "pointa": "Vondráček hájil nestihnutí lhůt mimořádnou schůzí. Rakušan připomněl dva a půl roku práce na služebním zákoně za Fialovy vlády.",
+  "mean": "Šestá schůze začala sporem o proceduru: proč zákon o úřednících nešel řádnou cestou a proč ve čtvrtek místo kontroly vlády běžela mimořádná jízda.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

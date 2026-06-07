@@ -1,13 +1,24 @@
 {
   "datum": "29.01.2026",
   "den": "čtvrtek",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "navrh-zakona-o-statnich-zamestnancich",
+    "mimoradna-schuze-statni-zakon"
+  ],
+  "dnesni_ucet": "Dvanáct hlasování za osm hodin.\nVečer padl zákon o státních zaměstnancích — 65 pro, 96 proti.",
+  "zaver": "že mimořádná schůze sice projednala velkou reformu úřadů, ale sněmovna ji v prvém čtení zastavila.",
+  "vysledek": [
+    "* oba návrhy o státních zaměstnancích v prvém čtení zamítli",
+    "* tři procedurální body prošly, osm legislativních padlo",
+    "* mimořádná schůze místo čtvrtečních interpelací",
+    "* debata o přes 70 000 zaměstnancích státu a analýzách dopadů"
+  ],
   "stats": {
     "pocet_hlas": 12,
     "minuty": 470,
     "end_cas": "16:51",
     "proslo": 3,
     "zamitnuto": 8,
-    "dlouha_debata": false
+    "dlouha_debata": true
   }
 }
