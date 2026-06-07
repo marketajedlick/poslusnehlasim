@@ -3,28 +3,28 @@
   "nazev": "Novela z. o zdrav. prostř. a diagnostických zdrav. prostř. in vitro -",
   "datum": "26.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "hlášení nedostatku zkumavek v nemocnicích",
+  "predmet_lidsky": "hlášení nedostatku zkumavek a diagnostických souprav v nemocnicích",
   "koho": [
     "Koho se to týká? Lidí, co chodí na odběry v nemocnici, a sester v laboratoři."
   ],
   "fakty": [
     {
-      "text": "Nemocnice dostanou včas vědět, když hrozí nedostatek zkumavek, méně zrušených termínů a kratší čekání v chodbě.",
+      "text": "Výrobci musí hlásit, když v nemocnici dochází soupravy na odběry.",
       "source": "manual",
       "note": "z glosy / TEMA_PRAVIDLA"
+    },
+    {
+      "text": "Finální hlasování číslo 55, sto padesát tři hlasů pro.",
+      "source": "votes",
+      "citace": "Hlasování číslo 55, pro 153, proti 1."
     }
   ],
   "publikovat": true,
-  "priorita": 3,
+  "priorita": 2,
   "nadpis": "Nemocnice uvidí docházející zkumavky",
+  "lead": "Úterní večer sněmovna v prvním čtení schválila EU novelu o laboratorních testech, sto padesát tři hlasů proti jednomu. Výrobci budou muset hlásit nedostatek zkumavek a souprav na odběry.",
+  "pointa": "Jde o technickou úpravu podle evropských pravidel, doma vás to netankuje, spíš sestry a laboratoře.",
+  "mean": "Nemocnice dostanou včas vědět, když hrozí nedostatek zkumavek, méně zrušených termínů a kratší čekání v chodbě.",
   "pocet_hlasovani": 1,
-  "proslo": true,
-  "signaly": {
-    "proti_max": 1,
-    "pritomno_min": 175,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": false
-  },
-  "steno_slov": 0
+  "proslo": true
 }

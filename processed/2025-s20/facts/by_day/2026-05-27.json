@@ -2,18 +2,24 @@
   "datum": "27.05.2026",
   "den": "středa",
   "topic_slugs": [
-    "novela-z-o-investicnich-spolecnostech-eu",
     "novela-z-o-doplnkovem-penzijnim-sporeni",
-    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem",
+    "novela-z-o-investicnich-spolecnostech-eu",
     "novela-z-o-rostlinolekarske-peci-eu"
   ],
+  "dnesni_ucet": "Penze pro seniory, investice a postřiky.\nVečer začal maraton stavebního zákona.",
+  "zaver": "že středa přinesla schválení novely penzijního spoření pro seniory a dvou EU tisků, večer koalice otevřela druhé čtení stavebního zákona přes kritiku opozice.",
+  "vysledek": [
+    "* novela penzijního spoření pro seniory schválena 136:7 ve třetím čtení",
+    "* pozměňovací návrhy Pirátů k fondům zamítnuty",
+    "* investiční společnosti a rostlinolékařská péče v prvním čtení",
+    "* odpoledne volební bloky, večer debata o lexu developerovi"
+  ],
   "stats": {
-    "pocet_hlas": 4,
+    "pocet_hlas": 45,
     "minuty": 744,
     "end_cas": "21:30",
-    "proslo": 4,
+    "proslo": 3,
     "zamitnuto": 0,
     "dlouha_debata": true
-  },
-  "dnesni_ucet": "Investice, penze, orgány sněmovny, postřiky.\nČtyři zákony v prvním čtení, nikdo proti."
+  }
 }

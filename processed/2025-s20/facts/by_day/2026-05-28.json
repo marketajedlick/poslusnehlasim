@@ -4,13 +4,20 @@
   "topic_slugs": [
     "novela-z-stavebni-zakon"
   ],
+  "dnesni_ucet": "Stavební zákon do půlnoci.\nČtyřicet tři pozměňovací návrhy padly, jeden prošel.",
+  "zaver": "že čtvrtek skončil až ve 22:59 schválením novely stavebního zákona šedesát čtyři proti deseti, opozice mluvila o lexu developerovi a úřednících, kteří hrozí odchodem.",
+  "vysledek": [
+    "* stavební zákon ve druhém čtení schválen 64:10",
+    "* 43 pozměňovacích návrhů zamítnuto, jeden komplexní přijat",
+    "* dopoledne interpelace o kojenecké výživě, Mrázové a ČT",
+    "* premiér Babiš na plénu odpovídal na dotazy opozice"
+  ],
   "stats": {
-    "pocet_hlas": 1,
+    "pocet_hlas": 47,
     "minuty": 793,
     "end_cas": "22:59",
     "proslo": 1,
     "zamitnuto": 0,
-    "dlouha_debata": false
-  },
-  "dnesni_ucet": "Stavební zákon konečně v prvním čtení.\nProšel bez jediného hlasu proti."
+    "dlouha_debata": true
+  }
 }

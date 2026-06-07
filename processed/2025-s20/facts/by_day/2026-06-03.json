@@ -1,0 +1,20 @@
+{
+  "datum": "03.06.2026",
+  "den": "středa",
+  "topic_slugs": [],
+  "dnesni_ucet": "Pokračování schůze po přerušení.\nJen personální a EU technika.",
+  "zaver": "že středa po přerušení schůze přinesla jen volební a procedurální body bez meritního článku pro noviny.",
+  "vysledek": [
+    "* změny ve složení orgánů schváleny per rollam",
+    "* hlavní pozměňovací návrh k evidenci tržeb zamítnut 33:100",
+    "* dopoledne návrhy opozice o ČT a střetu zájmů zamítnuty"
+  ],
+  "stats": {
+    "pocet_hlas": 28,
+    "minuty": 402,
+    "end_cas": "21:17",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  }
+}

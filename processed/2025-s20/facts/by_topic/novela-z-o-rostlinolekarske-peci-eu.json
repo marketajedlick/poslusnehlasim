@@ -3,22 +3,29 @@
   "nazev": "Novela z. o rostlinolékařské péči - EU",
   "datum": "27.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "rostlinolékařské péči",
+  "predmet_lidsky": "EU pravidel pro postřiky a rostlinolékařskou péči",
   "koho": [
     "Koho se to týká? Hlavně farmářů a podnikatelů v zemědělství, běžný občan v bytě to prakticky neřeší."
   ],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Jurečka řekl, že koalice navěsila na zákon nesouvisející norování.",
+      "source": "steno",
+      "steno_id": "2025_20_00285",
+      "citace": "Vládní koalice není schopna se domluvit a udělá si z tohoto zákona další přívěskový zákon, na který navěšuje věci, které vůbec nesouvisí s rostlinolékařskou péčí."
+    },
+    {
+      "text": "Finální hlasování číslo 72, devadesát hlasů pro.",
+      "source": "votes",
+      "citace": "Hlasování číslo 72, pro 90, proti 15."
+    }
+  ],
   "publikovat": true,
-  "priorita": 3,
+  "priorita": 1,
   "nadpis": "Postřiky mají nová pravidla",
+  "lead": "Po penzích a investicích prošla i EU novela o rostlinolékařské péči, devadesát hlasů proti patnácti. Jurečka koalici kritizoval za přívěsky k norování.",
+  "pointa": "Standardně nekonfliktní tisk se protáhl kvůli hádkám o navěšených pozměňovacích návrzích.",
+  "mean": "Farmáři dostanou aktualizovaná pravidla pro postřiky podle evropské legislativy.",
   "pocet_hlasovani": 1,
-  "proslo": true,
-  "signaly": {
-    "proti_max": 15,
-    "pritomno_min": 150,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": true
-  },
-  "steno_slov": 0
+  "proslo": true
 }

@@ -1,0 +1,43 @@
+{
+  "slug": "navrh-na-volbu-clenu-rady-ceske-televize",
+  "nazev": "Návrh na volbu členů Rady České televize",
+  "datum": "05.06.2026",
+  "verdikt": "zamitnuto",
+  "predmet_lidsky": "doplnění šesti míst v Radě České televize po skončení mandátů",
+  "koho": [
+    "Koho se to týká? Diváků ČT a lidí, kteří sledují debatu o nezávislosti veřejnoprávních médií."
+  ],
+  "fakty": [
+    {
+      "text": "Kolovratník řekl, že volí šest členů po 37 nominacích a veřejném slyšení.",
+      "source": "steno",
+      "steno_id": "2025_20_01753",
+      "citace": "Budeme volit šest členů a nacházíme se v prvním kole první volby."
+    },
+    {
+      "text": "Rakušan vysvětlil dohodu o veřejné volbě a nevolení Matochy s Bradáčem.",
+      "source": "steno",
+      "steno_id": "2025_20_01765",
+      "citace": "Přistupujeme na veřejnou volbu s příslibem, že tito dva lidi do Rady České televize nezvolí."
+    },
+    {
+      "text": "Hřib varoval před Veselým, Berkovem a nahrávkou s úplatkem, Šťastný slíbil Matochu nevolit.",
+      "source": "steno",
+      "steno_id": "2025_20_01791",
+      "citace": "Tito dva kandidáti nedostanou naši podporu v tuto chvíli a budeme volit kandidáty jiné."
+    },
+    {
+      "text": "Z 21 kol hlasování prošlo sedm kandidátů, čtrnáct padlo, poslední kolo 38:39.",
+      "source": "votes",
+      "citace": "Hlasování číslo 348 až 368, 7 přijato, 14 zamítnuto."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Rada ČT zůstala nedoplněná",
+  "lead": "Páteční dopoledne sněmovna po hodinové debatě veřejně volila šest členů Rady České televize. Sedm kandidátů prošlo, čtrnáct padlo a šest míst zůstalo neobsazených.",
+  "pointa": "Jakob kritizoval Veselého kvůli XTV, Hřib přinesl posudky k nahrávce Matochy a Bradáče. Koalice se dohodla Matochu a Bradáče nevolit, opozice chtěla veřejné hlasování.",
+  "mean": "Rada ČT, která dohlíží na televizi a volí ředitele, zůstává neúplná. Debata o financování ČT a návrhu Nachera na poplatky dál běží vedle.",
+  "pocet_hlasovani": 21,
+  "proslo": false
+}

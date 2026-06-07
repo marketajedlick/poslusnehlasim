@@ -1,0 +1,23 @@
+{
+  "datum": "05.06.2026",
+  "den": "pátek",
+  "topic_slugs": [
+    "navrh-na-volbu-clenu-rady-ceske-televize"
+  ],
+  "dnesni_ucet": "Volba do Rady České televize.\nSedm kandidátů prošlo, šest míst zůstalo prázdných.",
+  "zaver": "že páteční dopoledne sněmovna po dlouhé debatě o nezávislosti ČT veřejně volila radu, sedm kandidátů prošlo, ale šest míst zůstalo neobsazených.",
+  "vysledek": [
+    "* volba šesti členů Rady ČT, 7 kandidátů zvoleno, 14 padlo",
+    "* koalice slíbila nevolit Matochu a Bradáče kvůli nahrávce",
+    "* Hřib a Jakob kritizovali Veselého a Berkova",
+    "* veřejná volba místo tajné po dohodě předsedů klubů"
+  ],
+  "stats": {
+    "pocet_hlas": 22,
+    "minuty": 135,
+    "end_cas": "12:07",
+    "proslo": 0,
+    "zamitnuto": 1,
+    "dlouha_debata": true
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "navrhy-poslanecke-snemovny-na-propujceni-nebo-ud",
+  "nazev": "Návrhy Poslanecké sněmovny na propůjčení nebo udělení státních vyznamenání",
+  "datum": "04.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "udělení a propůjčení státních vyznamenání a řádů",
+  "koho": [
+    "Koho se to týká? Oceněných osob a jejich rodin, pro většinu občanů jde o ceremoniál bez přímého dopadu."
+  ],
+  "fakty": [
+    {
+      "text": "Sněmovna hlasovala o 165 návrzích na vyznamenání, sto třicet devět prošlo.",
+      "source": "votes",
+      "citace": "Hlasování číslo 181 až 345, 139 přijato, 26 zamítnuto."
+    },
+    {
+      "text": "Hřib při debatě o Radě ČT připomněl, že den předtím Šlégrovo vyznamenání neprošlo.",
+      "source": "steno",
+      "steno_id": "2025_20_01773",
+      "citace": "Včera jsme hlasovali o návrhu na vyznamenání posledně jmenovaného. Jsem rád, že dotyčný nebyl jmenován."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Sněmovna rozdala řády",
+  "lead": "Čtvrteční dopoledne sněmovna v sérii hlasování schválila sto třicet devět návrhů na státní vyznamenání a propůjčení řádů, sedmadcát šest jich zamítla.",
+  "pointa": "Jde o každoroční dávku ocenění za zásluhy, bez velké rozpravy na plénu.",
+  "mean": "Vybraní vojáci, vědci, umělci a další dostanou státní ocenění, zbytek návrhů padl.",
+  "pocet_hlasovani": 165,
+  "proslo": true
+}

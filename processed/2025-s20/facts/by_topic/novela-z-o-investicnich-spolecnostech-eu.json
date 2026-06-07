@@ -3,28 +3,23 @@
   "nazev": "Novela z. o investičních společnostech - EU",
   "datum": "27.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "dohledu nad investičními fondy a společnostmi",
+  "predmet_lidsky": "sjednocení dohledu nad investičními fondy podle EU pravidel",
   "koho": [
-    "Investiční společnosti spravují peníze investorů a nakupují za ně cenné papíry."
+    "Koho se to týká? Hlavně firem a lidí, kteří investují přes fondy, ne běžného účtu v bance."
   ],
   "fakty": [
     {
-      "text": "Poslanci sjednotili pravidla dohledu a povinností vůči klientům podle evropských norem.",
-      "source": "manual",
-      "note": "z glosy / TEMA_PRAVIDLA"
+      "text": "Po pěti hlasováních prošly všechny části novely bez jediného hlasu proti.",
+      "source": "votes",
+      "citace": "Hlasování číslo 67 až 71, všechna přijata."
     }
   ],
   "publikovat": true,
-  "priorita": 3,
+  "priorita": 1,
   "nadpis": "Investice mají přísnější dohled",
+  "lead": "Středeční dopoledne sněmovna v prvním čtení schválila EU novelu o investičních společnostech, pět hlasování bez odporu.",
+  "pointa": "Technická harmonizace s Bruselem, debata krátká.",
+  "mean": "Poslanci sjednotili pravidla dohledu a povinností vůči klientům podle evropských norem.",
   "pocet_hlasovani": 5,
-  "proslo": true,
-  "signaly": {
-    "proti_max": 1,
-    "pritomno_min": 148,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": true
-  },
-  "steno_slov": 0
+  "proslo": true
 }

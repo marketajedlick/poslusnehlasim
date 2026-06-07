@@ -1,0 +1,22 @@
+{
+  "datum": "04.06.2026",
+  "den": "čtvrtek",
+  "topic_slugs": [
+    "navrhy-poslanecke-snemovny-na-propujceni-nebo-ud"
+  ],
+  "dnesni_ucet": "Státní vyznamenání dopoledne.\nSto třicet devět návrhů prošlo.",
+  "zaver": "že čtvrteční dopoledne sněmovna schválila sto třicet devět návrhů na státní vyznamenání a řády, sedmadcát šest zamítla.",
+  "vysledek": [
+    "* 139 vyznamenání a řádů schváleno",
+    "* 27 návrhů zamítnuto včetně některých kontroverzních jmen",
+    "* bez rozpravy na plénu, sériové hlasování do poledne"
+  ],
+  "stats": {
+    "pocet_hlas": 166,
+    "minuty": 169,
+    "end_cas": "12:36",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  }
+}

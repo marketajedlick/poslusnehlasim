@@ -3,28 +3,34 @@
   "nazev": "Novela z. o pojistném na sociální zabezpečení",
   "datum": "26.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky",
+  "predmet_lidsky": "snížení minimálních záloh na sociálním pojištění pro živnostníky",
   "koho": [
     "Koho se to týká? Živnostníků a dalších, kdo platí zálohy na sociálním pojištění sami, ne běžných zaměstnanců na výplatní pásce."
   ],
   "fakty": [
     {
-      "text": "Od ledna klesne minimální záloha z 5 720 na 5 005 korun měsíčně (ušetříte zhruba 715 korun); přeplatek vám stát vrátí.",
+      "text": "Skopeček řekl, že živnostníci si zaslouží krok zpět od konsolidačních záloh.",
+      "source": "steno",
+      "steno_id": "2025_20_00130",
+      "citace": "Věřím, že náš poslanecký klub z drtivé většiny podpoří tu verzi sněmovní, abychom se vrátili o ten jeden krok zpátky, protože si myslím, že si to živnostníci zaslouží."
+    },
+    {
+      "text": "Od ledna klesne minimální záloha z 5 720 na 5 005 korun měsíčně, ušetříte zhruba 715 korun.",
       "source": "manual",
       "note": "z glosy / TEMA_PRAVIDLA"
+    },
+    {
+      "text": "Finální hlasování číslo 56, sto osmnáct hlasů pro.",
+      "source": "votes",
+      "citace": "Hlasování číslo 56, pro 118, proti nikdo."
     }
   ],
   "publikovat": true,
-  "priorita": 3,
+  "priorita": 2,
   "nadpis": "Živnostníci ušetří na odvodech",
+  "lead": "Hned po zkumavkách schválili senátní vratku o sociálním pojištění, sto osmnáct hlasů proti nikomu. Minimální záloha živnostníků klesne o sedm set patnáct korun měsíčně.",
+  "pointa": "Okamura tvrdil, že vláda vrací celý konsolidační balíček, Skopeček to opravil — jde jen o jeden krok zpět, ne o plnou refundaci.",
+  "mean": "Od ledna klesne minimální záloha z pět tisíc sedm set dvacet na pět tisíc pět korun měsíčně; přeplatek vám stát vrátí. Míň odvodů znamená míň důchod.",
   "pocet_hlasovani": 1,
-  "proslo": true,
-  "signaly": {
-    "proti_max": 0,
-    "pritomno_min": 158,
-    "jednomyslne": true,
-    "spor": false,
-    "prazdny_sal": true
-  },
-  "steno_slov": 0
+  "proslo": true
 }
