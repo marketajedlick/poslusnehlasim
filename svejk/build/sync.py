@@ -60,7 +60,11 @@ def _stored_vote_stats(paths: SchuzePaths) -> dict[str, Any]:
     }
 
 
-def _steno_stats(paths: SchuzePaths) -> dict[str, Any]:
+def _steno_stats(
+    paths: SchuzePaths,
+    state: dict[str, Any] | None = None,
+    cislo: int | None = None,
+) -> dict[str, Any]:
     count = 0
     last_poradi = 0
     last_datum = ""
@@ -71,6 +75,16 @@ def _steno_stats(paths: SchuzePaths) -> dict[str, Any]:
         d = (row.get("datum") or "")[:10]
         if d:
             last_datum = d
+    if last_poradi == 0 and state is not None and cislo is not None:
+        saved = (state.get("schuze") or {}).get(str(cislo)) or {}
+        saved_poradi = int(saved.get("last_steno_poradi") or 0)
+        if saved_poradi > 0:
+            return {
+                "count": int(saved.get("steno_count") or 0),
+                "last_poradi": saved_poradi,
+                "last_datum": saved.get("last_steno_datum") or last_datum,
+                "from_sync_state": True,
+            }
     return {"count": count, "last_poradi": last_poradi, "last_datum": last_datum}
 
 
@@ -167,7 +181,7 @@ def run_sync(
             continue
 
         stored_votes = _stored_vote_stats(paths)
-        steno_stats = _steno_stats(paths)
+        steno_stats = _steno_stats(paths, state, cislo)
 
         votes_changed = _votes_need_update(unl_stats, stored_votes) or unl_result.get("changed")
         steno_new = _steno_probe_has_new(client, obdobi, cislo, steno_stats["last_poradi"])
@@ -203,7 +217,7 @@ def run_sync(
             run_align(paths)
             extract_info = run_extract(paths)
             entry["extract"] = extract_info
-            steno_after = _steno_stats(paths)
+            steno_after = _steno_stats(paths, state, cislo)
             votes_after = _stored_vote_stats(paths)
             state["schuze"][str(cislo)] = {
                 **votes_after,
