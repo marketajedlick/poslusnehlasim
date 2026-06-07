@@ -1,0 +1,52 @@
+{
+  "slug": "opozice-stret-zajmu-agrofert",
+  "nazev": "Odpověď opozice ke střetu zájmů a Agrofertu",
+  "datum": "27.11.2025",
+  "verdikt": "odlozeno",
+  "predmet_lidsky": "odpověď opozice ke střetu zájmů a Agrofertu",
+  "koho": [
+    "Koho se to týká? Daňových poplatníků, kteří platí dotace a zakázky státu."
+  ],
+  "fakty": [
+    {
+      "text": "Čili to je nález Ústavního soudu 4/17 z roku 2020, který jasně ukazuje, proč po vás jak prezident republiky, tak veřejnost, tak my zde v Poslanecké sněmovně chceme znát tu odpověď.",
+      "source": "steno",
+      "steno_id": "2025_4_00009",
+      "citace": "Čili to je nález Ústavního soudu 4/17 z roku 2020, který jasně ukazuje, proč po vás jak prezident republiky, tak veřejnost, tak my zde v Poslanecké sněmovně chceme znát tu odpověď."
+    },
+    {
+      "text": "V letech 2017 až 2021 získal koncern Agrofert zhruba 7,5 miliardy korun na dotacích, které byly vyplaceny v rozporu se zákonem o střetu zájmů, a minimálně 12,5 miliardy na zakázkách od Lesů ČR a Čepra",
+      "source": "steno",
+      "steno_id": "2025_4_00015",
+      "citace": "V letech 2017 až 2021 získal koncern Agrofert zhruba 7,5 miliardy korun na dotacích, které byly vyplaceny v rozporu se zákonem o střetu zájmů, a minimálně 12,5 miliardy na zakázkách od Lesů ČR a Čepra"
+    },
+    {
+      "text": "My jsme dneska navrhli kuponovou debabišizaci, to znamená prodat akcie Agrofertu, 75 procent.",
+      "source": "steno",
+      "steno_id": "2025_4_00023",
+      "citace": "My jsme dneska navrhli kuponovou debabišizaci, to znamená prodat akcie Agrofertu, 75 procent."
+    },
+    {
+      "text": "Podle reprezentativního průzkumu si žádá toto vysvětlení 73 procent našich občanů.",
+      "source": "steno",
+      "steno_id": "2025_4_00023",
+      "citace": "Podle reprezentativního průzkumu si žádá toto vysvětlení 73 procent našich občanů."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Miliardy na stole",
+  "lead": "Opozice přišla počítat. Ústavní soud, sedm a půl miliardy v dotacích, dvanáct a půl miliardy ve zakázkách a kuponová debabišizace na sedmdesát pět procent akcií.",
+  "pointa": "Babiš odešel z sálu dřív, než začala odpověď. Marek Výborný řekl, že schůze mohla trvat desítky minut.",
+  "mean": "Po Babišově projevu vystoupili ministři a předsedové opozičních stran. Citovali nález Ústavního soudu z února dva tisíce dvacet, čísla o dotacích a zakázkách Agrofertu a požadovali konkrétní vysvětlení střetu zájmů před jmenováním vlády.",
+  "pocet_hlasovani": 0,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 151,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": false
+  },
+  "steno_slov": 7609
+}

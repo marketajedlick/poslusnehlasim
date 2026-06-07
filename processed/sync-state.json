@@ -1,0 +1,22 @@
+{
+  "obdobi": 2025,
+  "unl": {
+    "etag": "6a24b35e-2a03c8",
+    "last_modified": "Sat, 06 Jun 2026 23:55:10 GMT",
+    "content_length": 2753480,
+    "lines": 1509,
+    "fetched_at": "2026-06-07T12:11:44.383834+00:00"
+  },
+  "schuze": {
+    "18": {
+      "count": 4,
+      "max_cislo": 4,
+      "last_datum": "14.05.2026",
+      "steno_count": 0,
+      "last_steno_poradi": 0,
+      "last_steno_datum": "",
+      "synced_at": "2026-06-07T12:11:44.407961+00:00"
+    }
+  },
+  "updated_at": "2026-06-07T12:11:44.407973+00:00"
+}

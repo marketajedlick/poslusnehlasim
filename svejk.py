@@ -111,7 +111,7 @@ def cmd_generate(args: argparse.Namespace) -> int:
 def _timeline_z_cache(args: argparse.Namespace, fmt: str) -> str | None:
     """Načte hotový výstup z processed/, pokud existuje."""
     from svejk.paths import SchuzePaths
-    from svejk.timeline import normalize_day
+    from svejk.timeline import resolve_schuze_den
 
     paths = SchuzePaths.create(args.obdobi, args.schuze)
     out_dir = paths.noviny_dlouhe_dir()
@@ -120,7 +120,7 @@ def _timeline_z_cache(args: argparse.Namespace, fmt: str) -> str | None:
         return None
 
     if args.den:
-        d_unl = normalize_day(args.den)
+        d_unl, _ = resolve_schuze_den(paths, args.den)
         if fmt == "noviny-html":
             out = paths.noviny_dlouhe_html(d_unl)
         else:
@@ -177,6 +177,32 @@ def cmd_build(args: argparse.Namespace) -> int:
         print(f"Chyba: {e}", file=sys.stderr)
         return 1
     print(f"Artefakty: {paths.root}", file=sys.stderr)
+    return 0
+
+
+def cmd_sync(args: argparse.Namespace) -> int:
+    from svejk.build.sync import run_sync
+
+    schuze_list = None
+    if args.schuze:
+        schuze_list = [int(x.strip()) for x in args.schuze.split(",") if x.strip()]
+    try:
+        summary = run_sync(
+            args.obdobi,
+            schuze_od=args.od,
+            schuze_do=args.do,
+            schuze_list=schuze_list,
+            skip_steno=args.skip_steno,
+            force_unl=args.force_unl,
+            check_only=args.check_only,
+            verbose=not args.quiet,
+        )
+    except OSError as e:
+        print(f"Chyba: {e}", file=sys.stderr)
+        return 1
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    if summary.get("errors"):
+        return 1
     return 0
 
 
@@ -546,6 +572,32 @@ def main() -> int:
     )
     p_build.add_argument("-q", "--quiet", action="store_true")
     p_build.set_defaults(func=cmd_build)
+
+    p_sync = sub.add_parser(
+        "sync",
+        help="Synchronizace UNL (PSP) + steno (Hlídač) → processed/ (align, extract)",
+    )
+    p_sync.add_argument("--obdobi", type=int, default=2025)
+    p_sync.add_argument("--schuze", help="Jen vybrané schůze, čárkou: 18,20")
+    p_sync.add_argument("--od", type=int, default=1, help="Od čísla schůze")
+    p_sync.add_argument("--do", type=int, default=99, help="Do čísla schůze")
+    p_sync.add_argument(
+        "--check-only",
+        action="store_true",
+        help="Jen zjistit, co by se stáhlo (bez zápisu)",
+    )
+    p_sync.add_argument(
+        "--force-unl",
+        action="store_true",
+        help="Vždy stáhnout hl{obdobi}s.unl z PSP",
+    )
+    p_sync.add_argument(
+        "--skip-steno",
+        action="store_true",
+        help="Nestahovat steno z Hlídače",
+    )
+    p_sync.add_argument("-q", "--quiet", action="store_true")
+    p_sync.set_defaults(func=cmd_sync)
 
     p_seed = sub.add_parser("seed", help="Demo data pro lokální test")
     p_seed.add_argument("--schuze", type=int, default=20)

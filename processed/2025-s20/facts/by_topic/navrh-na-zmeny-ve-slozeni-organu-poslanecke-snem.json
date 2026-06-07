@@ -9,18 +9,6 @@
   ],
   "fakty": [
     {
-      "text": "Jako první otevřeme bod číslo 107.Návrh na změny ve složení orgánů Poslanecké sněmovny A já poprosím, aby se slova ujal předseda volební komise pan poslanec Martin Kolovratník.",
-      "source": "steno",
-      "steno_id": "2025_20_00307",
-      "citace": "Jako první otevřeme bod číslo 107.Návrh na změny ve složení orgánů Poslanecké sněmovny A já poprosím, aby se slova ujal předseda volební komise pan poslanec Martin Kolovratník."
-    },
-    {
-      "text": "Je 14 hodin, bohužel vás musím přerušit a musím přerušit nejenom vás, ale přerušíme i bod, který jsme právě projednávali a sice návrh zákona o státní zaměstnancích, ke kterému se vrátíme později, protože je 14 hodin a v tuhletu chvíli jsou pevně zařazené volební body.",
-      "source": "steno",
-      "steno_id": "2025_20_00307",
-      "citace": "Je 14 hodin, bohužel vás musím přerušit a musím přerušit nejenom vás, ale přerušíme i bod, který jsme právě projednávali a sice návrh zákona o státní zaměstnancích, ke kterému se vrátíme později, prot"
-    },
-    {
       "text": "Následně, protože tato volba nebyla realizována tady na plénu, tak jsme ještě vyhlásili jednu lhůtu na žádost kolegů z poslaneckého klubu KDU-ČSL, ta druhá lhůta byla do 26.",
       "source": "steno",
       "steno_id": "2025_20_00308",
@@ -31,11 +19,32 @@
       "source": "steno",
       "steno_id": "2025_20_00308",
       "citace": "Ten jsme promítli do usnesení volební komise per rollam číslo 73 ze 14."
+    },
+    {
+      "text": "A tam došlo k návrhu také na výměnu dvou kolegů v rámci tedy jednoho politického klubu, je to z organizačního výboru rezignace Toma Philippa a namísto něj do organizačního výboru nominace Mariana Jurečky.",
+      "source": "steno",
+      "steno_id": "2025_20_00308",
+      "citace": "A tam došlo k návrhu také na výměnu dvou kolegů v rámci tedy jednoho politického klubu, je to z organizačního výboru rezignace Toma Philippa a namísto něj do organizačního výboru nominace Mariana Jure"
+    },
+    {
+      "text": "Poslanec Kolovratník: Ano.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_20_00311",
+      "citace": "(Poslanec Kolovratník: Ano.)"
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 2,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 129,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 2048
 }

@@ -9,8 +9,16 @@
   ],
   "fakty": [],
   "publikovat": true,
-  "priorita": 1,
+  "priorita": 3,
   "nadpis": "Postřiky mají nová pravidla",
   "pocet_hlasovani": 1,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 15,
+    "pritomno_min": 150,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 0
 }

@@ -101,7 +101,7 @@ def render_den_html(
         if not raw and content.items:
             raw = content.items[0].nadpis
         meta_description = _meta_description(raw) if raw else (
-            f"Deník z Poslanecké sněmovny — {datum_design(content.datum, content.den)}."
+            f"Deník z Poslanecké sněmovny, {datum_design(content.datum, content.den)}."
         )
     if not canonical_url:
         from svejk.build.nav import edition_pages_href

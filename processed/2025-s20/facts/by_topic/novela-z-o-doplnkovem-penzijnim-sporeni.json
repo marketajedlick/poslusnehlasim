@@ -9,8 +9,16 @@
   ],
   "fakty": [],
   "publikovat": true,
-  "priorita": 1,
+  "priorita": 3,
   "nadpis": "Spoření na důchod se mění",
   "pocet_hlasovani": 4,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 88,
+    "pritomno_min": 152,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 0
 }

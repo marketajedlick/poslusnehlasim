@@ -520,6 +520,9 @@ def _sanitize_den_content(content: DenContent) -> None:
 
 def vysledek_radky(content: DenContent, paths: SchuzePaths, day_path: Path) -> list[str]:
     day = read_json(day_path)
+    custom = day.get("vysledek")
+    if custom:
+        return [str(r) for r in custom]
     slugs = day.get("topic_slugs") or []
     stats = {
         "pocet_hlas": 0,

@@ -14,7 +14,7 @@ from svejk.build.day_content import (
     _lead_kratky,
     _mean_z_dopadu,
 )
-from svejk.build.steno_text import nejlepsi_vety
+from svejk.build.steno_text import detekuj_predsedajici, fakty_z_steno_record
 from svejk.build.io import iter_jsonl, read_json
 from svejk.listy import _glosa_je_nedostatecna
 from svejk.text_norm import ma_dlouhou_pomlcku
@@ -174,11 +174,9 @@ def review_topic(paths: SchuzePaths, slug: str) -> TopicReview | None:
 
 
 def review_day(paths: SchuzePaths, den: str) -> list[TopicReview]:
-    from svejk.timeline import normalize_day
+    from svejk.timeline import resolve_schuze_den
 
-    d_unl = normalize_day(den)
-    d = datetime.strptime(d_unl, "%d.%m.%Y")
-    day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
+    d_unl, day_path = resolve_schuze_den(paths, den)
     if not day_path.is_file():
         raise FileNotFoundError(f"Chybí index dne: {day_path}")
     day = read_json(day_path)
@@ -266,7 +264,9 @@ def format_topic_review(
     topic = _topic_map(paths).get(tr.slug) if tr.slug else None
     steno_ids = (topic or {}).get("steno_ids") or []
     if paths.steno_jsonl.is_file() and steno_ids:
-        steno_by_id = {s["id"]: s for s in iter_jsonl(paths.steno_jsonl)}
+        steno_all = list(iter_jsonl(paths.steno_jsonl))
+        steno_by_id = {s["id"]: s for s in steno_all}
+        predsed_jmena = detekuj_predsedajici(steno_all)
         lines.append("")
         lines.append("── STENO (návrhy vět do fakty[]) " + "─" * 32)
         shown = 0
@@ -275,8 +275,11 @@ def format_topic_review(
             if not rec:
                 continue
             jmeno = (rec.get("cele_jmeno") or "").strip()
-            for v in nejlepsi_vety(rec.get("text") or "", limit=2):
-                lines.extend(_wrap(f"{sid} {jmeno}", v))
+            for f in fakty_z_steno_record(rec, predsed_jmena=predsed_jmena, limit=2):
+                label = f"{sid} {jmeno}"
+                if f.get("kind") == "scene":
+                    label += " [scéna]"
+                lines.extend(_wrap(label, f.get("text", "")))
                 shown += 1
                 if shown >= 4:
                     break
@@ -299,11 +302,10 @@ def format_day_review(
     *,
     show_votes: int = 5,
 ) -> str:
-    from svejk.timeline import normalize_day
+    from svejk.timeline import resolve_schuze_den
 
-    d_unl = normalize_day(den)
+    d_unl, day_path = resolve_schuze_den(paths, den)
     d = datetime.strptime(d_unl, "%d.%m.%Y")
-    day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
     day = read_json(day_path) if day_path.is_file() else {}
     topics = review_day(paths, den)
 

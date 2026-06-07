@@ -105,11 +105,9 @@ def run_compose(
                 )
 
     if den:
-        from svejk.timeline import normalize_day
+        from svejk.timeline import resolve_schuze_den
 
-        d_unl = normalize_day(den)
-        d = datetime.strptime(d_unl, "%d.%m.%Y")
-        day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
+        d_unl, day_path = resolve_schuze_den(paths, den)
         if not day_path.is_file():
             raise FileNotFoundError(f"Chybí index dne: {day_path}")
         _compose_one(day_path, d_unl)

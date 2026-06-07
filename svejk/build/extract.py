@@ -64,18 +64,40 @@ def _fakty_z_glosy(gloss: str) -> list[dict[str, Any]]:
     return out[:3]
 
 
-def _fakty_z_steno(steno_text: str, steno_id: str) -> list[dict[str, Any]]:
-    from svejk.build.steno_text import fakty_z_steno_text
+def _vote_signaly(votes: list[dict[str, Any]]) -> dict[str, int | bool]:
+    proti_vals = [int(v.get("proti") or 0) for v in votes]
+    pritomno_vals = [int(v.get("pritomno") or 0) for v in votes if v.get("pritomno")]
+    max_proti = max(proti_vals, default=0)
+    min_pritomno = min(pritomno_vals, default=200)
+    jednomyslne = bool(votes) and all(int(v.get("proti") or 0) == 0 for v in votes)
+    return {
+        "proti_max": max_proti,
+        "pritomno_min": min_pritomno,
+        "jednomyslne": jednomyslne,
+        "spor": max_proti > 0,
+        "prazdny_sal": bool(pritomno_vals) and min_pritomno < 170,
+    }
 
-    return fakty_z_steno_text(steno_text, steno_id, limit=3)
 
-
-def _priorita(koho: list[str], fakty: list[dict]) -> int:
-    if not koho:
+def _priorita(
+    koho: list[str],
+    fakty: list[dict],
+    *,
+    signaly: dict[str, int | bool] | None = None,
+) -> int:
+    if not koho and not fakty:
         return 0
-    if fakty:
-        return 2
-    return 1
+    p = 2 if fakty else 1
+    if not koho:
+        p = 1 if fakty else 0
+    if signaly:
+        if signaly.get("spor"):
+            p += 1
+        if signaly.get("prazdny_sal"):
+            p += 1
+        if any(f.get("kind") == "scene" for f in fakty):
+            p += 1
+    return min(p, 3)
 
 
 def _nadpis_fallback(nazev: str, proslo: bool) -> str:
@@ -99,8 +121,19 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
     topics: list[dict] = aligned.get("topics", [])
 
     steno_by_id: dict[str, dict] = {}
+    steno_all: list[dict] = []
     for s in iter_jsonl(paths.steno_jsonl):
         steno_by_id[s["id"]] = s
+        steno_all.append(s)
+
+    from svejk.build.steno_text import detekuj_predsedajici, fakty_z_steno_record
+
+    predsed_jmena = detekuj_predsedajici(steno_all)
+    votes_by_cislo: dict[int, dict] = {}
+    for v in iter_jsonl(paths.votes_jsonl):
+        c = v.get("cislo")
+        if c is not None:
+            votes_by_cislo[int(c)] = v
 
     written = 0
     with_facts = 0
@@ -118,11 +151,22 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
         koho = _koho_z_glosy(gloss) if gloss and not _glosa_je_nedostatecna(gloss) else []
         fakty = _fakty_z_glosy(gloss) if gloss else []
 
+        topic_votes = [
+            votes_by_cislo[int(c)]
+            for c in (topic.get("vote_cisla") or [])
+            if int(c) in votes_by_cislo
+        ]
+        signaly = _vote_signaly(topic_votes)
+
         steno_parts: list[dict] = []
+        steno_slov = 0
         for sid in topic.get("steno_ids") or []:
             rec = steno_by_id.get(sid)
             if rec:
-                steno_parts.extend(_fakty_z_steno(rec.get("text") or "", sid))
+                steno_slov += int(rec.get("pocet_slov") or 0)
+                steno_parts.extend(
+                    fakty_z_steno_record(rec, predsed_jmena=predsed_jmena, limit=3)
+                )
         # steno má přednost před obecnou glosou
         fakty = steno_parts + [f for f in fakty if f.get("source") != "steno"]
 
@@ -135,7 +179,7 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
                 uniq_f.append(f)
         fakty = uniq_f[:4]
 
-        priorita = _priorita(koho, fakty)
+        priorita = _priorita(koho, fakty, signaly=signaly)
         publikovat = priorita > 0 and not (
             gloss and _glosa_je_nedostatecna(gloss) and not koho
         )
@@ -153,6 +197,8 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
             "nadpis": _nadpis_fallback(nazev, proslo),
             "pocet_hlasovani": topic.get("pocet_hlasovani", 0),
             "proslo": proslo,
+            "signaly": signaly,
+            "steno_slov": steno_slov,
         }
         write_json(paths.facts_by_topic / f"{topic['slug']}.json", fact)
         written += 1
@@ -211,7 +257,11 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
                     "end_cas": end,
                     "proslo": proslo,
                     "zamitnuto": zamitnuto,
-                    "dlouha_debata": False,
+                    "dlouha_debata": any(
+                        read_json(paths.facts_by_topic / f"{slug}.json").get("steno_slov", 0) >= 1500
+                        for slug in slugs
+                        if (paths.facts_by_topic / f"{slug}.json").is_file()
+                    ),
                 },
             },
         )

@@ -15,8 +15,16 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Investice mají přísnější dohled",
   "pocet_hlasovani": 5,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 1,
+    "pritomno_min": 148,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 0
 }

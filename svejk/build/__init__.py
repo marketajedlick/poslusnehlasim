@@ -10,6 +10,7 @@ from svejk.build.compose import run_compose
 from svejk.build.extract import run_extract
 from svejk.build.fetch import run_fetch
 from svejk.build.io import read_json, write_json
+from svejk.build.sync import run_sync
 from svejk.build.nav import clear_edition_cache
 from svejk.config import PSP_DATA_DIR, PSP_ORGAN_ID
 from svejk.paths import SchuzePaths, processed_root
@@ -158,4 +159,4 @@ def run_build_obdobi(
     return summary
 
 
-__all__ = ["run_build", "run_build_obdobi", "STEPS", "SchuzePaths"]
+__all__ = ["run_build", "run_build_obdobi", "run_sync", "STEPS", "SchuzePaths"]

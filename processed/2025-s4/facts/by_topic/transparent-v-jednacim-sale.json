@@ -1,0 +1,48 @@
+{
+  "slug": "transparent-v-jednacim-sale",
+  "nazev": "Transparenty a pořádek v jednacím sále",
+  "datum": "27.11.2025",
+  "verdikt": "odlozeno",
+  "predmet_lidsky": "transparenty a pořádek v jednacím sále",
+  "koho": [
+    "Občana se to netýká, ledaže sleduje sněmovní divadlo v přímém přenosu."
+  ],
+  "fakty": [
+    {
+      "text": "Prosím vás, chtěl jsem vás jenom požádat, protože transparent by neměl zakrývat řečníka, jo?",
+      "source": "steno",
+      "steno_id": "2025_4_00004",
+      "citace": "Prosím vás, chtěl jsem vás jenom požádat, protože transparent by neměl zakrývat řečníka, jo?"
+    },
+    {
+      "text": "Poslanec Hřib chodí po sále s transparentem a předstupuje s ním před poslance Babiše. Poslanci za hnutí ANO buší pěstmi do lavic na protest.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_4_00003",
+      "citace": "(Poslanec Hřib chodí po sále s transparentem a předstupuje s ním před poslance Babiše. Poslanci za hnutí ANO buší pěstmi do lavic na protest.)"
+    },
+    {
+      "text": "Hluk v sále, poslanci se vracejí do sálu, řečník vyčkává.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_4_00009",
+      "citace": "(Hluk v sále, poslanci se vracejí do sálu, řečník vyčkává.)"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Transparent nesmí zakrývat řečníka",
+  "lead": "Uprostřed maratonu o Agrofertu vykročil Zdeněk Hřib s transparentem k řečništi a v pravé části sálu začali volat „transparent“.",
+  "pointa": "Předsedající citoval stanovisko legislativy. Poslanci ANO bušili do lavic. Řečník vyčkával.",
+  "mean": "Během Babišova projevu nesl předseda Pirátů transparent k řečnickému pultu. Předsedající Tomio Okamura a Patrik Nacher opakovaně vyzývali k dodržení pravidel a klidu v sále.",
+  "pocet_hlasovani": 0,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 151,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": false
+  },
+  "steno_slov": 5646
+}

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import date, datetime
+from pathlib import Path
 import re
 
 from psp.schuze import SchuzeAnalyzer, Vote
@@ -138,7 +139,7 @@ TEMA_PRAVIDLA: list[tuple[list[str], str, str]] = [
 ]
 
 
-def normalize_day(day: str | date) -> str:
+def normalize_day(day: str | date, *, default_year: int | None = None) -> str:
     if isinstance(day, date):
         return day.strftime("%d.%m.%Y")
     text = day.strip().rstrip(".")
@@ -147,15 +148,82 @@ def normalize_day(day: str | date) -> str:
     m = re.fullmatch(r"(\d{1,2})\.(\d{1,2})(?:\.(\d{2,4}))?", text)
     if m:
         d, mo = int(m.group(1)), int(m.group(2))
+        if mo > 12 and d <= 12:
+            d, mo = mo, d
         raw_y = m.group(3)
         if raw_y:
             year = int(raw_y)
             if year < 100:
                 year += 2000
+        elif default_year is not None:
+            year = default_year
         else:
             year = date.today().year
         return date(year, mo, d).strftime("%d.%m.%Y")
     return datetime.strptime(text, "%d.%m.%Y").strftime("%d.%m.%Y")
+
+
+def _parse_partial_den(text: str) -> tuple[int, int] | None:
+    m = re.fullmatch(r"(\d{1,2})\.(\d{1,2})(?:\.(\d{2,4}))?", text.strip().rstrip("."))
+    if not m or m.group(3):
+        return None
+    d, mo = int(m.group(1)), int(m.group(2))
+    if mo > 12 and d <= 12:
+        d, mo = mo, d
+    if not (1 <= mo <= 12 and 1 <= d <= 31):
+        return None
+    return d, mo
+
+
+def _years_for_den_v_schuze(paths, d: int, mo: int) -> list[int]:
+    years: list[int] = []
+    if paths.facts_by_day.is_dir():
+        for fp in paths.facts_by_day.glob("*.json"):
+            try:
+                y, m, day = (int(x) for x in fp.stem.split("-"))
+            except ValueError:
+                continue
+            if m == mo and day == d:
+                years.append(y)
+    if not years and paths.votes_jsonl.is_file():
+        from svejk.build.io import iter_jsonl
+
+        for v in iter_jsonl(paths.votes_jsonl):
+            datum = (v.get("datum") or "").strip()
+            if not datum:
+                continue
+            try:
+                parsed = datetime.strptime(datum, "%d.%m.%Y")
+            except ValueError:
+                continue
+            if parsed.month == mo and parsed.day == d:
+                years.append(parsed.year)
+    return years
+
+
+def resolve_schuze_den(paths, den: str) -> tuple[str, Path]:
+    """Datum bez roku doplní z dat schůze (ne z dnešního kalendáře)."""
+    partial = _parse_partial_den(den)
+    if partial is None:
+        d_unl = normalize_day(den)
+        d = datetime.strptime(d_unl, "%d.%m.%Y")
+        return d_unl, paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
+
+    d, mo = partial
+    years = _years_for_den_v_schuze(paths, d, mo)
+    if not years:
+        for year in (paths.obdobi, paths.obdobi + 1):
+            path = paths.facts_by_day / f"{year}-{mo:02d}-{d:02d}.json"
+            if path.is_file():
+                return date(year, mo, d).strftime("%d.%m.%Y"), path
+        year = paths.obdobi
+    else:
+        from collections import Counter
+
+        year = Counter(years).most_common(1)[0][0]
+
+    d_unl = date(year, mo, d).strftime("%d.%m.%Y")
+    return d_unl, paths.facts_by_day / f"{year}-{mo:02d}-{d:02d}.json"
 
 
 def den_v_tydnu(datum_unl: str) -> str:
