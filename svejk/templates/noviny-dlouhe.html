@@ -101,8 +101,8 @@
             <span class="bcolon">:</span>
             <div class="bteam r"><span class="bnum">{{ content.zamitnuto }}</span><span class="blbl">{{ zamitnuto_label }}</span></div>
           </div>
-          {% if content.result_note or content.dnesni_ucet %}
-          <div class="board-note">{{ content.result_note or content.dnesni_ucet }}</div>
+          {% if content.dnesni_ucet or content.result_note %}
+          <div class="board-note">{{ content.dnesni_ucet or content.result_note }}</div>
           {% endif %}
         </div>
 

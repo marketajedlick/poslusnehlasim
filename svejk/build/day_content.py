@@ -404,17 +404,25 @@ def build_den_content(
     topics = _topics_by_slug(paths)
 
     cal_den, cal_day, cal_month = calendar_parts(datum, den_cap)
+    custom_ucet = (day.get("dnesni_ucet") or "").strip()
+    custom_note = (day.get("result_note") or "").strip()
+    if custom_note:
+        result_note = custom_note
+    elif custom_ucet:
+        result_note = ""
+    else:
+        result_note = _result_note(stats, state=state)
     content = DenContent(
         datum=datum,
         den=den_cap,
         cal_den=cal_den,
         cal_day=cal_day,
         cal_month=cal_month,
-        dnesni_ucet=(day.get("dnesni_ucet") or "").strip() or _dnesni_ucet(stats, state=state),
+        dnesni_ucet=custom_ucet or _dnesni_ucet(stats, state=state),
         proslo=int(stats.get("proslo") or 0),
         zamitnuto=int(stats.get("zamitnuto") or 0),
         board_stats="",
-        result_note=_result_note(stats, state=state),
+        result_note=result_note,
     )
 
     num = 0
