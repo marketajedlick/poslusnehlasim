@@ -1,14 +1,23 @@
 {
   "datum": "24.04.2026",
   "den": "pátek",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "novela-z-o-cenach-2"
+  ],
+  "dnesni_ucet": "Zákon o cenách benzínu zpět po senátu.\nDruhé čtení prošlo, Senát ho přehlasují.",
+  "zaver": "že páteční schůze uzavřela týden o regulaci cen pohonných hmot schválením druhého čtení zákona, který Senát předtím zamítl.",
+  "vysledek": [
+    "* legislativní nouze znovu potvrzena",
+    "* druhé čtení zákona o cenách schváleno 102:45",
+    "* závěrečné hlasování 112:2",
+    "* Jakob kritizoval přehlasování senátu bez sebereflexe"
+  ],
   "stats": {
-    "pocet_hlas": 0,
+    "pocet_hlas": 1,
     "minuty": 281,
     "end_cas": "14:30",
-    "proslo": 0,
+    "proslo": 1,
     "zamitnuto": 0,
     "dlouha_debata": false
-  },
-  "dnesni_ucet": "Pátek bez velkého příběhu.\nMeritní body padly, schůze skončila dřív."
+  }
 }

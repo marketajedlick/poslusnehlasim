@@ -4,6 +4,13 @@
   "topic_slugs": [
     "navrh-zakona-o-statnich-zamestnancich"
   ],
+  "dnesni_ucet": "Krátké páteční jednání, jeden meritní bod.\nStátní zaměstnanci ve druhém čtení prošli.",
+  "zaver": "že páteční schůze skončila schválením zákona o státních zaměstnancích ve druhém čtení, sto třináct hlasů proti nule.",
+  "vysledek": [
+    "* zákon o státních zaměstnancích schválen 113:0",
+    "* Vondráčkův návrh sjednocuje pravidla pro úředníky",
+    "* den bez dalšího meritního hlasování"
+  ],
   "stats": {
     "pocet_hlas": 1,
     "minuty": 58,
@@ -11,6 +18,5 @@
     "proslo": 1,
     "zamitnuto": 0,
     "dlouha_debata": false
-  },
-  "dnesni_ucet": "Krátký pátek: zákon o státních zaměstnancích.\nPrvní čtení bez jediného hlasu proti."
+  }
 }

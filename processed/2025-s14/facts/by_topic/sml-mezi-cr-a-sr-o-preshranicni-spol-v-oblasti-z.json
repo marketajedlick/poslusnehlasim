@@ -3,14 +3,35 @@
   "nazev": "Sml. mezi ČR a SR o přeshraniční spol. v oblasti zdravotnické záchrann",
   "datum": "23.04.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "sml. mezi ČR a SR o přeshraniční spol. v oblasti zdravotnické záchrann",
+  "predmet_lidsky": "přeshraniční spolupráci záchranných služeb se Slovenskem",
   "koho": [
-    "Smlouva se Slovenskem, když vám na dovolené nebo u hranice přijede záchranka, kdo platí a kdo pomůže."
+    "Koho se to týká? Lidi v Jihomoravském, Zlínském a Moravskoslezském kraji u hranic se Slovenskem."
   ],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Vojtěch řekl, že smlouva pomůže pacientům v pohraničí.",
+      "source": "steno",
+      "steno_id": "2025_14_01314",
+      "citace": "Velmi zásadní pro pacienty žijící v pohraničí se Slovenskem, s cílem zabezpečit co nejlepší dostupnost zdravotnických záchranných služeb."
+    },
+    {
+      "text": "Smlouva navazuje na dohody s Německem a Rakouskem.",
+      "source": "steno",
+      "steno_id": "2025_14_01314",
+      "citace": "Tato smlouva vychází z již platných smluv s Německem a Rakouskem."
+    },
+    {
+      "text": "Hlasování číslo 167, sto pět hlasů pro.",
+      "source": "votes",
+      "citace": "Hlasování číslo 167, pro 105, proti 0."
+    }
+  ],
   "publikovat": true,
-  "priorita": 1,
-  "nadpis": "Prošlo to",
+  "priorita": 2,
+  "nadpis": "Záchranka přes hranici",
+  "lead": "Čtvrtek skončil ratifikací smlouvy se Slovenskem o spolupráci záchranných služeb, sto pět hlasů proti nule. Vojtěch mluvil o pacientech v pohraničí.",
+  "pointa": "Smlouva navazuje na dohody s Německem a Rakouskem a má pokrýt Jihomoravský, Zlínský a Moravskoslezský kraj.",
+  "mean": "Záchranka může při nehodě u hranic rychleji zasáhnout i na druhé straně. Dotkne se hlavně obyvatel příhraničních obcí.",
   "pocet_hlasovani": 1,
   "proslo": true
 }

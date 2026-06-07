@@ -3,12 +3,34 @@
   "nazev": "Novela z. - trestní zákoník",
   "datum": "21.04.2026",
   "verdikt": "zamiteno",
-  "predmet_lidsky": "",
-  "koho": [],
-  "fakty": [],
-  "publikovat": false,
-  "priorita": 0,
-  "nadpis": "Zůstává po staru",
+  "predmet_lidsky": "noře trestního zákoníku",
+  "koho": [
+    "Koho se to týká? Každého, koho se týkají trestní sazby a definice trestných činů."
+  ],
+  "fakty": [
+    {
+      "text": "Richterová kritizovala vládu za zástupná témata místo podstatných kauz.",
+      "source": "steno",
+      "steno_id": "2025_14_00735",
+      "citace": "Tato vláda se v posledních týdnech až příliš často schovává za zástupná témata a zástupné spory."
+    },
+    {
+      "text": "Druhé čtení novely prošlo 154:0.",
+      "source": "votes",
+      "citace": "Hlasování číslo 119, pro 154, proti 0."
+    },
+    {
+      "text": "Třetí čtení padlo, jen 67 poslanců hlasovalo pro.",
+      "source": "votes",
+      "citace": "Hlasování číslo 120, pro 67, proti 0, návrh nebyl přijat."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Trestní novela spadla",
+  "lead": "Úterý večer koalice nenatáhla třetí čtení novely trestního zákoníku. Druhé čtení sice prošlo sto padesáti čtyřmi hlasy, ale závěrečné hlasování skončilo jen sedmi desítkami pro.",
+  "pointa": "Novela měla projít rychlou kolejí spolu s dalšími zákony čtrnácté schůze. Bez dostatečné podpory ve třetím čtení v sále zůstala.",
+  "mean": "Úpravy trestního zákoníku tentokrát neprošly. Platí dál stávající pravidla, dokud sněmovna nepředloží nový návrh.",
   "pocet_hlasovani": 3,
   "proslo": false
 }

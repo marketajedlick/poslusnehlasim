@@ -2,15 +2,23 @@
   "datum": "14.04.2026",
   "den": "úterý",
   "topic_slugs": [
-    "posouzeni-podminek-pro-projednani-st-163-ve-zkra"
+    "porad-14-schuze",
+    "novela-z-o-cenach"
+  ],
+  "dnesni_ucet": "Legislativní nouze kvůli cenám benzínu, večer boj o pořad.\nZkrácené jednání prošlo, první čtení stovkou hlasů.",
+  "zaver": "že sněmovna potvrdila legislativní nouzi kvůli regulaci cen pohonných hmot, večer vybojovala pořad čtyřiceti čtyřmi hlasováními a schválila první čtení zákona o cenách.",
+  "vysledek": [
+    "* legislativní nouze potvrzena kvůli zákonu o cenách pohonných hmot",
+    "* pořad schválen po čtyřiceti čtyřech procedurálních hlasech",
+    "* zkrácené jednání schváleno 79:51",
+    "* první čtení zákona o cenách 100:0, druhé čtení večer padlo 64:89"
   ],
   "stats": {
-    "pocet_hlas": 1,
+    "pocet_hlas": 2,
     "minuty": 561,
     "end_cas": "23:22",
     "proslo": 1,
     "zamitnuto": 0,
-    "dlouha_debata": false
-  },
-  "dnesni_ucet": "Posouzení podmínek pro projednání senátního tisku.\nJeden meritní bod, zbytek procedura."
+    "dlouha_debata": true
+  }
 }

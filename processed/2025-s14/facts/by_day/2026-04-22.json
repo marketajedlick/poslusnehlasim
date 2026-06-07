@@ -2,16 +2,23 @@
   "datum": "22.04.2026",
   "den": "středa",
   "topic_slugs": [
+    "n-z-kterym-se-zrusuje-nominacni-zakon",
     "novela-z-o-statni-socialni-podpore",
     "novela-z-o-socialnich-sluzbach"
   ],
+  "dnesni_ucet": "Nominační zákon padl, sociální novely prošly.\nDávky a péče se digitalizují později.",
+  "zaver": "že středa přinesla zamítnutí zrušení nominačního zákona a schválení dvou sociálních novel, které odkládají digitalizaci dávek a převod péče na rok 2028.",
+  "vysledek": [
+    "* zrušení nominačního zákona zamítnuto 66:88",
+    "* digitalizace dávek státní sociální podpory odložena, schváleno 122:0",
+    "* převod péče a dávek OZP na ÚSSZ posunut na 2028, schváleno 122:0"
+  ],
   "stats": {
-    "pocet_hlas": 2,
+    "pocet_hlas": 3,
     "minuty": 476,
     "end_cas": "18:28",
     "proslo": 2,
-    "zamitnuto": 0,
+    "zamitnuto": 1,
     "dlouha_debata": false
-  },
-  "dnesni_ucet": "Sociální dávky a sociální služby v prvním čtení.\nOba zákony prošly, nikdo proti."
+  }
 }

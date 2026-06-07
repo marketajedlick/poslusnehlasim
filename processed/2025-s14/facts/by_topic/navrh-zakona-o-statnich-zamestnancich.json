@@ -3,14 +3,35 @@
   "nazev": "Návrh zákona o státních zaměstnancích",
   "datum": "17.04.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "státních zaměstnancích",
+  "predmet_lidsky": "právních poměrech státních zaměstnanců na úřadech",
   "koho": [
-    "Občana se to netýká, ledaže pracujete na úřadě nebo tam čekáte ve frontě."
+    "Koho se to týká? Úředníky a lidi, kteří řeší agendu na ministerstvech a správních úřadech."
   ],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Vondráček představil druhé čtení zákona o státních zaměstnancích.",
+      "source": "steno",
+      "steno_id": "2025_14_00619",
+      "citace": "Návrh poslanců Radka Vondráčka na vydání zákona o právních poměrech státních zaměstnanců v ministerstvech a jiných správních úřadech, druhé čtení."
+    },
+    {
+      "text": "Starostové návrh podporují kvůli napravení nespravedlnosti v systému.",
+      "source": "steno",
+      "steno_id": "2025_14_00600",
+      "citace": "My tento návrh podporujeme a podporujeme ho proto, že napravuje zjevnou nespravedlnost vůči lidem, kteří po změně zákona zůstali uvězněni v systému."
+    },
+    {
+      "text": "Hlasování číslo 78, sto třináct hlasů pro, zákon ve druhém čtení schválen.",
+      "source": "votes",
+      "citace": "Hlasování číslo 78, pro 113, proti 0."
+    }
+  ],
   "publikovat": true,
-  "priorita": 1,
-  "nadpis": "Prošlo to",
+  "priorita": 2,
+  "nadpis": "Nový zákon pro úředníky",
+  "lead": "Páteční dopoledne schválili druhé čtení zákona o státních zaměstnancích, sto třináct hlasů proti nule. Starostové mluvili o napravení nespravedlnosti vůči lidem uvězněným ve starém systému.",
+  "pointa": "Vondráčkův návrh sjednocuje pravidla pro úředníky na ministerstvech a správních úřadech. Jde o dlouho připravovanou rekodifikaci personálních poměrů státu.",
+  "mean": "Zákon mění podmínky státních zaměstnanců na úřadech. Běžného občana se netýká, pokud nepracuje ve státní správě.",
   "pocet_hlasovani": 1,
   "proslo": true
 }

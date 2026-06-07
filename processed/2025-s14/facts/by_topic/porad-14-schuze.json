@@ -1,0 +1,42 @@
+{
+  "slug": "porad-14-schuze",
+  "nazev": "Boj o pořad čtrnácté schůze",
+  "datum": "14.04.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "pořadu čtrnácté schůze před zákonem o cenách pohonných hmot",
+  "koho": [
+    "Koho se to týká? Spíš pozorovatele politiky. Jde o to, co se kdy projedná, ne o zákon pro občany."
+  ],
+  "fakty": [
+    {
+      "text": "Kupka chtěl zařadit střet zájmů Babiše, návrh padl 54:84.",
+      "source": "steno",
+      "steno_id": "2025_14_00158",
+      "citace": "Hlasování číslo 63, přihlášeno 151 poslanců, pro 54, proti 84. Návrh byl zamítnut."
+    },
+    {
+      "text": "Bureš prosadil zrušení zákona o prodejní době na páteční schůzi.",
+      "source": "steno",
+      "steno_id": "2025_14_00092",
+      "citace": "Navrhuji, aby bod číslo 61, to je sněmovní tisk 129, tedy návrh zákona, kterým se zrušuje zákon č. 223/2016 Sb., o prodejní době v maloobchodě, aby tento bod byl zařazen jako první bod naší páteční schůze."
+    },
+    {
+      "text": "Pořad schválen až po čtyřiceti čtyřech hlasováních o změnách.",
+      "source": "votes",
+      "citace": "44 hlasování o pořadu schůze před večerním zákonem o cenách."
+    },
+    {
+      "text": "Večer schváleno zkrácené jednání zákona o cenách 79:51.",
+      "source": "votes",
+      "citace": "Hlasování číslo 48, bod 902, pro 79, proti 51."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Pořad před půlnocí",
+  "lead": "Úterý čtrnácté schůze začalo legislativní nouzí kvůli cenám pohonných hmot, večer ale patřilo tabuli. Čtyřicet čtyři hlasování o tom, co se kdy projedná, oddálilo meritní body až na pozdní hodinu.",
+  "pointa": "Kupka chtěl střet zájmů Babiše, Bureš prosadil konec nočního zákazu prodeje na pátek. Teprve ve 20:17 schválili zkrácené jednání zákona o cenách a v 23:22 padl pokus o druhé čtení.",
+  "mean": "Sněmovna si nejdřív musela dohodnout pořad. Hodiny procedurálních hlasování oddálily zákon o regulaci cen benzínu a nafty až na noc.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

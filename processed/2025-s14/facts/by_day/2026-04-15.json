@@ -2,7 +2,16 @@
   "datum": "15.04.2026",
   "den": "středa",
   "topic_slugs": [
+    "novela-z-o-cenach-debata-1-cteni",
     "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-"
+  ],
+  "dnesni_ucet": "Noc o regulaci cen benzínu, desítky hlasování do rána.\nOdpoledne prošla novela rozpočtových zákonů.",
+  "zaver": "že středa patřila maratonu o cenách pohonných hmot ve zkráceném jednání a odpoledne sněmovna schválila druhé čtení novely rozpočtových zákonů.",
+  "vysledek": [
+    "* debata o regulaci cen benzínu trvala celou noc",
+    "* první čtení cenového zákona 160:0, druhé čtení v noci padlo",
+    "* rozpočtové zákony ve druhém čtení schváleny 93:50",
+    "* nový cizinecký zákon a státní svátky mimo noviny"
   ],
   "stats": {
     "pocet_hlas": 1,
@@ -10,7 +19,6 @@
     "end_cas": "16:00",
     "proslo": 1,
     "zamitnuto": 0,
-    "dlouha_debata": false
-  },
-  "dnesni_ucet": "Pravidla veřejných výdajů prošla v prvním čtení.\nDlouhá debata, několik pozměňováků padlo."
+    "dlouha_debata": true
+  }
 }

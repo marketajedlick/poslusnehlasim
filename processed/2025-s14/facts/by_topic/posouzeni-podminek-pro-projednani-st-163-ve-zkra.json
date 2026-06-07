@@ -3,38 +3,11 @@
   "nazev": "Posouzení podmínek pro projednání ST 163 ve zkráceném jednání",
   "datum": "14.04.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "posouzení podmínek pro projednání ST 163 ve zkráceném jednání",
-  "koho": [
-    "Občan to pozná, až zákon projde dřív, než čekal."
-  ],
-  "fakty": [
-    {
-      "text": "it. Schvalovalo se to někdy na podzim roku 2022, platilo to od ledna 2023. Tady nic takového není v tomto případě. Tady je to rána z",
-      "source": "steno",
-      "steno_id": "2025_14_00139",
-      "citace": "o někdy na podzim roku 2022, platilo to od ledna 2023. Tady nic takového není v tomto případě. Tady je to rána z vrchu rovnou za ucho"
-    },
-    {
-      "text": "oto je děláme. Když se do zákona vloží mnoho výjimek, brzda zůstane na papíře, ale politicky to vlastně přestane brzdit. Dále, otevírá se prostor pro navyšování výdajových rámců př",
-      "source": "steno",
-      "steno_id": "2025_14_00178",
-      "citace": "se do zákona vloží mnoho výjimek, brzda zůstane na papíře, ale politicky to vlastně přestane brzdit. Dále, otevírá se prostor pro navyšování výdajových rámců při změnách rozpočtu."
-    },
-    {
-      "text": "erých momentálně nevíme. Obecně účinnost zákona je navržena od 1. ledna 2029, a to s ohledem na nezbytnou přípravu integrovaného cizinec",
-      "source": "steno",
-      "steno_id": "2025_14_00253",
-      "citace": "íme. Obecně účinnost zákona je navržena od 1. ledna 2029, a to s ohledem na nezbytnou přípravu integrovaného cizineckého agendového syst"
-    },
-    {
-      "text": "bydlení, protože zúžení cílové skupiny poradenství určitě nesníží výdaje veřejného sektoru. V důvodové zprávě se to moc ani nepočítá, o kolik by se měl",
-      "source": "steno",
-      "steno_id": "2025_14_00356",
-      "citace": "ení cílové skupiny poradenství určitě nesníží výdaje veřejného sektoru. V důvodové zprávě se to moc ani nepočítá, o kolik by se mělo uspořit tím, že se"
-    }
-  ],
-  "publikovat": true,
-  "priorita": 2,
+  "predmet_lidsky": "zkráceném jednání zákona o cenách",
+  "koho": [],
+  "fakty": [],
+  "publikovat": false,
+  "priorita": 0,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
   "proslo": true

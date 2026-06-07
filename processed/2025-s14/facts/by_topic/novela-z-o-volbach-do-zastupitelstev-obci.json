@@ -3,12 +3,35 @@
   "nazev": "Novela z. o volbách do zastupitelstev obcí",
   "datum": "23.04.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "volbách do zastupitelstev obcí",
-  "koho": [],
-  "fakty": [],
-  "publikovat": false,
-  "priorita": 0,
-  "nadpis": "Prošlo to",
+  "predmet_lidsky": "volbách do obecních zastupitelstev",
+  "koho": [
+    "Koho se to týká? Voliče v obcích a kandidáty do komunálních voleb."
+  ],
+  "fakty": [
+    {
+      "text": "Senátní návrh šel jako třetí bod po přeskládání pořadu.",
+      "source": "steno",
+      "steno_id": "2025_14_01237",
+      "citace": "Třetí bod je senátní návrh o volbách do zastupitelstev obcí, bod číslo 63, jako třetí bod."
+    },
+    {
+      "text": "Navrženo první čtení ve zkráceném režimu podle § 90 odst. 2.",
+      "source": "steno",
+      "steno_id": "2025_14_01280",
+      "citace": "Je navrženo, abychom s návrhem zákona vyslovili souhlas již v prvém čtení."
+    },
+    {
+      "text": "Hlasování číslo 165, sto dvacet jedna hlasů pro.",
+      "source": "votes",
+      "citace": "Hlasování číslo 165, pro 121, proti 0."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Volby do obcí se mění",
+  "lead": "Sněmovna schválila senátní návrh novely volebního zákona pro obce, sto dvacet jedna hlasů proti nule. První čtení proběhlo ve zkráceném režimu.",
+  "pointa": "Zákon upravuje pravidla komunálních voleb. Senát ho poslal zpět se změnami, sněmovna souhlasila.",
+  "mean": "Změny se dotknou voleb do zastupitelstev obcí. Konkrétní úpravy závisí na finálním znění novely.",
   "pocet_hlasovani": 2,
   "proslo": true
 }

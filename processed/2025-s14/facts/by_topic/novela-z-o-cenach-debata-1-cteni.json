@@ -1,0 +1,43 @@
+{
+  "slug": "novela-z-o-cenach-debata-1-cteni",
+  "nazev": "Debata o regulaci cen pohonných hmot",
+  "datum": "15.04.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "regulaci cen pohonných hmot ve zkráceném jednání",
+  "koho": [
+    "Koho se to týká? Motoristy. Zákon má vládě umožnit zasahovat do cen benzínu a nafty v krizových situacích."
+  ],
+  "fakty": [
+    {
+      "text": "Schillerová obhajovala legislativní nouzi kvůli regulaci cen pohonných hmot.",
+      "source": "steno",
+      "steno_id": "2025_14_00005",
+      "citace": "Dovolte mi, abych vás jménem vlády České republiky seznámila s důvody, které nás vedly k tomu, že jsme požádali o vyhlášení stavu legislativní nouze u návrhu zákona o regulaci cen pohonných hmot vládou."
+    },
+    {
+      "text": "Hřib vládu obvinil ze socialistického experimentu a právních vad návrhu.",
+      "source": "steno",
+      "steno_id": "2025_14_00033",
+      "citace": "Vláda tady dlouho nedělala vůbec nic. Potom jste začali sledovat ty marže. A teď tady máme návrh na legislativní nouzi."
+    },
+    {
+      "text": "Jakob označil návrh za socialistické experimenty bez splnění podmínek nouze.",
+      "source": "steno",
+      "steno_id": "2025_14_00009",
+      "citace": "K těmto socialistickým experimentům podrobněji vyjádřím. K němu nejsou splněny podmínky, které dává náš jednací řád."
+    },
+    {
+      "text": "První čtení schváleno 160:0, druhé čtení v noci padlo 64:89.",
+      "source": "votes",
+      "citace": "Hlasování číslo 51 pro 160, hlasování číslo 50 pro 64 proti 89."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Noc o cenách benzínu",
+  "lead": "Středa patřila maratonu o regulaci cen pohonných hmot. Vláda tlačila zkrácené jednání v legislativní nouzi, opozice mluvila o socialistických experimentech, desítky hlasování o pozměňovacích návrzích trvaly až do rána.",
+  "pointa": "Schillerová hájila nouzový režim kvůli cenám na čerpacích stanicích, Hřib a Jakob útočili na právní vady. První čtení prošlo stovkou hlasů, druhé čtení v noci koalice nenatáhla.",
+  "mean": "Zákon má vládě dát nástroj na regulaci cen benzínu a nafty. Ve zkráceném jednání bez standardní lhůty jde o rychlou cestu, kterou opozice považuje za obcházení parlamentu.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

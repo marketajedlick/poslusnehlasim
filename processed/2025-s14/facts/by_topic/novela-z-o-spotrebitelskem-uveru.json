@@ -3,12 +3,29 @@
   "nazev": "Novela z. o spotřebitelském úvěru",
   "datum": "23.04.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "spotřebitelském úvěru",
-  "koho": [],
-  "fakty": [],
-  "publikovat": false,
-  "priorita": 0,
-  "nadpis": "Prošlo to",
+  "predmet_lidsky": "pravidlech spotřebitelských úvěrů",
+  "koho": [
+    "Koho se to týká? Lidi, kteří si berou půjčku, splátkový prodej nebo kreditní kartu."
+  ],
+  "fakty": [
+    {
+      "text": "Šťastný prosadil spotřebitelský úvěr jako první bod čtvrteční schůze.",
+      "source": "steno",
+      "steno_id": "2025_14_01236",
+      "citace": "Navrhuji, abychom dnes jako první bod pokračovali v projednávání bodu číslo 28, sněmovní tisk 145, o spotřebitelském úvěru."
+    },
+    {
+      "text": "Hlasování číslo 162, sto třicet čtyři hlasů pro.",
+      "source": "votes",
+      "citace": "Hlasování číslo 162, pro 134, proti 0."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Úvěry pod novými pravidly",
+  "lead": "Čtvrteční dopoledne schválili novelu o spotřebitelském úvěru, sto třicet čtyři hlasů proti nule. ODS prosadila zákon jako první bod dne.",
+  "pointa": "Novela ladí pravidla pro půjčky a splátkové prodeje. Šlo o rychlý bod mezi interpelacemi a dalšími zákony.",
+  "mean": "Změny se dotknou smluv o spotřebitelských úvěrech. Konkrétní podmínky závisí na finálním znění novely.",
   "pocet_hlasovani": 2,
   "proslo": true
 }

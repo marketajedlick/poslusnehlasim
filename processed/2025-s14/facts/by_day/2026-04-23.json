@@ -2,15 +2,24 @@
   "datum": "23.04.2026",
   "den": "čtvrtek",
   "topic_slugs": [
+    "novela-z-o-spotrebitelskem-uveru",
+    "novela-z-o-volbach-do-zastupitelstev-obci",
     "sml-mezi-cr-a-sr-o-preshranicni-spol-v-oblasti-z"
   ],
+  "dnesni_ucet": "Ráno interpelace, pak tři zákony bez dramatu.\nÚvěry, volby do obcí a záchranka se Slovenskem.",
+  "zaver": "že čtvrtek po interpelacích přinesl tři schválené zákony, od spotřebitelských úvěrů přes volby do obcí po smlouvu o přeshraniční záchranné službě se Slovenskem.",
+  "vysledek": [
+    "* spotřebitelský úvěr schválen 134:0",
+    "* volby do zastupitelstev obcí schváleny 121:0",
+    "* smlouva o záchranné službě se Slovenskem ratifikována 105:0",
+    "* písemné interpelace bez novinového článku"
+  ],
   "stats": {
-    "pocet_hlas": 1,
+    "pocet_hlas": 3,
     "minuty": 222,
     "end_cas": "13:16",
-    "proslo": 1,
+    "proslo": 3,
     "zamitnuto": 0,
     "dlouha_debata": false
-  },
-  "dnesni_ucet": "Smlouva se Slovenskem o záchranné službě.\nProšla v prvním čtení, nikdo proti."
+  }
 }

@@ -1,14 +1,23 @@
 {
   "datum": "21.04.2026",
   "den": "úterý",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "novela-z-trestni-zakonik"
+  ],
+  "dnesni_ucet": "Dopoledne harmonogram závěrečného účtu, večer trestní zákoník.\nTřetí čtení novely padlo, sedmi desítkami hlasů.",
+  "zaver": "že úterý večer sněmovna nenatáhla třetí čtení novely trestního zákoníku, přestože druhé čtení předtím prošlo bez odporu.",
+  "vysledek": [
+    "* harmonogram státního závěrečného účtu schválen 142:0",
+    "* trestní zákoník ve druhém čtení 154:0",
+    "* třetí čtení novely zamítnuto, jen 67 hlasů pro",
+    "* 37 hlasování o pořadu před meritními body"
+  ],
   "stats": {
-    "pocet_hlas": 0,
+    "pocet_hlas": 1,
     "minuty": 425,
     "end_cas": "21:13",
     "proslo": 0,
-    "zamitnuto": 0,
+    "zamitnuto": 1,
     "dlouha_debata": false
-  },
-  "dnesni_ucet": "Úterý bez meritního hlasování.\nSněmovna řešila hlavně pořad a proceduru."
+  }
 }
