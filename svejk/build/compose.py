@@ -17,6 +17,18 @@ from svejk.paths import SchuzePaths
 from svejk.text_norm import ma_dlouhou_pomlcku
 
 
+def _dnesni_ucet_radky(ucet: str) -> list[str]:
+    text = (ucet or "").strip()
+    if not text:
+        return ["**Dnešní účet:**"]
+    lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+    if not lines:
+        return ["**Dnešní účet:**"]
+    out = [f"**Dnešní účet:** {lines[0]}"]
+    out.extend(lines[1:])
+    return out
+
+
 def render_den_markdown(
     content: DenContent,
     paths: SchuzePaths,
@@ -29,7 +41,7 @@ def render_den_markdown(
         "",
         f"**{content.den.capitalize()} {nahrad_cisla_v_textu(_datum_cesky(content.datum))}**",
         "",
-        f"**Dnešní účet:** {content.dnesni_ucet}",
+        *_dnesni_ucet_radky(content.dnesni_ucet),
         "",
     ]
 
