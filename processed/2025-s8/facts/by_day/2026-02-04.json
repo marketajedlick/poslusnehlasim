@@ -1,13 +1,24 @@
 {
   "datum": "04.02.2026",
   "den": "středa",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "projednani-navrhu-na-vysloveni-neduvery-vlade-ce"
+  ],
+  "dnesni_ucet": "Dvě hlasování za dva a půl hodiny.\nOdpoledne konec debaty, večer jmenovité hlasování.",
+  "zaver": "že po dvou dnech řečí koalice nedůvěru zamítla a vláda Andreje Babiše zůstává u moci.",
+  "vysledek": [
+    "* debata o nedůvěře skončila, jmenovité hlasování ve 19:29",
+    "* nedůvěra zamítnuta, 99 proti 84",
+    "* premiér Babiš a první vicepremiér při hlasování chyběli",
+    "* spor Kupka versus Králíček o účast opozice",
+    "* osmá schůze ukončena"
+  ],
   "stats": {
-    "pocet_hlas": 1,
+    "pocet_hlas": 2,
     "minuty": 155,
     "end_cas": "19:29",
     "proslo": 0,
     "zamitnuto": 1,
-    "dlouha_debata": false
+    "dlouha_debata": true
   }
 }

@@ -2,10 +2,20 @@
   "datum": "13.02.2026",
   "den": "pátek",
   "topic_slugs": [
+    "novela-z-o-zivotnim-a-existencnim-minimu",
     "novela-z-o-davce-statni-socialni-pomoci"
   ],
+  "dnesni_ucet": "Šest hlasování za dvě hodiny.\nMimořádná schůze o superdávce, oba zákony bez jediného hlasu proti.",
+  "zaver": "že sněmovna na žádost 87 poslanců prodloužila přechod na superdávku a odkladila novelu minima, opozice nevetovala, ale chce dopady sledovat.",
+  "vysledek": [
+    "* mimořádná devátá schůze kvůli přechodu na superdávku",
+    "* novela minima schválena v prvním čtení, účinnost posunuta z května na červenec",
+    "* přechodné období superdávky prodlouženo o tři měsíce, 130 pro, nula proti",
+    "* přes 413 tisíc žádostí už v systému",
+    "* Piráti a Starostové nevetovali, chtějí data a úpravy definice zranitelnosti"
+  ],
   "stats": {
-    "pocet_hlas": 5,
+    "pocet_hlas": 6,
     "minuty": 115,
     "end_cas": "10:56",
     "proslo": 4,

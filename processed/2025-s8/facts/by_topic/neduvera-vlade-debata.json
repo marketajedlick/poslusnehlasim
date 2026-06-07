@@ -1,0 +1,44 @@
+{
+  "slug": "neduvera-vlade-debata",
+  "nazev": "Debata o nedůvěře vládě",
+  "datum": "03.02.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "návrhu na vyslovení nedůvěry vládě Andreje Babiše",
+  "koho": [
+    "Koho se to týká? Celé republiky. Když vláda padne, musí prezident sestavit novou, dokud ne, vláda dál vládne."
+  ],
+  "fakty": [
+    {
+      "text": "Skupina 81 poslanců podala návrh na vyslovení nedůvěry vládě. Návrh předložili zástupci poslaneckých klubů ODS, Starostové a nezávislí, Piráti, KDU-ČSL a TOP 09.",
+      "source": "steno",
+      "steno_id": "2025_8_00002",
+      "citace": "Skupina 81 poslanců podala návrh na vyslovení nedůvěry vládě."
+    },
+    {
+      "text": "Není obvyklé, aby poslanci žádali o schůzi o vyslovení nedůvěry vládě tak krátce po tom, kdy proběhlo jednání o vyslovení důvěry vládě. Dělí nás od toho okamžiku 19 dnů.",
+      "source": "steno",
+      "steno_id": "2025_8_00003",
+      "citace": "Dělí nás od toho okamžiku 19 dnů."
+    },
+    {
+      "text": "Takže scházíme se dnes na mimořádné schůzi Poslanecké sněmovny, jejímž jediným bodem je hlasování o nedůvěře naší vládě. Ano, už samotný fakt, že se tu setkáváme necelé tři týdny poté, co naše vláda získala důvěru dne 15. ledna, je samo o sobě dost výmluvné.",
+      "source": "steno",
+      "steno_id": "2025_8_00005",
+      "citace": "Úplně zbytečná schůze, která nepřinese vůbec nic, jenom to, že nemůžeme pracovat."
+    },
+    {
+      "text": "Hlasování číslo 2, přítomno 123 poslanců, 115 poslanců hlasovalo pro, 6 proti. Návrh byl přijat. Dnešní jednání bude pokračovat po dvacáté první hodině.",
+      "source": "steno",
+      "steno_id": "2025_8_00024",
+      "citace": "Hlasování číslo 2, pro 115, proti 6. Jednání bude pokračovat po 21. hodině."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Dva dny o nedůvěře",
+  "lead": "Jen devatenáct dní po důvěře zahájila opozice mimořádnou schůzi. Kupka mluvil o esemeskách Macinky a střetu zájmů, Babiš o zbytečné ztrátě času.",
+  "pointa": "Ministři Šťastný, Schillerová, Havlíček a Zůna hájili vládu celé odpoledne. Večer poslanci schválili jednání po devatenácté hodině, 115 proti 6.",
+  "mean": "Nedůvěra je tvrdší než kritika: když projde, vláda končí. Opozice ji svolala kvůli tlaku na prezidenta a sporům kolem ministrů, koalice říká, že jde o politické divadlo. Meritní hlasování mělo přijít až ve středu.",
+  "pocet_hlasovani": 1,
+  "proslo": false
+}
