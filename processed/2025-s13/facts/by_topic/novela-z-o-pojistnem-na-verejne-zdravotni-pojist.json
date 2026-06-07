@@ -3,26 +3,36 @@
   "nazev": "Novela z. o pojistném na veřejné zdravotní pojištění",
   "datum": "25.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky",
+  "predmet_lidsky": "přerozdělení rezerv zdravotních pojišťoven",
   "koho": [
-    "Koho se to týká? Živnostníků a dalších, kdo platí zálohy na sociálním pojištění sami, ne běžných zaměstnanců na výplatní pásce."
+    "Koho se to týká? Systému veřejného zdravotního pojištění. VZP přesune téměř osm miliard rezerv menším pojišťovnám, aby se stabilizovaly zálohy."
   ],
   "fakty": [
     {
-      "text": "Od ledna klesne minimální záloha z 5 720 na 5 005 korun měsíčně (ušetříte zhruba 715 korun); přeplatek vám stát vrátí.",
-      "source": "manual",
-      "note": "z glosy / TEMA_PRAVIDLA"
+      "text": "Vojtěch navrhuje jednorázové přerozdělení rezerv VZP ve prospěch ostatních pojišťoven.",
+      "source": "steno",
+      "steno_id": "2025_13_00310",
+      "citace": "Daný návrh zákona má za cíl jednorázové přerozdělení rezerv zdravotních pojišťoven, tedy konkrétně Všeobecné zdravotní pojišťovny, ve prospěch dalších zdravotních pojišťoven, svazových zdravotních pojišťoven, v objemu téměř 8 miliard korun."
     },
     {
-      "text": "VZP přijde zhruba o třináct set až čtrnáct set, o 1 300 až 1 400 korun, které by mohly být ve fondu prevence například a mohli by",
+      "text": "Cílem je stabilizovat systém veřejného zdravotního pojištění v tomto roce.",
       "source": "steno",
-      "steno_id": "2025_13_00316",
-      "citace": "třináct set až čtrnáct set, o 1 300 až 1 400 korun, které by mohly být ve fondu prevence například a mohli by z něho čerpat na růz"
+      "steno_id": "2025_13_00310",
+      "citace": "Abychom stabilizovali systém veřejného zdravotního pojištění v tomto roce."
+    },
+    {
+      "text": "Hlasování číslo 86, pro 93, proti 49, zákon schválen.",
+      "source": "steno",
+      "steno_id": "2025_13_00341",
+      "citace": "Hlasování číslo 86, přihlášeno 161 poslanců, pro 93 poslanců, proti 49. Konstatuji, že s návrhem zákona byl vysloven souhlas."
     }
   ],
   "publikovat": true,
   "priorita": 2,
-  "nadpis": "Živnostníci ušetří na odvodech",
+  "nadpis": "VZP rozdělí rezervy pojišťovnám",
+  "lead": "Sněmovna schválila přesun téměř osmi miliard z rezerv Všeobecné zdravotní pojišťovny k menším pojišťovnám, devadesát tři hlasy pro, čtyřicet devět proti.",
+  "pointa": "Vojtěch to představil jako jednorázovou injekci pro stabilizaci systému. Není to přímé snížení záloh živnostníkům, to řešil jiný zákon.",
+  "mean": "Menší zdravotní pojišťovny dostanou z rezerv VZP peníze na vyrovnání letošního roku. Pro běžného pacienta jde spíš o provoz pojišťoven než o změnu poplatků u lékaře.",
   "pocet_hlasovani": 5,
   "proslo": true
 }

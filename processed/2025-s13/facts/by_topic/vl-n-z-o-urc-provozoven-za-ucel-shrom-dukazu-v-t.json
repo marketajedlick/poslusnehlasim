@@ -5,7 +5,32 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "o urč. provozoven za účel shrom. důkazů v trestním řízení",
   "koho": [],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Nyní budeme pokračovat bodem číslo 6.Vládní návrh zákona o určování provozoven a jmenování zástupců některých poskytovatelů služeb za účelem shromažďování elektronických důkazů v trestním řízení/sněmovní tisk 52/ - prvé čtení Já jenom upozorním, že ve 14 hodin máme pevně zařazené volební body, čili uvidíme, co z tohoto",
+      "source": "steno",
+      "steno_id": "2025_13_00342",
+      "citace": "Nyní budeme pokračovat bodem číslo 6.Vládní návrh zákona o určování provozoven a jmenování zástupců některých poskytovatelů služeb za účelem shromažďování elektronických důkazů v trestním řízení/sněmo"
+    },
+    {
+      "text": "Z pověření vlády předložený návrh uvede pan ministr práce a sociálních věcí Juchelka.",
+      "source": "steno",
+      "steno_id": "2025_13_00342",
+      "citace": "Z pověření vlády předložený návrh uvede pan ministr práce a sociálních věcí Juchelka."
+    },
+    {
+      "text": "Tento návrh zákona je transpozicí směrnice Evropského parlamentu a Rady, kterou se stanoví harmonizovaná pravidla pro určování určených provozoven a jmenování zástupců za účelem shromažďování elektronických důkazů v trestním řízení.",
+      "source": "steno",
+      "steno_id": "2025_13_00343",
+      "citace": "Tento návrh zákona je transpozicí směrnice Evropského parlamentu a Rady, kterou se stanoví harmonizovaná pravidla pro určování určených provozoven a jmenování zástupců za účelem shromažďování elektron"
+    },
+    {
+      "text": "Vzhledem k tomu, že návrh zákona je transpozicí evropské směrnice, chtěl bych vás požádat o podporu tohoto návrhu a umožnění jeho rychlého projednání.",
+      "source": "steno",
+      "steno_id": "2025_13_00343",
+      "citace": "Vzhledem k tomu, že návrh zákona je transpozicí evropské směrnice, chtěl bych vás požádat o podporu tohoto návrhu a umožnění jeho rychlého projednání."
+    }
+  ],
   "publikovat": false,
   "priorita": 0,
   "nadpis": "Prošlo to",

@@ -2,16 +2,24 @@
   "datum": "24.03.2026",
   "den": "úterý",
   "topic_slugs": [
+    "novela-z-o-zivotnim-a-existencnim-minimu",
     "novela-z-o-doplnkovem-penzijnim-sporeni",
     "novela-z-o-zdrav-prostr-a-diagnostickych-zdrav-p"
   ],
+  "dnesni_ucet": "Čtyřicet čtyři hlasování o pořadu, pak teprve meritní body.\nMinimum padlo pěti hlasy, penze a zkumavky prošly.",
+  "zaver": "že po večerním souboji o pořad sněmovna potvrdila senát v zamítnutí minima, schválila nápravu pro penzisty ve třetím pilíři a pravidla pro hlášení docházejících zkumavek.",
+  "vysledek": [
+    "* minimum zamítnuto 5:85, padesát zdrželo",
+    "* penze pro seniory ve třetím pilíři schváleny v prvním čtení 119:3",
+    "* zkumavky v laboratořích schváleny v prvním čtení 113:0",
+    "* pořad schválen po čtyřiceti čtyřech hlasováních o změnách"
+  ],
   "stats": {
-    "pocet_hlas": 2,
+    "pocet_hlas": 3,
     "minuty": 424,
     "end_cas": "21:10",
     "proslo": 2,
-    "zamitnuto": 0,
+    "zamitnuto": 1,
     "dlouha_debata": false
-  },
-  "dnesni_ucet": "Penze a zdravotnické prostředky do půlnoci.\nDva zákony v prvním čtení prošly."
+  }
 }

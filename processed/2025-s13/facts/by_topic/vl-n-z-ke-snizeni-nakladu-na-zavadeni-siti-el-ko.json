@@ -5,7 +5,32 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "ke snížení nákladů na zavádění sítí el. komunikací",
   "koho": [],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Jde o 7.Vládní návrh zákona o opatřeních ke snížení nákladů na zavádění sítí elektronických komunikací s velmi vysokou kapacitou/sněmovní tisk 55/ - prvé čtení Z pověření vlády předložený návrh uvede místopředseda vlády, ministr průmyslu a obchodu Karel Havlíček.",
+      "source": "steno",
+      "steno_id": "2025_13_00400",
+      "citace": "Jde o 7.Vládní návrh zákona o opatřeních ke snížení nákladů na zavádění sítí elektronických komunikací s velmi vysokou kapacitou/sněmovní tisk 55/ - prvé čtení Z pověření vlády předložený návrh uvede "
+    },
+    {
+      "text": "A stejně tak i bod 84, to je vyšetřovací komise Dozimetr, v tomhletom případě tedy za ten teď zařazený bod o ekodesignu, to znamená bude pořadí desítka, dvanáctka, osmdesátčtyřka.",
+      "source": "steno",
+      "steno_id": "2025_13_00400",
+      "citace": "A stejně tak i bod 84, to je vyšetřovací komise Dozimetr, v tomhletom případě tedy za ten teď zařazený bod o ekodesignu, to znamená bude pořadí desítka, dvanáctka, osmdesátčtyřka."
+    },
+    {
+      "text": "Takže takhle se změní ten program a my můžeme pokračovat bodem číslo 7.",
+      "source": "steno",
+      "steno_id": "2025_13_00400",
+      "citace": "Takže takhle se změní ten program a my můžeme pokračovat bodem číslo 7."
+    },
+    {
+      "text": "Tento návrh zákona byl zpracován z důvodu potřeby adaptace nařízení 1309/2024 o opatřeních ke snížení nákladů na budování gigabitových sítí elektronických komunikací, které nahrazuje předchozí směrnici z roku 2014.",
+      "source": "steno",
+      "steno_id": "2025_13_00401",
+      "citace": "Tento návrh zákona byl zpracován z důvodu potřeby adaptace nařízení 1309/2024 o opatřeních ke snížení nákladů na budování gigabitových sítí elektronických komunikací, které nahrazuje předchozí směrnic"
+    }
+  ],
   "publikovat": false,
   "priorita": 0,
   "nadpis": "Prošlo to",

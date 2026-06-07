@@ -5,7 +5,33 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "o ekodesignu výrobků",
   "koho": [],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Smích v sále.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_13_00418",
+      "citace": "(Smích v sále.)"
+    },
+    {
+      "text": "2 z pověření vlády tedy poprosím opět ministra Aleše Juchelku, aby návrh uvedl a pak mám tady psaného zpravodaje, aby se připravil Jan Bauer.",
+      "source": "steno",
+      "steno_id": "2025_13_00418",
+      "citace": "2 z pověření vlády tedy poprosím opět ministra Aleše Juchelku, aby návrh uvedl a pak mám tady psaného zpravodaje, aby se připravil Jan Bauer."
+    },
+    {
+      "text": "Návrhy na zkrácení či prodloužení nezazněly a já končím i tento bod 10.",
+      "source": "steno",
+      "steno_id": "2025_13_00418",
+      "citace": "Návrhy na zkrácení či prodloužení nezazněly a já končím i tento bod 10."
+    },
+    {
+      "text": "Tyto předpisy nezačnou v každém případě platit dřív než na začátku roku 2028.",
+      "source": "steno",
+      "steno_id": "2025_13_00419",
+      "citace": "Tyto předpisy nezačnou v každém případě platit dřív než na začátku roku 2028."
+    }
+  ],
   "publikovat": false,
   "priorita": 0,
   "nadpis": "Prošlo to",

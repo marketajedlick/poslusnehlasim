@@ -5,7 +5,34 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "ochraně spotřebitele",
   "koho": [],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Ministr Juchelka: Ne.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_13_00408",
+      "citace": "(Ministr Juchelka: Ne.)"
+    },
+    {
+      "text": "89/2012 Sb., občanský zákoník, ve znění pozdějších předpisů/sněmovní tisk 53/ - prvé čtení Z pověření vlády je již poctivě nachystán ministr Aleš Juchelka, připraví se zpravodajka Berenika Peštová.",
+      "source": "steno",
+      "steno_id": "2025_13_00408",
+      "citace": "89/2012 Sb., občanský zákoník, ve znění pozdějších předpisů/sněmovní tisk 53/ - prvé čtení Z pověření vlády je již poctivě nachystán ministr Aleš Juchelka, připraví se zpravodajka Berenika Peštová."
+    },
+    {
+      "text": "Žádné návrhy na zkrácení či prodloužení lhůt nezazněly, tudíž i tento tisk číslo 8 končím.",
+      "source": "steno",
+      "steno_id": "2025_13_00408",
+      "citace": "Žádné návrhy na zkrácení či prodloužení lhůt nezazněly, tudíž i tento tisk číslo 8 končím."
+    },
+    {
+      "text": "životnosti",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_13_00409",
+      "citace": "(životnosti)"
+    }
+  ],
   "publikovat": false,
   "priorita": 0,
   "nadpis": "Prošlo to",

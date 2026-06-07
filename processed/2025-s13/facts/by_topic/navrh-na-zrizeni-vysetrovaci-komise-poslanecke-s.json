@@ -1,0 +1,44 @@
+{
+  "slug": "navrh-na-zrizeni-vysetrovaci-komise-poslanecke-s",
+  "nazev": "Návrh na zřízení vyšetřovací komise Poslanecké sněmovny ke kauze Dozim",
+  "datum": "25.03.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "vyšetřovací komise ke kauze Dozimetr",
+  "koho": [
+    "Koho se to týká? Veřejnosti sledující korupční kauzu kolem Dopravního podniku Prahy, KSS Středočeského kraje a VZP."
+  ],
+  "fakty": [
+    {
+      "text": "Rajchl navrhl komisi k prošetření kauzy Dozimetr v Dopravním podniku hlavního města Prahy.",
+      "source": "steno",
+      "steno_id": "2025_13_00188",
+      "citace": "Návrh na zřízení vyšetřovací komise Poslanecké sněmovny k prošetření okolností, systémových souvislostí a institucionálního fungování Dopravního podniku hlavního města Prahy ve věci z podezření z korupčního jednání, takzvaná kauza Dozimetr."
+    },
+    {
+      "text": "Hřib rozšířil mandát komise o KSS Středočeského kraje a VZP.",
+      "source": "steno",
+      "steno_id": "2025_13_00560",
+      "citace": "V názvu návrhu usnesení Poslanecké sněmovny se slova akciová společnost ve věci podezření z korupčního jednání nahrazují slovy Krajské správy a údržby silnic Středočeského kraje a Všeobecné zdravotní pojišťovny ve věci kauzy Dozimetr."
+    },
+    {
+      "text": "Hlasování číslo 110, pro 89, proti 15, komise zřízena.",
+      "source": "steno",
+      "steno_id": "2025_13_00571",
+      "citace": "V hlasování 110 přihlášeno 139 poslanců, pro 89, proti 15. Návrh byl přijat, usnesení bylo přijato."
+    },
+    {
+      "text": "Hřib se zdržel, chybí mu prověření výběrových řízení.",
+      "source": "steno",
+      "steno_id": "2025_13_00574",
+      "citace": "Z důvodu toho, že v té části II. není uvedeno, že se mají prověřit způsoby obsazování vedoucích a řídících pozic v dotčených subjektech, zejména zda nedocházelo k obcházení transparentních výběrových řízení."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Komise k kauze Dozimetr",
+  "lead": "Sněmovna zřídila vyšetřovací komisi ke kauze Dozimetr, osmdesát devět hlasů pro, patnáct proti. Má prošetřit DPP, středočeskou silničářskou správu i VZP.",
+  "pointa": "Hřib komisi podpořil pozměňovacím návrhem, ale u závěrečného hlasování se zdržel kvůli absenci bodu o výběrových řízeních.",
+  "mean": "Třináctičlenná komise má do roka předložit zjištění a návrhy opatření. Piráti do ní pošlou zástupce, i když Hřib s mandátem nesouhlasil.",
+  "pocet_hlasovani": 4,
+  "proslo": true
+}

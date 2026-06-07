@@ -5,7 +5,32 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "mezinárodní justiční spolupráci ve věcech trestních",
   "koho": [],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "104/2013 Sb., o mezinárodní justiční spolupráci ve věcech trestních, ve znění pozdějších předpisů/sněmovní tisk 46/ - prvé čtení Z pověření vlády předložený návrh uvede ministr spravedlnosti Jeroným Tejc.",
+      "source": "steno",
+      "steno_id": "2025_13_00139",
+      "citace": "104/2013 Sb., o mezinárodní justiční spolupráci ve věcech trestních, ve znění pozdějších předpisů/sněmovní tisk 46/ - prvé čtení Z pověření vlády předložený návrh uvede ministr spravedlnosti Jeroným T"
+    },
+    {
+      "text": "A přesuneme se k bodu dalšímu, kterým je 4.Vládní návrh zákona, kterým se mění zákon č.",
+      "source": "steno",
+      "steno_id": "2025_13_00139",
+      "citace": "A přesuneme se k bodu dalšímu, kterým je 4.Vládní návrh zákona, kterým se mění zákon č."
+    },
+    {
+      "text": "V tom případě jdeme tedy k poslednímu hlasování, a to je zkrácení lhůty o 30 dnů na 30 dnů.",
+      "source": "steno",
+      "steno_id": "2025_13_00139",
+      "citace": "V tom případě jdeme tedy k poslednímu hlasování, a to je zkrácení lhůty o 30 dnů na 30 dnů."
+    },
+    {
+      "text": "Zejména tedy se jedná o to, abychom byli schopni rychleji vypátrat případy kyberterorismu, dětské pornografie, obchodování s lidmi, se zbraněmi, ale i kybernetické podvody, které páchají organizované skupiny vůči běžným občanům.",
+      "source": "steno",
+      "steno_id": "2025_13_00140",
+      "citace": "Zejména tedy se jedná o to, abychom byli schopni rychleji vypátrat případy kyberterorismu, dětské pornografie, obchodování s lidmi, se zbraněmi, ale i kybernetické podvody, které páchají organizované "
+    }
+  ],
   "publikovat": false,
   "priorita": 0,
   "nadpis": "Prošlo to",

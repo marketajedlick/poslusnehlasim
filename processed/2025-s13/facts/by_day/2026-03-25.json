@@ -3,15 +3,23 @@
   "den": "středa",
   "topic_slugs": [
     "novela-z-o-pojistnem-na-socialni-zabezpeceni",
-    "novela-z-o-pojistnem-na-verejne-zdravotni-pojist"
+    "novela-z-o-pojistnem-na-verejne-zdravotni-pojist",
+    "navrh-na-zrizeni-vysetrovaci-komise-poslanecke-s"
+  ],
+  "dnesni_ucet": "Živnostníkům klesnou odvody, VZP přerozdělí rezervy.\nVečer vznikla komise k kauze Dozimetr.",
+  "zaver": "že sněmovna snížila sociální zálohy pro OSVČ, přesunula osm miliard z rezerv VZP a zřídila vyšetřovací komisi k korupční kauze Dozimetr.",
+  "vysledek": [
+    "* sociální odvody pro živnostníky schváleny 112:9 po zmatečném hlasování",
+    "* přerozdělení rezerv zdravotních pojišťoven schváleno 93:49",
+    "* vyšetřovací komise Dozimetr zřízena 89:15",
+    "* doplňující usnesení k nízkým důchodům OSVČ zamítnuto 81:3"
   ],
   "stats": {
-    "pocet_hlas": 2,
+    "pocet_hlas": 3,
     "minuty": 534,
     "end_cas": "19:44",
-    "proslo": 1,
-    "zamitnuto": 1,
+    "proslo": 3,
+    "zamitnuto": 0,
     "dlouha_debata": false
-  },
-  "dnesni_ucet": "Den živnostníků: levnější zdravotní zálohy prošly.\nSnížení sociálních odvodů v prvním čtení padlo."
+  }
 }
