@@ -16,6 +16,7 @@ from svejk.cislo_slovy import (
     nahrad_cisla_v_textu,
     po_hlasovanich,
     po_hlasovanich_cap,
+    schuze_slovy,
 )
 from svejk.text_norm import bez_dlouhych_pomlc
 from svejk.build.witty import (
@@ -99,6 +100,7 @@ class DenContent:
     cal_month: str
     dnesni_ucet: str
     items: list[DenItem] = field(default_factory=list)
+    schuze_label: str = ""
     proslo: int = 0
     zamitnuto: int = 0
     board_stats: str = ""
@@ -419,6 +421,7 @@ def build_den_content(
         cal_den=cal_den,
         cal_day=cal_day,
         cal_month=cal_month,
+        schuze_label=schuze_slovy(paths.schuze),
         dnesni_ucet=custom_ucet or _dnesni_ucet(stats, state=state),
         proslo=int(stats.get("proslo") or 0),
         zamitnuto=int(stats.get("zamitnuto") or 0),
