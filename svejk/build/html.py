@@ -10,7 +10,6 @@ from svejk.build.day_content import DenContent, datum_design
 from svejk.build.nav import (
     archiv_pages_href,
     archive_by_month,
-    archive_recent,
     edition_nav,
     edition_pages_href,
     list_obdobi_editions,
@@ -113,13 +112,6 @@ def render_den_html(
     if not canonical_url:
         href = edition_pages_href(ob, paths.schuze, content.datum, base_path)
         canonical_url = f"{cfg.site_url.rstrip('/')}{href}"
-    archive_recent_chips = archive_recent(
-        paths,
-        content.datum,
-        link_mode=link_mode,
-        obdobi=ob,
-        base_path=base_path,
-    )
     archive_href = archiv_pages_href(base_path) if link_mode == "pages" else None
     title = f"Poslušně hlásím · {datum_design(content.datum, content.den)}"
     from svejk.build.seo import article_json_ld as _article_json_ld
@@ -148,7 +140,6 @@ def render_den_html(
         canonical_url=canonical_url,
         meta_description=meta_description,
         article_json_ld=json_ld,
-        archive_recent=archive_recent_chips,
         archive_href=archive_href,
         **favicons,
     )

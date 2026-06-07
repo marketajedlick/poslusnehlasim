@@ -23,7 +23,7 @@
 <div class="archiv-wrap">
   <header class="archiv-head">
     <h1 class="archiv-title">Archiv vydání</h1>
-    <p class="archiv-gloss">Všechna vydání deníku z {{ obdobi }}. volebního období.</p>
+    <p class="archiv-gloss">Všechna dostupná vydání deníku.</p>
     {% if latest_href %}
     <a class="archiv-latest" href="{{ latest_href }}">Nejnovější vydání</a>
     {% endif %}
@@ -42,15 +42,15 @@
           aria-label="{{ chip.title }}"
         >
           <span class="archive-chip-day">{{ chip.day_label }}</span>
-          {% if chip.schuze_suffix %}
           <span class="archive-chip-sub">{{ chip.schuze_suffix }}</span>
-          {% endif %}
         </a>
         {% endfor %}
       </div>
     </section>
     {% endfor %}
   </div>
+
+  <p class="archiv-legend"><span class="archiv-legend-mark">s =</span> číslo schůze Poslanecké sněmovny</p>
 </div>
 </body>
 </html>

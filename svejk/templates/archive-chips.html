@@ -1,26 +1,5 @@
-        {% if archive_recent %}
-        <section class="archive" aria-label="Jiné vydání">
-          <h2 class="archive-kick">Jiné vydání</h2>
-          <div class="archive-scroll" tabindex="0">
-            <div class="archive-chips">
-              {% for chip in archive_recent %}
-              <a
-                class="archive-chip{% if chip.is_current %} is-current{% endif %}"
-                href="{{ chip.href }}"
-                title="{{ chip.title }}"
-                aria-label="{{ chip.title }}{% if chip.is_current %}, aktuální vydání{% endif %}"
-                {% if chip.is_current %}aria-current="page"{% endif %}
-              >
-                <span class="archive-chip-day">{{ chip.day_label }}</span>
-                {% if chip.schuze_suffix %}
-                <span class="archive-chip-sub">{{ chip.schuze_suffix }}</span>
-                {% endif %}
-              </a>
-              {% endfor %}
-            </div>
-          </div>
-          {% if archive_href %}
+        {% if archive_href %}
+        <section class="archive-link" aria-label="Archiv vydání">
           <a class="archive-all" href="{{ archive_href }}">Celý archiv</a>
-          {% endif %}
         </section>
         {% endif %}

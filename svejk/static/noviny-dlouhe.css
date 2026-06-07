@@ -324,29 +324,12 @@ body.is-turning{ pointer-events:none; }
 }
 .subscribe--success .subscribe-gloss{ display:none; }
 
-/* ---------- archive chips ---------- */
-.archive{
+/* ---------- archive (chips on archiv page, link on editions) ---------- */
+.archive-link{
   margin-top:24px; padding:20px 0 0;
   border-top:1px solid rgba(33,28,20,.14);
-  display:flex; flex-direction:column; align-items:center;
+  display:flex; justify-content:center;
   text-align:center;
-}
-.archive-kick{
-  margin:0 0 12px;
-  font-family:'Anton',sans-serif; text-transform:uppercase;
-  letter-spacing:.12em; font-size:13px; color:var(--ink-soft);
-}
-.archive-scroll{
-  width:100%; max-width:100%;
-  overflow-x:auto; overflow-y:hidden;
-  -webkit-overflow-scrolling:touch;
-  padding:2px 0 6px;
-  scrollbar-width:thin;
-  scrollbar-color:rgba(33,28,20,.25) transparent;
-}
-.archive-chips{
-  display:inline-flex; flex-wrap:nowrap; gap:8px;
-  padding:0 2px; min-width:min-content;
 }
 .archive-chip{
   flex:0 0 auto;
@@ -376,7 +359,7 @@ body.is-turning{ pointer-events:none; }
 }
 .archive-chip-sub{
   font-family:'Oswald',sans-serif; font-weight:500;
-  font-size:8px; line-height:1; letter-spacing:.04em;
+  font-size:7px; line-height:1; letter-spacing:.02em;
   margin-top:2px; opacity:.85;
 }
 .archive-all{
@@ -434,6 +417,17 @@ body.archiv-page{
 }
 .archiv-month-chips{
   display:flex; flex-wrap:wrap; gap:8px;
+}
+.archiv-legend{
+  margin:24px 0 0;
+  padding-top:18px;
+  border-top:1px solid rgba(33,28,20,.14);
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:11px; letter-spacing:.08em;
+  color:var(--ink-soft); text-align:center;
+}
+.archiv-legend-mark{
+  font-weight:600; color:var(--ink);
 }
 
 /* ---------- nav (mobile) ---------- */
@@ -597,8 +591,7 @@ body.archiv-page{
   .verdict .q{ font-size:38px; line-height:1.18; padding-left:74px; }
   .verdict .sign{ letter-spacing:.26em; font-size:11px; margin:18px 0 0 74px; }
 
-  .archive{ margin-top:28px; padding-top:24px; }
-  .archive-kick{ font-size:14px; }
+  .archive-link{ margin-top:28px; padding-top:24px; }
   .archive-chip{ width:46px; height:46px; }
   .archive-chip-day{ font-size:15px; }
 

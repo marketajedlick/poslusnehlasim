@@ -233,13 +233,12 @@ def _archive_chips(
     }
     for edition in subset:
         d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
-        dup = len(_editions_on_day(editions, edition.datum_unl)) > 1
         link = _make_link(edition, **kw)
         chips.append(
             ArchiveChip(
                 href=link.href,
                 day_label=f"{d.day:02d}",
-                schuze_suffix=f"s{edition.schuze}" if dup else "",
+                schuze_suffix=f"s{edition.schuze}",
                 is_current=(
                     edition.schuze == current_schuze and edition.datum_unl == current_datum
                 ),
@@ -262,7 +261,22 @@ def archive_recent(
     editions = list_obdobi_editions(ob)
     if not editions:
         return ()
-    subset = editions[-limit:] if len(editions) > limit else editions
+    recent = list(editions[-limit:] if len(editions) > limit else editions)
+    in_recent = any(
+        e.schuze == paths.schuze and e.datum_unl == datum_unl for e in recent
+    )
+    if not in_recent:
+        current = next(
+            (
+                e
+                for e in editions
+                if e.schuze == paths.schuze and e.datum_unl == datum_unl
+            ),
+            None,
+        )
+        if current is not None:
+            recent = [current] + recent[-(limit - 1) :]
+    subset = tuple(recent)
     return _archive_chips(
         subset,
         editions,
