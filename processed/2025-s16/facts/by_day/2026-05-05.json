@@ -1,14 +1,23 @@
 {
   "datum": "05.05.2026",
   "den": "úterý",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "sudetonemecky-sjezd-debata"
+  ],
+  "dnesni_ucet": "Koalice vs. opozice o sjezdu v Brně.\nČtrnáct hlasování padlo, usnesení přišlo až v noci.",
+  "zaver": "že úterý patřilo vášnivé debatě o sjezdu Sudetoněmeckého landsmanšaftu v Brně, koalice chtěla odsoudit jeho konání a čtrnáct pozměňovacích návrhů padlo až po půlnoci.",
+  "vysledek": [
+    "* debata o sudetoněmeckém sjezdu odpoledne do půlnoci",
+    "* čtrnáct hlasování o pozměňovacích návrzích zamítnuto",
+    "* Ferčíková navrhla protiusnesení o dialogu a Benešových dekretách",
+    "* koaliční text schválen až ve středu v 00:51"
+  ],
   "stats": {
     "pocet_hlas": 0,
-    "minuty": 550,
+    "minuty": 420,
     "end_cas": "23:12",
     "proslo": 0,
     "zamitnuto": 0,
-    "dlouha_debata": false
-  },
-  "dnesni_ucet": "Úterý bez schváleného zákona.\nČtrnáct návrhů na pořad nebo proceduru padlo."
+    "dlouha_debata": true
+  }
 }

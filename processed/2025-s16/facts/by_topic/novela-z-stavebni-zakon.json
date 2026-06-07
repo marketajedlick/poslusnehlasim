@@ -7,10 +7,24 @@
   "koho": [
     "Koho se to týká? Každého, kdo staví dům, dělá přístavbu nebo čeká na úřad."
   ],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "První čtení novely stavebního zákona prošlo sto deseti hlasy.",
+      "source": "votes",
+      "citace": "Hlasování číslo 66, pro 110, proti 0."
+    },
+    {
+      "text": "Druhé hlasování ve stejný večer, sto dvacet tři pro.",
+      "source": "votes",
+      "citace": "Hlasování číslo 67, pro 123, proti 0."
+    }
+  ],
   "publikovat": true,
-  "priorita": 1,
-  "nadpis": "Stavba půjde snáz, když bůh dá",
+  "priorita": 2,
+  "nadpis": "Stavební zákon pokračuje",
+  "lead": "Ve středu večer sněmovna schválila další kolo novely stavebního zákona, sto deset a pak sto dvacet tři hlasů proti nule. Prošlo až po celodenní debatě o sudetoněmeckém sjezdu.",
+  "pointa": "Novela je součást dlouhodobé reformy stavebního řízení. Tentokrát šlo o hlasování pozdě večer po odblokování pořadu.",
+  "mean": "Změny se dotknou každého, kdo řeší stavbu nebo rekonstrukci u úřadu. Konkrétní úpravy závisí na finálním znění.",
   "pocet_hlasovani": 2,
   "proslo": true
 }

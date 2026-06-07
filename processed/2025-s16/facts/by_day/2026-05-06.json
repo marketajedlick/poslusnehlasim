@@ -3,17 +3,24 @@
   "den": "středa",
   "topic_slugs": [
     "stanovisko-vladni-koalice-ke-sjezdu-sudetonemeck",
-    "novela-z-o-statni-socialni-podpore",
     "novela-z-stavebni-zakon",
+    "novela-z-o-statni-socialni-podpore",
     "novela-z-o-socialnich-sluzbach"
+  ],
+  "dnesni_ucet": "V noci prošlo usnesení proti sjezdu v Brně.\nVečer tři zákony, stavba i sociální dávky.",
+  "zaver": "že středa v noci sněmovna schválila stanovisko ke sjezdu Sudetoněmeckého landsmanšaftu v Brně a večer protlačila tři novely od stavebního zákona po sociální dávky.",
+  "vysledek": [
+    "* stanovisko ke sjezdu v Brně schváleno 109:1 ve 00:51",
+    "* stavební zákon ve dvou hlasováních 110:0 a 123:0",
+    "* digitalizace dávek odložena, schváleno 100:1",
+    "* převod péče OZP na 2028, schváleno 111:0"
   ],
   "stats": {
     "pocet_hlas": 4,
-    "minuty": 1269,
+    "minuty": 365,
     "end_cas": "22:00",
     "proslo": 4,
     "zamitnuto": 0,
-    "dlouha_debata": false
-  },
-  "dnesni_ucet": "Celonoční maraton: Sudetoněmecký sjezd, dávky, stavba, služby.\nČtyři zákony v prvním čtení, nikdo proti."
+    "dlouha_debata": true
+  }
 }

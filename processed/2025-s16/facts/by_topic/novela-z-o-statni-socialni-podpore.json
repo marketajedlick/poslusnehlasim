@@ -3,14 +3,35 @@
   "nazev": "Novela z. o státní sociální podpoře",
   "datum": "06.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "státní sociální podpoře",
+  "predmet_lidsky": "termínech digitalizace dávek na Úřadu práce",
   "koho": [
-    "Pokud chodíte na Úřad práce pro příspěvek na bydlení nebo přídavek na dítě, nemusíte se zatím bát, že by se vám všechno přes noc přeházelo."
+    "Koho se to týká? Rodiny čekající na příspěvek na bydlení, přídavek na dítě nebo další dávky z Úřadu práce."
   ],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Novela odkládá digitalizaci dávek, které měly naběhnout 1. července 2026.",
+      "source": "steno",
+      "steno_id": "2025_14_01084",
+      "citace": "Tato novela fakticky odkládá náběh digitalizačních změn, které měly být účinné od 1. července 2026."
+    },
+    {
+      "text": "IT systémy nestíhají kvůli zavedení superdávky.",
+      "source": "steno",
+      "steno_id": "2025_14_01084",
+      "citace": "Současné kapacity informačních systémů jsou plně vytíženy implementací nové dávky státní sociální pomoci."
+    },
+    {
+      "text": "Hlasování číslo 68 a 69, sto hlasů pro při závěrečném hlasování.",
+      "source": "votes",
+      "citace": "Hlasování číslo 69, pro 100, proti 1."
+    }
+  ],
   "publikovat": true,
-  "priorita": 1,
-  "nadpis": "Dávky se mění",
+  "priorita": 2,
+  "nadpis": "Dávky se digitalizují později",
+  "lead": "Sněmovna ve středu večer schválila technickou novelu, která odkládá digitalizaci dávek státní sociální podpory. Úřad práce nestihne nový systém k červenci.",
+  "pointa": "Kapacity IT žere superdávka. Směr digitalizace zůstává, mění se tempo, aby chyby neodnesli senioři a rodiny.",
+  "mean": "Dávky z Úřadu práce se zatím nebudou převádět do plně digitálního režimu podle původního harmonogramu.",
   "pocet_hlasovani": 2,
   "proslo": true
 }
