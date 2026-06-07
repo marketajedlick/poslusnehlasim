@@ -1,14 +1,23 @@
 {
   "datum": "16.04.2026",
   "den": "čtvrtek",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "mimoradna-schuze-opozice"
+  ],
+  "dnesni_ucet": "Opozice svolala mimořádnou schůzi, vláda odpovídala.\nDeset hodin řečí, žádné meritní hlasování.",
+  "zaver": "že opozice využila mimořádnou schůzi k útoku na vládu kvůli cenám pohonných hmot, médiím a kauzám, koalice obhajovala svůj program a jednání skončilo bez hlasování o zákonech.",
+  "vysledek": [
+    "* mimořádná schůze svolána devadesáti poslanci opozice",
+    "* debata o cenách benzínu, poplatcích ČT a evropských dotacích",
+    "* Okamura potvrdil návrh na zrušení koncesionářských poplatků",
+    "* jednání ukončeno v 21:00 bez prodloužení"
+  ],
   "stats": {
     "pocet_hlas": 0,
-    "minuty": 0,
-    "end_cas": "11:01",
+    "minuty": 554,
+    "end_cas": "21:00",
     "proslo": 0,
     "zamitnuto": 0,
-    "dlouha_debata": false
-  },
-  "dnesni_ucet": "Čtvrtek bez meritního hlasování.\nSněmovna jen zahájila, zákon nepadl."
+    "dlouha_debata": true
+  }
 }
