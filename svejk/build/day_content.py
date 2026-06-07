@@ -106,6 +106,7 @@ class DenContent:
     zaver: str = ""
     zaver_key: str = "Poslušně hlásím,"
     zaver_body: str = ""
+    board_note_lines: list[str] = field(default_factory=list)
 
 
 def lead_z_fact(fact: dict[str, Any]) -> str:
@@ -521,6 +522,10 @@ def _sanitize_den_content(content: DenContent) -> None:
     content.dnesni_ucet = _kapitalizuj_prvni_pismeno(
         _sanitize_text_export(content.dnesni_ucet)
     )
+    board_raw = (content.dnesni_ucet or content.result_note or "").strip()
+    content.board_note_lines = [
+        ln.strip() for ln in board_raw.splitlines() if ln.strip()
+    ]
     content.zaver = _sanitize_text_export(content.zaver)
     content.zaver_key = _sanitize_text_export(content.zaver_key)
     content.zaver_body = _sanitize_text_export(content.zaver_body)

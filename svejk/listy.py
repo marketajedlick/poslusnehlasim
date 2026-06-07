@@ -1006,8 +1006,8 @@ def _hodiny_debaty(svejk: str) -> int:
 def _dnesni_ucet(stats: dict, *, state: dict) -> str:
     p, m, k = stats["pocet_hlas"], stats["minuty"], stats["end_cas"]
     if k:
-        return f"{p} hlasování, {m} minut v sále a v {k} bylo po všem."
-    return f"{p} hlasování, {m} minut v sále."
+        return f"{p} hlasování, {m} minut v sále,\na v {k} bylo po všem."
+    return f"{p} hlasování,\n{m} minut v sále."
 
 
 def _shrnuti_radka(stats: dict, *, state: dict) -> str:
