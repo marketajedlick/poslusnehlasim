@@ -353,6 +353,118 @@ body.is-turning{ pointer-events:none; }
 }
 .subscribe--success .subscribe-gloss{ display:none; }
 
+/* ---------- archive chips ---------- */
+.archive{
+  margin-top:24px; padding:20px 0 0;
+  border-top:1px solid rgba(33,28,20,.14);
+  display:flex; flex-direction:column; align-items:center;
+  text-align:center;
+}
+.archive-kick{
+  margin:0 0 12px;
+  font-family:'Anton',sans-serif; text-transform:uppercase;
+  letter-spacing:.12em; font-size:13px; color:var(--ink-soft);
+}
+.archive-scroll{
+  width:100%; max-width:100%;
+  overflow-x:auto; overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+  padding:2px 0 6px;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(33,28,20,.25) transparent;
+}
+.archive-chips{
+  display:inline-flex; flex-wrap:nowrap; gap:8px;
+  padding:0 2px; min-width:min-content;
+}
+.archive-chip{
+  flex:0 0 auto;
+  display:inline-flex; flex-direction:column; align-items:center; justify-content:center;
+  width:42px; height:42px;
+  border:2px solid rgba(33,28,20,.28);
+  border-radius:50%;
+  background:var(--paper);
+  color:var(--ink);
+  text-decoration:none;
+  transition:background .15s, border-color .15s, color .15s;
+}
+.archive-chip:hover{
+  border-color:var(--terra);
+  background:rgba(207,90,49,.08);
+  color:var(--terra);
+}
+.archive-chip.is-current{
+  border-color:var(--terra);
+  background:var(--terra);
+  color:var(--paper);
+  pointer-events:none;
+}
+.archive-chip-day{
+  font-family:'Oswald',sans-serif; font-weight:600;
+  font-size:14px; line-height:1; letter-spacing:.02em;
+}
+.archive-chip-sub{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:8px; line-height:1; letter-spacing:.04em;
+  margin-top:2px; opacity:.85;
+}
+.archive-all{
+  margin-top:12px;
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--terra); text-decoration:none;
+  border-bottom:1px solid rgba(207,90,49,.35);
+  padding-bottom:1px;
+}
+.archive-all:hover{ border-bottom-color:var(--terra); }
+
+/* ---------- archiv page ---------- */
+body.archiv-page{
+  padding:calc(24px + env(safe-area-inset-top, 0px)) 16px 32px;
+}
+.archiv-wrap{
+  width:100%; max-width:640px; margin:0 auto;
+  background:var(--paper);
+  border:1.5px solid rgba(33,28,20,.22);
+  box-shadow:0 10px 28px var(--shadow);
+  padding:24px 18px 28px;
+}
+.archiv-head{
+  text-align:center;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(33,28,20,.14);
+  margin-bottom:20px;
+}
+.archiv-title{
+  margin:0 0 8px;
+  font-family:'Anton',sans-serif; text-transform:uppercase;
+  letter-spacing:.06em; font-size:clamp(22px, 6vw, 32px);
+  color:var(--ink);
+}
+.archiv-gloss{
+  margin:0 0 14px;
+  font-family:'Old Standard TT',serif; font-style:italic;
+  font-size:17px; line-height:1.45; color:var(--ink-soft);
+}
+.archiv-latest{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--terra); text-decoration:none;
+  border-bottom:1px solid rgba(207,90,49,.35);
+  padding-bottom:1px;
+}
+.archiv-latest:hover{ border-bottom-color:var(--terra); }
+.archiv-months{ display:flex; flex-direction:column; gap:18px; }
+.archiv-month-label{
+  margin:0 0 10px;
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.archiv-month-chips{
+  display:flex; flex-wrap:wrap; gap:8px;
+}
+
 /* ---------- nav (mobile) ---------- */
 .edition-nav{
   position:fixed;
@@ -513,6 +625,13 @@ body.is-turning{ pointer-events:none; }
   .verdict .qm{ font-size:120px; top:22px; left:18px; }
   .verdict .q{ font-size:38px; line-height:1.18; padding-left:74px; }
   .verdict .sign{ letter-spacing:.26em; font-size:11px; margin:18px 0 0 74px; }
+
+  .archive{ margin-top:28px; padding-top:24px; }
+  .archive-kick{ font-size:14px; }
+  .archive-chip{ width:46px; height:46px; }
+  .archive-chip-day{ font-size:15px; }
+
+  .archiv-wrap{ padding:32px 28px 36px; }
 
   .subscribe{ margin-top:28px; padding-top:24px; }
   .subscribe-gloss{ font-size:18px; max-width:none; }
@@ -695,6 +814,359 @@ Ve stenoprotokolu přes dvacet tisíc slov.</div>
           <div class="sign">- Váš dobrý voják Švejk -</div>
         </div>
 
+        
+        <section class="archive" aria-label="Jiné vydání">
+          <h2 class="archive-kick">Jiné vydání</h2>
+          <div class="archive-scroll" tabindex="0">
+            <div class="archive-chips">
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s7/out/noviny-dlouhe/2026-02-13.html"
+                title="Pátek 13 / 02 / 2026 · schůze 7"
+                aria-label="Pátek 13 / 02 / 2026 · schůze 7"
+                
+              >
+                <span class="archive-chip-day">13</span>
+                
+                <span class="archive-chip-sub">s7</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s9/out/noviny-dlouhe/2026-02-13.html"
+                title="Pátek 13 / 02 / 2026 · schůze 9"
+                aria-label="Pátek 13 / 02 / 2026 · schůze 9"
+                
+              >
+                <span class="archive-chip-day">13</span>
+                
+                <span class="archive-chip-sub">s9</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s10/out/noviny-dlouhe/2026-03-03.html"
+                title="Úterý 03 / 03 / 2026"
+                aria-label="Úterý 03 / 03 / 2026"
+                
+              >
+                <span class="archive-chip-day">03</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s10/out/noviny-dlouhe/2026-03-04.html"
+                title="Středa 04 / 03 / 2026"
+                aria-label="Středa 04 / 03 / 2026"
+                
+              >
+                <span class="archive-chip-day">04</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s11/out/noviny-dlouhe/2026-03-05.html"
+                title="Čtvrtek 05 / 03 / 2026"
+                aria-label="Čtvrtek 05 / 03 / 2026"
+                
+              >
+                <span class="archive-chip-day">05</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s10/out/noviny-dlouhe/2026-03-06.html"
+                title="Pátek 06 / 03 / 2026"
+                aria-label="Pátek 06 / 03 / 2026"
+                
+              >
+                <span class="archive-chip-day">06</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s10/out/noviny-dlouhe/2026-03-10.html"
+                title="Úterý 10 / 03 / 2026"
+                aria-label="Úterý 10 / 03 / 2026"
+                
+              >
+                <span class="archive-chip-day">10</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s10/out/noviny-dlouhe/2026-03-11.html"
+                title="Středa 11 / 03 / 2026"
+                aria-label="Středa 11 / 03 / 2026"
+                
+              >
+                <span class="archive-chip-day">11</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s10/out/noviny-dlouhe/2026-03-12.html"
+                title="Čtvrtek 12 / 03 / 2026"
+                aria-label="Čtvrtek 12 / 03 / 2026"
+                
+              >
+                <span class="archive-chip-day">12</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s12/out/noviny-dlouhe/2026-03-13.html"
+                title="Pátek 13 / 03 / 2026"
+                aria-label="Pátek 13 / 03 / 2026"
+                
+              >
+                <span class="archive-chip-day">13</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s13/out/noviny-dlouhe/2026-03-24.html"
+                title="Úterý 24 / 03 / 2026"
+                aria-label="Úterý 24 / 03 / 2026"
+                
+              >
+                <span class="archive-chip-day">24</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s13/out/noviny-dlouhe/2026-03-25.html"
+                title="Středa 25 / 03 / 2026"
+                aria-label="Středa 25 / 03 / 2026"
+                
+              >
+                <span class="archive-chip-day">25</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s14/out/noviny-dlouhe/2026-04-14.html"
+                title="Úterý 14 / 04 / 2026"
+                aria-label="Úterý 14 / 04 / 2026"
+                
+              >
+                <span class="archive-chip-day">14</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s14/out/noviny-dlouhe/2026-04-15.html"
+                title="Středa 15 / 04 / 2026"
+                aria-label="Středa 15 / 04 / 2026"
+                
+              >
+                <span class="archive-chip-day">15</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s15/out/noviny-dlouhe/2026-04-16.html"
+                title="Čtvrtek 16 / 04 / 2026"
+                aria-label="Čtvrtek 16 / 04 / 2026"
+                
+              >
+                <span class="archive-chip-day">16</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s14/out/noviny-dlouhe/2026-04-17.html"
+                title="Pátek 17 / 04 / 2026"
+                aria-label="Pátek 17 / 04 / 2026"
+                
+              >
+                <span class="archive-chip-day">17</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s14/out/noviny-dlouhe/2026-04-21.html"
+                title="Úterý 21 / 04 / 2026"
+                aria-label="Úterý 21 / 04 / 2026"
+                
+              >
+                <span class="archive-chip-day">21</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s14/out/noviny-dlouhe/2026-04-22.html"
+                title="Středa 22 / 04 / 2026"
+                aria-label="Středa 22 / 04 / 2026"
+                
+              >
+                <span class="archive-chip-day">22</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s14/out/noviny-dlouhe/2026-04-23.html"
+                title="Čtvrtek 23 / 04 / 2026"
+                aria-label="Čtvrtek 23 / 04 / 2026"
+                
+              >
+                <span class="archive-chip-day">23</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s14/out/noviny-dlouhe/2026-04-24.html"
+                title="Pátek 24 / 04 / 2026"
+                aria-label="Pátek 24 / 04 / 2026"
+                
+              >
+                <span class="archive-chip-day">24</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s16/out/noviny-dlouhe/2026-05-05.html"
+                title="Úterý 05 / 05 / 2026"
+                aria-label="Úterý 05 / 05 / 2026"
+                
+              >
+                <span class="archive-chip-day">05</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s16/out/noviny-dlouhe/2026-05-06.html"
+                title="Středa 06 / 05 / 2026 · schůze 16"
+                aria-label="Středa 06 / 05 / 2026 · schůze 16"
+                
+              >
+                <span class="archive-chip-day">06</span>
+                
+                <span class="archive-chip-sub">s16</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s17/out/noviny-dlouhe/2026-05-06.html"
+                title="Středa 06 / 05 / 2026 · schůze 17"
+                aria-label="Středa 06 / 05 / 2026 · schůze 17"
+                
+              >
+                <span class="archive-chip-day">06</span>
+                
+                <span class="archive-chip-sub">s17</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s17/out/noviny-dlouhe/2026-05-13.html"
+                title="Středa 13 / 05 / 2026"
+                aria-label="Středa 13 / 05 / 2026"
+                
+              >
+                <span class="archive-chip-day">13</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s18/out/noviny-dlouhe/2026-05-14.html"
+                title="Čtvrtek 14 / 05 / 2026"
+                aria-label="Čtvrtek 14 / 05 / 2026"
+                
+              >
+                <span class="archive-chip-day">14</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s17/out/noviny-dlouhe/2026-05-15.html"
+                title="Pátek 15 / 05 / 2026 · schůze 17"
+                aria-label="Pátek 15 / 05 / 2026 · schůze 17"
+                
+              >
+                <span class="archive-chip-day">15</span>
+                
+                <span class="archive-chip-sub">s17</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s19/out/noviny-dlouhe/2026-05-15.html"
+                title="Pátek 15 / 05 / 2026 · schůze 19"
+                aria-label="Pátek 15 / 05 / 2026 · schůze 19"
+                
+              >
+                <span class="archive-chip-day">15</span>
+                
+                <span class="archive-chip-sub">s19</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s20/out/noviny-dlouhe/2026-05-26.html"
+                title="Úterý 26 / 05 / 2026"
+                aria-label="Úterý 26 / 05 / 2026"
+                
+              >
+                <span class="archive-chip-day">26</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s20/out/noviny-dlouhe/2026-05-27.html"
+                title="Středa 27 / 05 / 2026"
+                aria-label="Středa 27 / 05 / 2026"
+                
+              >
+                <span class="archive-chip-day">27</span>
+                
+              </a>
+              
+              <a
+                class="archive-chip"
+                href="../../../2025-s20/out/noviny-dlouhe/2026-05-28.html"
+                title="Čtvrtek 28 / 05 / 2026"
+                aria-label="Čtvrtek 28 / 05 / 2026"
+                
+              >
+                <span class="archive-chip-day">28</span>
+                
+              </a>
+              
+            </div>
+          </div>
+          
+        </section>
+        
         
         <section class="subscribe" aria-label="Odběr novinek">
           <p class="subscribe-gloss">Do sněmovny sám nemusíš, nech mi tu email a pošleme ti nové vydání.</p>

@@ -9,27 +9,30 @@
   ],
   "fakty": [
     {
-      "text": "Od ledna klesne minimální záloha z 5 720 na 5 005 korun měsíčně (ušetříte zhruba 715 korun); přeplatek vám stát vrátí.",
-      "source": "manual",
-      "note": "z glosy / TEMA_PRAVIDLA"
+      "text": "Z tabule proti nikdo.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_5_00939",
+      "citace": "(Z tabule proti nikdo.)"
     },
     {
-      "text": "e zvýšení odvodové zátěže o dalších 715 korun měsíčně, tedy 8 580 korun ročně. Pokud sečteme zvýšení sociálních odvodů, ke kterému",
+      "text": "Hlasování číslo 62 bylo přihlášeno 182 poslanců, pro hlasovalo 159 (Z tabule proti nikdo.).",
       "source": "steno",
+      "steno_id": "2025_5_00939",
+      "citace": "Hlasování číslo 62 bylo přihlášeno 182 poslanců, pro hlasovalo 159 (Z tabule proti nikdo.)."
+    },
+    {
+      "text": "Dalším bodem podle schváleného programu schůze je 1.Návrh poslanců Aleny Schillerové, Andreje Babiše, Tomia Okamury, Petra Macinky, Aleše Juchelky, Karla Havlíčka, Taťány Malé, Radima Fialy a Borise Šťastného na vydání zákona, kterým se mění zákon č.",
+      "source": "steno",
+      "steno_id": "2025_5_00939",
+      "citace": "Dalším bodem podle schváleného programu schůze je 1.Návrh poslanců Aleny Schillerové, Andreje Babiše, Tomia Okamury, Petra Macinky, Aleše Juchelky, Karla Havlíčka, Taťány Malé, Radima Fialy a Borise Š"
+    },
+    {
+      "text": "Potlesk poslanců ANO.",
+      "source": "steno",
+      "kind": "scene",
       "steno_id": "2025_5_00940",
-      "citace": "átěže o dalších 715 korun měsíčně, tedy 8 580 korun ročně. Pokud sečteme zvýšení sociálních odvodů, ke kterému došlo v důsledku daň"
-    },
-    {
-      "text": "minimální zálohy na sociální pojistné, která od ledna činí 5 720 korun, bude v co nejkratší době zásadně zmírněno na nezbytné mini",
-      "source": "steno",
-      "steno_id": "2025_5_00940",
-      "citace": "sociální pojistné, která od ledna činí 5 720 korun, bude v co nejkratší době zásadně zmírněno na nezbytné minimum dané růstem prům"
-    },
-    {
-      "text": "hodné, aby vláda hledala rozpočtově neutrální řešení, které sníží minimální zálohy, ale současně nezatne do státního rozpočtu sekyru 7 miliard. A to je právě to, a je to škoda tohoto tisku, že si neklade",
-      "source": "steno",
-      "steno_id": "2025_5_00946",
-      "citace": "dala rozpočtově neutrální řešení, které sníží minimální zálohy, ale současně nezatne do státního rozpočtu sekyru 7 miliard. A to je právě to, a je to škoda tohoto tisku, že si neklade větší ambice a s"
+      "citace": "(Potlesk poslanců ANO.)"
     }
   ],
   "publikovat": true,

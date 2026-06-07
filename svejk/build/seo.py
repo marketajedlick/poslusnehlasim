@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from xml.etree.ElementTree import Element, SubElement, tostring
 
-from svejk.build.nav import Edition, edition_pages_href
+from svejk.build.nav import Edition, archiv_pages_href, edition_pages_href
 from svejk.newsletter.feed import _edition_description
 
 _AI_BOTS = (
@@ -95,6 +95,8 @@ def write_sitemap_xml(
         )
 
     add_url(f"{base}/", editions[-1].when if editions else datetime.now(timezone.utc))
+    if editions:
+        add_url(f"{base}{archiv_pages_href(base_path)}", editions[-1].when)
 
     for edition in editions:
         href = edition_pages_href(edition.obdobi, edition.schuze, edition.datum_unl, base_path)

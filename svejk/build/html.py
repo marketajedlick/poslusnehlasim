@@ -7,7 +7,14 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from svejk.build.day_content import DenContent, datum_design
-from svejk.build.nav import edition_nav, list_obdobi_editions
+from svejk.build.nav import (
+    archiv_pages_href,
+    archive_by_month,
+    archive_recent,
+    edition_nav,
+    edition_pages_href,
+    list_obdobi_editions,
+)
 from svejk.newsletter.config import NewsletterConfig
 from svejk.paths import SchuzePaths
 
@@ -104,12 +111,16 @@ def render_den_html(
             f"Deník z Poslanecké sněmovny, {datum_design(content.datum, content.den)}."
         )
     if not canonical_url:
-        from svejk.build.nav import edition_pages_href
-
-        href = edition_pages_href(
-            ob, paths.schuze, content.datum, base_path
-        )
+        href = edition_pages_href(ob, paths.schuze, content.datum, base_path)
         canonical_url = f"{cfg.site_url.rstrip('/')}{href}"
+    archive_recent_chips = archive_recent(
+        paths,
+        content.datum,
+        link_mode=link_mode,
+        obdobi=ob,
+        base_path=base_path,
+    )
+    archive_href = archiv_pages_href(base_path) if link_mode == "pages" else None
     title = f"Poslušně hlásím · {datum_design(content.datum, content.den)}"
     from svejk.build.seo import article_json_ld as _article_json_ld
 
@@ -137,5 +148,49 @@ def render_den_html(
         canonical_url=canonical_url,
         meta_description=meta_description,
         article_json_ld=json_ld,
+        archive_recent=archive_recent_chips,
+        archive_href=archive_href,
+        **favicons,
+    )
+
+
+def render_archiv_html(
+    obdobi: int,
+    *,
+    inline_css: bool = False,
+    css_href: str | None = None,
+    base_path: str = "",
+) -> str:
+    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    editions = list_obdobi_editions(obdobi)
+    if not editions:
+        raise ValueError(f"Žádná vydání pro období {obdobi}")
+
+    latest = editions[-1]
+    paths = SchuzePaths.create(latest.obdobi, latest.schuze)
+    months = archive_by_month(
+        paths,
+        "",
+        link_mode="pages",
+        obdobi=obdobi,
+        base_path=base_path,
+    )
+    latest_href = edition_pages_href(
+        latest.obdobi, latest.schuze, latest.datum_unl, base_path
+    )
+    canonical_url = f"{cfg.site_url.rstrip('/')}{archiv_pages_href(base_path)}"
+    tpl = _jinja_env().get_template("archiv.html")
+    return tpl.render(
+        obdobi=obdobi,
+        archive_months=months,
+        latest_href=latest_href,
+        canonical_url=canonical_url,
+        inline_css=inline_css,
+        css=css,
+        css_href=css_href,
         **favicons,
     )

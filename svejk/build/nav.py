@@ -6,12 +6,28 @@ import os
 from dataclasses import dataclass
 from datetime import datetime
 from functools import lru_cache
+from itertools import groupby
 from pathlib import Path
 
 from svejk.build.day_content import datum_design
 from svejk.build.io import read_json
 from svejk.paths import SchuzePaths, processed_root
 from svejk.timeline import den_v_tydnu
+
+_MESICE_NOM = (
+    "leden",
+    "únor",
+    "březen",
+    "duben",
+    "květen",
+    "červen",
+    "červenec",
+    "srpen",
+    "září",
+    "říjen",
+    "listopad",
+    "prosinec",
+)
 
 
 @dataclass(frozen=True)
@@ -25,6 +41,21 @@ class EditionLink:
 class EditionNav:
     prev: EditionLink | None
     next: EditionLink | None
+
+
+@dataclass(frozen=True)
+class ArchiveChip:
+    href: str
+    day_label: str
+    schuze_suffix: str
+    is_current: bool
+    title: str
+
+
+@dataclass(frozen=True)
+class ArchiveMonth:
+    label: str
+    chips: tuple[ArchiveChip, ...]
 
 
 @dataclass(frozen=True)
@@ -86,6 +117,11 @@ def edition_pages_href(
     base = base_path.rstrip("/")
     path = f"/noviny/{obdobi}/{schuze}/{datum_unl}.html"
     return f"{base}{path}" if base else path
+
+
+def archiv_pages_href(base_path: str = "") -> str:
+    base = base_path.rstrip("/")
+    return f"{base}/archiv.html" if base else "/archiv.html"
 
 
 def resolve_edition(obdobi: int, datum_unl: str, schuze: int | None = None) -> Edition | None:
@@ -174,6 +210,100 @@ def edition_nav(
     prev = _make_link(editions[idx - 1], **kw) if idx > 0 else None
     nxt = _make_link(editions[idx + 1], **kw) if idx < len(editions) - 1 else None
     return EditionNav(prev, nxt)
+
+
+def _archive_chips(
+    subset: tuple[Edition, ...],
+    editions: tuple[Edition, ...],
+    *,
+    current_schuze: int,
+    current_datum: str,
+    link_mode: str,
+    from_paths: SchuzePaths,
+    from_datum: str,
+    base_path: str,
+) -> tuple[ArchiveChip, ...]:
+    chips: list[ArchiveChip] = []
+    kw = {
+        "editions": editions,
+        "link_mode": link_mode,
+        "from_paths": from_paths,
+        "from_datum": from_datum,
+        "base_path": base_path,
+    }
+    for edition in subset:
+        d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
+        dup = len(_editions_on_day(editions, edition.datum_unl)) > 1
+        link = _make_link(edition, **kw)
+        chips.append(
+            ArchiveChip(
+                href=link.href,
+                day_label=f"{d.day:02d}",
+                schuze_suffix=f"s{edition.schuze}" if dup else "",
+                is_current=(
+                    edition.schuze == current_schuze and edition.datum_unl == current_datum
+                ),
+                title=link.title,
+            )
+        )
+    return tuple(chips)
+
+
+def archive_recent(
+    paths: SchuzePaths,
+    datum_unl: str,
+    *,
+    link_mode: str = "file",
+    obdobi: int | None = None,
+    base_path: str = "",
+    limit: int = 30,
+) -> tuple[ArchiveChip, ...]:
+    ob = obdobi if obdobi is not None else paths.obdobi
+    editions = list_obdobi_editions(ob)
+    if not editions:
+        return ()
+    subset = editions[-limit:] if len(editions) > limit else editions
+    return _archive_chips(
+        subset,
+        editions,
+        current_schuze=paths.schuze,
+        current_datum=datum_unl,
+        link_mode=link_mode,
+        from_paths=paths,
+        from_datum=datum_unl,
+        base_path=base_path,
+    )
+
+
+def archive_by_month(
+    paths: SchuzePaths,
+    datum_unl: str,
+    *,
+    link_mode: str = "file",
+    obdobi: int | None = None,
+    base_path: str = "",
+) -> tuple[ArchiveMonth, ...]:
+    ob = obdobi if obdobi is not None else paths.obdobi
+    editions = list_obdobi_editions(ob)
+    if not editions:
+        return ()
+
+    months: list[ArchiveMonth] = []
+    for (year, month), group in groupby(editions, key=lambda e: (e.when.year, e.when.month)):
+        subset = tuple(group)
+        label = f"{_MESICE_NOM[month - 1]} {year}"
+        chips = _archive_chips(
+            subset,
+            editions,
+            current_schuze=paths.schuze,
+            current_datum=datum_unl,
+            link_mode=link_mode,
+            from_paths=paths,
+            from_datum=datum_unl,
+            base_path=base_path,
+        )
+        months.append(ArchiveMonth(label=label, chips=chips))
+    return tuple(months)
 
 
 def clear_edition_cache() -> None:

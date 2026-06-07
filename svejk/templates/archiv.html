@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#c9bda3" />
+<link rel="icon" type="image/svg+xml" href="{{ favicon_svg }}" />
+<link rel="icon" type="image/png" href="{{ favicon_png }}" sizes="32x32" />
+<link rel="apple-touch-icon" href="{{ apple_touch_icon }}" />
+<title>Archiv vydání · Poslušně hlásím</title>
+<meta name="description" content="Všechna vydání deníku z Poslanecké sněmovny, období {{ obdobi }}." />
+<link rel="canonical" href="{{ canonical_url }}" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+{% if inline_css %}
+<style>{{ css | safe }}</style>
+{% else %}
+<link rel="stylesheet" href="{{ css_href }}" />
+{% endif %}
+</head>
+<body class="archiv-page">
+<div class="archiv-wrap">
+  <header class="archiv-head">
+    <h1 class="archiv-title">Archiv vydání</h1>
+    <p class="archiv-gloss">Všechna vydání deníku z {{ obdobi }}. volebního období.</p>
+    {% if latest_href %}
+    <a class="archiv-latest" href="{{ latest_href }}">Nejnovější vydání</a>
+    {% endif %}
+  </header>
+
+  <div class="archiv-months">
+    {% for month in archive_months %}
+    <section class="archiv-month" aria-label="{{ month.label }}">
+      <h2 class="archiv-month-label">{{ month.label }}</h2>
+      <div class="archiv-month-chips">
+        {% for chip in month.chips %}
+        <a
+          class="archive-chip{% if chip.is_current %} is-current{% endif %}"
+          href="{{ chip.href }}"
+          title="{{ chip.title }}"
+          aria-label="{{ chip.title }}"
+        >
+          <span class="archive-chip-day">{{ chip.day_label }}</span>
+          {% if chip.schuze_suffix %}
+          <span class="archive-chip-sub">{{ chip.schuze_suffix }}</span>
+          {% endif %}
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+    {% endfor %}
+  </div>
+</div>
+</body>
+</html>
