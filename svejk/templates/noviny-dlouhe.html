@@ -22,9 +22,7 @@
 <meta name="twitter:description" content="{{ meta_description }}" />
 <script type="application/ld+json">{{ article_json_ld | safe }}</script>
 <link rel="alternate" type="text/plain" title="Informace pro AI (llms.txt)" href="{{ newsletter.site_url }}/llms.txt" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="alternate" type="application/rss+xml" title="Poslušně hlásím, nová vydání" href="{{ newsletter.feed_url }}" />
 {% if inline_css %}
 <style>{{ css | safe }}</style>

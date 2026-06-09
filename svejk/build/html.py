@@ -23,6 +23,7 @@ from svejk.paths import SchuzePaths
 _TEMPLATES = Path(__file__).resolve().parent.parent / "templates"
 _STATIC = Path(__file__).resolve().parent.parent / "static"
 _CSS = _STATIC / "noviny-dlouhe.css"
+_FONTS_CSS = _STATIC / "fonts.css"
 _EMAIL_CSS = _STATIC / "noviny-email.css"
 _SVEJK_SVG = _STATIC / "svejk.svg"
 _FAVICON_PNG = _STATIC / "svejk-terra.png"
@@ -31,6 +32,14 @@ _FAVICON_PNG = _STATIC / "svejk-terra.png"
 def static_css_path(base_path: str = "", *, version: str | None = None) -> str:
     base = base_path.rstrip("/")
     path = "/static/noviny-dlouhe.css"
+    if version:
+        path = f"{path}?v={version}"
+    return f"{base}{path}" if base else path
+
+
+def static_fonts_css_path(base_path: str = "", *, version: str | None = None) -> str:
+    base = base_path.rstrip("/")
+    path = "/static/fonts.css"
     if version:
         path = f"{path}?v={version}"
     return f"{base}{path}" if base else path
@@ -50,6 +59,12 @@ def css_asset_version() -> str:
     import hashlib
 
     return hashlib.sha256(_CSS.read_bytes()).hexdigest()[:10]
+
+
+def fonts_asset_version() -> str:
+    import hashlib
+
+    return hashlib.sha256(_FONTS_CSS.read_bytes()).hexdigest()[:10]
 
 
 def _proslo_board_label(n: int) -> str:
@@ -89,6 +104,7 @@ def render_den_html(
     *,
     inline_css: bool = True,
     css_href: str | None = None,
+    fonts_css_href: str | None = None,
     link_mode: str = "file",
     obdobi: int | None = None,
     base_path: str = "",
@@ -111,6 +127,11 @@ def render_den_html(
     ob = obdobi if obdobi is not None else paths.obdobi
     dup_day = sum(1 for e in list_obdobi_editions(ob) if e.datum_unl == content.datum) > 1
     cfg = NewsletterConfig.from_env()
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
+        if link_mode == "file":
+            # lokální náhledy v processed/ — fonty natáhnou z produkčního webu
+            fonts_css_href = f"{cfg.site_url.rstrip('/')}{fonts_css_href}"
     if not meta_description:
         from svejk.build.seo import meta_description as _meta_description
 
@@ -146,6 +167,7 @@ def render_den_html(
         inline_css=inline_css,
         css=css,
         css_href=css_href,
+        fonts_css_href=fonts_css_href,
         nav=nav,
         newsletter=cfg,
         canonical_url=canonical_url,
@@ -287,11 +309,14 @@ def render_archiv_html(
     *,
     inline_css: bool = False,
     css_href: str | None = None,
+    fonts_css_href: str | None = None,
     base_path: str = "",
 ) -> str:
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
     if css_href is None:
         css_href = static_css_path(base_path)
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     editions = list_obdobi_editions(obdobi)
@@ -320,6 +345,7 @@ def render_archiv_html(
         inline_css=inline_css,
         css=css,
         css_href=css_href,
+        fonts_css_href=fonts_css_href,
         **favicons,
     )
 
@@ -329,12 +355,15 @@ def render_potvrzeno_html(
     *,
     inline_css: bool = False,
     css_href: str | None = None,
+    fonts_css_href: str | None = None,
     base_path: str = "",
 ) -> str:
     """Stránka po potvrzení double opt-in (přesměrování z Ecomailu)."""
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
     if css_href is None:
         css_href = static_css_path(base_path)
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     editions = list_obdobi_editions(obdobi)
@@ -362,6 +391,7 @@ def render_potvrzeno_html(
         inline_css=inline_css,
         css=css,
         css_href=css_href,
+        fonts_css_href=fonts_css_href,
         **favicons,
     )
 
@@ -371,12 +401,15 @@ def render_soukromi_html(
     *,
     inline_css: bool = False,
     css_href: str | None = None,
+    fonts_css_href: str | None = None,
     base_path: str = "",
 ) -> str:
     """Stránka ochrany osobních údajů u odběru novinek."""
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
     if css_href is None:
         css_href = static_css_path(base_path)
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     archive_href = archiv_pages_href(base_path)
@@ -390,5 +423,6 @@ def render_soukromi_html(
         inline_css=inline_css,
         css=css,
         css_href=css_href,
+        fonts_css_href=fonts_css_href,
         **favicons,
     )

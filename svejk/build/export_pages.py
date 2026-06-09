@@ -11,11 +11,13 @@ from typing import Any
 from svejk.build.day_content import build_den_content
 from svejk.build.html import (
     css_asset_version,
+    fonts_asset_version,
     render_archiv_html,
     render_den_html,
     render_potvrzeno_html,
     render_soukromi_html,
     static_css_path,
+    static_fonts_css_path,
 )
 from svejk.build.nav import (
     clear_edition_cache,
@@ -31,6 +33,8 @@ from svejk.paths import SchuzePaths, processed_root
 
 _STATIC = Path(__file__).resolve().parent.parent / "static"
 _CSS = _STATIC / "noviny-dlouhe.css"
+_FONTS_CSS = _STATIC / "fonts.css"
+_FONTS_DIR = _STATIC / "fonts"
 _FAVICON_PNG = _STATIC / "svejk-terra.png"
 _FAVICON_SVG = _STATIC / "svejk.svg"
 
@@ -60,6 +64,7 @@ def _render_edition_html(
     *,
     base: str,
     css_href: str,
+    fonts_css_href: str,
 ) -> str | None:
     paths = SchuzePaths.create(edition.obdobi, edition.schuze)
     d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
@@ -73,6 +78,7 @@ def _render_edition_html(
         day_path,
         inline_css=False,
         css_href=css_href,
+        fonts_css_href=fonts_css_href,
         link_mode="pages",
         obdobi=obdobi,
         base_path=base,
@@ -102,6 +108,8 @@ def run_export_pages(
     static_dir = out / "static"
     static_dir.mkdir()
     shutil.copy2(_CSS, static_dir / "noviny-dlouhe.css")
+    shutil.copy2(_FONTS_CSS, static_dir / "fonts.css")
+    shutil.copytree(_FONTS_DIR, static_dir / "fonts")
     if _FAVICON_SVG.is_file():
         shutil.copy2(_FAVICON_SVG, static_dir / "favicon.svg")
     if _FAVICON_PNG.is_file():
@@ -109,6 +117,7 @@ def run_export_pages(
         shutil.copy2(_FAVICON_PNG, static_dir / "apple-touch-icon.png")
         shutil.copy2(_FAVICON_PNG, out / "favicon.ico")
     css_href = static_css_path(base, version=css_asset_version())
+    fonts_css_href = static_fonts_css_path(base, version=fonts_asset_version())
 
     editions = list_obdobi_editions(obdobi)
     if not editions:
@@ -118,7 +127,9 @@ def run_export_pages(
 
     written: list[str] = []
     for edition in editions:
-        html = _render_edition_html(edition, obdobi, base=base, css_href=css_href)
+        html = _render_edition_html(
+            edition, obdobi, base=base, css_href=css_href, fonts_css_href=fonts_css_href
+        )
         if html is None:
             continue
         dest = out / "noviny" / str(edition.obdobi) / str(edition.schuze) / f"{edition.datum_unl}.html"
@@ -134,7 +145,9 @@ def run_export_pages(
         resolved = resolve_edition(obdobi, edition.datum_unl)
         if not resolved:
             continue
-        html = _render_edition_html(resolved, obdobi, base=base, css_href=css_href)
+        html = _render_edition_html(
+            resolved, obdobi, base=base, css_href=css_href, fonts_css_href=fonts_css_href
+        )
         if html is None:
             continue
         short = out / "noviny" / str(obdobi) / f"{edition.datum_unl}.html"
@@ -159,6 +172,7 @@ def run_export_pages(
             day_path,
             inline_css=False,
             css_href=css_href,
+            fonts_css_href=fonts_css_href,
             link_mode="pages",
             obdobi=obdobi,
             base_path=base,
@@ -168,17 +182,23 @@ def run_export_pages(
 
     page_count = sum(1 for p in written if p.endswith(".html") and p.count("/") >= 3)
 
-    archiv_html = render_archiv_html(obdobi, css_href=css_href, base_path=base)
+    archiv_html = render_archiv_html(
+        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
+    )
     (out / "archiv.html").write_text(archiv_html, encoding="utf-8")
     written.append("archiv.html")
 
-    potvrzeno_html = render_potvrzeno_html(obdobi, css_href=css_href, base_path=base)
+    potvrzeno_html = render_potvrzeno_html(
+        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
+    )
     potvrzeno_dir = out / "potvrzeno"
     potvrzeno_dir.mkdir(parents=True, exist_ok=True)
     (potvrzeno_dir / "index.html").write_text(potvrzeno_html, encoding="utf-8")
     written.append("potvrzeno/index.html")
 
-    soukromi_html = render_soukromi_html(obdobi, css_href=css_href, base_path=base)
+    soukromi_html = render_soukromi_html(
+        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
+    )
     soukromi_dir = out / "soukromi"
     soukromi_dir.mkdir(parents=True, exist_ok=True)
     (soukromi_dir / "index.html").write_text(soukromi_html, encoding="utf-8")
