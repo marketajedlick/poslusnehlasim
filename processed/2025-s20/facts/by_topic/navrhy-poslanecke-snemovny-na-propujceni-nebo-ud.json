@@ -5,9 +5,34 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "návrhy Poslanecké sněmovny na propůjčení nebo udělení státních vyzname",
   "koho": [],
-  "fakty": [],
-  "publikovat": false,
-  "priorita": 0,
+  "fakty": [
+    {
+      "text": "Otevírám bod číslo 113.Návrh na volbu místopředsedy Poslanecké sněmovny A poprosím, aby se ujal slova opět pan předseda Martin Kolovratník.",
+      "source": "steno",
+      "steno_id": "2025_20_00341",
+      "citace": "Otevírám bod číslo 113.Návrh na volbu místopředsedy Poslanecké sněmovny A poprosím, aby se ujal slova opět pan předseda Martin Kolovratník."
+    },
+    {
+      "text": "V hlasování číslo 79 bylo přihlášeno 164 poslanců, pro hlasovalo 142, proti bylo 13.",
+      "source": "steno",
+      "steno_id": "2025_20_00341",
+      "citace": "V hlasování číslo 79 bylo přihlášeno 164 poslanců, pro hlasovalo 142, proti bylo 13."
+    },
+    {
+      "text": "A já přerušuji bod číslo 112 k provedení volby.",
+      "source": "steno",
+      "steno_id": "2025_20_00341",
+      "citace": "A já přerušuji bod číslo 112 k provedení volby."
+    },
+    {
+      "text": "V tomto bodu se nacházíme už ve čtvrté volbě, bude to první kolo té volby, protože jsme 5.",
+      "source": "steno",
+      "steno_id": "2025_20_00342",
+      "citace": "V tomto bodu se nacházíme už ve čtvrté volbě, bude to první kolo té volby, protože jsme 5."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 165,
   "proslo": true,
@@ -18,5 +43,5 @@
     "spor": true,
     "prazdny_sal": false
   },
-  "steno_slov": 0
+  "steno_slov": 9897
 }

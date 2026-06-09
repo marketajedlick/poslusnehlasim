@@ -7,7 +7,8 @@
       "votes": 1,
       "steno": 32,
       "hlidac_token_used": true,
-      "fetched_at": "2026-05-30T09:28:45.469718+00:00"
+      "psp_steno_used": false,
+      "fetched_at": "2026-06-09T21:30:55.770635+00:00"
     },
     "align": {
       "done": true,
@@ -30,5 +31,5 @@
       ]
     }
   },
-  "built_at": "2026-06-07T20:09:56.084886+00:00"
+  "built_at": "2026-06-09T21:30:55.770868+00:00"
 }

@@ -1,13 +1,15 @@
 {
   "datum": "04.06.2026",
   "den": "čtvrtek",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "navrhy-poslanecke-snemovny-na-propujceni-nebo-ud"
+  ],
   "stats": {
     "pocet_hlas": 1,
     "minuty": 169,
     "end_cas": "12:36",
     "proslo": 1,
     "zamitnuto": 0,
-    "dlouha_debata": false
+    "dlouha_debata": true
   }
 }

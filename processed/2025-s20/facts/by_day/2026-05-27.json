@@ -4,8 +4,8 @@
   "topic_slugs": [
     "novela-z-o-investicnich-spolecnostech-eu",
     "novela-z-o-doplnkovem-penzijnim-sporeni",
-    "novela-z-o-rostlinolekarske-peci-eu",
-    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem"
+    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem",
+    "novela-z-o-rostlinolekarske-peci-eu"
   ],
   "stats": {
     "pocet_hlas": 5,
@@ -13,6 +13,6 @@
     "end_cas": "21:30",
     "proslo": 4,
     "zamitnuto": 1,
-    "dlouha_debata": false
+    "dlouha_debata": true
   }
 }

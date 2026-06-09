@@ -9,22 +9,20 @@
 <link rel="apple-touch-icon" href="/static/apple-touch-icon.png" />
 <style>.stagewrap,.stack{width:100%;max-width:100%;margin:0 auto}@media(min-width:721px){.stagewrap,.stack{width:840px;max-width:840px}}</style>
 <title>Poslušně hlásím · Úterý 26 / 05 / 2026</title>
-<meta name="description" content="Zkumavky v nemocnicích a levnější odvody živnostníků. Dva návrhy ze Senátu večer bez odporu." />
+<meta name="description" content="Dvě hlasování, čtyři sta sedmdesát osm minut v sále, a ve dvacet dvě hodin bylo po všem." />
 <link rel="canonical" href="https://poslusnehlasim.cz/noviny/2025/20/26.05.2026.html" />
 <meta property="og:type" content="article" />
 <meta property="og:locale" content="cs_CZ" />
 <meta property="og:site_name" content="Poslušně hlásím" />
 <meta property="og:title" content="Poslušně hlásím · Úterý 26 / 05 / 2026" />
-<meta property="og:description" content="Zkumavky v nemocnicích a levnější odvody živnostníků. Dva návrhy ze Senátu večer bez odporu." />
+<meta property="og:description" content="Dvě hlasování, čtyři sta sedmdesát osm minut v sále, a ve dvacet dvě hodin bylo po všem." />
 <meta property="og:url" content="https://poslusnehlasim.cz/noviny/2025/20/26.05.2026.html" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Poslušně hlásím · Úterý 26 / 05 / 2026" />
-<meta name="twitter:description" content="Zkumavky v nemocnicích a levnější odvody živnostníků. Dva návrhy ze Senátu večer bez odporu." />
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Poslušně hlásím · Úterý 26 / 05 / 2026", "description": "Zkumavky v nemocnicích a levnější odvody živnostníků. Dva návrhy ze Senátu večer bez odporu.", "url": "https://poslusnehlasim.cz/noviny/2025/20/26.05.2026.html", "datePublished": "2026-05-26", "inLanguage": "cs", "isAccessibleForFree": true, "isPartOf": {"@type": "WebSite", "name": "Poslušně hlásím", "url": "https://poslusnehlasim.cz/"}}</script>
+<meta name="twitter:description" content="Dvě hlasování, čtyři sta sedmdesát osm minut v sále, a ve dvacet dvě hodin bylo po všem." />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Poslušně hlásím · Úterý 26 / 05 / 2026", "description": "Dvě hlasování, čtyři sta sedmdesát osm minut v sále, a ve dvacet dvě hodin bylo po všem.", "url": "https://poslusnehlasim.cz/noviny/2025/20/26.05.2026.html", "datePublished": "2026-05-26", "inLanguage": "cs", "isAccessibleForFree": true, "isPartOf": {"@type": "WebSite", "name": "Poslušně hlásím", "url": "https://poslusnehlasim.cz/"}}</script>
 <link rel="alternate" type="text/plain" title="Informace pro AI (llms.txt)" href="https://poslusnehlasim.cz/llms.txt" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://poslusnehlasim.cz/static/fonts.css" />
 <link rel="alternate" type="application/rss+xml" title="Poslušně hlásím, nová vydání" href="https://poslusnehlasim.cz/feed.xml" />
 
 <style>:root{
@@ -323,7 +321,8 @@ body.is-turning{ pointer-events:none; }
   border-radius:2px;
 }
 .subscribe-input:focus{
-  outline:2px solid var(--terra); outline-offset:2px;
+  outline:2px solid var(--ink); outline-offset:2px;
+  border-color:var(--ink);
 }
 .subscribe-btn{
   width:100%;
@@ -351,6 +350,19 @@ body.is-turning{ pointer-events:none; }
 .subscribe-hint{
   color:var(--ink-soft);
 }
+.subscribe-privacy{
+  margin:14px 0 0;
+  font-family:'Old Standard TT',serif;
+  font-size:13px; line-height:1.45;
+  color:var(--ink-soft);
+  max-width:42ch;
+}
+.subscribe-privacy a{
+  color:var(--terra);
+  text-decoration:none;
+  border-bottom:1px solid rgba(207,90,49,.3);
+}
+.subscribe-privacy a:hover{ border-bottom-color:var(--terra); }
 .subscribe--success .subscribe-gloss{ display:none; }
 
 /* ---------- archive (chips on archiv page, link on editions) ---------- */
@@ -457,6 +469,68 @@ body.archiv-page{
 }
 .archiv-legend-mark{
   font-weight:600; color:var(--ink);
+}
+
+.potvrzeno-note{
+  margin:0;
+  font-family:'Old Standard TT',serif;
+  font-size:16px; line-height:1.5;
+  color:var(--ink-soft);
+  text-align:center;
+}
+.potvrzeno-welcome{
+  margin-top:4px;
+  text-align:left;
+}
+.potvrzeno-latest p.potvrzeno-cta-wrap{
+  margin:12px 0 0;
+  text-align:center;
+}
+.soukromi-section a.potvrzeno-cta{
+  display:inline-block;
+  font-family:'Anton',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:14px;
+  padding:10px 20px;
+  background:var(--terra);
+  color:var(--paper);
+  text-decoration:none;
+  border-bottom:none;
+  border-radius:2px;
+}
+.soukromi-section a.potvrzeno-cta:hover{ filter:brightness(1.05); }
+.potvrzeno-links{
+  margin-top:24px; padding-top:20px;
+  border-top:1px solid rgba(33,28,20,.14);
+  display:flex; flex-wrap:wrap; justify-content:center; gap:16px 24px;
+}
+.potvrzeno-wrap .potvrzeno-note{
+  margin-top:20px;
+  padding-top:18px;
+  border-top:1px solid rgba(33,28,20,.14);
+}
+
+.soukromi-body{
+  display:flex; flex-direction:column; gap:18px;
+}
+.soukromi-section p{
+  margin:0;
+  font-family:'Old Standard TT',serif;
+  font-size:16px; line-height:1.55;
+  color:var(--ink);
+}
+.soukromi-section a{
+  color:var(--terra);
+  text-decoration:none;
+  border-bottom:1px solid rgba(207,90,49,.3);
+}
+.soukromi-section a:hover{ border-bottom-color:var(--terra); }
+.soukromi-heading{
+  margin:0 0 6px;
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink-soft);
 }
 
 /* ---------- nav (mobile) ---------- */
@@ -735,7 +809,7 @@ body.archiv-page{
             <div class="bteam r"><span class="bnum">0</span><span class="blbl">návrhů zamítli</span></div>
           </div>
           
-          <div class="board-note">Zkumavky v nemocnicích a levnější odvody živnostníků.<br>Dva návrhy ze Senátu večer bez odporu.</div>
+          <div class="board-note">Dvě hlasování, čtyři sta sedmdesát osm minut v sále,<br>a ve dvacet dvě hodin bylo po všem.</div>
           
         </div>
 
@@ -752,7 +826,7 @@ body.archiv-page{
               <span class="hl">Nemocnice uvidí docházející zkumavky</span>
               
             </h2>
-            <p class="p">Úterní večer sněmovna v prvním kole schválila EU změnu o laboratorních testech, sto padesát tři hlasů proti jednomu. Výrobci budou muset hlásit nedostatek zkumavek a souprav na odběry. Jde o technickou úpravu podle evropských pravidel. Na běžného občana to dopadne spíš nepřímo, přes nemocnice a laboratoře.</p>
+            <p class="p">Poslušně hlásím, že poslanci schválili, že výrobci musí nemocnicím hlásit, když dojdou zkumavky na odběry. Vás doma to netankuje, to je spíš věc pro sestry.</p>
             
             <p class="mean"><b>Co to znamená: </b>Nemocnice dostanou včas vědět, když hrozí nedostatek zkumavek, méně zrušených termínů a kratší čekání v chodbě.</p>
             
@@ -771,9 +845,9 @@ body.archiv-page{
               <span class="hl">Živnostníci ušetří na odvodech</span>
               
             </h2>
-            <p class="p">Hned po zkumavkách schválili senátní vratku o sociálním pojištění, sto osmnáct hlasů proti nikomu. Minimální záloha živnostníků klesne o sedm set patnáct korun měsíčně. Okamura tvrdil, že vláda vrací celý konsolidační balíček, Skopeček to opravil: jde jen o jeden krok zpět, ne o plnou refundaci.</p>
+            <p class="p">Poslanci schválili změny v zálohách na sociálním pojištění pro živnostníky. Míň odvodů, míň důchod, to už je jiná kapitola.</p>
             
-            <p class="mean"><b>Co to znamená: </b>Od ledna klesne minimální záloha z pět tisíc sedm set dvacet na pět tisíc pět korun měsíčně; přeplatek vám stát vrátí. Míň odvodů znamená míň důchod.</p>
+            <p class="mean"><b>Co to znamená: </b>Koho se to týká? Živnostníků a dalších, kdo platí zálohy na sociálním pojištění sami, ne běžných zaměstnanců na výplatní pásce. Od ledna klesne minimální záloha z pět tisíc sedm set dvacet na pět tisíc pět korun měsíčně (ušetříte zhruba sedm set patnáct korun); přeplatek vám stát vrátí.</p>
             
           </div>
         </div>
@@ -782,7 +856,7 @@ body.archiv-page{
         <div class="verdict">
           <span class="qm">„</span>
           <p class="q">
-            <span class="key">Poslušně hlásím,</span> že úterý večer sněmovna schválila hlášení nedostatku zkumavek v nemocnicích a nižší zálohy pro živnostníky.
+            <span class="key">Poslušně hlásím,</span> že ve vydání jsou zkumavky v nemocnicích a levnější zálohy pro živnostníky; jedno vás doma netankuje, u druhého platí, že míň odvodů znamená míň důchod.
           </p>
           <div class="sign">- Váš dobrý voják Švejk -</div>
         </div>
@@ -813,8 +887,12 @@ body.archiv-page{
               <button class="subscribe-btn" type="submit">Poslušně odebírat</button>
             </div>
             <p class="subscribe-error" hidden role="alert"></p>
-            <p class="subscribe-success" hidden>Poslušně hlásím, e-mail je zapsán.</p>
+            <p class="subscribe-success" hidden>Poslušně hlásím: zkontroluj e-mail a potvrď odběr.</p>
           </form>
+          <p class="subscribe-privacy">
+            Odběrem souhlasíš se zpracováním e-mailu pro zasílání novinek.
+            <a href="https://poslusnehlasim.cz/soukromi/" rel="noopener">Jak nakládáme s e-mailem</a>.
+          </p>
         </section>
         
             </div>

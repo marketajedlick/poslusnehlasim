@@ -4,9 +4,9 @@
   "steps": {
     "extract": {
       "done": true,
-      "topics_written": 7,
-      "with_concrete_facts": 4,
-      "days": 3
+      "topics_written": 10,
+      "with_concrete_facts": 6,
+      "days": 7
     },
     "compose": {
       "done": true,
@@ -32,15 +32,16 @@
     },
     "fetch": {
       "done": true,
-      "votes": 149,
-      "steno": 851,
+      "votes": 368,
+      "steno": 1902,
       "hlidac_token_used": true,
-      "fetched_at": "2026-05-30T13:51:27.433994+00:00"
+      "psp_steno_used": false,
+      "fetched_at": "2026-06-09T21:38:27.673954+00:00"
     },
     "align": {
       "done": true,
-      "topics": 19
+      "topics": 23
     }
   },
-  "built_at": "2026-06-07T20:10:01.545274+00:00"
+  "built_at": "2026-06-09T21:38:28.813401+00:00"
 }
