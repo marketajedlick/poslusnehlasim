@@ -5,7 +5,6 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from svejk.build.html import render_doi_email_html
 from svejk.newsletter.config import NewsletterConfig
 
 
@@ -15,6 +14,8 @@ def export_doi_template(
     base_path: str = "",
 ) -> dict[str, Any]:
     """Zapíše HTML a plain text šablony DOI do složky (pro vložení do Ecomailu)."""
+    from svejk.build.html import render_doi_email_html
+
     cfg = NewsletterConfig.from_env()
     subject, plain, html = render_doi_email_html(
         site_url=cfg.site_url,
