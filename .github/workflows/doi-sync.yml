@@ -1,0 +1,42 @@
+name: Sync DOI template to Ecomail
+
+on:
+  workflow_dispatch:
+    inputs:
+      enable_double_optin:
+        description: "Zapnout double opt-in na seznamu"
+        type: boolean
+        default: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-svejk.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements-svejk.txt
+
+      - name: Sync DOI template to Ecomail
+        env:
+          ECOMAIL_API_KEY: ${{ secrets.ECOMAIL_API_KEY }}
+          ECOMAIL_LIST_ID: "2"
+          ECOMAIL_FROM_EMAIL: ${{ secrets.ECOMAIL_FROM_EMAIL }}
+          ECOMAIL_FROM_NAME: Poslušně hlásím
+          SVEJK_SITE_URL: https://poslusnehlasim.cz
+        run: |
+          if [ -z "$ECOMAIL_API_KEY" ]; then
+            echo "ECOMAIL_API_KEY chybí"
+            exit 1
+          fi
+          ARGS="--apply"
+          if [ "${{ inputs.enable_double_optin }}" = "true" ]; then
+            ARGS="$ARGS --enable-double-optin"
+          fi
+          ./run-svejk.sh newsletter-doi-sync $ARGS
