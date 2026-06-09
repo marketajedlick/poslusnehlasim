@@ -22,9 +22,7 @@
 <meta name="twitter:description" content="Skopeček třetím místopředsedou, Richterová třicet hlasů. Jedno křeslo ve vedení zůstává prázdné." />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Poslušně hlásím · Pátek 14 / 11 / 2025", "description": "Skopeček třetím místopředsedou, Richterová třicet hlasů. Jedno křeslo ve vedení zůstává prázdné.", "url": "https://poslusnehlasim.cz/noviny/2025/2/14.11.2025.html", "datePublished": "2025-11-14", "inLanguage": "cs", "isAccessibleForFree": true, "isPartOf": {"@type": "WebSite", "name": "Poslušně hlásím", "url": "https://poslusnehlasim.cz/"}}</script>
 <link rel="alternate" type="text/plain" title="Informace pro AI (llms.txt)" href="https://poslusnehlasim.cz/llms.txt" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://poslusnehlasim.cz/static/fonts.css" />
 <link rel="alternate" type="application/rss+xml" title="Poslušně hlásím, nová vydání" href="https://poslusnehlasim.cz/feed.xml" />
 
 <style>:root{
@@ -262,6 +260,7 @@ body.is-turning{ pointer-events:none; }
   border-radius:3px; opacity:.95;
 }
 .item.i2 .stamp{ transform:rotate(3deg); }
+.stamp.zvoleno{ color:var(--terra); border-color:var(--terra); box-shadow:inset 0 0 0 1.2px var(--terra); }
 .stamp.zamiteno{ color:var(--ink-soft); border-color:var(--ink-soft); box-shadow:inset 0 0 0 1.2px var(--ink-soft); }
 .stamp.odlozeno{ color:var(--blue); border-color:var(--blue); box-shadow:inset 0 0 0 1.2px var(--blue); }
 
@@ -323,7 +322,8 @@ body.is-turning{ pointer-events:none; }
   border-radius:2px;
 }
 .subscribe-input:focus{
-  outline:2px solid var(--terra); outline-offset:2px;
+  outline:2px solid var(--ink); outline-offset:2px;
+  border-color:var(--ink);
 }
 .subscribe-btn{
   width:100%;
@@ -351,6 +351,19 @@ body.is-turning{ pointer-events:none; }
 .subscribe-hint{
   color:var(--ink-soft);
 }
+.subscribe-privacy{
+  margin:14px 0 0;
+  font-family:'Old Standard TT',serif;
+  font-size:13px; line-height:1.45;
+  color:var(--ink-soft);
+  max-width:42ch;
+}
+.subscribe-privacy a{
+  color:var(--terra);
+  text-decoration:none;
+  border-bottom:1px solid rgba(207,90,49,.3);
+}
+.subscribe-privacy a:hover{ border-bottom-color:var(--terra); }
 .subscribe--success .subscribe-gloss{ display:none; }
 
 /* ---------- archive (chips on archiv page, link on editions) ---------- */
@@ -457,6 +470,68 @@ body.archiv-page{
 }
 .archiv-legend-mark{
   font-weight:600; color:var(--ink);
+}
+
+.potvrzeno-note{
+  margin:0;
+  font-family:'Old Standard TT',serif;
+  font-size:16px; line-height:1.5;
+  color:var(--ink-soft);
+  text-align:center;
+}
+.potvrzeno-welcome{
+  margin-top:4px;
+  text-align:left;
+}
+.potvrzeno-latest p.potvrzeno-cta-wrap{
+  margin:12px 0 0;
+  text-align:center;
+}
+.soukromi-section a.potvrzeno-cta{
+  display:inline-block;
+  font-family:'Anton',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:14px;
+  padding:10px 20px;
+  background:var(--terra);
+  color:var(--paper);
+  text-decoration:none;
+  border-bottom:none;
+  border-radius:2px;
+}
+.soukromi-section a.potvrzeno-cta:hover{ filter:brightness(1.05); }
+.potvrzeno-links{
+  margin-top:24px; padding-top:20px;
+  border-top:1px solid rgba(33,28,20,.14);
+  display:flex; flex-wrap:wrap; justify-content:center; gap:16px 24px;
+}
+.potvrzeno-wrap .potvrzeno-note{
+  margin-top:20px;
+  padding-top:18px;
+  border-top:1px solid rgba(33,28,20,.14);
+}
+
+.soukromi-body{
+  display:flex; flex-direction:column; gap:18px;
+}
+.soukromi-section p{
+  margin:0;
+  font-family:'Old Standard TT',serif;
+  font-size:16px; line-height:1.55;
+  color:var(--ink);
+}
+.soukromi-section a{
+  color:var(--terra);
+  text-decoration:none;
+  border-bottom:1px solid rgba(207,90,49,.3);
+}
+.soukromi-section a:hover{ border-bottom-color:var(--terra); }
+.soukromi-heading{
+  margin:0 0 6px;
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink-soft);
 }
 
 /* ---------- nav (mobile) ---------- */
@@ -612,6 +687,7 @@ body.archiv-page{
     box-shadow:inset 0 0 0 1.6px var(--red);
   }
   .item.i2 .stamp{ transform:rotate(5deg); }
+  .stamp.zvoleno,
   .stamp.zamitnuto,
   .stamp.odlozeno{ box-shadow:inset 0 0 0 1.6px currentColor; }
 
@@ -730,7 +806,7 @@ body.archiv-page{
         <div class="board">
           <div class="board-kick">Stav zápasu</div>
           <div class="board-main">
-            <div class="bteam l"><span class="blbl">věcí schválili</span><span class="bnum">36</span></div>
+            <div class="bteam l"><span class="blbl">věc schválili</span><span class="bnum">1</span></div>
             <span class="bcolon">:</span>
             <div class="bteam r"><span class="bnum">0</span><span class="blbl">návrhů zamítli</span></div>
           </div>
@@ -794,8 +870,12 @@ body.archiv-page{
               <button class="subscribe-btn" type="submit">Poslušně odebírat</button>
             </div>
             <p class="subscribe-error" hidden role="alert"></p>
-            <p class="subscribe-success" hidden>Poslušně hlásím, e-mail je zapsán.</p>
+            <p class="subscribe-success" hidden>Poslušně hlásím: zkontroluj e-mail a potvrď odběr.</p>
           </form>
+          <p class="subscribe-privacy">
+            Odběrem souhlasíš se zpracováním e-mailu pro zasílání novinek.
+            <a href="https://poslusnehlasim.cz/soukromi/" rel="noopener">Jak nakládáme s e-mailem</a>.
+          </p>
         </section>
         
             </div>

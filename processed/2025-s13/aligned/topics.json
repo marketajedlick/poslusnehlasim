@@ -400,7 +400,7 @@
         "2025_13_00307",
         "2025_13_00308"
       ],
-      "proslo": false,
+      "proslo": true,
       "pocet_hlasovani": 12,
       "pocet_prijato": 4,
       "pocet_zamitnuto": 8,

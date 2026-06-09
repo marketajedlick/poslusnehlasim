@@ -550,7 +550,7 @@
         120
       ],
       "steno_ids": [],
-      "proslo": false,
+      "proslo": true,
       "pocet_hlasovani": 3,
       "pocet_prijato": 1,
       "pocet_zamitnuto": 2,
@@ -588,7 +588,7 @@
         139
       ],
       "steno_ids": [],
-      "proslo": false,
+      "proslo": true,
       "pocet_hlasovani": 4,
       "pocet_prijato": 1,
       "pocet_zamitnuto": 3,

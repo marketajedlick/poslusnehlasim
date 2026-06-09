@@ -1811,7 +1811,7 @@
         "2025_20_01892",
         "2025_20_01893"
       ],
-      "proslo": false,
+      "proslo": true,
       "pocet_hlasovani": 21,
       "pocet_prijato": 7,
       "pocet_zamitnuto": 14,

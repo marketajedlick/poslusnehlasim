@@ -46,7 +46,7 @@
         44
       ],
       "steno_ids": [],
-      "proslo": false,
+      "proslo": true,
       "pocet_hlasovani": 37,
       "pocet_prijato": 8,
       "pocet_zamitnuto": 29,

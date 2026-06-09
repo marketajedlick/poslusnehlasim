@@ -15,11 +15,11 @@
     "* druhé kolo místopředsedů přesunuto na 14. 11."
   ],
   "stats": {
-    "pocet_hlas": 16,
+    "pocet_hlas": 1,
     "minuty": 709,
     "end_cas": "20:57",
-    "proslo": 15,
-    "zamitnuto": 1,
+    "proslo": 1,
+    "zamitnuto": 0,
     "dlouha_debata": true
   }
 }

@@ -13,10 +13,10 @@
     "* 37 hlasování o pořadu před zákony"
   ],
   "stats": {
-    "pocet_hlas": 1,
+    "pocet_hlas": 2,
     "minuty": 425,
     "end_cas": "21:13",
-    "proslo": 0,
+    "proslo": 1,
     "zamitnuto": 1,
     "dlouha_debata": false
   }

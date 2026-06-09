@@ -996,7 +996,7 @@
         "2025_5_01849",
         "2025_5_01850"
       ],
-      "proslo": false,
+      "proslo": true,
       "pocet_hlasovani": 9,
       "pocet_prijato": 3,
       "pocet_zamitnuto": 6,
@@ -4319,7 +4319,7 @@
         "2025_5_01364",
         "2025_5_01365"
       ],
-      "proslo": false,
+      "proslo": true,
       "pocet_hlasovani": 8,
       "pocet_prijato": 2,
       "pocet_zamitnuto": 6,
@@ -4662,7 +4662,7 @@
         "2025_5_01360",
         "2025_5_01361"
       ],
-      "proslo": false,
+      "proslo": true,
       "pocet_hlasovani": 10,
       "pocet_prijato": 2,
       "pocet_zamitnuto": 8,

@@ -14,10 +14,10 @@
     "* hlasování o nedůvěře až ve středu"
   ],
   "stats": {
-    "pocet_hlas": 0,
+    "pocet_hlas": 1,
     "minuty": 261,
     "end_cas": "15:22",
-    "proslo": 0,
+    "proslo": 1,
     "zamitnuto": 0,
     "dlouha_debata": true
   }

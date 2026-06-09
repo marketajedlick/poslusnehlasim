@@ -487,7 +487,7 @@
         "2025_8_00474",
         "2025_8_00475"
       ],
-      "proslo": false,
+      "proslo": true,
       "pocet_hlasovani": 2,
       "pocet_prijato": 1,
       "pocet_zamitnuto": 1,

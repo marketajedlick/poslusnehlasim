@@ -13,11 +13,11 @@
     "* koaliční text schválen až ve středu v 00:51"
   ],
   "stats": {
-    "pocet_hlas": 0,
+    "pocet_hlas": 1,
     "minuty": 420,
     "end_cas": "23:12",
     "proslo": 0,
-    "zamitnuto": 0,
+    "zamitnuto": 1,
     "dlouha_debata": true
   }
 }

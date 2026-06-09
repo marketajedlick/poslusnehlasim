@@ -17,8 +17,8 @@
     "pocet_hlas": 2,
     "minuty": 259,
     "end_cas": "13:34",
-    "proslo": 1,
-    "zamitnuto": 1,
+    "proslo": 2,
+    "zamitnuto": 0,
     "dlouha_debata": true
   }
 }

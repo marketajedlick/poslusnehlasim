@@ -608,7 +608,7 @@
         "2025_7_00979",
         "2025_7_00980"
       ],
-      "proslo": false,
+      "proslo": true,
       "pocet_hlasovani": 4,
       "pocet_prijato": 3,
       "pocet_zamitnuto": 1,
@@ -1984,7 +1984,7 @@
         "2025_7_00979",
         "2025_7_00980"
       ],
-      "proslo": false,
+      "proslo": true,
       "pocet_hlasovani": 10,
       "pocet_prijato": 3,
       "pocet_zamitnuto": 7,

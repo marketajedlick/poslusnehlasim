@@ -14,11 +14,11 @@
     "* první kolo zákona o cenách 100:0, druhé kolo večer padlo 64:89"
   ],
   "stats": {
-    "pocet_hlas": 2,
+    "pocet_hlas": 3,
     "minuty": 561,
     "end_cas": "23:22",
-    "proslo": 1,
-    "zamitnuto": 0,
+    "proslo": 2,
+    "zamitnuto": 1,
     "dlouha_debata": true
   }
 }

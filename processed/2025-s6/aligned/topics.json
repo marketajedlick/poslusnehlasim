@@ -27,7 +27,7 @@
         "2025_6_00050",
         "2025_6_00051"
       ],
-      "proslo": false,
+      "proslo": true,
       "pocet_hlasovani": 6,
       "pocet_prijato": 2,
       "pocet_zamitnuto": 4,
@@ -59,7 +59,7 @@
         "2025_6_00050",
         "2025_6_00051"
       ],
-      "proslo": false,
+      "proslo": true,
       "pocet_hlasovani": 5,
       "pocet_prijato": 1,
       "pocet_zamitnuto": 4,

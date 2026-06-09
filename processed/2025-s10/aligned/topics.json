@@ -1332,7 +1332,7 @@
         "2025_10_01481",
         "2025_10_01482"
       ],
-      "proslo": false,
+      "proslo": true,
       "pocet_hlasovani": 129,
       "pocet_prijato": 9,
       "pocet_zamitnuto": 120,
@@ -3751,7 +3751,7 @@
         "2025_10_01462",
         "2025_10_01463"
       ],
-      "proslo": false,
+      "proslo": true,
       "pocet_hlasovani": 2,
       "pocet_prijato": 1,
       "pocet_zamitnuto": 1,
