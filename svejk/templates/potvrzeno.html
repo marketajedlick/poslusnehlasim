@@ -21,23 +21,49 @@
 {% endif %}
 </head>
 <body class="archiv-page">
-<div class="archiv-wrap">
+<div class="archiv-wrap potvrzeno-wrap">
   <header class="archiv-head">
-    <h1 class="archiv-title">Odběr potvrzen</h1>
-    <p class="archiv-gloss">Poslušně hlásím, že e-mail je zapsán. Nové vydání ti pošleme, jakmile vyjde na webu.</p>
-    {% if latest_href %}
-    <a class="archiv-latest" href="{{ latest_href }}">Nejnovější vydání</a>
-    {% endif %}
+    <h1 class="archiv-title">Vítej v odběru</h1>
+    <p class="archiv-gloss">Poslušně hlásím, že e-mail je zapsán. Tohle je tvoje welcome stránka místo dalšího mailu.</p>
   </header>
 
-  <p class="potvrzeno-note">Tuhle stránku uvidíš jen po potvrzení odběru v e-mailu. Když něco nesedí, napiš na adresu odesílatele z potvrzovacího mailu.</p>
+  <div class="soukromi-body potvrzeno-welcome">
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Co je Poslušně hlásím</h2>
+      <p>Deník z jednání Poslanecké sněmovny ve stylu Haška. Po každém jednacím dni shrneme, co prošlo, co padlo a co to znamená v praxi.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Co tě čeká v mailu</h2>
+      <p>E-mail dostaneš jen když na webu vyjde nové vydání. Žádné týdenní připomínky, žádný marketing. Odhlášení je v každém mailu.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Jak často to chodí</h2>
+      <p>Jen ve dnech, kdy sněmovna jedná. Někdy nic týdny, jindy dva dny po sobě. Když zrovna nic nevyjde, pošleme taky nic.</p>
+    </section>
+
+    {% if latest_href %}
+    <section class="soukromi-section potvrzeno-latest">
+      <h2 class="soukromi-heading">Mezitím na webu</h2>
+      <p>Nejnovější vydání{% if latest_label %}: {{ latest_label }}{% endif %}. Můžeš si ho přečíst hned, nemusíš čekat na mail.</p>
+      <p class="potvrzeno-cta-wrap">
+        <a class="potvrzeno-cta" href="{{ latest_href }}">Číst nejnovější vydání</a>
+      </p>
+    </section>
+    {% endif %}
+  </div>
 
   <nav class="potvrzeno-links" aria-label="Další odkazy">
     {% if archive_href %}
     <a class="archiv-latest" href="{{ archive_href }}">Archiv vydání</a>
     {% endif %}
+    <a class="archiv-latest" href="{{ feed_url }}">RSS kanál</a>
+    <a class="archiv-latest" href="{{ privacy_url }}">Ochrana údajů</a>
     <a class="archiv-latest" href="{{ site_url }}/">Úvodní stránka</a>
   </nav>
+
+  <p class="potvrzeno-note">Tuhle stránku uvidíš jen po potvrzení odběru v e-mailu. Když něco nesedí, napiš na adresu odesílatele z potvrzovacího mailu.</p>
 </div>
 </body>
 </html>

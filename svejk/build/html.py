@@ -349,11 +349,17 @@ def render_potvrzeno_html(
     )
     archive_href = archiv_pages_href(base_path)
     canonical_url = f"{cfg.site_url.rstrip('/')}/potvrzeno/"
+    from svejk.timeline import den_v_tydnu
+
+    latest_label = datum_design(latest.datum_unl, den_v_tydnu(latest.datum_unl))
     tpl = _jinja_env().get_template("potvrzeno.html")
     return tpl.render(
         latest_href=latest_href,
+        latest_label=latest_label,
         archive_href=archive_href,
         site_url=cfg.site_url.rstrip("/"),
+        feed_url=cfg.feed_url,
+        privacy_url=cfg.privacy_url,
         canonical_url=canonical_url,
         inline_css=inline_css,
         css=css,

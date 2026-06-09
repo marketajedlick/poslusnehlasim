@@ -157,13 +157,11 @@ ECOMAIL_API_KEY=… ECOMAIL_LIST_ID=2 ECOMAIL_FROM_EMAIL=… \
 
 Příkaz `newsletter-doi-sync --apply` nastaví u seznamu `conf_message`, `conf_subject` a URL po potvrzení (`/potvrzeno/`). Merge tag **`*|SUBCONFIRM|*`** musí zůstat na tlačítku. Předmět: `Poslušně hlásím: potvrď odběr novinek`.
 
-3. **Welcome automatizace** (po potvrzení DOI)
-   - Automatizace → trigger **Přihlásí se do seznamu**
-   - Frekvence: **pouze jednou** (doporučeno)
-   - Worker už posílá `trigger_autoresponders: true` — automatizace se spustí sama
-   - Otestuj na vlastním e-mailu v záložce Testování
+3. **Welcome na webu** (místo dalšího e-mailu)
+   - Po potvrzení DOI přesměrování na `/potvrzeno/` — uvítání, vysvětlení frekvence, odkaz na nejnovější vydání
+   - Welcome automatizaci v Ecomailu **nenastavuj** (méně mailů, stejná informace na webu)
 
-4. **Kontrola cesty:** formulář → potvrzovací mail → klik → `/potvrzeno/` → welcome mail → kontakt v **Potvrzení** (ne Nepotvrzení)
+4. **Kontrola cesty:** formulář → potvrzovací mail → klik → `/potvrzeno/` → kontakt v **Potvrzení** (ne Nepotvrzení)
 
 5. **Success text na webu** — po nasazení DOI uprav v `subscribe.html` zprávu na „zkontroluj e-mail a potvrď odběr“ (zatím zůstává „e-mail je zapsán“).
 
