@@ -148,7 +148,7 @@ Po deployi webu je k dispozici děkovná stránka **`https://poslusnehlasim.cz/p
 # nebo při každém deployi automaticky: site/email/doi.html
 ```
 
-V Ecomailu: **Šablony → nová šablona** → vlož obsah `doi.html`. Merge tag **`*|SUBCONFIRM|*`** musí zůstat na tlačítku. Předmět: `Poslušně hlásím — potvrď odběr novinek`.
+V Ecomailu: **Šablony → nová šablona** → vlož obsah `doi.html`. Merge tag **`*|SUBCONFIRM|*`** musí zůstat na tlačítku. Předmět: `Poslušně hlásím: potvrď odběr novinek`.
 
 3. **Welcome automatizace** (po potvrzení DOI)
    - Automatizace → trigger **Přihlásí se do seznamu**
