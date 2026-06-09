@@ -226,11 +226,6 @@ def render_email_html(
     archive_url = f"{site}{archive_href}"
     datum_label = datum_design(edition.datum_unl, content.den)
     subject = f"Nové vydání · {datum_label}"
-    svejk_img_url = (
-        _static_asset_url(site, base_path, "svejk-terra.png")
-        if _FAVICON_PNG.is_file()
-        else ""
-    )
     css = _EMAIL_CSS.read_text(encoding="utf-8")
     tpl = _jinja_env().get_template("noviny-email.html")
     html = tpl.render(
@@ -241,7 +236,6 @@ def render_email_html(
         zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
         edition_url=edition_url,
         archive_url=archive_url,
-        svejk_img_url=svejk_img_url,
     )
     plain = plain_text_from_content(
         content,
@@ -262,28 +256,25 @@ def render_doi_email_html(
     """HTML + plain text pro potvrzovací e-mail (double opt-in) v Ecomailu."""
     cfg = NewsletterConfig.from_env()
     site = (site_url or cfg.site_url).rstrip("/")
-    subject = "Poslušně hlásím — potvrď odběr novinek"
-    svejk_img_url = (
-        _static_asset_url(site, base_path, "svejk-terra.png")
-        if _FAVICON_PNG.is_file()
-        else ""
-    )
+    subject = "Poslušně hlásím: potvrď odběr novinek"
     css = _EMAIL_CSS.read_text(encoding="utf-8")
     tpl = _jinja_env().get_template("doi-email.html")
     html = tpl.render(
         css=css,
-        svejk_img_url=svejk_img_url,
         privacy_url=cfg.privacy_url,
         confirm_redirect_url=cfg.confirm_redirect_url,
     )
     plain = "\n".join(
         [
-            "POSLUŠNĚ HLÁSÍM — potvrď odběr novinek",
+            "POSLUŠNĚ HLÁSÍM: potvrď odběr novinek",
             "",
             "Necháváš tu e-mail, abychom ti posílali nová vydání deníku z Poslanecké sněmovny.",
-            "Ještě jeden krok — potvrď, že to chceš opravdu ty.",
+            "Ještě jeden krok. Potvrď, že to chceš opravdu ty.",
             "",
-            "Poslušně hlásím, že bez potvrzení ti žádné vydání nepošleme.",
+            "Poslušně hlásím, že bez potvrzení ti žádné",
+            "vydání nepošleme.",
+            "Klikni a máš hotovo.",
+            "",
             "Potvrď odběr kliknutím na odkaz v HTML verzi tohoto e-mailu.",
             "",
             f"Po potvrzení tě přesměrujeme na: {cfg.confirm_redirect_url}",
