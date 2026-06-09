@@ -56,6 +56,50 @@ def api_request(
         raise RuntimeError(f"Ecomail API {e.code}: {err_body}") from e
 
 
+def show_list(api_key: str, list_id: int) -> dict[str, Any]:
+    return api_request(api_key, "GET", f"/lists/{list_id}")
+
+
+def update_list(api_key: str, list_id: int, payload: dict[str, Any]) -> dict[str, Any]:
+    return api_request(api_key, "PUT", f"/lists/{list_id}", payload=payload)
+
+
+def list_templates(api_key: str) -> list[dict[str, Any]]:
+    data = api_request(api_key, "GET", "/templates")
+    return data if isinstance(data, list) else []
+
+
+def create_template(
+    api_key: str,
+    *,
+    name: str,
+    html: str,
+    inline_css: bool = True,
+) -> dict[str, Any]:
+    return api_request(
+        api_key,
+        "POST",
+        "/templates",
+        payload={"name": name, "html": html, "inline_css": inline_css},
+    )
+
+
+def update_template(
+    api_key: str,
+    template_id: int,
+    *,
+    name: str,
+    html: str,
+    inline_css: bool = True,
+) -> dict[str, Any]:
+    return api_request(
+        api_key,
+        "PUT",
+        f"/templates/{template_id}",
+        payload={"name": name, "html": html, "inline_css": inline_css},
+    )
+
+
 def list_subscribers(api_key: str, list_id: int) -> dict[str, Any]:
     return api_request(api_key, "GET", f"/lists/{list_id}/subscribers")
 

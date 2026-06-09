@@ -144,11 +144,18 @@ Po deployi webu je k dispozici děkovná stránka **`https://poslusnehlasim.cz/p
 2. **Potvrzovací e-mail** — šablona ve stejném stylu jako newsletter:
 
 ```bash
+# náhled, co se zapíše do Ecomailu
+./run-svejk.sh newsletter-doi-sync
+
+# nahrát šablonu do Ecomailu (seznam + knihovna šablon)
+ECOMAIL_API_KEY=… ECOMAIL_LIST_ID=2 ECOMAIL_FROM_EMAIL=… \
+  ./run-svejk.sh newsletter-doi-sync --apply --enable-double-optin
+
+# jen export HTML souboru (záloha / ruční vložení)
 ./run-svejk.sh newsletter-doi-template -o site/email
-# nebo při každém deployi automaticky: site/email/doi.html
 ```
 
-V Ecomailu: **Šablony → nová šablona** → vlož obsah `doi.html`. Merge tag **`*|SUBCONFIRM|*`** musí zůstat na tlačítku. Předmět: `Poslušně hlásím: potvrď odběr novinek`.
+Příkaz `newsletter-doi-sync --apply` nastaví u seznamu `conf_message`, `conf_subject` a URL po potvrzení (`/potvrzeno/`). Merge tag **`*|SUBCONFIRM|*`** musí zůstat na tlačítku. Předmět: `Poslušně hlásím: potvrď odběr novinek`.
 
 3. **Welcome automatizace** (po potvrzení DOI)
    - Automatizace → trigger **Přihlásí se do seznamu**

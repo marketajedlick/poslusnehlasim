@@ -414,6 +414,30 @@ def cmd_newsletter_doi_template(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_newsletter_doi_sync(args: argparse.Namespace) -> int:
+    from svejk.newsletter.doi import sync_doi_to_ecomail
+
+    try:
+        result = sync_doi_to_ecomail(
+            base_path=(args.base_path or "").rstrip("/"),
+            apply=args.apply,
+            enable_double_optin=args.enable_double_optin,
+            sync_template=not args.no_template,
+        )
+    except RuntimeError as e:
+        print(f"Chyba: {e}", file=sys.stderr)
+        return 1
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    if result.get("skipped"):
+        print(f"Přeskočeno: {result.get('reason', '?')}", file=sys.stderr)
+        return 1 if result.get("reason", "").startswith("chybí") else 0
+    if result.get("synced"):
+        print("DOI šablona nahrána do Ecomailu.", file=sys.stderr)
+    elif result.get("dry_run"):
+        print("Náhled — pro zápis přidej --apply", file=sys.stderr)
+    return 0
+
+
 def cmd_newsletter_subscribers(_args: argparse.Namespace) -> int:
     from svejk.newsletter.api import api_key_from_env, list_id_from_env, list_subscribers
 
@@ -716,6 +740,32 @@ def main() -> int:
         help="Stejný prefix jako při export-pages (github.io/repo)",
     )
     p_doi.set_defaults(func=cmd_newsletter_doi_template)
+
+    p_doi_sync = sub.add_parser(
+        "newsletter-doi-sync",
+        help="Nahrát DOI šablonu do Ecomailu (seznam + knihovna šablon)",
+    )
+    p_doi_sync.add_argument(
+        "--base-path",
+        default="",
+        help="Stejný prefix jako při export-pages (github.io/repo)",
+    )
+    p_doi_sync.add_argument(
+        "--apply",
+        action="store_true",
+        help="Skutečně zapsat do Ecomailu (výchozí je jen náhled)",
+    )
+    p_doi_sync.add_argument(
+        "--enable-double-optin",
+        action="store_true",
+        help="Zapnout double opt-in na seznamu (double_optin: true)",
+    )
+    p_doi_sync.add_argument(
+        "--no-template",
+        action="store_true",
+        help="Neaktualizovat knihovnu šablon, jen nastavení seznamu",
+    )
+    p_doi_sync.set_defaults(func=cmd_newsletter_doi_sync)
 
     sub.add_parser(
         "newsletter-subscribers",
