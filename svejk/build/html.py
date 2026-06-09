@@ -266,7 +266,8 @@ def render_doi_email_html(
         [
             "POSLUŠNĚ HLÁSÍM: potvrď odběr novinek",
             "",
-            "Deník sněmovny už čeká. Ještě je ale třeba jeden krok.",
+            "Deník sněmovny už čeká.",
+            "Ještě je ale třeba jeden krok.",
             "Potvrď, že e-mail patří opravdu tobě a chceš deník odebírat.",
             "",
             "Poslušně hlásím, že bez potvrzení ti nemůžeme poslat ani řádku.",
