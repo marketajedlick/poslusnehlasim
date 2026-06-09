@@ -35,7 +35,8 @@ export default {
     if (website || !email || !email.includes("@")) {
       return json({ ok: false }, 400, headers);
     }
-    if (!env.ECOMAIL_API_KEY || !env.ECOMAIL_LIST_ID) {
+    const listId = env.ECOMAIL_SUBSCRIBE_LIST_ID || env.ECOMAIL_LIST_ID;
+    if (!env.ECOMAIL_API_KEY || !listId) {
       return json({ ok: false, error: "misconfigured" }, 500, headers);
     }
 
@@ -45,7 +46,7 @@ export default {
     }
 
     const res = await fetch(
-      `https://api2.ecomailapp.cz/lists/${env.ECOMAIL_LIST_ID}/subscribe`,
+      `https://api2.ecomailapp.cz/lists/${listId}/subscribe`,
       {
         method: "POST",
         headers: {
@@ -57,6 +58,8 @@ export default {
           trigger_autoresponders: true,
           update_existing: true,
           resubscribe: true,
+          // Nechá Ecomail poslat DOI — kontakt skončí jako nepotvrzený (status 6).
+          skip_confirmation: false,
         }),
       },
     );

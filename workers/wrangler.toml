@@ -4,7 +4,8 @@ pages_build_output_dir = "public"
 
 [vars]
 ALLOWED_ORIGIN = "https://poslusnehlasim.cz,https://www.poslusnehlasim.cz"
-ECOMAIL_LIST_ID = "2"
+ECOMAIL_SUBSCRIBE_LIST_ID = "3"
 
 # Secrets (wrangler pages secret put … --project-name=poslusnehlasim-odebir):
 # ECOMAIL_API_KEY, ECOMAIL_FROM_EMAIL, NOTIFY_EMAIL
+# ECOMAIL_SUBSCRIBE_LIST_ID je v [vars] výše (dev/test = seznam 3)
