@@ -357,6 +357,7 @@ def render_potvrzeno_html(
         archive_href=archive_href,
         site_url=cfg.site_url.rstrip("/"),
         privacy_url=cfg.privacy_url,
+        contact_email=cfg.contact_email,
         canonical_url=canonical_url,
         inline_css=inline_css,
         css=css,
