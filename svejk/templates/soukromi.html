@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#c9bda3" />
+<link rel="icon" type="image/svg+xml" href="{{ favicon_svg }}" />
+<link rel="icon" type="image/png" href="{{ favicon_png }}" sizes="32x32" />
+<link rel="apple-touch-icon" href="{{ apple_touch_icon }}" />
+<title>Ochrana údajů · Poslušně hlásím</title>
+<meta name="description" content="Jak Poslušně hlásím zpracovává e-mail při odběru novinek." />
+<link rel="canonical" href="{{ canonical_url }}" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+{% if inline_css %}
+<style>{{ css | safe }}</style>
+{% else %}
+<link rel="stylesheet" href="{{ css_href }}" />
+{% endif %}
+</head>
+<body class="archiv-page">
+<div class="archiv-wrap soukromi-wrap">
+  <header class="archiv-head">
+    <h1 class="archiv-title">Ochrana údajů</h1>
+    <p class="archiv-gloss">Krátce a bez právnických kliček — co se děje s e-mailem, který necháš v odběru novinek.</p>
+  </header>
+
+  <div class="soukromi-body">
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Co sbíráme</h2>
+      <p>Jen tvou e-mailovou adresu. Nic víc z formuláře nepotřebujeme.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">K čemu to je</h2>
+      <p>Posíláme ti e-mail, když na webu vyjde nové vydání deníku z Poslanecké sněmovny. Marketing z cizích obchodů neposíláme.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Na čem to stojí</h2>
+      <p>Odběrem dáváš souhlas se zpracováním e-mailu pro tento účel. U nových odběratelů posíláme potvrzovací e-mail — dokud na něj neklikneš, rozesílku nechodí.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Kde data držíme</h2>
+      <p>E-maily odběratelů neukládáme v kódu webu. Drží je služba <a href="https://ecomail.cz/gdpr" rel="noopener">Ecomail</a>, která pro nás rozesílku technicky zajišťuje. Více o zpracování u Ecomailu: <a href="https://ecomail.cz/gdpr" rel="noopener">ecomail.cz/gdpr</a>.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Jak dlouho</h2>
+      <p>Dokud se neodhlásíš. Po odhlášení tě z rozesílky vyřadíme.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Odhlášení</h2>
+      <p>V každém e-mailu je odkaz pro odhlášení. Stačí na něj kliknout — žádný telefonát ani formulář navíc.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Tvá práva</h2>
+      <p>Můžeš požádat o přístup k údajům, opravu nebo výmaz. Stížnost můžeš podat u <a href="https://www.uoou.cz/" rel="noopener">Úřadu pro ochranu osobních údajů</a>.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Kontakt</h2>
+      {% if contact_email %}
+      <p>Dotazy k odběru piš na <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>, případně odpověz na kterýkoliv e-mail z rozesílky.</p>
+      {% else %}
+      <p>Dotazy k odběru pošli odpovědí na kterýkoliv e-mail z rozesílky — adresa odesílatele je uvedená v záhlaví mailu.</p>
+      {% endif %}
+    </section>
+  </div>
+
+  <nav class="potvrzeno-links" aria-label="Zpět na web">
+    <a class="archiv-latest" href="{{ site_url }}/">Úvodní stránka</a>
+    {% if archive_href %}
+    <a class="archiv-latest" href="{{ archive_href }}">Archiv vydání</a>
+    {% endif %}
+  </nav>
+</div>
+</body>
+</html>

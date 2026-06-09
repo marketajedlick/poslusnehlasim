@@ -97,6 +97,7 @@ def write_sitemap_xml(
     add_url(f"{base}/", editions[-1].when if editions else datetime.now(timezone.utc))
     if editions:
         add_url(f"{base}{archiv_pages_href(base_path)}", editions[-1].when)
+        add_url(f"{base}/soukromi/", editions[-1].when)
 
     for edition in editions:
         href = edition_pages_href(edition.obdobi, edition.schuze, edition.datum_unl, base_path)

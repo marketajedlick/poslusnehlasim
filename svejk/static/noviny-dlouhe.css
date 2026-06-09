@@ -456,6 +456,28 @@ body.archiv-page{
   display:flex; flex-wrap:wrap; justify-content:center; gap:16px 24px;
 }
 
+.soukromi-body{
+  display:flex; flex-direction:column; gap:18px;
+}
+.soukromi-section p{
+  margin:0;
+  font-family:'Old Standard TT',serif;
+  font-size:16px; line-height:1.55;
+  color:var(--ink);
+}
+.soukromi-section a{
+  color:var(--terra);
+  text-decoration:none;
+  border-bottom:1px solid rgba(207,90,49,.3);
+}
+.soukromi-section a:hover{ border-bottom-color:var(--terra); }
+.soukromi-heading{
+  margin:0 0 6px;
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+
 /* ---------- nav (mobile) ---------- */
 .edition-nav{
   position:fixed;

@@ -8,12 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from svejk.build.nav import (
-    Edition,
-    archiv_pages_href,
-    edition_pages_href,
-    list_obdobi_editions,
-)
+from svejk.build.nav import Edition, edition_pages_href, list_obdobi_editions
 from svejk.newsletter.api import (
     api_key_from_env,
     create_campaign,
@@ -73,34 +68,9 @@ def _edition_export_path(edition: Edition, out_dir: Path, base_path: str) -> Pat
 
 
 def _build_email_body(edition: Edition, *, site_url: str, base_path: str) -> tuple[str, str, str]:
-    from svejk.build.day_content import datum_design
-    from svejk.timeline import den_v_tydnu
+    from svejk.build.html import render_email_html
 
-    title = datum_design(edition.datum_unl, den_v_tydnu(edition.datum_unl))
-    edition_href = edition_pages_href(
-        edition.obdobi, edition.schuze, edition.datum_unl, base_path
-    )
-    archive_href = archiv_pages_href(base_path)
-    site = site_url.rstrip("/")
-    edition_url = f"{site}{edition_href}"
-    archive_url = f"{site}{archive_href}"
-
-    subject = f"Nové vydání · {title}"
-    plain = "\n".join(
-        [
-            f"Na webu vyšlo nové vydání: {title}",
-            "",
-            f"Číst na webu: {edition_url}",
-            "",
-            f"Archiv všech vydání: {archive_url}",
-        ]
-    )
-    html = (
-        f"<p>Na webu vyšlo nové vydání: <strong>{title}</strong></p>"
-        f'<p><a href="{edition_url}">Číst na webu</a></p>'
-        f'<p><a href="{archive_url}">Archiv všech vydání</a></p>'
-    )
-    return subject, plain, html
+    return render_email_html(edition, site_url=site_url, base_path=base_path)
 
 
 def run_newsletter_notify(

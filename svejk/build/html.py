@@ -2,12 +2,14 @@
 
 from __future__ import annotations
 
+from datetime import datetime
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from svejk.build.day_content import DenContent, datum_design
+from svejk.build.day_content import DenContent, build_den_content, datum_design
 from svejk.build.nav import (
+    Edition,
     archiv_pages_href,
     archive_by_month,
     edition_nav,
@@ -20,6 +22,7 @@ from svejk.paths import SchuzePaths
 _TEMPLATES = Path(__file__).resolve().parent.parent / "templates"
 _STATIC = Path(__file__).resolve().parent.parent / "static"
 _CSS = _STATIC / "noviny-dlouhe.css"
+_EMAIL_CSS = _STATIC / "noviny-email.css"
 _SVEJK_SVG = _STATIC / "svejk.svg"
 _FAVICON_PNG = _STATIC / "svejk-terra.png"
 
@@ -145,6 +148,102 @@ def render_den_html(
     )
 
 
+def _static_asset_url(site_url: str, base_path: str, name: str) -> str:
+    base = base_path.rstrip("/")
+    prefix = f"{base}/static" if base else "/static"
+    return f"{site_url.rstrip('/')}{prefix}/{name}"
+
+
+def plain_text_from_content(
+    content: DenContent,
+    *,
+    datum_label: str,
+    edition_url: str,
+    archive_url: str,
+    proslo_label: str,
+    zamitnuto_label: str,
+) -> str:
+    lines = [
+        f"POSLUŠNĚ HLÁSÍM · {datum_label}",
+        "",
+        f"Stav zápasu: {content.proslo} : {content.zamitnuto}",
+        f"{proslo_label} / {zamitnuto_label}",
+    ]
+    if content.board_note_lines:
+        lines.extend(["", *content.board_note_lines])
+    for item in content.items:
+        lines.extend(
+            [
+                "",
+                f"{item.num:02d} · {item.kick} · {item.stamp}",
+                item.nadpis,
+                item.lead,
+            ]
+        )
+        if item.mean:
+            lines.append(f"Co to znamená: {item.mean}")
+    zaver = (content.zaver_body or content.zaver or "").strip()
+    if zaver:
+        key = (content.zaver_key or "").strip()
+        lines.extend(["", f"„{key} {zaver}".strip() if key else f"„{zaver}"])
+    lines.extend(
+        [
+            "",
+            f"Číst celé vydání: {edition_url}",
+            f"Archiv: {archive_url}",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def render_email_html(
+    edition: Edition,
+    *,
+    site_url: str,
+    base_path: str = "",
+) -> tuple[str, str, str]:
+    """HTML + plain text newsletteru ve stylu webového vydání."""
+    paths = SchuzePaths.create(edition.obdobi, edition.schuze)
+    d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
+    day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
+    content = build_den_content(day_path, paths)
+    edition_href = edition_pages_href(
+        edition.obdobi, edition.schuze, edition.datum_unl, base_path
+    )
+    archive_href = archiv_pages_href(base_path)
+    site = site_url.rstrip("/")
+    edition_url = f"{site}{edition_href}"
+    archive_url = f"{site}{archive_href}"
+    datum_label = datum_design(edition.datum_unl, content.den)
+    subject = f"Nové vydání · {datum_label}"
+    svejk_img_url = (
+        _static_asset_url(site, base_path, "svejk-terra.png")
+        if _FAVICON_PNG.is_file()
+        else ""
+    )
+    css = _EMAIL_CSS.read_text(encoding="utf-8")
+    tpl = _jinja_env().get_template("noviny-email.html")
+    html = tpl.render(
+        content=content,
+        css=css,
+        datum_design=datum_label,
+        proslo_label=_proslo_board_label(content.proslo),
+        zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
+        edition_url=edition_url,
+        archive_url=archive_url,
+        svejk_img_url=svejk_img_url,
+    )
+    plain = plain_text_from_content(
+        content,
+        datum_label=datum_label,
+        edition_url=edition_url,
+        archive_url=archive_url,
+        proslo_label=_proslo_board_label(content.proslo),
+        zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
+    )
+    return subject, plain, html
+
+
 def render_archiv_html(
     obdobi: int,
     *,
@@ -215,6 +314,34 @@ def render_potvrzeno_html(
         latest_href=latest_href,
         archive_href=archive_href,
         site_url=cfg.site_url.rstrip("/"),
+        canonical_url=canonical_url,
+        inline_css=inline_css,
+        css=css,
+        css_href=css_href,
+        **favicons,
+    )
+
+
+def render_soukromi_html(
+    obdobi: int,
+    *,
+    inline_css: bool = False,
+    css_href: str | None = None,
+    base_path: str = "",
+) -> str:
+    """Stránka ochrany osobních údajů u odběru novinek."""
+    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    archive_href = archiv_pages_href(base_path)
+    canonical_url = f"{cfg.site_url.rstrip('/')}/soukromi/"
+    tpl = _jinja_env().get_template("soukromi.html")
+    return tpl.render(
+        archive_href=archive_href,
+        site_url=cfg.site_url.rstrip("/"),
+        contact_email=cfg.contact_email,
         canonical_url=canonical_url,
         inline_css=inline_css,
         css=css,

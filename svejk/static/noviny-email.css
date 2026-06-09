@@ -1,0 +1,271 @@
+/* E-mailová varianta novin — zjednodušené styly pro inboxy. */
+body {
+  margin: 0;
+  padding: 0;
+  background: #c9bda3;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #211c14;
+  -webkit-text-size-adjust: 100%;
+}
+.email-wrap {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f0e6cf;
+  border-radius: 3px;
+}
+.email-pad {
+  padding: 18px 16px 20px;
+}
+.head {
+  width: 100%;
+}
+.head td {
+  vertical-align: top;
+}
+.cal {
+  width: 88px;
+  background: #f0e6cf;
+  border: 2px solid #211c14;
+  text-align: center;
+}
+.cal-wd {
+  background: #211c14;
+  color: #f0e6cf;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 10px;
+  padding: 5px 2px 4px;
+}
+.cal-day {
+  font-family: Impact, 'Arial Black', sans-serif;
+  color: #cf5a31;
+  font-size: 42px;
+  line-height: 0.9;
+  padding: 6px 0 0;
+}
+.cal-mo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 10px;
+  color: #211c14;
+  padding: 4px 2px 7px;
+}
+.titleblock {
+  padding-left: 14px;
+}
+.eyebrow {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 10px;
+  color: #cf5a31;
+}
+.mast {
+  font-family: Impact, 'Arial Black', sans-serif;
+  text-transform: uppercase;
+  color: #211c14;
+  font-size: 28px;
+  line-height: 0.92;
+  margin: 4px 0 0;
+}
+.mast .terra { color: #cf5a31; }
+.svejk-img {
+  display: block;
+  margin: 0 0 6px auto;
+  opacity: 0.75;
+}
+.hr {
+  border: none;
+  border-top: 2px solid #211c14;
+  margin: 14px 0 0;
+}
+.board {
+  background: #211c14;
+  color: #f0e6cf;
+  border-top: 3px solid #cf5a31;
+  margin-top: 14px;
+  padding: 14px 16px 16px;
+}
+.board-kick {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 10px;
+  color: #cf5a31;
+  margin-bottom: 10px;
+}
+.board-main {
+  width: 100%;
+  text-align: center;
+}
+.board-main td {
+  vertical-align: middle;
+  font-family: Impact, 'Arial Black', sans-serif;
+}
+.blbl {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 11px;
+  line-height: 1.15;
+  color: #f0e6cf;
+}
+.bnum-l {
+  font-size: 40px;
+  line-height: 1;
+  color: #f0e6cf;
+}
+.bnum-r {
+  font-size: 40px;
+  line-height: 1;
+  color: #cf5a31;
+}
+.bcolon {
+  font-size: 28px;
+  color: #ded0ad;
+  line-height: 0.7;
+  padding: 0 8px;
+}
+.board-note {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 1.45;
+  color: #ded0ad;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(240, 230, 207, 0.22);
+}
+.item {
+  padding: 18px 0 16px;
+  border-bottom: 1.5px solid rgba(33, 28, 20, 0.25);
+}
+.numcol {
+  margin-bottom: 10px;
+}
+.kick {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 11px;
+  color: #5a503e;
+}
+.num {
+  font-family: Impact, 'Arial Black', sans-serif;
+  font-size: 48px;
+  line-height: 1;
+  color: #cf5a31;
+}
+.item.i2 .num { color: #283c6e; }
+.stamp {
+  display: inline-block;
+  font-family: Impact, 'Arial Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  color: #c23a2b;
+  padding: 4px 10px 3px;
+  border: 2px solid #c23a2b;
+  border-radius: 3px;
+}
+.stamp.zamiteno {
+  color: #5a503e;
+  border-color: #5a503e;
+}
+.stamp.odlozeno {
+  color: #283c6e;
+  border-color: #283c6e;
+}
+.h {
+  font-family: Impact, 'Arial Black', sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 1.1;
+  margin: 0;
+}
+.hl { display: block; }
+.p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 12px 0 0;
+}
+.mean {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #211c14;
+  font-weight: bold;
+}
+.mean b {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #cf5a31;
+}
+.item.i2 .mean b { color: #283c6e; }
+.verdict {
+  margin-top: 16px;
+  padding: 18px 14px 16px 40px;
+  background: #211c14;
+  color: #f0e6cf;
+  position: relative;
+}
+.verdict .qm {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 48px;
+  line-height: 0.5;
+  color: #cf5a31;
+  position: absolute;
+  top: 12px;
+  left: 10px;
+}
+.verdict .q {
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.25;
+  margin: 0;
+}
+.verdict .q .key {
+  font-family: Impact, 'Arial Black', sans-serif;
+  font-style: normal;
+  color: #cf5a31;
+  text-transform: uppercase;
+}
+.verdict .sign {
+  font-family: Impact, 'Arial Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 9px;
+  color: #ded0ad;
+  margin: 14px 0 0;
+}
+.email-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(33, 28, 20, 0.14);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.email-footer a {
+  color: #cf5a31;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+.email-footer a:hover { text-decoration: underline; }

@@ -100,6 +100,7 @@ jobs:
           SVEJK_SHOW_SUBSCRIBE: "1"
           SVEJK_SUBSCRIBE_API_URL: ${{ steps.subscribe_worker.outputs.url || secrets.SVEJK_SUBSCRIBE_API_URL }}
           ECOMAIL_API_KEY: ${{ secrets.ECOMAIL_API_KEY }}
+          ECOMAIL_FROM_EMAIL: ${{ secrets.ECOMAIL_FROM_EMAIL }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           if [ -n "$ECOMAIL_API_KEY" ] && [ -z "$SVEJK_SUBSCRIBE_API_URL" ]; then

@@ -46,6 +46,7 @@ class NewsletterConfig:
     form_action: str
     subscribe_api_url: str
     privacy_url: str
+    contact_email: str
     site_url: str
     feed_url: str
     show_subscribe: bool
@@ -99,10 +100,17 @@ class NewsletterConfig:
         embed_widget_js = (
             os.environ.get("ECOMAIL_WIDGET_JS") or DEFAULT_ECOMAIL_WIDGET_JS
         ).strip()
+        privacy_url = (os.environ.get("SVEJK_PRIVACY_URL") or f"{site}/soukromi/").strip()
+        contact_email = (
+            os.environ.get("SVEJK_CONTACT_EMAIL")
+            or os.environ.get("ECOMAIL_FROM_EMAIL")
+            or ""
+        ).strip()
         return cls(
             form_action=form_action,
             subscribe_api_url=subscribe_api_url,
-            privacy_url="https://ecomail.cz/gdpr",
+            privacy_url=privacy_url,
+            contact_email=contact_email,
             site_url=site,
             feed_url=feed,
             show_subscribe=show_subscribe,

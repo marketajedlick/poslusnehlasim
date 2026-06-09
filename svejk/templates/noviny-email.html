@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Poslušně hlásím · {{ datum_design }}</title>
+<style>{{ css | safe }}</style>
+</head>
+<body>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#c9bda3;">
+<tr>
+<td align="center" style="padding:12px 8px;">
+<table role="presentation" class="email-wrap" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px;background:#f0e6cf;border-radius:3px;">
+<tr>
+<td class="email-pad">
+
+<table role="presentation" class="head" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="88" style="width:88px;vertical-align:top;">
+  <div class="cal">
+    <div class="cal-wd">{{ content.cal_den }}</div>
+    <div class="cal-day">{{ content.cal_day }}</div>
+    <div class="cal-mo">{{ content.cal_month }}</div>
+  </div>
+</td>
+<td style="vertical-align:top;">
+  <div class="titleblock">
+    {% if svejk_img_url %}
+    <img class="svejk-img" src="{{ svejk_img_url }}" alt="" width="72" height="72" />
+    {% endif %}
+    <div class="eyebrow">deník sněmovny</div>
+    <h1 class="mast" style="margin:4px 0 0;">POSLUŠNĚ <span class="terra">HLÁSÍM</span></h1>
+  </div>
+</td>
+</tr>
+</table>
+
+<hr class="hr" />
+
+<div class="board">
+  <div class="board-kick">Stav zápasu</div>
+  <table role="presentation" class="board-main" cellpadding="0" cellspacing="0" border="0" width="100%">
+  <tr>
+    <td align="right" width="40%">
+      <span class="blbl">{{ proslo_label }}</span><br />
+      <span class="bnum-l">{{ content.proslo }}</span>
+    </td>
+    <td align="center" width="20%"><span class="bcolon">:</span></td>
+    <td align="left" width="40%">
+      <span class="bnum-r">{{ content.zamitnuto }}</span><br />
+      <span class="blbl">{{ zamitnuto_label }}</span>
+    </td>
+  </tr>
+  </table>
+  {% if content.board_note_lines %}
+  <div class="board-note">{% for line in content.board_note_lines %}{{ line }}{% if not loop.last %}<br />{% endif %}{% endfor %}</div>
+  {% endif %}
+</div>
+
+{% for item in content.items %}
+<div class="item{% if item.variant %} {{ item.variant }}{% endif %}">
+  <div class="numcol">
+    <span class="kick">{{ item.kick }}</span>
+    <span class="num">{{ "%02d"|format(item.num) }}</span>
+    <span class="stamp{% if item.verdikt != 'schvaleno' %} {{ item.verdikt }}{% endif %}">{{ item.stamp }}</span>
+  </div>
+  <h2 class="h">
+    {% for line in item.nadpis_radky %}
+    <span class="hl">{{ line }}</span>
+    {% endfor %}
+  </h2>
+  <p class="p">{{ item.lead }}</p>
+  {% if item.mean %}
+  <p class="mean"><b>Co to znamená: </b>{{ item.mean }}</p>
+  {% endif %}
+</div>
+{% endfor %}
+
+<div class="verdict">
+  <span class="qm">„</span>
+  <p class="q">{% if content.zaver_key %}<span class="key">{{ content.zaver_key }}</span> {% endif %}{{ content.zaver_body or content.zaver }}</p>
+  <div class="sign">- Váš dobrý voják Švejk -</div>
+</div>
+
+<div class="email-footer">
+  <p style="margin:0 0 10px;"><a href="{{ edition_url }}">Číst celé vydání na webu</a></p>
+  <p style="margin:0;"><a href="{{ archive_url }}">Archiv všech vydání</a></p>
+</div>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
