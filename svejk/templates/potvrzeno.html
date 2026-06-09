@@ -27,7 +27,7 @@
     {% if latest_href %}
     <section class="soukromi-section potvrzeno-latest">
       <h2 class="soukromi-heading">Než dorazí další vydání</h2>
-      <p>Nejnovější číslo už je venku{% if latest_label %} {{ latest_label }}{% endif %}. Co poslanci schválili, co neprošlo a proč na tom záleží.</p>
+      <p>Nejnovější číslo už je venku{% if latest_label %}: {{ latest_label }}{% endif %}. Co poslanci schválili, co neprošlo a proč na tom záleží.</p>
       <p class="potvrzeno-cta-wrap">
         <a class="potvrzeno-cta" href="{{ latest_href }}">Přečíst poslední vydání →</a>
       </p>
@@ -54,7 +54,6 @@
     {% if archive_href %}
     <a class="archiv-latest" href="{{ archive_href }}">Archiv vydání</a>
     {% endif %}
-    <a class="archiv-latest" href="{{ feed_url }}">RSS kanál</a>
     <a class="archiv-latest" href="{{ privacy_url }}">Ochrana údajů</a>
     <a class="archiv-latest" href="{{ site_url }}/">Úvodní stránka</a>
   </nav>
