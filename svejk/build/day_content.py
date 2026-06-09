@@ -51,6 +51,7 @@ _KICK_RULES: tuple[tuple[tuple[str, ...], str], ...] = (
 
 _VERDIKT_STAMP = {
     "schvaleno": "Schváleno",
+    "zvoleno": "Zvoleno",
     "zamiteno": "Zamítnuto",
     "odlozeno": "Odloženo",
     "debata": "Debata",
@@ -117,6 +118,8 @@ def lead_z_fact(fact: dict[str, Any]) -> str:
 
     if verdikt == "schvaleno":
         lead = f"poslanci schválili změny v {predmet}." if predmet else "poslanci schválili změnu."
+    elif verdikt == "zvoleno":
+        lead = f"poslanci zvolili {predmet}." if predmet else "poslanci volbu dokončili."
     elif verdikt == "zamiteno":
         lead = f"poslanci zamítli změny v {predmet}." if predmet else "poslanci změnu zamítli."
     elif verdikt == "odlozeno":
@@ -237,6 +240,8 @@ def _verdikt_fráze_zaver(item: DenItem, pocet_hlasovani: int) -> str:
             return "debata skončila odkladem"
     if v == "schvaleno":
         return "návrh prošel"
+    if v == "zvoleno":
+        return "volba dopadla"
     if v == "zamiteno":
         return "návrh neprošel"
     if v == "odlozeno":

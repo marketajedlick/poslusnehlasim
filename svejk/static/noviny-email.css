@@ -180,6 +180,10 @@ body {
   border: 2px solid #c23a2b;
   border-radius: 3px;
 }
+.stamp.zvoleno {
+  color: #cf5a31;
+  border-color: #cf5a31;
+}
 .stamp.zamiteno {
   color: #5a503e;
   border-color: #5a503e;
