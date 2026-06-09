@@ -458,11 +458,11 @@ body.archiv-page{
 .potvrzeno-latest p{
   text-align:left;
 }
-.potvrzeno-cta-wrap{
+.potvrzeno-latest p.potvrzeno-cta-wrap{
   margin:12px 0 0;
   text-align:center;
 }
-.potvrzeno-cta{
+.soukromi-section a.potvrzeno-cta{
   display:inline-block;
   font-family:'Anton',sans-serif;
   text-transform:uppercase;
@@ -472,9 +472,10 @@ body.archiv-page{
   background:var(--terra);
   color:var(--paper);
   text-decoration:none;
+  border-bottom:none;
   border-radius:2px;
 }
-.potvrzeno-cta:hover{ filter:brightness(1.05); }
+.soukromi-section a.potvrzeno-cta:hover{ filter:brightness(1.05); }
 .potvrzeno-links{
   margin-top:24px; padding-top:20px;
   border-top:1px solid rgba(33,28,20,.14);
