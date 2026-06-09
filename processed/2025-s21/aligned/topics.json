@@ -17,8 +17,8 @@
       "pocet_prijato": 2,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "Navýšení rodičovského příspěvku na 400 000 Kč od 1. 1. 2027, spor o valorizaci.",
-      "tema_vysvetleni": "Vládní novela v prvním čtení zvyšuje rodičák o 50 000 korun, debata o pravidelné valorizaci a superdávce."
+      "tema_svejk": "Posun digitalizace dávek státní sociální podpory, úřady nestihly systém k 1. 7. 2026.",
+      "tema_vysvetleni": "Technická novela k reformě sociálních dávek, posun termínů u úřadu práce."
     },
     {
       "slug": "novela-z-o-sprave-voleb",
@@ -35,8 +35,8 @@
       "pocet_prijato": 2,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "Senátní novela o správě voleb schválena v prvním čtení, QR kódy pro nevidomé voliče.",
-      "tema_vysvetleni": "Rychlé první čtení kvůli podzimním volbám, návrat k samostatným lístkům do Senátu."
+      "tema_svejk": "Hlasovali o: Novela z. o správě voleb",
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     },
     {
       "slug": "n-z-kterym-se-meni-nektere-zakony-na-useku-vnitr",
@@ -54,8 +54,8 @@
       "pocet_prijato": 2,
       "pocet_zamitnuto": 1,
       "kategorie": "substantivni",
-      "tema_svejk": "Odklady eLegislativy a atestací spisovek, spor Pirátů o lobbistickou stopu.",
-      "tema_vysvetleni": "Poslanecký balíček odkládá digitalizační termíny a snižuje strop kompenzací České pošty na 1,5 miliardy."
+      "tema_svejk": "Hlasovali o: N. z., kterým se mění některé zákony na úseku vnitřní správy",
+      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
     }
   ]
 }

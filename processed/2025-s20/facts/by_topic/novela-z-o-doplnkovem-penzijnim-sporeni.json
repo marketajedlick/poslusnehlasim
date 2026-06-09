@@ -3,35 +3,22 @@
   "nazev": "Novela z. o doplňkovém penzijním spoření",
   "datum": "27.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "nápravě sankcí seniorům, kterým Fialova vláda odebrala státní příspěvek na penzi",
+  "predmet_lidsky": "doplňkovém penzijním spoření",
   "koho": [
-    "Koho se to týká? Seniorů s přiznaným důchodem, kteří zůstali v doplňkovém penzijním spoření po červenci 2024."
+    "Doplňkové penzijní spoření, dobrovolné odkládání peněz na důchod vedle státního."
   ],
-  "fakty": [
-    {
-      "text": "Schillerová řekla, že seniorům vrátí státní příspěvek a umožní odejít bez sankce.",
-      "source": "steno",
-      "steno_id": "2025_20_00221",
-      "citace": "Těmto seniorům nyní umožníme ze systému odejít bez sankce bez ohledu na délku spoření a pokud ze systému už dříve odešli, vrátíme jim státní příspěvky."
-    },
-    {
-      "text": "Richterová chtěla reformu fondů a snížení poplatků, koalice její návrhy zamítla.",
-      "source": "steno",
-      "steno_id": "2025_20_00231",
-      "citace": "U těch penzijních fondů může jít o ekonomickou reformu v podstatě největšího rozsahu, co se tady za poslední roky stala."
-    },
-    {
-      "text": "Pozměňovací návrhy Ančincové a Pirátů k poplatkům padly, základní novela prošla 136:7.",
-      "source": "votes",
-      "citace": "Hlasování číslo 63 až 65 zamítnuta, číslo 66 pro 136, proti 7."
-    }
-  ],
+  "fakty": [],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Seniorům vrátí penzijní příspěvek",
-  "lead": "Ve středu ve finálním kole schválili změnu penzijního spoření, sto třicet šest hlasů proti sedmi. Seniorům s důchodem vrátí státní příspěvek a umožní odejít ze systému bez sankce.",
-  "pointa": "Piráti tlačili širší reformu fondů a nižší poplatky, Schillerová slíbila komplexní pilíř později. Nacher kritizoval změny u běžících smluv jako u stavebního spoření.",
-  "mean": "Lidé s přiznaným starobním důchodem, kterým vláda odebrala státní příspěvek, dostanou peníze zpět a mohou bez trestu ukončit spoření.",
-  "pocet_hlasovani": 1,
-  "proslo": true
+  "priorita": 3,
+  "nadpis": "Spoření na důchod se mění",
+  "pocet_hlasovani": 4,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 88,
+    "pritomno_min": 152,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 0
 }

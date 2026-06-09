@@ -3,6 +3,13 @@
 set -e
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 
+if [[ -f "$ROOT/secrets.env" ]]; then
+  set -a
+  # shellcheck disable=SC1091
+  source "$ROOT/secrets.env"
+  set +a
+fi
+
 find_python() {
   local candidates=(
     "$HOME/anaconda3/envs/svejk/bin/python"

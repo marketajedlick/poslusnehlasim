@@ -1,3 +1,5 @@
 {
-  "html.validate.styles": false
+  "html.validate.styles": false,
+  "python.defaultInterpreterPath": "/Users/marketa/anaconda3/envs/svejk/bin/python",
+  "python.terminal.activateEnvironment": true
 }

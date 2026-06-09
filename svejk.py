@@ -439,15 +439,19 @@ def cmd_newsletter_doi_sync(args: argparse.Namespace) -> int:
 
 
 def cmd_newsletter_subscribers(_args: argparse.Namespace) -> int:
-    from svejk.newsletter.api import api_key_from_env, list_id_from_env, list_subscribers
+    from svejk.newsletter.api import (
+        api_key_from_env,
+        list_subscribers,
+        subscribe_list_id_from_env,
+    )
 
     api_key = api_key_from_env()
-    list_id = list_id_from_env()
+    list_id = subscribe_list_id_from_env()
     if not api_key:
         print("Chyba: ECOMAIL_API_KEY není nastaven", file=sys.stderr)
         return 1
     if not list_id:
-        print("Chyba: ECOMAIL_LIST_ID není nastaven", file=sys.stderr)
+        print("Chyba: ECOMAIL_SUBSCRIBE_LIST_ID není nastaven", file=sys.stderr)
         return 1
     try:
         data = list_subscribers(api_key, list_id)
@@ -769,7 +773,7 @@ def main() -> int:
 
     sub.add_parser(
         "newsletter-subscribers",
-        help="Seznam odběratelů z Ecomail API (vyžaduje ECOMAIL_API_KEY a ECOMAIL_LIST_ID)",
+        help="Odběratelé ze sběrového seznamu (ECOMAIL_SUBSCRIBE_LIST_ID)",
     ).set_defaults(func=cmd_newsletter_subscribers)
 
     p_serve = sub.add_parser("serve", help="Spusť web")

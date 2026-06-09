@@ -1,19 +1,14 @@
 {
   "datum": "03.06.2026",
   "den": "středa",
-  "topic_slugs": [],
-  "dnesni_ucet": "Dvacátá schůze po přerušení, volby funkcí a evropská technika.\nSedmnáctá mezitím schválila podporu bydlení.",
-  "zaver": "že středa po přerušení schůze přinesla jen volby funkcí a hlasování o pořadu, žádný zákon.",
-  "vysledek": [
-    "* změny ve složení orgánů schváleny per rollam",
-    "* hlavní pozměňovací návrh k evidenci tržeb zamítnut 33:100",
-    "* dopoledne návrhy opozice o ČT a střetu zájmů zamítnuty"
+  "topic_slugs": [
+    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2"
   ],
   "stats": {
-    "pocet_hlas": 28,
+    "pocet_hlas": 2,
     "minuty": 402,
     "end_cas": "21:17",
-    "proslo": 0,
+    "proslo": 2,
     "zamitnuto": 0,
     "dlouha_debata": false
   }

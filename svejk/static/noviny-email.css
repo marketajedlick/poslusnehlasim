@@ -300,13 +300,18 @@ body {
 }
 .doi-intro {
   margin-top: 14px;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 17px;
   line-height: 1.55;
   color: #211c14;
 }
+.doi-quote-wrap {
+  margin-top: 22px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
 .doi-box {
-  margin-top: 16px;
-  padding: 18px 16px 16px 40px;
+  padding: 22px 20px 20px 44px;
   background: #211c14;
   color: #f0e6cf;
   position: relative;
@@ -318,8 +323,15 @@ body {
   line-height: 0.5;
   color: #cf5a31;
   position: absolute;
-  top: 12px;
-  left: 10px;
+}
+.doi-box .qm-start {
+  top: 14px;
+  left: 12px;
+}
+.doi-box .qm-end {
+  right: 14px;
+  bottom: 8px;
+  font-size: 40px;
 }
 .doi-box .q {
   font-style: italic;

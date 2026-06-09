@@ -294,7 +294,8 @@ body.is-turning{ pointer-events:none; }
   border-radius:2px;
 }
 .subscribe-input:focus{
-  outline:2px solid var(--terra); outline-offset:2px;
+  outline:2px solid var(--ink); outline-offset:2px;
+  border-color:var(--ink);
 }
 .subscribe-btn{
   width:100%;

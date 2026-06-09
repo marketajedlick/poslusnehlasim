@@ -88,6 +88,17 @@ python3 -m http.server -d site 8765
 
 **E-maily odběratelů nejsou v gitu.** Ukládá je [Ecomail](https://ecomail.cz) (double opt-in, GDPR). Web má jen formulář a RSS.
 
+### Dva seznamy v Ecomailu
+
+| Účel | Proměnná | Výchozí (dev) | Co to ovládá |
+|------|----------|---------------|--------------|
+| **Sběr z webu + DOI** | `ECOMAIL_SUBSCRIBE_LIST_ID` | `3` | worker odběru, nepotvrzení kontakty, `newsletter-subscribers` |
+| **Rozesílání** | `ECOMAIL_LIST_ID` | `3` | `newsletter-notify`, `newsletter-doi-sync`, kampaně z CI |
+
+**Dev režim:** obojí běží na seznamu 3 (test). Nový zápis z webu skončí jako **nepotvrzený** — musí být na seznamu zapnutý double opt-in (`newsletter-doi-sync --apply --enable-double-optin`).
+
+**Produkce:** až budeš ready, vrať `ECOMAIL_SUBSCRIBE_LIST_ID=2` (sběr) a `ECOMAIL_LIST_ID=2` (odesílání), nasaď worker znovu.
+
 ### Jednorázové nastavení
 
 1. Založ účet na Ecomailu a vytvoř seznam kontaktů pro odběr.
@@ -157,7 +168,7 @@ Po deployi webu je k dispozici děkovná stránka **`https://poslusnehlasim.cz/p
 ./run-svejk.sh newsletter-doi-sync
 
 # nahrát šablonu do Ecomailu (seznam + knihovna šablon)
-ECOMAIL_API_KEY=… ECOMAIL_LIST_ID=2 ECOMAIL_FROM_EMAIL=… \
+ECOMAIL_API_KEY=… ECOMAIL_LIST_ID=3 ECOMAIL_FROM_EMAIL=… \
   ./run-svejk.sh newsletter-doi-sync --apply --enable-double-optin
 
 # jen export HTML souboru (záloha / ruční vložení)

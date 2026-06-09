@@ -8,7 +8,10 @@ import urllib.error
 import urllib.request
 from typing import Any
 
-from svejk.newsletter.config import DEFAULT_ECOMAIL_LIST_ID
+from svejk.newsletter.config import (
+    DEFAULT_ECOMAIL_LIST_ID,
+    DEFAULT_ECOMAIL_SUBSCRIBE_LIST_ID,
+)
 
 API_BASE = "https://api2.ecomailapp.cz"
 
@@ -18,7 +21,17 @@ def api_key_from_env() -> str:
 
 
 def list_id_from_env() -> int | None:
+    """Seznam pro rozesílání kampaní (výchozí: dev/test)."""
     raw = (os.environ.get("ECOMAIL_LIST_ID") or DEFAULT_ECOMAIL_LIST_ID).strip()
+    return int(raw) if raw.isdigit() else None
+
+
+def subscribe_list_id_from_env() -> int | None:
+    """Seznam pro zápis z webu a DOI (výchozí: produkce)."""
+    raw = (
+        os.environ.get("ECOMAIL_SUBSCRIBE_LIST_ID")
+        or DEFAULT_ECOMAIL_SUBSCRIBE_LIST_ID
+    ).strip()
     return int(raw) if raw.isdigit() else None
 
 
@@ -120,6 +133,7 @@ def add_subscriber(
             "trigger_autoresponders": True,
             "update_existing": True,
             "resubscribe": True,
+            "skip_confirmation": False,
         },
     )
 

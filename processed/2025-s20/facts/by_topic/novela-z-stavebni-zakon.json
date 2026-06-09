@@ -3,41 +3,22 @@
   "nazev": "Novela z. - stavební zákon",
   "datum": "28.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "rozsáhlé změny stavebního zákona, které má zrychlit výstavbu a bydlení",
+  "predmet_lidsky": "stavebním zákoně",
   "koho": [
     "Koho se to týká? Každého, kdo staví dům, dělá přístavbu nebo čeká na úřad."
   ],
-  "fakty": [
-    {
-      "text": "Vlček označil návrh za lex developer a kritizoval spěch bez vyhodnocení předchozí novely.",
-      "source": "steno",
-      "steno_id": "2025_20_00426",
-      "citace": "Proč je do stavebního prostředí vnášen zmatek a nejistota další novelou, když se ještě ani neohodnotila poslední přijatá změna legislativy?"
-    },
-    {
-      "text": "Hřib řekl, že jde o tisícistránkový paskvil a úředníci hrozí odchodem.",
-      "source": "steno",
-      "steno_id": "2025_20_00440",
-      "citace": "Místo promyšlené reformy je před námi nesourodý slepenec změn. Pokud má kvůli této novele odejít až 70 procent úředníků stavebních úřadů, žádné zrychlení nebude."
-    },
-    {
-      "text": "Kovářová vyzvala koalici zákon stáhnout, rychlost řízení podle ČKAIT problém není.",
-      "source": "steno",
-      "steno_id": "2025_20_00450",
-      "citace": "Za klub Pirátů jednoznačně vyzýváme: stáhněte tento zmatečně připravovaný zákon."
-    },
-    {
-      "text": "Po čtyřiceti třech zamítnutých pozměňovacích návrzích finální hlasování číslo 149 v 22:59, šedesát čtyři pro.",
-      "source": "votes",
-      "citace": "Hlasování číslo 149, pro 64, proti 10."
-    }
-  ],
+  "fakty": [],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Stavební zákon prošel přes odpor",
-  "lead": "Čtvrteční maraton u stavebního zákona skončil ve 22:59 hlasováním šedesát čtyři proti deseti. Opozice mluvila o lexu developerovi, koalice po čtyřiceti třech zamítnutých pozměňovacích návrzích tisk protlačila.",
-  "pointa": "Debata začala už ve středu večer, ve čtvrtek dopoledne interpelace a odpoledne pokračování. Jurečka koalici vyčítal, že u klíčového tisku chybí poslanci.",
-  "mean": "Stavební řízení se má zjednodušit a zrychlit, ale odborníci a opozice varují před chaosem na úřadech. Navazuje na první kolo ze šestnácté schůze 6. května, teď šlo o druhé kolo lex developer.",
-  "pocet_hlasovani": 1,
-  "proslo": true
+  "priorita": 3,
+  "nadpis": "Stavba půjde snáz, když bůh dá",
+  "pocet_hlasovani": 44,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 78,
+    "pritomno_min": 62,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 0
 }

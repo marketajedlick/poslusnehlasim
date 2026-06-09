@@ -268,17 +268,18 @@ def render_doi_email_html(
         [
             "POSLUŠNĚ HLÁSÍM: potvrď odběr novinek",
             "",
-            "Necháváš tu e-mail, abychom ti posílali nová vydání deníku z Poslanecké sněmovny.",
-            "Ještě jeden krok. Potvrď, že to chceš opravdu ty.",
+            "Deník sněmovny už čeká. Ještě je ale třeba jeden krok.",
+            "Potvrď, že e-mail patří opravdu tobě a chceš deník odebírat.",
             "",
-            "Poslušně hlásím, že bez potvrzení ti žádné vydání nepošleme. Klikni a máš hotovo.",
+            "Poslušně hlásím, že bez potvrzení ti nemůžeme poslat ani řádku.",
+            "Klikni a je vyřízeno.",
             "",
             "Potvrď odběr kliknutím na odkaz v HTML verzi tohoto e-mailu.",
             "",
             f"Po potvrzení tě přesměrujeme na: {cfg.confirm_redirect_url}",
-            f"Více o údajích: {cfg.privacy_url}",
+            f"Co děláme s e-mailovou adresou: {cfg.privacy_url}",
             "",
-            "Když jsi se nepřihlašoval/a ty, tenhle mail klidně ignoruj.",
+            "Pokud tento e-mail přišel omylem, není třeba nic dělat.",
         ]
     )
     return subject, plain, html

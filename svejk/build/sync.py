@@ -114,6 +114,45 @@ def _needs_pipeline(paths: SchuzePaths) -> bool:
     return not paths.topics_json.is_file() or not paths.facts_by_day.is_dir()
 
 
+def _saved_steno_poradi(state: dict[str, Any], cislo: int) -> int:
+    saved = (state.get("schuze") or {}).get(str(cislo)) or {}
+    return int(saved.get("last_steno_poradi") or 0)
+
+
+def _steno_file_last_poradi(paths: SchuzePaths) -> int:
+    if not paths.steno_jsonl.is_file() or paths.steno_jsonl.stat().st_size == 0:
+        return 0
+    last = 0
+    for row in iter_jsonl(paths.steno_jsonl):
+        p = row.get("poradi")
+        if p is not None:
+            last = max(last, int(p))
+    return last
+
+
+def _steno_cache_missing(
+    paths: SchuzePaths,
+    state: dict[str, Any],
+    cislo: int,
+) -> bool:
+    """sync-state říká, že steno je stažené, ale lokální soubor chybí nebo je prázdný."""
+    if paths.steno_jsonl.is_file() and paths.steno_jsonl.stat().st_size > 0:
+        return False
+    return _saved_steno_poradi(state, cislo) > 0
+
+
+def _steno_download_incomplete(
+    paths: SchuzePaths,
+    state: dict[str, Any],
+    cislo: int,
+) -> bool:
+    """Stažený soubor má méně záznamů, než slibuje sync-state (přerušený download)."""
+    saved_poradi = _saved_steno_poradi(state, cislo)
+    if saved_poradi <= 0:
+        return False
+    return _steno_file_last_poradi(paths) < saved_poradi
+
+
 def run_sync(
     obdobi: int,
     *,
@@ -184,10 +223,15 @@ def run_sync(
         steno_stats = _steno_stats(paths, state, cislo)
 
         votes_changed = _votes_need_update(unl_stats, stored_votes) or unl_result.get("changed")
-        steno_new = _steno_probe_has_new(client, obdobi, cislo, steno_stats["last_poradi"])
+        steno_missing = _steno_cache_missing(paths, state, cislo)
+        steno_incomplete = _steno_download_incomplete(paths, state, cislo)
+        if steno_missing or steno_incomplete:
+            steno_new = True
+        else:
+            steno_new = _steno_probe_has_new(client, obdobi, cislo, steno_stats["last_poradi"])
         pipeline_missing = _needs_pipeline(paths)
 
-        needs_work = votes_changed or steno_new or pipeline_missing
+        needs_work = votes_changed or steno_new or steno_missing or steno_incomplete or pipeline_missing
         action = "would_update" if check_only and needs_work else ("update" if needs_work else "skip")
 
         entry: dict[str, Any] = {
@@ -197,6 +241,8 @@ def run_sync(
             "votes_stored": stored_votes,
             "steno_stored": steno_stats,
             "steno_new_available": steno_new,
+            "steno_cache_missing": steno_missing,
+            "steno_download_incomplete": steno_incomplete,
             "pipeline_missing": pipeline_missing,
         }
         vysledky.append(entry)

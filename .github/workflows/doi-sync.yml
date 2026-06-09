@@ -26,7 +26,7 @@ jobs:
       - name: Sync DOI template to Ecomail
         env:
           ECOMAIL_API_KEY: ${{ secrets.ECOMAIL_API_KEY }}
-          ECOMAIL_LIST_ID: "2"
+          ECOMAIL_LIST_ID: "3"
           ECOMAIL_FROM_EMAIL: ${{ secrets.ECOMAIL_FROM_EMAIL }}
           ECOMAIL_FROM_NAME: Poslušně hlásím
           SVEJK_SITE_URL: https://poslusnehlasim.cz

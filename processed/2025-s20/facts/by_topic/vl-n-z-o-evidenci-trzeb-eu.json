@@ -10,5 +10,13 @@
   "priorita": 0,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 6,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 100,
+    "pritomno_min": 146,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 0
 }

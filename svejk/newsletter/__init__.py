@@ -6,6 +6,7 @@ from svejk.newsletter.api import (
     list_id_from_env,
     list_subscribers,
     send_campaign,
+    subscribe_list_id_from_env,
     update_list,
 )
 from svejk.newsletter.config import NewsletterConfig
@@ -19,6 +20,7 @@ __all__ = [
     "add_subscriber",
     "export_doi_template",
     "list_id_from_env",
+    "subscribe_list_id_from_env",
     "list_subscribers",
     "send_campaign",
     "sync_doi_to_ecomail",
