@@ -3,20 +3,34 @@
   "nazev": "Novela z. o pojistném na sociální zabezpečení",
   "datum": "26.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky",
+  "predmet_lidsky": "nižších zálohách na sociálním pojištění pro živnostníky",
   "koho": [
-    "Koho se to týká? Živnostníků a dalších, kdo platí zálohy na sociálním pojištění sami, ne běžných zaměstnanců na výplatní pásce."
+    "Koho se to týká? Živnostníků a dalších, kdo si platí zálohy na sociální pojištění sami, ne zaměstnanců na výplatní pásce."
   ],
   "fakty": [
     {
-      "text": "Od ledna klesne minimální záloha z 5 720 na 5 005 korun měsíčně (ušetříte zhruba 715 korun); přeplatek vám stát vrátí.",
-      "source": "manual",
-      "note": "z glosy / TEMA_PRAVIDLA"
+      "text": "Minimální záloha, která od ledna činí 5 720 korun, klesne na 5 005 korun měsíčně; živnostník ušetří 715 korun měsíčně a rozdíl zaplacený od ledna stát vrátí.",
+      "source": "steno",
+      "steno_id": "2025_20_00115",
+      "citace": "Náš návrh tedy počítá s tím, že zvýšení minimální zálohy na sociální pojistné, která od ledna činí 5 720 korun, bude v co nejkratší době zásadně zmírněno na nezbytné minimum dané růstem průměrné mzdy v ekonomice, tedy na 5.005 korun. OSVČ každý měsíc ušetří 715 korun, za celý rok tedy 8 580 korun. Zároveň zajistíme vrácení rozdílu."
+    },
+    {
+      "text": "Senát zákon zamítl, sněmovna ho přehlasovala 118 hlasy; potřeba bylo 101 a nikdo nebyl proti.",
+      "source": "votes",
+      "citace": "Hlasování číslo 56, pro 118, proti 0, zdrželo se 7."
+    },
+    {
+      "text": "Schillerová: opozice podle ní zvedla odvody živnostníkům dohromady zhruba o 50 000 korun, senátor Lochman varoval, že nižší zálohy znamenají nižší důchody.",
+      "source": "steno",
+      "steno_id": "2025_20_00121",
+      "citace": "Když někdo bude mít nižší zálohy a ty minimální a za 20 let se podívá na to, že bude mít nízký důchod, tak stát ho, kdybychom to měli dát do uvozovek, hlady rozhodně umřít nenechá."
     }
   ],
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Živnostníci ušetří na odvodech",
+  "lead": "Živnostníkům klesne minimální záloha na sociální pojištění z 5 720 na 5 005 korun měsíčně. Senát to zamítl, sněmovna ho ve 22 hodin přehlasovala 118 hlasy, proti nebyl nikdo.",
+  "mean": "Kdo si platí zálohy sám, ušetří 715 korun měsíčně a rozdíl zaplacený od ledna mu stát vrátí. Háček připomněl Senát: míň odvodů dnes znamená o něco míň důchodu za dvacet let.",
   "pocet_hlasovani": 1,
   "proslo": true,
   "signaly": {
@@ -24,7 +38,7 @@
     "pritomno_min": 158,
     "jednomyslne": true,
     "spor": false,
-    "prazdny_sal": true
+    "prazdny_sal": false
   },
   "steno_slov": 0
 }

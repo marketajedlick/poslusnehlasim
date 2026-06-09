@@ -2,42 +2,51 @@
   "slug": "navrh-na-volbu-clenu-rady-ceske-televize",
   "nazev": "Návrh na volbu členů Rady České televize",
   "datum": "05.06.2026",
-  "verdikt": "zamitnuto",
-  "predmet_lidsky": "doplnění šesti míst v Radě České televize po skončení mandátů",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "obsazení šesti míst v Radě České televize",
   "koho": [
     "Koho se to týká? Diváků ČT a lidí, kteří sledují debatu o nezávislosti veřejnoprávních médií."
   ],
   "fakty": [
     {
-      "text": "Kolovratník řekl, že volí šest členů po 37 nominacích a veřejném slyšení.",
+      "text": "Tajnou volbu sněmovna smetla 3:133 a o 18 kandidátech hlasovala veřejně; zvoleni byli Berkovec, Brozda, Chalupský, Plíšková, Šlégr a Luboš Xaver Veselý, všech šest míst je obsazeno.",
       "source": "steno",
-      "steno_id": "2025_20_01753",
-      "citace": "Budeme volit šest členů a nacházíme se v prvním kole první volby."
+      "steno_id": "2025_20_01860",
+      "citace": "Obsazovali jsme 6 míst a přesně 6 míst bylo obsazeno, takže tato volba byla v tomto smyslu úspěšná, že nezůstalo žádné místo neobsazené."
     },
     {
-      "text": "Rakušan vysvětlil dohodu o veřejné volbě a nevolení Matochy s Bradáčem.",
+      "text": "Volba byla dlouho zablokovaná kvůli nahrávce, na níž hlasy Matochy a Bradáče probírají úplatek 500 000 za volbu; Hřib přinesl posudky o její pravosti a koalice slíbila oba nevolit.",
       "source": "steno",
-      "steno_id": "2025_20_01765",
-      "citace": "Přistupujeme na veřejnou volbu s příslibem, že tito dva lidi do Rady České televize nezvolí."
+      "steno_id": "2025_20_01773",
+      "citace": "Na té nahrávce zaznělo, že je tedy nutné doplatit 500 000 za volbu. A základní otázkou tedy bylo a stále je, zdali ta nahrávka je autentická."
     },
     {
-      "text": "Hřib varoval před Veselým, Berkovem a nahrávkou s úplatkem, Šťastný slíbil Matochu nevolit.",
+      "text": "Proti Veselému opozice citovala jeho vlastní výroky, za které se musel soudně omluvit; Macinka ho naopak označil za suverénně nejlepšího radního. Dostal 93 hlasů.",
       "source": "steno",
-      "steno_id": "2025_20_01791",
-      "citace": "Tito dva kandidáti nedostanou naši podporu v tuto chvíli a budeme volit kandidáty jiné."
+      "steno_id": "2025_20_01797",
+      "citace": "Tak si pojďme jenom shrnout pár výroků tohoto suverénně nejlepšího radního České televize, který řekl, cituji, na adresu Johany Hovorkové, je to zrůda, svině, hnát svinským krokem. Za to tedy se musel soudně omluvit."
     },
     {
-      "text": "Z 21 kol hlasování prošlo sedm kandidátů, čtrnáct padlo, poslední kolo 38:39.",
-      "source": "votes",
-      "citace": "Hlasování číslo 348 až 368, 7 přijato, 14 zamítnuto."
+      "text": "Matocha dostal po koaliční dohodě 3 hlasy, po Jurečkově námitce se o něm hlasovalo znovu a dostal zase 3. A Jiří Šlégr, kterému sněmovna den předtím neschválila vyznamenání, získal křeslo v radě 91 hlasy.",
+      "source": "steno",
+      "steno_id": "2025_20_01843",
+      "citace": "Potvrzuji, že poslední hlasování bylo zpochybněno, tudíž znovu hlasujeme o návrhu na kandidáta Pavla Matochu."
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Rada ČT zůstala nedoplněná",
-  "lead": "Páteční dopoledne sněmovna po hodinové debatě veřejně volila šest členů Rady České televize. Sedm kandidátů prošlo, čtrnáct padlo a šest míst zůstalo neobsazených.",
-  "pointa": "Jakob kritizoval Veselého kvůli XTV, Hřib přinesl posudky k nahrávce Matochy a Bradáče. Koalice se dohodla Matochu a Bradáče nevolit, opozice chtěla veřejné hlasování.",
-  "mean": "Rada ČT má patnáct členů, tentokrát uspělo sedm kandidátů, šest míst zůstává prázdných. Debata navazuje na úpravu ústavy z května a mimořádnou schůzi opozice o poplatcích z dubna.",
+  "priorita": 3,
+  "nadpis": "Rada ČT obsazena, Xaver u toho",
+  "lead": "Sněmovna v pátek veřejnou volbou doplnila všech šest volných míst v Radě České televize. Mezi zvolenými je i Luboš Xaver Veselý, kterému opozice před volbou předčítala jeho vlastní výroky o novinářkách, za něž se musel soudně omluvit; dostal 93 hlasů.",
+  "pointa": "Pavel Matocha po koaliční dohodě a kauze s nahrávkou o úplatku dostal 3 hlasy, po námitce znovu přesně 3. A Jiří Šlégr, kterému sněmovna ve čtvrtek neschválila vyznamenání, v pátek od týchž poslanců dostal křeslo v Radě ČT.",
+  "mean": "Rada ČT dohlíží na Českou televizi a volí ji sněmovna, takže každé jméno je politika. Tentokrát se obsadilo všech šest míst najednou; opozice neuspěla ani s tajnou volbou, ani s varováním před jednotlivými kandidáty.",
   "pocet_hlasovani": 21,
-  "proslo": false
+  "proslo": true,
+  "signaly": {
+    "proti_max": 133,
+    "pritomno_min": 166,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 13524
 }

@@ -2,17 +2,45 @@
   "slug": "novela-z-stavebni-zakon",
   "nazev": "Novela z. - stavební zákon",
   "datum": "28.05.2026",
-  "verdikt": "schvaleno",
+  "verdikt": "debata",
   "predmet_lidsky": "stavebním zákoně",
   "koho": [
     "Koho se to týká? Každého, kdo staví dům, dělá přístavbu nebo čeká na úřad."
   ],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Změnu stavebního zákona předkládají poslanci vládních klubů v čele s Babišem; opozice jí říká lex developer a žádá stažení.",
+      "source": "steno",
+      "steno_id": "2025_20_00426",
+      "citace": "Já bych osobně tady hlavně začal otázkou, proč vlastně potřebujeme nový stavební zákon, mnohými nazýván jako lex developer."
+    },
+    {
+      "text": "Za dva večery padlo 44 hlasování a všechna byla jen o tom, kdy debatu přerušit; o obsahu zákona se nehlasovalo ani jednou.",
+      "source": "votes",
+      "citace": "Hlasování číslo 82 až 148 zamítnuta, hlasování číslo 149: pro 64, proti 10, návrh přerušit do zítřka přijat."
+    },
+    {
+      "text": "Jurečka ve středu večer spočítal v sále osm poslanců vládní koalice včetně jednoho ministra.",
+      "source": "steno",
+      "steno_id": "2025_20_00452",
+      "citace": "1, 2, 3, 4, 5, 6 kolegů z řad vládní koalice, 7, ať jsem přesný, 8, jeden pan ministr. Hrdina, který si dneska vytáhl černou sirku, aby tady vůbec udržel fungování dnešní Sněmovny."
+    },
+    {
+      "text": "Ve čtvrtek večer kleslo kvorum pod hranici, u jednoho hlasování zbylo přihlášených 62 poslanců a Okamura podezíral kolegy, že si hrají s kartami.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_20_00977",
+      "citace": "No já právě tuším, že si s tím někdo pohrává s tím vytahováním, zandaváním karet, když to osciluje. (Pobavení a smích v sále.)"
+    }
+  ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Stavba půjde snáz, když bůh dá",
+  "nadpis": "Stavební zákon: 44 hlasování o ničem",
+  "lead": "Druhé kolo stavebního zákona se táhlo dva večery a padlo u něj 44 hlasování, jenže ani jedno o stavbách: hlasovalo se výhradně o tom, kdy jít domů. Prošel až čtvrteční návrh přerušit jednání, 64:10 minutu před jedenáctou večer.",
+  "pointa": "Jurečka mezitím v sále napočítal osm koaličních poslanců a jednoho ministra, Okamura zase podezíral kolegy, že vytahováním karet shazují kvorum. (Pobavení a smích v sále.)",
+  "mean": "Zákon má zrychlit povolování staveb, opozice mu říká lex developer a varuje před chaosem. Zatím se ale o jeho obsahu vůbec nehlasovalo, debata pokračovala další týden a na konci schůze ji poslanci vyřadili na příště.",
   "pocet_hlasovani": 44,
-  "proslo": true,
+  "proslo": false,
   "signaly": {
     "proti_max": 78,
     "pritomno_min": 62,

@@ -5,18 +5,25 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "dohledu nad investičními fondy a společnostmi",
   "koho": [
-    "Investiční společnosti spravují peníze investorů a nakupují za ně cenné papíry."
+    "Koho se to týká? Hlavně firem a lidí, kteří investují přes fondy, ne běžného účtu v bance."
   ],
   "fakty": [
     {
-      "text": "Poslanci sjednotili pravidla dohledu a povinností vůči klientům podle evropských norem.",
+      "text": "Pravidla dohledu a povinností vůči klientům se srovnávají podle evropských norem.",
       "source": "manual",
       "note": "z glosy / TEMA_PRAVIDLA"
+    },
+    {
+      "text": "Zákon prošel 137:0, nikdo nebyl proti; spor se nekonal ani u čtyř dílčích úprav.",
+      "source": "votes",
+      "citace": "Hlasování číslo 71: pro 137, proti 0. Konstatuji, že s návrhem zákona byl vysloven souhlas."
     }
   ],
   "publikovat": true,
-  "priorita": 3,
-  "nadpis": "Investice mají přísnější dohled",
+  "priorita": 2,
+  "nadpis": "Investiční fondy podle Bruselu",
+  "lead": "Hned po penzijním spoření sněmovna srovnala pravidla pro investiční fondy s evropskými normami; 137 pro, proti nikdo.",
+  "mean": "Kdo investuje přes fondy, bude mít dohled a povinnosti správců sjednocené podle evropských pravidel. Běžného účtu v bance se to netýká a ve sněmovně se o tom nikdo ani nepohádal.",
   "pocet_hlasovani": 5,
   "proslo": true,
   "signaly": {
@@ -24,7 +31,7 @@
     "pritomno_min": 148,
     "jednomyslne": false,
     "spor": true,
-    "prazdny_sal": true
+    "prazdny_sal": false
   },
   "steno_slov": 0
 }

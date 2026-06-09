@@ -2726,7 +2726,7 @@
         149
       ],
       "steno_ids": [],
-      "proslo": true,
+      "proslo": false,
       "pocet_hlasovani": 44,
       "pocet_prijato": 1,
       "pocet_zamitnuto": 43,
@@ -2779,13 +2779,13 @@
       "slug": "novela-z-o-rostlinolekarske-peci-eu",
       "nazev": "Novela z. o rostlinolékařské péči - EU",
       "bod": "91",
-      "datum": "27.05.2026",
+      "datum": "05.06.2026",
       "vote_cisla": [
         346,
         72
       ],
       "steno_ids": [],
-      "proslo": true,
+      "proslo": false,
       "pocet_hlasovani": 2,
       "pocet_prijato": 2,
       "pocet_zamitnuto": 0,

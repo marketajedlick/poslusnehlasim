@@ -2,10 +2,17 @@
   "datum": "29.05.2026",
   "den": "pátek",
   "topic_slugs": [],
+  "dnesni_ucet": "Sněmovna se sešla ve dvě odpoledne a za osmnáct minut šla domů.\nJediné hlasování dne: 89 pro to zabalit, 5 proti.",
+  "zaver": "že páteční jednání trvalo osmnáct minut: poslankyně Malá navrhla, že už toho tento týden bylo dost, 89 poslanců souhlasilo a Hřibův protinávrh jednat i po deváté večer se ani nesměl hlasovat.",
+  "vysledek": [
+    "* žádný zákon, jediné hlasování bylo o tom, kdy skončit",
+    "* návrh přerušit schůzi do středy prošel 89:5",
+    "* Hřibův protinávrh jednat i po deváté večer předsedající smetl ze stolu"
+  ],
   "stats": {
     "pocet_hlas": 0,
-    "minuty": 0,
-    "end_cas": "14:16",
+    "minuty": 18,
+    "end_cas": "14:18",
     "proslo": 0,
     "zamitnuto": 0,
     "dlouha_debata": false
