@@ -453,10 +453,11 @@ body.archiv-page{
 }
 .potvrzeno-welcome{
   margin-top:4px;
-  text-align:left;
+  text-align:center;
 }
-.potvrzeno-latest p{
-  text-align:left;
+.potvrzeno-welcome .soukromi-heading,
+.potvrzeno-welcome p{
+  text-align:center;
 }
 .potvrzeno-latest p.potvrzeno-cta-wrap{
   margin:12px 0 0;
