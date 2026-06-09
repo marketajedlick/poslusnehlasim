@@ -38,7 +38,8 @@ from svejk.timeline import BlokDne, DenSchuze, den_v_tydnu
 
 _KICK_RULES: tuple[tuple[tuple[str, ...], str], ...] = (
     (("zkumav", "zdrav", "nemocnic", "laborator", "diagnost"), "Zdravotnictví"),
-    (("živnost", "pojistn", "odvod", "sociáln", "soc. zab"), "Živnostníci"),
+    (("sociální podpo", "dávk", "přídav", "příspěvek na bydlení"), "Dávky"),
+    (("živnost", "pojistn", "odvod", "soc. zab"), "Živnostníci"),
     (("penzij", "důchod", "spoření"), "Penze"),
     (("stavebn", "developersk", "územní"), "Stavby"),
     (("investič", "finan", "bank"), "Finance"),

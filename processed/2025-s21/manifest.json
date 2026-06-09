@@ -11,7 +11,25 @@
       "html_files": [
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s21/out/noviny-dlouhe/2026-06-02.html"
       ]
+    },
+    "fetch": {
+      "done": true,
+      "votes": 10,
+      "steno": 147,
+      "hlidac_token_used": true,
+      "psp_steno_used": false,
+      "fetched_at": "2026-06-09T21:31:45.126910+00:00"
+    },
+    "align": {
+      "done": true,
+      "topics": 3
+    },
+    "extract": {
+      "done": true,
+      "topics_written": 3,
+      "with_concrete_facts": 3,
+      "days": 1
     }
   },
-  "built_at": "2026-06-07T20:10:02.058706+00:00"
+  "built_at": "2026-06-09T21:50:04.117706+00:00"
 }

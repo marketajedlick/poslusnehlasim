@@ -311,6 +311,7 @@ def mean_z_clanku(
 
 _TEMA_Z_CLANKU: tuple[tuple[tuple[str, ...], str], ...] = (
     (("zkumav", "laborator", "odběr"), "docházející zkumavky v nemocnicích"),
+    (("dávk", "přídav", "sociální podpo"), "dávky pro rodiny"),
     (("živnost", "záloh", "odvod", "pojist"), "levnější zálohy pro živnostníky"),
     (("stavebn", "stavba", "územní plán"), "změny ve stavebním zákoně"),
     (("důchod", "penzij", "penze"), "pravidla penzí a důchodů"),
@@ -350,7 +351,13 @@ def _pointa_z_leadu(lead: str) -> str:
             return v if v.endswith((".", "!", "?")) else f"{v}."
     if len(vety) >= 2:
         tail = vety[-1].strip()
-        if tail and len(tail) < 110 and not tail.lower().startswith("poslušně"):
+        # fragment po rozseknutí data („1. července, ale …“) začíná malým písmenem
+        if (
+            tail
+            and len(tail) < 110
+            and not tail.lower().startswith("poslušně")
+            and tail[:1].isupper()
+        ):
             return tail if tail.endswith((".", "!", "?")) else f"{tail}."
     return ""
 
