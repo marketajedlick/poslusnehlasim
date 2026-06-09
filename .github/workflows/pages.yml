@@ -4,6 +4,11 @@ on:
   push:
     branches: [main, master]
   workflow_dispatch:
+    inputs:
+      newsletter_force:
+        description: "Vynutit nový Ecomail koncept i pro stejné vydání"
+        type: boolean
+        default: false
   schedule:
     # Po–Pá večer a ráno (UTC) — po jednání PS
     - cron: "30 20 * * 1-5"
@@ -128,7 +133,11 @@ jobs:
             echo "ECOMAIL_API_KEY není nastaven — přeskočeno"
             exit 0
           fi
-          ./run-svejk.sh newsletter-notify --obdobi 2025 --out site || echo "Newsletter notify selhal — deploy pokračuje"
+          FORCE_FLAG=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.newsletter_force }}" = "true" ]; then
+            FORCE_FLAG="--force"
+          fi
+          ./run-svejk.sh newsletter-notify --obdobi 2025 --out site $FORCE_FLAG || echo "Newsletter notify selhal — deploy pokračuje"
 
       - name: Save newsletter state
         uses: actions/cache/save@v4
