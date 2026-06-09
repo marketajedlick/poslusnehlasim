@@ -131,6 +131,28 @@ Cloudflare worker je volitelný (`SVEJK_SUBSCRIBE_MODE=worker` + secret `SVEJK_S
 
 **Double opt-in:** nový kontakt může být v Ecomailu nejdřív v sekci **Nepotvrzení** — musí kliknout na potvrzovací e-mail.
 
+### Nastavení double opt-in a welcome v Ecomailu
+
+Po deployi webu je k dispozici děkovná stránka **`https://poslusnehlasim.cz/potvrzeno/`** (exportuje se jako `potvrzeno/index.html`).
+
+1. **Seznam kontaktů → Nastavení seznamu**
+   - Zapni **Registrace s potvrzením e-mailu (double opt-in)**
+   - Odesílatel: ověřená doména (`ECOMAIL_FROM_EMAIL`)
+   - Šablona potvrzení musí obsahovat merge tag **`*|SUBCONFIRM|*`**
+   - URL po potvrzení: **`https://poslusnehlasim.cz/potvrzeno/`**
+
+2. **Potvrzovací e-mail** — krátký, jedno tlačítko. Bez dlouhého textu (ten patří do welcome).
+
+3. **Welcome automatizace** (po potvrzení DOI)
+   - Automatizace → trigger **Přihlásí se do seznamu**
+   - Frekvence: **pouze jednou** (doporučeno)
+   - Worker už posílá `trigger_autoresponders: true` — automatizace se spustí sama
+   - Otestuj na vlastním e-mailu v záložce Testování
+
+4. **Kontrola cesty:** formulář → potvrzovací mail → klik → `/potvrzeno/` → welcome mail → kontakt v **Potvrzení** (ne Nepotvrzení)
+
+5. **Success text na webu** — po nasazení DOI uprav v `subscribe.html` zprávu na „zkontroluj e-mail a potvrď odběr“ (zatím zůstává „e-mail je zapsán“).
+
 ### Jak lidé dostanou e-mail
 
 **Varianta A (doporučená): automatizace v Ecomailu**

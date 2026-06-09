@@ -56,6 +56,11 @@ class NewsletterConfig:
     subscribe_mode: str
 
     @property
+    def confirm_redirect_url(self) -> str:
+        """URL pro přesměrování po kliknutí na potvrzovací odkaz v Ecomailu (double opt-in)."""
+        return f"{self.site_url.rstrip('/')}/potvrzeno/"
+
+    @property
     def enabled(self) -> bool:
         return bool(self.form_action or self.subscribe_api_url)
 

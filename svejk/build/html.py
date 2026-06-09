@@ -185,3 +185,39 @@ def render_archiv_html(
         css_href=css_href,
         **favicons,
     )
+
+
+def render_potvrzeno_html(
+    obdobi: int,
+    *,
+    inline_css: bool = False,
+    css_href: str | None = None,
+    base_path: str = "",
+) -> str:
+    """Stránka po potvrzení double opt-in (přesměrování z Ecomailu)."""
+    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    editions = list_obdobi_editions(obdobi)
+    if not editions:
+        raise ValueError(f"Žádná vydání pro období {obdobi}")
+
+    latest = editions[-1]
+    latest_href = edition_pages_href(
+        latest.obdobi, latest.schuze, latest.datum_unl, base_path
+    )
+    archive_href = archiv_pages_href(base_path)
+    canonical_url = f"{cfg.site_url.rstrip('/')}/potvrzeno/"
+    tpl = _jinja_env().get_template("potvrzeno.html")
+    return tpl.render(
+        latest_href=latest_href,
+        archive_href=archive_href,
+        site_url=cfg.site_url.rstrip("/"),
+        canonical_url=canonical_url,
+        inline_css=inline_css,
+        css=css,
+        css_href=css_href,
+        **favicons,
+    )

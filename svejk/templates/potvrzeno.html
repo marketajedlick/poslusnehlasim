@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#c9bda3" />
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/svg+xml" href="{{ favicon_svg }}" />
+<link rel="icon" type="image/png" href="{{ favicon_png }}" sizes="32x32" />
+<link rel="apple-touch-icon" href="{{ apple_touch_icon }}" />
+<title>Odběr potvrzen · Poslušně hlásím</title>
+<meta name="description" content="Odběr novinek Poslušně hlásím je potvrzen." />
+<link rel="canonical" href="{{ canonical_url }}" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+{% if inline_css %}
+<style>{{ css | safe }}</style>
+{% else %}
+<link rel="stylesheet" href="{{ css_href }}" />
+{% endif %}
+</head>
+<body class="archiv-page">
+<div class="archiv-wrap">
+  <header class="archiv-head">
+    <h1 class="archiv-title">Odběr potvrzen</h1>
+    <p class="archiv-gloss">Poslušně hlásím, že e-mail je zapsán. Nové vydání ti pošleme, jakmile vyjde na webu.</p>
+    {% if latest_href %}
+    <a class="archiv-latest" href="{{ latest_href }}">Nejnovější vydání</a>
+    {% endif %}
+  </header>
+
+  <p class="potvrzeno-note">Tuhle stránku uvidíš jen po potvrzení odběru v e-mailu. Když něco nesedí, napiš na adresu odesílatele z potvrzovacího mailu.</p>
+
+  <nav class="potvrzeno-links" aria-label="Další odkazy">
+    {% if archive_href %}
+    <a class="archiv-latest" href="{{ archive_href }}">Archiv vydání</a>
+    {% endif %}
+    <a class="archiv-latest" href="{{ site_url }}/">Úvodní stránka</a>
+  </nav>
+</div>
+</body>
+</html>

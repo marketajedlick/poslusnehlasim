@@ -9,7 +9,13 @@ from pathlib import Path
 from typing import Any
 
 from svejk.build.day_content import build_den_content
-from svejk.build.html import css_asset_version, render_archiv_html, render_den_html, static_css_path
+from svejk.build.html import (
+    css_asset_version,
+    render_archiv_html,
+    render_den_html,
+    render_potvrzeno_html,
+    static_css_path,
+)
 from svejk.build.nav import (
     clear_edition_cache,
     edition_pages_href,
@@ -163,6 +169,12 @@ def run_export_pages(
     archiv_html = render_archiv_html(obdobi, css_href=css_href, base_path=base)
     (out / "archiv.html").write_text(archiv_html, encoding="utf-8")
     written.append("archiv.html")
+
+    potvrzeno_html = render_potvrzeno_html(obdobi, css_href=css_href, base_path=base)
+    potvrzeno_dir = out / "potvrzeno"
+    potvrzeno_dir.mkdir(parents=True, exist_ok=True)
+    (potvrzeno_dir / "index.html").write_text(potvrzeno_html, encoding="utf-8")
+    written.append("potvrzeno/index.html")
 
     feed_path = write_feed_xml(obdobi, out / "feed.xml", config=cfg, base_path=base)
     robots_path = write_robots_txt(out, site_url=site)
