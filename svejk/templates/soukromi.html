@@ -19,52 +19,54 @@
 <div class="archiv-wrap soukromi-wrap">
   <header class="archiv-head">
     <h1 class="archiv-title">Ochrana údajů</h1>
-    <p class="archiv-gloss">Krátce a bez právnických kliček — co se děje s e-mailem, který necháš v odběru novinek.</p>
+    <p class="archiv-gloss">Poslušně hlásím, že e-mail neprodáváme, nevyměňujeme<br />ani neposíláme na zkušenou. Tady je vše podstatné.</p>
   </header>
 
   <div class="soukromi-body">
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Co sbíráme</h2>
-      <p>Jen tvou e-mailovou adresu. Nic víc z formuláře nepotřebujeme.</p>
+      <p>Jen e-mailovou adresu.</p>
+      <p>Nic víc nepotřebujeme.</p>
     </section>
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">K čemu to je</h2>
-      <p>Posíláme ti e-mail, když na webu vyjde nové vydání deníku z Poslanecké sněmovny. Marketing z cizích obchodů neposíláme.</p>
-    </section>
-
-    <section class="soukromi-section">
-      <h2 class="soukromi-heading">Na čem to stojí</h2>
-      <p>Odběrem dáváš souhlas se zpracováním e-mailu pro tento účel. U nových odběratelů posíláme potvrzovací e-mail — dokud na něj neklikneš, rozesílku nechodí.</p>
+      <p>K posílání nových vydání Deníku sněmovny.</p>
+      <p>Žádný marketing cizích firem.</p>
+      <p>Žádné nabídky hrnců.</p>
+      <p>Žádné překvapení.</p>
     </section>
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Kde data držíme</h2>
-      <p>E-maily odběratelů neukládáme v kódu webu. Drží je služba <a href="https://ecomail.cz/gdpr" rel="noopener">Ecomail</a>, která pro nás rozesílku technicky zajišťuje. Více o zpracování u Ecomailu: <a href="https://ecomail.cz/gdpr" rel="noopener">ecomail.cz/gdpr</a>.</p>
-    </section>
-
-    <section class="soukromi-section">
-      <h2 class="soukromi-heading">Jak dlouho</h2>
-      <p>Dokud se neodhlásíš. Po odhlášení tě z rozesílky vyřadíme.</p>
+      <p>E-maily neukládáme do webu.</p>
+      <p>Rozesílku pro nás zajišťuje <a href="https://ecomail.cz/gdpr" rel="noopener">Ecomail</a>.</p>
     </section>
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Odhlášení</h2>
-      <p>V každém e-mailu je odkaz pro odhlášení. Stačí na něj kliknout — žádný telefonát ani formulář navíc.</p>
+      <p>V každém e-mailu je odkaz pro odhlášení.</p>
+      <p>Jedno kliknutí a je hotovo.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Jak dlouho</h2>
+      <p>Dokud odběr dává smysl.</p>
+      <p>Po odhlášení e-mail z rozesílky odstraníme.</p>
     </section>
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Tvá práva</h2>
-      <p>Můžeš požádat o přístup k údajům, opravu nebo výmaz. Stížnost můžeš podat u <a href="https://www.uoou.cz/" rel="noopener">Úřadu pro ochranu osobních údajů</a>.</p>
+      <p>Kdykoliv můžeš požádat o výmaz nebo informace o uložených údajích.</p>
     </section>
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Kontakt</h2>
+      <p>Dotazy k odběru:</p>
       {% if contact_email %}
-      <p>Dotazy k odběru piš na <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>, případně odpověz na kterýkoliv e-mail z rozesílky.</p>
-      {% else %}
-      <p>Dotazy k odběru pošli odpovědí na kterýkoliv e-mail z rozesílky — adresa odesílatele je uvedená v záhlaví mailu.</p>
+      <p><a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
       {% endif %}
+      <p>Nebo stačí odpovědět na kterýkoliv e-mail.</p>
     </section>
   </div>
 
