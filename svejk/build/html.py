@@ -257,10 +257,8 @@ def render_doi_email_html(
     cfg = NewsletterConfig.from_env()
     site = (site_url or cfg.site_url).rstrip("/")
     subject = "Poslušně hlásím: potvrď odběr novinek"
-    css = _EMAIL_CSS.read_text(encoding="utf-8")
     tpl = _jinja_env().get_template("doi-email.html")
     html = tpl.render(
-        css=css,
         privacy_url=cfg.privacy_url,
         confirm_redirect_url=cfg.confirm_redirect_url,
     )
