@@ -4,14 +4,23 @@ from __future__ import annotations
 
 import json
 import os
-import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from svejk.build.io import read_json
-from svejk.build.nav import Edition, list_obdobi_editions
-from svejk.newsletter.api import api_key_from_env, list_id_from_env, send_campaign
+from svejk.build.nav import (
+    Edition,
+    archiv_pages_href,
+    edition_pages_href,
+    list_obdobi_editions,
+)
+from svejk.newsletter.api import (
+    api_key_from_env,
+    create_campaign,
+    list_id_from_env,
+    send_campaign,
+    send_campaigns_enabled_from_env,
+)
 from svejk.newsletter.config import NewsletterConfig
 from svejk.paths import SchuzePaths, processed_root
 
@@ -44,66 +53,53 @@ def _latest_edition(obdobi: int) -> Edition | None:
     return editions[-1] if editions else None
 
 
-def _plain_to_html(text: str) -> str:
-    parts: list[str] = []
-    for line in text.splitlines():
-        if not line.strip():
-            continue
-        line = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", line)
-        line = re.sub(r"\[(.+?)\]\((.+?)\)", r'<a href="\2">\1</a>', line)
-        if line.startswith("• "):
-            parts.append(f"<li>{line[2:]}</li>")
-        else:
-            parts.append(f"<p>{line}</p>")
-    body = "\n".join(parts)
-    if "<li>" in body:
-        body = re.sub(
-            r"(<li>.*?</li>\n?)+",
-            lambda m: f"<ul>{m.group(0)}</ul>",
-            body,
-            flags=re.DOTALL,
-        )
-    return body
-
-
-def _build_email_body(edition: Edition, *, site_url: str, base_path: str) -> tuple[str, str, str]:
-    from svejk.build.day_content import build_den_content, datum_design
-    from svejk.build.nav import edition_pages_href
-
+def _edition_day_path(edition: Edition) -> Path:
     paths = SchuzePaths.create(edition.obdobi, edition.schuze)
     d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
-    day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
-    day = read_json(day_path) if day_path.is_file() else {}
-    den = day.get("den") or ""
-    content = build_den_content(day_path, paths)
-    title = datum_design(edition.datum_unl, den)
+    return paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
+
+
+def _edition_ready(edition: Edition) -> bool:
+    """Vydání má data — odpovídá stránce, kterou export-pages zapíše na web."""
+    return _edition_day_path(edition).is_file()
+
+
+def _edition_export_path(edition: Edition, out_dir: Path, base_path: str) -> Path:
     href = edition_pages_href(
         edition.obdobi, edition.schuze, edition.datum_unl, base_path
     )
-    url = f"{site_url.rstrip('/')}{href}"
+    rel = href.lstrip("/")
+    return out_dir / rel
 
-    lines = [
-        f"Vyšlo nové vydání: **{title}**",
-        "",
-        content.dnesni_ucet or "",
-        "",
-    ]
-    for item in content.items:
-        lines.append(f"• {item.nadpis}")
-    zaver = (content.zaver_body or content.zaver or "").strip()
-    if zaver:
-        lines.extend(["", zaver])
-    lines.extend(
+
+def _build_email_body(edition: Edition, *, site_url: str, base_path: str) -> tuple[str, str, str]:
+    from svejk.build.day_content import datum_design
+    from svejk.timeline import den_v_tydnu
+
+    title = datum_design(edition.datum_unl, den_v_tydnu(edition.datum_unl))
+    edition_href = edition_pages_href(
+        edition.obdobi, edition.schuze, edition.datum_unl, base_path
+    )
+    archive_href = archiv_pages_href(base_path)
+    site = site_url.rstrip("/")
+    edition_url = f"{site}{edition_href}"
+    archive_url = f"{site}{archive_href}"
+
+    subject = f"Nové vydání · {title}"
+    plain = "\n".join(
         [
+            f"Na webu vyšlo nové vydání: {title}",
             "",
-            f"[Číst vydání na webu]({url})",
+            f"Číst na webu: {edition_url}",
             "",
-            "Odhlášení: odkaz v patičce každého e-mailu od Ecomailu.",
+            f"Archiv všech vydání: {archive_url}",
         ]
     )
-    subject = f"Nové vydání · {title}"
-    plain = "\n".join(ln for ln in lines if ln is not None).strip()
-    html = _plain_to_html(plain)
+    html = (
+        f"<p>Na webu vyšlo nové vydání: <strong>{title}</strong></p>"
+        f'<p><a href="{edition_url}">Číst na webu</a></p>'
+        f'<p><a href="{archive_url}">Archiv všech vydání</a></p>'
+    )
     return subject, plain, html
 
 
@@ -112,12 +108,17 @@ def run_newsletter_notify(
     *,
     dry_run: bool = False,
     force: bool = False,
+    send: bool = False,
     base_path: str = "",
+    out_dir: str | Path | None = None,
 ) -> dict[str, Any]:
     """
-    Pokud je novější vydání než v newsletter-state.json, pošle e-mail přes Ecomail.
+    Při novém vydání na webu vytvoří kampaň v Ecomailu (výchozí: jen koncept).
+    S --send nebo ECOMAIL_SEND_CAMPAIGNS=1 kampaň i rozešle.
+    Stav v newsletter-state.json brání duplicitám při opakovaném deployi.
     E-maily odběratelů nejsou v repozitáři — drží je Ecomail (GDPR, double opt-in).
     """
+    draft_only = not send and not send_campaigns_enabled_from_env()
     api_key = api_key_from_env()
     list_id = list_id_from_env()
     from_email = (os.environ.get("ECOMAIL_FROM_EMAIL") or "").strip()
@@ -141,19 +142,75 @@ def run_newsletter_notify(
 
     eid = edition_id(latest)
     state = load_state()
-    if state.get("last_notified_id") == eid and not force:
+    if draft_only:
+        if state.get("last_drafted_id") == eid and not force:
+            return {"skipped": True, "reason": "už vytvořeno", "edition_id": eid}
+    elif state.get("last_notified_id") == eid and not force:
         return {"skipped": True, "reason": "už odesláno", "edition_id": eid}
+    if state.get("last_attempted_id") == eid and not force:
+        return {
+            "skipped": True,
+            "reason": "už zkoušeno — použij --force pro nový pokus",
+            "edition_id": eid,
+        }
+
+    if not _edition_ready(latest):
+        return {"skipped": True, "reason": "vydání nemá data pro web", "edition_id": eid}
+
+    export_dir = Path(out_dir) if out_dir else None
+    if export_dir is not None:
+        page_path = _edition_export_path(latest, export_dir, base_path)
+        if not page_path.is_file():
+            return {
+                "skipped": True,
+                "reason": "stránka vydání není v exportu",
+                "edition_id": eid,
+                "expected": str(page_path),
+            }
 
     subject, plain, html = _build_email_body(latest, site_url=cfg.site_url, base_path=base_path)
     result: dict[str, Any] = {
         "edition_id": eid,
         "subject": subject,
         "dry_run": dry_run,
+        "draft_only": draft_only,
     }
 
     if dry_run:
         result["skipped_send"] = True
         result["body_plain"] = plain
+        result["body_html"] = html
+        return result
+
+    save_state(
+        {
+            **state,
+            "last_attempted_id": eid,
+            "last_attempted_at": datetime.now(timezone.utc).isoformat(),
+            "last_subject": subject,
+        }
+    )
+
+    if draft_only:
+        created = create_campaign(
+            api_key=api_key,
+            list_id=list_id,
+            subject=subject,
+            html_body=html,
+            from_name=from_name,
+            from_email=from_email,
+            reply_to=reply_to,
+        )
+        result["ecomail"] = created
+        save_state(
+            {
+                **load_state(),
+                "last_drafted_id": eid,
+                "last_drafted_at": datetime.now(timezone.utc).isoformat(),
+                "last_subject": subject,
+            }
+        )
+        result["drafted"] = True
         return result
 
     sent = send_campaign(
@@ -169,6 +226,7 @@ def run_newsletter_notify(
 
     save_state(
         {
+            **load_state(),
             "last_notified_id": eid,
             "last_notified_at": datetime.now(timezone.utc).isoformat(),
             "last_subject": subject,

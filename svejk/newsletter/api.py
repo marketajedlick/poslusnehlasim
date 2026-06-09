@@ -80,7 +80,7 @@ def add_subscriber(
     )
 
 
-def send_campaign(
+def create_campaign(
     *,
     api_key: str,
     list_id: int,
@@ -107,5 +107,36 @@ def send_campaign(
     campaign_id = created.get("id")
     if not campaign_id:
         raise RuntimeError(f"Ecomail API: chybí id kampaně v odpovědi: {created!r}")
+    return {"id": campaign_id, "created": created}
+
+
+def send_campaign(
+    *,
+    api_key: str,
+    list_id: int,
+    subject: str,
+    html_body: str,
+    from_name: str,
+    from_email: str,
+    reply_to: str,
+) -> dict[str, Any]:
+    created = create_campaign(
+        api_key=api_key,
+        list_id=list_id,
+        subject=subject,
+        html_body=html_body,
+        from_name=from_name,
+        from_email=from_email,
+        reply_to=reply_to,
+    )
+    campaign_id = created["id"]
     sent = api_request(api_key, "POST", f"/campaigns/{campaign_id}/send")
     return {"id": campaign_id, "send": sent}
+
+
+def send_campaigns_enabled_from_env() -> bool:
+    return os.environ.get("ECOMAIL_SEND_CAMPAIGNS", "").strip().lower() in (
+        "1",
+        "true",
+        "yes",
+    )

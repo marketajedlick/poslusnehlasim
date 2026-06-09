@@ -127,7 +127,7 @@ jobs:
             echo "ECOMAIL_API_KEY není nastaven — přeskočeno"
             exit 0
           fi
-          ./run-svejk.sh newsletter-notify --obdobi 2025 || echo "Newsletter notify selhal — deploy pokračuje"
+          ./run-svejk.sh newsletter-notify --obdobi 2025 --out site || echo "Newsletter notify selhal — deploy pokračuje"
 
       - name: Save newsletter state
         uses: actions/cache/save@v4
