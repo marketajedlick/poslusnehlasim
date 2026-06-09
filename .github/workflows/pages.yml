@@ -3,6 +3,8 @@ name: Build and deploy GitHub Pages
 on:
   push:
     branches: [main, master]
+    paths-ignore:
+      - processed/newsletter-state.json
   workflow_dispatch:
     inputs:
       newsletter_force:
@@ -19,7 +21,7 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -113,12 +115,6 @@ jobs:
           fi
           ./run-svejk.sh export-pages --obdobi 2025 --out site --cname poslusnehlasim.cz
 
-      - name: Restore newsletter state
-        uses: actions/cache/restore@v4
-        with:
-          path: processed/newsletter-state.json
-          key: newsletter-state-v1
-
       - name: Notify newsletter (Ecomail)
         continue-on-error: true
         env:
@@ -139,12 +135,18 @@ jobs:
           fi
           ./run-svejk.sh newsletter-notify --obdobi 2025 --out site $FORCE_FLAG || echo "Newsletter notify selhal — deploy pokračuje"
 
-      - name: Save newsletter state
-        uses: actions/cache/save@v4
-        if: success()
-        with:
-          path: processed/newsletter-state.json
-          key: newsletter-state-v1
+      - name: Commit newsletter state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add processed/newsletter-state.json
+          if git diff --staged --quiet; then
+            echo "Newsletter state beze změny."
+            exit 0
+          fi
+          git commit -m "newsletter: aktualizace stavu po notify [skip ci]"
+          git push
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

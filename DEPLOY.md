@@ -29,10 +29,19 @@ Dva workflow ti pošlou **GitHub notifikaci** (selhání jobu), pokud máš u re
 | **Check new PSP data** (`data-check.yml`) | denně 05:30 a 21:30 CET (před sync) | Na PSP / Hlídači jsou nová data, která ještě nejsou lokálně |
 | **Sync PSP data** (`sync.yml`) | po stažení a commitu | Sync právě stáhl nová data do repa — je třeba doplnit `facts` a `compose` |
 
+Lokální tajemství (token z Hlídače atd.):
+
+```bash
+cp secrets.env.example secrets.env
+# doplň HLIDAC_TOKEN=… do secrets.env (soubor je v .gitignore)
+```
+
+`run-svejk.sh` i `svejk/config.py` načtou `secrets.env` automaticky. Proměnné už nastavené v shellu mají přednost.
+
 Lokální kontrola bez zápisu:
 
 ```bash
-HLIDAC_TOKEN=… ./run-svejk.sh sync --obdobi 2025 --check-only --fail-if-pending
+./run-svejk.sh sync --obdobi 2025 --check-only --fail-if-pending
 ```
 
 V **GitHub → Settings → Notifications** zapni e-maily u „Actions“ a u tohoto repozitáře „Watch → All activity“ (nebo aspoň failures).
@@ -173,7 +182,7 @@ Nastav uvítací sérii nebo automatizaci na nové kontakty ze seznamu. Případ
 
 **Varianta B: CI po deployi**
 
-Workflow po `export-pages` spustí `newsletter-notify`, pokud je `ECOMAIL_API_KEY`. Stav posledního odeslání je v `processed/newsletter-state.json` (jen ID vydání, žádné e-maily).
+Workflow po `export-pages` spustí `newsletter-notify`, pokud je `ECOMAIL_API_KEY`. Stav posledního konceptu/odeslání je v `processed/newsletter-state.json` v repu (jen ID vydání, žádné e-maily) — CI ho po notify commitne, lokálně před spuštěním udělej `git pull`.
 
 ```bash
 # náhled bez odeslání
