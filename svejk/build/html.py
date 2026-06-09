@@ -270,15 +270,13 @@ def render_doi_email_html(
             "Ještě je ale třeba jeden krok.",
             "Potvrď, že e-mail patří opravdu tobě a chceš deník odebírat.",
             "",
-            "Poslušně hlásím, že bez potvrzení ti nemůžeme poslat ani řádku.",
-            "Klikni a je vyřízeno.",
+            "Poslušně hlásím, že bez potvrzení ti nemůžeme poslat ani řádku. Klikni a je vyřízeno.",
             "",
             "Potvrď odběr kliknutím na odkaz v HTML verzi tohoto e-mailu.",
             "",
             f"Po potvrzení tě přesměrujeme na: {cfg.confirm_redirect_url}",
-            f"Co děláme s e-mailovou adresou: {cfg.privacy_url}",
-            "",
             "Pokud tento e-mail přišel omylem, není třeba nic dělat.",
+            f"Co děláme s e-mailovou adresou: {cfg.privacy_url}",
         ]
     )
     return subject, plain, html
