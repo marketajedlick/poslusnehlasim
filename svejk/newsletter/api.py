@@ -86,23 +86,27 @@ def create_campaign(
     list_id: int,
     subject: str,
     html_body: str,
+    plain_body: str = "",
     from_name: str,
     from_email: str,
     reply_to: str,
 ) -> dict[str, Any]:
+    payload: dict[str, Any] = {
+        "title": subject,
+        "from_name": from_name,
+        "from_email": from_email,
+        "reply_to": reply_to,
+        "subject": subject,
+        "html_text": html_body,
+        "recepient_lists": [list_id],
+    }
+    if plain_body.strip():
+        payload["plain_text"] = plain_body
     created = api_request(
         api_key,
         "POST",
         "/campaigns",
-        payload={
-            "title": subject,
-            "from_name": from_name,
-            "from_email": from_email,
-            "reply_to": reply_to,
-            "subject": subject,
-            "html_text": html_body,
-            "recepient_lists": [list_id],
-        },
+        payload=payload,
     )
     campaign_id = created.get("id")
     if not campaign_id:
@@ -116,6 +120,7 @@ def send_campaign(
     list_id: int,
     subject: str,
     html_body: str,
+    plain_body: str = "",
     from_name: str,
     from_email: str,
     reply_to: str,
@@ -125,6 +130,7 @@ def send_campaign(
         list_id=list_id,
         subject=subject,
         html_body=html_body,
+        plain_body=plain_body,
         from_name=from_name,
         from_email=from_email,
         reply_to=reply_to,

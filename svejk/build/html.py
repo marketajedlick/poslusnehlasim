@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from datetime import datetime
 from pathlib import Path
 
@@ -67,11 +68,18 @@ def _zamitnuto_board_label(n: int) -> str:
     return "návrhů zamítli"
 
 
+def _split_paragraphs(text: str) -> list[str]:
+    parts = re.split(r"(?<=[.!?])\s+", text.strip())
+    return [p for p in parts if p]
+
+
 def _jinja_env() -> Environment:
-    return Environment(
+    env = Environment(
         loader=FileSystemLoader(str(_TEMPLATES)),
         autoescape=select_autoescape(["html"]),
     )
+    env.filters["split_paragraphs"] = _split_paragraphs
+    return env
 
 
 def render_den_html(
@@ -191,6 +199,8 @@ def plain_text_from_content(
             "",
             f"Číst celé vydání: {edition_url}",
             f"Archiv: {archive_url}",
+            "",
+            "Odhlášení odběru: odkaz v patičce e-mailu od Ecomailu.",
         ]
     )
     return "\n".join(lines)
