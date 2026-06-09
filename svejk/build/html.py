@@ -356,7 +356,6 @@ def render_potvrzeno_html(
         latest_label=latest_label,
         archive_href=archive_href,
         site_url=cfg.site_url.rstrip("/"),
-        feed_url=cfg.feed_url,
         privacy_url=cfg.privacy_url,
         canonical_url=canonical_url,
         inline_css=inline_css,
