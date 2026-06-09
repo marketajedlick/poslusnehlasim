@@ -397,6 +397,23 @@ def cmd_newsletter_notify(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_newsletter_doi_template(args: argparse.Namespace) -> int:
+    from svejk.newsletter.doi import export_doi_template
+
+    try:
+        result = export_doi_template(
+            args.out,
+            base_path=(args.base_path or "").rstrip("/"),
+        )
+    except OSError as e:
+        print(f"Chyba: {e}", file=sys.stderr)
+        return 1
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    print(f"Šablona DOI: {result['html']}", file=sys.stderr)
+    print(f"Předmět: {result['subject']}", file=sys.stderr)
+    return 0
+
+
 def cmd_newsletter_subscribers(_args: argparse.Namespace) -> int:
     from svejk.newsletter.api import api_key_from_env, list_id_from_env, list_subscribers
 
@@ -681,6 +698,24 @@ def main() -> int:
         help="Složka z export-pages — ověří, že stránka vydání v exportu existuje",
     )
     p_nwl.set_defaults(func=cmd_newsletter_notify)
+
+    p_doi = sub.add_parser(
+        "newsletter-doi-template",
+        help="Export HTML šablony potvrzovacího e-mailu (double opt-in) pro Ecomail",
+    )
+    p_doi.add_argument(
+        "-o",
+        "--out",
+        type=Path,
+        default=Path("site/email"),
+        help="Složka pro doi.html, doi.txt a README.txt",
+    )
+    p_doi.add_argument(
+        "--base-path",
+        default="",
+        help="Stejný prefix jako při export-pages (github.io/repo)",
+    )
+    p_doi.set_defaults(func=cmd_newsletter_doi_template)
 
     sub.add_parser(
         "newsletter-subscribers",

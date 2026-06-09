@@ -141,7 +141,14 @@ Po deployi webu je k dispozici děkovná stránka **`https://poslusnehlasim.cz/p
    - Šablona potvrzení musí obsahovat merge tag **`*|SUBCONFIRM|*`**
    - URL po potvrzení: **`https://poslusnehlasim.cz/potvrzeno/`**
 
-2. **Potvrzovací e-mail** — krátký, jedno tlačítko. Bez dlouhého textu (ten patří do welcome).
+2. **Potvrzovací e-mail** — šablona ve stejném stylu jako newsletter:
+
+```bash
+./run-svejk.sh newsletter-doi-template -o site/email
+# nebo při každém deployi automaticky: site/email/doi.html
+```
+
+V Ecomailu: **Šablony → nová šablona** → vlož obsah `doi.html`. Merge tag **`*|SUBCONFIRM|*`** musí zůstat na tlačítku. Předmět: `Poslušně hlásím — potvrď odběr novinek`.
 
 3. **Welcome automatizace** (po potvrzení DOI)
    - Automatizace → trigger **Přihlásí se do seznamu**

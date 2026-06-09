@@ -254,6 +254,47 @@ def render_email_html(
     return subject, plain, html
 
 
+def render_doi_email_html(
+    *,
+    site_url: str | None = None,
+    base_path: str = "",
+) -> tuple[str, str, str]:
+    """HTML + plain text pro potvrzovací e-mail (double opt-in) v Ecomailu."""
+    cfg = NewsletterConfig.from_env()
+    site = (site_url or cfg.site_url).rstrip("/")
+    subject = "Poslušně hlásím — potvrď odběr novinek"
+    svejk_img_url = (
+        _static_asset_url(site, base_path, "svejk-terra.png")
+        if _FAVICON_PNG.is_file()
+        else ""
+    )
+    css = _EMAIL_CSS.read_text(encoding="utf-8")
+    tpl = _jinja_env().get_template("doi-email.html")
+    html = tpl.render(
+        css=css,
+        svejk_img_url=svejk_img_url,
+        privacy_url=cfg.privacy_url,
+        confirm_redirect_url=cfg.confirm_redirect_url,
+    )
+    plain = "\n".join(
+        [
+            "POSLUŠNĚ HLÁSÍM — potvrď odběr novinek",
+            "",
+            "Necháváš tu e-mail, abychom ti posílali nová vydání deníku z Poslanecké sněmovny.",
+            "Ještě jeden krok — potvrď, že to chceš opravdu ty.",
+            "",
+            "Poslušně hlásím, že bez potvrzení ti žádné vydání nepošleme.",
+            "Potvrď odběr kliknutím na odkaz v HTML verzi tohoto e-mailu.",
+            "",
+            f"Po potvrzení tě přesměrujeme na: {cfg.confirm_redirect_url}",
+            f"Více o údajích: {cfg.privacy_url}",
+            "",
+            "Když jsi se nepřihlašoval/a ty, tenhle mail klidně ignoruj.",
+        ]
+    )
+    return subject, plain, html
+
+
 def render_archiv_html(
     obdobi: int,
     *,

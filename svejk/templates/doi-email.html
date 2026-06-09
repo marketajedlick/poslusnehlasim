@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Potvrď odběr · Poslušně hlásím</title>
+<style>{{ css | safe }}</style>
+</head>
+<body>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#c9bda3;">
+<tr>
+<td align="center" style="padding:12px 8px;">
+<table role="presentation" class="email-wrap" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px;background:#f0e6cf;border-radius:3px;">
+<tr>
+<td class="email-pad">
+
+<table role="presentation" class="head" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="88" style="width:88px;vertical-align:top;">
+  <div class="cal">
+    <div class="cal-wd">odběr</div>
+    <div class="cal-day" style="font-size:34px;">@</div>
+    <div class="cal-mo">novinky</div>
+  </div>
+</td>
+<td style="vertical-align:top;">
+  <div class="titleblock">
+    {% if svejk_img_url %}
+    <img class="svejk-img" src="{{ svejk_img_url }}" alt="" width="72" height="72" />
+    {% endif %}
+    <div class="eyebrow">deník sněmovny</div>
+    <h1 class="mast" style="margin:4px 0 0;">POSLUŠNĚ <span class="terra">HLÁSÍM</span></h1>
+  </div>
+</td>
+</tr>
+</table>
+
+<hr class="hr" />
+
+<p class="doi-intro" style="margin-top:14px;font-size:17px;line-height:1.5;color:#211c14;">
+  Necháváš tu e-mail, abychom ti posílali nová vydání deníku z Poslanecké sněmovny.
+  Ještě jeden krok — potvrď, že to chceš opravdu ty.
+</p>
+
+<div class="doi-box">
+  <span class="qm">„</span>
+  <p class="q" style="font-style:italic;font-size:18px;line-height:1.3;margin:0;color:#f0e6cf;">
+    <span class="key" style="font-family:Impact,'Arial Black',sans-serif;font-style:normal;color:#cf5a31;text-transform:uppercase;">Poslušně hlásím,</span>
+    že bez potvrzení ti žádné vydání nepošleme. Klikni a máš hotovo.
+  </p>
+</div>
+
+<div class="doi-cta-wrap" style="margin-top:22px;text-align:center;">
+  <a href="*|SUBCONFIRM|*" class="email-cta" style="display:inline-block;background:#cf5a31;color:#f0e6cf;font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.1em;font-size:14px;line-height:1;text-decoration:none;padding:14px 28px;border-radius:2px;">Potvrdit odběr</a>
+</div>
+
+<p class="doi-note" style="margin-top:16px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.5;color:#5a503e;text-align:center;">
+  Když jsi se nepřihlašoval/a ty, tenhle mail klidně ignoruj.
+  <br />
+  <a href="{{ privacy_url }}" style="color:#5a503e;text-decoration:underline;">Jak nakládáme s údaji</a>
+</p>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

@@ -25,6 +25,7 @@ from svejk.build.nav import (
 )
 from svejk.build.seo import write_llms_txt, write_robots_txt, write_sitemap_xml
 from svejk.newsletter.config import NewsletterConfig
+from svejk.newsletter.doi import export_doi_template
 from svejk.newsletter.feed import write_feed_xml
 from svejk.paths import SchuzePaths, processed_root
 
@@ -183,6 +184,9 @@ def run_export_pages(
     (soukromi_dir / "index.html").write_text(soukromi_html, encoding="utf-8")
     written.append("soukromi/index.html")
 
+    doi_export = export_doi_template(out / "email", base_path=base)
+    written.append("email/doi.html")
+
     feed_path = write_feed_xml(obdobi, out / "feed.xml", config=cfg, base_path=base)
     robots_path = write_robots_txt(out, site_url=site)
     sitemap_path = write_sitemap_xml(out, editions, site_url=site, base_path=base)
@@ -201,5 +205,7 @@ def run_export_pages(
         "llms": str(llms_path.relative_to(out)),
         "llms_full": str(llms_full_path.relative_to(out)),
         "newsletter": cfg.enabled,
+        "doi_template": doi_export["html"],
+        "doi_subject": doi_export["subject"],
         "out_dir": str(out),
     }
