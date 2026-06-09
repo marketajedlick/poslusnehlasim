@@ -24,30 +24,31 @@
   </header>
 
   <div class="soukromi-body potvrzeno-welcome">
-    <section class="soukromi-section">
-      <h2 class="soukromi-heading">Co je Poslušně hlásím</h2>
-      <p>Deník z jednání Poslanecké sněmovny ve stylu Haška. Po každém jednacím dni shrneme, co prošlo, co padlo a co to znamená v praxi.</p>
+    {% if latest_href %}
+    <section class="soukromi-section potvrzeno-latest">
+      <h2 class="soukromi-heading">Než dorazí další vydání</h2>
+      <p>Nejnovější číslo už je venku{% if latest_label %} — {{ latest_label }}{% endif %}. Co poslanci schválili, co neprošlo a proč na tom záleží.</p>
+      <p class="potvrzeno-cta-wrap">
+        <a class="potvrzeno-cta" href="{{ latest_href }}">Přečíst poslední vydání →</a>
+      </p>
     </section>
+    {% endif %}
 
     <section class="soukromi-section">
-      <h2 class="soukromi-heading">Co tě čeká v mailu</h2>
-      <p>E-mail dostaneš jen když na webu vyjde nové vydání. Žádné týdenní připomínky, žádný marketing. Odhlášení je v každém mailu.</p>
+      <h2 class="soukromi-heading">Co v odběru čekat</h2>
+      <p>Po každém jednacím dni stručně shrneme: co prošlo, co neprošlo, co to znamená v praxi a kolik času tím poslanci strávili.</p>
+      <p>Bez stranění. Bez politických komentářů. Bez televizního křiku.</p>
     </section>
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Jak často to chodí</h2>
-      <p>Jen ve dnech, kdy sněmovna jedná. Někdy nic týdny, jindy dva dny po sobě. Když zrovna nic nevyjde, pošleme taky nic.</p>
+      <p>Jen když vyjde nové vydání. Někdy několikrát za týden, někdy vůbec. Když se nic neděje, neposíláme nic.</p>
     </section>
 
-    {% if latest_href %}
-    <section class="soukromi-section potvrzeno-latest">
-      <h2 class="soukromi-heading">Mezitím na webu</h2>
-      <p>Nejnovější vydání{% if latest_label %}: {{ latest_label }}{% endif %}. Můžeš si ho přečíst hned, nemusíš čekat na mail.</p>
-      <p class="potvrzeno-cta-wrap">
-        <a class="potvrzeno-cta" href="{{ latest_href }}">Číst nejnovější vydání</a>
-      </p>
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Poslušně hlásím</h2>
+      <p>Žádný marketing, žádné týdenní připomínky. Odhlásit se můžeš v každém e-mailu.</p>
     </section>
-    {% endif %}
   </div>
 
   <nav class="potvrzeno-links" aria-label="Další odkazy">
@@ -59,7 +60,7 @@
     <a class="archiv-latest" href="{{ site_url }}/">Úvodní stránka</a>
   </nav>
 
-  <p class="potvrzeno-note">Tuhle stránku uvidíš jen po potvrzení odběru v e-mailu. Když něco nesedí, napiš na adresu odesílatele z potvrzovacího mailu.</p>
+  <p class="potvrzeno-note">Tahle stránka se ukáže jen po potvrzení odběru. Něco nesedí? Odpověz rovnou na potvrzovací e-mail.</p>
 </div>
 </body>
 </html>
