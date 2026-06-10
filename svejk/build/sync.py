@@ -279,10 +279,13 @@ def run_sync(
             if verbose:
                 print(f"CHYBA {msg}", flush=True)
 
+    updated_schuze = [int(r["schuze"]) for r in vysledky if r.get("action") == "update"]
+    would_schuze = [int(r["schuze"]) for r in vysledky if r.get("action") == "would_update"]
     if not check_only:
+        state["last_updated_schuze"] = updated_schuze
         save_sync_state(state)
 
-    updated = sum(1 for r in vysledky if r.get("action") == "update")
+    updated = len(updated_schuze)
     would = sum(1 for r in vysledky if r.get("action") == "would_update")
     summary = {
         "obdobi": obdobi,
@@ -291,6 +294,7 @@ def run_sync(
         "updated": updated,
         "would_update": would,
         "skipped": sum(1 for r in vysledky if r.get("action") == "skip"),
+        "updated_schuze": would_schuze if check_only else updated_schuze,
         "vysledky": vysledky,
         "errors": errors,
         "check_only": check_only,

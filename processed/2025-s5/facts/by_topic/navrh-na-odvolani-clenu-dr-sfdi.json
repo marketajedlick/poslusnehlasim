@@ -3,48 +3,14 @@
   "nazev": "Návrh na odvolání členů DR SFDI",
   "datum": "28.01.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "návrh na odvolání členů DR SFDI",
+  "predmet_lidsky": "návrhu na odvolání členů dozorčí rady SFDI",
   "koho": [
     "Personální volba, kdo sedí v komisi nebo radě."
   ],
-  "fakty": [
-    {
-      "text": "Další bod je bod číslo 39.Návrh na odvolání členů a náhradníků Správní rady Všeobecné zdravotní pojišťovny České republiky Prosím, aby se slova ujal předseda volební komise poslanec Martin Kolovratník.",
-      "source": "steno",
-      "steno_id": "2025_5_01222",
-      "citace": "Další bod je bod číslo 39.Návrh na odvolání členů a náhradníků Správní rady Všeobecné zdravotní pojišťovny České republiky Prosím, aby se slova ujal předseda volební komise poslanec Martin Kolovratník"
-    },
-    {
-      "text": "Hlasování číslo 87, přihlášeno 178 poslanců, pro 1506, proti žádný.",
-      "source": "steno",
-      "steno_id": "2025_5_01222",
-      "citace": "Hlasování číslo 87, přihlášeno 178 poslanců, pro 1506, proti žádný."
-    },
-    {
-      "text": "Hlasování číslo 86, přihlášeno 176 poslanců, pro 144, proti nikdo.",
-      "source": "steno",
-      "steno_id": "2025_5_01222",
-      "citace": "Hlasování číslo 86, přihlášeno 176 poslanců, pro 144, proti nikdo."
-    },
-    {
-      "text": "Předsedající: Ano.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_5_01223",
-      "citace": "(Předsedající: Ano.)"
-    }
-  ],
-  "publikovat": true,
-  "priorita": 3,
+  "fakty": [],
+  "publikovat": false,
+  "priorita": 0,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
-  "proslo": true,
-  "signaly": {
-    "proti_max": 0,
-    "pritomno_min": 178,
-    "jednomyslne": true,
-    "spor": false,
-    "prazdny_sal": false
-  },
-  "steno_slov": 5430
+  "proslo": true
 }

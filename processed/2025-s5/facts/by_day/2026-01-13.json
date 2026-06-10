@@ -1,12 +1,23 @@
 {
   "datum": "13.01.2026",
   "den": "úterý",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "navrh-na-prispevek-na-uhradu-volebnich-nakladu-z",
+    "porad-a-distancovani-5-schuze"
+  ],
+  "dnesni_ucet": "Strany si schválily peníze za říjnové volby, nikdo proti,\no důvěře vlády se začalo zatím jenom mluvit.",
+  "zaver": "že si strany nejdřív vyplatily volební kampaně a teprve pak začala třídenní debata o důvěře vládě.",
+  "vysledek": [
+    "* příspěvky na volební náklady prošly, nikdo proti",
+    "* opozice chtěla odsoudit Okamurova slova o Ukrajině, koalice to smetla ze stolu",
+    "* debata o důvěře začala, hlasování až ve čtvrtek",
+    "* Fiala: důvěra není formalita, jen formalita trvala celé dopoledne"
+  ],
   "stats": {
     "pocet_hlas": 0,
     "minuty": 118,
     "end_cas": "13:00",
-    "proslo": 0,
+    "proslo": 1,
     "zamitnuto": 0,
     "dlouha_debata": false
   }

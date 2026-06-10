@@ -3,48 +3,44 @@
   "nazev": "Vyslovení důvěry vládě České republiky",
   "datum": "15.01.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "vyslovení důvěry vládě České republiky",
+  "predmet_lidsky": "vyslovení důvěry vládě Andreje Babiše",
   "koho": [
-    "Občan to pozná až u konkrétních návrhů, ne u sammečítla."
+    "Koho se to týká? Celé republiky, od schválené důvěry závisí, zda vláda může normálně vládnout a prosazovat program."
   ],
   "fakty": [
     {
-      "text": "prosince 2025 je připravena předstoupit před Poslaneckou sněmovnu a požádat ji o vyslovení důvěry.",
+      "text": "V dnešním hlasování hlasovalo 199 poslanců, 108 poslanců bylo pro návrh, 91 poslanců proti návrhu.",
       "source": "steno",
-      "steno_id": "2025_5_00045",
-      "citace": "prosince 2025 je připravena předstoupit před Poslaneckou sněmovnu a požádat ji o vyslovení důvěry."
+      "steno_id": "2025_5_00801",
+      "citace": "V dnešním hlasování hlasovalo 199 poslanců, 108 poslanců bylo pro návrh, 91 poslanců proti návrhu."
     },
     {
-      "text": "Nejprve bych chtěl připomenout platné usnesení Poslanecké sněmovny číslo 31 ze dne 23.",
+      "text": "My ve skutečnosti hlasujeme dnes o tom, zda věříme, že vládnutí a vláda Andreje Babiše a jeho koaličních partnerů prospěje této zemi, prospěje Česku, prospěje lidem, kteří tady žijí. Jedním slovem nevěříme.",
       "source": "steno",
-      "steno_id": "2025_5_00045",
-      "citace": "Nejprve bych chtěl připomenout platné usnesení Poslanecké sněmovny číslo 31 ze dne 23."
+      "steno_id": "2025_5_00114",
+      "citace": "My ve skutečnosti hlasujeme dnes o tom, zda věříme, že vládnutí a vláda Andreje Babiše a jeho koaličních partnerů prospěje této zemi. Jedním slovem nevěříme."
     },
     {
-      "text": "Předseda vlády Andrej Babiš požádal předsedu Poslanecké sněmovny dopisem ze dne 5.",
+      "text": "Rozhodnutí, které má důsledky, dlouhodobé důsledky pro směřování naší země.",
       "source": "steno",
-      "steno_id": "2025_5_00045",
-      "citace": "Předseda vlády Andrej Babiš požádal předsedu Poslanecké sněmovny dopisem ze dne 5."
+      "steno_id": "2025_5_00086",
+      "citace": "Rozhodnutí, které má důsledky, dlouhodobé důsledky pro směřování naší země."
     },
     {
-      "text": "Ukazuje.",
+      "text": "Potlesk koaličních poslanců, vzájemné gratulace mezi členy vlády.",
       "source": "steno",
       "kind": "scene",
-      "steno_id": "2025_5_00046",
-      "citace": "(Ukazuje.)"
+      "steno_id": "2025_5_00801",
+      "citace": "(Potlesk koaličních poslanců, vzájemné gratulace mezi členy vlády.)"
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Vláda má zelenou",
-  "pocet_hlasovani": 8,
+  "nadpis": "Důvěra těsně prošla",
+  "lead": "Po třech dnech řečí ministrů a premiéra sněmovna vyslovila vládě Andreje Babiše důvěru, 108 pro, 91 proti. Střet zájmů z listopadové mimořádné schůze zůstal nevyřešený.",
+  "pointa": "Rakušan řekl jedním slovem: nevěříme. Koalice stejně přečetla jména a gratulovala ve vestoje.",
+  "mean": "Večer rozhodlo jmenovité hlasování: 108 pro, 91 proti. Hned nato koalice po jednotlivých bodech odmítla Jurečkovo usnesení, které kritizovalo vládu za jmenování Filipa Turka zmocněncem pro klima, na samotnou důvěru to už nemělo vliv.",
+  "pocet_hlasovani": 1,
   "proslo": true,
-  "signaly": {
-    "proti_max": 104,
-    "pritomno_min": 189,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": false
-  },
   "steno_slov": 162552
 }

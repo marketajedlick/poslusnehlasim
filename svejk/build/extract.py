@@ -201,6 +201,45 @@ def _validate_fact_votes(fact: dict[str, Any], votes_by_cislo: dict[int, dict], 
     return warnings
 
 
+_MANUAL_TOPIC_KEYS = ("lead", "pointa", "mean", "nadpis", "publikovat", "koho", "fakty")
+_MANUAL_DAY_KEYS = ("dnesni_ucet", "zaver", "vysledek", "topic_slugs")
+
+
+def _topic_manually_edited(existing: dict[str, Any]) -> bool:
+    if any(existing.get(k) for k in ("lead", "pointa", "mean")):
+        return True
+    if existing.get("fakty") and any(
+        f.get("source") in ("votes", "manual") for f in existing.get("fakty") or []
+    ):
+        return True
+    nadpis = (existing.get("nadpis") or "").strip()
+    if nadpis and nadpis not in ("Prošlo to", "Prošlo"):
+        return True
+    return False
+
+
+def _merge_manual_fact(existing: dict[str, Any], fresh: dict[str, Any]) -> dict[str, Any]:
+    if not existing or not _topic_manually_edited(existing):
+        return fresh
+    out = dict(fresh)
+    for key in _MANUAL_TOPIC_KEYS:
+        if key in existing and existing[key] not in (None, "", []):
+            out[key] = existing[key]
+    return out
+
+
+def _merge_manual_day(existing: dict[str, Any], fresh: dict[str, Any]) -> dict[str, Any]:
+    if not existing:
+        return fresh
+    if not any(existing.get(k) for k in ("dnesni_ucet", "zaver", "vysledek")):
+        return fresh
+    out = dict(fresh)
+    for key in _MANUAL_DAY_KEYS:
+        if key in existing and existing[key] not in (None, "", []):
+            out[key] = existing[key]
+    return out
+
+
 def run_extract(paths: SchuzePaths) -> dict[str, Any]:
     paths.ensure_dirs()
     aligned = read_json(paths.topics_json)
@@ -270,23 +309,28 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
             gloss and _glosa_je_nedostatecna(gloss) and not koho
         )
 
-        fact = {
-            "slug": topic["slug"],
-            "nazev": nazev,
-            "datum": topic.get("datum", ""),
-            "verdikt": _verdikt(proslo, nazev, vysv),
-            "predmet_lidsky": _lead_predmet(nazev),
-            "koho": koho,
-            "fakty": fakty,
-            "publikovat": publikovat,
-            "priorita": priorita,
-            "nadpis": _nadpis_fallback(nazev, proslo),
-            "pocet_hlasovani": topic.get("pocet_hlasovani", 0),
-            "proslo": proslo,
-            "signaly": signaly,
-            "steno_slov": steno_slov,
-        }
-        write_json(paths.facts_by_topic / f"{topic['slug']}.json", fact)
+        fact_path = paths.facts_by_topic / f"{topic['slug']}.json"
+        existing_fact = read_json(fact_path) if fact_path.is_file() else {}
+        fact = _merge_manual_fact(
+            existing_fact,
+            {
+                "slug": topic["slug"],
+                "nazev": nazev,
+                "datum": topic.get("datum", ""),
+                "verdikt": _verdikt(proslo, nazev, vysv),
+                "predmet_lidsky": _lead_predmet(nazev),
+                "koho": koho,
+                "fakty": fakty,
+                "publikovat": publikovat,
+                "priorita": priorita,
+                "nadpis": _nadpis_fallback(nazev, proslo),
+                "pocet_hlasovani": topic.get("pocet_hlasovani", 0),
+                "proslo": proslo,
+                "signaly": signaly,
+                "steno_slov": steno_slov,
+            },
+        )
+        write_json(fact_path, fact)
         written += 1
         if fakty:
             with_facts += 1
@@ -325,8 +369,10 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
         slug_meta.sort(key=lambda x: (-x["priorita"], -x["pocet_hlasovani"]))
 
         d = datetime.strptime(datum, "%d.%m.%Y")
-        write_json(
-            paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json",
+        day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
+        existing_day = read_json(day_path) if day_path.is_file() else {}
+        day_doc = _merge_manual_day(
+            existing_day,
             {
                 "datum": datum,
                 "den": ["pondělí", "úterý", "středa", "čtvrtek", "pátek", "sobota", "neděle"][d.weekday()],
@@ -345,6 +391,7 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
                 },
             },
         )
+        write_json(day_path, day_doc)
 
     validation: list[str] = []
     for fp in paths.facts_by_topic.glob("*.json"):

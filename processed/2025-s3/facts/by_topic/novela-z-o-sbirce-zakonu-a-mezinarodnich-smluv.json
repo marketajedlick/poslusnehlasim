@@ -7,10 +7,34 @@
   "koho": [
     "Právník to potřebuje, občan u snídaně ne."
   ],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "Po třináctihodinové debatě o rozpočtu přišla ve 22:39 technická novela Sbírky zákonů, bez rozpravy.",
+      "source": "votes",
+      "citace": "Bod 2, 26.11.2025 22:39, po skončení rozpočtové debaty (schůze končí 23:20)."
+    },
+    {
+      "text": "V hlasování číslo 9 bylo přihlášeno 173 poslanců, pro hlasovalo 169, proti 0.",
+      "source": "votes",
+      "citace": "Hlasování číslo 9, 26.11.2025 22:39, pro 169, proti 0, přítomno 173."
+    },
+    {
+      "text": "V hlasování číslo 10 bylo přihlášeno 176 poslanců, pro hlasovalo 172, proti 0.",
+      "source": "votes",
+      "citace": "Hlasování číslo 10, 26.11.2025 22:42, pro 172, proti 0, přítomno 176."
+    },
+    {
+      "text": "V hlasování číslo 11 bylo přihlášeno 176 poslanců, pro hlasovalo 172, proti 0.",
+      "source": "votes",
+      "citace": "Hlasování číslo 11, 26.11.2025 22:43, pro 172, proti 0, přítomno 176."
+    }
+  ],
   "publikovat": true,
   "priorita": 1,
-  "nadpis": "Prošlo to",
+  "nadpis": "Sbírka zákonů po půlnoci",
+  "lead": "Poslušně hlásím, že po maratonu o rozpočtu poslanci ještě ve tři kola schválili úpravu Sbírky zákonů, v desáté večer, bez jediného hlasu proti.",
+  "pointa": "Sbírka zákonů je oficiální seznam všech norem. Tady šlo o technickou úpravu, ne o novou daň.",
+  "mean": "Technická novela, kde se zveřejňují zákony a mezinárodní smlouvy. Tři hlasování za čtyři minuty, 169 a pak dvakrát 172 hlasů pro. Právník to potřebuje, běžný občan u snídaně ne.",
   "pocet_hlasovani": 3,
   "proslo": true,
   "signaly": {
