@@ -144,9 +144,12 @@ def _prijmeni_tvary(prijmeni: str, pohlavi: str) -> set[str]:
             tvary.add(kmen + "é")
         return tvary
 
-    if prijmeni.endswith(("š", "ř", "č", "ž", "c", "j")):
+    if prijmeni.endswith(("ek", "ec")) and len(prijmeni) > 3:
+        kmen = prijmeni[:-2]
+        tvary.update(kmen + s for s in ("ka", "kovi", "kem"))
+    elif prijmeni.endswith(("š", "ř", "č", "ž", "c", "j")):
         tvary.add(prijmeni + "e")
-    if prijmeni.endswith("k"):
+    if prijmeni.endswith("k") and not prijmeni.endswith(("ek", "ec")):
         tvary.add(prijmeni + "a")
     elif prijmeni.endswith("h"):
         tvary.add(prijmeni + "a")
