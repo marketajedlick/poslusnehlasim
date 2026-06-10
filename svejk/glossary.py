@@ -8,6 +8,22 @@ from __future__ import annotations
 GLOSSARY: tuple[tuple[str, str], ...] = (
     # --- kontext konkrétních schůzí (delší fráze první) ---
     (
+        "koaliční změna stavebního zákona",
+        "Poslanecký návrh (tisk 67) od Babiše, Havlíčka a koalice: má zrychlit a zjednodušit "
+        "povolování domů, hal a silnic. Měl nahradit novellu Fialovy vlády z roku 2021, "
+        "koalice ho chtěla projít zkráceně.",
+    ),
+    (
+        "rychlost nesmí ztratit právní jistotu",
+        "Kučera (TOP 09) 28. 1. 2026: zrychlení staveb je správný cíl, ale nesmí rozbít "
+        "pravidla tak, aby stavebník ani úřad nevěděli, co platí.",
+    ),
+    (
+        "Bartošovu digitalizaci",
+        "Mrázová (ANO) kritizovala digitalizaci stavebního řízení za ministra Bartoše (Piráti): "
+        "úřady podle ní neměly funkční systém a povolování se nezrychlilo.",
+    ),
+    (
         "deset hlasování o usneseních ke jmenování ministrů",
         "16. 1. 2026: nejdřív se hlasovalo o pořadí, pak o devíti usneseních. Prošlo jen usnesení "
         "Šťastného (Motoristé), že prezident ať jmenuje ministry. Osm ostatních padlo: Jakob "

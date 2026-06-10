@@ -5,7 +5,7 @@
   "verdikt": "zamiteno",
   "predmet_lidsky": "novelě stavebního zákona a zrychlení povolování staveb",
   "koho": [
-    "Koho se to týká? Stavebníků, obcí i investorů, kdo čeká na povolení domu, haly nebo silnice."
+    "Koho se to týká? Stavebníků, obcí i investorů, kteří čekají na povolení domu, haly nebo silnice."
   ],
   "fakty": [
     {
@@ -30,9 +30,9 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Stavba si počká",
-  "lead": "Koaliční změna stavebního zákona v prvním kole padla, 31 pro, 86 proti. Havlíčkův tým sliboval zrychlení, opozice právní jistotu.",
-  "pointa": "Mrázová útočila na Fialu a Bartoše, Kučera připomněl pomalé povolování, ale rychlost ne za cenu chaosu.",
-  "mean": "Páteční večer patřil stavebnímu zákonu, který koalice chtěla protlačit zkráceně. Sněmovna ho v prvním kole zamítla a stavební úřady zůstávají u starých pravidel.",
+  "lead": "Koaliční změna stavebního zákona v prvním kole padla, třicet jedna proti osmdesáti šesti. Koalice chtěla zrychlit povolování staveb.",
+  "pointa": "Mrázová (ANO) kritizovala Fialovu novellu a Bartošovu digitalizaci, Kučera (TOP 09) uznal pomalé řízení, ale řekl, že rychlost nesmí ztratit právní jistotu.",
+  "mean": "Páteční večer patřil poslaneckému návrhu na novou podobu stavebního zákona, který koalice chtěla protlačit zkráceně. Sněmovna ho v prvním kole zamítla a stavební úřady zůstávají u starých pravidel.",
   "pocet_hlasovani": 9,
   "proslo": false,
   "steno_slov": 99686

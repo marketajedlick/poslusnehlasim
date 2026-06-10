@@ -5,7 +5,7 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky a OSVČ",
   "koho": [
-    "Koho se to týká? Živnostníků a dalších OSVČ, kdo platí zálohy na sociálním pojištění sami, ne běžných zaměstnanců na výplatní pásce."
+    "Koho se to týká? Živnostníků a dalších OSVČ, kteří platí zálohy na sociálním pojištění sami, ne běžných zaměstnanců na výplatní pásce."
   ],
   "fakty": [
     {
@@ -31,8 +31,8 @@
   "priorita": 2,
   "nadpis": "Snížení záloh pro živnostníky",
   "lead": "Odpoledne po ranním maratonu o ministry hlasovali o nižších zálohách OSVČ na sociálním pojištění. V prvním kole prošly.",
-  "pointa": "Schillerová slibovala snížení základ o 715 korun měsíčně. Jurečka doplnil, že úleva ubere z důchodu tisíc šest set padesát dvě korun — Schillerová to záměrně neřekla.",
-  "mean": "Zákon vrací vyměřovací základ pro sociální pojistné z čtyřicet na třicet pět procent průměrné mzdy. Koalice slibuje úlevu u záloh teď, opozice varuje před nižším budoucím důchodem.",
+  "pointa": "Schillerová slibovala snížení základu o 715 korun měsíčně. Jurečka doplnil, že úleva ubere z důchodu tisíc šest set padesát dvě korun — Schillerová to záměrně neřekla.",
+  "mean": "Zákon vrací vyměřovací základ pro sociální pojistné z čtyřiceti na třicet pět procent průměrné mzdy. Koalice slibuje úlevu u záloh teď, opozice varuje před nižším budoucím důchodem.",
   "pocet_hlasovani": 3,
   "proslo": true,
   "signaly": {
