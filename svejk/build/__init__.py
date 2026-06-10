@@ -19,6 +19,34 @@ from psp.schuze import SchuzeAnalyzer
 STEPS = ("fetch", "align", "extract", "compose")
 
 
+def compose_manifest_from_disk(paths: SchuzePaths) -> dict[str, Any]:
+    """Sekce steps.compose podle skutečných souborů v out/noviny-dlouhe."""
+    out_dir = paths.noviny_dlouhe_dir()
+    md_files = sorted(str(p) for p in out_dir.glob("*.md")) if out_dir.is_dir() else []
+    html_files = sorted(str(p) for p in out_dir.glob("*.html")) if out_dir.is_dir() else []
+    return {
+        "done": True,
+        "days": len(md_files),
+        "files": md_files,
+        "html_files": html_files,
+    }
+
+
+def refresh_compose_manifest(paths: SchuzePaths) -> dict[str, Any]:
+    """Opraví steps.compose v manifestu podle disku (bez znovu-compose)."""
+    paths.ensure_dirs()
+    manifest: dict[str, Any] = {}
+    if paths.manifest.is_file():
+        manifest = read_json(paths.manifest)
+    manifest.setdefault("obdobi", paths.obdobi)
+    manifest.setdefault("schuze", paths.schuze)
+    manifest.setdefault("steps", {})
+    manifest["steps"]["compose"] = compose_manifest_from_disk(paths)
+    manifest["built_at"] = datetime.now(timezone.utc).isoformat()
+    write_json(paths.manifest, manifest)
+    return manifest["steps"]["compose"]
+
+
 def run_build(
     obdobi: int,
     schuze: int,
@@ -63,10 +91,15 @@ def run_build(
         if verbose:
             print("→ compose", flush=True)
         clear_edition_cache()
-        manifest["steps"]["compose"] = {
-            "done": True,
-            **run_compose(paths, den=den),
-        }
+        partial = run_compose(paths, den=den)
+        compose = compose_manifest_from_disk(paths)
+        if den:
+            compose["last_partial_compose"] = {
+                "den": den,
+                "built_at": datetime.now(timezone.utc).isoformat(),
+                **partial,
+            }
+        manifest["steps"]["compose"] = compose
 
     manifest["built_at"] = datetime.now(timezone.utc).isoformat()
     write_json(paths.manifest, manifest)
@@ -159,4 +192,12 @@ def run_build_obdobi(
     return summary
 
 
-__all__ = ["run_build", "run_build_obdobi", "run_sync", "STEPS", "SchuzePaths"]
+__all__ = [
+    "run_build",
+    "run_build_obdobi",
+    "run_sync",
+    "STEPS",
+    "SchuzePaths",
+    "compose_manifest_from_disk",
+    "refresh_compose_manifest",
+]

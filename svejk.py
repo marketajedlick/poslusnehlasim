@@ -138,7 +138,36 @@ def _timeline_z_cache(args: argparse.Namespace, fmt: str) -> str | None:
 
 
 def cmd_build(args: argparse.Namespace) -> int:
-    from svejk.build import run_build, run_build_obdobi
+    from svejk.build import refresh_compose_manifest, run_build, run_build_obdobi
+    from svejk.paths import SchuzePaths, processed_root
+
+    if args.refresh_manifest:
+        if args.den:
+            print("Chyba: --refresh-manifest nelze s --den.", file=sys.stderr)
+            return 1
+        if args.schuze is not None:
+            cisla = [args.schuze]
+        elif args.vsechny_schuze:
+            cisla = list(range(args.od, args.do + 1))
+        else:
+            cisla = sorted(
+                int(p.name.split("-s", 1)[1])
+                for p in processed_root().glob(f"{args.obdobi}-s*")
+                if p.is_dir() and p.name.split("-s", 1)[1].isdigit()
+            )
+        if not cisla:
+            print("Chyba: žádná schůze k obnově manifestu.", file=sys.stderr)
+            return 1
+        for cislo in cisla:
+            paths = SchuzePaths.create(args.obdobi, cislo)
+            if not paths.noviny_dlouhe_dir().is_dir():
+                if not args.quiet:
+                    print(f"s{cislo}: přeskočeno (chybí out/)", flush=True)
+                continue
+            compose = refresh_compose_manifest(paths)
+            if not args.quiet:
+                print(f"s{cislo}: manifest compose → {compose['days']} dní", flush=True)
+        return 0
 
     only = None
     if args.only:
@@ -622,6 +651,11 @@ def main() -> int:
         help="Přeskoč schůze, které už mají hotový fetch v processed/",
     )
     p_build.add_argument("--den", help="Jen compose pro jeden den (DD.MM. nebo YYYY-MM-DD)")
+    p_build.add_argument(
+        "--refresh-manifest",
+        action="store_true",
+        help="Jen opravit steps.compose v manifestu podle out/ (bez compose)",
+    )
     p_build.add_argument(
         "--only",
         help="Kroky oddělené čárkou: fetch,align,extract,compose (výchozí vše)",
