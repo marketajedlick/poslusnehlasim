@@ -18,6 +18,7 @@ from svejk.cislo_slovy import (
     po_hlasovanich,
     po_hlasovanich_cap,
 )
+from svejk.poslanec_strany import dopln_strany_poslancu
 from svejk.text_norm import bez_dlouhych_pomlc
 from svejk.build.witty import (
     glosa_generic,
@@ -523,7 +524,7 @@ def build_den_content(
 
 
 def _sanitize_text_export(text: str) -> str:
-    return nahrad_cisla_v_textu(bez_dlouhych_pomlc(text))
+    return nahrad_cisla_v_textu(dopln_strany_poslancu(bez_dlouhych_pomlc(text)))
 
 
 def _sanitize_den_content(content: DenContent) -> None:

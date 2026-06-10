@@ -7,7 +7,12 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from svejk.build.day_content import DenContent, build_den_content, vysledek_radky
+from svejk.build.day_content import (
+    DenContent,
+    _sanitize_text_export,
+    build_den_content,
+    vysledek_radky,
+)
 from svejk.cislo_slovy import nahrad_cisla_v_textu
 from svejk.text_norm import bez_dlouhych_pomlc
 from svejk.build.html import render_den_html
@@ -79,7 +84,7 @@ def render_den_markdown(
     lines.append("## Výsledek dne")
     lines.append("")
     for radek in vysledek_radky(content, paths, day_path):
-        lines.append(nahrad_cisla_v_textu(bez_dlouhych_pomlc(radek)))
+        lines.append(_sanitize_text_export(radek))
     lines.append("")
     lines.append(f"**{content.zaver}**")
 
