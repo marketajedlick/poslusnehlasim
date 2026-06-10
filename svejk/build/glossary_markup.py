@@ -12,7 +12,7 @@ from svejk.glossary import GLOSSARY
 def _pattern(phrase: str) -> re.Pattern[str]:
     parts = [re.escape(p) for p in phrase.split()]
     body = r"\s+".join(parts)
-    return re.compile(rf"(?<![\w/]){body}(?![\w/])", re.IGNORECASE)
+    return re.compile(rf"(?<![\w]){body}(?![\w])", re.IGNORECASE)
 
 
 def _wrap(label: str, tip: str) -> str:

@@ -94,7 +94,7 @@ SKIP_CONTEXT = re.compile(
 
 # Krátké vzory snadno padají do běžných slov (vzpomeňte, senátor, nedůvěryhodný).
 FALSE_POSITIVE = re.compile(
-    r"(?:vzpome|senátor|senátore|nedůvěry|nedůvěryhod)",
+    r"(?:vzpome|senátor|senátore|nedůvěry|nedůvěryhod|transparentně|transparentni)",
     re.I,
 )
 

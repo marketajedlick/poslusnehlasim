@@ -148,6 +148,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Zastupuje předsedu: řídí schůzi a rozděluje slovo, když předseda není u kladívka.",
     ),
     (
+        "místopředsedů",
+        "Zastupují předsedu sněmovny při řízení schůze.",
+    ),
+    (
         "místopředsedkyně",
         "Zastupuje předsedu sněmovny při řízení schůze.",
     ),
@@ -176,6 +180,77 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Poslanec, který kontroluje přítomnost v sále a průběh hlasování.",
     ),
     # --- projednávání zákonů ---
+    (
+        "stanovisko vlády",
+        "Oficiální názor kabinetu k návrhu zákona. Poslanci ho dostanou jako samostatný "
+        "sněmovní tisk, obvykle s číslem /1.",
+    ),
+    (
+        "vládní návrh",
+        "Zákon, který do sněmovny posílá vláda (ne poslanci ani Senát). Má prioritu v pořadu "
+        "a často jde rychleji než opoziční návrhy.",
+    ),
+    (
+        "senátní návrh",
+        "Zákon, který do sněmovny posílá Senát. Sněmovna ho může schválit, upravit nebo zamítnout.",
+    ),
+    (
+        "zpravodajka",
+        "Poslanec z výboru, který sněmovně vysvětluje návrh zákona a doporučuje, jak hlasovat.",
+    ),
+    (
+        "zpravodajce",
+        "Poslanec z výboru, který sněmovně vysvětluje návrh zákona a doporučuje, jak hlasovat.",
+    ),
+    (
+        "zpravodajů",
+        "Poslanci u stolu u pultu: vysvětlují návrh zákona a odpovídají na dotazy před hlasováním.",
+    ),
+    (
+        "zpravodaj",
+        "Poslanec z výboru, který sněmovně vysvětluje návrh zákona a doporučuje, jak hlasovat.",
+    ),
+    (
+        "obecnou rozpravu",
+        "Fáze debaty, kdy poslanci mluví k celému návrhu obecně, ne k jednotlivým paragrafům.",
+    ),
+    (
+        "obecné rozpravě",
+        "Fáze debaty, kdy poslanci mluví k celému návrhu obecně, ne k jednotlivým paragrafům.",
+    ),
+    (
+        "obecné rozpravy",
+        "Fáze debaty, kdy poslanci mluví k celému návrhu obecně, ne k jednotlivým paragrafům.",
+    ),
+    (
+        "obecná rozprava",
+        "Fáze debaty, kdy poslanci mluví k celému návrhu obecně, ne k jednotlivým paragrafům.",
+    ),
+    (
+        "podrobnou rozpravu",
+        "Fáze debaty, kdy se čtou a projednávají konkrétní paragrafy zákona nebo usnesení.",
+    ),
+    (
+        "podrobné rozpravy",
+        "Fáze debaty, kdy se čtou a projednávají konkrétní paragrafy zákona nebo usnesení.",
+    ),
+    (
+        "podrobná rozprava",
+        "Fáze debaty, kdy se čtou a projednávají konkrétní paragrafy zákona nebo usnesení.",
+    ),
+    (
+        "nominační zákon",
+        "Zákon o tom, kdo může sedět ve statutárních orgánech firem se státním podílem "
+        "(353/2019 Sb.). Vláda jmenovala lidi do dozorů a rad státních podniků.",
+    ),
+    (
+        "kuponovou debabišizaci",
+        "Návrh prodat akcie Agrofertu občanům přes poukázky, aby premiér neměl firmu ve střetu zájmů.",
+    ),
+    (
+        "zagongoval",
+        "Předsedající zazvonil gongem a svolává poslance k hlasování (nebo ukončuje rozpravu).",
+    ),
     (
         "zrychlené projednávání",
         "Zkrácené lhůty na projednání zákona, obvykle desítky dnů místo standardních tří měsíců.",
@@ -229,12 +304,28 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Druhá fáze zákona: poslanci řeší konkrétní paragrafy a hlasují o finální podobě.",
     ),
     (
+        "prvém čtení",
+        "První fáze zákona: schvalují se obrysy návrhu, detaily přijdou ve druhém čtení.",
+    ),
+    (
+        "prvé čtení",
+        "První fáze zákona: schvalují se obrysy návrhu, detaily přijdou ve druhém čtení.",
+    ),
+    (
         "prvním čtení",
         "První fáze zákona: schvalují se obrysy návrhu, detaily přijdou ve druhém čtení.",
     ),
     (
         "první čtení",
         "První fáze zákona: schvalují se obrysy návrhu, detaily přijdou ve druhém čtení.",
+    ),
+    (
+        "sněmovního tisku",
+        "Oficiální číslo návrhu zákona ve sněmovně. Každý tisk má svůj program projednávání.",
+    ),
+    (
+        "sněmovní tisku",
+        "Oficiální číslo návrhu zákona ve sněmovně. Každý tisk má svůj program projednávání.",
     ),
     (
         "sněmovní tisk",
@@ -343,6 +434,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají; zákon vyžaduje vyloučení nebo vysvětlení.",
     ),
     (
+        "interpelacím",
+        "Poslanci v debatě vyhrávají otázky ministrům. Odpověď se nehlasuje, jde o veřejnou kontrolu vlády.",
+    ),
+    (
         "interpelací",
         "Poslanci v debatě vyhrávají otázky ministrům. Odpověď se nehlasuje, jde o veřejnou kontrolu vlády.",
     ),
@@ -409,6 +504,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     (
         "usnesení",
         "Politické rozhodnutí sněmovny: doporučení, výzva nebo schválení postupu. Není to zákon.",
+    ),
+    (
+        "transparenty",
+        "Plakáty v jednacím sále. Poslanci jimi vyjadřují názor; nesmí zakrývat řečníka u pultu.",
     ),
     (
         "transparentem",

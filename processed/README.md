@@ -14,6 +14,9 @@ Pipeline: **raw** (`votes.jsonl`, volitelně `steno.jsonl`) → **aligned** (`to
 # všechna slabá témata schůze
 ./run-svejk.sh review --schuze 20 --audit
 
+# pojmy ve facts bez tooltipu (glosář)
+./run-svejk.sh glossary-audit --obdobi 2025 --export-only
+
 # po úpravě facts přegenerovat noviny + lokální náhled
 ./run-svejk.sh build --schuze 20 --only compose --den 28.5
 ./run-svejk.sh export-pages --obdobi 2025 --out site --cname ""
