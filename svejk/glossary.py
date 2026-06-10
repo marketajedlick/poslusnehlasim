@@ -6,6 +6,20 @@ Pořadí: delší fráze nahoře, aby se neshodily s kratšími prefixy.
 from __future__ import annotations
 
 GLOSSARY: tuple[tuple[str, str], ...] = (
+    # --- kontext konkrétních schůzí (delší fráze první) ---
+    (
+        "ze čtvrté třídy",
+        "Richterová Kolovratníkovi: „Doufám, že jsme se nedostali do čtvrté třídy "
+        "základní školy, aby se tady běžně komolila lidem jména. To doufám, že byl "
+        "opravdu omyl.“",
+    ),
+    (
+        "Hřibek",
+        "Zdrobnělina, ne překlep. Kolovratník ji použil úmyslně, jako by mluvil o "
+        "někom méně vážně, pak se s úsměvem „opravil“ na správné jméno. Ve "
+        "stenoprotokolu je u toho poznámka (Se smíchem.), šlo o vědomou demisi, "
+        "ne o omyl.",
+    ),
     # --- volby a vedení sněmovny ---
     (
         "mandátový a imunitní výbor",
