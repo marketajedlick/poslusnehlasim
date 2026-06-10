@@ -10,7 +10,7 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     (
         "koaliční změna stavebního zákona",
         "Poslanecký návrh (tisk 67) od Babiše, Havlíčka a koalice: má zrychlit a zjednodušit "
-        "povolování domů, hal a silnic. Měl nahradit novellu Fialovy vlády z roku 2021, "
+        "povolování domů, hal a silnic. Měl nahradit novelu Fialovy vlády z roku 2021, "
         "koalice ho chtěla projít zkráceně.",
     ),
     (
