@@ -238,11 +238,11 @@ body.is-turning{ pointer-events:none; }
 }
 .hl{ display:block; }
 .p{
-  font-size:16px; line-height:1.5; margin:12px 0 0;
+  font-size:15px; line-height:1.5; margin:12px 0 0;
   overflow-wrap:anywhere;
 }
 .mean{
-  margin-top:10px; font-size:15px; line-height:1.45;
+  margin-top:10px; font-size:14px; line-height:1.45;
   color:var(--ink); font-weight:600;
   overflow-wrap:anywhere;
 }
@@ -266,11 +266,11 @@ body.is-turning{ pointer-events:none; }
   transform:translateX(-50%);
   z-index:20;
   width:max-content;
-  max-width:min(28ch, 72vw);
-  padding:8px 10px;
-  font-size:13px;
+  max-width:min(30ch, 72vw);
+  padding:7px 9px;
+  font-size:12px;
   font-weight:500;
-  line-height:1.4;
+  line-height:1.35;
   color:var(--ink);
   background:var(--paper);
   border:1px solid var(--ink-soft);
@@ -278,10 +278,12 @@ body.is-turning{ pointer-events:none; }
   box-shadow:0 4px 14px rgba(0,0,0,.12);
   pointer-events:none;
 }
-.term-tip:hover .term-tip-bubble,
-.term-tip:focus .term-tip-bubble,
-.term-tip:focus-within .term-tip-bubble{
-  display:block;
+@media (min-width:721px){
+  .term-tip:hover .term-tip-bubble,
+  .term-tip:focus .term-tip-bubble,
+  .term-tip:focus-within .term-tip-bubble{
+    display:block;
+  }
 }
 @media (max-width:720px){
   .sheet-shape{ overflow:visible; }
@@ -295,6 +297,9 @@ body.is-turning{ pointer-events:none; }
     left:0;
     transform:none;
     max-width:calc(100vw - 2rem);
+    padding:7px 10px;
+    font-size:12px;
+    line-height:1.35;
     white-space:normal;
     z-index:100;
   }
@@ -727,8 +732,8 @@ body.archiv-page{
   .num{ font-size:132px; line-height:.92; margin:2px 0 0; }
   .kick{ letter-spacing:.14em; font-size:12px; margin-bottom:2px; }
   .h{ font-size:33px; line-height:1.06; }
-  .p{ font-size:18.5px; line-height:1.42; max-width:46ch; margin:20px 0 0; }
-  .mean{ margin-top:14px; font-size:17px; line-height:1.44; }
+  .p{ font-size:17px; line-height:1.42; max-width:46ch; margin:20px 0 0; }
+  .mean{ margin-top:14px; font-size:16px; line-height:1.44; }
   .mean b{ letter-spacing:.08em; font-size:12.5px; }
   .stamp{
     margin-top:16px; font-size:19px; padding:6px 14px 5px;
@@ -877,9 +882,9 @@ body.archiv-page{
               <span class="hl">Košík místo programu</span>
               
             </h2>
-            <p class="p">Předseda hnutí ANO přišel k řečništi s nákupním košíkem, vytáhl knihy o Agrofertu a slíbil, že toastový chleba zůstane jen v rétorice. Devadesát poslanců chtělo krátké vysvětlení <span class="term-tip" tabindex="0" role="term" aria-label="Situace, kdy politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají.">střetu zájmů<span class="term-tip-bubble" role="tooltip">Situace, kdy politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají.</span></span>, místo toho Babiš hodinu a čtyřicet minut obhajoval toastovou linku v Chebu (šest set sedmnáct milionů investice, sto milionů dotace), <span class="term-tip" tabindex="0" role="term" aria-label="Babiš tvrdil, že Agrofert dodal 3600 toastů uprchlíkům z Ukrajiny na hlavním nádraží v roce 2022.">tři tisíce šest set toastů<span class="term-tip-bubble" role="tooltip">Babiš tvrdil, že Agrofert dodal 3600 toastů uprchlíkům z Ukrajiny na hlavním nádraží v roce 2022.</span></span> pro Ukrajince v roce 2022 a boj s „<span class="term-tip" tabindex="0" role="term" aria-label="Babišův termín pro zavedené strany a elity po roce 1989, které podle něj koordinovaně proti němu stojí.">polistopadovým kartelem<span class="term-tip-bubble" role="tooltip">Babišův termín pro zavedené strany a elity po roce 1989, které podle něj koordinovaně proti němu stojí.</span></span>“, tedy starými stranami proti němu.</p>
+            <p class="p">Předseda hnutí ANO přišel k řečništi s nákupním košíkem, vytáhl knihy o Agrofertu a slíbil, že toastový chleba zůstane jen v rétorice. Devadesát poslanců chtělo krátké vysvětlení <span class="term-tip" tabindex="0" role="term" aria-label="Situace, kdy politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají.">střetu zájmů<span class="term-tip-bubble" role="tooltip">Situace, kdy politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají.</span></span>, místo toho Babiš (ANO) hodinu a čtyřicet minut obhajoval toastovou linku v Chebu (šest set sedmnáct milionů investice, sto milionů dotace), <span class="term-tip" tabindex="0" role="term" aria-label="Babiš tvrdil, že Agrofert dodal 3600 toastů uprchlíkům z Ukrajiny na hlavním nádraží v roce 2022.">tři tisíce šest set toastů<span class="term-tip-bubble" role="tooltip">Babiš tvrdil, že Agrofert dodal 3600 toastů uprchlíkům z Ukrajiny na hlavním nádraží v roce 2022.</span></span> pro Ukrajince v roce 2022 a boj s „<span class="term-tip" tabindex="0" role="term" aria-label="Babišův termín pro zavedené strany a elity po roce 1989, které podle něj koordinovaně proti němu stojí.">polistopadovým kartelem<span class="term-tip-bubble" role="tooltip">Babišův termín pro zavedené strany a elity po roce 1989, které podle něj koordinovaně proti němu stojí.</span></span>“, tedy starými stranami proti němu.</p>
             
-            <p class="mean"><b>Co to znamená: </b><span class="term-tip" tabindex="0" role="term" aria-label="Schůze mimo pravidelný kalendář, svolaná kvůli konkrétnímu tématu, třeba střetu zájmů premiéra.">Mimořádnou schůzi<span class="term-tip-bubble" role="tooltip">Schůze mimo pravidelný kalendář, svolaná kvůli konkrétnímu tématu, třeba střetu zájmů premiéra.</span></span> svolala opozice, aby Babiš řekl, jak vyřeší <span class="term-tip" tabindex="0" role="term" aria-label="Politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají; zákon vyžaduje vyloučení nebo vysvětlení.">střet zájmů<span class="term-tip-bubble" role="tooltip">Politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají; zákon vyžaduje vyloučení nebo vysvětlení.</span></span> s Agrofertem před jmenováním vlády. Místo odpovědi přinesl nákupní košík s knihami a přednesl obhajobu celého holdingu.</p>
+            <p class="mean"><b>Co to znamená: </b><span class="term-tip" tabindex="0" role="term" aria-label="Schůze mimo pravidelný kalendář, svolaná kvůli konkrétnímu tématu, třeba střetu zájmů premiéra.">Mimořádnou schůzi<span class="term-tip-bubble" role="tooltip">Schůze mimo pravidelný kalendář, svolaná kvůli konkrétnímu tématu, třeba střetu zájmů premiéra.</span></span> svolala opozice, aby Babiš (ANO) řekl, jak vyřeší <span class="term-tip" tabindex="0" role="term" aria-label="Politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají; zákon vyžaduje vyloučení nebo vysvětlení.">střet zájmů<span class="term-tip-bubble" role="tooltip">Politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají; zákon vyžaduje vyloučení nebo vysvětlení.</span></span> s Agrofertem před jmenováním vlády. Místo odpovědi přinesl nákupní košík s knihami a přednesl obhajobu celého holdingu.</p>
             
           </div>
         </div>
@@ -896,9 +901,9 @@ body.archiv-page{
               <span class="hl">Transparent nesmí zakrývat řečníka</span>
               
             </h2>
-            <p class="p">Uprostřed maratonu o Agrofertu vykročil Zdeněk Hřib s <span class="term-tip" tabindex="0" role="term" aria-label="Plakát v jednacím sále. Poslanci jím vyjadřují názor; nesmí zakrývat řečníka u pultu.">transparentem<span class="term-tip-bubble" role="tooltip">Plakát v jednacím sále. Poslanci jím vyjadřují názor; nesmí zakrývat řečníka u pultu.</span></span> k řečništi a v pravé části sálu začali volat „<span class="term-tip" tabindex="0" role="term" aria-label="Plakát v jednacím sále. Poslanci jím vyjadřují názor; nesmí zakrývat řečníka u pultu.">transparent<span class="term-tip-bubble" role="tooltip">Plakát v jednacím sále. Poslanci jím vyjadřují názor; nesmí zakrývat řečníka u pultu.</span></span>“. Hřib s ním šel k Babišovi a ANO bušilo do lavic. Okamura citoval pravidlo: u pultu smí stát <span class="term-tip" tabindex="0" role="term" aria-label="Plakát v jednacím sále. Poslanci jím vyjadřují názor; nesmí zakrývat řečníka u pultu.">transparent<span class="term-tip-bubble" role="tooltip">Plakát v jednacím sále. Poslanci jím vyjadřují názor; nesmí zakrývat řečníka u pultu.</span></span> jen s vědomím řečníka.</p>
+            <p class="p">Uprostřed maratonu o Agrofertu vykročil Zdeněk Hřib (Piráti) s <span class="term-tip" tabindex="0" role="term" aria-label="Plakát v jednacím sále. Poslanci jím vyjadřují názor; nesmí zakrývat řečníka u pultu.">transparentem<span class="term-tip-bubble" role="tooltip">Plakát v jednacím sále. Poslanci jím vyjadřují názor; nesmí zakrývat řečníka u pultu.</span></span> k řečništi a v pravé části sálu začali volat „<span class="term-tip" tabindex="0" role="term" aria-label="Plakát v jednacím sále. Poslanci jím vyjadřují názor; nesmí zakrývat řečníka u pultu.">transparent<span class="term-tip-bubble" role="tooltip">Plakát v jednacím sále. Poslanci jím vyjadřují názor; nesmí zakrývat řečníka u pultu.</span></span>“. Hřib (Piráti) s ním šel k Babišovi (ANO) a ANO bušilo do lavic. Okamura (SPD) citoval pravidlo: u pultu smí stát <span class="term-tip" tabindex="0" role="term" aria-label="Plakát v jednacím sále. Poslanci jím vyjadřují názor; nesmí zakrývat řečníka u pultu.">transparent<span class="term-tip-bubble" role="tooltip">Plakát v jednacím sále. Poslanci jím vyjadřují názor; nesmí zakrývat řečníka u pultu.</span></span> jen s vědomím řečníka.</p>
             
-            <p class="mean"><b>Co to znamená: </b>Během Babišova projevu nesl předseda Pirátů <span class="term-tip" tabindex="0" role="term" aria-label="Plakát v jednacím sále. Poslanci jím vyjadřují názor; nesmí zakrývat řečníka u pultu.">transparent<span class="term-tip-bubble" role="tooltip">Plakát v jednacím sále. Poslanci jím vyjadřují názor; nesmí zakrývat řečníka u pultu.</span></span> k řečnickému pultu. Předsedající Tomio Okamura a Patrik Nacher opakovaně vyzývali k dodržení pravidel a klidu v sále.</p>
+            <p class="mean"><b>Co to znamená: </b>Během Babišova projevu nesl předseda Pirátů <span class="term-tip" tabindex="0" role="term" aria-label="Plakát v jednacím sále. Poslanci jím vyjadřují názor; nesmí zakrývat řečníka u pultu.">transparent<span class="term-tip-bubble" role="tooltip">Plakát v jednacím sále. Poslanci jím vyjadřují názor; nesmí zakrývat řečníka u pultu.</span></span> k řečnickému pultu. Předsedající Tomio Okamura (SPD) a Patrik Nacher (ANO) opakovaně vyzývali k dodržení pravidel a klidu v sále.</p>
             
           </div>
         </div>
@@ -915,7 +920,7 @@ body.archiv-page{
               <span class="hl">Miliardy na stole</span>
               
             </h2>
-            <p class="p">Opozice přišla počítat. Ústavní soud, sedm a půl miliardy v dotacích, dvanáct a půl miliardy ve zakázkách a <span class="term-tip" tabindex="0" role="term" aria-label="Návrh prodat akcie Agrofertu občanům přes poukázky, aby premiér neměl firmu ve střetu zájmů.">kuponová debabišizace<span class="term-tip-bubble" role="tooltip">Návrh prodat akcie Agrofertu občanům přes poukázky, aby premiér neměl firmu ve střetu zájmů.</span></span> na sedmdesát pět procent akcií. Babiš odešel ze sálu dřív, než začala odpověď. Výborný řekl, že stačila krátká odpověď na <span class="term-tip" tabindex="0" role="term" aria-label="Politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají; zákon vyžaduje vyloučení nebo vysvětlení.">střet zájmů<span class="term-tip-bubble" role="tooltip">Politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají; zákon vyžaduje vyloučení nebo vysvětlení.</span></span>, schůze mohla trvat pár desítek minut, ne hodiny.</p>
+            <p class="p">Opozice přišla počítat. Ústavní soud, sedm a půl miliardy v dotacích, dvanáct a půl miliardy ve zakázkách a <span class="term-tip" tabindex="0" role="term" aria-label="Návrh prodat akcie Agrofertu občanům přes poukázky, aby premiér neměl firmu ve střetu zájmů.">kuponová debabišizace<span class="term-tip-bubble" role="tooltip">Návrh prodat akcie Agrofertu občanům přes poukázky, aby premiér neměl firmu ve střetu zájmů.</span></span> na sedmdesát pět procent akcií. Babiš (ANO) odešel ze sálu dřív, než začala odpověď. Výborný (KDU-ČSL) řekl, že stačila krátká odpověď na <span class="term-tip" tabindex="0" role="term" aria-label="Politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají; zákon vyžaduje vyloučení nebo vysvětlení.">střet zájmů<span class="term-tip-bubble" role="tooltip">Politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají; zákon vyžaduje vyloučení nebo vysvětlení.</span></span>, schůze mohla trvat pár desítek minut, ne hodiny.</p>
             
             <p class="mean"><b>Co to znamená: </b>Po Babišově projevu vystoupili ministři a opozice. Citovali nález Ústavního soudu z února 2020, čísla o dotacích a zakázkách Agrofertu a Rakušanův návrh prodat sedmdesát pět procent akcií občanům přes poukázky, aby premiér neměl firmu ve <span class="term-tip" tabindex="0" role="term" aria-label="Situace, kdy politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají.">střetu zájmů<span class="term-tip-bubble" role="tooltip">Situace, kdy politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají.</span></span>.</p>
             
@@ -1380,15 +1385,15 @@ body.archiv-page{
     var bubble = tip.querySelector(".term-tip-bubble");
     tip.classList.remove("is-tip-open");
     if (openTip === tip) openTip = null;
-    if (tip === document.activeElement) tip.blur();
-    if (!bubble) return;
-    ["left", "top", "width", "visibility", "display"].forEach(function (key) {
-      bubble.style[key] = "";
-    });
+    tip.blur();
+    if (bubble) bubble.removeAttribute("style");
   }
 
   function resetAll() {
-    document.querySelectorAll(".term-tip.is-tip-open").forEach(resetTip);
+    document.querySelectorAll(".term-tip").forEach(function (tip) {
+      if (tip.classList.contains("is-tip-open")) resetTip(tip);
+      else tip.blur();
+    });
     openTip = null;
   }
 
@@ -1437,15 +1442,18 @@ body.archiv-page{
     placeTip(tip);
   }
 
+  document.addEventListener("pointerdown", function (e) {
+    if (!isMobile()) return;
+    var tip = e.target.closest && e.target.closest(".term-tip");
+    if (!tip) resetAll();
+  }, true);
+
   document.addEventListener("click", function (e) {
     if (!isMobile()) return;
     var tip = e.target.closest && e.target.closest(".term-tip");
-    if (tip) {
-      e.preventDefault();
-      toggleTip(tip);
-      return;
-    }
-    resetAll();
+    if (!tip) return;
+    e.preventDefault();
+    toggleTip(tip);
   }, true);
 
   document.addEventListener("keydown", function (e) {

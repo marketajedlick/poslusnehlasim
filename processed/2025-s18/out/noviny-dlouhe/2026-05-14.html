@@ -238,11 +238,11 @@ body.is-turning{ pointer-events:none; }
 }
 .hl{ display:block; }
 .p{
-  font-size:16px; line-height:1.5; margin:12px 0 0;
+  font-size:15px; line-height:1.5; margin:12px 0 0;
   overflow-wrap:anywhere;
 }
 .mean{
-  margin-top:10px; font-size:15px; line-height:1.45;
+  margin-top:10px; font-size:14px; line-height:1.45;
   color:var(--ink); font-weight:600;
   overflow-wrap:anywhere;
 }
@@ -266,11 +266,11 @@ body.is-turning{ pointer-events:none; }
   transform:translateX(-50%);
   z-index:20;
   width:max-content;
-  max-width:min(28ch, 72vw);
-  padding:8px 10px;
-  font-size:13px;
+  max-width:min(30ch, 72vw);
+  padding:7px 9px;
+  font-size:12px;
   font-weight:500;
-  line-height:1.4;
+  line-height:1.35;
   color:var(--ink);
   background:var(--paper);
   border:1px solid var(--ink-soft);
@@ -278,10 +278,12 @@ body.is-turning{ pointer-events:none; }
   box-shadow:0 4px 14px rgba(0,0,0,.12);
   pointer-events:none;
 }
-.term-tip:hover .term-tip-bubble,
-.term-tip:focus .term-tip-bubble,
-.term-tip:focus-within .term-tip-bubble{
-  display:block;
+@media (min-width:721px){
+  .term-tip:hover .term-tip-bubble,
+  .term-tip:focus .term-tip-bubble,
+  .term-tip:focus-within .term-tip-bubble{
+    display:block;
+  }
 }
 @media (max-width:720px){
   .sheet-shape{ overflow:visible; }
@@ -295,6 +297,9 @@ body.is-turning{ pointer-events:none; }
     left:0;
     transform:none;
     max-width:calc(100vw - 2rem);
+    padding:7px 10px;
+    font-size:12px;
+    line-height:1.35;
     white-space:normal;
     z-index:100;
   }
@@ -727,8 +732,8 @@ body.archiv-page{
   .num{ font-size:132px; line-height:.92; margin:2px 0 0; }
   .kick{ letter-spacing:.14em; font-size:12px; margin-bottom:2px; }
   .h{ font-size:33px; line-height:1.06; }
-  .p{ font-size:18.5px; line-height:1.42; max-width:46ch; margin:20px 0 0; }
-  .mean{ margin-top:14px; font-size:17px; line-height:1.44; }
+  .p{ font-size:17px; line-height:1.42; max-width:46ch; margin:20px 0 0; }
+  .mean{ margin-top:14px; font-size:16px; line-height:1.44; }
   .mean b{ letter-spacing:.08em; font-size:12.5px; }
   .stamp{
     margin-top:16px; font-size:19px; padding:6px 14px 5px;
@@ -877,7 +882,7 @@ body.archiv-page{
               <span class="hl">Koalice bez opozice</span>
               
             </h2>
-            <p class="p">Ve čtvrtek odpoledne koalice na mimořádné schůzi schválila <span class="term-tip" tabindex="0" role="term" aria-label="Politické rozhodnutí sněmovny: doporučení, výzva nebo schválení postupu. Není to zákon.">usnesení<span class="term-tip-bubble" role="tooltip">Politické rozhodnutí sněmovny: doporučení, výzva nebo schválení postupu. Není to zákon.</span></span> proti sjezdu Sudetoněmeckého <span class="term-tip" tabindex="0" role="term" aria-label="Spolek sudetoněmeckých krajanů. Sněmovna usneseními reaguje na jeho sjezdy v Česku.">landsmanšaftu<span class="term-tip-bubble" role="tooltip">Spolek sudetoněmeckých krajanů. Sněmovna usneseními reaguje na jeho sjezdy v Česku.</span></span> v Brně, sedmdesát tři hlasy a nikdo proti. Opozice v sále chyběla, text navazuje na hlasování 109:1 ze šestnácté schůze šestého května. Malá mluvila o starých ranách a deklaraci z roku 1997, Rajchl citoval pozůstalé z Lidic. Šafránková řekla, že opoziční návrhy <span class="term-tip" tabindex="0" role="term" aria-label="Politické rozhodnutí sněmovny: doporučení, výzva nebo schválení postupu. Není to zákon.">usnesení<span class="term-tip-bubble" role="tooltip">Politické rozhodnutí sněmovny: doporučení, výzva nebo schválení postupu. Není to zákon.</span></span> kvůli nepřítomnosti hlasovat nešly.</p>
+            <p class="p">Ve čtvrtek odpoledne koalice na mimořádné schůzi schválila <span class="term-tip" tabindex="0" role="term" aria-label="Politické rozhodnutí sněmovny: doporučení, výzva nebo schválení postupu. Není to zákon.">usnesení<span class="term-tip-bubble" role="tooltip">Politické rozhodnutí sněmovny: doporučení, výzva nebo schválení postupu. Není to zákon.</span></span> proti sjezdu Sudetoněmeckého <span class="term-tip" tabindex="0" role="term" aria-label="Spolek sudetoněmeckých krajanů. Sněmovna usneseními reaguje na jeho sjezdy v Česku.">landsmanšaftu<span class="term-tip-bubble" role="tooltip">Spolek sudetoněmeckých krajanů. Sněmovna usneseními reaguje na jeho sjezdy v Česku.</span></span> v Brně, sedmdesát tři hlasy a nikdo proti. Opozice v sále chyběla, text navazuje na hlasování 109:1 ze šestnácté schůze šestého května. Malá (ANO) mluvila o starých ranách a deklaraci z roku 1997, Rajchl (SPD) citoval pozůstalé z Lidic. Šafránková (SPD) řekla, že opoziční návrhy <span class="term-tip" tabindex="0" role="term" aria-label="Politické rozhodnutí sněmovny: doporučení, výzva nebo schválení postupu. Není to zákon.">usnesení<span class="term-tip-bubble" role="tooltip">Politické rozhodnutí sněmovny: doporučení, výzva nebo schválení postupu. Není to zákon.</span></span> kvůli nepřítomnosti hlasovat nešly.</p>
             
             <p class="mean"><b>Co to znamená: </b>Sněmovna oficiálně odmítá sjezd v Brně a vyzývá organizátory, aby akci zrušili. Jde o politické <span class="term-tip" tabindex="0" role="term" aria-label="Politické rozhodnutí sněmovny: doporučení, výzva nebo schválení postupu. Není to zákon.">usnesení<span class="term-tip-bubble" role="tooltip">Politické rozhodnutí sněmovny: doporučení, výzva nebo schválení postupu. Není to zákon.</span></span> bez přímého dopadu na práva občanů.</p>
             
@@ -1342,15 +1347,15 @@ body.archiv-page{
     var bubble = tip.querySelector(".term-tip-bubble");
     tip.classList.remove("is-tip-open");
     if (openTip === tip) openTip = null;
-    if (tip === document.activeElement) tip.blur();
-    if (!bubble) return;
-    ["left", "top", "width", "visibility", "display"].forEach(function (key) {
-      bubble.style[key] = "";
-    });
+    tip.blur();
+    if (bubble) bubble.removeAttribute("style");
   }
 
   function resetAll() {
-    document.querySelectorAll(".term-tip.is-tip-open").forEach(resetTip);
+    document.querySelectorAll(".term-tip").forEach(function (tip) {
+      if (tip.classList.contains("is-tip-open")) resetTip(tip);
+      else tip.blur();
+    });
     openTip = null;
   }
 
@@ -1399,15 +1404,18 @@ body.archiv-page{
     placeTip(tip);
   }
 
+  document.addEventListener("pointerdown", function (e) {
+    if (!isMobile()) return;
+    var tip = e.target.closest && e.target.closest(".term-tip");
+    if (!tip) resetAll();
+  }, true);
+
   document.addEventListener("click", function (e) {
     if (!isMobile()) return;
     var tip = e.target.closest && e.target.closest(".term-tip");
-    if (tip) {
-      e.preventDefault();
-      toggleTip(tip);
-      return;
-    }
-    resetAll();
+    if (!tip) return;
+    e.preventDefault();
+    toggleTip(tip);
   }, true);
 
   document.addEventListener("keydown", function (e) {

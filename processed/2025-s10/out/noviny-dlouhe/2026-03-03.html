@@ -238,11 +238,11 @@ body.is-turning{ pointer-events:none; }
 }
 .hl{ display:block; }
 .p{
-  font-size:16px; line-height:1.5; margin:12px 0 0;
+  font-size:15px; line-height:1.5; margin:12px 0 0;
   overflow-wrap:anywhere;
 }
 .mean{
-  margin-top:10px; font-size:15px; line-height:1.45;
+  margin-top:10px; font-size:14px; line-height:1.45;
   color:var(--ink); font-weight:600;
   overflow-wrap:anywhere;
 }
@@ -266,11 +266,11 @@ body.is-turning{ pointer-events:none; }
   transform:translateX(-50%);
   z-index:20;
   width:max-content;
-  max-width:min(28ch, 72vw);
-  padding:8px 10px;
-  font-size:13px;
+  max-width:min(30ch, 72vw);
+  padding:7px 9px;
+  font-size:12px;
   font-weight:500;
-  line-height:1.4;
+  line-height:1.35;
   color:var(--ink);
   background:var(--paper);
   border:1px solid var(--ink-soft);
@@ -278,10 +278,12 @@ body.is-turning{ pointer-events:none; }
   box-shadow:0 4px 14px rgba(0,0,0,.12);
   pointer-events:none;
 }
-.term-tip:hover .term-tip-bubble,
-.term-tip:focus .term-tip-bubble,
-.term-tip:focus-within .term-tip-bubble{
-  display:block;
+@media (min-width:721px){
+  .term-tip:hover .term-tip-bubble,
+  .term-tip:focus .term-tip-bubble,
+  .term-tip:focus-within .term-tip-bubble{
+    display:block;
+  }
 }
 @media (max-width:720px){
   .sheet-shape{ overflow:visible; }
@@ -295,6 +297,9 @@ body.is-turning{ pointer-events:none; }
     left:0;
     transform:none;
     max-width:calc(100vw - 2rem);
+    padding:7px 10px;
+    font-size:12px;
+    line-height:1.35;
     white-space:normal;
     z-index:100;
   }
@@ -727,8 +732,8 @@ body.archiv-page{
   .num{ font-size:132px; line-height:.92; margin:2px 0 0; }
   .kick{ letter-spacing:.14em; font-size:12px; margin-bottom:2px; }
   .h{ font-size:33px; line-height:1.06; }
-  .p{ font-size:18.5px; line-height:1.42; max-width:46ch; margin:20px 0 0; }
-  .mean{ margin-top:14px; font-size:17px; line-height:1.44; }
+  .p{ font-size:17px; line-height:1.42; max-width:46ch; margin:20px 0 0; }
+  .mean{ margin-top:14px; font-size:16px; line-height:1.44; }
   .mean b{ letter-spacing:.08em; font-size:12.5px; }
   .stamp{
     margin-top:16px; font-size:19px; padding:6px 14px 5px;
@@ -877,7 +882,7 @@ body.archiv-page{
               <span class="hl">Blízký východ a pořad</span>
               
             </h2>
-            <p class="p">Úvod desáté schůze patřil krizi na Blízkém východě a hlasování o pořadu. Hřib chtěl bod o krizové lince pro Čechy v ohrožení, koalice většinu opozičních návrhů smetla. Po projevu prezidenta Pavla o konstruktivitě přišly desítky hlasování o pořadu. Večer teprve prošly <span class="term-tip" tabindex="0" role="term" aria-label="Základní zákon státu. Změny vyžadují vysokou politickou shodu ve sněmovně i senátu.">ústava<span class="term-tip-bubble" role="tooltip">Základní zákon státu. Změny vyžadují vysokou politickou shodu ve sněmovně i senátu.</span></span>, rozpočtová pravidla a data.</p>
+            <p class="p">Úvod desáté schůze patřil krizi na Blízkém východě a hlasování o pořadu. Hřib (Piráti) chtěl bod o krizové lince pro Čechy v ohrožení, koalice většinu opozičních návrhů smetla. Po projevu prezidenta Pavla o konstruktivitě přišly desítky hlasování o pořadu. Večer teprve prošly <span class="term-tip" tabindex="0" role="term" aria-label="Základní zákon státu. Změny vyžadují vysokou politickou shodu ve sněmovně i senátu.">ústava<span class="term-tip-bubble" role="tooltip">Základní zákon státu. Změny vyžadují vysokou politickou shodu ve sněmovně i senátu.</span></span>, rozpočtová pravidla a data.</p>
             
             <p class="mean"><b>Co to znamená: </b>Dopoledne a odpoledne se řešilo, co vůbec sněmovna projedná a jak reaguje na válku na Blízkém východě. Zákony přišly až večer.</p>
             
@@ -898,7 +903,7 @@ body.archiv-page{
               <span class="hl">sahala na média</span>
               
             </h2>
-            <p class="p"><span class="term-tip" tabindex="0" role="term" aria-label="Horní komora parlamentu. Může zákon vrátit k přepracování nebo ho zamítnout.">Senát<span class="term-tip-bubble" role="tooltip">Horní komora parlamentu. Může zákon vrátit k přepracování nebo ho zamítnout.</span></span> poslal do sněmovny úpravu ústavy, která rozšiřuje kompetence <span class="term-tip" tabindex="0" role="term" aria-label="Nejvyšší kontrolní úřad kontroluje, jak stát a firmy nakládají s veřejnými penězi.">NKÚ<span class="term-tip-bubble" role="tooltip">Nejvyšší kontrolní úřad kontroluje, jak stát a firmy nakládají s veřejnými penězi.</span></span> vůči České televizi a rozhlasu. V <span class="term-tip" tabindex="0" role="term" aria-label="První hlasování: u rozpočtu schvalují obrysy (ne konečný státní rozpočet), u voleb první pokus.">prvním kole<span class="term-tip-bubble" role="tooltip">První hlasování: u rozpočtu schvalují obrysy (ne konečný státní rozpočet), u voleb první pokus.</span></span> prošla sto padesát čtyři hlasy, nikdo proti. Urbanová ze STAN řekla, že návrh teď nepodpoří. Volpe z Motoristů naopak mluvil o veřejné kontrole peněz v médiích.</p>
+            <p class="p"><span class="term-tip" tabindex="0" role="term" aria-label="Horní komora parlamentu. Může zákon vrátit k přepracování nebo ho zamítnout.">Senát<span class="term-tip-bubble" role="tooltip">Horní komora parlamentu. Může zákon vrátit k přepracování nebo ho zamítnout.</span></span> poslal do sněmovny úpravu ústavy, která rozšiřuje kompetence <span class="term-tip" tabindex="0" role="term" aria-label="Nejvyšší kontrolní úřad kontroluje, jak stát a firmy nakládají s veřejnými penězi.">NKÚ<span class="term-tip-bubble" role="tooltip">Nejvyšší kontrolní úřad kontroluje, jak stát a firmy nakládají s veřejnými penězi.</span></span> vůči České televizi a rozhlasu. V <span class="term-tip" tabindex="0" role="term" aria-label="První hlasování: u rozpočtu schvalují obrysy (ne konečný státní rozpočet), u voleb první pokus.">prvním kole<span class="term-tip-bubble" role="tooltip">První hlasování: u rozpočtu schvalují obrysy (ne konečný státní rozpočet), u voleb první pokus.</span></span> prošla sto padesát čtyři hlasy, nikdo proti. Urbanová (STAN) ze STAN řekla, že návrh teď nepodpoří. Volpe (Piráti) z Motoristů naopak mluvil o veřejné kontrole peněz v médiích.</p>
             
             <p class="mean"><b>Co to znamená: </b><span class="term-tip" tabindex="0" role="term" aria-label="Základní zákon státu. Změny vyžadují vysokou politickou shodu ve sněmovně i senátu.">Ústava<span class="term-tip-bubble" role="tooltip">Základní zákon státu. Změny vyžadují vysokou politickou shodu ve sněmovně i senátu.</span></span> není technická úprava. Debata je o tom, jestli má kontrolor zasahovat do veřejnoprávních médií, nebo zůstane mimo.</p>
             
@@ -917,7 +922,7 @@ body.archiv-page{
               <span class="hl">Rozpočtová pravidla prošla</span>
               
             </h2>
-            <p class="p">Vláda prosadila změny veřejných rozpočtů v <span class="term-tip" tabindex="0" role="term" aria-label="První hlasování: u rozpočtu schvalují obrysy (ne konečný státní rozpočet), u voleb první pokus.">prvním kole<span class="term-tip-bubble" role="tooltip">První hlasování: u rozpočtu schvalují obrysy (ne konečný státní rozpočet), u voleb první pokus.</span></span>, sto čtyřicet devět hlasů pro, nikdo proti. Starostové předem avizovali veto ke zkrácenému jednání podle § devadesát jednacího řádu. Sedmihradská mluvila o transpozici EU, Činčila z ODS varoval před oslabením rozpočtové odpovědnosti.</p>
+            <p class="p">Vláda prosadila změny veřejných rozpočtů v <span class="term-tip" tabindex="0" role="term" aria-label="První hlasování: u rozpočtu schvalují obrysy (ne konečný státní rozpočet), u voleb první pokus.">prvním kole<span class="term-tip-bubble" role="tooltip">První hlasování: u rozpočtu schvalují obrysy (ne konečný státní rozpočet), u voleb první pokus.</span></span>, sto čtyřicet devět hlasů pro, nikdo proti. Starostové předem avizovali veto ke zkrácenému jednání podle § devadesát jednacího řádu. Sedmihradská (STAN) mluvila o transpozici EU, Činčila (KDU-ČSL) z ODS varoval před oslabením rozpočtové odpovědnosti.</p>
             
             <p class="mean"><b>Co to znamená: </b>Zákon má sladit české rozpočtování s pravidly EU. Opozice říká, že vláda pod záminkou Bruselu mění pravidla, která drží stát v rozpočtové kondici.</p>
             
@@ -1401,15 +1406,15 @@ body.archiv-page{
     var bubble = tip.querySelector(".term-tip-bubble");
     tip.classList.remove("is-tip-open");
     if (openTip === tip) openTip = null;
-    if (tip === document.activeElement) tip.blur();
-    if (!bubble) return;
-    ["left", "top", "width", "visibility", "display"].forEach(function (key) {
-      bubble.style[key] = "";
-    });
+    tip.blur();
+    if (bubble) bubble.removeAttribute("style");
   }
 
   function resetAll() {
-    document.querySelectorAll(".term-tip.is-tip-open").forEach(resetTip);
+    document.querySelectorAll(".term-tip").forEach(function (tip) {
+      if (tip.classList.contains("is-tip-open")) resetTip(tip);
+      else tip.blur();
+    });
     openTip = null;
   }
 
@@ -1458,15 +1463,18 @@ body.archiv-page{
     placeTip(tip);
   }
 
+  document.addEventListener("pointerdown", function (e) {
+    if (!isMobile()) return;
+    var tip = e.target.closest && e.target.closest(".term-tip");
+    if (!tip) resetAll();
+  }, true);
+
   document.addEventListener("click", function (e) {
     if (!isMobile()) return;
     var tip = e.target.closest && e.target.closest(".term-tip");
-    if (tip) {
-      e.preventDefault();
-      toggleTip(tip);
-      return;
-    }
-    resetAll();
+    if (!tip) return;
+    e.preventDefault();
+    toggleTip(tip);
   }, true);
 
   document.addEventListener("keydown", function (e) {

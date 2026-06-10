@@ -238,11 +238,11 @@ body.is-turning{ pointer-events:none; }
 }
 .hl{ display:block; }
 .p{
-  font-size:16px; line-height:1.5; margin:12px 0 0;
+  font-size:15px; line-height:1.5; margin:12px 0 0;
   overflow-wrap:anywhere;
 }
 .mean{
-  margin-top:10px; font-size:15px; line-height:1.45;
+  margin-top:10px; font-size:14px; line-height:1.45;
   color:var(--ink); font-weight:600;
   overflow-wrap:anywhere;
 }
@@ -266,11 +266,11 @@ body.is-turning{ pointer-events:none; }
   transform:translateX(-50%);
   z-index:20;
   width:max-content;
-  max-width:min(28ch, 72vw);
-  padding:8px 10px;
-  font-size:13px;
+  max-width:min(30ch, 72vw);
+  padding:7px 9px;
+  font-size:12px;
   font-weight:500;
-  line-height:1.4;
+  line-height:1.35;
   color:var(--ink);
   background:var(--paper);
   border:1px solid var(--ink-soft);
@@ -278,10 +278,12 @@ body.is-turning{ pointer-events:none; }
   box-shadow:0 4px 14px rgba(0,0,0,.12);
   pointer-events:none;
 }
-.term-tip:hover .term-tip-bubble,
-.term-tip:focus .term-tip-bubble,
-.term-tip:focus-within .term-tip-bubble{
-  display:block;
+@media (min-width:721px){
+  .term-tip:hover .term-tip-bubble,
+  .term-tip:focus .term-tip-bubble,
+  .term-tip:focus-within .term-tip-bubble{
+    display:block;
+  }
 }
 @media (max-width:720px){
   .sheet-shape{ overflow:visible; }
@@ -295,6 +297,9 @@ body.is-turning{ pointer-events:none; }
     left:0;
     transform:none;
     max-width:calc(100vw - 2rem);
+    padding:7px 10px;
+    font-size:12px;
+    line-height:1.35;
     white-space:normal;
     z-index:100;
   }
@@ -727,8 +732,8 @@ body.archiv-page{
   .num{ font-size:132px; line-height:.92; margin:2px 0 0; }
   .kick{ letter-spacing:.14em; font-size:12px; margin-bottom:2px; }
   .h{ font-size:33px; line-height:1.06; }
-  .p{ font-size:18.5px; line-height:1.42; max-width:46ch; margin:20px 0 0; }
-  .mean{ margin-top:14px; font-size:17px; line-height:1.44; }
+  .p{ font-size:17px; line-height:1.42; max-width:46ch; margin:20px 0 0; }
+  .mean{ margin-top:14px; font-size:16px; line-height:1.44; }
   .mean b{ letter-spacing:.08em; font-size:12.5px; }
   .stamp{
     margin-top:16px; font-size:19px; padding:6px 14px 5px;
@@ -877,7 +882,7 @@ body.archiv-page{
               <span class="hl">Úředníci zůstávají</span>
               
             </h2>
-            <p class="p">Koaliční návrh, který má nahradit zákon o státní službě, v <span class="term-tip" tabindex="0" role="term" aria-label="První hlasování: u rozpočtu schvalují obrysy (ne konečný státní rozpočet), u voleb první pokus.">prvním kole<span class="term-tip-bubble" role="tooltip">První hlasování: u rozpočtu schvalují obrysy (ne konečný státní rozpočet), u voleb první pokus.</span></span> padl, šedesát pět hlasů pro, devadesát šest proti. Opozice mluvila o politizaci úřadů a chybějících analýzách. Pospíšil chtěl vládní návrh, Pláteník varoval před oslabením státu. Kučera navrhl zamítnout oba sloučené tisky.</p>
+            <p class="p">Koaliční návrh, který má nahradit zákon o státní službě, v <span class="term-tip" tabindex="0" role="term" aria-label="První hlasování: u rozpočtu schvalují obrysy (ne konečný státní rozpočet), u voleb první pokus.">prvním kole<span class="term-tip-bubble" role="tooltip">První hlasování: u rozpočtu schvalují obrysy (ne konečný státní rozpočet), u voleb první pokus.</span></span> padl, šedesát pět hlasů pro, devadesát šest proti. Opozice mluvila o politizaci úřadů a chybějících analýzách. Pospíšil (TOP devět) chtěl vládní návrh, Pláteník (KDU-ČSL) varoval před oslabením státu. Kučera (TOP devět) navrhl zamítnout oba sloučené tisky.</p>
             
             <p class="mean"><b>Co to znamená: </b>Šestá schůze skončila večer zamítnutím reformy pro přes sedmdesát tisíc státních zaměstnanců. Koalice chtěla přejít ze služebního poměru na zákoník práce, sněmovna to v <span class="term-tip" tabindex="0" role="term" aria-label="První hlasování: u rozpočtu schvalují obrysy (ne konečný státní rozpočet), u voleb první pokus.">prvním kole<span class="term-tip-bubble" role="tooltip">První hlasování: u rozpočtu schvalují obrysy (ne konečný státní rozpočet), u voleb první pokus.</span></span> zastavila.</p>
             
@@ -896,7 +901,7 @@ body.archiv-page{
               <span class="hl">Čtvrtek bez interpelací</span>
               
             </h2>
-            <p class="p">Koalice svolala <span class="term-tip" tabindex="0" role="term" aria-label="Schůze mimo pravidelný kalendář, svolaná kvůli konkrétnímu tématu, třeba střetu zájmů premiéra.">mimořádnou schůzi<span class="term-tip-bubble" role="tooltip">Schůze mimo pravidelný kalendář, svolaná kvůli konkrétnímu tématu, třeba střetu zájmů premiéra.</span></span> na den vyhrazený pro <span class="term-tip" tabindex="0" role="term" aria-label="Poslanci v debatě vyhrávají otázky ministrům. Odpověď se nehlasuje, jde o veřejnou kontrolu vlády.">interpelace<span class="term-tip-bubble" role="tooltip">Poslanci v debatě vyhrávají otázky ministrům. Odpověď se nehlasuje, jde o veřejnou kontrolu vlády.</span></span>. Rakušan kritizoval prosincové mlčení sněmovny, Jakob řekl, že dnes se ministry neptají. Vondráček hájil nestihnutí lhůt mimořádnou schůzí. Rakušan připomněl dva a půl roku práce na služebním zákoně za Fialovy vlády.</p>
+            <p class="p">Koalice svolala <span class="term-tip" tabindex="0" role="term" aria-label="Schůze mimo pravidelný kalendář, svolaná kvůli konkrétnímu tématu, třeba střetu zájmů premiéra.">mimořádnou schůzi<span class="term-tip-bubble" role="tooltip">Schůze mimo pravidelný kalendář, svolaná kvůli konkrétnímu tématu, třeba střetu zájmů premiéra.</span></span> na den vyhrazený pro <span class="term-tip" tabindex="0" role="term" aria-label="Poslanci v debatě vyhrávají otázky ministrům. Odpověď se nehlasuje, jde o veřejnou kontrolu vlády.">interpelace<span class="term-tip-bubble" role="tooltip">Poslanci v debatě vyhrávají otázky ministrům. Odpověď se nehlasuje, jde o veřejnou kontrolu vlády.</span></span>. Rakušan (STAN) kritizoval prosincové mlčení sněmovny, Jakob (TOP devět) řekl, že dnes se ministry neptají. Vondráček (ANO) hájil nestihnutí lhůt mimořádnou schůzí. Rakušan (STAN) připomněl dva a půl roku práce na služebním zákoně za Fialovy vlády.</p>
             
             <p class="mean"><b>Co to znamená: </b>Šestá schůze začala sporem o proceduru: proč zákon o úřednících nešel řádnou cestou a proč ve čtvrtek místo kontroly vlády běžela mimořádná jízda.</p>
             
@@ -1361,15 +1366,15 @@ body.archiv-page{
     var bubble = tip.querySelector(".term-tip-bubble");
     tip.classList.remove("is-tip-open");
     if (openTip === tip) openTip = null;
-    if (tip === document.activeElement) tip.blur();
-    if (!bubble) return;
-    ["left", "top", "width", "visibility", "display"].forEach(function (key) {
-      bubble.style[key] = "";
-    });
+    tip.blur();
+    if (bubble) bubble.removeAttribute("style");
   }
 
   function resetAll() {
-    document.querySelectorAll(".term-tip.is-tip-open").forEach(resetTip);
+    document.querySelectorAll(".term-tip").forEach(function (tip) {
+      if (tip.classList.contains("is-tip-open")) resetTip(tip);
+      else tip.blur();
+    });
     openTip = null;
   }
 
@@ -1418,15 +1423,18 @@ body.archiv-page{
     placeTip(tip);
   }
 
+  document.addEventListener("pointerdown", function (e) {
+    if (!isMobile()) return;
+    var tip = e.target.closest && e.target.closest(".term-tip");
+    if (!tip) resetAll();
+  }, true);
+
   document.addEventListener("click", function (e) {
     if (!isMobile()) return;
     var tip = e.target.closest && e.target.closest(".term-tip");
-    if (tip) {
-      e.preventDefault();
-      toggleTip(tip);
-      return;
-    }
-    resetAll();
+    if (!tip) return;
+    e.preventDefault();
+    toggleTip(tip);
   }, true);
 
   document.addEventListener("keydown", function (e) {

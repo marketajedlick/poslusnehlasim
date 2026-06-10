@@ -238,11 +238,11 @@ body.is-turning{ pointer-events:none; }
 }
 .hl{ display:block; }
 .p{
-  font-size:16px; line-height:1.5; margin:12px 0 0;
+  font-size:15px; line-height:1.5; margin:12px 0 0;
   overflow-wrap:anywhere;
 }
 .mean{
-  margin-top:10px; font-size:15px; line-height:1.45;
+  margin-top:10px; font-size:14px; line-height:1.45;
   color:var(--ink); font-weight:600;
   overflow-wrap:anywhere;
 }
@@ -266,11 +266,11 @@ body.is-turning{ pointer-events:none; }
   transform:translateX(-50%);
   z-index:20;
   width:max-content;
-  max-width:min(28ch, 72vw);
-  padding:8px 10px;
-  font-size:13px;
+  max-width:min(30ch, 72vw);
+  padding:7px 9px;
+  font-size:12px;
   font-weight:500;
-  line-height:1.4;
+  line-height:1.35;
   color:var(--ink);
   background:var(--paper);
   border:1px solid var(--ink-soft);
@@ -278,10 +278,12 @@ body.is-turning{ pointer-events:none; }
   box-shadow:0 4px 14px rgba(0,0,0,.12);
   pointer-events:none;
 }
-.term-tip:hover .term-tip-bubble,
-.term-tip:focus .term-tip-bubble,
-.term-tip:focus-within .term-tip-bubble{
-  display:block;
+@media (min-width:721px){
+  .term-tip:hover .term-tip-bubble,
+  .term-tip:focus .term-tip-bubble,
+  .term-tip:focus-within .term-tip-bubble{
+    display:block;
+  }
 }
 @media (max-width:720px){
   .sheet-shape{ overflow:visible; }
@@ -295,6 +297,9 @@ body.is-turning{ pointer-events:none; }
     left:0;
     transform:none;
     max-width:calc(100vw - 2rem);
+    padding:7px 10px;
+    font-size:12px;
+    line-height:1.35;
     white-space:normal;
     z-index:100;
   }
@@ -727,8 +732,8 @@ body.archiv-page{
   .num{ font-size:132px; line-height:.92; margin:2px 0 0; }
   .kick{ letter-spacing:.14em; font-size:12px; margin-bottom:2px; }
   .h{ font-size:33px; line-height:1.06; }
-  .p{ font-size:18.5px; line-height:1.42; max-width:46ch; margin:20px 0 0; }
-  .mean{ margin-top:14px; font-size:17px; line-height:1.44; }
+  .p{ font-size:17px; line-height:1.42; max-width:46ch; margin:20px 0 0; }
+  .mean{ margin-top:14px; font-size:16px; line-height:1.44; }
   .mean b{ letter-spacing:.08em; font-size:12.5px; }
   .stamp{
     margin-top:16px; font-size:19px; padding:6px 14px 5px;
@@ -877,7 +882,7 @@ body.archiv-page{
               <span class="hl">Druhý den o nedůvěře</span>
               
             </h2>
-            <p class="p">Středa patřila závěrečnému kolu řečí před hlasováním. Jurečka si všiml, že u pultu sedí jen jeden ministr, Bartoš znovu mluvil o esemeskách Macinky a <span class="term-tip" tabindex="0" role="term" aria-label="Situace, kdy politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají.">střetu zájmů<span class="term-tip-bubble" role="tooltip">Situace, kdy politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají.</span></span>. Skopeček odmítl, že by schůze byla zbytečná, vláda prý dělá botu za botou. Večer poslanci prodloužili jednání po devatenácté hodině, sto třicet devět hlasů pro.</p>
+            <p class="p">Středa patřila závěrečnému kolu řečí před hlasováním. Jurečka (KDU-ČSL) si všiml, že u pultu sedí jen jeden ministr, Bartoš (Piráti) znovu mluvil o esemeskách Macinky (Motoristé) a <span class="term-tip" tabindex="0" role="term" aria-label="Situace, kdy politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají.">střetu zájmů<span class="term-tip-bubble" role="tooltip">Situace, kdy politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají.</span></span>. Skopeček (ODS) odmítl, že by schůze byla zbytečná, vláda prý dělá botu za botou. Večer poslanci prodloužili jednání po devatenácté hodině, sto třicet devět hlasů pro.</p>
             
             <p class="mean"><b>Co to znamená: </b>Druhý den debaty už neotevíral nová témata, spíš bilancoval včerejší výpady ministrů. Hlasování o pádu vlády mělo přijít až večer.</p>
             
@@ -896,7 +901,7 @@ body.archiv-page{
               <span class="hl">Nedůvěra neprošla</span>
               
             </h2>
-            <p class="p">Po dvou dnech řečí sněmovna zamítla <span class="term-tip" tabindex="0" role="term" aria-label="Poslanci hlasují o tom, zda vláda ztratila důvěru. Projde-li návrh, kabinet padá.">nedůvěru<span class="term-tip-bubble" role="tooltip">Poslanci hlasují o tom, zda vláda ztratila důvěru. Projde-li návrh, kabinet padá.</span></span> vládě, devadesát devět hlasů proti osmdesát čtyři. Koalice tleskala, opozice nedosáhla na potřebnou většinu. Premiér Babiš a první vicepremiér Macinka při jmenovitém hlasování chyběli, Macinka byl v USA. Králíček pak opozici připomněl, že pro návrh hlasovalo jen osmdesát čtyři poslanců.</p>
+            <p class="p">Po dvou dnech řečí sněmovna zamítla <span class="term-tip" tabindex="0" role="term" aria-label="Poslanci hlasují o tom, zda vláda ztratila důvěru. Projde-li návrh, kabinet padá.">nedůvěru<span class="term-tip-bubble" role="tooltip">Poslanci hlasují o tom, zda vláda ztratila důvěru. Projde-li návrh, kabinet padá.</span></span> vládě, devadesát devět hlasů proti osmdesát čtyři. Koalice tleskala, opozice nedosáhla na potřebnou většinu. Premiér Babiš (ANO) a první vicepremiér Macinka (Motoristé) při jmenovitém hlasování chyběli, Macinka (Motoristé) byl v USA. Králíček (ANO) pak opozici připomněl, že pro návrh hlasovalo jen osmdesát čtyři poslanců.</p>
             
             <p class="mean"><b>Co to znamená: </b>K pádu vlády bylo potřeba víc než sto hlasů pro. <span class="term-tip" tabindex="0" role="term" aria-label="Hlasování, při kterém poslanci rozhodnou, zda vláda ztratila důvěru a má odstoupit.">Nedůvěra<span class="term-tip-bubble" role="tooltip">Hlasování, při kterém poslanci rozhodnou, zda vláda ztratila důvěru a má odstoupit.</span></span> padla, Babišova vláda pokračuje. Debata ale ukázala rozdíl: opozice mluvila o Macinkových esemeskách a <span class="term-tip" tabindex="0" role="term" aria-label="Situace, kdy politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají.">střetu zájmů<span class="term-tip-bubble" role="tooltip">Situace, kdy politik rozhoduje o věcech, které se ho nebo jeho firmu osobně týkají.</span></span>, koalice o zahraničních cestách a práci prvního měsíce.</p>
             
@@ -907,7 +912,7 @@ body.archiv-page{
         <div class="verdict">
           <span class="qm">„</span>
           <p class="q">
-            <span class="key">Poslušně hlásím,</span> že po dvou dnech řečí koalice <span class="term-tip" tabindex="0" role="term" aria-label="Poslanci hlasují o tom, zda vláda ztratila důvěru. Projde-li návrh, kabinet padá.">nedůvěru<span class="term-tip-bubble" role="tooltip">Poslanci hlasují o tom, zda vláda ztratila důvěru. Projde-li návrh, kabinet padá.</span></span> zamítla a vláda Babiše zůstává.
+            <span class="key">Poslušně hlásím,</span> že po dvou dnech řečí koalice <span class="term-tip" tabindex="0" role="term" aria-label="Poslanci hlasují o tom, zda vláda ztratila důvěru. Projde-li návrh, kabinet padá.">nedůvěru<span class="term-tip-bubble" role="tooltip">Poslanci hlasují o tom, zda vláda ztratila důvěru. Projde-li návrh, kabinet padá.</span></span> zamítla a vláda Babiše (ANO) zůstává.
           </p>
           <div class="sign">- Váš dobrý voják Švejk -</div>
         </div>
@@ -1361,15 +1366,15 @@ body.archiv-page{
     var bubble = tip.querySelector(".term-tip-bubble");
     tip.classList.remove("is-tip-open");
     if (openTip === tip) openTip = null;
-    if (tip === document.activeElement) tip.blur();
-    if (!bubble) return;
-    ["left", "top", "width", "visibility", "display"].forEach(function (key) {
-      bubble.style[key] = "";
-    });
+    tip.blur();
+    if (bubble) bubble.removeAttribute("style");
   }
 
   function resetAll() {
-    document.querySelectorAll(".term-tip.is-tip-open").forEach(resetTip);
+    document.querySelectorAll(".term-tip").forEach(function (tip) {
+      if (tip.classList.contains("is-tip-open")) resetTip(tip);
+      else tip.blur();
+    });
     openTip = null;
   }
 
@@ -1418,15 +1423,18 @@ body.archiv-page{
     placeTip(tip);
   }
 
+  document.addEventListener("pointerdown", function (e) {
+    if (!isMobile()) return;
+    var tip = e.target.closest && e.target.closest(".term-tip");
+    if (!tip) resetAll();
+  }, true);
+
   document.addEventListener("click", function (e) {
     if (!isMobile()) return;
     var tip = e.target.closest && e.target.closest(".term-tip");
-    if (tip) {
-      e.preventDefault();
-      toggleTip(tip);
-      return;
-    }
-    resetAll();
+    if (!tip) return;
+    e.preventDefault();
+    toggleTip(tip);
   }, true);
 
   document.addEventListener("keydown", function (e) {
