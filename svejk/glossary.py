@@ -14,6 +14,18 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "opravdu omyl.“",
     ),
     (
+        "oslovil Hřibkem",
+        "Kolovratník záměrně řekl Hřibek místo Hřib, jako by mluvil o někom "
+        "méně vážně, pak se s úsměvem opravil. Ve stenoprotokolu je u toho "
+        "poznámka (Se smíchem.), šlo o vědomou demisi, ne o překlep.",
+    ),
+    (
+        "Hřibkem",
+        "Zdrobnělina, ne překlep. Kolovratník ji použil úmyslně, jako by mluvil "
+        "o někom méně vážně, pak se s úsměvem opravil na správné jméno. Ve "
+        "stenoprotokolu je u toho poznámka (Se smíchem.).",
+    ),
+    (
         "Hřibek",
         "Zdrobnělina, ne překlep. Kolovratník ji použil úmyslně, jako by mluvil o "
         "někom méně vážně, pak se s úsměvem „opravil“ na správné jméno. Ve "
@@ -21,11 +33,17 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "ne o omyl.",
     ),
     (
+        "kde je férovost",
+        "Kolovratník připomněl minulé období: Piráti 4 poslanci, přesto "
+        "Richterová místopředsedkyně Sněmovny; SPD 20 poslanců a ve vedení "
+        "Sněmovny nebylo. Ptá se, kde je férovost. Jenže mluvil o vedení "
+        "Sněmovny, zatímco debata šla o výborech.",
+    ),
+    (
         "čtyři poslance a místopředsedkyni",
-        "Kolovratník Richterové: v minulém období měli Piráti jen 4 poslance, "
-        "přesto Richterová byla místopředsedkyní Sněmovny. SPD mělo 20 poslanců "
-        "a ve vedení nebylo. Ptá se, kde je férové rozdělení, když menší strana "
-        "měla vyšší post.",
+        "Totéž číslo jinak: Kolovratník připomněl, že Piráti měli jen 4 "
+        "poslance, ale Richterová seděla ve vedení Sněmovny. SPD mělo 20 "
+        "poslanců a ve vedení Sněmovny nebylo.",
     ),
     (
         "deset ku deseti",
@@ -34,10 +52,15 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "22 členů a získala většinu.",
     ),
     (
+        "dvě různé volby",
+        "Hřib: místopředsedkyně Sněmovny volí celé plénum podle koaliční "
+        "dohody (Piráti se STAN měli 800 000 voličů). Předsedu výboru volí "
+        "členové výboru. Kolovratník podle něj plete obě věci dohromady.",
+    ),
+    (
         "dvě různé funkce",
-        "Hřib vysvětluje rozdíl: místopředsedkyně Sněmovny volí celé plénum "
-        "podle koaliční dohody (Piráti se STAN měli 800 000 voličů). Předsedu "
-        "výboru volí členové výboru. Kolovratník to podle Hřiba plete záměrně.",
+        "Totéž: vedení Sněmovny a vedení výboru jsou dvě různé volby. "
+        "Místopředsedkyni volí plénum, předsedu výboru volí členové výboru.",
     ),
     (
         "vedení výborů",
