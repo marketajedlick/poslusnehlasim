@@ -8,6 +8,35 @@ from __future__ import annotations
 GLOSSARY: tuple[tuple[str, str], ...] = (
     # --- kontext konkrétních schůzí (delší fráze první) ---
     (
+        "čekal na jmenování ministra životního prostředí, než mohl domluvit projev",
+        "Pirát Václav Pláteník měl ve středu 14. 1. dokončit projev proti vládě. Před "
+        "obědem ho ve 14 hodin přerušili uprostřed věty. Po obědě ho předsedající Barták "
+        "nechal počkat, až v sále sedí víc ministrů, ne kvůli jednomu konkrétnímu "
+        "rezortu, ale kvůli sporu o přítomnost vlády při debatě o důvěře. Králíček "
+        "(Motoristé) to označil za pirátskou obstrukci. Teprve pak Pláteník domluvil "
+        "druhou část (začíná „Druhou prosbou…“). Ten den se zároveň hodně mluvilo o "
+        "životním prostředí: rezort vedl vicepremiér Macinka a formální jmenování "
+        "ministrem prezidentem bylo sporné.",
+    ),
+    (
+        "azbestu v Milovicích",
+        "Kauza z vojenského areálu Milovice a Mladá: při demolicích a sanaci údajně skončil "
+        "eternit rozdrcený ve stavební sutí v lese místo na bezpečné skládce. Policie "
+        "obvinila mj. středočeského radního za ANO Bezděka z úmyslného zamoření lesů "
+        "azbestem. Znalec spočítal škodu na životním prostředí 2,2 miliardy Kč; na "
+        "zhruba 22 hektarech našli 88 tun kontaminované suti. Richterová to 14. 1. "
+        "v debatě o důvěře připomněla jako příklad kauz hnutí ANO.",
+    ),
+    (
+        "kauzách",
+        "Ve středeční debatě o důvěře 14. 1. opozice (hlavně Richterová) vyjmenovávala "
+        "konkrétní skandály kolem lidí z ANO: hejtman Krkoška (odsouzený za organizovanou "
+        "zločineckou skupinu), primátor Charvát (vazba kvůli zakázkám města), kauza "
+        "Stoka v Brně (exradní Švachula 9,5 roku), Faltýnkův diář se zakázkami, vazby "
+        "senátorky Mračkové na Dozimetr a azbest v Milovicích. Nešlo o hlasování, "
+        "šlo o útok na důvěryhodnost kabinetu, který o důvěru žádal.",
+    ),
+    (
         "dva opoziční návrhy ho chtěly shodit",
         "Před závěrečným hlasováním (č. 8) padly dva návrhy. Havránek (ODS) chtěl "
         "schválit základní parametry rozpočtu a poslat kapitoly do výborů (67:105). "

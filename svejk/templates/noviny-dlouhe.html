@@ -550,15 +550,15 @@
     var bubble = tip.querySelector(".term-tip-bubble");
     tip.classList.remove("is-tip-open");
     if (openTip === tip) openTip = null;
-    if (tip === document.activeElement) tip.blur();
-    if (!bubble) return;
-    ["left", "top", "width", "visibility", "display"].forEach(function (key) {
-      bubble.style[key] = "";
-    });
+    tip.blur();
+    if (bubble) bubble.removeAttribute("style");
   }
 
   function resetAll() {
-    document.querySelectorAll(".term-tip.is-tip-open").forEach(resetTip);
+    document.querySelectorAll(".term-tip").forEach(function (tip) {
+      if (tip.classList.contains("is-tip-open")) resetTip(tip);
+      else tip.blur();
+    });
     openTip = null;
   }
 
@@ -607,15 +607,18 @@
     placeTip(tip);
   }
 
+  document.addEventListener("pointerdown", function (e) {
+    if (!isMobile()) return;
+    var tip = e.target.closest && e.target.closest(".term-tip");
+    if (!tip) resetAll();
+  }, true);
+
   document.addEventListener("click", function (e) {
     if (!isMobile()) return;
     var tip = e.target.closest && e.target.closest(".term-tip");
-    if (tip) {
-      e.preventDefault();
-      toggleTip(tip);
-      return;
-    }
-    resetAll();
+    if (!tip) return;
+    e.preventDefault();
+    toggleTip(tip);
   }, true);
 
   document.addEventListener("keydown", function (e) {

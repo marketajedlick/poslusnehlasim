@@ -251,10 +251,12 @@ body.is-turning{ pointer-events:none; }
   box-shadow:0 4px 14px rgba(0,0,0,.12);
   pointer-events:none;
 }
-.term-tip:hover .term-tip-bubble,
-.term-tip:focus .term-tip-bubble,
-.term-tip:focus-within .term-tip-bubble{
-  display:block;
+@media (min-width:721px){
+  .term-tip:hover .term-tip-bubble,
+  .term-tip:focus .term-tip-bubble,
+  .term-tip:focus-within .term-tip-bubble{
+    display:block;
+  }
 }
 @media (max-width:720px){
   .sheet-shape{ overflow:visible; }
