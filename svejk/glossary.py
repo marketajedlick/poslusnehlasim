@@ -486,33 +486,28 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "interpelacím",
-        "Poslanci se ve sněmovně ptají ministrům a premiérovi, ten musí odpovědět. "
-        "Nerozhoduje se o tom hlasováním, jde o veřejnou kontrolu vlády. "
-        "Ve čtvrtek je na to podle jednacího řádu vyhrazený den.",
+        "Poslanci se ve sněmovně ptají ministrů a premiéra. "
+        "Ve čtvrtek byl na to podle jednacího řádu vyhrazený den.",
     ),
     (
         "interpelací",
-        "Poslanci se ve sněmovně ptají ministrům a premiérovi, ten musí odpovědět. "
-        "Nerozhoduje se o tom hlasováním, jde o veřejnou kontrolu vlády. "
-        "Ve čtvrtek je na to podle jednacího řádu vyhrazený den.",
+        "Poslanci se ve sněmovně ptají ministrů a premiéra. "
+        "Ve čtvrtek byl na to podle jednacího řádu vyhrazený den.",
     ),
     (
         "interpelacemi",
-        "Poslanci se ve sněmovně ptají ministrům a premiérovi, ten musí odpovědět. "
-        "Nerozhoduje se o tom hlasováním, jde o veřejnou kontrolu vlády. "
-        "Ve čtvrtek je na to podle jednacího řádu vyhrazený den.",
+        "Poslanci se ve sněmovně ptají ministrů a premiéra. "
+        "Ve čtvrtek byl na to podle jednacího řádu vyhrazený den.",
     ),
     (
         "interpelacích",
-        "Poslanci se ve sněmovně ptají ministrům a premiérovi, ten musí odpovědět. "
-        "Nerozhoduje se o tom hlasováním, jde o veřejnou kontrolu vlády. "
-        "Ve čtvrtek je na to podle jednacího řádu vyhrazený den.",
+        "Poslanci se ve sněmovně ptají ministrů a premiéra. "
+        "Ve čtvrtek byl na to podle jednacího řádu vyhrazený den.",
     ),
     (
         "interpelace",
-        "Poslanci se ve sněmovně ptají ministrům a premiérovi, ten musí odpovědět. "
-        "Nerozhoduje se o tom hlasováním, jde o veřejnou kontrolu vlády. "
-        "Ve čtvrtek je na to podle jednacího řádu vyhrazený den.",
+        "Poslanci se ve sněmovně ptají ministrů a premiéra. "
+        "Ve čtvrtek byl na to podle jednacího řádu vyhrazený den.",
     ),
     (
         "ústavní zákon",
