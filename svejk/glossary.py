@@ -8,6 +8,13 @@ from __future__ import annotations
 GLOSSARY: tuple[tuple[str, str], ...] = (
     # --- kontext konkrétních schůzí (delší fráze první) ---
     (
+        "dva opoziční návrhy ho chtěly shodit",
+        "Před závěrečným hlasováním (č. 8) padly dva návrhy. Havránek (ODS) chtěl "
+        "schválit základní parametry rozpočtu a poslat kapitoly do výborů (67:105). "
+        "Svobodová (Piráti) chtěla doplnit 14 miliard na dostupné bydlení (39:35, "
+        "80 zdrželých). Pak prošlo usnesení rozpočtového výboru 105:64.",
+    ),
+    (
         "stokrát opakovanou lží",
         "Stanjura 26. 11. při rozpočtu 2026: ANO celé dopoledne tvrdilo, že země "
         "není v kondici. On to označil za opakovanou lež a chtěl ukázat srovnání "
