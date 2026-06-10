@@ -18,6 +18,13 @@
       "text": "Tři úpravy od Pirátek spadly pod stůl, samotný zákon pak prošel 136:7.",
       "source": "votes",
       "citace": "Hlasování číslo 63 až 65 nepřijata, hlasování číslo 66: pro 136, proti 7."
+    },
+    {
+      "text": "Poslankyně Schillerová mimo mikrofon: Můžu i v rozpravě?",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_20_00220",
+      "citace": "(Poslankyně Schillerová mimo mikrofon: Můžu i v rozpravě?)"
     }
   ],
   "publikovat": true,
@@ -35,5 +42,5 @@
     "spor": true,
     "prazdny_sal": false
   },
-  "steno_slov": 0
+  "steno_slov": 7171
 }

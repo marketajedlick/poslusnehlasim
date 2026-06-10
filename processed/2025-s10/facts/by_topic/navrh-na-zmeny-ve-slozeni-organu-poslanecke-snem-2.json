@@ -13,6 +13,13 @@
       "source": "steno",
       "steno_id": "2025_10_01487",
       "citace": "Hlasování číslo 249, pro 121, proti nikdo. Návrh byl přijat."
+    },
+    {
+      "text": "Poslanec Šťastný přistupuje k řečništi",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_10_00689",
+      "citace": "(Poslanec Šťastný přistupuje k řečništi)"
     }
   ],
   "publikovat": true,
@@ -22,5 +29,6 @@
   "pointa": "Dopoledne obsazování postů, odpoledne balík evropských úprav zákonů.",
   "mean": "Strany si rozdělily místa ve výborech. Kdo sedí ve kterém výboru, určuje, kdo vidí jaké zákony jako první.",
   "pocet_hlasovani": 1,
-  "proslo": true
+  "proslo": true,
+  "steno_slov": 14905
 }

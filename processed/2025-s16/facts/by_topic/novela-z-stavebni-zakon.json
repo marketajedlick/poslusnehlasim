@@ -17,6 +17,12 @@
       "text": "Druhé hlasování ve stejný večer, sto dvacet tři pro.",
       "source": "votes",
       "citace": "Hlasování číslo 67, pro 123, proti 0."
+    },
+    {
+      "text": "63.Návrh poslankyně Zuzany Mrázové na vydání zákona, kterým se mění zákon č.",
+      "source": "steno",
+      "steno_id": "2025_16_00335",
+      "citace": "63.Návrh poslankyně Zuzany Mrázové na vydání zákona, kterým se mění zákon č."
     }
   ],
   "publikovat": true,
@@ -26,5 +32,6 @@
   "pointa": "Ve středu večer prošlo první kolo změny zákonů stavebního zákona. Finální podobu dostane až na dvacáté schůzi 28. května.",
   "mean": "Změny se dotknou každého, kdo řeší stavbu nebo rekonstrukci u úřadu. Konkrétní úpravy závisí na finálním znění.",
   "pocet_hlasovani": 2,
-  "proslo": true
+  "proslo": true,
+  "steno_slov": 7904
 }

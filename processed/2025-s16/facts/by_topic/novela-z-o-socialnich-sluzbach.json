@@ -18,6 +18,12 @@
       "text": "Hlasování číslo 70, sto jedenáct hlasů pro.",
       "source": "votes",
       "citace": "Hlasování číslo 70, pro 111, proti 0."
+    },
+    {
+      "text": "7.Návrh poslanců Aleše Juchelky a Jany Pastuchové na vydání zákona, kterým se mění zákon č.",
+      "source": "steno",
+      "steno_id": "2025_16_00508",
+      "citace": "7.Návrh poslanců Aleše Juchelky a Jany Pastuchové na vydání zákona, kterým se mění zákon č."
     }
   ],
   "publikovat": true,
@@ -27,5 +33,6 @@
   "pointa": "Jde o navazující změnu k reformě sociálních dávek. Tentokrát prošla až po celodenní blokaci kvůli sudetoněmeckému sjezdu.",
   "mean": "Lidé s průkazem OZP a příspěvkem na péči zatím zůstanou na Úřadu práce. Velký přesun přijde až za dva roky.",
   "pocet_hlasovani": 1,
-  "proslo": true
+  "proslo": true,
+  "steno_slov": 5245
 }
