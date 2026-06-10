@@ -12,12 +12,9 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Pirát Václav Pláteník měl 14. 1. po obědě domluvit projev proti vládě, který "
         "před polední pauzou přerušili uprostřed věty. Předsedající Barták (Motoristé) "
         "ho před pokračováním nechal chvíli počkat, až v sále sedí víc ministrů. "
-        "Nešlo o jmenování ministra životního prostředí: šlo o spor, jestli má vláda "
-        "sedět v sále, když o důvěře mluví opozice. Richterová chtěla pauzu, dokud se "
-        "nevrátí Babiš; Králíček (Motoristé) to označil za pirátskou obstrukci. "
-        "Rezort životního prostředí ten den vedl vicepremiér Macinka jen jako pověřený, "
-        "prezident odmítl Filipa Turka a plnohodnotného ministra jmenoval až v únoru "
-        "(Igor Červený).",
+        "Šlo o spor, jestli má vláda sedět v sále při debatě o důvěře. Richterová "
+        "chtěla pauzu, dokud se nevrátí Babiš; Králíček (Motoristé) to označil za "
+        "pirátskou obstrukci.",
     ),
     (
         "azbestu v Milovicích",
