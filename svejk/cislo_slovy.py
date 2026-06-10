@@ -418,6 +418,12 @@ def _nahrad_zbyla_cisla(text: str) -> str:
         return f"k {_poradove_loc(den)} {m.group(2).lower()}"
 
     def _cislo(m: re.Match[str]) -> str:
+        start, end = m.start(), m.end()
+        # Skóre hlasování (105:64) necháváme číslicemi, ne jako čas.
+        if end < len(t) and t[end] == ":" and end + 1 < len(t) and t[end + 1].isdigit():
+            return m.group(1)
+        if start > 0 and t[start - 1] == ":":
+            return m.group(1)
         return _rok_nebo_cislo(m, t)
 
     t = _RE_CAS.sub(_cas, text)

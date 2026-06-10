@@ -8,6 +8,14 @@ from __future__ import annotations
 GLOSSARY: tuple[tuple[str, str], ...] = (
     # --- kontext konkrétních schůzí (delší fráze první) ---
     (
+        "stokrát opakovanou lží",
+        "Stanjura 26. 11. při rozpočtu 2026: ANO celé dopoledne tvrdilo, že země "
+        "není v kondici. On to označil za opakovanou lež a chtěl ukázat srovnání "
+        "z hodnocení všech členských států Evropské komise (17. 11. 2025). "
+        "Schillerová předtím útočila na rozpočet Fialovy vlády a srovnávala schodek "
+        "376 miliard z roku 2021 s dnešními čísly.",
+    ),
+    (
         "ze čtvrté třídy",
         "Richterová Kolovratníkovi: „Doufám, že jsme se nedostali do čtvrté třídy "
         "základní školy, aby se tady běžně komolila lidem jména. To doufám, že byl "
