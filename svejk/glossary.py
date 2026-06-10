@@ -9,19 +9,15 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     # --- kontext konkrétních schůzí (delší fráze první) ---
     (
         "deset hlasování o usneseních ke jmenování ministrů",
-        "16. 1. 2026, hlasování 52 až 61: nejdřív procedura pořadí (52), pak devět usnesení. Prošlo jen "
-        "Šťastného: prezident ať jmenuje ministry (53). Zamítli návrhy Jakoba (rozpočtová odpovědnost), "
-        "Zuny (vůči ministrům Zuna a Macinka), Langšádlové (klima, Ukrajina), Dvořáka (nový ministr "
-        "životního prostředí), Jurečky (proti Turkovi jako klimatickému zmocněnci) a Pospíšila "
-        "(kompetenční žaloba). Osm z deseti padlo ~82:101.",
+        "16. 1. 2026: nejdřív se hlasovalo o pořadí, pak o devíti usneseních. Prošlo jen usnesení "
+        "Šťastného (Motoristé), že prezident ať jmenuje ministry. Osm ostatních padlo ~82:101, "
+        "včetně Jurečkova proti Turkovi jako klimatickému zmocněnci.",
     ),
     (
         "deset hlasování o obsazení vlády",
-        "16. 1. 2026, hlasování 52 až 61: nejdřív procedura pořadí (52), pak devět usnesení. Prošlo jen "
-        "Šťastného: prezident ať jmenuje ministry (53). Zamítli návrhy Jakoba (rozpočtová odpovědnost), "
-        "Zuny (vůči ministrům Zuna a Macinka), Langšádlové (klima, Ukrajina), Dvořáka (nový ministr "
-        "životního prostředí), Jurečky (proti Turkovi jako klimatickému zmocněnci) a Pospíšila "
-        "(kompetenční žaloba). Osm z deseti padlo ~82:101.",
+        "16. 1. 2026: nejdřív se hlasovalo o pořadí, pak o devíti usneseních. Prošlo jen usnesení "
+        "Šťastného (Motoristé), že prezident ať jmenuje ministry. Osm ostatních padlo ~82:101, "
+        "včetně Jurečkova proti Turkovi jako klimatickému zmocněnci.",
     ),
     (
         "rozdíl zisků VZP a ostatních pojišťoven",
