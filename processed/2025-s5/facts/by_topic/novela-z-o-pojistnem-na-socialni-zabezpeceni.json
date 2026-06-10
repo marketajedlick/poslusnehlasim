@@ -3,41 +3,36 @@
   "nazev": "Novela z. o pojistném na sociální zabezpečení",
   "datum": "16.01.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky",
+  "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky a OSVČ",
   "koho": [
-    "Koho se to týká? Živnostníků a dalších, kdo platí zálohy na sociálním pojištění sami, ne běžných zaměstnanců na výplatní pásce."
+    "Koho se to týká? Živnostníků a dalších OSVČ, kdo platí zálohy na sociálním pojištění sami — ne běžných zaměstnanců na výplatní pásce."
   ],
   "fakty": [
     {
-      "text": "Z tabule proti nikdo.",
+      "text": "náš koaliční návrh, který má živnostníkům vrátit vyměřovací základ pro odvody na sociální pojistné z 40 procent na 35 procent průměrné mzdy",
       "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_5_00939",
-      "citace": "(Z tabule proti nikdo.)"
-    },
-    {
-      "text": "Hlasování číslo 62 bylo přihlášeno 182 poslanců, pro hlasovalo 159 (Z tabule proti nikdo.).",
-      "source": "steno",
-      "steno_id": "2025_5_00939",
-      "citace": "Hlasování číslo 62 bylo přihlášeno 182 poslanců, pro hlasovalo 159 (Z tabule proti nikdo.)."
-    },
-    {
-      "text": "Dalším bodem podle schváleného programu schůze je 1.Návrh poslanců Aleny Schillerové, Andreje Babiše, Tomia Okamury, Petra Macinky, Aleše Juchelky, Karla Havlíčka, Taťány Malé, Radima Fialy a Borise Šťastného na vydání zákona, kterým se mění zákon č.",
-      "source": "steno",
-      "steno_id": "2025_5_00939",
-      "citace": "Dalším bodem podle schváleného programu schůze je 1.Návrh poslanců Aleny Schillerové, Andreje Babiše, Tomia Okamury, Petra Macinky, Aleše Juchelky, Karla Havlíčka, Taťány Malé, Radima Fialy a Borise Š"
-    },
-    {
-      "text": "Potlesk poslanců ANO.",
-      "source": "steno",
-      "kind": "scene",
       "steno_id": "2025_5_00940",
-      "citace": "(Potlesk poslanců ANO.)"
+      "citace": "náš koaliční návrh, který má živnostníkům vrátit vyměřovací základ pro odvody na sociální pojistné z 40 procent na 35 procent průměrné mzdy"
+    },
+    {
+      "text": "představuje zvýšení odvodové zátěže o dalších 715 korun měsíčně, tedy 8 580 korun ročně",
+      "source": "steno",
+      "steno_id": "2025_5_00940",
+      "citace": "představuje zvýšení odvodové zátěže o dalších 715 korun měsíčně, tedy 8 580 korun ročně"
+    },
+    {
+      "text": "Snížit budoucí důchody osob samostatně výdělečně činných měsíčně o 1 652 korun. To tady Alena Schillerová záměrně neřekla.",
+      "source": "steno",
+      "steno_id": "2025_5_00950",
+      "citace": "Snížit budoucí důchody osob samostatně výdělečně činných měsíčně o 1 652 korun. To tady Alena Schillerová záměrně neřekla."
     }
   ],
   "publikovat": true,
-  "priorita": 3,
-  "nadpis": "Živnostníci ušetří na odvodech",
+  "priorita": 2,
+  "nadpis": "Snížení záloh pro živnostníky",
+  "lead": "Koalice tlačí snížení záloh pro živnostníky o 715 korun měsíčně. Jurečka počítá, že to v budoucnu uberze z důchodu 1 652 korun.",
+  "pointa": "Schillerová mluvila o úlevě teď, opozice o ceně později. Prvé čtení přesto prošlo.",
+  "mean": "Páteční dopoledne patřilo sporu o to, jestli levnější zálohy pro OSVČ jsou pomoc, nebo záloha na nižší důchod. Sněmovna zákon v prvém čtení schválila, debata o číslech pokračuje.",
   "pocet_hlasovani": 3,
   "proslo": true,
   "signaly": {
@@ -45,7 +40,7 @@
     "pritomno_min": 165,
     "jednomyslne": false,
     "spor": true,
-    "prazdny_sal": true
+    "prazdny_sal": false
   },
   "steno_slov": 12080
 }

@@ -3,14 +3,22 @@
   "den": "pátek",
   "topic_slugs": [
     "novela-z-o-pojistnem-na-socialni-zabezpeceni",
-    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem"
+    "usneseni-ke-jmenovani-clenu-vlady"
+  ],
+  "dnesni_ucet": "Dvaceti jedna hlasování za čtyři hodiny.\nNejdřív Jurečka brzdil ministry, pak levnější odvody pro živnostníky.",
+  "zaver": "že pátek po důvěře nebyl klidný — personální blokáda padla, zálohy pro OSVČ v prvém čtení prošly.",
+  "vysledek": [
+    "* osm zákonů a usnesení schválili",
+    "* osm návrhů zamítli",
+    "* Jurečka desetkrát zkoušel zablokovat jmenování ministrů",
+    "* živnostníkům levnější zálohy, opozice počítá nižší důchod"
   ],
   "stats": {
-    "pocet_hlas": 2,
+    "pocet_hlas": 21,
     "minuty": 259,
     "end_cas": "13:34",
-    "proslo": 2,
-    "zamitnuto": 0,
+    "proslo": 8,
+    "zamitnuto": 8,
     "dlouha_debata": true
   }
 }

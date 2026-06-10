@@ -560,6 +560,19 @@ def cmd_review(args: argparse.Namespace) -> int:
     return 1 if has_warn else 0
 
 
+def cmd_glossary_audit(args: argparse.Namespace) -> int:
+    from svejk.glossary_audit import audit_obdobi, format_report
+
+    gaps = audit_obdobi(args.obdobi, args.od, args.do, export_only=args.export_only)
+    report = format_report(gaps, limit=args.limit)
+    print(report)
+    if args.out:
+        args.out.parent.mkdir(parents=True, exist_ok=True)
+        args.out.write_text(report, encoding="utf-8")
+        print(f"Uloženo: {args.out}", file=sys.stderr)
+    return 1 if gaps else 0
+
+
 def cmd_audit(args: argparse.Namespace) -> int:
     from svejk.audit import audit_obdobi, format_audit_report
 
@@ -846,6 +859,22 @@ def main() -> int:
     p_audit.add_argument("--do", type=int, default=21, help="Cislo schuze do")
     p_audit.add_argument("-o", "--out", type=Path, help="Ulozit report do souboru")
     p_audit.set_defaults(func=cmd_audit)
+
+    p_gloss = sub.add_parser(
+        "glossary-audit",
+        help="Pojmy ve facts/steno bez tooltipu v glosáři",
+    )
+    p_gloss.add_argument("--obdobi", type=int, default=2025)
+    p_gloss.add_argument("--od", type=int, default=1)
+    p_gloss.add_argument("--do", type=int, default=21)
+    p_gloss.add_argument(
+        "--export-only",
+        action="store_true",
+        help="Jen text, který jde na web (lead/mean/fakty), ne celé steno",
+    )
+    p_gloss.add_argument("--limit", type=int, default=40, help="Max. počet pojmů v reportu")
+    p_gloss.add_argument("-o", "--out", type=Path, help="Uložit report")
+    p_gloss.set_defaults(func=cmd_glossary_audit)
 
     p_val = sub.add_parser("validate", help="Kontrola glos, casu a fakt z UNL")
     p_val.add_argument("--obdobi", type=int, default=2025)
