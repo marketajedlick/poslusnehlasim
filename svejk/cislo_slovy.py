@@ -401,7 +401,7 @@ def _nahrad_zbyla_cisla(text: str) -> str:
         return text
 
     def _cas(m: re.Match[str]) -> str:
-        return cas_slovy(int(m.group(1)), int(m.group(2)))
+        return m.group(0)
 
     def _krat(m: re.Match[str]) -> str:
         return krat_slovy(int(m.group(1)))
