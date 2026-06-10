@@ -335,6 +335,41 @@ _RE_DATUM_LOC = re.compile(
     re.IGNORECASE,
 )
 _RE_CISLO = re.compile(r"\b(\d+)\b")
+_RE_MESIC_ROK = re.compile(
+    r"\b(ledna|února|března|dubna|května|června|července|srpna|září|října|listopadu|prosince|"
+    r"lednu|únoru|březnu|dubnu|květnu|červnu|červenci|srpnu|říjnu|listopadu|prosinci)\s+"
+    r"((?:19|20)\d{2})\b",
+    re.IGNORECASE,
+)
+
+
+def _je_kalendarni_rok(n: int) -> bool:
+    return 1900 <= n <= 2099
+
+
+def _rok_nebo_cislo(m: re.Match[str], text: str) -> str:
+    n = int(m.group(1))
+    start = m.start()
+    end = m.end()
+    if start > 0 and text[start - 1] == "/":
+        return str(n)
+    if end < len(text) and text[end] == "/":
+        return str(n)
+
+    if not _je_kalendarni_rok(n):
+        return cislo_slovy(n)
+
+    prefix = text[max(0, start - 20) : start].lower()
+    if re.search(r"(?:\brok[u]?\s|\broce\s|\bna\s+)$", prefix):
+        return str(n)
+    if re.search(
+        r"(ledna|února|března|dubna|května|června|července|srpna|září|října|listopadu|prosince|"
+        r"lednu|únoru|březnu|dubnu|květnu|červnu|červenci|srpnu|říjnu|prosinci)\s+$",
+        prefix,
+    ):
+        return str(n)
+
+    return f"rok {n}"
 
 
 def nahrad_hlasovani_v_textu(text: str) -> str:
@@ -383,13 +418,14 @@ def _nahrad_zbyla_cisla(text: str) -> str:
         return f"k {_poradove_loc(den)} {m.group(2).lower()}"
 
     def _cislo(m: re.Match[str]) -> str:
-        return cislo_slovy(int(m.group(1)))
+        return _rok_nebo_cislo(m, t)
 
     t = _RE_CAS.sub(_cas, text)
     t = _RE_KRAT.sub(_krat, t)
     t = _RE_TISICE.sub(_tis, t)
     t = _RE_DATUM_LOC.sub(_datum_loc, t)
     t = _RE_DATUM_GEN.sub(_datum_gen, t)
+    t = _RE_MESIC_ROK.sub(lambda m: f"{m.group(1).lower()} {m.group(2)}", t)
     t = _RE_CISLO.sub(_cislo, t)
     return t
 

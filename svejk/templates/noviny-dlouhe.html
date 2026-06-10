@@ -100,7 +100,7 @@
             <div class="bteam r"><span class="bnum">{{ content.zamitnuto }}</span><span class="blbl">{{ zamitnuto_label }}</span></div>
           </div>
           {% if content.board_note_lines %}
-          <div class="board-note">{% for line in content.board_note_lines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</div>
+          <div class="board-note">{% for line in content.board_note_lines %}{{ line | glossary }}{% if not loop.last %}<br>{% endif %}{% endfor %}</div>
           {% endif %}
         </div>
 
@@ -117,9 +117,9 @@
               <span class="hl">{{ line }}</span>
               {% endfor %}
             </h2>
-            <p class="p">{{ item.lead }}</p>
+            <p class="p">{{ item.lead | glossary }}</p>
             {% if item.mean %}
-            <p class="mean"><b>Co to znamená: </b>{{ item.mean }}</p>
+            <p class="mean"><b>Co to znamená: </b>{{ item.mean | glossary }}</p>
             {% endif %}
           </div>
         </div>
@@ -128,7 +128,7 @@
         <div class="verdict">
           <span class="qm">„</span>
           <p class="q">
-            {% if content.zaver_key %}<span class="key">{{ content.zaver_key }}</span> {% endif %}{{ content.zaver_body or content.zaver }}
+            {% if content.zaver_key %}<span class="key">{{ content.zaver_key }}</span> {% endif %}{{ (content.zaver_body or content.zaver) | glossary }}
           </p>
           <div class="sign">- Váš dobrý voják Švejk -</div>
         </div>

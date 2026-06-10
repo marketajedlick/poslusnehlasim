@@ -9,6 +9,7 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from svejk.build.day_content import DenContent, build_den_content, datum_design
+from svejk.build.glossary_markup import glossary_markup
 from svejk.build.nav import (
     Edition,
     archiv_pages_href,
@@ -94,6 +95,7 @@ def _jinja_env() -> Environment:
         autoescape=select_autoescape(["html"]),
     )
     env.filters["split_paragraphs"] = _split_paragraphs
+    env.filters["glossary"] = glossary_markup
     return env
 
 

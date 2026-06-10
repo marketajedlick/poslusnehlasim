@@ -251,6 +251,39 @@ body.is-turning{ pointer-events:none; }
   letter-spacing:.06em; text-transform:uppercase; font-size:11px; color:var(--terra);
 }
 .item.i2 .mean b{ color:var(--blue); }
+
+.term-tip{
+  position:relative;
+  border-bottom:1px dotted var(--terra);
+  cursor:help;
+  outline:none;
+}
+.item.i2 .term-tip{ border-bottom-color:var(--blue); }
+.term-tip-bubble{
+  display:none;
+  position:absolute;
+  left:50%; bottom:calc(100% + 8px);
+  transform:translateX(-50%);
+  z-index:20;
+  width:max-content;
+  max-width:min(28ch, 72vw);
+  padding:8px 10px;
+  font-size:13px;
+  font-weight:500;
+  line-height:1.4;
+  color:var(--ink);
+  background:var(--paper);
+  border:1px solid var(--ink-soft);
+  border-radius:4px;
+  box-shadow:0 4px 14px rgba(0,0,0,.12);
+  pointer-events:none;
+}
+.term-tip:hover .term-tip-bubble,
+.term-tip:focus .term-tip-bubble,
+.term-tip:focus-within .term-tip-bubble{
+  display:block;
+}
+
 .stamp{
   display:inline-block;
   font-family:'Anton',sans-serif; text-transform:uppercase;
@@ -828,9 +861,9 @@ body.archiv-page{
               <span class="hl">Rodičům přidají</span>
               
             </h2>
-            <p class="p">Rodičovský příspěvek má stoupnout z tří set padesáti na čtyři sta tisíc korun, u dvojčat a vícerčat na osm set tisíc. Platit má pro děti narozené od ledna dvě tisíce dvacet sedm a v sále se proti tomu nezvedla jediná ruka. O penězích se nehádal nikdo, zato o slovech ano: rozpravou létaly výrazy „klerofašisti“ a „lhářka“, zatímco příspěvek tiše proplul jednomyslně.</p>
+            <p class="p">Rodičovský příspěvek má stoupnout z tří set padesáti na čtyři sta tisíc korun, u dvojčat a vícerčat na osm set tisíc. Platit má pro děti narozené od ledna 2027 a v sále se proti tomu nezvedla jediná ruka. O penězích se nehádal nikdo, zato o slovech ano: rozpravou létaly výrazy „klerofašisti“ a „lhářka“, zatímco příspěvek tiše proplul jednomyslně.</p>
             
-            <p class="mean"><b>Co to znamená: </b>Zatím jde o první kolo: návrh míří do sociálního výboru a lhůtu na projednání si poslanci zkrátili na dvacet pět dnů, aby přidání stihli. Pro úplnost, loni se narodilo sedmdesát sedm tisíc šest set třicet šest dětí, nejméně za dvě stě let, takže se přidává rodičům, kterých ubývá.</p>
+            <p class="mean"><b>Co to znamená: </b>Zatím jde o <span class="term-tip" tabindex="0" role="term" aria-label="U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.">první kolo<span class="term-tip-bubble" role="tooltip">U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.</span></span>: návrh míří do sociálního výboru a lhůtu na projednání si poslanci zkrátili na dvacet pět dnů, aby přidání stihli. Pro úplnost, loni se narodilo sedmdesát sedm tisíc šest set třicet šest dětí, nejméně za dvě stě let, takže se přidává rodičům, kterých ubývá.</p>
             
           </div>
         </div>
@@ -847,7 +880,7 @@ body.archiv-page{
               <span class="hl">Volby s QR kódem</span>
               
             </h2>
-            <p class="p">Nevidomí a slabozrací voliči si budou moct volební lístky rozeznat sami: přibudou na nich QR kódy. Senátní nápad prošel zrychleně rovnou v prvním kole a pro bylo všech sto padesát pět přítomných. Senátor Canov se loučil slovy, že tu byl přesně před čtyřiceti dny a moc se mu tu líbilo, tak je tu zase; sál se pobavil a zatleskal mu.</p>
+            <p class="p">Nevidomí a slabozrací voliči si budou moct volební lístky rozeznat sami: přibudou na nich QR kódy. Senátní nápad prošel zrychleně rovnou v <span class="term-tip" tabindex="0" role="term" aria-label="U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.">prvním kole<span class="term-tip-bubble" role="tooltip">U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.</span></span> a pro bylo všech sto padesát pět přítomných. Senátor Canov se loučil slovy, že tu byl přesně před čtyřiceti dny a moc se mu tu líbilo, tak je tu zase; sál se pobavil a zatleskal mu.</p>
             
             <p class="mean"><b>Co to znamená: </b>Kromě QR kódů se k senátním volbám vrací oddělené lístky pro každého kandidáta a stát si dá pauzu se spouštěním nového počítačového systému pro správu voleb, dokud ho pořádně neotestuje. Platit to má už pro podzimní komunální a senátní volby.</p>
             
@@ -868,7 +901,7 @@ body.archiv-page{
             </h2>
             <p class="p">Balík změn pro Českou poštu a státní počítače: poště se vrací stará pravidla financování, aby nenarazila u Bruselu, a elektronická sbírka zákonů se zase odkládá, protože systém pořád není hotový. Stojanová varovala, že odklad eLegislativy nesmí být odkladem transparentnosti, a Skopeček dodal, ať se z odkladu nestane nový standard.</p>
             
-            <p class="mean"><b>Co to znamená: </b>První kolo: návrh jde do výboru pro veřejnou správu a lhůta se zkrátila na třicet dnů. Jediné, co dnes spadlo pod stůl, byl Bendův nápad přibrat k tomu ještě ústavně-právní výbor, pro bylo jen dvaašedesát poslanců.</p>
+            <p class="mean"><b>Co to znamená: </b><span class="term-tip" tabindex="0" role="term" aria-label="U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.">První kolo<span class="term-tip-bubble" role="tooltip">U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.</span></span>: návrh jde do výboru pro veřejnou správu a lhůta se zkrátila na třicet dnů. Jediné, co dnes spadlo pod stůl, byl Bendův nápad přibrat k tomu ještě ústavně-právní výbor, pro bylo jen dvaašedesát poslanců.</p>
             
           </div>
         </div>

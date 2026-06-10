@@ -251,6 +251,39 @@ body.is-turning{ pointer-events:none; }
   letter-spacing:.06em; text-transform:uppercase; font-size:11px; color:var(--terra);
 }
 .item.i2 .mean b{ color:var(--blue); }
+
+.term-tip{
+  position:relative;
+  border-bottom:1px dotted var(--terra);
+  cursor:help;
+  outline:none;
+}
+.item.i2 .term-tip{ border-bottom-color:var(--blue); }
+.term-tip-bubble{
+  display:none;
+  position:absolute;
+  left:50%; bottom:calc(100% + 8px);
+  transform:translateX(-50%);
+  z-index:20;
+  width:max-content;
+  max-width:min(28ch, 72vw);
+  padding:8px 10px;
+  font-size:13px;
+  font-weight:500;
+  line-height:1.4;
+  color:var(--ink);
+  background:var(--paper);
+  border:1px solid var(--ink-soft);
+  border-radius:4px;
+  box-shadow:0 4px 14px rgba(0,0,0,.12);
+  pointer-events:none;
+}
+.term-tip:hover .term-tip-bubble,
+.term-tip:focus .term-tip-bubble,
+.term-tip:focus-within .term-tip-bubble{
+  display:block;
+}
+
 .stamp{
   display:inline-block;
   font-family:'Anton',sans-serif; text-transform:uppercase;
@@ -868,7 +901,7 @@ body.archiv-page{
               <span class="hl">ze třetího pilíře</span>
               
             </h2>
-            <p class="p">Sněmovna schválila v prvním kole nápravu pro důchodce uvězněné v penzijním spoření po zrušení státního příspěvku, sto devatenáct hlasů pro. STAN a Piráti nevetovali. Schillerová připomněla půl milionu lidí, kteří ze systému odešli, a Jakob slíbil cílenější pozměňovací návrh ve druhém kole.</p>
+            <p class="p">Sněmovna schválila v <span class="term-tip" tabindex="0" role="term" aria-label="U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.">prvním kole<span class="term-tip-bubble" role="tooltip">U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.</span></span> nápravu pro důchodce uvězněné v penzijním spoření po zrušení státního příspěvku, sto devatenáct hlasů pro. STAN a Piráti nevetovali. Schillerová připomněla půl milionu lidí, kteří ze systému odešli, a Jakob slíbil cílenější pozměňovací návrh ve druhém kole.</p>
             
             <p class="mean"><b>Co to znamená: </b>Starobní důchodci ve třetím pilíři budou moci odejít bez sankcí a některým se vrátí i vlastní peníze. Zákon ještě čeká druhé a finální kolo.</p>
             
@@ -887,7 +920,7 @@ body.archiv-page{
               <span class="hl">Nemocnice uvidí docházející zkumavky</span>
               
             </h2>
-            <p class="p">Sněmovna schválila v prvním kole pravidla pro hlášení nedostatku laboratorních souprav, sto třináct hlasů pro, nikdo proti. Obecná rozprava proběhla bez řečníků. Jde o implementaci EU nařízení, aby nemocnice věděly dopředu, že dochází zkumavky na odběry.</p>
+            <p class="p">Sněmovna schválila v <span class="term-tip" tabindex="0" role="term" aria-label="U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.">prvním kole<span class="term-tip-bubble" role="tooltip">U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.</span></span> pravidla pro hlášení nedostatku laboratorních souprav, sto třináct hlasů pro, nikdo proti. Obecná rozprava proběhla bez řečníků. Jde o implementaci EU nařízení, aby nemocnice věděly dopředu, že dochází zkumavky na odběry.</p>
             
             <p class="mean"><b>Co to znamená: </b>Výrobci budou muset hlásit nedostatek diagnostických prostředků. Na běžného pacienta to dopadne spíš nepřímo, přes kratší čekání na výsledky v nemocnici.</p>
             

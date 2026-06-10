@@ -251,6 +251,39 @@ body.is-turning{ pointer-events:none; }
   letter-spacing:.06em; text-transform:uppercase; font-size:11px; color:var(--terra);
 }
 .item.i2 .mean b{ color:var(--blue); }
+
+.term-tip{
+  position:relative;
+  border-bottom:1px dotted var(--terra);
+  cursor:help;
+  outline:none;
+}
+.item.i2 .term-tip{ border-bottom-color:var(--blue); }
+.term-tip-bubble{
+  display:none;
+  position:absolute;
+  left:50%; bottom:calc(100% + 8px);
+  transform:translateX(-50%);
+  z-index:20;
+  width:max-content;
+  max-width:min(28ch, 72vw);
+  padding:8px 10px;
+  font-size:13px;
+  font-weight:500;
+  line-height:1.4;
+  color:var(--ink);
+  background:var(--paper);
+  border:1px solid var(--ink-soft);
+  border-radius:4px;
+  box-shadow:0 4px 14px rgba(0,0,0,.12);
+  pointer-events:none;
+}
+.term-tip:hover .term-tip-bubble,
+.term-tip:focus .term-tip-bubble,
+.term-tip:focus-within .term-tip-bubble{
+  display:block;
+}
+
 .stamp{
   display:inline-block;
   font-family:'Anton',sans-serif; text-transform:uppercase;
@@ -811,7 +844,7 @@ body.archiv-page{
             <div class="bteam r"><span class="bnum">1</span><span class="blbl">návrh zamítli</span></div>
           </div>
           
-          <div class="board-note">Jurečka zkoušel brzdit jmenování ministrů.<br>Levnější odvody pro živnostníky v prvním kole prošly.</div>
+          <div class="board-note">Jurečka zkoušel brzdit jmenování ministrů.<br>Levnější odvody pro živnostníky v <span class="term-tip" tabindex="0" role="term" aria-label="U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.">prvním kole<span class="term-tip-bubble" role="tooltip">U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.</span></span> prošly.</div>
           
         </div>
 
@@ -830,9 +863,9 @@ body.archiv-page{
               <span class="hl">mínus u důchodu</span>
               
             </h2>
-            <p class="p">Koalice tlačí snížení záloh pro živnostníky o sedm set patnáct korun měsíčně. Jurečka počítá, že to v budoucnu uberze z důchodu tisíc šest set padesát dvě korun. Schillerová mluvila o úlevě teď, opozice o ceně později. První kolo přesto prošlo.</p>
+            <p class="p">Koalice tlačí snížení záloh pro živnostníky o sedm set patnáct korun měsíčně. Jurečka počítá, že to v budoucnu uberze z důchodu tisíc šest set padesát dvě korun. Schillerová mluvila o úlevě teď, opozice o ceně později. <span class="term-tip" tabindex="0" role="term" aria-label="U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.">První kolo<span class="term-tip-bubble" role="tooltip">U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.</span></span> přesto prošlo.</p>
             
-            <p class="mean"><b>Co to znamená: </b>Páteční dopoledne patřilo sporu o to, jestli levnější zálohy pro OSVČ jsou pomoc, nebo záloha na nižší důchod. Sněmovna zákon v prvním kole schválila, debata o číslech pokračuje.</p>
+            <p class="mean"><b>Co to znamená: </b>Páteční dopoledne patřilo sporu o to, jestli levnější zálohy pro OSVČ jsou pomoc, nebo záloha na nižší důchod. Sněmovna zákon v <span class="term-tip" tabindex="0" role="term" aria-label="U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.">prvním kole<span class="term-tip-bubble" role="tooltip">U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.</span></span> schválila, debata o číslech pokračuje.</p>
             
           </div>
         </div>
@@ -860,7 +893,7 @@ body.archiv-page{
         <div class="verdict">
           <span class="qm">„</span>
           <p class="q">
-            <span class="key">Poslušně hlásím,</span> že pátek po důvěře nebyl klidný: hádali se o ministry, ale zálohy pro živnostníky v prvním kole prošly.
+            <span class="key">Poslušně hlásím,</span> že pátek po důvěře nebyl klidný: hádali se o ministry, ale zálohy pro živnostníky v <span class="term-tip" tabindex="0" role="term" aria-label="U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.">prvním kole<span class="term-tip-bubble" role="tooltip">U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.</span></span> prošly.
           </p>
           <div class="sign">- Váš dobrý voják Švejk -</div>
         </div>

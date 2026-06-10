@@ -251,6 +251,39 @@ body.is-turning{ pointer-events:none; }
   letter-spacing:.06em; text-transform:uppercase; font-size:11px; color:var(--terra);
 }
 .item.i2 .mean b{ color:var(--blue); }
+
+.term-tip{
+  position:relative;
+  border-bottom:1px dotted var(--terra);
+  cursor:help;
+  outline:none;
+}
+.item.i2 .term-tip{ border-bottom-color:var(--blue); }
+.term-tip-bubble{
+  display:none;
+  position:absolute;
+  left:50%; bottom:calc(100% + 8px);
+  transform:translateX(-50%);
+  z-index:20;
+  width:max-content;
+  max-width:min(28ch, 72vw);
+  padding:8px 10px;
+  font-size:13px;
+  font-weight:500;
+  line-height:1.4;
+  color:var(--ink);
+  background:var(--paper);
+  border:1px solid var(--ink-soft);
+  border-radius:4px;
+  box-shadow:0 4px 14px rgba(0,0,0,.12);
+  pointer-events:none;
+}
+.term-tip:hover .term-tip-bubble,
+.term-tip:focus .term-tip-bubble,
+.term-tip:focus-within .term-tip-bubble{
+  display:block;
+}
+
 .stamp{
   display:inline-block;
   font-family:'Anton',sans-serif; text-transform:uppercase;
@@ -828,9 +861,9 @@ body.archiv-page{
               <span class="hl">Skopeček třetí, Richterová ne</span>
               
             </h2>
-            <p class="p">Páteční druhé kolo doplnilo vedení Sněmovny: Jan Skopeček získal sto dvacet jedna hlasů, Olga Richterová jen třicet. Jedno křeslo místopředsedy zůstává volné. Richterová mluvila o půl milionu pirátských voličů, část koalice mezitím opustila sál. Nacher se omluvil za předčasný gong, omylem ukončil rozpravu, i když měla hned navazovat tajná volba lístky.</p>
+            <p class="p">Páteční druhé kolo doplnilo vedení Sněmovny: Jan Skopeček získal sto dvacet jedna hlasů, Olga Richterová jen třicet. Jedno křeslo místopředsedy zůstává volné. Richterová mluvila o půl milionu pirátských voličů, část koalice mezitím opustila sál. Nacher se omluvil za předčasný <span class="term-tip" tabindex="0" role="term" aria-label="Zvukové znamení, kterým předsedající ukončí rozpravu a svolá poslance k hlasování.">gong<span class="term-tip-bubble" role="tooltip">Zvukové znamení, kterým předsedající ukončí rozpravu a svolá poslance k hlasování.</span></span>, omylem ukončil rozpravu, i když měla hned navazovat <span class="term-tip" tabindex="0" role="term" aria-label="Poslanci hlasují anonymně na papírových lístcích v urně, ne tlačítkem na kartě.">tajná volba<span class="term-tip-bubble" role="tooltip">Poslanci hlasují anonymně na papírových lístcích v urně, ne tlačítkem na kartě.</span></span> lístky.</p>
             
-            <p class="mean"><b>Co to znamená: </b>Tajná volba znamená, že poslanci hlasují anonymně na papírových lístcích, ne tlačítkem na kartě. Po Bartákovi, Nacherovi a Skopečkovi chybí ještě jeden člověk do čtyřčlenného týmu.</p>
+            <p class="mean"><b>Co to znamená: </b><span class="term-tip" tabindex="0" role="term" aria-label="Poslanci hlasují anonymně na papírových lístcích v urně, ne tlačítkem na kartě.">Tajná volba<span class="term-tip-bubble" role="tooltip">Poslanci hlasují anonymně na papírových lístcích v urně, ne tlačítkem na kartě.</span></span> znamená, že poslanci hlasují anonymně na papírových lístcích, ne tlačítkem na kartě. Po Bartákovi, Nacherovi a Skopečkovi chybí ještě jeden člověk do čtyřčlenného týmu.</p>
             
           </div>
         </div>
@@ -839,7 +872,7 @@ body.archiv-page{
         <div class="verdict">
           <span class="qm">„</span>
           <p class="q">
-            <span class="key">Poslušně hlásím,</span> že pátek doplnil vedení o Skopečka, Richterová ve druhém kole tajné volby neuspěla a jedno křeslo místopředsedy zůstalo prázdné.
+            <span class="key">Poslušně hlásím,</span> že pátek doplnil vedení o Skopečka, Richterová ve druhém kole <span class="term-tip" tabindex="0" role="term" aria-label="Poslanci hlasují anonymně na papírových lístcích v urně, ne tlačítkem na kartě.">tajné volby<span class="term-tip-bubble" role="tooltip">Poslanci hlasují anonymně na papírových lístcích v urně, ne tlačítkem na kartě.</span></span> neuspěla a jedno křeslo místopředsedy zůstalo prázdné.
           </p>
           <div class="sign">- Váš dobrý voják Švejk -</div>
         </div>

@@ -251,6 +251,39 @@ body.is-turning{ pointer-events:none; }
   letter-spacing:.06em; text-transform:uppercase; font-size:11px; color:var(--terra);
 }
 .item.i2 .mean b{ color:var(--blue); }
+
+.term-tip{
+  position:relative;
+  border-bottom:1px dotted var(--terra);
+  cursor:help;
+  outline:none;
+}
+.item.i2 .term-tip{ border-bottom-color:var(--blue); }
+.term-tip-bubble{
+  display:none;
+  position:absolute;
+  left:50%; bottom:calc(100% + 8px);
+  transform:translateX(-50%);
+  z-index:20;
+  width:max-content;
+  max-width:min(28ch, 72vw);
+  padding:8px 10px;
+  font-size:13px;
+  font-weight:500;
+  line-height:1.4;
+  color:var(--ink);
+  background:var(--paper);
+  border:1px solid var(--ink-soft);
+  border-radius:4px;
+  box-shadow:0 4px 14px rgba(0,0,0,.12);
+  pointer-events:none;
+}
+.term-tip:hover .term-tip-bubble,
+.term-tip:focus .term-tip-bubble,
+.term-tip:focus-within .term-tip-bubble{
+  display:block;
+}
+
 .stamp{
   display:inline-block;
   font-family:'Anton',sans-serif; text-transform:uppercase;
@@ -830,7 +863,7 @@ body.archiv-page{
             </h2>
             <p class="p">Státní rozpočet prošel ve finálním kole, sto sedmdesát osm hlasů pro, jeden proti. Večer padly i rozpočty většiny fondů. Den trval do večera a přinesl přes sto dílčích hlasování k pozměňovacím návrhům. Závěrečné schválení navazovalo na druhé kolo ze čtvrtka čtvrtého března.</p>
             
-            <p class="mean"><b>Co to znamená: </b>Finální kolo je finální schválení rozpočtu na rok dvě tisíce dvacet šest. Schodek kolem tři sta deset miliard dělí politiku na dvě poloviny, peníze půjdou od armády po školství.</p>
+            <p class="mean"><b>Co to znamená: </b>Finální kolo je finální schválení rozpočtu na rok 2026. Schodek kolem tři sta deset miliard dělí politiku na dvě poloviny, peníze půjdou od armády po školství.</p>
             
           </div>
         </div>
@@ -849,7 +882,7 @@ body.archiv-page{
             </h2>
             <p class="p">Rozpočet fondu životního prostředí ve finále prošel, devadesát hlasů pro, třicet dvě proti. Předtím jeden návrh spadl padesát osm:osmdesát devět, ale závěrečné hlasování koalici stačilo. Den přinesl desítky hlasování k fondům i státnímu rozpočtu. SFŽP nakonec nezůstal sám na ocet, na rozdíl od prvního pokusu.</p>
             
-            <p class="mean"><b>Co to znamená: </b>SFŽP platí deštníky, čističky a zelené projekty. Schválený rozpočet fondu na rok dvě tisíce dvacet šest umožní čerpání dotací v plánovaném režimu.</p>
+            <p class="mean"><b>Co to znamená: </b>SFŽP platí deštníky, čističky a zelené projekty. Schválený rozpočet fondu na rok 2026 umožní čerpání dotací v plánovaném režimu.</p>
             
           </div>
         </div>

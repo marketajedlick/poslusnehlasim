@@ -251,6 +251,39 @@ body.is-turning{ pointer-events:none; }
   letter-spacing:.06em; text-transform:uppercase; font-size:11px; color:var(--terra);
 }
 .item.i2 .mean b{ color:var(--blue); }
+
+.term-tip{
+  position:relative;
+  border-bottom:1px dotted var(--terra);
+  cursor:help;
+  outline:none;
+}
+.item.i2 .term-tip{ border-bottom-color:var(--blue); }
+.term-tip-bubble{
+  display:none;
+  position:absolute;
+  left:50%; bottom:calc(100% + 8px);
+  transform:translateX(-50%);
+  z-index:20;
+  width:max-content;
+  max-width:min(28ch, 72vw);
+  padding:8px 10px;
+  font-size:13px;
+  font-weight:500;
+  line-height:1.4;
+  color:var(--ink);
+  background:var(--paper);
+  border:1px solid var(--ink-soft);
+  border-radius:4px;
+  box-shadow:0 4px 14px rgba(0,0,0,.12);
+  pointer-events:none;
+}
+.term-tip:hover .term-tip-bubble,
+.term-tip:focus .term-tip-bubble,
+.term-tip:focus-within .term-tip-bubble{
+  display:block;
+}
+
 .stamp{
   display:inline-block;
   font-family:'Anton',sans-serif; text-transform:uppercase;
@@ -811,7 +844,7 @@ body.archiv-page{
             <div class="bteam r"><span class="bnum">0</span><span class="blbl">návrhů zamítli</span></div>
           </div>
           
-          <div class="board-note">Mimořádná schůze kvůli přechodu na superdávku,<br>dva zákony v prvním kole, nikdo proti.</div>
+          <div class="board-note">Mimořádná schůze kvůli přechodu na superdávku,<br>dva zákony v <span class="term-tip" tabindex="0" role="term" aria-label="U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.">prvním kole<span class="term-tip-bubble" role="tooltip">U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.</span></span>, nikdo proti.</div>
           
         </div>
 
@@ -828,7 +861,7 @@ body.archiv-page{
               <span class="hl">Minimum až v červenci</span>
               
             </h2>
-            <p class="p">Sněmovna v prvním kole schválila odklad změny zákonů životního a existenčního minima z května na červenec, sto třicet sedm hlasů pro, nikdo proti. Juchelka mluvil o časové tísní a informačních systémech Úřadu práce. Zpravodajka Šafránková řekla, že jde o technickou úpravu bez změny sociální politiky. Opozice nevetovala, ale chce později doladit samotnou superdávku.</p>
+            <p class="p">Sněmovna v <span class="term-tip" tabindex="0" role="term" aria-label="U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.">prvním kole<span class="term-tip-bubble" role="tooltip">U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.</span></span> schválila odklad změny zákonů životního a existenčního minima z května na červenec, sto třicet sedm hlasů pro, nikdo proti. Juchelka mluvil o časové tísní a informačních systémech Úřadu práce. Zpravodajka Šafránková řekla, že jde o technickou úpravu bez změny sociální politiky. Opozice nevetovala, ale chce později doladit samotnou superdávku.</p>
             
             <p class="mean"><b>Co to znamená: </b>Životní a existenční minimum je základ pro výpočet dávek. Posun o dva měsíce má dát úřadům čas, aby nepřepočítávaly systémy dvakrát za sebou při přechodu na novou superdávku. Pro lidi v nouzi to znamená hlavně, že se nemění pravidla hned v květnu, ale až v létě.</p>
             

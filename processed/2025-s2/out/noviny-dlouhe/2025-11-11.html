@@ -251,6 +251,39 @@ body.is-turning{ pointer-events:none; }
   letter-spacing:.06em; text-transform:uppercase; font-size:11px; color:var(--terra);
 }
 .item.i2 .mean b{ color:var(--blue); }
+
+.term-tip{
+  position:relative;
+  border-bottom:1px dotted var(--terra);
+  cursor:help;
+  outline:none;
+}
+.item.i2 .term-tip{ border-bottom-color:var(--blue); }
+.term-tip-bubble{
+  display:none;
+  position:absolute;
+  left:50%; bottom:calc(100% + 8px);
+  transform:translateX(-50%);
+  z-index:20;
+  width:max-content;
+  max-width:min(28ch, 72vw);
+  padding:8px 10px;
+  font-size:13px;
+  font-weight:500;
+  line-height:1.4;
+  color:var(--ink);
+  background:var(--paper);
+  border:1px solid var(--ink-soft);
+  border-radius:4px;
+  box-shadow:0 4px 14px rgba(0,0,0,.12);
+  pointer-events:none;
+}
+.term-tip:hover .term-tip-bubble,
+.term-tip:focus .term-tip-bubble,
+.term-tip:focus-within .term-tip-bubble{
+  display:block;
+}
+
 .stamp{
   display:inline-block;
   font-family:'Anton',sans-serif; text-transform:uppercase;
@@ -811,7 +844,7 @@ body.archiv-page{
             <div class="bteam r"><span class="bnum">0</span><span class="blbl">návrhů zamítli</span></div>
           </div>
           
-          <div class="board-note">Dvacet devět hlasování o výborech, spor o poměrné zastoupení.<br>Richterová vs. koalice, Lang vs. Hřib.</div>
+          <div class="board-note">Dvacet devět hlasování o výborech, spor o <span class="term-tip" tabindex="0" role="term" aria-label="Počet míst ve výborech podle toho, kolik poslanců (a voličů) každá strana ve volbách získala.">poměrné zastoupení<span class="term-tip-bubble" role="tooltip">Počet míst ve výborech podle toho, kolik poslanců (a voličů) každá strana ve volbách získala.</span></span>.<br>Richterová vs. koalice, Lang vs. Hřib.</div>
           
         </div>
 
@@ -828,7 +861,7 @@ body.archiv-page{
               <span class="hl">Výbory na hraně</span>
               
             </h2>
-            <p class="p">Úterý patřilo maratonu výborů a hlasité debatě. Piráti tvrdili, že koalice maří poměrné zastoupení, Lang Hřibovi připomněl, že už není primátorem. Přesto všech devětadvacet hlasování o výborech prošlo. Kolovratník s Richterovou si vyměnili faktické poznámky o minulém období, Hřib hájil zkušenosti z Prahy. Večer přišly stálé komise a delegace.</p>
+            <p class="p">Úterý patřilo maratonu výborů a hlasité debatě. Piráti tvrdili, že koalice maří <span class="term-tip" tabindex="0" role="term" aria-label="Počet míst ve výborech podle toho, kolik poslanců (a voličů) každá strana ve volbách získala.">poměrné zastoupení<span class="term-tip-bubble" role="tooltip">Počet míst ve výborech podle toho, kolik poslanců (a voličů) každá strana ve volbách získala.</span></span>, Lang Hřibovi připomněl, že už není primátorem. Přesto všech devětadvacet hlasování o výborech prošlo. Kolovratník s Richterovou si vyměnili faktické poznámky o minulém období, Hřib hájil zkušenosti z Prahy. Večer přišly stálé komise a delegace.</p>
             
             <p class="mean"><b>Co to znamená: </b>Výbory připravují zákony před plénem. Kdo v nich sedí, určuje, jaké téma dostane prostor a kdo má většinu při hlasování.</p>
             
@@ -847,9 +880,9 @@ body.archiv-page{
               <span class="hl">Evropský výbor na půl</span>
               
             </h2>
-            <p class="p">Úterní dopoledne začalo sporem o výbor pro evropské záležitosti. V původním usnesení měl výbor po deseti místech pro koalici a opozici, koalice to pak označila za omyl a poměr změnila, sto čtyřiceti devíti hlasy pro, jeden proti. Richterová mluvila o zvyku od revoluce, že každá strana sedí ve vedení výborů podle síly. Kolovratník ji popálil: minule měli Piráti čtyři poslance a místo ve vedení Sněmovny, SPD dvacet poslanců a nic.</p>
+            <p class="p">Úterní dopoledne začalo sporem o výbor pro evropské záležitosti. V původním usnesení měl výbor po deseti místech pro koalici a opozici, koalice to pak označila za omyl a poměr změnila, sto čtyřiceti devíti hlasy pro, jeden proti. Richterová mluvila o zvyku, že místa ve výborech dostávají strany podle počtu poslanců z voleb. Kolovratník ji popálil: minule měli Piráti čtyři poslance a místo ve vedení Sněmovny, SPD dvacet poslanců a nic.</p>
             
-            <p class="mean"><b>Co to znamená: </b>V usnesení z pátého listopadu měl evropský výbor výjimečně po deseti místech pro koalici a opozici. Koalice to označila za omyl a změnou usnesení si vzala většinu jako ve všech ostatních výborech.</p>
+            <p class="mean"><b>Co to znamená: </b>Počty ve výborech určují, kdo má většinu při projednávání zákonů. Evropský výbor měl výjimečně po deseti místech pro koalici a opozici, koalice to označila za omyl a změnou usnesení si vzala většinu jako jinde.</p>
             
           </div>
         </div>

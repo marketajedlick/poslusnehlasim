@@ -251,6 +251,39 @@ body.is-turning{ pointer-events:none; }
   letter-spacing:.06em; text-transform:uppercase; font-size:11px; color:var(--terra);
 }
 .item.i2 .mean b{ color:var(--blue); }
+
+.term-tip{
+  position:relative;
+  border-bottom:1px dotted var(--terra);
+  cursor:help;
+  outline:none;
+}
+.item.i2 .term-tip{ border-bottom-color:var(--blue); }
+.term-tip-bubble{
+  display:none;
+  position:absolute;
+  left:50%; bottom:calc(100% + 8px);
+  transform:translateX(-50%);
+  z-index:20;
+  width:max-content;
+  max-width:min(28ch, 72vw);
+  padding:8px 10px;
+  font-size:13px;
+  font-weight:500;
+  line-height:1.4;
+  color:var(--ink);
+  background:var(--paper);
+  border:1px solid var(--ink-soft);
+  border-radius:4px;
+  box-shadow:0 4px 14px rgba(0,0,0,.12);
+  pointer-events:none;
+}
+.term-tip:hover .term-tip-bubble,
+.term-tip:focus .term-tip-bubble,
+.term-tip:focus-within .term-tip-bubble{
+  display:block;
+}
+
 .stamp{
   display:inline-block;
   font-family:'Anton',sans-serif; text-transform:uppercase;
@@ -811,7 +844,7 @@ body.archiv-page{
             <div class="bteam r"><span class="bnum">0</span><span class="blbl">návrhů zamítli</span></div>
           </div>
           
-          <div class="board-note">Pořad schválili osmdesát pět proti třicet osm, pak šlo jen o poradenství v bydlení.<br>Zákon o bydlení prošel první kolo, opozice chtěla celý zákon zahodit.</div>
+          <div class="board-note">Pořad schválili osmdesát pět proti třicet osm, pak šlo jen o poradenství v bydlení.<br>Zákon o bydlení prošel <span class="term-tip" tabindex="0" role="term" aria-label="U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.">první kolo<span class="term-tip-bubble" role="tooltip">U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.</span></span>, opozice chtěla celý zákon zahodit.</div>
           
         </div>
 
@@ -828,7 +861,7 @@ body.archiv-page{
               <span class="hl">Bydlení na první pokus</span>
               
             </h2>
-            <p class="p">Změna zákona o podpoře bydlení prošla první kolo, návrh na zamítnutí padl na dvacet sedm hlasů. Vláda zužuje okruh lidí u kontaktních míst, opozice varovala před devíti miliardami z EU. Dopoledne v sále znělo NATO a připravovaný zákon o cizích vazbách (opozice ho nazývá „ruský zákon“) místo bydlení. Bartoš jako bývalý ministr hájil preventivní síť, Olšáková chtěla zákon zamítnout, sněmovna ji nepustila.</p>
+            <p class="p">Změna zákona o podpoře bydlení prošla <span class="term-tip" tabindex="0" role="term" aria-label="U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.">první kolo<span class="term-tip-bubble" role="tooltip">U rozpočtu nebo volby první pokus: u zákona obrysy, u volby první hlasování před případným druhým.</span></span>, návrh na zamítnutí padl na dvacet sedm hlasů. Vláda zužuje okruh lidí u kontaktních míst, opozice varovala před devíti miliardami z EU. Dopoledne v sále znělo NATO a připravovaný zákon o cizích vazbách (opozice ho nazývá „ruský zákon“) místo bydlení. Bartoš jako bývalý ministr hájil preventivní síť, Olšáková chtěla zákon zamítnout, sněmovna ji nepustila.</p>
             
             <p class="mean"><b>Co to znamená: </b>Kontaktní místa mají pomáhat lidem v nájemní krizi dřív, než spadnou do ubytoven. Změna zákona cílí poradenství jen na zranitelné skupiny. Zákon sám byty nestaví, ale má zabránit zbytečným nákladům státu.</p>
             
