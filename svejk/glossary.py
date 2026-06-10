@@ -332,6 +332,14 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Babišův termín pro zavedené strany a elity po roce 1989, které podle něj koordinovaně proti němu stojí.",
     ),
     (
+        "polistopadovým kartelem",
+        "Babišův termín pro zavedené strany a elity po roce 1989, které podle něj koordinovaně proti němu stojí.",
+    ),
+    (
+        "tři tisíce šest set toastů",
+        "Babiš tvrdil, že Agrofert dodal 3600 toastů uprchlíkům z Ukrajiny na hlavním nádraží v roce 2022.",
+    ),
+    (
         "landsmanšaft",
         "Spolek sudetoněmeckých krajanů. Sněmovna usneseními reaguje na jeho sjezdy v Česku.",
     ),
