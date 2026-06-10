@@ -10,14 +10,18 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     (
         "deset hlasování o usneseních ke jmenování ministrů",
         "16. 1. 2026: nejdřív se hlasovalo o pořadí, pak o devíti usneseních. Prošlo jen usnesení "
-        "Šťastného (Motoristé), že prezident ať jmenuje ministry. Osm ostatních padlo ~82:101, "
-        "včetně Jurečkova proti Turkovi jako klimatickému zmocněnci.",
+        "Šťastného (Motoristé), že prezident ať jmenuje ministry. Osm ostatních padlo: Jakob "
+        "(rozpočtová odpovědnost), Zuna (dvakrát vůči ministrům), Langšádlová (klima a Ukrajina), "
+        "Dvořák (nový ministr životního prostředí), Jurečka (proti Turkovi), Pospíšil "
+        "(kompetenční žaloba).",
     ),
     (
         "deset hlasování o obsazení vlády",
         "16. 1. 2026: nejdřív se hlasovalo o pořadí, pak o devíti usneseních. Prošlo jen usnesení "
-        "Šťastného (Motoristé), že prezident ať jmenuje ministry. Osm ostatních padlo ~82:101, "
-        "včetně Jurečkova proti Turkovi jako klimatickému zmocněnci.",
+        "Šťastného (Motoristé), že prezident ať jmenuje ministry. Osm ostatních padlo: Jakob "
+        "(rozpočtová odpovědnost), Zuna (dvakrát vůči ministrům), Langšádlová (klima a Ukrajina), "
+        "Dvořák (nový ministr životního prostředí), Jurečka (proti Turkovi), Pospíšil "
+        "(kompetenční žaloba).",
     ),
     (
         "rozdíl zisků VZP a ostatních pojišťoven",
