@@ -8,15 +8,16 @@ from __future__ import annotations
 GLOSSARY: tuple[tuple[str, str], ...] = (
     # --- kontext konkrétních schůzí (delší fráze první) ---
     (
-        "čekal na jmenování ministra životního prostředí, než mohl domluvit projev",
-        "Pirát Václav Pláteník měl ve středu 14. 1. dokončit projev proti vládě. Před "
-        "obědem ho ve 14 hodin přerušili uprostřed věty. Po obědě ho předsedající Barták "
-        "nechal počkat, až v sále sedí víc ministrů, ne kvůli jednomu konkrétnímu "
-        "rezortu, ale kvůli sporu o přítomnost vlády při debatě o důvěře. Králíček "
-        "(Motoristé) to označil za pirátskou obstrukci. Teprve pak Pláteník domluvil "
-        "druhou část (začíná „Druhou prosbou…“). Ten den se zároveň hodně mluvilo o "
-        "životním prostředí: rezort vedl vicepremiér Macinka a formální jmenování "
-        "ministrem prezidentem bylo sporné.",
+        "nechal počkat, až v sále sedí víc ministrů",
+        "Pirát Václav Pláteník měl 14. 1. po obědě domluvit projev proti vládě, který "
+        "před polední pauzou přerušili uprostřed věty. Předsedající Barták (Motoristé) "
+        "ho před pokračováním nechal chvíli počkat, až v sále sedí víc ministrů. "
+        "Nešlo o jmenování ministra životního prostředí: šlo o spor, jestli má vláda "
+        "sedět v sále, když o důvěře mluví opozice. Richterová chtěla pauzu, dokud se "
+        "nevrátí Babiš; Králíček (Motoristé) to označil za pirátskou obstrukci. "
+        "Rezort životního prostředí ten den vedl vicepremiér Macinka jen jako pověřený, "
+        "prezident odmítl Filipa Turka a plnohodnotného ministra jmenoval až v únoru "
+        "(Igor Červený).",
     ),
     (
         "azbestu v Milovicích",
