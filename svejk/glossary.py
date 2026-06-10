@@ -20,6 +20,31 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "stenoprotokolu je u toho poznámka (Se smíchem.), šlo o vědomou demisi, "
         "ne o omyl.",
     ),
+    (
+        "čtyři poslance a místopředsedkyni",
+        "Kolovratník Richterové: v minulém období měli Piráti jen 4 poslance, "
+        "přesto Richterová byla místopředsedkyní Sněmovny. SPD mělo 20 poslanců "
+        "a ve vedení nebylo. Ptá se, kde je férové rozdělení, když menší strana "
+        "měla vyšší post.",
+    ),
+    (
+        "deset ku deseti",
+        "Jediný výbor, kde koalice a opozice měly na papíře stejný počet míst "
+        "(10+10). Richterová v tom viděla výjimku, koalice to přepsala na "
+        "22 členů a získala většinu.",
+    ),
+    (
+        "dvě různé funkce",
+        "Hřib vysvětluje rozdíl: místopředsedkyně Sněmovny volí celé plénum "
+        "podle koaliční dohody (Piráti se STAN měli 800 000 voličů). Předsedu "
+        "výboru volí členové výboru. Kolovratník to podle Hřiba plete záměrně.",
+    ),
+    (
+        "vedení výborů",
+        "Richterová: třicet let platilo, že strany vedou výbory podle počtu "
+        "poslanců z voleb. Předseda svolává jednání a navrhuje program, "
+        "proto na tom záleží.",
+    ),
     # --- volby a vedení sněmovny ---
     (
         "mandátový a imunitní výbor",
