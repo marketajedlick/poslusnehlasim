@@ -9,7 +9,13 @@
   ],
   "fakty": [
     {
-      "text": "Richterová kritizovala, že u evropského výboru koalice nejdřív slíbila poměr 10:10, pak ho změnila.",
+      "text": "Taťána Malá navrhla změnu kvůli technické chybě: místo 20 členů evropského výboru se omylem načetlo 22.",
+      "source": "steno",
+      "steno_id": "2025_2_00004",
+      "citace": "Navrhla jsem zařazení tohoto bodu z důvodu technické chyby při načtení počtu členů výboru pro evropské záležitosti."
+    },
+    {
+      "text": "Richterová řekla, že jediný výbor s poměrem 10:10 vypadal jako výjimka, ale koalice ho stejně přepočítala ve svůj prospěch.",
       "source": "steno",
       "steno_id": "2025_2_00006",
       "citace": "Protože tam ty počty seděly půl na půl, 10 poslanců za vznikající koalici, 10 poslanců za nás, za opozici."
@@ -20,7 +26,7 @@
       "citace": "Hlasování číslo 5, přihlášeno 189, pro 149, proti 1."
     },
     {
-      "text": "Kolovratník se v rozpravě ptal, proč Piráti ve vedení byli se čtyřmi poslanci, ale SPD s dvaceti ne.",
+      "text": "Kolovratník Richterové připomněl minulé období: Piráti 4 poslanci a místopředsedkyně, SPD 20 poslanců a ve vedení nic.",
       "source": "steno",
       "steno_id": "2025_2_00016",
       "citace": "Paní Richterová byla ve vedení Sněmovny a SPD nebylo. Tak se chci zeptat kolegyně, jestli by to vysvětlila."
@@ -29,9 +35,9 @@
   "publikovat": true,
   "priorita": 2,
   "nadpis": "Evropský výbor na půl",
-  "lead": "Úterní dopoledne začalo sporem o výbor pro evropské záležitosti. V původním usnesení měl výbor po deseti místech pro koalici a opozici, koalice to pak označila za omyl a poměr změnila — sto čtyřiceti devíti hlasy pro, jeden proti.",
-  "pointa": "Richterová mluvila o zvyku, že místa ve výborech dostávají strany podle počtu poslanců z voleb. Kolovratník ji popálil: minule měli Piráti čtyři poslance a místo ve vedení Sněmovny, SPD dvacet poslanců a nic.",
-  "mean": "Počty ve výborech určují, kdo má většinu při projednávání zákonů. Evropský výbor měl výjimečně po deseti místech pro koalici a opozici, koalice to označila za omyl a změnou usnesení si vzala většinu jako jinde.",
+  "lead": "Úterý ráno koalice přečísla evropský výbor z 20 na 22 členů. Jediný výbor s poměrem deset na deset vypadal jako výjimka, kde by spolupracovali s opozicí, ale Taťána Malá to označila za technickou chybu při načtení počtu. Hlasování číslo 5: 149 pro, 1 proti.",
+  "pointa": "Richterová řekla, že koalice si jinde stejně hlídá většinu a tady ji jen opravila. Kolovratník ji v rozpravě popálil: minule měli Piráti čtyři poslance a místopředsedkyni Sněmovny, SPD dvacet poslanců a ve vedení nic. Richterová odpověděla, že u výborů platilo třicet let poměrné zastoupení, Hřib doplnil, že místopředsedkyně a předseda výboru jsou dvě různé věci.",
+  "mean": "Počet míst ve výboru určuje, kdo má většinu při projednávání. Evropský výbor měl na papíře rozdělení deset na deset, po změně na 22 členů koalice získá většinu stejně jako ve všech ostatních výborech.",
   "pocet_hlasovani": 1,
   "proslo": true,
   "signaly": {
