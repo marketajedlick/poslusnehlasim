@@ -2,43 +2,49 @@
   "slug": "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-",
   "nazev": "Vl.n.z., kt. se mění některé z. v oblasti veřejných rozpočtů",
   "datum": "15.05.2026",
-  "verdikt": "zamiteno",
-  "predmet_lidsky": "změnách zákonů v oblasti veřejných rozpočtů a rozpočtové odpovědnosti",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": ", kt. se mění některé z. v oblasti veřejných rozpočtů",
   "koho": [
-    "Koho se to týká? Každého, kdo platí daně. Jde o to, jak moc může stát utrácet nad rámec a jaké výjimky z limitů výdajů platí."
+    "Kdo jezdí po rozbitých silnicích, ten chápe, proč se o tom hádají celé dopoledne."
   ],
   "fakty": [
     {
-      "text": "Malá řekla, že debata o tisku 90 trvala přes dvacet hodin na plénu i ve výborech.",
+      "text": "Ministryně Schillerová si přeje vystoupit až v rozpravě.",
       "source": "steno",
-      "steno_id": "2025_17_00389",
-      "citace": "Debata probíhala na plénu v prvním i ve druhém čtení celkem 5,5 hodiny, na třech zasedáních rozpočtového výboru 6 hodin."
+      "kind": "scene",
+      "steno_id": "2025_17_00115",
+      "citace": "(Ministryně Schillerová si přeje vystoupit až v rozpravě.)"
     },
     {
-      "text": "Jakob varoval před schodkem přes čtyři sta miliard a výjimkami Schillerové.",
+      "text": "Pozměňovací návrhy jsou vedeny ve sněmovní tisku 90/2, který byl doručen dne 16.",
       "source": "steno",
-      "steno_id": "2025_17_00399",
-      "citace": "Pokud budou všechny tyto výjimky využity naplno, může se schodek státního rozpočtu příští rok dostat výrazně nad hranici 400 miliard korun."
+      "steno_id": "2025_17_00115",
+      "citace": "Pozměňovací návrhy jsou vedeny ve sněmovní tisku 90/2, který byl doručen dne 16."
     },
     {
-      "text": "Vlček řekl, že vláda vypíná rozpočtová pravidla a brzdy.",
+      "text": "(Ministryně Schillerová si přeje vystoupit až v rozpravě.) Ne, ne, ne, ještě nejsme v rozpravě.",
       "source": "steno",
-      "steno_id": "2025_17_00401",
-      "citace": "Vláda Andreje Babiše se chystá vypnout rozpočtová pravidla, vypnout brzdy, které nás chránily v době covidu."
+      "steno_id": "2025_17_00115",
+      "citace": "(Ministryně Schillerová si přeje vystoupit až v rozpravě.) Ne, ne, ne, ještě nejsme v rozpravě."
     },
     {
-      "text": "Finální hlasování číslo 44 v 13:10 padlo šedesát osm proti devadesáti.",
-      "source": "votes",
-      "citace": "Hlasování číslo 44, pro 68, proti 90."
+      "text": "Pan Martin Kupka dovolil, aby schválený rozpočet SFDI na rok 2026 obsahoval nekryté výdaje za neuvěřitelných 37 miliard korun.",
+      "source": "steno",
+      "steno_id": "2025_17_00116",
+      "citace": "Pan Martin Kupka dovolil, aby schválený rozpočet SFDI na rok 2026 obsahoval nekryté výdaje za neuvěřitelných 37 miliard korun."
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Rozpočtové brzdy padly",
-  "lead": "V pátek dopoledne sněmovna zamítla vládní změnu rozpočtových zákonů, devadesát poslanců proti šedesáti osmi. Koalice chtěla rozvolnit fiskální limity, opozice mluvila o schodku přes čtyři sta miliard.",
-  "pointa": "Jakob obhajoval čtyři opoziční pozměňovací návrhy pro rezervu a silnější roli Národní rozpočtové rady. Vlček říkal, že Schillerová slíbila nic nerozvolňovat, ale ve druhém kole přidala vlastní výjimky.",
-  "mean": "Zákon měl upravit limity výdajů státu podle evropských pravidel. Sněmovna ho ve finálním kole neschválila, rozpočtová pravidla zůstávají v dosavadní podobě.",
-  "pocet_hlasovani": 1,
-  "proslo": false,
+  "nadpis": "Pravidla výdajů prošla",
+  "pocet_hlasovani": 36,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 98,
+    "pritomno_min": 152,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
   "steno_slov": 38268
 }

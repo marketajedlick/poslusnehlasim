@@ -3,37 +3,47 @@
   "nazev": "Novela z. o zdrav. prostř. a diagnostických zdrav. prostř. in vitro -",
   "datum": "24.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "hlášení nedostatku zkumavek a laboratorních souprav",
+  "predmet_lidsky": "hlášení nedostatku zkumavek v nemocnicích",
   "koho": [
-    "Koho se to týká? Nemocnic a laboratoří spíš než pacientů doma. Výrobci musí hlásit, když dochází soupravy na odběry."
+    "Koho se to týká? Lidí, co chodí na odběry v nemocnici, a sester v laboratoři."
   ],
   "fakty": [
     {
-      "text": "Návrh adaptuje nařízení EU 2024/1860 o dostupnosti zdravotnických prostředků.",
+      "text": "2 Upozorňuji, že je navrženo, abychom s návrhem zákona vyslovili souhlas již v prvém čtení.",
+      "source": "steno",
+      "steno_id": "2025_13_00145",
+      "citace": "2 Upozorňuji, že je navrženo, abychom s návrhem zákona vyslovili souhlas již v prvém čtení."
+    },
+    {
+      "text": "A dalším bodem je 5.Vládní návrh zákona, kterým se mění zákon č.",
+      "source": "steno",
+      "steno_id": "2025_13_00145",
+      "citace": "A dalším bodem je 5.Vládní návrh zákona, kterým se mění zákon č."
+    },
+    {
+      "text": "Kdo souhlasí s tím, aby předložený návrh byl přikázán k projednání ústavně-právnímu výboru jako garančnímu výboru?",
+      "source": "steno",
+      "steno_id": "2025_13_00145",
+      "citace": "Kdo souhlasí s tím, aby předložený návrh byl přikázán k projednání ústavně-právnímu výboru jako garančnímu výboru?"
+    },
+    {
+      "text": "Návrh zákona je implementační právní úpravou, která adaptuje národní právní řád na nařízení Evropského parlamentu a Rady 2024/1860 ze dne 13.",
       "source": "steno",
       "steno_id": "2025_13_00146",
       "citace": "Návrh zákona je implementační právní úpravou, která adaptuje národní právní řád na nařízení Evropského parlamentu a Rady 2024/1860 ze dne 13."
-    },
-    {
-      "text": "Hlasování číslo 52, pro 111, návrh na pokračování v prvním čtení schválen.",
-      "source": "steno",
-      "steno_id": "2025_13_00149",
-      "citace": "Hlasování číslo 52, přihlášeno 169 poslanců, pro 111, proti žádný. Návrh usnesení byl schválen."
-    },
-    {
-      "text": "Hlasování číslo 53, pro 113, zákon schválen v prvním čtení.",
-      "source": "steno",
-      "steno_id": "2025_13_00149",
-      "citace": "Hlasování číslo 53, přihlášeno 168 poslanců, pro 113, proti žádný. Návrh usnesení byl schválen."
     }
   ],
   "publikovat": true,
-  "priorita": 1,
+  "priorita": 3,
   "nadpis": "Nemocnice uvidí docházející zkumavky",
-  "lead": "Sněmovna schválila v prvním kole pravidla pro hlášení nedostatku laboratorních souprav, sto třináct hlasů pro, nikdo proti. Obecná rozprava proběhla bez řečníků.",
-  "pointa": "Jde o implementaci EU nařízení, aby nemocnice věděly dopředu, že dochází zkumavky na odběry.",
-  "mean": "Výrobci budou muset hlásit nedostatek diagnostických prostředků. Na běžného pacienta to dopadne spíš nepřímo, přes kratší čekání na výsledky v nemocnici.",
   "pocet_hlasovani": 2,
   "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 168,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
   "steno_slov": 14227
 }

@@ -2,15 +2,8 @@
   "datum": "11.11.2025",
   "den": "úterý",
   "topic_slugs": [
-    "ustaveni-vyboru-debata",
-    "zmena-usn-ps-c-13-ze-dne-5-11-2025"
-  ],
-  "dnesni_ucet": "Dvacet devět hlasování o výborech, spor o poměrné zastoupení.\nRichterová vs. koalice, Lang vs. Hřib.",
-  "zaver": "že úterý začalo hlasitou hádkou o výbory, ale koalici se podařilo protlačit všech devětadvacet hlasování o složení sněmovny.",
-  "vysledek": [
-    "* všechny výbory a stálé komise ustaveny",
-    "* změna usnesení o evropském výboru 149:1",
-    "* zasedací pořádek schválen 188:0"
+    "nav-zasedaciho-poradku-poslancu-v-jedn-sale-ps",
+    "navrh-na-stanoveni-poctu-poslancu-ve-stalych-del"
   ],
   "stats": {
     "pocet_hlas": 8,

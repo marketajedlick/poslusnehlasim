@@ -3,30 +3,20 @@
   "nazev": "Novela z. o zdrav. prostř. a diagnostických zdrav. prostř. in vitro -",
   "datum": "26.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "hlášení docházejících zdravotnických prostředků a testovacích souprav",
+  "predmet_lidsky": "hlášení nedostatku zkumavek v nemocnicích",
   "koho": [
-    "Koho se to týká? Lidí, co chodí na odběry a testy v nemocnici, a personálu v laboratořích."
+    "Koho se to týká? Lidí, co chodí na odběry v nemocnici, a sester v laboratoři."
   ],
   "fakty": [
     {
-      "text": "Výrobci budou muset předem hlásit, když přestanou dodávat prostředek, jehož výpadek by mohl ohrozit péči; hlásí to úřadům i nemocnicím, kterým dodávají.",
-      "source": "steno",
-      "steno_id": "2025_20_00106",
-      "citace": "Pokud výrobci z jakéhokoliv důvodu předvídají přerušení nebo ukončení dodávek svého prostředku, u kterého lze důvodně předpokládat, že jeho nedostupnost by mohla způsobit vážnou újmu, je jim uložena povinnost informovat příslušný orgán a zároveň hospodářské subjekty a poskytovatele zdravotních služeb, kterým takový prostředek přímo dodávají."
-    },
-    {
-      "text": "Sněmovna přijala verzi, kterou jí vrátil Senát: 153 pro, 1 proti.",
-      "source": "steno",
-      "steno_id": "2025_20_00111",
-      "citace": "Hlasování číslo 55, přihlášeno 175 poslanců, pro 153, proti 1. Konstatuji, že jsme návrh zákona ve znění schváleném Senátem přijali."
+      "text": "Nemocnice dostanou včas vědět, když hrozí nedostatek zkumavek, méně zrušených termínů a kratší čekání v chodbě.",
+      "source": "manual",
+      "note": "z glosy / TEMA_PRAVIDLA"
     }
   ],
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Nemocnice uvidí docházející zkumavky",
-  "lead": "Výrobci zdravotnických pomůcek a testovacích souprav budou muset dopředu hlásit, když přestanou dodávat něco, bez čeho se nemocnice neobejde. Prošla senátní verze, 153 hlasů proti jednomu.",
-  "pointa": "Technická úprava bez debaty: laboratoře mají dostat včasné varování před výpadkem materiálu, ne novou byrokracii pro pacienty.",
-  "mean": "Když začnou docházet testovací soupravy nebo jiný materiál, laboratoře a úřady se to dozvědí dřív, než dojde úplně. Pro pacienta to znamená menší riziko zrušených odběrů; jinak to doma nepoznáte.",
   "pocet_hlasovani": 1,
   "proslo": true,
   "signaly": {

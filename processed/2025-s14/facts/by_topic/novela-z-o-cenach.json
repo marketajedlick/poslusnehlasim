@@ -1,43 +1,48 @@
 {
   "slug": "novela-z-o-cenach",
   "nazev": "Novela z. o cenách",
-  "datum": "14.04.2026",
+  "datum": "15.04.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "regulaci cen pohonných hmot ve zkráceném jednání",
-  "koho": [
-    "Koho se to týká? Motoristy. Zákon má vládě umožnit zasahovat do cen benzínu a nafty, když trh selže."
-  ],
+  "predmet_lidsky": "cenách",
+  "koho": [],
   "fakty": [
     {
-      "text": "Okamura vyhlásil legislativní nouzi kvůli sněmovnímu tisku 163 o cenách pohonných hmot.",
-      "source": "steno",
-      "steno_id": "2025_14_00002",
-      "citace": "Dne 13. dubna tohoto roku jsem svým rozhodnutím vyhlásil stav legislativní nouze na dobu od 13. dubna 2026 do 29. května 2026."
-    },
-    {
-      "text": "Schillerová představila vládní návrh o regulaci cen pohonných hmot.",
+      "text": "526/1990 Sb., o cenách, ve znění pozdějších předpisů/sněmovní tisk 163/ – zkrácené jednání Předložený návrh uvede místopředsedkyně vlády a ministryně financí Alena Schillerová.",
       "source": "steno",
       "steno_id": "2025_14_00114",
-      "citace": "Předložený návrh uvede místopředsedkyně vlády a ministryně financí Alena Schillerová."
+      "citace": "526/1990 Sb., o cenách, ve znění pozdějších předpisů/sněmovní tisk 163/ – zkrácené jednání Předložený návrh uvede místopředsedkyně vlády a ministryně financí Alena Schillerová."
     },
     {
-      "text": "Zkrácené jednání schváleno 79:51, první čtení 100:0.",
-      "source": "votes",
-      "citace": "Hlasování číslo 48 pro 79 proti 51, hlasování číslo 49 pro 100."
+      "text": "1.Vládní návrh zákona o regulaci cen pohonných hmot vládou a o změně zákona č.",
+      "source": "steno",
+      "steno_id": "2025_14_00114",
+      "citace": "1.Vládní návrh zákona o regulaci cen pohonných hmot vládou a o změně zákona č."
     },
     {
-      "text": "Pokus o druhé čtení večer padl 64:89.",
-      "source": "votes",
-      "citace": "Hlasování číslo 50, pro 64, proti 89. Návrh byl zamítnut."
+      "text": "Poslanci odcházejí z jednacího sálu, hluk.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_14_00115",
+      "citace": "(Poslanci odcházejí z jednacího sálu, hluk.)"
+    },
+    {
+      "text": "(Poslanci odcházejí z jednacího sálu, hluk.) Jo, já taky mám času.",
+      "source": "steno",
+      "steno_id": "2025_14_00115",
+      "citace": "(Poslanci odcházejí z jednacího sálu, hluk.) Jo, já taky mám času."
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Benzín pod dohledem státu",
-  "lead": "Večer čtrnácté schůze schválili zkrácenou debatu o cenách benzínu a první kolo stovkou hlasů. Středeční noc a pátek čtyřiadvacátého dubna na tento zákon navážou.",
-  "pointa": "Vláda spustila zrychlené projednávání kvůli cenám na čerpacích stanicích. Opozice mluvila o socialistických experimentech, ale první kolo prošlo bez odporu.",
-  "mean": "Zákon má vládě dát nástroj na regulaci cen benzínu a nafty v krizových situacích. Ve zkrácené debatě jde o rychlou cestu bez standardních lhůt.",
-  "pocet_hlasovani": 3,
+  "priorita": 3,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 12,
   "proslo": true,
+  "signaly": {
+    "proti_max": 92,
+    "pritomno_min": 101,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
   "steno_slov": 14898
 }

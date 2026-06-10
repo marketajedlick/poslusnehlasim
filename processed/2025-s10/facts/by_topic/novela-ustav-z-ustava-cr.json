@@ -1,38 +1,44 @@
 {
   "slug": "novela-ustav-z-ustava-cr",
-  "nazev": "Senátní návrh ústavního zákona, kterým se mění Ústava ČR",
+  "nazev": "Novela ústav. z. - Ústava ČR",
   "datum": "03.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "rozšíření kompetencí NKÚ vůči veřejnoprávním médiím",
+  "predmet_lidsky": "novela ústav. z. - Ústava ČR",
   "koho": [
-    "Koho se to týká? Spíš institucí než občana na ulici. Jde o to, kdo kontroluje peníze veřejnoprávních médií."
+    "Občana se to netýká každý den, ale dotkne se to demokracie jako celku."
   ],
   "fakty": [
     {
-      "text": "Hnutí STAN předmětnou ústavní novelu v této chvíli, a to podtrhuji, v této chvíli, nepodpoří.",
+      "text": "přikázán",
       "source": "steno",
-      "steno_id": "2025_10_00092",
-      "citace": "Hnutí STAN předmětnou ústavní novelu v této chvíli nepodpoří."
+      "kind": "scene",
+      "steno_id": "2025_10_00135",
+      "citace": "(přikázán)"
     },
     {
-      "text": "Rozšíření působnosti NKÚ proto považuji za jeden z nejdůležitějších protikorupčních návrhů, protože posiluje prevenci.",
+      "text": "Konstatuji, že tento návrh byl (přikázán) k projednání ústavně-právním výboru jako garančním výboru.",
       "source": "steno",
-      "steno_id": "2025_10_00102",
-      "citace": "Rozšíření působnosti NKÚ považuji za jeden z nejdůležitějších protikorupčních návrhů."
+      "steno_id": "2025_10_00135",
+      "citace": "Konstatuji, že tento návrh byl (přikázán) k projednání ústavně-právním výboru jako garančním výboru."
     },
     {
-      "text": "Hlasování číslo 47, pro 154, proti nikdo. S návrhem ústavního zákona byl vysloven souhlas.",
-      "source": "votes",
-      "citace": "Hlasování číslo 47, pro 154, proti 0."
+      "text": "Otvírám tedy další bod, kterým je 5.Návrh poslance Andreje Babiše na vydání zákona, kterým se mění zákon č.",
+      "source": "steno",
+      "steno_id": "2025_10_00135",
+      "citace": "Otvírám tedy další bod, kterým je 5.Návrh poslance Andreje Babiše na vydání zákona, kterým se mění zákon č."
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "NKÚ by sahala na média",
-  "lead": "Senát poslal do sněmovny úpravu ústavy, která rozšiřuje kompetence NKÚ vůči České televizi a rozhlasu. V prvním kole prošla 154 hlasy, nikdo proti.",
-  "pointa": "Urbanová ze STAN řekla, že návrh teď nepodpoří. Volpe z Motoristů naopak mluvil o veřejné kontrole peněz v médiích.",
-  "mean": "Ústava není technická úprava. Debata je o tom, jestli má kontrolor zasahovat do veřejnoprávních médií, nebo zůstane mimo.",
-  "pocet_hlasovani": 2,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 4,
   "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 160,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
   "steno_slov": 462
 }

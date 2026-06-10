@@ -3,43 +3,49 @@
   "nazev": "Novela z. o doplňkovém penzijním spoření",
   "datum": "24.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "nápravě pro penzisty uvězněné ve třetím pilíři",
+  "predmet_lidsky": "doplňkovém penzijním spoření",
   "koho": [
-    "Koho se to týká? Starobních důchodců, kteří zůstali v doplňkovém penzijním spoření po zrušení státního příspěvku. Asi sto padesát tisíc lidí může odejít bez sankcí."
+    "Doplňkové penzijní spoření, dobrovolné odkládání peněz na důchod vedle státního."
   ],
   "fakty": [
     {
-      "text": "Fialova vláda penzistům odebrala státní příspěvek, ale neumožnila bez sankcí odejít.",
+      "text": "85 proti",
       "source": "steno",
-      "steno_id": "2025_13_00088",
-      "citace": "Klientům ve třetím penzijním pilíři s přiznaným starobním důchodem přestal být od 1. července 2024 poskytován státní příspěvek, ale nebylo jim umožněno ze systému bez sankcí odejít."
+      "kind": "scene",
+      "steno_id": "2025_13_00087",
+      "citace": "(85 proti)"
     },
     {
-      "text": "Návrh vrátí peníze asi čtrnácti tisícům lidí, stát zaplatí zhruba šedesát milionů.",
+      "text": "V hlasování číslo 46 bylo přihlášeno 171 poslanců, pro hlasovalo 5 (85 proti) a návrh usnesení nebyl schválen.",
       "source": "steno",
-      "steno_id": "2025_13_00088",
-      "citace": "Jedná se celkově ke konci roku 2025 o cirka 14 000 osob. Pro státní rozpočet půjde o výdaje ve výši zhruba 60 milionů korun."
+      "steno_id": "2025_13_00087",
+      "citace": "V hlasování číslo 46 bylo přihlášeno 171 poslanců, pro hlasovalo 5 (85 proti) a návrh usnesení nebyl schválen."
     },
     {
-      "text": "Hlasování číslo 48, pro 119, proti 3, lhůty zkráceny na 15 dnů.",
+      "text": "Nyní se dostáváme k dalšímu bodu naší schválené schůze, a to je 2.Návrh poslanců Aleny Schillerové, Patrika Nachera, Borise Šťastného, Tomia Okamury a Taťány Malé na vydání zákona, kterým se mění zákon č.",
       "source": "steno",
-      "steno_id": "2025_13_00123",
-      "citace": "Hlasování číslo 48. Přítomno 170 poslanců, pro hlasovalo 119, proti 3. Návrh na zkrácení lhůt na 15 dnů byl přijat."
+      "steno_id": "2025_13_00087",
+      "citace": "Nyní se dostáváme k dalšímu bodu naší schválené schůze, a to je 2.Návrh poslanců Aleny Schillerové, Patrika Nachera, Borise Šťastného, Tomia Okamury a Taťány Malé na vydání zákona, kterým se mění záko"
     },
     {
-      "text": "Stát se neměl chovat jako šmejd, řekla Schillerová.",
+      "text": "Potlesk v levé části sálu.",
       "source": "steno",
+      "kind": "scene",
       "steno_id": "2025_13_00088",
-      "citace": "Když bojujeme proti šmejdům, proti finančním šmejdům, tak by se stát neměl chovat jako šmejd."
+      "citace": "(Potlesk v levé části sálu.)"
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Penzistům vrátí peníze ze třetího pilíře",
-  "lead": "Sněmovna schválila v prvním kole nápravu pro důchodce uvězněné v penzijním spoření po zrušení státního příspěvku, sto devatenáct hlasů pro. STAN a Piráti nevetovali.",
-  "pointa": "Schillerová připomněla půl milionu lidí, kteří ze systému odešli, a Jakob slíbil cílenější pozměňovací návrh ve druhém kole.",
-  "mean": "Starobní důchodci ve třetím pilíři budou moci odejít bez sankcí a některým se vrátí i vlastní peníze. Zákon ještě čeká druhé a finální kolo.",
+  "priorita": 3,
+  "nadpis": "Spoření na důchod se mění",
   "pocet_hlasovani": 2,
   "proslo": true,
+  "signaly": {
+    "proti_max": 3,
+    "pritomno_min": 169,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
   "steno_slov": 7529
 }

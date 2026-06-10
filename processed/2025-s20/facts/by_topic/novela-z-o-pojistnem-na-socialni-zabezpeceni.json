@@ -3,35 +3,41 @@
   "nazev": "Novela z. o pojistném na sociální zabezpečení",
   "datum": "26.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "nižších zálohách na sociálním pojištění pro živnostníky",
+  "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky",
   "koho": [
-    "Koho se to týká? Živnostníků a dalších, kdo si platí zálohy na sociální pojištění sami, ne zaměstnanců na výplatní pásce."
+    "Koho se to týká? Živnostníků a dalších, kdo platí zálohy na sociálním pojištění sami, ne běžných zaměstnanců na výplatní pásce."
   ],
   "fakty": [
     {
-      "text": "Minimální záloha, která od ledna činí 5 720 korun, klesne na 5 005 korun měsíčně; živnostník ušetří 715 korun měsíčně a rozdíl zaplacený od ledna stát vrátí.",
+      "text": "O slovo se z místa před řečnickým pultíkem hlásí poslanec Gregor.",
       "source": "steno",
-      "steno_id": "2025_20_00115",
-      "citace": "Náš návrh tedy počítá s tím, že zvýšení minimální zálohy na sociální pojistné, která od ledna činí 5 720 korun, bude v co nejkratší době zásadně zmírněno na nezbytné minimum dané růstem průměrné mzdy v ekonomice, tedy na 5.005 korun. OSVČ každý měsíc ušetří 715 korun, za celý rok tedy 8 580 korun. Zároveň zajistíme vrácení rozdílu."
+      "kind": "scene",
+      "steno_id": "2025_20_00112",
+      "citace": "(O slovo se z místa před řečnickým pultíkem hlásí poslanec Gregor.)"
     },
     {
-      "text": "Senát zákon zamítl, sněmovna ho přehlasovala 118 hlasy; potřeba bylo 101 a nikdo nebyl proti.",
-      "source": "votes",
-      "citace": "Hlasování číslo 56, pro 118, proti 0, zdrželo se 7."
+      "text": "(O slovo se z místa před řečnickým pultíkem hlásí poslanec Gregor.) K hlasování – prosím, pan poslanec Gregor.",
+      "source": "steno",
+      "steno_id": "2025_20_00112",
+      "citace": "(O slovo se z místa před řečnickým pultíkem hlásí poslanec Gregor.) K hlasování – prosím, pan poslanec Gregor."
     },
     {
-      "text": "Schillerová: opozice podle ní zvedla odvody živnostníkům dohromady zhruba o 50 000 korun, senátor Lochman varoval, že nižší zálohy znamenají nižší důchody.",
+      "text": "589/1992 Sb., o pojistném na sociální zabezpečení a příspěvku na státní politiku zaměstnanosti, ve znění pozdějších předpisů/sněmovní tisk 11/7/ – zamítnuto Senátem Tento návrh zákona jsme obdrželi jako sněmovní tisk 11/8.",
       "source": "steno",
-      "steno_id": "2025_20_00121",
-      "citace": "Když někdo bude mít nižší zálohy a ty minimální a za 20 let se podívá na to, že bude mít nízký důchod, tak stát ho, kdybychom to měli dát do uvozovek, hlady rozhodně umřít nenechá."
+      "steno_id": "2025_20_00112",
+      "citace": "589/1992 Sb., o pojistném na sociální zabezpečení a příspěvku na státní politiku zaměstnanosti, ve znění pozdějších předpisů/sněmovní tisk 11/7/ – zamítnuto Senátem Tento návrh zákona jsme obdrželi ja"
+    },
+    {
+      "text": "V sále panuje značný hluk, poslanci se baví mezi sebou, telefonují.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_20_00118",
+      "citace": "(V sále panuje značný hluk, poslanci se baví mezi sebou, telefonují.)"
     }
   ],
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Živnostníci ušetří na odvodech",
-  "lead": "Živnostníkům klesne minimální záloha na sociální pojištění z 5 720 na 5 005 korun měsíčně. Senát to zamítl, sněmovna ho ve 22 hodin přehlasovala 118 hlasy, proti nebyl nikdo.",
-  "pointa": "Schillerová počítala úsporu 715 korun měsíčně, Lochman ze Senátu varoval, že nižší zálohy znamenají nižší důchod. Koalice senátorské veto přehlasovala bez jediného hlasu proti.",
-  "mean": "Kdo si platí zálohy sám, ušetří 715 korun měsíčně a rozdíl zaplacený od ledna mu stát vrátí. Háček připomněl Senát: míň odvodů dnes znamená o něco míň důchodu za dvacet let.",
   "pocet_hlasovani": 1,
   "proslo": true,
   "signaly": {
@@ -39,7 +45,7 @@
     "pritomno_min": 158,
     "jednomyslne": true,
     "spor": false,
-    "prazdny_sal": false
+    "prazdny_sal": true
   },
   "steno_slov": 8247
 }

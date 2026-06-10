@@ -3,41 +3,49 @@
   "nazev": "Novela z. o státní sociální podpoře",
   "datum": "15.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "odložení digitalizace dávek státní sociální podpory na Úřadu práce",
+  "predmet_lidsky": "státní sociální podpoře",
   "koho": [
-    "Koho se to týká? Rodiny čekající na příspěvek na bydlení, přídavek na dítě nebo další dávky z Úřadu práce."
+    "Pokud chodíte na Úřad práce pro příspěvek na bydlení nebo přídavek na dítě, nemusíte se zatím bát, že by se vám všechno přes noc přeházelo."
   ],
   "fakty": [
     {
-      "text": "Juchelka řekl, že úřad nestihne digitalizaci k 1. červenci kvůli superdávce.",
+      "text": "Ministr Juchelka reaguje mimo mikrofon.",
       "source": "steno",
-      "steno_id": "2025_19_00014",
-      "citace": "Cílem návrhu je oddálení náběhu digitalizace a souvisejících změn ve způsobu administrace dávek státní sociální podpory, ke kterému má dojít k 1. červenci tohoto roku."
+      "kind": "scene",
+      "steno_id": "2025_19_00013",
+      "citace": "(Ministr Juchelka reaguje mimo mikrofon.)"
     },
     {
-      "text": "Hřib a Richterová chtěli navýšit rodičák na 420 000 a valorizaci.",
+      "text": "/sněmovní tisk 124/ – třetí čtení Prosím, aby místo u stolku zpravodajů zaujal za navrhovatele poslanec Aleš Juchelka a zpravodajka garančního výboru poslankyně Renáta Oulehlová.",
       "source": "steno",
-      "steno_id": "2025_19_00003",
-      "citace": "Navrhujeme, aby to bylo 420 000 a hlavně aby se nastavila pravidelná valorizace."
+      "steno_id": "2025_19_00013",
+      "citace": "/sněmovní tisk 124/ – třetí čtení Prosím, aby místo u stolku zpravodajů zaujal za navrhovatele poslanec Aleš Juchelka a zpravodajka garančního výboru poslankyně Renáta Oulehlová."
     },
     {
-      "text": "Pozměňovací návrhy Pirátů a Blišťanové k rodičáku padly.",
-      "source": "votes",
-      "citace": "Hlasování číslo 4 až 6, všechna zamítnuta."
+      "text": "Pozměňovací návrhy jsou uvedeny ve sněmovním tisku 124/3, který byl doručen dne 6.",
+      "source": "steno",
+      "steno_id": "2025_19_00013",
+      "citace": "Pozměňovací návrhy jsou uvedeny ve sněmovním tisku 124/3, který byl doručen dne 6."
     },
     {
-      "text": "Finální hlasování číslo 7 v 09:48, sto dvacet osm hlasů pro.",
-      "source": "votes",
-      "citace": "Hlasování číslo 7, pro 128, proti nikdo."
+      "text": "Hlasité hovory v sále.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_19_00016",
+      "citace": "(Hlasité hovory v sále.)"
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Dávky se digitalizují později",
-  "lead": "V pátek ráno sněmovna ve finálním kole schválila odklad digitalizace dávek státní sociální podpory, sto dvacet osm hlasů proti nule. Navazuje na schválení ze 6. května na šestnácté schůzi. Piráti místo toho tlačili rodičák na 420 000, koalice jejich návrhy zamítla.",
-  "pointa": "Juchelka hájil technickou změnu kvůli kapacitám IT po superdávce. Martínková Španihelová mluvila o valorizaci rodičovského příspěvku, Jurečka apeloval na shodu o péči.",
-  "mean": "Dávky z Úřadu práce se zatím nebudou převádět do plně digitálního režimu podle původního harmonogramu. Směr digitalizace zůstává, mění se tempo.",
-  "pocet_hlasovani": 1,
+  "priorita": 3,
+  "nadpis": "Dávky se mění",
+  "pocet_hlasovani": 5,
   "proslo": true,
+  "signaly": {
+    "proti_max": 74,
+    "pritomno_min": 150,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
   "steno_slov": 3554
 }

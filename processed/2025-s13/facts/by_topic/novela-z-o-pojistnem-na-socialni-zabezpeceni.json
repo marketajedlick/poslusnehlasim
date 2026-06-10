@@ -5,47 +5,45 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky",
   "koho": [
-    "Koho se to týká? Živnostníků a OSVČ na hlavní činnost. Minimální záloha klesne z 40 na 35 procent průměrné mzdy, úspora zhruba sedm set korun měsíčně."
+    "Koho se to týká? Živnostníků a dalších, kdo platí zálohy na sociálním pojištění sami, ne běžných zaměstnanců na výplatní pásce."
   ],
   "fakty": [
     {
-      "text": "Od ledna 2026 vzrostl minimální vyměřovací základ OSVČ na 40 procent průměrné mzdy.",
+      "text": "Pozměňovací návrhy jsou uvedeny ve sněmovním tisku 11/5, který byl doručen dne 5.",
+      "source": "steno",
+      "steno_id": "2025_13_00201",
+      "citace": "Pozměňovací návrhy jsou uvedeny ve sněmovním tisku 11/5, který byl doručen dne 5."
+    },
+    {
+      "text": "589/1992 Sb.,o pojistném na sociální zabezpečení a příspěvku na státní politiku zaměstnanosti, ve znění pozdějších předpisů /sněmovní tisk 11/ - třetí čtení Prosím, aby místo u stolku zpravodajů zaujal za navrhovatele ministr práce a sociálních věcí Aleš Juchelka a zpravodaj garančního výboru pro sociální politiku posl",
+      "source": "steno",
+      "steno_id": "2025_13_00201",
+      "citace": "589/1992 Sb.,o pojistném na sociální zabezpečení a příspěvku na státní politiku zaměstnanosti, ve znění pozdějších předpisů /sněmovní tisk 11/ - třetí čtení Prosím, aby místo u stolku zpravodajů zauja"
+    },
+    {
+      "text": "Nyní bychom tedy přešli k prvnímu bodu dnešního programu, což je 55.",
+      "source": "steno",
+      "steno_id": "2025_13_00201",
+      "citace": "Nyní bychom tedy přešli k prvnímu bodu dnešního programu, což je 55."
+    },
+    {
+      "text": "Ten předložený návrh, který má za cíl vrátit výši minimálního vyměřovacího základu osob samostatně výdělečně činných, vykonávajících hlavní samostatnou činnost, na úroveň, která byla zákonem stanovena pro rok 2025, se dostává do třetího čtení.",
       "source": "steno",
       "steno_id": "2025_13_00202",
-      "citace": "Od 1. ledna 2026 došlo ke zvýšení minimálního měsíčního vyměřovacího základu osob samostatně výdělečně činných vykonávajících hlavní samostatnou výdělečnou činnost na 40 procent průměrné mzdy."
-    },
-    {
-      "text": "Návrh vrací základ na úroveň roku 2025, tedy na 35 procent.",
-      "source": "steno",
-      "steno_id": "2025_13_00202",
-      "citace": "Ten předložený návrh, který má za cíl vrátit výši minimálního vyměřovacího základu osob samostatně výdělečně činných na úroveň, která byla zákonem stanovena pro rok 2025."
-    },
-    {
-      "text": "První hlasování o zákonu bylo zmatečné, předsedající nepřečetl celé usnesení.",
-      "source": "steno",
-      "steno_id": "2025_13_00303",
-      "citace": "Já musím prohlásit to předchozí hlasování jako zmatečné, protože je povinností, abych vám přečetl celý návrh usnesení."
-    },
-    {
-      "text": "Hlasování číslo 80, pro 112, proti 9, zákon schválen.",
-      "source": "steno",
-      "steno_id": "2025_13_00303",
-      "citace": "Hlasování číslo 80, přihlášeno 171 poslanců, pro 112 poslanců, proti 9. Návrh usnesení byl přijat."
-    },
-    {
-      "text": "Doplňující usnesení k nízkým důchodům OSVČ padlo 81:3.",
-      "source": "steno",
-      "steno_id": "2025_13_00309",
-      "citace": "Hlasování číslo 81, přihlášeno 174 poslanců, pro 81, proti 3 poslanci. Návrh usnesení nebyl přijat."
+      "citace": "Ten předložený návrh, který má za cíl vrátit výši minimálního vyměřovacího základu osob samostatně výdělečně činných, vykonávajících hlavní samostatnou činnost, na úroveň, která byla zákonem stanovena"
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Živnostníkům klesnou odvody",
-  "lead": "Sněmovna ve finálním kole schválila snížení minimálních sociálních záloh pro živnostníky, sto dvanáct hlasů pro. Předtím předsedající prohlásil první hlasování za zmatečné.",
-  "pointa": "Juchelka chtěl vrátit základ z 40 na 35 procent průměrné mzdy. Doplňující usnesení o nízkých důchodech OSVČ pak padlo, protože na ně nebylo dost hlasů.",
-  "mean": "Živnostníci na hlavní činnost zaplatí nižší minimální zálohu na sociálním pojištění, úspora je zhruba sedm set korun měsíčně. Zaměstnance na výplatní pásce se to netýká.",
+  "nadpis": "Živnostníci ušetří na odvodech",
   "pocet_hlasovani": 12,
   "proslo": true,
+  "signaly": {
+    "proti_max": 108,
+    "pritomno_min": 104,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
   "steno_slov": 18364
 }

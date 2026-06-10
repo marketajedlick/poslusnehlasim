@@ -1,34 +1,50 @@
 {
   "slug": "navrh-pravidel-hospodareni-poslaneckych-klubu-pr",
-  "nazev": "Návrh Pravidel hospodaření poslaneckých klubů",
+  "nazev": "Návrh Pravidel hospodaření poslaneckých klubů pro rok 2026",
   "datum": "12.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "pravidel hospodaření poslaneckých klubů",
+  "predmet_lidsky": "návrh Pravidel hospodaření poslaneckých klubů pro rok 2026",
   "koho": [
-    "Koho se to týká? Politických stran ve sněmovně. Daňový poplatník platí provoz klubů."
+    "Občana se to netýká, to platí daňový poplatník, ale ne u pokladny v obchodě."
   ],
   "fakty": [
-    {
-      "text": "Hlasování číslo 251, pro 127, proti nikdo. Návrh byl přijat.",
-      "source": "steno",
-      "steno_id": "2025_10_01490",
-      "citace": "Hlasování číslo 251, pro 127, proti nikdo. Návrh byl přijat."
-    },
     {
       "text": "Poslankyně Vesecká žádá kolegu v poslanecké lavici, aby ji odhlásil.",
       "source": "steno",
       "kind": "scene",
       "steno_id": "2025_10_01487",
       "citace": "(Poslankyně Vesecká žádá kolegu v poslanecké lavici, aby ji odhlásil.)"
+    },
+    {
+      "text": "Přihlášeno 126 poslanců, (Poslankyně Vesecká žádá kolegu v poslanecké lavici, aby ji odhlásil.), pro 121, proti nikdo.",
+      "source": "steno",
+      "steno_id": "2025_10_01487",
+      "citace": "Přihlášeno 126 poslanců, (Poslankyně Vesecká žádá kolegu v poslanecké lavici, aby ji odhlásil.), pro 121, proti nikdo."
+    },
+    {
+      "text": "(Poslankyně Vesecká: Děkuji.) Tak a vrhneme se na další bod.",
+      "source": "steno",
+      "steno_id": "2025_10_01487",
+      "citace": "(Poslankyně Vesecká: Děkuji.) Tak a vrhneme se na další bod."
+    },
+    {
+      "text": "Pevná částka na kluby je 27 000 korun, variabilní částka na člena klubu vládní strany 5 845 korun a variabilní částka na člena klubu nevládní strany 7 599 korun, koeficient 1,3.",
+      "source": "steno",
+      "steno_id": "2025_10_01488",
+      "citace": "Pevná částka na kluby je 27 000 korun, variabilní částka na člena klubu vládní strany 5 845 korun a variabilní částka na člena klubu nevládní strany 7 599 korun, koeficient 1,3."
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Pravidla pro kluby",
-  "lead": "Sněmovna schválila pravidla hospodaření poslaneckých klubů, 127 hlasů pro, nikdo proti.",
-  "pointa": "Okamura vedl hlasování o rezignacích a nominacích do orgánů ještě před zákony.",
-  "mean": "Každý klub dostává z rozpočtu sněmovny peníze na provoz. Pravidla říkají, za co je může utratit.",
+  "priorita": 3,
+  "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
   "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 132,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
   "steno_slov": 509
 }

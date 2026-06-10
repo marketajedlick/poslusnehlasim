@@ -3,31 +3,47 @@
   "nazev": "Novela z. o rostlinolékařské péči - EU",
   "datum": "10.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "rostlinolékařské péči a evidenci postřiků",
+  "predmet_lidsky": "rostlinolékařské péči",
   "koho": [
-    "Koho se to týká? Hlavně farmářů a podnikatelů v zemědělství. Běžný občan v bytě to prakticky neřeší."
+    "Koho se to týká? Hlavně farmářů a podnikatelů v zemědělství, běžný občan v bytě to prakticky neřeší."
   ],
   "fakty": [
     {
-      "text": "Stěžejním cílem návrhu je zajištění souladu s evropskými nařízeními v oblasti statistiky používání přípravků na ochranu rostlin.",
-      "source": "steno",
-      "steno_id": "2025_10_00902",
-      "citace": "Stěžejním cílem návrhu je zajištění souladu s evropskými nařízeními v oblasti statistiky používání přípravků na ochranu rostlin."
-    },
-    {
-      "text": "Hlasování číslo 100, pro 146, proti nikdo. S návrhem zákona byl vysloven souhlas.",
+      "text": "326/2004 Sb., o rostlinolékařské péči a o změně některých souvisejících zákonů, ve znění pozdějších předpisů/sněmovní tisk 48/ - prvé čtení Z pověření vlády předložený návrh uvede ministr zemědělství Martin Šebestyán.",
       "source": "steno",
       "steno_id": "2025_10_00901",
-      "citace": "Hlasování číslo 100, pro 146, proti nikdo. S návrhem zákona byl vysloven souhlas."
+      "citace": "326/2004 Sb., o rostlinolékařské péči a o změně některých souvisejících zákonů, ve znění pozdějších předpisů/sněmovní tisk 48/ - prvé čtení Z pověření vlády předložený návrh uvede ministr zemědělství "
+    },
+    {
+      "text": "Vypořádali jsme se se všemi návrhy a pokud nikdo není proti, končím projednávání prvního čtení bodu číslo 8 a nyní přistoupíme k projednávání bodu číslo 17.Vládní návrh zákona, kterým se mění zákon č.",
+      "source": "steno",
+      "steno_id": "2025_10_00901",
+      "citace": "Vypořádali jsme se se všemi návrhy a pokud nikdo není proti, končím projednávání prvního čtení bodu číslo 8 a nyní přistoupíme k projednávání bodu číslo 17.Vládní návrh zákona, kterým se mění zákon č."
+    },
+    {
+      "text": "Kdo je pro, aby byl přikázán tento návrh k projednání výboru pro bezpečnost jako dalšímu.",
+      "source": "steno",
+      "steno_id": "2025_10_00901",
+      "citace": "Kdo je pro, aby byl přikázán tento návrh k projednání výboru pro bezpečnost jako dalšímu."
+    },
+    {
+      "text": "Stěžejním cílem návrhu je zajištění souladu s evropskými nařízeními v oblasti statistiky používání přípravků na ochranu rostlin a vedení záznamu používání přípravku na ochranu rostlin.",
+      "source": "steno",
+      "steno_id": "2025_10_00902",
+      "citace": "Stěžejním cílem návrhu je zajištění souladu s evropskými nařízeními v oblasti statistiky používání přípravků na ochranu rostlin a vedení záznamu používání přípravku na ochranu rostlin."
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Postřiky mají nová pravidla",
-  "lead": "Změna zákona o rostlinolékařské péči prošla v prvním kole, 146 hlasů pro, nikdo proti. Farmáři budou lépe evidovat postřiky podle EU.",
-  "pointa": "Předtím opozice chtěla zákon o digitální ekonomice zahodit (7:68), sněmovna to odmítla a návrh poslala dál. Zemědělský zákon šel hladce.",
-  "mean": "Česko musí sladit pravidla s Bruselem. Stát chce přehled o pesticidech v praxi, ne novou daň pro občana.",
-  "pocet_hlasovani": 2,
+  "pocet_hlasovani": 4,
   "proslo": true,
+  "signaly": {
+    "proti_max": 50,
+    "pritomno_min": 162,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
   "steno_slov": 14598
 }

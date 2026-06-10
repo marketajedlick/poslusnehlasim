@@ -3,42 +3,39 @@
   "nazev": "Vl.n.z. o evidenci tržeb - EU",
   "datum": "03.06.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "návratu elektronické evidence tržeb",
-  "koho": [
-    "Koho se to týká? Podnikatelů a živnostníků, kteří přijímají tržby; zákazník pozná leda to, že nedostane povinnou účtenku."
-  ],
+  "predmet_lidsky": "o evidenci tržeb",
+  "koho": [],
   "fakty": [
     {
-      "text": "Schillerová předložila novou evidenci tržeb, druhou generaci EET: má platit od ledna 2027 a obejít se bez povinného tištění účtenek.",
-      "source": "steno",
-      "steno_id": "2025_20_01033",
-      "citace": "Přicházíme s EET 2.0, které stojí na několika zcela nových principech a které by podle našeho návrhu mělo začít platit od ledna 2027. Za prvé, nezavádí povinnost tisknout účtenky, to znamená, žádné povinné tiskárny, žádné stohy papíru kvůli evidenci."
-    },
-    {
-      "text": "Vláda slibuje 15 miliard navíc; Hřib připomněl, že první EET sliboval 10 miliard za tři roky, a označil nové číslo za hausnumero.",
-      "source": "steno",
-      "steno_id": "2025_20_01081",
-      "citace": "Teď se tady najednou objevuje nějaké hausumero, které je zhruba více než třikrát větší za rok než to, co bylo tvrzeno Ministerstvem financí v roce 2017."
-    },
-    {
-      "text": "Návrhy TOP 09 a ODS na zamítnutí či vrácení spadly pod stůl (52:94 a 33:100) a zákon postoupil z prvního kola do výborů.",
-      "source": "votes",
-      "citace": "Hlasování číslo 174: pro 33, proti 100, zamítnuto. Hlasování číslo 175: pro 52, proti 94, zamítnuto. Hlasování číslo 176: pro 144, proti 1, přijato."
-    },
-    {
-      "text": "Schillerová v závěru debaty: posedlá EET prý není.",
+      "text": "Silný hluk v sále.",
       "source": "steno",
       "kind": "scene",
-      "steno_id": "2025_20_01083",
-      "citace": "Já skutečně znovu zopakuji, já nejsem posedlá EET. A věřte, že bych si našla jiné zaměstnání teď v tom volebním období a mám ho dost."
+      "steno_id": "2025_20_01032",
+      "citace": "(Silný hluk v sále.)"
+    },
+    {
+      "text": "29.Vládní návrh zákona o evidenci tržeb a o změně některých dalších zákonů/sněmovní tisk 189/ – prvé čtení Takzvané EET.",
+      "source": "steno",
+      "steno_id": "2025_20_01032",
+      "citace": "29.Vládní návrh zákona o evidenci tržeb a o změně některých dalších zákonů/sněmovní tisk 189/ – prvé čtení Takzvané EET."
+    },
+    {
+      "text": "Jan Skopeček od 16.45 do 20 z pracovních důvodů a Marek Výborný od 18.45 do 21 z pracovních důvodů.",
+      "source": "steno",
+      "steno_id": "2025_20_01032",
+      "citace": "Jan Skopeček od 16.45 do 20 z pracovních důvodů a Marek Výborný od 18.45 do 21 z pracovních důvodů."
+    },
+    {
+      "text": "Potlesk koaličních poslanců.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_20_01033",
+      "citace": "(Potlesk koaličních poslanců.)"
     }
   ],
-  "publikovat": true,
+  "publikovat": false,
   "priorita": 3,
-  "nadpis": "EET se vrací, tentokrát bez účtenek",
-  "lead": "Deset let po první verzi se do sněmovny vrátila elektronická evidence tržeb. Ministryně Schillerová slibuje start od ledna 2027 bez povinných účtenek a 15 miliard navíc; návrhy na zamítnutí spadly a zákon prošel prvním kolem do výborů.",
-  "pointa": "Opozice číslu 15 miliard nevěří, Hřib mu řekl hausnumero. Schillerová kontrovala, že posedlá EET není a že by si jiné zaměstnání našla.",
-  "mean": "Kdo podniká, tomu se od roku 2027 může vrátit povinnost evidovat tržby, tentokrát bez povinných tiskáren a účtenek. Zatím je to první kolo: zákon teď proberou výbory a hádka o to, kolik to státu vynese, pojede dál.",
+  "nadpis": "Prošlo to",
   "pocet_hlasovani": 6,
   "proslo": true,
   "signaly": {

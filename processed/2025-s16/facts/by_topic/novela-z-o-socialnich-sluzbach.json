@@ -3,36 +3,48 @@
   "nazev": "Novela z. o sociálních službách",
   "datum": "06.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "převodu péče a dávek OZP z Úřadu práce na ÚSSZ",
+  "predmet_lidsky": "sociálních službách",
   "koho": [
-    "Koho se to týká? Lidi se zdravotním postižením a rodiny, které řeší péči, průkaz OZP nebo příspěvek na péči."
+    "Pořád půjdete pro péči o staré rodiče nebo hendikepované, zatím pořád na Úřad práce."
   ],
   "fakty": [
-    {
-      "text": "Juchelka už v dubnu navrhoval posunout převod kompetencí z Úřadu práce na ÚSSZ na červen 2028.",
-      "source": "manual",
-      "note": "citace z 14. schůze (22. 4.), steno 2025_14_01093",
-      "citace": "Posunout převod kompetencí z Úřadu práce na územní správy sociálního zabezpečení z 1. července 2026 na 1. června 2028."
-    },
-    {
-      "text": "Hlasování číslo 70, sto jedenáct hlasů pro.",
-      "source": "votes",
-      "citace": "Hlasování číslo 70, pro 111, proti 0."
-    },
     {
       "text": "7.Návrh poslanců Aleše Juchelky a Jany Pastuchové na vydání zákona, kterým se mění zákon č.",
       "source": "steno",
       "steno_id": "2025_16_00508",
       "citace": "7.Návrh poslanců Aleše Juchelky a Jany Pastuchové na vydání zákona, kterým se mění zákon č."
+    },
+    {
+      "text": "329/2011 Sb., o poskytování dávek osobám se zdravotním postižením a o změně souvisejících zákonů, ve znění pozdějších předpisů, a další související zákony/sněmovní tisk 125/ – druhé čtení Prosím, aby předložený návrh uvedla – uvedl, ano uvedl za navrhovatele poslanec Igor Hendrych.",
+      "source": "steno",
+      "steno_id": "2025_16_00508",
+      "citace": "329/2011 Sb., o poskytování dávek osobám se zdravotním postižením a o změně souvisejících zákonů, ve znění pozdějších předpisů, a další související zákony/sněmovní tisk 125/ – druhé čtení Prosím, aby "
+    },
+    {
+      "text": "108/2006 Sb., o sociálních službách, ve znění pozdějších předpisů, zákon č.",
+      "source": "steno",
+      "steno_id": "2025_16_00508",
+      "citace": "108/2006 Sb., o sociálních službách, ve znění pozdějších předpisů, zákon č."
+    },
+    {
+      "text": "Hluk v sále.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_16_00509",
+      "citace": "(Hluk v sále.)"
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Péče zůstane na ÚP déle",
-  "lead": "Ve středu v deset hodin večer schválili změnu sociálních služeb, sto jedenáct hlasů proti nule. Převod péče pro hendikepované z Úřadu práce na sociální správu se posouvá na rok 2028. Finální kolo přijde na mimořádné schůzi 15. května.",
-  "pointa": "Jde o navazující změnu k reformě sociálních dávek. Tentokrát prošla až po celodenní blokaci kvůli sudetoněmeckému sjezdu.",
-  "mean": "Lidé s průkazem OZP a příspěvkem na péči zatím zůstanou na Úřadu práce. Velký přesun přijde až za dva roky.",
+  "priorita": 3,
+  "nadpis": "Úřad práce zůstává na svém místě",
   "pocet_hlasovani": 1,
   "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 112,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
   "steno_slov": 5245
 }

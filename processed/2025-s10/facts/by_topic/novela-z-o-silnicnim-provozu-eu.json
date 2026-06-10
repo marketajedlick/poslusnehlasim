@@ -32,9 +32,17 @@
       "citace": "Návrh zákona stanoví základní pravidla směřující ke splnění povinnosti České republiky zajistit, aby 27 kategorií dat vztahujících se k poskytování vybraných služeb inteligentních dopravních systémů b"
     }
   ],
-  "publikovat": false,
-  "priorita": 0,
+  "publikovat": true,
+  "priorita": 3,
   "nadpis": "Řidiči to pocítí jen málo",
   "pocet_hlasovani": 4,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 81,
+    "pritomno_min": 152,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 7553
 }

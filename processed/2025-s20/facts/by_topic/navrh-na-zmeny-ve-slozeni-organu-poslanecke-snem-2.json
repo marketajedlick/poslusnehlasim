@@ -3,20 +3,40 @@
   "nazev": "Návrh na změny ve složení orgánů Poslanecké sněmovny",
   "datum": "03.06.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "výměnách poslanců ve výborech a komisích",
+  "predmet_lidsky": "návrh na změny ve složení orgánů Poslanecké sněmovny",
   "koho": [
     "Občana se netýká, leda že zná někoho z poslanců osobně."
   ],
   "fakty": [
     {
-      "text": "Rezignace a nominace ve výborech prošly bez sporu, 158:0 a 155:0.",
-      "source": "votes",
-      "citace": "Hlasování číslo 172: pro 158, proti nikdo. Hlasování číslo 173: pro 155, proti nikdo."
+      "text": "Následně, protože tato volba nebyla realizována tady na plénu, tak jsme ještě vyhlásili jednu lhůtu na žádost kolegů z poslaneckého klubu KDU-ČSL, ta druhá lhůta byla do 26.",
+      "source": "steno",
+      "steno_id": "2025_20_00308",
+      "citace": "Následně, protože tato volba nebyla realizována tady na plénu, tak jsme ještě vyhlásili jednu lhůtu na žádost kolegů z poslaneckého klubu KDU-ČSL, ta druhá lhůta byla do 26."
+    },
+    {
+      "text": "Ten jsme promítli do usnesení volební komise per rollam číslo 73 ze 14.",
+      "source": "steno",
+      "steno_id": "2025_20_00308",
+      "citace": "Ten jsme promítli do usnesení volební komise per rollam číslo 73 ze 14."
+    },
+    {
+      "text": "A tam došlo k návrhu také na výměnu dvou kolegů v rámci tedy jednoho politického klubu, je to z organizačního výboru rezignace Toma Philippa a namísto něj do organizačního výboru nominace Mariana Jurečky.",
+      "source": "steno",
+      "steno_id": "2025_20_00308",
+      "citace": "A tam došlo k návrhu také na výměnu dvou kolegů v rámci tedy jednoho politického klubu, je to z organizačního výboru rezignace Toma Philippa a namísto něj do organizačního výboru nominace Mariana Jure"
+    },
+    {
+      "text": "Poslanec Kolovratník: Ano.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_20_00311",
+      "citace": "(Poslanec Kolovratník: Ano.)"
     }
   ],
-  "publikovat": false,
-  "priorita": 1,
-  "nadpis": "Židle ve výborech se přeskládaly",
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Prošlo to",
   "pocet_hlasovani": 2,
   "proslo": true,
   "signaly": {
@@ -26,5 +46,5 @@
     "spor": false,
     "prazdny_sal": true
   },
-  "steno_slov": 0
+  "steno_slov": 34650
 }

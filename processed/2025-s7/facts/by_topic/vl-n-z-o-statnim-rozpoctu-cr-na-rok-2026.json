@@ -3,44 +3,47 @@
   "nazev": "Vl.n.z. o státním rozpočtu ČR na rok 2026",
   "datum": "12.02.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "státního rozpočtu ČR na rok 2026 v prvním čtení",
+  "predmet_lidsky": "o státním rozpočtu ČR na rok 2026",
   "koho": [
     "Kdo čeká na opravu silnice nebo vyšší plat sestře, ten ví, proč se o tom hádají celé dny."
   ],
   "fakty": [
     {
-      "text": "Po dlouhých čtyřech letech se totiž do Poslanecké sněmovny dostává návrh státního rozpočtu, který je úplný, pravdivý a reálný.",
+      "text": "Další bod je 63.Návrh časového harmonogramu projednávání vládního návrhu zákona o státním rozpočtu České republiky na rok 2026 v Poslanecké sněmovně a jejích orgánech/sněmovní dokument 327/ Sněmovní dokument 327 obsahuje usnesení rozpočtového výboru číslo 40 z jeho 8.",
       "source": "steno",
-      "steno_id": "2025_7_00247",
-      "citace": "Po dlouhých čtyřech letech se totiž do Poslanecké sněmovny dostává návrh státního rozpočtu, který je úplný, pravdivý a reálný."
+      "steno_id": "2025_7_00240",
+      "citace": "Další bod je 63.Návrh časového harmonogramu projednávání vládního návrhu zákona o státním rozpočtu České republiky na rok 2026 v Poslanecké sněmovně a jejích orgánech/sněmovní dokument 327/ Sněmovní d"
     },
     {
-      "text": "Vážený pane předsedající, vážení členové vlády, milé kolegyně, milí kolegové, Alena Schillerová tady předvedla klasickou figuru, když máte černé svědomí, začněte útočit na všechny ostatní. To, že předkládá rozpočet se schodkem 310 miliard korun, není závažné jen v tom směru, že se oproti všem předchozím čtyřem letům schodek významně zvyšuje, ale především proto, že porušuje zákon.",
+      "text": "února 2026, jehož přílohou je i návrh usnesení Poslanecké sněmovny.",
       "source": "steno",
-      "steno_id": "2025_7_00251",
-      "citace": "To, že předkládá rozpočet se schodkem 310 miliard korun, porušuje zákon."
+      "steno_id": "2025_7_00240",
+      "citace": "února 2026, jehož přílohou je i návrh usnesení Poslanecké sněmovny."
     },
     {
-      "text": "Hlasování číslo 65, bylo přihlášeno 158 poslanců, pro 90, proti 68. Návrh byl přijat, návrh usnesení byl schválen.",
+      "text": "Tento sněmovní dokument uvede zpravodaj rozpočtového výboru, zároveň předseda poslanec Vladimír Pikora, kterého prosím, aby se ujal slova a současně přednesl také návrh usnesení Poslanecké sněmovny.",
       "source": "steno",
-      "steno_id": "2025_7_00603",
-      "citace": "Hlasování číslo 65, bylo přihlášeno 158 poslanců, pro 90, proti 68. Návrh byl přijat."
+      "steno_id": "2025_7_00240",
+      "citace": "Tento sněmovní dokument uvede zpravodaj rozpočtového výboru, zároveň předseda poslanec Vladimír Pikora, kterého prosím, aby se ujal slova a současně přednesl také návrh usnesení Poslanecké sněmovny."
     },
     {
-      "text": "Bouřlivý potlesk v sále, bušení do lavic.",
+      "text": "Toto usnesení obsahuje návrh dvanáctibodového usnesení Poslanecké sněmovny, které naleznete ve sněmovním dokumentu 327, a pokud nebude z vaší strany námitek, v rámci urychlení bych těch 12 bodů nečetl.",
       "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_7_00603",
-      "citace": "(Bouřlivý potlesk v sále, bušení do lavic.)"
+      "steno_id": "2025_7_00241",
+      "citace": "Toto usnesení obsahuje návrh dvanáctibodového usnesení Poslanecké sněmovny, které naleznete ve sněmovním dokumentu 327, a pokud nebude z vaší strany námitek, v rámci urychlení bych těch 12 bodů nečetl"
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Rozpočet na první pokus",
-  "lead": "Po celonoční debatě sněmovna v prvním kole schválila rozpočet na rok 2026, 90 hlasů proti 68. Čtyři opoziční usnesení předtím padla.",
-  "pointa": "Schillerová mluvila o pravdivém rozpočtu po čtyřech letech, Kupka o schodku 310 miliard a porušení zákona. Listopadové první kolo (105:64) předložila ještě Fialova vláda v demisi, nová vláda Babiše návrh představila znovu. Hlasování skončilo až po půlnoci v jednu hodinu.",
-  "mean": "První kolo neříká, kolik peněz kam definitivně půjde, ale že návrh může dál do výborů. Koalice prosadila vládní verzi těsně, opozice chtěla nižší schodek, víc na bydlení nebo obranu.",
+  "nadpis": "Stát ví, kolik smí utratit",
   "pocet_hlasovani": 6,
   "proslo": true,
+  "signaly": {
+    "proti_max": 90,
+    "pritomno_min": 158,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
   "steno_slov": 100283
 }

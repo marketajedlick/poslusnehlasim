@@ -2,44 +2,50 @@
   "slug": "navrh-zakona-o-statnich-zamestnancich",
   "nazev": "Návrh zákona o státních zaměstnancích",
   "datum": "29.01.2026",
-  "verdikt": "zamiteno",
-  "predmet_lidsky": "novém zákonu o státních zaměstnancích místo zákona o státní službě",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "státních zaměstnancích",
   "koho": [
-    "Koho se to týká? Přes 70 000 lidí ve státní správě a každého, kdo řeší úřady, jde o to, jestli úředníci pracují podle služebního zákona, nebo jako běžní zaměstnanci."
+    "Občana se to netýká, ledaže pracujete na úřadě nebo tam čekáte ve frontě."
   ],
   "fakty": [
     {
-      "text": "tak zásadní změna služebního zákona, která se dotýká desítek tisíc úředníků, má probíhat formou vládního návrhu",
+      "text": "Poslanci přicházejí do sálu.",
       "source": "steno",
-      "steno_id": "2025_6_00097",
-      "citace": "tak zásadní změna služebního zákona, která se dotýká desítek tisíc úředníků, má probíhat formou vládního návrhu"
+      "kind": "scene",
+      "steno_id": "2025_6_00042",
+      "citace": "(Poslanci přicházejí do sálu.)"
     },
     {
-      "text": "který de facto ruší zákon o státní službě, likviduje tím všechno, co bylo na této půdě doposavad dosaženo",
+      "text": "Nyní tedy přistupme k prvnímu bodu pořadu, kterým je 1.Návrh poslanců Radka Vondráčka, Renaty Vesecké, Libora Vondráčka a Zuzany Ožanové na vydání zákona o právních poměrech státních zaměstnanců v ministerstvech a jiných správních úřadech (zákon o státních zaměstnancích)/sněmovní tisk 76/ - prvé čtení Prosím, aby předl",
       "source": "steno",
-      "steno_id": "2025_6_00141",
-      "citace": "který de facto ruší zákon o státní službě, likviduje tím všechno, co bylo na této půdě doposavad dosaženo"
+      "steno_id": "2025_6_00042",
+      "citace": "Nyní tedy přistupme k prvnímu bodu pořadu, kterým je 1.Návrh poslanců Radka Vondráčka, Renaty Vesecké, Libora Vondráčka a Zuzany Ožanové na vydání zákona o právních poměrech státních zaměstnanců v min"
     },
     {
-      "text": "když se předkládá takhle komplexní novela, která mění fungování státní služby a dotýká se víc jak 70 000 zaměstnanců státu, tak mně jako zvolené zákonodárkyni přijde jako slušnost k občanům a občankám a jako naše základní odpovědnost, abychom pokud možno takhle velké změny právě dělali na základě odborné, nezávislé, fundované a dobré analýzy",
+      "text": "Mám zde hlasování na náhradní kartu číslo 3, kterou předložil pan poslanec Munzar.",
       "source": "steno",
-      "steno_id": "2025_6_00089",
-      "citace": "když se předkládá takhle komplexní novela, která mění fungování státní služby a dotýká se víc jak 70 000 zaměstnanců státu"
+      "steno_id": "2025_6_00042",
+      "citace": "Mám zde hlasování na náhradní kartu číslo 3, kterou předložil pan poslanec Munzar."
     },
     {
-      "text": "Já jsem podal návrh na zamítnutí obou dvou sloučených tisků.",
+      "text": "Silný hluk v sále.",
       "source": "steno",
-      "steno_id": "2025_6_00135",
-      "citace": "Já jsem podal návrh na zamítnutí obou dvou sloučených tisků."
+      "kind": "scene",
+      "steno_id": "2025_6_00043",
+      "citace": "(Silný hluk v sále.)"
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Úředníci zůstávají",
-  "lead": "Koaliční návrh, který má nahradit zákon o státní službě, v prvním kole padl, 65 hlasů pro, 96 proti. Opozice mluvila o politizaci úřadů a chybějících analýzách.",
-  "pointa": "Pospíšil chtěl vládní návrh, Pláteník varoval před oslabením státu. Kučera navrhl zamítnout oba sloučené tisky.",
-  "mean": "Šestá schůze skončila večer zamítnutím reformy pro přes 70 000 státních zaměstnanců. Koalice chtěla přejít ze služebního poměru na zákoník práce, sněmovna to v prvním kole zastavila.",
+  "nadpis": "Prošlo to",
   "pocet_hlasovani": 6,
-  "proslo": false,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 96,
+    "pritomno_min": 130,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
   "steno_slov": 5424
 }

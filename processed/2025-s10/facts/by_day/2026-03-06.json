@@ -4,20 +4,12 @@
   "topic_slugs": [
     "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem"
   ],
-  "dnesni_ucet": "Pátek o obsazení postů: VZP, rozhlas, televize,\nochránce dětí a orgány sněmovny, všechno prošlo.",
-  "zaver": "že pátek byl o obsazení postů, ne o zákoně pro občany.",
-  "vysledek": [
-    "* změny ve složení orgánů sněmovny 168:0",
-    "* volba do správy VZP 117:33",
-    "* rada Českého rozhlasu a televize schválena",
-    "* ochránce práv dětí zvolen 120:11"
-  ],
   "stats": {
     "pocet_hlas": 1,
     "minuty": 282,
     "end_cas": "13:58",
     "proslo": 1,
     "zamitnuto": 0,
-    "dlouha_debata": false
+    "dlouha_debata": true
   }
 }

@@ -5,18 +5,27 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "dohledu nad investičními fondy a společnostmi",
   "koho": [
-    "Koho se to týká? Hlavně firem a lidí, kteří investují přes fondy, ne běžného účtu v bance."
+    "Investiční společnosti spravují peníze investorů a nakupují za ně cenné papíry."
   ],
   "fakty": [
     {
-      "text": "Pravidla dohledu a povinností vůči klientům se srovnávají podle evropských norem.",
-      "source": "manual",
-      "note": "z glosy / TEMA_PRAVIDLA"
+      "text": "Řečník přerušuje svou řeč z důvodu neklidu v sále.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_20_00258",
+      "citace": "(Řečník přerušuje svou řeč z důvodu neklidu v sále.)"
     },
     {
-      "text": "Zákon prošel 137:0, nikdo nebyl proti; spor se nekonal ani u čtyř dílčích úprav.",
-      "source": "votes",
-      "citace": "Hlasování číslo 71: pro 137, proti 0. Konstatuji, že s návrhem zákona byl vysloven souhlas."
+      "text": "A nakonec o tom svědčí fakt, že číslo tisku 13 napovídá tomu, že ten návrh předkládala ještě naše vláda, ale obhajuje jej tady paní ministryně, a opravdu se jedná o technickou a odbornou záležitost.",
+      "source": "steno",
+      "steno_id": "2025_20_00258",
+      "citace": "A nakonec o tom svědčí fakt, že číslo tisku 13 napovídá tomu, že ten návrh předkládala ještě naše vláda, ale obhajuje jej tady paní ministryně, a opravdu se jedná o technickou a odbornou záležitost."
+    },
+    {
+      "text": "A právě myslím, že během celé té debaty se ukázala jedna důležitá věc, že ten návrh opravdu není žádnou ideologickou revolucí.",
+      "source": "steno",
+      "steno_id": "2025_20_00258",
+      "citace": "A právě myslím, že během celé té debaty se ukázala jedna důležitá věc, že ten návrh opravdu není žádnou ideologickou revolucí."
     },
     {
       "text": "Vážený pane předsedající, vážená paní ministryně, kolegyně, kolegové, dovolte mi taky pár poznámek k tomuto sněmovnímu tisku 13 – k návrhu zákona, kterým se mění zákon č.",
@@ -26,11 +35,8 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Investiční fondy podle Bruselu",
-  "lead": "Hned po penzijním spoření sněmovna srovnala pravidla pro investiční fondy s evropskými normami; 137 pro, proti nikdo.",
-  "pointa": "Bruselská harmonizace bez odporu: ani u čtyř dílčích hlasování se nikdo nezvedl proti.",
-  "mean": "Kdo investuje přes fondy, bude mít dohled a povinnosti správců sjednocené podle evropských pravidel. Běžného účtu v bance se to netýká a ve sněmovně se o tom nikdo ani nepohádal.",
+  "priorita": 3,
+  "nadpis": "Investice mají přísnější dohled",
   "pocet_hlasovani": 5,
   "proslo": true,
   "signaly": {
@@ -38,7 +44,7 @@
     "pritomno_min": 148,
     "jednomyslne": false,
     "spor": true,
-    "prazdny_sal": false
+    "prazdny_sal": true
   },
   "steno_slov": 3264
 }

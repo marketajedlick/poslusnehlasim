@@ -33,9 +33,17 @@
       "citace": "(Potlesk koaličních poslanců.)"
     }
   ],
-  "publikovat": false,
-  "priorita": 0,
+  "publikovat": true,
+  "priorita": 3,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 2,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 9,
+    "pritomno_min": 141,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 5901
 }

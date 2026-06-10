@@ -3,31 +3,45 @@
   "nazev": "Návrh časového harmonogramu projednávání zákona o státním rozpočtu ČR",
   "datum": "11.02.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "časového harmonogramu projednávání rozpočtu na rok 2026",
-  "koho": [
-    "Koho se to týká? Každého, kdo čeká, kolik stát utratí. Harmonogram určuje, kdy se o rozpočtu bude hlasovat."
-  ],
+  "predmet_lidsky": "návrh časového harmonogramu projednávání zákona o státním rozpočtu ČR",
+  "koho": [],
   "fakty": [
+    {
+      "text": "Další bod je 63.Návrh časového harmonogramu projednávání vládního návrhu zákona o státním rozpočtu České republiky na rok 2026 v Poslanecké sněmovně a jejích orgánech/sněmovní dokument 327/ Sněmovní dokument 327 obsahuje usnesení rozpočtového výboru číslo 40 z jeho 8.",
+      "source": "steno",
+      "steno_id": "2025_7_00240",
+      "citace": "Další bod je 63.Návrh časového harmonogramu projednávání vládního návrhu zákona o státním rozpočtu České republiky na rok 2026 v Poslanecké sněmovně a jejích orgánech/sněmovní dokument 327/ Sněmovní d"
+    },
+    {
+      "text": "února 2026, jehož přílohou je i návrh usnesení Poslanecké sněmovny.",
+      "source": "steno",
+      "steno_id": "2025_7_00240",
+      "citace": "února 2026, jehož přílohou je i návrh usnesení Poslanecké sněmovny."
+    },
     {
       "text": "Tento sněmovní dokument uvede zpravodaj rozpočtového výboru, zároveň předseda poslanec Vladimír Pikora, kterého prosím, aby se ujal slova a současně přednesl také návrh usnesení Poslanecké sněmovny.",
       "source": "steno",
       "steno_id": "2025_7_00240",
-      "citace": "Tento sněmovní dokument uvede zpravodaj rozpočtového výboru poslanec Vladimír Pikora."
+      "citace": "Tento sněmovní dokument uvede zpravodaj rozpočtového výboru, zároveň předseda poslanec Vladimír Pikora, kterého prosím, aby se ujal slova a současně přednesl také návrh usnesení Poslanecké sněmovny."
     },
     {
-      "text": "V hlasování číslo 59 bylo přihlášeno 166 poslanců, pro 127, proti 0. Návrh byl přijat.",
+      "text": "Toto usnesení obsahuje návrh dvanáctibodového usnesení Poslanecké sněmovny, které naleznete ve sněmovním dokumentu 327, a pokud nebude z vaší strany námitek, v rámci urychlení bych těch 12 bodů nečetl.",
       "source": "steno",
-      "steno_id": "2025_7_00246",
-      "citace": "V hlasování číslo 59 bylo přihlášeno 166 poslanců, pro 127, proti 0. Návrh byl přijat."
+      "steno_id": "2025_7_00241",
+      "citace": "Toto usnesení obsahuje návrh dvanáctibodového usnesení Poslanecké sněmovny, které naleznete ve sněmovním dokumentu 327, a pokud nebude z vaší strany námitek, v rámci urychlení bych těch 12 bodů nečetl"
     }
   ],
   "publikovat": true,
   "priorita": 2,
-  "nadpis": "Kalendář rozpočtu",
-  "lead": "Sněmovna schválila harmonogram projednávání rozpočtu na rok 2026, 127 hlasů pro, nikdo proti.",
-  "pointa": "Zpravodaj Pikora představil dvanáctibodové usnesení rozpočtového výboru. Večer pak začala první debata o samotném návrhu.",
-  "mean": "Harmonogram říká, kdy a jak rychle půjde rozpočet výbory a plénem. Bez něj by se o schodku 310 miliard nehlasovalo podle plánu, ale pořád jen o pořadu.",
+  "nadpis": "Stát ví, kolik smí utratit",
   "pocet_hlasovani": 1,
   "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 166,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
   "steno_slov": 100283
 }

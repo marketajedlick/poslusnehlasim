@@ -3,43 +3,46 @@
   "nazev": "Novela z. o životním a existenčním minimu",
   "datum": "24.03.2026",
   "verdikt": "zamiteno",
-  "predmet_lidsky": "životním a existenčním minimu vráceném Senátem",
-  "koho": [
-    "Koho se to týká? Lidí na dávkách a úřadů práce. Senát zamítl duplicitní návrh, sněmovna to potvrdila."
-  ],
+  "predmet_lidsky": "životním a existenčním minimu",
+  "koho": [],
   "fakty": [
     {
-      "text": "Senát schválil širší tisk 88 a tisk 85 vrátil jako nadbytečný.",
+      "text": "Ťukání karet do lavic.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_13_00082",
+      "citace": "(Ťukání karet do lavic.)"
+    },
+    {
+      "text": "(Proti 1.) Návrh byl přijat a budeme tento bod projednávat jako 10.",
+      "source": "steno",
+      "steno_id": "2025_13_00082",
+      "citace": "(Proti 1.) Návrh byl přijat a budeme tento bod projednávat jako 10."
+    },
+    {
+      "text": "V hlasování číslo 3 bylo přihlášeno 170 poslanců, pro hlasovalo 169, (proti 0).",
+      "source": "steno",
+      "steno_id": "2025_13_00082",
+      "citace": "V hlasování číslo 3 bylo přihlášeno 170 poslanců, pro hlasovalo 169, (proti 0)."
+    },
+    {
+      "text": "Z tohoto důvodu byl Senátem schválen sněmovní tisk 88 a jako nadbytečný zamítnut sněmovní tisk 85, který se proto nyní vrátil zpátky do Poslanecké sněmovny.",
       "source": "steno",
       "steno_id": "2025_13_00083",
       "citace": "Z tohoto důvodu byl Senátem schválen sněmovní tisk 88 a jako nadbytečný zamítnut sněmovní tisk 85, který se proto nyní vrátil zpátky do Poslanecké sněmovny."
-    },
-    {
-      "text": "K přijetí usnesení je zapotřebí souhlasu 101 poslanců.",
-      "source": "steno",
-      "steno_id": "2025_13_00087",
-      "citace": "K přijetí následujícího usnesení je zapotřebí souhlasu nadpoloviční většiny všech poslanců, tedy souhlasu 101 poslance."
-    },
-    {
-      "text": "Hlasování číslo 46, pro 5, proti 85, návrh nebyl schválen.",
-      "source": "steno",
-      "steno_id": "2025_13_00087",
-      "citace": "V hlasování číslo 46 bylo přihlášeno 171 poslanců, pro hlasovalo 5 (85 proti) a návrh usnesení nebyl schválen."
-    },
-    {
-      "text": "Před tím čtyřicet čtyři hlasování o změnách pořadu schůze.",
-      "source": "steno",
-      "steno_id": "2025_13_00082",
-      "citace": "V hlasování číslo 45 bylo přihlášeno 175 poslanců, pro hlasovalo 96. (Proti 6.) Návrh byl přijat a já konstatuji, že jsme schválili pořad schůze."
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Minimum zůstává zamítnuté",
-  "lead": "Sněmovna nepotvrdila vrácený návrh minima, jen pět hlasů proti senátnímu zamítnutí, osmdesát pět proti. Senát už mezitím schválil širší verzi v jiném tisku.",
-  "pointa": "Večer předtím čtyřicet čtyři hlasování o pořadu, pak teprve minimum. Juchelka žádal o zamítnutí duplicitního tisku, sněmovna souhlasila.",
-  "mean": "Hranice chudoby a superdávka se řeší jiným zákonem (tisk 88), který Senát už přijal po únorovém odkladu superdávky. Tento vrácený návrh byl nadbytečný a definitivně padl.",
+  "nadpis": "Hranice chudoby zůstává",
   "pocet_hlasovani": 1,
   "proslo": false,
+  "signaly": {
+    "proti_max": 85,
+    "pritomno_min": 171,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
   "steno_slov": 3916
 }

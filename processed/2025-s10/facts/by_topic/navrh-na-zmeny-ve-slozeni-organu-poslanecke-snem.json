@@ -3,37 +3,48 @@
   "nazev": "Návrh na změny ve složení orgánů Poslanecké sněmovny",
   "datum": "06.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "změnách ve složení orgánů sněmovny a souvisejících volbách",
+  "predmet_lidsky": "návrh na změny ve složení orgánů Poslanecké sněmovny",
   "koho": [
-    "Koho se to týká? Politické strany a orgány sněmovny. Občana na ulici to netrefí."
+    "Občana se netýká, leda že zná někoho z poslanců osobně."
   ],
   "fakty": [
     {
-      "text": "Hlasování číslo 70, pro 168, proti nikdo. Návrh byl přijat.",
+      "text": "Poslanec Šťastný přistupuje k řečništi",
       "source": "steno",
-      "steno_id": "2025_10_00713",
-      "citace": "Hlasování číslo 70, pro 168, proti nikdo. Návrh byl přijat."
+      "kind": "scene",
+      "steno_id": "2025_10_00689",
+      "citace": "(Poslanec Šťastný přistupuje k řečništi)"
     },
     {
-      "text": "Hlasování číslo 72, pro 117, proti 33. Návrh byl přijat.",
+      "text": "Mám zde s faktickou poznámkou ještě pana poslance Marka Nováka, ale vzhledem k tomu, že máme jednu hodinu, tak přerušuji projednávání Vládního návrhu zákona o digitální ekonomice a o změně některých souvisejících zákonů, sněmovní tisk 69.",
       "source": "steno",
-      "steno_id": "2025_10_00713",
-      "citace": "Hlasování číslo 72, pro 117, proti 33. Návrh byl přijat."
+      "steno_id": "2025_10_00689",
+      "citace": "Mám zde s faktickou poznámkou ještě pana poslance Marka Nováka, ale vzhledem k tomu, že máme jednu hodinu, tak přerušuji projednávání Vládního návrhu zákona o digitální ekonomice a o změně některých s"
     },
     {
-      "text": "Hlasování číslo 75, pro 120, proti 11. Návrh byl přijat.",
+      "text": "Ještě než začnu s bodem číslo 95, tak prosím, odhlašuji všechny poslance a prosím, aby se znovu přihlásili svou kartičkou.",
       "source": "steno",
-      "steno_id": "2025_10_00713",
-      "citace": "Hlasování číslo 75, pro 120, proti 11. Návrh byl přijat."
+      "steno_id": "2025_10_00689",
+      "citace": "Ještě než začnu s bodem číslo 95, tak prosím, odhlašuji všechny poslance a prosím, aby se znovu přihlásili svou kartičkou."
+    },
+    {
+      "text": "Piráti doplnili další, a to jednu změnu, tu jsme přijali do usnesení per rollam číslo 55 a je tam rezignace z hospodářského výboru - pan poslanec Samuel Volpe a nominace do hospodářského výboru Veronika Kovářová.",
+      "source": "steno",
+      "steno_id": "2025_10_00692",
+      "citace": "Piráti doplnili další, a to jednu změnu, tu jsme přijali do usnesení per rollam číslo 55 a je tam rezignace z hospodářského výboru - pan poslanec Samuel Volpe a nominace do hospodářského výboru Veroni"
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Obsazování postů ve sněmovně",
-  "lead": "Páteční dopoledne patřilo volbám do orgánů: VZP, Český rozhlas, Česká televize i ochránce práv dětí. Všechno prošlo.",
-  "pointa": "U správy VZP bylo 33 hlasů proti, u ochránce dětí 11. Jinak klidná obsazování postů bez velkého příběhu.",
-  "mean": "Sněmovna si obsadila výbory a rady, které dohlížejí na instituce od pojišťovny po média. Jde o moc uvnitř parlamentu, ne o zákon pro lidi.",
-  "pocet_hlasovani": 1,
+  "priorita": 3,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 2,
   "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 169,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
   "steno_slov": 14735
 }

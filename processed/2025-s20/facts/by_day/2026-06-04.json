@@ -4,18 +4,10 @@
   "topic_slugs": [
     "navrhy-poslanecke-snemovny-na-propujceni-nebo-ud"
   ],
-  "dnesni_ucet": "165 hlasování o metálech za necelé tři hodiny, deset sekund na jméno.\nZeman prošel napotřetí, Moravec vůbec; odpoledne interpelace.",
-  "zaver": "že sněmovna rozdávala návrhy na metály tempem deset sekund na jméno: Miloš Zeman prošel až napotřetí, Václav Moravec vůbec a výsledný seznam pro Hrad nakonec zvedlo 180 rukou.",
-  "vysledek": [
-    "* návrhy na vyznamenání: většina jmen prošla, přes dvacet jich padlo",
-    "* Miloš Zeman schválen na třetí pokus 99:80, dvakrát se hlasování zpochybnilo",
-    "* neprošli Václav Moravec 82:67, Daniel Vávra 85:33 ani bratři Kroupové",
-    "* výsledný seznam pro Hrad prošel 180:0, odpoledne patřilo interpelacím"
-  ],
   "stats": {
-    "pocet_hlas": 0,
-    "minuty": 451,
-    "end_cas": "16:31",
+    "pocet_hlas": 1,
+    "minuty": 169,
+    "end_cas": "12:36",
     "proslo": 1,
     "zamitnuto": 0,
     "dlouha_debata": true

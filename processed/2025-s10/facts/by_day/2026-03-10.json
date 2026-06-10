@@ -4,19 +4,12 @@
   "topic_slugs": [
     "novela-z-o-rostlinolekarske-peci-eu"
   ],
-  "dnesni_ucet": "Digitální ekonomika přežila pokus o zahození,\npostřiky a rostlinolékařská péče prošly 146:0.",
-  "zaver": "že úterý přineslo dva schválené zákony z EU a pokus o zahození digitální ekonomiky padl.",
-  "vysledek": [
-    "* pokus o zahození digitální ekonomiky zamítnut 7:68, zákon prošel dál",
-    "* změna zákona o postřicích prošla 146:0",
-    "* ministr Šebestyán obhajoval soulad s EU"
-  ],
   "stats": {
     "pocet_hlas": 2,
     "minuty": 198,
     "end_cas": "19:01",
     "proslo": 1,
     "zamitnuto": 0,
-    "dlouha_debata": false
+    "dlouha_debata": true
   }
 }

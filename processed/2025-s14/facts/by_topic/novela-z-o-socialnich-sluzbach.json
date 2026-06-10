@@ -3,36 +3,48 @@
   "nazev": "Novela z. o sociálních službách",
   "datum": "22.04.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "převodu péče a dávek OZP z Úřadu práce na ÚSSZ",
+  "predmet_lidsky": "sociálních službách",
   "koho": [
-    "Koho se to týká? Lidi se zdravotním postižením a rodiny, které řeší péči, průkaz OZP nebo příspěvek na péči."
+    "Pořád půjdete pro péči o staré rodiče nebo hendikepované, zatím pořád na Úřad práce."
   ],
   "fakty": [
     {
-      "text": "Juchelka posunul převod kompetencí z Úřadu práce na ÚSSZ na červen 2028.",
+      "text": "Někteří poslanci se zvedají a odcházejí ze sálu.",
       "source": "steno",
-      "steno_id": "2025_14_01093",
-      "citace": "Posunout převod kompetencí z Úřadu práce v oblasti příspěvku na péči, dávek pro osoby se zdravotním postižením a problematiky průkazu OZP na územní správy sociálního zabezpečení z 1. července 2026 na 1. června 2028."
+      "kind": "scene",
+      "steno_id": "2025_14_01092",
+      "citace": "(Někteří poslanci se zvedají a odcházejí ze sálu.)"
     },
     {
-      "text": "Novela prošla v prvním čtení ve zkráceném režimu podle § 90 odst. 2.",
+      "text": "2 V této chvíli tedy upozorňuju, že jako v minulém tisku je navrženo, abychom s návrhem zákona vyslovili souhlas již v prvém čtení.",
       "source": "steno",
       "steno_id": "2025_14_01092",
-      "citace": "Je navrženo, abychom s návrhem zákona vyslovili souhlas již v prvém čtení."
+      "citace": "2 V této chvíli tedy upozorňuju, že jako v minulém tisku je navrženo, abychom s návrhem zákona vyslovili souhlas již v prvém čtení."
     },
     {
-      "text": "Hlasování číslo 143, sto dvacet dva hlasů pro.",
-      "source": "votes",
-      "citace": "Hlasování číslo 143, pro 122, proti 0."
+      "text": "14.Návrh poslanců Aleše Juchelky a Jany Pastuchové na vydání zákona, kterým se mění zákon č.",
+      "source": "steno",
+      "steno_id": "2025_14_01092",
+      "citace": "14.Návrh poslanců Aleše Juchelky a Jany Pastuchové na vydání zákona, kterým se mění zákon č."
+    },
+    {
+      "text": "Změny spočívající v převodu kompetencí z Úřadu práce na územní správy sociálního zabezpečení, k němuž by mělo dojít ve výše uvedených oblastech na základě zákona číslo 300, s účinností od 1.",
+      "source": "steno",
+      "steno_id": "2025_14_01093",
+      "citace": "Změny spočívající v převodu kompetencí z Úřadu práce na územní správy sociálního zabezpečení, k němuž by mělo dojít ve výše uvedených oblastech na základě zákona číslo 300, s účinností od 1."
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Péče zůstane na ÚP déle",
-  "lead": "Ve středu schválili změnu sociálních služeb, sto dvacet dva hlasů proti nule. Převod péče a dávek pro hendikepované z Úřadu práce na sociální správu se posouvá na rok 2028.",
-  "pointa": "Juchelka argumentoval časovou tísní a nutností sladit reformu s digitalizací dávek. První kolo proběhlo ve zkráceném režimu.",
-  "mean": "Lidé s průkazem OZP a příspěvkem na péči zatím zůstanou na Úřadu práce. Velký přesun na územní správy sociálního zabezpečení přijde až za dva roky.",
+  "priorita": 3,
+  "nadpis": "Úřad práce zůstává na svém místě",
   "pocet_hlasovani": 3,
   "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 146,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
   "steno_slov": 9218
 }

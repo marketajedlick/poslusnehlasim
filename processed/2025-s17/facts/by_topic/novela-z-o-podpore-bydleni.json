@@ -1,44 +1,49 @@
 {
   "slug": "novela-z-o-podpore-bydleni",
   "nazev": "Novela z. o podpoře bydlení",
-  "datum": "03.06.2026",
+  "datum": "29.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "změnách zákona o podpoře bydlení a fungování kontaktních míst pro bydlení",
-  "koho": [
-    "Koho se to týká? Lidi v bytové nouzi, nájemníky a obce. Novela ladí podpůrná opatření a spolupráci samospráv s úřady."
-  ],
+  "predmet_lidsky": "podpoře bydlení",
+  "koho": [],
   "fakty": [
     {
-      "text": "Richterová řekla, že dostupné bydlení je zásadní pro rodiny i seniory.",
+      "text": "zákon o podpoře bydlení",
       "source": "steno",
-      "steno_id": "2025_17_00671",
-      "citace": "Dostupné bydlení rozhoduje o tom, jestli mladí lidé začnou samostatný život a jestli rodiny zvládnou vychovávat děti."
+      "kind": "scene",
+      "steno_id": "2025_17_00539",
+      "citace": "(zákon o podpoře bydlení)"
     },
     {
-      "text": "Kovářová citovala starostu o dopadech bytové nouze na obce.",
+      "text": "175/2025 Sb., o poskytování některých opatření v podpoře bydlení (zákon o podpoře bydlení)/sněmovní tisk 82/ – třetí čtení Prosím, aby u stolku zpravodajů zaujala (místo) za navrhovatele ministryně pro místní rozvoj Zuzana Mrázová a zpravodajka garančního výboru Eva Fialová.",
       "source": "steno",
-      "steno_id": "2025_17_00673",
-      "citace": "Bytová nouze není abstraktní pojem z analytických studií. Je to konkrétní realita rodin, seniorů a samoživitelek."
+      "steno_id": "2025_17_00539",
+      "citace": "175/2025 Sb., o poskytování některých opatření v podpoře bydlení (zákon o podpoře bydlení)/sněmovní tisk 82/ – třetí čtení Prosím, aby u stolku zpravodajů zaujala (místo) za navrhovatele ministryně pr"
     },
     {
-      "text": "Fialová hájila pojistku proti obchodníkům s chudobou u poskytovatelů.",
+      "text": "Pozměňovací návrhy jsou uvedeny ve sněmovním tisku 82/2, který vám byl doručen 16.",
       "source": "steno",
-      "steno_id": "2025_17_00701",
-      "citace": "Obec, která toho poskytovatele zná, má s ním zkušenosti a vyhodnotí, zda je v pořádku."
+      "steno_id": "2025_17_00539",
+      "citace": "Pozměňovací návrhy jsou uvedeny ve sněmovním tisku 82/2, který vám byl doručen 16."
     },
     {
-      "text": "Finální hlasování číslo 70 v 13:01, sto osmnáct proti dvaceti třem.",
-      "source": "votes",
-      "citace": "Hlasování číslo 70, pro 118, proti 23."
+      "text": "Smích v sále.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_17_00551",
+      "citace": "(Smích v sále.)"
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Podpora bydlení prošla",
-  "lead": "Ve středu dopoledne sněmovna schválila změnu zákona o podpoře bydlení, sto osmnáct hlasů proti dvaceti třem. Debata pokračovala po pátečním přerušení, koalice protlačila vládní verzi.",
-  "pointa": "Richterová kritizovala vyškrtnutí definice dostupného bydlení, Urbanová zákon obhajovala jako pomoc obcím. Fialová hájila kontrolu poskytovatelů podpůrných opatření.",
-  "mean": "Změna zákona upravuje podpůrná opatření v bydlení a práci kontaktních míst obcí. Zákon prošel ve finálním kole po přerušení z pátku 29. května.",
-  "pocet_hlasovani": 1,
+  "priorita": 3,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 24,
   "proslo": true,
+  "signaly": {
+    "proti_max": 97,
+    "pritomno_min": 106,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
   "steno_slov": 64787
 }

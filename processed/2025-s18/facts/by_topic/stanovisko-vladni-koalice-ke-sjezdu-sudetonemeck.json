@@ -1,50 +1,50 @@
 {
   "slug": "stanovisko-vladni-koalice-ke-sjezdu-sudetonemeck",
-  "nazev": "Stanovisko ke sjezdu Sudetoněmeckého landsmanšaftu v Brně",
+  "nazev": "Stanovisko vládní koalice ke sjezdu Sudetoněmeckého landsmanšaftu v Br",
   "datum": "14.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "postoji sněmovny ke sjezdu Sudetoněmeckého landsmanšaftu v Brně",
+  "predmet_lidsky": "stanovisko vládní koalice ke sjezdu Sudetoněmeckého landsmanšaftu v Br",
   "koho": [
-    "Koho se to týká? Spíš vztahy s Německem. Usnesení odsuzuje sjezd v Brně a odkazuje na česko-německou deklaraci z roku 1997."
+    "Občana se to netýká, spíš vztahy se sousedy."
   ],
   "fakty": [
     {
-      "text": "Okamura svolal mimořádnou schůzi na žádost padesáti sedmi poslanců.",
+      "text": "Hluk v sále.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_18_00002",
+      "citace": "(Hluk v sále.)"
+    },
+    {
+      "text": "(Hluk v sále.) Ještě předtím jsem byl požádán, že tamhle na galerii máme návštěvu.",
       "source": "steno",
       "steno_id": "2025_18_00002",
-      "citace": "Tuto schůzi jsem jako předseda Poslanecké sněmovny svolal podle § 51 odst. 4 na základě žádosti 57 poslanců."
+      "citace": "(Hluk v sále.) Ještě předtím jsem byl požádán, že tamhle na galerii máme návštěvu."
     },
     {
-      "text": "Opozice v sále chyběla, Piráti měli transparent o nenávisti a dluzích.",
+      "text": "(Poslanec Králíček reaguje z pléna.) Ano, Králíček Robert ruší svoji omluvu.",
       "source": "steno",
       "steno_id": "2025_18_00002",
-      "citace": "Opoziční poslanci nejsou přítomni. Na lavici Pirátů je transparent s nápisem Vyvoláváním nenávisti dluhy nezaplatíte."
+      "citace": "(Poslanec Králíček reaguje z pléna.) Ano, Králíček Robert ruší svoji omluvu."
     },
     {
-      "text": "Šťastný řekl, že sjezd v Brně je politická provokace.",
+      "text": "připomíná, že Poslanecká sněmovna Parlamentu České republiky vyslovila souhlas s Česko-německou deklarací dne 14.",
       "source": "steno",
-      "steno_id": "2025_18_00006",
-      "citace": "To, co se má odehrát v Brně, není nic jiného než politická provokace."
-    },
-    {
-      "text": "Rajchl přečetl prohlášení spolku Lidice Memory proti sjezdu.",
-      "source": "steno",
-      "steno_id": "2025_18_00010",
-      "citace": "Zásadně odmítáme, aby se tato akce konala na území České republiky."
-    },
-    {
-      "text": "Finální hlasování číslo 4 ve 14:24, sedmdesát tři hlasů pro, nikdo proti.",
-      "source": "votes",
-      "citace": "Hlasování číslo 4, pro 73, proti nikdo."
+      "steno_id": "2025_18_00004",
+      "citace": "připomíná, že Poslanecká sněmovna Parlamentu České republiky vyslovila souhlas s Česko-německou deklarací dne 14."
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Koalice bez opozice",
-  "lead": "Ve čtvrtek odpoledne koalice na mimořádné schůzi schválila usnesení proti sjezdu Sudetoněmeckého landsmanšaftu v Brně, sedmdesát tři hlasy a nikdo proti. Opozice v sále chyběla, text navazuje na hlasování 109:1 ze šestnácté schůze 6. května.",
-  "pointa": "Malá mluvila o starých ranách a deklaraci z roku 1997, Rajchl citoval pozůstalé z Lidic. Šafránková řekla, že opoziční návrhy usnesení kvůli nepřítomnosti hlasovat nešly.",
-  "mean": "Sněmovna oficiálně odmítá sjezd v Brně a vyzývá organizátory, aby akci zrušili. Jde o politické usnesení bez přímého dopadu na práva občanů.",
-  "pocet_hlasovani": 1,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 2,
   "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 77,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
   "steno_slov": 6096
 }

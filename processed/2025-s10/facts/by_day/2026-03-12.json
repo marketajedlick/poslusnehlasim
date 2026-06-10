@@ -2,23 +2,17 @@
   "datum": "12.03.2026",
   "den": "čtvrtek",
   "topic_slugs": [
+    "novela-z-o-silnicnim-provozu-eu",
     "novela-z-o-investicnich-spolecnostech-eu",
-    "navrh-pravidel-hospodareni-poslaneckych-klubu-pr",
-    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2"
-  ],
-  "dnesni_ucet": "Investice pod dohledem, pravidla klubů, orgány,\nplus balík evropských úprav od účetnictví po silnice.",
-  "zaver": "že čtvrtek byl evropský technický den a navrch ještě hádali o funkce.",
-  "vysledek": [
-    "* orgány sněmovny a pravidla klubů schváleny",
-    "* investiční společnosti, účetnictví a silniční provoz v prvním kole",
-    "* většina zákonů bez jediného hlasu proti"
+    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2",
+    "navrh-pravidel-hospodareni-poslaneckych-klubu-pr"
   ],
   "stats": {
     "pocet_hlas": 7,
     "minuty": 173,
     "end_cas": "12:59",
-    "proslo": 3,
+    "proslo": 4,
     "zamitnuto": 0,
-    "dlouha_debata": false
+    "dlouha_debata": true
   }
 }

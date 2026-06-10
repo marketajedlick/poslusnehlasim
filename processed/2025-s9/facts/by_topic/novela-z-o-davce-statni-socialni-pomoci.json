@@ -3,44 +3,48 @@
   "nazev": "Novela z. o dávce státní sociální pomoci",
   "datum": "13.02.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "prodloužení přechodného období dávky státní sociální pomoci",
+  "predmet_lidsky": "dávce státní sociální pomoci",
   "koho": [
-    "Koho se to týká? Domácností na sociálních dávkách. Superdávka má čtyři staré příspěvky sloučit do jedné, přechod trvá déle, než se čekalo."
+    "Dávky pro lidi v těžké situaci, kdo má málo peněz a potřebuje pomoc státu."
   ],
   "fakty": [
     {
-      "text": "Celkem jich je 413 154. Z toho nových žádostí je 79 593.",
-      "source": "steno",
-      "steno_id": "2025_9_00006",
-      "citace": "Celkem jich je 413 154. Z toho nových žádostí je 79 593."
-    },
-    {
-      "text": "Přechod na nový systém takzvané superdávky se pro stávající příjemce rušených dávek odkládá. Lidé by tak nynější dávky na bydlení, živobytí a děti pobírali až do července, ne do dubna.",
-      "source": "steno",
-      "steno_id": "2025_9_00050",
-      "citace": "Lidé by tak nynější dávky pobírali až do července, ne do dubna."
-    },
-    {
-      "text": "Hlasování číslo 6, přihlášeno 136 poslanců, pro 130, proti nikdo. Návrh byl přijat.",
-      "source": "steno",
-      "steno_id": "2025_9_00067",
-      "citace": "Hlasování číslo 6, pro 130, proti nikdo. Návrh byl přijat."
-    },
-    {
-      "text": "Potlesk zleva.",
+      "text": "Hluk v sále.",
       "source": "steno",
       "kind": "scene",
-      "steno_id": "2025_9_00068",
-      "citace": "(Potlesk zleva.)"
+      "steno_id": "2025_9_00047",
+      "citace": "(Hluk v sále.)"
+    },
+    {
+      "text": "Přednesu návrh usnesení: \"Poslanecká sněmovna souhlasí s pokračováním jednání o sněmovním tisku 85 tak, aby s ním mohl být vysloven souhlas již v prvém čtení.\" Ještě chvíli počkám, již jsem zagongoval.",
+      "source": "steno",
+      "steno_id": "2025_9_00047",
+      "citace": "Přednesu návrh usnesení: \"Poslanecká sněmovna souhlasí s pokračováním jednání o sněmovním tisku 85 tak, aby s ním mohl být vysloven souhlas již v prvém čtení.\" Ještě chvíli počkám, již jsem zagongoval"
+    },
+    {
+      "text": "Půjdeme tedy k druhému bodu mimořádné schůze, a tím je 2.Návrh poslance Aleše Juchelky na vydání zákona, kterým se mění zákon č.",
+      "source": "steno",
+      "steno_id": "2025_9_00047",
+      "citace": "Půjdeme tedy k druhému bodu mimořádné schůze, a tím je 2.Návrh poslance Aleše Juchelky na vydání zákona, kterým se mění zákon č."
+    },
+    {
+      "text": "Pokud bude administrace dávky probíhat bez komplikací a ukáže se, že posun přechodného období není nutný, může nastat situace, kdy nebude potřeba tento tisk 88 v legislativním procesu dále podporovat a bude Senátem zamítnut.",
+      "source": "steno",
+      "steno_id": "2025_9_00048",
+      "citace": "Pokud bude administrace dávky probíhat bez komplikací a ukáže se, že posun přechodného období není nutný, může nastat situace, kdy nebude potřeba tento tisk 88 v legislativním procesu dále podporovat "
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Superdávka má o tři měsíce déle",
-  "lead": "Mimořádná schůze schválila prodloužení přechodu na superdávku o tři měsíce, 130 hlasů pro, nikdo proti. Stávající příjemci dostanou staré dávky do července, ne do dubna.",
-  "pointa": "Juchelka děkoval koalici i opozici. Piráti a Starostové nevetovali, Richterová ale varovala před dopady na zranitelné domácnosti a chtěla jasná data.",
-  "mean": "Superdávka mění způsob, jak stát vyplácí pomoc v hmotné nouzi. Úřad práce nestíhá převést přes 400 tisíc žádostí, proto vláda posouvá termín. Kapacity IT pak brzdí i digitalizaci dalších dávek na jaře a v létě. Lidé by neměli přijít o peníze, ale musí si v tíživé situaci říct o mimořádnou okamžitou pomoc.",
+  "nadpis": "Pomoc v nouzi se mění",
   "pocet_hlasovani": 2,
   "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 133,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
   "steno_slov": 3715
 }

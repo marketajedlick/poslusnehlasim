@@ -1,33 +1,50 @@
 {
   "slug": "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026",
-  "nazev": "Vládní návrh zákona o státním rozpočtu ČR na rok 2026",
+  "nazev": "Vl.n.z. o státním rozpočtu ČR na rok 2026",
   "datum": "11.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "státním rozpočtu na rok 2026",
+  "predmet_lidsky": "o státním rozpočtu ČR na rok 2026",
   "koho": [
-    "Koho se to týká? Všech. Rozpočet určuje, kolik stát utratí za zdravotnictví, obranu, školství i dávky."
+    "Kdo čeká na opravu silnice nebo vyšší plat sestře, ten ví, proč se o tom hádají celé dny."
   ],
   "fakty": [
     {
-      "text": "Hlasování číslo 110, pro 178, proti 1. S návrhem zákona byl vysloven souhlas.",
+      "text": "Ano.",
       "source": "steno",
+      "kind": "scene",
       "steno_id": "2025_10_00219",
-      "citace": "Hlasování číslo 110, pro 178, proti 1. S návrhem zákona byl vysloven souhlas."
+      "citace": "(Ano.)"
     },
     {
-      "text": "Hlasování číslo 239, pro 142, proti nikdo. Návrh usnesení byl schválen.",
+      "text": "(Ano.) Jestli to přečtu: Informace vlády o situaci migrace z oblasti Blízkého východu, energetické bezpečnosti České republiky a bezpečnosti v souvislosti s konfliktem v Íránu.",
       "source": "steno",
-      "steno_id": "2025_10_01378",
-      "citace": "Hlasování číslo 239, pro 142, proti nikdo. Návrh usnesení byl schválen."
+      "steno_id": "2025_10_00219",
+      "citace": "(Ano.) Jestli to přečtu: Informace vlády o situaci migrace z oblasti Blízkého východu, energetické bezpečnosti České republiky a bezpečnosti v souvislosti s konfliktem v Íránu."
+    },
+    {
+      "text": "Tím jsme vyřešili návrhy na změny dnešní schůze a zahajujeme prvním bodem 1.Vládní návrh zákona o státním rozpočtu České republiky na rok 2026/sněmovní tisk 94/ - druhé čtení Tento vládní návrh uvede místopředsedkyně vlády a ministryně financí Alena Schillerová, kterou prosím, aby se ujala slova, už sedí za stolem se z",
+      "source": "steno",
+      "steno_id": "2025_10_00219",
+      "citace": "Tím jsme vyřešili návrhy na změny dnešní schůze a zahajujeme prvním bodem 1.Vládní návrh zákona o státním rozpočtu České republiky na rok 2026/sněmovní tisk 94/ - druhé čtení Tento vládní návrh uvede "
+    },
+    {
+      "text": "Dalším pravidlem pro navržené poslanecké změny je zákonem stanovená minimální výše vládní rozpočtové rezervy, která nesmí klesnout pod úroveň 0,3 procenta celkových výdajů státního rozpočtu, absolutně vyjádřeno, se jedná o minimální částku této rezervy ve výši 7 283 511 440 korun.",
+      "source": "steno",
+      "steno_id": "2025_10_00220",
+      "citace": "Dalším pravidlem pro navržené poslanecké změny je zákonem stanovená minimální výše vládní rozpočtové rezervy, která nesmí klesnout pod úroveň 0,3 procenta celkových výdajů státního rozpočtu, absolutně"
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Rozpočet schválen",
-  "lead": "Státní rozpočet prošel ve finálním kole, sto sedmdesát osm hlasů pro, jeden proti. Večer padly i rozpočty většiny fondů.",
-  "pointa": "Den trval do večera a přinesl přes sto dílčích hlasování k pozměňovacím návrhům. Závěrečné schválení navazovalo na druhé kolo ze čtvrtka 4. března.",
-  "mean": "Finální kolo je finální schválení rozpočtu na rok 2026. Schodek kolem 310 miliard dělí politiku na dvě poloviny, peníze půjdou od armády po školství.",
-  "pocet_hlasovani": 2,
+  "nadpis": "Stát ví, kolik smí utratit",
+  "pocet_hlasovani": 129,
   "proslo": true,
+  "signaly": {
+    "proti_max": 104,
+    "pritomno_min": 189,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
   "steno_slov": 144303
 }

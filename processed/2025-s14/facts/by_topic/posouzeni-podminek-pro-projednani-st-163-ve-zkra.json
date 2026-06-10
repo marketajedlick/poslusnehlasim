@@ -3,12 +3,48 @@
   "nazev": "Posouzení podmínek pro projednání ST 163 ve zkráceném jednání",
   "datum": "14.04.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "zkráceném jednání zákona o cenách",
-  "koho": [],
-  "fakty": [],
-  "publikovat": false,
-  "priorita": 0,
+  "predmet_lidsky": "posouzení podmínek pro projednání ST 163 ve zkráceném jednání",
+  "koho": [
+    "Občan to pozná, až zákon projde dřív, než čekal."
+  ],
+  "fakty": [
+    {
+      "text": "proti 0",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_14_00113",
+      "citace": "(proti 0)"
+    },
+    {
+      "text": "526/1990 Sb., o cenách, ve znění pozdějších předpisů, sněmovní tisk 163, ve zkráceném jednání.“ (Žádost z pléna o odhlášení.) Ano, evidoval jsem návrh na odhlášení.",
+      "source": "steno",
+      "steno_id": "2025_14_00113",
+      "citace": "526/1990 Sb., o cenách, ve znění pozdějších předpisů, sněmovní tisk 163, ve zkráceném jednání.“ (Žádost z pléna o odhlášení.) Ano, evidoval jsem návrh na odhlášení."
+    },
+    {
+      "text": "Hlasování číslo 20, bylo přehlášeno 161 poslanců, pro hlasovalo 71, (proti 86.) Návrh byl zamítnut.",
+      "source": "steno",
+      "steno_id": "2025_14_00113",
+      "citace": "Hlasování číslo 20, bylo přehlášeno 161 poslanců, pro hlasovalo 71, (proti 86.) Návrh byl zamítnut."
+    },
+    {
+      "text": "526/1990 Sb., o cenách, ve znění pozdějších předpisů/sněmovní tisk 163/ – zkrácené jednání Předložený návrh uvede místopředsedkyně vlády a ministryně financí Alena Schillerová.",
+      "source": "steno",
+      "steno_id": "2025_14_00114",
+      "citace": "526/1990 Sb., o cenách, ve znění pozdějších předpisů/sněmovní tisk 163/ – zkrácené jednání Předložený návrh uvede místopředsedkyně vlády a ministryně financí Alena Schillerová."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 51,
+    "pritomno_min": 139,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 185919
 }

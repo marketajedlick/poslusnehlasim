@@ -2,36 +2,48 @@
   "slug": "novela-z-trestni-zakonik",
   "nazev": "Novela z. - trestní zákoník",
   "datum": "21.04.2026",
-  "verdikt": "zamiteno",
-  "predmet_lidsky": "noře trestního zákoníku",
-  "koho": [
-    "Koho se to týká? Každého, koho se týkají trestní sazby a definice trestných činů."
-  ],
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "",
+  "koho": [],
   "fakty": [
     {
-      "text": "Richterová kritizovala vládu za zástupná témata místo podstatných kauz.",
+      "text": "zákon o obětech trestných činů",
       "source": "steno",
-      "steno_id": "2025_14_00735",
-      "citace": "Tato vláda se v posledních týdnech až příliš často schovává za zástupná témata a zástupné spory."
+      "kind": "scene",
+      "steno_id": "2025_14_00800",
+      "citace": "(zákon o obětech trestných činů)"
     },
     {
-      "text": "Druhé čtení novely prošlo 154:0.",
-      "source": "votes",
-      "citace": "Hlasování číslo 119, pro 154, proti 0."
+      "text": "11.Návrh poslanců Andreje Babiše, Taťány Malé, Radka Vondráčka, Heleny Válkové, Borise Šťastného a Radima Fialy na vydání zákona, kterým se mění zákon č.",
+      "source": "steno",
+      "steno_id": "2025_14_00800",
+      "citace": "11.Návrh poslanců Andreje Babiše, Taťány Malé, Radka Vondráčka, Heleny Válkové, Borise Šťastného a Radima Fialy na vydání zákona, kterým se mění zákon č."
     },
     {
-      "text": "Třetí čtení padlo, jen 67 poslanců hlasovalo pro.",
-      "source": "votes",
-      "citace": "Hlasování číslo 120, pro 67, proti 0, návrh nebyl přijat."
+      "text": "2 Upozorňuji, že je navrženo, abychom s návrhem zákona tedy vyslovili souhlas již v prvním čtení.",
+      "source": "steno",
+      "steno_id": "2025_14_00800",
+      "citace": "2 Upozorňuji, že je navrženo, abychom s návrhem zákona tedy vyslovili souhlas již v prvním čtení."
+    },
+    {
+      "text": "V sále je hluk.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_14_00801",
+      "citace": "(V sále je hluk.)"
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Trestní změna spadla",
-  "lead": "Úterý večer koalice nenatáhla finální hlasování o zákonu trestního zákoníku. Druhé kolo sice prošlo sto padesáti čtyřmi hlasy, ale závěrečné hlasování skončilo jen sedmi desítkami pro.",
-  "pointa": "Změna zákona měla projít rychlou kolejí spolu s dalšími zákony čtrnácté schůze. Bez dostatečné podpory ve finálním kole v sále zůstala.",
-  "mean": "Úpravy trestního zákoníku tentokrát neprošly. Platí dál stávající pravidla, dokud sněmovna nepředloží nový návrh.",
+  "nadpis": "Prošlo to",
   "pocet_hlasovani": 3,
-  "proslo": false,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 89,
+    "pritomno_min": 155,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
   "steno_slov": 21874
 }

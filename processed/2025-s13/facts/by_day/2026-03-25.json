@@ -3,23 +3,14 @@
   "den": "středa",
   "topic_slugs": [
     "novela-z-o-pojistnem-na-socialni-zabezpeceni",
-    "novela-z-o-pojistnem-na-verejne-zdravotni-pojist",
-    "navrh-na-zrizeni-vysetrovaci-komise-poslanecke-s"
-  ],
-  "dnesni_ucet": "Živnostníkům klesnou odvody, VZP přerozdělí rezervy.\nVečer vznikla komise ke kauze Dozimetr.",
-  "zaver": "že sněmovna snížila zálohy pro živnostníky, přesunula osm miliard z rezerv pojišťovny a zřídila vyšetřovací komisi ke kauze Dozimetr.",
-  "vysledek": [
-    "* sociální odvody pro živnostníky schváleny 112:9 po zmatečném hlasování",
-    "* přerozdělení rezerv zdravotních pojišťoven schváleno 93:49",
-    "* vyšetřovací komise Dozimetr zřízena 89:15",
-    "* doplňující usnesení k nízkým důchodům OSVČ zamítnuto 81:3"
+    "novela-z-o-pojistnem-na-verejne-zdravotni-pojist"
   ],
   "stats": {
     "pocet_hlas": 8,
     "minuty": 534,
     "end_cas": "19:44",
-    "proslo": 3,
+    "proslo": 2,
     "zamitnuto": 0,
-    "dlouha_debata": false
+    "dlouha_debata": true
   }
 }

@@ -3,36 +3,47 @@
   "nazev": "Novela z. o státní sociální podpoře",
   "datum": "22.04.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "termínech digitalizace dávek na Úřadu práce",
+  "predmet_lidsky": "státní sociální podpoře",
   "koho": [
-    "Koho se to týká? Rodiny čekající na příspěvek na bydlení, přídavek na dítě nebo další dávky z Úřadu práce."
+    "Pokud chodíte na Úřad práce pro příspěvek na bydlení nebo přídavek na dítě, nemusíte se zatím bát, že by se vám všechno přes noc přeházelo."
   ],
   "fakty": [
     {
-      "text": "Brzesková řekla, že úřady nestihnou digitalizaci dávek k 1. červenci 2026.",
+      "text": "2 Upozorňuji, že navrženo, tedy, aby se díky tomuto paragrafu zákon schválil již v prvém čtení, stanovisko vlády bylo doručeno jako sněmovní tisk 124/1.",
       "source": "steno",
-      "steno_id": "2025_14_01084",
-      "citace": "Tato novela fakticky odkládá náběh digitalizačních změn, které měly být účinné od 1. července 2026."
+      "steno_id": "2025_14_01051",
+      "citace": "2 Upozorňuji, že navrženo, tedy, aby se díky tomuto paragrafu zákon schválil již v prvém čtení, stanovisko vlády bylo doručeno jako sněmovní tisk 124/1."
     },
     {
-      "text": "Kapacity IT systémů jsou vytíženy zavedením superdávky.",
+      "text": "13.Návrh poslance Aleše Juchelky na vydání zákona, kterým se mění zákon č.",
       "source": "steno",
-      "steno_id": "2025_14_01084",
-      "citace": "Současné kapacity informačních systémů jsou plně vytíženy implementací nové dávky státní sociální pomoci."
+      "steno_id": "2025_14_01051",
+      "citace": "13.Návrh poslance Aleše Juchelky na vydání zákona, kterým se mění zákon č."
     },
     {
-      "text": "Hlasování číslo 140, sto dvacet dva hlasů pro, zákon schválen.",
-      "source": "votes",
-      "citace": "Hlasování číslo 140, pro 122, proti 0."
+      "text": "152/2025 Sb., kterým se mění některé zákony v souvislosti s přijetím zákona o dávce státní sociální pomoci, ve znění zákona č.",
+      "source": "steno",
+      "steno_id": "2025_14_01051",
+      "citace": "152/2025 Sb., kterým se mění některé zákony v souvislosti s přijetím zákona o dávce státní sociální pomoci, ve znění zákona č."
+    },
+    {
+      "text": "2027, projde to tady třemi čteními, schválí to Senát, podepíše to pan prezident, budeme mít svého kosmonauta ve vesmíru.",
+      "source": "steno",
+      "steno_id": "2025_14_01052",
+      "citace": "2027, projde to tady třemi čteními, schválí to Senát, podepíše to pan prezident, budeme mít svého kosmonauta ve vesmíru."
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Dávky se digitalizují později",
-  "lead": "Sněmovna schválila technickou novelu, která odkládá digitalizaci dávek státní sociální podpory. Úřad práce nestihne nový systém k červenci, protože kapacity žere superdávka.",
-  "pointa": "Směr digitalizace zůstává, mění se tempo. Brzesková říkala, že jinak by chyby odnesli senioři, rodiče a samoživitelé.",
-  "mean": "Dávky z Úřadu práce se zatím nebudou převádět do plně digitálního režimu podle původního harmonogramu. Lidé u pokladny úřadu zatím neuvidí změnu.",
+  "priorita": 3,
+  "nadpis": "Dávky se mění",
   "pocet_hlasovani": 3,
   "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 122,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
   "steno_slov": 8449
 }

@@ -5,10 +5,45 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "o vstupu a pobytu cizinců",
   "koho": [],
-  "fakty": [],
+  "fakty": [
+    {
+      "text": "cizinecký zákon",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_14_00250",
+      "citace": "(cizinecký zákon)"
+    },
+    {
+      "text": "10.Vládní návrh zákona o vstupu a pobytu cizinců (cizinecký zákon)/sněmovní tisk 144/ – prvé čtení Z pověření vlády předložený návrh uvede ministr vnitra Lubomír Metnar.",
+      "source": "steno",
+      "steno_id": "2025_14_00250",
+      "citace": "10.Vládní návrh zákona o vstupu a pobytu cizinců (cizinecký zákon)/sněmovní tisk 144/ – prvé čtení Z pověření vlády předložený návrh uvede ministr vnitra Lubomír Metnar."
+    },
+    {
+      "text": "Poprosím Roberta Králíčka, který je zpravodaj, aby si sedl za zpravodajský stůl.",
+      "source": "steno",
+      "steno_id": "2025_14_00250",
+      "citace": "Poprosím Roberta Králíčka, který je zpravodaj, aby si sedl za zpravodajský stůl."
+    },
+    {
+      "text": "Hluk v sále přetrvává.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_14_00251",
+      "citace": "(Hluk v sále přetrvává.)"
+    }
+  ],
   "publikovat": false,
-  "priorita": 0,
+  "priorita": 3,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 117,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 1456
 }

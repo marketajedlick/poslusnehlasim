@@ -1,44 +1,49 @@
 {
   "slug": "stanovisko-vladni-koalice-ke-sjezdu-sudetonemeck",
-  "nazev": "Stanovisko ke sjezdu Sudetoněmeckého landsmanšaftu v Brně",
+  "nazev": "Stanovisko vládní koalice ke sjezdu Sudetoněmeckého landsmanšaftu v Br",
   "datum": "06.05.2026",
-  "verdikt": "schvaleno",
-  "predmet_lidsky": "postoji sněmovny ke sjezdu Sudetoněmeckého landsmanšaftu v Brně",
-  "koho": [
-    "Koho se to týká? Spíš vztahy s Německem. Usnesení odsuzuje sjezd, který podle koalice ohrožuje česko-německé vztahy."
-  ],
+  "verdikt": "zamiteno",
+  "predmet_lidsky": "stanovisko vládní koalice ke sjezdu Sudetoněmeckého landsmanšaftu v Br",
+  "koho": [],
   "fakty": [
     {
-      "text": "Koten obhajoval usnesení odkazem na česko-německou deklaraci z roku 1997.",
+      "text": "Poslankyně Malá se domlouvá s předsedou Okamurou a žádá o pozdržení dalšího hlasování.",
       "source": "steno",
-      "steno_id": "2025_16_00061",
-      "citace": "Vyzdvihuje význam Česko–německé deklarace podepsané 21. ledna 1997 pro utváření moderních česko-německých vztahů."
+      "kind": "scene",
+      "steno_id": "2025_16_00058",
+      "citace": "(Poslankyně Malá se domlouvá s předsedou Okamurou a žádá o pozdržení dalšího hlasování.)"
     },
     {
-      "text": "Benda řekl, že bod nemá být stanovisko vládní koalice, ale sněmovny.",
+      "text": "(Poslanec Koten nepřichází k řečnickému pultu.) Já bych poprosil pana poslance Kotta, jak jsem ho vyzval, aby se ujal slova.",
       "source": "steno",
-      "steno_id": "2025_16_00063",
-      "citace": "Máme mimořádně hloupý návrh. Vládní koalici se nepodařilo pochopit, že ten bod by se neměl jmenovat Stanovisko vládní koalice."
+      "steno_id": "2025_16_00058",
+      "citace": "(Poslanec Koten nepřichází k řečnickému pultu.) Já bych poprosil pana poslance Kotta, jak jsem ho vyzval, aby se ujal slova."
     },
     {
-      "text": "Zuna navrhoval vyřadit bod z pořadu, aby se odblokovala sněmovna.",
+      "text": "(Poslanec Okamura vznáší mimo mikrofon námitku, že se jedná o poslance Kotena, ne Kotta.) Kotena, pardon.",
       "source": "steno",
-      "steno_id": "2025_16_00278",
-      "citace": "Dovolím si navrhnout vyřazení tohoto bodu z pořadu schůze."
+      "steno_id": "2025_16_00058",
+      "citace": "(Poslanec Okamura vznáší mimo mikrofon námitku, že se jedná o poslance Kotena, ne Kotta.) Kotena, pardon."
     },
     {
-      "text": "Hlasování číslo 49 ve 00:51, sto devět hlasů pro, jeden proti.",
-      "source": "votes",
-      "citace": "Hlasování číslo 49, pro 109, proti 1."
+      "text": "Silný hluk v sále. Přerušuje svůj projev a obrací se na předsedajícího.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_16_00059",
+      "citace": "(Silný hluk v sále. Přerušuje svůj projev a obrací se na předsedajícího.)"
     }
   ],
-  "publikovat": true,
+  "publikovat": false,
   "priorita": 3,
-  "nadpis": "Sněmovna proti sjezdu v Brně",
-  "lead": "Ve středu v noci sněmovna schválila stanovisko ke sjezdu Sudetoněmeckého landsmanšaftu v Brně, sto devět hlasů proti jednomu. Debata trvala od úterka večer, opozice celý den brzdila obstrukcemi.",
-  "pointa": "Koalice usnesení obhajovala odkazem na česko-německou deklaraci, opozice mluvila o usmíření a Benešových dekretech. Benda kritizoval název bodu jako stanovisko vládní koalice. Stejné téma se vrátí na mimořádné schůzi 18. května.",
-  "mean": "Sněmovna oficiálně odmítá sjezd v Brně. Jde o politické usnesení, ne o zákon měnící práva občanů.",
-  "pocet_hlasovani": 1,
-  "proslo": true,
+  "nadpis": "Zůstává po staru",
+  "pocet_hlasovani": 15,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 82,
+    "pritomno_min": 117,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
   "steno_slov": 73350
 }

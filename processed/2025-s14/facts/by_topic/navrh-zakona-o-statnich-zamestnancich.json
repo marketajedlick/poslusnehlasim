@@ -3,36 +3,48 @@
   "nazev": "Návrh zákona o státních zaměstnancích",
   "datum": "17.04.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "právních poměrech státních zaměstnanců na úřadech",
+  "predmet_lidsky": "státních zaměstnancích",
   "koho": [
-    "Koho se to týká? Úředníky a lidi, kteří řeší agendu na ministerstvech a správních úřadech."
+    "Občana se to netýká, ledaže pracujete na úřadě nebo tam čekáte ve frontě."
   ],
   "fakty": [
     {
-      "text": "Vondráček představil druhé čtení zákona o státních zaměstnancích.",
+      "text": "zákon o státních zaměstnancích",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_14_00619",
+      "citace": "(zákon o státních zaměstnancích)"
+    },
+    {
+      "text": "7.Návrh poslanců Radka Vondráčka, Renaty Vesecké, Libora Vondráčka a Zuzany Ožanové na vydání zákona o právních poměrech státních zaměstnanců v ministerstvech a jiných správních úřadech (zákon o státních zaměstnancích)/sněmovní tisk 76/ – druhé čtení Prosím aby předložený návrh uvedl za navrhovatele poslanec Radek Vond",
       "source": "steno",
       "steno_id": "2025_14_00619",
-      "citace": "Návrh poslanců Radka Vondráčka na vydání zákona o právních poměrech státních zaměstnanců v ministerstvech a jiných správních úřadech, druhé čtení."
+      "citace": "7.Návrh poslanců Radka Vondráčka, Renaty Vesecké, Libora Vondráčka a Zuzany Ožanové na vydání zákona o právních poměrech státních zaměstnanců v ministerstvech a jiných správních úřadech (zákon o státn"
     },
     {
-      "text": "Starostové návrh podporují kvůli napravení nespravedlnosti v systému.",
+      "text": "Mezitím tedy sdělím, že návrh jsme v prvním čtení přikázali k projednání ústavně-právnímu výboru jako výboru garančnímu.",
       "source": "steno",
-      "steno_id": "2025_14_00600",
-      "citace": "My tento návrh podporujeme a podporujeme ho proto, že napravuje zjevnou nespravedlnost vůči lidem, kteří po změně zákona zůstali uvězněni v systému."
+      "steno_id": "2025_14_00619",
+      "citace": "Mezitím tedy sdělím, že návrh jsme v prvním čtení přikázali k projednání ústavně-právnímu výboru jako výboru garančnímu."
     },
     {
-      "text": "Hlasování číslo 78, sto třináct hlasů pro, zákon ve druhém čtení schválen.",
-      "source": "votes",
-      "citace": "Hlasování číslo 78, pro 113, proti 0."
+      "text": "Tady jenom pro vaši představu, v jedné ruce držím pozměňovací návrhy k tisku 76, v druhé ruce pozměňovací návrhy k tisku 77, další byly nahrány do systému.",
+      "source": "steno",
+      "steno_id": "2025_14_00620",
+      "citace": "Tady jenom pro vaši představu, v jedné ruce držím pozměňovací návrhy k tisku 76, v druhé ruce pozměňovací návrhy k tisku 77, další byly nahrány do systému."
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Nový zákon pro úředníky",
-  "lead": "Páteční dopoledne schválili druhé kolo zákona o státních zaměstnancích, sto třináct hlasů proti nule. Starostové mluvili o napravení nespravedlnosti vůči úředníkům, které nový zákon zasáhl po změně pravidel.",
-  "pointa": "Vondráčkův návrh sjednocuje pravidla pro úředníky na ministerstvech a správních úřadech. Jde o dlouho připravovanou rekodifikaci personálních poměrů státu.",
-  "mean": "Zákon mění podmínky státních zaměstnanců na úřadech. Běžného občana se netýká, pokud nepracuje ve státní správě.",
+  "priorita": 3,
+  "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
   "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 115,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
   "steno_slov": 1323
 }
