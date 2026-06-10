@@ -470,15 +470,33 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "interpelacím",
-        "Poslanci v debatě vyhrávají otázky ministrům. Odpověď se nehlasuje, jde o veřejnou kontrolu vlády.",
+        "Poslanci se ve sněmovně ptají ministrům a premiérovi, ten musí odpovědět. "
+        "Nerozhoduje se o tom hlasováním, jde o veřejnou kontrolu vlády. "
+        "Ve čtvrtek je na to podle jednacího řádu vyhrazený den.",
     ),
     (
         "interpelací",
-        "Poslanci v debatě vyhrávají otázky ministrům. Odpověď se nehlasuje, jde o veřejnou kontrolu vlády.",
+        "Poslanci se ve sněmovně ptají ministrům a premiérovi, ten musí odpovědět. "
+        "Nerozhoduje se o tom hlasováním, jde o veřejnou kontrolu vlády. "
+        "Ve čtvrtek je na to podle jednacího řádu vyhrazený den.",
+    ),
+    (
+        "interpelacemi",
+        "Poslanci se ve sněmovně ptají ministrům a premiérovi, ten musí odpovědět. "
+        "Nerozhoduje se o tom hlasováním, jde o veřejnou kontrolu vlády. "
+        "Ve čtvrtek je na to podle jednacího řádu vyhrazený den.",
+    ),
+    (
+        "interpelacích",
+        "Poslanci se ve sněmovně ptají ministrům a premiérovi, ten musí odpovědět. "
+        "Nerozhoduje se o tom hlasováním, jde o veřejnou kontrolu vlády. "
+        "Ve čtvrtek je na to podle jednacího řádu vyhrazený den.",
     ),
     (
         "interpelace",
-        "Poslanci v debatě vyhrávají otázky ministrům. Odpověď se nehlasuje, jde o veřejnou kontrolu vlády.",
+        "Poslanci se ve sněmovně ptají ministrům a premiérovi, ten musí odpovědět. "
+        "Nerozhoduje se o tom hlasováním, jde o veřejnou kontrolu vlády. "
+        "Ve čtvrtek je na to podle jednacího řádu vyhrazený den.",
     ),
     (
         "ústavní zákon",
