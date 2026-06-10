@@ -357,6 +357,10 @@ def split_nadpis_radky(nadpis: str, *, max_lines: int = 2) -> list[str]:
     text = (nadpis or "").strip()
     if not text:
         return [""]
+    if "\n" in text:
+        parts = [p.strip() for p in text.splitlines() if p.strip()]
+        if parts:
+            return parts[:max_lines]
     for sep in (" - ",):
         if sep in text:
             parts = [p.strip() for p in text.split(sep, 1) if p.strip()]

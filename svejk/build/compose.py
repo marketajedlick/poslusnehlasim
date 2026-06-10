@@ -68,9 +68,14 @@ def render_den_markdown(
             prvni = False
 
         co_znamena = item.mean.strip() if item.mean else item.dopad
+        heading = (
+            "\n".join(item.nadpis_radky)
+            if len(item.nadpis_radky) > 1
+            else item.nadpis
+        )
         lines.extend(
             [
-                f"## {item.nadpis}",
+                f"## {heading}",
                 "",
                 lead,
                 "",
