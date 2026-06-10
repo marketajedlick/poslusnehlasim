@@ -340,6 +340,14 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Babiš tvrdil, že Agrofert dodal 3600 toastů uprchlíkům z Ukrajiny na hlavním nádraží v roce 2022.",
     ),
     (
+        "Okamurova novoročního projevu",
+        "Video předsedy sněmovny ze 1. ledna 2026: odmítl posílat zbraně Ukrajině a řekl, že za peníze důchodců nelze kupovat zbraně „k udržování nesmyslné války“.",
+    ),
+    (
+        "videa se Zunou",
+        "Ve sněmovně točili s generálem Zunou ponižující klipy poté, co řekl, že je nutné pomáhat Ukrajině ve válce proti Rusku.",
+    ),
+    (
         "landsmanšaft",
         "Spolek sudetoněmeckých krajanů. Sněmovna usneseními reaguje na jeho sjezdy v Česku.",
     ),
