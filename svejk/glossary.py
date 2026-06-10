@@ -15,7 +15,7 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "rychlost nesmí ztratit právní jistotu",
-        "Kučera (TOP 09) 28. 1. 2026: zrychlení staveb je správný cíl, ale nesmí rozbít "
+        "Kučera (TOP 09): zrychlení staveb je správný cíl, ale nesmí rozbít "
         "pravidla tak, aby stavebník ani úřad nevěděli, co platí.",
     ),
     (
