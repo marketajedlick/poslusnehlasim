@@ -8,6 +8,13 @@ from __future__ import annotations
 GLOSSARY: tuple[tuple[str, str], ...] = (
     # --- kontext konkrétních schůzí (delší fráze první) ---
     (
+        "ubere z důchodu tisíc šest set padesát dvě korun",
+        "Jurečkův protiargument z debaty 16. 1. 2026: nižší zálohy na sociálním pojištění "
+        "znamenají nižší odvody na důchod. Koalice mluví o úspoře 715 Kč měsíčně u záloh; "
+        "Jurečka počítá, že v penzi by OSVČ přišla zhruba o 1 652 Kč měsíčně. Schillerová "
+        "v projevu tuto cenu nezmínila.",
+    ),
+    (
         "nechal počkat, až v sále sedí víc ministrů",
         "Pirát Václav Pláteník měl 14. 1. po obědě domluvit projev proti vládě, který "
         "před polední pauzou přerušili uprostřed věty. Předsedající Barták (Motoristé) "

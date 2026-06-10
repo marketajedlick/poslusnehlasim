@@ -538,7 +538,7 @@ def cmd_review(args: argparse.Namespace) -> int:
             print(f"Chyba: chybí facts pro slug {args.slug}", file=sys.stderr)
             return 1
         topics = [tr]
-        text = format_topic_review(tr, show_votes=args.votes)
+        text = format_topic_review(tr, paths, show_votes=args.votes)
     elif args.audit:
         weak = audit_weak_facts(paths)
         text = format_audit_report(weak, paths)

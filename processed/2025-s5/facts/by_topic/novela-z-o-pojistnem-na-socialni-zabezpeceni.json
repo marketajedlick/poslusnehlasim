@@ -5,9 +5,21 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky a OSVČ",
   "koho": [
-    "Koho se to týká? Živnostníků a dalších OSVČ, kdo platí zálohy na sociálním pojištění sami — ne běžných zaměstnanců na výplatní pásce."
+    "Koho se to týká? Živnostníků a dalších OSVČ, kdo platí zálohy na sociálním pojištění sami, ne běžných zaměstnanců na výplatní pásce."
   ],
   "fakty": [
+    {
+      "text": "My už jsme se mohli věnovat věcným věcem, sociálnímu pojištění, jednacímu řádu, stavebnímu zákonu a místo toho tady znova opakovaně, stále donekonečna, řešíme Filipa Turka.",
+      "source": "steno",
+      "steno_id": "2025_5_00870",
+      "citace": "My už jsme se mohli věnovat věcným věcem, sociálnímu pojištění, jednacímu řádu, stavebnímu zákonu a místo toho tady znova opakovaně, stále donekonečna, řešíme Filipa Turka."
+    },
+    {
+      "text": "Prezident republiky odmítl jmenovat pana Filipa Turka ministrem životního prostředí, a to i přesto, že byl řádně navržen předsedou vlády.",
+      "source": "steno",
+      "steno_id": "2025_5_00818",
+      "citace": "Prezident republiky odmítl jmenovat pana Filipa Turka ministrem životního prostředí, a to i přesto, že byl řádně navržen předsedou vlády."
+    },
     {
       "text": "náš koaliční návrh, který má živnostníkům vrátit vyměřovací základ pro odvody na sociální pojistné z 40 procent na 35 procent průměrné mzdy",
       "source": "steno",
@@ -15,10 +27,10 @@
       "citace": "náš koaliční návrh, který má živnostníkům vrátit vyměřovací základ pro odvody na sociální pojistné z 40 procent na 35 procent průměrné mzdy"
     },
     {
-      "text": "představuje zvýšení odvodové zátěže o dalších 715 korun měsíčně, tedy 8 580 korun ročně",
+      "text": "toto zvýšení je již třetím zvýšením v řadě a představuje zvýšení odvodové zátěže o dalších 715 korun měsíčně, tedy 8 580 korun ročně",
       "source": "steno",
       "steno_id": "2025_5_00940",
-      "citace": "představuje zvýšení odvodové zátěže o dalších 715 korun měsíčně, tedy 8 580 korun ročně"
+      "citace": "toto zvýšení je již třetím zvýšením v řadě a představuje zvýšení odvodové zátěže o dalších 715 korun měsíčně, tedy 8 580 korun ročně"
     },
     {
       "text": "Snížit budoucí důchody osob samostatně výdělečně činných měsíčně o 1 652 korun. To tady Alena Schillerová záměrně neřekla.",
@@ -30,9 +42,9 @@
   "publikovat": true,
   "priorita": 2,
   "nadpis": "Snížení záloh pro živnostníky",
-  "lead": "Koalice tlačí snížení záloh pro živnostníky o 715 korun měsíčně. Jurečka počítá, že to v budoucnu ubere z důchodu 1 652 korun.",
-  "pointa": "Schillerová mluvila o úlevě teď, opozice o ceně později. Prvé čtení přesto prošlo.",
-  "mean": "Páteční dopoledne patřilo sporu o to, jestli levnější zálohy pro OSVČ jsou pomoc, nebo záloha na nižší důchod. Sněmovna zákon v prvém čtení schválila, debata o číslech pokračuje.",
+  "lead": "Ve čtvrtek vládě prošla důvěra, v pátek poslanci ještě desetkrát hlasovali o usneseních ke jmenování ministrů, hlavně kvůli sporu o klimatického zmocněnce Filipa Turka. Ministr Hladík připomněl, že místo toho už mohli řešit zálohy OSVČ; odpoledne v prvním kole prošly.",
+  "pointa": "Schillerová slibovala snížení základ o 715 korun měsíčně. Jurečka doplnil, že z důchodu OSVČ to vezme 1 652 korun: „záměrně neřekla.“",
+  "mean": "Po schválené důvěře ještě deset hlasování o usneseních k obsazení vlády, důvěra neznamená klid. Odpoledne první kolo zákona vracející zálohy OSVČ z 40 na 35 % mzdy, opozice varuje před nižším důchodem.",
   "pocet_hlasovani": 3,
   "proslo": true,
   "signaly": {
