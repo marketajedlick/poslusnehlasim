@@ -24,6 +24,12 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "(kompetenční žaloba).",
     ),
     (
+        "koalice obsazování postů pustila dál",
+        "16. 1. 2026: osm opozičních usnesení chtělo zbrzdit jmenování ministrů, většinou padlo "
+        "101:82 až 101:83. Koalice schválila jen návrh Šťastného (Motoristé), že prezident má "
+        "jmenovat ministry, a personální kolotoč pokračoval k odpoledním volbám do orgánů sněmovny.",
+    ),
+    (
         "rozdíl zisků VZP a ostatních pojišťoven",
         "Vojtěch 28. 1. 2026: navrhovaných 7,9 miliardy prý odpovídá rozdílu zisků za zaměstnance. "
         "VZP zhruba 10,5 miliardy, zaměstnanecké pojišťovny asi 2,6. Opozice to vnímá jako neférový "
