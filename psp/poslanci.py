@@ -158,10 +158,13 @@ def _prijmeni_tvary(prijmeni: str, pohlavi: str) -> set[str]:
     elif prijmeni.endswith("n"):
         tvary.add(prijmeni + "a")
     if prijmeni.endswith("a"):
-        tvary.add(prijmeni[:-1] + "y")
-        tvary.add(prijmeni[:-1] + "ovi")
+        kmen = prijmeni[:-1]
+        tvary.add(kmen + "y")
+        tvary.add(kmen + "ovi")
+        tvary.update(kmen + s for s in ("ova", "ovy", "ovu"))
     else:
         tvary.add(prijmeni + "ovi")
+        tvary.update(prijmeni + s for s in ("ova", "ovy", "ově", "ův"))
     return tvary
 
 
