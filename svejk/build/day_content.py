@@ -8,6 +8,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+from svejk.build.extract import skore_z_verdiktu
 from svejk.build.io import read_json
 from svejk.cislo_slovy import (
     krat_hlasovali,
@@ -410,6 +411,11 @@ def build_den_content(
     }
     slugs = day.get("topic_slugs") or []
     topics = _topics_by_slug(paths)
+
+    skore_p, skore_z = skore_z_verdiktu(slugs, paths)
+    if skore_p or skore_z:
+        stats["proslo"] = skore_p
+        stats["zamitnuto"] = skore_z
 
     cal_den, cal_day, cal_month = calendar_parts(datum, den_cap)
     custom_ucet = (day.get("dnesni_ucet") or "").strip()

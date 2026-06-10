@@ -54,7 +54,8 @@ Schůze má pevnou kostru. Rozeznávej rutinu od odchylky — **odchylky jsou te
 
 ## Dnešní účet a počty hlasování
 
-- Do `dnesni_ucet`, `stats.pocet_hlas` a sportovního skóre (tabule „stav zápasu") počítej jen **zákony** (`kategorie: substantivni`). Výbory, volby funkcí, volební komise a pořad schůze (`je_porad_schuze: true`, personálka) **nepočítej**.
+- Do `stats.pocet_hlas` počítej jen **zákony** (`kategorie: substantivni`). Výbory, volby funkcí, volební komise a pořad schůze (`je_porad_schuze: true`) **nepočítej**.
+- Sportovní skóre (tabule „stav zápasu") počítej z **publikovaných článků** dne podle `verdikt`: `schvaleno` a `zvoleno` → prošlo, `zamiteno` a `odlozeno` → padlo. Vrácení zákona do druhého kola (`odlozeno`) je pro skóre jako zamítnutí, i když procedurální hlasování skončilo „přijato".
 - Formát `X:Y` ve výsledku dne používej jen u zákonů. U procedury piš „sto X pro, Y proti".
 - Boj o pořad může být samostatný článek (distanc, ukrajina, absurdita), ale ne jako „třicet hlasování za dvě hodiny".
 - **Zákony a usnesení jsou jádro dne.** Procedura je kulisa.

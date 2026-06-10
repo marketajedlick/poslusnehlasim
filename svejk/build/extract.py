@@ -116,6 +116,28 @@ def _nadpis_fallback(nazev: str, proslo: bool) -> str:
     return _nadpis_bodu(b)
 
 
+_PROSLO_VERDIKTY = frozenset({"schvaleno", "zvoleno"})
+_ZAMITNUTO_VERDIKTY = frozenset({"zamiteno", "odlozeno"})
+
+
+def skore_z_verdiktu(slugs: list[str], paths: SchuzePaths) -> tuple[int, int]:
+    """Stav zápasu z publikovaných článků: schváleno/zvoleno vs. zamítnuto/odloženo."""
+    proslo = zamitnuto = 0
+    for slug in slugs:
+        fp = paths.facts_by_topic / f"{slug}.json"
+        if not fp.is_file():
+            continue
+        fact = read_json(fp)
+        if not fact.get("publikovat"):
+            continue
+        v = (fact.get("verdikt") or "").strip()
+        if v in _PROSLO_VERDIKTY:
+            proslo += 1
+        elif v in _ZAMITNUTO_VERDIKTY:
+            zamitnuto += 1
+    return proslo, zamitnuto
+
+
 def _den_zakon_stats(day_votes: list[dict]) -> tuple[int, int, int]:
     """Počty pro tabuli stavu zápasu: jen zákony, jedno skóre na téma (poslední hlasování)."""
     groups: dict[tuple[str, str], list] = defaultdict(list)
@@ -236,7 +258,7 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
     days = sorted({v["datum"] for v in votes if v.get("datum")})
     for datum in days:
         day_votes = [v for v in votes if v.get("datum") == datum]
-        proslo, zamitnuto, pocet_hlas = _den_zakon_stats(day_votes)
+        vote_proslo, vote_zamitnuto, pocet_hlas = _den_zakon_stats(day_votes)
         times = [v.get("cas", "") for v in day_votes if v.get("cas")]
         start = times[0][:5] if times else ""
         end = times[-1][:5] if times else ""
@@ -247,6 +269,9 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
             minuty = max(0, (eh * 60 + em) - (sh * 60 + sm))
 
         slugs = by_day_topics.get(datum, [])
+        proslo, zamitnuto = skore_z_verdiktu(slugs, paths)
+        if not proslo and not zamitnuto:
+            proslo, zamitnuto = vote_proslo, vote_zamitnuto
         slug_meta = []
         for slug in slugs:
             fp = paths.facts_by_topic / f"{slug}.json"

@@ -18,8 +18,8 @@
     "pocet_hlas": 1,
     "minuty": 277,
     "end_cas": "13:37",
-    "proslo": 0,
-    "zamitnuto": 0,
+    "proslo": 1,
+    "zamitnuto": 1,
     "dlouha_debata": true
   }
 }
