@@ -539,22 +539,27 @@
   var mq = window.matchMedia("(max-width:720px)");
   var margin = 16;
   var gap = 8;
+  var openTip = null;
 
   function isMobile() {
     return mq.matches;
   }
 
   function resetTip(tip) {
+    if (!tip) return;
     var bubble = tip.querySelector(".term-tip-bubble");
     tip.classList.remove("is-tip-open");
+    if (openTip === tip) openTip = null;
+    if (tip === document.activeElement) tip.blur();
     if (!bubble) return;
-    ["left", "top", "width"].forEach(function (key) {
+    ["left", "top", "width", "visibility", "display"].forEach(function (key) {
       bubble.style[key] = "";
     });
   }
 
   function resetAll() {
     document.querySelectorAll(".term-tip.is-tip-open").forEach(resetTip);
+    openTip = null;
   }
 
   function placeTip(tip) {
@@ -562,8 +567,11 @@
     var bubble = tip.querySelector(".term-tip-bubble");
     if (!bubble) return;
 
+    if (openTip && openTip !== tip) resetTip(openTip);
     resetAll();
+
     tip.classList.add("is-tip-open");
+    openTip = tip;
     bubble.style.visibility = "hidden";
     bubble.style.display = "block";
 
@@ -590,31 +598,39 @@
     bubble.style.visibility = "";
   }
 
-  document.addEventListener("focusin", function (e) {
-    var tip = e.target.closest && e.target.closest(".term-tip");
-    if (tip) placeTip(tip);
-  });
-
-  document.addEventListener("focusout", function (e) {
-    var tip = e.target.closest && e.target.closest(".term-tip");
-    if (!tip || tip.contains(e.relatedTarget)) return;
-    resetTip(tip);
-  });
+  function toggleTip(tip) {
+    if (!isMobile()) return;
+    if (tip.classList.contains("is-tip-open")) {
+      resetTip(tip);
+      return;
+    }
+    placeTip(tip);
+  }
 
   document.addEventListener("click", function (e) {
     if (!isMobile()) return;
-    if (e.target.closest && e.target.closest(".term-tip")) return;
+    var tip = e.target.closest && e.target.closest(".term-tip");
+    if (tip) {
+      e.preventDefault();
+      toggleTip(tip);
+      return;
+    }
+    resetAll();
+  }, true);
+
+  document.addEventListener("keydown", function (e) {
+    if (!isMobile() || e.key !== "Escape") return;
     resetAll();
   });
 
   window.addEventListener("scroll", function () {
-    if (!isMobile()) return;
-    document.querySelectorAll(".term-tip.is-tip-open").forEach(placeTip);
+    if (!isMobile() || !openTip) return;
+    placeTip(openTip);
   }, { passive: true });
 
   window.addEventListener("resize", function () {
-    if (!isMobile()) return;
-    document.querySelectorAll(".term-tip.is-tip-open").forEach(placeTip);
+    if (!isMobile() || !openTip) return;
+    placeTip(openTip);
   }, { passive: true });
 })();
 </script>

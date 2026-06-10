@@ -258,15 +258,11 @@ body.is-turning{ pointer-events:none; }
 }
 @media (max-width:720px){
   .sheet-shape{ overflow:visible; }
-  .term-tip:hover .term-tip-bubble{
-    display:none;
-  }
-  .term-tip:focus .term-tip-bubble,
-  .term-tip:focus-within .term-tip-bubble,
-  .term-tip.is-tip-open .term-tip-bubble{
-    display:block;
+  .term-tip .term-tip-bubble{
+    display:none !important;
   }
   .term-tip.is-tip-open .term-tip-bubble{
+    display:block !important;
     position:fixed;
     bottom:auto;
     left:0;
