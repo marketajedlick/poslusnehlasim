@@ -209,6 +209,24 @@ def cmd_build(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_compose_changed(args: argparse.Namespace) -> int:
+    from svejk.build import run_compose_changed
+
+    schuze_list = None
+    if args.schuze:
+        schuze_list = [int(x.strip()) for x in args.schuze.split(",") if x.strip()]
+    try:
+        summary = run_compose_changed(args.obdobi, schuze_list=schuze_list, verbose=not args.quiet)
+    except (ValueError, OSError, FileNotFoundError) as e:
+        print(f"Chyba: {e}", file=sys.stderr)
+        return 1
+    if summary.get("failed"):
+        return 1
+    if not schuze_list and not (summary.get("ok") or summary.get("vysledky")):
+        return 1
+    return 0
+
+
 def cmd_sync(args: argparse.Namespace) -> int:
     from svejk.build.sync import run_sync
 
@@ -230,6 +248,13 @@ def cmd_sync(args: argparse.Namespace) -> int:
         print(f"Chyba: {e}", file=sys.stderr)
         return 1
     print(json.dumps(summary, ensure_ascii=False, indent=2))
+    updated = summary.get("updated_schuze") or []
+    if updated and not summary.get("check_only") and not args.quiet:
+        print(
+            f"Po syncu compose jen změněné schůze: "
+            f"./run-svejk.sh compose-changed --obdobi {args.obdobi}",
+            file=sys.stderr,
+        )
     if summary.get("errors"):
         return 1
     if getattr(args, "fail_if_pending", False):
@@ -717,6 +742,18 @@ def main() -> int:
     )
     p_sync.add_argument("-q", "--quiet", action="store_true")
     p_sync.set_defaults(func=cmd_sync)
+
+    p_cc = sub.add_parser(
+        "compose-changed",
+        help="Compose jen schůze ze syncu (last_updated_schuze), ne celé období",
+    )
+    p_cc.add_argument("--obdobi", type=int, default=2025)
+    p_cc.add_argument(
+        "--schuze",
+        help="Přepsat seznam schůzí (čárkou), jinak last_updated_schuze ze sync-state",
+    )
+    p_cc.add_argument("-q", "--quiet", action="store_true")
+    p_cc.set_defaults(func=cmd_compose_changed)
 
     p_seed = sub.add_parser("seed", help="Demo data pro lokální test")
     p_seed.add_argument("--schuze", type=int, default=20)

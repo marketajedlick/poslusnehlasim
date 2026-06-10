@@ -27,7 +27,7 @@ Dva workflow ti pošlou **GitHub notifikaci** (selhání jobu), pokud máš u re
 | Workflow | Kdy | Co znamená selhání |
 |----------|-----|-------------------|
 | **Check new PSP data** (`data-check.yml`) | denně 05:30 a 21:30 CET (před sync) | Na PSP / Hlídači jsou nová data, která ještě nejsou lokálně |
-| **Sync PSP data** (`sync.yml`) | po stažení a commitu | Sync právě stáhl nová data do repa — je třeba doplnit `facts` a `compose` |
+| **Sync PSP data** (`sync.yml`) | po stažení a commitu | Sync stáhl nová data do repa — zkontroluj facts, doplň texty, spusť **jen** `compose-changed` (ne `--vsechny-schuze`) |
 
 Lokální tajemství (token z Hlídače atd.):
 

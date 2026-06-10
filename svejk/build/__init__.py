@@ -192,9 +192,39 @@ def run_build_obdobi(
     return summary
 
 
+def run_compose_changed(
+    obdobi: int,
+    *,
+    schuze_list: list[int] | None = None,
+    verbose: bool = True,
+) -> dict[str, Any]:
+    """Compose jen schůze ze syncu (last_updated_schuze), ne celé období."""
+    from svejk.build.sync import load_sync_state
+
+    cisla = schuze_list
+    if cisla is None:
+        state = load_sync_state()
+        cisla = [int(c) for c in state.get("last_updated_schuze") or []]
+    if not cisla:
+        msg = "Žádná schůze k compose — spusť sync, nebo uveď --schuze."
+        if verbose:
+            print(msg, flush=True)
+        return {"obdobi": obdobi, "composed": [], "message": msg}
+
+    if verbose:
+        print(f"Compose jen změněné schůze: {cisla}", flush=True)
+    return run_build_obdobi(
+        obdobi,
+        schuze_list=cisla,
+        only=("compose",),
+        verbose=verbose,
+    )
+
+
 __all__ = [
     "run_build",
     "run_build_obdobi",
+    "run_compose_changed",
     "run_sync",
     "STEPS",
     "SchuzePaths",
