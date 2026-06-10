@@ -3,47 +3,37 @@
   "nazev": "Novela z. o pojistném na veřejné zdravotní pojištění",
   "datum": "25.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky",
+  "predmet_lidsky": "přerozdělení rezerv zdravotních pojišťoven",
   "koho": [
-    "Koho se to týká? Živnostníků a dalších, kdo platí zálohy na sociálním pojištění sami, ne běžných zaměstnanců na výplatní pásce."
+    "Koho se to týká? Systému veřejného zdravotního pojištění. VZP přesune téměř osm miliard rezerv menším pojišťovnám, aby se stabilizovaly zálohy."
   ],
   "fakty": [
     {
-      "text": "Návrh na zamítnutí a pozměňovací návrhy jsou uvedeny ve sněmovním tisku 70/3, který byl doručen dne 6.",
-      "source": "steno",
-      "steno_id": "2025_13_00309",
-      "citace": "Návrh na zamítnutí a pozměňovací návrhy jsou uvedeny ve sněmovním tisku 70/3, který byl doručen dne 6."
-    },
-    {
-      "text": "Dalším bodem je bod číslo 56.Návrh poslance Adama Vojtěcha na vydání zákona, kterým se mění zákon č.",
-      "source": "steno",
-      "steno_id": "2025_13_00309",
-      "citace": "Dalším bodem je bod číslo 56.Návrh poslance Adama Vojtěcha na vydání zákona, kterým se mění zákon č."
-    },
-    {
-      "text": "592/1992 Sb., o pojistném na veřejné zdravotní pojištění, ve znění pozdějších předpisů/sněmovní tisk 70/ - třetí čtení Prosím, aby místo u stolku zpravodajů zaujal za navrhovatele poslanec Adam Vojtěch a zpravodaj garančního výboru, což byl výbor pro zdravotnictví, poslanec Jiří Mašek.",
-      "source": "steno",
-      "steno_id": "2025_13_00309",
-      "citace": "592/1992 Sb., o pojistném na veřejné zdravotní pojištění, ve znění pozdějších předpisů/sněmovní tisk 70/ - třetí čtení Prosím, aby místo u stolku zpravodajů zaujal za navrhovatele poslanec Adam Vojtěc"
-    },
-    {
-      "text": "Vážený pane předsedající, vážené paní poslankyně, vážení páni poslanci, velmi stručně vzhledem k času, znovu opakuji, že daný návrh zákona má za cíl jednorázové přerozdělení rezerv zdravotních pojišťoven, tedy konkrétně Všeobecné zdravotní pojišťovny, ve prospěch dalších zdravotních pojišťoven, svazových zdravotních po",
+      "text": "Vojtěch navrhuje jednorázové přerozdělení rezerv VZP ve prospěch ostatních pojišťoven.",
       "source": "steno",
       "steno_id": "2025_13_00310",
-      "citace": "Vážený pane předsedající, vážené paní poslankyně, vážení páni poslanci, velmi stručně vzhledem k času, znovu opakuji, že daný návrh zákona má za cíl jednorázové přerozdělení rezerv zdravotních pojišťo"
+      "citace": "Daný návrh zákona má za cíl jednorázové přerozdělení rezerv zdravotních pojišťoven, tedy konkrétně Všeobecné zdravotní pojišťovny, ve prospěch dalších zdravotních pojišťoven, svazových zdravotních pojišťoven, v objemu téměř 8 miliard korun."
+    },
+    {
+      "text": "Cílem je stabilizovat systém veřejného zdravotního pojištění v tomto roce.",
+      "source": "steno",
+      "steno_id": "2025_13_00310",
+      "citace": "Abychom stabilizovali systém veřejného zdravotního pojištění v tomto roce."
+    },
+    {
+      "text": "Hlasování číslo 86, pro 93, proti 49, zákon schválen.",
+      "source": "steno",
+      "steno_id": "2025_13_00341",
+      "citace": "Hlasování číslo 86, přihlášeno 161 poslanců, pro 93 poslanců, proti 49. Konstatuji, že s návrhem zákona byl vysloven souhlas."
     }
   ],
   "publikovat": true,
-  "priorita": 3,
-  "nadpis": "Živnostníci ušetří na odvodech",
+  "priorita": 2,
+  "nadpis": "VZP rozdělí rezervy pojišťovnám",
+  "lead": "Sněmovna schválila přesun téměř osmi miliard z rezerv Všeobecné zdravotní pojišťovny k menším pojišťovnám, devadesát tři hlasy pro, čtyřicet devět proti.",
+  "pointa": "Vojtěch to představil jako jednorázovou injekci pro stabilizaci systému. Není to přímé snížení záloh živnostníkům, to řešil jiný zákon.",
+  "mean": "Menší zdravotní pojišťovny dostanou z rezerv VZP peníze na vyrovnání letošního roku. Pro běžného pacienta jde spíš o provoz pojišťoven než o změnu poplatků u lékaře.",
   "pocet_hlasovani": 5,
   "proslo": true,
-  "signaly": {
-    "proti_max": 93,
-    "pritomno_min": 156,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": true
-  },
   "steno_slov": 2449
 }

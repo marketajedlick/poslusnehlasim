@@ -3,41 +3,36 @@
   "nazev": "Novela z. o doplňkovém penzijním spoření",
   "datum": "27.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "doplňkovém penzijním spoření",
+  "predmet_lidsky": "vrácení státních příspěvků seniorům v penzijním spoření",
   "koho": [
-    "Doplňkové penzijní spoření, dobrovolné odkládání peněz na důchod vedle státního."
+    "Koho se to týká? Seniorů, kterým stát od července 2024 přestal přispívat na penzijní spoření, ale nepustil je ze smlouvy bez sankce."
   ],
   "fakty": [
+    {
+      "text": "Senioři s přiznaným důchodem budou moci ze spoření odejít bez sankce a kdo už odešel a přišel o příspěvky, dostane je zpět; stát to má stát zhruba 60 milionů korun.",
+      "source": "steno",
+      "steno_id": "2025_20_00221",
+      "citace": "Těmto seniorům nyní umožníme ze systému odejít bez sankce bez ohledu na délku spoření a pokud ze systému už dříve odešli, vrátíme jim státní příspěvky nebo jejich vlastní prostředky, o které v důsledku odchodu ze systému přišli. Celkový náklad odhadujeme zhruba na 60 milionů korun."
+    },
+    {
+      "text": "Tři úpravy od Pirátek spadly pod stůl, samotný zákon pak prošel 136:7.",
+      "source": "votes",
+      "citace": "Hlasování číslo 63 až 65 nepřijata, hlasování číslo 66: pro 136, proti 7."
+    },
     {
       "text": "Poslankyně Schillerová mimo mikrofon: Můžu i v rozpravě?",
       "source": "steno",
       "kind": "scene",
       "steno_id": "2025_20_00220",
       "citace": "(Poslankyně Schillerová mimo mikrofon: Můžu i v rozpravě?)"
-    },
-    {
-      "text": "89.Návrh poslanců Aleny Schillerové, Patrika Nachera, Borise Šťastného, Tomia Okamury a Taťány Malé na vydání zákona, kterým se mění zákon č.",
-      "source": "steno",
-      "steno_id": "2025_20_00220",
-      "citace": "89.Návrh poslanců Aleny Schillerové, Patrika Nachera, Borise Šťastného, Tomia Okamury a Taťány Malé na vydání zákona, kterým se mění zákon č."
-    },
-    {
-      "text": "Pozměňovací návrhy jsou vedeny ve sněmovním tisku 119/3, který byl doručen 17.",
-      "source": "steno",
-      "steno_id": "2025_20_00220",
-      "citace": "Pozměňovací návrhy jsou vedeny ve sněmovním tisku 119/3, který byl doručen 17."
-    },
-    {
-      "text": "Odmlka pro hluk v sále.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_20_00223",
-      "citace": "(Odmlka pro hluk v sále.)"
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Spoření na důchod se mění",
+  "nadpis": "Seniorům vrátí příspěvky na spoření",
+  "lead": "Senioři, kterým stát v roce 2024 přestal přispívat na penzijní spoření, budou moci odejít bez pokuty a vrácené peníze dostanou zpět. Prošlo to 136:7, tři pirátské úpravy předtím spadly pod stůl.",
+  "pointa": "Stát si na opravu dá zhruba 60 milionů korun; Piráti chtěli ještě víc, ale jejich tři pozměňovací návrhy před finálem spadly.",
+  "mean": "Kdo je v důchodu a uvízl ve spoření bez státního příspěvku, bude moci smlouvu opustit bez sankce; komu už peníze strhli, stát mu je vrátí. Účet pro rozpočet: zhruba 60 milionů korun.",
   "pocet_hlasovani": 4,
   "proslo": true,
   "signaly": {
@@ -45,7 +40,7 @@
     "pritomno_min": 152,
     "jednomyslne": false,
     "spor": true,
-    "prazdny_sal": true
+    "prazdny_sal": false
   },
   "steno_slov": 7171
 }

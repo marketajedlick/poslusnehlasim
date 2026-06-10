@@ -3,48 +3,37 @@
   "nazev": "Novela z. o jednacím řádu PS",
   "datum": "13.02.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "jednacím řádu PS",
+  "predmet_lidsky": "novely jednacího řádu sněmovny v prvním čtení",
   "koho": [
-    "Jednací řád sněmovny, jak poslanci smějí mluvit, kdy hlasovat a kdo má slovo."
+    "Koho se to týká? Spíš politiku a televizní přenosy. Mění pravidla debaty, faktických poznámek a přednostních práv v sněmovně."
   ],
   "fakty": [
     {
-      "text": "90/1995 Sb., o jednacím řádu Poslanecké sněmovny, ve znění pozdějších předpisů /sněmovní tisk 72/ Jedná se o prvé čtení.",
+      "text": "Na tom, jak se tady k sobě budeme chovat, novela jednacího řádu nezmění vůbec nic. Vzájemnému respektu nás nenaučí.",
       "source": "steno",
-      "steno_id": "2025_7_00067",
-      "citace": "90/1995 Sb., o jednacím řádu Poslanecké sněmovny, ve znění pozdějších předpisů /sněmovní tisk 72/ Jedná se o prvé čtení."
-    },
-    {
-      "text": "Tak, prosím, mám tady další omluvu, od 18.10 se z pracovních důvodů omlouvá pan poslanec a předseda klubu Marek Benda.",
-      "source": "steno",
-      "steno_id": "2025_7_00067",
-      "citace": "Tak, prosím, mám tady další omluvu, od 18.10 se z pracovních důvodů omlouvá pan poslanec a předseda klubu Marek Benda."
-    },
-    {
-      "text": "Nyní tedy budeme projednávat Návrh poslanců Radka Vondráčka, Andreje Babiše, Tomia Okamury, Petra Macinky, Marka Bendy, Taťány Malé, Radima Fialy a Borise Šťastného na vydání zákona, kterým se mění zákon č.",
-      "source": "steno",
-      "steno_id": "2025_7_00067",
-      "citace": "Nyní tedy budeme projednávat Návrh poslanců Radka Vondráčka, Andreje Babiše, Tomia Okamury, Petra Macinky, Marka Bendy, Taťány Malé, Radima Fialy a Borise Šťastného na vydání zákona, kterým se mění zá"
-    },
-    {
-      "text": "Potlesk zleva.",
-      "source": "steno",
-      "kind": "scene",
       "steno_id": "2025_7_00068",
-      "citace": "(Potlesk zleva.)"
+      "citace": "Na tom, jak se tady k sobě budeme chovat, novela jednacího řádu nezmění vůbec nic."
+    },
+    {
+      "text": "Nikdo ty faktické poznámky v takovéto debatě omezovat nebude. Ten jednací řád přijímáme a snažíme se ucpat díru, protože faktické poznámky bývají obstrukčně zneužívány.",
+      "source": "steno",
+      "steno_id": "2025_7_00931",
+      "citace": "Nikdo ty faktické poznámky v takovéto debatě omezovat nebude."
+    },
+    {
+      "text": "Hlasování číslo 90, hlasovalo 138 poslanců, pro 57, proti 77. Návrh na prodloužení lhůt nebyl přijat.",
+      "source": "steno",
+      "steno_id": "2025_7_00978",
+      "citace": "Hlasování číslo 90, pro 57, proti 77. Návrh na prodloužení lhůt nebyl přijat."
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Prošlo to",
+  "nadpis": "Pravidla hry v sále",
+  "lead": "Koaliční změna jednacího řádu prošla prvním kolem a míří do výborů. Opozice chtěla o dvacet dní delší lhůtu, 57 proti 77 neprošlo.",
+  "pointa": "Debata začala už v úterý při boji o pořad sedmé schůze. Vondráček řekl, že rozprava byla vzorová, Richterová varovala před omezením faktických poznámek, které už při rozjezdu sněmovny kritizovala.",
+  "mean": "Jde o to, kdo a jak dlouho smí mluvit ve sněmovně. Koalice chce omezit obstrukce, opozice se bojí, že většina si pravidla ohně podle sebe. Zákon v prvním kole prošel, detaily se řeší ve výborech.",
   "pocet_hlasovani": 4,
   "proslo": true,
-  "signaly": {
-    "proti_max": 77,
-    "pritomno_min": 137,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": true
-  },
   "steno_slov": 41789
 }

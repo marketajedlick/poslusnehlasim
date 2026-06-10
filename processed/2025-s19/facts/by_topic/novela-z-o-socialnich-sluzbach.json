@@ -3,48 +3,41 @@
   "nazev": "Novela z. o sociálních službách",
   "datum": "15.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "sociálních službách",
+  "predmet_lidsky": "posunu převodu péče a dávek OZP z Úřadu práce na sociální správu",
   "koho": [
-    "Pořád půjdete pro péči o staré rodiče nebo hendikepované, zatím pořád na Úřad práce."
+    "Koho se to týká? Lidi se zdravotním postižením a rodiny, které řeší péči, průkaz OZP nebo příspěvek na péči."
   ],
   "fakty": [
     {
-      "text": "Ministr: Nesouhlas.",
+      "text": "Juchelka posunul převod kompetencí z Úřadu práce na červen 2028.",
       "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_19_00052",
-      "citace": "(Ministr: Nesouhlas.)"
+      "steno_id": "2025_19_00045",
+      "citace": "Posun převodu kompetencí z Úřadu práce v oblasti příspěvku na péči a dávek OZP na Správu sociálního zabezpečení z 1. července 2026 na 1. června 2028."
     },
     {
-      "text": "Hlasování číslo 9, přihlášeno 151 poslanců, pro 41, proti 8.",
+      "text": "Jurečka chtěl navýšit příspěvek na péči, zejména ve čtvrtém stupni.",
       "source": "steno",
-      "steno_id": "2025_19_00052",
-      "citace": "Hlasování číslo 9, přihlášeno 151 poslanců, pro 41, proti 8."
+      "steno_id": "2025_19_00011",
+      "citace": "Varianta, která zvyšuje příspěvek na péči ve čtvrtém stupni a cílí především na řešení problémů lidí, kteří potřebují osobní asistenci."
     },
     {
-      "text": "(Ministr: Nesouhlas.) Zahajuji hlasování.",
-      "source": "steno",
-      "steno_id": "2025_19_00052",
-      "citace": "(Ministr: Nesouhlas.) Zahajuji hlasování."
+      "text": "Pozměňovací návrh Pastuchové na příspěvek na mobilitu prošel.",
+      "source": "votes",
+      "citace": "Hlasování číslo 13, pro 147, proti nikdo."
     },
     {
-      "text": "Hlasování číslo 10, přihlášeno 151 poslanců, pro 43, proti 5.",
-      "source": "steno",
-      "steno_id": "2025_19_00054",
-      "citace": "Hlasování číslo 10, přihlášeno 151 poslanců, pro 43, proti 5."
+      "text": "Finální hlasování číslo 14 v 09:58, sto třicet dva hlasů pro.",
+      "source": "votes",
+      "citace": "Hlasování číslo 14, pro 132, proti nikdo."
     }
   ],
   "publikovat": true,
-  "priorita": 3,
-  "nadpis": "Úřad práce zůstává na svém místě",
-  "pocet_hlasovani": 7,
+  "priorita": 2,
+  "nadpis": "Péče zůstane na ÚP déle",
+  "lead": "Hned po prvním zákonu sněmovna ve finálním kole schválila změnu sociálních služeb, sto třicet dva hlasů proti nule. Navazuje na schválení ze 6. května, novinkou je příspěvek na mobilitu tři tisíce korun.",
+  "pointa": "Jurečkův návrh na navýšení příspěvku na péči padl, koalice přijala Pastuchové úpravu příspěvku na mobilitu na tři tisíce korun. Schůzi chtěli stihnout do hodiny.",
+  "mean": "Lidé s průkazem OZP a příspěvkem na péči zatím zůstanou na Úřadu práce. Velký přesun přijde až za dva roky.",
+  "pocet_hlasovani": 1,
   "proslo": true,
-  "signaly": {
-    "proti_max": 8,
-    "pritomno_min": 151,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": true
-  },
   "steno_slov": 1034
 }

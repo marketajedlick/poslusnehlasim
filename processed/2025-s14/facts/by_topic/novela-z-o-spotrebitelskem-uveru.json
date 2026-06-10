@@ -3,45 +3,36 @@
   "nazev": "Novela z. o spotřebitelském úvěru",
   "datum": "23.04.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "spotřebitelském úvěru",
-  "koho": [],
+  "predmet_lidsky": "pravidlech spotřebitelských úvěrů",
+  "koho": [
+    "Koho se to týká? Lidi, kteří si berou půjčku, splátkový prodej nebo kreditní kartu."
+  ],
   "fakty": [
+    {
+      "text": "Šťastný prosadil spotřebitelský úvěr jako první bod čtvrteční schůze.",
+      "source": "steno",
+      "steno_id": "2025_14_01236",
+      "citace": "Navrhuji, abychom dnes jako první bod pokračovali v projednávání bodu číslo 28, sněmovní tisk 145, o spotřebitelském úvěru."
+    },
+    {
+      "text": "Hlasování číslo 162, sto třicet čtyři hlasů pro.",
+      "source": "votes",
+      "citace": "Hlasování číslo 162, pro 134, proti 0."
+    },
     {
       "text": "Už při přijetí současného zákona v roce 2016 jsme nastavili pravidla poměrně přísně a v řadě oblastí jsme šli nad rámec tehdejší evropské úpravy.",
       "source": "steno",
       "steno_id": "2025_14_01119",
       "citace": "Už při přijetí současného zákona v roce 2016 jsme nastavili pravidla poměrně přísně a v řadě oblastí jsme šli nad rámec tehdejší evropské úpravy."
-    },
-    {
-      "text": "Věřím, že legislativní proces půjde hladce a podaří se, aby zákon nabyl účinnosti 20.",
-      "source": "steno",
-      "steno_id": "2025_14_01119",
-      "citace": "Věřím, že legislativní proces půjde hladce a podaří se, aby zákon nabyl účinnosti 20."
-    },
-    {
-      "text": "Dovolte mi, abych vám věcně představila návrh novely zákona o spotřebitelském úvěru, který posiluje ochranu spotřebitelů a upravuje pravidla pro poskytování úvěrů.",
-      "source": "steno",
-      "steno_id": "2025_14_01119",
-      "citace": "Dovolte mi, abych vám věcně představila návrh novely zákona o spotřebitelském úvěru, který posiluje ochranu spotřebitelů a upravuje pravidla pro poskytování úvěrů."
-    },
-    {
-      "text": "Na úvod chci říct jednu důležitou věc, tedy to, že je tomu tak, že tento návrh implementuje evropskou směrnici, určitě posiluje ochranu spotřebitele a reaguje na nové trendy jako je digitalizace či využívání algoritmu.",
-      "source": "steno",
-      "steno_id": "2025_14_01123",
-      "citace": "Na úvod chci říct jednu důležitou věc, tedy to, že je tomu tak, že tento návrh implementuje evropskou směrnici, určitě posiluje ochranu spotřebitele a reaguje na nové trendy jako je digitalizace či vy"
     }
   ],
   "publikovat": true,
-  "priorita": 3,
-  "nadpis": "Prošlo to",
+  "priorita": 2,
+  "nadpis": "Úvěry pod novými pravidly",
+  "lead": "Čtvrteční dopoledne schválili změnu o spotřebitelském úvěru, sto třicet čtyři hlasů proti nule. ODS prosadila zákon jako první bod dne.",
+  "pointa": "Změna zákona ladí pravidla pro půjčky a splátkové prodeje. Šlo o rychlý bod mezi interpelacemi a dalšími zákony.",
+  "mean": "Změna zákona zpřísňuje informační povinnosti věřitelů a upravuje práva dlužníků u půjček a splátkového prodeje.",
   "pocet_hlasovani": 2,
   "proslo": true,
-  "signaly": {
-    "proti_max": 34,
-    "pritomno_min": 134,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": true
-  },
   "steno_slov": 23812
 }

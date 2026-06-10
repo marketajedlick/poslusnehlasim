@@ -34,17 +34,9 @@
       "citace": "(V sále je velký hluk.)"
     }
   ],
-  "publikovat": true,
-  "priorita": 3,
+  "publikovat": false,
+  "priorita": 2,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
-  "proslo": true,
-  "signaly": {
-    "proti_max": 13,
-    "pritomno_min": 177,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": false
-  },
-  "steno_slov": 5004
+  "proslo": true
 }

@@ -3,45 +3,36 @@
   "nazev": "Novela z. o cenách",
   "datum": "24.04.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "cenách",
-  "koho": [],
+  "predmet_lidsky": "regulaci cen pohonných hmot po zamítnutí senátem",
+  "koho": [
+    "Koho se to týká? Motoristy. Zákon má vládě umožnit zasahovat do cen benzínu a nafty."
+  ],
   "fakty": [
     {
-      "text": "526/1990 Sb., o cenách, ve znění pozdějších předpisů/sněmovní tisk 163/2/ – zkrácené jednání Návrh zákona o regulaci cen pohonných hmot vládou a o změně zákona č.",
+      "text": "Jakob připomněl, že Senát zákon zamítl kvůli věcným i právním vadám.",
       "source": "steno",
-      "steno_id": "2025_14_01595",
-      "citace": "526/1990 Sb., o cenách, ve znění pozdějších předpisů/sněmovní tisk 163/2/ – zkrácené jednání Návrh zákona o regulaci cen pohonných hmot vládou a o změně zákona č."
+      "steno_id": "2025_14_01517",
+      "citace": "Následně jej ale zamítl Senát Parlamentu České republiky, což není drobnost, to je poměrně vážné varování."
     },
     {
-      "text": "o cenách, ve znění pozdějších předpisů, sněmovní tisk 163/2, který byl zamítnut Senátem.",
+      "text": "Koalice žádá Senát přehlasovat bez sebereflexe.",
       "source": "steno",
-      "steno_id": "2025_14_01595",
-      "citace": "o cenách, ve znění pozdějších předpisů, sněmovní tisk 163/2, který byl zamítnut Senátem."
+      "steno_id": "2025_14_01517",
+      "citace": "Koalice dnes žádá jediné, aby svou většinou Senát přehlasovala. Bez jakékoliv sebereflexe."
     },
     {
-      "text": "Usnesení, jímž Senát zamítl tento návrh, bylo doručeno jako sněmovní tisk 164/3.",
-      "source": "steno",
-      "steno_id": "2025_14_01595",
-      "citace": "Usnesení, jímž Senát zamítl tento návrh, bylo doručeno jako sněmovní tisk 164/3."
-    },
-    {
-      "text": "Ceny benzínu stouply o 14,6 procenta, tedy čtvrtým nejvyšším tempem v EU Je ale potřeba dodat i ten kontext, který opozice záměrně opomíjí a bere si jen to, co se jí takzvaně hodí do krámu.",
-      "source": "steno",
-      "steno_id": "2025_14_01598",
-      "citace": "Ceny benzínu stouply o 14,6 procenta, tedy čtvrtým nejvyšším tempem v EU Je ale potřeba dodat i ten kontext, který opozice záměrně opomíjí a bere si jen to, co se jí takzvaně hodí do krámu."
+      "text": "Druhé čtení prošlo 102:45, závěrečné hlasování 112:2.",
+      "source": "votes",
+      "citace": "Hlasování číslo 193 pro 102 proti 45, hlasování číslo 194 pro 112 proti 2."
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Prošlo to",
+  "nadpis": "Benzín prošel přes Senát",
+  "lead": "Pátek uzavřel dubnový oblouk o cenách benzínu. Sněmovna ve druhém kole zákon schválila sto dvěma hlasy proti pětačtyřiceti, přestože ho Senát po úterním prvním kole a středeční noci zamítl.",
+  "pointa": "Jakob mluvil o zrychlené projednávání jako zkratce pro sporný návrh. Koalice zákon znovu protlačila ve zkráceném režimu.",
+  "mean": "Vláda může dál usilovat o regulaci cen benzínu a nafty. Senát musí zákon znovu posoudit, tentokrát proti vůli horní komory.",
   "pocet_hlasovani": 2,
   "proslo": true,
-  "signaly": {
-    "proti_max": 45,
-    "pritomno_min": 145,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": true
-  },
   "steno_slov": 15863
 }

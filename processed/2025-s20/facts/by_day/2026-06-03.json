@@ -2,12 +2,20 @@
   "datum": "03.06.2026",
   "den": "středa",
   "topic_slugs": [
-    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2"
+    "vl-n-z-o-evidenci-trzeb-eu"
+  ],
+  "dnesni_ucet": "Odpoledne hádky o program, večer první kolo návratu EET.\nStavební zákon pak držel poslance v sále i po půl jedenácté.",
+  "zaver": "že se po deseti letech vrací evidence tržeb: první kolo prošlo, Schillerová přísahá, že posedlá EET není, a stavební zákon zase držel poslance v sále do noci.",
+  "vysledek": [
+    "* návrat EET prošel prvním kolem, návrh na zamítnutí padl 52:94",
+    "* opoziční pokusy přidat body do programu opět spadly pod stůl",
+    "* výměny ve výborech prošly 158:0 a 155:0",
+    "* stavební zákon: rozprava do noci, bez jediného hlasování"
   ],
   "stats": {
-    "pocet_hlas": 2,
+    "pocet_hlas": 1,
     "minuty": 402,
-    "end_cas": "21:17",
+    "end_cas": "",
     "proslo": 1,
     "zamitnuto": 0,
     "dlouha_debata": true

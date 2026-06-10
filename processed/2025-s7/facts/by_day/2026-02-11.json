@@ -3,14 +3,24 @@
   "den": "středa",
   "topic_slugs": [
     "sml-mezi-cr-a-sr-o-preshranicni-spol-v-oblasti-z",
-    "navrh-casoveho-harmonogramu-projednavani-zakona-"
+    "navrh-statniho-zaverecneho-uctu-ceske-republiky-",
+    "navrh-casoveho-harmonogramu-projednavani-zakona-",
+    "statni-rozpocet-2026-debata-1-cteni"
+  ],
+  "dnesni_ucet": "Záchranka se Slovenskem, účet za 2024, kalendář rozpočtu.\nVečer debata o schodku 310 miliard, hlasování až po půlnoci.",
+  "zaver": "že dopoledne sněmovna dořešila organizaci a večer otevřela rozpočtovou debatu, která skončila až po půlnoci.",
+  "vysledek": [
+    "* smlouva se Slovenskem o záchranné službě schválena, 141 a 146 hlasů",
+    "* závěrečný účet za rok 2024 schválen, 113 pro, nula proti",
+    "* harmonogram rozpočtu na rok 2026 schválen, 127 pro",
+    "* večer začala debata o rozpočtu, hlasování až ve čtvrtek po půlnoci"
   ],
   "stats": {
     "pocet_hlas": 3,
     "minuty": 126,
     "end_cas": "11:11",
-    "proslo": 2,
+    "proslo": 3,
     "zamitnuto": 0,
-    "dlouha_debata": true
+    "dlouha_debata": false
   }
 }

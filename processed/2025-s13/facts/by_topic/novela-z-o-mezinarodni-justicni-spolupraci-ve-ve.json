@@ -32,16 +32,8 @@
     }
   ],
   "publikovat": false,
-  "priorita": 2,
+  "priorita": 0,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
-  "proslo": true,
-  "signaly": {
-    "proti_max": 0,
-    "pritomno_min": 169,
-    "jednomyslne": true,
-    "spor": false,
-    "prazdny_sal": true
-  },
-  "steno_slov": 1755
+  "proslo": true
 }

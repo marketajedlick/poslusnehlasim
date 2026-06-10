@@ -3,48 +3,49 @@
   "nazev": "Žádost o udělení souhlasu s trestním stíháním poslance Andreje Babiše",
   "datum": "05.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "žádost o udělení souhlasu s trestním stíháním poslance Andreje Babiše",
+  "predmet_lidsky": "souhlasu s trestním stíháním Andreje Babiše v kauze Čapí hnízdo",
   "koho": [
-    "Občana se to netýká, spíš politici a justice."
+    "Koho se to týká? Spíš politiku a justici. Jde o to, jestli může soud pokračovat v kauze dotačního podvodu kolem farmy Čapí hnízdo."
   ],
   "fakty": [
     {
-      "text": "Hluk v sále.",
+      "text": "Městský soud žádá souhlas se stíháním v trestní věci sp. zn. 56 T 7/2022, tedy dotační podvod a poškození finančních zájmů EU.",
       "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_11_00022",
-      "citace": "(Hluk v sále.)"
+      "steno_id": "2025_11_00029",
+      "citace": "Žádost o udělení souhlasu s trestním stíháním poslance Andreje Babiše ve věci sp. zn. 56 T 7/2022."
     },
     {
-      "text": "(Hluk pokračuje.) Můžu poprosit tady na pravé straně, aby byl klid, aby bylo jasné, jak to v této chvíli povedeme.",
+      "text": "Mandátový výbor doporučil nesouhlas, sněmovna usnesení přijala.",
       "source": "steno",
-      "steno_id": "2025_11_00022",
-      "citace": "(Hluk pokračuje.) Můžu poprosit tady na pravé straně, aby byl klid, aby bylo jasné, jak to v této chvíli povedeme."
+      "steno_id": "2025_11_00029",
+      "citace": "Mandátový a imunitní výbor navrhuje, aby Poslanecká sněmovna vyslovila nesouhlas k žádosti o udělení souhlasu k trestnímu stíhání obžalovaného poslance Andreje Babiše."
     },
     {
-      "text": "V této chvíli tedy projednáváme 1.Žádost o udělení souhlasu s trestním stíháním poslance Andreje Babiše ve věci sp.",
+      "text": "Hlasování číslo 7, pro 104, proti 81. Návrh usnesení byl přijat.",
       "source": "steno",
-      "steno_id": "2025_11_00022",
-      "citace": "V této chvíli tedy projednáváme 1.Žádost o udělení souhlasu s trestním stíháním poslance Andreje Babiše ve věci sp."
+      "steno_id": "2025_11_00195",
+      "citace": "V hlasování číslo 7 bylo přihlášeno 186 poslanců, pro hlasovalo 104, proti 81. Návrh usnesení byl přijat."
     },
     {
-      "text": "Já si myslím, že to by nám nemělo být lhostejné, že z kapes daňových poplatníků platíme justici za její chyby zhruba 100 milionů korun ročně.",
+      "text": "Přestaňte fňukat, přestaňte se schovávat za papalášskou imunitu.",
       "source": "steno",
-      "steno_id": "2025_11_00027",
-      "citace": "Já si myslím, že to by nám nemělo být lhostejné, že z kapes daňových poplatníků platíme justici za její chyby zhruba 100 milionů korun ročně."
+      "steno_id": "2025_11_00007",
+      "citace": "Přestaňte fňukat. Přestaňte se schovávat za papalášskou imunitu."
+    },
+    {
+      "text": "O vině a trestu v právním státě rozhodují zásadně jen soudy.",
+      "source": "steno",
+      "steno_id": "2025_11_00013",
+      "citace": "O vině a trestu v právním státě rozhodují zásadně jen soudy."
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Prošlo to",
-  "pocet_hlasovani": 3,
+  "nadpis": "Babiše nevydali",
+  "lead": "Sněmovna odmítla souhlas se stíháním v kauze Čapí hnízdo, 104 hlasy pro, 81 proti. Babiš místo obhajoby hodinu mluvil o repatriačních letech z Blízkého východu.",
+  "pointa": "Hřib mu vyčítal fňukání a vzkazy leteckým společnostem z pultíku. Kupka připomněl, že o vině rozhodují soudy, ne výsledky voleb.",
+  "mean": "Poslanec má imunitu a sněmovna může stíhání zastavit. Bez jejího souhlasu soud v kauze dotačního podvodu kolem farmy Čapí hnízdo pokračovat nemůže.",
+  "pocet_hlasovani": 1,
   "proslo": true,
-  "signaly": {
-    "proti_max": 135,
-    "pritomno_min": 184,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": false
-  },
   "steno_slov": 7052
 }

@@ -3,47 +3,36 @@
   "nazev": "Sml. mezi ČR a SR o přeshraniční spol. v oblasti zdravotnické záchrann",
   "datum": "23.04.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "sml. mezi ČR a SR o přeshraniční spol. v oblasti zdravotnické záchrann",
+  "predmet_lidsky": "přeshraniční spolupráci záchranných služeb se Slovenskem",
   "koho": [
-    "Smlouva se Slovenskem, když vám na dovolené nebo u hranice přijede záchranka, kdo platí a kdo pomůže."
+    "Koho se to týká? Lidi v Jihomoravském, Zlínském a Moravskoslezském kraji u hranic se Slovenskem."
   ],
   "fakty": [
     {
-      "text": "66.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Rámcová smlouva mezi Českou republikou a Slovenskou republikou o přeshraniční spolupráci v oblasti zdravotnické záchranné služby podepsaná v Praze dne 4.",
-      "source": "steno",
-      "steno_id": "2025_14_01313",
-      "citace": "66.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Rámcová smlouva mezi Českou republikou a Slovenskou republikou o přeshraniční spolupráci v oblasti zdr"
-    },
-    {
-      "text": "července 2025/sněmovní tisk 3/ – druhé čtení Takže bychom to teď dojeli, pak by byla pauza, pak jsou Interpelace.",
-      "source": "steno",
-      "steno_id": "2025_14_01313",
-      "citace": "července 2025/sněmovní tisk 3/ – druhé čtení Takže bychom to teď dojeli, pak by byla pauza, pak jsou Interpelace."
-    },
-    {
-      "text": "Já poprosím pana ministra zdravotnictví Adama Vojtěcha, aby se ujal slova, a připraví se Michal Ratiborský.",
-      "source": "steno",
-      "steno_id": "2025_14_01313",
-      "citace": "Já poprosím pana ministra zdravotnictví Adama Vojtěcha, aby se ujal slova, a připraví se Michal Ratiborský."
-    },
-    {
-      "text": "února 2026 a Poslanecká sněmovna přikázala návrh k projednání v zahraničním výboru a výboru pro zdravotnictví.",
+      "text": "Vojtěch řekl, že smlouva pomůže pacientům v pohraničí.",
       "source": "steno",
       "steno_id": "2025_14_01314",
-      "citace": "února 2026 a Poslanecká sněmovna přikázala návrh k projednání v zahraničním výboru a výboru pro zdravotnictví."
+      "citace": "Velmi zásadní pro pacienty žijící v pohraničí se Slovenskem, s cílem zabezpečit co nejlepší dostupnost zdravotnických záchranných služeb."
+    },
+    {
+      "text": "Smlouva navazuje na dohody s Německem a Rakouskem.",
+      "source": "steno",
+      "steno_id": "2025_14_01314",
+      "citace": "Tato smlouva vychází z již platných smluv s Německem a Rakouskem."
+    },
+    {
+      "text": "Hlasování číslo 167, sto pět hlasů pro.",
+      "source": "votes",
+      "citace": "Hlasování číslo 167, pro 105, proti 0."
     }
   ],
   "publikovat": true,
-  "priorita": 3,
-  "nadpis": "Prošlo to",
+  "priorita": 2,
+  "nadpis": "Záchranka přes hranici",
+  "lead": "Čtvrtek skončil finální ratifikací smlouvy se Slovenskem o spolupráci záchranných služeb, sto pět hlasů proti nule. První souhlas sněmovna vyslovila už v únoru na sedmé schůzi.",
+  "pointa": "Smlouva navazuje na dohody s Německem a Rakouskem a má pokrýt Jihomoravský, Zlínský a Moravskoslezský kraj.",
+  "mean": "Záchranka může při nehodě u hranic rychleji zasáhnout i na druhé straně. Dotkne se hlavně obyvatel příhraničních obcí.",
   "pocet_hlasovani": 1,
   "proslo": true,
-  "signaly": {
-    "proti_max": 0,
-    "pritomno_min": 126,
-    "jednomyslne": true,
-    "spor": false,
-    "prazdny_sal": true
-  },
   "steno_slov": 49535
 }

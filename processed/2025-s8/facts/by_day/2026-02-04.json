@@ -2,14 +2,24 @@
   "datum": "04.02.2026",
   "den": "středa",
   "topic_slugs": [
+    "neduvera-vlade-debata-den-dva",
     "projednani-navrhu-na-vysloveni-neduvery-vlade-ce"
+  ],
+  "dnesni_ucet": "Po dvou dnech řečí hlasování ve 19:29.\nNedůvěra padla, 99 proti 84, vláda zůstává.",
+  "zaver": "že po dvou dnech řečí koalice nedůvěru zamítla a vláda Babiše zůstává.",
+  "vysledek": [
+    "* debata o nedůvěře skončila, jmenovité hlasování ve 19:29",
+    "* nedůvěra zamítnuta, 99 proti 84",
+    "* premiér Babiš a první vicepremiér při hlasování chyběli",
+    "* Králíček připomněl, že pro návrh hlasovalo jen 84 poslanců",
+    "* osmá schůze ukončena"
   ],
   "stats": {
     "pocet_hlas": 1,
     "minuty": 155,
     "end_cas": "19:29",
-    "proslo": 1,
-    "zamitnuto": 0,
+    "proslo": 0,
+    "zamitnuto": 1,
     "dlouha_debata": true
   }
 }

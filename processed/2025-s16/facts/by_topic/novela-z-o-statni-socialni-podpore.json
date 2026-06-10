@@ -3,49 +3,37 @@
   "nazev": "Novela z. o státní sociální podpoře",
   "datum": "06.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "státní sociální podpoře",
+  "predmet_lidsky": "termínech digitalizace dávek na Úřadu práce",
   "koho": [
-    "Pokud chodíte na Úřad práce pro příspěvek na bydlení nebo přídavek na dítě, nemusíte se zatím bát, že by se vám všechno přes noc přeházelo."
+    "Koho se to týká? Rodiny čekající na příspěvek na bydlení, přídavek na dítě nebo další dávky z Úřadu práce."
   ],
   "fakty": [
+    {
+      "text": "Hendrych připomněl, že novela oddaluje náběh digitalizace dávek státní sociální podpory, který měl platit od 1. července 2026.",
+      "source": "steno",
+      "steno_id": "2025_16_00357",
+      "citace": "Cílem návrhu zákona je oddálení náběhu digitalizace a souvisejících změn ve způsobu administrace dávek, a to v oblasti řízení ve věcech dávek státní sociální podpory, ke kterému má podle platného znění zákona č. 117/1995 Sb. dojít k 1. červenci roku 2026."
+    },
+    {
+      "text": "Hlasování číslo 68 a 69, sto hlasů pro při závěrečném hlasování.",
+      "source": "votes",
+      "citace": "Hlasování číslo 69, pro 100, proti 1."
+    },
     {
       "text": "Úpravy?",
       "source": "steno",
       "kind": "scene",
       "steno_id": "2025_16_00357",
       "citace": "(Úpravy?)"
-    },
-    {
-      "text": "(Úpravy?) zákona o státní sociální podpoře, které by měly být podle platné legislativy účinné již k 1.",
-      "source": "steno",
-      "steno_id": "2025_16_00357",
-      "citace": "(Úpravy?) zákona o státní sociální podpoře, které by měly být podle platné legislativy účinné již k 1."
-    },
-    {
-      "text": "dubna 2026 doporučil Poslanecké sněmovně usnesením číslo 25 vyslovit s předkládaným návrhem zákona souhlas, byl to sněmovní tisk 124/2.",
-      "source": "steno",
-      "steno_id": "2025_16_00357",
-      "citace": "dubna 2026 doporučil Poslanecké sněmovně usnesením číslo 25 vyslovit s předkládaným návrhem zákona souhlas, byl to sněmovní tisk 124/2."
-    },
-    {
-      "text": "Odmlčí se pro hluk v sále a hledí vlevo do pléna.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_16_00361",
-      "citace": "(Odmlčí se pro hluk v sále a hledí vlevo do pléna.)"
     }
   ],
   "publikovat": true,
-  "priorita": 3,
-  "nadpis": "Dávky se mění",
+  "priorita": 2,
+  "nadpis": "Dávky se digitalizují později",
+  "lead": "Sněmovna ve středu večer schválila technickou novelu, která odkládá digitalizaci dávek státní sociální podpory. Úřad práce nestihne nový systém k červenci. Finální podobu zákon dostane až na mimořádné schůzi 15. května.",
+  "pointa": "Kapacity IT žere superdávka. Směr digitalizace zůstává, mění se tempo, aby chyby neodnesli senioři a rodiny.",
+  "mean": "Dávky z Úřadu práce se zatím nebudou převádět do plně digitálního režimu podle původního harmonogramu.",
   "pocet_hlasovani": 2,
   "proslo": true,
-  "signaly": {
-    "proti_max": 1,
-    "pritomno_min": 75,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": true
-  },
   "steno_slov": 23417
 }

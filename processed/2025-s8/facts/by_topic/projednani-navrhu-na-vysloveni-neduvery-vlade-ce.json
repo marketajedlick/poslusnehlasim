@@ -2,47 +2,45 @@
   "slug": "projednani-navrhu-na-vysloveni-neduvery-vlade-ce",
   "nazev": "Projednání návrhu na vyslovení nedůvěry vládě České republiky",
   "datum": "04.02.2026",
-  "verdikt": "schvaleno",
-  "predmet_lidsky": "projednání návrhu na vyslovení nedůvěry vládě České republiky",
-  "koho": [],
+  "verdikt": "zamiteno",
+  "predmet_lidsky": "vyslovení nedůvěry vládě Andreje Babiše",
+  "koho": [
+    "Koho se to týká? Celé republiky. Když nedůvěra neprojde, vláda dál řídí stát a prosazuje svůj program."
+  ],
   "fakty": [
     {
-      "text": "Návrh předložili zástupci poslaneckých klubů ODS, Starostové a nezávislí, Piráti, KDU-ČSL a TOP 09.",
+      "text": "Hlasovalo celkem 183 poslanců, pro návrh hlasovalo 84 a proti návrhu hlasovalo 99 poslanců.",
       "source": "steno",
-      "steno_id": "2025_8_00002",
-      "citace": "Návrh předložili zástupci poslaneckých klubů ODS, Starostové a nezávislí, Piráti, KDU-ČSL a TOP 09."
+      "steno_id": "2025_8_00466",
+      "citace": "Hlasovalo celkem 183 poslanců, pro návrh hlasovalo 84 a proti návrhu hlasovalo 99 poslanců."
     },
     {
-      "text": "90/1995 Sb., o jednacím řádu Poslanecké sněmovny, podala návrh na vyslovení nedůvěry vládě.",
-      "source": "steno",
-      "steno_id": "2025_8_00002",
-      "citace": "90/1995 Sb., o jednacím řádu Poslanecké sněmovny, podala návrh na vyslovení nedůvěry vládě."
-    },
-    {
-      "text": "Jinak už v této fázi poznamenám, aby se nad tím tady nevedly nějaké diskuse, že předsedkyně poslaneckého klubu ANO 2011 paní Taťána Malá, která je omluvena ze zdravotních důvodů, pověřila, aby ji během jednání dnes 3.",
-      "source": "steno",
-      "steno_id": "2025_8_00002",
-      "citace": "Jinak už v této fázi poznamenám, aby se nad tím tady nevedly nějaké diskuse, že předsedkyně poslaneckého klubu ANO 2011 paní Taťána Malá, která je omluvena ze zdravotních důvodů, pověřila, aby ji běhe"
-    },
-    {
-      "text": "Poslanec Turek reaguje nesrozumitelnou poznámkou z místa.",
+      "text": "Bouřlivý potlesk v sále.",
       "source": "steno",
       "kind": "scene",
-      "steno_id": "2025_8_00003",
-      "citace": "(Poslanec Turek reaguje nesrozumitelnou poznámkou z místa.)"
+      "steno_id": "2025_8_00466",
+      "citace": "(Bouřlivý potlesk v sále.)"
+    },
+    {
+      "text": "Při hlasování o nedůvěře vládě chyběl Andrej Babiš, premiér, a chyběl první vicepremiér. To se v novodobé historii České republiky prostě ještě nestalo.",
+      "source": "steno",
+      "steno_id": "2025_8_00468",
+      "citace": "Při hlasování o nedůvěře vládě chyběl Andrej Babiš, premiér, a chyběl první vicepremiér."
+    },
+    {
+      "text": "Tak se podívejte na to číslo. Vás tady bylo pouze 84. Ani vašim lídrům, jako je Zdeněk Hřib, jako je Petr Fiala, to nestálo za to, aby vyjádřili svůj názor!",
+      "source": "steno",
+      "steno_id": "2025_8_00470",
+      "citace": "Vás tady bylo pouze 84."
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Vláda má zelenou",
-  "pocet_hlasovani": 2,
-  "proslo": true,
-  "signaly": {
-    "proti_max": 99,
-    "pritomno_min": 123,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": true
-  },
+  "nadpis": "Nedůvěra neprošla",
+  "lead": "Po dvou dnech řečí sněmovna zamítla nedůvěru vládě, 99 hlasů proti 84. Koalice tleskala, opozice nedosáhla na potřebnou většinu.",
+  "pointa": "Premiér Babiš a první vicepremiér Macinka při jmenovitém hlasování chyběli, Macinka byl v USA. Králíček pak opozici připomněl, že pro návrh hlasovalo jen 84 poslanců.",
+  "mean": "K pádu vlády bylo potřeba víc než 100 hlasů pro. Nedůvěra padla, Babišova vláda pokračuje. Debata ale ukázala rozdíl: opozice mluvila o Macinkových esemeskách a střetu zájmů, koalice o zahraničních cestách a práci prvního měsíce.",
+  "pocet_hlasovani": 1,
+  "proslo": false,
   "steno_slov": 175553
 }

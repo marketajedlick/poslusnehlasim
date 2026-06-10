@@ -3,47 +3,55 @@
   "nazev": "Novela z. o podpoře bydlení",
   "datum": "13.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "podpoře bydlení",
-  "koho": [],
+  "predmet_lidsky": "zužení poradenství na kontaktních místech pro bydlení",
+  "koho": [
+    "Koho se to týká? Lidí v nájmu a v bytové tísni. Kontaktní místa mají radit dřív, než člověk skončí v ubytovně nebo na ulici."
+  ],
   "fakty": [
     {
-      "text": "zákon o podpoře bydlení",
+      "text": "Novela zavádí cílení poradenství na vybrané skupiny osob, ne na kohokoli.",
       "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_12_00022",
-      "citace": "(zákon o podpoře bydlení)"
-    },
-    {
-      "text": "175/2025 Sb., o poskytování některých opatření v podpoře bydlení (zákon o podpoře bydlení)/sněmovní tisk 82/ - prvé čtení Z pověření vlády předložený návrh uvede ministryně pro místní rozvoj Zuzana Mrázová.",
-      "source": "steno",
-      "steno_id": "2025_12_00022",
-      "citace": "175/2025 Sb., o poskytování některých opatření v podpoře bydlení (zákon o podpoře bydlení)/sněmovní tisk 82/ - prvé čtení Z pověření vlády předložený návrh uvede ministryně pro místní rozvoj Zuzana Mr"
-    },
-    {
-      "text": "Nyní tedy přistoupíme k jedinému bodu pořadu, kterým je 1.Vládní návrh zákona, kterým se mění zákon č.",
-      "source": "steno",
-      "steno_id": "2025_12_00022",
-      "citace": "Nyní tedy přistoupíme k jedinému bodu pořadu, kterým je 1.Vládní návrh zákona, kterým se mění zákon č."
-    },
-    {
-      "text": "Stále silný hluk v sále. Poslanci hlasitě diskutují.",
-      "source": "steno",
-      "kind": "scene",
       "steno_id": "2025_12_00023",
-      "citace": "(Stále silný hluk v sále. Poslanci hlasitě diskutují.)"
+      "citace": "Novela zavádí cílení na skupiny osob, které mají na kontaktních místech pro bydlení poskytováno poradenství."
+    },
+    {
+      "text": "Hlasování číslo 3, pro 27, proti 86. Návrh na zamítnutí nebyl přijat.",
+      "source": "steno",
+      "steno_id": "2025_12_00112",
+      "citace": "Hlasování číslo 3, pro 27 poslanců, proti 86 poslanců. Návrh na zamítnutí nebyl přijat."
+    },
+    {
+      "text": "Hlasování číslo 5, pro 126, proti nikdo. Návrh byl přikázán garančnímu výboru.",
+      "source": "steno",
+      "steno_id": "2025_12_00112",
+      "citace": "Hlasování číslo 5, pro 126 poslanců, proti žádný. Konstatuji, že tento návrh byl přikázán k projednání výboru pro veřejnou správu a regionální rozvoj jako garančnímu výboru."
+    },
+    {
+      "text": "Odložením zákona by vláda ohrozila více než 9 miliard korun z fondu Evropské unie.",
+      "source": "steno",
+      "steno_id": "2025_12_00059",
+      "citace": "Odložením zákona by vláda přímo ohrozila více než 9 miliard korun z fondu Evropské unie, které se podařilo předchozí vládě získat na výstavbu dostupného bydlení."
+    },
+    {
+      "text": "Zákon o podpoře bydlení žádné byty nestaví, ale staví preventivní síť poradenství.",
+      "source": "steno",
+      "steno_id": "2025_12_00075",
+      "citace": "Zákon o podpoře bydlení žádné byty nestaví. A já doufám, že už si to nebudeme opakovat, protože to nebyla ambice zákona o podpoře bydlení."
+    },
+    {
+      "text": "Dopady bytové nouze jsou 4,1 miliardy ročně.",
+      "source": "steno",
+      "steno_id": "2025_12_00049",
+      "citace": "Odborníci spočítali, že dopady bytové nouze jsou 4,1 miliardy ročně."
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Prošlo to",
-  "pocet_hlasovani": 5,
+  "nadpis": "Bydlení na první pokus",
+  "lead": "Změna zákona o podpoře bydlení prošla první kolo, návrh na zamítnutí padl na 27 hlasů. Vláda zužuje okruh lidí u kontaktních míst, opozice varovala před devíti miliardami z EU.",
+  "pointa": "Dopoledne v sále znělo NATO a připravovaný zákon o cizích vazbách (opozice ho nazývá „ruský zákon“) místo bydlení. Bartoš jako bývalý ministr hájil preventivní síť, Olšáková chtěla zákon zamítnout, sněmovna ji nepustila.",
+  "mean": "Kontaktní místa mají pomáhat lidem v nájemní krizi dřív, než spadnou do ubytoven. Změna zákona cílí poradenství jen na zranitelné skupiny. Zákon sám byty nestaví, ale má zabránit zbytečným nákladům státu.",
+  "pocet_hlasovani": 1,
   "proslo": true,
-  "signaly": {
-    "proti_max": 86,
-    "pritomno_min": 125,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": true
-  },
   "steno_slov": 31906
 }

@@ -2,48 +2,37 @@
   "slug": "n-z-kterym-se-zrusuje-nominacni-zakon",
   "nazev": "N. z., kterým se zrušuje nominační zákon",
   "datum": "22.04.2026",
-  "verdikt": "schvaleno",
-  "predmet_lidsky": "n. z., kterým se zrušuje nominační zákon",
-  "koho": [],
+  "verdikt": "zamiteno",
+  "predmet_lidsky": "zrušení nominačního zákona pro státní zakázky",
+  "koho": [
+    "Koho se to týká? Firmy, které soutěží o veřejné zakázky, a daňové poplatníky sledující transparentnost státu."
+  ],
   "fakty": [
     {
-      "text": "nominační zákon",
+      "text": "Piráti varovali, že zrušení nominačního zákona je součást snahy o návrat kamarádíčkování.",
       "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_14_00869",
-      "citace": "(nominační zákon)"
+      "steno_id": "2025_14_00928",
+      "citace": "Zrušení nominačního zákona je součást snah současné vládní koalice."
     },
     {
-      "text": "353/2019 Sb., o výběru osob do řídících a dozorčích orgánů právnických osob s majetkovou účastí státu (nominační zákon), ve znění pozdějších předpisů/sněmovní tisk 116/ – prvé čtení Stanovisko vlády bylo doručeno jako sněmovní tisk 116/1.",
+      "text": "Havránek kritizoval návrh na zrušení místo novelizace.",
       "source": "steno",
-      "steno_id": "2025_14_00869",
-      "citace": "353/2019 Sb., o výběru osob do řídících a dozorčích orgánů právnických osob s majetkovou účastí státu (nominační zákon), ve znění pozdějších předpisů/sněmovní tisk 116/ – prvé čtení Stanovisko vlády b"
+      "steno_id": "2025_14_00950",
+      "citace": "Nepovažuju za správné, že ten návrh je o zrušení, že to není o tom, že bychom se bavili o nějaké novelizaci."
     },
     {
-      "text": "12.Návrh poslanců Zuzany Ožanové, Patrika Pařila a Renaty Vesecké na vydání zákona, kterým se zrušuje zákon č.",
-      "source": "steno",
-      "steno_id": "2025_14_00869",
-      "citace": "12.Návrh poslanců Zuzany Ožanové, Patrika Pařila a Renaty Vesecké na vydání zákona, kterým se zrušuje zákon č."
-    },
-    {
-      "text": "Hluk v sále.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_14_00870",
-      "citace": "(Hluk v sále.)"
+      "text": "Závěrečné hlasování o zamítnutí návrhu, 66 proti 88.",
+      "source": "votes",
+      "citace": "Hlasování číslo 139, pro 66, proti 88. Návrh byl zamítnut."
     }
   ],
   "publikovat": true,
-  "priorita": 3,
-  "nadpis": "Prošlo to",
+  "priorita": 2,
+  "nadpis": "Zákon o zakázkách zůstává",
+  "lead": "Středa odpoledne sněmovna zamítla návrh na zrušení zákona o veřejných zakázkách, osmdesát osm hlasů proti. Piráti mluvili o návratu kamarádíčkování, Havránek chtěl spíš změnu než zrušení.",
+  "pointa": "Koalice chtěla zákon zrušit zčistajasna. Opozice i část koalice argumentovala, že pravidla pro transparentní zakázky je lepší upravit než zahodit.",
+  "mean": "Zákon o veřejných zakázkách dál platí a stát musí u velkých zakázek zveřejňovat vazby na politicky exponované osoby.",
   "pocet_hlasovani": 4,
-  "proslo": true,
-  "signaly": {
-    "proti_max": 88,
-    "pritomno_min": 162,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": true
-  },
+  "proslo": false,
   "steno_slov": 53298
 }

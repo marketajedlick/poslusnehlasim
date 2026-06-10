@@ -3,46 +3,37 @@
   "nazev": "Novela z. o životním a existenčním minimu",
   "datum": "13.02.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "životním a existenčním minimu",
-  "koho": [],
+  "predmet_lidsky": "odkladu účinnosti novely životního a existenčního minima",
+  "koho": [
+    "Koho se to týká? Lidí na dávkách a úřadů práce. Minimum určuje hranici, od které se počítá, komu stát přispěje na živobytí."
+  ],
   "fakty": [
     {
-      "text": "Hluk v sále.",
+      "text": "Hlavním účelem navrhovaných úprav je především odklad účinnosti novely zákona o životním a existenčním minimu. Účinnost této novely byla původně stanovena na 1. května 2026. Obsahem mého návrhu je posun účinnosti dotčené novely na 1. července 2026.",
       "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_9_00047",
-      "citace": "(Hluk v sále.)"
+      "steno_id": "2025_9_00006",
+      "citace": "Obsahem mého návrhu je posun účinnosti dotčené novely o životním a existenčním minimu na 1. července 2026."
     },
     {
-      "text": "Přednesu návrh usnesení: \"Poslanecká sněmovna souhlasí s pokračováním jednání o sněmovním tisku 85 tak, aby s ním mohl být vysloven souhlas již v prvém čtení.\" Ještě chvíli počkám, již jsem zagongoval.",
+      "text": "Návrh má čistě legislativně technický charakter a nemění věcnou podstatu sociální politiky státu.",
       "source": "steno",
-      "steno_id": "2025_9_00047",
-      "citace": "Přednesu návrh usnesení: \"Poslanecká sněmovna souhlasí s pokračováním jednání o sněmovním tisku 85 tak, aby s ním mohl být vysloven souhlas již v prvém čtení.\" Ještě chvíli počkám, již jsem zagongoval"
+      "steno_id": "2025_9_00008",
+      "citace": "Návrh má čistě legislativně technický charakter a nemění věcnou podstatu sociální politiky státu."
     },
     {
-      "text": "Půjdeme tedy k druhému bodu mimořádné schůze, a tím je 2.Návrh poslance Aleše Juchelky na vydání zákona, kterým se mění zákon č.",
+      "text": "Hlasování číslo 4, přihlášeno 141 poslanců, pro 137, proti nikdo. S návrhem zákona byl vysloven souhlas.",
       "source": "steno",
       "steno_id": "2025_9_00047",
-      "citace": "Půjdeme tedy k druhému bodu mimořádné schůze, a tím je 2.Návrh poslance Aleše Juchelky na vydání zákona, kterým se mění zákon č."
-    },
-    {
-      "text": "Pokud bude administrace dávky probíhat bez komplikací a ukáže se, že posun přechodného období není nutný, může nastat situace, kdy nebude potřeba tento tisk 88 v legislativním procesu dále podporovat a bude Senátem zamítnut.",
-      "source": "steno",
-      "steno_id": "2025_9_00048",
-      "citace": "Pokud bude administrace dávky probíhat bez komplikací a ukáže se, že posun přechodného období není nutný, může nastat situace, kdy nebude potřeba tento tisk 88 v legislativním procesu dále podporovat "
+      "citace": "Hlasování číslo 4, pro 137, proti nikdo. S návrhem zákona byl vysloven souhlas."
     }
   ],
   "publikovat": true,
-  "priorita": 3,
-  "nadpis": "Chudoba má novou hranici",
+  "priorita": 2,
+  "nadpis": "Minimum až v červenci",
+  "lead": "Sněmovna v prvním kole schválila odklad změny zákonů životního a existenčního minima z května na červenec, 137 hlasů pro, nikdo proti. Juchelka mluvil o časové tísní a informačních systémech Úřadu práce.",
+  "pointa": "Zpravodajka Šafránková řekla, že jde o technickou úpravu bez změny sociální politiky. Opozice nevetovala, ale chce později doladit samotnou superdávku.",
+  "mean": "Životní a existenční minimum je základ pro výpočet dávek. Posun o dva měsíce má dát úřadům čas, aby nepřepočítávaly systémy dvakrát za sebou při přechodu na novou superdávku. Pro lidi v nouzi to znamená hlavně, že se nemění pravidla hned v květnu, ale až v létě.",
   "pocet_hlasovani": 2,
   "proslo": true,
-  "signaly": {
-    "proti_max": 0,
-    "pritomno_min": 135,
-    "jednomyslne": true,
-    "spor": false,
-    "prazdny_sal": true
-  },
   "steno_slov": 3715
 }

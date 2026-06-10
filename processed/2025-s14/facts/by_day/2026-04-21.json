@@ -2,15 +2,22 @@
   "datum": "21.04.2026",
   "den": "úterý",
   "topic_slugs": [
-    "novela-z-trestni-zakonik",
-    "n-casoveho-harm-projednavani-vladniho-navrhu-st-"
+    "novela-z-trestni-zakonik"
+  ],
+  "dnesni_ucet": "Dopoledne harmonogram závěrečného účtu, večer trestní zákoník.\nFinální hlasování o zákonu padlo, sedmi desítkami hlasů.",
+  "zaver": "že úterý večer sněmovna nerozhodla o finálním hlasování o trestním zákoníku, přestože druhé kolo předtím prošlo hladce.",
+  "vysledek": [
+    "* harmonogram státního závěrečného účtu schválen 142:0",
+    "* trestní zákoník ve druhém kole 154:0",
+    "* finální hlasování o zákonu zamítnuto, jen 67 hlasů pro",
+    "* 37 hlasování o pořadu před zákony"
   ],
   "stats": {
     "pocet_hlas": 2,
     "minuty": 425,
     "end_cas": "21:13",
-    "proslo": 2,
-    "zamitnuto": 0,
-    "dlouha_debata": true
+    "proslo": 0,
+    "zamitnuto": 1,
+    "dlouha_debata": false
   }
 }

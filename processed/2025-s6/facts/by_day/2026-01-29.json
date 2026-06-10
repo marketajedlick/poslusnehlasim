@@ -3,14 +3,22 @@
   "den": "čtvrtek",
   "topic_slugs": [
     "navrh-zakona-o-statnich-zamestnancich",
-    "navrh-zakona-o-statnich-zamestnancich-souvisejic"
+    "mimoradna-schuze-statni-zakon"
+  ],
+  "dnesni_ucet": "Mimořádná schůze místo interpelací.\nVelká reforma úřadů v prvním kole padla.",
+  "zaver": "že mimořádná schůze sice celý den mluvila o velké reformě úřadů, ale sněmovna ji v prvním kole zastavila.",
+  "vysledek": [
+    "* oba návrhy o státních zaměstnancích v prvním kole zamítli",
+    "* tři organizační body prošly, osm zákonů padlo",
+    "* mimořádná schůze místo čtvrtečních interpelací",
+    "* debata o přes 70 000 zaměstnancích státu a analýzách dopadů"
   ],
   "stats": {
     "pocet_hlas": 2,
     "minuty": 470,
     "end_cas": "16:51",
-    "proslo": 2,
-    "zamitnuto": 0,
+    "proslo": 0,
+    "zamitnuto": 1,
     "dlouha_debata": true
   }
 }

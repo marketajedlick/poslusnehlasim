@@ -3,38 +3,41 @@
   "nazev": "N. z., kterým se mění některé zákony na úseku vnitřní správy",
   "datum": "02.06.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "n. z., kterým se mění některé zákony na úseku vnitřní správy",
-  "koho": [],
+  "predmet_lidsky": "pravidlech pro Českou poštu a odkladech státní digitalizace",
+  "koho": [
+    "Koho se to týká? České pošty a jejích zákazníků, a všech, kdo čekají na elektronickou sbírku zákonů a digitální úřady."
+  ],
   "fakty": [
     {
-      "text": "3.Návrh poslanců Huberta Langa, Igora Hendrycha, Jiřího Maška a Drahoslava Ryby na vydání zákona, kterým se mění některé zákony na úseku vnitřní správy/sněmovní tisk 187/ – prvé čtení Stanovisko vlády vám bylo doručeno jako sněmovní tisk 187/1.",
+      "text": "Lang: poště se vrací stará pravidla financování, Evropská komise povolila podporu jen do výše miliardy a půl ročně.",
       "source": "steno",
-      "steno_id": "2025_21_00118",
-      "citace": "3.Návrh poslanců Huberta Langa, Igora Hendrycha, Jiřího Maška a Drahoslava Ryby na vydání zákona, kterým se mění některé zákony na úseku vnitřní správy/sněmovní tisk 187/ – prvé čtení Stanovisko vlády"
+      "steno_id": "2025_21_00121",
+      "citace": "Evropské komise, která schválila veřejnou podporu pro Českou poštu pouze do výše 1,5 miliardy korun ročně"
     },
     {
-      "text": "A prosím také, aby se připravila paní zpravodajka pro první čtení, paní poslankyně Barbora Rázga.",
+      "text": "Stojanová: odklad eLegislativy nesmí být zároveň odkladem transparentnosti.",
       "source": "steno",
-      "steno_id": "2025_21_00118",
-      "citace": "A prosím také, aby se připravila paní zpravodajka pro první čtení, paní poslankyně Barbora Rázga."
+      "steno_id": "2025_21_00125",
+      "citace": "Ten technický odklad eLegislativy totiž nesmí být zároveň odkladem transparentnosti."
     },
     {
-      "text": "Prosím, aby předložený návrh uvedl za navrhovatele poslanec Hubert Lang.",
+      "text": "Skopeček varoval, ať se z odkladu nestane nový standard a z termínů bezvýznamná čísla.",
       "source": "steno",
-      "steno_id": "2025_21_00118",
-      "citace": "Prosím, aby předložený návrh uvedl za navrhovatele poslanec Hubert Lang."
+      "steno_id": "2025_21_00128",
+      "citace": "To neznamená ale, že z odkladu uděláme nový standard a z termínu jen bezvýznamná čísla."
     },
     {
-      "text": "Hluk v sále.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_21_00119",
-      "citace": "(Hluk v sále.)"
+      "text": "Do výboru pro veřejnou správu posláno 145 hlasy; Bendův návrh přibrat ústavně-právní výbor zamítnut (62 pro), zkrácení lhůt na 30 dnů prošlo 91 pro, 7 proti.",
+      "source": "votes",
+      "citace": "Hlasování číslo 8: pro 145. Hlasování číslo 9: pro 62, proti 1, zamítnuto. Hlasování číslo 10: pro 91, proti 7, přijato."
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Prošlo to",
+  "nadpis": "Pošta a věčné odklady",
+  "lead": "Balík změn pro Českou poštu a státní počítače: poště se vrací stará pravidla financování, aby nenarazila u Bruselu, a elektronická sbírka zákonů se zase odkládá, protože systém pořád není hotový.",
+  "pointa": "Stojanová varovala, že odklad eLegislativy nesmí být odkladem transparentnosti, a Skopeček dodal, ať se z odkladu nestane nový standard.",
+  "mean": "První kolo: návrh jde do výboru pro veřejnou správu a lhůta se zkrátila na třicet dnů. Jediné, co dnes spadlo pod stůl, byl Bendův nápad přibrat k tomu ještě ústavně-právní výbor, pro bylo jen dvaašedesát poslanců.",
   "pocet_hlasovani": 3,
   "proslo": true,
   "signaly": {

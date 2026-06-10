@@ -6,12 +6,20 @@
     "novela-z-o-volbach-do-zastupitelstev-obci",
     "sml-mezi-cr-a-sr-o-preshranicni-spol-v-oblasti-z"
   ],
+  "dnesni_ucet": "Ráno interpelace, pak tři zákony bez dramatu.\nÚvěry, volby do obcí a záchranka se Slovenskem.",
+  "zaver": "že čtvrtek po interpelacích přinesl tři schválené zákony: o úvěrech, volbách do obcí a záchranné službě se Slovenskem.",
+  "vysledek": [
+    "* spotřebitelský úvěr schválen 134:0",
+    "* volby do zastupitelstev obcí schváleny 121:0",
+    "* smlouva o záchranné službě se Slovenskem ratifikována 105:0",
+    "* písemné interpelace bez novinového článku"
+  ],
   "stats": {
     "pocet_hlas": 3,
     "minuty": 222,
     "end_cas": "13:16",
     "proslo": 3,
     "zamitnuto": 0,
-    "dlouha_debata": true
+    "dlouha_debata": false
   }
 }

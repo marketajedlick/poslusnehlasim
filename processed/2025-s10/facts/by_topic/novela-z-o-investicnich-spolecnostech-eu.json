@@ -5,46 +5,30 @@
   "verdikt": "schvaleno",
   "predmet_lidsky": "dohledu nad investičními fondy a společnostmi",
   "koho": [
-    "Investiční společnosti spravují peníze investorů a nakupují za ně cenné papíry."
+    "Koho se to týká? Investorů a firem spravujících fondy. Běžný spořitel to pocítí spíš nepřímo."
   ],
   "fakty": [
+    {
+      "text": "Hlasování číslo 261, pro 117, proti nikdo. S návrhem zákona byl vysloven souhlas.",
+      "source": "steno",
+      "steno_id": "2025_10_01569",
+      "citace": "Hlasování číslo 261, pro 117, proti nikdo. S návrhem zákona byl vysloven souhlas."
+    },
     {
       "text": "Hluk v sále.",
       "source": "steno",
       "kind": "scene",
       "steno_id": "2025_10_01567",
       "citace": "(Hluk v sále.)"
-    },
-    {
-      "text": "Tímto ukončuji projednání bodu číslo 22 a přesunujeme se na bod číslo 13.Vládní návrh zákona, kterým se mění zákon č.",
-      "source": "steno",
-      "steno_id": "2025_10_01567",
-      "citace": "Tímto ukončuji projednání bodu číslo 22 a přesunujeme se na bod číslo 13.Vládní návrh zákona, kterým se mění zákon č."
-    },
-    {
-      "text": "Tak a zbývá nám zde poslední hlasování, a to je hlasování na návrhu na zkrácení zkrácení doby na 30 dní.",
-      "source": "steno",
-      "steno_id": "2025_10_01567",
-      "citace": "Tak a zbývá nám zde poslední hlasování, a to je hlasování na návrhu na zkrácení zkrácení doby na 30 dní."
-    },
-    {
-      "text": "Účinnost návrhu zákona je v souladu s transpoziční lhůtou navržena na 16.",
-      "source": "steno",
-      "steno_id": "2025_10_01568",
-      "citace": "Účinnost návrhu zákona je v souladu s transpoziční lhůtou navržena na 16."
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Investice mají přísnější dohled",
+  "nadpis": "Investice pod dohledem",
+  "lead": "Změna zákona o investičních společnostech prošla v prvním kole, 117 hlasů pro, nikdo proti.",
+  "pointa": "Čtvrtek přinesl balík EU novel, od účetnictví po silniční provoz. Investiční zákon byl jeden z vrcholů.",
+  "mean": "Stát zpřísňuje pravidla pro fondy a investiční firmy podle EU. Cílem je ochrana investorů, ne nová daň.",
   "pocet_hlasovani": 2,
   "proslo": true,
-  "signaly": {
-    "proti_max": 0,
-    "pritomno_min": 152,
-    "jednomyslne": true,
-    "spor": false,
-    "prazdny_sal": true
-  },
   "steno_slov": 6096
 }

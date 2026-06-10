@@ -22,29 +22,15 @@
       "citace": "(Ano.) Jestli to přečtu: Informace vlády o situaci migrace z oblasti Blízkého východu, energetické bezpečnosti České republiky a bezpečnosti v souvislosti s konfliktem v Íránu."
     },
     {
-      "text": "Tím jsme vyřešili návrhy na změny dnešní schůze a zahajujeme prvním bodem 1.Vládní návrh zákona o státním rozpočtu České republiky na rok 2026/sněmovní tisk 94/ - druhé čtení Tento vládní návrh uvede místopředsedkyně vlády a ministryně financí Alena Schillerová, kterou prosím, aby se ujala slova, už sedí za stolem se z",
-      "source": "steno",
-      "steno_id": "2025_10_00219",
-      "citace": "Tím jsme vyřešili návrhy na změny dnešní schůze a zahajujeme prvním bodem 1.Vládní návrh zákona o státním rozpočtu České republiky na rok 2026/sněmovní tisk 94/ - druhé čtení Tento vládní návrh uvede "
-    },
-    {
       "text": "Dalším pravidlem pro navržené poslanecké změny je zákonem stanovená minimální výše vládní rozpočtové rezervy, která nesmí klesnout pod úroveň 0,3 procenta celkových výdajů státního rozpočtu, absolutně vyjádřeno, se jedná o minimální částku této rezervy ve výši 7 283 511 440 korun.",
       "source": "steno",
       "steno_id": "2025_10_00220",
       "citace": "Dalším pravidlem pro navržené poslanecké změny je zákonem stanovená minimální výše vládní rozpočtové rezervy, která nesmí klesnout pod úroveň 0,3 procenta celkových výdajů státního rozpočtu, absolutně"
     }
   ],
-  "publikovat": true,
-  "priorita": 3,
+  "publikovat": false,
+  "priorita": 2,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
-  "proslo": true,
-  "signaly": {
-    "proti_max": 32,
-    "pritomno_min": 152,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": true
-  },
-  "steno_slov": 144664
+  "proslo": true
 }

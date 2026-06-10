@@ -1,13 +1,24 @@
 {
   "datum": "03.02.2026",
   "den": "úterý",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "neduvera-vlade-debata"
+  ],
+  "dnesni_ucet": "Mimořádná schůze, celý den debata o nedůvěře.\nHlasování o zákonech až zítra, večer jednání do devatenácti hodin.",
+  "zaver": "že osmá schůze začala dvoudenní přednáškou o nedůvěře vládě, rozhodnutí až ve středu večer.",
+  "vysledek": [
+    "* mimořádná schůze kvůli návrhu opozice na nedůvěru",
+    "* Kupka: 19 dní po důvěře, důvody esemesky Macinky a střet zájmů",
+    "* Babiš: zbytečná schůze, dva dny ztráty času",
+    "* jednání prodlouženo do večera, 115 proti 6",
+    "* hlasování o nedůvěře až ve středu"
+  ],
   "stats": {
     "pocet_hlas": 1,
     "minuty": 261,
     "end_cas": "15:22",
     "proslo": 1,
     "zamitnuto": 0,
-    "dlouha_debata": false
+    "dlouha_debata": true
   }
 }

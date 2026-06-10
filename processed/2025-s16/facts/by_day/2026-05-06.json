@@ -2,15 +2,24 @@
   "datum": "06.05.2026",
   "den": "středa",
   "topic_slugs": [
-    "novela-z-o-statni-socialni-podpore",
+    "stanovisko-vladni-koalice-ke-sjezdu-sudetonemeck",
     "novela-z-stavebni-zakon",
+    "novela-z-o-statni-socialni-podpore",
     "novela-z-o-socialnich-sluzbach"
+  ],
+  "dnesni_ucet": "Paralelně sedmnáctá schůze řeší ústavu a rozpočet.\nV noci odsouzení sjezdu v Brně, večer tři zákony.",
+  "zaver": "že ve středu v noci sněmovna odsoudila sjezd sudetoněmeckých krajanů v Brně a večer protlačila tři zákony od staveb po sociální dávky.",
+  "vysledek": [
+    "* stanovisko ke sjezdu v Brně schváleno 109:1 ve 00:51",
+    "* stavební zákon ve dvou hlasováních 110:0 a 123:0",
+    "* digitalizace dávek odložena, schváleno 100:1",
+    "* převod péče OZP na 2028, schváleno 111:0"
   ],
   "stats": {
     "pocet_hlas": 4,
-    "minuty": 1269,
+    "minuty": 365,
     "end_cas": "22:00",
-    "proslo": 3,
+    "proslo": 4,
     "zamitnuto": 0,
     "dlouha_debata": true
   }
