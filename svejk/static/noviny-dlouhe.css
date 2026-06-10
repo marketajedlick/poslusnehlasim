@@ -258,12 +258,22 @@ body.is-turning{ pointer-events:none; }
 }
 @media (max-width:720px){
   .sheet-shape{ overflow:visible; }
-  .term-tip-bubble{
-    bottom:calc(100% + 8px);
-    left:50%;
-    transform:translateX(-50%);
-    max-width:min(28ch, calc(100vw - 2rem));
-    z-index:30;
+  .term-tip:hover .term-tip-bubble{
+    display:none;
+  }
+  .term-tip:focus .term-tip-bubble,
+  .term-tip:focus-within .term-tip-bubble,
+  .term-tip.is-tip-open .term-tip-bubble{
+    display:block;
+  }
+  .term-tip.is-tip-open .term-tip-bubble{
+    position:fixed;
+    bottom:auto;
+    left:0;
+    transform:none;
+    max-width:calc(100vw - 2rem);
+    white-space:normal;
+    z-index:100;
   }
 }
 

@@ -345,7 +345,7 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "videa se Zunou",
-        "Ve sněmovně točili s generálem Zunou ponižující klipy poté, co řekl, že je nutné pomáhat Ukrajině ve válce proti Rusku.",
+        "Bartoš připomněl klipy z minulé sněmovny: předseda klubu SPD Fiala s generálem Zunou točil ponižující videa poté, co Zuna řekl, že pomoc Ukrajině je nutná a Rusko je agresor. Ministr Šťastný (SPD) pak musel na tiskovce mlčet.",
     ),
     (
         "landsmanšaft",

@@ -285,12 +285,22 @@ body.is-turning{ pointer-events:none; }
 }
 @media (max-width:720px){
   .sheet-shape{ overflow:visible; }
-  .term-tip-bubble{
-    bottom:calc(100% + 8px);
-    left:50%;
-    transform:translateX(-50%);
-    max-width:min(28ch, calc(100vw - 2rem));
-    z-index:30;
+  .term-tip:hover .term-tip-bubble{
+    display:none;
+  }
+  .term-tip:focus .term-tip-bubble,
+  .term-tip:focus-within .term-tip-bubble,
+  .term-tip.is-tip-open .term-tip-bubble{
+    display:block;
+  }
+  .term-tip.is-tip-open .term-tip-bubble{
+    position:fixed;
+    bottom:auto;
+    left:0;
+    transform:none;
+    max-width:calc(100vw - 2rem);
+    white-space:normal;
+    z-index:100;
   }
 }
 
@@ -1340,6 +1350,90 @@ body.archiv-page{
       submitHosted(form);
     }
   });
+})();
+</script>
+<script>
+(function () {
+  var mq = window.matchMedia("(max-width:720px)");
+  var margin = 16;
+  var gap = 8;
+
+  function isMobile() {
+    return mq.matches;
+  }
+
+  function resetTip(tip) {
+    var bubble = tip.querySelector(".term-tip-bubble");
+    tip.classList.remove("is-tip-open");
+    if (!bubble) return;
+    ["left", "top", "width"].forEach(function (key) {
+      bubble.style[key] = "";
+    });
+  }
+
+  function resetAll() {
+    document.querySelectorAll(".term-tip.is-tip-open").forEach(resetTip);
+  }
+
+  function placeTip(tip) {
+    if (!isMobile()) return;
+    var bubble = tip.querySelector(".term-tip-bubble");
+    if (!bubble) return;
+
+    resetAll();
+    tip.classList.add("is-tip-open");
+    bubble.style.visibility = "hidden";
+    bubble.style.display = "block";
+
+    var tipRect = tip.getBoundingClientRect();
+    var maxW = window.innerWidth - margin * 2;
+    bubble.style.width = "";
+    var bubbleRect = bubble.getBoundingClientRect();
+
+    if (bubbleRect.width > maxW) {
+      bubble.style.width = maxW + "px";
+      bubbleRect = bubble.getBoundingClientRect();
+    }
+
+    var left = tipRect.left + tipRect.width / 2 - bubbleRect.width / 2;
+    left = Math.max(margin, Math.min(left, window.innerWidth - bubbleRect.width - margin));
+
+    var top = tipRect.top - bubbleRect.height - gap;
+    if (top < margin) {
+      top = tipRect.bottom + gap;
+    }
+
+    bubble.style.left = left + "px";
+    bubble.style.top = top + "px";
+    bubble.style.visibility = "";
+  }
+
+  document.addEventListener("focusin", function (e) {
+    var tip = e.target.closest && e.target.closest(".term-tip");
+    if (tip) placeTip(tip);
+  });
+
+  document.addEventListener("focusout", function (e) {
+    var tip = e.target.closest && e.target.closest(".term-tip");
+    if (!tip || tip.contains(e.relatedTarget)) return;
+    resetTip(tip);
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!isMobile()) return;
+    if (e.target.closest && e.target.closest(".term-tip")) return;
+    resetAll();
+  });
+
+  window.addEventListener("scroll", function () {
+    if (!isMobile()) return;
+    document.querySelectorAll(".term-tip.is-tip-open").forEach(placeTip);
+  }, { passive: true });
+
+  window.addEventListener("resize", function () {
+    if (!isMobile()) return;
+    document.querySelectorAll(".term-tip.is-tip-open").forEach(placeTip);
+  }, { passive: true });
 })();
 </script>
 </body>
