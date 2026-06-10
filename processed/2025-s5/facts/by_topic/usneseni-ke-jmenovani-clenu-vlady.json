@@ -9,24 +9,30 @@
   ],
   "fakty": [
     {
+      "text": "Prezident republiky odmítl jmenovat pana Filipa Turka ministrem životního prostředí, a to i přesto, že byl řádně navržen předsedou vlády.",
+      "source": "steno",
+      "steno_id": "2025_5_00818",
+      "citace": "Prezident republiky odmítl jmenovat pana Filipa Turka ministrem životního prostředí, a to i přesto, že byl řádně navržen předsedou vlády."
+    },
+    {
+      "text": "My už jsme se mohli věnovat věcným věcem, sociálnímu pojištění, jednacímu řádu, stavebnímu zákonu a místo toho tady znova opakovaně, stále donekonečna, řešíme Filipa Turka.",
+      "source": "steno",
+      "steno_id": "2025_5_00870",
+      "citace": "My už jsme se mohli věnovat věcným věcem, sociálnímu pojištění, jednacímu řádu, stavebnímu zákonu a místo toho tady znova opakovaně, stále donekonečna, řešíme Filipa Turka."
+    },
+    {
       "text": "V hlasování číslo 54 bylo přihlášeno 183 poslanců, pro hlasovalo 82, proti 101. Návrh byl zamítnut.",
       "source": "steno",
       "steno_id": "2025_5_00915",
       "citace": "V hlasování číslo 54 bylo přihlášeno 183 poslanců, pro hlasovalo 82, proti 101. Návrh byl zamítnut."
-    },
-    {
-      "text": "Zahajuji hlasování a ptám se, kdo je pro takové usnesení?",
-      "source": "steno",
-      "steno_id": "2025_5_00915",
-      "citace": "Zahajuji hlasování a ptám se, kdo je pro takové usnesení?"
     }
   ],
-  "publikovat": false,
-  "priorita": 2,
-  "nadpis": "Jurečka brzdil ministry",
-  "lead": "Marian Jurečka zkoušel přes usnesení zablokovat jmenování ministrů. Osm z deseti návrhů padlo těsně, 82 pro, 101 proti.",
-  "pointa": "Skopeček četl výsledky hlasování jedno po druhém. Koalice většinu bodů zamítla, obsazování postů vlády pokračovala.",
-  "mean": "Pátek po důvěře nebyl klidný: opozice chtěla ještě zabrzdit obsazení rezortů. Deset hlasování o pořadu ukázalo, že i po schválené důvěře se hraje o každé jmenování zvlášť.",
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Deset hlasování o Turkovi",
+  "lead": "Ve čtvrtek vládě prošla důvěra, v pátek poslanci ještě desetkrát hlasovali o usneseních ke jmenování ministrů, hlavně kvůli sporu o klimatického zmocněnce Filipa Turka.",
+  "pointa": "Jurečka zkoušel přes usnesení zablokovat jmenování ministrů, osm z deseti návrhů padlo těsně 82:101. Skopeček četl výsledky jedno po druhém, koalice obsazování postů pustila dál.",
+  "mean": "Po schválené důvěře ještě deset hlasování o obsazení vlády, důvěra totiž neznamená klid. Prezident odmítl Turka jako ministra, opozice to kritizovala — většinu Jurečkových návrhů stejně zamítli.",
   "pocet_hlasovani": 10,
   "proslo": false,
   "steno_slov": 55056

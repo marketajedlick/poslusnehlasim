@@ -8,6 +8,12 @@ from __future__ import annotations
 GLOSSARY: tuple[tuple[str, str], ...] = (
     # --- kontext konkrétních schůzí (delší fráze první) ---
     (
+        "rozdíl zisků VZP a ostatních pojišťoven",
+        "Vojtěch 28. 1. 2026: navrhovaných 7,9 miliardy prý odpovídá rozdílu zisků za zaměstnance. "
+        "VZP zhruba 10,5 miliardy, zaměstnanecké pojišťovny asi 2,6. Opozice to vnímá jako neférový "
+        "přesun ve prospěch konkurence.",
+    ),
+    (
         "ubere z důchodu tisíc šest set padesát dvě korun",
         "Jurečkův protiargument z debaty 16. 1. 2026: nižší zálohy na sociálním pojištění "
         "znamenají nižší odvody na důchod. Koalice mluví o úspoře 715 Kč měsíčně u záloh; "
