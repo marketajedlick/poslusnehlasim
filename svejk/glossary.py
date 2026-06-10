@@ -8,6 +8,22 @@ from __future__ import annotations
 GLOSSARY: tuple[tuple[str, str], ...] = (
     # --- kontext konkrétních schůzí (delší fráze první) ---
     (
+        "deset hlasování o usneseních ke jmenování ministrů",
+        "16. 1. 2026, hlasování 52 až 61: nejdřív procedura pořadí (52), pak devět usnesení. Prošlo jen "
+        "Šťastného: prezident ať jmenuje ministry (53). Zamítli návrhy Jakoba (rozpočtová odpovědnost), "
+        "Zuny (vůči ministrům Zuna a Macinka), Langšádlové (klima, Ukrajina), Dvořáka (nový ministr "
+        "životního prostředí), Jurečky (proti Turkovi jako klimatickému zmocněnci) a Pospíšila "
+        "(kompetenční žaloba). Osm z deseti padlo ~82:101.",
+    ),
+    (
+        "deset hlasování o obsazení vlády",
+        "16. 1. 2026, hlasování 52 až 61: nejdřív procedura pořadí (52), pak devět usnesení. Prošlo jen "
+        "Šťastného: prezident ať jmenuje ministry (53). Zamítli návrhy Jakoba (rozpočtová odpovědnost), "
+        "Zuny (vůči ministrům Zuna a Macinka), Langšádlové (klima, Ukrajina), Dvořáka (nový ministr "
+        "životního prostředí), Jurečky (proti Turkovi jako klimatickému zmocněnci) a Pospíšila "
+        "(kompetenční žaloba). Osm z deseti padlo ~82:101.",
+    ),
+    (
         "rozdíl zisků VZP a ostatních pojišťoven",
         "Vojtěch 28. 1. 2026: navrhovaných 7,9 miliardy prý odpovídá rozdílu zisků za zaměstnance. "
         "VZP zhruba 10,5 miliardy, zaměstnanecké pojišťovny asi 2,6. Opozice to vnímá jako neférový "
