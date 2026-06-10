@@ -144,27 +144,35 @@ def _prijmeni_tvary(prijmeni: str, pohlavi: str) -> set[str]:
             tvary.add(kmen + "é")
         return tvary
 
-    if prijmeni.endswith(("ek", "ec")) and len(prijmeni) > 3:
+    ek_ec = prijmeni.endswith(("ek", "ec")) and len(prijmeni) > 3
+    ka = prijmeni.endswith("ka") and len(prijmeni) > 3
+    if ek_ec:
         kmen = prijmeni[:-2]
-        tvary.update(kmen + s for s in ("ka", "kovi", "kem"))
-    elif prijmeni.endswith(("š", "ř", "č", "ž", "c", "j")):
-        tvary.add(prijmeni + "e")
-    if prijmeni.endswith("k") and not prijmeni.endswith(("ek", "ec")):
-        tvary.add(prijmeni + "a")
-    elif prijmeni.endswith("h"):
-        tvary.add(prijmeni + "a")
-    elif prijmeni.endswith("r"):
-        tvary.add(prijmeni + "a")
-    elif prijmeni.endswith("n"):
-        tvary.add(prijmeni + "a")
-    if prijmeni.endswith("a"):
+        tvary.update(
+            kmen + s
+            for s in ("ka", "kovi", "kem", "kova", "kovo", "kův", "kovy", "kově")
+        )
+    elif ka:
         kmen = prijmeni[:-1]
-        tvary.add(kmen + "y")
-        tvary.add(kmen + "ovi")
-        tvary.update(kmen + s for s in ("ova", "ovy", "ovu"))
+        tvary.update(
+            kmen + s
+            for s in ("y", "ou", "ovi", "em", "ova", "ovo", "ův", "ovy", "ově", "ových")
+        )
     else:
-        tvary.add(prijmeni + "ovi")
-        tvary.update(prijmeni + s for s in ("ova", "ovy", "ově", "ův"))
+        if prijmeni.endswith(("š", "ř", "č", "ž", "c", "j")):
+            tvary.add(prijmeni + "e")
+        if prijmeni.endswith("k"):
+            tvary.add(prijmeni + "a")
+        elif prijmeni.endswith(("h", "r", "n")):
+            tvary.add(prijmeni + "a")
+        if prijmeni.endswith("a"):
+            kmen = prijmeni[:-1]
+            tvary.add(kmen + "y")
+            tvary.add(kmen + "ovi")
+            tvary.update(kmen + s for s in ("ova", "ovy", "ovu"))
+        else:
+            tvary.add(prijmeni + "ovi")
+            tvary.update(prijmeni + s for s in ("ova", "ovy", "ově", "ův"))
     return tvary
 
 
