@@ -424,6 +424,9 @@ def _nahrad_zbyla_cisla(text: str) -> str:
             return m.group(1)
         if start > 0 and t[start - 1] == ":":
             return m.group(1)
+        # TOP 09 – strana, ne slovní číslo
+        if start >= 4 and t[start - 4 : start].upper() == "TOP ":
+            return m.group(1)
         return _rok_nebo_cislo(m, t)
 
     t = _RE_CAS.sub(_cas, text)
