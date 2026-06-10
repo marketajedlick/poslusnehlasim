@@ -3,20 +3,12 @@
   "nazev": "N. na potvrzení platnosti usnesení, kterými PS upravila své vnitřní p",
   "datum": "26.11.2025",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "n. na potvrzení platnosti usnesení, kterými PS upravila své vnitřní p",
+  "predmet_lidsky": "potvrzení starých jednacích řádů",
   "koho": [],
   "fakty": [],
   "publikovat": false,
   "priorita": 0,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 2,
-  "proslo": true,
-  "signaly": {
-    "proti_max": 0,
-    "pritomno_min": 175,
-    "jednomyslne": true,
-    "spor": false,
-    "prazdny_sal": false
-  },
-  "steno_slov": 0
+  "proslo": true
 }

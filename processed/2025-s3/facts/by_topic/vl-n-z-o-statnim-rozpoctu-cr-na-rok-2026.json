@@ -3,39 +3,40 @@
   "nazev": "Vl. n. z. o státním rozpočtu ČR na rok 2026",
   "datum": "26.11.2025",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "o státním rozpočtu ČR na rok 2026",
+  "predmet_lidsky": "státním rozpočtu na rok 2026 v prvním čtení",
   "koho": [
-    "Kdo čeká na opravu silnice nebo vyšší plat sestře, ten ví, proč se o tom hádají celé dny."
+    "Koho se to týká? Všech. Rozpočet určuje, kolik stát utratí za zdravotnictví, obranu, školství i dávky."
   ],
   "fakty": [
     {
-      "text": "Pořád dokola, pořád dokola, ale stokrát opakovaná lež se nestane pravdou, i kdyby to bylo 101-,102-,105krát řečeno.",
+      "text": "Zbyněk Stanjura hájil rozpočet daty Evropské komise, Schillerová mluvila o opakovaných lžích o stavu země.",
       "source": "steno",
       "steno_id": "2025_3_00026",
-      "citace": "Pořád dokola, pořád dokola, ale stokrát opakovaná lež se nestane pravdou, i kdyby to bylo 101-,102-,105krát řečeno."
+      "citace": "Stokrát opakovaná lež se nestane pravdou, i kdyby to bylo 101-,102-,105krát řečeno."
     },
     {
-      "text": "Debata o rozpočtu už začala před schválením programu, ale to vůbec nevadí.",
+      "text": "Debata o rozpočtu začala ještě před schválením pořadu dne, přestávka od 14 do 15.15 hodin.",
       "source": "steno",
       "steno_id": "2025_3_00026",
       "citace": "Debata o rozpočtu už začala před schválením programu, ale to vůbec nevadí."
     },
     {
-      "text": "Já jsem si pro vás pro všechny připravil mezinárodní srovnání, které vychází z hodnocení všech členských států Evropské komise.",
-      "source": "steno",
-      "steno_id": "2025_3_00026",
-      "citace": "Já jsem si pro vás pro všechny připravil mezinárodní srovnání, které vychází z hodnocení všech členských států Evropské komise."
+      "text": "Závěrečné hlasování číslo 8: sto pět pro, šedesát čtyři proti, návrh v prvním čtení prošel.",
+      "source": "votes",
+      "citace": "Hlasování číslo 8, přihlášeno 180, pro 105, proti 64."
     },
     {
-      "text": "Motoristi jsou efektivní a rychlí, samozřejmě nám to bude stačit, nepotřebujeme tady uspávat hady.",
-      "source": "steno",
-      "steno_id": "2025_3_00028",
-      "citace": "Motoristi jsou efektivní a rychlí, samozřejmě nám to bude stačit, nepotřebujeme tady uspávat hady."
+      "text": "Předtím padly dva návrhy opozice: 67 proti 105 a 39 proti 35 se 80 zdrželými.",
+      "source": "votes",
+      "citace": "Hlasování číslo 6, pro 67, proti 105. Hlasování číslo 7, pro 39, proti 35."
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Stát ví, kolik smí utratit",
+  "nadpis": "Rozpočet na první pokus",
+  "lead": "Středa patřila maratonu o státním rozpočtu na rok 2026. Od deseti hodin do půlnoci debatovali ministři i opozice, první kolo prošlo sto pěti hlasy proti šedesáti čtyřem.",
+  "pointa": "Schillerová porovnávala schodek 376 miliard z roku 2021 s dnešními čísly, Stanjura odpověděl daty z Bruselu a „stokrát opakovanou lží“. Odcházející Fialova vláda předložila rozpočet v demisi, nová Babišova ho stejně přepíše — přesto první kolo prošlo 105:64 a dva opoziční návrhy ho chtěly shodit.",
+  "mean": "První kolo neukončuje rozpočet, jen ho posílá do výborů k detailnímu projednání. Tentokrát šlo o rozpočet odcházející vlády, kterou stejně nahradí nová koalice s vlastní verzí.",
   "pocet_hlasovani": 4,
   "proslo": true,
   "signaly": {
@@ -45,5 +46,5 @@
     "spor": true,
     "prazdny_sal": false
   },
-  "steno_slov": 15143
+  "steno_slov": 33381
 }

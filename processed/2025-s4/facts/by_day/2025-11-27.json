@@ -1,11 +1,22 @@
 {
   "datum": "27.11.2025",
   "den": "čtvrtek",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "babis-projev-4-schuze",
+    "transparent-v-jednacim-sale",
+    "opozice-stret-zajmu-agrofert"
+  ],
+  "dnesni_ucet": "Mimořádná debata, žádný zákon se nehlasoval.\nVe stenoprotokolu přes dvacet tisíc slov.",
+  "zaver": "že sněmovna sice nic nehlasovala, ale zato si dala maraton o košíku, toastové lince a miliardách z Agrofertu.",
+  "vysledek": [
+    "* nula zákonů schválili",
+    "* jedno hlasování o pořadu o ověřovatelích, nula proti",
+    "* ve stenoprotokolu přes dvacet tisíc slov debaty"
+  ],
   "stats": {
     "pocet_hlas": 0,
     "minuty": 0,
-    "end_cas": "18:01",
+    "end_cas": "",
     "proslo": 0,
     "zamitnuto": 0,
     "dlouha_debata": false

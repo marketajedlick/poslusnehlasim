@@ -3,41 +3,35 @@
   "nazev": "Návrh termínu 2. schůze PS",
   "datum": "05.11.2025",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "návrh termínu 2. schůze PS",
+  "predmet_lidsky": "termínu a pořadu 2. schůze",
   "koho": [
     "Občana se to netýká."
   ],
   "fakty": [
     {
-      "text": "Smích v sále.",
+      "text": "Taťána Malá navrhla zařadit volbu místopředsedů na pátek 14. listopadu jako bod 17.",
       "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_1_00002",
-      "citace": "(Smích v sále.)"
+      "steno_id": "2025_1_00247",
+      "citace": "Zařadit nový bod Návrh na volbu místopředsedů Poslanecké sněmovny, a to jako bod 17 na pátek 14. 11."
     },
     {
-      "text": "(Smích v sále.) Chtěl bych vám popřát, aby vaše práce – vás všech – měla smysl pro Českou republiku, pro naše občany a i smysl pro vás, abyste byli hodně zdraví a abyste při všem tom státnickém rozhodování tady dál zachovali i kus toho humoru, protože bez něj by život neměl smysl.",
+      "text": "Marek Benda protestoval proti formulaci „po dohodě klubů“, šlo podle něj o diktát koalice.",
       "source": "steno",
-      "steno_id": "2025_1_00002",
-      "citace": "(Smích v sále.) Chtěl bych vám popřát, aby vaše práce – vás všech – měla smysl pro Českou republiku, pro naše občany a i smysl pro vás, abyste byli hodně zdraví a abyste při všem tom státnickém rozhod"
+      "steno_id": "2025_1_00251",
+      "citace": "Neříkejte po dohodě předsedů poslaneckých klubů, když je to diktát, který jste opozici sdělili."
     },
     {
-      "text": "Vážená paní předsedající, milé kolegyně, vážení kolegové, vážená vládo, bylo mi ctí tady s vámi 12 let sdílet místo v této slovutné Poslanecké sněmovně, ale ten čas se nachýlil a je zjevné, že Marka Bendu již nepřekonám.",
-      "source": "steno",
-      "steno_id": "2025_1_00002",
-      "citace": "Vážená paní předsedající, milé kolegyně, vážení kolegové, vážená vládo, bylo mi ctí tady s vámi 12 let sdílet místo v této slovutné Poslanecké sněmovně, ale ten čas se nachýlil a je zjevné, že Marka B"
-    },
-    {
-      "text": "Potlesk v sále.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_1_00004",
-      "citace": "(Potlesk v sále.)"
+      "text": "Hlasování číslo 18 o vyřazení neprojednaného bodu: sto devatenáct pro, čtyřicet osm proti.",
+      "source": "votes",
+      "citace": "Hlasování číslo 18, přihlášeno 194, pro 119, proti 48."
     }
   ],
   "publikovat": true,
-  "priorita": 3,
-  "nadpis": "Prošlo to",
+  "priorita": 2,
+  "nadpis": "Druhé kolo v pátek",
+  "lead": "Večer kolem deváté schůze přesunula druhé kolo volby místopředsedů na pátek 14. listopadu, sto devatenáct hlasů proti čtyřiceti osmi. Benda Okamurovi vyčítal, že jde o koaliční diktát, ne dohodu.",
+  "pointa": "Malá prosadila zařazení volby místopředsedů na pátek 14. listopadu a vyřazení neprojednaného bodu z pořadu. Richterová pak chtěla opakovat hlasování — hlasovala proti, ale na obrazovce se jí objevilo „zdržel se“.",
+  "mean": "Termín další schůze určuje, kdy se Sněmovna zase sejde. Tentokrát šlo hlavně o to, kdy doplní zbývající místopředsedy.",
   "pocet_hlasovani": 3,
   "proslo": true,
   "signaly": {
@@ -47,5 +41,5 @@
     "spor": true,
     "prazdny_sal": false
   },
-  "steno_slov": 699
+  "steno_slov": 1182
 }

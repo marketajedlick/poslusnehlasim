@@ -3,41 +3,12 @@
   "nazev": "změny ve složení orgánů PS",
   "datum": "14.11.2025",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "kdo sedí v kterém sněmovním výboru",
-  "koho": [
-    "Občana se netýká, leda že zná někoho z poslanců osobně."
-  ],
-  "fakty": [
-    {
-      "text": "Páteční dopoledne, bod 18: sněmovna schvaluje změny ve složení výborů a dalších orgánů, bez rozpravy.",
-      "source": "votes",
-      "citace": "Bod 18, 14.11.2025 11:14 a 11:15, název: změny ve složení orgánů PS."
-    },
-    {
-      "text": "V hlasování číslo 55 bylo přihlášeno 187 poslanců, pro hlasovalo 180, proti 0.",
-      "source": "votes",
-      "citace": "Hlasování číslo 55, 14.11.2025 11:14, pro 180, proti 0, přítomno 187."
-    },
-    {
-      "text": "V hlasování číslo 56 bylo přihlášeno 187 poslanců, pro hlasovalo 181, proti 0.",
-      "source": "votes",
-      "citace": "Hlasování číslo 56, 14.11.2025 11:15, pro 181, proti 0, přítomno 187."
-    }
-  ],
-  "publikovat": true,
-  "priorita": 1,
-  "nadpis": "Personálka ve výborech",
-  "lead": "Poslušně hlásím, že poslanci schválili přesuny ve výborech: dvě hlasování v jedenáct hodin, obě bez jediného hlasu proti.",
-  "pointa": "Kdo sedí v hospodářském, evropském nebo zahraničním výboru, rozhodují poslanci mezi sebou. Občana u pokladny to netankuje.",
-  "mean": "Sněmovna jen přesadila lidi ve výborech a orgánech. Bez debaty, 180 a 181 hlasů pro, nula proti. Jde o personálku uvnitř parlamentu, ne o zákon pro veřejnost.",
+  "predmet_lidsky": "změnách ve složení výborů",
+  "koho": [],
+  "fakty": [],
+  "publikovat": false,
+  "priorita": 0,
+  "nadpis": "Prošlo to",
   "pocet_hlasovani": 2,
-  "proslo": true,
-  "signaly": {
-    "proti_max": 0,
-    "pritomno_min": 187,
-    "jednomyslne": true,
-    "spor": false,
-    "prazdny_sal": false
-  },
-  "steno_slov": 0
+  "proslo": true
 }
