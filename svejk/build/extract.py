@@ -138,8 +138,27 @@ def skore_z_verdiktu(slugs: list[str], paths: SchuzePaths) -> tuple[int, int]:
     return proslo, zamitnuto
 
 
+def topic_proslo_from_votes(group: list[dict]) -> bool:
+    """Prošlo, pokud existuje rozhodující A (pro > proti); u maratonů přerušení ne."""
+    group = sorted(group, key=lambda v: (v.get("datum", ""), v.get("cas", "")))
+    if not group:
+        return False
+    prijato = sum(1 for v in group if v.get("vysledek") == "A")
+    zamitnuto = sum(1 for v in group if v.get("vysledek") == "R")
+    decisive = [
+        v
+        for v in group
+        if v.get("vysledek") == "A" and (v.get("pro") or 0) > (v.get("proti") or 0)
+    ]
+    if not decisive:
+        return False
+    if prijato <= 2 and zamitnuto >= max(10, prijato * 5):
+        return False
+    return True
+
+
 def _den_zakon_stats(day_votes: list[dict]) -> tuple[int, int, int]:
-    """Počty pro tabuli stavu zápasu: jen zákony, jedno skóre na téma (poslední hlasování)."""
+    """Počty pro tabuli stavu zápasu: jen zákony, jedno skóre na téma."""
     groups: dict[tuple[str, str], list] = defaultdict(list)
     for v in day_votes:
         if v.get("je_porad_schuze"):
@@ -150,13 +169,36 @@ def _den_zakon_stats(day_votes: list[dict]) -> tuple[int, int, int]:
         groups[(v.get("bod") or "", nazev)].append(v)
     proslo = zamitnuto = 0
     for group in groups.values():
-        group.sort(key=lambda x: (x.get("datum", ""), x.get("cas", "")))
-        vysledek = group[-1].get("vysledek")
-        if vysledek == "A":
+        if topic_proslo_from_votes(group):
             proslo += 1
-        elif vysledek == "R":
+        else:
             zamitnuto += 1
     return proslo, zamitnuto, proslo + zamitnuto
+
+
+def _validate_fact_votes(fact: dict[str, Any], votes_by_cislo: dict[int, dict], schuze: int) -> list[str]:
+    """Kontrola citací hlasování a steno_id před zápisem."""
+    import re
+
+    warnings: list[str] = []
+    prefix = f"2025_{schuze}_"
+    for f in fact.get("fakty") or []:
+        sid = (f.get("steno_id") or "").strip()
+        if sid and f.get("source") == "steno" and sid.startswith("2025_") and not sid.startswith(prefix):
+            warnings.append(f"steno_id {sid} není ze schůze s{schuze}")
+        cit = f.get("citace") or ""
+        for m in re.finditer(
+            r"č[ií]slo\s+(\d+)[^0-9]{0,80}?pro\s+(\d+)(?:\s*,?\s*proti\s+(\d+))?",
+            cit,
+            re.I | re.S,
+        ):
+            c, pro, proti = int(m.group(1)), int(m.group(2)), int(m.group(3) or 0)
+            rv = votes_by_cislo.get(c)
+            if rv and (int(rv.get("pro") or 0) != pro or int(rv.get("proti") or 0) != proti):
+                warnings.append(
+                    f"#{c} citace {pro}:{proti} vs raw {rv.get('pro')}:{rv.get('proti')}"
+                )
+    return warnings
 
 
 def run_extract(paths: SchuzePaths) -> dict[str, Any]:
@@ -304,4 +346,19 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
             },
         )
 
-    return {"topics_written": written, "with_concrete_facts": with_facts, "days": len(days)}
+    validation: list[str] = []
+    for fp in paths.facts_by_topic.glob("*.json"):
+        if fp.name == "_example.json":
+            continue
+        fact = read_json(fp)
+        if not fact.get("publikovat"):
+            continue
+        for w in _validate_fact_votes(fact, votes_by_cislo, paths.schuze):
+            validation.append(f"{fact.get('slug')}: {w}")
+
+    return {
+        "topics_written": written,
+        "with_concrete_facts": with_facts,
+        "days": len(days),
+        "validation_warnings": validation,
+    }

@@ -163,7 +163,9 @@ def run_align(paths: SchuzePaths) -> dict[str, Any]:
         cisla = [int(v["cislo"]) for v in group if v.get("cislo") is not None]
         prijato = sum(1 for v in group if v.get("vysledek") == "A")
         zamitnuto = sum(1 for v in group if v.get("vysledek") == "R")
-        proslo = last.get("vysledek") == "A"
+        from svejk.build.extract import topic_proslo_from_votes
+
+        proslo = topic_proslo_from_votes(group)
         slug = slug_by_key[(bod, nazev)]
 
         ids_cislo: list[str] = []

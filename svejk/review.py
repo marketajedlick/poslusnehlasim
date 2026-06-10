@@ -93,10 +93,12 @@ def _issues_for_topic(
     if gloss and _glosa_je_nedostatecna(gloss):
         issues.append(ReviewIssue("warn", "generic_glosa", "Automatická glosa je slabá (fallback)."))
 
+    custom_lead = (fact.get("lead") or "").strip()
     low_parl = export_parliament.lower()
     if (
         ("schválili změny v " in low_parl or "zamítli změny v " in low_parl)
         and "hlasován" not in low_parl
+        and not custom_lead
     ):
         issues.append(
             ReviewIssue(
