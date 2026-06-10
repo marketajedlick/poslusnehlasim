@@ -257,23 +257,13 @@ body.is-turning{ pointer-events:none; }
   display:block;
 }
 @media (max-width:720px){
+  .sheet-shape{ overflow:visible; }
   .term-tip-bubble{
-    position:fixed;
-    left:1rem;
-    right:1rem;
-    bottom:calc(1rem + env(safe-area-inset-bottom, 0px));
-    top:auto;
-    transform:none;
-    width:auto;
-    max-width:none;
-    z-index:100;
-  }
-  .term-tip:hover .term-tip-bubble{
-    display:none;
-  }
-  .term-tip:focus .term-tip-bubble,
-  .term-tip:focus-within .term-tip-bubble{
-    display:block;
+    bottom:calc(100% + 8px);
+    left:50%;
+    transform:translateX(-50%);
+    max-width:min(28ch, calc(100vw - 2rem));
+    z-index:30;
   }
 }
 

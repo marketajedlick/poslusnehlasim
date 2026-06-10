@@ -283,6 +283,16 @@ body.is-turning{ pointer-events:none; }
 .term-tip:focus-within .term-tip-bubble{
   display:block;
 }
+@media (max-width:720px){
+  .sheet-shape{ overflow:visible; }
+  .term-tip-bubble{
+    bottom:calc(100% + 8px);
+    left:50%;
+    transform:translateX(-50%);
+    max-width:min(28ch, calc(100vw - 2rem));
+    z-index:30;
+  }
+}
 
 .stamp{
   display:inline-block;
