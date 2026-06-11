@@ -1,4 +1,4 @@
-"""Sněmovní pojmy — krátká vysvětlení pro tooltipy v HTML.
+"""Sněmovní pojmy: krátká vysvětlení pro tooltipy v HTML.
 
 Pořadí: delší fráze nahoře, aby se neshodily s kratšími prefixy.
 """
@@ -329,7 +329,7 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "zrychlené projednávání",
-        "Mimořádný režim, kdy se zákon projednává rychleji než obvykle — kratší lhůty na připomínky "
+        "Mimořádný režim, kdy se zákon projednává rychleji než obvykle, kratší lhůty na připomínky "
         "a méně času pro opozici.",
     ),
     (
@@ -471,22 +471,22 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     # --- kola hlasování (rozpočet, volby) ---
     (
         "druhém kole",
-        "Druhé projednání ve sněmovně — u zákonu fáze konkrétních úprav, u rozpočtu další fáze, "
+        "Druhé projednání ve sněmovně: u zákonu fáze konkrétních úprav, u rozpočtu další fáze, "
         "u voleb funkcí druhý pokus.",
     ),
     (
         "druhé kolo",
-        "Druhé projednání ve sněmovně — u zákonu fáze konkrétních úprav, u rozpočtu další fáze, "
+        "Druhé projednání ve sněmovně: u zákonu fáze konkrétních úprav, u rozpočtu další fáze, "
         "u voleb funkcí druhý pokus.",
     ),
     (
         "prvním kole",
-        "První projednání ve sněmovně — u zákonu rozhoduje, jestli se návrhem budou dál zabývat, "
+        "První projednání ve sněmovně: u zákonu rozhoduje, jestli se návrhem budou dál zabývat, "
         "u rozpočtu schvalují obrysy, u voleb první pokus.",
     ),
     (
         "první kolo",
-        "První projednání ve sněmovně — u zákonu rozhoduje, jestli se návrhem budou dál zabývat, "
+        "První projednání ve sněmovně: u zákonu rozhoduje, jestli se návrhem budou dál zabývat, "
         "u rozpočtu schvalují obrysy, u voleb první pokus.",
     ),
     (
@@ -1044,11 +1044,11 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "investičních fond",
-        "Společnosti, které spravují peníze investorů — třeba z penzijního spoření.",
+        "Společnosti, které spravují peníze investorů, třeba z penzijního spoření.",
     ),
     (
         "investiční fondy",
-        "Společnosti, které spravují peníze investorů — třeba z penzijního spoření.",
+        "Společnosti, které spravují peníze investorů, třeba z penzijního spoření.",
     ),
     (
         "investiční společnost",
@@ -1080,11 +1080,11 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "(KDU-ČSL)",
-        "Křesťanská a demokratická unie — Československá lidová strana.",
+        "Křesťanská a demokratická unie, Československá lidová strana.",
     ),
     (
         "(TOP 09)",
-        "TOP 09 — strana, která se profiluje jako liberálně konzervativní.",
+        "TOP 09, strana, která se profiluje jako liberálně konzervativní.",
     ),
     (
         "(Piráti)",
@@ -1092,11 +1092,11 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "(Motoristé)",
-        "Motoristé sobě — strana Petra Macinky, která se profiluje jako hnutí za práva řidičů.",
+        "Motoristé sobě, strana Petra Macinky, která se profiluje jako hnutí za práva řidičů.",
     ),
     (
         "(SPD)",
-        "Svoboda a přímá demokracie — strana Tomia Okamury.",
+        "Svoboda a přímá demokracie, strana Tomia Okamury.",
     ),
     (
         "(STAN)",
@@ -1108,7 +1108,7 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "(ANO)",
-        "Hnutí ANO 2011 — strana Andreje Babiše.",
+        "Hnutí ANO 2011, strana Andreje Babiše.",
     ),
     (
         "hnutí STAN",
@@ -1217,7 +1217,7 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
 )
 
-# Švejkův slovník — box pod článkem (kanonický název, klíč pro vyhledání v textu).
+# Švejkův slovník: box pod článkem (kanonický název, klíč pro vyhledání v textu).
 SLOVNIK_BOX: tuple[tuple[str, str], ...] = (
     ("Rozpočtové brzdy", "rozpočtových brzd"),
     ("Fiskální pravidla", "fiskální pravidl"),
@@ -1248,18 +1248,18 @@ SLOVNIK_BOX: tuple[tuple[str, str], ...] = (
     ("Mimořádná schůze", "mimořádn"),
 )
 
-# Švejkův slovníček — panel vpravo na webu (otázka → odpověď).
+# Švejkův slovníček: panel vpravo na webu (otázka → odpověď).
 SLOVNIČEK: tuple[tuple[str, str], ...] = (
     ("Co je pozměňovací návrh?", "Pokus poslance přepsat kus zákona, než se o něm definitivně hlasuje."),
     ("Co je první čtení?", "Poslanci zatím neřeší detaily. Jen rozhodují, jestli má smysl se zákonem zabývat."),
     ("Co je druhé čtení?", "Teď začíná vrtání v detailech a přibývají pozměňovací návrhy."),
     ("Co je třetí čtení?", "Poslední šance něco změnit. Pak už se hlasuje ano nebo ne."),
-    ("Co je procedurální návrh?", "Hlasuje se o tom, kdy a jak se bude jednat — ne o obsahu zákona."),
+    ("Co je procedurální návrh?", "Hlasuje se o tom, kdy a jak se bude jednat, ne o obsahu zákona."),
     ("Co je přerušení schůze?", "Poslanci si dali pauzu a slíbili, že se k tomu vrátí."),
     ("Co jsou rozpočtové brzdy?", "Zákon, který státu připomíná šlápnout na brzdu, když utrácí moc rychle."),
     ("Co jsou fiskální pravidla?", "Pravidla, která mají státu připomínat, že kreditka není bezedná."),
     ("Co je schodek?", "Rozdíl mezi tím, co stát vybral, a tím, co utratil navíc."),
-    ("Co je EET?", "Elektronická evidence tržeb — každá účtenka hlásila státu, kolik kdo utržil."),
+    ("Co je EET?", "Elektronická evidence tržeb, každá účtenka hlásila státu, kolik kdo utržil."),
     ("Co je usnesení?", "Stanovisko nebo rozhodnutí sněmovny. Nejde o zákon."),
     ("Co je interpelace?", "Část jednání, kdy poslanci pokládají otázky členům vlády."),
     ("Co je Dozimetr?", "Korupční kauza kolem pražského dopravního podniku a lidí napojených na STAN."),
@@ -1271,7 +1271,7 @@ SLOVNIČEK: tuple[tuple[str, str], ...] = (
     ("Co je Rada ČT?", "Skupina, která dohlíží na Českou televizi a vybírá její vedení."),
 )
 
-# Švejkův překladač z poslanečtiny — pro rubriky a sociální sítě.
+# Švejkův překladač z poslanečtiny: pro rubriky a sociální sítě.
 POSLANECINY_PREKLAD: tuple[tuple[str, str], ...] = (
     ("První čtení", "Ještě se nic nerozhodlo"),
     ("Druhé čtení", "Teď se vrtá v paragrafech"),
