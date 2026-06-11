@@ -531,6 +531,11 @@ def _sanitize_text_export(text: str) -> str:
     return nahrad_cisla_v_textu(dopln_strany_poslancu(bez_dlouhych_pomlc(text)))
 
 
+def _sanitize_vysledek_export(text: str) -> str:
+    """Výsledek dne: čísla ponechat (stav zápasu), zbytek stejně jako v textu."""
+    return dopln_strany_poslancu(bez_dlouhych_pomlc(text))
+
+
 def _sanitize_den_content(content: DenContent) -> None:
     content.board_stats = _sanitize_text_export(content.board_stats)
     content.result_note = _kapitalizuj_prvni_pismeno(

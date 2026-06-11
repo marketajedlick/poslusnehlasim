@@ -231,7 +231,7 @@ GLOSY: list[tuple[tuple[str, ...], str, str]] = [
     (
         ("silničním provozu", "silniční provoz"),
         (
-            "Pravidla silnic, technická úprava kvůli EU. Řidiče se může dotknout "
+            "Pravidla silnic, papírová úprava kvůli EU. Řidiče se může dotknout "
             "papírování k autu nebo homologace; běžná jízda do práce se nemění "
             "každým takovým hlasováním."
         ),
@@ -284,7 +284,7 @@ GLOSY: list[tuple[tuple[str, ...], str, str]] = [
     (
         ("sbírce zákonů",),
         (
-            "Technická úprava Sbírky zákonů, kde se zveřejňují zákony. "
+            "Papírová úprava Sbírky zákonů, kde se zveřejňují zákony. "
             "Právník to potřebuje, občan u snídaně ne."
         ),
         "Úprava Sbírky zákonů neprošla.",

@@ -52,7 +52,7 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "přesun ve prospěch konkurence.",
     ),
     (
-        "ubere z důchodu tisíc šest set padesát dvě korun",
+        "ubere z důchodu tisíc šest set padesát dva korun",
         "Jurečkův protiargument z debaty 16. 1. 2026: nižší zálohy na sociálním pojištění "
         "znamenají nižší odvody na důchod. Koalice mluví o úspoře 715 Kč měsíčně u záloh; "
         "Jurečka počítá, že v penzi by OSVČ přišla zhruba o 1 652 Kč měsíčně. Schillerová "
@@ -526,7 +526,7 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Babiš tvrdil, že Agrofert dodal 3600 toastů uprchlíkům z Ukrajiny na hlavním nádraží v roce 2022.",
     ),
     (
-        "Okamurova novoročního projevu",
+        "Okamurův novoroční projev",
         "Video předsedy sněmovny ze 1. ledna 2026: odmítl posílat zbraně Ukrajině a řekl, že za peníze důchodců nelze kupovat zbraně „k udržování nesmyslné války“.",
     ),
     (

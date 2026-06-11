@@ -101,3 +101,17 @@ Schůze má pevnou kostru. Rozeznávej rutinu od odchylky — **odchylky jsou te
 ## Při generování čísel a statistik
 
 Když uvádíš číslo (počet slov, hlasů, přítomných, poměr k 200 poslancům), **spočítej ho z dat**, neodhaduj. Pokud si nejsi jistý, raději číslo vynech než uveď nepřesné.
+
+## Terminologie a styl (sjednocený jazyk)
+
+Cíl není připomínat tiskovou zprávu sněmovny. Preferuj lidovou češtinu, hospodský jazyk, konkrétní slova, aktivní věty a lehkou švejkovskou ironii. Omezuj legislativní formulace, úřednické obraty a abstraktní pojmy (`technická úprava`, `procedurální krok`, `implementace`, `proces`). Test: pokud by věta mohla bez úprav vyjít na webu Poslanecké sněmovny, je pravděpodobně moc úřednická.
+
+**Vysvětlovací bloky:** používej nadpis `CO TO ZNAMENÁ PRO VÁS:` (v markdown `### Co to znamená pro vás?`).
+
+**Rozpočty, zákony, legislativa — nahrazuj:**
+- `prošel/pršla prvním kolem` → `přežil/přežila první kolo`
+- `v prvním kole schválila` → `na první pokus schválila` (kde to sedí)
+- `technická úprava` → `papírová úprava`
+- `návrh míří do výborů` → `návrh teď čeká kolečko po výborech`
+
+**Politické označení:** první zmínka `Babišova vláda`, další `vláda`. Nestřídej `vláda Babiše (ANO)`, `nová vláda Babiše`, `Babišova (ANO) vláda`, pokud to není nutné pro srozumitelnost.

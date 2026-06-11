@@ -1,4 +1,4 @@
-"""Švejkovský lead + pointa pod nadpisem; věcné vysvětlení v „Co to znamená“."""
+"""Švejkovský lead + pointa pod nadpisem; věcné vysvětlení v „Co to znamená pro vás“."""
 
 from __future__ import annotations
 
@@ -254,7 +254,7 @@ def mean_vysvetleni(
     dopad_fallback: str,
     mean_from_dopad: Callable[[str, str], str],
 ) -> str:
-    """Co to znamená: jen věcné vysvětlení, bez švejkovské pointy."""
+    """Co to znamená pro vás: jen věcné vysvětlení, bez švejkovské pointy."""
     if (fact.get("mean") or "").strip():
         return _zkrat(fact["mean"].strip())
 

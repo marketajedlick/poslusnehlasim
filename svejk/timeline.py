@@ -119,7 +119,7 @@ TEMA_PRAVIDLA: list[tuple[list[str], str, str]] = [
     (
         ["investiční společnost"],
         "EU finance, prošlo jak vagón munice do Budějovic. Exemplárně.",
-        "Technická úprava pravidel pro investiční společnosti. Běžného člověka se netýká.",
+        "Papírová úprava pravidel pro investiční společnosti. Běžného člověka se netýká.",
     ),
     (
         ["rostlinolékař"],

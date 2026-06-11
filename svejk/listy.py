@@ -167,7 +167,7 @@ LEGISLATIVNI_SLOVA = (
     "legislativ",
     "transpozic",
     "reforma",
-    "technická úprava",
+    "papírová úprava",
 )
 
 MAX_SLOV = 320
@@ -270,7 +270,7 @@ def _skore_legislativy(veta: str) -> int:
 
 
 def _veta_je_pouze_uradni(veta: str) -> bool:
-    """Úřednická věta bez osobního dopadu, do „Co to znamená?“ nepatří."""
+    """Úřednická věta bez osobního dopadu, do „Co to znamená pro vás?“ nepatří."""
     if _skore_osloveni(veta) > 0:
         return False
     if any(
@@ -1120,7 +1120,7 @@ def render_den_listy(day: DenSchuze, *, state: dict | None = None) -> str:
         lines.append("")
         lines.append(lead)
         lines.append("")
-        lines.append("### Co to znamená?")
+        lines.append("### Co to znamená pro vás?")
         lines.append("")
         lines.append(dopad)
 

@@ -9,7 +9,7 @@ from typing import Any
 
 from svejk.build.day_content import (
     DenContent,
-    _sanitize_text_export,
+    _sanitize_vysledek_export,
     build_den_content,
     vysledek_radky,
 )
@@ -79,7 +79,7 @@ def render_den_markdown(
                 "",
                 lead,
                 "",
-                "### Co to znamená?",
+                "### Co to znamená pro vás?",
                 "",
                 co_znamena,
                 "",
@@ -89,7 +89,7 @@ def render_den_markdown(
     lines.append("## Výsledek dne")
     lines.append("")
     for radek in vysledek_radky(content, paths, day_path):
-        lines.append(_sanitize_text_export(radek))
+        lines.append(_sanitize_vysledek_export(radek))
     lines.append("")
     lines.append(f"**{content.zaver}**")
 

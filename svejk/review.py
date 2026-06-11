@@ -109,7 +109,7 @@ def _issues_for_topic(
         )
 
     if export_mean and export_lead and export_mean.strip() == export_lead.strip():
-        issues.append(ReviewIssue("warn", "duplicate", "Lead a „Co to znamená“ jsou stejné."))
+        issues.append(ReviewIssue("warn", "duplicate", "Lead a „Co to znamená pro vás“ jsou stejné."))
 
     for label, txt in (("lead", export_lead), ("mean", export_mean)):
         if txt and ma_dlouhou_pomlcku(txt):
@@ -292,7 +292,7 @@ def format_topic_review(
         lines.append(f"  (steno_ids={len(steno_ids)}, ale chybí raw/steno.jsonl, spusť fetch)")
 
     lines.extend(_wrap("EXPORT lead (na stránce)", tr.export_lead))
-    lines.extend(_wrap("EXPORT mean (Co to znamená)", tr.export_mean))
+    lines.extend(_wrap("EXPORT mean (Co to znamená pro vás)", tr.export_mean))
     lines.extend(_wrap("EXPORT parliament (md úvod)", tr.export_parliament))
 
     return "\n".join(lines)
