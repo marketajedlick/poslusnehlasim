@@ -587,6 +587,96 @@ body.slovnicek-page{
   font-size:15px; line-height:1.45;
 }
 
+/* ---------- vyznamenání neprošli ---------- */
+body.vyznamenani-page{
+  padding:calc(24px + env(safe-area-inset-top, 0px)) 16px 32px;
+}
+.vyznamenani-wrap{
+  width:100%; max-width:920px; margin:0 auto;
+  background:var(--paper);
+  border:1.5px solid rgba(33,28,20,.22);
+  box-shadow:0 10px 28px var(--shadow);
+  padding:36px 24px 40px;
+}
+.vyznamenani-head{
+  margin-bottom:24px;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(33,28,20,.14);
+}
+.vyznamenani-title{
+  margin:0 0 8px;
+  font-family:'Oswald',sans-serif; font-weight:600;
+  font-size:28px; letter-spacing:.04em; text-transform:uppercase;
+  color:var(--ink);
+}
+.vyznamenani-gloss{
+  margin:0 0 16px;
+  font-size:15px; line-height:1.45; color:var(--ink-soft);
+}
+.vyznamenani-nav{
+  display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
+  gap:8px 12px; margin-top:8px;
+}
+.vyznamenani-nav-sep{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:12px; color:var(--ink-soft); opacity:.7;
+}
+.vyznamenani-back{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--terra); text-decoration:none;
+  border-bottom:1px solid rgba(207,90,49,.35);
+  padding-bottom:1px;
+}
+.vyznamenani-back:hover{ border-bottom-color:var(--terra); }
+.vyznamenani-table-wrap{
+  overflow-x:auto;
+  margin-bottom:20px;
+}
+.vyznamenani-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+  line-height:1.4;
+}
+.vyznamenani-table th,
+.vyznamenani-table td{
+  padding:10px 12px;
+  text-align:left;
+  vertical-align:top;
+  border-bottom:1px solid rgba(33,28,20,.1);
+}
+.vyznamenani-table thead th{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-soft);
+  border-bottom:1.5px solid rgba(33,28,20,.18);
+}
+.vyznamenani-table tbody th{
+  font-weight:600;
+  color:var(--ink);
+  white-space:nowrap;
+}
+.vyznamenani-skore{
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+.vyznamenani-note{
+  margin:0;
+  font-size:13px; line-height:1.45; color:var(--ink-soft);
+}
+a.mean-link{
+  color:inherit;
+  text-decoration:underline;
+  text-decoration-style:dotted;
+  text-underline-offset:3px;
+  text-decoration-color:rgba(207,90,49,.55);
+}
+a.mean-link:hover{
+  text-decoration-color:var(--terra);
+  color:var(--terra);
+}
+
 /* ---------- archiv page ---------- */
 body.archiv-page{
   padding:calc(24px + env(safe-area-inset-top, 0px)) 16px 32px;
@@ -1024,7 +1114,7 @@ body.archiv-page{
             </h2>
             <p class="p">Sněmovna ve čtvrtek dopoledne sestavovala seznam návrhů na <span class="term-tip" tabindex="0" role="term" aria-label="Medaile a vyznamenání, která uděluje prezident nebo sněmovna za mimořádné zásluhy.">státní vyznamenání<span class="term-tip-bubble" role="tooltip">Medaile a vyznamenání, která uděluje prezident nebo sněmovna za mimořádné zásluhy.</span></span>: sto šedesát pět hlasování za necelé tři hodiny, deset sekund na jméno. Miloš Zeman prošel až napotřetí 99:80, <span class="term-tip" tabindex="0" role="term" aria-label="Moderátor a novinář; návrh na vyznamenání 4. 6. 2026 neprošel (82:67).">Václav Moravec<span class="term-tip-bubble" role="tooltip">Moderátor a novinář; návrh na vyznamenání 4. 6. 2026 neprošel (82:67).</span></span> nebo <span class="term-tip" tabindex="0" role="term" aria-label="Herní vývojář; návrh na vyznamenání 4. 6. 2026 neprošel (85:33).">Daniel Vávra<span class="term-tip-bubble" role="tooltip">Herní vývojář; návrh na vyznamenání 4. 6. 2026 neprošel (85:33).</span></span> neprošli vůbec. Výsledný seznam nakonec podpořilo sto osmdesát poslanců a nikdo nebyl proti.</p>
             
-            <p class="mean"><b>Co to znamená pro vás: </b>Sněmovna <span class="term-tip" tabindex="0" role="term" aria-label="Sněmovna 4. 6. 2026 doporučila prezidentovi vyznamenat: Alena Macurová, Alois Pískala, Alois Šoba, Antonín Vojtek, Božetěch Kostelka, Elena Gorolová, Eliška Wagnerová, Emílie Klusalová, Emílie Londová, Ernestina Švorcová, František Peltán, Gabriela Kabátová, Ivo Kahánek, Jan Bula, Jan Herzig, Jan Heřmánek, Jan Hůda, Jan Picek, Jan Plesl, Jan Podveský, Jan Zábrana, Jan Čapek, Jana Moravcová, Jarmila Doležalová, Jaroslav Beck, Jaroslav Cibulka, Jaroslav Doležel, Jaroslav Kursa, Jaroslav Londa, Jaroslav Svoboda, Jaroslav Šedivý, Jaroslava Boukalová, Jiří Beneš, Jiří Bubeníček, Jiří Hromada, Jiří Komrska, Jiří Lábus, Jiří Markovič, Jiří Pavlica, Jiří Procházka, Jiří Suchomel, Jiří Tecl, Jiří Švenger, Josef Kubát, Josef Miker, Jozef Fulka, Juraj Herz, Karel Antonín Macháček, Karel Herbst, Karel Hlaváček, Karel Zeman, Katarína Vlčková, Kurt Gebauer, Ladislav Dohnal, Ladislav Samohýl, Libor Musil, Lubomír Glos, Luboš Hošek, Lucie Žáčková, Mahulena Exnerová, Marek Eben, Marie Vavroňová, Marie Ředinová, Marko Čermák, Martin Kourek, Martin Loučka, Martina Mátlová, Michal Anděl, Michal Prokop, Milan Hejný, Milan Kuna, Milan Kundera, Milan Vyhnálek, Milan Štěrba, Miloš Svoboda, Miloš Zeman, Miroslav Adámek, Miroslav Kváč, Olga Sozanská, Ondřej Peřina, Ondřej Vlček, Otmar Kučera, Otmar Oliva, Patrik Schick, Pavel Talankin, Pavlína Zvelebilová, Peter Pöthe, Petr Charvát, Petr Neužil, Petr Pánek, Petra Vitoušová, Prokop Šmirous, Radek Kaiser, Radoslav Kvapil, Richard Mikuláš Coudenhove-Kalergi, Richard Smejkal, Roman Šustáček, Sylva Knedlová, Tereza Sasková, Tomáš Hlaváč, Tomáš Kraus, Tomáš Londa, Tomáš Mikolov, Tomáš Rothröckl, Viktor Zůbek, Vilém Franěk, Vladimír Mikeš, Vladimír Slánský, Vladimír Vochoč, Vladimír Vícha, Vojtěch Cepl, Vojtěch Smolík, Václav Drbola, Václav Týfa, Věra Junková, Věra Vohlídalová, Yvona Kreuzmannová, Zdeněk Macháček, Zdeněk Mančal, Zikmund Doležal, Zuzana Dvořáková, Česlav Santarius.">posílá prezidentovi doporučení<span class="term-tip-bubble" role="tooltip">Sněmovna 4. 6. 2026 doporučila prezidentovi vyznamenat: Alena Macurová, Alois Pískala, Alois Šoba, Antonín Vojtek, Božetěch Kostelka, Elena Gorolová, Eliška Wagnerová, Emílie Klusalová, Emílie Londová, Ernestina Švorcová, František Peltán, Gabriela Kabátová, Ivo Kahánek, Jan Bula, Jan Herzig, Jan Heřmánek, Jan Hůda, Jan Picek, Jan Plesl, Jan Podveský, Jan Zábrana, Jan Čapek, Jana Moravcová, Jarmila Doležalová, Jaroslav Beck, Jaroslav Cibulka, Jaroslav Doležel, Jaroslav Kursa, Jaroslav Londa, Jaroslav Svoboda, Jaroslav Šedivý, Jaroslava Boukalová, Jiří Beneš, Jiří Bubeníček, Jiří Hromada, Jiří Komrska, Jiří Lábus, Jiří Markovič, Jiří Pavlica, Jiří Procházka, Jiří Suchomel, Jiří Tecl, Jiří Švenger, Josef Kubát, Josef Miker, Jozef Fulka, Juraj Herz, Karel Antonín Macháček, Karel Herbst, Karel Hlaváček, Karel Zeman, Katarína Vlčková, Kurt Gebauer, Ladislav Dohnal, Ladislav Samohýl, Libor Musil, Lubomír Glos, Luboš Hošek, Lucie Žáčková, Mahulena Exnerová, Marek Eben, Marie Vavroňová, Marie Ředinová, Marko Čermák, Martin Kourek, Martin Loučka, Martina Mátlová, Michal Anděl, Michal Prokop, Milan Hejný, Milan Kuna, Milan Kundera, Milan Vyhnálek, Milan Štěrba, Miloš Svoboda, Miloš Zeman, Miroslav Adámek, Miroslav Kváč, Olga Sozanská, Ondřej Peřina, Ondřej Vlček, Otmar Kučera, Otmar Oliva, Patrik Schick, Pavel Talankin, Pavlína Zvelebilová, Peter Pöthe, Petr Charvát, Petr Neužil, Petr Pánek, Petra Vitoušová, Prokop Šmirous, Radek Kaiser, Radoslav Kvapil, Richard Mikuláš Coudenhove-Kalergi, Richard Smejkal, Roman Šustáček, Sylva Knedlová, Tereza Sasková, Tomáš Hlaváč, Tomáš Kraus, Tomáš Londa, Tomáš Mikolov, Tomáš Rothröckl, Viktor Zůbek, Vilém Franěk, Vladimír Mikeš, Vladimír Slánský, Vladimír Vochoč, Vladimír Vícha, Vojtěch Cepl, Vojtěch Smolík, Václav Drbola, Václav Týfa, Věra Junková, Věra Vohlídalová, Yvona Kreuzmannová, Zdeněk Macháček, Zdeněk Mančal, Zikmund Doležal, Zuzana Dvořáková, Česlav Santarius.</span></span>, koho vyznamenat osmadvacátého října; konečné slovo má Hrad. Třiadvacet návrhů ale spadlo pod stůl. U Miloše Zemana se hlasovalo třikrát, než to platilo.</p>
+            <p class="mean"><b>Co to znamená pro vás: </b>Sněmovna <a class="mean-link" href="2026-06-04-prosli.html">posílá prezidentovi doporučení</a>, koho vyznamenat osmadvacátého října; konečné slovo má Hrad. <a class="mean-link" href="2026-06-04-neprosli.html">Třiadvacet návrhů ale spadlo pod stůl</a>. U Miloše Zemana se hlasovalo třikrát, než to platilo.</p>
             
             
             <p class="kuriozita">Kuriozita dne: <span class="term-tip" tabindex="0" role="term" aria-label="Novinář; návrh na vyznamenání 4. 6. 2026 neprošel (91:13), přestože měl nejvíc hlasů pro.">Luboš Dobrovský<span class="term-tip-bubble" role="tooltip">Novinář; návrh na vyznamenání 4. 6. 2026 neprošel (91:13), přestože měl nejvíc hlasů pro.</span></span> dostal devadesát jedna hlasů pro a jen třináct proti, a přesto neprošel, protože v plném sále je potřebná většina vyšší.</p>

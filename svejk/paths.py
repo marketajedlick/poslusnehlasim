@@ -82,6 +82,16 @@ class SchuzePaths:
         d = datetime.strptime(datum_unl, "%d.%m.%Y")
         return self.noviny_dlouhe_dir() / f"{d.strftime('%Y-%m-%d')}.html"
 
+    def vyznamenani_html(self, datum_unl: str, kind: str) -> Path:
+        """datum_unl = DD.MM.RRRR → soubor YYYY-MM-DD-{kind}.html"""
+        from datetime import datetime
+
+        d = datetime.strptime(datum_unl, "%d.%m.%Y")
+        return self.noviny_dlouhe_dir() / f"{d.strftime('%Y-%m-%d')}-{kind}.html"
+
+    def vyznamenani_neprosli_html(self, datum_unl: str) -> Path:
+        return self.vyznamenani_html(datum_unl, "neprosli")
+
     def ensure_dirs(self) -> None:
         for p in (
             self.raw,

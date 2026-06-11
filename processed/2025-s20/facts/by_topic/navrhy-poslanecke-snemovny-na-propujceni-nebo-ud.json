@@ -37,6 +37,16 @@
   "lead": "Sněmovna ve čtvrtek dopoledne sestavovala seznam návrhů na státní vyznamenání: 165 hlasování za necelé tři hodiny, deset sekund na jméno. Miloš Zeman prošel až napotřetí 99:80, Václav Moravec nebo Daniel Vávra neprošli vůbec.",
   "pointa": "Výsledný seznam nakonec podpořilo 180 poslanců a nikdo nebyl proti.",
   "mean": "Sněmovna posílá prezidentovi doporučení, koho vyznamenat 28. října; konečné slovo má Hrad. Třiadvacet návrhů ale spadlo pod stůl. U Miloše Zemana se hlasovalo třikrát, než to platilo.",
+  "mean_links": [
+    {
+      "phrase": "posílá prezidentovi doporučení",
+      "page": "prosli"
+    },
+    {
+      "phrase": "Třiadvacet návrhů ale spadlo pod stůl",
+      "page": "neprosli"
+    }
+  ],
   "kuriozita": "Kuriozita dne: Luboš Dobrovský dostal 91 hlasů pro a jen 13 proti, a přesto neprošel, protože v plném sále je potřebná většina vyšší.",
   "pocet_hlasovani": 165,
   "proslo": true,

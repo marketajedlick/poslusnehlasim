@@ -17,9 +17,11 @@ from svejk.build.html import (
     render_potvrzeno_html,
     render_slovnicek_html,
     render_soukromi_html,
+    render_vyznamenani_table_html,
     static_css_path,
     static_fonts_css_path,
 )
+from svejk.build.vyznamenani_neprosli import load_vyznamenani
 from svejk.build.nav import (
     clear_edition_cache,
     edition_pages_href,
@@ -137,6 +139,32 @@ def run_export_pages(
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(html, encoding="utf-8")
         written.append(str(dest.relative_to(out)))
+
+        paths = SchuzePaths.create(edition.obdobi, edition.schuze)
+        for kind in ("neprosli", "prosli"):
+            if not load_vyznamenani(paths, edition.datum_unl, kind):
+                continue
+            table_html = render_vyznamenani_table_html(
+                paths,
+                edition.datum_unl,
+                kind,
+                css_href=css_href,
+                fonts_css_href=fonts_css_href,
+                base_path=base,
+                link_mode="pages",
+            )
+            if not table_html:
+                continue
+            table_dest = (
+                out
+                / "noviny"
+                / str(edition.obdobi)
+                / str(edition.schuze)
+                / f"{edition.datum_unl}-{kind}.html"
+            )
+            table_dest.parent.mkdir(parents=True, exist_ok=True)
+            table_dest.write_text(table_html, encoding="utf-8")
+            written.append(str(table_dest.relative_to(out)))
 
     seen_dates: set[str] = set()
     for edition in editions:

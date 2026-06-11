@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#c9bda3" />
+<link rel="icon" type="image/svg+xml" href="{{ favicon_svg }}" />
+<link rel="icon" type="image/png" href="{{ favicon_png }}" sizes="32x32" />
+<link rel="apple-touch-icon" href="{{ apple_touch_icon }}" />
+<title>{{ page_title }} · vyznamenání {{ datum_label }} · Poslušně hlásím</title>
+<meta name="description" content="{{ page_description }}" />
+<link rel="canonical" href="{{ canonical_url }}" />
+<link rel="stylesheet" href="{{ fonts_css_href }}" />
+<link rel="stylesheet" href="{{ css_href }}" />
+</head>
+<body class="vyznamenani-page">
+<div class="vyznamenani-wrap">
+  <header class="vyznamenani-head">
+    <h1 class="vyznamenani-title">{{ page_title }}</h1>
+    <p class="vyznamenani-gloss">{{ page_gloss }}</p>
+    {% if edition_href %}
+    <nav class="vyznamenani-nav">
+      <a class="vyznamenani-back" href="{{ edition_href }}">← Zpět na vydání {{ datum_label }}</a>
+      {% if sibling_href and sibling_label %}
+      <span class="vyznamenani-nav-sep" aria-hidden="true">·</span>
+      <a class="vyznamenani-back" href="{{ sibling_href }}">{{ sibling_label }}</a>
+      {% endif %}
+    </nav>
+    {% endif %}
+  </header>
+
+  <div class="vyznamenani-table-wrap">
+    <table class="vyznamenani-table">
+      <thead>
+        <tr>
+          <th scope="col">Jméno</th>
+          <th scope="col">Hlasování</th>
+          <th scope="col">Pro</th>
+          <th scope="col">Proti</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <th scope="row">{{ row.jmeno }}</th>
+          <td class="vyznamenani-skore">{{ row.skore }}</td>
+          <td>{{ row.kluby_pro }}</td>
+          <td>{{ row.kluby_proti }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <p class="vyznamenani-note">{{ page_note }}</p>
+</div>
+</body>
+</html>

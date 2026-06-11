@@ -5,6 +5,7 @@ from __future__ import annotations
 import re
 from datetime import datetime
 from pathlib import Path
+from typing import Any
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
@@ -19,6 +20,15 @@ from svejk.build.nav import (
     edition_pages_href,
     list_obdobi_editions,
     slovnicek_pages_href,
+    vyznamenani_pages_href,
+)
+from svejk.build.vyznamenani_neprosli import (
+    VyznamenaniKind,
+    inject_mean_links,
+    load_vyznamenani,
+    page_meta,
+    table_rows,
+    vyznamenani_href,
 )
 from svejk.newsletter.config import NewsletterConfig
 from svejk.paths import SchuzePaths
@@ -160,6 +170,27 @@ def render_den_html(
         date_unl=content.datum,
         site_url=cfg.site_url,
     )
+    for item in content.items:
+        if not item.mean_links:
+            continue
+        link_pairs: list[tuple[str, str]] = []
+        for phrase, page in item.mean_links:
+            if page not in ("neprosli", "prosli"):
+                continue
+            kind: VyznamenaniKind = page  # type: ignore[assignment]
+            if not load_vyznamenani(paths, content.datum, kind):
+                continue
+            href = vyznamenani_href(
+                ob,
+                paths.schuze,
+                content.datum,
+                kind,
+                link_mode=link_mode,
+                base_path=base_path,
+            )
+            link_pairs.append((phrase, href))
+        if link_pairs:
+            item.mean = inject_mean_links(item.mean, link_pairs)
     tpl = _jinja_env().get_template("noviny-dlouhe.html")
     return tpl.render(
         content=content,
@@ -402,6 +433,90 @@ def render_potvrzeno_html(
         fonts_css_href=fonts_css_href,
         **favicons,
     )
+
+
+def render_vyznamenani_table_html(
+    paths: SchuzePaths,
+    datum_unl: str,
+    kind: VyznamenaniKind,
+    *,
+    inline_css: bool = False,
+    css_href: str | None = None,
+    fonts_css_href: str | None = None,
+    base_path: str = "",
+    link_mode: str = "file",
+) -> str | None:
+    data = load_vyznamenani(paths, datum_unl, kind)
+    if not data:
+        return None
+    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path)
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    obdobi = int(data.get("obdobi") or paths.obdobi)
+    schuze = int(data.get("schuze") or paths.schuze)
+    d = datetime.strptime(datum_unl, "%d.%m.%Y")
+    datum_label = f"{d.day}. {d.month}. {d.year}"
+    pocet = int(data.get("pocet") or len(data.get("radky") or []))
+    meta = page_meta(kind, pocet=pocet, datum_label=datum_label)
+    sibling_kind: VyznamenaniKind = "prosli" if kind == "neprosli" else "neprosli"
+    sibling_data = load_vyznamenani(paths, datum_unl, sibling_kind)
+    if link_mode == "pages":
+        edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path)
+        canonical_url = (
+            f"{cfg.site_url.rstrip('/')}"
+            f"{vyznamenani_pages_href(obdobi, schuze, datum_unl, kind, base_path)}"
+        )
+        sibling_href = (
+            vyznamenani_href(
+                obdobi, schuze, datum_unl, sibling_kind, link_mode="pages", base_path=base_path
+            )
+            if sibling_data
+            else ""
+        )
+    else:
+        edition_href = f"{d.strftime('%Y-%m-%d')}.html"
+        canonical_url = ""
+        sibling_href = (
+            vyznamenani_href(obdobi, schuze, datum_unl, sibling_kind, link_mode="file")
+            if sibling_data
+            else ""
+        )
+    sibling_label = (
+        "Koho Sněmovna doporučila"
+        if sibling_kind == "prosli"
+        else "Kdo neprošel"
+    )
+    page_description = meta["gloss"]
+    tpl = _jinja_env().get_template("vyznamenani-tabulka-stranka.html")
+    return tpl.render(
+        rows=table_rows(data),
+        datum_label=datum_label,
+        edition_href=edition_href,
+        sibling_href=sibling_href if sibling_data else "",
+        sibling_label=sibling_label if sibling_data else "",
+        page_title=meta["title"],
+        page_gloss=meta["gloss"],
+        page_note=meta["note"],
+        page_description=page_description,
+        canonical_url=canonical_url,
+        inline_css=inline_css,
+        css=css,
+        css_href=css_href,
+        fonts_css_href=fonts_css_href,
+        **favicons,
+    )
+
+
+def render_vyznamenani_neprosli_html(
+    paths: SchuzePaths,
+    datum_unl: str,
+    **kwargs: Any,
+) -> str | None:
+    return render_vyznamenani_table_html(paths, datum_unl, "neprosli", **kwargs)
 
 
 def render_slovnicek_html(

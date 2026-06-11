@@ -1,0 +1,5634 @@
+{
+  "datum": "04.06.2026",
+  "obdobi": 2025,
+  "schuze": 20,
+  "pocet": 122,
+  "radky": [
+    {
+      "jmeno": "Alena Macurová",
+      "cislo_hlasovani": 290,
+      "pro": 175,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 70
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Alois Pískala",
+      "cislo_hlasovani": 312,
+      "pro": 172,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 70
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 12
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Alois Šoba",
+      "cislo_hlasovani": 223,
+      "pro": 181,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 75
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Antonín Vojtek",
+      "cislo_hlasovani": 340,
+      "pro": 104,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 22
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 16
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "ANO",
+          "pro": 12
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Božetěch Kostelka",
+      "cislo_hlasovani": 273,
+      "pro": 117,
+      "proti": 3,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "ANO",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 2
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        },
+        {
+          "klub": "ANO",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Elena Gorolová",
+      "cislo_hlasovani": 203,
+      "pro": 94,
+      "proti": 5,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 20
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "SPD",
+          "pro": 11
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        },
+        {
+          "klub": "ANO",
+          "pro": 5
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "ANO",
+          "proti": 3
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Eliška Wagnerová",
+      "cislo_hlasovani": 211,
+      "pro": 96,
+      "proti": 19,
+      "kluby_pro": [
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "ODS",
+          "pro": 16
+        },
+        {
+          "klub": "ANO",
+          "pro": 14
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "SPD",
+          "proti": 14
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 4
+        },
+        {
+          "klub": "ANO",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Emílie Klusalová",
+      "cislo_hlasovani": 274,
+      "pro": 178,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 74
+        },
+        {
+          "klub": "ODS",
+          "pro": 22
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Emílie Londová",
+      "cislo_hlasovani": 219,
+      "pro": 179,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 76
+        },
+        {
+          "klub": "ODS",
+          "pro": 22
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Ernestina Švorcová",
+      "cislo_hlasovani": 226,
+      "pro": 176,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 72
+        },
+        {
+          "klub": "ODS",
+          "pro": 22
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "František Peltán",
+      "cislo_hlasovani": 188,
+      "pro": 179,
+      "proti": 0,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 74
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": []
+    },
+    {
+      "jmeno": "Gabriela Kabátová",
+      "cislo_hlasovani": 269,
+      "pro": 115,
+      "proti": 3,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "ANO",
+          "pro": 15
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 2
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "ANO",
+          "proti": 2
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Ivo Kahánek",
+      "cislo_hlasovani": 270,
+      "pro": 174,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 68
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jan Bula",
+      "cislo_hlasovani": 236,
+      "pro": 179,
+      "proti": 0,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 71
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 10
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": []
+    },
+    {
+      "jmeno": "Jan Herzig",
+      "cislo_hlasovani": 261,
+      "pro": 141,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 36
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jan Heřmánek",
+      "cislo_hlasovani": 262,
+      "pro": 97,
+      "proti": 18,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "ANO",
+          "pro": 11
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "SPD",
+          "proti": 11
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 4
+        },
+        {
+          "klub": "ANO",
+          "proti": 3
+        }
+      ]
+    },
+    {
+      "jmeno": "Jan Hůda",
+      "cislo_hlasovani": 266,
+      "pro": 153,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 69
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "Piráti",
+          "pro": 15
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 7
+        },
+        {
+          "klub": "STAN",
+          "pro": 3
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jan Picek",
+      "cislo_hlasovani": 311,
+      "pro": 173,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 73
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 7
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jan Plesl",
+      "cislo_hlasovani": 207,
+      "pro": 173,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 70
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Jan Podveský",
+      "cislo_hlasovani": 208,
+      "pro": 181,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 75
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 9
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jan Zábrana",
+      "cislo_hlasovani": 342,
+      "pro": 167,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 68
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "STAN",
+          "pro": 17
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 12
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jan Čapek",
+      "cislo_hlasovani": 183,
+      "pro": 176,
+      "proti": 0,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 73
+        },
+        {
+          "klub": "ODS",
+          "pro": 22
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": []
+    },
+    {
+      "jmeno": "Jana Moravcová",
+      "cislo_hlasovani": 299,
+      "pro": 112,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 18
+        },
+        {
+          "klub": "ANO",
+          "pro": 17
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "ANO",
+          "proti": 1
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jarmila Doležalová",
+      "cislo_hlasovani": 241,
+      "pro": 181,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 74
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 9
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jaroslav Beck",
+      "cislo_hlasovani": 232,
+      "pro": 170,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 69
+        },
+        {
+          "klub": "ODS",
+          "pro": 22
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Jaroslav Cibulka",
+      "cislo_hlasovani": 199,
+      "pro": 102,
+      "proti": 4,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "ANO",
+          "pro": 4
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 1
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 3
+        },
+        {
+          "klub": "ANO",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jaroslav Doležel",
+      "cislo_hlasovani": 242,
+      "pro": 175,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 71
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jaroslav Kursa",
+      "cislo_hlasovani": 286,
+      "pro": 175,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 70
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Jaroslav Londa",
+      "cislo_hlasovani": 217,
+      "pro": 177,
+      "proti": 0,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 74
+        },
+        {
+          "klub": "ODS",
+          "pro": 22
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": []
+    },
+    {
+      "jmeno": "Jaroslav Svoboda",
+      "cislo_hlasovani": 326,
+      "pro": 168,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 68
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "STAN",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "ODS",
+          "proti": 1
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jaroslav Šedivý",
+      "cislo_hlasovani": 189,
+      "pro": 119,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "ANO",
+          "pro": 19
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jaroslava Boukalová",
+      "cislo_hlasovani": 234,
+      "pro": 127,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 31
+        },
+        {
+          "klub": "ODS",
+          "pro": 21
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 15
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jiří Beneš",
+      "cislo_hlasovani": 233,
+      "pro": 160,
+      "proti": 14,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 69
+        },
+        {
+          "klub": "ODS",
+          "pro": 21
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 9
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "SPD",
+          "proti": 13
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jiří Bubeníček",
+      "cislo_hlasovani": 235,
+      "pro": 157,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 73
+        },
+        {
+          "klub": "ODS",
+          "pro": 22
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 9
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "ODS",
+          "proti": 1
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jiří Hromada",
+      "cislo_hlasovani": 265,
+      "pro": 143,
+      "proti": 17,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 62
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "ODS",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 12
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 2
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "SPD",
+          "proti": 13
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 3
+        },
+        {
+          "klub": "ANO",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jiří Komrska",
+      "cislo_hlasovani": 272,
+      "pro": 176,
+      "proti": 3,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 73
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 3
+        }
+      ]
+    },
+    {
+      "jmeno": "Jiří Lábus",
+      "cislo_hlasovani": 287,
+      "pro": 143,
+      "proti": 4,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 41
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 12
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "ANO",
+          "proti": 2
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Jiří Markovič",
+      "cislo_hlasovani": 292,
+      "pro": 177,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 72
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Jiří Pavlica",
+      "cislo_hlasovani": 309,
+      "pro": 175,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 71
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 12
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jiří Procházka",
+      "cislo_hlasovani": 315,
+      "pro": 98,
+      "proti": 5,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 23
+        },
+        {
+          "klub": "ODS",
+          "pro": 22
+        },
+        {
+          "klub": "STAN",
+          "pro": 15
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        },
+        {
+          "klub": "Piráti",
+          "pro": 5
+        },
+        {
+          "klub": "SPD",
+          "pro": 3
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        },
+        {
+          "klub": "SPD",
+          "proti": 2
+        },
+        {
+          "klub": "Piráti",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jiří Suchomel",
+      "cislo_hlasovani": 325,
+      "pro": 130,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 31
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 3
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jiří Tecl",
+      "cislo_hlasovani": 227,
+      "pro": 180,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 75
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jiří Švenger",
+      "cislo_hlasovani": 225,
+      "pro": 180,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 75
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Josef Kubát",
+      "cislo_hlasovani": 283,
+      "pro": 177,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 72
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Josef Miker",
+      "cislo_hlasovani": 294,
+      "pro": 103,
+      "proti": 14,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "ANO",
+          "pro": 19
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "SPD",
+          "pro": 1
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "SPD",
+          "proti": 12
+        },
+        {
+          "klub": "ANO",
+          "proti": 1
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Jozef Fulka",
+      "cislo_hlasovani": 253,
+      "pro": 159,
+      "proti": 3,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 56
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 4
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 3
+        }
+      ]
+    },
+    {
+      "jmeno": "Juraj Herz",
+      "cislo_hlasovani": 260,
+      "pro": 182,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 73
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 10
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Karel Antonín Macháček",
+      "cislo_hlasovani": 204,
+      "pro": 182,
+      "proti": 0,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 75
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 9
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": []
+    },
+    {
+      "jmeno": "Karel Herbst",
+      "cislo_hlasovani": 258,
+      "pro": 154,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 70
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        },
+        {
+          "klub": "Piráti",
+          "pro": 2
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Karel Hlaváček",
+      "cislo_hlasovani": 213,
+      "pro": 181,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 75
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 9
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Karel Zeman",
+      "cislo_hlasovani": 191,
+      "pro": 178,
+      "proti": 0,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 74
+        },
+        {
+          "klub": "ODS",
+          "pro": 21
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 9
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": []
+    },
+    {
+      "jmeno": "Katarína Vlčková",
+      "cislo_hlasovani": 338,
+      "pro": 168,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 66
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 18
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Kurt Gebauer",
+      "cislo_hlasovani": 254,
+      "pro": 116,
+      "proti": 5,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "ANO",
+          "pro": 18
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "STAN",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "SPD",
+          "pro": 12
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 4
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 3
+        },
+        {
+          "klub": "ANO",
+          "proti": 1
+        },
+        {
+          "klub": "STAN",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Ladislav Dohnal",
+      "cislo_hlasovani": 240,
+      "pro": 176,
+      "proti": 3,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 72
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 3
+        }
+      ]
+    },
+    {
+      "jmeno": "Ladislav Samohýl",
+      "cislo_hlasovani": 319,
+      "pro": 152,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 71
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 12
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 7
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 5
+        },
+        {
+          "klub": "Piráti",
+          "pro": 2
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Libor Musil",
+      "cislo_hlasovani": 301,
+      "pro": 168,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 68
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Lubomír Glos",
+      "cislo_hlasovani": 255,
+      "pro": 159,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 72
+        },
+        {
+          "klub": "ODS",
+          "pro": 22
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        },
+        {
+          "klub": "Piráti",
+          "pro": 2
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Piráti",
+          "proti": 1
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Luboš Hošek",
+      "cislo_hlasovani": 264,
+      "pro": 170,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 70
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 12
+        },
+        {
+          "klub": "SPD",
+          "pro": 12
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "SPD",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Lucie Žáčková",
+      "cislo_hlasovani": 344,
+      "pro": 154,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 60
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 18
+        },
+        {
+          "klub": "Piráti",
+          "pro": 15
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 7
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 4
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Mahulena Exnerová",
+      "cislo_hlasovani": 247,
+      "pro": 178,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 71
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Marek Eben",
+      "cislo_hlasovani": 245,
+      "pro": 147,
+      "proti": 6,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 67
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "SPD",
+          "pro": 8
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        },
+        {
+          "klub": "Piráti",
+          "pro": 3
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 5
+        },
+        {
+          "klub": "SPD",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Marie Vavroňová",
+      "cislo_hlasovani": 334,
+      "pro": 109,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 20
+        },
+        {
+          "klub": "ANO",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "STAN",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 11
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Marie Ředinová",
+      "cislo_hlasovani": 318,
+      "pro": 173,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 71
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Marko Čermák",
+      "cislo_hlasovani": 239,
+      "pro": 176,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 71
+        },
+        {
+          "klub": "ODS",
+          "pro": 21
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 9
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Martin Kourek",
+      "cislo_hlasovani": 215,
+      "pro": 176,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 74
+        },
+        {
+          "klub": "ODS",
+          "pro": 22
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Martin Loučka",
+      "cislo_hlasovani": 289,
+      "pro": 174,
+      "proti": 3,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 71
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 3
+        }
+      ]
+    },
+    {
+      "jmeno": "Martina Mátlová",
+      "cislo_hlasovani": 293,
+      "pro": 171,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 66
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Michal Anděl",
+      "cislo_hlasovani": 230,
+      "pro": 171,
+      "proti": 0,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 70
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 15
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": []
+    },
+    {
+      "jmeno": "Michal Prokop",
+      "cislo_hlasovani": 316,
+      "pro": 114,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 33
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 17
+        },
+        {
+          "klub": "Piráti",
+          "pro": 16
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 3
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        },
+        {
+          "klub": "SPD",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Milan Hejný",
+      "cislo_hlasovani": 257,
+      "pro": 176,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 72
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Milan Kuna",
+      "cislo_hlasovani": 284,
+      "pro": 171,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 67
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Milan Kundera",
+      "cislo_hlasovani": 186,
+      "pro": 153,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 77
+        },
+        {
+          "klub": "ODS",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 14
+        },
+        {
+          "klub": "STAN",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 9
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 4
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 1
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "ODS",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Milan Vyhnálek",
+      "cislo_hlasovani": 341,
+      "pro": 173,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 71
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "STAN",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Milan Štěrba",
+      "cislo_hlasovani": 224,
+      "pro": 180,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 75
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Miloš Svoboda",
+      "cislo_hlasovani": 327,
+      "pro": 175,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 69
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 10
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Miloš Zeman",
+      "cislo_hlasovani": 197,
+      "pro": 99,
+      "proti": 80,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 76
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 10
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "STAN",
+          "proti": 20
+        },
+        {
+          "klub": "ODS",
+          "proti": 18
+        },
+        {
+          "klub": "Piráti",
+          "proti": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "proti": 14
+        },
+        {
+          "klub": "TOP 09",
+          "proti": 9
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Miroslav Adámek",
+      "cislo_hlasovani": 229,
+      "pro": 169,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 75
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "Piráti",
+          "pro": 9
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Miroslav Kváč",
+      "cislo_hlasovani": 281,
+      "pro": 171,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 69
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 12
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Olga Sozanská",
+      "cislo_hlasovani": 324,
+      "pro": 118,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "ANO",
+          "pro": 22
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 11
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 1
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Ondřej Peřina",
+      "cislo_hlasovani": 310,
+      "pro": 117,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "ANO",
+          "pro": 21
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 12
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Ondřej Vlček",
+      "cislo_hlasovani": 337,
+      "pro": 164,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 66
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "STAN",
+          "pro": 16
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Otmar Kučera",
+      "cislo_hlasovani": 216,
+      "pro": 178,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 74
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "STAN",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Otmar Oliva",
+      "cislo_hlasovani": 303,
+      "pro": 170,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 67
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Patrik Schick",
+      "cislo_hlasovani": 321,
+      "pro": 100,
+      "proti": 3,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 23
+        },
+        {
+          "klub": "ODS",
+          "pro": 19
+        },
+        {
+          "klub": "STAN",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "Piráti",
+          "pro": 12
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 7
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        },
+        {
+          "klub": "SPD",
+          "pro": 2
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "ANO",
+          "proti": 1
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        },
+        {
+          "klub": "SPD",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Pavel Talankin",
+      "cislo_hlasovani": 331,
+      "pro": 126,
+      "proti": 17,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 43
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 12
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 3
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "SPD",
+          "proti": 12
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 4
+        },
+        {
+          "klub": "ANO",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Pavlína Zvelebilová",
+      "cislo_hlasovani": 343,
+      "pro": 163,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 66
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 11
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 7
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Peter Pöthe",
+      "cislo_hlasovani": 314,
+      "pro": 168,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 66
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Petr Charvát",
+      "cislo_hlasovani": 267,
+      "pro": 177,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 72
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 12
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Petr Neužil",
+      "cislo_hlasovani": 187,
+      "pro": 181,
+      "proti": 0,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 76
+        },
+        {
+          "klub": "ODS",
+          "pro": 22
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": []
+    },
+    {
+      "jmeno": "Petr Pánek",
+      "cislo_hlasovani": 305,
+      "pro": 98,
+      "proti": 17,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "ANO",
+          "pro": 15
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "SPD",
+          "proti": 13
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 4
+        }
+      ]
+    },
+    {
+      "jmeno": "Petra Vitoušová",
+      "cislo_hlasovani": 336,
+      "pro": 172,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 68
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Prokop Šmirous",
+      "cislo_hlasovani": 329,
+      "pro": 119,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 25
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "STAN",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 7
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 1
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "ANO",
+          "proti": 1
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Radek Kaiser",
+      "cislo_hlasovani": 271,
+      "pro": 177,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 72
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Radoslav Kvapil",
+      "cislo_hlasovani": 282,
+      "pro": 176,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 73
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 7
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Richard Mikuláš Coudenhove-Kalergi",
+      "cislo_hlasovani": 200,
+      "pro": 161,
+      "proti": 15,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 72
+        },
+        {
+          "klub": "ODS",
+          "pro": 22
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "SPD",
+          "proti": 14
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Richard Smejkal",
+      "cislo_hlasovani": 323,
+      "pro": 156,
+      "proti": 11,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 67
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        },
+        {
+          "klub": "SPD",
+          "pro": 1
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "SPD",
+          "proti": 10
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Roman Šustáček",
+      "cislo_hlasovani": 330,
+      "pro": 166,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 68
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "STAN",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 7
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Sylva Knedlová",
+      "cislo_hlasovani": 276,
+      "pro": 172,
+      "proti": 3,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 71
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 3
+        }
+      ]
+    },
+    {
+      "jmeno": "Tereza Sasková",
+      "cislo_hlasovani": 220,
+      "pro": 114,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "ANO",
+          "pro": 17
+        },
+        {
+          "klub": "Piráti",
+          "pro": 16
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 10
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Tomáš Hlaváč",
+      "cislo_hlasovani": 263,
+      "pro": 169,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 71
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "SPD",
+          "pro": 8
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Tomáš Kraus",
+      "cislo_hlasovani": 277,
+      "pro": 179,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 71
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 10
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Tomáš Londa",
+      "cislo_hlasovani": 218,
+      "pro": 180,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 76
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Tomáš Mikolov",
+      "cislo_hlasovani": 297,
+      "pro": 171,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 69
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Tomáš Rothröckl",
+      "cislo_hlasovani": 317,
+      "pro": 125,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 27
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 3
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Viktor Zůbek",
+      "cislo_hlasovani": 228,
+      "pro": 176,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 73
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Vilém Franěk",
+      "cislo_hlasovani": 252,
+      "pro": 101,
+      "proti": 3,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 22
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 12
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "ANO",
+          "pro": 4
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 3
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 3
+        }
+      ]
+    },
+    {
+      "jmeno": "Vladimír Mikeš",
+      "cislo_hlasovani": 295,
+      "pro": 164,
+      "proti": 2,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 70
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 18
+        },
+        {
+          "klub": "Piráti",
+          "pro": 16
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "SPD",
+          "pro": 10
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 4
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Vladimír Slánský",
+      "cislo_hlasovani": 221,
+      "pro": 183,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 76
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 9
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Vladimír Vochoč",
+      "cislo_hlasovani": 210,
+      "pro": 160,
+      "proti": 13,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 72
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "STAN",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 6
+        },
+        {
+          "klub": "SPD",
+          "pro": 1
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "SPD",
+          "proti": 13
+        }
+      ]
+    },
+    {
+      "jmeno": "Vladimír Vícha",
+      "cislo_hlasovani": 335,
+      "pro": 152,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 51
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 8
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Vojtěch Cepl",
+      "cislo_hlasovani": 238,
+      "pro": 117,
+      "proti": 4,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 22
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "ANO",
+          "pro": 15
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 4
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 3
+        },
+        {
+          "klub": "ANO",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Vojtěch Smolík",
+      "cislo_hlasovani": 222,
+      "pro": 181,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 76
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 9
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Václav Drbola",
+      "cislo_hlasovani": 243,
+      "pro": 132,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 28
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Václav Týfa",
+      "cislo_hlasovani": 332,
+      "pro": 157,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 66
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "SPD",
+          "pro": 12
+        },
+        {
+          "klub": "Piráti",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 7
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Věra Junková",
+      "cislo_hlasovani": 214,
+      "pro": 183,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 76
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 9
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Věra Vohlídalová",
+      "cislo_hlasovani": 339,
+      "pro": 96,
+      "proti": 14,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 19
+        },
+        {
+          "klub": "ANO",
+          "pro": 16
+        },
+        {
+          "klub": "Piráti",
+          "pro": 16
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 7
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 1
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "SPD",
+          "proti": 13
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    },
+    {
+      "jmeno": "Yvona Kreuzmannová",
+      "cislo_hlasovani": 278,
+      "pro": 106,
+      "proti": 5,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 17
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "ANO",
+          "pro": 6
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 1
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 3
+        },
+        {
+          "klub": "ANO",
+          "proti": 2
+        }
+      ]
+    },
+    {
+      "jmeno": "Zdeněk Macháček",
+      "cislo_hlasovani": 291,
+      "pro": 117,
+      "proti": 3,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "ANO",
+          "pro": 19
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 3
+        }
+      ]
+    },
+    {
+      "jmeno": "Zdeněk Mančal",
+      "cislo_hlasovani": 205,
+      "pro": 180,
+      "proti": 0,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 74
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        }
+      ],
+      "kluby_proti": []
+    },
+    {
+      "jmeno": "Zikmund Doležal",
+      "cislo_hlasovani": 201,
+      "pro": 165,
+      "proti": 0,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 75
+        },
+        {
+          "klub": "ODS",
+          "pro": 23
+        },
+        {
+          "klub": "STAN",
+          "pro": 20
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 8
+        },
+        {
+          "klub": "Piráti",
+          "pro": 4
+        }
+      ],
+      "kluby_proti": []
+    },
+    {
+      "jmeno": "Zuzana Dvořáková",
+      "cislo_hlasovani": 244,
+      "pro": 123,
+      "proti": 3,
+      "kluby_pro": [
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "ANO",
+          "pro": 21
+        },
+        {
+          "klub": "STAN",
+          "pro": 21
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 14
+        },
+        {
+          "klub": "SPD",
+          "pro": 14
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 2
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 3
+        }
+      ]
+    },
+    {
+      "jmeno": "Česlav Santarius",
+      "cislo_hlasovani": 320,
+      "pro": 170,
+      "proti": 1,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 70
+        },
+        {
+          "klub": "ODS",
+          "pro": 24
+        },
+        {
+          "klub": "Piráti",
+          "pro": 18
+        },
+        {
+          "klub": "STAN",
+          "pro": 18
+        },
+        {
+          "klub": "KDU-ČSL",
+          "pro": 13
+        },
+        {
+          "klub": "SPD",
+          "pro": 13
+        },
+        {
+          "klub": "TOP 09",
+          "pro": 9
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 5
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ]
+    }
+  ]
+}

@@ -129,6 +129,27 @@ def slovnicek_pages_href(base_path: str = "") -> str:
     return f"{base}/slovnicek.html" if base else "/slovnicek.html"
 
 
+def vyznamenani_pages_href(
+    obdobi: int,
+    schuze: int,
+    datum_unl: str,
+    kind: str,
+    base_path: str = "",
+) -> str:
+    base = base_path.rstrip("/")
+    path = f"/noviny/{obdobi}/{schuze}/{datum_unl}-{kind}.html"
+    return f"{base}{path}" if base else path
+
+
+def vyznamenani_neprosli_pages_href(
+    obdobi: int,
+    schuze: int,
+    datum_unl: str,
+    base_path: str = "",
+) -> str:
+    return vyznamenani_pages_href(obdobi, schuze, datum_unl, "neprosli", base_path)
+
+
 def resolve_edition(obdobi: int, datum_unl: str, schuze: int | None = None) -> Edition | None:
     matches = _editions_on_day(list_obdobi_editions(obdobi), datum_unl)
     if not matches:

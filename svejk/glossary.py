@@ -8,8 +8,12 @@ from __future__ import annotations
 GLOSSARY: tuple[tuple[str, str], ...] = (
     # --- vyznamenání 4. 6. 2026 (s20) ---
     (
-        "posílá prezidentovi doporučení",
-        "Sněmovna 4. 6. 2026 doporučila prezidentovi vyznamenat: Alena Macurová, Alois Pískala, Alois Šoba, Antonín Vojtek, Božetěch Kostelka, Elena Gorolová, Eliška Wagnerová, Emílie Klusalová, Emílie Londová, Ernestina Švorcová, František Peltán, Gabriela Kabátová, Ivo Kahánek, Jan Bula, Jan Herzig, Jan Heřmánek, Jan Hůda, Jan Picek, Jan Plesl, Jan Podveský, Jan Zábrana, Jan Čapek, Jana Moravcová, Jarmila Doležalová, Jaroslav Beck, Jaroslav Cibulka, Jaroslav Doležel, Jaroslav Kursa, Jaroslav Londa, Jaroslav Svoboda, Jaroslav Šedivý, Jaroslava Boukalová, Jiří Beneš, Jiří Bubeníček, Jiří Hromada, Jiří Komrska, Jiří Lábus, Jiří Markovič, Jiří Pavlica, Jiří Procházka, Jiří Suchomel, Jiří Tecl, Jiří Švenger, Josef Kubát, Josef Miker, Jozef Fulka, Juraj Herz, Karel Antonín Macháček, Karel Herbst, Karel Hlaváček, Karel Zeman, Katarína Vlčková, Kurt Gebauer, Ladislav Dohnal, Ladislav Samohýl, Libor Musil, Lubomír Glos, Luboš Hošek, Lucie Žáčková, Mahulena Exnerová, Marek Eben, Marie Vavroňová, Marie Ředinová, Marko Čermák, Martin Kourek, Martin Loučka, Martina Mátlová, Michal Anděl, Michal Prokop, Milan Hejný, Milan Kuna, Milan Kundera, Milan Vyhnálek, Milan Štěrba, Miloš Svoboda, Miloš Zeman, Miroslav Adámek, Miroslav Kváč, Olga Sozanská, Ondřej Peřina, Ondřej Vlček, Otmar Kučera, Otmar Oliva, Patrik Schick, Pavel Talankin, Pavlína Zvelebilová, Peter Pöthe, Petr Charvát, Petr Neužil, Petr Pánek, Petra Vitoušová, Prokop Šmirous, Radek Kaiser, Radoslav Kvapil, Richard Mikuláš Coudenhove-Kalergi, Richard Smejkal, Roman Šustáček, Sylva Knedlová, Tereza Sasková, Tomáš Hlaváč, Tomáš Kraus, Tomáš Londa, Tomáš Mikolov, Tomáš Rothröckl, Viktor Zůbek, Vilém Franěk, Vladimír Mikeš, Vladimír Slánský, Vladimír Vochoč, Vladimír Vícha, Vojtěch Cepl, Vojtěch Smolík, Václav Drbola, Václav Týfa, Věra Junková, Věra Vohlídalová, Yvona Kreuzmannová, Zdeněk Macháček, Zdeněk Mančal, Zikmund Doležal, Zuzana Dvořáková, Česlav Santarius.",
+        "Třiadvacet návrhů ale spadlo pod stůl",
+        "Tyto návrhy na vyznamenání 4. 6. 2026 neprošly: Luboš Dobrovský, Karel I., Michael Žantovský, "
+        "Radim Passer, Naděžda Vlašín Johanisová, Lucie Bášová, Kristýna Cejnarová, Daniel Herman, "
+        "Libuše Jarcovjáková, Milan Kňažko, Martin Kroupa, Mikuláš Kroupa, Miroslav Kundrata, "
+        "Eva Lehotská, Ladislav Miko, Jesica Miňovská, Václav Moravec, Ondřej Novotný, Martin Ondráček, "
+        "Zdislava Pokorná, Jiří Šlégr, Daniel Vávra a Vojtěch Filsák.",
     ),
     (
         "Luboš Dobrovský",

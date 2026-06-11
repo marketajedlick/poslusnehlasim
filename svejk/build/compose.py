@@ -15,7 +15,13 @@ from svejk.build.day_content import (
 )
 from svejk.cislo_slovy import nahrad_cisla_v_textu
 from svejk.text_norm import bez_dlouhych_pomlc, lcfirst_preserve_proper
-from svejk.build.html import render_den_html
+from svejk.build.html import render_den_html, render_vyznamenani_table_html
+from svejk.build.vyznamenani_neprosli import (
+    VyznamenaniKind,
+    inject_mean_links_md,
+    load_vyznamenani,
+    vyznamenani_href,
+)
 from svejk.build.io import read_json
 from svejk.noviny import HLAVICKA_LISTU, _datum_cesky, _new_state
 from svejk.paths import SchuzePaths
@@ -68,6 +74,24 @@ def render_den_markdown(
             prvni = False
 
         co_znamena = item.mean.strip() if item.mean else item.dopad
+        if item.mean_links:
+            link_pairs: list[tuple[str, str]] = []
+            for phrase, page in item.mean_links:
+                if page not in ("neprosli", "prosli"):
+                    continue
+                kind: VyznamenaniKind = page  # type: ignore[assignment]
+                if not load_vyznamenani(paths, content.datum, kind):
+                    continue
+                href = vyznamenani_href(
+                    paths.obdobi,
+                    paths.schuze,
+                    content.datum,
+                    kind,
+                    link_mode="file",
+                )
+                link_pairs.append((phrase, href))
+            if link_pairs:
+                co_znamena = inject_mean_links_md(co_znamena, link_pairs)
         heading = (
             "\n".join(item.nadpis_radky)
             if len(item.nadpis_radky) > 1
@@ -126,6 +150,16 @@ def run_compose(
         html_body = render_den_html(content, paths, day_path)
         html_out.write_text(html_body, encoding="utf-8")
         written_html.append(str(html_out))
+
+        for kind in ("neprosli", "prosli"):
+            table_html = render_vyznamenani_table_html(
+                paths, datum, kind, link_mode="file"
+            )
+            if not table_html:
+                continue
+            table_out = paths.vyznamenani_html(datum, kind)
+            table_out.write_text(table_html, encoding="utf-8")
+            written_html.append(str(table_out))
 
         for out_path, body in ((md_out, md_body), (html_out, html_body)):
             if ma_dlouhou_pomlcku(body):
