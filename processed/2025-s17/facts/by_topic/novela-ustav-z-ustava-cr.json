@@ -3,7 +3,7 @@
   "nazev": "Novela ústav. z. - Ústava ČR",
   "datum": "06.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "rozšíření pravomocí Nejvyššího kontrolního úřadu nad hospodařením České televize a Českého rozhlasu",
+  "predmet_lidsky": "novela ústav. z. - Ústava ČR",
   "koho": [
     "Koho se to týká? Každého, kdo platí koncesionářské poplatky. NKÚ by mohl kontrolovat, jak veřejnoprávní média utrácí miliardy z poplatků."
   ],
@@ -35,10 +35,17 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "NKÚ může kontrolovat ČT",
-  "lead": "Ve středu odpoledne Sněmovna schválila návrh ze Senátu ústavy, která rozšiřuje pravomoci Nejvyššího kontrolního úřadu nad hospodařením České televize a Českého rozhlasu, sedmdesát jedna hlasů proti šestnácti.",
-  "pointa": "Kordová Marvanová hájila kontrolu poplatků, Jakob spojil ústavu s obavami o média, Benda kritizoval koaliční pozměňovací návrh. Opozice celé dopoledne bránila pořadu kvůli rozpočtovým zákonům.",
-  "mean": "Ústava by umožnila NKÚ hlouběji zkoumat smlouvy a výdaje veřejnoprávních médií. Navazuje na dubnovou mimořádnou schůzi opozice o poplatcích ČT a předjímá červnovou volbu rady televize.",
   "pocet_hlasovani": 1,
   "proslo": true,
-  "steno_slov": 193
+  "signaly": {
+    "proti_max": 16,
+    "pritomno_min": 118,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 193,
+  "lead": "Ve středu odpoledne Sněmovna schválila návrh ze Senátu ústavy, která rozšiřuje pravomoci Nejvyššího kontrolního úřadu nad hospodařením České televize a Českého rozhlasu, sedmdesát jedna hlasů proti šestnácti.",
+  "pointa": "Kordová Marvanová hájila kontrolu poplatků, Jakob spojil ústavu s obavami o média, Benda kritizoval koaliční pozměňovací návrh. Opozice celé dopoledne bránila pořadu kvůli rozpočtovým zákonům.",
+  "mean": "Ústava by umožnila NKÚ hlouběji zkoumat smlouvy a výdaje veřejnoprávních médií. Navazuje na dubnovou mimořádnou schůzi opozice o poplatcích ČT a předjímá červnovou volbu rady televize."
 }

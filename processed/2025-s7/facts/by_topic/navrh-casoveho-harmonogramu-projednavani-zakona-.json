@@ -3,7 +3,7 @@
   "nazev": "Návrh časového harmonogramu projednávání zákona o státním rozpočtu ČR",
   "datum": "11.02.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "časového harmonogramu projednávání rozpočtu na rok 2026",
+  "predmet_lidsky": "návrh časového harmonogramu projednávání zákona o státním rozpočtu ČR",
   "koho": [
     "Koho se to týká? Každého, kdo čeká, kolik stát utratí. Harmonogram určuje, kdy se o rozpočtu bude hlasovat."
   ],
@@ -24,10 +24,17 @@
   "publikovat": true,
   "priorita": 2,
   "nadpis": "Kalendář rozpočtu",
-  "lead": "Sněmovna schválila harmonogram projednávání rozpočtu na rok 2026, 127 hlasů pro, nikdo proti.",
-  "pointa": "Zpravodaj Pikora představil dvanáctibodové usnesení rozpočtového výboru. Večer pak začala první debata o samotném návrhu.",
-  "mean": "Harmonogram říká, kdy a jak rychle půjde rozpočet výbory a plénem. Bez něj by se o schodku 310 miliard nehlasovalo podle plánu, ale pořád jen o pořadu.",
   "pocet_hlasovani": 1,
   "proslo": true,
-  "steno_slov": 100283
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 166,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 100283,
+  "lead": "Sněmovna schválila harmonogram projednávání rozpočtu na rok 2026, 127 hlasů pro, nikdo proti.",
+  "pointa": "Zpravodaj Pikora představil dvanáctibodové usnesení rozpočtového výboru. Večer pak začala první debata o samotném návrhu.",
+  "mean": "Harmonogram říká, kdy a jak rychle půjde rozpočet výbory a plénem. Bez něj by se o schodku 310 miliard nehlasovalo podle plánu, ale pořád jen o pořadu."
 }

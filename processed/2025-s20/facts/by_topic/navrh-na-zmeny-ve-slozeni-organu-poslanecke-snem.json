@@ -3,7 +3,7 @@
   "nazev": "Návrh na změny ve složení orgánů Poslanecké sněmovny",
   "datum": "27.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "výměnách poslanců ve výborech a komisích",
+  "predmet_lidsky": "návrh na změny ve složení orgánů Poslanecké sněmovny",
   "koho": [
     "Občana se netýká, leda že zná někoho z poslanců osobně."
   ],
@@ -15,7 +15,7 @@
     }
   ],
   "publikovat": false,
-  "priorita": 1,
+  "priorita": 3,
   "nadpis": "Židle ve výborech se přeskládaly",
   "pocet_hlasovani": 2,
   "proslo": true,
@@ -26,5 +26,5 @@
     "spor": false,
     "prazdny_sal": true
   },
-  "steno_slov": 0
+  "steno_slov": 34650
 }

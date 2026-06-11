@@ -6,6 +6,14 @@
     "navrh-na-stanoveni-poctu-mistopredsedu-ps",
     "navrh-terminu-2-schuze-ps"
   ],
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 709,
+    "end_cas": "20:57",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  },
   "dnesni_ucet": "Okamura zvolen předsedou, Barták a Nacher zvoleni místopředsedy.\nDruhé kolo v pátek, Benda protestoval proti diktátu.",
   "zaver": "že večer zvolili Okamuru předsedou, Barták s Nacherem usedli do křesla místopředsedů a zbytek voleb posunuli na pátek.",
   "vysledek": [
@@ -13,13 +21,5 @@
     "* samostatný návrh na Fialu zamítnut 18:136",
     "* zvoleni dva místopředsedové: Barták a Nacher, další dvě místa až v pátek",
     "* druhé kolo místopředsedů přesunuto na 14. 11."
-  ],
-  "stats": {
-    "pocet_hlas": 1,
-    "minuty": 709,
-    "end_cas": "20:57",
-    "proslo": 3,
-    "zamitnuto": 0,
-    "dlouha_debata": true
-  }
+  ]
 }

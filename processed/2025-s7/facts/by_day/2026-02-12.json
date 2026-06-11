@@ -5,6 +5,14 @@
     "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026",
     "navrh-usneseni-poslanecke-snemovny-k-odsouzeni-t"
   ],
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 769,
+    "end_cas": "13:41",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
   "dnesni_ucet": "Po celonoční maratonu rozpočet v prvním kole.\nOdpoledne jednohlasně proti týrání zvířat.",
   "zaver": "že po celonoční debatě koalice prosadila rozpočet v prvním kole a odpoledne jednohlasně odsoudila týrání zvířat.",
   "vysledek": [
@@ -12,13 +20,5 @@
     "* rozpočet na rok 2026 v prvním kole schválen, 90 proti 68",
     "* usnesení proti týrání zvířat schváleno, 139 pro, nula proti",
     "* doplnění o toulavých kočkách prošlo, 127 proti 6"
-  ],
-  "stats": {
-    "pocet_hlas": 2,
-    "minuty": 769,
-    "end_cas": "13:41",
-    "proslo": 2,
-    "zamitnuto": 0,
-    "dlouha_debata": true
-  }
+  ]
 }

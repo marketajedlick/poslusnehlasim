@@ -5,6 +5,14 @@
     "novela-z-o-cenach-debata-1-cteni",
     "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-"
   ],
+  "stats": {
+    "pocet_hlas": 4,
+    "minuty": 942,
+    "end_cas": "16:00",
+    "proslo": 3,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
   "dnesni_ucet": "Noc o regulaci cen benzínu, desítky hlasování do rána.\nOdpoledne prošly změny rozpočtových zákonů.",
   "zaver": "že středa patřila maratonu o cenách benzínu a odpoledne Sněmovna v druhém kole schválila změny rozpočtových zákonů.",
   "vysledek": [
@@ -12,13 +20,5 @@
     "* první kolo cenového zákona 160:0, druhé kolo v noci padlo",
     "* rozpočtové zákony ve druhém kole schváleny 93:50",
     "* nový cizinecký zákon a státní svátky mimo noviny"
-  ],
-  "stats": {
-    "pocet_hlas": 4,
-    "minuty": 942,
-    "end_cas": "16:00",
-    "proslo": 1,
-    "zamitnuto": 0,
-    "dlouha_debata": true
-  }
+  ]
 }

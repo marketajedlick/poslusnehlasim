@@ -3,7 +3,7 @@
   "nazev": "Novela z. o jednacím řádu PS",
   "datum": "13.02.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "novely jednacího řádu sněmovny v prvním čtení",
+  "predmet_lidsky": "jednacím řádu PS",
   "koho": [
     "Koho se to týká? Spíš politiku a televizní přenosy. Mění pravidla debaty, faktických poznámek a přednostních práv v sněmovně."
   ],
@@ -30,10 +30,17 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Pravidla hry v sále",
-  "lead": "Koaliční změna jednacího řádu přežila první kolo a teď čeká kolečko po výborech. Opozice chtěla o dvacet dní delší lhůtu, 57 proti 77 neprošlo.",
-  "pointa": "Debata začala už v úterý při boji o pořad sedmé schůze. Vondráček řekl, že rozprava byla vzorová, Richterová varovala před omezením faktických poznámek, které už při rozjezdu sněmovny kritizovala.",
-  "mean": "Jde o to, kdo a jak dlouho smí mluvit ve sněmovně. Koalice chce omezit obstrukce, opozice se bojí, že většina si pravidla ohně podle sebe. Zákon v prvním kole prošel, detaily se řeší ve výborech.",
   "pocet_hlasovani": 4,
   "proslo": true,
-  "steno_slov": 41789
+  "signaly": {
+    "proti_max": 77,
+    "pritomno_min": 137,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 41789,
+  "lead": "Koaliční změna jednacího řádu přežila první kolo a teď čeká kolečko po výborech. Opozice chtěla o dvacet dní delší lhůtu, 57 proti 77 neprošlo.",
+  "pointa": "Debata začala už v úterý při boji o pořad sedmé schůze. Vondráček řekl, že rozprava byla vzorová, Richterová varovala před omezením faktických poznámek, které už při rozjezdu sněmovny kritizovala.",
+  "mean": "Jde o to, kdo a jak dlouho smí mluvit ve sněmovně. Koalice chce omezit obstrukce, opozice se bojí, že většina si pravidla ohně podle sebe. Zákon v prvním kole prošel, detaily se řeší ve výborech."
 }

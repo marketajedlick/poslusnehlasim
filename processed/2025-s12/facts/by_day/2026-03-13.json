@@ -4,6 +4,14 @@
   "topic_slugs": [
     "novela-z-o-podpore-bydleni"
   ],
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 293,
+    "end_cas": "13:54",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
   "dnesni_ucet": "Pořad schválili 85 proti 38, pak šlo jen o poradenství v bydlení.\nZákon o bydlení prošel první kolo, opozice chtěla celý zákon zahodit.",
   "zaver": "že mimořádná schůze začala hádkou o NATO a ruském zákonu, ale odpoledne nechala zákon o podpoře bydlení žít dál.",
   "vysledek": [
@@ -11,13 +19,5 @@
     "* návrh na zamítnutí padl 27:86",
     "* přikázání garančnímu výboru 126:0",
     "* lhůta ve výborech zkrácena na 30 dní, 80:40"
-  ],
-  "stats": {
-    "pocet_hlas": 1,
-    "minuty": 293,
-    "end_cas": "13:54",
-    "proslo": 1,
-    "zamitnuto": 0,
-    "dlouha_debata": false
-  }
+  ]
 }

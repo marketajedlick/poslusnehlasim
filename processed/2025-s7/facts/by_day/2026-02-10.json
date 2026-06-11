@@ -4,6 +4,14 @@
   "topic_slugs": [
     "porad-7-schuze"
   ],
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 244,
+    "end_cas": "18:05",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  },
   "dnesni_ucet": "Sedmá schůze začala bojem o pořad, ne zákonem.\nRozpočet pokračoval, listopad už přežil první kolo.",
   "zaver": "že sedmá schůze začala hádáním o pořadu, ne zákonem. Koalice většinu návrhů opozice smetla a večer se otevřel rozpočet.",
   "vysledek": [
@@ -12,13 +20,5 @@
     "* koalice většinu návrhů zamítla",
     "* debata o rozpočtu se schodkem 310 miliard začala, o zákoně se zatím nehlasovalo",
     "* večer začala změna jednacího řádu"
-  ],
-  "stats": {
-    "pocet_hlas": 0,
-    "minuty": 244,
-    "end_cas": "18:05",
-    "proslo": 0,
-    "zamitnuto": 0,
-    "dlouha_debata": true
-  }
+  ]
 }

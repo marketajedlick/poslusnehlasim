@@ -4,6 +4,14 @@
   "topic_slugs": [
     "novela-z-o-cenach-2"
   ],
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 281,
+    "end_cas": "14:30",
+    "proslo": 2,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
   "dnesni_ucet": "Zákon o cenách benzínu zpět po senátu.\nDruhé kolo prošlo, Senát ho přehlasují.",
   "zaver": "že pátek uzavřel týden o cenách benzínu schválením zákona ve druhém kole, který Senát předtím vrátil.",
   "vysledek": [
@@ -11,13 +19,5 @@
     "* druhé kolo zákona o cenách schváleno 102:45",
     "* závěrečné hlasování 112:2",
     "* Jakob kritizoval přehlasování senátu bez sebereflexe"
-  ],
-  "stats": {
-    "pocet_hlas": 2,
-    "minuty": 281,
-    "end_cas": "14:30",
-    "proslo": 1,
-    "zamitnuto": 0,
-    "dlouha_debata": false
-  }
+  ]
 }

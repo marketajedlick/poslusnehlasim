@@ -1,9 +1,9 @@
 {
   "slug": "novela-z-o-podpore-bydleni",
   "nazev": "Novela z. o podpoře bydlení",
-  "datum": "03.06.2026",
+  "datum": "29.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "změnách zákona o podpoře bydlení a fungování kontaktních míst pro bydlení",
+  "predmet_lidsky": "podpoře bydlení",
   "koho": [
     "Koho se to týká? Lidi v bytové nouzi, nájemníky a obce. Novela ladí podpůrná opatření a spolupráci samospráv s úřady."
   ],
@@ -33,12 +33,19 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Podpora bydlení prošla",
+  "pocet_hlasovani": 24,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 97,
+    "pritomno_min": 106,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 64787,
   "lead": "Ve středu dopoledne Sněmovna schválila změnu zákona o podpoře bydlení, sto osmnáct hlasů proti dvaceti třem. Debata pokračovala po pátečním přerušení, koalice protlačila vládní verzi.",
   "pointa": "Richterová kritizovala vyškrtnutí definice dostupného bydlení, Urbanová zákon obhajovala jako pomoc obcím. Fialová hájila kontrolu poskytovatelů podpůrných opatření.",
-  "mean": "Změna zákona upravuje podpůrná opatření v bydlení a práci kontaktních míst obcí. Zákon prošel v závěrečném hlasování po přerušení z pátku 29. května.",
-  "pocet_hlasovani": 1,
-  "proslo": true,
-  "steno_slov": 64787
+  "mean": "Změna zákona upravuje podpůrná opatření v bydlení a práci kontaktních míst obcí. Zákon prošel v závěrečném hlasování po přerušení z pátku 29. května."
 }

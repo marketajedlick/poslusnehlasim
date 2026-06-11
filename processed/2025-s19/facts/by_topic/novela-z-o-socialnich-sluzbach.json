@@ -3,7 +3,7 @@
   "nazev": "Novela z. o sociálních službách",
   "datum": "15.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "posunu převodu péče a dávek OZP z Úřadu práce na sociální správu",
+  "predmet_lidsky": "sociálních službách",
   "koho": [
     "Koho se to týká? Lidi se zdravotním postižením a rodiny, které řeší péči, průkaz OZP nebo příspěvek na péči."
   ],
@@ -32,12 +32,19 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Péče zůstane na ÚP déle",
+  "pocet_hlasovani": 7,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 8,
+    "pritomno_min": 151,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 1034,
   "lead": "Hned po prvním zákonu  Sněmovna v závěrečném hlasování schválila změnu sociálních služeb, sto třicet dva hlasů proti nule. Navazuje na schválení ze 6. května, novinkou je příspěvek na mobilitu tři tisíce korun.",
   "pointa": "Jurečkův návrh na navýšení příspěvku na péči padl, koalice přijala Pastuchové úpravu příspěvku na mobilitu na tři tisíce korun. Schůzi chtěli stihnout do hodiny.",
-  "mean": "Lidé s průkazem OZP a příspěvkem na péči zatím zůstanou na Úřadu práce. Velký přesun přijde až za dva roky.",
-  "pocet_hlasovani": 1,
-  "proslo": true,
-  "steno_slov": 1034
+  "mean": "Lidé s průkazem OZP a příspěvkem na péči zatím zůstanou na Úřadu práce. Velký přesun přijde až za dva roky."
 }

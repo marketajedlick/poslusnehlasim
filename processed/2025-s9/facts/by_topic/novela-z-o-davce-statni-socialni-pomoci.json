@@ -3,7 +3,7 @@
   "nazev": "Novela z. o dávce státní sociální pomoci",
   "datum": "13.02.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "prodloužení přechodného období dávky státní sociální pomoci",
+  "predmet_lidsky": "dávce státní sociální pomoci",
   "koho": [
     "Koho se to týká? Domácností na sociálních dávkách. Superdávka má čtyři staré příspěvky sloučit do jedné, přechod trvá déle, než se čekalo."
   ],
@@ -37,10 +37,17 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Superdávka má o tři měsíce déle",
-  "lead": "Mimořádná schůze schválila prodloužení přechodu na superdávku o tři měsíce, 130 hlasů pro, nikdo proti. Stávající příjemci dostanou staré dávky do července, ne do dubna.",
-  "pointa": "Juchelka děkoval koalici i opozici. Piráti a Starostové nevetovali, Richterová ale varovala před dopady na zranitelné domácnosti a chtěla jasná data.",
-  "mean": "Superdávka mění způsob, jak stát vyplácí pomoc v hmotné nouzi. Úřad práce nestíhá převést přes 400 tisíc žádostí, proto vláda posouvá termín. Kapacity IT pak brzdí i digitalizaci dalších dávek na jaře a v létě. Lidé by neměli přijít o peníze, ale musí si v tíživé situaci říct o mimořádnou okamžitou pomoc.",
   "pocet_hlasovani": 2,
   "proslo": true,
-  "steno_slov": 3715
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 133,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 3715,
+  "lead": "Mimořádná schůze schválila prodloužení přechodu na superdávku o tři měsíce, 130 hlasů pro, nikdo proti. Stávající příjemci dostanou staré dávky do července, ne do dubna.",
+  "pointa": "Juchelka děkoval koalici i opozici. Piráti a Starostové nevetovali, Richterová ale varovala před dopady na zranitelné domácnosti a chtěla jasná data.",
+  "mean": "Superdávka mění způsob, jak stát vyplácí pomoc v hmotné nouzi. Úřad práce nestíhá převést přes 400 tisíc žádostí, proto vláda posouvá termín. Kapacity IT pak brzdí i digitalizaci dalších dávek na jaře a v létě. Lidé by neměli přijít o peníze, ale musí si v tíživé situaci říct o mimořádnou okamžitou pomoc."
 }

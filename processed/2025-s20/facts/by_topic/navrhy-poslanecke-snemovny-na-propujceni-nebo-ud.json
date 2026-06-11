@@ -3,7 +3,7 @@
   "nazev": "Návrhy Poslanecké sněmovny na propůjčení nebo udělení státních vyzname",
   "datum": "04.06.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "návrzích na státní vyznamenání pro prezidenta",
+  "predmet_lidsky": "návrhy Poslanecké sněmovny na propůjčení nebo udělení státních vyzname",
   "koho": [
     "Koho se to týká? Lidí na seznamu kandidátů na metály; Sněmovna jen doporučuje, rozdávat bude prezident 28. října."
   ],
@@ -32,21 +32,21 @@
     }
   ],
   "publikovat": true,
-  "priorita": 3,
+  "priorita": 2,
   "nadpis": "Metály na běžícím pásu",
+  "pocet_hlasovani": 165,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 80,
+    "pritomno_min": 175,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 9897,
   "lead": "Sněmovna ve čtvrtek dopoledne sestavovala seznam návrhů na státní vyznamenání: 165 hlasování za necelé tři hodiny, deset sekund na jméno. Miloš Zeman prošel až napotřetí 99:80, Václav Moravec nebo Daniel Vávra neprošli vůbec.",
   "pointa": "Výsledný seznam nakonec podpořilo 180 poslanců a nikdo nebyl proti.",
   "mean": "Sněmovna posílá prezidentovi doporučení, koho vyznamenat 28. října; konečné slovo má Hrad. Třiadvacet návrhů ale spadlo pod stůl. U Miloše Zemana se hlasovalo třikrát, než to platilo.",
-  "mean_links": [
-    {
-      "phrase": "posílá prezidentovi doporučení",
-      "page": "prosli"
-    },
-    {
-      "phrase": "Třiadvacet návrhů ale spadlo pod stůl",
-      "page": "neprosli"
-    }
-  ],
   "kuriozita": "Kuriozita dne: Vojtěch Filsák měl 92:16 a chyběl mu jediný hlas na většinu přítomných, z třiadvaceti neprošlých byl od metálu nejblíž. Luboš Dobrovský s 91:13 prošel podobně těsně, ale taky ne.",
   "kuriozita_links": [
     {
@@ -57,15 +57,5 @@
       "label": "Kdo neprošel",
       "page": "neprosli"
     }
-  ],
-  "pocet_hlasovani": 165,
-  "proslo": true,
-  "signaly": {
-    "proti_max": 80,
-    "pritomno_min": 175,
-    "jednomyslne": false,
-    "spor": true,
-    "prazdny_sal": false
-  },
-  "steno_slov": 9897
+  ]
 }

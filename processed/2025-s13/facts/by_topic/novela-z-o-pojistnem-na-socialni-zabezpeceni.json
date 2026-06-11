@@ -42,10 +42,17 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Živnostníkům klesnou odvody",
-  "lead": "Sněmovna v závěrečném hlasování schválila snížení minimálních sociálních záloh pro živnostníky, sto dvanáct hlasů pro. Předtím předsedající prohlásil první hlasování za zmatečné.",
-  "pointa": "Juchelka chtěl vrátit základ z 40 na 35 procent průměrné mzdy. Doplňující usnesení o nízkých důchodech OSVČ pak padlo, protože na ně nebylo dost hlasů.",
-  "mean": "Živnostníci na hlavní činnost zaplatí nižší minimální zálohu na sociálním pojištění, úspora je zhruba sedm set korun měsíčně. Zaměstnance na výplatní pásce se to netýká.",
   "pocet_hlasovani": 12,
   "proslo": true,
-  "steno_slov": 18364
+  "signaly": {
+    "proti_max": 108,
+    "pritomno_min": 104,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 18364,
+  "lead": "Sněmovna v závěrečném hlasování schválila snížení minimálních sociálních záloh pro živnostníky, sto dvanáct hlasů pro. Předtím předsedající prohlásil první hlasování za zmatečné.",
+  "pointa": "Juchelka chtěl vrátit základ z 40 na 35 procent průměrné mzdy. Doplňující usnesení o nízkých důchodech OSVČ pak padlo, protože na ně nebylo dost hlasů.",
+  "mean": "Živnostníci na hlavní činnost zaplatí nižší minimální zálohu na sociálním pojištění, úspora je zhruba sedm set korun měsíčně. Zaměstnance na výplatní pásce se to netýká."
 }

@@ -3,7 +3,7 @@
   "nazev": "Novela z. o státní sociální podpoře",
   "datum": "15.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "odložení digitalizace dávek státní sociální podpory na Úřadu práce",
+  "predmet_lidsky": "státní sociální podpoře",
   "koho": [
     "Koho se to týká? Rodiny čekající na příspěvek na bydlení, přídavek na dítě nebo další dávky z Úřadu práce."
   ],
@@ -32,12 +32,19 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Dávky se digitalizují později",
+  "pocet_hlasovani": 5,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 74,
+    "pritomno_min": 150,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 3554,
   "lead": "V pátek ráno Sněmovna v závěrečném hlasování schválila odklad digitalizace dávek státní sociální podpory, sto dvacet osm hlasů proti nule. Navazuje na schválení ze 6. května na šestnácté schůzi. Piráti místo toho tlačili rodičák na 420 000, koalice jejich návrhy zamítla.",
   "pointa": "Juchelka hájil technickou změnu kvůli kapacitám IT po superdávce. Martínková Španihelová mluvila o valorizaci rodičovského příspěvku, Jurečka apeloval na shodu o péči.",
-  "mean": "Dávky z Úřadu práce se zatím nebudou převádět do plně digitálního režimu podle původního harmonogramu. Směr digitalizace zůstává, mění se tempo.",
-  "pocet_hlasovani": 1,
-  "proslo": true,
-  "steno_slov": 3554
+  "mean": "Dávky z Úřadu práce se zatím nebudou převádět do plně digitálního režimu podle původního harmonogramu. Směr digitalizace zůstává, mění se tempo."
 }

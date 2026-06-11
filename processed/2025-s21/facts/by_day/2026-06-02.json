@@ -6,6 +6,14 @@
     "novela-z-o-sprave-voleb",
     "n-z-kterym-se-meni-nektere-zakony-na-useku-vnitr"
   ],
+  "stats": {
+    "pocet_hlas": 3,
+    "minuty": 210,
+    "end_cas": "17:35",
+    "proslo": 3,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
   "dnesni_ucet": "Mimořádná schůze: rodičovský příspěvek, volby s QR kódem a Česká pošta.\nTři zákony za tři a půl hodiny, proti skoro nikdo.",
   "zaver": "že mimořádné úterý dalo rodičům naději na čtyři sta tisíc, nevidomým voličům rovnou schválilo QR kódy na lístcích, poštu poslalo do výboru, a sotva došel program, strhla se hádka, kdo víc obstruuje.",
   "vysledek": [
@@ -14,13 +22,5 @@
     "* pošta a odklady digitalizace do výboru; spadl jen Bendův nápad na výbor navíc",
     "* pořad schůze jako jediný rozdělil sál: osmdesát pět pro, čtyřicet osm proti",
     "* nový poslanec Forman složil slib; po vyčerpání programu hádka o obstrukce a bušení do lavic"
-  ],
-  "stats": {
-    "pocet_hlas": 3,
-    "minuty": 210,
-    "end_cas": "17:35",
-    "proslo": 3,
-    "zamitnuto": 0,
-    "dlouha_debata": true
-  }
+  ]
 }

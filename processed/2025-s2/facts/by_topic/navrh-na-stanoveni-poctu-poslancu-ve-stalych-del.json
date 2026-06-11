@@ -3,12 +3,48 @@
   "nazev": "Návrh na stanovení počtu poslanců ve stálých delegacích",
   "datum": "11.11.2025",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "počtu poslanců ve stálých delegacích",
-  "koho": [],
-  "fakty": [],
-  "publikovat": false,
-  "priorita": 0,
+  "predmet_lidsky": "návrh na stanovení počtu poslanců ve stálých delegacích",
+  "koho": [
+    "Občana se to netýká."
+  ],
+  "fakty": [
+    {
+      "text": "O slovo se hlásí poslankyně Richterová.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_2_00005",
+      "citace": "(O slovo se hlásí poslankyně Richterová.)"
+    },
+    {
+      "text": "(O slovo se hlásí poslankyně Richterová.) Ano, prosím, paní předsedkyně klubu Pirátů Olga Richterová.",
+      "source": "steno",
+      "steno_id": "2025_2_00005",
+      "citace": "(O slovo se hlásí poslankyně Richterová.) Ano, prosím, paní předsedkyně klubu Pirátů Olga Richterová."
+    },
+    {
+      "text": "Protože tam ty počty seděly půl na půl, 10 poslanců za vznikající koalici, 10 poslanců za nás, za opozici.",
+      "source": "steno",
+      "steno_id": "2025_2_00006",
+      "citace": "Protože tam ty počty seděly půl na půl, 10 poslanců za vznikající koalici, 10 poslanců za nás, za opozici."
+    },
+    {
+      "text": "Já jsem si prostě říkala: To bude jistě tím, že na těch věcech z Evropy je spousta práce a bude tam vůle alespoň v tomto jednom výboru maximálně spolupracovat.",
+      "source": "steno",
+      "steno_id": "2025_2_00006",
+      "citace": "Já jsem si prostě říkala: To bude jistě tím, že na těch věcech z Evropy je spousta práce a bude tam vůle alespoň v tomto jednom výboru maximálně spolupracovat."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 191,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": false
+  },
+  "steno_slov": 1973
 }

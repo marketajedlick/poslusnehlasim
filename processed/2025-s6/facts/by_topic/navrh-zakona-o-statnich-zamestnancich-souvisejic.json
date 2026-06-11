@@ -2,13 +2,50 @@
   "slug": "navrh-zakona-o-statnich-zamestnancich-souvisejic",
   "nazev": "Návrh zákona o státních zaměstnancích - související",
   "datum": "29.01.2026",
-  "verdikt": "zamiteno",
-  "predmet_lidsky": "souvisejících změnách dalších zákonů ke státním zaměstnancům",
-  "koho": [],
-  "fakty": [],
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "státních zaměstnancích - související",
+  "koho": [
+    "Občana se to netýká, ledaže pracujete na úřadě nebo tam čekáte ve frontě."
+  ],
+  "fakty": [
+    {
+      "text": "Poslanci přicházejí do sálu.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_6_00042",
+      "citace": "(Poslanci přicházejí do sálu.)"
+    },
+    {
+      "text": "Nyní tedy přistupme k prvnímu bodu pořadu, kterým je 1.Návrh poslanců Radka Vondráčka, Renaty Vesecké, Libora Vondráčka a Zuzany Ožanové na vydání zákona o právních poměrech státních zaměstnanců v ministerstvech a jiných správních úřadech (zákon o státních zaměstnancích)/sněmovní tisk 76/ - prvé čtení Prosím, aby předl",
+      "source": "steno",
+      "steno_id": "2025_6_00042",
+      "citace": "Nyní tedy přistupme k prvnímu bodu pořadu, kterým je 1.Návrh poslanců Radka Vondráčka, Renaty Vesecké, Libora Vondráčka a Zuzany Ožanové na vydání zákona o právních poměrech státních zaměstnanců v min"
+    },
+    {
+      "text": "Mám zde hlasování na náhradní kartu číslo 3, kterou předložil pan poslanec Munzar.",
+      "source": "steno",
+      "steno_id": "2025_6_00042",
+      "citace": "Mám zde hlasování na náhradní kartu číslo 3, kterou předložil pan poslanec Munzar."
+    },
+    {
+      "text": "Silný hluk v sále.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_6_00043",
+      "citace": "(Silný hluk v sále.)"
+    }
+  ],
   "publikovat": false,
-  "priorita": 0,
+  "priorita": 3,
   "nadpis": "Zůstává po staru",
   "pocet_hlasovani": 5,
-  "proslo": false
+  "proslo": true,
+  "signaly": {
+    "proti_max": 95,
+    "pritomno_min": 161,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 5182
 }

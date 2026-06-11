@@ -6,19 +6,19 @@
     "novela-z-o-statni-socialni-podpore",
     "novela-z-o-socialnich-sluzbach"
   ],
+  "stats": {
+    "pocet_hlas": 3,
+    "minuty": 476,
+    "end_cas": "18:28",
+    "proslo": 3,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
   "dnesni_ucet": "Zákon o veřejných zakázkách padl, sociální úpravy prošly.\nDávky a péče se digitalizují později.",
   "zaver": "že středa zamítla zrušení zákona o veřejných zakázkách a schválila dvě sociální úpravy, které odkládají digitalizaci dávek a převod péče na rok 2028.",
   "vysledek": [
     "* zrušení zákona o veřejných zakázkách zamítnuto 66:88",
     "* digitalizace dávek státní sociální podpory odložena, schváleno 122:0",
     "* převod péče a dávek OZP na ÚSSZ posunut na 2028, schváleno 122:0"
-  ],
-  "stats": {
-    "pocet_hlas": 3,
-    "minuty": 476,
-    "end_cas": "18:28",
-    "proslo": 2,
-    "zamitnuto": 1,
-    "dlouha_debata": false
-  }
+  ]
 }

@@ -4,6 +4,14 @@
   "topic_slugs": [
     "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-"
   ],
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 188,
+    "end_cas": "13:20",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
   "dnesni_ucet": "Ráno na devatenácté schůzi sociální změny, odpoledne rozpočet.\nRozpočtové brzdy padly 68:90 v závěrečném hlasování.",
   "zaver": "že pátek skončil zamítnutím vládních rozpočtových zákonů: koalice chtěla uvolnit limity, opozice varovala před schodkem přes čtyři sta miliard.",
   "vysledek": [
@@ -11,13 +19,5 @@
     "* třicet šest hlasování o pozměňovacích návrzích, osm prošlo",
     "* Jakob obhajoval rezervu a silnější roli Národní rozpočtové rady",
     "* Vlček řekl, že vláda vypíná rozpočtová pravidla"
-  ],
-  "stats": {
-    "pocet_hlas": 1,
-    "minuty": 188,
-    "end_cas": "13:20",
-    "proslo": 0,
-    "zamitnuto": 1,
-    "dlouha_debata": false
-  }
+  ]
 }

@@ -3,7 +3,7 @@
   "nazev": "Novela z. o podpoře bydlení",
   "datum": "13.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "zužení poradenství na kontaktních místech pro bydlení",
+  "predmet_lidsky": "podpoře bydlení",
   "koho": [
     "Koho se to týká? Lidí v nájmu a v bytové tísni. Kontaktní místa mají radit dřív, než člověk skončí v ubytovně nebo na ulici."
   ],
@@ -48,10 +48,17 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Bydlení na první pokus",
+  "pocet_hlasovani": 5,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 86,
+    "pritomno_min": 125,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 31906,
   "lead": "Změna zákona o podpoře bydlení prošla první kolo, návrh na zamítnutí padl na 27 hlasů. Vláda zužuje okruh lidí u kontaktních míst, opozice varovala před devíti miliardami z EU.",
   "pointa": "Dopoledne v sále znělo NATO a připravovaný zákon o cizích vazbách (opozice ho nazývá „ruský zákon“) místo bydlení. Bartoš jako bývalý ministr hájil preventivní síť, Olšáková chtěla zákon zamítnout, Sněmovna ji nepustila.",
-  "mean": "Kontaktní místa mají pomáhat lidem v nájemní krizi dřív, než spadnou do ubytoven. Změna zákona cílí poradenství jen na zranitelné skupiny. Zákon sám byty nestaví, ale má zabránit zbytečným nákladům státu.",
-  "pocet_hlasovani": 1,
-  "proslo": true,
-  "steno_slov": 31906
+  "mean": "Kontaktní místa mají pomáhat lidem v nájemní krizi dřív, než spadnou do ubytoven. Změna zákona cílí poradenství jen na zranitelné skupiny. Zákon sám byty nestaví, ale má zabránit zbytečným nákladům státu."
 }

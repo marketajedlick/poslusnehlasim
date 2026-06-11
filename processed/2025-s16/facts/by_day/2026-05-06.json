@@ -7,6 +7,14 @@
     "novela-z-o-statni-socialni-podpore",
     "novela-z-o-socialnich-sluzbach"
   ],
+  "stats": {
+    "pocet_hlas": 4,
+    "minuty": 1269,
+    "end_cas": "22:00",
+    "proslo": 3,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
   "dnesni_ucet": "Paralelně sedmnáctá schůze řeší ústavu a rozpočet.\nV noci odsouzení sjezdu v Brně, večer tři zákony.",
   "zaver": "že pozdě v noci Sněmovna odsoudila sjezd sudetoněmeckých krajanů v Brně a večer protlačila tři zákony od staveb po sociální dávky.",
   "vysledek": [
@@ -14,13 +22,5 @@
     "* stavební zákon ve dvou hlasováních 110:0 a 123:0",
     "* digitalizace dávek odložena, schváleno 100:1",
     "* převod péče OZP na 2028, schváleno 111:0"
-  ],
-  "stats": {
-    "pocet_hlas": 4,
-    "minuty": 365,
-    "end_cas": "22:00",
-    "proslo": 4,
-    "zamitnuto": 0,
-    "dlouha_debata": true
-  }
+  ]
 }

@@ -4,6 +4,14 @@
   "topic_slugs": [
     "mimoradna-schuze-opozice"
   ],
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 0,
+    "end_cas": "11:01",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  },
   "dnesni_ucet": "Opozice svolala mimořádnou schůzi, vláda odpovídala.\nDeset hodin řečí, žádné hlasování o zákonech.",
   "zaver": "že opozice celý den útočila na vládu kvůli benzínu, médiím a kauzám, koalice se bránila a bez hlasování o zákonech to skončilo.",
   "vysledek": [
@@ -11,13 +19,5 @@
     "* debata o cenách benzínu, poplatcích ČT a evropských dotacích",
     "* Okamura potvrdil návrh na zrušení koncesionářských poplatků",
     "* jednání ukončeno v 21:00 bez prodloužení"
-  ],
-  "stats": {
-    "pocet_hlas": 0,
-    "minuty": 554,
-    "end_cas": "21:00",
-    "proslo": 0,
-    "zamitnuto": 0,
-    "dlouha_debata": true
-  }
+  ]
 }

@@ -1,9 +1,9 @@
 {
   "slug": "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026",
-  "nazev": "Vládní návrh zákona o státním rozpočtu ČR na rok 2026",
+  "nazev": "Vl.n.z. o státním rozpočtu ČR na rok 2026",
   "datum": "11.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "státním rozpočtu na rok 2026",
+  "predmet_lidsky": "o státním rozpočtu ČR na rok 2026",
   "koho": [
     "Koho se to týká? Všech. Rozpočet určuje, kolik stát utratí za zdravotnictví, obranu, školství i dávky."
   ],
@@ -24,10 +24,17 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Rozpočet schválen",
+  "pocet_hlasovani": 129,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 104,
+    "pritomno_min": 189,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 144303,
   "lead": "Státní rozpočet prošel v závěrečném hlasování, sto sedmdesát osm hlasů pro, jeden proti. Večer padly i rozpočty většiny fondů.",
   "pointa": "Den trval do večera a přinesl přes sto dílčích hlasování k pozměňovacím návrhům. Závěrečné schválení navazovalo na druhé kolo ze čtvrtka 4. března.",
-  "mean": "Závěrečné hlasování je finální schválení rozpočtu na rok 2026. Schodek kolem 310 miliard dělí politiku na dvě poloviny, peníze půjdou od armády po školství.",
-  "pocet_hlasovani": 2,
-  "proslo": true,
-  "steno_slov": 144303
+  "mean": "Závěrečné hlasování je finální schválení rozpočtu na rok 2026. Schodek kolem 310 miliard dělí politiku na dvě poloviny, peníze půjdou od armády po školství."
 }

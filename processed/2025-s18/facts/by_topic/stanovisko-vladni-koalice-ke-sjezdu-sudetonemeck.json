@@ -1,9 +1,9 @@
 {
   "slug": "stanovisko-vladni-koalice-ke-sjezdu-sudetonemeck",
-  "nazev": "Stanovisko ke sjezdu Sudetoněmeckého landsmanšaftu v Brně",
+  "nazev": "Stanovisko vládní koalice ke sjezdu Sudetoněmeckého landsmanšaftu v Br",
   "datum": "14.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "postoji sněmovny ke sjezdu Sudetoněmeckého landsmanšaftu v Brně",
+  "predmet_lidsky": "stanovisko vládní koalice ke sjezdu Sudetoněmeckého landsmanšaftu v Br",
   "koho": [
     "Koho se to týká? Spíš vztahy s Německem. Usnesení odsuzuje sjezd v Brně a odkazuje na česko-německou deklaraci z roku 1997."
   ],
@@ -41,10 +41,17 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Sjezd v Brně došel až do noci",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 77,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 6096,
   "lead": "Ve čtvrtek odpoledne koalice na mimořádné schůzi schválila usnesení proti sjezdu Sudetoněmeckého landsmanšaftu v Brně, sedmdesát tři hlasy a nikdo proti. Opozice v sále chyběla, text navazuje na hlasování 109:1 ze šestnácté schůze 6. května.",
   "pointa": "Malá mluvila o starých ranách a deklaraci z roku 1997, Rajchl citoval pozůstalé z Lidic. Šafránková řekla, že o opozičních návrzích usnesení kvůli nepřítomnosti nešlo hlasovat.",
-  "mean": "Sněmovna oficiálně odsoudila sjezd v Brně a vyzývá organizátory, aby akci zrušili. Jde o politické usnesení bez přímého dopadu na práva občanů.",
-  "pocet_hlasovani": 1,
-  "proslo": true,
-  "steno_slov": 6096
+  "mean": "Sněmovna oficiálně odsoudila sjezd v Brně a vyzývá organizátory, aby akci zrušili. Jde o politické usnesení bez přímého dopadu na práva občanů."
 }

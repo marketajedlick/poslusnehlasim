@@ -2,9 +2,11 @@
   "slug": "dotacni-programy-zemedelstvi-pro-rok-2026",
   "nazev": "Dotační programy zemědělství pro rok 2026",
   "datum": "11.03.2026",
-  "verdikt": "zamiteno",
+  "verdikt": "schvaleno",
   "predmet_lidsky": "dotační programy zemědělství pro rok 2026",
-  "koho": [],
+  "koho": [
+    "Dotace pro farmáře, kolik dostanou na hektar nebo dobytče."
+  ],
   "fakty": [
     {
       "text": "252/1997 Sb., o zemědělství, ve znění pozdějších předpisů/sněmovní tisk 96/ Tento materiál uvede ministr zemědělství Martin Šebestyán a já ho poprosím, aby se ujal slova.",
@@ -32,8 +34,16 @@
     }
   ],
   "publikovat": false,
-  "priorita": 0,
+  "priorita": 3,
   "nadpis": "Zůstává po staru",
   "pocet_hlasovani": 2,
-  "proslo": false
+  "proslo": true,
+  "signaly": {
+    "proti_max": 94,
+    "pritomno_min": 171,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 5784
 }

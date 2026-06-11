@@ -26,12 +26,19 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Stavební zákon pokračuje",
-  "lead": "Večer Sněmovna schválila další kolo změny zákonů stavebního zákona, sto deset a pak sto dvacet tři hlasů proti nule. Prošlo až po celodenní debatě o sudetoněmeckém sjezdu.",
-  "pointa": "Večer prošlo první kolo změny zákonů stavebního zákona. Finální podobu dostane až na dvacáté schůzi 28. května.",
-  "mean": "Změny se dotknou každého, kdo řeší stavbu nebo rekonstrukci u úřadu. Konkrétní úpravy závisí na finálním znění.",
   "pocet_hlasovani": 2,
   "proslo": true,
-  "steno_slov": 7904
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 133,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 7904,
+  "lead": "Večer Sněmovna schválila další kolo změny zákonů stavebního zákona, sto deset a pak sto dvacet tři hlasů proti nule. Prošlo až po celodenní debatě o sudetoněmeckém sjezdu.",
+  "pointa": "Večer prošlo první kolo změny zákonů stavebního zákona. Finální podobu dostane až na dvacáté schůzi 28. května.",
+  "mean": "Změny se dotknou každého, kdo řeší stavbu nebo rekonstrukci u úřadu. Konkrétní úpravy závisí na finálním znění."
 }

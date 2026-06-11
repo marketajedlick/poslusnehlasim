@@ -3,7 +3,7 @@
   "nazev": "Novela z. o státní sociální podpoře",
   "datum": "02.06.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "rodičovském příspěvku",
+  "predmet_lidsky": "státní sociální podpoře",
   "koho": [
     "Koho se to týká? Rodičů dětí narozených od ledna 2027. Rodičovský příspěvek se zvedne o padesát tisíc korun, u dvojčat a vícerčat na dvojnásobek."
   ],
@@ -35,9 +35,6 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Rodičům přidají",
-  "lead": "Rodičovský příspěvek má stoupnout z tří set padesáti na čtyři sta tisíc korun, u dvojčat a vícerčat na osm set tisíc. Platit má pro děti narozené od ledna 2027 a v sále se proti tomu nezvedla jediná ruka.",
-  "pointa": "O penězích se nehádal nikdo, zato o slovech ano: rozpravou létaly výrazy „klerofašisti“ a „lhářka“, zatímco příspěvek tiše proplul jednomyslně.",
-  "mean": "Zatím jde o první kolo: návrh teď čeká kolečko po sociálním výboru a lhůtu na projednání si poslanci zkrátili na dvacet pět dnů, aby přidání stihli. Pro úplnost, loni se narodilo 77 636 dětí, nejméně za dvě stě let, takže se přidává rodičům, kterých ubývá.",
   "pocet_hlasovani": 2,
   "proslo": true,
   "signaly": {
@@ -47,5 +44,8 @@
     "spor": false,
     "prazdny_sal": true
   },
-  "steno_slov": 11774
+  "steno_slov": 11774,
+  "lead": "Rodičovský příspěvek má stoupnout z tří set padesáti na čtyři sta tisíc korun, u dvojčat a vícerčat na osm set tisíc. Platit má pro děti narozené od ledna 2027 a v sále se proti tomu nezvedla jediná ruka.",
+  "pointa": "O penězích se nehádal nikdo, zato o slovech ano: rozpravou létaly výrazy „klerofašisti“ a „lhářka“, zatímco příspěvek tiše proplul jednomyslně.",
+  "mean": "Zatím jde o první kolo: návrh teď čeká kolečko po sociálním výboru a lhůtu na projednání si poslanci zkrátili na dvacet pět dnů, aby přidání stihli. Pro úplnost, loni se narodilo 77 636 dětí, nejméně za dvě stě let, takže se přidává rodičům, kterých ubývá."
 }

@@ -4,19 +4,19 @@
   "topic_slugs": [
     "novela-z-stavebni-zakon"
   ],
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 793,
+    "end_cas": "22:59",
+    "proslo": 0,
+    "zamitnuto": 1,
+    "dlouha_debata": true
+  },
   "dnesni_ucet": "Celý den interpelace, večer 23 hlasování o stavebním zákoně.\nVšechna jen o tom, kdy přestat; o obsahu nepadlo ani jedno, skóre 0:0.",
   "zaver": "že Sněmovna celý den interpelovala a večer u stavebního zákona třiadvacetkrát hlasovala jen o tom, kdy jít domů; jednou se ani nesešlo kvorum a ve 22:59 to konečně prošlo 64:10.",
   "vysledek": [
     "* žádný zákon dnes nedošel k hlasování, den patřil interpelacím",
     "* stavební zákon: dvaadvacet návrhů na přerušení padlo, třiadvacátý prošel 64:10",
     "* u jednoho hlasování zbylo v sále dvaašedesát poslanců a kvorum se nekonalo"
-  ],
-  "stats": {
-    "pocet_hlas": 0,
-    "minuty": 793,
-    "end_cas": "22:59",
-    "proslo": 0,
-    "zamitnuto": 0,
-    "dlouha_debata": true
-  }
+  ]
 }

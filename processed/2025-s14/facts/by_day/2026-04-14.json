@@ -5,14 +5,6 @@
     "porad-14-schuze",
     "novela-z-o-cenach"
   ],
-  "dnesni_ucet": "Zrychlené projednávání kvůli cenám benzínu, večer boj o pořad.\nZkrácená debata prošla, první kolo stovkou hlasů.",
-  "zaver": "že Sněmovna schválila zrychlené projednávání kvůli cenám benzínu, večer po čtyřiceti čtyřech hlasech o pořadu dala zelenou prvnímu kolu zákona o cenách.",
-  "vysledek": [
-    "* zrychlené projednávání potvrzeno kvůli zákonu o cenách benzínu",
-    "* pořad schválen po čtyřiceti čtyřech hlasech o pořadu",
-    "* zkrácená debata schváleno 79:51",
-    "* první kolo zákona o cenách 100:0, druhé kolo večer padlo 64:89"
-  ],
   "stats": {
     "pocet_hlas": 3,
     "minuty": 561,
@@ -20,5 +12,13 @@
     "proslo": 1,
     "zamitnuto": 0,
     "dlouha_debata": true
-  }
+  },
+  "dnesni_ucet": "Zrychlené projednávání kvůli cenám benzínu, večer boj o pořad.\nZkrácená debata prošla, první kolo stovkou hlasů.",
+  "zaver": "že Sněmovna schválila zrychlené projednávání kvůli cenám benzínu, večer po čtyřiceti čtyřech hlasech o pořadu dala zelenou prvnímu kolu zákona o cenách.",
+  "vysledek": [
+    "* zrychlené projednávání potvrzeno kvůli zákonu o cenách benzínu",
+    "* pořad schválen po čtyřiceti čtyřech hlasech o pořadu",
+    "* zkrácená debata schváleno 79:51",
+    "* první kolo zákona o cenách 100:0, druhé kolo večer padlo 64:89"
+  ]
 }

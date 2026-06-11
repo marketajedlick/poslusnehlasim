@@ -3,7 +3,7 @@
   "nazev": "Novela z. o sociálních službách",
   "datum": "06.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "převodu péče a dávek OZP z Úřadu práce na ÚSSZ",
+  "predmet_lidsky": "sociálních službách",
   "koho": [
     "Koho se to týká? Lidi se zdravotním postižením a rodiny, které řeší péči, průkaz OZP nebo příspěvek na péči."
   ],
@@ -27,12 +27,19 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Péče zůstane na ÚP déle",
-  "lead": "Kolem desáté večer schválili změnu sociálních služeb, sto jedenáct hlasů proti nule. Převod péče pro hendikepované z Úřadu práce na sociální správu se posouvá na rok 2028. Závěrečné hlasování přijde na mimořádné schůzi 15. května.",
-  "pointa": "Jde o navazující změnu k reformě sociálních dávek. Tentokrát prošla až po celodenní blokaci kvůli sudetoněmeckému sjezdu.",
-  "mean": "Lidé s průkazem OZP a příspěvkem na péči zatím zůstanou na Úřadu práce. Velký přesun přijde až za dva roky.",
   "pocet_hlasovani": 1,
   "proslo": true,
-  "steno_slov": 5245
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 112,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 5245,
+  "lead": "Kolem desáté večer schválili změnu sociálních služeb, sto jedenáct hlasů proti nule. Převod péče pro hendikepované z Úřadu práce na sociální správu se posouvá na rok 2028. Závěrečné hlasování přijde na mimořádné schůzi 15. května.",
+  "pointa": "Jde o navazující změnu k reformě sociálních dávek. Tentokrát prošla až po celodenní blokaci kvůli sudetoněmeckému sjezdu.",
+  "mean": "Lidé s průkazem OZP a příspěvkem na péči zatím zůstanou na Úřadu práce. Velký přesun přijde až za dva roky."
 }

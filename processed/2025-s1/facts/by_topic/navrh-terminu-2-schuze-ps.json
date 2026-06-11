@@ -3,7 +3,7 @@
   "nazev": "Návrh termínu 2. schůze PS",
   "datum": "05.11.2025",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "termínu a pořadu 2. schůze",
+  "predmet_lidsky": "návrh termínu 2. schůze PS",
   "koho": [
     "Občana se to netýká."
   ],
@@ -27,11 +27,8 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Druhé kolo v pátek",
-  "lead": "Večer kolem deváté schůze přesunula druhé kolo volby místopředsedů na pátek 14. listopadu, sto devatenáct hlasů proti čtyřiceti osmi. Benda Okamurovi vyčítal, že jde o koaliční diktát, ne dohodu.",
-  "pointa": "Malá prosadila zařazení volby místopředsedů na pátek 14. listopadu a vyřazení neprojednaného bodu z pořadu. Richterová pak chtěla opakovat hlasování — hlasovala proti, ale na obrazovce se jí objevilo „zdržel se“.",
-  "mean": "Termín další schůze určuje, kdy se Sněmovna zase sejde. Tentokrát šlo hlavně o to, kdy doplní zbývající místopředsedy.",
   "pocet_hlasovani": 3,
   "proslo": true,
   "signaly": {
@@ -41,5 +38,8 @@
     "spor": true,
     "prazdny_sal": false
   },
-  "steno_slov": 1182
+  "steno_slov": 699,
+  "lead": "Večer kolem deváté schůze přesunula druhé kolo volby místopředsedů na pátek 14. listopadu, sto devatenáct hlasů proti čtyřiceti osmi. Benda Okamurovi vyčítal, že jde o koaliční diktát, ne dohodu.",
+  "pointa": "Malá prosadila zařazení volby místopředsedů na pátek 14. listopadu a vyřazení neprojednaného bodu z pořadu. Richterová pak chtěla opakovat hlasování — hlasovala proti, ale na obrazovce se jí objevilo „zdržel se“.",
+  "mean": "Termín další schůze určuje, kdy se Sněmovna zase sejde. Tentokrát šlo hlavně o to, kdy doplní zbývající místopředsedy."
 }

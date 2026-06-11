@@ -3,7 +3,7 @@
   "nazev": "Návrh na změny ve složení orgánů Poslanecké sněmovny",
   "datum": "12.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "změnách ve složení orgánů sněmovny",
+  "predmet_lidsky": "návrh na změny ve složení orgánů Poslanecké sněmovny",
   "koho": [
     "Koho se to týká? Politických stran. Jde o obsazení výborů a komisí."
   ],
@@ -23,12 +23,19 @@
     }
   ],
   "publikovat": true,
-  "priorita": 1,
+  "priorita": 3,
   "nadpis": "Orgány přeskládány",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 126,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 14905,
   "lead": "Změny ve složení orgánů sněmovny prošly 121 hlasy, nikdo proti.",
   "pointa": "Dopoledne obsazování postů, odpoledne balík evropských úprav zákonů.",
-  "mean": "Strany si rozdělily místa ve výborech. Kdo sedí ve kterém výboru, určuje, kdo vidí jaké zákony jako první.",
-  "pocet_hlasovani": 1,
-  "proslo": true,
-  "steno_slov": 14905
+  "mean": "Strany si rozdělily místa ve výborech. Kdo sedí ve kterém výboru, určuje, kdo vidí jaké zákony jako první."
 }

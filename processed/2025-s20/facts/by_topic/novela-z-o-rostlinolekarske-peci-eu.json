@@ -1,9 +1,9 @@
 {
   "slug": "novela-z-o-rostlinolekarske-peci-eu",
   "nazev": "Novela z. o rostlinolékařské péči - EU",
-  "datum": "05.06.2026",
-  "verdikt": "odlozeno",
-  "predmet_lidsky": "pravidlech pro postřiky a rostlinolékařskou péči",
+  "datum": "27.05.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "rostlinolékařské péči",
   "koho": [
     "Koho se to týká? Hlavně farmářů a podnikatelů v zemědělství, běžný občan v bytě to prakticky neřeší."
   ],
@@ -22,13 +22,10 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Postřiky se vracejí do druhého kola",
-  "lead": "Pravidla pro postřiky se do cíle nedostala: poslanci je v pátek poslali zpátky do druhého kola, 87 hlasů pro, 46 proti.",
-  "pointa": "Oborná prosadila opakování druhého čtení; farmáři si na jasná pravidla pro postřiky počkají a celá debata poběží znovu.",
-  "mean": "Farmáři si na nová pravidla pro postřiky počkají. Zákon už jednou poslanci přerušili a teď ho vrátili o kolo zpět, takže celá debata o úpravách poběží znovu.",
   "pocet_hlasovani": 2,
-  "proslo": false,
+  "proslo": true,
   "signaly": {
     "proti_max": 46,
     "pritomno_min": 139,
@@ -36,5 +33,8 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 726
+  "steno_slov": 726,
+  "lead": "Pravidla pro postřiky se do cíle nedostala: poslanci je v pátek poslali zpátky do druhého kola, 87 hlasů pro, 46 proti.",
+  "pointa": "Oborná prosadila opakování druhého čtení; farmáři si na jasná pravidla pro postřiky počkají a celá debata poběží znovu.",
+  "mean": "Farmáři si na nová pravidla pro postřiky počkají. Zákon už jednou poslanci přerušili a teď ho vrátili o kolo zpět, takže celá debata o úpravách poběží znovu."
 }

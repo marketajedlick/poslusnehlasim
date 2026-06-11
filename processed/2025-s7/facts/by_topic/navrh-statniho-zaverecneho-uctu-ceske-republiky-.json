@@ -3,7 +3,7 @@
   "nazev": "Návrh státního závěrečného účtu České republiky za rok 2024",
   "datum": "11.02.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "státního závěrečného účtu za rok 2024",
+  "predmet_lidsky": "návrh státního závěrečného účtu České republiky za rok 2024",
   "koho": [
     "Koho se to týká? Spíš účetní uzávěrku státu. Občana to zasáhne jen nepřímo, ukazuje ale, kolik stát loni utratil a jak dopadl."
   ],
@@ -22,12 +22,19 @@
     }
   ],
   "publikovat": true,
-  "priorita": 1,
+  "priorita": 2,
   "nadpis": "Účet za rok 2024",
-  "lead": "Sněmovna schválila státní závěrečný účet za rok 2024, 113 hlasů pro, nikdo proti.",
-  "pointa": "Formální krok před rozpočtem na letošní rok. Část poslanců se zdržela, ale návrh prošel bez jediného hlasu proti.",
-  "mean": "Závěrečný účet uzavírá minulý rok: kolik stát utratil a jak sedí čísla. Není to debata o tom, kam půjdou peníze v roce 2026, ale kontrola hospodaření za rok 2024.",
   "pocet_hlasovani": 1,
   "proslo": true,
-  "steno_slov": 103507
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 164,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 103507,
+  "lead": "Sněmovna schválila státní závěrečný účet za rok 2024, 113 hlasů pro, nikdo proti.",
+  "pointa": "Formální krok před rozpočtem na letošní rok. Část poslanců se zdržela, ale návrh prošel bez jediného hlasu proti.",
+  "mean": "Závěrečný účet uzavírá minulý rok: kolik stát utratil a jak sedí čísla. Není to debata o tom, kam půjdou peníze v roce 2026, ale kontrola hospodaření za rok 2024."
 }

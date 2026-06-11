@@ -3,7 +3,7 @@
   "nazev": "Vl.n.z. o evidenci tržeb - EU",
   "datum": "03.06.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "návratu elektronické evidence tržeb",
+  "predmet_lidsky": "o evidenci tržeb",
   "koho": [
     "Koho se to týká? Podnikatelů a živnostníků, kteří přijímají tržby; zákazník pozná leda to, že nedostane povinnou účtenku."
   ],
@@ -36,9 +36,6 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "EET se vrací, tentokrát bez účtenek",
-  "lead": "Deset let po první verzi se do sněmovny vrátila elektronická evidence tržeb. Ministryně Schillerová slibuje start od ledna 2027 bez povinných účtenek a 15 miliard navíc; návrhy na zamítnutí spadly a zákon přežil první kolo a teď čeká kolečko po výborech.",
-  "pointa": "Opozice částce 15 miliard nevěří, Hřib mu řekl hausnumero. Schillerová oponovala, že EET posedlostí není a že by si jiné zaměstnání našla.",
-  "mean": "Kdo podniká, tomu se od roku 2027 může vrátit povinnost evidovat tržby, tentokrát bez povinných tiskáren a účtenek. Zatím je to první kolo: zákon teď proberou výbory a hádka o to, kolik to státu vynese, pojede dál.",
   "pocet_hlasovani": 6,
   "proslo": true,
   "signaly": {
@@ -48,5 +45,8 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 73135
+  "steno_slov": 73135,
+  "lead": "Deset let po první verzi se do sněmovny vrátila elektronická evidence tržeb. Ministryně Schillerová slibuje start od ledna 2027 bez povinných účtenek a 15 miliard navíc; návrhy na zamítnutí spadly a zákon přežil první kolo a teď čeká kolečko po výborech.",
+  "pointa": "Opozice částce 15 miliard nevěří, Hřib mu řekl hausnumero. Schillerová oponovala, že EET posedlostí není a že by si jiné zaměstnání našla.",
+  "mean": "Kdo podniká, tomu se od roku 2027 může vrátit povinnost evidovat tržby, tentokrát bez povinných tiskáren a účtenek. Zatím je to první kolo: zákon teď proberou výbory a hádka o to, kolik to státu vynese, pojede dál."
 }

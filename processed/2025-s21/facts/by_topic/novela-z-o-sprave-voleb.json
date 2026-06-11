@@ -36,9 +36,6 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Volby s QR kódem",
-  "lead": "Nevidomí a slabozrací voliči si budou moct volební lístky rozeznat sami: nově na nich budou QR kódy. Senátní nápad prošel zrychleně rovnou v prvním kole a pro bylo všech sto padesát pět přítomných.",
-  "pointa": "Senátor Canov se loučil slovy, že tu byl přesně před čtyřiceti dny a protože se mu to líbilo, je tu zase; sál se pobavil a zatleskal mu.",
-  "mean": "Kromě QR kódů se k senátním volbám vrací oddělené lístky pro každého kandidáta a stát si dá pauzu se spouštěním nového počítačového systému pro správu voleb, dokud ho pořádně neotestuje. Platit to má už pro podzimní komunální a senátní volby.",
   "pocet_hlasovani": 2,
   "proslo": true,
   "signaly": {
@@ -48,5 +45,8 @@
     "spor": false,
     "prazdny_sal": true
   },
-  "steno_slov": 3589
+  "steno_slov": 3589,
+  "lead": "Nevidomí a slabozrací voliči si budou moct volební lístky rozeznat sami: nově na nich budou QR kódy. Senátní nápad prošel zrychleně rovnou v prvním kole a pro bylo všech sto padesát pět přítomných.",
+  "pointa": "Senátor Canov se loučil slovy, že tu byl přesně před čtyřiceti dny a protože se mu to líbilo, je tu zase; sál se pobavil a zatleskal mu.",
+  "mean": "Kromě QR kódů se k senátním volbám vrací oddělené lístky pro každého kandidáta a stát si dá pauzu se spouštěním nového počítačového systému pro správu voleb, dokud ho pořádně neotestuje. Platit to má už pro podzimní komunální a senátní volby."
 }

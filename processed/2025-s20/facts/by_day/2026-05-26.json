@@ -5,19 +5,19 @@
     "novela-z-o-zdrav-prostr-a-diagnostickych-zdrav-p",
     "novela-z-o-pojistnem-na-socialni-zabezpeceni"
   ],
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 478,
+    "end_cas": "22:00",
+    "proslo": 2,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
   "dnesni_ucet": "Nejdřív tři hodiny přetahované o program, 45 opozičních návrhů spadlo.\nVečer dva zákony, skóre dne 2:0, domů se šlo ve 23:20.",
   "zaver": "že první den schůze protekl hádkou o program a večer Sněmovna stihla dva zákony: nemocnice se dozvědí o docházejících zkumavkách a živnostníci ušetří na zálohách; Senát u obojího ostrouhal.",
   "vysledek": [
     "* hlášení docházejících zdravotních pomůcek přijato ve znění Senátu 153:1",
     "* nižší zálohy živnostníků: veto Senátu přehlasováno 118 hlasy, nikdo proti",
     "* program: 53 hlasování, prošlo jen 8, opozice ostrouhala pětačtyřicetkrát"
-  ],
-  "stats": {
-    "pocet_hlas": 2,
-    "minuty": 560,
-    "end_cas": "23:20",
-    "proslo": 2,
-    "zamitnuto": 0,
-    "dlouha_debata": false
-  }
+  ]
 }

@@ -5,6 +5,14 @@
     "usneseni-ke-jmenovani-clenu-vlady",
     "novela-z-o-pojistnem-na-socialni-zabezpeceni"
   ],
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 259,
+    "end_cas": "13:34",
+    "proslo": 2,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
   "dnesni_ucet": "Ráno deset hlasování o Turkovi a ministry,\nodpoledne zálohy pro živnostníky.",
   "zaver": "že pátek nebyl klidný: hádali se o ministry, ale nižší zálohy pro živnostníky v prvním kole prošly.",
   "vysledek": [
@@ -12,13 +20,5 @@
     "* osm návrhů zamítli",
     "* dopoledne deset hlasování o usneseních ke jmenování ministrů, hlavně spor o Filipa Turka",
     "* odpoledne nižší zálohy OSVČ v prvním kole, u zrychlení 29 poslanců proti"
-  ],
-  "stats": {
-    "pocet_hlas": 21,
-    "minuty": 259,
-    "end_cas": "13:34",
-    "proslo": 8,
-    "zamitnuto": 8,
-    "dlouha_debata": true
-  }
+  ]
 }

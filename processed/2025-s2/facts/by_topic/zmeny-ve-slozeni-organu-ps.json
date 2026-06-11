@@ -3,12 +3,22 @@
   "nazev": "změny ve složení orgánů PS",
   "datum": "14.11.2025",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "změnách ve složení výborů",
-  "koho": [],
+  "predmet_lidsky": "změny ve složení orgánů PS",
+  "koho": [
+    "Občana se netýká, leda že zná někoho z poslanců osobně."
+  ],
   "fakty": [],
-  "publikovat": false,
-  "priorita": 0,
+  "publikovat": true,
+  "priorita": 1,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 2,
-  "proslo": true
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 187,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": false
+  },
+  "steno_slov": 0
 }

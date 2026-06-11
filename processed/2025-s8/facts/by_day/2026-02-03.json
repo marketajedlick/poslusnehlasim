@@ -4,6 +4,14 @@
   "topic_slugs": [
     "neduvera-vlade-debata"
   ],
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 261,
+    "end_cas": "15:22",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  },
   "dnesni_ucet": "Mimořádná schůze, celý den debata o nedůvěře.\nHlasování o zákonech až zítra, večer jednání do devatenácti hodin.",
   "zaver": "že osmá schůze začala dvoudenní přednáškou o nedůvěře vládě, rozhodnutí až ve středu večer.",
   "vysledek": [
@@ -12,13 +20,5 @@
     "* Babiš: zbytečná schůze, dva dny ztráty času",
     "* jednání prodlouženo do večera, 115 proti 6",
     "* hlasování o nedůvěře až ve středu"
-  ],
-  "stats": {
-    "pocet_hlas": 1,
-    "minuty": 261,
-    "end_cas": "15:22",
-    "proslo": 1,
-    "zamitnuto": 0,
-    "dlouha_debata": true
-  }
+  ]
 }

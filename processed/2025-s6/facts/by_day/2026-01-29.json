@@ -5,6 +5,14 @@
     "navrh-zakona-o-statnich-zamestnancich",
     "mimoradna-schuze-statni-zakon"
   ],
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 470,
+    "end_cas": "16:51",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
   "dnesni_ucet": "Mimořádná schůze místo interpelací.\nVelká reforma úřadů v prvním kole padla.",
   "zaver": "že na mimořádné schůzi se sice celý den mluvilo o velké reformě úřadů, ale Sněmovna ji v prvním kole zastavila.",
   "vysledek": [
@@ -12,13 +20,5 @@
     "* tři organizační body prošly, osm zákonů padlo",
     "* mimořádná schůze místo čtvrtečních interpelací",
     "* debata o přes 70 000 zaměstnancích státu a analýzách dopadů"
-  ],
-  "stats": {
-    "pocet_hlas": 2,
-    "minuty": 470,
-    "end_cas": "16:51",
-    "proslo": 0,
-    "zamitnuto": 1,
-    "dlouha_debata": true
-  }
+  ]
 }

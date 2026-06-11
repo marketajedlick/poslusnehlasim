@@ -5,6 +5,14 @@
     "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026",
     "rozpocet-sfzp-na-rok-2026"
   ],
+  "stats": {
+    "pocet_hlas": 7,
+    "minuty": 700,
+    "end_cas": "20:44",
+    "proslo": 6,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
   "dnesni_ucet": "Státní rozpočet prošel 178:1,\nSFŽP po prvním pádu přeželo 90:32.",
   "zaver": "že rozpočtový maraton skončil schválením státního rozpočtu i fondu životního prostředí, oba cestou přes neúspěšné pokusy.",
   "vysledek": [
@@ -12,13 +20,5 @@
     "* rozpočty SFA, SFDI, SFPI a SZIF prošly",
     "* rozpočet SFŽP nejdřív spadl 58:89, v závěrečném hlasování prošel 90:32",
     "* přes sto dílčích hlasování k pozměňovacím návrhům"
-  ],
-  "stats": {
-    "pocet_hlas": 7,
-    "minuty": 700,
-    "end_cas": "20:44",
-    "proslo": 2,
-    "zamitnuto": 0,
-    "dlouha_debata": true
-  }
+  ]
 }

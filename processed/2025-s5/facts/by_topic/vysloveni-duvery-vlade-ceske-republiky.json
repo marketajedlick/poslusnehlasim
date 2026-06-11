@@ -3,7 +3,7 @@
   "nazev": "Vyslovení důvěry vládě České republiky",
   "datum": "15.01.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "vyslovení důvěry vládě Andreje Babiše",
+  "predmet_lidsky": "vyslovení důvěry vládě České republiky",
   "koho": [
     "Koho se to týká? Celé republiky, od schválené důvěry závisí, zda vláda může normálně vládnout a prosazovat program."
   ],
@@ -37,10 +37,17 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Důvěra těsně prošla",
+  "pocet_hlasovani": 8,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 104,
+    "pritomno_min": 189,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 162552,
   "lead": "Po třech dnech řečí ministrů a premiéra Sněmovna vyslovila vládě Andreje Babiše důvěru, 108 pro, 91 proti. Střet zájmů z listopadové mimořádné schůze zůstal nevyřešený.",
   "pointa": "Rakušan řekl jediné slovo: „Nevěříme.“ Koalice stejně přečetla jména a gratulovala ve vestoje.",
-  "mean": "Večer rozhodlo jmenovité hlasování: 108 pro, 91 proti. Hned nato koalice po jednotlivých bodech odmítla Jurečkovo usnesení, které kritizovalo vládu za jmenování Filipa Turka zmocněncem pro klima, na samotnou důvěru to už nemělo vliv.",
-  "pocet_hlasovani": 1,
-  "proslo": true,
-  "steno_slov": 162552
+  "mean": "Večer rozhodlo jmenovité hlasování: 108 pro, 91 proti. Hned nato koalice po jednotlivých bodech odmítla Jurečkovo usnesení, které kritizovalo vládu za jmenování Filipa Turka zmocněncem pro klima, na samotnou důvěru to už nemělo vliv."
 }

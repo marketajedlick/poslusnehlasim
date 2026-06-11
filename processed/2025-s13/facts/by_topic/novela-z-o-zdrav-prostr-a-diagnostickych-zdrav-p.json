@@ -3,7 +3,7 @@
   "nazev": "Novela z. o zdrav. prostř. a diagnostických zdrav. prostř. in vitro -",
   "datum": "24.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "hlášení nedostatku zkumavek a laboratorních souprav",
+  "predmet_lidsky": "hlášení nedostatku zkumavek v nemocnicích",
   "koho": [
     "Koho se to týká? Nemocnic a laboratoří spíš než pacientů doma. Výrobci musí hlásit, když dochází soupravy na odběry."
   ],
@@ -28,12 +28,19 @@
     }
   ],
   "publikovat": true,
-  "priorita": 1,
+  "priorita": 3,
   "nadpis": "Zkumavky budou pod dohledem",
-  "lead": "Sněmovna schválila v prvním kole pravidla pro hlášení nedostatku laboratorních souprav, sto třináct hlasů pro, nikdo proti. Obecná rozprava proběhla bez řečníků.",
-  "pointa": "Jde o implementaci EU nařízení, aby nemocnice věděly dopředu, že dochází zkumavky na odběry.",
-  "mean": "Výrobci budou muset hlásit nedostatek diagnostických prostředků. Na běžného pacienta to dopadne spíš nepřímo, přes kratší čekání na výsledky v nemocnici.",
   "pocet_hlasovani": 2,
   "proslo": true,
-  "steno_slov": 14227
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 168,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 14227,
+  "lead": "Sněmovna schválila v prvním kole pravidla pro hlášení nedostatku laboratorních souprav, sto třináct hlasů pro, nikdo proti. Obecná rozprava proběhla bez řečníků.",
+  "pointa": "Jde o implementaci EU nařízení, aby nemocnice věděly dopředu, že dochází zkumavky na odběry.",
+  "mean": "Výrobci budou muset hlásit nedostatek diagnostických prostředků. Na běžného pacienta to dopadne spíš nepřímo, přes kratší čekání na výsledky v nemocnici."
 }

@@ -2,8 +2,8 @@
   "slug": "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-",
   "nazev": "Vl.n.z., kt. se mění některé z. v oblasti veřejných rozpočtů",
   "datum": "15.05.2026",
-  "verdikt": "zamiteno",
-  "predmet_lidsky": "změnách zákonů v oblasti veřejných rozpočtů a rozpočtové odpovědnosti",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": ", kt. se mění některé z. v oblasti veřejných rozpočtů",
   "koho": [
     "Koho se to týká? Každého, kdo platí daně. Jde o to, jak moc může stát utrácet nad rámec a jaké výjimky z limitů výdajů platí."
   ],
@@ -35,10 +35,17 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Rozpočtové brzdy padly",
+  "pocet_hlasovani": 36,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 98,
+    "pritomno_min": 152,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 38268,
   "lead": "V pátek dopoledne Sněmovna zamítla vládní změnu rozpočtových zákonů, devadesát poslanců proti šedesáti osmi. Koalice chtěla rozvolnit fiskální limity, opozice mluvila o schodku přes čtyři sta miliard.",
   "pointa": "Jakob obhajoval čtyři opoziční pozměňovací návrhy pro rezervu a silnější roli Národní rozpočtové rady. Vlček říkal, že Schillerová dříve slibovala, že limity nerozvolní, ale ve druhém kole přidala vlastní výjimky.",
-  "mean": "Zákon měl upravit limity výdajů státu podle evropských pravidel. Sněmovna ho v závěrečném hlasování neschválila, rozpočtová pravidla zůstávají v dosavadní podobě.",
-  "pocet_hlasovani": 1,
-  "proslo": false,
-  "steno_slov": 38268
+  "mean": "Zákon měl upravit limity výdajů státu podle evropských pravidel. Sněmovna ho v závěrečném hlasování neschválila, rozpočtová pravidla zůstávají v dosavadní podobě."
 }

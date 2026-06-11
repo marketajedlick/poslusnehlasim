@@ -5,14 +5,6 @@
     "zadost-o-udeleni-souhlasu-s-trestnim-stihanim-po",
     "zadost-o-udeleni-souhlasu-s-trestnim-stihanim-po-2"
   ],
-  "dnesni_ucet": "Mimořádná schůze jen o imunitě Babiše a Okamury, ne o zákonech.\nSněmovna oběma odmítla vydání, přesto skoro dvě stovky hlasů proti.",
-  "zaver": "že po deseti hodinách debaty Sněmovna nevydala ani Babiše v kauze Čapí hnízdo, ani Okamuru za plakát proti migračnímu paktu.",
-  "vysledek": [
-    "* Babiš nevydán k trestnímu stíhání 104:81",
-    "* Okamura nevydán k trestnímu stíhání 104:82",
-    "* návrh na tajné hlasování dvakrát zamítnut",
-    "* debata večer prodloužena, sto třicet devět hlasů pro"
-  ],
   "stats": {
     "pocet_hlas": 3,
     "minuty": 610,
@@ -20,5 +12,13 @@
     "proslo": 2,
     "zamitnuto": 0,
     "dlouha_debata": true
-  }
+  },
+  "dnesni_ucet": "Mimořádná schůze jen o imunitě Babiše a Okamury, ne o zákonech.\nSněmovna oběma odmítla vydání, přesto skoro dvě stovky hlasů proti.",
+  "zaver": "že po deseti hodinách debaty Sněmovna nevydala ani Babiše v kauze Čapí hnízdo, ani Okamuru za plakát proti migračnímu paktu.",
+  "vysledek": [
+    "* Babiš nevydán k trestnímu stíhání 104:81",
+    "* Okamura nevydán k trestnímu stíhání 104:82",
+    "* návrh na tajné hlasování dvakrát zamítnut",
+    "* debata večer prodloužena, sto třicet devět hlasů pro"
+  ]
 }

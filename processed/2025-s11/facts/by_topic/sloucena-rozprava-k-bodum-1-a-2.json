@@ -2,8 +2,8 @@
   "slug": "sloucena-rozprava-k-bodum-1-a-2",
   "nazev": "Sloučená rozprava k bodům 1 a 2",
   "datum": "05.03.2026",
-  "verdikt": "debata",
-  "predmet_lidsky": "sloučené rozpravy k žádostem o vydání Babiše a Okamury",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "sloučená rozprava k bodům 1 a 2",
   "koho": [
     "Pro občana jde o kulisu debaty, ne o samostatné rozhodnutí."
   ],
@@ -22,8 +22,16 @@
     }
   ],
   "publikovat": false,
-  "priorita": 0,
+  "priorita": 3,
   "nadpis": "Sloučená rozprava",
-  "pocet_hlasovani": 0,
-  "proslo": false
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 10,
+    "pritomno_min": 157,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 40890
 }

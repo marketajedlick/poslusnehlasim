@@ -2,8 +2,8 @@
   "slug": "n-z-kterym-se-zrusuje-nominacni-zakon",
   "nazev": "N. z., kterým se zrušuje nominační zákon",
   "datum": "22.04.2026",
-  "verdikt": "zamiteno",
-  "predmet_lidsky": "zrušení nominačního zákona pro státní zakázky",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "n. z., kterým se zrušuje nominační zákon",
   "koho": [
     "Koho se to týká? Firmy, které soutěží o veřejné zakázky, a daňové poplatníky sledující transparentnost státu."
   ],
@@ -27,12 +27,19 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Zákon o zakázkách zůstává",
+  "pocet_hlasovani": 4,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 88,
+    "pritomno_min": 162,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 53298,
   "lead": "Středa odpoledne Sněmovna zamítla návrh na zrušení zákona o veřejných zakázkách, osmdesát osm hlasů proti. Piráti mluvili o návratu kamarádíčkování, Havránek chtěl spíš změnu než zrušení.",
   "pointa": "Koalice chtěla zákon zrušit rovnou. Opozice i část koalice argumentovala, že pravidla pro transparentní zakázky je lepší upravit než zahodit.",
-  "mean": "Zákon o veřejných zakázkách dál platí a stát musí u velkých zakázek zveřejňovat vazby na politicky exponované osoby.",
-  "pocet_hlasovani": 4,
-  "proslo": false,
-  "steno_slov": 53298
+  "mean": "Zákon o veřejných zakázkách dál platí a stát musí u velkých zakázek zveřejňovat vazby na politicky exponované osoby."
 }

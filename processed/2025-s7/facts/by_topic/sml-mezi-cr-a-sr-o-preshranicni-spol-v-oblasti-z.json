@@ -3,7 +3,7 @@
   "nazev": "Sml. mezi ČR a SR o přeshraniční spol. v oblasti zdravotnické záchrann",
   "datum": "11.02.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "souhlasu s rámcovou smlouvou se Slovenskem o přeshraniční záchranné službě",
+  "predmet_lidsky": "sml. mezi ČR a SR o přeshraniční spol. v oblasti zdravotnické záchrann",
   "koho": [
     "Koho se to týká? Lidí u hranic a na cestách. Když u Slováků nebo u nás zavolá záchranka, má jasněji, kdo pomůže a kdo platí."
   ],
@@ -22,12 +22,19 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Záchranka přes hranici",
-  "lead": "Sněmovna schválila smlouvu se Slovenskem o spolupráci záchranných služeb, 141 hlasů pro, nikdo proti.",
-  "pointa": "Ministr Vojtěch představil rámcovou smlouvu podepsanou v Praze. Dva hlasovací kroky prošly bez odporu.",
-  "mean": "Jde o technickou, ale praktickou dohodu: při zásahu u hranic má být jasné, jak česká a slovenská záchranná služba spolupracují. Pro občana to znamená spíš jistotu při nehodě na cestách než velkou politickou změnu.",
   "pocet_hlasovani": 2,
   "proslo": true,
-  "steno_slov": 2674
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 158,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 2674,
+  "lead": "Sněmovna schválila smlouvu se Slovenskem o spolupráci záchranných služeb, 141 hlasů pro, nikdo proti.",
+  "pointa": "Ministr Vojtěch představil rámcovou smlouvu podepsanou v Praze. Dva hlasovací kroky prošly bez odporu.",
+  "mean": "Jde o technickou, ale praktickou dohodu: při zásahu u hranic má být jasné, jak česká a slovenská záchranná služba spolupracují. Pro občana to znamená spíš jistotu při nehodě na cestách než velkou politickou změnu."
 }

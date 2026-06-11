@@ -3,7 +3,7 @@
   "nazev": "N. z., kterým se mění některé zákony na úseku vnitřní správy",
   "datum": "02.06.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "pravidlech pro Českou poštu a odkladech státní digitalizace",
+  "predmet_lidsky": "n. z., kterým se mění některé zákony na úseku vnitřní správy",
   "koho": [
     "Koho se to týká? České pošty a jejích zákazníků, a všech, kdo čekají na elektronickou sbírku zákonů a digitální úřady."
   ],
@@ -35,9 +35,6 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Pošta a věčné odklady",
-  "lead": "Balík změn pro Českou poštu a státní počítače: poště se vrací stará pravidla financování, aby nenarazila u Bruselu, a elektronická sbírka zákonů se zase odkládá, protože systém pořád není hotový.",
-  "pointa": "Stojanová varovala, že odklad eLegislativy nesmí být odkladem transparentnosti, a Skopeček dodal, ať se z odkladu nestane nový standard.",
-  "mean": "První kolo: návrh jde do výboru pro veřejnou správu a lhůta se zkrátila na třicet dnů. Jediné, co dnes spadlo pod stůl, byl Bendův nápad přibrat k tomu ještě ústavně-právní výbor, pro bylo jen dvaašedesát poslanců.",
   "pocet_hlasovani": 3,
   "proslo": true,
   "signaly": {
@@ -47,5 +44,8 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 5957
+  "steno_slov": 5957,
+  "lead": "Balík změn pro Českou poštu a státní počítače: poště se vrací stará pravidla financování, aby nenarazila u Bruselu, a elektronická sbírka zákonů se zase odkládá, protože systém pořád není hotový.",
+  "pointa": "Stojanová varovala, že odklad eLegislativy nesmí být odkladem transparentnosti, a Skopeček dodal, ať se z odkladu nestane nový standard.",
+  "mean": "První kolo: návrh jde do výboru pro veřejnou správu a lhůta se zkrátila na třicet dnů. Jediné, co dnes spadlo pod stůl, byl Bendův nápad přibrat k tomu ještě ústavně-právní výbor, pro bylo jen dvaašedesát poslanců."
 }

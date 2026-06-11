@@ -26,11 +26,8 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Investiční fondy podle Bruselu",
-  "lead": "Hned po penzijním spoření Sněmovna srovnala pravidla pro investiční fondy s evropskými normami; 137 pro, proti nikdo.",
-  "pointa": "Bruselská harmonizace bez odporu: ani u čtyř dílčích hlasování se nikdo nezvedl proti.",
-  "mean": "Kdo investuje přes fondy, bude mít dohled a povinnosti správců sjednocené podle evropských pravidel. Běžného účtu v bance se to netýká a ve sněmovně se o tom nikdo ani nepohádal.",
   "pocet_hlasovani": 5,
   "proslo": true,
   "signaly": {
@@ -38,7 +35,10 @@
     "pritomno_min": 148,
     "jednomyslne": false,
     "spor": true,
-    "prazdny_sal": false
+    "prazdny_sal": true
   },
-  "steno_slov": 3264
+  "steno_slov": 3264,
+  "lead": "Hned po penzijním spoření Sněmovna srovnala pravidla pro investiční fondy s evropskými normami; 137 pro, proti nikdo.",
+  "pointa": "Bruselská harmonizace bez odporu: ani u čtyř dílčích hlasování se nikdo nezvedl proti.",
+  "mean": "Kdo investuje přes fondy, bude mít dohled a povinnosti správců sjednocené podle evropských pravidel. Běžného účtu v bance se to netýká a ve sněmovně se o tom nikdo ani nepohádal."
 }

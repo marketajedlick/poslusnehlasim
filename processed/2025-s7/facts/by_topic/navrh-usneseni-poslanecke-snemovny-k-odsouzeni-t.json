@@ -3,7 +3,7 @@
   "nazev": "Návrh usnesení Poslanecké sněmovny k odsouzení týrání zvířat",
   "datum": "12.02.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "usnesení, kterým Sněmovna odsuzuje týrání zvířat a slibuje tvrdší ochranu",
+  "predmet_lidsky": "návrh usnesení Poslanecké sněmovny k odsouzení týrání zvířat",
   "koho": [
     "Koho se to týká? Majitelů psů a koček, chovatelů i lidí, kteří hlásí týrání. Usnesení samo zákony nemění, ale slibuje legislativu."
   ],
@@ -28,12 +28,19 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Týrání zvířat odsouzeno",
-  "lead": "Sněmovna schválila koaliční usnesení proti týrání zvířat, 139 hlasů pro, nikdo proti. Debata byla shodná, hlasování o doplnění už ne.",
-  "pointa": "Okamura i Šebestyán mluvili o tvrdších trestech a vstupu policie. Opoziční návrhy na policejní útvar nebo mysliveckou změnu většinou padly.",
-  "mean": "Šlo o politický slib, ne o hotový zákon. Hlavní text prošel jednohlasně, jeden doplněný bod o péči o toulavé kočky taky. Samotná ochrana zvířat se má teprve propsat do změny zákonů zákona.",
   "pocet_hlasovani": 10,
   "proslo": true,
-  "steno_slov": 91270
+  "signaly": {
+    "proti_max": 75,
+    "pritomno_min": 138,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 91270,
+  "lead": "Sněmovna schválila koaliční usnesení proti týrání zvířat, 139 hlasů pro, nikdo proti. Debata byla shodná, hlasování o doplnění už ne.",
+  "pointa": "Okamura i Šebestyán mluvili o tvrdších trestech a vstupu policie. Opoziční návrhy na policejní útvar nebo mysliveckou změnu většinou padly.",
+  "mean": "Šlo o politický slib, ne o hotový zákon. Hlavní text prošel jednohlasně, jeden doplněný bod o péči o toulavé kočky taky. Samotná ochrana zvířat se má teprve propsat do změny zákonů zákona."
 }

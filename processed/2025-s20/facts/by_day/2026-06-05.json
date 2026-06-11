@@ -5,6 +5,14 @@
     "navrh-na-volbu-clenu-rady-ceske-televize",
     "novela-z-o-rostlinolekarske-peci-eu"
   ],
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 135,
+    "end_cas": "12:07",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  },
   "dnesni_ucet": "Rada ČT doplněna veřejnou volbou, šest jmen včetně Xavera.\nNávrh o postřicích vrátili do druhého kola a zbytek programu vyřadili.",
   "zaver": "že Sněmovna v pátek obsadila Radu ČT i místopředsednické křeslo, návrh o postřicích vrátila do druhého kola a zbytek programu prostě vyřadila.",
   "vysledek": [
@@ -13,13 +21,5 @@
     "* návrh o postřicích vrácen do druhého kola 87:46",
     "* Urbanová zvolena místopředsedkyní sněmovny, Rajchl povede komisi k Dozimetru",
     "* zbylé body schůze vyřazeny 134:5, konec ve 13:37"
-  ],
-  "stats": {
-    "pocet_hlas": 1,
-    "minuty": 277,
-    "end_cas": "13:37",
-    "proslo": 1,
-    "zamitnuto": 1,
-    "dlouha_debata": true
-  }
+  ]
 }

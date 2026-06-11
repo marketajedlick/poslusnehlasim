@@ -3,7 +3,7 @@
   "nazev": "Novela z. o pojistném na veřejné zdravotní pojištění",
   "datum": "25.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "přerozdělení rezerv zdravotních pojišťoven",
+  "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky",
   "koho": [
     "Koho se to týká? Systému veřejného zdravotního pojištění. VZP přesune téměř osm miliard rezerv menším pojišťovnám, aby se stabilizovaly zálohy."
   ],
@@ -28,12 +28,19 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "VZP rozdělí rezervy pojišťovnám",
-  "lead": "Sněmovna schválila přesun téměř osmi miliard z rezerv Všeobecné zdravotní pojišťovny k menším pojišťovnám, devadesát tři hlasy pro, čtyřicet devět proti.",
-  "pointa": "Vojtěch to představil jako jednorázovou injekci pro stabilizaci systému. Není to přímé snížení záloh živnostníkům, to řešil jiný zákon.",
-  "mean": "Menší zdravotní pojišťovny dostanou z rezerv VZP peníze na vyrovnání letošního roku. Pro běžného pacienta jde spíš o provoz pojišťoven než o změnu poplatků u lékaře.",
   "pocet_hlasovani": 5,
   "proslo": true,
-  "steno_slov": 2449
+  "signaly": {
+    "proti_max": 93,
+    "pritomno_min": 156,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 2449,
+  "lead": "Sněmovna schválila přesun téměř osmi miliard z rezerv Všeobecné zdravotní pojišťovny k menším pojišťovnám, devadesát tři hlasy pro, čtyřicet devět proti.",
+  "pointa": "Vojtěch to představil jako jednorázovou injekci pro stabilizaci systému. Není to přímé snížení záloh živnostníkům, to řešil jiný zákon.",
+  "mean": "Menší zdravotní pojišťovny dostanou z rezerv VZP peníze na vyrovnání letošního roku. Pro běžného pacienta jde spíš o provoz pojišťoven než o změnu poplatků u lékaře."
 }

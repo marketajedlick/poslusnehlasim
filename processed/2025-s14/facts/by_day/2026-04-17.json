@@ -4,13 +4,6 @@
   "topic_slugs": [
     "navrh-zakona-o-statnich-zamestnancich"
   ],
-  "dnesni_ucet": "Krátké páteční jednání, jeden zákon.\nStátní zaměstnanci ve druhém kole prošli.",
-  "zaver": "že pátek skončil schválením zákona o státních zaměstnancích ve druhém kole, sto třináct pro, nikdo proti.",
-  "vysledek": [
-    "* zákon o státních zaměstnancích schválen 113:0",
-    "* Vondráčkův návrh sjednocuje pravidla pro úředníky",
-    "* den bez dalšího hlasování o zákonech"
-  ],
   "stats": {
     "pocet_hlas": 1,
     "minuty": 58,
@@ -18,5 +11,12 @@
     "proslo": 1,
     "zamitnuto": 0,
     "dlouha_debata": false
-  }
+  },
+  "dnesni_ucet": "Krátké páteční jednání, jeden zákon.\nStátní zaměstnanci ve druhém kole prošli.",
+  "zaver": "že pátek skončil schválením zákona o státních zaměstnancích ve druhém kole, sto třináct pro, nikdo proti.",
+  "vysledek": [
+    "* zákon o státních zaměstnancích schválen 113:0",
+    "* Vondráčkův návrh sjednocuje pravidla pro úředníky",
+    "* den bez dalšího hlasování o zákonech"
+  ]
 }

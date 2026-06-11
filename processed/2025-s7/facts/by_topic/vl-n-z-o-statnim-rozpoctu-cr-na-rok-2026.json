@@ -3,7 +3,7 @@
   "nazev": "Vl.n.z. o státním rozpočtu ČR na rok 2026",
   "datum": "12.02.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "státního rozpočtu ČR na rok 2026 v prvním čtení",
+  "predmet_lidsky": "o státním rozpočtu ČR na rok 2026",
   "koho": [
     "Kdo čeká na opravu silnice nebo vyšší plat sestře, ten ví, proč se o tom hádají celé dny."
   ],
@@ -37,10 +37,17 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Rozpočet na první pokus",
-  "lead": "Po celonoční debatě Sněmovna na první pokus schválila rozpočet na rok 2026, 90 hlasů proti 68. Čtyři opoziční usnesení předtím padla.",
-  "pointa": "Schillerová mluvila o pravdivém rozpočtu po čtyřech letech, Kupka o schodku 310 miliard a porušení zákona. Listopadové první kolo (105:64) předložila ještě Fialova vláda v demisi, Babišova vláda návrh představila znovu. Hlasování skončilo až po půlnoci v jednu hodinu.",
-  "mean": "První kolo neříká, kolik peněz kam definitivně půjde, ale že návrh může dál do výborů. Koalice prosadila vládní verzi těsně, opozice chtěla nižší schodek, víc na bydlení nebo obranu.",
   "pocet_hlasovani": 6,
   "proslo": true,
-  "steno_slov": 100283
+  "signaly": {
+    "proti_max": 90,
+    "pritomno_min": 158,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 100283,
+  "lead": "Po celonoční debatě Sněmovna na první pokus schválila rozpočet na rok 2026, 90 hlasů proti 68. Čtyři opoziční usnesení předtím padla.",
+  "pointa": "Schillerová mluvila o pravdivém rozpočtu po čtyřech letech, Kupka o schodku 310 miliard a porušení zákona. Listopadové první kolo (105:64) předložila ještě Fialova vláda v demisi, Babišova vláda návrh představila znovu. Hlasování skončilo až po půlnoci v jednu hodinu.",
+  "mean": "První kolo neříká, kolik peněz kam definitivně půjde, ale že návrh může dál do výborů. Koalice prosadila vládní verzi těsně, opozice chtěla nižší schodek, víc na bydlení nebo obranu."
 }

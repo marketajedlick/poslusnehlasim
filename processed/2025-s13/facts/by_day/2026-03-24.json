@@ -7,14 +7,6 @@
     "novela-z-o-doplnkovem-penzijnim-sporeni",
     "novela-z-o-zdrav-prostr-a-diagnostickych-zdrav-p"
   ],
-  "dnesni_ucet": "Čtyřicet čtyři hlasování o pořadu, pak teprve zákony.\nMinimum padlo pěti hlasy, penze a zkumavky prošly.",
-  "zaver": "že po večerním souboji o pořad Sněmovna potvrdila, že minimum zůstane níž, penzistům pomohla ve třetím pilíři a nemocnice budou hlásit docházející zkumavky.",
-  "vysledek": [
-    "* minimum zamítnuto 5:85, padesát zdrželo",
-    "* penze pro seniory ve třetím pilíři schváleny v prvním kole 119:3",
-    "* zkumavky v laboratořích schváleny v prvním kole 113:0",
-    "* pořad schválen po čtyřiceti čtyřech hlasováních o změnách"
-  ],
   "stats": {
     "pocet_hlas": 5,
     "minuty": 424,
@@ -22,5 +14,13 @@
     "proslo": 2,
     "zamitnuto": 1,
     "dlouha_debata": true
-  }
+  },
+  "dnesni_ucet": "Čtyřicet čtyři hlasování o pořadu, pak teprve zákony.\nMinimum padlo pěti hlasy, penze a zkumavky prošly.",
+  "zaver": "že po večerním souboji o pořad Sněmovna potvrdila, že minimum zůstane níž, penzistům pomohla ve třetím pilíři a nemocnice budou hlásit docházející zkumavky.",
+  "vysledek": [
+    "* minimum zamítnuto 5:85, padesát zdrželo",
+    "* penze pro seniory ve třetím pilíři schváleny v prvním kole 119:3",
+    "* zkumavky v laboratořích schváleny v prvním kole 113:0",
+    "* pořad schválen po čtyřiceti čtyřech hlasováních o změnách"
+  ]
 }

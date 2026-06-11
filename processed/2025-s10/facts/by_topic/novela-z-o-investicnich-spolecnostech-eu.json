@@ -25,10 +25,17 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Investice pod dohledem",
-  "lead": "Změna zákona o investičních společnostech prošla v prvním kole, 117 hlasů pro, nikdo proti.",
-  "pointa": "Čtvrtek přinesl balík EU novel, od účetnictví po silniční provoz. Investiční zákon byl jeden z vrcholů.",
-  "mean": "Stát zpřísňuje pravidla pro fondy a investiční firmy podle EU. Cílem je ochrana investorů, ne nová daň.",
   "pocet_hlasovani": 2,
   "proslo": true,
-  "steno_slov": 6096
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 152,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 6096,
+  "lead": "Změna zákona o investičních společnostech prošla v prvním kole, 117 hlasů pro, nikdo proti.",
+  "pointa": "Čtvrtek přinesl balík EU novel, od účetnictví po silniční provoz. Investiční zákon byl jeden z vrcholů.",
+  "mean": "Stát zpřísňuje pravidla pro fondy a investiční firmy podle EU. Cílem je ochrana investorů, ne nová daň."
 }

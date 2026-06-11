@@ -3,7 +3,7 @@
   "nazev": "Novela z. o životním a existenčním minimu",
   "datum": "13.02.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "odkladu účinnosti novely životního a existenčního minima",
+  "predmet_lidsky": "životním a existenčním minimu",
   "koho": [
     "Koho se to týká? Lidí na dávkách a úřadů práce. Minimum určuje hranici, od které se počítá, komu stát přispěje na živobytí."
   ],
@@ -28,12 +28,19 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Minimum neprošlo",
-  "lead": "Sněmovna na první pokus schválila odklad změny zákonů životního a existenčního minima z května na červenec, 137 hlasů pro, nikdo proti. Juchelka mluvil o časové tísní a informačních systémech Úřadu práce.",
-  "pointa": "Zpravodajka Šafránková řekla, že jde o papírovou úpravu bez změny sociální politiky. Opozice nevetovala, ale chce později doladit samotnou superdávku.",
-  "mean": "Životní a existenční minimum je základ pro výpočet dávek. Posun o dva měsíce má dát úřadům čas, aby nepřepočítávaly systémy dvakrát za sebou při přechodu na novou superdávku. Pro lidi v nouzi to znamená hlavně, že se nemění pravidla hned v květnu, ale až v létě.",
   "pocet_hlasovani": 2,
   "proslo": true,
-  "steno_slov": 3715
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 135,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 3715,
+  "lead": "Sněmovna na první pokus schválila odklad změny zákonů životního a existenčního minima z května na červenec, 137 hlasů pro, nikdo proti. Juchelka mluvil o časové tísní a informačních systémech Úřadu práce.",
+  "pointa": "Zpravodajka Šafránková řekla, že jde o papírovou úpravu bez změny sociální politiky. Opozice nevetovala, ale chce později doladit samotnou superdávku.",
+  "mean": "Životní a existenční minimum je základ pro výpočet dávek. Posun o dva měsíce má dát úřadům čas, aby nepřepočítávaly systémy dvakrát za sebou při přechodu na novou superdávku. Pro lidi v nouzi to znamená hlavně, že se nemění pravidla hned v květnu, ale až v létě."
 }

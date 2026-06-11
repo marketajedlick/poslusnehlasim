@@ -4,6 +4,14 @@
   "topic_slugs": [
     "novela-z-o-podpore-bydleni"
   ],
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 20,
+    "end_cas": "13:01",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  },
   "dnesni_ucet": "Sedmnáctá schůze: bydlení po přerušení z pátku.\nSto osmnáct hlasů proti dvaceti třem.",
   "zaver": "že středa dopoledne Sněmovna schválila zákon o podpoře bydlení a tím skončila sedmnáctá mimořádná schůze.",
   "vysledek": [
@@ -11,13 +19,5 @@
     "* dvacet hlasování o pozměňovacích návrzích, dvanáct prošlo",
     "* Richterová kritizovala vyškrtnutí definice dostupného bydlení",
     "* Kovářová mluvila o dopadech bytové nouze na obce"
-  ],
-  "stats": {
-    "pocet_hlas": 1,
-    "minuty": 240,
-    "end_cas": "13:01",
-    "proslo": 1,
-    "zamitnuto": 0,
-    "dlouha_debata": false
-  }
+  ]
 }

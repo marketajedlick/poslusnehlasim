@@ -3,7 +3,7 @@
   "nazev": "Žádost o udělení souhlasu s trestním stíháním poslance Andreje Babiše",
   "datum": "05.03.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "souhlasu s trestním stíháním Andreje Babiše v kauze Čapí hnízdo",
+  "predmet_lidsky": "žádost o udělení souhlasu s trestním stíháním poslance Andreje Babiše",
   "koho": [
     "Koho se to týká? Spíš politiku a justici. Jde o to, jestli může soud pokračovat v kauze dotačního podvodu kolem farmy Čapí hnízdo."
   ],
@@ -42,10 +42,17 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Babiše nevydali",
+  "pocet_hlasovani": 3,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 135,
+    "pritomno_min": 184,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 7052,
   "lead": "Sněmovna odmítla souhlas se stíháním v kauze Čapí hnízdo, 104 hlasy pro, 81 proti. Babiš místo obhajoby hodinu mluvil o repatriačních letech z Blízkého východu.",
   "pointa": "Hřib mu vyčítal fňukání a vzkazy leteckým společnostem z pultíku. Kupka připomněl, že o vině rozhodují soudy, ne výsledky voleb.",
-  "mean": "Poslanec má imunitu a Sněmovna může stíhání zastavit. Bez jejího souhlasu nemůže soud v kauze dotačního podvodu kolem farmy Čapí hnízdo pokračovat.",
-  "pocet_hlasovani": 1,
-  "proslo": true,
-  "steno_slov": 7052
+  "mean": "Poslanec má imunitu a Sněmovna může stíhání zastavit. Bez jejího souhlasu nemůže soud v kauze dotačního podvodu kolem farmy Čapí hnízdo pokračovat."
 }

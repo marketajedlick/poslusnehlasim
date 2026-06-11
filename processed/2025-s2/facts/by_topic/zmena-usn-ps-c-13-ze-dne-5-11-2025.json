@@ -3,7 +3,7 @@
   "nazev": "změna usn. PS č. 13 ze dne 5. 11. 2025",
   "datum": "11.11.2025",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "změně počtu členů výboru pro evropské záležitosti",
+  "predmet_lidsky": "změna usn. PS č. 13 ze dne 5. 11. 2025",
   "koho": [
     "Koho zajímá evropská politika a rozdělení míst ve výborech."
   ],
@@ -33,11 +33,8 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Evropský výbor na půl",
-  "lead": "Úterý ráno šlo nejdřív o jednu tabulku. Výbor pro evropské záležitosti měl jako jediný na papíře deset míst pro koalici a deset pro opozici. Koalice pak počet změnila z dvaceti na dvacet dva členů a Taťána Malá mluvila o chybě při načítání.",
-  "pointa": "Richterová říkala, že deset ku deseti vypadalo jako ochota ke spolupráci, ale po přečíslování si koalice vezme většinu jako u všech ostatních výborů. Kolovratník se ptal, kde je férovost a připomněl minulost: Piráti čtyři poslanci, přesto Richterová místopředsedkyně Sněmovny; SPD dvacet poslanců a ve vedení Sněmovny nebylo. Jenže debata šla o předsedy výborů, ne o křesla u kladívka. Richterová bránila poměrné zastoupení ve výborech. Hřib dodal, že SPD předsedy výborů měla a že místopředsedkyně Sněmovny s předsedou výboru jsou dvě různé volby.",
-  "mean": "Výbor je jako malá sněmovna: kdo má víc míst, svolává jednání a má většinu hlasů. Když evropský výbor přešel z rovného deseti ku deseti na 22 členů, koalice získala převahu stejně jako jinde.",
   "pocet_hlasovani": 1,
   "proslo": true,
   "signaly": {
@@ -47,5 +44,8 @@
     "spor": true,
     "prazdny_sal": false
   },
-  "steno_slov": 636
+  "steno_slov": 636,
+  "lead": "Úterý ráno šlo nejdřív o jednu tabulku. Výbor pro evropské záležitosti měl jako jediný na papíře deset míst pro koalici a deset pro opozici. Koalice pak počet změnila z dvaceti na dvacet dva členů a Taťána Malá mluvila o chybě při načítání.",
+  "pointa": "Richterová říkala, že deset ku deseti vypadalo jako ochota ke spolupráci, ale po přečíslování si koalice vezme většinu jako u všech ostatních výborů. Kolovratník se ptal, kde je férovost a připomněl minulost: Piráti čtyři poslanci, přesto Richterová místopředsedkyně Sněmovny; SPD dvacet poslanců a ve vedení Sněmovny nebylo. Jenže debata šla o předsedy výborů, ne o křesla u kladívka. Richterová bránila poměrné zastoupení ve výborech. Hřib dodal, že SPD předsedy výborů měla a že místopředsedkyně Sněmovny s předsedou výboru jsou dvě různé volby.",
+  "mean": "Výbor je jako malá sněmovna: kdo má víc míst, svolává jednání a má většinu hlasů. Když evropský výbor přešel z rovného deseti ku deseti na 22 členů, koalice získala převahu stejně jako jinde."
 }

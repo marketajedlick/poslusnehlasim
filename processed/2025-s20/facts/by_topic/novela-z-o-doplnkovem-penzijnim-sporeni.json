@@ -3,7 +3,7 @@
   "nazev": "Novela z. o doplňkovém penzijním spoření",
   "datum": "27.05.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "vrácení státních příspěvků seniorům v penzijním spoření",
+  "predmet_lidsky": "doplňkovém penzijním spoření",
   "koho": [
     "Koho se to týká? Seniorů, kterým stát od července 2024 přestal přispívat na penzijní spoření, ale nepustil je ze smlouvy bez sankce."
   ],
@@ -30,9 +30,6 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Seniorům vrátí příspěvky na spoření",
-  "lead": "Senioři, kterým stát v roce 2024 přestal posílat státní příspěvek na penzijní spoření, budou moci odejít bez pokuty a vrácené peníze dostanou zpět. Prošlo to 136:7, tři pirátské úpravy předtím spadly pod stůl.",
-  "pointa": "Stát si na opravu dá zhruba 60 milionů korun; Piráti chtěli ještě víc, ale jejich tři pozměňovací návrhy před finálem spadly.",
-  "mean": "Kdo je v důchodu a zůstal ve spoření bez státního příspěvku, bude moci smlouvu opustit bez sankce; komu už peníze strhli, stát mu je vrátí. Účet pro rozpočet: zhruba 60 milionů korun.",
   "pocet_hlasovani": 4,
   "proslo": true,
   "signaly": {
@@ -40,7 +37,10 @@
     "pritomno_min": 152,
     "jednomyslne": false,
     "spor": true,
-    "prazdny_sal": false
+    "prazdny_sal": true
   },
-  "steno_slov": 7171
+  "steno_slov": 7171,
+  "lead": "Senioři, kterým stát v roce 2024 přestal posílat státní příspěvek na penzijní spoření, budou moci odejít bez pokuty a vrácené peníze dostanou zpět. Prošlo to 136:7, tři pirátské úpravy předtím spadly pod stůl.",
+  "pointa": "Stát si na opravu dá zhruba 60 milionů korun; Piráti chtěli ještě víc, ale jejich tři pozměňovací návrhy před finálem spadly.",
+  "mean": "Kdo je v důchodu a zůstal ve spoření bez státního příspěvku, bude moci smlouvu opustit bez sankce; komu už peníze strhli, stát mu je vrátí. Účet pro rozpočet: zhruba 60 milionů korun."
 }

@@ -3,7 +3,7 @@
   "nazev": "Novela z. o státní sociální podpoře",
   "datum": "22.04.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "termínech digitalizace dávek na Úřadu práce",
+  "predmet_lidsky": "státní sociální podpoře",
   "koho": [
     "Koho se to týká? Rodiny čekající na příspěvek na bydlení, přídavek na dítě nebo další dávky z Úřadu práce."
   ],
@@ -27,12 +27,19 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Dávky se digitalizují později",
-  "lead": "Sněmovna schválila technickou novelu, která odkládá digitalizaci dávek státní sociální podpory. Úřad práce nestihne nový systém k červenci, protože kapacity žere superdávka.",
-  "pointa": "Směr digitalizace zůstává, mění se tempo. Brzesková říkala, že jinak by chyby odnesli senioři, rodiče a samoživitelé.",
-  "mean": "Dávky z Úřadu práce se zatím nebudou převádět do plně digitálního režimu podle původního harmonogramu. Lidé u pokladny úřadu zatím neuvidí změnu.",
   "pocet_hlasovani": 3,
   "proslo": true,
-  "steno_slov": 8449
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 122,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 8449,
+  "lead": "Sněmovna schválila technickou novelu, která odkládá digitalizaci dávek státní sociální podpory. Úřad práce nestihne nový systém k červenci, protože kapacity žere superdávka.",
+  "pointa": "Směr digitalizace zůstává, mění se tempo. Brzesková říkala, že jinak by chyby odnesli senioři, rodiče a samoživitelé.",
+  "mean": "Dávky z Úřadu práce se zatím nebudou převádět do plně digitálního režimu podle původního harmonogramu. Lidé u pokladny úřadu zatím neuvidí změnu."
 }
