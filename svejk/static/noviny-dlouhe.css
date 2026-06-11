@@ -560,21 +560,22 @@ body.slovnicek-page{
   font-size:15px; line-height:1.45;
 }
 
-/* ---------- vyznamenání neprošli ---------- */
+/* ---------- vyznamenání tabulky ---------- */
 body.vyznamenani-page{
-  padding:calc(24px + env(safe-area-inset-top, 0px)) 16px 32px;
+  padding:calc(24px + env(safe-area-inset-top, 0px)) 16px 40px;
+  background:var(--paper-2);
 }
 .vyznamenani-wrap{
-  width:100%; max-width:920px; margin:0 auto;
+  width:100%; max-width:1120px; margin:0 auto;
   background:var(--paper);
   border:1.5px solid rgba(33,28,20,.22);
   box-shadow:0 10px 28px var(--shadow);
-  padding:36px 24px 40px;
+  padding:36px 28px 44px;
 }
 .vyznamenani-head{
-  margin-bottom:24px;
-  padding-bottom:20px;
-  border-bottom:1px solid rgba(33,28,20,.14);
+  margin-bottom:28px;
+  padding-bottom:22px;
+  border-bottom:2px solid rgba(33,28,20,.12);
 }
 .vyznamenani-title{
   margin:0 0 8px;
@@ -582,12 +583,15 @@ body.vyznamenani-page{
   font-size:28px; letter-spacing:.04em; text-transform:uppercase;
   color:var(--ink);
 }
+.vyznamenani-page--neprosli .vyznamenani-title{ color:var(--terra); }
+.vyznamenani-page--prosli .vyznamenani-title{ color:var(--blue); }
 .vyznamenani-gloss{
   margin:0 0 16px;
-  font-size:15px; line-height:1.45; color:var(--ink-soft);
+  font-size:15px; line-height:1.5; color:var(--ink-soft);
+  max-width:52em;
 }
 .vyznamenani-nav{
-  display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
+  display:flex; flex-wrap:wrap; justify-content:flex-start; align-items:center;
   gap:8px 12px; margin-top:8px;
 }
 .vyznamenani-nav-sep{
@@ -603,58 +607,200 @@ body.vyznamenani-page{
 }
 .vyznamenani-back:hover{ border-bottom-color:var(--terra); }
 .vyznamenani-explain{
-  margin:0 0 24px;
-  padding:16px 18px;
-  background:rgba(207,90,49,.06);
-  border-left:3px solid rgba(207,90,49,.45);
+  margin:0 0 28px;
+  padding:18px 20px;
+  background:linear-gradient(90deg, rgba(207,90,49,.08), rgba(207,90,49,.02));
+  border:1px solid rgba(207,90,49,.18);
+  border-left:4px solid var(--terra);
+  border-radius:0 4px 4px 0;
+}
+.vyznamenani-page--prosli .vyznamenani-explain{
+  background:linear-gradient(90deg, rgba(40,60,110,.08), rgba(40,60,110,.02));
+  border-color:rgba(40,60,110,.18);
+  border-left-color:var(--blue);
 }
 .vyznamenani-explain p{
   margin:0 0 10px;
   font-size:14px;
-  line-height:1.5;
+  line-height:1.55;
   color:var(--ink);
 }
 .vyznamenani-explain p:last-child{ margin-bottom:0; }
 .vyznamenani-table-wrap{
   overflow-x:auto;
-  margin-bottom:20px;
+  margin-bottom:24px;
+  border:1px solid rgba(33,28,20,.12);
+  border-radius:4px;
+  background:var(--paper);
+  -webkit-overflow-scrolling:touch;
 }
 .vyznamenani-table{
   width:100%;
-  border-collapse:collapse;
-  font-size:14px;
+  min-width:880px;
+  border-collapse:separate;
+  border-spacing:0;
+  font-size:13px;
   line-height:1.4;
 }
 .vyznamenani-table th,
 .vyznamenani-table td{
-  padding:10px 12px;
+  padding:11px 12px;
   text-align:left;
   vertical-align:top;
-  border-bottom:1px solid rgba(33,28,20,.1);
+  border-bottom:1px solid rgba(33,28,20,.08);
 }
 .vyznamenani-table thead th{
   font-family:'Oswald',sans-serif; font-weight:500;
-  font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  font-size:10px; letter-spacing:.12em; text-transform:uppercase;
   color:var(--ink-soft);
-  border-bottom:1.5px solid rgba(33,28,20,.18);
+  background:var(--paper-2);
+  position:sticky; top:0; z-index:2;
 }
+.vyznamenani-table tr.vyznamenani-groups th{
+  font-size:9px;
+  letter-spacing:.14em;
+  color:var(--ink);
+  background:var(--paper-3);
+  border-bottom:1px solid rgba(33,28,20,.12);
+  text-align:center;
+}
+.vyznamenani-table tr.vyznamenani-groups th.vyznamenani-sticky{
+  text-align:left;
+  z-index:4;
+}
+.vyznamenani-table tr.vyznamenani-cols th{
+  top:28px;
+  z-index:3;
+  text-align:center;
+}
+.vyznamenani-table tr.vyznamenani-cols th:first-child{ text-align:left; }
+.vyznamenani-table tbody tr:nth-child(even){ background:rgba(33,28,20,.025); }
+.vyznamenani-table tbody tr:hover{ background:rgba(207,90,49,.05); }
 .vyznamenani-table tbody th{
   font-weight:600;
+  font-size:14px;
   color:var(--ink);
-  white-space:nowrap;
+  background:inherit;
 }
-.vyznamenani-skore,
+.vyznamenani-sticky{
+  position:sticky;
+  left:0;
+  z-index:1;
+  background:inherit;
+  box-shadow:4px 0 8px -4px rgba(33,28,20,.12);
+  min-width:11em;
+}
+.vyznamenani-table thead .vyznamenani-sticky{
+  background:var(--paper-2);
+  z-index:5;
+}
+.vyznamenani-table tr.vyznamenani-groups .vyznamenani-sticky{ background:var(--paper-3); }
+.vyznamenani-skore{
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+  text-align:center;
+  font-family:'Oswald',sans-serif;
+  font-size:15px;
+  letter-spacing:.04em;
+}
+.vyznamenani-vote--pro{ color:var(--blue); font-weight:600; }
+.vyznamenani-vote--proti{ color:var(--terra); font-weight:600; }
+.vyznamenani-vote-sep{ color:var(--ink-soft); margin:0 1px; }
 .vyznamenani-num{
   font-variant-numeric:tabular-nums;
   white-space:nowrap;
+  text-align:center;
+  color:var(--ink-soft);
+}
+.vyznamenani-potreba{
+  font-weight:600;
+  color:var(--ink);
 }
 .vyznamenani-chybelo{
-  font-weight:600;
+  font-weight:700;
   color:var(--terra);
+  background:rgba(207,90,49,.08);
 }
+.vyznamenani-kluby{ min-width:10em; max-width:16em; }
+.vyznamenani-chips{
+  display:flex; flex-wrap:wrap; gap:5px;
+}
+.vyznamenani-chip{
+  display:inline-flex; align-items:center; gap:4px;
+  padding:3px 7px;
+  border-radius:3px;
+  font-size:11px;
+  line-height:1.3;
+  letter-spacing:.02em;
+  white-space:nowrap;
+}
+.vyznamenani-chip strong{
+  font-family:'Oswald',sans-serif;
+  font-weight:600;
+  font-size:12px;
+}
+.vyznamenani-chip--pro{
+  background:rgba(40,60,110,.1);
+  color:var(--blue);
+  border:1px solid rgba(40,60,110,.15);
+}
+.vyznamenani-chip--proti{
+  background:rgba(207,90,49,.1);
+  color:var(--terra);
+  border:1px solid rgba(207,90,49,.18);
+}
+.vyznamenani-empty{ color:var(--ink-soft); }
 .vyznamenani-note{
   margin:0;
-  font-size:13px; line-height:1.45; color:var(--ink-soft);
+  font-size:13px; line-height:1.5; color:var(--ink-soft);
+  padding-top:4px;
+}
+@media (max-width:760px){
+  .vyznamenani-wrap{ padding:28px 16px 36px; }
+  .vyznamenani-table{ min-width:0; }
+  .vyznamenani-table thead{ display:none; }
+  .vyznamenani-table tbody tr{
+    display:block;
+    margin:0 0 14px;
+    padding:14px 14px 6px;
+    border:1px solid rgba(33,28,20,.12);
+    border-radius:4px;
+    background:var(--paper);
+  }
+  .vyznamenani-table tbody tr:nth-child(even){ background:var(--paper); }
+  .vyznamenani-table tbody tr:hover{ background:var(--paper); }
+  .vyznamenani-table tbody th,
+  .vyznamenani-table tbody td{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:12px;
+    padding:8px 0;
+    border-bottom:1px solid rgba(33,28,20,.06);
+    box-shadow:none;
+    position:static;
+    min-width:0;
+    max-width:none;
+  }
+  .vyznamenani-table tbody th{
+    font-size:16px;
+    border-bottom:1px solid rgba(33,28,20,.14);
+    padding-bottom:10px;
+    margin-bottom:4px;
+  }
+  .vyznamenani-table tbody td::before{
+    content:attr(data-label);
+    flex:0 0 42%;
+    font-family:'Oswald',sans-serif;
+    font-size:10px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    padding-top:2px;
+  }
+  .vyznamenani-table tbody th::before{ display:none; }
+  .vyznamenani-skore{ justify-content:flex-end; }
+  .vyznamenani-chips{ justify-content:flex-end; max-width:56%; }
 }
 a.mean-link{
   color:inherit;

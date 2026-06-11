@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/static/fonts.css" />
 <link rel="stylesheet" href="/static/noviny-dlouhe.css" />
 </head>
-<body class="vyznamenani-page">
+<body class="vyznamenani-page vyznamenani-page--neprosli">
 <div class="vyznamenani-wrap">
   <header class="vyznamenani-head">
     <h1 class="vyznamenani-title">Kdo neprošel</h1>
@@ -46,10 +46,15 @@
   <div class="vyznamenani-table-wrap">
     <table class="vyznamenani-table">
       <thead>
-        <tr>
-          <th scope="col">Jméno</th>
-          <th scope="col">Hlasování</th>
-          
+        
+        <tr class="vyznamenani-groups">
+          <th scope="col" rowspan="2" class="vyznamenani-sticky">Jméno</th>
+          <th scope="col" rowspan="2">Výsledek</th>
+          <th scope="colgroup" colspan="3">Kolik stačilo</th>
+          <th scope="colgroup" colspan="2">Nehlasovali</th>
+          <th scope="colgroup" colspan="2">Po klubech</th>
+        </tr>
+        <tr class="vyznamenani-cols">
           <th scope="col">Přítomno</th>
           <th scope="col">Stačilo pro</th>
           
@@ -57,379 +62,1189 @@
           
           <th scope="col">Zdržel se</th>
           <th scope="col">Nehlasoval</th>
-          
-          <th scope="col">Kluby pro</th>
-          <th scope="col">Kluby proti</th>
+          <th scope="col">Pro</th>
+          <th scope="col">Proti</th>
         </tr>
+        
       </thead>
       <tbody>
         
         <tr>
-          <th scope="row">Vojtěch Filsák</th>
-          <td class="vyznamenani-skore">92:16</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Vojtěch Filsák</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">92</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">16</span>
+          </td>
           
-          <td class="vyznamenani-num">185</td>
-          <td class="vyznamenani-num">93</td>
+          <td class="vyznamenani-num" data-label="Přítomno">185</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">93</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">1</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">1</td>
           
-          <td class="vyznamenani-num">29</td>
-          <td class="vyznamenani-num">48</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">29</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">48</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>71</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>1</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>1</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">SPD <strong>14</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Motoristé <strong>5</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ODS <strong>3</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">KDU-ČSL <strong>3</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">TOP 09 <strong>7</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>3</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 71, Piráti 1, KDU-ČSL 1, SPD 14, Motoristé 5</td>
-          <td>TOP 09 7, ODS 3, KDU-ČSL 3, Motoristé 3</td>
         </tr>
         
         <tr>
-          <th scope="row">Miroslav Kundrata</th>
-          <td class="vyznamenani-skore">92:6</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Miroslav Kundrata</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">92</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">6</span>
+          </td>
           
-          <td class="vyznamenani-num">188</td>
-          <td class="vyznamenani-num">95</td>
+          <td class="vyznamenani-num" data-label="Přítomno">188</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">95</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">3</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">3</td>
           
-          <td class="vyznamenani-num">70</td>
-          <td class="vyznamenani-num">20</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">70</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">20</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>8</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>23</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>20</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>17</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>14</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>9</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Motoristé <strong>1</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>2</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>2</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>2</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 8, ODS 23, STAN 20, Piráti 17, KDU-ČSL 14, TOP 09 9, Motoristé 1</td>
-          <td>ANO 2, Motoristé 2, SPD 2</td>
         </tr>
         
         <tr>
-          <th scope="row">Luboš Dobrovský</th>
-          <td class="vyznamenani-skore">91:13</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Luboš Dobrovský</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">91</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">13</span>
+          </td>
           
-          <td class="vyznamenani-num">186</td>
-          <td class="vyznamenani-num">94</td>
+          <td class="vyznamenani-num" data-label="Přítomno">186</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">94</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">3</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">3</td>
           
-          <td class="vyznamenani-num">57</td>
-          <td class="vyznamenani-num">25</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">57</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">25</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>6</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>23</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>20</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>18</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>14</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>9</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Motoristé <strong>1</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>2</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>11</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 6, ODS 23, STAN 20, Piráti 18, KDU-ČSL 14, TOP 09 9, Motoristé 1</td>
-          <td>SPD 11, ANO 2</td>
         </tr>
         
         <tr>
-          <th scope="row">Martin Kroupa</th>
-          <td class="vyznamenani-skore">88:18</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Martin Kroupa</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">88</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">18</span>
+          </td>
           
-          <td class="vyznamenani-num">188</td>
-          <td class="vyznamenani-num">95</td>
+          <td class="vyznamenani-num" data-label="Přítomno">188</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">95</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">7</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">7</td>
           
-          <td class="vyznamenani-num">63</td>
-          <td class="vyznamenani-num">19</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">63</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">19</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>3</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>23</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>21</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>18</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>14</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>9</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>2</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>13</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>3</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 3, ODS 23, STAN 21, Piráti 18, KDU-ČSL 14, TOP 09 9</td>
-          <td>SPD 13, Motoristé 3, ANO 2</td>
         </tr>
         
         <tr>
-          <th scope="row">Martin Ondráček</th>
-          <td class="vyznamenani-skore">88:24</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Martin Ondráček</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">88</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">24</span>
+          </td>
           
-          <td class="vyznamenani-num">187</td>
-          <td class="vyznamenani-num">94</td>
+          <td class="vyznamenani-num" data-label="Přítomno">187</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">94</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">6</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">6</td>
           
-          <td class="vyznamenani-num">61</td>
-          <td class="vyznamenani-num">14</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">61</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">14</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>5</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>24</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>19</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>17</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>14</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>8</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">SPD <strong>1</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>5</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>13</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>6</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 5, ODS 24, STAN 19, Piráti 17, KDU-ČSL 14, TOP 09 8, SPD 1</td>
-          <td>SPD 13, Motoristé 6, ANO 5</td>
         </tr>
         
         <tr>
-          <th scope="row">Daniel Herman</th>
-          <td class="vyznamenani-skore">87:20</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Daniel Herman</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">87</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">20</span>
+          </td>
           
-          <td class="vyznamenani-num">188</td>
-          <td class="vyznamenani-num">95</td>
+          <td class="vyznamenani-num" data-label="Přítomno">188</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">95</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">8</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">8</td>
           
-          <td class="vyznamenani-num">54</td>
-          <td class="vyznamenani-num">27</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">54</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">27</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>30</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>12</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>10</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>11</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>14</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>9</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Motoristé <strong>1</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>1</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>13</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>6</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 30, ODS 12, STAN 10, Piráti 11, KDU-ČSL 14, TOP 09 9, Motoristé 1</td>
-          <td>SPD 13, Motoristé 6, ANO 1</td>
         </tr>
         
         <tr>
-          <th scope="row">Lucie Bášová</th>
-          <td class="vyznamenani-skore">86:6</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Lucie Bášová</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">86</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">6</span>
+          </td>
           
-          <td class="vyznamenani-num">186</td>
-          <td class="vyznamenani-num">94</td>
+          <td class="vyznamenani-num" data-label="Přítomno">186</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">94</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">8</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">8</td>
           
-          <td class="vyznamenani-num">66</td>
-          <td class="vyznamenani-num">28</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">66</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">28</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>5</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>20</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>20</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>18</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>14</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>9</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>4</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>1</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>1</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 5, ODS 20, STAN 20, Piráti 18, KDU-ČSL 14, TOP 09 9</td>
-          <td>ANO 4, Motoristé 1, SPD 1</td>
         </tr>
         
         <tr>
-          <th scope="row">Jesica Miňovská</th>
-          <td class="vyznamenani-skore">86:16</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Jesica Miňovská</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">86</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">16</span>
+          </td>
           
-          <td class="vyznamenani-num">188</td>
-          <td class="vyznamenani-num">95</td>
+          <td class="vyznamenani-num" data-label="Přítomno">188</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">95</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">9</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">9</td>
           
-          <td class="vyznamenani-num">66</td>
-          <td class="vyznamenani-num">20</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">66</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">20</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>7</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>20</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>19</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>18</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>13</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>9</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>2</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>13</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>1</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 7, ODS 20, STAN 19, Piráti 18, KDU-ČSL 13, TOP 09 9</td>
-          <td>SPD 13, ANO 2, Motoristé 1</td>
         </tr>
         
         <tr>
-          <th scope="row">Ondřej Novotný</th>
-          <td class="vyznamenani-skore">86:10</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Ondřej Novotný</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">86</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">10</span>
+          </td>
           
-          <td class="vyznamenani-num">178</td>
-          <td class="vyznamenani-num">90</td>
+          <td class="vyznamenani-num" data-label="Přítomno">178</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">90</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">4</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">4</td>
           
-          <td class="vyznamenani-num">62</td>
-          <td class="vyznamenani-num">20</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">62</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">20</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>19</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>22</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>17</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>2</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>9</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>5</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">SPD <strong>9</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Motoristé <strong>3</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>5</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Piráti <strong>1</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">KDU-ČSL <strong>1</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>1</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>2</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 19, ODS 22, STAN 17, Piráti 2, KDU-ČSL 9, TOP 09 5, SPD 9, Motoristé 3</td>
-          <td>ANO 5, Motoristé 2, Piráti 1, KDU-ČSL 1, SPD 1</td>
         </tr>
         
         <tr>
-          <th scope="row">Milan Kňažko</th>
-          <td class="vyznamenani-skore">85:22</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Milan Kňažko</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">85</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">22</span>
+          </td>
           
-          <td class="vyznamenani-num">188</td>
-          <td class="vyznamenani-num">95</td>
+          <td class="vyznamenani-num" data-label="Přítomno">188</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">95</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">10</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">10</td>
           
-          <td class="vyznamenani-num">64</td>
-          <td class="vyznamenani-num">17</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">64</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">17</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>8</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>22</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>20</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>18</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>12</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>1</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Motoristé <strong>4</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>14</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>4</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>4</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 8, ODS 22, STAN 20, Piráti 18, KDU-ČSL 12, TOP 09 1, Motoristé 4</td>
-          <td>ANO 14, Motoristé 4, SPD 4</td>
         </tr>
         
         <tr>
-          <th scope="row">Daniel Vávra</th>
-          <td class="vyznamenani-skore">85:33</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Daniel Vávra</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">85</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">33</span>
+          </td>
           
-          <td class="vyznamenani-num">182</td>
-          <td class="vyznamenani-num">92</td>
+          <td class="vyznamenani-num" data-label="Přítomno">182</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">92</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">7</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">7</td>
           
-          <td class="vyznamenani-num">47</td>
-          <td class="vyznamenani-num">17</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">47</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">17</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>45</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>16</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">SPD <strong>13</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Motoristé <strong>11</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">STAN <strong>7</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Piráti <strong>14</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">KDU-ČSL <strong>8</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">TOP 09 <strong>4</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 45, ODS 16, SPD 13, Motoristé 11</td>
-          <td>Piráti 14, KDU-ČSL 8, STAN 7, TOP 09 4</td>
         </tr>
         
         <tr>
-          <th scope="row">Kristýna Cejnarová</th>
-          <td class="vyznamenani-skore">84:6</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Kristýna Cejnarová</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">84</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">6</span>
+          </td>
           
-          <td class="vyznamenani-num">186</td>
-          <td class="vyznamenani-num">94</td>
+          <td class="vyznamenani-num" data-label="Přítomno">186</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">94</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">10</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">10</td>
           
-          <td class="vyznamenani-num">72</td>
-          <td class="vyznamenani-num">24</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">72</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">24</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>1</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>20</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>19</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>18</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>14</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>8</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Motoristé <strong>4</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>2</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>1</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>3</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 1, ODS 20, STAN 19, Piráti 18, KDU-ČSL 14, TOP 09 8, Motoristé 4</td>
-          <td>Motoristé 3, ANO 2, SPD 1</td>
         </tr>
         
         <tr>
-          <th scope="row">Mikuláš Kroupa</th>
-          <td class="vyznamenani-skore">84:19</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Mikuláš Kroupa</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">84</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">19</span>
+          </td>
           
-          <td class="vyznamenani-num">188</td>
-          <td class="vyznamenani-num">95</td>
+          <td class="vyznamenani-num" data-label="Přítomno">188</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">95</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">11</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">11</td>
           
-          <td class="vyznamenani-num">67</td>
-          <td class="vyznamenani-num">18</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">67</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">18</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>3</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>21</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>19</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>18</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>14</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>9</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>2</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>14</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>3</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 3, ODS 21, STAN 19, Piráti 18, KDU-ČSL 14, TOP 09 9</td>
-          <td>SPD 14, Motoristé 3, ANO 2</td>
         </tr>
         
         <tr>
-          <th scope="row">Václav Moravec</th>
-          <td class="vyznamenani-skore">82:67</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Václav Moravec</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">82</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">67</span>
+          </td>
           
-          <td class="vyznamenani-num">188</td>
-          <td class="vyznamenani-num">95</td>
+          <td class="vyznamenani-num" data-label="Přítomno">188</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">95</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">13</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">13</td>
           
-          <td class="vyznamenani-num">28</td>
-          <td class="vyznamenani-num">11</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">28</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">11</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>19</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>19</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>18</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>14</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>8</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">SPD <strong>1</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Motoristé <strong>3</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>51</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>11</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>5</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ODS 19, STAN 19, Piráti 18, KDU-ČSL 14, TOP 09 8, SPD 1, Motoristé 3</td>
-          <td>ANO 51, SPD 11, Motoristé 5</td>
         </tr>
         
         <tr>
-          <th scope="row">Ladislav Miko</th>
-          <td class="vyznamenani-skore">79:61</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Ladislav Miko</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">79</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">61</span>
+          </td>
           
-          <td class="vyznamenani-num">188</td>
-          <td class="vyznamenani-num">95</td>
+          <td class="vyznamenani-num" data-label="Přítomno">188</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">95</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">16</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">16</td>
           
-          <td class="vyznamenani-num">35</td>
-          <td class="vyznamenani-num">13</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">35</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">13</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>2</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>18</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>19</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>18</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>14</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>8</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>41</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>13</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>7</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 2, ODS 18, STAN 19, Piráti 18, KDU-ČSL 14, TOP 09 8</td>
-          <td>ANO 41, SPD 13, Motoristé 7</td>
         </tr>
         
         <tr>
-          <th scope="row">Libuše Jarcovjáková</th>
-          <td class="vyznamenani-skore">78:3</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Libuše Jarcovjáková</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">78</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">3</span>
+          </td>
           
-          <td class="vyznamenani-num">188</td>
-          <td class="vyznamenani-num">95</td>
+          <td class="vyznamenani-num" data-label="Přítomno">188</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">95</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">17</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">17</td>
           
-          <td class="vyznamenani-num">70</td>
-          <td class="vyznamenani-num">37</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">70</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">37</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>5</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>11</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>21</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>18</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>13</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>9</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Motoristé <strong>1</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>2</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>1</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 5, ODS 11, STAN 21, Piráti 18, KDU-ČSL 13, TOP 09 9, Motoristé 1</td>
-          <td>ANO 2, SPD 1</td>
         </tr>
         
         <tr>
-          <th scope="row">Eva Lehotská</th>
-          <td class="vyznamenani-skore">76:17</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Eva Lehotská</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">76</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">17</span>
+          </td>
           
-          <td class="vyznamenani-num">182</td>
-          <td class="vyznamenani-num">92</td>
+          <td class="vyznamenani-num" data-label="Přítomno">182</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">92</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">16</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">16</td>
           
-          <td class="vyznamenani-num">67</td>
-          <td class="vyznamenani-num">22</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">67</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">22</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>6</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>22</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>20</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>9</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>12</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>7</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>1</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>14</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>2</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 6, ODS 22, STAN 20, Piráti 9, KDU-ČSL 12, TOP 09 7</td>
-          <td>SPD 14, Motoristé 2, ANO 1</td>
         </tr>
         
         <tr>
-          <th scope="row">Michael Žantovský</th>
-          <td class="vyznamenani-skore">71:22</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Michael Žantovský</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">71</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">22</span>
+          </td>
           
-          <td class="vyznamenani-num">182</td>
-          <td class="vyznamenani-num">92</td>
+          <td class="vyznamenani-num" data-label="Přítomno">182</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">92</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">21</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">21</td>
           
-          <td class="vyznamenani-num">64</td>
-          <td class="vyznamenani-num">25</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">64</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">25</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>4</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>12</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>18</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>15</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>12</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>9</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Motoristé <strong>1</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>4</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>14</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>4</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 4, ODS 12, STAN 18, Piráti 15, KDU-ČSL 12, TOP 09 9, Motoristé 1</td>
-          <td>SPD 14, ANO 4, Motoristé 4</td>
         </tr>
         
         <tr>
-          <th scope="row">Naděžda Vlašín Johanisová</th>
-          <td class="vyznamenani-skore">60:21</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Naděžda Vlašín Johanisová</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">60</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">21</span>
+          </td>
           
-          <td class="vyznamenani-num">185</td>
-          <td class="vyznamenani-num">93</td>
+          <td class="vyznamenani-num" data-label="Přítomno">185</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">93</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">33</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">33</td>
           
-          <td class="vyznamenani-num">66</td>
-          <td class="vyznamenani-num">38</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">66</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">38</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>3</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>3</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>20</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>15</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>11</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>7</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Motoristé <strong>1</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>3</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ODS <strong>3</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>13</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>2</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 3, ODS 3, STAN 20, Piráti 15, KDU-ČSL 11, TOP 09 7, Motoristé 1</td>
-          <td>SPD 13, ODS 3, ANO 3, Motoristé 2</td>
         </tr>
         
         <tr>
-          <th scope="row">Zdislava Pokorná</th>
-          <td class="vyznamenani-skore">59:55</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Zdislava Pokorná</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">59</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">55</span>
+          </td>
           
-          <td class="vyznamenani-num">188</td>
-          <td class="vyznamenani-num">95</td>
+          <td class="vyznamenani-num" data-label="Přítomno">188</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">95</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">36</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">36</td>
           
-          <td class="vyznamenani-num">45</td>
-          <td class="vyznamenani-num">29</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">45</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">29</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>3</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>19</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Piráti <strong>18</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>11</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>8</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>32</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ODS <strong>2</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>12</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Motoristé <strong>9</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 3, STAN 19, Piráti 18, KDU-ČSL 11, TOP 09 8</td>
-          <td>ANO 32, SPD 12, Motoristé 9, ODS 2</td>
         </tr>
         
         <tr>
-          <th scope="row">Jiří Šlégr</th>
-          <td class="vyznamenani-skore">55:19</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Jiří Šlégr</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">55</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">19</span>
+          </td>
           
-          <td class="vyznamenani-num">180</td>
-          <td class="vyznamenani-num">91</td>
+          <td class="vyznamenani-num" data-label="Přítomno">180</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">91</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">36</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">36</td>
           
-          <td class="vyznamenani-num">69</td>
-          <td class="vyznamenani-num">37</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">69</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">37</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>26</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>2</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>6</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">SPD <strong>12</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Motoristé <strong>9</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>2</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ODS <strong>3</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">STAN <strong>6</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Piráti <strong>1</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">KDU-ČSL <strong>1</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">TOP 09 <strong>6</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 26, ODS 2, KDU-ČSL 6, SPD 12, Motoristé 9</td>
-          <td>STAN 6, TOP 09 6, ODS 3, ANO 2, Piráti 1, KDU-ČSL 1</td>
         </tr>
         
         <tr>
-          <th scope="row">Radim Passer</th>
-          <td class="vyznamenani-skore">50:16</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Radim Passer</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">50</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">16</span>
+          </td>
           
-          <td class="vyznamenani-num">180</td>
-          <td class="vyznamenani-num">91</td>
+          <td class="vyznamenani-num" data-label="Přítomno">180</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">91</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">41</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">41</td>
           
-          <td class="vyznamenani-num">71</td>
-          <td class="vyznamenani-num">43</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">71</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">43</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>15</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>1</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>10</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">SPD <strong>13</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Motoristé <strong>11</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ODS <strong>1</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">STAN <strong>7</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">Piráti <strong>8</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 15, ODS 1, KDU-ČSL 10, SPD 13, Motoristé 11</td>
-          <td>Piráti 8, STAN 7, ODS 1</td>
         </tr>
         
         <tr>
-          <th scope="row">Karel I</th>
-          <td class="vyznamenani-skore">38:15</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">Karel I</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">38</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">15</span>
+          </td>
           
-          <td class="vyznamenani-num">184</td>
-          <td class="vyznamenani-num">93</td>
+          <td class="vyznamenani-num" data-label="Přítomno">184</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">93</td>
           
-          <td class="vyznamenani-num vyznamenani-chybelo">55</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">55</td>
           
-          <td class="vyznamenani-num">79</td>
-          <td class="vyznamenani-num">52</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">79</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">52</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ANO <strong>7</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">ODS <strong>6</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">STAN <strong>3</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">KDU-ČSL <strong>7</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">TOP 09 <strong>9</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">SPD <strong>2</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--pro">Motoristé <strong>4</strong></span>
+              
+            </div>
+            
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            
+            <div class="vyznamenani-chips">
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">ANO <strong>3</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">STAN <strong>2</strong></span>
+              
+              <span class="vyznamenani-chip vyznamenani-chip--proti">SPD <strong>10</strong></span>
+              
+            </div>
+            
+          </td>
           
-          <td>ANO 7, ODS 6, STAN 3, KDU-ČSL 7, TOP 09 9, SPD 2, Motoristé 4</td>
-          <td>SPD 10, ANO 3, STAN 2</td>
         </tr>
         
       </tbody>

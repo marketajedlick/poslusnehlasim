@@ -578,7 +578,7 @@ def _sanitize_den_content(content: DenContent) -> None:
         item.nadpis_radky = [_sanitize_text_export(x) for x in item.nadpis_radky]
         item.lead = _sanitize_text_export(item.lead)
         item.mean = _sanitize_mean_export(item.mean)
-        item.kuriozita = _sanitize_text_export(item.kuriozita)
+        item.kuriozita = _sanitize_mean_export(item.kuriozita)
         item.dopad = _sanitize_text_export(item.dopad)
         item.parliament_lead = _sanitize_text_export(item.parliament_lead)
 

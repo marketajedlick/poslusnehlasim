@@ -17,7 +17,11 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "Luboš Dobrovský",
-        "Novinář; návrh na vyznamenání 4. 6. 2026 neprošel (91:13), přestože měl nejvíc hlasů pro.",
+        "Novinář; návrh na vyznamenání 4. 6. 2026 neprošel (91:13), chyběly tři hlasy na většinu přítomných.",
+    ),
+    (
+        "Vojtěch Filsák",
+        "Návrh na vyznamenání 4. 6. 2026 neprošel (92:16); chyběl jediný hlas na většinu přítomných.",
     ),
     (
         "Václav Moravec",

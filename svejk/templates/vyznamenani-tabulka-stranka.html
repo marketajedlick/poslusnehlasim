@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
-<body class="vyznamenani-page">
+<body class="vyznamenani-page vyznamenani-page--{{ kind }}">
 <div class="vyznamenani-wrap">
   <header class="vyznamenani-head">
     <h1 class="vyznamenani-title">{{ page_title }}</h1>
@@ -40,10 +40,15 @@
   <div class="vyznamenani-table-wrap">
     <table class="vyznamenani-table">
       <thead>
-        <tr>
-          <th scope="col">Jméno</th>
-          <th scope="col">Hlasování</th>
-          {% if show_vote_threshold %}
+        {% if show_vote_threshold %}
+        <tr class="vyznamenani-groups">
+          <th scope="col" rowspan="2" class="vyznamenani-sticky">Jméno</th>
+          <th scope="col" rowspan="2">Výsledek</th>
+          <th scope="colgroup" colspan="{{ 3 if kind == 'neprosli' else 2 }}">Kolik stačilo</th>
+          <th scope="colgroup" colspan="2">Nehlasovali</th>
+          <th scope="colgroup" colspan="2">Po klubech</th>
+        </tr>
+        <tr class="vyznamenani-cols">
           <th scope="col">Přítomno</th>
           <th scope="col">Stačilo pro</th>
           {% if kind == "neprosli" %}
@@ -51,27 +56,77 @@
           {% endif %}
           <th scope="col">Zdržel se</th>
           <th scope="col">Nehlasoval</th>
-          {% endif %}
+          <th scope="col">Pro</th>
+          <th scope="col">Proti</th>
+        </tr>
+        {% else %}
+        <tr>
+          <th scope="col">Jméno</th>
+          <th scope="col">Výsledek</th>
           <th scope="col">Kluby pro</th>
           <th scope="col">Kluby proti</th>
         </tr>
+        {% endif %}
       </thead>
       <tbody>
         {% for row in rows %}
         <tr>
-          <th scope="row">{{ row.jmeno }}</th>
-          <td class="vyznamenani-skore">{{ row.skore }}</td>
+          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">{{ row.jmeno }}</th>
+          <td class="vyznamenani-skore" data-label="Výsledek">
+            <span class="vyznamenani-vote vyznamenani-vote--pro">{{ row.pro }}</span>
+            <span class="vyznamenani-vote-sep">:</span>
+            <span class="vyznamenani-vote vyznamenani-vote--proti">{{ row.proti }}</span>
+          </td>
           {% if show_vote_threshold %}
-          <td class="vyznamenani-num">{{ row.pritomno or "—" }}</td>
-          <td class="vyznamenani-num">{{ row.potreba or "—" }}</td>
+          <td class="vyznamenani-num" data-label="Přítomno">{{ row.pritomno or "—" }}</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">{{ row.potreba or "—" }}</td>
           {% if kind == "neprosli" %}
-          <td class="vyznamenani-num vyznamenani-chybelo">{{ row.chybelo or "—" }}</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">{{ row.chybelo or "—" }}</td>
           {% endif %}
-          <td class="vyznamenani-num">{{ row.zdrzel or "—" }}</td>
-          <td class="vyznamenani-num">{{ row.nehlasoval or "—" }}</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">{{ row.zdrzel or "—" }}</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">{{ row.nehlasoval or "—" }}</td>
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            {% if row.kluby_pro_chips %}
+            <div class="vyznamenani-chips">
+              {% for chip in row.kluby_pro_chips %}
+              <span class="vyznamenani-chip vyznamenani-chip--pro">{{ chip.klub }} <strong>{{ chip.n }}</strong></span>
+              {% endfor %}
+            </div>
+            {% else %}
+            <span class="vyznamenani-empty">—</span>
+            {% endif %}
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            {% if row.kluby_proti_chips %}
+            <div class="vyznamenani-chips">
+              {% for chip in row.kluby_proti_chips %}
+              <span class="vyznamenani-chip vyznamenani-chip--proti">{{ chip.klub }} <strong>{{ chip.n }}</strong></span>
+              {% endfor %}
+            </div>
+            {% else %}
+            <span class="vyznamenani-empty">—</span>
+            {% endif %}
+          </td>
+          {% else %}
+          <td class="vyznamenani-kluby" data-label="Kluby pro">
+            {% if row.kluby_pro_chips %}
+            <div class="vyznamenani-chips">
+              {% for chip in row.kluby_pro_chips %}
+              <span class="vyznamenani-chip vyznamenani-chip--pro">{{ chip.klub }} <strong>{{ chip.n }}</strong></span>
+              {% endfor %}
+            </div>
+            {% else %}<span class="vyznamenani-empty">—</span>{% endif %}
+          </td>
+          <td class="vyznamenani-kluby" data-label="Kluby proti">
+            {% if row.kluby_proti_chips %}
+            <div class="vyznamenani-chips">
+              {% for chip in row.kluby_proti_chips %}
+              <span class="vyznamenani-chip vyznamenani-chip--proti">{{ chip.klub }} <strong>{{ chip.n }}</strong></span>
+              {% endfor %}
+            </div>
+            {% else %}<span class="vyznamenani-empty">—</span>{% endif %}
+          </td>
           {% endif %}
-          <td>{{ row.kluby_pro }}</td>
-          <td>{{ row.kluby_proti }}</td>
         </tr>
         {% endfor %}
       </tbody>

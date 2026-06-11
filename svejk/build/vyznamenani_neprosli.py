@@ -131,27 +131,25 @@ def inject_mean_links_md(text: str, links: list[tuple[str, str]]) -> str:
     return out
 
 
-def _kluby_proti_label(kluby: list[dict[str, Any]]) -> str:
-    if not kluby:
-        return "—"
-    parts = [f"{k['klub']} {k['proti']}" for k in kluby if k.get("proti")]
-    return ", ".join(parts) if parts else "—"
-
-
-def _kluby_pro_label(kluby: list[dict[str, Any]]) -> str:
-    if not kluby:
-        return "—"
-    ordered = sorted(
+def _sort_kluby(kluby: list[dict[str, Any]], count_key: str) -> list[dict[str, Any]]:
+    return sorted(
         kluby,
         key=lambda k: (
             _KLUB_ORDER.index(k["klub"])
             if k.get("klub") in _KLUB_ORDER
             else len(_KLUB_ORDER),
-            -int(k.get("pro") or 0),
+            -int(k.get(count_key) or 0),
         ),
     )
-    parts = [f"{k['klub']} {k['pro']}" for k in ordered if k.get("pro")]
-    return ", ".join(parts) if parts else "—"
+
+
+def _kluby_chips(kluby: list[dict[str, Any]], count_key: str) -> list[dict[str, str]]:
+    chips: list[dict[str, str]] = []
+    for k in _sort_kluby(kluby, count_key):
+        n = int(k.get(count_key) or 0)
+        if n:
+            chips.append({"klub": k["klub"], "n": str(n)})
+    return chips
 
 
 def _load_votes_by_cislo(paths: SchuzePaths, datum_unl: str) -> dict[int, dict[str, int]]:
@@ -203,15 +201,18 @@ def table_rows(
     *,
     kind: VyznamenaniKind,
     votes_by_cislo: dict[int, dict[str, int]] | None = None,
-) -> list[dict[str, str]]:
-    rows: list[dict[str, str]] = []
+) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
     for row in data.get("radky") or []:
         stats = _row_vote_stats(row, votes_by_cislo or {})
-        item = {
+        pro = int(row.get("pro") or stats["pro"] or 0)
+        proti = int(row.get("proti") or 0)
+        item: dict[str, Any] = {
             "jmeno": row.get("jmeno") or "",
-            "skore": f"{row.get('pro', 0)}:{row.get('proti', 0)}",
-            "kluby_pro": _kluby_pro_label(row.get("kluby_pro") or []),
-            "kluby_proti": _kluby_proti_label(row.get("kluby_proti") or []),
+            "pro": str(pro),
+            "proti": str(proti),
+            "kluby_pro_chips": _kluby_chips(row.get("kluby_pro") or [], "pro"),
+            "kluby_proti_chips": _kluby_chips(row.get("kluby_proti") or [], "proti"),
         }
         if stats["pritomno"]:
             item["pritomno"] = str(stats["pritomno"])
