@@ -726,6 +726,9 @@ body.vyznamenani-page{
 .vyznamenani-vote--proti{ color:var(--terra); font-weight:600; }
 .vyznamenani-vote-sep{ color:var(--ink-soft); margin:0 1px; }
 .vyznamenani-num{
+  font-family:'Oswald',sans-serif;
+  font-size:14px;
+  letter-spacing:.03em;
   font-variant-numeric:tabular-nums;
   white-space:nowrap;
   text-align:center;
