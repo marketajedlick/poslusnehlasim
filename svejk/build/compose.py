@@ -78,7 +78,7 @@ def render_den_markdown(
         if item.mean_links:
             link_pairs: list[tuple[str, str]] = []
             for phrase, page in item.mean_links:
-                if page not in ("neprosli", "prosli"):
+                if page not in ("neprosli", "prosli", "zvoleni"):
                     continue
                 kind: VyznamenaniKind = page  # type: ignore[assignment]
                 if not load_vyznamenani(paths, content.datum, kind):
@@ -92,6 +92,7 @@ def render_den_markdown(
                 )
                 link_pairs.append((phrase, href))
             if link_pairs:
+                lead = inject_mean_links_md(lead, link_pairs)
                 co_znamena = inject_mean_links_md(co_znamena, link_pairs)
         heading = (
             "\n".join(item.nadpis_radky)
@@ -164,7 +165,7 @@ def run_compose(
         html_out.write_text(html_body, encoding="utf-8")
         written_html.append(str(html_out))
 
-        for kind in ("neprosli", "prosli"):
+        for kind in ("neprosli", "prosli", "zvoleni"):
             table_html = render_vyznamenani_table_html(
                 paths, datum, kind, link_mode="file"
             )

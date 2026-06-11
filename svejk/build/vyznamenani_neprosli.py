@@ -11,7 +11,13 @@ from svejk.build.io import read_json
 from svejk.build.nav import vyznamenani_pages_href
 from svejk.paths import SchuzePaths
 
-VyznamenaniKind = Literal["neprosli", "prosli"]
+VyznamenaniKind = Literal["neprosli", "prosli", "zvoleni"]
+
+_JSON_BASENAME: dict[VyznamenaniKind, str] = {
+    "neprosli": "vyznamenani-neprosli",
+    "prosli": "vyznamenani-prosli",
+    "zvoleni": "hlasovani-zvoleni",
+}
 
 _KLUB_ORDER = (
     "ANO",
@@ -46,6 +52,17 @@ _PAGE_META: dict[VyznamenaniKind, dict[str, str]] = {
             "získaly potřebnou většinu přítomných."
         ),
     },
+    "zvoleni": {
+        "title": "Koho Sněmovna zvolila do Rady ČT",
+        "gloss": (
+            "{pocet} nových členů Rady České televize, které Sněmovna {datum} "
+            "obsadila veřejnou volbou. U každého jména souhrn hlasů po poslaneckých klubech."
+        ),
+        "note": (
+            "Volba byla veřejná. Ke zvolení stačilo mít víc hlasů pro než proti "
+            "a splnit kvorum přítomných."
+        ),
+    },
 }
 
 
@@ -55,7 +72,8 @@ def vyznamenani_json_path(
     from datetime import datetime
 
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
-    return paths.facts / f"vyznamenani-{kind}-{d.strftime('%Y-%m-%d')}.json"
+    basename = _JSON_BASENAME[kind]
+    return paths.facts / f"{basename}-{d.strftime('%Y-%m-%d')}.json"
 
 
 def load_vyznamenani(
@@ -114,7 +132,7 @@ def resolve_vyznamenani_page_links(
     """Přeloží (popisek, prosli|neprosli) na (popisek, href) jen když data existují."""
     out: list[tuple[str, str]] = []
     for label, page in links:
-        if page not in ("neprosli", "prosli"):
+        if page not in _JSON_BASENAME:
             continue
         kind: VyznamenaniKind = page  # type: ignore[assignment]
         if not load_vyznamenani(paths, datum_unl, kind):
@@ -232,6 +250,8 @@ def table_rows(
         stats = _row_vote_stats(row, votes_by_cislo or {})
         pro = int(row.get("pro") or stats["pro"] or 0)
         proti = int(row.get("proti") or 0)
+        if kind == "zvoleni" and proti:
+            stats = {**stats, "potreba": proti + 1}
         item: dict[str, Any] = {
             "jmeno": row.get("jmeno") or "",
             "pro": str(pro),
@@ -246,6 +266,13 @@ def table_rows(
             item["nehlasoval"] = str(stats["nehlasoval"])
             if kind == "neprosli":
                 item["chybelo"] = str(stats["chybelo"]) if stats["chybelo"] else "0"
+        varovani = row.get("varovani")
+        if isinstance(varovani, dict) and (varovani.get("shrnuti") or varovani.get("citace")):
+            item["varovani"] = {
+                k: str(v).strip()
+                for k, v in varovani.items()
+                if k in ("rečník", "shrnuti", "citace") and str(v).strip()
+            }
         rows.append(item)
     if kind == "neprosli":
         rows.sort(
@@ -255,7 +282,7 @@ def table_rows(
                 (r.get("jmeno") or "").casefold(),
             )
         )
-    elif kind == "prosli":
+    elif kind in ("prosli", "zvoleni"):
         rows.sort(
             key=lambda r: (
                 -int(r.get("pro") or 0),
@@ -271,6 +298,11 @@ _MAJORITY_EXPLAIN = (
     "nebo vůbec nehlasovali, laťku zvedají stejně jako volič proti."
 )
 
+_ZVOLENI_EXPLAIN = (
+    "Ke zvolení musel kandidát získat víc hlasů pro než proti "
+    "a splnit kvorum přítomných poslanců."
+)
+
 
 def page_explain(
     kind: VyznamenaniKind,
@@ -279,6 +311,8 @@ def page_explain(
 ) -> list[str]:
     if not votes_by_cislo:
         return []
+    if kind == "zvoleni":
+        return [_ZVOLENI_EXPLAIN]
     return [_MAJORITY_EXPLAIN]
 
 

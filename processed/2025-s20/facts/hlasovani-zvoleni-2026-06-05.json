@@ -1,0 +1,292 @@
+{
+  "datum": "05.06.2026",
+  "obdobi": 2025,
+  "schuze": 20,
+  "pocet": 6,
+  "radky": [
+    {
+      "jmeno": "Stanislav Berkovec",
+      "cislo_hlasovani": 350,
+      "pro": 92,
+      "proti": 77,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 69
+        },
+        {
+          "klub": "SPD",
+          "pro": 11
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 12
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "ODS",
+          "proti": 22
+        },
+        {
+          "klub": "STAN",
+          "proti": 20
+        },
+        {
+          "klub": "Piráti",
+          "proti": 14
+        },
+        {
+          "klub": "KDU-ČSL",
+          "proti": 13
+        },
+        {
+          "klub": "TOP 09",
+          "proti": 8
+        }
+      ],
+      "varovani": {
+        "rečník": "Zdeněk Hřib",
+        "shrnuti": "Jako pozorovatel referenda na Krymu po návratu tvrdil, že hlasování proběhlo svobodně, přestože EU a NATO oficiální pozici odmítal.",
+        "citace": "pan Berkovec po návratu z Krymu neváhal hlásat, že hlasování v referendu proběhlo svobodně navzdory tomu, že opak byl pravdou"
+      }
+    },
+    {
+      "jmeno": "Petr Brozda",
+      "cislo_hlasovani": 352,
+      "pro": 91,
+      "proti": 78,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 69
+        },
+        {
+          "klub": "SPD",
+          "pro": 11
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 11
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "ODS",
+          "proti": 22
+        },
+        {
+          "klub": "STAN",
+          "proti": 20
+        },
+        {
+          "klub": "Piráti",
+          "proti": 14
+        },
+        {
+          "klub": "KDU-ČSL",
+          "proti": 12
+        },
+        {
+          "klub": "TOP 09",
+          "proti": 9
+        },
+        {
+          "klub": "Motoristé",
+          "proti": 1
+        }
+      ],
+      "varovani": {
+        "shrnuti": "Ve stenoprotokolu se k jménu nevyslovila konkrétní námitka; opoziční kluby ale hlasovaly proti."
+      }
+    },
+    {
+      "jmeno": "Martin Chalupský",
+      "cislo_hlasovani": 356,
+      "pro": 132,
+      "proti": 37,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 69
+        },
+        {
+          "klub": "ODS",
+          "pro": 22
+        },
+        {
+          "klub": "STAN",
+          "pro": 17
+        },
+        {
+          "klub": "SPD",
+          "pro": 12
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 12
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "STAN",
+          "proti": 1
+        },
+        {
+          "klub": "Piráti",
+          "proti": 14
+        },
+        {
+          "klub": "KDU-ČSL",
+          "proti": 13
+        },
+        {
+          "klub": "TOP 09",
+          "proti": 9
+        }
+      ],
+      "varovani": {
+        "shrnuti": "Získal hlasy i z ODS a STAN; žádný řečník opozice k němu ve sněmovně výhrady neměl."
+      }
+    },
+    {
+      "jmeno": "Lucie Plíšková",
+      "cislo_hlasovani": 365,
+      "pro": 93,
+      "proti": 77,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 69
+        },
+        {
+          "klub": "SPD",
+          "pro": 12
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 12
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "ODS",
+          "proti": 22
+        },
+        {
+          "klub": "STAN",
+          "proti": 19
+        },
+        {
+          "klub": "Piráti",
+          "proti": 14
+        },
+        {
+          "klub": "KDU-ČSL",
+          "proti": 13
+        },
+        {
+          "klub": "TOP 09",
+          "proti": 9
+        }
+      ],
+      "varovani": {
+        "shrnuti": "Ve stenoprotokolu se k jménu nevyslovila konkrétní námitka; opoziční kluby ale hlasovaly proti."
+      }
+    },
+    {
+      "jmeno": "Jiří Šlégr",
+      "cislo_hlasovani": 366,
+      "pro": 91,
+      "proti": 76,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 68
+        },
+        {
+          "klub": "SPD",
+          "pro": 11
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 12
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "ODS",
+          "proti": 21
+        },
+        {
+          "klub": "STAN",
+          "proti": 20
+        },
+        {
+          "klub": "Piráti",
+          "proti": 14
+        },
+        {
+          "klub": "KDU-ČSL",
+          "proti": 13
+        },
+        {
+          "klub": "TOP 09",
+          "proti": 8
+        }
+      ],
+      "varovani": {
+        "rečník": "Jan Jakob",
+        "shrnuti": "Opozice ho spojuje s nezákonným odvoláním dozorčí komise, kvůli kterému ČT podle ní utrpěla škodu čtyři miliony korun.",
+        "citace": "Mezi radními, kteří pro nezákonné odvolání dozorčí komise hlasovali, jsou Pavel Matocha, Roman Bradáč, Jiří Šlégr a Lubomír Veselý."
+      }
+    },
+    {
+      "jmeno": "Luboš Xaver Veselý",
+      "cislo_hlasovani": 367,
+      "pro": 93,
+      "proti": 78,
+      "kluby_pro": [
+        {
+          "klub": "ANO",
+          "pro": 69
+        },
+        {
+          "klub": "SPD",
+          "pro": 12
+        },
+        {
+          "klub": "Motoristé",
+          "pro": 12
+        }
+      ],
+      "kluby_proti": [
+        {
+          "klub": "ODS",
+          "proti": 22
+        },
+        {
+          "klub": "STAN",
+          "proti": 20
+        },
+        {
+          "klub": "Piráti",
+          "proti": 14
+        },
+        {
+          "klub": "KDU-ČSL",
+          "proti": 13
+        },
+        {
+          "klub": "TOP 09",
+          "proti": 9
+        }
+      ],
+      "varovani": {
+        "rečník": "František Talíř",
+        "shrnuti": "Před volbou mu opozice předčítala soudem nařízené omluvy za výroky o novinářkách; Jan Jakob tvrdil, že v radě zastupuje obchodní zájmy internetové televize XTV.",
+        "citace": "na adresu Johany Hovorkové, je to zrůda, svině, hnát svinským krokem. Za to tedy se musel soudně omluvit"
+      }
+    }
+  ]
+}

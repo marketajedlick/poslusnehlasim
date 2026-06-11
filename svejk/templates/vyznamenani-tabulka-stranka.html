@@ -7,7 +7,7 @@
 <link rel="icon" type="image/svg+xml" href="{{ favicon_svg }}" />
 <link rel="icon" type="image/png" href="{{ favicon_png }}" sizes="32x32" />
 <link rel="apple-touch-icon" href="{{ apple_touch_icon }}" />
-<title>{{ page_title }} · vyznamenání {{ datum_label }} · Poslušně hlásím</title>
+<title>{{ page_title }} · {{ datum_label }} · Poslušně hlásím</title>
 <meta name="description" content="{{ page_description }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
@@ -128,6 +128,24 @@
           </td>
           {% endif %}
         </tr>
+          {% if kind == "zvoleni" and row.varovani %}
+          <tr class="vyznamenani-varovani-row">
+            <td colspan="8">
+              <div class="vyznamenani-varovani">
+                <span class="vyznamenani-varovani-label">Varování opozice</span>
+                {% if row.varovani.rečník %}
+                <span class="vyznamenani-varovani-rečník">{{ row.varovani.rečník }}</span>
+                {% endif %}
+                {% if row.varovani.shrnuti %}
+                <p class="vyznamenani-varovani-text">{{ row.varovani.shrnuti }}</p>
+                {% endif %}
+                {% if row.varovani.citace %}
+                <blockquote class="vyznamenani-varovani-citace">„{{ row.varovani.citace }}“</blockquote>
+                {% endif %}
+              </div>
+            </td>
+          </tr>
+          {% endif %}
         {% endfor %}
       </tbody>
     </table>

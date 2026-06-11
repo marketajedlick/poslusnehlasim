@@ -178,7 +178,7 @@ def render_den_html(
             continue
         link_pairs: list[tuple[str, str]] = []
         for phrase, page in item.mean_links:
-            if page not in ("neprosli", "prosli"):
+            if page not in ("neprosli", "prosli", "zvoleni"):
                 continue
             kind: VyznamenaniKind = page  # type: ignore[assignment]
             if not load_vyznamenani(paths, content.datum, kind):
@@ -193,6 +193,7 @@ def render_den_html(
             )
             link_pairs.append((phrase, href))
         if link_pairs:
+            item.lead = inject_mean_links(item.lead, link_pairs)
             item.mean = inject_mean_links(item.mean, link_pairs)
         if item.kuriozita_links:
             item.kuriozita_nav = resolve_vyznamenani_page_links(
@@ -475,8 +476,12 @@ def render_vyznamenani_table_html(
     datum_label = f"{d.day}. {d.month}. {d.year}"
     pocet = int(data.get("pocet") or len(data.get("radky") or []))
     meta = page_meta(kind, pocet=pocet, datum_label=datum_label)
-    sibling_kind: VyznamenaniKind = "prosli" if kind == "neprosli" else "neprosli"
-    sibling_data = load_vyznamenani(paths, datum_unl, sibling_kind)
+    sibling_kind: VyznamenaniKind | None = (
+        "prosli" if kind == "neprosli" else "neprosli" if kind == "prosli" else None
+    )
+    sibling_data = (
+        load_vyznamenani(paths, datum_unl, sibling_kind) if sibling_kind else None
+    )
     if link_mode == "pages":
         edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path)
         canonical_url = (

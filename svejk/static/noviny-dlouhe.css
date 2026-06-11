@@ -603,6 +603,7 @@ body.vyznamenani-page{
 }
 .vyznamenani-page--neprosli .vyznamenani-title{ color:var(--terra); }
 .vyznamenani-page--prosli .vyznamenani-title{ color:var(--blue); }
+.vyznamenani-page--zvoleni .vyznamenani-title{ color:var(--blue); }
 .vyznamenani-gloss{
   margin:0 0 16px;
   font-size:15px; line-height:1.5; color:var(--ink-soft);
@@ -773,6 +774,43 @@ body.vyznamenani-page{
   font-size:13px; line-height:1.5; color:var(--ink-soft);
   padding-top:4px;
 }
+.vyznamenani-varovani-row td{
+  padding:0 12px 14px;
+  border-bottom:1px solid rgba(33,28,20,.1);
+  background:rgba(207,90,49,.03);
+}
+.vyznamenani-varovani-row:hover td{ background:rgba(207,90,49,.03); }
+.vyznamenani-varovani{
+  margin:0;
+  padding:10px 12px 12px;
+  border-left:3px solid var(--terra);
+  font-size:14px; line-height:1.45;
+}
+.vyznamenani-varovani-label{
+  display:block;
+  font-family:'Oswald',sans-serif;
+  font-size:10px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--terra);
+  margin-bottom:4px;
+}
+.vyznamenani-varovani-rečník{
+  display:block;
+  font-size:12px;
+  color:var(--ink-soft);
+  margin-bottom:6px;
+}
+.vyznamenani-varovani-text{
+  margin:0 0 6px;
+  color:var(--ink);
+}
+.vyznamenani-varovani-citace{
+  margin:0;
+  font-size:13px;
+  font-style:italic;
+  color:var(--ink-soft);
+}
 @media (max-width:760px){
   .vyznamenani-wrap{ padding:28px 16px 36px; }
   .vyznamenani-table{ min-width:0; }
@@ -819,6 +857,28 @@ body.vyznamenani-page{
   .vyznamenani-table tbody th::before{ display:none; }
   .vyznamenani-skore{ justify-content:flex-end; }
   .vyznamenani-chips{ justify-content:flex-end; max-width:56%; }
+  .vyznamenani-page--zvoleni .vyznamenani-table tbody tr:not(.vyznamenani-varovani-row){
+    margin-bottom:0;
+    padding-bottom:0;
+    border-bottom:none;
+    border-radius:4px 4px 0 0;
+  }
+  .vyznamenani-varovani-row{
+    display:block;
+    margin:0 0 14px;
+    padding:0 14px 12px;
+    border:1px solid rgba(33,28,20,.12);
+    border-top:none;
+    border-radius:0 0 4px 4px;
+    background:var(--paper);
+  }
+  .vyznamenani-varovani-row td{
+    display:block;
+    padding:0;
+    border:none;
+  }
+  .vyznamenani-varovani-row td::before{ display:none; }
+  .vyznamenani-varovani{ padding:8px 0 0; }
 }
 a.mean-link{
   color:inherit;

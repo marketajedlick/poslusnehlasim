@@ -141,7 +141,7 @@ def run_export_pages(
         written.append(str(dest.relative_to(out)))
 
         paths = SchuzePaths.create(edition.obdobi, edition.schuze)
-        for kind in ("neprosli", "prosli"):
+        for kind in ("neprosli", "prosli", "zvoleni"):
             if not load_vyznamenani(paths, edition.datum_unl, kind):
                 continue
             table_html = render_vyznamenani_table_html(
