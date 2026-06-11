@@ -809,10 +809,18 @@ body.vyznamenani-page{
   color:var(--ink);
 }
 .vyznamenani-varovani-citace{
-  margin:0;
+  margin:6px 0 0;
   font-size:13px;
   font-style:italic;
   color:var(--ink-soft);
+}
+.vyznamenani-varovani-citace:first-of-type{ margin-top:0; }
+.vyznamenani-varovani-cite-author{
+  display:block;
+  font-style:normal;
+  font-size:12px;
+  color:var(--ink-soft);
+  margin-bottom:3px;
 }
 @media (max-width:760px){
   .vyznamenani-wrap{ padding:28px 16px 36px; }

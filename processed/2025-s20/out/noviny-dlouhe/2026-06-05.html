@@ -753,6 +753,9 @@ body.vyznamenani-page{
 .vyznamenani-vote--proti{ color:var(--terra); font-weight:600; }
 .vyznamenani-vote-sep{ color:var(--ink-soft); margin:0 1px; }
 .vyznamenani-num{
+  font-family:'Oswald',sans-serif;
+  font-size:14px;
+  letter-spacing:.03em;
   font-variant-numeric:tabular-nums;
   white-space:nowrap;
   text-align:center;
@@ -833,10 +836,18 @@ body.vyznamenani-page{
   color:var(--ink);
 }
 .vyznamenani-varovani-citace{
-  margin:0;
+  margin:6px 0 0;
   font-size:13px;
   font-style:italic;
   color:var(--ink-soft);
+}
+.vyznamenani-varovani-citace:first-of-type{ margin-top:0; }
+.vyznamenani-varovani-cite-author{
+  display:block;
+  font-style:normal;
+  font-size:12px;
+  color:var(--ink-soft);
+  margin-bottom:3px;
 }
 @media (max-width:760px){
   .vyznamenani-wrap{ padding:28px 16px 36px; }
@@ -1400,7 +1411,7 @@ body.archiv-page{
         <div class="verdict">
           <span class="qm">„</span>
           <p class="q">
-            <span class="key">Poslušně hlásím,</span> že Sněmovna v pátek obsadila Radu ČT i místopředsednické křeslo, návrh o postřicích vrátila do druhého kola a zbytek programu prostě vyřadila; ve 13:37 bylo po celé schůzi.
+            <span class="key">Poslušně hlásím,</span> že Sněmovna v pátek obsadila Radu ČT i místopředsednické křeslo, návrh o postřicích vrátila do druhého kola a zbytek programu prostě vyřadila.
           </p>
           <div class="sign">- Váš dobrý voják Švejk -</div>
         </div>

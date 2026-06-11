@@ -216,6 +216,30 @@ def _load_votes_by_cislo(paths: SchuzePaths, datum_unl: str) -> dict[int, dict[s
     return out
 
 
+def _normalize_varovani_citace(raw: Any) -> list[dict[str, str]]:
+    if not raw:
+        return []
+    items = [raw] if isinstance(raw, str) else list(raw) if isinstance(raw, list) else []
+    out: list[dict[str, str]] = []
+    for item in items:
+        if isinstance(item, str):
+            text = item.strip()
+            if text:
+                out.append({"text": text})
+            continue
+        if not isinstance(item, dict):
+            continue
+        text = str(item.get("text") or "").strip()
+        if not text:
+            continue
+        entry: dict[str, str] = {"text": text}
+        recnik = str(item.get("rečník") or "").strip()
+        if recnik:
+            entry["rečník"] = recnik
+        out.append(entry)
+    return out
+
+
 def _potreba_pro(pritomno: int) -> int:
     """Většina přítomných: pro musí být víc než polovina."""
     return pritomno // 2 + 1
@@ -267,12 +291,19 @@ def table_rows(
             if kind == "neprosli":
                 item["chybelo"] = str(stats["chybelo"]) if stats["chybelo"] else "0"
         varovani = row.get("varovani")
-        if isinstance(varovani, dict) and (varovani.get("shrnuti") or varovani.get("citace")):
-            item["varovani"] = {
-                k: str(v).strip()
-                for k, v in varovani.items()
-                if k in ("rečník", "shrnuti", "citace") and str(v).strip()
-            }
+        if isinstance(varovani, dict) and (
+            varovani.get("shrnuti") or varovani.get("citace")
+        ):
+            citace_list = _normalize_varovani_citace(varovani.get("citace"))
+            entry: dict[str, Any] = {}
+            if str(varovani.get("rečník") or "").strip():
+                entry["rečník"] = str(varovani["rečník"]).strip()
+            if str(varovani.get("shrnuti") or "").strip():
+                entry["shrnuti"] = str(varovani["shrnuti"]).strip()
+            if citace_list:
+                entry["citace_list"] = citace_list
+            if entry:
+                item["varovani"] = entry
         rows.append(item)
     if kind == "neprosli":
         rows.sort(

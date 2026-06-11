@@ -139,9 +139,14 @@
                 {% if row.varovani.shrnuti %}
                 <p class="vyznamenani-varovani-text">{{ row.varovani.shrnuti }}</p>
                 {% endif %}
-                {% if row.varovani.citace %}
-                <blockquote class="vyznamenani-varovani-citace">„{{ row.varovani.citace }}“</blockquote>
-                {% endif %}
+                {% for cite in row.varovani.citace_list or [] %}
+                <blockquote class="vyznamenani-varovani-citace">
+                  {% if cite.rečník and (not row.varovani.rečník or (row.varovani.citace_list|length > 1)) %}
+                  <span class="vyznamenani-varovani-cite-author">{{ cite.rečník }}</span>
+                  {% endif %}
+                  „{{ cite.text }}“
+                </blockquote>
+                {% endfor %}
               </div>
             </td>
           </tr>
