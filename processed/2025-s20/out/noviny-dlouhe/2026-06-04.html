@@ -629,6 +629,19 @@ body.vyznamenani-page{
   padding-bottom:1px;
 }
 .vyznamenani-back:hover{ border-bottom-color:var(--terra); }
+.vyznamenani-explain{
+  margin:0 0 24px;
+  padding:16px 18px;
+  background:rgba(207,90,49,.06);
+  border-left:3px solid rgba(207,90,49,.45);
+}
+.vyznamenani-explain p{
+  margin:0 0 10px;
+  font-size:14px;
+  line-height:1.5;
+  color:var(--ink);
+}
+.vyznamenani-explain p:last-child{ margin-bottom:0; }
 .vyznamenani-table-wrap{
   overflow-x:auto;
   margin-bottom:20px;
@@ -657,9 +670,14 @@ body.vyznamenani-page{
   color:var(--ink);
   white-space:nowrap;
 }
-.vyznamenani-skore{
+.vyznamenani-skore,
+.vyznamenani-num{
   font-variant-numeric:tabular-nums;
   white-space:nowrap;
+}
+.vyznamenani-chybelo{
+  font-weight:600;
+  color:var(--terra);
 }
 .vyznamenani-note{
   margin:0;

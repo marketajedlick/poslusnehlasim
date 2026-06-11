@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 from pathlib import Path
 from typing import Any, Literal
@@ -31,8 +32,7 @@ _PAGE_META: dict[VyznamenaniKind, dict[str, str]] = {
             "U každého jména souhrn hlasů po poslaneckých klubech."
         ),
         "note": (
-            "Potřebná je většina přítomných poslanců. U některých jmen proto padli i ti, "
-            "kdo měli víc hlasů pro než proti."
+            "Sloupec Chybělo ukazuje, kolik hlasů pro ještě nestačilo na většinu přítomných."
         ),
     },
     "prosli": {
@@ -154,18 +154,136 @@ def _kluby_pro_label(kluby: list[dict[str, Any]]) -> str:
     return ", ".join(parts) if parts else "—"
 
 
-def table_rows(data: dict[str, Any]) -> list[dict[str, str]]:
+def _load_votes_by_cislo(paths: SchuzePaths, datum_unl: str) -> dict[int, dict[str, int]]:
+    fp = paths.raw / "votes.jsonl"
+    if not fp.is_file():
+        return {}
+    out: dict[int, dict[str, int]] = {}
+    for line in fp.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        v = json.loads(line)
+        if v.get("datum") != datum_unl:
+            continue
+        out[int(v["cislo"])] = {
+            "pro": int(v.get("pro") or 0),
+            "proti": int(v.get("proti") or 0),
+            "zdrzel": int(v.get("zdrzel") or 0),
+            "nehlasoval": int(v.get("nehlasoval") or 0),
+            "pritomno": int(v.get("pritomno") or 0),
+        }
+    return out
+
+
+def _potreba_pro(pritomno: int) -> int:
+    """Většina přítomných: pro musí být víc než polovina."""
+    return pritomno // 2 + 1
+
+
+def _row_vote_stats(
+    row: dict[str, Any], votes_by_cislo: dict[int, dict[str, int]]
+) -> dict[str, int]:
+    cislo = int(row.get("cislo_hlasovani") or 0)
+    v = votes_by_cislo.get(cislo, {})
+    pro = int(row.get("pro") or v.get("pro") or 0)
+    pritomno = int(v.get("pritomno") or 0)
+    potreba = _potreba_pro(pritomno) if pritomno else 0
+    return {
+        "pro": pro,
+        "pritomno": pritomno,
+        "potreba": potreba,
+        "chybelo": max(0, potreba - pro) if potreba else 0,
+        "zdrzel": int(v.get("zdrzel") or 0),
+        "nehlasoval": int(v.get("nehlasoval") or 0),
+    }
+
+
+def table_rows(
+    data: dict[str, Any],
+    *,
+    kind: VyznamenaniKind,
+    votes_by_cislo: dict[int, dict[str, int]] | None = None,
+) -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
     for row in data.get("radky") or []:
-        rows.append(
-            {
-                "jmeno": row.get("jmeno") or "",
-                "skore": f"{row.get('pro', 0)}:{row.get('proti', 0)}",
-                "kluby_pro": _kluby_pro_label(row.get("kluby_pro") or []),
-                "kluby_proti": _kluby_proti_label(row.get("kluby_proti") or []),
-            }
-        )
+        stats = _row_vote_stats(row, votes_by_cislo or {})
+        item = {
+            "jmeno": row.get("jmeno") or "",
+            "skore": f"{row.get('pro', 0)}:{row.get('proti', 0)}",
+            "kluby_pro": _kluby_pro_label(row.get("kluby_pro") or []),
+            "kluby_proti": _kluby_proti_label(row.get("kluby_proti") or []),
+        }
+        if stats["pritomno"]:
+            item["pritomno"] = str(stats["pritomno"])
+            item["potreba"] = str(stats["potreba"])
+            item["zdrzel"] = str(stats["zdrzel"])
+            item["nehlasoval"] = str(stats["nehlasoval"])
+            if kind == "neprosli":
+                item["chybelo"] = str(stats["chybelo"]) if stats["chybelo"] else "0"
+        rows.append(item)
     return rows
+
+
+def page_explain(
+    kind: VyznamenaniKind,
+    data: dict[str, Any],
+    votes_by_cislo: dict[int, dict[str, int]],
+) -> list[str]:
+    stats_list = [_row_vote_stats(r, votes_by_cislo) for r in data.get("radky") or []]
+    pritomnosti = [s["pritomno"] for s in stats_list if s["pritomno"]]
+    potreby = [s["potreba"] for s in stats_list if s["potreba"]]
+    if not pritomnosti or not potreby:
+        return []
+
+    min_p, max_p = min(pritomnosti), max(pritomnosti)
+    min_need, max_need = min(potreby), max(potreby)
+
+    if kind == "neprosli":
+        paras = [
+            (
+                "Nestáčí mít víc hlasů pro než proti. Návrh projde jen tehdy, když je pro "
+                "víc než polovina poslanců přítomných ve sněmovně — ti, kdo se zdrželi "
+                "nebo vůbec nehlasovali, laťku zvedají stejně jako volič proti."
+            ),
+            (
+                f"Čtvrtého června bylo v sále {min_p} až {max_p} poslanců, takže ke schválení "
+                f"většinou stačilo {min_need} až {max_need} hlasů pro."
+            ),
+        ]
+        examples: list[str] = []
+        for row in data.get("radky") or []:
+            s = _row_vote_stats(row, votes_by_cislo)
+            if not s["chybelo"]:
+                continue
+            jmeno = row.get("jmeno") or ""
+            if jmeno == "Luboš Dobrovský":
+                examples.append(
+                    f"Luboš Dobrovský dostal {s['pro']} proti {row.get('proti', 0)}, "
+                    f"přítomných bylo {s['pritomno']}, stačilo {s['potreba']} — "
+                    f"chyběly {s['chybelo']} hlasy. Zbytek se zdržel ({s['zdrzel']}) "
+                    f"nebo nehlasoval ({s['nehlasoval']})."
+                )
+            elif jmeno == "Václav Moravec":
+                examples.append(
+                    f"Václav Moravec měl {s['pro']}:{row.get('proti', 0)}, ale při "
+                    f"{s['pritomno']} přítomných potřeboval {s['potreba']} hlasů pro — "
+                    f"hlavně kvůli masivnímu záporu v ANO."
+                )
+            if len(examples) >= 2:
+                break
+        paras.extend(examples)
+        return paras
+
+    return [
+        (
+            "Ke schválení nestačilo mít víc hlasů pro než proti. Potřebná byla většina "
+            "přítomných poslanců — typicky víc než polovina těch, kdo byli ve sále."
+        ),
+        (
+            f"Čtvrtého června bylo přítomno {min_p} až {max_p} poslanců, takže většinou "
+            f"stačilo {min_need} až {max_need} hlasů pro."
+        ),
+    ]
 
 
 def page_meta(kind: VyznamenaniKind, *, pocet: int, datum_label: str) -> dict[str, str]:

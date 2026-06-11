@@ -26,9 +26,11 @@ from svejk.build.vyznamenani_neprosli import (
     VyznamenaniKind,
     inject_mean_links,
     load_vyznamenani,
+    page_explain,
     page_meta,
     table_rows,
     vyznamenani_href,
+    _load_votes_by_cislo,
 )
 from svejk.newsletter.config import NewsletterConfig
 from svejk.paths import SchuzePaths
@@ -491,9 +493,14 @@ def render_vyznamenani_table_html(
         else "Kdo neprošel"
     )
     page_description = meta["gloss"]
+    votes_by_cislo = _load_votes_by_cislo(paths, datum_unl)
+    explain = page_explain(kind, data, votes_by_cislo)
     tpl = _jinja_env().get_template("vyznamenani-tabulka-stranka.html")
     return tpl.render(
-        rows=table_rows(data),
+        rows=table_rows(data, kind=kind, votes_by_cislo=votes_by_cislo),
+        kind=kind,
+        show_vote_threshold=bool(votes_by_cislo),
+        page_explain=explain,
         datum_label=datum_label,
         edition_href=edition_href,
         sibling_href=sibling_href if sibling_data else "",

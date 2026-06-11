@@ -29,14 +29,31 @@
     {% endif %}
   </header>
 
+  {% if page_explain %}
+  <div class="vyznamenani-explain">
+    {% for para in page_explain %}
+    <p>{{ para }}</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+
   <div class="vyznamenani-table-wrap">
     <table class="vyznamenani-table">
       <thead>
         <tr>
           <th scope="col">Jméno</th>
           <th scope="col">Hlasování</th>
-          <th scope="col">Pro</th>
-          <th scope="col">Proti</th>
+          {% if show_vote_threshold %}
+          <th scope="col">Přítomno</th>
+          <th scope="col">Stačilo pro</th>
+          {% if kind == "neprosli" %}
+          <th scope="col">Chybělo</th>
+          {% endif %}
+          <th scope="col">Zdržel se</th>
+          <th scope="col">Nehlasoval</th>
+          {% endif %}
+          <th scope="col">Kluby pro</th>
+          <th scope="col">Kluby proti</th>
         </tr>
       </thead>
       <tbody>
@@ -44,6 +61,15 @@
         <tr>
           <th scope="row">{{ row.jmeno }}</th>
           <td class="vyznamenani-skore">{{ row.skore }}</td>
+          {% if show_vote_threshold %}
+          <td class="vyznamenani-num">{{ row.pritomno or "—" }}</td>
+          <td class="vyznamenani-num">{{ row.potreba or "—" }}</td>
+          {% if kind == "neprosli" %}
+          <td class="vyznamenani-num vyznamenani-chybelo">{{ row.chybelo or "—" }}</td>
+          {% endif %}
+          <td class="vyznamenani-num">{{ row.zdrzel or "—" }}</td>
+          <td class="vyznamenani-num">{{ row.nehlasoval or "—" }}</td>
+          {% endif %}
           <td>{{ row.kluby_pro }}</td>
           <td>{{ row.kluby_proti }}</td>
         </tr>
