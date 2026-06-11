@@ -222,7 +222,29 @@ def table_rows(
             if kind == "neprosli":
                 item["chybelo"] = str(stats["chybelo"]) if stats["chybelo"] else "0"
         rows.append(item)
+    if kind == "neprosli":
+        rows.sort(
+            key=lambda r: (
+                int(r.get("chybelo") or 999),
+                -int(r.get("pro") or 0),
+                (r.get("jmeno") or "").casefold(),
+            )
+        )
+    elif kind == "prosli":
+        rows.sort(
+            key=lambda r: (
+                -int(r.get("pro") or 0),
+                (r.get("jmeno") or "").casefold(),
+            )
+        )
     return rows
+
+
+_MAJORITY_EXPLAIN = (
+    "Nestáčí mít víc hlasů pro než proti. Návrh projde jen tehdy, když je pro "
+    "víc než polovina poslanců přítomných ve sněmovně ti, kdo se zdrželi "
+    "nebo vůbec nehlasovali, laťku zvedají stejně jako volič proti."
+)
 
 
 def page_explain(
@@ -230,61 +252,9 @@ def page_explain(
     data: dict[str, Any],
     votes_by_cislo: dict[int, dict[str, int]],
 ) -> list[str]:
-    stats_list = [_row_vote_stats(r, votes_by_cislo) for r in data.get("radky") or []]
-    pritomnosti = [s["pritomno"] for s in stats_list if s["pritomno"]]
-    potreby = [s["potreba"] for s in stats_list if s["potreba"]]
-    if not pritomnosti or not potreby:
+    if not votes_by_cislo:
         return []
-
-    min_p, max_p = min(pritomnosti), max(pritomnosti)
-    min_need, max_need = min(potreby), max(potreby)
-
-    if kind == "neprosli":
-        paras = [
-            (
-                "Nestáčí mít víc hlasů pro než proti. Návrh projde jen tehdy, když je pro "
-                "víc než polovina poslanců přítomných ve sněmovně — ti, kdo se zdrželi "
-                "nebo vůbec nehlasovali, laťku zvedají stejně jako volič proti."
-            ),
-            (
-                f"Čtvrtého června bylo v sále {min_p} až {max_p} poslanců, takže ke schválení "
-                f"většinou stačilo {min_need} až {max_need} hlasů pro."
-            ),
-        ]
-        examples: list[str] = []
-        for row in data.get("radky") or []:
-            s = _row_vote_stats(row, votes_by_cislo)
-            if not s["chybelo"]:
-                continue
-            jmeno = row.get("jmeno") or ""
-            if jmeno == "Luboš Dobrovský":
-                examples.append(
-                    f"Luboš Dobrovský dostal {s['pro']} proti {row.get('proti', 0)}, "
-                    f"přítomných bylo {s['pritomno']}, stačilo {s['potreba']} — "
-                    f"chyběly {s['chybelo']} hlasy. Zbytek se zdržel ({s['zdrzel']}) "
-                    f"nebo nehlasoval ({s['nehlasoval']})."
-                )
-            elif jmeno == "Václav Moravec":
-                examples.append(
-                    f"Václav Moravec měl {s['pro']}:{row.get('proti', 0)}, ale při "
-                    f"{s['pritomno']} přítomných potřeboval {s['potreba']} hlasů pro — "
-                    f"hlavně kvůli masivnímu záporu v ANO."
-                )
-            if len(examples) >= 2:
-                break
-        paras.extend(examples)
-        return paras
-
-    return [
-        (
-            "Ke schválení nestačilo mít víc hlasů pro než proti. Potřebná byla většina "
-            "přítomných poslanců — typicky víc než polovina těch, kdo byli ve sále."
-        ),
-        (
-            f"Čtvrtého června bylo přítomno {min_p} až {max_p} poslanců, takže většinou "
-            f"stačilo {min_need} až {max_need} hlasů pro."
-        ),
-    ]
+    return [_MAJORITY_EXPLAIN]
 
 
 def page_meta(kind: VyznamenaniKind, *, pocet: int, datum_label: str) -> dict[str, str]:
