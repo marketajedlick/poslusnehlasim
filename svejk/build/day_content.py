@@ -19,7 +19,7 @@ from svejk.cislo_slovy import (
     po_hlasovanich_cap,
 )
 from svejk.poslanec_strany import dopln_strany_poslancu
-from svejk.text_norm import bez_dlouhych_pomlc
+from svejk.text_norm import bez_dlouhych_pomlc, lcfirst_preserve_proper
 from svejk.build.witty import (
     glosa_generic,
     lead_svejkovsky,
@@ -265,7 +265,7 @@ def zaver_z_obsahu(content: DenContent, day: dict[str, Any]) -> str:
     if override:
         if override.lower().startswith("poslušně"):
             return override
-        return f"Poslušně hlásím, {override[0].lower()}{override[1:]}"
+        return f"Poslušně hlásím, {lcfirst_preserve_proper(override)}"
 
     items = content.items
     meta: dict[int, dict[str, Any]] = day.get("items_meta") or {}
@@ -509,7 +509,7 @@ def build_den_content(
         zaver = (
             override
             if override.lower().startswith("poslušně")
-            else f"Poslušně hlásím, {override[0].lower()}{override[1:]}"
+            else f"Poslušně hlásím, {lcfirst_preserve_proper(override)}"
         )
     else:
         zaver = zaver_glosa_dne(

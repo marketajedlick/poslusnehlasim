@@ -14,7 +14,7 @@ from svejk.build.day_content import (
     vysledek_radky,
 )
 from svejk.cislo_slovy import nahrad_cisla_v_textu
-from svejk.text_norm import bez_dlouhych_pomlc
+from svejk.text_norm import bez_dlouhych_pomlc, lcfirst_preserve_proper
 from svejk.build.html import render_den_html
 from svejk.build.io import read_json
 from svejk.noviny import HLAVICKA_LISTU, _datum_cesky, _new_state
@@ -63,7 +63,7 @@ def render_den_markdown(
         lead = intro
         if prvni:
             if not re.match(r"^poslušně\s+hlásím", intro, re.I):
-                lead = f"Poslušně hlásím, že {intro[0].lower()}{intro[1:]}"
+                lead = f"Poslušně hlásím, že {lcfirst_preserve_proper(intro)}"
             state["poslusne_count"] = 1
             prvni = False
 

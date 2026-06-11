@@ -14,47 +14,31 @@ EDITORIAL_KEYS = frozenset(
     {"lead", "pointa", "mean", "zaver", "dnesni_ucet", "nadpis", "predmet_lidsky"}
 )
 
-SNEMOVNA_VERBS = (
-    "schválila",
-    "schválili",
-    "zamítla",
-    "zamítli",
-    "zvolila",
-    "zvolili",
-    "vyslovila",
-    "debato",
-    "obsadila",
-    "odmítla",
-    "potvrdila",
-    "začala",
-    "nerozhodla",
-    "odvolala",
-    "těsně",
-    "nevydala",
-    "rozdávala",
-    "projedná",
-    "odsoudila",
-    "protlačila",
-    "nenatáhla",
-    "ne",
+SNEMOVNA_LOWERCASE = re.compile(
+    r"\b("
+    r"do sněmovny|ve sněmovně|o sněmovně|"
+    r"souhlasu sněmovny|bez souhlasu sněmovny|"
+    r"místopředsedkyní sněmovny|orgán[^.]{0,40}sněmovny|"
+    r"postoji sněmovny|předseda sněmovny|"
+    r"složení orgánů sněmovny|nové sněmovny|malá sněmovna"
+    r")\b",
+    re.I,
 )
 
 
 def _capitalize_snemovna(text: str) -> str:
-    def repl(m: re.Match[str]) -> str:
-        prefix = m.group(1)
-        rest = text[m.end() : m.end() + 40]
-        if any(rest.lstrip().startswith(v) for v in SNEMOVNA_VERBS):
-            return f"{prefix}Sněmovna"
-        return m.group(0)
+    protected: dict[str, str] = {}
 
-    out = re.sub(r"(^|že\s+|,\s+|\. )sněmovna\b", repl, text)
-    out = re.sub(
-        r"(Večer|Odpoledne|Dopoledne|Ráno|Celý den|Středa odpoledne|V pátek ráno|Po [^,]+,\s*|Hned po prvním zákonu )sněmovna\b",
-        lambda m: f"{m.group(1)} Sněmovna",
-        out,
-    )
-    return out
+    def protect(m: re.Match[str]) -> str:
+        key = f"__SN_{len(protected)}__"
+        protected[key] = m.group(0)
+        return key
+
+    tmp = SNEMOVNA_LOWERCASE.sub(protect, text)
+    tmp = re.sub(r"\bsněmovna\b", "Sněmovna", tmp)
+    for key, value in protected.items():
+        tmp = tmp.replace(key, value)
+    return tmp
 
 
 def _unify_terminology(text: str) -> str:
