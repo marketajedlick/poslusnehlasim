@@ -71,6 +71,9 @@
   {% if item.mean %}
   <p class="mean" style="margin-top:10px;font-size:15px;line-height:1.45;color:#211c14;font-weight:bold;"><b style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;letter-spacing:0.06em;text-transform:uppercase;font-size:11px;color:#cf5a31;">Co to znamená pro vás: </b>{{ item.mean }}</p>
   {% endif %}
+  {% if item.kuriozita %}
+  <p class="kuriozita" style="margin-top:8px;font-size:15px;line-height:1.45;color:#5a5348;font-style:italic;">{{ item.kuriozita }}</p>
+  {% endif %}
 </div>
 {% endfor %}
 

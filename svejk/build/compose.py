@@ -82,9 +82,11 @@ def render_den_markdown(
                 "### Co to znamená pro vás?",
                 "",
                 co_znamena,
-                "",
             ]
         )
+        if item.kuriozita:
+            lines.extend(["", f"*{item.kuriozita}*"])
+        lines.append("")
 
     lines.append("## Výsledek dne")
     lines.append("")

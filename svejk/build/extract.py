@@ -201,7 +201,7 @@ def _validate_fact_votes(fact: dict[str, Any], votes_by_cislo: dict[int, dict], 
     return warnings
 
 
-_MANUAL_TOPIC_KEYS = ("lead", "pointa", "mean", "nadpis", "publikovat", "koho", "fakty")
+_MANUAL_TOPIC_KEYS = ("lead", "pointa", "mean", "kuriozita", "nadpis", "publikovat", "koho", "fakty")
 _MANUAL_DAY_KEYS = ("dnesni_ucet", "zaver", "vysledek", "topic_slugs")
 
 

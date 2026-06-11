@@ -224,6 +224,11 @@ body.is-turning{ pointer-events:none; }
   letter-spacing:.06em; text-transform:uppercase; font-size:11px; color:var(--terra);
 }
 .item.i2 .mean b{ color:var(--blue); }
+.kuriozita{
+  margin-top:8px; font-size:14px; line-height:1.45;
+  font-family:'Old Standard TT',serif; font-style:italic;
+  color:var(--ink-soft); overflow-wrap:anywhere;
+}
 
 /* ---------- Švejkův slovníček ---------- */
 .slovnicek{
@@ -822,6 +827,7 @@ body.archiv-page{
   .p{ font-size:17px; line-height:1.42; max-width:46ch; margin:20px 0 0; }
   .mean{ margin-top:14px; font-size:16px; line-height:1.44; max-width:46ch; }
   .mean b{ letter-spacing:.08em; font-size:12.5px; }
+  .kuriozita{ margin-top:10px; font-size:16px; line-height:1.44; max-width:46ch; }
   .stamp{
     margin-top:16px; font-size:19px; padding:6px 14px 5px;
     transform:rotate(-8deg); border-width:3px;

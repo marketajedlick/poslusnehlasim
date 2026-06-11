@@ -156,6 +156,39 @@ def _pointa_z_vysvetleni(vysv: str, glosa: str) -> str:
     return ""
 
 
+def rozdel_kuriozitu(text: str) -> tuple[str, str]:
+    """Vrátí (kuriozita, zbytek) když text obsahuje „Kuriozita dne:“."""
+    text = text.strip()
+    if not text:
+        return "", ""
+    m = re.search(r"Kuriozita dne:\s*", text, re.I)
+    if not m:
+        return "", text
+    start = m.start()
+    tail = text[m.end() :]
+    dot = re.search(r"\.\s+", tail)
+    if dot:
+        kuriozita = text[start : m.end() + dot.start() + 1].strip()
+        pred = text[:start].strip().rstrip(".")
+        po = tail[dot.end() :].strip()
+        zbytek = " ".join(chunk for chunk in (pred, po) if chunk).strip()
+        return kuriozita, zbytek
+    kuriozita = text[start:].strip()
+    zbytek = text[:start].strip().rstrip(".")
+    return kuriozita, zbytek
+
+
+def kuriozita_z_fact(fact: dict[str, Any]) -> str:
+    explicit = (fact.get("kuriozita") or "").strip()
+    if explicit:
+        return explicit
+    for key in ("pointa", "lead"):
+        kuriozita, _ = rozdel_kuriozitu((fact.get(key) or "").strip())
+        if kuriozita:
+            return kuriozita
+    return ""
+
+
 def _pointa_pod_nadpis(
     fact: dict[str, Any],
     topic: dict[str, Any] | None,
@@ -163,8 +196,10 @@ def _pointa_pod_nadpis(
     *,
     state: dict,
 ) -> str:
-    if (fact.get("pointa") or "").strip():
-        return fact["pointa"].strip()
+    pointa = (fact.get("pointa") or "").strip()
+    if pointa:
+        _, clean = rozdel_kuriozitu(pointa)
+        return clean
 
     vysv = (topic or {}).get("tema_vysvetleni") or ""
     p = _pointa_z_vysvetleni(vysv, glosa)
@@ -256,7 +291,7 @@ def mean_vysvetleni(
 ) -> str:
     """Co to znamená pro vás: jen věcné vysvětlení, bez švejkovské pointy."""
     if (fact.get("mean") or "").strip():
-        return _zkrat(fact["mean"].strip())
+        return fact["mean"].strip()
 
     vysv = (topic or {}).get("tema_vysvetleni") or ""
     factual = _faktualni_z_vysvetleni(vysv, svejk_lead)

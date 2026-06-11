@@ -251,6 +251,61 @@ body.is-turning{ pointer-events:none; }
   letter-spacing:.06em; text-transform:uppercase; font-size:11px; color:var(--terra);
 }
 .item.i2 .mean b{ color:var(--blue); }
+.kuriozita{
+  margin-top:8px; font-size:14px; line-height:1.45;
+  font-family:'Old Standard TT',serif; font-style:italic;
+  color:var(--ink-soft); overflow-wrap:anywhere;
+}
+
+/* ---------- Švejkův slovníček ---------- */
+.slovnicek{
+  position:fixed;
+  z-index:30;
+  right:max(8px, env(safe-area-inset-right, 0px));
+  bottom:max(12px, env(safe-area-inset-bottom, 0px));
+  width:min(18rem, calc(100vw - 16px));
+  font-family:'Old Standard TT',serif;
+}
+.slovnicek-toggle{
+  display:flex; align-items:center; justify-content:center;
+  width:100%;
+  font-family:'Oswald',sans-serif; font-weight:600; text-transform:uppercase;
+  letter-spacing:.1em; font-size:11px;
+  padding:10px 12px;
+  border:2px solid rgba(33,28,20,.28);
+  border-radius:3px;
+  background:var(--paper);
+  color:var(--ink);
+  cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,.12);
+}
+.slovnicek-toggle:hover{ border-color:var(--terra); color:var(--terra); }
+.slovnicek-body{
+  margin-top:8px;
+  max-height:min(52vh, 24rem);
+  overflow:auto;
+  padding:12px 14px 14px;
+  background:var(--paper);
+  border:2px solid rgba(33,28,20,.22);
+  border-radius:3px;
+  box-shadow:0 8px 22px var(--shadow);
+}
+.slovnicek-lead{
+  margin:0 0 12px;
+  font-size:13px; line-height:1.4; color:var(--ink-soft);
+}
+.slovnicek-list{ margin:0; }
+.slovnicek-entry{ margin:0 0 12px; }
+.slovnicek-entry:last-child{ margin-bottom:0; }
+.slovnicek-entry dt{
+  margin:0 0 4px;
+  font-family:'Oswald',sans-serif; font-weight:600;
+  font-size:12px; letter-spacing:.04em; color:var(--terra);
+}
+.slovnicek-entry dd{
+  margin:0;
+  font-size:13px; line-height:1.4; color:var(--ink);
+}
 
 .term-tip{
   position:relative;
@@ -458,8 +513,15 @@ body.is-turning{ pointer-events:none; }
   font-size:7px; line-height:1; letter-spacing:.02em;
   margin-top:2px; opacity:.85;
 }
+.archive-nav{
+  display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
+  gap:8px 12px; margin-top:12px;
+}
+.archive-nav-sep{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:12px; color:var(--ink-soft); opacity:.7;
+}
 .archive-all{
-  margin-top:12px;
   font-family:'Oswald',sans-serif; font-weight:500;
   font-size:12px; letter-spacing:.1em; text-transform:uppercase;
   color:var(--terra); text-decoration:none;
@@ -467,6 +529,63 @@ body.is-turning{ pointer-events:none; }
   padding-bottom:1px;
 }
 .archive-all:hover{ border-bottom-color:var(--terra); }
+
+/* ---------- slovníček page ---------- */
+body.slovnicek-page{
+  padding:calc(24px + env(safe-area-inset-top, 0px)) 16px 32px;
+}
+.slovnicek-wrap{
+  width:100%; max-width:640px; margin:0 auto;
+  background:var(--paper);
+  border:1.5px solid rgba(33,28,20,.22);
+  box-shadow:0 10px 28px var(--shadow);
+  padding:36px 32px 40px;
+}
+.slovnicek-head{
+  margin-bottom:28px;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(33,28,20,.14);
+}
+.slovnicek-title{
+  margin:0 0 8px;
+  font-family:'Oswald',sans-serif; font-weight:600;
+  font-size:28px; letter-spacing:.04em; text-transform:uppercase;
+  color:var(--ink);
+}
+.slovnicek-gloss{
+  margin:0 0 16px;
+  font-size:15px; line-height:1.45; color:var(--ink-soft);
+}
+.slovnicek-nav{
+  display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
+  gap:8px 12px;
+}
+.slovnicek-nav-sep{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:12px; color:var(--ink-soft); opacity:.7;
+}
+.slovnicek-back{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--terra); text-decoration:none;
+  border-bottom:1px solid rgba(207,90,49,.35);
+  padding-bottom:1px;
+}
+.slovnicek-back:hover{ border-bottom-color:var(--terra); }
+.slovnicek-list--page .slovnicek-entry{
+  margin:0 0 18px;
+  padding-bottom:18px;
+  border-bottom:1px solid rgba(33,28,20,.1);
+}
+.slovnicek-list--page .slovnicek-entry:last-child{
+  margin-bottom:0; padding-bottom:0; border-bottom:none;
+}
+.slovnicek-list--page .slovnicek-entry dt{
+  font-size:14px; letter-spacing:.03em;
+}
+.slovnicek-list--page .slovnicek-entry dd{
+  font-size:15px; line-height:1.45;
+}
 
 /* ---------- archiv page ---------- */
 body.archiv-page{
@@ -735,6 +854,7 @@ body.archiv-page{
   .p{ font-size:17px; line-height:1.42; max-width:46ch; margin:20px 0 0; }
   .mean{ margin-top:14px; font-size:16px; line-height:1.44; max-width:46ch; }
   .mean b{ letter-spacing:.08em; font-size:12.5px; }
+  .kuriozita{ margin-top:10px; font-size:16px; line-height:1.44; max-width:46ch; }
   .stamp{
     margin-top:16px; font-size:19px; padding:6px 14px 5px;
     transform:rotate(-8deg); border-width:3px;
@@ -755,6 +875,7 @@ body.archiv-page{
   .archive-chip-day{ font-size:15px; }
 
   .archiv-wrap{ padding:32px 28px 36px; }
+  .slovnicek-wrap{ padding:32px 28px 36px; }
 
   .subscribe{ margin-top:28px; padding-top:24px; }
   .subscribe-gloss{ font-size:18px; max-width:none; }
@@ -779,6 +900,25 @@ body.archiv-page{
   }
   .edition-now-day{ font-size:26px; }
   .edition-now-sub{ font-size:12px; margin-top:0; letter-spacing:.1em; }
+
+  .slovnicek{
+    top:calc(88px + env(safe-area-inset-top, 0px));
+    bottom:auto;
+    left:calc(50% + 436px);
+    right:auto;
+    width:14.5rem;
+  }
+  @media (max-width: 1120px){
+    .slovnicek{
+      left:auto;
+      right:max(8px, env(safe-area-inset-right, 0px));
+      bottom:max(12px, env(safe-area-inset-bottom, 0px));
+      top:auto;
+    }
+  }
+  .slovnicek-body{
+    max-height:calc(100vh - 120px);
+  }
 }
 </style>
 
@@ -865,7 +1005,7 @@ body.archiv-page{
             <div class="bteam r"><span class="bnum">0</span><span class="blbl">návrhů zamítli</span></div>
           </div>
           
-          <div class="board-note">Sto šedesát pět hlasování o metálech za necelé tři hodiny, deset sekund na jméno.<br>Zeman prošel napotřetí, Moravec vůbec; odpoledne <span class="term-tip" tabindex="0" role="term" aria-label="Poslanci se ve sněmovně ptají ministrů a premiéra. Ve čtvrtek byl na to podle jednacího řádu vyhrazený den.">interpelace<span class="term-tip-bubble" role="tooltip">Poslanci se ve sněmovně ptají ministrů a premiéra. Ve čtvrtek byl na to podle jednacího řádu vyhrazený den.</span></span>.</div>
+          <div class="board-note">Sto šedesát pět hlasování o metálech za necelé tři hodiny, deset sekund na jméno.<br>Zeman prošel napotřetí, Moravec vůbec; odpoledne <span class="term-tip" tabindex="0" role="term" aria-label="Část jednání, kdy poslanci pokládají otázky členům vlády.">interpelace<span class="term-tip-bubble" role="tooltip">Část jednání, kdy poslanci pokládají otázky členům vlády.</span></span>.</div>
           
         </div>
 
@@ -882,9 +1022,12 @@ body.archiv-page{
               <span class="hl">Metály na běžícím pásu</span>
               
             </h2>
-            <p class="p">Sněmovna ve čtvrtek dopoledne sestavovala seznam návrhů na státní vyznamenání: sto šedesát pět hlasování za necelé tři hodiny, deset sekund na jméno. Miloš Zeman prošel až napotřetí 99:80, Václav Moravec nebo Daniel Vávra neprošli vůbec. Kuriozita dne: Luboš Dobrovský dostal devadesát jedna hlasů pro a jen třináct proti, a přesto neprošel, protože v plném sále je potřebná většina vyšší. Výsledný seznam nakonec podpořilo sto osmdesát poslanců a nikdo nebyl proti.</p>
+            <p class="p">Sněmovna ve čtvrtek dopoledne sestavovala seznam návrhů na <span class="term-tip" tabindex="0" role="term" aria-label="Medaile a vyznamenání, která uděluje prezident nebo sněmovna za mimořádné zásluhy.">státní vyznamenání<span class="term-tip-bubble" role="tooltip">Medaile a vyznamenání, která uděluje prezident nebo sněmovna za mimořádné zásluhy.</span></span>: sto šedesát pět hlasování za necelé tři hodiny, deset sekund na jméno. Miloš Zeman prošel až napotřetí 99:80, Václav Moravec nebo Daniel Vávra neprošli vůbec. Výsledný seznam nakonec podpořilo sto osmdesát poslanců a nikdo nebyl proti.</p>
             
-            <p class="mean"><b>Co to znamená pro vás: </b>Sněmovna posílá prezidentovi doporučení, koho vyznamenat osmadvacátého října; konečné slovo má Hrad. Většina jmen prošla bez odporu, přes dvacet kandidátů ale spadlo pod stůl a u Miloše Zemana se hlasovalo třikrát, než to platilo.</p>
+            <p class="mean"><b>Co to znamená pro vás: </b>Sněmovna posílá prezidentovi doporučení, koho vyznamenat osmadvacátého října; konečné slovo má Hrad. Většina jmen prošla, ale pod stůl spadli Luboš Dobrovský, Karel I., Michael Žantovský, Radim Passer, Naděžda Vlašín Johanisová, Lucie Bášová, Kristýna Cejnarová, Daniel Herman, Libuše Jarcovjáková, Milan Kňažko, Martin a Mikuláš Kroupovi, Miroslav Kundrata, Eva Lehotská, Ladislav Miko, Jesica Miňovská, Václav Moravec, Ondřej Novotný, Martin Ondráček, Zdislava Pokorná, Jiří Šlégr, Daniel Vávra a Vojtěch Filsák. U Miloše Zemana se hlasovalo třikrát, než to platilo.</p>
+            
+            
+            <p class="kuriozita">Kuriozita dne: Luboš Dobrovský dostal devadesát jedna hlasů pro a jen třináct proti, a přesto neprošel, protože v plném sále je potřebná většina vyšší.</p>
             
           </div>
         </div>

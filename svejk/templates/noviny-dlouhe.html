@@ -121,6 +121,9 @@
             {% if item.mean %}
             <p class="mean"><b>Co to znamená pro vás: </b>{{ item.mean | glossary }}</p>
             {% endif %}
+            {% if item.kuriozita %}
+            <p class="kuriozita">{{ item.kuriozita | glossary }}</p>
+            {% endif %}
           </div>
         </div>
         {% endfor %}

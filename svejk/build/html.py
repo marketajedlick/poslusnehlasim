@@ -218,6 +218,8 @@ def plain_text_from_content(
         )
         if item.mean:
             lines.append(f"Co to znamená pro vás: {item.mean}")
+        if item.kuriozita:
+            lines.append(item.kuriozita)
     zaver = (content.zaver_body or content.zaver or "").strip()
     if zaver:
         key = (content.zaver_key or "").strip()

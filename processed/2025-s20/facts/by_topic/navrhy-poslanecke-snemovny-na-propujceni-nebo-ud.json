@@ -21,7 +21,7 @@
       "citace": "Tak potřetí, Miloš Zeman."
     },
     {
-      "text": "Neprošli mimo jiné Václav Moravec (82:67), Daniel Herman, Milan Kňažko, Daniel Vávra, Jiří Šlégr ani bratři Kroupové; Luboš Dobrovský měl 91 pro a 13 proti, a stejně nedosáhl na potřebnou většinu.",
+      "text": "Pod stůl spadlo třiadvacet jmen: Luboš Dobrovský (91:13), Karel I. (38:15), Michael Žantovský (71:22), Radim Passer (50:16), Naděžda Vlašín Johanisová (60:21), Lucie Bášová (86:6), Kristýna Cejnarová (84:6), Daniel Herman (87:20), Libuše Jarcovjáková (78:3), Milan Kňažko (85:22), Martin Kroupa (88:18), Mikuláš Kroupa (84:19), Miroslav Kundrata (92:6), Eva Lehotská (76:17), Ladislav Miko (79:61), Jesica Miňovská (86:16), Václav Moravec (82:67), Ondřej Novotný (86:10), Martin Ondráček (88:24), Zdislava Pokorná (59:55), Jiří Šlégr (55:19), Daniel Vávra (85:33) a Vojtěch Filsák (92:16).",
       "source": "votes",
       "citace": "Hlasování číslo 300: pro 82, proti 67, nepřijato. Hlasování číslo 184: pro 91, proti 13, nepřijato."
     },
@@ -35,8 +35,9 @@
   "priorita": 3,
   "nadpis": "Metály na běžícím pásu",
   "lead": "Sněmovna ve čtvrtek dopoledne sestavovala seznam návrhů na státní vyznamenání: 165 hlasování za necelé tři hodiny, deset sekund na jméno. Miloš Zeman prošel až napotřetí 99:80, Václav Moravec nebo Daniel Vávra neprošli vůbec.",
-  "pointa": "Kuriozita dne: Luboš Dobrovský dostal 91 hlasů pro a jen 13 proti, a přesto neprošel, protože v plném sále je potřebná většina vyšší. Výsledný seznam nakonec podpořilo 180 poslanců a nikdo nebyl proti.",
-  "mean": "Sněmovna posílá prezidentovi doporučení, koho vyznamenat 28. října; konečné slovo má Hrad. Většina jmen prošla bez odporu, přes dvacet kandidátů ale spadlo pod stůl a u Miloše Zemana se hlasovalo třikrát, než to platilo.",
+  "pointa": "Výsledný seznam nakonec podpořilo 180 poslanců a nikdo nebyl proti.",
+  "mean": "Sněmovna posílá prezidentovi doporučení, koho vyznamenat 28. října; konečné slovo má Hrad. Většina jmen prošla, ale pod stůl spadli Luboš Dobrovský, Karel I., Michael Žantovský, Radim Passer, Naděžda Vlašín Johanisová, Lucie Bášová, Kristýna Cejnarová, Daniel Herman, Libuše Jarcovjáková, Milan Kňažko, Martin a Mikuláš Kroupovi, Miroslav Kundrata, Eva Lehotská, Ladislav Miko, Jesica Miňovská, Václav Moravec, Ondřej Novotný, Martin Ondráček, Zdislava Pokorná, Jiří Šlégr, Daniel Vávra a Vojtěch Filsák. U Miloše Zemana se hlasovalo třikrát, než to platilo.",
+  "kuriozita": "Kuriozita dne: Luboš Dobrovský dostal 91 hlasů pro a jen 13 proti, a přesto neprošel, protože v plném sále je potřebná většina vyšší.",
   "pocet_hlasovani": 165,
   "proslo": true,
   "signaly": {
