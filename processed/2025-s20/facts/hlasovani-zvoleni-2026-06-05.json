@@ -48,10 +48,7 @@
       "varovani": {
         "rečník": "Zdeněk Hřib",
         "shrnuti": "Jako pozorovatel referenda na Krymu po návratu tvrdil, že hlasování proběhlo svobodně, přestože EU a NATO oficiální pozici odmítal.",
-        "citace": [
-          "Putinův hlas pan Stanislav Berkovec",
-          "pan Berkovec po návratu z Krymu neváhal hlásat, že hlasování v referendu proběhlo svobodně navzdory tomu, že opak byl pravdou"
-        ]
+        "citace": "Putinův hlas pan Stanislav Berkovec"
       }
     },
     {
@@ -243,17 +240,9 @@
         }
       ],
       "varovani": {
+        "rečník": "Jan Jakob",
         "shrnuti": "Opozice ho spojuje s nezákonným odvoláním dozorčí komise, kvůli kterému ČT podle ní utrpěla škodu čtyři miliony korun.",
-        "citace": [
-          {
-            "rečník": "Jan Jakob",
-            "text": "Mezi radními, kteří pro nezákonné odvolání dozorčí komise hlasovali, jsou Pavel Matocha, Roman Bradáč, Jiří Šlégr a Lubomír Veselý."
-          },
-          {
-            "rečník": "Olga Richterová",
-            "text": "Lidé, kteří prokazatelně způsobili škody České televizi."
-          }
-        ]
+        "citace": "Mezi radními, kteří pro nezákonné odvolání dozorčí komise hlasovali, jsou Pavel Matocha, Roman Bradáč, Jiří Šlégr a Lubomír Veselý."
       }
     },
     {
@@ -298,25 +287,9 @@
         }
       ],
       "varovani": {
+        "rečník": "František Talíř",
         "shrnuti": "Před volbou mu opozice předčítala soudem nařízené omluvy za výroky o novinářkách; Jan Jakob tvrdil, že v radě zastupuje obchodní zájmy internetové televize XTV.",
-        "citace": [
-          {
-            "rečník": "František Talíř",
-            "text": "na adresu Johany Hovorkové, je to zrůda, svině, hnát svinským krokem. Za to tedy se musel soudně omluvit"
-          },
-          {
-            "rečník": "Jan Jakob",
-            "text": "Pan Veselý veřejně prohlásil, že v radě České televize zastupuje obchodní zájmy internetové televize XTV. To je jeho vlastní veřejný výrok."
-          },
-          {
-            "rečník": "Zdeněk Hřib",
-            "text": "Luboš Xaver Veselý do Rady České televize rozhodně nepatří."
-          },
-          {
-            "rečník": "Olga Richterová",
-            "text": "Proč chcete člověka, který způsobil škodu České televizi, je opakovaně vulgární, opakovaně útočí na ženy, na novinářky a opakovaně prokazuje, že není schopen zachovat nestrannost a nezávislost a zachovávat důstojnost radního České televize, takže tohoto člověka chcete zvolit?"
-          }
-        ]
+        "citace": "na adresu Johany Hovorkové, je to zrůda, svině, hnát svinským krokem. Za to tedy se musel soudně omluvit"
       }
     }
   ]
