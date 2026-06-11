@@ -6,7 +6,7 @@ import re
 
 from markupsafe import Markup, escape
 
-from svejk.glossary import GLOSSARY
+from svejk.glossary import GLOSSARY, SLOVNIK_BOX
 
 
 def _pattern(phrase: str) -> re.Pattern[str]:
@@ -55,3 +55,45 @@ def markup_glossary(text: str) -> str:
 
 def glossary_markup(text: str) -> Markup:
     return Markup(markup_glossary(text))
+
+
+def _tip_for_phrase(phrase: str) -> str | None:
+    for gp, tip in GLOSSARY:
+        if gp.lower() == phrase.lower():
+            return tip
+    pat = _pattern(phrase)
+    for gp, tip in GLOSSARY:
+        if pat.search(gp):
+            return tip
+    return None
+
+
+def _needle_pattern(needle: str) -> re.Pattern[str]:
+    """Shoda i na českých koncích (brzdách, pravidlech…)."""
+    parts = [re.escape(p) for p in needle.split()]
+    body = r"\s+".join(parts)
+    return re.compile(rf"(?<![\w]){body}", re.IGNORECASE)
+
+
+def svejkov_slovnik(*texts: str, limit: int = 6) -> list[tuple[str, str]]:
+    """Pojmy z textu dne pro box Švejkův slovník (název, vysvětlení)."""
+    combined = "\n".join(t for t in texts if t)
+    if not combined.strip():
+        return []
+
+    found: list[tuple[str, str]] = []
+    seen: set[str] = set()
+    for label, needle in SLOVNIK_BOX:
+        if len(found) >= limit:
+            break
+        if not _needle_pattern(needle).search(combined):
+            continue
+        tip = _tip_for_phrase(needle) or _tip_for_phrase(label)
+        if not tip:
+            continue
+        key = label.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        found.append((label, tip))
+    return found
