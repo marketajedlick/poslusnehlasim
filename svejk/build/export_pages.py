@@ -190,7 +190,7 @@ def run_export_pages(
     written.append("archiv.html")
 
     slovnicek_html = render_slovnicek_html(
-        css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
+        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
     )
     (out / "slovnicek.html").write_text(slovnicek_html, encoding="utf-8")
     written.append("slovnicek.html")

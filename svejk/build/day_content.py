@@ -27,7 +27,6 @@ from svejk.build.witty import (
     nadpis_z_clanku,
     zaver_glosa_dne,
 )
-from svejk.build.glossary_markup import svejkov_slovnik
 from svejk.listy import (
     _dnesni_ucet,
     _format_koho_veta,
@@ -112,7 +111,6 @@ class DenContent:
     zaver_key: str = "Poslušně hlásím,"
     zaver_body: str = ""
     board_note_lines: list[str] = field(default_factory=list)
-    svejkov_slovnik: list[tuple[str, str]] = field(default_factory=list)
 
 
 def lead_z_fact(fact: dict[str, Any]) -> str:
@@ -561,16 +559,6 @@ def _sanitize_den_content(content: DenContent) -> None:
         item.mean = _sanitize_text_export(item.mean)
         item.dopad = _sanitize_text_export(item.dopad)
         item.parliament_lead = _sanitize_text_export(item.parliament_lead)
-
-    texts = [
-        content.dnesni_ucet,
-        content.zaver,
-        content.zaver_body,
-        *(item.lead for item in content.items),
-        *(item.mean for item in content.items if item.mean),
-    ]
-    content.svejkov_slovnik = svejkov_slovnik(*texts)
-
 
 def vysledek_radky(content: DenContent, paths: SchuzePaths, day_path: Path) -> list[str]:
     day = read_json(day_path)

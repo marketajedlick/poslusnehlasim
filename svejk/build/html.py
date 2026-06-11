@@ -403,6 +403,7 @@ def render_potvrzeno_html(
 
 
 def render_slovnicek_html(
+    obdobi: int,
     *,
     inline_css: bool = False,
     css_href: str | None = None,
@@ -416,12 +417,21 @@ def render_slovnicek_html(
         fonts_css_href = static_fonts_css_path(base_path)
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
+    editions = list_obdobi_editions(obdobi)
+    if not editions:
+        raise ValueError(f"Žádná vydání pro období {obdobi}")
+
+    latest = editions[-1]
     archive_href = archiv_pages_href(base_path)
+    latest_href = edition_pages_href(
+        latest.obdobi, latest.schuze, latest.datum_unl, base_path
+    )
     canonical_url = f"{cfg.site_url.rstrip('/')}{slovnicek_pages_href(base_path)}"
     tpl = _jinja_env().get_template("slovnicek-stranka.html")
     return tpl.render(
         slovnicek=SLOVNIČEK,
         archive_href=archive_href,
+        latest_href=latest_href,
         canonical_url=canonical_url,
         inline_css=inline_css,
         css=css,
