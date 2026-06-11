@@ -94,7 +94,7 @@ NADPIS_VYSLEDEK: dict[str, dict[str, str]] = {
         "zamitli": "Postřiky zůstávají po staru",
     },
     "in_vitro": {
-        "schvalili": "Nemocnice uvidí docházející zkumavky",
+        "schvalili": "Zkumavky budou pod dohledem",
         "zamitli": "Zkumavky zůstávají bez nových pravidel",
     },
     "silnicnim_provozu": {
