@@ -340,35 +340,35 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "třetím čtení",
-        "Poslední fáze zákona: jen drobné úpravy, pak může jít k prezidentovi k podpisu.",
+        "Finální hlasování o zákonu, pak může jít k prezidentovi k podpisu.",
     ),
     (
         "třetí čtení",
-        "Poslední fáze zákona: jen drobné úpravy, pak může jít k prezidentovi k podpisu.",
+        "Finální hlasování o zákonu, pak může jít k prezidentovi k podpisu.",
     ),
     (
         "druhém čtení",
-        "Druhá fáze zákona: poslanci řeší konkrétní paragrafy a hlasují o finální podobě.",
+        "Poslanci navrhují změny a úpravy zákona, hlasuje se o konkrétních paragrafech.",
     ),
     (
         "druhé čtení",
-        "Druhá fáze zákona: poslanci řeší konkrétní paragrafy a hlasují o finální podobě.",
+        "Poslanci navrhují změny a úpravy zákona, hlasuje se o konkrétních paragrafech.",
     ),
     (
         "prvém čtení",
-        "První fáze zákona: schvalují se obrysy návrhu, detaily přijdou ve druhém čtení.",
+        "Rozhoduje se, jestli se návrh bude řešit dál. Detaily přijdou později.",
     ),
     (
         "prvé čtení",
-        "První fáze zákona: schvalují se obrysy návrhu, detaily přijdou ve druhém čtení.",
+        "Rozhoduje se, jestli se návrh bude řešit dál. Detaily přijdou později.",
     ),
     (
         "prvním čtení",
-        "První fáze zákona: schvalují se obrysy návrhu, detaily přijdou ve druhém čtení.",
+        "Rozhoduje se, jestli se návrh bude řešit dál. Detaily přijdou později.",
     ),
     (
         "první čtení",
-        "První fáze zákona: schvalují se obrysy návrhu, detaily přijdou ve druhém čtení.",
+        "Rozhoduje se, jestli se návrh bude řešit dál. Detaily přijdou později.",
     ),
     (
         "sněmovního tisku",
@@ -543,7 +543,121 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "superdávka",
-        "Nová zastřešující sociální dávka, která má postupně nahradit část stávajících příspěvků státu.",
+        "Plán spojit několik sociálních dávek do jednoho systému s jednou žádostí. "
+        "Nejde o novou dávku navíc, ale o sjednocení stávajících.",
+    ),
+    (
+        "Čapí hnízdo",
+        "Dlouholetá kauza kolem evropské dotace na farmu spojenou s Andrejem Babišem. "
+        "Soud řeší, zda byly splněny podmínky pro získání dotace.",
+    ),
+    (
+        "obstrukcemi",
+        "Zdržování jednání dlouhými projevy nebo procedurálními návrhy.",
+    ),
+    (
+        "obstrukce",
+        "Zdržování jednání dlouhými projevy nebo procedurálními návrhy.",
+    ),
+    (
+        "obstrukcí",
+        "Zdržování jednání dlouhými projevy nebo procedurálními návrhy.",
+    ),
+    (
+        "jednacího řádu",
+        "Pravidla hry pro poslance. Určuje, kdo, kdy a jak dlouho smí mluvit.",
+    ),
+    (
+        "jednacím řádu",
+        "Pravidla hry pro poslance. Určuje, kdo, kdy a jak dlouho smí mluvit.",
+    ),
+    (
+        "jednací řád",
+        "Pravidla hry pro poslance. Určuje, kdo, kdy a jak dlouho smí mluvit.",
+    ),
+    (
+        "transpozicí",
+        "Převedení evropských pravidel do českých zákonů.",
+    ),
+    (
+        "transpozice",
+        "Převedení evropských pravidel do českých zákonů.",
+    ),
+    (
+        "transpozici",
+        "Převedení evropských pravidel do českých zákonů.",
+    ),
+    (
+        "schodku",
+        "Stát utratí víc peněz, než vybere.",
+    ),
+    (
+        "schodek",
+        "Stát utratí víc peněz, než vybere.",
+    ),
+    (
+        "schodkem",
+        "Stát utratí víc peněz, než vybere.",
+    ),
+    (
+        "rozpočtového pravidla",
+        "Zákon určující, jak může stát plánovat a utrácet peníze.",
+    ),
+    (
+        "rozpočtové pravidlo",
+        "Zákon určující, jak může stát plánovat a utrácet peníze.",
+    ),
+    (
+        "poslaneckých klubů",
+        "Skupiny poslanců jedné strany ve sněmovně.",
+    ),
+    (
+        "poslanecký klub",
+        "Skupina poslanců jedné strany ve sněmovně.",
+    ),
+    (
+        "poslanecké kluby",
+        "Skupiny poslanců jedné strany ve sněmovně.",
+    ),
+    (
+        "ve výborech",
+        "Menší pracovní skupiny poslanců, kde se zákony řeší podrobněji než v hlavním sále.",
+    ),
+    (
+        "do výborů",
+        "Zákony se posílají do menších pracovních skupin poslanců, kde se řeší podrobněji než v sále.",
+    ),
+    (
+        "výbory",
+        "Menší pracovní skupiny poslanců, kde se zákony řeší podrobněji než v hlavním sále.",
+    ),
+    (
+        "výbor",
+        "Menší pracovní skupina poslanců, kde se zákony řeší podrobněji než v hlavním sále.",
+    ),
+    (
+        "imunitu poslance",
+        "Ochrana poslance před trestním stíháním bez souhlasu sněmovny.",
+    ),
+    (
+        "imunita poslance",
+        "Ochrana poslance před trestním stíháním bez souhlasu sněmovny.",
+    ),
+    (
+        "imunitu",
+        "Ochrana poslance před trestním stíháním bez souhlasu sněmovny.",
+    ),
+    (
+        "imunita",
+        "Ochrana poslance před trestním stíháním bez souhlasu sněmovny.",
+    ),
+    (
+        "nařízení Evropské unie",
+        "Pravidlo, které platí přímo ve všech členských státech Evropské unie.",
+    ),
+    (
+        "nařízení EU",
+        "Pravidlo, které platí přímo ve všech členských státech Evropské unie.",
     ),
     (
         "v demisi",
@@ -612,6 +726,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     (
         "VZP",
         "Všeobecná zdravotní pojišťovna, největší zdravotní pojišťovna v Česku.",
+    ),
+    (
+        "SFŽP",
+        "Státní fond životního prostředí. Platí například čistírny, zateplování nebo projekty proti suchu.",
     ),
     # --- zkratky a specifické pojmy ---
     (

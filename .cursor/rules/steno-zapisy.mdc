@@ -110,6 +110,33 @@ Cíl není připomínat tiskovou zprávu sněmovny. Preferuj lidovou češtinu, 
 
 **Vysvětlovací bloky:** používej nadpis `CO TO ZNAMENÁ PRO VÁS:` (v markdown `### Co to znamená pro vás?`).
 
+**Parlamentní pojmy pro laiky:** čtenář nesleduje politiku. Sekce `mean` / „Co to znamená pro vás“ má překládat sněmovní češtinu do normální. Když se v textu dne poprvé objeví některý z pojmů níže a čtenář by bez vysvětlení nepochopil, co se děje, doplň do `mean` **jednu krátkou větu** v běžné češtině (ne úřednický slovník). Na stejný den už stejný pojem znovu nevysvětlovat — stačí poprvé.
+
+| Pojem | Jak to říct občanovi |
+|---|---|
+| Čapí hnízdo | Dlouholetá kauza kolem evropské dotace na farmu spojenou s Andrejem Babišem. Soud řeší, zda byly splněny podmínky pro získání dotace. |
+| superdávka | Plán spojit několik sociálních dávek do jednoho systému s jednou žádostí — nejde o novou dávku navíc. |
+| NKÚ | Nejvyšší kontrolní úřad. Kontroluje, jak stát hospodaří s veřejnými penězi. |
+| SFŽP | Státní fond životního prostředí. Platí například čistírny, zateplování nebo projekty proti suchu. |
+| VZP | Největší česká zdravotní pojišťovna. |
+| imunita (poslance) | Ochrana poslance před trestním stíháním bez souhlasu sněmovny. |
+| nedůvěra vládě | Hlasování, kterým může sněmovna vládu odvolat. Projde-li, vláda končí. |
+| střet zájmů | Politik rozhoduje o věcech, které mohou přinést výhodu jemu nebo jeho blízkým. |
+| obstrukce | Zdržování jednání dlouhými projevy nebo procedurálními návrhy. |
+| jednací řád | Pravidla hry pro poslance — kdo, kdy a jak dlouho smí mluvit. |
+| první čtení / první kolo | Rozhoduje se, jestli se návrh bude řešit dál. |
+| druhé čtení / druhé kolo | Poslanci navrhují změny a úpravy zákona. |
+| třetí čtení / závěrečné hlasování | Finální hlasování o zákonu. |
+| usnesení | Stanovisko nebo výzva sněmovny. Na rozdíl od zákona většinou nic přímo nepřikazuje. |
+| pozměňovací návrh | Pokus změnit část zákona bez psaní nového. |
+| transpozice | Převedení evropských pravidel do českých zákonů. |
+| nařízení EU | Pravidlo, které platí přímo ve všech členských státech. |
+| schodek | Stát utratí víc peněz, než vybere. |
+| státní závěrečný účet | Zpětný pohled na to, jak stát hospodařil v minulém roce. |
+| rozpočtové pravidlo | Zákon určující, jak může stát plánovat a utrácet peníze. |
+| poslanecký klub | Skupina poslanců jedné strany ve sněmovně. |
+| výbor | Menší pracovní skupina poslanců, kde se zákony řeší podrobněji než v hlavním sále. |
+
 **Rozpočty, zákony, legislativa — nahrazuj:**
 - `prošel/pršla prvním kolem` → `přežil/přežila první kolo`
 - `v prvním kole schválila` → `na první pokus schválila` (kde to sedí)

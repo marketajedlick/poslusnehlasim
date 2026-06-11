@@ -134,11 +134,19 @@ GLOSY: list[tuple[tuple[str, ...], str, str]] = [
         "Rozpočet SFŽP neprošel.",
     ),
     (
+        ("čapí hnízdo",),
+        (
+            "Kauza kolem evropské dotace na farmu spojenou s Andrejem Babišem. "
+            "Soud řeší, zda byly splněny podmínky pro získání dotace. "
+            "Sněmovna rozhodla, jestli může trestní řízení pokračovat."
+        ),
+        "Souhlas se stíháním v kauze nebyl udělen.",
+    ),
+    (
         ("souhlasu s trestním stíháním", "trestním stíháním poslance"),
         (
-            "Sněmovna rozhodla, jestli může policie stíhat poslance, "
-            "imunita jinak trestní řízení blokuje. Občana se to netýká, "
-            "spíš politici a justice."
+            "Poslanec má imunitu: bez souhlasu sněmovny ho policie nemůže stíhat. "
+            "Občana se to netýká, spíš politici a justice."
         ),
         "Souhlas se stíháním poslance nebyl udělen.",
     ),
