@@ -1,0 +1,18 @@
+{% if slovnicek %}
+<aside class="slovnicek" id="slovnicek" aria-label="Švejkův slovníček">
+  <button type="button" class="slovnicek-toggle" aria-expanded="false" aria-controls="slovnicek-body">
+    Švejkův slovníček
+  </button>
+  <div class="slovnicek-body" id="slovnicek-body" hidden>
+    <p class="slovnicek-lead">Krátké vysvětlení pojmů ze sněmovny pro lidi, kteří politiku běžně nesledují.</p>
+    <dl class="slovnicek-list">
+      {% for question, answer in slovnicek %}
+      <div class="slovnicek-entry">
+        <dt>{{ question }}</dt>
+        <dd>{{ answer }}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+  </div>
+</aside>
+{% endif %}

@@ -31,6 +31,8 @@
 {% endif %}
 </head>
 <body>
+{% include "slovnicek.html" %}
+
 {% if nav %}
 <nav class="edition-nav" aria-label="Vydání deníku">
   {% if nav.prev %}
@@ -124,6 +126,15 @@
           </div>
         </div>
         {% endfor %}
+
+        {% if content.svejkov_slovnik %}
+        <div class="svejkov-slovnik">
+          <div class="svejkov-slovnik-title">Švejkův slovník</div>
+          {% for label, tip in content.svejkov_slovnik %}
+          <p class="svejkov-slovnik-row"><b>{{ label }}</b> – {{ tip }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
 
         <div class="verdict">
           <span class="qm">„</span>
@@ -635,6 +646,36 @@
     if (!isMobile() || !openTip) return;
     placeTip(openTip);
   }, { passive: true });
+})();
+</script>
+<script>
+(function () {
+  var root = document.getElementById("slovnicek");
+  if (!root) return;
+  var toggle = root.querySelector(".slovnicek-toggle");
+  var body = root.querySelector(".slovnicek-body");
+  if (!toggle || !body) return;
+
+  function setOpen(open) {
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    body.hidden = !open;
+    root.classList.toggle("is-open", open);
+  }
+
+  toggle.addEventListener("click", function () {
+    setOpen(!root.classList.contains("is-open"));
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && root.classList.contains("is-open")) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+
+  if (window.matchMedia("(min-width:1121px)").matches) {
+    setOpen(true);
+  }
 })();
 </script>
 </body>

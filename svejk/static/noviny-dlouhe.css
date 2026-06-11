@@ -181,6 +181,29 @@ body.is-turning{ pointer-events:none; }
   white-space:pre-line;
 }
 
+.svejkov-slovnik{
+  margin:20px 0 8px;
+  padding:14px 16px;
+  border:1.5px solid rgba(33,28,20,.2);
+  background:rgba(240,230,207,.35);
+}
+.svejkov-slovnik-title{
+  font-family:'Oswald',sans-serif;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:11px;
+  color:var(--ink-2);
+  margin-bottom:10px;
+}
+.svejkov-slovnik-row{
+  margin:0 0 8px;
+  font-size:13px;
+  line-height:1.45;
+  color:var(--ink);
+}
+.svejkov-slovnik-row:last-child{ margin-bottom:0; }
+
 /* ---------- items (mobile) ---------- */
 .item{
   display:block;
@@ -224,6 +247,56 @@ body.is-turning{ pointer-events:none; }
   letter-spacing:.06em; text-transform:uppercase; font-size:11px; color:var(--terra);
 }
 .item.i2 .mean b{ color:var(--blue); }
+
+/* ---------- Švejkův slovníček ---------- */
+.slovnicek{
+  position:fixed;
+  z-index:30;
+  right:max(8px, env(safe-area-inset-right, 0px));
+  bottom:max(12px, env(safe-area-inset-bottom, 0px));
+  width:min(18rem, calc(100vw - 16px));
+  font-family:'Old Standard TT',serif;
+}
+.slovnicek-toggle{
+  display:flex; align-items:center; justify-content:center;
+  width:100%;
+  font-family:'Oswald',sans-serif; font-weight:600; text-transform:uppercase;
+  letter-spacing:.1em; font-size:11px;
+  padding:10px 12px;
+  border:2px solid rgba(33,28,20,.28);
+  border-radius:3px;
+  background:var(--paper);
+  color:var(--ink);
+  cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,.12);
+}
+.slovnicek-toggle:hover{ border-color:var(--terra); color:var(--terra); }
+.slovnicek-body{
+  margin-top:8px;
+  max-height:min(52vh, 24rem);
+  overflow:auto;
+  padding:12px 14px 14px;
+  background:var(--paper);
+  border:2px solid rgba(33,28,20,.22);
+  border-radius:3px;
+  box-shadow:0 8px 22px var(--shadow);
+}
+.slovnicek-lead{
+  margin:0 0 12px;
+  font-size:13px; line-height:1.4; color:var(--ink-soft);
+}
+.slovnicek-list{ margin:0; }
+.slovnicek-entry{ margin:0 0 12px; }
+.slovnicek-entry:last-child{ margin-bottom:0; }
+.slovnicek-entry dt{
+  margin:0 0 4px;
+  font-family:'Oswald',sans-serif; font-weight:600;
+  font-size:12px; letter-spacing:.04em; color:var(--terra);
+}
+.slovnicek-entry dd{
+  margin:0;
+  font-size:13px; line-height:1.4; color:var(--ink);
+}
 
 .term-tip{
   position:relative;
@@ -752,4 +825,23 @@ body.archiv-page{
   }
   .edition-now-day{ font-size:26px; }
   .edition-now-sub{ font-size:12px; margin-top:0; letter-spacing:.1em; }
+
+  .slovnicek{
+    top:calc(88px + env(safe-area-inset-top, 0px));
+    bottom:auto;
+    left:calc(50% + 436px);
+    right:auto;
+    width:14.5rem;
+  }
+  @media (max-width: 1120px){
+    .slovnicek{
+      left:auto;
+      right:max(8px, env(safe-area-inset-right, 0px));
+      bottom:max(12px, env(safe-area-inset-bottom, 0px));
+      top:auto;
+    }
+  }
+  .slovnicek-body{
+    max-height:calc(100vh - 120px);
+  }
 }

@@ -99,6 +99,7 @@ Schůze má pevnou kostru. Rozeznávej rutinu od odchylky — **odchylky jsou te
 - **Historický kvíz** — když si řečníci protiřečí ve faktech
 - **Graf hlasitosti** — eskalace tónu napříč projevy jednoho dne
 - **Host na galerii** — absurdní vsuvky ze scénických poznámek
+- **Švejkův překladač z poslanečtiny** — tabulka poslanecký výraz → česky (viz `POSLANECINY_PREKLAD` v `svejk/glossary.py`). Samostatně sdílitelné na sociálních sítích; v článku jen 2–4 řádky, ne celý slovník.
 
 ## Při generování čísel a statistik
 
@@ -110,24 +111,60 @@ Cíl není připomínat tiskovou zprávu sněmovny. Preferuj lidovou češtinu, 
 
 **Vysvětlovací bloky:** používej nadpis `CO TO ZNAMENÁ PRO VÁS:` (v markdown `### Co to znamená pro vás?`).
 
-**Parlamentní pojmy pro laiky:** čtenář nesleduje politiku. Sekce `mean` / „Co to znamená pro vás“ má překládat sněmovní češtinu do normální. Když se v textu dne poprvé objeví některý z pojmů níže a čtenář by bez vysvětlení nepochopil, co se děje, doplň do `mean` **jednu krátkou větu** v běžné češtině (ne úřednický slovník). Na stejný den už stejný pojem znovu nevysvětlovat — stačí poprvé.
+**Kdy vysvětlovat (a kdy ne):** ne všechno je potřeba vysvětlovat. Když vysvětlíš moc, zabiješ tempo a humor. Vysvětlivku dej jen tam, kde běžný člověk pravděpodobně neví **co to je**, **proč se o tom hádají** nebo **proč by ho to mělo zajímat**. Na stejný den stejný pojem znovu nevysvětlovat.
+
+**Parlamentní pojmy pro laiky:** čtenář nesleduje politiku. Sekce `mean` / „Co to znamená pro vás“ má překládat sněmovní češtinu do normální. Když se v textu dne poprvé objeví některý z pojmů níže a čtenář by bez vysvětlení nepochopil, co se děje, doplň do `mean` **jednu krátkou větu** v běžné češtině (ne úřednický slovník). Tooltipy v HTML vycházejí z `svejk/glossary.py`.
 
 | Pojem | Jak to říct občanovi |
 |---|---|
+| Dozimetr | Korupční kauza kolem pražského dopravního podniku a lidí napojených na STAN. |
+| Benešovy dekrety | Poválečné dekrety prezidenta Beneše o majetku a postavení Němců a Maďarů po válce. |
+| Sudetoněmecký landsmanšaft | Organizace sdružující Němce vysídlené po druhé světové válce z Československa a jejich potomky. |
+| koncesionářské poplatky | Roční poplatek za televizi a rozhlas. |
+| volba rady ČT | Hlasování o tom, kdo bude sedět v radě České televize. |
+| rezervy / přebytky VZP | Peníze, které VZP naspořila navíc; politici o nich často debatují při přerozdělování mezi pojišťovnami. |
+| třetí pilíř | Dobrovolné penzijní spoření na důchod. |
+| digitalizace dávek | Převod žádostí a administrativy dávek do online systému. |
+| minimální sociální záloha | Nejnižší povinná částka, kterou OSVČ odvádí na sociální pojištění. |
+| OSVČ | Osoba samostatně výdělečně činná, tedy živnostník. |
+| OZP | Osoba se zdravotním postižením. |
+| Úřad práce | Úřad, který vyplácí dávky v nezaměstnanosti a další sociální pomoc. |
+| DPP | Dopravní podnik hlavního města Prahy. |
+| veřejnoprávní média | Česká televize a Český rozhlas. |
+| mimořádná schůze | Schůze svolaná mimo běžný harmonogram. |
+| zkrácené řízení / zrychlené projednávání | Mimořádný režim, kdy se zákon projednává rychleji než obvykle. |
+| ANO / ODS / STAN / SPD / TOP 09 / KDU-ČSL / Piráti | Politické strany — tooltip v závorce je v `svejk/glossary.py`. |
+| mandátový a imunitní výbor | Sněmovní rozhodčí. Řeší třeba střety zájmů, disciplinární prohřešky nebo vydání poslanců policii. |
+| ověřovatelé | Poslanečtí „kontroloři zápisu“. Hlídají, že schůze proběhla podle pravidel. |
+| volební komise | Skupina poslanců, která organizuje a kontroluje všechny volby uvnitř Sněmovny. |
+| první čtení / první kolo | Ještě zákon neschválí. Jen rozhodne, jestli se jím Sněmovna bude dál zabývat. |
+| druhé čtení / druhé kolo | Poslanci navrhují změny a úpravy zákona. |
+| třetí čtení / závěrečné hlasování | Finální hlasování o zákonu. |
+| tajná volba | Poslanci hlasují anonymně, nikdo nevidí, kdo koho podpořil. |
+| místopředseda Sněmovny | Zástupce předsedy. Řídí schůze, když předseda není přítomen. |
+| usnesení | Stanovisko nebo rozhodnutí Sněmovny. Není to zákon. |
+| interpelace | Část jednání, kdy poslanci pokládají otázky členům vlády. |
+| Agrofert | Jeden z největších českých holdingů. Babiš ho převedl do svěřenských fondů; spor je, zda na něj má stále vliv. |
+| střet zájmů | Politik rozhoduje o věcech, které mohou ovlivnit jeho vlastní byznys nebo osobní zájmy. |
+| polistopadový kartel | Označení, které Andrej Babiš používá pro tradiční politické strany po roce 1989. |
+| kupónová privatizace | Privatizace státního majetku v 90. letech pomocí kupónových knížek. |
+| Ústavní soud (2020) | Nejvyšší soudní autorita pro ústavu. V roce 2020 řešil mimo jiné otázky střetu zájmů Andreje Babiše. |
+| VZP | Největší zdravotní pojišťovna v Česku. |
+| správní rada VZP | Skupina lidí, která rozhoduje o fungování VZP. |
+| Sbírka zákonů | Oficiální místo, kde se zveřejňují schválené zákony. |
+| online zákonodárství | Projekt digitalizace zákonů. Cílem je, aby se připravovaly a zveřejňovaly elektronicky. |
+| legislativní proces | Cesta zákona od návrhu až po podpis prezidenta. |
+| služební zákon | Pravidla pro fungování státních úředníků. |
+| stenoprotokol | Doslovný přepis všeho, co ve Sněmovně zazní. |
+| organizační výbor | Skupina, která plánuje program schůzí. |
 | Čapí hnízdo | Dlouholetá kauza kolem evropské dotace na farmu spojenou s Andrejem Babišem. Soud řeší, zda byly splněny podmínky pro získání dotace. |
 | superdávka | Plán spojit několik sociálních dávek do jednoho systému s jednou žádostí — nejde o novou dávku navíc. |
 | NKÚ | Nejvyšší kontrolní úřad. Kontroluje, jak stát hospodaří s veřejnými penězi. |
 | SFŽP | Státní fond životního prostředí. Platí například čistírny, zateplování nebo projekty proti suchu. |
-| VZP | Největší česká zdravotní pojišťovna. |
 | imunita (poslance) | Ochrana poslance před trestním stíháním bez souhlasu sněmovny. |
 | nedůvěra vládě | Hlasování, kterým může sněmovna vládu odvolat. Projde-li, vláda končí. |
-| střet zájmů | Politik rozhoduje o věcech, které mohou přinést výhodu jemu nebo jeho blízkým. |
 | obstrukce | Zdržování jednání dlouhými projevy nebo procedurálními návrhy. |
 | jednací řád | Pravidla hry pro poslance — kdo, kdy a jak dlouho smí mluvit. |
-| první čtení / první kolo | Rozhoduje se, jestli se návrh bude řešit dál. |
-| druhé čtení / druhé kolo | Poslanci navrhují změny a úpravy zákona. |
-| třetí čtení / závěrečné hlasování | Finální hlasování o zákonu. |
-| usnesení | Stanovisko nebo výzva sněmovny. Na rozdíl od zákona většinou nic přímo nepřikazuje. |
 | pozměňovací návrh | Pokus změnit část zákona bez psaní nového. |
 | transpozice | Převedení evropských pravidel do českých zákonů. |
 | nařízení EU | Pravidlo, které platí přímo ve všech členských státech. |
@@ -136,6 +173,44 @@ Cíl není připomínat tiskovou zprávu sněmovny. Preferuj lidovou češtinu, 
 | rozpočtové pravidlo | Zákon určující, jak může stát plánovat a utrácet peníze. |
 | poslanecký klub | Skupina poslanců jedné strany ve sněmovně. |
 | výbor | Menší pracovní skupina poslanců, kde se zákony řeší podrobněji než v hlavním sále. |
+| procedurální návrh | Hlasuje se o tom, kdy a jak se bude jednat — ne o obsahu zákona. |
+| přerušení schůze | Poslanci si dali pauzu a slíbili, že se k tomu vrátí. |
+| Senát vrátil zákon | Senátoři poslali návrh zpátky s poznámkou „zkuste to ještě jednou“. |
+| schváleno v prvním kole | Zákon ještě neplatí. Jen přežil první překážku a pokračuje dál. |
+| fiskální pravidla | Pravidla, která mají státu připomínat, že kreditka není bezedná. |
+| rozpočtové brzdy | Zákon, který státu připomíná šlápnout na brzdu, když utrácí moc rychle. |
+| harmonizace s EU | Přepisování českých pravidel tak, aby si v Bruselu nemuseli dělat poznámky. |
+| landsmanšaft | Organizace sudetoněmeckých krajanů vysídlených po druhé světové válce. |
+| Rada ČT | Skupina, která dohlíží na Českou televizi a vybírá její vedení. |
+| Úřad práce | Místo pro dávky, pomoc s hledáním práce a občas i pro trpělivost. |
+| EET | Elektronická evidence tržeb — každá účtenka hlásila státu, kolik kdo utržil. |
+| lex developer | Přezdívka kritiků stavebního zákona: nahrává velkým developerům. |
+| příspěvek na mobilitu | Peníze pro lidi se zdravotním omezením na dopravu a cestování. |
+| OZP | Osoba se zdravotním postižením. |
+| sociální pojištění | Odvody na důchody, nemocenskou a podporu v nezaměstnanosti. |
+| minimální záloha | Nejmenší měsíční částka, kterou musí živnostník odvést na sociální pojištění. |
+| penzijní spoření | Dobrovolné odkládání peněz na důchod vedle státní penze. |
+| investiční fondy | Společnosti, které spravují peníze investorů. |
+| státní vyznamenání | Medaile a vyznamenání za mimořádné zásluhy. |
+| kvorum | Minimální počet poslanců v sále, bez kterého se oficiálně hlasovat nemůže. |
+| kontaktní místo obce | Obecní pobočka, kam občan chodí vyřizovat formalitky. |
+| podpora bydlení | Státní pomoc s nájmem nebo hypotékou pro lidi, kteří si bydlení nemohou dovolit. |
+| mimořádná schůze | Schůze mimo běžný kalendář, svolaná kvůli konkrétnímu tématu. |
+| (ANO) | Hnutí ANO 2011 — strana Andreje Babiše. |
+| (ODS) | Občanská demokratická strana. |
+| (KDU-ČSL) | Křesťanská a demokratická unice — Československá lidová strana. |
+| (STAN) | Starostové a nezávislí. |
+| (SPD) | Svoboda a přímá demokracie — strana Tomia Okamury. |
+| (Piráti) | Česká pirátská strana. |
+| (TOP 09) | Liberálně konzervativní strana. |
+| Alena Schillerová | Bývalá ministryně financí, dnes poslankyně ANO. |
+| Marian Jurečka | Ministr práce a sociálních věcí a předseda KDU-ČSL. |
+| Jakub Michálek | Předseda poslaneckého klubu Pirátů. |
+| Radim Fiala | Předseda poslaneckého klubu SPD. |
+
+**Švejkův slovník pod článkem:** generuje se automaticky z `SLOVNIK_BOX` v `svejk/glossary.py` podle pojmů v textu dne (max. 6). Tooltipy vycházejí z `GLOSSARY` ve stejném souboru.
+
+**Švejkův slovníček (panel na webu):** viz `SLOVNIČEK` v `svejk/glossary.py` — otázka/odpověď pro sidebar.
 
 **Rozpočty, zákony, legislativa — nahrazuj:**
 - `prošel/pršla prvním kolem` → `přežil/přežila první kolo`

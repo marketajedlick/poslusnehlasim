@@ -164,7 +164,7 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     # --- volby a vedení sněmovny ---
     (
         "mandátový a imunitní výbor",
-        "Výbor, který posuzuje platnost poslaneckého mandátu a imunitu, tedy ochranu před stíháním za výrok ve sněmovně.",
+        "Sněmovní rozhodčí: řeší střety zájmů, disciplinární prohřešky nebo vydání poslance policii.",
     ),
     (
         "tajné hlasování",
@@ -184,19 +184,19 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "volební komise",
-        "Poslanci, kteří při volbě funkcí počítají hlasy, vydávají lístky a dohlíží na průběh.",
+        "Skupina poslanců, která organizuje a kontroluje všechny volby uvnitř Sněmovny.",
     ),
     (
         "místopředsedkyně sněmovny",
-        "Zastupuje předsedu: řídí schůzi a rozděluje slovo, když předseda není u kladívka.",
+        "Zástupce předsedy. Řídí schůze, když předseda není přítomen.",
     ),
     (
         "místopředsedou sněmovny",
-        "Zastupuje předsedu: řídí schůzi a rozděluje slovo, když předseda není u kladívka.",
+        "Zástupce předsedy. Řídí schůze, když předseda není přítomen.",
     ),
     (
         "místopředseda sněmovny",
-        "Zastupuje předsedu: řídí schůzi a rozděluje slovo, když předseda není u kladívka.",
+        "Zástupce předsedy. Řídí schůze, když předseda není přítomen.",
     ),
     (
         "místopředsedů",
@@ -220,15 +220,15 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "ověřovatelé",
-        "Poslanci, kteří kontrolují přítomnost v sále a průběh hlasování.",
+        "Poslanečtí „kontroloři zápisu“. Hlídají, že schůze proběhla podle pravidel.",
     ),
     (
         "ověřovatele",
-        "Poslanec, který kontroluje přítomnost v sále a průběh hlasování.",
+        "Poslanečtí „kontroloři zápisu“. Hlídají, že schůze proběhla podle pravidel.",
     ),
     (
         "ověřovatel",
-        "Poslanec, který kontroluje přítomnost v sále a průběh hlasování.",
+        "Poslanečtí „kontroloři zápisu“. Hlídají, že schůze proběhla podle pravidel.",
     ),
     # --- projednávání zákonů ---
     (
@@ -304,7 +304,12 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "zrychlené projednávání",
-        "Zkrácené lhůty na projednání zákona, obvykle desítky dnů místo standardních tří měsíců.",
+        "Mimořádný režim, kdy se zákon projednává rychleji než obvykle — kratší lhůty na připomínky "
+        "a méně času pro opozici.",
+    ),
+    (
+        "zkrácené řízení",
+        "Mimořádný režim, kdy se zákon projednává rychleji než obvykle.",
     ),
     (
         "zkráceném režimu",
@@ -332,11 +337,55 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "pozměňovací návrhy",
-        "Návrhy poslanců na úpravu znění zákona nebo rozpočtu ještě před finálním hlasováním.",
+        "Pokus poslanců přepsat kus zákona, než se o něm definitivně hlasuje.",
     ),
     (
         "pozměňovací návrh",
-        "Návrh poslance na úpravu znění zákona nebo rozpočtu ještě před finálním hlasováním.",
+        "Pokus poslance přepsat kus zákona, než se o něm definitivně hlasuje.",
+    ),
+    (
+        "procedurálními návrhy",
+        "Hlasuje se o tom, kdy, jak a jestli se vůbec bude jednat. Ne o obsahu zákona.",
+    ),
+    (
+        "procedurální návrhy",
+        "Hlasuje se o tom, kdy, jak a jestli se vůbec bude jednat. Ne o obsahu zákona.",
+    ),
+    (
+        "procedurálním návrhem",
+        "Hlasuje se o tom, kdy, jak a jestli se vůbec bude jednat. Ne o obsahu zákona.",
+    ),
+    (
+        "procedurální návrh",
+        "Hlasuje se o tom, kdy, jak a jestli se vůbec bude jednat. Ne o obsahu zákona.",
+    ),
+    (
+        "přerušení schůze",
+        "Poslanci si dali pauzu a slíbili, že se k tomu jednou vrátí.",
+    ),
+    (
+        "přerušení jednání",
+        "Poslanci si dali pauzu a slíbili, že se k tomu jednou vrátí.",
+    ),
+    (
+        "přerušení bodu",
+        "Poslanci si dali pauzu u konkrétního bodu programu a slíbili, že se k němu vrátí.",
+    ),
+    (
+        "schůze přerušena",
+        "Poslanci si dali pauzu a slíbili, že se k tomu jednou vrátí.",
+    ),
+    (
+        "vrácen senátem",
+        "Senátoři si zákon přečetli a poslali ho zpátky s poznámkou „zkuste to ještě jednou“.",
+    ),
+    (
+        "senátem vrácen",
+        "Senátoři si zákon přečetli a poslali ho zpátky s poznámkou „zkuste to ještě jednou“.",
+    ),
+    (
+        "vrátil senát",
+        "Senátoři si zákon přečetli a poslali ho zpátky s poznámkou „zkuste to ještě jednou“.",
     ),
     (
         "třetím čtení",
@@ -356,19 +405,19 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "prvém čtení",
-        "Rozhoduje se, jestli se návrh bude řešit dál. Detaily přijdou později.",
+        "Ještě zákon neschválí. Jen rozhodne, jestli se jím Sněmovna bude dál zabývat.",
     ),
     (
         "prvé čtení",
-        "Rozhoduje se, jestli se návrh bude řešit dál. Detaily přijdou později.",
+        "Ještě zákon neschválí. Jen rozhodne, jestli se jím Sněmovna bude dál zabývat.",
     ),
     (
         "prvním čtení",
-        "Rozhoduje se, jestli se návrh bude řešit dál. Detaily přijdou později.",
+        "Ještě zákon neschválí. Jen rozhodne, jestli se jím Sněmovna bude dál zabývat.",
     ),
     (
         "první čtení",
-        "Rozhoduje se, jestli se návrh bude řešit dál. Detaily přijdou později.",
+        "Ještě zákon neschválí. Jen rozhodne, jestli se jím Sněmovna bude dál zabývat.",
     ),
     (
         "sněmovního tisku",
@@ -388,7 +437,7 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "online zákonodárství",
-        "Elektronický systém (eLegislativa) pro tvorbu a projednávání zákonů na úřadech i ve sněmovně.",
+        "Projekt digitalizace zákonů. Cílem je, aby se připravovaly a zveřejňovaly elektronicky.",
     ),
     (
         "eLegislativa",
@@ -397,19 +446,31 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     # --- kola hlasování (rozpočet, volby) ---
     (
         "druhém kole",
-        "Druhé hlasování: u rozpočtu další fáze projednávání, u voleb funkcí druhý pokus o obsazení míst.",
+        "Druhé projednání ve sněmovně — u zákonu fáze konkrétních úprav, u rozpočtu další fáze, "
+        "u voleb funkcí druhý pokus.",
     ),
     (
         "druhé kolo",
-        "Druhé hlasování: u rozpočtu další fáze, u voleb funkcí druhý pokus, když první neobsadilo všechna místa.",
+        "Druhé projednání ve sněmovně — u zákonu fáze konkrétních úprav, u rozpočtu další fáze, "
+        "u voleb funkcí druhý pokus.",
     ),
     (
         "prvním kole",
-        "První hlasování: u rozpočtu schvalují obrysy (ne konečný státní rozpočet), u voleb první pokus.",
+        "První projednání ve sněmovně — u zákonu rozhoduje, jestli se návrhem budou dál zabývat, "
+        "u rozpočtu schvalují obrysy, u voleb první pokus.",
     ),
     (
         "první kolo",
-        "První hlasování: u rozpočtu schvalují obrysy (ne konečný státní rozpočet), u voleb první pokus.",
+        "První projednání ve sněmovně — u zákonu rozhoduje, jestli se návrhem budou dál zabývat, "
+        "u rozpočtu schvalují obrysy, u voleb první pokus.",
+    ),
+    (
+        "závěrečné hlasování",
+        "Poslední hlasování o zákonu ve sněmovně (třetí čtení), pak může jít k prezidentovi k podpisu.",
+    ),
+    (
+        "finální hlasování",
+        "Poslední hlasování o zákonu ve sněmovně (třetí čtení), pak může jít k prezidentovi k podpisu.",
     ),
     # --- politické instituce a procedury ---
     (
@@ -450,11 +511,11 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "imunitní výbor",
-        "Výbor, který posuzuje platnost poslaneckého mandátu a imunitu poslanců.",
+        "Sněmovní rozhodčí: řeší střety zájmů, disciplinární prohřešky nebo vydání poslance policii.",
     ),
     (
         "mandátový výbor",
-        "Výbor, který posuzuje platnost poslaneckého mandátu a imunitu poslanců.",
+        "Sněmovní rozhodčí: řeší střety zájmů, disciplinární prohřešky nebo vydání poslance policii.",
     ),
     (
         "Všeobecná pojišťovna",
@@ -486,28 +547,23 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "interpelacím",
-        "Poslanci se ve sněmovně ptají ministrů a premiéra. "
-        "Ve čtvrtek byl na to podle jednacího řádu vyhrazený den.",
+        "Čas vyhrazený na otázky poslanců ministrům a premiérovi.",
     ),
     (
         "interpelací",
-        "Poslanci se ve sněmovně ptají ministrů a premiéra. "
-        "Ve čtvrtek byl na to podle jednacího řádu vyhrazený den.",
+        "Čas vyhrazený na otázky poslanců ministrům a premiérovi.",
     ),
     (
         "interpelacemi",
-        "Poslanci se ve sněmovně ptají ministrů a premiéra. "
-        "Ve čtvrtek byl na to podle jednacího řádu vyhrazený den.",
+        "Čas vyhrazený na otázky poslanců ministrům a premiérovi.",
     ),
     (
         "interpelacích",
-        "Poslanci se ve sněmovně ptají ministrů a premiéra. "
-        "Ve čtvrtek byl na to podle jednacího řádu vyhrazený den.",
+        "Čas vyhrazený na otázky poslanců ministrům a premiérovi.",
     ),
     (
         "interpelace",
-        "Poslanci se ve sněmovně ptají ministrů a premiéra. "
-        "Ve čtvrtek byl na to podle jednacího řádu vyhrazený den.",
+        "Část jednání, kdy poslanci pokládají otázky členům vlády.",
     ),
     (
         "ústavní zákon",
@@ -534,12 +590,106 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Bartoš připomněl klipy z minulé sněmovny: předseda klubu SPD Fiala s generálem Zunou točil ponižující videa poté, co Zuna řekl, že pomoc Ukrajině je nutná a Rusko je agresor. Ministr Šťastný (SPD) pak musel na tiskovce mlčet.",
     ),
     (
+        "sudetoněmecký landsmanšaft",
+        "Organizace sdružující Němce vysídlené po druhé světové válce z Československa a jejich potomky.",
+    ),
+    (
+        "Sudetoněmecký landsmanšaft",
+        "Organizace sdružující Němce vysídlené po druhé světové válce z Československa a jejich potomky.",
+    ),
+    (
         "landsmanšaft",
-        "Spolek sudetoněmeckých krajanů. Sněmovna usneseními reaguje na jeho sjezdy v Česku.",
+        "Organizace sdružující Němce vysídlené po druhé světové válce z Československa a jejich potomky.",
     ),
     (
         "landsmanšaftu",
-        "Spolek sudetoněmeckých krajanů. Sněmovna usneseními reaguje na jeho sjezdy v Česku.",
+        "Organizace sdružující Němce vysídlené po druhé světové válce z Československa a jejich potomky.",
+    ),
+    (
+        "Benešových dekretů",
+        "Poválečné dekrety prezidenta Beneše, které mimo jiné řešily majetek a postavení Němců "
+        "a Maďarů po válce.",
+    ),
+    (
+        "Benešovy dekrety",
+        "Poválečné dekrety prezidenta Beneše, které mimo jiné řešily majetek a postavení Němců "
+        "a Maďarů po válce.",
+    ),
+    (
+        "koncesionářských poplatků",
+        "Roční poplatek za televizi a rozhlas. Vláda a sněmovna o něm často debatují při rozpočtu "
+        "a při volbách do rady České televize.",
+    ),
+    (
+        "koncesionářské poplatky",
+        "Roční poplatek za televizi a rozhlas. Vláda a sněmovna o něm často debatují při rozpočtu "
+        "a při volbách do rady České televize.",
+    ),
+    (
+        "volbě rady ČT",
+        "Hlasování o tom, kdo bude sedět v radě České televize a dohlížet na její fungování.",
+    ),
+    (
+        "volba rady ČT",
+        "Hlasování o tom, kdo bude sedět v radě České televize a dohlížet na její fungování.",
+    ),
+    (
+        "Rada ČT",
+        "Skupina lidí, která dohlíží na Českou televizi a vybírá její vedení.",
+    ),
+    (
+        "rady ČT",
+        "Skupina lidí, která dohlíží na Českou televizi a vybírá její vedení.",
+    ),
+    (
+        "přebytků VZP",
+        "Peníze, které VZP vydělala navíc. Politici je často chtějí přerozdělit mezi zdravotní "
+        "pojišťovny nebo použít na jiné účely.",
+    ),
+    (
+        "rezervy VZP",
+        "Peníze, které VZP naspořila navíc. Politici o nich často debatují při přerozdělování "
+        "mezi pojišťovnami.",
+    ),
+    (
+        "důchodový třetí pilíř",
+        "Dobrovolné penzijní spoření, do kterého si lidé ukládají peníze na důchod vedle státního.",
+    ),
+    (
+        "třetí pilíř",
+        "Dobrovolné penzijní spoření, do kterého si lidé ukládají peníze na důchod.",
+    ),
+    (
+        "digitalizace dávek",
+        "Převod žádostí a administrativy sociálních dávek do online systému.",
+    ),
+    (
+        "digitalizaci dávek",
+        "Převod žádostí a administrativy sociálních dávek do online systému.",
+    ),
+    (
+        "minimální sociální záloha",
+        "Nejnižší povinná částka, kterou OSVČ odvádí na sociální pojištění.",
+    ),
+    (
+        "minimální sociální zálohy",
+        "Nejnižší povinná částka, kterou OSVČ odvádí na sociální pojištění.",
+    ),
+    (
+        "veřejnoprávních médií",
+        "Česká televize a Český rozhlas.",
+    ),
+    (
+        "veřejnoprávní média",
+        "Česká televize a Český rozhlas.",
+    ),
+    (
+        "Úřadu práce",
+        "Úřad, který vyplácí dávky v nezaměstnanosti, příspěvky na bydlení a další sociální pomoc.",
+    ),
+    (
+        "Úřad práce",
+        "Úřad, který vyplácí dávky v nezaměstnanosti, příspěvky na bydlení a další sociální pomoc.",
     ),
     (
         "superdávka",
@@ -589,15 +739,43 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "schodku",
-        "Stát utratí víc peněz, než vybere.",
+        "Rozdíl mezi tím, co stát vybral, a tím, co utratil navíc.",
     ),
     (
         "schodek",
-        "Stát utratí víc peněz, než vybere.",
+        "Rozdíl mezi tím, co stát vybral, a tím, co utratil navíc.",
     ),
     (
         "schodkem",
-        "Stát utratí víc peněz, než vybere.",
+        "Rozdíl mezi tím, co stát vybral, a tím, co utratil navíc.",
+    ),
+    (
+        "fiskálními pravidly",
+        "Pravidla, která mají státu připomínat, že kreditka není bezedná.",
+    ),
+    (
+        "fiskální pravidla",
+        "Pravidla, která mají státu připomínat, že kreditka není bezedná.",
+    ),
+    (
+        "fiskálních pravidel",
+        "Pravidla, která mají státu připomínat, že kreditka není bezedná.",
+    ),
+    (
+        "fiskální limity",
+        "Pravidla, která mají státu připomínat, že kreditka není bezedná.",
+    ),
+    (
+        "rozpočtových brzdách",
+        "Zákon, který říká: když stát utrácí moc rychle, měl by aspoň občas šlápnout na brzdu.",
+    ),
+    (
+        "rozpočtové brzdy",
+        "Zákon, který říká: když stát utrácí moc rychle, měl by aspoň občas šlápnout na brzdu.",
+    ),
+    (
+        "rozpočtových brzd",
+        "Zákon, který říká: když stát utrácí moc rychle, měl by aspoň občas šlápnout na brzdu.",
     ),
     (
         "rozpočtového pravidla",
@@ -606,6 +784,14 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     (
         "rozpočtové pravidlo",
         "Zákon určující, jak může stát plánovat a utrácet peníze.",
+    ),
+    (
+        "harmonizací s evropským právem",
+        "Přepisování českých pravidel tak, aby si v Bruselu nemuseli dělat poznámky.",
+    ),
+    (
+        "harmonizace s evropským",
+        "Přepisování českých pravidel tak, aby si v Bruselu nemuseli dělat poznámky.",
     ),
     (
         "poslaneckých klubů",
@@ -632,8 +818,20 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Menší pracovní skupiny poslanců, kde se zákony řeší podrobněji než v hlavním sále.",
     ),
     (
+        "výborem",
+        "Menší pracovní skupina poslanců, kde se zákony řeší podrobněji než v hlavním sále.",
+    ),
+    (
+        "výboru",
+        "Menší pracovní skupina poslanců, kde se zákony řeší podrobněji než v hlavním sále.",
+    ),
+    (
         "výbor",
         "Menší pracovní skupina poslanců, kde se zákony řeší podrobněji než v hlavním sále.",
+    ),
+    (
+        "kvorum",
+        "Minimální počet poslanců v sále, bez kterého se oficiálně hlasovat nemůže.",
     ),
     (
         "imunitu poslance",
@@ -709,23 +907,195 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "Dozimetr",
-        "Kauza kolem podezřelých zakázek v Dopravním podniku Prahy a dalších institucích; vyšetřovací komise ji prošetřuje.",
+        "Korupční kauza kolem pražského dopravního podniku a lidí napojených na hnutí STAN.",
     ),
     (
         "dozimetr",
-        "Kauza kolem podezřelých zakázek v Dopravním podniku Prahy a dalších institucích; vyšetřovací komise ji prošetřuje.",
+        "Korupční kauza kolem pražského dopravního podniku a lidí napojených na hnutí STAN.",
     ),
     (
         "Agrofert",
-        "Babišův holding (zemědělství, potraviny, média). U premiéra jde o střet zájmů se státem.",
+        "Jeden z největších českých holdingů. Babiš ho převedl do svěřenských fondů; spor je, zda na něj má stále vliv.",
+    ),
+    (
+        "nález Ústavního soudu",
+        "Rozhodnutí nejvyššího soudního orgánu pro ústavu. V únoru 2020 řešil mimo jiné střet zájmů Andreje Babiše.",
+    ),
+    (
+        "Ústavního soudu",
+        "Nejvyšší soudní autorita pro ústavu. V roce 2020 řešil mimo jiné otázky střetu zájmů Andreje Babiše.",
+    ),
+    (
+        "Ústavní soud",
+        "Nejvyšší soudní autorita pro ústavu. V roce 2020 řešil mimo jiné otázky střetu zájmů Andreje Babiše.",
+    ),
+    (
+        "kupónovou privatizaci",
+        "Privatizace státního majetku v 90. letech pomocí kupónových knížek.",
+    ),
+    (
+        "kupónová privatizace",
+        "Privatizace státního majetku v 90. letech pomocí kupónových knížek.",
+    ),
+    (
+        "správní rady VZP",
+        "Skupina lidí, která rozhoduje o fungování VZP.",
+    ),
+    (
+        "správní rada VZP",
+        "Skupina lidí, která rozhoduje o fungování VZP.",
+    ),
+    (
+        "elektronická sbírka zákonů",
+        "Oficiální místo, kde se zveřejňují schválené zákony. Má být plně digitální, systém ale pořád není hotový.",
+    ),
+    (
+        "sbírce zákonů",
+        "Oficiální místo, kde se zveřejňují schválené zákony.",
+    ),
+    (
+        "Sbírka zákonů",
+        "Oficiální místo, kde se zveřejňují schválené zákony.",
+    ),
+    (
+        "legislativní proces",
+        "Cesta zákona od návrhu až po podpis prezidenta.",
+    ),
+    (
+        "služební zákon",
+        "Pravidla pro fungování státních úředníků.",
+    ),
+    (
+        "stenoprotokolu",
+        "Doslovný přepis všeho, co ve Sněmovně zazní.",
+    ),
+    (
+        "stenoprotokol",
+        "Doslovný přepis všeho, co ve Sněmovně zazní.",
+    ),
+    (
+        "organizační výbor",
+        "Skupina, která plánuje program schůzí.",
+    ),
+    (
+        "EET",
+        "Elektronická evidence tržeb. Každá účtenka hlásila státu, kolik kdo utržil.",
+    ),
+    (
+        "elektronická evidence tržeb",
+        "Každá účtenka hlásila státu, kolik kdo utržil. Mladší generace už často netuší, o co šlo.",
+    ),
+    (
+        "lex developer",
+        "Přezdívka kritiků stavebního zákona: podle nich nahrává velkým developerům.",
+    ),
+    (
+        "příspěvku na mobilitu",
+        "Peníze pro lidi se zdravotním omezením na dopravu a cestování.",
+    ),
+    (
+        "příspěvek na mobilitu",
+        "Peníze pro lidi se zdravotním omezením na dopravu a cestování.",
+    ),
+    (
+        "sociálním pojištění",
+        "Odchozí peníze zaměstnanců a živnostníků na důchody, nemocenskou a podporu v nezaměstnanosti.",
+    ),
+    (
+        "sociální pojištění",
+        "Odchozí peníze zaměstnanců a živnostníků na důchody, nemocenskou a podporu v nezaměstnanosti.",
+    ),
+    (
+        "minimální záloha",
+        "Nejmenší měsíční částka, kterou musí živnostník odvést na sociální pojištění.",
+    ),
+    (
+        "penzijního spoření",
+        "Dobrovolné odkládání peněz na důchod vedle státní penze.",
+    ),
+    (
+        "penzijní spoření",
+        "Dobrovolné odkládání peněz na důchod vedle státní penze.",
+    ),
+    (
+        "investičních fond",
+        "Společnosti, které spravují peníze investorů — třeba z penzijního spoření.",
+    ),
+    (
+        "investiční fondy",
+        "Společnosti, které spravují peníze investorů — třeba z penzijního spoření.",
+    ),
+    (
+        "investiční společnost",
+        "Firma, která spravuje peníze investorů podle pravidel zákona.",
+    ),
+    (
+        "státní vyznamenání",
+        "Medaile a vyznamenání, která uděluje prezident nebo sněmovna za mimořádné zásluhy.",
+    ),
+    (
+        "kontaktní místo obce",
+        "Obecní úřad nebo pobočka, kam občan chodí vyřizovat formalitky místo na radnici.",
+    ),
+    (
+        "podpoře bydlení",
+        "Státní pomoc s nájmem nebo hypotékou pro lidi, kteří si sami nemohou bydlení dovolit.",
+    ),
+    (
+        "podpora bydlení",
+        "Státní pomoc s nájmem nebo hypotékou pro lidi, kteří si sami nemohou bydlení dovolit.",
+    ),
+    (
+        "osob se zdravotním postižením",
+        "Lidé s dlouhodobým zdravotním omezením; v zákoně se často zkracuje na OZP.",
+    ),
+    (
+        "OZP",
+        "Osoba se zdravotním postižením.",
+    ),
+    (
+        "(KDU-ČSL)",
+        "Křesťanská a demokratická unie — Československá lidová strana.",
+    ),
+    (
+        "(TOP 09)",
+        "TOP 09 — strana, která se profiluje jako liberálně konzervativní.",
+    ),
+    (
+        "(Piráti)",
+        "Česká pirátská strana.",
+    ),
+    (
+        "(Motoristé)",
+        "Motoristé sobě — strana Petra Macinky, která se profiluje jako hnutí za práva řidičů.",
+    ),
+    (
+        "(SPD)",
+        "Svoboda a přímá demokracie — strana Tomia Okamury.",
+    ),
+    (
+        "(STAN)",
+        "Starostové a nezávislí.",
+    ),
+    (
+        "(ODS)",
+        "Občanská demokratická strana.",
+    ),
+    (
+        "(ANO)",
+        "Hnutí ANO 2011 — strana Andreje Babiše.",
+    ),
+    (
+        "hnutí STAN",
+        "Starostové a nezávislí.",
     ),
     (
         "NKÚ",
-        "Nejvyšší kontrolní úřad kontroluje, jak stát a firmy nakládají s veřejnými penězi.",
+        "Nejvyšší kontrolní úřad. Kontroluje, jak stát hospodaří s veřejnými penězi.",
     ),
     (
         "VZP",
-        "Všeobecná zdravotní pojišťovna, největší zdravotní pojišťovna v Česku.",
+        "Největší česká zdravotní pojišťovna.",
     ),
     (
         "SFŽP",
@@ -820,4 +1190,79 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Ústava",
         "Základní zákon státu. Změny vyžadují vysokou politickou shodu ve sněmovně i senátu.",
     ),
+)
+
+# Švejkův slovník — box pod článkem (kanonický název, klíč pro vyhledání v textu).
+SLOVNIK_BOX: tuple[tuple[str, str], ...] = (
+    ("Rozpočtové brzdy", "rozpočtových brzd"),
+    ("Fiskální pravidla", "fiskální pravidl"),
+    ("Schodek", "schodek"),
+    ("Pozměňovací návrh", "pozměňovací návrh"),
+    ("První čtení", "první čtení"),
+    ("Druhé čtení", "druhé čtení"),
+    ("Třetí čtení", "třetí čtení"),
+    ("Procedurální návrh", "procedurální návrh"),
+    ("Přerušení schůze", "přerušení"),
+    ("Senát vrátil zákon", "vrácen senátem"),
+    ("Usnesení", "usnesení"),
+    ("Kvorum", "kvorum"),
+    ("Výbor", "výbor"),
+    ("EET", "EET"),
+    ("Lex developer", "lex developer"),
+    ("Rada ČT", "Rada ČT"),
+    ("Landsmanšaft", "landsmanšaft"),
+    ("Harmonizace s EU", "harmonizac"),
+    ("Příspěvek na mobilitu", "příspěvek na mobilitu"),
+    ("OZP", "OZP"),
+    ("Minimální záloha", "minimální záloha"),
+    ("Penzijní spoření", "penzijní spoření"),
+    ("Investiční fondy", "investiční fond"),
+    ("Podpora bydlení", "podpoře bydlení"),
+    ("Státní vyznamenání", "státní vyznamenání"),
+    ("Úřad práce", "Úřad práce"),
+    ("Mimořádná schůze", "mimořádn"),
+)
+
+# Švejkův slovníček — panel vpravo na webu (otázka → odpověď).
+SLOVNIČEK: tuple[tuple[str, str], ...] = (
+    ("Co je pozměňovací návrh?", "Pokus poslance přepsat kus zákona, než se o něm definitivně hlasuje."),
+    ("Co je první čtení?", "Poslanci zatím neřeší detaily. Jen rozhodují, jestli má smysl se zákonem zabývat."),
+    ("Co je druhé čtení?", "Teď začíná vrtání v detailech a přibývají pozměňovací návrhy."),
+    ("Co je třetí čtení?", "Poslední šance něco změnit. Pak už se hlasuje ano nebo ne."),
+    ("Co je procedurální návrh?", "Hlasuje se o tom, kdy a jak se bude jednat — ne o obsahu zákona."),
+    ("Co je přerušení schůze?", "Poslanci si dali pauzu a slíbili, že se k tomu vrátí."),
+    ("Co jsou rozpočtové brzdy?", "Zákon, který státu připomíná šlápnout na brzdu, když utrácí moc rychle."),
+    ("Co jsou fiskální pravidla?", "Pravidla, která mají státu připomínat, že kreditka není bezedná."),
+    ("Co je schodek?", "Rozdíl mezi tím, co stát vybral, a tím, co utratil navíc."),
+    ("Co je EET?", "Elektronická evidence tržeb — každá účtenka hlásila státu, kolik kdo utržil."),
+    ("Co je usnesení?", "Stanovisko nebo rozhodnutí sněmovny. Nejde o zákon."),
+    ("Co je interpelace?", "Část jednání, kdy poslanci pokládají otázky členům vlády."),
+    ("Co je Dozimetr?", "Korupční kauza kolem pražského dopravního podniku a lidí napojených na STAN."),
+    ("Co je superdávka?", "Plán na sloučení několika sociálních dávek do jednoho systému."),
+    ("Co je NKÚ?", "Nejvyšší kontrolní úřad. Kontroluje, jak stát hospodaří s veřejnými penězi."),
+    ("Co je VZP?", "Největší česká zdravotní pojišťovna."),
+    ("Co je OZP?", "Osoba se zdravotním postižením."),
+    ("Co je landsmanšaft?", "Organizace sudetoněmeckých krajanů vysídlených po válce."),
+    ("Co je Rada ČT?", "Skupina, která dohlíží na Českou televizi a vybírá její vedení."),
+)
+
+# Švejkův překladač z poslanečtiny — pro rubriky a sociální sítě.
+POSLANECINY_PREKLAD: tuple[tuple[str, str], ...] = (
+    ("První čtení", "Ještě se nic nerozhodlo"),
+    ("Druhé čtení", "Teď se vrtá v paragrafech"),
+    ("Třetí čtení", "Poslední šance, pak ano nebo ne"),
+    ("Procedurální návrh", "Hádka o tom, jak se budou hádat"),
+    ("Přerušení schůze", "Pauza"),
+    ("Senát vrátil zákon", "Senát řekl: zkuste to ještě jednou"),
+    ("Usnesení", "Vzkaz"),
+    ("Interpelace", "Vysvětlování ministrů"),
+    ("Výbor", "Menší sněmovna"),
+    ("Střet zájmů", "Když politik řeší vlastní byznys"),
+    ("Rozpočtové brzdy", "Brzda na státní kreditku"),
+    ("Fiskální pravidla", "Pravidla, že kreditka není bezedná"),
+    ("Schodek", "Utratili víc, než vybrali"),
+    ("Kvorum", "Málo poslanců v sále, hlasovat nejde"),
+    ("Lex developer", "Zákon pro velké stavitele"),
+    ("EET", "Účtenka hlásí státu každou korunu"),
+    ("Odročení", "Dneska už ne"),
 )

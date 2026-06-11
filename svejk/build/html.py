@@ -10,6 +10,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from svejk.build.day_content import DenContent, build_den_content, datum_design
 from svejk.build.glossary_markup import glossary_markup
+from svejk.glossary import SLOVNIČEK
 from svejk.build.nav import (
     Edition,
     archiv_pages_href,
@@ -176,6 +177,7 @@ def render_den_html(
         meta_description=meta_description,
         article_json_ld=json_ld,
         archive_href=archive_href,
+        slovnicek=SLOVNIČEK,
         **favicons,
     )
 
