@@ -18,6 +18,7 @@ from svejk.build.nav import (
     edition_nav,
     edition_pages_href,
     list_obdobi_editions,
+    slovnicek_pages_href,
 )
 from svejk.newsletter.config import NewsletterConfig
 from svejk.paths import SchuzePaths
@@ -148,6 +149,7 @@ def render_den_html(
         href = edition_pages_href(ob, paths.schuze, content.datum, base_path)
         canonical_url = f"{cfg.site_url.rstrip('/')}{href}"
     archive_href = archiv_pages_href(base_path) if link_mode == "pages" else None
+    slovnicek_href = slovnicek_pages_href(base_path) if link_mode == "pages" else None
     title = f"Poslušně hlásím · {datum_design(content.datum, content.den)}"
     from svejk.build.seo import article_json_ld as _article_json_ld
 
@@ -177,7 +179,7 @@ def render_den_html(
         meta_description=meta_description,
         article_json_ld=json_ld,
         archive_href=archive_href,
-        slovnicek=SLOVNIČEK,
+        slovnicek_href=slovnicek_href,
         **favicons,
     )
 
@@ -391,6 +393,35 @@ def render_potvrzeno_html(
         site_url=cfg.site_url.rstrip("/"),
         privacy_url=cfg.privacy_url,
         contact_email=cfg.contact_email,
+        canonical_url=canonical_url,
+        inline_css=inline_css,
+        css=css,
+        css_href=css_href,
+        fonts_css_href=fonts_css_href,
+        **favicons,
+    )
+
+
+def render_slovnicek_html(
+    *,
+    inline_css: bool = False,
+    css_href: str | None = None,
+    fonts_css_href: str | None = None,
+    base_path: str = "",
+) -> str:
+    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path)
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    archive_href = archiv_pages_href(base_path)
+    canonical_url = f"{cfg.site_url.rstrip('/')}{slovnicek_pages_href(base_path)}"
+    tpl = _jinja_env().get_template("slovnicek-stranka.html")
+    return tpl.render(
+        slovnicek=SLOVNIČEK,
+        archive_href=archive_href,
         canonical_url=canonical_url,
         inline_css=inline_css,
         css=css,

@@ -15,6 +15,7 @@ from svejk.build.html import (
     render_archiv_html,
     render_den_html,
     render_potvrzeno_html,
+    render_slovnicek_html,
     render_soukromi_html,
     static_css_path,
     static_fonts_css_path,
@@ -187,6 +188,12 @@ def run_export_pages(
     )
     (out / "archiv.html").write_text(archiv_html, encoding="utf-8")
     written.append("archiv.html")
+
+    slovnicek_html = render_slovnicek_html(
+        css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
+    )
+    (out / "slovnicek.html").write_text(slovnicek_html, encoding="utf-8")
+    written.append("slovnicek.html")
 
     potvrzeno_html = render_potvrzeno_html(
         obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base

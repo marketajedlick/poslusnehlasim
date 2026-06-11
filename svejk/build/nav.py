@@ -124,6 +124,11 @@ def archiv_pages_href(base_path: str = "") -> str:
     return f"{base}/archiv.html" if base else "/archiv.html"
 
 
+def slovnicek_pages_href(base_path: str = "") -> str:
+    base = base_path.rstrip("/")
+    return f"{base}/slovnicek.html" if base else "/slovnicek.html"
+
+
 def resolve_edition(obdobi: int, datum_unl: str, schuze: int | None = None) -> Edition | None:
     matches = _editions_on_day(list_obdobi_editions(obdobi), datum_unl)
     if not matches:

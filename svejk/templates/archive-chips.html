@@ -1,5 +1,11 @@
         {% if archive_href %}
         <section class="archive-link" aria-label="Archiv vydání">
-          <a class="archive-all" href="{{ archive_href }}">Celý archiv</a>
+          <nav class="archive-nav">
+            <a class="archive-all" href="{{ archive_href }}">Celý archiv</a>
+            {% if slovnicek_href %}
+            <span class="archive-nav-sep" aria-hidden="true">·</span>
+            <a class="archive-all" href="{{ slovnicek_href }}">Švejkův slovníček</a>
+            {% endif %}
+          </nav>
         </section>
         {% endif %}
