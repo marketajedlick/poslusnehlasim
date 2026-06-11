@@ -28,6 +28,7 @@ from svejk.build.vyznamenani_neprosli import (
     load_vyznamenani,
     page_explain,
     page_meta,
+    resolve_vyznamenani_page_links,
     table_rows,
     vyznamenani_href,
     _load_votes_by_cislo,
@@ -193,6 +194,16 @@ def render_den_html(
             link_pairs.append((phrase, href))
         if link_pairs:
             item.mean = inject_mean_links(item.mean, link_pairs)
+        if item.kuriozita_links:
+            item.kuriozita_nav = resolve_vyznamenani_page_links(
+                paths,
+                content.datum,
+                item.kuriozita_links,
+                obdobi=ob,
+                schuze=paths.schuze,
+                link_mode=link_mode,
+                base_path=base_path,
+            )
     tpl = _jinja_env().get_template("noviny-dlouhe.html")
     return tpl.render(
         content=content,

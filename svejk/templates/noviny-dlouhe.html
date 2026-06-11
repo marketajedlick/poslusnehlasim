@@ -124,6 +124,14 @@
             {% if item.kuriozita %}
             <p class="kuriozita">{{ item.kuriozita | glossary }}</p>
             {% endif %}
+            {% if item.kuriozita_nav %}
+            <nav class="kuriozita-links" aria-label="Tabulky hlasování o vyznamenání">
+              {% for label, href in item.kuriozita_nav %}
+              {% if not loop.first %}<span class="kuriozita-links-sep" aria-hidden="true">·</span>{% endif %}
+              <a class="kuriozita-link" href="{{ href }}">{{ label }}</a>
+              {% endfor %}
+            </nav>
+            {% endif %}
           </div>
         </div>
         {% endfor %}

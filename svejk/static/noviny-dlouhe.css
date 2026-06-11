@@ -229,6 +229,24 @@ body.is-turning{ pointer-events:none; }
   font-family:'Old Standard TT',serif; font-style:italic;
   color:var(--ink-soft); overflow-wrap:anywhere;
 }
+.kuriozita-links{
+  display:flex; flex-wrap:wrap; align-items:center;
+  gap:6px 10px; margin-top:10px;
+}
+.kuriozita-links-sep{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:11px; color:var(--ink-soft); opacity:.7;
+}
+a.kuriozita-link{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--terra); text-decoration:none;
+  border-bottom:1px solid rgba(207,90,49,.35);
+  padding-bottom:1px;
+}
+a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
+.item.i2 a.kuriozita-link{ color:var(--blue); border-bottom-color:rgba(40,60,110,.35); }
+.item.i2 a.kuriozita-link:hover{ border-bottom-color:var(--blue); }
 
 /* ---------- Švejkův slovníček ---------- */
 .slovnicek{

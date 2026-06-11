@@ -20,6 +20,7 @@ from svejk.build.vyznamenani_neprosli import (
     VyznamenaniKind,
     inject_mean_links_md,
     load_vyznamenani,
+    resolve_vyznamenani_page_links,
     vyznamenani_href,
 )
 from svejk.build.io import read_json
@@ -110,6 +111,18 @@ def render_den_markdown(
         )
         if item.kuriozita:
             lines.extend(["", f"*{item.kuriozita}*"])
+        if item.kuriozita_links:
+            nav = resolve_vyznamenani_page_links(
+                paths,
+                content.datum,
+                item.kuriozita_links,
+                obdobi=paths.obdobi,
+                schuze=paths.schuze,
+                link_mode="file",
+            )
+            if nav:
+                md_links = " · ".join(f"[{label}]({href})" for label, href in nav)
+                lines.extend(["", md_links])
         lines.append("")
 
     lines.append("## Výsledek dne")

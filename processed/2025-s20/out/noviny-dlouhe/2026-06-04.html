@@ -256,6 +256,24 @@ body.is-turning{ pointer-events:none; }
   font-family:'Old Standard TT',serif; font-style:italic;
   color:var(--ink-soft); overflow-wrap:anywhere;
 }
+.kuriozita-links{
+  display:flex; flex-wrap:wrap; align-items:center;
+  gap:6px 10px; margin-top:10px;
+}
+.kuriozita-links-sep{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:11px; color:var(--ink-soft); opacity:.7;
+}
+a.kuriozita-link{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--terra); text-decoration:none;
+  border-bottom:1px solid rgba(207,90,49,.35);
+  padding-bottom:1px;
+}
+a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
+.item.i2 a.kuriozita-link{ color:var(--blue); border-bottom-color:rgba(40,60,110,.35); }
+.item.i2 a.kuriozita-link:hover{ border-bottom-color:var(--blue); }
 
 /* ---------- Švejkův slovníček ---------- */
 .slovnicek{
@@ -1282,6 +1300,17 @@ body.archiv-page{
             
             
             <p class="kuriozita">Kuriozita dne: <span class="term-tip" tabindex="0" role="term" aria-label="Návrh na vyznamenání 4. 6. 2026 neprošel (92:16); chyběl jediný hlas na většinu přítomných.">Vojtěch Filsák<span class="term-tip-bubble" role="tooltip">Návrh na vyznamenání 4. 6. 2026 neprošel (92:16); chyběl jediný hlas na většinu přítomných.</span></span> měl 92:16 a chyběl mu jediný hlas na většinu přítomných, z třiadvaceti neprošlých byl od metálu nejblíž. <span class="term-tip" tabindex="0" role="term" aria-label="Novinář; návrh na vyznamenání 4. 6. 2026 neprošel (91:13), chyběly tři hlasy na většinu přítomných.">Luboš Dobrovský<span class="term-tip-bubble" role="tooltip">Novinář; návrh na vyznamenání 4. 6. 2026 neprošel (91:13), chyběly tři hlasy na většinu přítomných.</span></span> s 91:13 prošel podobně těsně, ale taky ne.</p>
+            
+            
+            <nav class="kuriozita-links" aria-label="Tabulky hlasování o vyznamenání">
+              
+              
+              <a class="kuriozita-link" href="2026-06-04-prosli.html">Kdo prošel</a>
+              
+              <span class="kuriozita-links-sep" aria-hidden="true">·</span>
+              <a class="kuriozita-link" href="2026-06-04-neprosli.html">Kdo neprošel</a>
+              
+            </nav>
             
           </div>
         </div>

@@ -101,6 +101,31 @@ def vyznamenani_neprosli_href(
     )
 
 
+def resolve_vyznamenani_page_links(
+    paths: SchuzePaths,
+    datum_unl: str,
+    links: list[tuple[str, str]],
+    *,
+    obdobi: int,
+    schuze: int,
+    link_mode: str,
+    base_path: str = "",
+) -> list[tuple[str, str]]:
+    """Přeloží (popisek, prosli|neprosli) na (popisek, href) jen když data existují."""
+    out: list[tuple[str, str]] = []
+    for label, page in links:
+        if page not in ("neprosli", "prosli"):
+            continue
+        kind: VyznamenaniKind = page  # type: ignore[assignment]
+        if not load_vyznamenani(paths, datum_unl, kind):
+            continue
+        href = vyznamenani_href(
+            obdobi, schuze, datum_unl, kind, link_mode=link_mode, base_path=base_path
+        )
+        out.append((label, href))
+    return out
+
+
 def inject_mean_link(text: str, phrase: str, href: str) -> str:
     if not text or not phrase or not href or phrase not in text:
         return text

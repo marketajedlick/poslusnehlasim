@@ -91,6 +91,8 @@ class DenItem:
     variant: str = ""
     has_custom_lead: bool = False
     mean_links: list[tuple[str, str]] = field(default_factory=list)
+    kuriozita_links: list[tuple[str, str]] = field(default_factory=list)
+    kuriozita_nav: list[tuple[str, str]] = field(default_factory=list)
 
     @property
     def stamp(self) -> str:
@@ -501,6 +503,12 @@ def build_den_content(
         legacy_page = (legacy.get("page") or "neprosli").strip()
         if legacy_phrase and not any(p == legacy_phrase for p, _ in mean_links):
             mean_links.append((legacy_phrase, legacy_page))
+        kuriozita_links: list[tuple[str, str]] = []
+        for entry in fact.get("kuriozita_links") or []:
+            label = (entry.get("label") or "").strip()
+            page = (entry.get("page") or "").strip()
+            if label and page:
+                kuriozita_links.append((label, page))
         items_meta[str(num)] = {"pocet_hlasovani": ph, "slug": slug}
         content.items.append(
             DenItem(
@@ -517,6 +525,7 @@ def build_den_content(
                 verdikt=fact.get("verdikt", "schvaleno"),
                 variant="i2" if num % 2 == 0 else "",
                 mean_links=mean_links,
+                kuriozita_links=kuriozita_links,
             )
         )
 

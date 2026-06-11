@@ -48,6 +48,16 @@
     }
   ],
   "kuriozita": "Kuriozita dne: Vojtěch Filsák měl 92:16 a chyběl mu jediný hlas na většinu přítomných, z třiadvaceti neprošlých byl od metálu nejblíž. Luboš Dobrovský s 91:13 prošel podobně těsně, ale taky ne.",
+  "kuriozita_links": [
+    {
+      "label": "Kdo prošel",
+      "page": "prosli"
+    },
+    {
+      "label": "Kdo neprošel",
+      "page": "neprosli"
+    }
+  ],
   "pocet_hlasovani": 165,
   "proslo": true,
   "signaly": {
