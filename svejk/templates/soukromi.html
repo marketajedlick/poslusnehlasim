@@ -5,6 +5,7 @@
 <title>Ochrana údajů · Poslušně hlásím</title>
 <meta name="description" content="Jak Poslušně hlásím zpracovává e-mail při odběru novinek a co měří na webu." />
 <link rel="canonical" href="{{ canonical_url }}" />
+{% include "og-meta.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
@@ -40,9 +41,10 @@
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Cookies</h2>
-      <p>Google Analytics může ukládat cookies do prohlížeče, aby rozeznal opakovanou návštěvu.</p>
-      <p>Bez nich web funguje dál — jen neuvidíme, že jste tu už byli.</p>
+      <p>Google Analytics ukládá cookies jen po tvém souhlasu v liště dole na webu.</p>
+      <p>Bez souhlasu se analytika nespustí — web funguje dál stejně.</p>
       <p>Cookies pro odběr novinek nepotřebujeme; ten běží přes e-mail.</p>
+      <p><button type="button" class="cookie-settings-btn" onclick="window.phOpenCookieSettings && window.phOpenCookieSettings()">Změnit volbu cookies</button></p>
     </section>
 
     <section class="soukromi-section">
@@ -60,7 +62,7 @@
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Tvá práva</h2>
       <p>Kdykoliv můžeš požádat o výmaz nebo informace o uložených údajích z odběru.</p>
-      <p>U analytiky můžeš cookies v prohlížeči smazat nebo blokovat; Google má také <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">doplněk pro vypnutí Analytics</a>.</p>
+      <p>U analytiky můžeš kdykoliv změnit volbu cookies na této stránce, nebo cookies v prohlížeči smazat. Google má také <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">doplněk pro vypnutí Analytics</a>.</p>
     </section>
 
     <section class="soukromi-section">
@@ -80,5 +82,6 @@
     {% endif %}
   </nav>
 </div>
+{% include "cookie-consent.html" %}
 </body>
 </html>

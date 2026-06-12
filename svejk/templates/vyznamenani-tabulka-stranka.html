@@ -5,6 +5,7 @@
 <title>{{ page_title }} · {{ datum_label }} · Poslušně hlásím</title>
 <meta name="description" content="{{ page_description }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
+{% include "og-meta.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
@@ -153,5 +154,6 @@
 
   <p class="vyznamenani-note">{{ page_note }}</p>
 </div>
+{% include "cookie-consent.html" %}
 </body>
 </html>

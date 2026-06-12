@@ -167,7 +167,14 @@ def render_den_html(
     from svejk.build.seo import article_headline as _article_headline
     from svejk.build.seo import article_json_ld as _article_json_ld
 
-    og_image_url = _static_asset_url(cfg.site_url, base_path, "apple-touch-icon.png")
+    og = _og_context(
+        site_url=cfg.site_url,
+        base_path=base_path,
+        title=title,
+        description=meta_description,
+        og_type="article",
+    )
+    og_image_url = og["og_image_url"]
     schema_headline = _article_headline(
         dnesni_ucet=content.dnesni_ucet,
         meta_description=meta_description,
@@ -247,8 +254,8 @@ def render_den_html(
         canonical_url=canonical_url,
         meta_description=meta_description,
         article_json_ld=json_ld,
-        og_image_url=og_image_url,
         archive_href=archive_href,
+        **og,
         slovnicek_href=slovnicek_href,
         **favicons,
     )
@@ -258,6 +265,22 @@ def _static_asset_url(site_url: str, base_path: str, name: str) -> str:
     base = base_path.rstrip("/")
     prefix = f"{base}/static" if base else "/static"
     return f"{site_url.rstrip('/')}{prefix}/{name}"
+
+
+def _og_context(
+    *,
+    site_url: str,
+    base_path: str,
+    title: str,
+    description: str,
+    og_type: str = "website",
+) -> dict[str, str]:
+    return {
+        "og_title": title,
+        "og_description": description,
+        "og_image_url": _static_asset_url(site_url, base_path, "apple-touch-icon.png"),
+        "og_type": og_type,
+    }
 
 
 def plain_text_from_content(
@@ -414,12 +437,19 @@ def render_archiv_html(
         latest.obdobi, latest.schuze, latest.datum_unl, base_path
     )
     canonical_url = f"{cfg.site_url.rstrip('/')}{archiv_pages_href(base_path)}"
+    og = _og_context(
+        site_url=cfg.site_url,
+        base_path=base_path,
+        title="Archiv vydání · Poslušně hlásím",
+        description=f"Všechna vydání deníku z Poslanecké sněmovny, období {obdobi}.",
+    )
     tpl = _jinja_env().get_template("archiv.html")
     return tpl.render(
         obdobi=obdobi,
         archive_months=months,
         latest_href=latest_href,
         canonical_url=canonical_url,
+        **og,
         inline_css=inline_css,
         css=css,
         css_href=css_href,
@@ -534,6 +564,13 @@ def render_vyznamenani_table_html(
         else "Kdo neprošel"
     )
     page_description = meta["gloss"]
+    og_title = f"{meta['title']} · {datum_label} · Poslušně hlásím"
+    og = _og_context(
+        site_url=cfg.site_url,
+        base_path=base_path,
+        title=og_title,
+        description=page_description,
+    )
     votes_by_cislo = _load_votes_by_cislo(paths, datum_unl)
     explain = page_explain(kind, data, votes_by_cislo)
     tpl = _jinja_env().get_template("vyznamenani-tabulka-stranka.html")
@@ -556,6 +593,7 @@ def render_vyznamenani_table_html(
         css_href=css_href,
         fonts_css_href=fonts_css_href,
         **favicons,
+        **og,
     )
 
 
@@ -592,12 +630,19 @@ def render_slovnicek_html(
         latest.obdobi, latest.schuze, latest.datum_unl, base_path
     )
     canonical_url = f"{cfg.site_url.rstrip('/')}{slovnicek_pages_href(base_path)}"
+    og = _og_context(
+        site_url=cfg.site_url,
+        base_path=base_path,
+        title="Švejkův slovníček · Poslušně hlásím",
+        description="Krátké vysvětlení pojmů z Poslanecké sněmovny pro lidi, kteří politiku běžně nesledují.",
+    )
     tpl = _jinja_env().get_template("slovnicek-stranka.html")
     return tpl.render(
         slovnicek=SLOVNIČEK,
         archive_href=archive_href,
         latest_href=latest_href,
         canonical_url=canonical_url,
+        **og,
         inline_css=inline_css,
         css=css,
         css_href=css_href,
@@ -624,12 +669,19 @@ def render_soukromi_html(
     cfg = NewsletterConfig.from_env()
     archive_href = archiv_pages_href(base_path)
     canonical_url = f"{cfg.site_url.rstrip('/')}/soukromi/"
+    og = _og_context(
+        site_url=cfg.site_url,
+        base_path=base_path,
+        title="Ochrana údajů · Poslušně hlásím",
+        description="Jak Poslušně hlásím zpracovává e-mail při odběru novinek a co měří na webu.",
+    )
     tpl = _jinja_env().get_template("soukromi.html")
     return tpl.render(
         archive_href=archive_href,
         site_url=cfg.site_url.rstrip("/"),
         contact_email=cfg.contact_email,
         canonical_url=canonical_url,
+        **og,
         inline_css=inline_css,
         css=css,
         css_href=css_href,

@@ -5,6 +5,7 @@
 <title>Archiv vydání · Poslušně hlásím</title>
 <meta name="description" content="Všechna vydání deníku z Poslanecké sněmovny, období {{ obdobi }}." />
 <link rel="canonical" href="{{ canonical_url }}" />
+{% include "og-meta.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
@@ -41,5 +42,6 @@
 
   <p class="archiv-legend"><span class="archiv-legend-mark">s =</span> číslo schůze Poslanecké sněmovny</p>
 </div>
+{% include "cookie-consent.html" %}
 </body>
 </html>
