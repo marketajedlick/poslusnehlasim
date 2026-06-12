@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% include "analytics.html" %}
 <meta name="theme-color" content="#c9bda3" />
 <link rel="icon" type="image/svg+xml" href="{{ favicon_svg }}" />
 <link rel="icon" type="image/png" href="{{ favicon_png }}" sizes="32x32" />
 <link rel="apple-touch-icon" href="{{ apple_touch_icon }}" />
 <title>Ochrana údajů · Poslušně hlásím</title>
-<meta name="description" content="Jak Poslušně hlásím zpracovává e-mail při odběru novinek." />
+<meta name="description" content="Jak Poslušně hlásím zpracovává e-mail při odběru novinek a co měří na webu." />
 <link rel="canonical" href="{{ canonical_url }}" />
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
@@ -23,13 +24,14 @@
   <div class="soukromi-body">
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Co sbíráme</h2>
-      <p>Jen e-mailovou adresu.</p>
-      <p>Nic víc nepotřebujeme.</p>
+      <p><strong>Odběr novinek:</strong> e-mailovou adresu. Nic víc nepotřebujeme.</p>
+      <p><strong>Web:</strong> základní údaje o návštěvě — kolik lidí stránku otevřelo, které články čtou, odkud přišli. Nepotřebujeme jméno, adresu ani platební kartu.</p>
     </section>
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">K čemu to je</h2>
-      <p>K posílání nových vydání Deníku sněmovny.</p>
+      <p><strong>E-mail:</strong> posílání nových vydání Deníku sněmovny.</p>
+      <p><strong>Analytika:</strong> abychom věděli, jestli někdo web vůbec čte a co ho zajímá. Ne prodávat reklamu — spíš neposílat deník do prázdna.</p>
       <p>Žádný marketing cizích firem.</p>
       <p>Žádné nabídky hrnců.</p>
       <p>Žádné překvapení.</p>
@@ -39,6 +41,14 @@
       <h2 class="soukromi-heading">Kde data držíme</h2>
       <p>E-maily neukládáme do webu.</p>
       <p>Rozesílku pro nás zajišťuje <a href="https://ecomail.cz/gdpr" rel="noopener">Ecomail</a>.</p>
+      <p>Statistiky návštěvnosti sbírá <a href="https://policies.google.com/privacy" rel="noopener">Google Analytics</a>. Data ukládá Google jako zpracovatel; my vidíme jen souhrnné přehledy.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Cookies</h2>
+      <p>Google Analytics může ukládat cookies do prohlížeče, aby rozeznal opakovanou návštěvu.</p>
+      <p>Bez nich web funguje dál — jen neuvidíme, že jste tu už byli.</p>
+      <p>Cookies pro odběr novinek nepotřebujeme; ten běží přes e-mail.</p>
     </section>
 
     <section class="soukromi-section">
@@ -55,7 +65,8 @@
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Tvá práva</h2>
-      <p>Kdykoliv můžeš požádat o výmaz nebo informace o uložených údajích.</p>
+      <p>Kdykoliv můžeš požádat o výmaz nebo informace o uložených údajích z odběru.</p>
+      <p>U analytiky můžeš cookies v prohlížeči smazat nebo blokovat; Google má také <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">doplněk pro vypnutí Analytics</a>.</p>
     </section>
 
     <section class="soukromi-section">
