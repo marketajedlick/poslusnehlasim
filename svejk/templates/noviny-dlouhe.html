@@ -39,15 +39,6 @@
       <span class="edition-now-day">{{ content.cal_day }}</span>
       <span class="edition-now-sub">{{ content.cal_den }} · {{ content.cal_month }} · s{{ schuze }}</span>
     </div>
-    {% if archive_href %}
-    <nav class="edition-shortcuts archive-nav" aria-label="Archiv a slovníček">
-      <a class="archive-all" href="{{ archive_href }}">Celý archiv</a>
-      {% if slovnicek_href %}
-      <span class="archive-nav-sep" aria-hidden="true">·</span>
-      <a class="archive-all" href="{{ slovnicek_href }}">Švejkův slovníček</a>
-      {% endif %}
-    </nav>
-    {% endif %}
   </div>
 
   {% if nav.next %}
@@ -92,6 +83,7 @@
           </div>
         </div>
         <hr class="hr" />
+{% include "archive-chips.html" %}
 
         <div class="board">
           <div class="board-kick">Stav zápasu</div>
@@ -145,7 +137,6 @@
           <div class="sign">- Váš dobrý voják Švejk -</div>
         </div>
 
-{% include "archive-chips.html" %}
 {% include "subscribe.html" %}
             </div>
             <div class="dogear"></div>
