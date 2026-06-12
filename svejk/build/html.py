@@ -164,14 +164,39 @@ def render_den_html(
     archive_href = archiv_pages_href(base_path) if link_mode == "pages" else None
     slovnicek_href = slovnicek_pages_href(base_path) if link_mode == "pages" else None
     title = f"Poslušně hlásím · {datum_design(content.datum, content.den)}"
+    from svejk.build.seo import article_headline as _article_headline
     from svejk.build.seo import article_json_ld as _article_json_ld
+    from svejk.build.seo import publisher_logo_url as _publisher_logo_url
 
+    og_image_url = _static_asset_url(cfg.site_url, base_path, "apple-touch-icon.png")
+    schema_headline = _article_headline(
+        dnesni_ucet=content.dnesni_ucet,
+        meta_description=meta_description,
+        first_item_nadpis=content.items[0].nadpis if content.items else "",
+        edition_title=title,
+    )
+    schema_parts: list[dict[str, str | int]] = []
+    body_chunks: list[str] = []
+    for item in content.items:
+        chunk = item.lead.strip()
+        if item.mean:
+            chunk = f"{chunk} {item.mean.strip()}"
+        body_chunks.append(f"{item.nadpis}. {chunk}")
+        schema_parts.append(
+            {"headline": item.nadpis, "body": chunk, "position": item.num}
+        )
+    if content.zaver:
+        body_chunks.append(content.zaver.strip())
     json_ld = _article_json_ld(
-        headline=title,
+        headline=schema_headline,
         description=meta_description,
         url=canonical_url,
         date_unl=content.datum,
         site_url=cfg.site_url,
+        image_url=og_image_url,
+        edition_title=title,
+        article_body=" ".join(body_chunks),
+        parts=schema_parts or None,
     )
     for item in content.items:
         if not item.mean_links:
@@ -223,6 +248,7 @@ def render_den_html(
         canonical_url=canonical_url,
         meta_description=meta_description,
         article_json_ld=json_ld,
+        og_image_url=og_image_url,
         archive_href=archive_href,
         slovnicek_href=slovnicek_href,
         **favicons,

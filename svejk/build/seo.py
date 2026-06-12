@@ -36,6 +36,52 @@ def meta_description(text: str, *, max_len: int = 155) -> str:
     return cut + "…"
 
 
+def publisher_logo_url(site_url: str, base_path: str = "") -> str:
+    base = site_url.rstrip("/")
+    prefix = f"{base_path.rstrip('/')}/static" if base_path else "/static"
+    if not prefix.startswith("/"):
+        prefix = "/" + prefix
+    return f"{base}{prefix}/apple-touch-icon.png"
+
+
+def article_headline(
+    *,
+    dnesni_ucet: str,
+    meta_description: str,
+    first_item_nadpis: str = "",
+    edition_title: str = "",
+) -> str:
+    """Nadpis pro schema.org — shrnutí dne, ne datum v hlavičce."""
+    raw = " ".join((dnesni_ucet or "").split())
+    if raw:
+        return _truncate_text(meta_description or raw, max_len=110)
+    if first_item_nadpis:
+        return _truncate_text(first_item_nadpis, max_len=110)
+    return _truncate_text(edition_title, max_len=110)
+
+
+def _truncate_text(text: str, *, max_len: int) -> str:
+    one = " ".join(text.split())
+    if len(one) <= max_len:
+        return one
+    cut = one[: max_len - 1].rsplit(" ", 1)[0]
+    return cut + "…"
+
+
+def _publisher_block(*, site_url: str, site_name: str, logo_url: str) -> dict:
+    return {
+        "@type": "Organization",
+        "name": site_name,
+        "url": site_url.rstrip("/") + "/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": logo_url,
+            "width": 200,
+            "height": 280,
+        },
+    }
+
+
 def article_json_ld(
     *,
     headline: str,
@@ -44,23 +90,52 @@ def article_json_ld(
     date_unl: str,
     site_url: str,
     site_name: str = "Poslušně hlásím",
+    image_url: str | None = None,
+    edition_title: str = "",
+    article_body: str = "",
+    parts: list[dict[str, str | int]] | None = None,
 ) -> str:
     published = datetime.strptime(date_unl, "%d.%m.%Y").strftime("%Y-%m-%d")
-    data = {
+    logo_url = image_url or publisher_logo_url(site_url)
+    publisher = _publisher_block(
+        site_url=site_url, site_name=site_name, logo_url=logo_url
+    )
+    data: dict = {
         "@context": "https://schema.org",
         "@type": "NewsArticle",
+        "@id": url,
+        "mainEntityOfPage": {"@type": "WebPage", "@id": url},
         "headline": headline,
         "description": description,
         "url": url,
         "datePublished": published,
+        "dateModified": published,
         "inLanguage": "cs",
         "isAccessibleForFree": True,
+        "articleSection": "Poslanecká sněmovna",
+        "author": publisher,
+        "publisher": publisher,
+        "image": [logo_url],
         "isPartOf": {
             "@type": "WebSite",
             "name": site_name,
             "url": site_url.rstrip("/") + "/",
         },
     }
+    if edition_title and edition_title != headline:
+        data["alternativeHeadline"] = edition_title
+    if article_body:
+        data["articleBody"] = article_body
+    if parts:
+        data["hasPart"] = [
+            {
+                "@type": "NewsArticle",
+                "headline": part["headline"],
+                "articleBody": part["body"],
+                "position": part["position"],
+            }
+            for part in parts
+        ]
     return json.dumps(data, ensure_ascii=False)
 
 

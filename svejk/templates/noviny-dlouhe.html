@@ -12,7 +12,13 @@
 <meta property="og:title" content="Poslušně hlásím · {{ datum_design }}" />
 <meta property="og:description" content="{{ meta_description }}" />
 <meta property="og:url" content="{{ canonical_url }}" />
+{% if og_image_url %}
+<meta property="og:image" content="{{ og_image_url }}" />
 <meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="{{ og_image_url }}" />
+{% else %}
+<meta name="twitter:card" content="summary" />
+{% endif %}
 <meta name="twitter:title" content="Poslušně hlásím · {{ datum_design }}" />
 <meta name="twitter:description" content="{{ meta_description }}" />
 <script type="application/ld+json">{{ article_json_ld | safe }}</script>
