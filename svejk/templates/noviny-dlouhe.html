@@ -34,10 +34,20 @@
   </span>
   {% endif %}
 
-  <span class="edition-now" title="{{ datum_design }} · schůze {{ schuze }}">
-    <span class="edition-now-day">{{ content.cal_day }}</span>
-    <span class="edition-now-sub">{{ content.cal_den }} · {{ content.cal_month }} · s{{ schuze }}</span>
-  </span>
+  <div class="edition-now" title="{{ datum_design }} · schůze {{ schuze }}">
+    <div class="edition-now-date">
+      <span class="edition-now-day">{{ content.cal_day }}</span>
+      <span class="edition-now-sub">{{ content.cal_den }} · {{ content.cal_month }} · s{{ schuze }}</span>
+    </div>
+    {% if archive_href %}
+    <nav class="edition-shortcuts" aria-label="Archiv a slovníček">
+      <a class="edition-shortcut-btn" href="{{ archive_href }}">Archiv</a>
+      {% if slovnicek_href %}
+      <a class="edition-shortcut-btn" href="{{ slovnicek_href }}">Slovníček</a>
+      {% endif %}
+    </nav>
+    {% endif %}
+  </div>
 
   {% if nav.next %}
   <a class="edition-arrow next" href="{{ nav.next.href }}" title="{{ nav.next.title }}" aria-label="Novější vydání: {{ nav.next.title }}">
@@ -67,10 +77,20 @@
             <div class="grain"></div>
             <div class="pad">
         <div class="head">
-          <div class="cal">
-            <div class="cal-wd">{{ content.cal_den }}</div>
-            <div class="cal-day">{{ content.cal_day }}</div>
-            <div class="cal-mo">{{ content.cal_month }}</div>
+          <div class="cal-col">
+            <div class="cal">
+              <div class="cal-wd">{{ content.cal_den }}</div>
+              <div class="cal-day">{{ content.cal_day }}</div>
+              <div class="cal-mo">{{ content.cal_month }}</div>
+            </div>
+            {% if archive_href %}
+            <nav class="head-shortcuts" aria-label="Archiv a slovníček">
+              <a class="head-shortcut-btn" href="{{ archive_href }}">Celý archiv</a>
+              {% if slovnicek_href %}
+              <a class="head-shortcut-btn" href="{{ slovnicek_href }}">Švejkův slovníček</a>
+              {% endif %}
+            </nav>
+            {% endif %}
           </div>
           <div class="titleblock">
             {% if svejk_svg %}
