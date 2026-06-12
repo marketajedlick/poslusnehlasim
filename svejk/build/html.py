@@ -166,7 +166,6 @@ def render_den_html(
     title = f"Poslušně hlásím · {datum_design(content.datum, content.den)}"
     from svejk.build.seo import article_headline as _article_headline
     from svejk.build.seo import article_json_ld as _article_json_ld
-    from svejk.build.seo import publisher_logo_url as _publisher_logo_url
 
     og_image_url = _static_asset_url(cfg.site_url, base_path, "apple-touch-icon.png")
     schema_headline = _article_headline(
