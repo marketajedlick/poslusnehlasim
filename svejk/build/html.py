@@ -43,6 +43,9 @@ _FONTS_CSS = _STATIC / "fonts.css"
 _EMAIL_CSS = _STATIC / "noviny-email.css"
 _SVEJK_SVG = _STATIC / "svejk.svg"
 _FAVICON_PNG = _STATIC / "svejk-terra.png"
+_OG_SHARE = _STATIC / "og-share.png"
+_OG_SHARE_SIZE = (1200, 630)
+_FALLBACK_OG_SIZE = (200, 280)
 
 
 def static_css_path(base_path: str = "", *, version: str | None = None) -> str:
@@ -127,6 +130,7 @@ def render_den_html(
     base_path: str = "",
     canonical_url: str = "",
     meta_description: str = "",
+    is_homepage: bool = False,
 ) -> str:
     _ = day_path
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
@@ -163,23 +167,32 @@ def render_den_html(
         canonical_url = f"{cfg.site_url.rstrip('/')}{href}"
     archive_href = archiv_pages_href(base_path) if link_mode == "pages" else None
     slovnicek_href = slovnicek_pages_href(base_path) if link_mode == "pages" else None
-    title = f"Poslušně hlásím · {datum_design(content.datum, content.den)}"
+    datum_label = datum_design(content.datum, content.den)
+    edition_title = f"Poslušně hlásím · {datum_label}"
     from svejk.build.seo import article_headline as _article_headline
     from svejk.build.seo import article_json_ld as _article_json_ld
+    from svejk.build.seo import edition_page_title as _edition_page_title
 
+    page_title = _edition_page_title(
+        dnesni_ucet=content.dnesni_ucet,
+        meta_description=meta_description,
+        first_item_nadpis=content.items[0].nadpis if content.items else "",
+        datum_unl=content.datum,
+        den=content.den,
+        datum_design=datum_label,
+    )
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
-        title=title,
+        title=page_title,
         description=meta_description,
         og_type="article",
     )
-    og_image_url = og["og_image_url"]
     schema_headline = _article_headline(
         dnesni_ucet=content.dnesni_ucet,
         meta_description=meta_description,
         first_item_nadpis=content.items[0].nadpis if content.items else "",
-        edition_title=title,
+        edition_title=edition_title,
     )
     schema_parts: list[dict[str, str | int]] = []
     body_chunks: list[str] = []
@@ -193,16 +206,33 @@ def render_den_html(
         )
     if content.zaver:
         body_chunks.append(content.zaver.strip())
+    from svejk.build.seo import mtime_iso as _mtime_iso
+    from svejk.build.seo import publisher_logo_url as _publisher_logo_url
+    from svejk.build.seo import website_json_ld as _website_json_ld
+
+    date_modified = _mtime_iso(day_path) if day_path.is_file() else None
+    website_ld = (
+        _website_json_ld(
+            site_url=cfg.site_url,
+            logo_url=_publisher_logo_url(cfg.site_url, base_path),
+            base_path=base_path,
+        )
+        if is_homepage
+        else ""
+    )
     json_ld = _article_json_ld(
         headline=schema_headline,
         description=meta_description,
         url=canonical_url,
         date_unl=content.datum,
         site_url=cfg.site_url,
-        image_url=og_image_url,
-        edition_title=title,
+        image_url=og["og_image_url"],
+        logo_url=_publisher_logo_url(cfg.site_url, base_path),
+        date_modified=date_modified,
+        edition_title=edition_title,
         article_body=" ".join(body_chunks),
         parts=schema_parts or None,
+        base_path=base_path,
     )
     for item in content.items:
         if not item.mean_links:
@@ -253,7 +283,9 @@ def render_den_html(
         newsletter=cfg,
         canonical_url=canonical_url,
         meta_description=meta_description,
+        page_title=page_title,
         article_json_ld=json_ld,
+        website_json_ld=website_ld,
         archive_href=archive_href,
         **og,
         slovnicek_href=slovnicek_href,
@@ -267,6 +299,13 @@ def _static_asset_url(site_url: str, base_path: str, name: str) -> str:
     return f"{site_url.rstrip('/')}{prefix}/{name}"
 
 
+def _social_image_asset() -> tuple[str, int, int]:
+    """Soubor a rozměry sdílecího obrázku (og-share.png od grafika, jinak favicon)."""
+    if _OG_SHARE.is_file():
+        return "og-share.png", *_OG_SHARE_SIZE
+    return "apple-touch-icon.png", *_FALLBACK_OG_SIZE
+
+
 def _og_context(
     *,
     site_url: str,
@@ -274,11 +313,14 @@ def _og_context(
     title: str,
     description: str,
     og_type: str = "website",
-) -> dict[str, str]:
+) -> dict[str, str | int]:
+    image_name, image_w, image_h = _social_image_asset()
     return {
         "og_title": title,
         "og_description": description,
-        "og_image_url": _static_asset_url(site_url, base_path, "apple-touch-icon.png"),
+        "og_image_url": _static_asset_url(site_url, base_path, image_name),
+        "og_image_width": image_w,
+        "og_image_height": image_h,
         "og_type": og_type,
     }
 

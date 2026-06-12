@@ -40,6 +40,7 @@ _FONTS_CSS = _STATIC / "fonts.css"
 _FONTS_DIR = _STATIC / "fonts"
 _FAVICON_PNG = _STATIC / "svejk-terra.png"
 _FAVICON_SVG = _STATIC / "svejk.svg"
+_OG_SHARE = _STATIC / "og-share.png"
 
 
 def _base_path() -> str:
@@ -119,6 +120,8 @@ def run_export_pages(
         shutil.copy2(_FAVICON_PNG, static_dir / "favicon.png")
         shutil.copy2(_FAVICON_PNG, static_dir / "apple-touch-icon.png")
         shutil.copy2(_FAVICON_PNG, out / "favicon.ico")
+    if _OG_SHARE.is_file():
+        shutil.copy2(_OG_SHARE, static_dir / "og-share.png")
     css_href = static_css_path(base, version=css_asset_version())
     fonts_css_href = static_fonts_css_path(base, version=fonts_asset_version())
 
@@ -206,6 +209,7 @@ def run_export_pages(
             obdobi=obdobi,
             base_path=base,
             canonical_url=f"{site}/",
+            is_homepage=True,
         )
         (out / "index.html").write_text(index_html, encoding="utf-8")
 

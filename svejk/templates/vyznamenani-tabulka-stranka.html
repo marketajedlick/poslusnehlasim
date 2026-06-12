@@ -74,13 +74,13 @@
             <span class="vyznamenani-vote vyznamenani-vote--proti">{{ row.proti }}</span>
           </td>
           {% if show_vote_threshold %}
-          <td class="vyznamenani-num" data-label="Přítomno">{{ row.pritomno or "—" }}</td>
-          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">{{ row.potreba or "—" }}</td>
+          <td class="vyznamenani-num" data-label="Přítomno">{{ row.pritomno or "-" }}</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">{{ row.potreba or "-" }}</td>
           {% if kind == "neprosli" %}
-          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">{{ row.chybelo or "—" }}</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">{{ row.chybelo or "-" }}</td>
           {% endif %}
-          <td class="vyznamenani-num" data-label="Zdržel se">{{ row.zdrzel or "—" }}</td>
-          <td class="vyznamenani-num" data-label="Nehlasoval">{{ row.nehlasoval or "—" }}</td>
+          <td class="vyznamenani-num" data-label="Zdržel se">{{ row.zdrzel or "-" }}</td>
+          <td class="vyznamenani-num" data-label="Nehlasoval">{{ row.nehlasoval or "-" }}</td>
           <td class="vyznamenani-kluby" data-label="Kluby pro">
             {% if row.kluby_pro_chips %}
             <div class="vyznamenani-chips">
@@ -89,7 +89,7 @@
               {% endfor %}
             </div>
             {% else %}
-            <span class="vyznamenani-empty">—</span>
+            <span class="vyznamenani-empty">-</span>
             {% endif %}
           </td>
           <td class="vyznamenani-kluby" data-label="Kluby proti">
@@ -100,7 +100,7 @@
               {% endfor %}
             </div>
             {% else %}
-            <span class="vyznamenani-empty">—</span>
+            <span class="vyznamenani-empty">-</span>
             {% endif %}
           </td>
           {% else %}
@@ -111,7 +111,7 @@
               <span class="vyznamenani-chip vyznamenani-chip--pro">{{ chip.klub }} <strong>{{ chip.n }}</strong></span>
               {% endfor %}
             </div>
-            {% else %}<span class="vyznamenani-empty">—</span>{% endif %}
+            {% else %}<span class="vyznamenani-empty">-</span>{% endif %}
           </td>
           <td class="vyznamenani-kluby" data-label="Kluby proti">
             {% if row.kluby_proti_chips %}
@@ -120,7 +120,7 @@
               <span class="vyznamenani-chip vyznamenani-chip--proti">{{ chip.klub }} <strong>{{ chip.n }}</strong></span>
               {% endfor %}
             </div>
-            {% else %}<span class="vyznamenani-empty">—</span>{% endif %}
+            {% else %}<span class="vyznamenani-empty">-</span>{% endif %}
           </td>
           {% endif %}
         </tr>

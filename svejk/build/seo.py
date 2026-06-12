@@ -44,20 +44,61 @@ def publisher_logo_url(site_url: str, base_path: str = "") -> str:
     return f"{base}{prefix}/apple-touch-icon.png"
 
 
+def mtime_iso(path: Path) -> str:
+    """ISO 8601 UTC z času poslední změny souboru (pro dateModified)."""
+    ts = path.stat().st_mtime
+    return datetime.fromtimestamp(ts, tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
 def article_headline(
     *,
     dnesni_ucet: str,
     meta_description: str,
     first_item_nadpis: str = "",
     edition_title: str = "",
+    max_len: int = 110,
 ) -> str:
     """Nadpis pro schema.org — shrnutí dne, ne datum v hlavičce."""
     raw = " ".join((dnesni_ucet or "").split())
     if raw:
-        return _truncate_text(meta_description or raw, max_len=110)
+        return _truncate_text(meta_description or raw, max_len=max_len)
     if first_item_nadpis:
-        return _truncate_text(first_item_nadpis, max_len=110)
-    return _truncate_text(edition_title, max_len=110)
+        return _truncate_text(first_item_nadpis, max_len=max_len)
+    return _truncate_text(edition_title, max_len=max_len)
+
+
+def edition_page_title(
+    *,
+    dnesni_ucet: str,
+    meta_description: str,
+    first_item_nadpis: str = "",
+    datum_unl: str,
+    den: str = "",
+    datum_design: str = "",
+    max_len: int = 65,
+) -> str:
+    """<title> pro vydání: téma dne · datum · Poslušně hlásím."""
+    if datum_unl and "." in datum_unl:
+        d, m, y = datum_unl.split(".", 2)
+        date_bit = f"{d}/{m}/{y}"
+    else:
+        date_bit = datum_design or datum_unl
+    if den:
+        date_bit = f"{den.lower()} {date_bit}"
+    suffix = f" · {date_bit} · Poslušně hlásím"
+    budget = max_len - len(suffix)
+    if budget < 8:
+        return _truncate_text(f"Poslušně hlásím · {date_bit}", max_len=max_len)
+    headline = article_headline(
+        dnesni_ucet=dnesni_ucet,
+        meta_description=meta_description,
+        first_item_nadpis=first_item_nadpis,
+        edition_title=datum_design,
+        max_len=budget,
+    )
+    if not headline.strip():
+        return _truncate_text(f"Poslušně hlásím · {date_bit}", max_len=max_len)
+    return f"{headline}{suffix}"
 
 
 def _truncate_text(text: str, *, max_len: int) -> str:
@@ -91,14 +132,18 @@ def article_json_ld(
     site_url: str,
     site_name: str = "Poslušně hlásím",
     image_url: str | None = None,
+    logo_url: str | None = None,
+    date_modified: str | None = None,
     edition_title: str = "",
     article_body: str = "",
     parts: list[dict[str, str | int]] | None = None,
+    base_path: str = "",
 ) -> str:
     published = datetime.strptime(date_unl, "%d.%m.%Y").strftime("%Y-%m-%d")
-    logo_url = image_url or publisher_logo_url(site_url)
+    logo = logo_url or publisher_logo_url(site_url, base_path)
+    article_image = image_url or logo
     publisher = _publisher_block(
-        site_url=site_url, site_name=site_name, logo_url=logo_url
+        site_url=site_url, site_name=site_name, logo_url=logo
     )
     data: dict = {
         "@context": "https://schema.org",
@@ -109,13 +154,13 @@ def article_json_ld(
         "description": description,
         "url": url,
         "datePublished": published,
-        "dateModified": published,
+        "dateModified": date_modified or published,
         "inLanguage": "cs",
         "isAccessibleForFree": True,
         "articleSection": "Poslanecká sněmovna",
         "author": publisher,
         "publisher": publisher,
-        "image": [logo_url],
+        "image": [article_image],
         "isPartOf": {
             "@type": "WebSite",
             "name": site_name,
@@ -136,6 +181,38 @@ def article_json_ld(
             }
             for part in parts
         ]
+    return json.dumps(data, ensure_ascii=False)
+
+
+_WEBSITE_DESCRIPTION = (
+    "Deník z jednání Poslanecké sněmovny ve stylu Haška — "
+    "srozumitelné shrnutí hlasování a zákonů pro lidi, kteří do sněmovny nemusí."
+)
+
+
+def website_json_ld(
+    *,
+    site_url: str,
+    site_name: str = "Poslušně hlásím",
+    description: str = _WEBSITE_DESCRIPTION,
+    logo_url: str | None = None,
+    base_path: str = "",
+) -> str:
+    """WebSite + publisher pro homepage."""
+    base = site_url.rstrip("/")
+    logo = logo_url or publisher_logo_url(site_url, base_path)
+    data = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": f"{base}/#website",
+        "url": f"{base}/",
+        "name": site_name,
+        "description": description,
+        "inLanguage": "cs",
+        "publisher": _publisher_block(
+            site_url=site_url, site_name=site_name, logo_url=logo
+        ),
+    }
     return json.dumps(data, ensure_ascii=False)
 
 
@@ -207,7 +284,7 @@ def write_llms_txt(
 
     llms = f"""# Poslušně hlásím
 
-> Deník z jednání Poslanecké sněmovny ČR ve stylu Haška — srozumitelné shrnutí hlasování a zákonů pro lidi, kteří do sněmovny nemusí.
+> Deník z jednání Poslanecké sněmovny ČR ve stylu Haška: srozumitelné shrnutí hlasování a zákonů pro lidi, kteří do sněmovny nemusí.
 
 Poslušně hlásím publikuje po každém jednacím dni stručné vydání: kolik věcí prošlo, co se schválilo nebo zamítlo a co to znamená v praxi. Texty jsou v češtině.
 
@@ -234,7 +311,7 @@ Poslušně hlásím publikuje po každém jednacím dni stručné vydání: koli
     from svejk.timeline import den_v_tydnu
 
     full_lines = [
-        "# Poslušně hlásím — index vydání",
+        "# Poslušně hlásím, index vydání",
         "",
         f"> Kompletní seznam vydání období {obdobi}. Zdroj: {base}",
         "",
