@@ -1,4 +1,4 @@
-"""Po exportu: rozeslat e-mail odběratelům přes Ecomail API (volitelné)."""
+"""Po exportu: připravit koncept kampaně v Ecomailu (odeslání ručně v UI)."""
 
 from __future__ import annotations
 
@@ -13,8 +13,6 @@ from svejk.newsletter.api import (
     api_key_from_env,
     create_campaign,
     list_id_from_env,
-    send_campaign,
-    send_campaigns_enabled_from_env,
 )
 from svejk.newsletter.config import NewsletterConfig
 from svejk.paths import SchuzePaths, processed_root
@@ -78,17 +76,15 @@ def run_newsletter_notify(
     *,
     dry_run: bool = False,
     force: bool = False,
-    send: bool = False,
     base_path: str = "",
     out_dir: str | Path | None = None,
 ) -> dict[str, Any]:
     """
-    Při novém vydání na webu vytvoří kampaň v Ecomailu (výchozí: jen koncept).
-    S --send nebo ECOMAIL_SEND_CAMPAIGNS=1 kampaň i rozešle.
+    Při novém vydání na webu vytvoří koncept kampaně v Ecomailu.
+    Odeslání vždy ručně v Ecomailu — API nikdy nerozešle.
     Stav v newsletter-state.json brání duplicitám při opakovaném deployi.
     E-maily odběratelů nejsou v repozitáři — drží je Ecomail (GDPR, double opt-in).
     """
-    draft_only = not send and not send_campaigns_enabled_from_env()
     api_key = api_key_from_env()
     list_id = list_id_from_env()
     from_email = (os.environ.get("ECOMAIL_FROM_EMAIL") or "").strip()
@@ -112,11 +108,8 @@ def run_newsletter_notify(
 
     eid = edition_id(latest)
     state = load_state()
-    if draft_only:
-        if state.get("last_drafted_id") == eid and not force:
-            return {"skipped": True, "reason": "už vytvořeno", "edition_id": eid}
-    elif state.get("last_notified_id") == eid and not force:
-        return {"skipped": True, "reason": "už odesláno", "edition_id": eid}
+    if state.get("last_drafted_id") == eid and not force:
+        return {"skipped": True, "reason": "už vytvořeno", "edition_id": eid}
     if state.get("last_attempted_id") == eid and not force:
         return {
             "skipped": True,
@@ -143,11 +136,9 @@ def run_newsletter_notify(
         "edition_id": eid,
         "subject": subject,
         "dry_run": dry_run,
-        "draft_only": draft_only,
     }
 
     if dry_run:
-        result["skipped_send"] = True
         result["body_plain"] = plain
         result["body_html"] = html
         return result
@@ -161,30 +152,7 @@ def run_newsletter_notify(
         }
     )
 
-    if draft_only:
-        created = create_campaign(
-            api_key=api_key,
-            list_id=list_id,
-            subject=subject,
-            html_body=html,
-            plain_body=plain,
-            from_name=from_name,
-            from_email=from_email,
-            reply_to=reply_to,
-        )
-        result["ecomail"] = created
-        save_state(
-            {
-                **load_state(),
-                "last_drafted_id": eid,
-                "last_drafted_at": datetime.now(timezone.utc).isoformat(),
-                "last_subject": subject,
-            }
-        )
-        result["drafted"] = True
-        return result
-
-    sent = send_campaign(
+    created = create_campaign(
         api_key=api_key,
         list_id=list_id,
         subject=subject,
@@ -194,15 +162,14 @@ def run_newsletter_notify(
         from_email=from_email,
         reply_to=reply_to,
     )
-    result["ecomail"] = sent
-
+    result["ecomail"] = created
     save_state(
         {
             **load_state(),
-            "last_notified_id": eid,
-            "last_notified_at": datetime.now(timezone.utc).isoformat(),
+            "last_drafted_id": eid,
+            "last_drafted_at": datetime.now(timezone.utc).isoformat(),
             "last_subject": subject,
         }
     )
-    result["notified"] = True
+    result["drafted"] = True
     return result

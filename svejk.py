@@ -434,7 +434,6 @@ def cmd_newsletter_notify(args: argparse.Namespace) -> int:
             args.obdobi,
             dry_run=args.dry_run,
             force=args.force,
-            send=args.send,
             base_path=(args.base_path or "").rstrip("/"),
             out_dir=args.out or None,
         )
@@ -442,10 +441,8 @@ def cmd_newsletter_notify(args: argparse.Namespace) -> int:
         print(f"Chyba: {e}", file=sys.stderr)
         return 1
     print(json.dumps(result, ensure_ascii=False, indent=2))
-    if result.get("notified"):
-        print("Newsletter odeslán.", file=sys.stderr)
-    elif result.get("drafted"):
-        print("Koncept kampaně vytvořen v Ecomailu (bez odeslání).", file=sys.stderr)
+    if result.get("drafted"):
+        print("Koncept kampaně vytvořen v Ecomailu — odeslání ručně v UI.", file=sys.stderr)
     elif result.get("skipped"):
         print(f"Přeskočeno: {result.get('reason', '?')}", file=sys.stderr)
     return 0
@@ -781,7 +778,7 @@ def main() -> int:
 
     p_nwl = sub.add_parser(
         "newsletter-notify",
-        help="Po novém vydání vytvořit kampaň v Ecomailu (výchozí: jen koncept)",
+        help="Po novém vydání připravit koncept kampaně v Ecomailu (odeslání ručně)",
     )
     p_nwl.add_argument("--obdobi", type=int, default=2025)
     p_nwl.add_argument(
@@ -798,11 +795,6 @@ def main() -> int:
         "--force",
         action="store_true",
         help="Znovu i když už je v newsletter-state.json",
-    )
-    p_nwl.add_argument(
-        "--send",
-        action="store_true",
-        help="Kampaň i rozeslat (výchozí je jen koncept v Ecomailu)",
     )
     p_nwl.add_argument(
         "--out",

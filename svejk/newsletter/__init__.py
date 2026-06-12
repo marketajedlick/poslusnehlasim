@@ -1,4 +1,4 @@
-"""Newsletter: odběr přes Ecomail, RSS, volitelné rozeslání po exportu."""
+"""Newsletter: odběr přes Ecomail, RSS, koncept kampaně po exportu."""
 
 from svejk.newsletter.api import (
     api_request,

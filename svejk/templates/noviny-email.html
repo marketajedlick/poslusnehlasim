@@ -14,37 +14,43 @@
 <tr>
 <td class="email-pad">
 
-<div class="email-head" style="text-align:center;padding-bottom:10px;">
-  <div class="eyebrow" style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.2em;font-size:13px;color:#cf5a31;">deník sněmovny</div>
-  <h1 class="mast email-mast" style="margin:8px 0 0;font-family:Impact,'Arial Black',sans-serif;text-transform:uppercase;color:#211c14;font-size:38px;line-height:0.95;text-align:center;">POSLUŠNĚ <span class="terra" style="color:#cf5a31;">HLÁSÍM</span></h1>
-</div>
-
 <table role="presentation" class="head" cellpadding="0" cellspacing="0" border="0" width="100%">
 <tr>
-<td align="center" style="padding-top:4px;">
-  <div class="cal" style="display:inline-block;width:88px;background:#f0e6cf;border:2px solid #211c14;text-align:center;">
+<td class="head-cal" width="88" valign="top" style="width:88px;vertical-align:top;">
+  <div class="cal" style="width:88px;background:#f0e6cf;border:2px solid #211c14;text-align:center;">
     <div class="cal-wd">{{ content.cal_den }}</div>
     <div class="cal-day">{{ content.cal_day }}</div>
     <div class="cal-mo">{{ content.cal_month }}</div>
   </div>
 </td>
+<td class="head-title" valign="bottom" style="vertical-align:bottom;padding:0 10px 2px 14px;text-align:left;">
+  <div class="eyebrow" style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.2em;font-size:13px;color:#cf5a31;text-align:left;">deník sněmovny</div>
+  <h1 class="mast email-mast" style="margin:8px 0 0;font-family:Impact,'Arial Black',sans-serif;text-transform:uppercase;color:#211c14;font-size:38px;line-height:0.95;text-align:left;">POSLUŠNĚ <span class="terra" style="color:#cf5a31;">HLÁSÍM</span></h1>
+</td>
+<td class="head-svejk" width="100" align="right" valign="top" style="width:100px;vertical-align:top;text-align:right;">
+  {% if svejk_img_url %}
+  <img src="{{ svejk_img_url }}" alt="" width="100" style="display:block;width:100px;max-width:100px;height:auto;opacity:0.55;border:0;" />
+  {% else %}
+  <div class="svejk-placeholder" style="width:100px;height:90px;">&nbsp;</div>
+  {% endif %}
+</td>
 </tr>
 </table>
 
-<hr class="hr" />
+<hr class="hr" style="border:none;border-top:2px solid #211c14;margin:14px 0 0;" />
 
 <div class="board">
   <div class="board-kick">Stav zápasu</div>
   <table role="presentation" class="board-main" cellpadding="0" cellspacing="0" border="0" width="100%">
   <tr>
-    <td align="right" width="40%">
-      <span class="blbl">{{ proslo_label }}</span><br />
-      <span class="bnum-l">{{ content.proslo }}</span>
+    <td class="bteam-l" align="right" style="vertical-align:middle;">
+      <span class="blbl">{{ proslo_label }}</span><span class="bnum-l" style="font-family:Impact,'Arial Black',sans-serif;font-size:56px;line-height:1;color:#f0e6cf;">{{ content.proslo }}</span>
     </td>
-    <td align="center" width="20%"><span class="bcolon">:</span></td>
-    <td align="left" width="40%">
-      <span class="bnum-r">{{ content.zamitnuto }}</span><br />
-      <span class="blbl">{{ zamitnuto_label }}</span>
+    <td class="bcolon-cell" align="center" width="36" style="vertical-align:middle;width:36px;">
+      <span class="bcolon" style="font-family:Impact,'Arial Black',sans-serif;font-size:38px;line-height:0.7;color:#ded0ad;">:</span>
+    </td>
+    <td class="bteam-r" align="left" style="vertical-align:middle;">
+      <span class="bnum-r" style="font-family:Impact,'Arial Black',sans-serif;font-size:56px;line-height:1;color:#cf5a31;">{{ content.zamitnuto }}</span><span class="blbl">{{ zamitnuto_label }}</span>
     </td>
   </tr>
   </table>
@@ -54,27 +60,43 @@
 </div>
 
 {% for item in content.items %}
-<div class="item{% if item.variant %} {{ item.variant }}{% endif %}">
-  <div class="numcol">
-    <span class="kick">{{ item.kick }}</span>
-    <span class="num">{{ "%02d"|format(item.num) }}</span>
+<table role="presentation" class="item{% if item.variant %} {{ item.variant }}{% endif %}" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td class="item-wrap" style="padding:18px 0 16px;border-bottom:1.5px solid rgba(33,28,20,0.25);">
+  <table role="presentation" class="item-inner" cellpadding="0" cellspacing="0" border="0" width="100%">
+  <tr>
+  <td class="item-numcol stack-col" width="140" valign="top" align="center" style="width:140px;max-width:140px;vertical-align:top;text-align:center;">
+    <div class="kick">{{ item.kick }}</div>
+    <div class="num">{{ "%02d"|format(item.num) }}</div>
     <span class="stamp{% if item.verdikt != 'schvaleno' %} {{ item.verdikt }}{% endif %}">{{ item.stamp }}</span>
-  </div>
-  <h2 class="h">
-    {% for line in item.nadpis_radky %}
-    <span class="hl">{{ line }}</span>
-    {% endfor %}
-  </h2>
-  {% for para in item.lead | split_paragraphs %}
-  <p class="p" style="font-size:16px;line-height:1.5;margin:12px 0 0;color:#211c14;">{{ para }}</p>
-  {% endfor %}
-  {% if item.mean %}
-  <p class="mean" style="margin-top:10px;font-size:15px;line-height:1.45;color:#211c14;font-weight:bold;"><b style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;letter-spacing:0.06em;text-transform:uppercase;font-size:11px;color:#cf5a31;">Co to znamená pro vás: </b>{{ item.mean }}</p>
-  {% endif %}
-  {% if item.kuriozita %}
-  <p class="kuriozita" style="margin-top:8px;font-size:15px;line-height:1.45;color:#5a5348;font-style:italic;">{{ item.kuriozita }}</p>
-  {% endif %}
-</div>
+  </td>
+  <td class="item-body stack-col" valign="top" style="vertical-align:top;padding-left:18px;text-align:left;">
+    <h2 class="h" style="text-align:left;margin:0;">
+      {% for line in item.nadpis_radky %}
+      <span class="hl">{{ line }}</span>
+      {% endfor %}
+    </h2>
+    <p class="p" style="font-size:16px;line-height:1.5;margin:12px 0 0;color:#211c14;text-align:left;">{{ item.lead | safe }}</p>
+    {% if item.mean %}
+    <p class="mean" style="margin-top:10px;font-size:15px;line-height:1.45;color:#211c14;font-weight:bold;text-align:left;"><b style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;letter-spacing:0.06em;text-transform:uppercase;font-size:11px;color:#cf5a31;">Co to znamená pro vás: </b>{{ item.mean | safe }}</p>
+    {% endif %}
+    {% if item.kuriozita %}
+    <p class="kuriozita" style="margin-top:8px;font-size:15px;line-height:1.45;color:#5a5348;font-style:italic;text-align:left;">{{ item.kuriozita }}</p>
+    {% endif %}
+    {% if item.kuriozita_nav %}
+    <p class="kuriozita-links" style="margin-top:8px;font-size:14px;line-height:1.45;text-align:left;">
+      {% for label, href in item.kuriozita_nav %}
+      {% if not loop.first %}<span style="color:#5a5348;"> · </span>{% endif %}
+      <a href="{{ href }}" style="color:#cf5a31;font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-decoration:underline;">{{ label }}</a>
+      {% endfor %}
+    </p>
+    {% endif %}
+  </td>
+  </tr>
+  </table>
+</td>
+</tr>
+</table>
 {% endfor %}
 
 <div class="verdict">

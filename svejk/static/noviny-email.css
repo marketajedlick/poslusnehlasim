@@ -17,11 +17,28 @@ body {
 .email-pad {
   padding: 18px 16px 20px;
 }
+
+/* ---------- header ---------- */
 .head {
   width: 100%;
 }
 .head td {
   vertical-align: top;
+}
+.head-title {
+  text-align: left;
+}
+.head-svejk img {
+  display: block;
+  width: 100px;
+  max-width: 100px;
+  height: auto;
+  opacity: 0.55;
+  border: 0;
+}
+.svejk-placeholder {
+  width: 100px;
+  height: 90px;
 }
 .cal {
   width: 88px;
@@ -55,13 +72,6 @@ body {
   color: #211c14;
   padding: 4px 2px 7px;
 }
-.email-head {
-  text-align: center;
-  padding-bottom: 10px;
-}
-.titleblock {
-  padding-left: 14px;
-}
 .eyebrow {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -69,6 +79,7 @@ body {
   letter-spacing: 0.2em;
   font-size: 13px;
   color: #cf5a31;
+  text-align: left;
 }
 .mast {
   font-family: Impact, 'Arial Black', sans-serif;
@@ -77,9 +88,10 @@ body {
   font-size: 38px;
   line-height: 0.95;
   margin: 8px 0 0;
+  text-align: left;
 }
 .email-mast {
-  text-align: center;
+  text-align: left;
 }
 .mast .terra { color: #cf5a31; }
 .hr {
@@ -87,6 +99,8 @@ body {
   border-top: 2px solid #211c14;
   margin: 14px 0 0;
 }
+
+/* ---------- scoreboard ---------- */
 .board {
   background: #211c14;
   color: #f0e6cf;
@@ -112,6 +126,10 @@ body {
   vertical-align: middle;
   font-family: Impact, 'Arial Black', sans-serif;
 }
+.bteam-l,
+.bteam-r {
+  white-space: nowrap;
+}
 .blbl {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -120,22 +138,31 @@ body {
   font-size: 11px;
   line-height: 1.15;
   color: #f0e6cf;
+  vertical-align: middle;
+}
+.bteam-l .blbl {
+  margin-right: 10px;
+}
+.bteam-r .blbl {
+  margin-left: 10px;
 }
 .bnum-l {
-  font-size: 40px;
+  font-size: 56px;
   line-height: 1;
   color: #f0e6cf;
+  vertical-align: middle;
 }
 .bnum-r {
-  font-size: 40px;
+  font-size: 56px;
   line-height: 1;
   color: #cf5a31;
+  vertical-align: middle;
 }
 .bcolon {
-  font-size: 28px;
+  font-size: 38px;
   color: #ded0ad;
   line-height: 0.7;
-  padding: 0 8px;
+  padding: 0 6px;
 }
 .board-note {
   text-align: center;
@@ -147,28 +174,50 @@ body {
   padding-top: 12px;
   border-top: 1px solid rgba(240, 230, 207, 0.22);
 }
+
+/* ---------- items ---------- */
 .item {
+  width: 100%;
+}
+.item-wrap {
   padding: 18px 0 16px;
   border-bottom: 1.5px solid rgba(33, 28, 20, 0.25);
 }
-.numcol {
-  margin-bottom: 10px;
+.item-inner {
+  width: 100%;
+}
+.item-numcol {
+  width: 140px;
+  max-width: 140px;
+  text-align: center;
+  vertical-align: top;
+}
+.item-body {
+  vertical-align: top;
+  padding-left: 18px;
+  text-align: left;
 }
 .kick {
+  display: block;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 11px;
   color: #5a503e;
+  margin-bottom: 2px;
 }
 .num {
+  display: block;
   font-family: Impact, 'Arial Black', sans-serif;
-  font-size: 48px;
-  line-height: 1;
+  font-size: 84px;
+  line-height: 0.92;
   color: #cf5a31;
+  margin: 2px 0 0;
+  letter-spacing: -0.03em;
 }
 .item.i2 .num { color: #283c6e; }
+/* rotate() funguje v Apple Mail / iOS; Outlook a část Gmailu ignoruje → rovné razítko. */
 .stamp {
   display: inline-block;
   font-family: Impact, 'Arial Black', sans-serif;
@@ -179,18 +228,31 @@ body {
   padding: 4px 10px 3px;
   border: 2px solid #c23a2b;
   border-radius: 3px;
+  box-shadow: inset 0 0 0 1.2px #c23a2b;
+  margin-top: 10px;
+  -webkit-transform: rotate(-4deg);
+  -ms-transform: rotate(-4deg);
+  transform: rotate(-4deg);
+}
+.item.i2 .stamp {
+  -webkit-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
 }
 .stamp.zvoleno {
   color: #cf5a31;
   border-color: #cf5a31;
+  box-shadow: inset 0 0 0 1.2px #cf5a31;
 }
 .stamp.zamiteno {
   color: #5a503e;
   border-color: #5a503e;
+  box-shadow: inset 0 0 0 1.2px #5a503e;
 }
 .stamp.odlozeno {
   color: #283c6e;
   border-color: #283c6e;
+  box-shadow: inset 0 0 0 1.2px #283c6e;
 }
 .h {
   font-family: Impact, 'Arial Black', sans-serif;
@@ -198,12 +260,23 @@ body {
   font-size: 20px;
   line-height: 1.1;
   margin: 0;
+  text-align: left;
 }
 .hl { display: block; }
 .p {
   font-size: 16px;
   line-height: 1.5;
   margin: 12px 0 0;
+  text-align: left;
+}
+.p a.mean-link,
+.mean a.mean-link {
+  color: #cf5a31;
+  text-decoration: underline;
+}
+.item.i2 .p a.mean-link,
+.item.i2 .mean a.mean-link {
+  color: #283c6e;
 }
 .mean {
   margin-top: 10px;
@@ -211,6 +284,7 @@ body {
   line-height: 1.45;
   color: #211c14;
   font-weight: bold;
+  text-align: left;
 }
 .mean b {
   font-family: Arial, Helvetica, sans-serif;
@@ -221,6 +295,8 @@ body {
   color: #cf5a31;
 }
 .item.i2 .mean b { color: #283c6e; }
+
+/* ---------- verdict ---------- */
 .verdict {
   margin-top: 16px;
   padding: 18px 14px 16px 40px;
@@ -237,6 +313,7 @@ body {
   position: absolute;
   top: 12px;
   left: 10px;
+  opacity: 0.9;
 }
 .verdict .q {
   font-style: italic;
@@ -287,6 +364,98 @@ body {
 .email-legal a {
   color: #5a503e;
   text-decoration: underline;
+}
+
+/* ---------- mobile stack ---------- */
+@media only screen and (max-width: 480px) {
+  .email-pad {
+    padding: 14px 12px 18px !important;
+  }
+  .head-cal {
+    width: 72px !important;
+  }
+  .head-cal .cal {
+    width: 72px !important;
+  }
+  .head-cal .cal-day {
+    font-size: 34px !important;
+  }
+  .head-title {
+    padding: 0 6px 2px 10px !important;
+  }
+  .head-svejk {
+    display: none !important;
+    width: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+  }
+  .mast {
+    font-size: 28px !important;
+    line-height: 0.95 !important;
+  }
+  .eyebrow {
+    font-size: 11px !important;
+    letter-spacing: 0.14em !important;
+  }
+  .board {
+    padding: 12px 10px 14px !important;
+  }
+  .board-main .bteam-l,
+  .board-main .bteam-r {
+    white-space: normal !important;
+    text-align: center !important;
+  }
+  .board-main .bteam-l {
+    padding-right: 4px !important;
+  }
+  .board-main .bteam-r {
+    padding-left: 4px !important;
+  }
+  .blbl {
+    font-size: 9px !important;
+    letter-spacing: 0.04em !important;
+    display: inline-block !important;
+    max-width: 7em !important;
+    line-height: 1.1 !important;
+    vertical-align: middle !important;
+  }
+  .bteam-l .blbl {
+    margin-right: 6px !important;
+  }
+  .bteam-r .blbl {
+    margin-left: 6px !important;
+  }
+  .bnum-l,
+  .bnum-r {
+    font-size: 44px !important;
+  }
+  .bcolon {
+    font-size: 32px !important;
+  }
+  .item-inner tr,
+  .item-inner tbody {
+    display: block !important;
+    width: 100% !important;
+  }
+  .item-inner .stack-col {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .item-inner .item-numcol {
+    padding-bottom: 10px !important;
+    text-align: center !important;
+  }
+  .item-inner .item-body {
+    padding-left: 0 !important;
+  }
+  .num {
+    font-size: 72px !important;
+  }
+  .h {
+    font-size: 19px !important;
+  }
 }
 
 /* ---------- double opt-in ---------- */

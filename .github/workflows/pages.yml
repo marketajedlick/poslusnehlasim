@@ -133,6 +133,7 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.newsletter_force }}" = "true" ]; then
             FORCE_FLAG="--force"
           fi
+          # Jen koncept kampaně — odeslání ručně v Ecomail UI
           ./run-svejk.sh newsletter-notify --obdobi 2025 --out site $FORCE_FLAG || echo "Newsletter notify selhal — deploy pokračuje"
 
       - name: Commit newsletter state

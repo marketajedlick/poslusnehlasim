@@ -107,6 +107,57 @@ def _split_paragraphs(text: str) -> list[str]:
     return [p for p in parts if p]
 
 
+def _abs_href(href: str, site_url: str | None) -> str:
+    if not site_url or not href or href.startswith(("http://", "https://", "mailto:")):
+        return href
+    return f"{site_url.rstrip('/')}{href}"
+
+
+def _apply_content_item_links(
+    content: DenContent,
+    paths: SchuzePaths,
+    *,
+    obdobi: int,
+    link_mode: str,
+    base_path: str = "",
+    site_url: str | None = None,
+) -> None:
+    """Doplní odkazy v lead/mean a kuriozita_nav — stejná logika jako u webového vydání."""
+    for item in content.items:
+        link_pairs: list[tuple[str, str]] = []
+        for phrase, page in item.mean_links:
+            if page not in ("neprosli", "prosli", "zvoleni"):
+                continue
+            kind: VyznamenaniKind = page  # type: ignore[assignment]
+            if not load_vyznamenani(paths, content.datum, kind):
+                continue
+            href = vyznamenani_href(
+                obdobi,
+                paths.schuze,
+                content.datum,
+                kind,
+                link_mode=link_mode,
+                base_path=base_path,
+            )
+            link_pairs.append((phrase, _abs_href(href, site_url)))
+        if link_pairs:
+            item.lead = inject_mean_links(item.lead, link_pairs)
+            item.mean = inject_mean_links(item.mean, link_pairs)
+        if item.kuriozita_links:
+            item.kuriozita_nav = [
+                (label, _abs_href(href, site_url))
+                for label, href in resolve_vyznamenani_page_links(
+                    paths,
+                    content.datum,
+                    item.kuriozita_links,
+                    obdobi=obdobi,
+                    schuze=paths.schuze,
+                    link_mode=link_mode,
+                    base_path=base_path,
+                )
+            ]
+
+
 def _jinja_env() -> Environment:
     env = Environment(
         loader=FileSystemLoader(str(_TEMPLATES)),
@@ -234,38 +285,13 @@ def render_den_html(
         parts=schema_parts or None,
         base_path=base_path,
     )
-    for item in content.items:
-        if not item.mean_links:
-            continue
-        link_pairs: list[tuple[str, str]] = []
-        for phrase, page in item.mean_links:
-            if page not in ("neprosli", "prosli", "zvoleni"):
-                continue
-            kind: VyznamenaniKind = page  # type: ignore[assignment]
-            if not load_vyznamenani(paths, content.datum, kind):
-                continue
-            href = vyznamenani_href(
-                ob,
-                paths.schuze,
-                content.datum,
-                kind,
-                link_mode=link_mode,
-                base_path=base_path,
-            )
-            link_pairs.append((phrase, href))
-        if link_pairs:
-            item.lead = inject_mean_links(item.lead, link_pairs)
-            item.mean = inject_mean_links(item.mean, link_pairs)
-        if item.kuriozita_links:
-            item.kuriozita_nav = resolve_vyznamenani_page_links(
-                paths,
-                content.datum,
-                item.kuriozita_links,
-                obdobi=ob,
-                schuze=paths.schuze,
-                link_mode=link_mode,
-                base_path=base_path,
-            )
+    _apply_content_item_links(
+        content,
+        paths,
+        obdobi=ob,
+        link_mode=link_mode,
+        base_path=base_path,
+    )
     tpl = _jinja_env().get_template("noviny-dlouhe.html")
     return tpl.render(
         content=content,
@@ -355,6 +381,8 @@ def plain_text_from_content(
             lines.append(f"Co to znamená pro vás: {item.mean}")
         if item.kuriozita:
             lines.append(item.kuriozita)
+        for label, href in item.kuriozita_nav:
+            lines.append(f"{label}: {href}")
     zaver = (content.zaver_body or content.zaver or "").strip()
     if zaver:
         key = (content.zaver_key or "").strip()
@@ -391,6 +419,22 @@ def render_email_html(
     archive_url = f"{site}{archive_href}"
     datum_label = datum_design(edition.datum_unl, content.den)
     subject = f"Nové vydání · {datum_label}"
+    plain = plain_text_from_content(
+        content,
+        datum_label=datum_label,
+        edition_url=edition_url,
+        archive_url=archive_url,
+        proslo_label=_proslo_board_label(content.proslo),
+        zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
+    )
+    _apply_content_item_links(
+        content,
+        paths,
+        obdobi=edition.obdobi,
+        link_mode="pages",
+        base_path=base_path,
+        site_url=site,
+    )
     css = _EMAIL_CSS.read_text(encoding="utf-8")
     tpl = _jinja_env().get_template("noviny-email.html")
     html = tpl.render(
@@ -401,14 +445,8 @@ def render_email_html(
         zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
         edition_url=edition_url,
         archive_url=archive_url,
-    )
-    plain = plain_text_from_content(
-        content,
-        datum_label=datum_label,
-        edition_url=edition_url,
-        archive_url=archive_url,
-        proslo_label=_proslo_board_label(content.proslo),
-        zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
+        # PNG místo SVG — Outlook a část Gmailu SVG v <img> nezobrazí.
+        svejk_img_url=_static_asset_url(site, base_path, "favicon.png"),
     )
     return subject, plain, html
 

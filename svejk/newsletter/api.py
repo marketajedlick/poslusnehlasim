@@ -198,9 +198,3 @@ def send_campaign(
     return {"id": campaign_id, "send": sent}
 
 
-def send_campaigns_enabled_from_env() -> bool:
-    return os.environ.get("ECOMAIL_SEND_CAMPAIGNS", "").strip().lower() in (
-        "1",
-        "true",
-        "yes",
-    )

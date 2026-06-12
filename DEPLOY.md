@@ -193,14 +193,14 @@ Nastav uvítací sérii nebo automatizaci na nové kontakty ze seznamu. Případ
 
 **Varianta B: CI po deployi**
 
-Workflow po `export-pages` spustí `newsletter-notify`, pokud je `ECOMAIL_API_KEY`. Stav posledního konceptu/odeslání je v `processed/newsletter-state.json` v repu (jen ID vydání, žádné e-maily) — CI ho po notify commitne, lokálně před spuštěním udělej `git pull`.
+Workflow po `export-pages` spustí `newsletter-notify`, pokud je `ECOMAIL_API_KEY`. Vždy jen **koncept kampaně** v Ecomailu — odeslání musí odkliknout člověk v Ecomail UI. Stav posledního konceptu je v `processed/newsletter-state.json` v repu (jen ID vydání, žádné e-maily) — CI ho po notify commitne, lokálně před spuštěním udělej `git pull`.
 
 ```bash
-# náhled bez odeslání
+# náhled bez zápisu do Ecomailu
 ECOMAIL_API_KEY=… ECOMAIL_LIST_ID=… ECOMAIL_FROM_EMAIL=… \
   ./run-svejk.sh newsletter-notify --obdobi 2025 --dry-run
 
-# vynutit znovu (test)
+# vynutit nový koncept (test)
 ./run-svejk.sh newsletter-notify --obdobi 2025 --force
 ```
 
