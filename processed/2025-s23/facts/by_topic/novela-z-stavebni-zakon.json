@@ -1,0 +1,49 @@
+{
+  "slug": "novela-z-stavebni-zakon",
+  "nazev": "Novela z. - stavební zákon",
+  "datum": "11.06.2026",
+  "verdikt": "zamiteno",
+  "predmet_lidsky": "stavebním zákoně",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "Rozhlíží se po sále, kde je hlučno.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_23_00006",
+      "citace": "(Rozhlíží se po sále, kde je hlučno.)"
+    },
+    {
+      "text": "(Rozhlíží se po sále, kde je hlučno.).",
+      "source": "steno",
+      "steno_id": "2025_23_00006",
+      "citace": "(Rozhlíží se po sále, kde je hlučno.)."
+    },
+    {
+      "text": "Ministryně hovoří s nějakým poslancem.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_23_00008",
+      "citace": "(Ministryně hovoří s nějakým poslancem.)"
+    },
+    {
+      "text": "Sice ta míra hluku se nějak nesnížila, ale já se pokusím i přesto pokračovat ve svém komentáři v rámci druhého čtení novely zákona, sněmovní tisk 67, který jsem přerušil ve 23 hodin tuším minulý týden.",
+      "source": "steno",
+      "steno_id": "2025_23_00008",
+      "citace": "Sice ta míra hluku se nějak nesnížila, ale já se pokusím i přesto pokračovat ve svém komentáři v rámci druhého čtení novely zákona, sněmovní tisk 67, který jsem přerušil ve 23 hodin tuším minulý týden"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Stavba si počká",
+  "pocet_hlasovani": 1,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 75,
+    "pritomno_min": 102,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 37863
+}
