@@ -205,14 +205,14 @@ def render_den_html(
             # lokální náhledy v processed/ — fonty natáhnou z produkčního webu
             fonts_css_href = f"{cfg.site_url.rstrip('/')}{fonts_css_href}"
     if not meta_description:
-        from svejk.build.seo import meta_description as _meta_description
+        from svejk.build.seo import edition_meta_description as _edition_meta_description
 
-        raw = (content.dnesni_ucet or "").strip()
-        if not raw and content.items:
-            raw = content.items[0].nadpis
-        meta_description = _meta_description(raw) if raw else (
-            f"Deník z Poslanecké sněmovny, {datum_design(content.datum, content.den)}."
-        )
+        meta_description = _edition_meta_description(
+            dnesni_ucet=content.dnesni_ucet,
+            first_item_nadpis=content.items[0].nadpis if content.items else "",
+            proslo=content.proslo,
+            zamitnuto=content.zamitnuto,
+        ) or f"Deník z Poslanecké sněmovny, {datum_design(content.datum, content.den)}."
     if not canonical_url:
         href = edition_pages_href(ob, paths.schuze, content.datum, base_path)
         canonical_url = f"{cfg.site_url.rstrip('/')}{href}"

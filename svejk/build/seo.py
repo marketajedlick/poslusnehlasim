@@ -50,55 +50,93 @@ def mtime_iso(path: Path) -> str:
     return datetime.fromtimestamp(ts, tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def _edition_date_label(datum_unl: str, den: str = "") -> str:
+    if datum_unl and "." in datum_unl:
+        d, m, y = datum_unl.split(".", 2)
+        core = f"{int(d)}. {int(m)}. {y}"
+    else:
+        core = datum_unl
+    if den:
+        return f"{den.capitalize()} {core}"
+    return core
+
+
+def _dnesni_ucet_headline(dnesni_ucet: str) -> str:
+    """První věta z dnešního účtu — záloha, když chybí nadpis článku."""
+    raw = " ".join((dnesni_ucet or "").split())
+    if not raw:
+        return ""
+    first = raw.split(". ", 1)[0].strip()
+    return first if first.endswith(".") else f"{first.rstrip('.')}"
+
+
 def article_headline(
     *,
     dnesni_ucet: str,
-    meta_description: str,
+    meta_description: str = "",
     first_item_nadpis: str = "",
     edition_title: str = "",
     max_len: int = 110,
 ) -> str:
-    """Nadpis pro schema.org — shrnutí dne, ne datum v hlavičce."""
-    raw = " ".join((dnesni_ucet or "").split())
-    if raw:
-        return _truncate_text(meta_description or raw, max_len=max_len)
-    if first_item_nadpis:
-        return _truncate_text(first_item_nadpis, max_len=max_len)
+    """Téma dne pro <title> a schema.org — nadpis článku, ne meta description."""
+    _ = meta_description
+    if first_item_nadpis.strip():
+        return _truncate_text(first_item_nadpis.strip(), max_len=max_len)
+    from_account = _dnesni_ucet_headline(dnesni_ucet)
+    if from_account:
+        return _truncate_text(from_account, max_len=max_len)
     return _truncate_text(edition_title, max_len=max_len)
+
+
+def edition_meta_description(
+    *,
+    dnesni_ucet: str,
+    first_item_nadpis: str = "",
+    proslo: int = 0,
+    zamitnuto: int = 0,
+    max_len: int = 155,
+) -> str:
+    """Unikátní meta description — skóre dne + shrnutí, ne kopie <title>."""
+    parts: list[str] = []
+    if proslo or zamitnuto:
+        parts.append(f"Skóre dne {proslo}:{zamitnuto}.")
+    account = " ".join((dnesni_ucet or "").split())
+    if account:
+        parts.append(account)
+    elif first_item_nadpis.strip():
+        parts.append(first_item_nadpis.strip())
+    raw = " ".join(parts)
+    return meta_description(raw, max_len=max_len) if raw else ""
 
 
 def edition_page_title(
     *,
     dnesni_ucet: str,
-    meta_description: str,
+    meta_description: str = "",
     first_item_nadpis: str = "",
     datum_unl: str,
     den: str = "",
     datum_design: str = "",
-    max_len: int = 65,
+    max_len: int = 72,
 ) -> str:
-    """<title> pro vydání: téma dne · datum · Poslušně hlásím."""
-    if datum_unl and "." in datum_unl:
-        d, m, y = datum_unl.split(".", 2)
-        date_bit = f"{d}/{m}/{y}"
-    else:
-        date_bit = datum_design or datum_unl
-    if den:
-        date_bit = f"{den.lower()} {date_bit}"
-    suffix = f" · {date_bit} · Poslušně hlásím"
-    budget = max_len - len(suffix)
-    if budget < 8:
-        return _truncate_text(f"Poslušně hlásím · {date_bit}", max_len=max_len)
+    """<title> pro vydání: Poslušně hlásím — datum: téma dne."""
+    _ = meta_description
+    date_label = _edition_date_label(datum_unl, den) if datum_unl else (datum_design or "")
+    prefix = f"Poslušně hlásím — {date_label}: " if date_label else "Poslušně hlásím: "
+    budget = max(12, max_len - len(prefix))
     headline = article_headline(
         dnesni_ucet=dnesni_ucet,
-        meta_description=meta_description,
         first_item_nadpis=first_item_nadpis,
         edition_title=datum_design,
         max_len=budget,
     )
     if not headline.strip():
-        return _truncate_text(f"Poslušně hlásím · {date_bit}", max_len=max_len)
-    return f"{headline}{suffix}"
+        return _truncate_text(
+            f"Poslušně hlásím — {date_label}" if date_label else "Poslušně hlásím",
+            max_len=max_len,
+        )
+    title = f"{prefix}{headline}"
+    return title if len(title) <= max_len else _truncate_text(title, max_len=max_len)
 
 
 def _truncate_text(text: str, *, max_len: int) -> str:
