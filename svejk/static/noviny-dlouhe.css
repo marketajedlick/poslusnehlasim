@@ -67,34 +67,8 @@ body.is-turning{ pointer-events:none; }
   gap:14px;
   align-items:flex-start;
 }
-.cal-col{
-  flex:0 0 88px;
-  display:flex;
-  flex-direction:column;
-  align-items:stretch;
-  gap:8px;
-}
-.head-shortcuts{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-.head-shortcut-btn{
-  font-family:'Oswald',sans-serif; font-weight:600;
-  font-size:8px; letter-spacing:.06em; text-transform:uppercase;
-  text-align:center; text-decoration:none; line-height:1.25;
-  padding:6px 4px;
-  border:2px solid rgba(33,28,20,.28); border-radius:2px;
-  background:var(--paper); color:var(--ink);
-  transition:background .15s, border-color .15s, color .15s;
-}
-.head-shortcut-btn:hover{
-  border-color:var(--terra);
-  color:var(--terra);
-  background:rgba(207,90,49,.08);
-}
 .cal{
-  width:100%;
+  flex:0 0 88px;
   background:var(--paper);
   border:2px solid var(--ink);
   text-align:center;
@@ -1081,23 +1055,16 @@ body.archiv-page{
 .edition-now-date{
   display:flex; flex-direction:column; align-items:center; justify-content:center;
 }
-.edition-shortcuts{
-  display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:6px;
+.edition-shortcuts.archive-nav{
+  margin-top:2px;
+  gap:6px 10px;
 }
-.edition-shortcut-btn{
-  font-family:'Oswald',sans-serif; font-weight:600;
-  font-size:9px; letter-spacing:.08em; text-transform:uppercase;
-  text-decoration:none; line-height:1;
-  padding:5px 8px;
-  border:1.5px solid rgba(33,28,20,.28); border-radius:2px;
-  background:var(--paper); color:var(--ink);
-  white-space:nowrap;
-  transition:background .15s, border-color .15s, color .15s;
+.edition-shortcuts .archive-all{
+  font-size:10px;
+  letter-spacing:.08em;
 }
-.edition-shortcut-btn:hover{
-  border-color:var(--terra);
-  color:var(--terra);
-  background:rgba(207,90,49,.08);
+.edition-shortcuts .archive-nav-sep{
+  font-size:10px;
 }
 .edition-now-day{
   font-family:'Anton',sans-serif; color:var(--terra);
@@ -1155,9 +1122,7 @@ body.archiv-page{
   .pad{ padding:44px 50px 40px; }
 
   .head{ gap:26px; align-items:stretch; }
-  .cal-col{ flex:0 0 132px; gap:10px; }
-  .head-shortcut-btn{ font-size:9px; letter-spacing:.08em; padding:7px 6px; }
-  .cal{ border-width:3px; box-shadow:4px 5px 0 rgba(33,28,20,.18); }
+  .cal{ flex:0 0 132px; border-width:3px; box-shadow:4px 5px 0 rgba(33,28,20,.18); }
   .cal-wd{ letter-spacing:.22em; font-size:14px; padding:6px 4px 5px; }
   .cal-day{ font-size:86px; line-height:.84; padding:8px 0 0; }
   .cal-mo{ letter-spacing:.14em; font-size:13px; padding:6px 4px 9px; }
@@ -1266,7 +1231,7 @@ body.archiv-page{
   .edition-now-date{
     flex-direction:row; align-items:baseline; gap:10px;
   }
-  .edition-shortcut-btn{ font-size:10px; padding:6px 10px; }
+  .edition-shortcuts .archive-all{ font-size:11px; }
   .edition-now-day{ font-size:26px; }
   .edition-now-sub{ font-size:12px; margin-top:0; letter-spacing:.1em; }
 
