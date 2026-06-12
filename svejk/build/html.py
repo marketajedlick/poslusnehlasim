@@ -285,13 +285,38 @@ def render_den_html(
         parts=schema_parts or None,
         base_path=base_path,
     )
-    _apply_content_item_links(
-        content,
-        paths,
-        obdobi=ob,
-        link_mode=link_mode,
-        base_path=base_path,
-    )
+    for item in content.items:
+        if not item.mean_links:
+            continue
+        link_pairs: list[tuple[str, str]] = []
+        for phrase, page in item.mean_links:
+            if page not in ("neprosli", "prosli", "zvoleni"):
+                continue
+            kind: VyznamenaniKind = page  # type: ignore[assignment]
+            if not load_vyznamenani(paths, content.datum, kind):
+                continue
+            href = vyznamenani_href(
+                ob,
+                paths.schuze,
+                content.datum,
+                kind,
+                link_mode=link_mode,
+                base_path=base_path,
+            )
+            link_pairs.append((phrase, href))
+        if link_pairs:
+            item.lead = inject_mean_links(item.lead, link_pairs)
+            item.mean = inject_mean_links(item.mean, link_pairs)
+        if item.kuriozita_links:
+            item.kuriozita_nav = resolve_vyznamenani_page_links(
+                paths,
+                content.datum,
+                item.kuriozita_links,
+                obdobi=ob,
+                schuze=paths.schuze,
+                link_mode=link_mode,
+                base_path=base_path,
+            )
     tpl = _jinja_env().get_template("noviny-dlouhe.html")
     return tpl.render(
         content=content,
@@ -390,7 +415,7 @@ def plain_text_from_content(
     lines.extend(
         [
             "",
-            f"Číst celé vydání: {edition_url}",
+            f"Číst vydání: {edition_url}",
             f"Archiv: {archive_url}",
             "",
             "Odhlášení odběru: odkaz v patičce e-mailu od Ecomailu.",

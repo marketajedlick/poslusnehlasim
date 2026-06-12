@@ -16,22 +16,28 @@
 
 <table role="presentation" class="head" cellpadding="0" cellspacing="0" border="0" width="100%">
 <tr>
-<td class="head-cal" width="88" valign="top" style="width:88px;vertical-align:top;">
-  <div class="cal" style="width:88px;background:#f0e6cf;border:2px solid #211c14;text-align:center;">
-    <div class="cal-wd">{{ content.cal_den }}</div>
-    <div class="cal-day">{{ content.cal_day }}</div>
-    <div class="cal-mo">{{ content.cal_month }}</div>
-  </div>
+<td class="head-brand" valign="middle" style="vertical-align:middle;">
+  <table role="presentation" class="head-brand-inner" cellpadding="0" cellspacing="0" border="0" height="96" style="height:96px;">
+  <tr>
+  <td class="head-cal" width="88" height="96" valign="middle" style="width:88px;height:96px;vertical-align:middle;padding:0;">
+    <div class="cal" style="width:88px;background:#f0e6cf;border:2px solid #211c14;text-align:center;">
+      <div class="cal-wd">{{ content.cal_den }}</div>
+      <div class="cal-day">{{ content.cal_day }}</div>
+      <div class="cal-mo">{{ content.cal_month }}</div>
+    </div>
+  </td>
+  <td class="head-title" height="96" valign="middle" style="height:96px;vertical-align:middle;padding:0 0 0 12px;text-align:left;">
+    <div class="eyebrow" style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.2em;font-size:13px;color:#cf5a31;text-align:left;line-height:1.2;">deník sněmovny</div>
+    <h1 class="mast email-mast" style="margin:4px 0 0;font-family:Impact,'Arial Black',sans-serif;text-transform:uppercase;color:#211c14;font-size:38px;line-height:0.95;text-align:left;">POSLUŠNĚ <span class="terra" style="color:#cf5a31;">HLÁSÍM</span></h1>
+  </td>
+  </tr>
+  </table>
 </td>
-<td class="head-title" valign="bottom" style="vertical-align:bottom;padding:0 10px 2px 14px;text-align:left;">
-  <div class="eyebrow" style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.2em;font-size:13px;color:#cf5a31;text-align:left;">deník sněmovny</div>
-  <h1 class="mast email-mast" style="margin:8px 0 0;font-family:Impact,'Arial Black',sans-serif;text-transform:uppercase;color:#211c14;font-size:38px;line-height:0.95;text-align:left;">POSLUŠNĚ <span class="terra" style="color:#cf5a31;">HLÁSÍM</span></h1>
-</td>
-<td class="head-svejk" width="100" align="right" valign="top" style="width:100px;vertical-align:top;text-align:right;">
+<td class="head-svejk" width="56" height="96" align="right" valign="middle" style="width:56px;height:96px;vertical-align:middle;text-align:right;padding:0 0 0 8px;">
   {% if svejk_img_url %}
-  <img src="{{ svejk_img_url }}" alt="" width="100" style="display:block;width:100px;max-width:100px;height:auto;opacity:0.55;border:0;" />
+  <img src="{{ svejk_img_url }}" alt="" width="54" height="76" style="display:block;width:54px;max-width:54px;height:76px;opacity:0.55;border:0;" />
   {% else %}
-  <div class="svejk-placeholder" style="width:100px;height:90px;">&nbsp;</div>
+  <div class="svejk-placeholder" style="width:54px;height:76px;">&nbsp;</div>
   {% endif %}
 </td>
 </tr>
@@ -44,13 +50,13 @@
   <table role="presentation" class="board-main" cellpadding="0" cellspacing="0" border="0" width="100%">
   <tr>
     <td class="bteam-l" align="right" style="vertical-align:middle;">
-      <span class="blbl">{{ proslo_label }}</span><span class="bnum-l" style="font-family:Impact,'Arial Black',sans-serif;font-size:56px;line-height:1;color:#f0e6cf;">{{ content.proslo }}</span>
+      <span class="blbl">{{ proslo_label }}</span><span class="bnum-l" style="font-family:Impact,'Arial Black',sans-serif;font-size:84px;line-height:0.88;color:#f0e6cf;">{{ content.proslo }}</span>
     </td>
-    <td class="bcolon-cell" align="center" width="36" style="vertical-align:middle;width:36px;">
-      <span class="bcolon" style="font-family:Impact,'Arial Black',sans-serif;font-size:38px;line-height:0.7;color:#ded0ad;">:</span>
+    <td class="bcolon-cell" align="center" width="48" style="vertical-align:middle;width:48px;">
+      <span class="bcolon" style="font-family:Impact,'Arial Black',sans-serif;font-size:54px;line-height:0.7;color:#ded0ad;">:</span>
     </td>
     <td class="bteam-r" align="left" style="vertical-align:middle;">
-      <span class="bnum-r" style="font-family:Impact,'Arial Black',sans-serif;font-size:56px;line-height:1;color:#cf5a31;">{{ content.zamitnuto }}</span><span class="blbl">{{ zamitnuto_label }}</span>
+      <span class="bnum-r" style="font-family:Impact,'Arial Black',sans-serif;font-size:84px;line-height:0.88;color:#cf5a31;">{{ content.zamitnuto }}</span><span class="blbl">{{ zamitnuto_label }}</span>
     </td>
   </tr>
   </table>
@@ -106,7 +112,7 @@
 </div>
 
 <div class="email-footer">
-  <p style="margin:0 0 10px;"><a href="{{ edition_url }}" style="color:#cf5a31;font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.08em;text-decoration:none;">Číst celé vydání na webu</a></p>
+  <p style="margin:0 0 10px;"><a href="{{ edition_url }}" style="color:#cf5a31;font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.08em;text-decoration:none;">Číst vydání</a></p>
   <p style="margin:0 0 16px;"><a href="{{ archive_url }}" style="color:#cf5a31;font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.08em;text-decoration:none;">Archiv všech vydání</a></p>
 </div>
 <div class="email-legal" style="margin-top:4px;padding-top:14px;border-top:1px solid rgba(33,28,20,0.14);text-align:center;font-size:12px;line-height:1.6;color:#5a503e;">

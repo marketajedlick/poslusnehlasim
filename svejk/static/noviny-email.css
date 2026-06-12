@@ -25,20 +25,34 @@ body {
 .head td {
   vertical-align: top;
 }
+.head-brand {
+  width: 100%;
+}
+.head-brand-inner {
+  height: 96px;
+}
+.head-brand-inner td {
+  vertical-align: middle;
+  height: 96px;
+}
 .head-title {
   text-align: left;
 }
+.head-svejk {
+  vertical-align: middle;
+  height: 96px;
+}
 .head-svejk img {
   display: block;
-  width: 100px;
-  max-width: 100px;
-  height: auto;
+  width: 54px;
+  max-width: 54px;
+  height: 76px;
   opacity: 0.55;
   border: 0;
 }
 .svejk-placeholder {
-  width: 100px;
-  height: 90px;
+  width: 54px;
+  height: 76px;
 }
 .cal {
   width: 88px;
@@ -147,22 +161,22 @@ body {
   margin-left: 10px;
 }
 .bnum-l {
-  font-size: 56px;
-  line-height: 1;
+  font-size: 84px;
+  line-height: 0.88;
   color: #f0e6cf;
   vertical-align: middle;
 }
 .bnum-r {
-  font-size: 56px;
-  line-height: 1;
+  font-size: 84px;
+  line-height: 0.88;
   color: #cf5a31;
   vertical-align: middle;
 }
 .bcolon {
-  font-size: 38px;
+  font-size: 54px;
   color: #ded0ad;
   line-height: 0.7;
-  padding: 0 6px;
+  padding: 0 8px;
 }
 .board-note {
   text-align: center;
@@ -381,13 +395,14 @@ body {
     font-size: 34px !important;
   }
   .head-title {
-    padding: 0 6px 2px 10px !important;
+    padding: 0 0 0 10px !important;
   }
   .head-svejk {
     display: none !important;
     width: 0 !important;
     max-height: 0 !important;
     overflow: hidden !important;
+    padding: 0 !important;
   }
   .mast {
     font-size: 28px !important;
@@ -427,10 +442,10 @@ body {
   }
   .bnum-l,
   .bnum-r {
-    font-size: 44px !important;
+    font-size: 72px !important;
   }
   .bcolon {
-    font-size: 32px !important;
+    font-size: 46px !important;
   }
   .item-inner tr,
   .item-inner tbody {
