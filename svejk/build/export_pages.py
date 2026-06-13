@@ -14,6 +14,8 @@ from svejk.build.html import (
     fonts_asset_version,
     render_archiv_html,
     render_den_html,
+    render_dekuju_html,
+    render_pivo_html,
     render_potvrzeno_html,
     render_slovnicek_html,
     render_soukromi_html,
@@ -246,6 +248,18 @@ def run_export_pages(
     )
     (out / "slovnicek.html").write_text(slovnicek_html, encoding="utf-8")
     written.append("slovnicek.html")
+
+    pivo_html = render_pivo_html(
+        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
+    )
+    (out / "pivo.html").write_text(pivo_html, encoding="utf-8")
+    written.append("pivo.html")
+
+    dekuju_html = render_dekuju_html(
+        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
+    )
+    (out / "dekuju.html").write_text(dekuju_html, encoding="utf-8")
+    written.append("dekuju.html")
 
     potvrzeno_html = render_potvrzeno_html(
         obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base

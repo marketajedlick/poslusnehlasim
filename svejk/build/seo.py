@@ -11,6 +11,7 @@ from svejk.build.nav import (
     Edition,
     archiv_pages_href,
     edition_pages_href,
+    pivo_pages_href,
     slovnicek_pages_href,
 )
 from svejk.newsletter.feed import _edition_description
@@ -293,6 +294,7 @@ def write_sitemap_xml(
     if editions:
         add_url(f"{base}{archiv_pages_href(base_path)}", editions[-1].when)
         add_url(f"{base}{slovnicek_pages_href(base_path)}", editions[-1].when)
+        add_url(f"{base}{pivo_pages_href(base_path)}", editions[-1].when)
         add_url(f"{base}/soukromi/", editions[-1].when)
 
     for edition in editions:
