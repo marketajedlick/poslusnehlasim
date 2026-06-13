@@ -734,17 +734,18 @@ a.pivo-menu-row:hover{
 }
 .dekuju-head{
   text-align:center;
-  padding-top:4px;
+  padding-top:8px;
 }
 .dekuju-head .eyebrow{
-  margin-top:0;
+  margin:0 0 10px;
   letter-spacing:.22em;
   font-size:11px;
+  line-height:1.2;
 }
 .dekuju-head .mast{
-  margin:6px auto 0;
+  margin:0 auto;
   font-size:clamp(32px, 8vw, 52px);
-  line-height:.9;
+  line-height:.92;
 }
 .dekuju-body{
   display:flex; flex-direction:column; align-items:center;
@@ -1461,8 +1462,8 @@ body.archiv-page{
   .pivo-menu-name{ font-size:14px; }
   .pivo-menu-price{ font-size:20px; }
   .pivo-menu-note{ font-size:15px; }
-  .dekuju-head .mast{ font-size:66px; line-height:.86; margin-top:8px; }
-  .dekuju-head .eyebrow{ letter-spacing:.26em; font-size:13px; }
+  .dekuju-head .mast{ font-size:66px; line-height:.88; }
+  .dekuju-head .eyebrow{ letter-spacing:.26em; font-size:13px; margin-bottom:14px; }
   .dekuju-quote p{ font-size:26px; }
   .dekuju-quote .pivo-quote-by{ font-size:15px; }
   .archive-chip{ width:46px; height:46px; }
