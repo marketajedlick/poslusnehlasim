@@ -71,6 +71,16 @@ def load_approved_keys() -> frozenset[str]:
 
 
 @lru_cache(maxsize=1)
+def load_hidden_keys() -> frozenset[str]:
+    path = approved_path()
+    if not path.is_file():
+        return frozenset()
+    data = json.loads(path.read_text(encoding="utf-8"))
+    keys = data.get("hidden") or []
+    return frozenset(str(k) for k in keys)
+
+
+@lru_cache(maxsize=1)
 def load_held_keys() -> frozenset[str]:
     path = approved_path()
     if not path.is_file():
@@ -89,9 +99,11 @@ def edition_source(edition: Edition) -> Literal["facts", "snapshot"] | None:
     if not publish_gate_enabled():
         return "facts"
     key = edition_key(edition.obdobi, edition.schuze, edition.datum_unl)
+    if key in load_hidden_keys():
+        return None
     if key in load_approved_keys():
         return "facts"
-    if snapshot_path(edition).is_file():
+    if key in load_held_keys() and snapshot_path(edition).is_file():
         return "snapshot"
     return None
 
@@ -124,9 +136,10 @@ def blocked_editions(obdobi: int) -> tuple[Edition, ...]:
 
     blocked: list[Edition] = []
     held = load_held_keys()
+    hidden = load_hidden_keys()
     for edition in _list_obdobi_editions(obdobi):
         key = edition_key(edition.obdobi, edition.schuze, edition.datum_unl)
-        if key in held:
+        if key in held or key in hidden:
             continue
         if edition_source(edition) is not None:
             continue
@@ -140,6 +153,7 @@ def blocked_editions(obdobi: int) -> tuple[Edition, ...]:
 
 def clear_publish_cache() -> None:
     load_approved_keys.cache_clear()
+    load_hidden_keys.cache_clear()
     load_held_keys.cache_clear()
 
 
@@ -202,6 +216,7 @@ def run_publish_check(obdobi: int) -> dict:
         "obdobi": obdobi,
         "gate_enabled": publish_gate_enabled(),
         "approved_count": len(load_approved_keys()),
+        "hidden_count": len(load_hidden_keys()),
         "held_count": len(load_held_keys()),
         "site_editions": len(list_site_editions(obdobi)),
         "blocked": items,
