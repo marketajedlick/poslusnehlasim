@@ -14,8 +14,6 @@ from svejk.build.html import (
     fonts_asset_version,
     render_archiv_html,
     render_den_html,
-    render_dekuju_html,
-    render_pivo_html,
     render_potvrzeno_html,
     render_slovnicek_html,
     render_soukromi_html,
@@ -27,8 +25,14 @@ from svejk.build.vyznamenani_neprosli import load_vyznamenani
 from svejk.build.nav import (
     clear_edition_cache,
     edition_pages_href,
-    list_obdobi_editions,
     resolve_edition,
+)
+from svejk.build.publish import (
+    clear_publish_cache,
+    edition_source,
+    list_approved_editions,
+    list_site_editions,
+    snapshot_path,
 )
 from svejk.build.seo import write_llms_txt, write_robots_txt, write_sitemap_xml
 from svejk.newsletter.config import NewsletterConfig
@@ -98,8 +102,9 @@ def run_export_pages(
     base_path: str | None = None,
     cname: str | None = None,
 ) -> dict[str, Any]:
-    """Vyexportuje všechna vydání období do složky pro GitHub Pages."""
+    """Vyexportuje schválená vydání období do složky pro GitHub Pages."""
     clear_edition_cache()
+    clear_publish_cache()
     base = _base_path() if base_path is None else base_path.rstrip("/")
     out = Path(out_dir)
     if out.exists():
@@ -127,23 +132,31 @@ def run_export_pages(
     css_href = static_css_path(base, version=css_asset_version())
     fonts_css_href = static_fonts_css_path(base, version=fonts_asset_version())
 
-    editions = list_obdobi_editions(obdobi)
+    editions = list_site_editions(obdobi)
     if not editions:
         raise FileNotFoundError(
-            f"Žádná vydání v {processed_root()}/{obdobi}-s*, spusť build pro období {obdobi}."
+            f"Žádná schválená vydání v {processed_root()}/{obdobi}-s* "
+            f"(zkontroluj publish-approved.json a publish-snapshots/)."
         )
 
     written: list[str] = []
     for edition in editions:
-        html = _render_edition_html(
-            edition, obdobi, base=base, css_href=css_href, fonts_css_href=fonts_css_href
-        )
-        if html is None:
-            continue
         dest = out / "noviny" / str(edition.obdobi) / str(edition.schuze) / f"{edition.datum_unl}.html"
         dest.parent.mkdir(parents=True, exist_ok=True)
-        dest.write_text(html, encoding="utf-8")
+        src = edition_source(edition)
+        if src == "snapshot":
+            dest.write_text(snapshot_path(edition).read_text(encoding="utf-8"), encoding="utf-8")
+        else:
+            html = _render_edition_html(
+                edition, obdobi, base=base, css_href=css_href, fonts_css_href=fonts_css_href
+            )
+            if html is None:
+                continue
+            dest.write_text(html, encoding="utf-8")
         written.append(str(dest.relative_to(out)))
+
+        if src == "snapshot":
+            continue
 
         paths = SchuzePaths.create(edition.obdobi, edition.schuze)
         for kind in ("neprosli", "prosli", "zvoleni"):
@@ -177,26 +190,31 @@ def run_export_pages(
             continue
         seen_dates.add(edition.datum_unl)
         resolved = resolve_edition(obdobi, edition.datum_unl)
-        if not resolved:
-            continue
-        html = _render_edition_html(
-            resolved, obdobi, base=base, css_href=css_href, fonts_css_href=fonts_css_href
-        )
-        if html is None:
+        if not resolved or edition_source(resolved) is None:
             continue
         short = out / "noviny" / str(obdobi) / f"{edition.datum_unl}.html"
         short.parent.mkdir(parents=True, exist_ok=True)
-        short.write_text(html, encoding="utf-8")
+        if edition_source(resolved) == "snapshot":
+            short.write_text(snapshot_path(resolved).read_text(encoding="utf-8"), encoding="utf-8")
+        else:
+            html = _render_edition_html(
+                resolved, obdobi, base=base, css_href=css_href, fonts_css_href=fonts_css_href
+            )
+            if html is None:
+                continue
+            short.write_text(html, encoding="utf-8")
         written.append(str(short.relative_to(out)))
 
+    approved = list_approved_editions(obdobi)
     latest = editions[-1]
     latest_href = edition_pages_href(latest.obdobi, latest.schuze, latest.datum_unl, base)
     cfg = NewsletterConfig.from_env()
     site = cfg.site_url.rstrip("/")
-    paths = SchuzePaths.create(latest.obdobi, latest.schuze)
-    d = datetime.strptime(latest.datum_unl, "%d.%m.%Y")
+    homepage_edition = approved[-1] if approved else latest
+    paths = SchuzePaths.create(homepage_edition.obdobi, homepage_edition.schuze)
+    d = datetime.strptime(homepage_edition.datum_unl, "%d.%m.%Y")
     day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
-    if not day_path.is_file():
+    if edition_source(homepage_edition) == "snapshot" or not day_path.is_file():
         (out / "index.html").write_text(_redirect_html(f"{site}{latest_href}"), encoding="utf-8")
     else:
         content = build_den_content(day_path, paths)
@@ -228,18 +246,6 @@ def run_export_pages(
     )
     (out / "slovnicek.html").write_text(slovnicek_html, encoding="utf-8")
     written.append("slovnicek.html")
-
-    pivo_html = render_pivo_html(
-        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
-    )
-    (out / "pivo.html").write_text(pivo_html, encoding="utf-8")
-    written.append("pivo.html")
-
-    dekuju_html = render_dekuju_html(
-        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
-    )
-    (out / "dekuju.html").write_text(dekuju_html, encoding="utf-8")
-    written.append("dekuju.html")
 
     potvrzeno_html = render_potvrzeno_html(
         obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base

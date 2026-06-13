@@ -12,6 +12,8 @@ from pathlib import Path
 from svejk.build.day_content import datum_design
 from svejk.build.io import read_json
 from svejk.paths import SchuzePaths, processed_root
+
+from svejk.build.publish import list_site_editions
 from svejk.timeline import den_v_tydnu
 
 _MESICE_NOM = (
@@ -129,16 +131,6 @@ def slovnicek_pages_href(base_path: str = "") -> str:
     return f"{base}/slovnicek.html" if base else "/slovnicek.html"
 
 
-def pivo_pages_href(base_path: str = "") -> str:
-    base = base_path.rstrip("/")
-    return f"{base}/pivo.html" if base else "/pivo.html"
-
-
-def dekuju_pages_href(base_path: str = "") -> str:
-    base = base_path.rstrip("/")
-    return f"{base}/dekuju.html" if base else "/dekuju.html"
-
-
 def vyznamenani_pages_href(
     obdobi: int,
     schuze: int,
@@ -161,7 +153,7 @@ def vyznamenani_neprosli_pages_href(
 
 
 def resolve_edition(obdobi: int, datum_unl: str, schuze: int | None = None) -> Edition | None:
-    matches = _editions_on_day(list_obdobi_editions(obdobi), datum_unl)
+    matches = _editions_on_day(list_site_editions(obdobi), datum_unl)
     if not matches:
         return None
     if schuze is not None:
@@ -228,7 +220,7 @@ def edition_nav(
     base_path: str = "",
 ) -> EditionNav:
     ob = obdobi if obdobi is not None else paths.obdobi
-    editions = list_obdobi_editions(ob)
+    editions = list_site_editions(ob)
     idx = next(
         (i for i, e in enumerate(editions) if e.schuze == paths.schuze and e.datum_unl == datum_unl),
         None,
@@ -294,7 +286,7 @@ def archive_recent(
     limit: int = 30,
 ) -> tuple[ArchiveChip, ...]:
     ob = obdobi if obdobi is not None else paths.obdobi
-    editions = list_obdobi_editions(ob)
+    editions = list_site_editions(ob)
     if not editions:
         return ()
     recent = list(editions[-limit:] if len(editions) > limit else editions)
@@ -334,7 +326,7 @@ def archive_by_month(
     base_path: str = "",
 ) -> tuple[ArchiveMonth, ...]:
     ob = obdobi if obdobi is not None else paths.obdobi
-    editions = list_obdobi_editions(ob)
+    editions = list_site_editions(ob)
     if not editions:
         return ()
 
@@ -358,3 +350,6 @@ def archive_by_month(
 
 def clear_edition_cache() -> None:
     list_obdobi_editions.cache_clear()
+    from svejk.build.publish import clear_publish_cache
+
+    clear_publish_cache()

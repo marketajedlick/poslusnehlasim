@@ -98,11 +98,15 @@ jobs:
     #      ./run-svejk.sh build --obdobi 2025 --vsechny-schuze -q \
      #       || ./run-svejk.sh build --obdobi 2025 --vsechny-schuze --only align,extract,compose -q
 
+      - name: Publish gate check
+        run: ./run-svejk.sh publish-check --obdobi 2025
+
       - name: Export static site
         env:
           SVEJK_BASE_PATH: ""
           SVEJK_PAGES_CNAME: poslusnehlasim.cz
           SVEJK_SITE_URL: https://poslusnehlasim.cz
+          SVEJK_PUBLISH_GATE: "1"
           ECOMAIL_FORM_ACTION: https://poslusnehlasim.ecomailapp.cz/public/subscribe/2/2bb287d15897fe2f9d89c882af9a3a8b
           SVEJK_SHOW_SUBSCRIBE: "1"
           SVEJK_SUBSCRIBE_API_URL: ${{ steps.subscribe_worker.outputs.url || secrets.SVEJK_SUBSCRIBE_API_URL }}

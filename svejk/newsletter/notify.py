@@ -8,7 +8,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from svejk.build.nav import Edition, edition_pages_href, list_obdobi_editions
+from svejk.build.nav import Edition, edition_pages_href
+from svejk.build.publish import is_edition_approved, list_approved_editions
 from svejk.newsletter.api import (
     api_key_from_env,
     create_campaign,
@@ -42,7 +43,7 @@ def edition_id(edition: Edition) -> str:
 
 
 def _latest_edition(obdobi: int) -> Edition | None:
-    editions = list_obdobi_editions(obdobi)
+    editions = list_approved_editions(obdobi)
     return editions[-1] if editions else None
 
 
@@ -119,6 +120,12 @@ def run_newsletter_notify(
 
     if not _edition_ready(latest):
         return {"skipped": True, "reason": "vydání nemá data pro web", "edition_id": eid}
+    if not is_edition_approved(latest):
+        return {
+            "skipped": True,
+            "reason": "vydání není v publish-approved.json",
+            "edition_id": eid,
+        }
 
     export_dir = Path(out_dir) if out_dir else None
     if export_dir is not None:

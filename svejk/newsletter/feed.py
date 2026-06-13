@@ -9,7 +9,8 @@ from pathlib import Path
 from xml.etree.ElementTree import Element, SubElement, tostring
 
 from svejk.build.io import read_json
-from svejk.build.nav import Edition, edition_pages_href, list_obdobi_editions
+from svejk.build.nav import Edition, edition_pages_href
+from svejk.build.publish import list_site_editions
 from svejk.newsletter.config import NewsletterConfig
 from svejk.paths import SchuzePaths
 
@@ -58,7 +59,7 @@ def write_feed_xml(
     max_items: int = 40,
 ) -> Path:
     cfg = config or NewsletterConfig.from_env()
-    editions = list_obdobi_editions(obdobi)
+    editions = list_site_editions(obdobi)
     if not editions:
         raise FileNotFoundError(f"Žádná vydání pro období {obdobi}")
 

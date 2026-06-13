@@ -408,6 +408,44 @@ def cmd_seed(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_publish_check(args: argparse.Namespace) -> int:
+    from svejk.build.publish import run_publish_check
+
+    result = run_publish_check(args.obdobi)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    if not result.get("ok"):
+        blocked = result.get("blocked") or []
+        held = result.get("held_missing_snapshots") or []
+        print(
+            f"Publish gate: {len(blocked)} neblokovaných vydání, "
+            f"{len(held)} held bez snapshotu.",
+            file=sys.stderr,
+        )
+        for item in blocked:
+            print(f"  blocked: {item['key']}", file=sys.stderr)
+        for item in held:
+            print(f"  held bez snapshotu: {item['key']}", file=sys.stderr)
+        return 1
+    print("Publish gate: OK.", file=sys.stderr)
+    return 0
+
+
+def cmd_publish_snapshot_fetch(args: argparse.Namespace) -> int:
+    from svejk.build.publish import fetch_production_snapshot
+
+    try:
+        dest = fetch_production_snapshot(
+            args.edition,
+            site_url=args.site_url,
+            overwrite=args.overwrite,
+        )
+    except (ValueError, OSError, FileNotFoundError) as e:
+        print(f"Chyba: {e}", file=sys.stderr)
+        return 1
+    print(json.dumps({"edition": args.edition, "path": str(dest)}, ensure_ascii=False, indent=2))
+    return 0
+
+
 def cmd_export_pages(args: argparse.Namespace) -> int:
     from svejk.build.export_pages import run_export_pages
 
@@ -757,6 +795,33 @@ def main() -> int:
     p_seed.add_argument("--obdobi", type=int, default=2025)
     p_seed.add_argument("--schvalit", action="store_true", help="Rovnou vlož schválený zápis")
     p_seed.set_defaults(func=cmd_seed)
+
+    p_pub_check = sub.add_parser(
+        "publish-check",
+        help="Kontrola, že nedoladěná vydání nemají cestu na web bez schválení",
+    )
+    p_pub_check.add_argument("--obdobi", type=int, default=2025)
+    p_pub_check.set_defaults(func=cmd_publish_check)
+
+    p_pub_snap = sub.add_parser(
+        "publish-snapshot-fetch",
+        help="Stáhne HTML vydání z produkce do processed/publish-snapshots/",
+    )
+    p_pub_snap.add_argument(
+        "edition",
+        help="Klíč vydání, např. 2025/22/11.06.2026",
+    )
+    p_pub_snap.add_argument(
+        "--site-url",
+        default="https://poslusnehlasim.cz",
+        help="Základ URL produkčního webu",
+    )
+    p_pub_snap.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="Přepsat existující snapshot",
+    )
+    p_pub_snap.set_defaults(func=cmd_publish_snapshot_fetch)
 
     p_export = sub.add_parser(
         "export-pages",
