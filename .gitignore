@@ -3,6 +3,7 @@ secrets.env
 __pycache__/
 *.py[cod]
 .DS_Store
+.cursor/
 svejk.db
 site/
 grammer_check/

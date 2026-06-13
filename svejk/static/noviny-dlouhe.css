@@ -485,50 +485,31 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
 .hospoda{
   margin-top:16px;
   padding:14px 14px 12px;
-  background:var(--ink);
+  background:var(--terra);
   color:var(--paper);
-  border-top:3px solid var(--terra);
-}
-.hospoda-kick{
   text-align:center;
-  font-family:'Oswald',sans-serif; font-weight:600;
-  text-transform:uppercase; letter-spacing:.16em;
-  font-size:10px; color:var(--terra); margin-bottom:8px;
 }
 .hospoda-gloss{
-  margin:0 0 12px;
+  margin:0;
   font-family:'Old Standard TT',serif; font-style:italic;
-  font-size:15px; line-height:1.45; color:var(--paper-3);
-  text-align:center;
+  font-size:15px; line-height:1.45; color:var(--paper);
 }
-.hospoda-tiers{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
+.hospoda-cta{
+  margin:12px 0 0;
 }
-.hospoda-tier{
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  min-height:58px; padding:8px 6px;
-  border:1.5px solid rgba(240,230,207,.22);
-  border-radius:2px;
-  background:rgba(240,230,207,.04);
-  color:var(--paper); text-decoration:none; text-align:center;
-  transition:background .15s, border-color .15s, color .15s;
-}
-.hospoda-tier:hover{
-  border-color:var(--terra);
-  background:rgba(207,90,49,.14);
-  color:var(--paper);
-}
-.hospoda-tier-name{
+.hospoda-link{
+  display:inline-block;
   font-family:'Oswald',sans-serif; font-weight:600;
-  text-transform:uppercase; letter-spacing:.06em;
-  font-size:9px; line-height:1.2;
+  text-transform:uppercase; letter-spacing:.1em;
+  font-size:12px; color:var(--paper);
+  text-decoration:none;
+  border-bottom:2px solid rgba(240,230,207,.55);
+  padding-bottom:2px;
+  transition:border-color .15s, color .15s;
 }
-.hospoda-tier-price{
-  font-family:'Anton',sans-serif;
-  font-size:15px; line-height:1.1; color:var(--terra);
-  margin-top:4px;
+.hospoda-link:hover{
+  border-bottom-color:var(--paper);
+  color:var(--paper);
 }
 
 /* ---------- archive (chips on archiv page, link on editions) ---------- */
@@ -1466,9 +1447,7 @@ body.archiv-page{
   .archive-link + .board{ margin-top:10px; }
   .hospoda{ margin-top:22px; padding:16px 18px 14px; }
   .hospoda-gloss{ font-size:17px; }
-  .hospoda-tiers{ grid-template-columns:repeat(4, 1fr); gap:10px; }
-  .hospoda-tier-name{ font-size:10px; }
-  .hospoda-tier-price{ font-size:16px; }
+  .hospoda-link{ font-size:13px; }
   .hospoda + .archive-link{ padding:12px 0 0; }
   .pivo-stage .pad{ padding:44px 50px 40px; }
   .pivo-body p{ font-size:18px; }
