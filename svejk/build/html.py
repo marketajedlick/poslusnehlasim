@@ -28,8 +28,8 @@ from svejk.build.nav import (
 
 # Stripe Payment Links — redirect ve Stripe Dashboardu → /dekuju.html
 STRIPE_PIVO_URL = "https://donate.stripe.com/14A7sNekE1pP8cEfb83Je00"
-STRIPE_RUM_URL = "https://buy.stripe.com/test_28E00l1zp7wT73FftM4Rq01"
-STRIPE_STAMGAST_URL = "https://buy.stripe.com/test_cNi5kFfqfbN9gEfepI4Rq03"
+STRIPE_RUM_URL = "https://donate.stripe.com/4gM00l0tO3xX0Kc1ki3Je01"
+STRIPE_STAMGAST_URL = "https://donate.stripe.com/5kQ14pa4o8ShfF66EC3Je02"
 
 
 def _stripe_url(env_key: str, default: str) -> str:

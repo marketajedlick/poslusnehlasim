@@ -713,8 +713,7 @@ a.pivo-menu-row:hover{
   font-size:10px; color:var(--terra);
   white-space:nowrap;
 }
-.pivo-pay-note,
-.pivo-bmc-note{
+.pivo-pay-note{
   margin:10px 0 0 !important;
   font-size:13px !important;
   line-height:1.45 !important;
