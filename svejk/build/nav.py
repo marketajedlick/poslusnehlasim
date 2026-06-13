@@ -129,6 +129,16 @@ def slovnicek_pages_href(base_path: str = "") -> str:
     return f"{base}/slovnicek.html" if base else "/slovnicek.html"
 
 
+def pivo_pages_href(base_path: str = "") -> str:
+    base = base_path.rstrip("/")
+    return f"{base}/pivo.html" if base else "/pivo.html"
+
+
+def dekuju_pages_href(base_path: str = "") -> str:
+    base = base_path.rstrip("/")
+    return f"{base}/dekuju.html" if base else "/dekuju.html"
+
+
 def vyznamenani_pages_href(
     obdobi: int,
     schuze: int,

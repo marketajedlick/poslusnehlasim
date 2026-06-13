@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+{% set head_noindex = true %}
+{% include "head-noviny.html" %}
+<title>Děkujeme · Poslušně hlásím</title>
+<meta name="description" content="Platba za pivo pro Švejka byla přijata." />
+<link rel="canonical" href="{{ canonical_url }}" />
+<link rel="stylesheet" href="{{ fonts_css_href }}" />
+<link rel="stylesheet" href="{{ css_href }}" />
+</head>
+<body class="pivo-page dekuju-page">
+<div class="stagewrap pivo-stage">
+  <div class="stack">
+    <div class="page-slot">
+      <div class="page-top">
+        <div class="sheet-shape">
+          <div class="grain"></div>
+          <div class="pad">
+            <header class="dekuju-head">
+              <div class="eyebrow">deník sněmovny</div>
+              <h1 class="mast">POSLUŠNĚ <span class="terra">HLÁSÍM</span></h1>
+            </header>
+
+            <hr class="hr" />
+
+            <div class="pivo-body dekuju-body">
+              <blockquote class="pivo-quote dekuju-quote">
+                <p>Poslušně hlásím, že pivo bude vypito na zdraví Sněmovny.</p>
+                <span class="pivo-quote-by">Váš dobrý voják Švejk</span>
+              </blockquote>
+
+              {% if archive_href or latest_href %}
+              <nav class="dekuju-nav" aria-label="Další odkazy">
+                {% if archive_href %}
+                <a class="pivo-back" href="{{ archive_href }}">Archiv vydání</a>
+                {% endif %}
+                {% if latest_href %}
+                {% if archive_href %}<span class="pivo-nav-sep" aria-hidden="true">·</span>{% endif %}
+                <a class="pivo-back" href="{{ latest_href }}">Nejnovější vydání</a>
+                {% endif %}
+              </nav>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% include "cookie-consent.html" %}
+</body>
+</html>

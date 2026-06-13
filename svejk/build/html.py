@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import re
 from datetime import datetime
 from pathlib import Path
@@ -19,9 +20,50 @@ from svejk.build.nav import (
     edition_nav,
     edition_pages_href,
     list_obdobi_editions,
+    pivo_pages_href,
+    dekuju_pages_href,
     slovnicek_pages_href,
     vyznamenani_pages_href,
 )
+
+# Stripe Payment Links — redirect ve Stripe Dashboardu → /dekuju.html
+STRIPE_PIVO_URL = "https://buy.stripe.com/test_fZu00la5V3gD73F5Tc4Rq02"
+STRIPE_RUM_URL = "https://buy.stripe.com/test_28E00l1zp7wT73FftM4Rq01"
+STRIPE_STAMGAST_URL = "https://buy.stripe.com/test_cNi5kFfqfbN9gEfepI4Rq03"
+
+
+def _stripe_url(env_key: str, default: str) -> str:
+    return os.environ.get(env_key, default).strip() or default
+
+
+def pivo_tiers() -> list[dict[str, Any]]:
+    """Hospodský ceník — tři položky, pay_href vede na Stripe Payment Links."""
+    return [
+        {
+            "id": "velke",
+            "name": "Velké pivo",
+            "price": "65 Kč",
+            "note": "starý osvědčený prostředek proti trudnomyslnosti",
+            "pay_href": _stripe_url("STRIPE_PIVO_URL", STRIPE_PIVO_URL),
+        },
+        {
+            "id": "rum",
+            "name": "Rum",
+            "price": "95 Kč",
+            "note": "kořalku nepiju, jenom rum",
+            "pay_href": _stripe_url("STRIPE_RUM_URL", STRIPE_RUM_URL),
+        },
+        {
+            "id": "stamgast",
+            "name": "Štamgast",
+            "price": "65 Kč měsíčně",
+            "note": "pro ty, kdo chodí pravidelně a ne jen na mobilizaci",
+            "pay_href": _stripe_url("STRIPE_STAMGAST_URL", STRIPE_STAMGAST_URL),
+            "highlight": True,
+        },
+    ]
+
+
 from svejk.build.vyznamenani_neprosli import (
     VyznamenaniKind,
     inject_mean_links,
@@ -218,6 +260,7 @@ def render_den_html(
         canonical_url = f"{cfg.site_url.rstrip('/')}{href}"
     archive_href = archiv_pages_href(base_path) if link_mode == "pages" else None
     slovnicek_href = slovnicek_pages_href(base_path) if link_mode == "pages" else None
+    pivo_href = pivo_pages_href(base_path) if link_mode == "pages" else None
     datum_label = datum_design(content.datum, content.den)
     edition_title = f"Poslušně hlásím · {datum_label}"
     from svejk.build.seo import article_headline as _article_headline
@@ -340,6 +383,8 @@ def render_den_html(
         archive_href=archive_href,
         **og,
         slovnicek_href=slovnicek_href,
+        pivo_href=pivo_href,
+        pivo_tiers=pivo_tiers(),
         **favicons,
     )
 
@@ -439,9 +484,11 @@ def render_email_html(
         edition.obdobi, edition.schuze, edition.datum_unl, base_path
     )
     archive_href = archiv_pages_href(base_path)
+    pivo_href = pivo_pages_href(base_path)
     site = site_url.rstrip("/")
     edition_url = f"{site}{edition_href}"
     archive_url = f"{site}{archive_href}"
+    pivo_url = f"{site}{pivo_href}"
     datum_label = datum_design(edition.datum_unl, content.den)
     subject = f"Nové vydání · {datum_label}"
     plain = plain_text_from_content(
@@ -470,6 +517,7 @@ def render_email_html(
         zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
         edition_url=edition_url,
         archive_url=archive_url,
+        pivo_url=pivo_url,
         # PNG místo SVG — Outlook a část Gmailu SVG v <img> nezobrazí.
         svejk_img_url=_static_asset_url(site, base_path, "favicon.png"),
     )
@@ -748,6 +796,94 @@ def render_slovnicek_html(
         latest_href=latest_href,
         canonical_url=canonical_url,
         **og,
+        inline_css=inline_css,
+        css=css,
+        css_href=css_href,
+        fonts_css_href=fonts_css_href,
+        **favicons,
+    )
+
+
+def render_pivo_html(
+    obdobi: int,
+    *,
+    inline_css: bool = False,
+    css_href: str | None = None,
+    fonts_css_href: str | None = None,
+    base_path: str = "",
+) -> str:
+    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path)
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    editions = list_obdobi_editions(obdobi)
+    if not editions:
+        raise ValueError(f"Žádná vydání pro období {obdobi}")
+
+    latest = editions[-1]
+    archive_href = archiv_pages_href(base_path)
+    slovnicek_href = slovnicek_pages_href(base_path)
+    latest_href = edition_pages_href(
+        latest.obdobi, latest.schuze, latest.datum_unl, base_path
+    )
+    canonical_url = f"{cfg.site_url.rstrip('/')}{pivo_pages_href(base_path)}"
+    og = _og_context(
+        site_url=cfg.site_url,
+        base_path=base_path,
+        title="Kup Švejkovi pivo · Poslušně hlásím",
+        description="Dobrovolný příspěvek na provoz deníku z Poslanecké sněmovny. Noviny zůstávají zdarma.",
+    )
+    tpl = _jinja_env().get_template("pivo-stranka.html")
+    return tpl.render(
+        archive_href=archive_href,
+        slovnicek_href=slovnicek_href,
+        latest_href=latest_href,
+        pivo_tiers=pivo_tiers(),
+        pivo_menu_pay=True,
+        canonical_url=canonical_url,
+        **og,
+        inline_css=inline_css,
+        css=css,
+        css_href=css_href,
+        fonts_css_href=fonts_css_href,
+        **favicons,
+    )
+
+
+def render_dekuju_html(
+    obdobi: int,
+    *,
+    inline_css: bool = False,
+    css_href: str | None = None,
+    fonts_css_href: str | None = None,
+    base_path: str = "",
+) -> str:
+    """Stránka po úspěšné platbě (redirect ze Stripe)."""
+    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path)
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    editions = list_obdobi_editions(obdobi)
+    if not editions:
+        raise ValueError(f"Žádná vydání pro období {obdobi}")
+
+    latest = editions[-1]
+    archive_href = archiv_pages_href(base_path)
+    latest_href = edition_pages_href(
+        latest.obdobi, latest.schuze, latest.datum_unl, base_path
+    )
+    canonical_url = f"{cfg.site_url.rstrip('/')}{dekuju_pages_href(base_path)}"
+    tpl = _jinja_env().get_template("dekuju-stranka.html")
+    return tpl.render(
+        archive_href=archive_href,
+        latest_href=latest_href,
+        canonical_url=canonical_url,
         inline_css=inline_css,
         css=css,
         css_href=css_href,

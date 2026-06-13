@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+{% include "head-noviny.html" %}
+<title>Kup Švejkovi pivo · Poslušně hlásím</title>
+<meta name="description" content="Dobrovolný příspěvek na provoz deníku z Poslanecké sněmovny. Noviny zůstávají zdarma." />
+<link rel="canonical" href="{{ canonical_url }}" />
+{% include "og-meta.html" %}
+<link rel="stylesheet" href="{{ fonts_css_href }}" />
+<link rel="stylesheet" href="{{ css_href }}" />
+</head>
+<body class="pivo-page">
+<div class="stagewrap pivo-stage">
+  <div class="stack">
+    <div class="page-slot">
+      <div class="page-top">
+        <div class="sheet-shape">
+          <div class="grain"></div>
+          <div class="pad">
+            <header class="pivo-head">
+              <div class="eyebrow">hospoda u švejka</div>
+              <h1 class="pivo-title">Kup <span class="terra">Švejkovi</span> pivo</h1>
+              {% if archive_href or latest_href or slovnicek_href %}
+              <nav class="pivo-nav">
+                {% if archive_href %}
+                <a class="pivo-back" href="{{ archive_href }}">Archiv vydání</a>
+                {% endif %}
+                {% if slovnicek_href %}
+                {% if archive_href %}<span class="pivo-nav-sep" aria-hidden="true">·</span>{% endif %}
+                <a class="pivo-back" href="{{ slovnicek_href }}">Švejkův slovníček</a>
+                {% endif %}
+                {% if latest_href %}
+                {% if archive_href or slovnicek_href %}<span class="pivo-nav-sep" aria-hidden="true">·</span>{% endif %}
+                <a class="pivo-back" href="{{ latest_href }}">Nejnovější vydání</a>
+                {% endif %}
+              </nav>
+              {% endif %}
+            </header>
+
+            <hr class="hr" />
+
+            <div class="pivo-body">
+              <p>Poslušně hlásím, že každý den, kdy Sněmovna zasedá, sedím na galerii, poslouchám, zapisuju a překládám to do lidské řeči. Je to služba vlasti a vlast za to neplatí, ona totiž ani neví, že to dělám.</p>
+              <p>Noviny byly, jsou a zůstanou zadarmo pro každého. Ale doména, server a nástroje něco stojí a žízeň po celodenním poslouchání poslanců je veliká. Kdyby každý desátý čtenář koupil jedno pivo měsíčně, mám provoz zaplacený a ještě zbyde na utopence.</p>
+
+{% include "pivo-menu.html" %}
+
+              <p>Na co peníze jdou: provoz webu, rozesílání novin e-mailem a čas strávený ve Sněmovně, aby tam za vás nemusel nikdo z vás.</p>
+
+              <blockquote class="pivo-quote">
+                <p>„Já jsem si vždycky myslel, že pivo se má pít a politika hlásit. Tak to taky dělám." <span class="pivo-quote-by">Váš dobrý voják Švejk</span></p>
+              </blockquote>
+
+              <p class="pivo-fine">Příspěvky jsou dobrovolné a nezakládají nárok na žádné protiplnění.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% include "cookie-consent.html" %}
+</body>
+</html>
