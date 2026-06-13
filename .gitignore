@@ -5,8 +5,10 @@ __pycache__/
 .DS_Store
 svejk.db
 site/
+grammer_check/
 # Velké PSP exporty — pro build stačí hl2025s.unl + zmatecne.unl
 hl-2025ps/omluvy.unl
 hl-2025ps/hl2025h1.unl
 hl-2025ps/hl2025h2.unl
 data/psp/poslanci.zip
+psp/poslanci.zip

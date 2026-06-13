@@ -27,7 +27,7 @@ from svejk.build.nav import (
 )
 
 # Stripe Payment Links — redirect ve Stripe Dashboardu → /dekuju.html
-STRIPE_PIVO_URL = "https://buy.stripe.com/test_fZu00la5V3gD73F5Tc4Rq02"
+STRIPE_PIVO_URL = "https://donate.stripe.com/14A7sNekE1pP8cEfb83Je00"
 STRIPE_RUM_URL = "https://buy.stripe.com/test_28E00l1zp7wT73FftM4Rq01"
 STRIPE_STAMGAST_URL = "https://buy.stripe.com/test_cNi5kFfqfbN9gEfepI4Rq03"
 
