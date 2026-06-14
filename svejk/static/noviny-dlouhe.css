@@ -1591,7 +1591,12 @@ body.archiv-page{
   font-size:12px; line-height:1.45;
   color:var(--ink-soft);
 }
-.soukromi-section .soukromi-operator{ margin-top:8px; }
+.soukromi-section p.soukromi-operator{
+  margin-top:8px;
+  font-size:12px;
+  line-height:1.45;
+  color:var(--ink-soft);
+}
 
 /* ---------- nav (mobile) ---------- */
 .edition-nav{
