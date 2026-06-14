@@ -737,7 +737,7 @@ a.pivo-menu-row:hover{
   padding-top:8px;
 }
 .dekuju-head .eyebrow{
-  margin:0 0 10px;
+  margin:0 0 16px;
   letter-spacing:.22em;
   font-size:11px;
   line-height:1.2;
@@ -1463,7 +1463,7 @@ body.archiv-page{
   .pivo-menu-price{ font-size:20px; }
   .pivo-menu-note{ font-size:15px; }
   .dekuju-head .mast{ font-size:66px; line-height:.88; }
-  .dekuju-head .eyebrow{ letter-spacing:.26em; font-size:13px; margin-bottom:14px; }
+  .dekuju-head .eyebrow{ letter-spacing:.26em; font-size:13px; margin-bottom:20px; }
   .dekuju-quote p{ font-size:26px; }
   .dekuju-quote .pivo-quote-by{ font-size:15px; }
   .archive-chip{ width:46px; height:46px; }
