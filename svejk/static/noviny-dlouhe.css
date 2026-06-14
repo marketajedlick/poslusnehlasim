@@ -790,7 +790,6 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
   display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
   gap:8px 12px;
 }
-.archiv-head .site-nav,
 .slovnicek-head .site-nav,
 .pivo-head .site-nav,
 .vyznamenani-head .site-nav{
@@ -1450,8 +1449,14 @@ a.mean-link:hover{
 
 /* ---------- archiv page ---------- */
 body.archiv-page{
-  padding:calc(24px + env(safe-area-inset-top, 0px)) 0 0;
+  padding:calc(4px + env(safe-area-inset-top, 0px)) 0 0;
 }
+.archiv-nav-wrap{
+  width:min(640px, calc(100% - 32px));
+  margin:0 auto 14px;
+  text-align:center;
+}
+.archiv-nav-wrap .site-nav{ margin:0; }
 .archiv-wrap{
   width:min(640px, calc(100% - 32px));
   margin:0 auto;

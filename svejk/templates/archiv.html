@@ -10,11 +10,13 @@
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="archiv-page">
+<div class="archiv-nav-wrap">
+  {% include "site-nav.html" %}
+</div>
 <div class="archiv-wrap">
   <header class="archiv-head">
     <h1 class="archiv-title">Archiv vydání</h1>
     <p class="archiv-gloss">Všechna dostupná vydání deníku.</p>
-    {% include "site-nav.html" %}
     {% if latest_href %}
     <a class="archiv-latest-cta" href="{{ latest_href }}">
       <span class="archiv-latest-cta-kicker">Nejnovější vydání</span>
