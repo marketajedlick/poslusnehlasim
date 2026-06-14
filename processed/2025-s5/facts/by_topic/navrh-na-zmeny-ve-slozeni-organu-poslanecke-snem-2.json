@@ -45,5 +45,30 @@
     "spor": false,
     "prazdny_sal": false
   },
-  "steno_slov": 38376
+  "steno_slov": 38376,
+  "en": {
+    "nadpis": "It passed",
+    "predmet_lidsky": "proposal for changes in the composition of the bodies of The Chamber of Deputies",
+    "koho": [
+      "It does not apply to citizens, unless they know one of the MPs personally."
+    ],
+    "fakty": [
+      {
+        "text": "90/1995 Coll., on the rules of procedure of The Chamber of Deputies, regulating the more detailed rules for the election of the public defender of rights, the defender of children's rights and the representative of the public defender of rights and the defender of children's rights/parliamentary document 98/ This is parliamentary document 98.",
+        "citace": "90/1995 Coll., on the rules of procedure of The Chamber of Deputies, regulating the more detailed rules for the election of the public defender of rights, the defender of children's rights and the representative of the public defender of rights and the defender of children's rights/parliament d"
+      },
+      {
+        "text": "This parliamentary document contains the Resolution of the Petitions Committee No. 11 of 2",
+        "citace": "This parliamentary document contains the Resolution of the Petitions Committee No. 11 of 2"
+      },
+      {
+        "text": "December 2025, which also includes a draft resolution of The Chamber of Deputies.",
+        "citace": "December 2025, which also includes a draft resolution of The Chamber of Deputies."
+      },
+      {
+        "text": "2 of Act No. 90/1995 Coll., on the Rules of Procedure of The Chamber of Deputies of the Parliament, which regulates more detailed rules for the election of a public defender of rights, a defender of children's rights and a representative of a public defender of rights and a defender of children's rights.",
+        "citace": "2 of Act No. 90/1995 Coll., on the rules of procedure of The Chamber of Deputies of the Parliament, which regulate the more detailed rules for the election of the public defender of rights, the defender of children's rights and the representative of the public defender of rights, and"
+      }
+    ]
+  }
 }
