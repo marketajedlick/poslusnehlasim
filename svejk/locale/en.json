@@ -59,9 +59,8 @@
   },
   "beer_support": {
     "aria": "Švejk's pub",
-    "text_before": "If today's report was useful, you can",
-    "link": "buy Švejk a beer",
-    "text_after": ". The newspaper stays free either way. 🍺"
+    "gloss": "I hereby report that going to the Chamber every day is thirsty work.",
+    "cta": "Buy Švejk a beer 🍺"
   },
   "locale_notice": "This edition is in Czech. A satirical diary from real records of the Czech Chamber of Deputies.",
   "archive": {

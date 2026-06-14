@@ -59,9 +59,8 @@
   },
   "beer_support": {
     "aria": "Hospoda u Švejka",
-    "text_before": "Jestli vám dnešní hlášení přišlo vhod, můžete",
-    "link": "Švejkovi koupit jedno pivo",
-    "text_after": ". Noviny zůstanou zdarma tak jako tak. 🍺"
+    "gloss": "Poslušně hlásím, že chodit denně do Sněmovny je žízeň.",
+    "cta": "Kup Švejkovi pivo 🍺"
   },
   "locale_notice": "Toto vydání je v češtině. Satirický deník z reálných záznamů Poslanecké sněmovny.",
   "archive": {

@@ -1,3 +1,8 @@
         <section class="hospoda" aria-label="{{ t.beer_support.aria }}">
-          <p class="hospoda-gloss">{{ t.beer_support.text_before }}{% if pivo_href %} <a class="hospoda-link hospoda-link--inline" href="{{ pivo_href }}#stamgast">{{ t.beer_support.link }}</a>{% else %} {{ t.beer_support.link }}{% endif %}{{ t.beer_support.text_after }}</p>
+          <p class="hospoda-gloss">{{ t.beer_support.gloss }}</p>
+          {% if pivo_href %}
+          <p class="hospoda-cta">
+            <a class="hospoda-link" href="{{ pivo_href }}#stamgast">{{ t.beer_support.cta }}</a>
+          </p>
+          {% endif %}
         </section>
