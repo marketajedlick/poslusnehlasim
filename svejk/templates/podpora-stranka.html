@@ -19,11 +19,7 @@
   <div class="soukromi-body soukromi-body--prose">
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Kontakt</h2>
-      {% if contact_email %}
-      <p>Napište na <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>. Odpovídáme obvykle do několika pracovních dnů a stačí i odpověď na kterýkoliv e-mail od nás.</p>
-      {% else %}
-      <p>Odpovídáme obvykle do několika pracovních dnů a stačí i odpověď na kterýkoliv e-mail od nás.</p>
-      {% endif %}
+      <p>Napište na {% if contact_email %}<a href="mailto:{{ contact_email }}">{{ contact_email }}</a>{% else %}<a href="mailto:svejk@poslusnehlasim.cz">svejk@poslusnehlasim.cz</a>{% endif %}.</p>
     </section>
 
     <section class="soukromi-section">
