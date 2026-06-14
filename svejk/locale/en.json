@@ -4,7 +4,7 @@
     "latest": "Latest edition",
     "archive": "Archive",
     "glossary": "Švejk's glossary",
-    "beer": "Buy Švejk a Pint 🍺",
+    "beer": "Buy Švejk a Beer 🍺",
     "lang_switch": "Česky",
     "lang_switch_aria": "Switch to Czech version of the site",
     "lang_toggle_aria": "Site language"
@@ -62,7 +62,7 @@
   "beer_support": {
     "aria": "Švejk's pub",
     "gloss": "Poslušně hlásím, že going to The Chamber of Deputies every day is thirsty work.",
-    "cta": "Buy Švejk a Pint 🍺"
+    "cta": "Buy Švejk a Beer 🍺"
   },
   "locale_notice": "This edition is in Czech. A satirical diary from real records of the Czech Chamber of Deputies.",
   "archive": {
@@ -89,11 +89,11 @@
     "notice": ""
   },
   "beer_page": {
-    "title": "Buy Švejk a Pint · Poslušně hlásím",
+    "title": "Buy Švejk a Beer · Poslušně hlásím",
     "meta": "Voluntary contribution to running the parliamentary diary. The newspaper stays free.",
     "eyebrow": "švejk's pub",
-    "heading": "Buy Švejk a Pint",
-    "promise": "The newspaper stays free for everyone. A pint is voluntary.",
+    "heading": "Buy Švejk a Beer",
+    "promise": "The newspaper stays free for everyone. A beer is voluntary.",
     "fine": "Contributions are voluntary and do not entitle you to any consideration.",
     "menu_aria": "Contribution menu",
     "once_title": "One-time contribution",
@@ -103,8 +103,8 @@
   },
   "thanks_page": {
     "title": "Thank you · Poslušně hlásím",
-    "meta": "Payment for Švejk's pint was received.",
-    "quote": "Poslušně hlásím, že the pint will be drunk to the health of The Chamber of Deputies.",
+    "meta": "Payment for Švejk's beer was received.",
+    "quote": "Poslušně hlásím, že the beer will be drunk to the health of The Chamber of Deputies.",
     "quote_by": "Your good soldier Švejk"
   },
   "confirmed_page": {

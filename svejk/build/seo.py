@@ -51,7 +51,7 @@ _STATIC_HREF_FN = {
 _STATIC_PAGE_LABELS_EN: dict[str, str] = {
     "archiv": "Edition archive",
     "slovnicek": "Švejk's glossary",
-    "pivo": "Buy Švejk a Pint",
+    "pivo": "Buy Švejk a Beer",
     "podminky": "Terms of use",
     "podpora": "Support",
     "soukromi": "Privacy",
