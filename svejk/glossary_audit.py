@@ -47,7 +47,7 @@ JARGON_SEEDS: tuple[str, ...] = (
     r"EET",
     r"elektronick(?:á|ou) evidence tržeb",
     r"příspěvek na mobilitu",
-    r"OZP",
+    r"\bOZP\b",
     r"sociální pojištění",
     r"minimální záloha",
     r"penzijní spoření",
@@ -91,7 +91,7 @@ JARGON_SEEDS: tuple[str, ...] = (
     r"rezerv(?:y|ami) VZP",
     r"přebytk(?:ů|y) VZP",
     r"Úřad(?:u)? práce",
-    r"OZP",
+    r"\bOZP\b",
     r"zkrácen(?:é|ého) řízení",
     r"závěrečné hlasování",
     r"\(ANO\)",
@@ -159,7 +159,7 @@ SKIP_CONTEXT = re.compile(
 
 # Krátké vzory snadno padají do běžných slov (vzpomeňte, senátor, nedůvěryhodný).
 FALSE_POSITIVE = re.compile(
-    r"(?:vzpome|senátor|senátore|nedůvěry|nedůvěryhod|transparentně|transparentni)",
+    r"(?:vzpome|senátor|senátore|nedůvěry|nedůvěryhod|transparentně|transparentni|transparentnost)",
     re.I,
 )
 

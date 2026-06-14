@@ -635,6 +635,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Organizace sdružující část sudetských Němců a jejich potomků po poválečném vysídlení.",
     ),
     (
+        "Sudetoněmeckého landsmanšaftu",
+        "Organizace sdružující část sudetských Němců a jejich potomků po poválečném vysídlení.",
+    ),
+    (
         "Sudetoněmecký landsmanšaft",
         "Organizace sdružující část sudetských Němců a jejich potomků po poválečném vysídlení.",
     ),
@@ -738,6 +742,11 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Nejde o novou dávku navíc, ale o sjednocení stávajících.",
     ),
     (
+        "superdávky",
+        "Plán spojit několik sociálních dávek do jednoho systému s jednou žádostí. "
+        "Nejde o novou dávku navíc, ale o sjednocení stávajících.",
+    ),
+    (
         "Čapí hnízdo",
         "Dlouholetá kauza kolem evropské dotace na farmu spojenou s Andrejem Babišem. "
         "Soud řeší, zda byly splněny podmínky pro získání dotace.",
@@ -752,6 +761,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "obstrukcí",
+        "Zdržování jednání dlouhými projevy nebo procedurálními návrhy.",
+    ),
+    (
+        "obstrukci",
         "Zdržování jednání dlouhými projevy nebo procedurálními návrhy.",
     ),
     (
@@ -855,6 +868,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Zákony se posílají do menších pracovních skupin poslanců, kde se řeší podrobněji než v sále.",
     ),
     (
+        "výborů",
+        "Menší pracovní skupiny poslanců, kde se zákony řeší podrobněji než v hlavním sále.",
+    ),
+    (
         "výbory",
         "Menší pracovní skupiny poslanců, kde se zákony řeší podrobněji než v hlavním sále.",
     ),
@@ -913,6 +930,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     (
         "nedůvěra",
         "Hlasování, při kterém poslanci rozhodnou, zda vláda ztratila důvěru a má odstoupit.",
+    ),
+    (
+        "usneseních",
+        "Politická rozhodnutí sněmovny: doporučení, výzvy nebo schválení postupu. Nejde o zákony.",
     ),
     (
         "usnesením",
