@@ -14,6 +14,8 @@
   <header class="archiv-head">
     <h1 class="archiv-title">Zákaznická podpora</h1>
     <p class="archiv-gloss">Poslušně hlásím, že i ten nejlepší systém<br />občas ztratí nit. Když se to stane, napište.</p>
+    {% set site_nav_modifier = "site-nav--section" %}
+    {% include "site-nav.html" %}
   </header>
 
   <div class="soukromi-body soukromi-body--prose">
@@ -37,9 +39,6 @@
       <p>Nefunguje stránka, odběr nebo platba? Napište nám, co se stalo, co jste zrovna dělali a jaký používáte prohlížeč. Čím více detailů pošlete, tím rychleji problém najdeme. Ideálně přiložte i odkaz na konkrétní vydání nebo screenshot.</p>
     </section>
   </div>
-
-  {% set site_nav_modifier = "site-nav--section" %}
-  {% include "site-nav.html" %}
 </div>
 {% include "site-footer.html" %}
 {% include "cookie-consent.html" %}

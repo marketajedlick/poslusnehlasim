@@ -800,6 +800,11 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
 .vyznamenani-head .site-nav{
   margin-top:14px;
 }
+.archiv-head .site-nav--section{
+  margin-top:14px;
+  padding-top:0;
+  border-top:0;
+}
 .archive-link .site-nav{
   margin-top:12px;
 }

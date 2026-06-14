@@ -14,6 +14,8 @@
   <header class="archiv-head">
     <h1 class="archiv-title">Podmínky používání</h1>
     <p class="archiv-gloss">Poslušně hlásím, že deník je zdarma,<br />pivo je dobrovolné a humor není právní rada.</p>
+    {% set site_nav_modifier = "site-nav--section" %}
+    {% include "site-nav.html" %}
   </header>
 
   <div class="soukromi-body">
@@ -46,9 +48,6 @@
       <p class="soukromi-operator">Provozovatel: Markéta Jedličková, IČO 74980700</p>
     </section>
   </div>
-
-  {% set site_nav_modifier = "site-nav--section" %}
-  {% include "site-nav.html" %}
 </div>
 {% include "site-footer.html" %}
 {% include "cookie-consent.html" %}
