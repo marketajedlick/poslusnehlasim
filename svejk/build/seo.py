@@ -234,7 +234,7 @@ def article_json_ld(
         "inLanguage": loc,
         "isAccessibleForFree": True,
         "articleSection": (
-            "Chamber of Deputies" if loc == "en" else "Poslanecká sněmovna"
+            "The Chamber of Deputies" if loc == "en" else "Poslanecká sněmovna"
         ),
         "author": publisher,
         "publisher": publisher,
