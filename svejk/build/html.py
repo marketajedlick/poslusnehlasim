@@ -70,7 +70,6 @@ def pivo_tiers() -> list[dict[str, Any]]:
             "note": "pro ty, kdo chodí pravidelně, i když zrovna není poplach",
             "cta": "Stát se Štamgastem",
             "pay_href": _stripe_url("STRIPE_STAMGAST_URL", STRIPE_STAMGAST_URL),
-            "highlight": True,
         },
     ]
 
@@ -237,7 +236,7 @@ def _footer_closing(seed: str) -> str:
     return _FOOTER_CLOSINGS[idx]
 
 
-def _footer_stats_line(obdobi: int) -> str:
+def _edition_stats_parts(obdobi: int) -> tuple[int, str]:
     editions = list_site_editions(obdobi)
     n_editions = len(editions)
     n_schuze = len({e.schuze for e in editions})
@@ -247,7 +246,17 @@ def _footer_stats_line(obdobi: int) -> str:
         schuze_part = f"{n_schuze} schůze"
     else:
         schuze_part = f"{n_schuze} schůzí"
+    return n_editions, schuze_part
+
+
+def _footer_stats_line(obdobi: int) -> str:
+    n_editions, schuze_part = _edition_stats_parts(obdobi)
     return f"{n_editions} vydání • {schuze_part} • 100 % veřejná data"
+
+
+def _pivo_stats_line(obdobi: int) -> str:
+    n_editions, schuze_part = _edition_stats_parts(obdobi)
+    return f"{n_editions} vydání • {schuze_part} • 0 korun od státu"
 
 
 def _site_footer_ctx(
@@ -1055,6 +1064,7 @@ def render_pivo_html(
         canonical_url=canonical_url,
         **og,
         pivo_tiers=pivo_tiers(),
+        pivo_stats=_pivo_stats_line(obdobi),
         pivo_menu_pay=True,
         stripe_portal_href=_stripe_url("STRIPE_PORTAL_URL", STRIPE_PORTAL_URL),
         inline_css=inline_css,
