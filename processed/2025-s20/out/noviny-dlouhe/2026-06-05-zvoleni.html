@@ -3,13 +3,43 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    wait_for_update: 500
+  });
+</script>
 <meta name="theme-color" content="#c9bda3" />
+
 <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
 <link rel="icon" type="image/png" href="/static/favicon.png" sizes="32x32" />
 <link rel="apple-touch-icon" href="/static/apple-touch-icon.png" />
 <title>Koho Sněmovna zvolila do Rady ČT · 5. 6. 2026 · Poslušně hlásím</title>
 <meta name="description" content="6 nových členů Rady České televize, které Sněmovna 5. 6. 2026 obsadila veřejnou volbou. U každého jména souhrn hlasů po poslaneckých klubech." />
 <link rel="canonical" href="" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:site_name" content="Poslušně hlásím" />
+<meta property="og:title" content="Koho Sněmovna zvolila do Rady ČT · 5. 6. 2026 · Poslušně hlásím" />
+<meta property="og:description" content="6 nových členů Rady České televize, které Sněmovna 5. 6. 2026 obsadila veřejnou volbou. U každého jména souhrn hlasů po poslaneckých klubech." />
+<meta property="og:url" content="" />
+
+<meta property="og:image" content="https://poslusnehlasim.cz/static/apple-touch-icon.png" />
+<meta property="og:image:width" content="200" />
+<meta property="og:image:height" content="280" />
+<meta property="og:image:alt" content="Poslušně hlásím, Švejk" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://poslusnehlasim.cz/static/apple-touch-icon.png" />
+<meta name="twitter:image:alt" content="Poslušně hlásím, Švejk" />
+
+<meta name="twitter:title" content="Koho Sněmovna zvolila do Rady ČT · 5. 6. 2026 · Poslušně hlásím" />
+<meta name="twitter:description" content="6 nových členů Rady České televize, které Sněmovna 5. 6. 2026 obsadila veřejnou volbou. U každého jména souhrn hlasů po poslaneckých klubech." />
 <link rel="stylesheet" href="/static/fonts.css" />
 <link rel="stylesheet" href="/static/noviny-dlouhe.css" />
 </head>
@@ -24,6 +54,25 @@
       
     </nav>
     
+    
+<nav class="site-nav" aria-label="Hlavní navigace">
+  
+  <a class="site-nav-link" href="/noviny/2025/20/05.06.2026.html">Nejnovější vydání</a>
+  
+  
+  <span class="site-nav-sep" aria-hidden="true">·</span>
+  <a class="site-nav-link" href="/archiv.html">Archiv vydání</a>
+  
+  
+  <span class="site-nav-sep" aria-hidden="true">·</span>
+  <a class="site-nav-link" href="/slovnicek.html">Švejkův slovníček</a>
+  
+  
+  <span class="site-nav-sep" aria-hidden="true">·</span>
+  <a class="site-nav-link" href="/pivo.html">Kup Švejkovi pivo 🍺</a>
+  
+</nav>
+
   </header>
 
   
@@ -34,7 +83,7 @@
   </div>
   
 
-  <div class="vyznamenani-table-wrap">
+  <div class="vyznamenani-table-wrap table-wrapper table-wrapper--wide">
     <table class="vyznamenani-table">
       <thead>
         
@@ -463,5 +512,193 @@
 
   <p class="vyznamenani-note">Volba byla veřejná. Ke zvolení stačilo mít víc hlasů pro než proti a splnit kvorum přítomných.</p>
 </div>
+<footer class="site-footer" aria-label="Patička webu">
+  <div class="site-footer-inner">
+    <p class="site-footer-closing">Poslušně hlásím, že demokracie je běh na dlouhou trať a někdy i na dlouhou schůzi.</p>
+    <p class="site-footer-stats">55 vydání • 21 schůzí • 100 % veřejná data</p>
+    <nav class="site-footer-links" aria-label="Právní informace a podpora">
+      <a href="/podminky/">Podmínky používání</a>
+      <span class="site-footer-sep" aria-hidden="true">·</span>
+      <a href="/soukromi/">Ochrana údajů</a>
+      <span class="site-footer-sep" aria-hidden="true">·</span>
+      <a href="/podpora/">Podpora</a>
+    </nav>
+  </div>
+</footer>
+<style>
+.cookie-consent{
+  position:fixed;
+  z-index:9999;
+  left:0; right:0; bottom:0;
+  padding:12px 12px calc(12px + env(safe-area-inset-bottom, 0px));
+  background:rgba(33,28,20,.92);
+  color:#f0e6cf;
+  font-family:'Old Standard TT',Georgia,serif;
+  font-size:15px;
+  line-height:1.45;
+}
+.cookie-consent[hidden]{ display:none !important; }
+.cookie-consent-inner{
+  max-width:840px;
+  margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 16px;
+  align-items:center;
+  justify-content:space-between;
+}
+.cookie-consent-text{
+  margin:0;
+  flex:1 1 16rem;
+  max-width:52ch;
+}
+.cookie-consent-text a{
+  color:#f0e6cf;
+  text-underline-offset:2px;
+}
+.cookie-consent-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  flex:0 0 auto;
+}
+.cookie-consent-btn{
+  font-family:'Anton',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:13px;
+  padding:10px 14px;
+  border:2px solid #f0e6cf;
+  border-radius:3px;
+  cursor:pointer;
+  background:transparent;
+  color:#f0e6cf;
+}
+.cookie-consent-btn--accept{
+  background:#cf5a31;
+  border-color:#cf5a31;
+  color:#f0e6cf;
+}
+.cookie-consent-btn:hover{ filter:brightness(1.06); }
+.cookie-settings-btn{
+  font:inherit;
+  color:inherit;
+  background:none;
+  border:none;
+  padding:0;
+  text-decoration:underline;
+  text-underline-offset:2px;
+  cursor:pointer;
+}
+</style>
+<div id="cookie-consent" class="cookie-consent" role="dialog" aria-labelledby="cookie-consent-title" aria-live="polite" hidden>
+  <div class="cookie-consent-inner">
+    <p id="cookie-consent-title" class="cookie-consent-text">
+      Poslušně hlásím, že pro statistiky návštěvnosti používáme Google Analytics, a to jen po tvém souhlasu.
+      <a href="/soukromi/" rel="noopener">Více v ochraně údajů</a>.
+    </p>
+    <div class="cookie-consent-actions">
+      <button type="button" class="cookie-consent-btn" id="cookie-reject" data-action="reject">Odmítnout</button>
+      <button type="button" class="cookie-consent-btn cookie-consent-btn--accept" id="cookie-accept" data-action="accept">Souhlasím</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var STORAGE_KEY = "ph_cookie_consent";
+  var GA_ID = "G-DV9Y4JXX05";
+
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+
+  function loadGA() {
+    if (window.__phGaLoaded) return;
+    window.__phGaLoaded = true;
+    gtag("consent", "update", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "granted"
+    });
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+    document.head.appendChild(s);
+    gtag("js", new Date());
+    gtag("config", GA_ID);
+  }
+
+  function denyConsent() {
+    gtag("consent", "update", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "denied"
+    });
+  }
+
+  function saveChoice(value) {
+    try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
+  }
+
+  function getChoice() {
+    try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+  }
+
+  function banner() {
+    return document.getElementById("cookie-consent");
+  }
+
+  function showBanner() {
+    var el = banner();
+    if (el) el.hidden = false;
+  }
+
+  function hideBanner() {
+    var el = banner();
+    if (el) el.hidden = true;
+  }
+
+  function applyStoredChoice() {
+    var choice = getChoice();
+    if (choice === "granted") {
+      loadGA();
+      hideBanner();
+      return true;
+    }
+    if (choice === "denied") {
+      denyConsent();
+      hideBanner();
+      return true;
+    }
+    return false;
+  }
+
+  window.phOpenCookieSettings = function () {
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+    denyConsent();
+    window.__phGaLoaded = false;
+    showBanner();
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (applyStoredChoice()) return;
+    showBanner();
+
+    document.getElementById("cookie-accept")?.addEventListener("click", function () {
+      saveChoice("granted");
+      loadGA();
+      hideBanner();
+    });
+
+    document.getElementById("cookie-reject")?.addEventListener("click", function () {
+      saveChoice("denied");
+      denyConsent();
+      hideBanner();
+    });
+  });
+})();
+</script>
 </body>
 </html>

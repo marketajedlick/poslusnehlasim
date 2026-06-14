@@ -154,33 +154,6 @@ def _zamitnuto_board_label(n: int) -> str:
     return "návrhů zamítli"
 
 
-def _proslo_score_phrase(n: int) -> str:
-    if n == 1:
-        return "1 věc prošla"
-    if 2 <= n <= 4:
-        return f"{n} věci prošly"
-    return f"{n} věcí prošlo"
-
-
-def _zamitnuto_score_phrase(n: int) -> str:
-    return f"{n} zamítnuto"
-
-
-def _board_score_summary(proslo: int, zamitnuto: int) -> tuple[str, str]:
-    main = (
-        f"Dnešní skóre: {_proslo_score_phrase(proslo)}, "
-        f"{_zamitnuto_score_phrase(zamitnuto)}."
-    )
-    return main, "(Klikni pro detail hlasování)"
-
-
-def _board_score_ctx(proslo: int, zamitnuto: int) -> dict[str, str]:
-    summary, hint = _board_score_summary(proslo, zamitnuto)
-    return {
-        "board_summary": summary,
-        "board_summary_hint": hint,
-    }
-
 
 def _split_paragraphs(text: str) -> list[str]:
     parts = re.split(r"(?<=[.!?])\s+", text.strip())
@@ -524,7 +497,6 @@ def render_den_html(
         datum_design=datum_design(content.datum, content.den),
         proslo_label=_proslo_board_label(content.proslo),
         zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
-        **_board_score_ctx(content.proslo, content.zamitnuto),
         svejk_svg=svejk_svg,
         inline_css=inline_css,
         css=css,
@@ -605,14 +577,11 @@ def plain_text_from_content(
     proslo_label: str,
     zamitnuto_label: str,
 ) -> str:
-    summary, hint = _board_score_summary(content.proslo, content.zamitnuto)
     lines = [
         f"POSLUŠNĚ HLÁSÍM · {datum_label}",
         "",
         f"Stav zápasu: {content.proslo} : {content.zamitnuto}",
         f"{proslo_label} / {zamitnuto_label}",
-        summary,
-        hint,
     ]
     if content.board_note_lines:
         lines.extend(["", *content.board_note_lines])
@@ -693,7 +662,6 @@ def render_email_html(
         datum_design=datum_label,
         proslo_label=_proslo_board_label(content.proslo),
         zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
-        **_board_score_ctx(content.proslo, content.zamitnuto),
         edition_url=edition_url,
         archive_url=archive_url,
         pivo_url=pivo_url,

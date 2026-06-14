@@ -1,0 +1,17 @@
+{
+  "obdobi": 2025,
+  "schuze": 23,
+  "steps": {
+    "compose": {
+      "done": true,
+      "days": 1,
+      "files": [
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s23/out/noviny-dlouhe/2026-06-11.md"
+      ],
+      "html_files": [
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s23/out/noviny-dlouhe/2026-06-11.html"
+      ]
+    }
+  },
+  "built_at": "2026-06-14T10:22:20.280726+00:00"
+}
