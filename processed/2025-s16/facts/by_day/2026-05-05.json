@@ -19,5 +19,16 @@
     "* čtrnáct hlasování o pozměňovacích návrzích zamítnuto",
     "* Ferčíková navrhla protiusnesení o dialogu a Benešových dekretách",
     "* koaliční text schválen až ve středu v 00:51"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Coalition vs. opposition about the congress in Brno.\nFourteen votes were cast, the resolution came only at night.",
+    "zaver": "that Tuesday was a dispute over a convention of Sudeten German compatriots in Brno, the coalition wanted to condemn him, and fourteen proposals were made only after midnight.",
+    "vysledek": [
+      "* debate on the Sudeten German Congress from afternoon to midnight",
+      "* fourteen votes on amendments rejected",
+      "* Ferčíková proposed a counter-resolution on dialogue and Beneš's decrees",
+      "* the coalition text was only approved on Wednesday at 00:51"
+    ],
+    "den": "Tuesday"
+  }
 }

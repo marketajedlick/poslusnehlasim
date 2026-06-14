@@ -18,5 +18,15 @@
     "* pokus o zahození digitální ekonomiky zamítnut 7:68, zákon prošel dál",
     "* změna zákona o postřicích prošla 146:0",
     "* ministr Šebestyán obhajoval soulad s EU"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "The Digital Economy Survived the Dumping Attempt\nspraying and plant health care passed 146-0.",
+    "zaver": "that Tuesday brought two approved laws from the EU and the attempt to discard the digital economy failed.",
+    "vysledek": [
+      "* attempt to discard the digital economy rejected 7:68, the law passed",
+      "* the amendment to the spraying law passed 146:0",
+      "* Minister Šebestyán defended compliance with the EU"
+    ],
+    "den": "Tuesday"
+  }
 }

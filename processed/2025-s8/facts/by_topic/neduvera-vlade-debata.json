@@ -40,5 +40,33 @@
   "pointa": "Ministři Šťastný, Schillerová, Havlíček a Zůna hájili vládu celé odpoledne. Večer poslanci schválili jednání po devatenácté hodině, 115 proti 6.",
   "mean": "Nedůvěra je tvrdší než kritika: když projde, vláda končí. Opozice ji svolala kvůli tlaku na prezidenta a sporům kolem ministrů, koalice říká, že jde o politické divadlo. Hlasování o zákonech mělo přijít až ve středu.",
   "pocet_hlasovani": 1,
-  "proslo": false
+  "proslo": false,
+  "en": {
+    "nadpis": "Two days of distrust",
+    "lead": "Only nineteen days after the vote of confidence, the opposition started an extraordinary meeting. Kupka spoke about Vice Prime Minister Petr Macinka's text messages to President Pavlov and the conflict of interests, Babiš about the unnecessary waste of time.",
+    "pointa": "Ministers Šťastný, Schillerová, Havlíček and ZŪna defended the government all afternoon. In the evening, the deputies approved the meeting after 19:00, 115 to 6.",
+    "mean": "No-confidence is harsher than criticism: when it passes, the government ends. The opposition called it because of pressure on the president and disputes over ministers, the coalition says it is political theater. The vote on the laws was not supposed to come until Wednesday.",
+    "predmet_lidsky": "motion of no confidence in the government of Andrej Babiš",
+    "koho": [
+      "Who does it concern? The whole republic. When the government falls, the president must form a new one, until it doesn't, the government continues to rule."
+    ],
+    "fakty": [
+      {
+        "text": "A group of 81 MPs filed a motion of no confidence in the government. The proposal was submitted by representatives of the ODS, Mayors and Independents, Pirates, KDU-ČSL and TOP 09 parliamentary clubs.",
+        "citace": "Skupina 81 poslanců podala návrh na vyslovení nedůvěry vládě."
+      },
+      {
+        "text": "It is unusual for MPs to request a no-confidence meeting so soon after a no-confidence meeting has taken place. We are 19 days away from that moment.",
+        "citace": "Dělí nás od toho okamžiku 19 dnů."
+      },
+      {
+        "text": "So we are meeting today at an extraordinary meeting of the Chamber of Deputies, the only point of which is a vote of no confidence in our government. Yes, the very fact that we are meeting here less than three weeks after our government won confidence on 15 January is telling enough in itself.",
+        "citace": "Úplně zbytečná schůze, která nepřinese vůbec nic, jenom to, že nemůžeme pracovat."
+      },
+      {
+        "text": "Voting number 2, 123 deputies present, 115 deputies voted for, 6 against. The motion was accepted. Today's meeting will continue after the twenty-first hour.",
+        "citace": "Hlasování číslo 2, pro 115, proti 6. Jednání bude pokračovat po 21. hodině."
+      }
+    ]
+  }
 }

@@ -19,5 +19,16 @@
     "* debata o cenách benzínu, poplatcích ČT a evropských dotacích",
     "* Okamura potvrdil návrh na zrušení koncesionářských poplatků",
     "* jednání ukončeno v 21:00 bez prodloužení"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "The opposition called an extraordinary meeting, the government responded.\nTen hours of speeches, no voting on bills.",
+    "zaver": "that the opposition attacked the government all day for petrol, media and causes, the coalition fought back and it ended without a vote on the laws.",
+    "vysledek": [
+      "* an extraordinary meeting called by ninety MPs of the opposition",
+      "* debate on petrol prices, CT fees and European subsidies",
+      "* Okamura confirmed the proposal to abolish concession fees",
+      "* meeting ended at 21:00 without extension"
+    ],
+    "den": "Thursday"
+  }
 }

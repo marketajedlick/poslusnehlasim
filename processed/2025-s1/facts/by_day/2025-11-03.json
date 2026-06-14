@@ -17,5 +17,14 @@
   "vysledek": [
     "* mandátový a imunitní výbor zřízen, sto devadesát tři pro, nikdo proti",
     "* volební komise ustavena, sto devadesát jedna pro, nikdo proti"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Anthem, Brabec left, mandate committee.\nThe first day just organization, no laws.",
+    "zaver": "that Monday was just the start: Brabec left, the House of Representatives set up a mandate committee with sixteen members.",
+    "vysledek": [
+      "* mandate and immunity committee established, one hundred and ninety-three in favor, none against",
+      "* electoral commission established, one hundred and ninety-one for, none against"
+    ],
+    "den": "Monday"
+  }
 }

@@ -20,5 +20,16 @@
     "* převod péče OZP na 2028 a mobilita na 3000 Kč, schváleno 132:0",
     "* pozměňovací návrhy Pirátů k rodičáku zamítnuty",
     "* Jurečkův návrh na navýšení příspěvku na péči padl"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "The extraordinary nineteenth meeting, the seventeenth meanwhile deals with the budget.\nThe morning hour of two social laws in the final vote.",
+    "zaver": "that on Friday morning the House approved the postponement of the digitization of benefits and the shift of the transfer of care to the year 2028, the Pirates instead pushed for the parent.",
+    "vysledek": [
+      "* digitization of benefits postponed, approved 128:0 in final vote",
+      "* transfer of PWD care to 2028 and mobility to CZK 3,000, approved 132:0",
+      "* the Pirates' amendments to the maternity leave rejected",
+      "* Jurečko's proposal to increase the care allowance was defeated"
+    ],
+    "den": "Friday"
+  }
 }

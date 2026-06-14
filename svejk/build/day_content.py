@@ -607,10 +607,15 @@ def build_den_content(
     override = pick_field(day, "zaver", loc) or (day.get("zaver") or "").strip()
     if override:
         if loc == "en":
+            body = override
+            if body.lower().startswith("že "):
+                body = body[3:].strip()
+            elif body.lower().startswith("that "):
+                body = body[5:].strip()
             zaver = (
                 override
                 if override.lower().startswith("i hereby report")
-                else f"I hereby report that {lcfirst_preserve_proper(override)}"
+                else f"I hereby report that {lcfirst_preserve_proper(body)}"
             )
         elif override.lower().startswith("poslušně"):
             zaver = override
@@ -629,18 +634,24 @@ def build_den_content(
         )
     content.zaver = zaver
     content.zaver_key, content.zaver_body = split_zaver(zaver, locale=loc)
-    _sanitize_den_content(content)
+    _sanitize_den_content(content, locale=loc)
 
     return content
 
 
-def _sanitize_text_export(text: str) -> str:
-    return nahrad_cisla_v_textu(dopln_strany_poslancu(bez_dlouhych_pomlc(text)))
+def _sanitize_text_export(text: str, *, locale: str = "cs") -> str:
+    out = dopln_strany_poslancu(bez_dlouhych_pomlc(text))
+    if normalize_locale(locale) == "cs":
+        out = nahrad_cisla_v_textu(out)
+    return out
 
 
-def _sanitize_mean_export(text: str) -> str:
+def _sanitize_mean_export(text: str, *, locale: str = "cs") -> str:
     """Vysvětlení pro čtenáře — bez doplňování stran u jmen v seznamech."""
-    return nahrad_cisla_v_textu(bez_dlouhych_pomlc(text))
+    out = bez_dlouhych_pomlc(text)
+    if normalize_locale(locale) == "cs":
+        out = nahrad_cisla_v_textu(out)
+    return out
 
 
 def _sanitize_vysledek_export(text: str) -> str:
@@ -648,30 +659,33 @@ def _sanitize_vysledek_export(text: str) -> str:
     return dopln_strany_poslancu(bez_dlouhych_pomlc(text))
 
 
-def _sanitize_den_content(content: DenContent) -> None:
-    content.board_stats = _sanitize_text_export(content.board_stats)
+def _sanitize_den_content(content: DenContent, *, locale: str = "cs") -> None:
+    loc = normalize_locale(locale)
+    content.board_stats = _sanitize_text_export(content.board_stats, locale=loc)
     content.result_note = _kapitalizuj_prvni_pismeno(
-        _sanitize_text_export(content.result_note)
+        _sanitize_text_export(content.result_note, locale=loc)
     )
     content.dnesni_ucet = _kapitalizuj_prvni_pismeno(
-        _sanitize_text_export(content.dnesni_ucet)
+        _sanitize_text_export(content.dnesni_ucet, locale=loc)
     )
     board_raw = (content.dnesni_ucet or content.result_note or "").strip()
     content.board_note_lines = [
         ln.strip() for ln in board_raw.splitlines() if ln.strip()
     ]
-    content.zaver = _sanitize_text_export(content.zaver)
-    content.zaver_key = _sanitize_text_export(content.zaver_key)
-    content.zaver_body = _sanitize_text_export(content.zaver_body)
+    content.zaver = _sanitize_text_export(content.zaver, locale=loc)
+    content.zaver_key = _sanitize_text_export(content.zaver_key, locale=loc)
+    content.zaver_body = _sanitize_text_export(content.zaver_body, locale=loc)
     for item in content.items:
-        item.kick = _sanitize_text_export(item.kick)
-        item.nadpis = _sanitize_text_export(item.nadpis)
-        item.nadpis_radky = [_sanitize_text_export(x) for x in item.nadpis_radky]
-        item.lead = _sanitize_text_export(item.lead)
-        item.mean = _sanitize_mean_export(item.mean)
-        item.kuriozita = _sanitize_mean_export(item.kuriozita)
-        item.dopad = _sanitize_text_export(item.dopad)
-        item.parliament_lead = _sanitize_text_export(item.parliament_lead)
+        item.kick = _sanitize_text_export(item.kick, locale=loc)
+        item.nadpis = _sanitize_text_export(item.nadpis, locale=loc)
+        item.nadpis_radky = [
+            _sanitize_text_export(x, locale=loc) for x in item.nadpis_radky
+        ]
+        item.lead = _sanitize_text_export(item.lead, locale=loc)
+        item.mean = _sanitize_mean_export(item.mean, locale=loc)
+        item.kuriozita = _sanitize_mean_export(item.kuriozita, locale=loc)
+        item.dopad = _sanitize_text_export(item.dopad, locale=loc)
+        item.parliament_lead = _sanitize_text_export(item.parliament_lead, locale=loc)
 
 def vysledek_radky(content: DenContent, paths: SchuzePaths, day_path: Path, *, locale: str = "cs") -> list[str]:
     day_raw = read_json(day_path)

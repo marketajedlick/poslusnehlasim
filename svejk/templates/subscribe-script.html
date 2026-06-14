@@ -97,6 +97,14 @@
     btn.textContent = btn.dataset.label || msgs.submit;
   }
 
+  function subscribePayload(form) {
+    return {
+      email: form.querySelector('input[name="email"]')?.value?.trim() || "",
+      website: form.querySelector(".subscribe-hp")?.value || "",
+      locale: form.dataset.locale || "cs",
+    };
+  }
+
   function submitViaApi(form, apiUrl) {
     var emailInput = form.querySelector('input[name="email"]');
     var email = emailInput?.value?.trim() || "";
@@ -112,10 +120,7 @@
     return fetch(apiUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: email,
-        website: form.querySelector(".subscribe-hp")?.value || "",
-      }),
+      body: JSON.stringify(subscribePayload(form)),
     })
       .then(function (res) {
         return res.json().catch(function () { return {}; }).then(function (data) {
@@ -163,10 +168,7 @@
     fetch(apiUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: email,
-        website: form.querySelector(".subscribe-hp")?.value || "",
-      }),
+      body: JSON.stringify(subscribePayload(form)),
     })
       .then(function (res) {
         return res.json().catch(function () { return {}; }).then(function (data) {

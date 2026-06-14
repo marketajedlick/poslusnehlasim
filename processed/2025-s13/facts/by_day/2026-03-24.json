@@ -22,5 +22,16 @@
     "* penze pro seniory ve třetím pilíři schváleny v prvním kole 119:3",
     "* zkumavky v laboratořích schváleny v prvním kole 113:0",
     "* pořad schválen po čtyřiceti čtyřech hlasováních o změnách"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Forty-four votes on the program, then only the laws.\nThe minimum was five votes, pensions and test tubes passed.",
+    "zaver": "that after the evening fight over the program, the House of Representatives confirmed that the minimum would remain lower, pensioners were helped in the third pillar, and hospitals would report running out of test tubes.",
+    "vysledek": [
+      "* minimum rejected 5:85, fifty delayed",
+      "* pensions for senior citizens in the third pillar approved in the first round 119:3",
+      "* test tubes in laboratories approved in the first round 113:0",
+      "* program approved after forty-four votes on changes"
+    ],
+    "den": "Tuesday"
+  }
 }

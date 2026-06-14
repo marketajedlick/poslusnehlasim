@@ -21,5 +21,16 @@
     "* volby do zastupitelstev obcí schváleny 121:0",
     "* smlouva o záchranné službě se Slovenskem ratifikována 105:0",
     "* písemné interpelace bez novinového článku"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Interpellation in the morning, then three laws without drama.\nLoans, municipal elections and rescue with Slovakia.",
+    "zaver": "that Thursday, after the interpellations, brought three approved laws: on loans, municipal elections and emergency services with Slovakia.",
+    "vysledek": [
+      "* consumer loan approved 134:0",
+      "* elections to municipal councils approved 121:0",
+      "* the rescue service agreement with Slovakia ratified 105:0",
+      "* written interviews without a newspaper article"
+    ],
+    "den": "Thursday"
+  }
 }

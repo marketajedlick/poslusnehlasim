@@ -22,5 +22,17 @@
     "* pošta a odklady digitalizace do výboru; spadl jen Bendův nápad na výbor navíc",
     "* pořad schůze jako jediný rozdělil sál: osmdesát pět pro, čtyřicet osm proti",
     "* nový poslanec Forman složil slib; po vyčerpání programu hádka o obstrukce a bušení do lavic"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Extraordinary meeting: parental allowance, elections with QR code and Czech Post.\nThree laws in three and a half hours, almost no one against.",
+    "zaver": "that the extraordinary Tuesday gave parents hope for four hundred thousand, blind voters immediately approved the QR codes on the tickets, sent the mail to the committee, and as soon as the program was finished, an argument broke out over who was obstructing more.",
+    "vysledek": [
+      "* higher parental contribution sent to committee: one hundred and fifty-four in favor, none against",
+      "* elections with a QR code for the blind approved straight away in the first round, all one hundred and fifty-five in favour",
+      "* post and digitization delays to committee; only Benda's idea fell to the extra committee",
+      "* the agenda of the meeting was the only one that divided the hall: eighty-five for, forty-eight against",
+      "* new MP Forman took the oath; after the program was exhausted, a row about obstructions and pounding on the benches"
+    ],
+    "den": "Tuesday"
+  }
 }

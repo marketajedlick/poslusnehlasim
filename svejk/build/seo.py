@@ -122,11 +122,18 @@ def edition_meta_description(
     proslo: int = 0,
     zamitnuto: int = 0,
     max_len: int = 155,
+    locale: str = "cs",
 ) -> str:
     """Unikátní meta description, skóre dne + shrnutí, ne kopie <title>."""
+    from svejk.locale import normalize_locale
+
+    loc = normalize_locale(locale)
     parts: list[str] = []
     if proslo or zamitnuto:
-        parts.append(f"Skóre dne {proslo}:{zamitnuto}.")
+        if loc == "en":
+            parts.append(f"Score {proslo}:{zamitnuto}.")
+        else:
+            parts.append(f"Skóre dne {proslo}:{zamitnuto}.")
     account = " ".join((dnesni_ucet or "").split())
     if account:
         parts.append(account)
@@ -203,7 +210,11 @@ def article_json_ld(
     article_body: str = "",
     parts: list[dict[str, str | int]] | None = None,
     base_path: str = "",
+    locale: str = "cs",
 ) -> str:
+    from svejk.locale import normalize_locale
+
+    loc = normalize_locale(locale)
     published = datetime.strptime(date_unl, "%d.%m.%Y").strftime("%Y-%m-%d")
     logo = logo_url or publisher_logo_url(site_url, base_path)
     article_image = image_url or logo
@@ -220,9 +231,11 @@ def article_json_ld(
         "url": url,
         "datePublished": published,
         "dateModified": date_modified or published,
-        "inLanguage": "cs",
+        "inLanguage": loc,
         "isAccessibleForFree": True,
-        "articleSection": "Poslanecká sněmovna",
+        "articleSection": (
+            "Chamber of Deputies" if loc == "en" else "Poslanecká sněmovna"
+        ),
         "author": publisher,
         "publisher": publisher,
         "image": [article_image],

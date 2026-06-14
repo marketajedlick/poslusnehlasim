@@ -19,5 +19,16 @@
     "* šest návrhů zamítli",
     "* stavební zákon v prvním kole padl",
     "* dopoledne dvacet hlasování o pořadu schůze"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Morning fight over meeting agenda.\nThe construction law was defeated in the first round.",
+    "zaver": "that although the deputies had been talking about the construction law since Wednesday, it still fell in the first round on Friday.",
+    "vysledek": [
+      "* they approved three things",
+      "* they rejected six proposals",
+      "* the construction law was passed in the first round",
+      "* twenty votes in the morning on the agenda of the meeting"
+    ],
+    "den": "Friday"
+  }
 }

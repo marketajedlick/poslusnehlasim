@@ -21,5 +21,17 @@
     "proslo": 0,
     "zamitnuto": 0,
     "dlouha_debata": true
+  },
+  "en": {
+    "dnesni_ucet": "Wednesday in the middle of a three-day debate, zero votes.\nThe Prime Minister was absent, the speakers were not.",
+    "zaver": "that Wednesday belonged to the speeches of the ministers, the prime minister was absent in the hall, nothing was voted on and the decision came only on Thursday evening.",
+    "vysledek": [
+      "* state of the day zero: zero, voting on laws only on Thursday evening",
+      "* almost eighty thousand words in the stenoprotocol, zero votes in the table",
+      "* the prime minister asked for a vote of confidence, while he was absent for an hour and a half",
+      "* Happy: we're glad he's not here",
+      "* sixty-four speakers lined up, the debate hasn't even started"
+    ],
+    "den": "Wednesday"
   }
 }

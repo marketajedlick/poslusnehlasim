@@ -433,7 +433,12 @@ def render_den_html(
             first_item_nadpis=content.items[0].nadpis if content.items else "",
             proslo=content.proslo,
             zamitnuto=content.zamitnuto,
-        ) or f"Deník z Poslanecké sněmovny, {datum_design(content.datum, content.den)}."
+            locale=loc,
+        ) or (
+            f"Diary from the Czech Chamber of Deputies, {datum_design(content.datum, content.den)}."
+            if loc == "en"
+            else f"Deník z Poslanecké sněmovny, {datum_design(content.datum, content.den)}."
+        )
     if not canonical_url:
         href = edition_pages_href(ob, paths.schuze, content.datum, base_path, loc)
         canonical_url = f"{cfg.site_url.rstrip('/')}{href}"
@@ -539,6 +544,7 @@ def render_den_html(
         article_body=" ".join(body_chunks),
         parts=schema_parts or None,
         base_path=base_path,
+        locale=loc,
     )
     for item in content.items:
         if not item.mean_links:

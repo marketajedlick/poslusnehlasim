@@ -19,5 +19,16 @@
     "* Miloš Zeman schválen na třetí pokus 99:80, dvakrát se hlasování zpochybnilo",
     "* neprošli Václav Moravec 82:67, Daniel Vávra 85:33 ani bratři Kroupové",
     "* výsledný seznam pro Hrad prošel 180:0, odpoledne patřilo interpelacím"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "165 metal votes in less than three hours, ten seconds per name.\nZeman passed the third time, Moravec not at all; afternoon interview.",
+    "zaver": "that the House of Representatives distributed proposals for metals at a rate of ten seconds per name: Miloš Zeman passed only the third time, Václav Moravec not at all, and the resulting list for the Castle was finally supported by 180 deputies.",
+    "vysledek": [
+      "* nominations for honors: most names passed, twenty-three candidates failed",
+      "* Miloš Zeman approved on the third attempt 99:80, the vote was disputed twice",
+      "* Václav Moravec 82:67, Daniel Vávra 85:33 and the Kroupov brothers did not pass",
+      "* the resulting list for the Castle passed 180:0, the afternoon belonged to interpellations"
+    ],
+    "den": "Thursday"
+  }
 }

@@ -21,5 +21,16 @@
     "* samostatný návrh na Fialu zamítnut 18:136",
     "* zvoleni dva místopředsedové: Barták a Nacher, další dvě místa až v pátek",
     "* druhé kolo místopředsedů přesunuto na 14. 11."
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Okamura elected chairman, Barták and Nacher elected vice-chairmen.\nThe second round on Friday, Benda protested against the dictation.",
+    "zaver": "that in the evening they elected Okamura as chairman, Barták and Nacher took the seats of vice-chairmen and postponed the rest of the elections to Friday.",
+    "vysledek": [
+      "* Tomio Okamura elected chairman (116 votes in the first round)",
+      "* separate proposal for Fiala rejected 18:136",
+      "* elected two vice-chairmen: Barták and Nacher, two more positions until Friday",
+      "* second round of vice-presidents moved to 11/14"
+    ],
+    "den": "Wednesday"
+  }
 }

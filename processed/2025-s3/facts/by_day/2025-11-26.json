@@ -20,5 +20,16 @@
     "* změna zákona o Sbírce zákonů prošla 172:0",
     "* dva opoziční návrhy k rozpočtu zamítnuty",
     "* volby funkcí večer bez dramatu"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "They spent the whole day dealing with the budget for 2026, the first round at 22:02.\nAfter Midnight Online Legislation and Feature Elections.",
+    "zaver": "that didn't end until after midnight Wednesday, the 2026 budget survived the first round 105-64 and online legislation moved to 2027.",
+    "vysledek": [
+      "* budget for 2026 in the first round 105:64",
+      "* the amendment to the Law on the Collection of Laws passed 172:0",
+      "* two opposition budget proposals rejected",
+      "* function choices in the evening without drama"
+    ],
+    "den": "Wednesday"
+  }
 }

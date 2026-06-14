@@ -49,5 +49,33 @@
   "steno_slov": 175553,
   "lead": "Po dvou dnech řečí Sněmovna zamítla nedůvěru vládě, 99 hlasů proti 84. Koalice tleskala, opozice nedosáhla na potřebnou většinu.",
   "pointa": "Premiér Babiš a první vicepremiér Macinka při jmenovitém hlasování chyběli, Macinka byl v USA. Králíček pak opozici připomněl, že pro návrh hlasovalo jen 84 poslanců.",
-  "mean": "K pádu vlády bylo potřeba víc než 100 hlasů pro. Nedůvěra padla, Babišova vláda pokračuje. Debata ale ukázala rozdíl: opozice mluvila o Macinkových esemeskách a střetu zájmů, koalice o zahraničních cestách a práci prvního měsíce."
+  "mean": "K pádu vlády bylo potřeba víc než 100 hlasů pro. Nedůvěra padla, Babišova vláda pokračuje. Debata ale ukázala rozdíl: opozice mluvila o Macinkových esemeskách a střetu zájmů, koalice o zahraničních cestách a práci prvního měsíce.",
+  "en": {
+    "nadpis": "Disbelief did not pass",
+    "lead": "After two days of speeches, the House rejected the motion of no confidence in the government, 99 votes against 84. The coalition applauded, the opposition did not reach the necessary majority.",
+    "pointa": "Prime Minister Babiš and First Deputy Prime Minister Macinka were absent from the roll-call vote, Macinka was in the USA. Králíček then reminded the opposition that only 84 MPs voted for the proposal.",
+    "mean": "More than 100 votes were needed to bring down the government. Mistrust fell, Babiš's government continues. But the debate showed a difference: the opposition talked about Macinka's text messages and the conflict of interests, the coalition about foreign trips and the first month's work.",
+    "predmet_lidsky": "discussion of a motion of no confidence in the government of the Czech Republic",
+    "koho": [
+      "Who does it concern? The whole republic. When no confidence passes, the government continues to run the state and push its agenda."
+    ],
+    "fakty": [
+      {
+        "text": "A total of 183 deputies voted, 84 voted for the proposal and 99 voted against the proposal.",
+        "citace": "Hlasovalo celkem 183 poslanců, pro návrh hlasovalo 84 a proti návrhu hlasovalo 99 poslanců."
+      },
+      {
+        "text": "Thunderous applause in the hall.",
+        "citace": "(Bouřlivý potlesk v sále.)"
+      },
+      {
+        "text": "During the vote of no confidence in the government, Andrej Babiš, the Prime Minister, was absent, as was the First Deputy Prime Minister. This has simply never happened in the modern history of the Czech Republic.",
+        "citace": "Při hlasování o nedůvěře vládě chyběl Andrej Babiš, premiér, a chyběl první vicepremiér."
+      },
+      {
+        "text": "So look at that number. There were only 84 of you here. Even your leaders, like Zdeněk Hřib, like Petr Fiala, it wasn't worth it to express their opinion!",
+        "citace": "Vás tady bylo pouze 84."
+      }
+    ]
+  }
 }

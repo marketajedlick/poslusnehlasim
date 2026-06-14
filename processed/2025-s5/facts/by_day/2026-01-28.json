@@ -20,5 +20,16 @@
     "* celkem třicet pět hlasování o pořadu včetně jmen",
     "* odvolání správní rady VZP, 144 pro",
     "* přerozdělení téměř 8 miliard z přebytků VZP"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Exchange in the VZP administration, afternoon\nsolution, what with the eight billion from VZP.",
+    "zaver": "that Wednesday was the day in the healthcare industry: first who sits on the board of directors, then where do the billions go.",
+    "vysledek": [
+      "* two laws: new VZP administration and redistribution of money",
+      "* a total of thirty-five votes on the program including names",
+      "* appeal of the administrative board of the VZP, 144 pro",
+      "* redistribution of almost 8 billion from the surpluses of VZP"
+    ],
+    "den": "Wednesday"
+  }
 }

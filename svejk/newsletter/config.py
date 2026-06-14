@@ -18,6 +18,7 @@ def _site_url() -> str:
 # Fallback XHR formulář (hash je per-seznam). Seznam 3 nemá veřejný formulář — odběr jde přes worker API.
 DEFAULT_ECOMAIL_FORM_ACTION = ""
 DEFAULT_ECOMAIL_SUBSCRIBE_LIST_ID = "3"
+DEFAULT_ECOMAIL_SUBSCRIBE_LIST_ID_EN = "4"
 DEFAULT_ECOMAIL_LIST_ID = "3"
 DEFAULT_ECOMAIL_WIDGET_JS = "https://d70shl7vidtft.cloudfront.net/widget.js"
 DEFAULT_SUBSCRIBE_API_URL = (
