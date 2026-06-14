@@ -141,18 +141,27 @@ def _edition_og_fields(edition, *, snapshot_html: str = "", locale: str = "cs") 
     }
 
 
-def _inject_edition_og(html: str, edition, *, base: str, site_url: str) -> str:
-    fields = _edition_og_fields(edition)
-    og_title = edition_og_title(edition.datum_unl, str(fields["den"]))
+def _inject_edition_og(
+    html: str,
+    edition,
+    *,
+    base: str,
+    site_url: str,
+    locale: str = "cs",
+) -> str:
+    loc = normalize_locale(locale)
+    fields = _edition_og_fields(edition, locale=loc)
+    og_title = edition_og_title(edition.datum_unl, str(fields["den"]), locale=loc)
     og_headline = edition_og_headline(
         dnesni_ucet=str(fields["dnesni_ucet"]),
         first_item_nadpis=str(fields["first_item_nadpis"]),
         datum_unl=edition.datum_unl,
         den=str(fields["den"]),
+        locale=loc,
     )
     return inject_og_image(
         html,
-        og_image_url=og_image_abs_url(site_url, base, edition.datum_unl),
+        og_image_url=og_image_abs_url(site_url, base, edition.datum_unl, locale=loc),
         og_image_width=OG_WIDTH,
         og_image_height=OG_HEIGHT,
         og_image_alt=og_headline,
@@ -225,8 +234,6 @@ def run_export_pages(
     if _OG_SHARE.is_file():
         shutil.copy2(_OG_SHARE, static_dir / "og-share.png")
 
-    og_dir = out / "og"
-    og_dir.mkdir()
     cfg = NewsletterConfig.from_env()
     site = cfg.site_url.rstrip("/")
     css_href = static_css_path(base, version=css_asset_version())
@@ -240,25 +247,32 @@ def run_export_pages(
         )
 
     written: list[str] = []
-    og_dates: set[str] = set()
+    og_dates: set[tuple[str, str]] = set()
     for edition in editions:
-        if edition.datum_unl in og_dates:
-            continue
-        og_dates.add(edition.datum_unl)
         snapshot_html = ""
         if edition_source(edition) == "snapshot":
             snapshot_html = snapshot_path(edition).read_text(encoding="utf-8")
-        fields = _edition_og_fields(edition, snapshot_html=snapshot_html)
-        render_edition_og_image(
-            og_dir,
-            datum_unl=edition.datum_unl,
-            den=str(fields["den"]),
-            dnesni_ucet=str(fields["dnesni_ucet"]),
-            first_item_nadpis=str(fields["first_item_nadpis"]),
-            proslo=int(fields["proslo"]),
-            zamitnuto=int(fields["zamitnuto"]),
-        )
-        written.append(f"og/{og_image_filename(edition.datum_unl)}")
+        for locale in SUPPORTED_LOCALES:
+            loc = normalize_locale(locale)
+            key = (edition.datum_unl, loc)
+            if key in og_dates:
+                continue
+            og_dates.add(key)
+            fields = _edition_og_fields(edition, snapshot_html=snapshot_html, locale=loc)
+            og_subdir = out / "en" / "og" if loc == "en" else out / "og"
+            og_subdir.mkdir(parents=True, exist_ok=True)
+            render_edition_og_image(
+                og_subdir,
+                datum_unl=edition.datum_unl,
+                den=str(fields["den"]),
+                dnesni_ucet=str(fields["dnesni_ucet"]),
+                first_item_nadpis=str(fields["first_item_nadpis"]),
+                proslo=int(fields["proslo"]),
+                zamitnuto=int(fields["zamitnuto"]),
+                locale=loc,
+            )
+            prefix = "en/og" if loc == "en" else "og"
+            written.append(f"{prefix}/{og_image_filename(edition.datum_unl)}")
 
     def _export_edition_page(
         edition,

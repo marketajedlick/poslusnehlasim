@@ -92,14 +92,30 @@ def mtime_iso(path: Path) -> str:
     return datetime.fromtimestamp(ts, tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def _edition_date_label(datum_unl: str, den: str = "") -> str:
+_DEN_CS_TO_EN = {
+    "pondělí": "Monday",
+    "úterý": "Tuesday",
+    "středa": "Wednesday",
+    "čtvrtek": "Thursday",
+    "pátek": "Friday",
+    "sobota": "Saturday",
+    "neděle": "Sunday",
+}
+
+
+def _edition_date_label(datum_unl: str, den: str = "", *, locale: str = "cs") -> str:
+    loc = normalize_locale(locale)
     if datum_unl and "." in datum_unl:
         d, m, y = datum_unl.split(".", 2)
         core = f"{int(d)}. {int(m)}. {y}"
     else:
         core = datum_unl
     if den:
-        return f"{den.capitalize()} {core}"
+        if loc == "en":
+            day = _DEN_CS_TO_EN.get(den.lower(), den).capitalize()
+        else:
+            day = den.capitalize()
+        return f"{day} {core}"
     return core
 
 

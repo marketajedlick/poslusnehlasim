@@ -492,12 +492,13 @@ def render_den_html(
         og_image_abs_url,
     )
 
-    og_share_title = edition_og_title(content.datum, content.den)
+    og_share_title = edition_og_title(content.datum, content.den, locale=loc)
     og_headline = edition_og_headline(
         dnesni_ucet=content.dnesni_ucet,
         first_item_nadpis=content.items[0].nadpis if content.items else "",
         datum_unl=content.datum,
         den=content.den,
+        locale=loc,
     )
     og = _og_context(
         site_url=cfg.site_url,
@@ -505,7 +506,7 @@ def render_den_html(
         title=og_share_title,
         description=meta_description,
         og_type="article",
-        image_url=og_image_abs_url(cfg.site_url, base_path, content.datum),
+        image_url=og_image_abs_url(cfg.site_url, base_path, content.datum, locale=loc),
         image_width=OG_WIDTH,
         image_height=OG_HEIGHT,
         image_alt=og_headline,
