@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+{% include "head-noviny.html" %}
+<title>Podmínky používání · Poslušně hlásím</title>
+<meta name="description" content="Pravidla používání webu Poslušně hlásím, odběru novinek a dobrovolných příspěvků." />
+<link rel="canonical" href="{{ canonical_url }}" />
+{% include "og-meta.html" %}
+<link rel="stylesheet" href="{{ fonts_css_href }}" />
+<link rel="stylesheet" href="{{ css_href }}" />
+</head>
+<body class="archiv-page">
+<div class="archiv-wrap soukromi-wrap">
+  <header class="archiv-head">
+    <h1 class="archiv-title">Podmínky používání</h1>
+    <p class="archiv-gloss">Poslušně hlásím, že deník je zdarma,<br />pivo je dobrovolné a humor není právní rada.</p>
+  </header>
+
+  <div class="soukromi-body">
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Co je Poslušně hlásím</h2>
+      <p>Deník z Poslanecké sněmovny — satirické texty z reálných stenozáznamů a hlasování.</p>
+      <p>Web provozuje fyzická osoba. Není to státní instituce ani oficiální výstup Sněmovny.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Obsah a odpovědnost</h2>
+      <p>Texty jsou satirické. Vtip stavíme na skutečných datech, ale nejsou právní, finanční ani politickou radou.</p>
+      <p>Články, citace a čísla kontrolujeme z veřejných zdrojů. Když něco přehlédneme, napište — opravíme.</p>
+      <p>Obsah webu je chráněn autorským právem. Sdílet odkaz můžete; kopírovat celé vydání bez souhlasu ne.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Odběr novinek</h2>
+      <p>Odběr e-mailem je zdarma a dobrovolný.</p>
+      <p>Po přihlášení dostanete potvrzovací e-mail. Odhlásit se můžete kdykoliv odkazem v každém vydání.</p>
+      <p>Zpracování údajů popisují <a href="{{ privacy_href }}">zásady ochrany osobních údajů</a>.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Dobrovolné příspěvky</h2>
+      <p>„Pivo“, rum nebo Štamgast jsou dobrovolné příspěvky na provoz webu — ne nákup zboží, služby ani předplatné obsahu.</p>
+      <p>Noviny zůstávají zdarma i bez příspěvku. Platby zpracovává <a href="https://stripe.com" rel="noopener">Stripe</a>; web neukládá platební údaje.</p>
+      <p><strong>Štamgast:</strong> měsíční předplatné příspěvku zrušíte ve Stripe (odkaz v e-mailu po platbě).</p>
+      <p>Reklamace nebo dotazy k platbám: <a href="{{ support_href }}">zákaznická podpora</a>.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Odkazy a třetí strany</h2>
+      <p>Web může odkazovat na jiné stránky (Sněmovna, Stripe, Ecomail…). Za jejich obsah neodpovídáme.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Změny</h2>
+      <p>Podmínky můžeme upravit. Aktuální znění je vždy na této stránce.</p>
+      <p>Pokračováním v používání webu nebo odběru s upraveným zněním souhlasíte.</p>
+    </section>
+
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Kontakt</h2>
+      {% if contact_email %}
+      <p><a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
+      {% endif %}
+      <p>Podpora: <a href="{{ support_href }}">zákaznická podpora</a>.</p>
+    </section>
+  </div>
+
+  <nav class="potvrzeno-links" aria-label="Zpět na web">
+    <a class="archiv-latest" href="{{ site_url }}/">Úvodní stránka</a>
+    {% if archive_href %}
+    <a class="archiv-latest" href="{{ archive_href }}">Archiv vydání</a>
+    {% endif %}
+  </nav>
+</div>
+{% include "site-footer.html" %}
+{% include "cookie-consent.html" %}
+</body>
+</html>

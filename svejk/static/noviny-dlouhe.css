@@ -10,14 +10,20 @@ html{
   overflow-x:clip;
   -webkit-text-size-adjust:100%;
 }
+html{
+  min-height:100%;
+}
 body{
   margin:0;
+  min-height:100dvh;
+  display:flex;
+  flex-direction:column;
   background:#c9bda3 !important;
   font-family:'Old Standard TT',serif;
   color:var(--ink);
   overflow-x:clip;
   max-width:100%;
-  padding:calc(var(--nav-h) + env(safe-area-inset-top, 0px) + 12px) 8px 8px;
+  padding:calc(var(--nav-h) + env(safe-area-inset-top, 0px) + 12px) 0 0;
 }
 
 .stagewrap,
@@ -25,6 +31,9 @@ body{
   width:100%;
   max-width:100%;
   margin:0 auto;
+  padding-left:8px;
+  padding-right:8px;
+  flex:1 0 auto;
 }
 .stack{ position:relative; }
 
@@ -110,7 +119,6 @@ body.is-turning{ pointer-events:none; }
   overflow-wrap:anywhere;
 }
 .mast .terra{ color:var(--terra); }
-.hr{ border:none; border-top:2px solid var(--ink); margin:14px 0 0; }
 
 /* ---------- scoreboard (mobile) ---------- */
 .board{
@@ -512,20 +520,57 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
   color:var(--paper);
 }
 
-/* ---------- archive (chips on archiv page, link on editions) ---------- */
-.archive-link{
-  margin-top:24px; padding:20px 0 0;
-  border-top:1px solid rgba(33,28,20,.14);
-  display:flex; justify-content:center;
+/* ---------- site footer (právní odkazy) ---------- */
+.site-footer{
+  flex-shrink:0;
+  box-sizing:border-box;
+  width:100vw;
+  max-width:100vw;
+  margin:40px calc(50% - 50vw) 0;
+  padding:24px 20px calc(24px + env(safe-area-inset-bottom, 0px));
+  border-top:2px solid rgba(33,28,20,.16);
+  background:#b5a78c;
   text-align:center;
 }
-.hr + .archive-link{
-  margin-top:6px;
-  padding:4px 0 6px;
-  border-top:none;
+.site-footer-inner{
+  width:100%;
+  max-width:840px;
+  margin:0 auto;
 }
-.hr + .archive-link .archive-nav{
-  margin-top:0;
+.site-footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:6px 10px;
+  font-family:'Oswald',sans-serif;
+  font-weight:500;
+  font-size:12px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  line-height:1.5;
+  color:rgba(33,28,20,.72);
+}
+.site-footer-links a{
+  color:rgba(33,28,20,.88);
+  text-decoration:underline;
+  text-underline-offset:3px;
+  text-decoration-color:rgba(33,28,20,.35);
+}
+.site-footer-links a:hover{
+  color:var(--terra);
+  text-decoration-color:var(--terra);
+}
+.site-footer-sep{
+  color:rgba(33,28,20,.32);
+  user-select:none;
+}
+
+/* ---------- archive (chips on archiv page, link on editions) ---------- */
+.archive-link{
+  margin-top:12px; padding:4px 0 6px;
+  display:flex; justify-content:center;
+  text-align:center;
 }
 .archive-link + .board{
   margin-top:8px;
@@ -592,13 +637,14 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
 
 /* ---------- pivo page ---------- */
 body.pivo-page{
-  padding:calc(24px + env(safe-area-inset-top, 0px)) 8px 24px;
+  padding:calc(24px + env(safe-area-inset-top, 0px)) 0 0;
 }
 .pivo-stage .pad{ padding-bottom:24px; }
 .pivo-head{
   text-align:center;
 }
 .pivo-head .eyebrow{ margin-top:0; }
+.pivo-body{ padding-top:4px; }
 .pivo-title{
   font-family:'Anton',sans-serif; text-transform:uppercase;
   font-size:clamp(28px, 8vw, 42px); line-height:.92;
@@ -777,10 +823,11 @@ a.pivo-menu-row:hover{
 
 /* ---------- slovníček page ---------- */
 body.slovnicek-page{
-  padding:calc(24px + env(safe-area-inset-top, 0px)) 16px 32px;
+  padding:calc(24px + env(safe-area-inset-top, 0px)) 0 32px;
 }
 .slovnicek-wrap{
-  width:100%; max-width:640px; margin:0 auto;
+  width:min(640px, calc(100% - 32px));
+  margin:0 auto;
   background:var(--paper);
   border:1.5px solid rgba(33,28,20,.22);
   box-shadow:0 10px 28px var(--shadow);
@@ -834,11 +881,12 @@ body.slovnicek-page{
 
 /* ---------- vyznamenání tabulky ---------- */
 body.vyznamenani-page{
-  padding:calc(24px + env(safe-area-inset-top, 0px)) 16px 40px;
+  padding:calc(24px + env(safe-area-inset-top, 0px)) 0 40px;
   background:var(--paper-2);
 }
 .vyznamenani-wrap{
-  width:100%; max-width:1120px; margin:0 auto;
+  width:min(1120px, calc(100% - 32px));
+  margin:0 auto;
   background:var(--paper);
   border:1.5px solid rgba(33,28,20,.22);
   box-shadow:0 10px 28px var(--shadow);
@@ -1159,10 +1207,12 @@ a.mean-link:hover{
 
 /* ---------- archiv page ---------- */
 body.archiv-page{
-  padding:calc(24px + env(safe-area-inset-top, 0px)) 16px 32px;
+  padding:calc(24px + env(safe-area-inset-top, 0px)) 0 0;
 }
 .archiv-wrap{
-  width:100%; max-width:640px; margin:0 auto;
+  width:min(640px, calc(100% - 32px));
+  margin:0 auto;
+  flex:1 0 auto;
   background:var(--paper);
   border:1.5px solid rgba(33,28,20,.22);
   box-shadow:0 10px 28px var(--shadow);
@@ -1380,7 +1430,6 @@ body.archiv-page{
   .svejk svg{ height:100%; width:auto; display:block; fill:var(--terra); }
   .eyebrow{ letter-spacing:.26em; font-size:13px; }
   .mast{ font-size:66px; line-height:.86; margin:8px 0 0; }
-  .hr{ border-top-width:3px; margin:18px 0 0; }
 
   .board{ border-top-width:4px; margin-top:16px; padding:16px 28px 18px; }
   .board-kick{ letter-spacing:.24em; font-size:12px; margin-bottom:8px; }
@@ -1443,8 +1492,7 @@ body.archiv-page{
   .verdict .q{ font-size:38px; line-height:1.18; padding-left:74px; }
   .verdict .sign{ letter-spacing:.26em; font-size:11px; margin:18px 0 0 74px; }
 
-  .archive-link{ margin-top:28px; padding-top:24px; }
-  .hr + .archive-link{ margin-top:8px; padding:6px 0 8px; }
+  .archive-link{ margin-top:14px; padding:6px 0 8px; }
   .archive-link + .board{ margin-top:10px; }
   .hospoda{ margin-top:22px; padding:16px 18px 14px; }
   .hospoda-gloss{ font-size:17px; }
@@ -1471,6 +1519,8 @@ body.archiv-page{
 
   .archiv-wrap{ padding:32px 28px 36px; }
   .slovnicek-wrap{ padding:32px 28px 36px; }
+
+  .site-footer{ margin-top:56px; padding-top:28px; padding-bottom:calc(28px + env(safe-area-inset-bottom, 0px)); }
 
   .subscribe{ margin-top:28px; padding-top:24px; }
   .subscribe-gloss{ font-size:18px; max-width:none; }

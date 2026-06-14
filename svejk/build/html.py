@@ -22,7 +22,10 @@ from svejk.build.nav import (
     edition_pages_href,
     pivo_pages_href,
     dekuju_pages_href,
+    podminky_pages_href,
+    podpora_pages_href,
     slovnicek_pages_href,
+    soukromi_pages_href,
     vyznamenani_pages_href,
 )
 
@@ -30,6 +33,7 @@ from svejk.build.nav import (
 STRIPE_PIVO_URL = "https://donate.stripe.com/14A7sNekE1pP8cEfb83Je00"
 STRIPE_RUM_URL = "https://donate.stripe.com/4gM00l0tO3xX0Kc1ki3Je01"
 STRIPE_STAMGAST_URL = "https://donate.stripe.com/5kQ14pa4o8ShfF66EC3Je02"
+STRIPE_PORTAL_URL = "https://billing.stripe.com/p/login/14A7sNekE1pP8cEfb83Je00"
 
 
 def _stripe_url(env_key: str, default: str) -> str:
@@ -210,6 +214,32 @@ def _jinja_env() -> Environment:
     return env
 
 
+def _site_footer_ctx(base_path: str = "") -> dict[str, str]:
+    return {
+        "terms_href": podminky_pages_href(base_path),
+        "privacy_href": soukromi_pages_href(base_path),
+        "support_href": podpora_pages_href(base_path),
+    }
+
+
+def render_site_footer_html(base_path: str = "") -> str:
+    env = _jinja_env()
+    return env.get_template("site-footer.html").render(**_site_footer_ctx(base_path))
+
+
+def inject_site_footer(html: str, base_path: str = "") -> str:
+    """Doplní patičku do HTML z produkčního snapshotu, pokud v něm chybí."""
+    if 'class="site-footer"' in html:
+        return html
+    fragment = render_site_footer_html(base_path)
+    marker = '<div id="cookie-consent"'
+    if marker in html:
+        return html.replace(marker, fragment + "\n" + marker, 1)
+    if "</body>" in html:
+        return html.replace("</body>", fragment + "\n</body>", 1)
+    return html + "\n" + fragment
+
+
 def render_den_html(
     content: DenContent,
     paths: SchuzePaths,
@@ -385,6 +415,7 @@ def render_den_html(
         slovnicek_href=slovnicek_href,
         pivo_href=pivo_href,
         pivo_tiers=pivo_tiers(),
+        **_site_footer_ctx(base_path),
         **favicons,
     )
 
@@ -607,6 +638,7 @@ def render_archiv_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
+        **_site_footer_ctx(base_path),
         **favicons,
     )
 
@@ -653,6 +685,7 @@ def render_potvrzeno_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
+        **_site_footer_ctx(base_path),
         **favicons,
     )
 
@@ -745,6 +778,7 @@ def render_vyznamenani_table_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
+        **_site_footer_ctx(base_path),
         **favicons,
         **og,
     )
@@ -800,6 +834,7 @@ def render_slovnicek_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
+        **_site_footer_ctx(base_path),
         **favicons,
     )
 
@@ -843,12 +878,14 @@ def render_pivo_html(
         latest_href=latest_href,
         pivo_tiers=pivo_tiers(),
         pivo_menu_pay=True,
+        stripe_portal_href=_stripe_url("STRIPE_PORTAL_URL", STRIPE_PORTAL_URL),
         canonical_url=canonical_url,
         **og,
         inline_css=inline_css,
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
+        **_site_footer_ctx(base_path),
         **favicons,
     )
 
@@ -888,6 +925,7 @@ def render_dekuju_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
+        **_site_footer_ctx(base_path),
         **favicons,
     )
 
@@ -900,7 +938,7 @@ def render_soukromi_html(
     fonts_css_href: str | None = None,
     base_path: str = "",
 ) -> str:
-    """Stránka ochrany osobních údajů u odběru novinek."""
+    """Zásady ochrany osobních údajů (odběr, analytika, platby)."""
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
     if css_href is None:
         css_href = static_css_path(base_path)
@@ -909,12 +947,12 @@ def render_soukromi_html(
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     archive_href = archiv_pages_href(base_path)
-    canonical_url = f"{cfg.site_url.rstrip('/')}/soukromi/"
+    canonical_url = f"{cfg.site_url.rstrip('/')}{soukromi_pages_href(base_path)}"
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
-        title="Ochrana údajů · Poslušně hlásím",
-        description="Jak Poslušně hlásím zpracovává e-mail při odběru novinek a co měří na webu.",
+        title="Zásady ochrany osobních údajů · Poslušně hlásím",
+        description="Jak Poslušně hlásím zpracovává e-mail, cookies, analytiku a platby.",
     )
     tpl = _jinja_env().get_template("soukromi.html")
     return tpl.render(
@@ -927,5 +965,86 @@ def render_soukromi_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
+        **_site_footer_ctx(base_path),
+        **favicons,
+    )
+
+
+def render_podminky_html(
+    obdobi: int,
+    *,
+    inline_css: bool = False,
+    css_href: str | None = None,
+    fonts_css_href: str | None = None,
+    base_path: str = "",
+) -> str:
+    """Podmínky používání webu, odběru a dobrovolných příspěvků."""
+    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path)
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    archive_href = archiv_pages_href(base_path)
+    canonical_url = f"{cfg.site_url.rstrip('/')}{podminky_pages_href(base_path)}"
+    og = _og_context(
+        site_url=cfg.site_url,
+        base_path=base_path,
+        title="Podmínky používání · Poslušně hlásím",
+        description="Pravidla používání webu Poslušně hlásím, odběru novinek a dobrovolných příspěvků.",
+    )
+    tpl = _jinja_env().get_template("podminky-stranka.html")
+    return tpl.render(
+        archive_href=archive_href,
+        site_url=cfg.site_url.rstrip("/"),
+        contact_email=cfg.contact_email,
+        canonical_url=canonical_url,
+        **og,
+        inline_css=inline_css,
+        css=css,
+        css_href=css_href,
+        fonts_css_href=fonts_css_href,
+        **_site_footer_ctx(base_path),
+        **favicons,
+    )
+
+
+def render_podpora_html(
+    obdobi: int,
+    *,
+    inline_css: bool = False,
+    css_href: str | None = None,
+    fonts_css_href: str | None = None,
+    base_path: str = "",
+) -> str:
+    """Zákaznická podpora — kontakt, platby, odběr."""
+    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path)
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    archive_href = archiv_pages_href(base_path)
+    canonical_url = f"{cfg.site_url.rstrip('/')}{podpora_pages_href(base_path)}"
+    og = _og_context(
+        site_url=cfg.site_url,
+        base_path=base_path,
+        title="Zákaznická podpora · Poslušně hlásím",
+        description="Kontakt a pomoc s odběrem novinek, platbami a webem Poslušně hlásím.",
+    )
+    tpl = _jinja_env().get_template("podpora-stranka.html")
+    return tpl.render(
+        archive_href=archive_href,
+        site_url=cfg.site_url.rstrip("/"),
+        contact_email=cfg.contact_email,
+        canonical_url=canonical_url,
+        **og,
+        inline_css=inline_css,
+        css=css,
+        css_href=css_href,
+        fonts_css_href=fonts_css_href,
+        **_site_footer_ctx(base_path),
         **favicons,
     )

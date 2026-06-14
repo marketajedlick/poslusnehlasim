@@ -109,11 +109,6 @@ body {
   text-align: center;
 }
 .mast .terra { color: #cf5a31; }
-.hr {
-  border: none;
-  border-top: 2px solid #211c14;
-  margin: 14px 0 0;
-}
 
 /* ---------- scoreboard ---------- */
 .board {

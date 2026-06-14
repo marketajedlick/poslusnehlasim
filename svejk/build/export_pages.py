@@ -12,9 +12,12 @@ from svejk.build.day_content import build_den_content
 from svejk.build.html import (
     css_asset_version,
     fonts_asset_version,
+    inject_site_footer,
     render_archiv_html,
     render_den_html,
     render_dekuju_html,
+    render_podminky_html,
+    render_podpora_html,
     render_pivo_html,
     render_potvrzeno_html,
     render_slovnicek_html,
@@ -147,7 +150,8 @@ def run_export_pages(
         dest.parent.mkdir(parents=True, exist_ok=True)
         src = edition_source(edition)
         if src == "snapshot":
-            dest.write_text(snapshot_path(edition).read_text(encoding="utf-8"), encoding="utf-8")
+            raw = snapshot_path(edition).read_text(encoding="utf-8")
+            dest.write_text(inject_site_footer(raw, base), encoding="utf-8")
         else:
             html = _render_edition_html(
                 edition, obdobi, base=base, css_href=css_href, fonts_css_href=fonts_css_href
@@ -197,7 +201,8 @@ def run_export_pages(
         short = out / "noviny" / str(obdobi) / f"{edition.datum_unl}.html"
         short.parent.mkdir(parents=True, exist_ok=True)
         if edition_source(resolved) == "snapshot":
-            short.write_text(snapshot_path(resolved).read_text(encoding="utf-8"), encoding="utf-8")
+            raw = snapshot_path(resolved).read_text(encoding="utf-8")
+            short.write_text(inject_site_footer(raw, base), encoding="utf-8")
         else:
             html = _render_edition_html(
                 resolved, obdobi, base=base, css_href=css_href, fonts_css_href=fonts_css_href
@@ -260,6 +265,22 @@ def run_export_pages(
     )
     (out / "dekuju.html").write_text(dekuju_html, encoding="utf-8")
     written.append("dekuju.html")
+
+    podminky_html = render_podminky_html(
+        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
+    )
+    podminky_dir = out / "podminky"
+    podminky_dir.mkdir(parents=True, exist_ok=True)
+    (podminky_dir / "index.html").write_text(podminky_html, encoding="utf-8")
+    written.append("podminky/index.html")
+
+    podpora_html = render_podpora_html(
+        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
+    )
+    podpora_dir = out / "podpora"
+    podpora_dir.mkdir(parents=True, exist_ok=True)
+    (podpora_dir / "index.html").write_text(podpora_html, encoding="utf-8")
+    written.append("podpora/index.html")
 
     potvrzeno_html = render_potvrzeno_html(
         obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base

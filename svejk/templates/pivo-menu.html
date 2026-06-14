@@ -32,4 +32,7 @@
     </section>
     {% if pivo_menu_pay %}
     <p class="pivo-pay-note">Platbu bezpečně zpracuje <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe</a>. Web sám platební údaje neukládá.</p>
+    {% if stripe_portal_href %}
+    <p class="pivo-pay-note">Jste už Štamgast a chcete změnit kartu nebo zrušit podporu? Spravujte své předplatné <a href="{{ stripe_portal_href }}" target="_blank" rel="noopener">zde</a>.</p>
+    {% endif %}
     {% endif %}

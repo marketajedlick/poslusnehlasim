@@ -136,6 +136,21 @@ def pivo_pages_href(base_path: str = "") -> str:
     return f"{base}/pivo.html" if base else "/pivo.html"
 
 
+def soukromi_pages_href(base_path: str = "") -> str:
+    base = base_path.rstrip("/")
+    return f"{base}/soukromi/" if base else "/soukromi/"
+
+
+def podpora_pages_href(base_path: str = "") -> str:
+    base = base_path.rstrip("/")
+    return f"{base}/podpora/" if base else "/podpora/"
+
+
+def podminky_pages_href(base_path: str = "") -> str:
+    base = base_path.rstrip("/")
+    return f"{base}/podminky/" if base else "/podminky/"
+
+
 def dekuju_pages_href(base_path: str = "") -> str:
     base = base_path.rstrip("/")
     return f"{base}/dekuju.html" if base else "/dekuju.html"

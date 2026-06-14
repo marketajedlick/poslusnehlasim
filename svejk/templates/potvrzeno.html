@@ -53,6 +53,7 @@
 
   <p class="potvrzeno-note">Tahle stránka se ukáže jen po potvrzení odběru.<br />{% if contact_email %}Něco nesedí? Napiš na e-mail: <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.{% else %}Něco nesedí? Odpověz rovnou na potvrzovací e-mail.{% endif %}</p>
 </div>
+{% include "site-footer.html" %}
 {% include "cookie-consent.html" %}
 </body>
 </html>

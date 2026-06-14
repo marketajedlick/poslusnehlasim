@@ -12,7 +12,10 @@ from svejk.build.nav import (
     archiv_pages_href,
     edition_pages_href,
     pivo_pages_href,
+    podminky_pages_href,
+    podpora_pages_href,
     slovnicek_pages_href,
+    soukromi_pages_href,
 )
 from svejk.newsletter.feed import _edition_description
 
@@ -295,7 +298,9 @@ def write_sitemap_xml(
         add_url(f"{base}{archiv_pages_href(base_path)}", editions[-1].when)
         add_url(f"{base}{slovnicek_pages_href(base_path)}", editions[-1].when)
         add_url(f"{base}{pivo_pages_href(base_path)}", editions[-1].when)
-        add_url(f"{base}/soukromi/", editions[-1].when)
+        add_url(f"{base}{podminky_pages_href(base_path)}", editions[-1].when)
+        add_url(f"{base}{podpora_pages_href(base_path)}", editions[-1].when)
+        add_url(f"{base}{soukromi_pages_href(base_path)}", editions[-1].when)
 
     for edition in editions:
         href = edition_pages_href(edition.obdobi, edition.schuze, edition.datum_unl, base_path)

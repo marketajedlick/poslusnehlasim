@@ -2,8 +2,8 @@
 <html lang="cs">
 <head>
 {% include "head-noviny.html" %}
-<title>Ochrana údajů · Poslušně hlásím</title>
-<meta name="description" content="Jak Poslušně hlásím zpracovává e-mail při odběru novinek a co měří na webu." />
+<title>Zásady ochrany osobních údajů · Poslušně hlásím</title>
+<meta name="description" content="Jak Poslušně hlásím zpracovává e-mail, cookies, analytiku a dobrovolné platby." />
 <link rel="canonical" href="{{ canonical_url }}" />
 {% include "og-meta.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
@@ -12,7 +12,7 @@
 <body class="archiv-page">
 <div class="archiv-wrap soukromi-wrap">
   <header class="archiv-head">
-    <h1 class="archiv-title">Ochrana údajů</h1>
+    <h1 class="archiv-title">Zásady ochrany osobních údajů</h1>
     <p class="archiv-gloss">Poslušně hlásím, že e-mail neprodáváme, nevyměňujeme<br />ani neposíláme na zkušenou. Tady je vše podstatné.</p>
   </header>
 
@@ -73,11 +73,12 @@
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Kontakt</h2>
-      <p>Dotazy k odběru:</p>
+      <p>Dotazy k odběru a údajům:</p>
       {% if contact_email %}
       <p><a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
       {% endif %}
-      <p>Nebo stačí odpovědět na kterýkoliv e-mail.</p>
+      <p>Platby a technické potíže: <a href="{{ support_href }}">zákaznická podpora</a>.</p>
+      <p>Nebo stačí odpovědět na kterýkoliv e-mail od nás.</p>
     </section>
   </div>
 
@@ -88,6 +89,7 @@
     {% endif %}
   </nav>
 </div>
+{% include "site-footer.html" %}
 {% include "cookie-consent.html" %}
 </body>
 </html>
