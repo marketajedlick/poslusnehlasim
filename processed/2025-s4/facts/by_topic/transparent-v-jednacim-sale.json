@@ -44,5 +44,29 @@
     "spor": false,
     "prazdny_sal": false
   },
-  "steno_slov": 5646
+  "steno_slov": 5646,
+  "en": {
+    "nadpis": "The banner must not cover the speaker",
+    "lead": "In the middle of the marathon about Agrofert, Zdeněk Hřib walked up to the podium with a banner and in the right part of the hall they started shouting \"banner\".",
+    "pointa": "Hřib went with him to Babiš and ANO pounded the benches. Okamura cited a rule: a banner may be placed at the counter only with the knowledge of the speaker.",
+    "mean": "During Babiš's speech, the president of the Pirates carried a banner to the lectern. Chairmen Tomio Okamura and Patrik Nacher repeatedly called for compliance with the rules and calm in the hall.",
+    "predmet_lidsky": "banners and order in the meeting hall",
+    "koho": [
+      "It does not concern the citizen, unless he is watching the parliamentary theater live."
+    ],
+    "fakty": [
+      {
+        "text": "Please, I just wanted to ask because the banner shouldn't cover the speaker, right?",
+        "citace": "Prosím vás, chtěl jsem vás jenom požádat, protože transparent by neměl zakrývat řečníka, jo?"
+      },
+      {
+        "text": "Deputy Hřib walks around the hall with a banner and appears with it in front of deputy Babiš. MPs for the ANO movement pound their fists on the benches in protest.",
+        "citace": "(Poslanec Hřib chodí po sále s transparentem a předstupuje s ním před poslance Babiše. Poslanci za hnutí ANO buší pěstmi do lavic na protest.)"
+      },
+      {
+        "text": "Noise in the hall, deputies return to the hall, the speaker waits.",
+        "citace": "(Hluk v sále, poslanci se vracejí do sálu, řečník vyčkává.)"
+      }
+    ]
+  }
 }

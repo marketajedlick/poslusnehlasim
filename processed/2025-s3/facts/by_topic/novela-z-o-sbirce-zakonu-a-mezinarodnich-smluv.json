@@ -41,5 +41,29 @@
   "steno_slov": 0,
   "lead": "Krátce po půlnoci prošla v prvním kole změna zákona o Sbírce zákonů, sto sedmdesát dva hlasů proti nule. Vláda chce o rok odložit povinnost připravovat změny zákonů v systému online zákonodárství.",
   "pointa": "Rakušan řekl, že změny zákonů jsou složitější než nové zákony, proto dostávají výjimku. Úplná digitalizace legislativy se posouvá na rok 2027.",
-  "mean": "online zákonodárství má sjednotit tvorbu zákonů v elektronické podobě. Odklad se týká hlavně novel, ne zcela nových předpisů."
+  "mean": "online zákonodárství má sjednotit tvorbu zákonů v elektronické podobě. Odklad se týká hlavně novel, ne zcela nových předpisů.",
+  "en": {
+    "nadpis": "online legislation will wait",
+    "lead": "Shortly after midnight, the amendment to the Law on the Collection of Laws passed in the first round, one hundred and seventy-two votes against zero. The government wants to postpone for a year the obligation to prepare changes to laws in the online legislation system.",
+    "pointa": "The Austrian said that changes to laws are more complicated than new laws, which is why they get an exemption. The full digitization of the legislation is postponed to 2027.",
+    "mean": "online legislation is supposed to unify the creation of laws in electronic form. The postponement mainly concerns amendments, not completely new regulations.",
+    "predmet_lidsky": "a collection of laws and international treaties",
+    "koho": [
+      "A lawyer and an official are interested, but a citizen at breakfast is not."
+    ],
+    "fakty": [
+      {
+        "text": "The amendment postpones the obligation of eLegislation for amendments to laws to January 1, 2027.",
+        "citace": "Od 1. ledna 2027 se posouvá příprava a projednání návrhů zákonů v systému eLegislativa, avšak pouze pro novely zákonů."
+      },
+      {
+        "text": "The Austrian defended the delay because of the complexity of the amendments, not completely new laws.",
+        "citace": "Předkládaný návrh zákona v zásadě upravuje dvě záležitosti, obě se týkají eLegislativy."
+      },
+      {
+        "text": "Vote number 11 at 10:43 p.m.: one hundred and seventy-two in favor, none against.",
+        "citace": "Hlasování číslo 11, přihlášeno 176, pro 172, proti 0."
+      }
+    ]
+  }
 }

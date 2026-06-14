@@ -47,5 +47,33 @@
   "steno_slov": 11774,
   "lead": "Rodičovský příspěvek má stoupnout z tří set padesáti na čtyři sta tisíc korun, u dvojčat a vícerčat na osm set tisíc. Platit má pro děti narozené od ledna 2027 a v sále se proti tomu nezvedla jediná ruka.",
   "pointa": "O penězích se nehádal nikdo, zato o slovech ano: rozpravou létaly výrazy „klerofašisti“ a „lhářka“, zatímco příspěvek tiše proplul jednomyslně.",
-  "mean": "Zatím jde o první kolo: návrh teď čeká kolečko po sociálním výboru a lhůtu na projednání si poslanci zkrátili na dvacet pět dnů, aby přidání stihli. Pro úplnost, loni se narodilo 77 636 dětí, nejméně za dvě stě let, takže se přidává rodičům, kterých ubývá."
+  "mean": "Zatím jde o první kolo: návrh teď čeká kolečko po sociálním výboru a lhůtu na projednání si poslanci zkrátili na dvacet pět dnů, aby přidání stihli. Pro úplnost, loni se narodilo 77 636 dětí, nejméně za dvě stě let, takže se přidává rodičům, kterých ubývá.",
+  "en": {
+    "nadpis": "They will add to the parents",
+    "lead": "The parental allowance is to rise from three hundred and fifty to four hundred thousand crowns, for twins and multiples to eight hundred thousand. It is supposed to apply to children born from January 2027, and not a single hand was raised in the hall against it.",
+    "pointa": "No one argued about the money, but they did about the words: \"clerofascists\" and \"liar\" flew through the debate, while the post floated by quietly in unison.",
+    "mean": "So far, it is the first round: the proposal is now waiting for a round after the social committee, and the deputies shortened the discussion period to twenty-five days in order to make the addition. For completeness, 77,636 babies were born last year, the least in two hundred years, so it's adding to the dwindling number of parents.",
+    "predmet_lidsky": "state social support",
+    "koho": [
+      "Who does it concern? Parents of children born from January 2027. The parental allowance will increase by fifty thousand crowns, double for twins and multiples."
+    ],
+    "fakty": [
+      {
+        "text": "Minister Juchelka: the parental allowance will rise to four hundred thousand crowns, for families with multiple children to eight hundred thousand, for children born on January 1, 2027.",
+        "citace": "zvýšení rodičovského příspěvku, a to na celkovou částku 400 000 korun pro domácnost s jedním nejmladším dítětem a na celkovou částku 800 000 korun pro rodinu, v níž jsou dvě nebo více dětí narozené současně"
+      },
+      {
+        "text": "Ančincová: 77,636 children were born in 2025, the least in more than two hundred years of monitoring.",
+        "citace": "V roce 2025 se narodilo 77 636 dětí a je to nejnižší počet narozených dětí od doby sledování těchto dat"
+      },
+      {
+        "text": "The debate slipped from money to insults, clero-fascists were spoken of and repeated accusations of lying; Raven refused both.",
+        "citace": "úplně stejná věc je tady několikrát zopakovat a říct: Říkám to již poněkolikáté, paní kolegyně XY je lhářka."
+      },
+      {
+        "text": "154 votes were sent to the Social Committee, none opposed; the period for discussion reduced to 25 days (155 for).",
+        "citace": "Hlasování číslo 4: pro 154, proti nikdo. Hlasování číslo 5: pro 155, proti nikdo."
+      }
+    ]
+  }
 }

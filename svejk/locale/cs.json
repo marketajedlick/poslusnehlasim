@@ -59,9 +59,9 @@
   },
   "beer_support": {
     "aria": "Hospoda u Švejka",
-    "read_edition": "Číst vydání",
-    "archive": "Archiv všech vydání",
-    "beer": "Kup Švejkovi pivo 🍺"
+    "text_before": "Jestli vám dnešní hlášení přišlo vhod, můžete",
+    "link": "Švejkovi koupit jedno pivo",
+    "text_after": ". Noviny zůstanou zdarma tak jako tak. 🍺"
   },
   "locale_notice": "Toto vydání je v češtině. Satirický deník z reálných záznamů Poslanecké sněmovny.",
   "archive": {

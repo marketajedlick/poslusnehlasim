@@ -1,13 +1,3 @@
         <section class="hospoda" aria-label="{{ t.beer_support.aria }}">
-          <nav class="hospoda-nav" aria-label="{{ t.beer_support.aria }}">
-            {% if canonical_url %}
-            <a class="hospoda-link" href="{{ canonical_url }}">{{ t.beer_support.read_edition }}</a>
-            {% endif %}
-            {% if archive_href %}
-            <a class="hospoda-link" href="{{ archive_href }}">{{ t.beer_support.archive }}</a>
-            {% endif %}
-            {% if pivo_href %}
-            <a class="hospoda-link" href="{{ pivo_href }}#stamgast">{{ t.beer_support.beer }}</a>
-            {% endif %}
-          </nav>
+          <p class="hospoda-gloss">{{ t.beer_support.text_before }}{% if pivo_href %} <a class="hospoda-link hospoda-link--inline" href="{{ pivo_href }}#stamgast">{{ t.beer_support.link }}</a>{% else %} {{ t.beer_support.link }}{% endif %}{{ t.beer_support.text_after }}</p>
         </section>

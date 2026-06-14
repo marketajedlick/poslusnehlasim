@@ -42,5 +42,29 @@
   "steno_slov": 91270,
   "lead": "Sněmovna schválila koaliční usnesení proti týrání zvířat, 139 hlasů pro, nikdo proti. Debata byla shodná, hlasování o doplnění už ne.",
   "pointa": "Okamura i Šebestyán mluvili o tvrdších trestech a vstupu policie. Opoziční návrhy na policejní útvar nebo mysliveckou změnu většinou padly.",
-  "mean": "Šlo o politický slib, ne o hotový zákon. Hlavní text prošel jednohlasně, jeden doplněný bod o péči o toulavé kočky taky. Samotná ochrana zvířat se má teprve propsat do změny zákonů zákona."
+  "mean": "Šlo o politický slib, ne o hotový zákon. Hlavní text prošel jednohlasně, jeden doplněný bod o péči o toulavé kočky taky. Samotná ochrana zvířat se má teprve propsat do změny zákonů zákona.",
+  "en": {
+    "nadpis": "Animal cruelty condemned",
+    "lead": "The House approved the coalition resolution against animal cruelty, 139 votes in favor, none against. The debate was unanimous, the vote on additions was not.",
+    "pointa": "Both Okamura and Šebestyán talked about harsher punishments and the involvement of the police. Opposition proposals for a police department or hunting change were mostly defeated.",
+    "mean": "It was a political promise, not a finished law. The main text passed unanimously, one added point about the care of stray cats as well. The protection of animals itself has yet to be included in the amendment of the laws of the law.",
+    "predmet_lidsky": "draft resolution of the Chamber of Deputies to condemn animal cruelty",
+    "koho": [
+      "Who does it concern? Dog and cat owners, breeders and people who report abuse. The resolution itself does not change the laws, but promises legislation."
+    ],
+    "fakty": [
+      {
+        "text": "While inspecting a cat breeding facility in Brno, where dozens of animals lived in appalling conditions, the veterinary inspectors were physically attacked and one of them was kicked in the head.",
+        "citace": "Při kontrole množírny koček v Brně byly veterinární inspektorky fyzicky napadeny a jedna z nich byla kopnuta do hlavy."
+      },
+      {
+        "text": "Vote number 67, 140 deputies present, 139 voted for, none against. The motion was accepted.",
+        "citace": "Hlasování číslo 67, přítomno 140 poslanců, pro hlasovalo 139, proti žádný. Návrh byl přijat."
+      },
+      {
+        "text": "I would also like to take the liberty of thanking everyone for the last time, because we, as the Chamber of Deputies, have really given a strong symbol that animal cruelty really does not belong in our society.",
+        "citace": "Dali jsme důrazný symbol, že týrání zvířat do naší společnosti nepatří."
+      }
+    ]
+  }
 }

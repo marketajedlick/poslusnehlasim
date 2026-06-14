@@ -42,5 +42,29 @@
   "steno_slov": 41789,
   "lead": "Koaliční změna jednacího řádu přežila první kolo a teď čeká kolečko po výborech. Opozice chtěla o dvacet dní delší lhůtu, 57 proti 77 neprošlo.",
   "pointa": "Debata začala už v úterý při boji o pořad sedmé schůze. Vondráček řekl, že rozprava byla vzorová, Richterová varovala před omezením faktických poznámek, které už při rozjezdu sněmovny kritizovala.",
-  "mean": "Jde o to, kdo a jak dlouho smí mluvit ve sněmovně. Koalice chce omezit obstrukce, opozice se bojí, že většina si pravidla ohně podle sebe. Zákon v prvním kole prošel, detaily se řeší ve výborech."
+  "mean": "Jde o to, kdo a jak dlouho smí mluvit ve sněmovně. Koalice chce omezit obstrukce, opozice se bojí, že většina si pravidla ohně podle sebe. Zákon v prvním kole prošel, detaily se řeší ve výborech.",
+  "en": {
+    "nadpis": "Rules of the game in the hall",
+    "lead": "The coalition's amendment to the rules of procedure survived the first round and now awaits a round of committees. The opposition wanted a twenty-day longer deadline, 57 against 77 it did not pass.",
+    "pointa": "The debate started already on Tuesday during the fight for the agenda of the seventh meeting. Vondráček said that the debate was exemplary, Richter warned against the limitation of factual remarks, which she had already criticized at the start of the chamber.",
+    "mean": "It is about who is allowed to speak in the House and for how long. The coalition wants to limit obstructions, the opposition is afraid that the majority will set the rules according to their own wishes. The law passed in the first round, the details are being worked out in committees.",
+    "predmet_lidsky": "rules of procedure of PS",
+    "koho": [
+      "Who does it concern? More like politics and TV broadcasts. It changes the rules of debate, remarks of fact and privileges in the House."
+    ],
+    "fakty": [
+      {
+        "text": "The amendment to the rules of procedure will not change anything about how we treat each other here. They will not teach us mutual respect.",
+        "citace": "Na tom, jak se tady k sobě budeme chovat, novela jednacího řádu nezmění vůbec nic."
+      },
+      {
+        "text": "No one will limit the factual remarks in such a debate. We accept that order of business and try to plug the hole, because factual notes tend to be misused in an obstructive manner.",
+        "citace": "Nikdo ty faktické poznámky v takovéto debatě omezovat nebude."
+      },
+      {
+        "text": "Vote number 90, 138 MPs voted, 57 for, 77 against. The proposal to extend the deadlines was not accepted.",
+        "citace": "Hlasování číslo 90, pro 57, proti 77. Návrh na prodloužení lhůt nebyl přijat."
+      }
+    ]
+  }
 }

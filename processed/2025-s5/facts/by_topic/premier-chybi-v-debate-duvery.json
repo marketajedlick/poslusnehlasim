@@ -52,5 +52,41 @@
   "pointa": "Barták (Motoristé) po obědě poprosil, ať přijde víc členů vlády. Králíček to označil za pirátskou obstrukci. Pláteník měl dokončit přerušený projev a Barták ho nechal počkat, až v sále sedí víc ministrů.",
   "mean": "Důvěra je formálně žádost premiéra, ne celé vlády. Když žadatel chybí uprostřed debaty, opozice to bere jako nedůstojnost, koalice to brání srovnáním s minulými schůzemi a s tím, že ministři jsou v jídelně nebo na výborech.",
   "pocet_hlasovani": 0,
-  "proslo": false
+  "proslo": false,
+  "en": {
+    "nadpis": "Prime minister in the dining room",
+    "lead": "Andrej Babiš asked for confidence, while he was not in the hall for an hour and a half. Richter suggested a break until he returned, Jurečka addressed him as absent. Šťastný said that they were glad that he was not here, Nacher reminded that fifteen ministers out of eighteen were missing from Fiala.",
+    "pointa": "After lunch, Barták (Motorists) asked for more government members to come. Rabbit called it pirate obstruction. Pláteník was supposed to finish his interrupted speech, and Barták made him wait until more ministers were sitting in the hall.",
+    "mean": "The vote of confidence is formally a request from the Prime Minister, not the entire government. When the applicant is absent in the middle of a debate, the opposition takes it as an indignity, the coalition defends it by comparing it to past meetings and to ministers being in the dining room or in committees.",
+    "predmet_lidsky": "the presence of Prime Minister Andrej Babiš during the debate on confidence in his government",
+    "koho": [
+      "Who does it concern? Voters who expected the trust applicant to sit through the request."
+    ],
+    "fakty": [
+      {
+        "text": "The prime minister of the government that is asking for confidence has simply not been here since 11.10. He is not present at the hearing of the motion of confidence in his government.",
+        "citace": "Premiér vlády, která žádá o důvěru, tady už od nějakých 11.10 prostě není."
+      },
+      {
+        "text": "I will therefore ask that we wait, and I therefore propose a break until the prime minister returns to the hall, because it is Andrej Babiš who is asking for a vote of confidence for his government. He had not been here more than an hour and twenty before.",
+        "citace": "Navrhuji pauzu do doby, než se vrátí pan premiér do sálu."
+      },
+      {
+        "text": "Good afternoon. Dear absent Mr. Prime Minister, dear members of the government, I will be brief at the beginning and then I will discuss some things in detail.",
+        "citace": "Vážený nepřítomný pane premiére, vážení členové vlády."
+      },
+      {
+        "text": "The Prime Minister is here, and through the chairman, Mrs. Deputy Richterová, she also doesn't have her chairman here, and half of you are there. So it doesn't matter, I think we're glad he's not here.",
+        "citace": "Já si myslím, že my jsme rádi, že tady není. (Potlesk vlevo.)"
+      },
+      {
+        "text": "So it would be good if there were more members of the government here. I am opening the afternoon session of the Chamber of Deputies.",
+        "citace": "Bylo by tedy dobré, kdyby těch členů vlády tady bylo více."
+      },
+      {
+        "text": "When I was the first in line of non-priority MPs to express confidence in Petr Fiala's government in January 2022, three ministers were sitting here, out of eighteen, fifteen of them were not here.",
+        "citace": "Při důvěře Fialy tady seděli tři ministři, z osmnácti patnáct nebylo."
+      }
+    ]
+  }
 }

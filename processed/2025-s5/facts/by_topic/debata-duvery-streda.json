@@ -35,5 +35,29 @@
   "mean": "Druhý den debaty patřil ministrům a opozičním projevům. Sněmovna nic nehlasovala, jen mluvila o programovém prohlášení a kauzách. Hlasování o důvěře bylo naplánované na čtvrtek.",
   "pocet_hlasovani": 0,
   "proslo": false,
-  "steno_slov": 78023
+  "steno_slov": 78023,
+  "en": {
+    "nadpis": "Speech without voting",
+    "lead": "Wednesday amid a three-day confidence debate. Sixty-four speakers in line, almost eighty thousand words in shorthand, the board remained at zero. The Austrian said only one word: \"We don't believe.\", voting on the laws until tomorrow evening.",
+    "pointa": "The ministers talked about the program statement, the opposition about cases and asbestos in Milovice. The House did not vote all day.",
+    "mean": "The second day of the debate belonged to ministers and opposition speeches. The House did not vote on anything, it only talked about the program statement and the cases. A vote of confidence was scheduled for Thursday.",
+    "predmet_lidsky": "the request of the government of Andrej Babiš for a vote of confidence",
+    "koho": [
+      "Who does it concern? The entire republic, without trust the government cannot rule normally, but today there was only talk."
+    ],
+    "fakty": [
+      {
+        "text": "Since we have 64 speakers registered for a debate that has not even started, I would allow myself to continue.",
+        "citace": "Protože máme 64 řečníků přihlášených do rozpravy, která ani nezačala, tak já bych si dovolil pokračovat."
+      },
+      {
+        "text": "We are actually voting today on whether we believe that the governance and rule of Andrej Babiš and his coalition partners will benefit this country. In a word, we don't believe.",
+        "citace": "My ve skutečnosti hlasujeme dnes o tom, zda věříme, že vláda prospěje této zemi. Jedním slovem nevěříme."
+      },
+      {
+        "text": "The expert estimated the damage to the environment at around 2.2 billion crowns without VAT. And that contaminated rubble is 88 tons.",
+        "citace": "Znalec vyčíslil škodu na životním prostředí na zhruba 2,2 miliardy korun bez DPH."
+      }
+    ]
+  }
 }

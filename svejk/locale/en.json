@@ -59,9 +59,9 @@
   },
   "beer_support": {
     "aria": "Švejk's pub",
-    "read_edition": "Read edition",
-    "archive": "All editions archive",
-    "beer": "Buy Švejk a beer 🍺"
+    "text_before": "If today's report was useful, you can",
+    "link": "buy Švejk a beer",
+    "text_after": ". The newspaper stays free either way. 🍺"
   },
   "locale_notice": "This edition is in Czech. A satirical diary from real records of the Czech Chamber of Deputies.",
   "archive": {
