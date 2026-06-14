@@ -14,7 +14,7 @@
 {% endif %}
 <link rel="alternate" type="text/plain" title="Informace pro AI (llms.txt)" href="{{ newsletter.site_url }}/llms.txt" />
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
-<link rel="alternate" type="application/rss+xml" title="{{ t.feed.rss_title | default('Poslušně hlásím, nová vydání') }}" href="{{ newsletter.feed_url_en if lang == 'en' else newsletter.feed_url }}" />
+<link rel="alternate" type="application/rss+xml" title="{% if lang == 'en' %}Poslušně hlásím, new editions{% else %}Poslušně hlásím, nová vydání{% endif %}" href="{{ newsletter.feed_url_en if lang == 'en' else newsletter.feed_url }}" />
 {% if inline_css %}
 <style>{{ css | safe }}</style>
 {% else %}

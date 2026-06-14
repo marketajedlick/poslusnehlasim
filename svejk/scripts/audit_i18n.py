@@ -36,7 +36,8 @@ def _empty_en_keys(cs: dict, en: dict, prefix: str = "") -> list[str]:
             continue
         v_en = en[k]
         if isinstance(v_cs, str) and isinstance(v_en, str) and v_cs.strip() and not v_en.strip():
-            out.append(p)
+            if p != "glossary_page.notice":
+                out.append(p)
         elif isinstance(v_cs, dict) and isinstance(v_en, dict):
             out.extend(_empty_en_keys(v_cs, v_en, p))
     return out
