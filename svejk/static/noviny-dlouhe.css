@@ -801,9 +801,9 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
   margin-top:14px;
 }
 .archiv-head .site-nav--section{
-  margin-top:14px;
-  padding-top:0;
-  border-top:0;
+  margin-top:20px;
+  padding-top:20px;
+  border-top:1px solid rgba(33,28,20,.14);
 }
 .archive-link .site-nav{
   margin-top:12px;
@@ -1097,6 +1097,7 @@ body.slovnicek-page{
   margin-bottom:28px;
   padding-bottom:20px;
   border-bottom:1px solid rgba(33,28,20,.14);
+  text-align:center;
 }
 .slovnicek-title{
   margin:0 0 8px;
@@ -1105,7 +1106,9 @@ body.slovnicek-page{
   color:var(--ink);
 }
 .slovnicek-gloss{
-  margin:0 0 16px;
+  margin:0 auto 16px;
+  max-width:36em;
+  font-family:'Old Standard TT',serif; font-style:italic;
   font-size:15px; line-height:1.45; color:var(--ink-soft);
 }
 .slovnicek-nav{
@@ -1124,6 +1127,9 @@ body.slovnicek-page{
   padding-bottom:1px;
 }
 .slovnicek-back:hover{ border-bottom-color:var(--terra); }
+.slovnicek-list--page{
+  text-align:center;
+}
 .slovnicek-list--page .slovnicek-entry{
   margin:0 0 18px;
   padding-bottom:18px;
@@ -1503,9 +1509,10 @@ body.archiv-page{
   font-family:'Oswald',sans-serif; font-weight:500;
   font-size:11px; letter-spacing:.14em; text-transform:uppercase;
   color:var(--ink-soft);
+  text-align:center;
 }
 .archiv-month-chips{
-  display:flex; flex-wrap:wrap; gap:8px;
+  display:flex; flex-wrap:wrap; justify-content:center; gap:8px;
   overflow:visible;
 }
 .archiv-legend{
