@@ -1001,7 +1001,7 @@ def render_slovnicek_html(
         site_url=cfg.site_url,
         base_path=base_path,
         title="Švejkův slovníček · Poslušně hlásím",
-        description="Poslušně hlásím, že sněmovna má vlastní jazyk — slovníček pojmů pro lidi, kteří politiku běžně nesledují.",
+        description="Poslušně hlásím, že sněmovna má vlastní jazyk. Slovníček pojmů pro lidi, kteří politiku běžně nesledují.",
     )
     tpl = _jinja_env().get_template("slovnicek-stranka.html")
     slovnicek = [

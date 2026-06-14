@@ -8,6 +8,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+from svejk.text_norm import ma_dlouhou_pomlcku
 from svejk.build.day_content import build_den_content
 from svejk.build.html import (
     css_asset_version,
@@ -63,6 +64,14 @@ _FONTS_DIR = _STATIC / "fonts"
 _FAVICON_PNG = _STATIC / "svejk-terra.png"
 _FAVICON_SVG = _STATIC / "svejk.svg"
 _OG_SHARE = _STATIC / "og-share.png"
+
+
+def _write_html(path: Path, html: str) -> None:
+    if ma_dlouhou_pomlcku(html):
+        raise ValueError(
+            f"Zakázaná dlouhá pomlčka (—/–) ve výstupu {path}, oprav zdrojové texty."
+        )
+    path.write_text(html, encoding="utf-8")
 
 
 def _base_path() -> str:
@@ -330,38 +339,38 @@ def run_export_pages(
             canonical_url=f"{site}/",
             is_homepage=True,
         )
-        (out / "index.html").write_text(index_html, encoding="utf-8")
+        _write_html(out / "index.html", index_html)
 
     page_count = sum(1 for p in written if p.endswith(".html") and p.count("/") >= 3)
 
     archiv_html = render_archiv_html(
         obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
     )
-    (out / "archiv.html").write_text(archiv_html, encoding="utf-8")
+    _write_html(out / "archiv.html", archiv_html)
     written.append("archiv.html")
 
     notfound_html = render_404_html(
         obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
     )
-    (out / "404.html").write_text(notfound_html, encoding="utf-8")
+    _write_html(out / "404.html", notfound_html)
     written.append("404.html")
 
     slovnicek_html = render_slovnicek_html(
         obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
     )
-    (out / "slovnicek.html").write_text(slovnicek_html, encoding="utf-8")
+    _write_html(out / "slovnicek.html", slovnicek_html)
     written.append("slovnicek.html")
 
     pivo_html = render_pivo_html(
         obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
     )
-    (out / "pivo.html").write_text(pivo_html, encoding="utf-8")
+    _write_html(out / "pivo.html", pivo_html)
     written.append("pivo.html")
 
     dekuju_html = render_dekuju_html(
         obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
     )
-    (out / "dekuju.html").write_text(dekuju_html, encoding="utf-8")
+    _write_html(out / "dekuju.html", dekuju_html)
     written.append("dekuju.html")
 
     podminky_html = render_podminky_html(
@@ -369,7 +378,7 @@ def run_export_pages(
     )
     podminky_dir = out / "podminky"
     podminky_dir.mkdir(parents=True, exist_ok=True)
-    (podminky_dir / "index.html").write_text(podminky_html, encoding="utf-8")
+    _write_html(podminky_dir / "index.html", podminky_html)
     written.append("podminky/index.html")
 
     podpora_html = render_podpora_html(
@@ -377,7 +386,7 @@ def run_export_pages(
     )
     podpora_dir = out / "podpora"
     podpora_dir.mkdir(parents=True, exist_ok=True)
-    (podpora_dir / "index.html").write_text(podpora_html, encoding="utf-8")
+    _write_html(podpora_dir / "index.html", podpora_html)
     written.append("podpora/index.html")
 
     potvrzeno_html = render_potvrzeno_html(
@@ -385,7 +394,7 @@ def run_export_pages(
     )
     potvrzeno_dir = out / "potvrzeno"
     potvrzeno_dir.mkdir(parents=True, exist_ok=True)
-    (potvrzeno_dir / "index.html").write_text(potvrzeno_html, encoding="utf-8")
+    _write_html(potvrzeno_dir / "index.html", potvrzeno_html)
     written.append("potvrzeno/index.html")
 
     soukromi_html = render_soukromi_html(
@@ -393,7 +402,7 @@ def run_export_pages(
     )
     soukromi_dir = out / "soukromi"
     soukromi_dir.mkdir(parents=True, exist_ok=True)
-    (soukromi_dir / "index.html").write_text(soukromi_html, encoding="utf-8")
+    _write_html(soukromi_dir / "index.html", soukromi_html)
     written.append("soukromi/index.html")
 
     doi_export = export_doi_template(out / "email", base_path=base)
