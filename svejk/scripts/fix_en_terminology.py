@@ -224,7 +224,7 @@ _REGEX: list[tuple[str, str]] = [
     (r"\bHouse overrode\b", "The Chamber of Deputies overrode"),
     (r"\bHouse adopted\b", "The Chamber of Deputies adopted"),
     (r"\bHouse began\b", "The Chamber of Deputies began"),
-    (r"\bHouse occupied\b", "The Chamber of Deputies occupied"),
+    (r"\bHouse occupied\b", "The Chamber of Deputies filled"),
     (r"\bHouse passed\b", "The Chamber of Deputies passed"),
     (r"\bHouse distributed\b", "The Chamber of Deputies distributed"),
     (r"\bHouse did not\b", "The Chamber of Deputies did not"),
@@ -278,6 +278,13 @@ _REGEX: list[tuple[str, str]] = [
     # Rada ČT.
     (r"\bCT Council\b", "Czech Television Council"),
     (r"\bCT Board\b", "Czech Television Council"),
+    # Obsazení postů (ne military „occupied“).
+    (r"\bThe Chamber of Deputies occupied\b", "The Chamber of Deputies filled"),
+    (r"\boccupied the Czech Television Council\b", "filled the Czech Television Council"),
+    (r"\boccupied the CT Council\b", "filled the Czech Television Council"),
+    (r"\bhas occupied committees\b", "has filled committees"),
+    (r"\boccupying six seats\b", "filling six seats"),
+    (r"\bCT board is occupied\b", "Czech Television Council filled"),
 ]
 
 _EET_FIRST = re.compile(r"\bEET\b(?!\s*\(electronic sales records\)|-)")
