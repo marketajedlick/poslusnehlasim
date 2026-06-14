@@ -49,11 +49,11 @@
     "fakty": [
       {
         "text": "Vote number 246, for 90, against 32. The motion was carried.",
-        "citace": "Hlasování číslo 246, pro 90, proti 32. Návrh byl přijat."
+        "citace": "Vote number 246, for 90, against 32. The motion was carried."
       },
       {
         "text": "Previously, vote number 245 ended 58-89, the motion was not adopted.",
-        "citace": "Hlasování číslo 245, pro 58, proti 89. Návrh nebyl přijat."
+        "citace": "Vote number 245, for 58, against 89. The motion was not adopted."
       }
     ]
   }
