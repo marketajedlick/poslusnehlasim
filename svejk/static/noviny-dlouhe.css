@@ -1620,6 +1620,33 @@ body.archiv-page{
   border-top:1px solid rgba(33,28,20,.14);
 }
 
+/* ---------- 404 page ---------- */
+.notfound-code{
+  margin:0 0 6px;
+  font-family:'Anton',sans-serif;
+  font-size:clamp(36px, 10vw, 52px);
+  letter-spacing:.08em;
+  color:var(--terra);
+  line-height:1;
+}
+.notfound-body{
+  text-align:left;
+}
+.notfound-latest{
+  margin-bottom:8px;
+}
+.notfound-cta-wrap{
+  margin-top:12px;
+}
+.notfound-wrap .subscribe{
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid rgba(33,28,20,.14);
+}
+.notfound-wrap .subscribe-gloss{
+  max-width:none;
+}
+
 .soukromi-body{
   display:flex; flex-direction:column; gap:18px;
 }

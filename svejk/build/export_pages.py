@@ -14,6 +14,7 @@ from svejk.build.html import (
     fonts_asset_version,
     inject_site_footer,
     render_archiv_html,
+    render_404_html,
     render_den_html,
     render_dekuju_html,
     render_podminky_html,
@@ -338,6 +339,12 @@ def run_export_pages(
     )
     (out / "archiv.html").write_text(archiv_html, encoding="utf-8")
     written.append("archiv.html")
+
+    notfound_html = render_404_html(
+        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
+    )
+    (out / "404.html").write_text(notfound_html, encoding="utf-8")
+    written.append("404.html")
 
     slovnicek_html = render_slovnicek_html(
         obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base

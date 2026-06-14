@@ -9,9 +9,9 @@ from typing import Any
 from svejk.newsletter.api import (
     api_key_from_env,
     create_template,
-    list_id_from_env,
     list_templates,
     show_list,
+    subscribe_list_id_from_env,
     update_list,
     update_template,
 )
@@ -109,11 +109,11 @@ def sync_doi_to_ecomail(
     - volitelně vytvoří/aktualizuje šablonu v Knihovně šablon
     """
     api_key = api_key_from_env()
-    list_id = list_id_from_env()
+    list_id = subscribe_list_id_from_env()
     if not api_key:
         return {"skipped": True, "reason": "chybí ECOMAIL_API_KEY"}
     if not list_id:
-        return {"skipped": True, "reason": "chybí ECOMAIL_LIST_ID"}
+        return {"skipped": True, "reason": "chybí ECOMAIL_SUBSCRIBE_LIST_ID"}
 
     cfg = NewsletterConfig.from_env()
     from_name, from_email, reply_to = _doi_sender()

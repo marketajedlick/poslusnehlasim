@@ -15,9 +15,8 @@ def _site_url() -> str:
     return (base + path).rstrip("/") or base
 
 
-DEFAULT_ECOMAIL_FORM_ACTION = (
-    "https://poslusnehlasim.ecomailapp.cz/public/subscribe/2/2bb287d15897fe2f9d89c882af9a3a8b"
-)
+# Fallback XHR formulář (hash je per-seznam). Seznam 3 nemá veřejný formulář — odběr jde přes worker API.
+DEFAULT_ECOMAIL_FORM_ACTION = ""
 DEFAULT_ECOMAIL_SUBSCRIBE_LIST_ID = "3"
 DEFAULT_ECOMAIL_LIST_ID = "3"
 DEFAULT_ECOMAIL_WIDGET_JS = "https://d70shl7vidtft.cloudfront.net/widget.js"

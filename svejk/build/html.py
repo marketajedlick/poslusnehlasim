@@ -797,6 +797,48 @@ def render_archiv_html(
     )
 
 
+def render_404_html(
+    obdobi: int,
+    *,
+    inline_css: bool = False,
+    css_href: str | None = None,
+    fonts_css_href: str | None = None,
+    base_path: str = "",
+) -> str:
+    """Vlastní 404 stránka pro GitHub Pages."""
+    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path)
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    editions = list_site_editions(obdobi)
+    if not editions:
+        raise ValueError(f"Žádná vydání pro období {obdobi}")
+
+    latest = editions[-1]
+    from svejk.timeline import den_v_tydnu
+
+    latest_label = datum_design(latest.datum_unl, den_v_tydnu(latest.datum_unl))
+    base = base_path.rstrip("/")
+    home = f"{base}/" if base else "/"
+    canonical_url = f"{cfg.site_url.rstrip('/')}{home}"
+    tpl = _jinja_env().get_template("404-stranka.html")
+    return tpl.render(
+        latest_label=latest_label,
+        newsletter=cfg,
+        canonical_url=canonical_url,
+        inline_css=inline_css,
+        css=css,
+        css_href=css_href,
+        fonts_css_href=fonts_css_href,
+        **_site_nav_ctx(obdobi, base_path),
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="404"),
+        **favicons,
+    )
+
+
 def render_potvrzeno_html(
     obdobi: int,
     *,

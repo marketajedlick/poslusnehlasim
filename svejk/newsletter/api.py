@@ -27,7 +27,7 @@ def list_id_from_env() -> int | None:
 
 
 def subscribe_list_id_from_env() -> int | None:
-    """Seznam pro zápis z webu a DOI (výchozí: produkce)."""
+    """Seznam pro zápis z webu a DOI (výchozí: dev/test)."""
     raw = (
         os.environ.get("ECOMAIL_SUBSCRIBE_LIST_ID")
         or DEFAULT_ECOMAIL_SUBSCRIBE_LIST_ID

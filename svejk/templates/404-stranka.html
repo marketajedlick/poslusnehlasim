@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+{% set head_noindex = true %}
+{% include "head-noviny.html" %}
+<title>Stránka nenalezena · Poslušně hlásím</title>
+<meta name="description" content="Tahle adresa na webu Poslušně hlásím neexistuje. Archiv vydání a odběr novinek jsou na úvodní stránce." />
+<link rel="canonical" href="{{ canonical_url }}" />
+<link rel="stylesheet" href="{{ fonts_css_href }}" />
+<link rel="stylesheet" href="{{ css_href }}" />
+</head>
+<body class="archiv-page">
+<div class="archiv-wrap notfound-wrap">
+  <header class="archiv-head">
+    <p class="notfound-code" aria-hidden="true">404</p>
+    <h1 class="archiv-title">Poslušně hlásím: tady nic není</h1>
+    <p class="archiv-gloss">Adresa, kterou jste otevřeli, na webu neexistuje.<br />Sněmovna má spoustu bodů programu — tento nepatří mezi ně.</p>
+    {% set site_nav_modifier = "site-nav--section" %}
+    {% include "site-nav.html" %}
+  </header>
+
+  <div class="notfound-body">
+    {% if latest_href %}
+    <section class="soukromi-section notfound-latest">
+      <h2 class="soukromi-heading">Nebo rovnou poslední vydání</h2>
+      <p>Nejnovější číslo deníku{% if latest_label %}: {{ latest_label }}{% endif %}.</p>
+      <p class="notfound-cta-wrap">
+        <a class="potvrzeno-cta" href="{{ latest_href }}">Přečíst poslední vydání →</a>
+      </p>
+    </section>
+    {% endif %}
+
+    {% include "subscribe.html" %}
+  </div>
+</div>
+{% include "site-footer.html" %}
+{% include "cookie-consent.html" %}
+{% include "subscribe-script.html" %}
+</body>
+</html>

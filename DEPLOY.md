@@ -97,7 +97,9 @@ python3 -m http.server -d site 8765
 
 **Dev režim:** obojí běží na seznamu 3 (test). Nový zápis z webu skončí jako **nepotvrzený** — musí být na seznamu zapnutý double opt-in (`newsletter-doi-sync --apply --enable-double-optin`).
 
-**Produkce:** až budeš ready, vrať `ECOMAIL_SUBSCRIBE_LIST_ID=2` (sběr) a `ECOMAIL_LIST_ID=2` (odesílání), nasaď worker znovu.
+**Fallback formulář:** seznam 3 nemá veřejný Ecomail formulář (hash). Odběr jde přes worker API (`ECOMAIL_SUBSCRIBE_LIST_ID=3`). Starý fallback na seznam 2 je vypnutý — jinak by se odběratelé rozdělili mezi dva seznamy.
+
+**Produkce:** až budeš ready, přepni obě proměnné na seznam 2 (nebo vytvoř formulář na cílovém seznamu a doplň `ECOMAIL_FORM_ACTION`), nasaď worker znovu.
 
 ### Jednorázové nastavení
 
@@ -168,7 +170,7 @@ Po deployi webu je k dispozici děkovná stránka **`https://poslusnehlasim.cz/p
 ./run-svejk.sh newsletter-doi-sync
 
 # nahrát šablonu do Ecomailu (seznam + knihovna šablon)
-ECOMAIL_API_KEY=… ECOMAIL_LIST_ID=3 ECOMAIL_FROM_EMAIL=… \
+ECOMAIL_API_KEY=… ECOMAIL_SUBSCRIBE_LIST_ID=3 ECOMAIL_FROM_EMAIL=… \
   ./run-svejk.sh newsletter-doi-sync --apply --enable-double-optin
 
 # jen export HTML souboru (záloha / ruční vložení)
