@@ -1579,12 +1579,12 @@ body.archiv-page{
   color:var(--ink-soft);
 }
 .soukromi-operator{
-  margin:18px 0 0;
+  margin:10px 0 0;
   font-family:'Old Standard TT',serif;
   font-size:12px; line-height:1.45;
   color:var(--ink-soft);
-  text-align:center;
 }
+.soukromi-section .soukromi-operator{ margin-top:8px; }
 
 /* ---------- nav (mobile) ---------- */
 .edition-nav{

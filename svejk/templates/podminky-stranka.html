@@ -36,10 +36,7 @@
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Dobrovolné příspěvky</h2>
-      <p>„Pivo“, rum nebo Štamgast jsou dobrovolné příspěvky na provoz webu, ne nákup zboží, služby ani předplatné obsahu.</p>
-      <p>Noviny zůstávají zdarma i bez příspěvku. Platby zpracovává <a href="https://stripe.com" rel="noopener">Stripe</a>; web neukládá platební údaje.</p>
-      <p><strong>Štamgast:</strong> měsíční předplatné příspěvku zrušíte ve Stripe (odkaz v e-mailu po platbě).</p>
-      <p>Reklamace nebo dotazy k platbám: <a href="{{ support_href }}">zákaznická podpora</a>.</p>
+      <p>Poslušně hlásím, že pivo, rum i Štamgast jsou čistě dobrovolná záležitost. Noviny dostává každý bez ohledu na stav peněženky. Platby obstarává <a href="https://stripe.com" rel="noopener">Stripe</a>, neboť Švejk na pokladnu nikdy nebyl. Štamgasta lze odvolat kdykoliv a bez zbytečného papírování. Když nastane nějaký administrativní zmatek, obraťte se na <a href="{{ support_href }}">zákaznickou podporu</a>.</p>
     </section>
 
     <section class="soukromi-section">
@@ -49,8 +46,7 @@
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Změny</h2>
-      <p>Podmínky můžeme upravit. Aktuální znění je vždy na této stránce.</p>
-      <p>Pokračováním v používání webu nebo odběru s upraveným zněním souhlasíte.</p>
+      <p>Podmínky můžeme upravit. Aktuální znění je vždy na této stránce. Pokračováním v používání webu nebo odběru s upraveným zněním souhlasíte.</p>
     </section>
 
     <section class="soukromi-section">
@@ -59,13 +55,12 @@
       <p><a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
       {% endif %}
       <p>Podpora: <a href="{{ support_href }}">zákaznická podpora</a>.</p>
+      <p class="soukromi-operator">Provozovatel: Markéta Jedličková, IČO 74980700</p>
     </section>
   </div>
 
   {% set site_nav_modifier = "site-nav--section" %}
   {% include "site-nav.html" %}
-
-  <p class="soukromi-operator">Provozovatel: Markéta Jedličková, IČO 74980700</p>
 </div>
 {% include "site-footer.html" %}
 {% include "cookie-consent.html" %}
