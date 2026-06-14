@@ -52,6 +52,9 @@ class ArchiveChip:
     schuze_suffix: str
     is_current: bool
     title: str
+    headline: str
+    date_label: str
+    schuze: int
 
 
 @dataclass(frozen=True)
@@ -191,6 +194,24 @@ def resolve_edition(obdobi: int, datum_unl: str, schuze: int | None = None) -> E
     return matches[-1]
 
 
+def _edition_headline(edition: Edition, *, max_len: int = 80) -> str:
+    from svejk.build.day_content import build_den_content
+    from svejk.build.seo import article_headline
+
+    paths = SchuzePaths.create(edition.obdobi, edition.schuze)
+    d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
+    day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
+    if not day_path.is_file():
+        return ""
+    content = build_den_content(day_path, paths)
+    return article_headline(
+        dnesni_ucet=content.dnesni_ucet,
+        first_item_nadpis=content.items[0].nadpis if content.items else "",
+        edition_title="",
+        max_len=max_len,
+    )
+
+
 def _den_z_index(paths: SchuzePaths, datum_unl: str) -> str:
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
     day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
@@ -287,6 +308,13 @@ def _archive_chips(
     for edition in subset:
         d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
         link = _make_link(edition, **kw)
+        target_paths = SchuzePaths.create(edition.obdobi, edition.schuze)
+        den = _den_z_index(target_paths, edition.datum_unl)
+        date_label = datum_design(edition.datum_unl, den)
+        headline = _edition_headline(edition)
+        aria = f"{headline}. {date_label}, schůze {edition.schuze}" if headline else (
+            f"{date_label}, schůze {edition.schuze}"
+        )
         chips.append(
             ArchiveChip(
                 href=link.href,
@@ -295,7 +323,10 @@ def _archive_chips(
                 is_current=(
                     edition.schuze == current_schuze and edition.datum_unl == current_datum
                 ),
-                title=link.title,
+                title=aria,
+                headline=headline,
+                date_label=date_label,
+                schuze=edition.schuze,
             )
         )
     return tuple(chips)

@@ -82,12 +82,8 @@
     </section>
   </div>
 
-  <nav class="potvrzeno-links" aria-label="Zpět na web">
-    <a class="archiv-latest" href="{{ site_url }}/">Úvodní stránka</a>
-    {% if archive_href %}
-    <a class="archiv-latest" href="{{ archive_href }}">Archiv vydání</a>
-    {% endif %}
-  </nav>
+  {% set site_nav_modifier = "site-nav--section" %}
+  {% include "site-nav.html" %}
 </div>
 {% include "site-footer.html" %}
 {% include "cookie-consent.html" %}

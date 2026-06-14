@@ -343,7 +343,7 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
   .sheet-shape{ overflow:visible; }
   .pivo-menu-row{
     grid-template-columns:1fr;
-    grid-template-rows:auto auto auto;
+    grid-template-rows:auto auto auto auto;
     gap:4px 0;
   }
   .pivo-menu-name{ grid-column:1; grid-row:1; }
@@ -352,10 +352,16 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
     text-align:left;
   }
   .pivo-menu-note{ grid-column:1; grid-row:3; }
+  .pivo-menu-btn{
+    grid-column:1; grid-row:4;
+    justify-self:stretch;
+    margin-top:6px;
+  }
   .pivo-menu-badge{ grid-row:1; margin-bottom:4px; }
   .pivo-menu-row--highlight .pivo-menu-name{ grid-row:2; }
   .pivo-menu-row--highlight .pivo-menu-price{ grid-row:3; }
   .pivo-menu-row--highlight .pivo-menu-note{ grid-row:4; }
+  .pivo-menu-row--highlight .pivo-menu-btn{ grid-row:5; }
   .term-tip .term-tip-bubble{
     display:none !important;
   }
@@ -580,7 +586,7 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
   padding:0;
   border-top:none;
 }
-.hospoda + .archive-link .archive-nav{
+.hospoda + .archive-link .site-nav{
   margin-top:0;
 }
 .archive-link + .subscribe{
@@ -590,6 +596,7 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
 .archive-chip{
   flex:0 0 auto;
   display:inline-flex; flex-direction:column; align-items:center; justify-content:center;
+  position:relative;
   width:42px; height:42px;
   border:2px solid rgba(33,28,20,.28);
   border-radius:50%;
@@ -609,6 +616,54 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
   color:var(--paper);
   pointer-events:none;
 }
+.archive-chip-tooltip{
+  position:absolute;
+  left:50%;
+  bottom:calc(100% + 10px);
+  transform:translateX(-50%) translateY(4px);
+  display:flex; flex-direction:column; align-items:center; gap:3px;
+  width:max-content;
+  max-width:min(220px, 70vw);
+  padding:8px 10px;
+  border:1.5px solid rgba(33,28,20,.2);
+  border-radius:3px;
+  background:var(--ink);
+  color:var(--paper);
+  box-shadow:0 6px 18px rgba(33,28,20,.22);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .15s, transform .15s, visibility .15s;
+  z-index:20;
+}
+.archive-chip-tooltip::after{
+  content:"";
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%);
+  border:6px solid transparent;
+  border-top-color:var(--ink);
+}
+.archive-chip-tooltip-headline{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:11px; line-height:1.35; letter-spacing:.03em;
+  text-align:center;
+}
+.archive-chip-tooltip-meta{
+  font-family:'Oswald',sans-serif; font-weight:400;
+  font-size:9px; line-height:1.3; letter-spacing:.06em;
+  text-transform:uppercase;
+  text-align:center;
+  color:rgba(240,230,207,.82);
+}
+.archive-chip:hover .archive-chip-tooltip,
+.archive-chip:focus-visible .archive-chip-tooltip{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(-50%) translateY(0);
+}
+.archive-chip.is-current .archive-chip-tooltip{ display:none; }
 .archive-chip-day{
   font-family:'Oswald',sans-serif; font-weight:600;
   font-size:14px; line-height:1; letter-spacing:.02em;
@@ -634,6 +689,37 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
   padding-bottom:1px;
 }
 .archive-all:hover{ border-bottom-color:var(--terra); }
+
+/* ---------- hlavní navigace (sjednocená) ---------- */
+.site-nav{
+  display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
+  gap:8px 12px;
+}
+.archiv-head .site-nav,
+.slovnicek-head .site-nav,
+.pivo-head .site-nav,
+.vyznamenani-head .site-nav{
+  margin-top:14px;
+}
+.archive-link .site-nav{
+  margin-top:12px;
+}
+.site-nav--section{
+  margin-top:24px; padding-top:20px;
+  border-top:1px solid rgba(33,28,20,.14);
+}
+.site-nav-sep{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:12px; color:var(--ink-soft); opacity:.7;
+}
+.site-nav-link{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--terra); text-decoration:none;
+  border-bottom:1px solid rgba(207,90,49,.35);
+  padding-bottom:1px;
+}
+.site-nav-link:hover{ border-bottom-color:var(--terra); }
 
 /* ---------- pivo page ---------- */
 body.pivo-page{
@@ -677,19 +763,40 @@ body.pivo-page{
   border:2px solid var(--ink);
   background:rgba(240,230,207,.45);
 }
-.pivo-menu-row{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) auto auto;
-  grid-template-rows:auto auto;
-  gap:2px 12px;
+.pivo-menu-lead{
+  margin:0;
   padding:12px 14px;
   border-bottom:1px solid rgba(33,28,20,.2);
-  text-decoration:none;
-  color:inherit;
-  transition:background .15s;
+  font-family:'Old Standard TT',serif;
+  font-size:14px; line-height:1.45;
+  color:var(--ink-soft);
+  text-align:center;
 }
-a.pivo-menu-row:hover{
-  background:rgba(207,90,49,.1);
+.pivo-menu-group{
+  border-bottom:1px solid rgba(33,28,20,.2);
+}
+.pivo-menu-group--monthly{
+  border-bottom:0;
+}
+.pivo-menu-group-title{
+  margin:0;
+  padding:10px 14px 8px;
+  font-family:'Oswald',sans-serif; font-weight:600;
+  text-transform:uppercase; letter-spacing:.1em;
+  font-size:11px; color:var(--ink-soft);
+  border-bottom:1px solid rgba(33,28,20,.12);
+}
+.pivo-menu-group--monthly .pivo-menu-group-title{
+  color:var(--terra);
+}
+.pivo-menu-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  grid-template-rows:auto auto;
+  gap:4px 12px;
+  padding:12px 14px;
+  border-bottom:1px solid rgba(33,28,20,.2);
+  color:inherit;
 }
 .pivo-menu-row--last{ border-bottom:0; }
 .pivo-menu-row--highlight{
@@ -711,6 +818,7 @@ a.pivo-menu-row:hover{
 .pivo-menu-row--highlight .pivo-menu-name{ grid-row:2; }
 .pivo-menu-row--highlight .pivo-menu-price{ grid-row:2; }
 .pivo-menu-row--highlight .pivo-menu-note{ grid-row:3; }
+.pivo-menu-row--highlight .pivo-menu-btn{ grid-row:2 / span 2; }
 .pivo-menu-row:target{
   background:rgba(207,90,49,.14);
   scroll-margin-top:calc(var(--nav-h) + 16px);
@@ -728,17 +836,30 @@ a.pivo-menu-row:hover{
   text-align:right; white-space:nowrap;
 }
 .pivo-menu-note{
-  grid-column:1 / 2; grid-row:2;
+  grid-column:1; grid-row:2;
   font-family:'Old Standard TT',serif; font-style:italic;
   font-size:14px; line-height:1.35; color:var(--ink-soft);
 }
-.pivo-menu-action{
-  grid-column:3; grid-row:1 / span 2;
+.pivo-menu-btn{
+  grid-column:2; grid-row:1 / span 2;
   align-self:center;
+  display:inline-block;
   font-family:'Oswald',sans-serif; font-weight:600;
   text-transform:uppercase; letter-spacing:.08em;
-  font-size:10px; color:var(--terra);
+  font-size:11px; line-height:1.2;
+  color:var(--paper);
+  background:var(--terra);
+  text-decoration:none;
+  text-align:center;
+  padding:10px 14px;
+  border:0;
+  border-radius:2px;
   white-space:nowrap;
+  transition:filter .15s;
+}
+.pivo-menu-btn:hover{ filter:brightness(1.06); }
+.pivo-menu-btn--monthly{
+  background:var(--ink);
 }
 .pivo-pay-note{
   margin:10px 0 0 !important;
@@ -1231,7 +1352,7 @@ body.archiv-page{
   color:var(--ink);
 }
 .archiv-gloss{
-  margin:0 0 14px;
+  margin:0 0 18px;
   font-family:'Old Standard TT',serif; font-style:italic;
   font-size:17px; line-height:1.45; color:var(--ink-soft);
 }
@@ -1243,6 +1364,44 @@ body.archiv-page{
   padding-bottom:1px;
 }
 .archiv-latest:hover{ border-bottom-color:var(--terra); }
+.archiv-latest-cta{
+  display:inline-flex; flex-direction:column; align-items:center; gap:4px;
+  max-width:min(420px, 100%);
+  margin:0 auto;
+  padding:14px 22px 16px;
+  background:var(--terra);
+  color:var(--paper);
+  text-decoration:none;
+  border:2px solid var(--ink);
+  border-radius:3px;
+  box-shadow:0 4px 0 var(--ink);
+  transition:filter .15s, transform .15s, box-shadow .15s;
+}
+.archiv-latest-cta:hover{
+  filter:brightness(1.05);
+  transform:translateY(-1px);
+  box-shadow:0 5px 0 var(--ink);
+}
+.archiv-latest-cta:active{
+  transform:translateY(2px);
+  box-shadow:0 1px 0 var(--ink);
+}
+.archiv-latest-cta-kicker{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:10px; letter-spacing:.16em; text-transform:uppercase;
+  opacity:.88;
+}
+.archiv-latest-cta-title{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(15px, 4vw, 20px);
+  line-height:1.2; letter-spacing:.04em; text-transform:uppercase;
+  text-align:center;
+}
+.archiv-latest-cta-meta{
+  font-family:'Oswald',sans-serif; font-weight:400;
+  font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+  opacity:.82;
+}
 .archiv-months{ display:flex; flex-direction:column; gap:18px; }
 .archiv-month-label{
   margin:0 0 10px;
@@ -1252,6 +1411,7 @@ body.archiv-page{
 }
 .archiv-month-chips{
   display:flex; flex-wrap:wrap; gap:8px;
+  overflow:visible;
 }
 .archiv-legend{
   margin:24px 0 0;
@@ -1503,7 +1663,7 @@ body.archiv-page{
   .pivo-menu-name{ font-size:14px; }
   .pivo-menu-price{ font-size:20px; }
   .pivo-menu-note{ font-size:15px; }
-  .pivo-menu-action{ font-size:11px; }
+  .pivo-menu-btn{ font-size:12px; padding:11px 16px; }
   .archive-link + .subscribe{ margin-top:18px; padding-top:14px; }
   .pivo-stage .pad{ padding:44px 50px 40px; }
   .pivo-body p{ font-size:18px; }

@@ -43,13 +43,8 @@
     </section>
   </div>
 
-  <nav class="potvrzeno-links" aria-label="Další odkazy">
-    {% if archive_href %}
-    <a class="archiv-latest" href="{{ archive_href }}">Archiv vydání</a>
-    {% endif %}
-    <a class="archiv-latest" href="{{ privacy_url }}">Ochrana údajů</a>
-    <a class="archiv-latest" href="{{ latest_href }}">Nejnovější číslo</a>
-  </nav>
+  {% set site_nav_modifier = "site-nav--section" %}
+  {% include "site-nav.html" %}
 
   <p class="potvrzeno-note">Tahle stránka se ukáže jen po potvrzení odběru.<br />{% if contact_email %}Něco nesedí? Napiš na e-mail: <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.{% else %}Něco nesedí? Odpověz rovnou na potvrzovací e-mail.{% endif %}</p>
 </div>

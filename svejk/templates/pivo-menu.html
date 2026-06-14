@@ -1,34 +1,56 @@
     <section class="pivo-menu" aria-label="Ceník příspěvků">
-      {% for tier in pivo_tiers %}
-      {% if pivo_menu_pay %}
-      <a
-        class="pivo-menu-row{% if tier.highlight %} pivo-menu-row--highlight{% endif %}{% if loop.last %} pivo-menu-row--last{% endif %}"
-        id="{{ tier.id }}"
-        href="{{ tier.pay_href }}"
-        target="_blank"
-        rel="noopener"
-      >
-        {% if tier.highlight %}
-        <span class="pivo-menu-badge">Nejoblíbenější</span>
-        {% endif %}
-        <span class="pivo-menu-name">{{ tier.name }}</span>
-        <span class="pivo-menu-price">{{ tier.price }}</span>
-        <span class="pivo-menu-note">{{ tier.note }}</span>
-      </a>
-      {% else %}
-      <a
-        class="pivo-menu-row{% if tier.highlight %} pivo-menu-row--highlight{% endif %}{% if loop.last %} pivo-menu-row--last{% endif %}"
-        href="{{ pivo_href }}#{{ tier.id }}"
-      >
-        {% if tier.highlight %}
-        <span class="pivo-menu-badge">Nejoblíbenější</span>
-        {% endif %}
-        <span class="pivo-menu-name">{{ tier.name }}</span>
-        <span class="pivo-menu-price">{{ tier.price }}</span>
-        <span class="pivo-menu-note">{{ tier.note }}</span>
-      </a>
-      {% endif %}
-      {% endfor %}
+      <p class="pivo-menu-lead">Nejde o nákup zboží — jde o dobrovolný příspěvek na provoz deníku.</p>
+
+      <div class="pivo-menu-group">
+        <h2 class="pivo-menu-group-title">Jednorázový příspěvek</h2>
+        {% for tier in pivo_tiers if tier.kind == 'once' %}
+        <div
+          class="pivo-menu-row{% if loop.last %} pivo-menu-row--last{% endif %}"
+          id="{{ tier.id }}"
+        >
+          <span class="pivo-menu-name">{{ tier.name }}</span>
+          <span class="pivo-menu-price">{{ tier.price }}</span>
+          <span class="pivo-menu-note">{{ tier.note }}</span>
+          {% if pivo_menu_pay %}
+          <a
+            class="pivo-menu-btn"
+            href="{{ tier.pay_href }}"
+            target="_blank"
+            rel="noopener"
+          >{{ tier.cta }}</a>
+          {% else %}
+          <a class="pivo-menu-btn" href="{{ pivo_href }}#{{ tier.id }}">{{ tier.cta }}</a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="pivo-menu-group pivo-menu-group--monthly">
+        <h2 class="pivo-menu-group-title">Měsíční Štamgast podpora</h2>
+        {% for tier in pivo_tiers if tier.kind == 'monthly' %}
+        <div
+          class="pivo-menu-row{% if tier.highlight %} pivo-menu-row--highlight{% endif %}{% if loop.last %} pivo-menu-row--last{% endif %}"
+          id="{{ tier.id }}"
+        >
+          {% if tier.highlight %}
+          <span class="pivo-menu-badge">Nejoblíbenější</span>
+          {% endif %}
+          <span class="pivo-menu-name">{{ tier.name }}</span>
+          <span class="pivo-menu-price">{{ tier.price }}</span>
+          <span class="pivo-menu-note">{{ tier.note }}</span>
+          {% if pivo_menu_pay %}
+          <a
+            class="pivo-menu-btn pivo-menu-btn--monthly"
+            href="{{ tier.pay_href }}"
+            target="_blank"
+            rel="noopener"
+          >{{ tier.cta }}</a>
+          {% else %}
+          <a class="pivo-menu-btn pivo-menu-btn--monthly" href="{{ pivo_href }}#{{ tier.id }}">{{ tier.cta }}</a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
     </section>
     {% if pivo_menu_pay %}
     <p class="pivo-pay-note">Platbu bezpečně zpracuje <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe</a>. Web sám platební údaje neukládá.</p>

@@ -28,17 +28,8 @@
                 <span class="pivo-quote-by">Váš dobrý voják Švejk</span>
               </blockquote>
 
-              {% if archive_href or latest_href %}
-              <nav class="dekuju-nav" aria-label="Další odkazy">
-                {% if archive_href %}
-                <a class="pivo-back" href="{{ archive_href }}">Archiv vydání</a>
-                {% endif %}
-                {% if latest_href %}
-                {% if archive_href %}<span class="pivo-nav-sep" aria-hidden="true">·</span>{% endif %}
-                <a class="pivo-back" href="{{ latest_href }}">Nejnovější vydání</a>
-                {% endif %}
-              </nav>
-              {% endif %}
+              {% set site_nav_modifier = "site-nav--section" %}
+              {% include "site-nav.html" %}
             </div>
           </div>
         </div>

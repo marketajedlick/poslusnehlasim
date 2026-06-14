@@ -45,23 +45,29 @@ def pivo_tiers() -> list[dict[str, Any]]:
     return [
         {
             "id": "velke",
+            "kind": "once",
             "name": "Velké pivo",
             "price": "65 Kč",
             "note": "starý osvědčený prostředek proti trudnomyslnosti",
+            "cta": "Přispět jednorázově",
             "pay_href": _stripe_url("STRIPE_PIVO_URL", STRIPE_PIVO_URL),
         },
         {
             "id": "rum",
+            "kind": "once",
             "name": "Rum",
             "price": "95 Kč",
             "note": "kořalku nepiju, jenom rum",
+            "cta": "Přispět jednorázově",
             "pay_href": _stripe_url("STRIPE_RUM_URL", STRIPE_RUM_URL),
         },
         {
             "id": "stamgast",
+            "kind": "monthly",
             "name": "Štamgast",
             "price": "65 Kč měsíčně",
             "note": "pro ty, kdo chodí pravidelně a ne jen na mobilizaci",
+            "cta": "Stát se Štamgastem",
             "pay_href": _stripe_url("STRIPE_STAMGAST_URL", STRIPE_STAMGAST_URL),
             "highlight": True,
         },
@@ -222,6 +228,22 @@ def _site_footer_ctx(base_path: str = "") -> dict[str, str]:
     }
 
 
+def _site_nav_ctx(obdobi: int, base_path: str = "") -> dict[str, str]:
+    editions = list_site_editions(obdobi)
+    latest_href = ""
+    if editions:
+        latest = editions[-1]
+        latest_href = edition_pages_href(
+            latest.obdobi, latest.schuze, latest.datum_unl, base_path
+        )
+    return {
+        "archive_href": archiv_pages_href(base_path),
+        "latest_href": latest_href,
+        "slovnicek_href": slovnicek_pages_href(base_path),
+        "pivo_href": pivo_pages_href(base_path),
+    }
+
+
 def render_site_footer_html(base_path: str = "") -> str:
     env = _jinja_env()
     return env.get_template("site-footer.html").render(**_site_footer_ctx(base_path))
@@ -288,9 +310,12 @@ def render_den_html(
     if not canonical_url:
         href = edition_pages_href(ob, paths.schuze, content.datum, base_path)
         canonical_url = f"{cfg.site_url.rstrip('/')}{href}"
-    archive_href = archiv_pages_href(base_path) if link_mode == "pages" else None
-    slovnicek_href = slovnicek_pages_href(base_path) if link_mode == "pages" else None
-    pivo_href = pivo_pages_href(base_path) if link_mode == "pages" else None
+    nav_ctx = _site_nav_ctx(ob, base_path) if link_mode == "pages" else {
+        "archive_href": None,
+        "latest_href": None,
+        "slovnicek_href": None,
+        "pivo_href": None,
+    }
     datum_label = datum_design(content.datum, content.den)
     edition_title = f"Poslušně hlásím · {datum_label}"
     from svejk.build.seo import article_headline as _article_headline
@@ -410,11 +435,9 @@ def render_den_html(
         page_title=page_title,
         article_json_ld=json_ld,
         website_json_ld=website_ld,
-        archive_href=archive_href,
         **og,
-        slovnicek_href=slovnicek_href,
-        pivo_href=pivo_href,
         pivo_tiers=pivo_tiers(),
+        **nav_ctx,
         **_site_footer_ctx(base_path),
         **favicons,
     )
@@ -617,9 +640,12 @@ def render_archiv_html(
         obdobi=obdobi,
         base_path=base_path,
     )
-    latest_href = edition_pages_href(
-        latest.obdobi, latest.schuze, latest.datum_unl, base_path
-    )
+    from svejk.build.nav import _den_z_index, _edition_headline
+    from svejk.timeline import den_v_tydnu
+
+    latest_den = _den_z_index(paths, latest.datum_unl)
+    latest_label = datum_design(latest.datum_unl, latest_den)
+    latest_headline = _edition_headline(latest)
     canonical_url = f"{cfg.site_url.rstrip('/')}{archiv_pages_href(base_path)}"
     og = _og_context(
         site_url=cfg.site_url,
@@ -631,13 +657,16 @@ def render_archiv_html(
     return tpl.render(
         obdobi=obdobi,
         archive_months=months,
-        latest_href=latest_href,
+        latest_label=latest_label,
+        latest_headline=latest_headline,
+        latest_schuze=latest.schuze,
         canonical_url=canonical_url,
         **og,
         inline_css=inline_css,
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
+        **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path),
         **favicons,
     )
@@ -664,19 +693,13 @@ def render_potvrzeno_html(
         raise ValueError(f"Žádná vydání pro období {obdobi}")
 
     latest = editions[-1]
-    latest_href = edition_pages_href(
-        latest.obdobi, latest.schuze, latest.datum_unl, base_path
-    )
-    archive_href = archiv_pages_href(base_path)
     canonical_url = f"{cfg.site_url.rstrip('/')}/potvrzeno/"
     from svejk.timeline import den_v_tydnu
 
     latest_label = datum_design(latest.datum_unl, den_v_tydnu(latest.datum_unl))
     tpl = _jinja_env().get_template("potvrzeno.html")
     return tpl.render(
-        latest_href=latest_href,
         latest_label=latest_label,
-        archive_href=archive_href,
         site_url=cfg.site_url.rstrip("/"),
         privacy_url=cfg.privacy_url,
         contact_email=cfg.contact_email,
@@ -685,6 +708,7 @@ def render_potvrzeno_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
+        **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path),
         **favicons,
     )
@@ -778,6 +802,7 @@ def render_vyznamenani_table_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
+        **_site_nav_ctx(paths.obdobi, base_path),
         **_site_footer_ctx(base_path),
         **favicons,
         **og,
@@ -812,10 +837,6 @@ def render_slovnicek_html(
         raise ValueError(f"Žádná vydání pro období {obdobi}")
 
     latest = editions[-1]
-    archive_href = archiv_pages_href(base_path)
-    latest_href = edition_pages_href(
-        latest.obdobi, latest.schuze, latest.datum_unl, base_path
-    )
     canonical_url = f"{cfg.site_url.rstrip('/')}{slovnicek_pages_href(base_path)}"
     og = _og_context(
         site_url=cfg.site_url,
@@ -826,14 +847,13 @@ def render_slovnicek_html(
     tpl = _jinja_env().get_template("slovnicek-stranka.html")
     return tpl.render(
         slovnicek=SLOVNIČEK,
-        archive_href=archive_href,
-        latest_href=latest_href,
         canonical_url=canonical_url,
         **og,
         inline_css=inline_css,
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
+        **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path),
         **favicons,
     )
@@ -859,11 +879,6 @@ def render_pivo_html(
         raise ValueError(f"Žádná vydání pro období {obdobi}")
 
     latest = editions[-1]
-    archive_href = archiv_pages_href(base_path)
-    slovnicek_href = slovnicek_pages_href(base_path)
-    latest_href = edition_pages_href(
-        latest.obdobi, latest.schuze, latest.datum_unl, base_path
-    )
     canonical_url = f"{cfg.site_url.rstrip('/')}{pivo_pages_href(base_path)}"
     og = _og_context(
         site_url=cfg.site_url,
@@ -873,18 +888,16 @@ def render_pivo_html(
     )
     tpl = _jinja_env().get_template("pivo-stranka.html")
     return tpl.render(
-        archive_href=archive_href,
-        slovnicek_href=slovnicek_href,
-        latest_href=latest_href,
+        canonical_url=canonical_url,
+        **og,
         pivo_tiers=pivo_tiers(),
         pivo_menu_pay=True,
         stripe_portal_href=_stripe_url("STRIPE_PORTAL_URL", STRIPE_PORTAL_URL),
-        canonical_url=canonical_url,
-        **og,
         inline_css=inline_css,
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
+        **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path),
         **favicons,
     )
@@ -911,20 +924,15 @@ def render_dekuju_html(
         raise ValueError(f"Žádná vydání pro období {obdobi}")
 
     latest = editions[-1]
-    archive_href = archiv_pages_href(base_path)
-    latest_href = edition_pages_href(
-        latest.obdobi, latest.schuze, latest.datum_unl, base_path
-    )
     canonical_url = f"{cfg.site_url.rstrip('/')}{dekuju_pages_href(base_path)}"
     tpl = _jinja_env().get_template("dekuju-stranka.html")
     return tpl.render(
-        archive_href=archive_href,
-        latest_href=latest_href,
         canonical_url=canonical_url,
         inline_css=inline_css,
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
+        **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path),
         **favicons,
     )
@@ -946,7 +954,6 @@ def render_soukromi_html(
         fonts_css_href = static_fonts_css_path(base_path)
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
-    archive_href = archiv_pages_href(base_path)
     canonical_url = f"{cfg.site_url.rstrip('/')}{soukromi_pages_href(base_path)}"
     og = _og_context(
         site_url=cfg.site_url,
@@ -956,7 +963,6 @@ def render_soukromi_html(
     )
     tpl = _jinja_env().get_template("soukromi.html")
     return tpl.render(
-        archive_href=archive_href,
         site_url=cfg.site_url.rstrip("/"),
         contact_email=cfg.contact_email,
         canonical_url=canonical_url,
@@ -965,6 +971,7 @@ def render_soukromi_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
+        **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path),
         **favicons,
     )
@@ -986,7 +993,6 @@ def render_podminky_html(
         fonts_css_href = static_fonts_css_path(base_path)
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
-    archive_href = archiv_pages_href(base_path)
     canonical_url = f"{cfg.site_url.rstrip('/')}{podminky_pages_href(base_path)}"
     og = _og_context(
         site_url=cfg.site_url,
@@ -996,7 +1002,6 @@ def render_podminky_html(
     )
     tpl = _jinja_env().get_template("podminky-stranka.html")
     return tpl.render(
-        archive_href=archive_href,
         site_url=cfg.site_url.rstrip("/"),
         contact_email=cfg.contact_email,
         canonical_url=canonical_url,
@@ -1005,6 +1010,7 @@ def render_podminky_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
+        **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path),
         **favicons,
     )
@@ -1026,7 +1032,6 @@ def render_podpora_html(
         fonts_css_href = static_fonts_css_path(base_path)
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
-    archive_href = archiv_pages_href(base_path)
     canonical_url = f"{cfg.site_url.rstrip('/')}{podpora_pages_href(base_path)}"
     og = _og_context(
         site_url=cfg.site_url,
@@ -1036,7 +1041,6 @@ def render_podpora_html(
     )
     tpl = _jinja_env().get_template("podpora-stranka.html")
     return tpl.render(
-        archive_href=archive_href,
         site_url=cfg.site_url.rstrip("/"),
         contact_email=cfg.contact_email,
         canonical_url=canonical_url,
@@ -1045,6 +1049,7 @@ def render_podpora_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
+        **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path),
         **favicons,
     )
