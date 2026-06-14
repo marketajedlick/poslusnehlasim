@@ -358,7 +358,7 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
   .sheet-shape{ overflow:visible; }
   .pivo-menu-row{
     grid-template-columns:1fr;
-    grid-template-rows:auto auto auto auto;
+    grid-template-rows:auto auto auto;
     gap:4px 0;
   }
   .pivo-menu-name{ grid-column:1; grid-row:1; }
@@ -367,12 +367,6 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
     text-align:left;
   }
   .pivo-menu-note{ grid-column:1; grid-row:3; }
-  .pivo-menu-btn{
-    grid-column:1; grid-row:4;
-    justify-self:stretch;
-    margin-top:6px;
-  }
-  .pivo-menu-badge{ grid-row:1; margin-bottom:8px; }
   .pivo-menu-group--monthly{ padding:10px 12px 12px; }
   .pivo-menu-row--highlight{
     padding:14px 12px 16px;
@@ -380,10 +374,6 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
       0 2px 0 rgba(33,28,20,.08),
       0 6px 14px rgba(207,90,49,.12);
   }
-  .pivo-menu-row--highlight .pivo-menu-name{ grid-row:2; }
-  .pivo-menu-row--highlight .pivo-menu-price{ grid-row:3; }
-  .pivo-menu-row--highlight .pivo-menu-note{ grid-row:4; }
-  .pivo-menu-row--highlight .pivo-menu-btn{ grid-row:5; }
   .term-tip .term-tip-bubble{
     display:none !important;
   }
@@ -847,9 +837,12 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
 
 /* ---------- pivo page ---------- */
 body.pivo-page{
-  padding:calc(24px + env(safe-area-inset-top, 0px)) 0 0;
+  padding:calc(8px + env(safe-area-inset-top, 0px)) 0 0;
 }
-.pivo-stage .pad{ padding-bottom:24px; }
+.pivo-stage .pad{
+  padding-top:8px;
+  padding-bottom:24px;
+}
 .pivo-head{
   text-align:center;
 }
@@ -964,28 +957,10 @@ body.pivo-page{
     rgba(207,90,49,.12) 100%
   );
 }
-.pivo-menu-badge{
-  grid-column:1 / -1; grid-row:1;
-  display:inline-block;
-  align-self:start;
-  width:fit-content;
-  margin:0 0 8px;
-  padding:4px 9px;
-  border-radius:2px;
-  background:var(--terra);
-  font-family:'Oswald',sans-serif; font-weight:600;
-  text-transform:uppercase; letter-spacing:.14em;
-  font-size:10px; line-height:1;
-  color:var(--paper);
-}
 .pivo-menu-row--highlight .pivo-menu-name{
-  grid-row:2;
   color:var(--terra);
   font-size:14px;
 }
-.pivo-menu-row--highlight .pivo-menu-price{ grid-row:2; }
-.pivo-menu-row--highlight .pivo-menu-note{ grid-row:3; }
-.pivo-menu-row--highlight .pivo-menu-btn{ grid-row:3; }
 .pivo-menu-row:target{
   background:rgba(207,90,49,.14);
   scroll-margin-top:calc(var(--nav-h) + 16px);
@@ -1006,32 +981,6 @@ body.pivo-page{
   grid-column:1; grid-row:2;
   font-family:'Old Standard TT',serif; font-style:italic;
   font-size:14px; line-height:1.35; color:var(--ink-soft);
-}
-.pivo-menu-btn{
-  grid-column:2; grid-row:2;
-  align-self:center;
-  display:inline-block;
-  font-family:'Oswald',sans-serif; font-weight:600;
-  text-transform:uppercase; letter-spacing:.08em;
-  font-size:11px; line-height:1.2;
-  color:var(--paper);
-  background:var(--terra);
-  text-align:center;
-  padding:10px 14px;
-  border:0;
-  border-radius:2px;
-  white-space:nowrap;
-  transition:filter .15s;
-  pointer-events:none;
-}
-.pivo-menu-row:hover .pivo-menu-btn{ filter:brightness(1.06); }
-.pivo-menu-btn--monthly{
-  background:var(--terra);
-  box-shadow:0 2px 0 rgba(33,28,20,.18);
-}
-.pivo-menu-row--highlight .pivo-menu-btn--monthly{
-  background:var(--ink);
-  box-shadow:0 2px 0 rgba(33,28,20,.22);
 }
 .pivo-pay-note{
   margin:10px 0 0 !important;
@@ -1858,18 +1807,12 @@ body.archiv-page{
   .hospoda-gloss{ font-size:17px; }
   .hospoda-link{ font-size:13px; }
   .hospoda + .archive-link{ padding:12px 0 0; }
-  .pivo-stage .pad{ padding:44px 50px 40px; }
+  .pivo-stage .pad{ padding:16px 50px 40px; }
   .pivo-body p{ font-size:18px; }
   .pivo-menu-name{ font-size:14px; }
   .pivo-menu-price{ font-size:20px; }
   .pivo-menu-note{ font-size:15px; }
-  .pivo-menu-btn{ font-size:12px; padding:11px 16px; }
   .archive-link + .subscribe{ margin-top:18px; padding-top:14px; }
-  .pivo-stage .pad{ padding:44px 50px 40px; }
-  .pivo-body p{ font-size:18px; }
-  .pivo-menu-name{ font-size:14px; }
-  .pivo-menu-price{ font-size:20px; }
-  .pivo-menu-note{ font-size:15px; }
   .dekuju-head .mast{ font-size:66px; line-height:.88; }
   .dekuju-head .eyebrow{ letter-spacing:.26em; font-size:13px; margin-bottom:20px; }
   .dekuju-quote p{ font-size:26px; }
