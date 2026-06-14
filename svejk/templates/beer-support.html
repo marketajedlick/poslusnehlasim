@@ -1,8 +1,3 @@
         <section class="hospoda" aria-label="Hospoda u Švejka">
-          <p class="hospoda-gloss">Poslušně hlásím, že chodit denně do Sněmovny je žízeň.</p>
-          {% if pivo_href %}
-          <p class="hospoda-cta">
-            <a class="hospoda-link" href="{{ pivo_href }}#stamgast">Kup Švejkovi pivo 🍺</a>
-          </p>
-          {% endif %}
+          <p class="hospoda-gloss">Jestli vám dnešní hlášení přišlo vhod, můžete{% if pivo_href %} <a class="hospoda-link hospoda-link--inline" href="{{ pivo_href }}#stamgast">Švejkovi koupit jedno pivo</a>{% else %} Švejkovi koupit jedno pivo{% endif %}. Noviny zůstanou zdarma tak jako tak. 🍺</p>
         </section>

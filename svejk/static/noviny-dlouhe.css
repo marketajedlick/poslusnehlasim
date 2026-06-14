@@ -556,6 +556,15 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
   border-bottom-color:var(--paper);
   color:var(--paper);
 }
+.hospoda-link--inline{
+  font-family:'Old Standard TT',serif;
+  font-style:italic;
+  font-weight:400;
+  text-transform:none;
+  letter-spacing:0;
+  font-size:inherit;
+  border-bottom:1px solid rgba(240,230,207,.55);
+}
 
 /* ---------- site footer (právní odkazy) ---------- */
 .site-footer{
@@ -994,7 +1003,8 @@ body.pivo-page{
   font-size:14px; line-height:1.35; color:var(--ink-soft);
 }
 .pivo-pay-note{
-  margin:10px 0 0 !important;
+  margin:10px auto 0 !important;
+  max-width:36em;
   font-size:13px !important;
   line-height:1.45 !important;
   color:var(--ink-soft) !important;
@@ -1499,7 +1509,8 @@ body.archiv-page{
   color:var(--ink);
 }
 .archiv-gloss{
-  margin:0;
+  margin:0 auto;
+  max-width:36em;
   font-family:'Old Standard TT',serif; font-style:italic;
   font-size:17px; line-height:1.45; color:var(--ink-soft);
 }
@@ -1528,7 +1539,8 @@ body.archiv-page{
 }
 
 .potvrzeno-note{
-  margin:0;
+  margin:0 auto;
+  max-width:36em;
   font-family:'Old Standard TT',serif;
   font-size:16px; line-height:1.5;
   color:var(--ink-soft);
