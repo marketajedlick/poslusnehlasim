@@ -352,7 +352,6 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
     align-items:flex-start;
   }
   .pivo-menu-note{ grid-column:1; grid-row:3; }
-  .pivo-menu-group--monthly{ padding:10px 12px 12px; }
   .term-tip .term-tip-bubble{
     display:none !important;
   }
@@ -882,17 +881,9 @@ body.pivo-page{
 }
 .pivo-menu{
   margin:14px 0 0;
-  border:1px solid rgba(33,28,20,.28);
-  background:rgba(240,230,207,.35);
-}
-.pivo-stats{
-  margin:20px 0 0;
-  font-family:'Oswald',sans-serif; font-weight:500;
-  font-size:11px; letter-spacing:.1em;
-  text-transform:uppercase;
-  text-align:center;
-  line-height:1.5;
-  color:rgba(33,28,20,.55);
+  display:flex;
+  flex-direction:column;
+  gap:14px;
 }
 .pivo-promise{
   margin:12px 0 0;
@@ -903,11 +894,17 @@ body.pivo-page{
 }
 .pivo-promise strong{ font-weight:700; }
 .pivo-menu-group{
-  border-bottom:1px solid rgba(33,28,20,.2);
+  border:1px solid rgba(33,28,20,.28);
+  background:rgba(240,230,207,.35);
 }
 .pivo-menu-group--monthly{
-  border-bottom:0;
-  padding:10px 14px 14px;
+  border:1px solid rgba(207,90,49,.48);
+  background:linear-gradient(
+    160deg,
+    rgba(207,90,49,.14) 0%,
+    rgba(240,230,207,.55) 62%,
+    rgba(207,90,49,.06) 100%
+  );
 }
 .pivo-menu-group-title{
   margin:0;
@@ -919,8 +916,7 @@ body.pivo-page{
 }
 .pivo-menu-group--monthly .pivo-menu-group-title{
   color:var(--terra);
-  padding:0 0 10px;
-  border-bottom:0;
+  border-bottom-color:rgba(207,90,49,.22);
 }
 .pivo-menu-row{
   display:grid;
@@ -935,7 +931,10 @@ body.pivo-page{
   transition:background .15s;
 }
 .pivo-menu-row:hover{
-  background:rgba(207,90,49,.06);
+  background:rgba(207,90,49,.08);
+}
+.pivo-menu-group--monthly .pivo-menu-row:hover{
+  background:rgba(207,90,49,.14);
 }
 .pivo-menu-row:focus-visible{
   outline:2px solid var(--terra);

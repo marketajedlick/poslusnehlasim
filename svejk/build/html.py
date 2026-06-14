@@ -254,11 +254,6 @@ def _footer_stats_line(obdobi: int) -> str:
     return f"{n_editions} vydání • {schuze_part} • 100 % veřejná data"
 
 
-def _pivo_stats_line(obdobi: int) -> str:
-    n_editions, schuze_part = _edition_stats_parts(obdobi)
-    return f"{n_editions} vydání • {schuze_part} • 0 korun od státu"
-
-
 def _site_footer_ctx(
     base_path: str = "",
     *,
@@ -1064,7 +1059,6 @@ def render_pivo_html(
         canonical_url=canonical_url,
         **og,
         pivo_tiers=pivo_tiers(),
-        pivo_stats=_pivo_stats_line(obdobi),
         pivo_menu_pay=True,
         stripe_portal_href=_stripe_url("STRIPE_PORTAL_URL", STRIPE_PORTAL_URL),
         inline_css=inline_css,
