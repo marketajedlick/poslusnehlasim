@@ -765,12 +765,6 @@ def render_archiv_html(
         obdobi=obdobi,
         base_path=base_path,
     )
-    from svejk.build.nav import _den_z_index, _edition_headline
-    from svejk.timeline import den_v_tydnu
-
-    latest_den = _den_z_index(paths, latest.datum_unl)
-    latest_label = datum_design(latest.datum_unl, latest_den)
-    latest_headline = _edition_headline(latest)
     canonical_url = f"{cfg.site_url.rstrip('/')}{archiv_pages_href(base_path)}"
     og = _og_context(
         site_url=cfg.site_url,
@@ -782,9 +776,6 @@ def render_archiv_html(
     return tpl.render(
         obdobi=obdobi,
         archive_months=months,
-        latest_label=latest_label,
-        latest_headline=latest_headline,
-        latest_schuze=latest.schuze,
         canonical_url=canonical_url,
         **og,
         inline_css=inline_css,

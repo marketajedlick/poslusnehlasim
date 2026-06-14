@@ -10,23 +10,12 @@
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="archiv-page">
-<div class="archiv-nav-wrap">
-  {% set site_nav_hide_archive = true %}
-  {% include "site-nav.html" %}
-</div>
 <div class="archiv-wrap">
   <header class="archiv-head">
     <h1 class="archiv-title">Archiv vydání</h1>
     <p class="archiv-gloss">Všechna dostupná vydání deníku.</p>
-    {% if latest_href %}
-    <a class="archiv-latest-cta" href="{{ latest_href }}">
-      <span class="archiv-latest-cta-kicker">Nejnovější vydání</span>
-      {% if latest_headline %}
-      <span class="archiv-latest-cta-title">{{ latest_headline }}</span>
-      {% endif %}
-      <span class="archiv-latest-cta-meta">{{ latest_label }} · schůze {{ latest_schuze }}</span>
-    </a>
-    {% endif %}
+    {% set site_nav_hide_archive = true %}
+    {% include "site-nav.html" %}
   </header>
 
   <div class="archiv-months">
