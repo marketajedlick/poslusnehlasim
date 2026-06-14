@@ -844,7 +844,7 @@ body.pivo-page{
   padding:calc(4px + env(safe-area-inset-top, 0px)) 0 0;
 }
 .pivo-stage .pad{
-  padding-top:0;
+  padding-top:16px;
   padding-bottom:24px;
 }
 .pivo-head{
@@ -1793,7 +1793,7 @@ body.archiv-page{
   .hospoda-gloss{ font-size:17px; }
   .hospoda-link{ font-size:13px; }
   .hospoda + .archive-link{ padding:12px 0 0; }
-  .pivo-stage .pad{ padding:0 50px 40px; }
+  .pivo-stage .pad{ padding:20px 50px 40px; }
   .pivo-head .eyebrow{ letter-spacing:.26em; font-size:13px; margin-bottom:20px; }
   .pivo-body p{ font-size:18px; }
   .pivo-menu-name{ font-size:14px; }
