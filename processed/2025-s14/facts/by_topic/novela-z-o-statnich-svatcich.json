@@ -44,5 +44,27 @@
     "spor": true,
     "prazdny_sal": false
   },
-  "steno_slov": 5266
+  "steno_slov": 5266,
+  "en": {
+    "nadpis": "It passed",
+    "predmet_lidsky": "national holidays",
+    "fakty": [
+      {
+        "text": "245/2000 Coll., on national holidays, on other holidays, on important days and on days off, as amended/house press 78/2/, returned by the Senate The Senate returned the bill with amendments, we received its resolution as house press 78/3.",
+        "citace": "245/2000 Coll., on national holidays, on other holidays, on important days and on days of rest, as amended/parliamentary press 78/2/, returned by the Senate The Senate returned the bill with p"
+      },
+      {
+        "text": "I welcome Senator Stanislav Balík among us, and I ask that MP Andrej Babiš, who is not here, speak on behalf of the proposer of the Senate resolution and the proposed amendments.",
+        "citace": "I welcome Senator Stanislav Balík among us, and I ask that MP Andrej Babiš, who is not here, speak on behalf of the proposer of the Senate resolution and the proposed amendments."
+      },
+      {
+        "text": "2. Draft law amending Act no.",
+        "citace": "2. Draft law amending Act no."
+      },
+      {
+        "text": "movement in the hall",
+        "citace": "(commotion in the hall)"
+      }
+    ]
+  }
 }
