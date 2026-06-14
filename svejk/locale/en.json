@@ -136,6 +136,20 @@
     "stamgast_cta": "Become a regular",
     "monthly_badge": "MONTHLY"
   },
+  "doi": {
+    "title": "Confirm subscription · Poslušně hlásím",
+    "eyebrow": "PARLIAMENT DIARY",
+    "intro": "The Chamber diary is waiting. One more step: confirm that this e-mail is really yours and you want the newsletter.",
+    "cta": "Confirm subscription",
+    "quote_key": "I HEREBY REPORT",
+    "quote_body": "that without confirmation we cannot send you a single line. Click and it is done.",
+    "footer": "If you received this e-mail by mistake, you do not need to do anything.",
+    "privacy_link": "What we do with your e-mail address.",
+    "subject": "Poslušně hlásím: confirm your subscription",
+    "plain_lead": "POSLUŠNĚ HLÁSÍM: confirm your subscription",
+    "plain_cta": "Confirm your subscription using the link in the HTML version of this e-mail.",
+    "plain_after_confirm": "After confirmation we will redirect you to:"
+  },
   "board": {
     "proslo_1": "item passed",
     "proslo_2_4": "items passed",

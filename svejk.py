@@ -512,6 +512,8 @@ def cmd_newsletter_doi_sync(args: argparse.Namespace) -> int:
             apply=args.apply,
             enable_double_optin=args.enable_double_optin,
             sync_template=not args.no_template,
+            locale=args.locale,
+            all_locales=args.all_locales,
         )
     except RuntimeError as e:
         print(f"Chyba: {e}", file=sys.stderr)
@@ -985,6 +987,17 @@ def main() -> int:
         "--no-template",
         action="store_true",
         help="Neaktualizovat knihovnu šablon, jen nastavení seznamu",
+    )
+    p_doi_sync.add_argument(
+        "--locale",
+        choices=("cs", "en"),
+        default="cs",
+        help="Jazyk DOI šablony a cílového seznamu (výchozí: cs = seznam 3)",
+    )
+    p_doi_sync.add_argument(
+        "--all-locales",
+        action="store_true",
+        help="Synchronizovat cs (seznam 3) i en (seznam 4)",
     )
     p_doi_sync.set_defaults(func=cmd_newsletter_doi_sync)
 

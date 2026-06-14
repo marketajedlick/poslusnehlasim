@@ -778,31 +778,43 @@ def render_doi_email_html(
     *,
     site_url: str | None = None,
     base_path: str = "",
+    locale: str = "cs",
 ) -> tuple[str, str, str]:
     """HTML + plain text pro potvrzovací e-mail (double opt-in) v Ecomailu."""
+    from svejk.build.nav import soukromi_pages_href
+    from svejk.locale import load_strings, localized_path, normalize_locale
+
     cfg = NewsletterConfig.from_env()
     site = (site_url or cfg.site_url).rstrip("/")
-    subject = "Poslušně hlásím: potvrď odběr novinek"
+    loc = normalize_locale(locale)
+    t = load_strings(loc)
+    doi = t["doi"]
+    base = base_path.rstrip("/")
+    privacy_path = soukromi_pages_href(base, loc)
+    confirm_path = localized_path("/potvrzeno/", loc)
+    privacy_url = f"{site}{privacy_path}"
+    confirm_redirect_url = f"{site}{confirm_path}"
+    subject = doi["subject"]
     tpl = _jinja_env().get_template("doi-email.html")
     html = tpl.render(
-        privacy_url=cfg.privacy_url,
-        confirm_redirect_url=cfg.confirm_redirect_url,
+        locale=loc,
+        t=t,
+        privacy_url=privacy_url,
+        confirm_redirect_url=confirm_redirect_url,
     )
     plain = "\n".join(
         [
-            "POSLUŠNĚ HLÁSÍM: potvrď odběr novinek",
+            doi["plain_lead"],
             "",
-            "Deník sněmovny už čeká. Ještě je ale třeba",
-            "jeden krok. Potvrď, že e-mail patří opravdu tobě",
-            "a chceš deník odebírat.",
+            doi["intro"],
             "",
-            "Poslušně hlásím, že bez potvrzení ti nemůžeme poslat ani řádku. Klikni a je vyřízeno.",
+            f"{doi['quote_key']} {doi['quote_body']}",
             "",
-            "Potvrď odběr kliknutím na odkaz v HTML verzi tohoto e-mailu.",
+            doi["plain_cta"],
             "",
-            f"Po potvrzení tě přesměrujeme na: {cfg.confirm_redirect_url}",
-            "Pokud tento e-mail přišel omylem, není třeba nic dělat.",
-            f"Co děláme s e-mailovou adresou: {cfg.privacy_url}",
+            f"{doi['plain_after_confirm']} {confirm_redirect_url}",
+            doi["footer"],
+            f"{doi['privacy_link']}: {privacy_url}",
         ]
     )
     return subject, plain, html

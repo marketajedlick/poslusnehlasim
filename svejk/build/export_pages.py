@@ -404,6 +404,7 @@ def run_export_pages(
 
     doi_export = export_doi_template(out / "email", base_path=base)
     written.append("email/doi.html")
+    written.append("email/doi-en.html")
 
     feed_path = write_feed_xml(obdobi, out / "feed.xml", config=cfg, base_path=base)
     robots_path = write_robots_txt(out, site_url=site)

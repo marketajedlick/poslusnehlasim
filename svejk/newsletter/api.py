@@ -11,6 +11,7 @@ from typing import Any
 from svejk.newsletter.config import (
     DEFAULT_ECOMAIL_LIST_ID,
     DEFAULT_ECOMAIL_SUBSCRIBE_LIST_ID,
+    DEFAULT_ECOMAIL_SUBSCRIBE_LIST_ID_EN,
 )
 
 API_BASE = "https://api2.ecomailapp.cz"
@@ -31,6 +32,15 @@ def subscribe_list_id_from_env() -> int | None:
     raw = (
         os.environ.get("ECOMAIL_SUBSCRIBE_LIST_ID")
         or DEFAULT_ECOMAIL_SUBSCRIBE_LIST_ID
+    ).strip()
+    return int(raw) if raw.isdigit() else None
+
+
+def subscribe_list_id_en_from_env() -> int | None:
+    """Anglický seznam pro zápis z webu a DOI."""
+    raw = (
+        os.environ.get("ECOMAIL_SUBSCRIBE_LIST_ID_EN")
+        or DEFAULT_ECOMAIL_SUBSCRIBE_LIST_ID_EN
     ).strip()
     return int(raw) if raw.isdigit() else None
 
