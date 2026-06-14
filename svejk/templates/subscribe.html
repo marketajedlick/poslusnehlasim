@@ -11,18 +11,21 @@
           >
             <input type="text" name="website" tabindex="-1" autocomplete="off" class="subscribe-hp" aria-hidden="true" />
             <div class="subscribe-row">
-              <input
-                class="subscribe-input"
-                type="email"
-                name="email"
-                required
-                autocomplete="email"
-                aria-label="E-mail pro odběr novinek"
-                placeholder="vas@email.cz"
-              />
+              <div class="subscribe-field">
+                <input
+                  class="subscribe-input"
+                  type="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  aria-label="E-mail pro odběr novinek"
+                  aria-describedby="subscribe-error"
+                  placeholder="vas@email.cz"
+                />
+                <p class="subscribe-error" id="subscribe-error" hidden role="alert"></p>
+              </div>
               <button class="subscribe-btn" type="submit">Poslušně odebírat</button>
             </div>
-            <p class="subscribe-error" hidden role="alert"></p>
             <p class="subscribe-success" hidden>Poslušně hlásím: zkontroluj e-mail a potvrď odběr.</p>
           </form>
           <p class="subscribe-privacy">

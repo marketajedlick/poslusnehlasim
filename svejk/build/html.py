@@ -57,7 +57,7 @@ def pivo_tiers() -> list[dict[str, Any]]:
             "kind": "once",
             "name": "Rum",
             "price": "95 Kč",
-            "note": "kořalku nepiju, jenom rum",
+            "note": "Kořalku nepiju, jen rum.",
             "cta": "Přispět jednorázově",
             "pay_href": _stripe_url("STRIPE_RUM_URL", STRIPE_RUM_URL),
         },
@@ -66,7 +66,7 @@ def pivo_tiers() -> list[dict[str, Any]]:
             "kind": "monthly",
             "name": "Štamgast",
             "price": "65 Kč měsíčně",
-            "note": "pro ty, kdo chodí pravidelně a ne jen na mobilizaci",
+            "note": "pro ty, kdo chodí pravidelně, i když zrovna není poplach",
             "cta": "Stát se Štamgastem",
             "pay_href": _stripe_url("STRIPE_STAMGAST_URL", STRIPE_STAMGAST_URL),
             "highlight": True,
@@ -154,6 +154,34 @@ def _zamitnuto_board_label(n: int) -> str:
     return "návrhů zamítli"
 
 
+def _proslo_score_phrase(n: int) -> str:
+    if n == 1:
+        return "1 věc prošla"
+    if 2 <= n <= 4:
+        return f"{n} věci prošly"
+    return f"{n} věcí prošlo"
+
+
+def _zamitnuto_score_phrase(n: int) -> str:
+    return f"{n} zamítnuto"
+
+
+def _board_score_summary(proslo: int, zamitnuto: int) -> tuple[str, str]:
+    main = (
+        f"Dnešní skóre: {_proslo_score_phrase(proslo)}, "
+        f"{_zamitnuto_score_phrase(zamitnuto)}."
+    )
+    return main, "(Klikni pro detail hlasování)"
+
+
+def _board_score_ctx(proslo: int, zamitnuto: int) -> dict[str, str]:
+    summary, hint = _board_score_summary(proslo, zamitnuto)
+    return {
+        "board_summary": summary,
+        "board_summary_hint": hint,
+    }
+
+
 def _split_paragraphs(text: str) -> list[str]:
     parts = re.split(r"(?<=[.!?])\s+", text.strip())
     return [p for p in parts if p]
@@ -228,17 +256,28 @@ def _site_footer_ctx(base_path: str = "") -> dict[str, str]:
     }
 
 
+def _edition_back_label(datum_unl: str) -> str:
+    d = datetime.strptime(datum_unl, "%d.%m.%Y")
+    return f"{d.day}. {d.month}. {d.year}"
+
+
 def _site_nav_ctx(obdobi: int, base_path: str = "") -> dict[str, str]:
     editions = list_site_editions(obdobi)
     latest_href = ""
+    edition_back_href = ""
+    edition_back_label = ""
     if editions:
         latest = editions[-1]
         latest_href = edition_pages_href(
             latest.obdobi, latest.schuze, latest.datum_unl, base_path
         )
+        edition_back_href = latest_href
+        edition_back_label = _edition_back_label(latest.datum_unl)
     return {
         "archive_href": archiv_pages_href(base_path),
         "latest_href": latest_href,
+        "edition_back_href": edition_back_href,
+        "edition_back_label": edition_back_label,
         "slovnicek_href": slovnicek_pages_href(base_path),
         "pivo_href": pivo_pages_href(base_path),
     }
@@ -423,6 +462,7 @@ def render_den_html(
         datum_design=datum_design(content.datum, content.den),
         proslo_label=_proslo_board_label(content.proslo),
         zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
+        **_board_score_ctx(content.proslo, content.zamitnuto),
         svejk_svg=svejk_svg,
         inline_css=inline_css,
         css=css,
@@ -484,11 +524,14 @@ def plain_text_from_content(
     proslo_label: str,
     zamitnuto_label: str,
 ) -> str:
+    summary, hint = _board_score_summary(content.proslo, content.zamitnuto)
     lines = [
         f"POSLUŠNĚ HLÁSÍM · {datum_label}",
         "",
         f"Stav zápasu: {content.proslo} : {content.zamitnuto}",
         f"{proslo_label} / {zamitnuto_label}",
+        summary,
+        hint,
     ]
     if content.board_note_lines:
         lines.extend(["", *content.board_note_lines])
@@ -569,6 +612,7 @@ def render_email_html(
         datum_design=datum_label,
         proslo_label=_proslo_board_label(content.proslo),
         zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
+        **_board_score_ctx(content.proslo, content.zamitnuto),
         edition_url=edition_url,
         archive_url=archive_url,
         pivo_url=pivo_url,

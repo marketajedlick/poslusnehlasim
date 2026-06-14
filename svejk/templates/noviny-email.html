@@ -58,6 +58,7 @@
     </td>
   </tr>
   </table>
+{% include "board-score-summary.html" %}
   {% if content.board_note_lines %}
   <div class="board-note">{% for line in content.board_note_lines %}{{ line }}{% if not loop.last %}<br />{% endif %}{% endfor %}</div>
   {% endif %}
