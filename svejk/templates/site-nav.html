@@ -3,16 +3,16 @@
   {% if latest_href %}
   <a class="site-nav-link" href="{{ latest_href }}">Nejnovější vydání</a>
   {% endif %}
-  {% if archive_href %}
+  {% if archive_href and not site_nav_hide_archive %}
   {% if latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
   <a class="site-nav-link" href="{{ archive_href }}">Archiv vydání</a>
   {% endif %}
   {% if slovnicek_href %}
-  {% if archive_href or latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
+  {% if (archive_href and not site_nav_hide_archive) or latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
   <a class="site-nav-link" href="{{ slovnicek_href }}">Švejkův slovníček</a>
   {% endif %}
   {% if pivo_href %}
-  {% if archive_href or latest_href or slovnicek_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
+  {% if (archive_href and not site_nav_hide_archive) or latest_href or slovnicek_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
   <a class="site-nav-link" href="{{ pivo_href }}">Kup Švejkovi pivo 🍺</a>
   {% endif %}
 </nav>
