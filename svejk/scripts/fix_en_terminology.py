@@ -19,6 +19,22 @@ def read_json(path: Path) -> dict:
 
 # Přesné náhrady (déle první).
 _EXACT: list[tuple[str, str]] = [
+    ("Filling of posts in The Chamber of Deputies of Commons", "Filling parliamentary posts"),
+    ("Care will stay longer at the Ú", "Disability Care Remains with the Labour Office"),
+    ("Gasoline passed the Senate", "Fuel bill pushes past Senate veto"),
+    ("Skopek the third,\nNot Richter", "Skopeček makes three,\nRichterová out"),
+    ("Taxes for self-employed people will decrease", "Social contributions cut for the self-employed"),
+    ("The second day about mistrust", "Second day of the no-confidence debate"),
+    ("Benefits are digitized later", "Benefits digitization delayed"),
+    ("Exchange in the VZP administration", "Shake-up at VZP"),
+    ("They will add to the parents", "Parents get a raise"),
+    ("Entrepreneurs save on taxes", "Self-employed save on contributions"),
+    ("Payout before trust", "Payout before the confidence vote"),
+    ("Trust narrowly passed", "Confidence vote narrowly passed"),
+    ("Ten votes on the Turk", "Ten votes on Turk"),
+    ("Choices with QR code", "Elections with QR codes"),
+    ("online legislation will wait", "Online legislation will wait"),
+    ("Organs rearranged", "Bodies reshuffled"),
     ("The Austrian", "Rakušan"),
     ("Rabbit called", "Králíček called"),
     ("Officials remain", "Officials Stay Put"),
@@ -384,11 +400,28 @@ def apply_en_terminology(obj: object) -> object:
     return _expand_first_occurrences(_walk(obj))
 
 
+def _fix_contextual_nadpis(data: dict) -> None:
+    """Opravy nadpisu podle kontextu (verdikt, lead), které globální replace nezachytí."""
+    en = data.get("en")
+    if not isinstance(en, dict):
+        return
+    nadpis = (en.get("nadpis") or "").strip()
+    lead = (en.get("lead") or "").lower()
+    if (
+        data.get("slug") == "novela-z-o-zivotnim-a-existencnim-minimu"
+        and data.get("verdikt") == "schvaleno"
+        and "postpon" in lead
+        and nadpis == "Living Minimum Rejected"
+    ):
+        en["nadpis"] = "Living minimum changes delayed"
+
+
 def fix_file(path: Path, *, dry_run: bool = False) -> bool:
     data = read_json(path)
     en = data.get("en")
     if not isinstance(en, dict) or not en:
         return False
+    _fix_contextual_nadpis(data)
     new_en = apply_en_terminology(en)
     if new_en == en:
         return False
