@@ -850,7 +850,7 @@ body.pivo-page{
 .pivo-head{
   text-align:center;
 }
-.pivo-head .eyebrow{ margin-top:0; margin-bottom:5px; }
+.pivo-head .eyebrow{ margin-top:-15px; margin-bottom:5px; }
 .pivo-body{ padding-top:4px; }
 .pivo-title{
   font-family:'Anton',sans-serif; text-transform:uppercase;
@@ -1005,6 +1005,7 @@ body.pivo-page{
   margin:0;
   font-family:'Old Standard TT',serif; font-style:italic;
   font-size:16px; line-height:1.5; color:var(--paper);
+  text-align:center;
 }
 .pivo-quote-by{
   display:block;
@@ -1013,6 +1014,7 @@ body.pivo-page{
   font-size:13px;
   letter-spacing:.04em;
   color:var(--paper-3);
+  text-align:center;
 }
 .pivo-fine{
   margin-top:20px !important;
