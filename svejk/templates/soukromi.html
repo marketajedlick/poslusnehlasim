@@ -34,29 +34,27 @@
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Cookies</h2>
-      <p>Google Analytics používáme jen s tvým souhlasem. Bez něj se analytika nespustí a web funguje dál stejně. Cookies pro odběr novinek nepotřebujeme; ten běží přes e-mail.</p>
-      <p><button type="button" class="cookie-settings-btn" onclick="window.phOpenCookieSettings && window.phOpenCookieSettings()">Změnit volbu cookies</button></p>
+      <p>Google Analytics používáme jen s tvým souhlasem. <button type="button" class="cookie-settings-btn" onclick="window.phOpenCookieSettings && window.phOpenCookieSettings()">Změnit volbu cookies</button>.</p>
     </section>
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Odběr a uchování dat</h2>
-      <p>V každém e-mailu najdeš odkaz pro odhlášení. Po odhlášení e-mail z rozesílky odstraníme. Údaje uchováváme jen po dobu, kdy odběr dává smysl.</p>
+      <p>V každém e-mailu najdeš odkaz pro odhlášení. Po odhlášení e-mail z rozesílky odstraníme.</p>
     </section>
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Tvá práva</h2>
-      <p>Kdykoliv můžeš požádat o informaci, jaké údaje z odběru máme, nebo o jejich výmaz. U analytiky můžeš kdykoliv změnit volbu cookies na této stránce, případně cookies smazat v prohlížeči. Google nabízí také <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">doplněk pro vypnutí Analytics</a>.</p>
+      <p>Kdykoliv můžeš požádat o informaci, jaké údaje z odběru máme, nebo o jejich výmaz. U analytiky můžeš kdykoliv změnit volbu cookies na této stránce, případně cookies smazat v prohlížeči.</p>
     </section>
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Dobrovolné příspěvky</h2>
-      <p>Platby za „pivo“, rum nebo Štamgasta zpracovává <a href="https://stripe.com/privacy" rel="noopener">Stripe</a>. Web platební údaje neukládá. Údaje o kartě zadáváš přímo na stránkách Stripe.</p>
+      <p>Platby za „pivo“, „rum“ nebo „Štamgasta“ zpracovává <a href="https://stripe.com/privacy" rel="noopener">Stripe</a>. Web platební údaje neukládá. Údaje o kartě zadáváš přímo na stránkách Stripe.</p>
     </section>
 
     <section class="soukromi-section">
-      <h2 class="soukromi-heading">Kontakt a správce údajů</h2>
-      <p>Dotazy k odběru nebo osobním údajům posílej na {% if contact_email %}<a href="mailto:{{ contact_email }}">{{ contact_email }}</a>{% else %}<a href="mailto:svejk@poslusnehlasim.cz">svejk@poslusnehlasim.cz</a>{% endif %}. U plateb a technických potíží můžeš využít <a href="{{ support_href }}">zákaznickou podporu</a> nebo odpovědět na kterýkoliv e-mail od nás.</p>
-      <p class="soukromi-operator">Správcem údajů je Markéta Jedličková, IČO 74980700.</p>
+      <h2 class="soukromi-heading">Kontakt</h2>
+      <p>Dotazy k odběru nebo osobním údajům posílej na {% if contact_email %}<a href="mailto:{{ contact_email }}">{{ contact_email }}</a>{% else %}<a href="mailto:svejk@poslusnehlasim.cz">svejk@poslusnehlasim.cz</a>{% endif %}.</p>
     </section>
   </div>
 
