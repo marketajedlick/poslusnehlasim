@@ -1140,13 +1140,15 @@ body.vyznamenani-page{
   color:var(--ink);
 }
 .vyznamenani-explain p:last-child{ margin-bottom:0; }
-.vyznamenani-table-wrap{
+.vyznamenani-table-wrap,
+.table-wrapper{
   overflow-x:auto;
   margin-bottom:24px;
   border:1px solid rgba(33,28,20,.12);
   border-radius:4px;
   background:var(--paper);
   -webkit-overflow-scrolling:touch;
+  max-width:100%;
 }
 .vyznamenani-table{
   width:100%;
@@ -1319,9 +1321,16 @@ body.vyznamenani-page{
 }
 @media (max-width:760px){
   .vyznamenani-wrap{ padding:28px 16px 36px; }
-  .vyznamenani-table{ min-width:0; }
-  .vyznamenani-table thead{ display:none; }
-  .vyznamenani-table tbody tr{
+  .table-wrapper--wide{
+    width:100%;
+    max-width:100%;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+  .table-wrapper--wide .vyznamenani-table{ min-width:880px; }
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table{ min-width:0; }
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table thead{ display:none; }
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody tr{
     display:block;
     margin:0 0 14px;
     padding:14px 14px 6px;
@@ -1329,10 +1338,10 @@ body.vyznamenani-page{
     border-radius:4px;
     background:var(--paper);
   }
-  .vyznamenani-table tbody tr:nth-child(even){ background:var(--paper); }
-  .vyznamenani-table tbody tr:hover{ background:var(--paper); }
-  .vyznamenani-table tbody th,
-  .vyznamenani-table tbody td{
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody tr:nth-child(even){ background:var(--paper); }
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody tr:hover{ background:var(--paper); }
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody th,
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody td{
     display:flex;
     justify-content:space-between;
     align-items:flex-start;
@@ -1344,13 +1353,13 @@ body.vyznamenani-page{
     min-width:0;
     max-width:none;
   }
-  .vyznamenani-table tbody th{
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody th{
     font-size:16px;
     border-bottom:1px solid rgba(33,28,20,.14);
     padding-bottom:10px;
     margin-bottom:4px;
   }
-  .vyznamenani-table tbody td::before{
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody td::before{
     content:attr(data-label);
     flex:0 0 42%;
     font-family:'Oswald',sans-serif;
@@ -1360,16 +1369,16 @@ body.vyznamenani-page{
     color:var(--ink-soft);
     padding-top:2px;
   }
-  .vyznamenani-table tbody th::before{ display:none; }
-  .vyznamenani-skore{ justify-content:flex-end; }
-  .vyznamenani-chips{ justify-content:flex-end; max-width:56%; }
-  .vyznamenani-page--zvoleni .vyznamenani-table tbody tr:not(.vyznamenani-varovani-row){
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody th::before{ display:none; }
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-skore{ justify-content:flex-end; }
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-chips{ justify-content:flex-end; max-width:56%; }
+  .vyznamenani-page--zvoleni .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody tr:not(.vyznamenani-varovani-row){
     margin-bottom:0;
     padding-bottom:0;
     border-bottom:none;
     border-radius:4px 4px 0 0;
   }
-  .vyznamenani-varovani-row{
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-varovani-row{
     display:block;
     margin:0 0 14px;
     padding:0 14px 12px;
@@ -1378,13 +1387,13 @@ body.vyznamenani-page{
     border-radius:0 0 4px 4px;
     background:var(--paper);
   }
-  .vyznamenani-varovani-row td{
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-varovani-row td{
     display:block;
     padding:0;
     border:none;
   }
-  .vyznamenani-varovani-row td::before{ display:none; }
-  .vyznamenani-varovani{ padding:8px 0 0; }
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-varovani-row td::before{ display:none; }
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-varovani{ padding:8px 0 0; }
 }
 a.mean-link{
   color:inherit;
