@@ -16,6 +16,7 @@ from svejk.build.io import read_json
 from svejk.glossary import slovnicek_anchor, slovnicek_for_locale
 from svejk.build.publish import list_site_editions
 from svejk.locale import (
+    alternate_locale,
     footer_closings,
     footer_stats_line,
     hreflang_links,
@@ -298,6 +299,7 @@ def _locale_ctx(
         "lang": loc,
         "t": t,
         "og_locale": og_locale_tag(loc),
+        "og_locale_alternate": og_locale_tag(alternate_locale(loc)),
         "hreflang_links": hreflang_links(page_path, site_url, base_path),
         "lang_switch_href": locale_switch_href(page_path, loc, base_path),
         "lang_switch_label": t["nav"]["lang_switch"],

@@ -39,7 +39,7 @@
           </form>
           <p class="subscribe-privacy">
             {{ t.subscribe.privacy }}
-            <a href="{{ newsletter.privacy_url }}" rel="noopener">{{ t.subscribe.privacy_link }}</a>.
+            <a href="{{ cookie_privacy_url | default(newsletter.privacy_url) | default('/soukromi/') }}" rel="noopener">{{ t.subscribe.privacy_link }}</a>.
           </p>
         </section>
         {% endif %}
