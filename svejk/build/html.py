@@ -369,12 +369,31 @@ def render_den_html(
         den=content.den,
         datum_design=datum_label,
     )
+    from svejk.build.og_image import (
+        OG_HEIGHT,
+        OG_WIDTH,
+        edition_og_headline,
+        edition_og_title,
+        og_image_abs_url,
+    )
+
+    og_share_title = edition_og_title(content.datum, content.den)
+    og_headline = edition_og_headline(
+        dnesni_ucet=content.dnesni_ucet,
+        first_item_nadpis=content.items[0].nadpis if content.items else "",
+        datum_unl=content.datum,
+        den=content.den,
+    )
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
-        title=page_title,
+        title=og_share_title,
         description=meta_description,
         og_type="article",
+        image_url=og_image_abs_url(cfg.site_url, base_path, content.datum),
+        image_width=OG_WIDTH,
+        image_height=OG_HEIGHT,
+        image_alt=og_headline,
     )
     schema_headline = _article_headline(
         dnesni_ucet=content.dnesni_ucet,
@@ -503,14 +522,29 @@ def _og_context(
     title: str,
     description: str,
     og_type: str = "website",
+    image_url: str | None = None,
+    image_width: int | None = None,
+    image_height: int | None = None,
+    image_alt: str | None = None,
 ) -> dict[str, str | int]:
-    image_name, image_w, image_h = _social_image_asset()
+    if image_url:
+        og_image_url = image_url
+        og_image_width = image_width or _OG_SHARE_SIZE[0]
+        og_image_height = image_height or _OG_SHARE_SIZE[1]
+        og_image_alt = image_alt or "Poslušně hlásím"
+    else:
+        image_name, image_w, image_h = _social_image_asset()
+        og_image_url = _static_asset_url(site_url, base_path, image_name)
+        og_image_width = image_w
+        og_image_height = image_h
+        og_image_alt = image_alt or "Poslušně hlásím, Švejk"
     return {
         "og_title": title,
         "og_description": description,
-        "og_image_url": _static_asset_url(site_url, base_path, image_name),
-        "og_image_width": image_w,
-        "og_image_height": image_h,
+        "og_image_url": og_image_url,
+        "og_image_width": og_image_width,
+        "og_image_height": og_image_height,
+        "og_image_alt": og_image_alt,
         "og_type": og_type,
     }
 
