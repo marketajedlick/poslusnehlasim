@@ -14,8 +14,19 @@
   <header class="slovnicek-head">
     <h1 class="slovnicek-title">Švejkův slovníček</h1>
     <p class="slovnicek-gloss">Krátké vysvětlení pojmů ze sněmovny pro lidi, kteří politiku běžně nesledují.</p>
-    {% include "edition-back-nav.html" %}
-    {% include "site-nav.html" %}
+    <nav class="slovnicek-nav" aria-label="Navigace">
+      {% if edition_back_href %}
+      <a class="edition-back-link" href="{{ edition_back_href }}">← Zpět na nejnovější vydání</a>
+      {% endif %}
+      {% if archive_href %}
+      {% if edition_back_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
+      <a class="site-nav-link" href="{{ archive_href }}">Archiv vydání</a>
+      {% endif %}
+      {% if pivo_href %}
+      {% if archive_href or edition_back_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
+      <a class="site-nav-link" href="{{ pivo_href }}">Kup Švejkovi pivo 🍺</a>
+      {% endif %}
+    </nav>
   </header>
 
   <dl class="slovnicek-list slovnicek-list--page">
