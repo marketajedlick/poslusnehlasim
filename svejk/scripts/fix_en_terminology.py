@@ -69,15 +69,15 @@ _EXACT: list[tuple[str, str]] = [
     ),
     (
         "that the House of Representatives made sure by voting twenty-one times on the building bill that it would not go home yet",
-        "that The Chamber of Deputies voted twenty-one times on the building bill and still would not let anyone go home",
+        "that The Chamber of Deputies voted twenty-one times on the Building Permits Act and still would not let anyone go home",
     ),
     (
         "that the House of Representatives occupied the CT Council and the vice-chairman's seat on Friday, returned the proposal on spraying to the second round and simply eliminated the rest of the program.",
-        "that The Chamber of Deputies filled the CT Council and a Deputy Speaker's seat on Friday, sent the spraying bill back to second reading, and simply dropped the rest of the programme.",
+        "that The Chamber of Deputies filled the CT Council and a Deputy Speaker's seat on Friday, sent the Plant Protection Act back to second reading, and simply dropped the rest of the programme.",
     ),
     (
         "that after ten years the records of sales are coming back: the first round has passed, Schillerová swears that she is not obsessed with EET, and the construction law again kept the deputies in the hall until night.",
-        "that after ten years sales records are coming back: first reading passed, Schillerová swears she is not EET-obsessed, and the Construction Bill again kept deputies in The Chamber of Deputies until night.",
+        "that after ten years sales records are coming back: first reading passed, Schillerová swears she is not EET-obsessed, and the Building Permits Act again kept deputies in The Chamber of Deputies until night.",
     ),
     ("Metals on a conveyor belt", "State Honours on a conveyor belt"),
     (
@@ -103,8 +103,45 @@ _EXACT: list[tuple[str, str]] = [
     ),
     (
         "that The Chamber of Deputies filled the CT Council and a Deputy Speaker's seat on Friday, sent the spraying bill back to second reading, and simply dropped the rest of the programme.",
-        "that The Chamber of Deputies filled the Czech Television Council and a Deputy Speaker's seat on Friday, sent the spraying bill back to second reading, and simply dropped the rest of the programme.",
+        "that The Chamber of Deputies filled the Czech Television Council and a Deputy Speaker's seat on Friday, sent the Plant Protection Act back to second reading, and simply dropped the rest of the programme.",
     ),
+    ("The sprays return for round two", "Plant Protection Act back for round two"),
+    ("Sprays have new rules", "Crop spraying gets new rules"),
+    (
+        "The rules for spraying did not reach the goal: the deputies sent them back to second reading on Friday, 87 votes in favor, 46 against.",
+        "The Plant Protection Act did not reach the goal: the deputies sent it back to second reading on Friday, 87 votes in favor, 46 against.",
+    ),
+    (
+        "returned the proposal on spraying to second reading",
+        "sent the Plant Protection Act back to second reading",
+    ),
+    (
+        "returned the proposal about spraying to second reading",
+        "sent the Plant Protection Act back to second reading",
+    ),
+    (
+        "They returned the proposal about spraying to second reading.",
+        "They sent the Plant Protection Act back to second reading.",
+    ),
+    (
+        "* proposal on spraying returned to second reading 87:46",
+        "* Plant Protection Act returned to second reading 87:46",
+    ),
+    ("* spraying rules postponed until Friday 90:15", "* Plant Protection Act postponed until Friday 90:15"),
+    (
+        "The Chamber of Deputies sent the spraying rules back for a runoff on Friday; Monika Oborná's proposal for a repeat was passed 87:46.",
+        "The Chamber of Deputies sent the Plant Protection Act back for a runoff on Friday; Monika Oborná's proposal for a repeat was passed 87:46.",
+    ),
+    (
+        "The amendment to the law on plant medicine care passed at first reading, 146 votes in favor, none against. Farmers will better register spraying according to the EU.",
+        "The Plant Protection Act amendment passed at first reading, 146 votes in favor, none against. Farmers will better register crop spraying according to the EU.",
+    ),
+    (
+        "The Digital Economy Survived the Dumping Attempt\nspraying and plant health care passed 146-0.",
+        "The Digital Economy Survived the Dumping Attempt\ncrop spraying and plant protection passed 146-0.",
+    ),
+    ("* the amendment to the spraying law passed 146:0", "* the Plant Protection Act passed 146:0"),
+    ("The Construction Bill continues", "The Building Permits Act continues"),
 ]
 
 # Regex náhrady (pořadí záleží).
@@ -212,12 +249,30 @@ _REGEX: list[tuple[str, str]] = [
     (r"\bMistrust fell\b", "No confidence failed"),
     (r"\bdistrust\b", "no confidence"),
     (r"\bDistrust\b", "No confidence"),
-    # Stavební zákon — jednotně Construction Bill.
-    (r"\bthe construction law\b", "the Construction Bill"),
-    (r"\bconstruction law\b", "Construction Bill"),
-    (r"\bthe building bill\b", "the Construction Bill"),
-    (r"\bbuilding bill\b", "Construction Bill"),
-    (r"\bbuilding law\b", "Construction Bill"),
+    # Rostlinolékařská péče — zákon jako Plant Protection Act, postřiky jako crop spraying.
+    (r"\bthe amendment to the spraying law\b", "the Plant Protection Act amendment"),
+    (r"\bamendment to the spraying law\b", "the Plant Protection Act amendment"),
+    (r"\bspraying bill\b", "Plant Protection Act"),
+    (r"\bproposal about spraying\b", "Plant Protection Act"),
+    (r"\bproposal on spraying\b", "Plant Protection Act"),
+    (r"\bthe spraying rules\b", "the Plant Protection Act"),
+    (r"(?<!crop )\bspraying rules\b", "Plant Protection Act"),
+    (r"\bspraying law\b", "Plant Protection Act"),
+    (r"\bclear rules for spraying\b", "clear crop spraying rules"),
+    (r"\bnew rules for spraying\b", "new crop spraying rules"),
+    (r"\brules for spraying\b", "crop spraying rules"),
+    (r"\bregister spraying\b", "register crop spraying"),
+    (r"\bspraying and plant health care\b", "crop spraying and plant protection"),
+    (r"\bplant medicine care\b", "plant protection"),
+    (r"\bherbal care\b", "plant protection"),
+    # Stavební zákon — jednotně Building Permits Act.
+    (r"\bthe Construction Bill\b", "the Building Permits Act"),
+    (r"\bConstruction Bill\b", "Building Permits Act"),
+    (r"\bthe construction law\b", "the Building Permits Act"),
+    (r"\bconstruction law\b", "Building Permits Act"),
+    (r"\bthe building bill\b", "the Building Permits Act"),
+    (r"\bbuilding bill\b", "Building Permits Act"),
+    (r"\bbuilding law\b", "Building Permits Act"),
     # Rada ČT.
     (r"\bCT Council\b", "Czech Television Council"),
     (r"\bCT Board\b", "Czech Television Council"),

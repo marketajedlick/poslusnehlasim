@@ -1,7 +1,7 @@
 {
   "obdobi": 2025,
-  "schuze_celkem": 23,
-  "ok": 23,
+  "schuze_celkem": 21,
+  "ok": 21,
   "skipped": 0,
   "failed": 0,
   "vysledky": [
@@ -109,17 +109,7 @@
       "schuze": 21,
       "ok": true,
       "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s21"
-    },
-    {
-      "schuze": 22,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s22"
-    },
-    {
-      "schuze": 23,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s23"
     }
   ],
-  "built_at": "2026-06-14T15:06:29.671483+00:00"
+  "built_at": "2026-06-14T19:25:21.082382+00:00"
 }
