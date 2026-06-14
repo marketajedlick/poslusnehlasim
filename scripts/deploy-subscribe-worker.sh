@@ -51,15 +51,41 @@ cd "$WORKERS_DIR"
 
 npx wrangler@4 pages project create "$PROJECT" --production-branch=main 2>/dev/null || true
 
-KV_ID=$(npx wrangler@4 kv namespace list 2>/dev/null | node -e "
-  const title = process.argv[1];
-  const list = JSON.parse(require('fs').readFileSync(0, 'utf8') || '[]');
-  const ns = list.find((n) => n.title === title);
-  process.stdout.write(ns?.id || '');
-" "$KV_TITLE")
+resolve_kv_id() {
+  npx wrangler@4 kv namespace list 2>/dev/null | node -e "
+    const title = process.argv[1];
+    const raw = require('fs').readFileSync(0, 'utf8');
+    try {
+      const list = JSON.parse(raw || '[]');
+      const ns = list.find((n) => n.title === title);
+      if (ns?.id) process.stdout.write(ns.id);
+    } catch {}
+  " "$KV_TITLE"
+}
+
+parse_kv_id_from_text() {
+  node -e "
+    const t = require('fs').readFileSync(0, 'utf8');
+    const m = t.match(/id = \"([^\"]+)\"/);
+    process.stdout.write(m ? m[1] : '');
+  "
+}
+
+KV_ID="$(resolve_kv_id)"
 
 if [[ -z "$KV_ID" ]]; then
-  KV_ID=$(npx wrangler@4 kv namespace create "$KV_TITLE" --json | node -e "process.stdout.write(JSON.parse(require('fs').readFileSync(0,'utf8')).id)")
+  CREATE_OUT=$(npx wrangler@4 kv namespace create "$KV_TITLE" 2>&1) || true
+  echo "$CREATE_OUT"
+  KV_ID=$(printf '%s' "$CREATE_OUT" | parse_kv_id_from_text)
+fi
+
+if [[ -z "$KV_ID" ]]; then
+  KV_ID="$(resolve_kv_id)"
+fi
+
+if [[ -z "$KV_ID" ]]; then
+  echo "::error::Nepodařilo se získat KV namespace ID pro rate limit."
+  exit 1
 fi
 
 sed -i "s/$PLACEHOLDER/$KV_ID/g" wrangler.toml
