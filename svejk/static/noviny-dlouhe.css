@@ -414,6 +414,7 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
 .stamp.zvoleno{ color:var(--terra); border-color:var(--terra); box-shadow:inset 0 0 0 1.2px var(--terra); }
 .stamp.zamiteno{ color:var(--ink-soft); border-color:var(--ink-soft); box-shadow:inset 0 0 0 1.2px var(--ink-soft); }
 .stamp.odlozeno{ color:var(--blue); border-color:var(--blue); box-shadow:inset 0 0 0 1.2px var(--blue); }
+.stamp.debata{ color:var(--blue); border-color:var(--blue); box-shadow:inset 0 0 0 1.2px var(--blue); }
 
 /* ---------- verdict (mobile) ---------- */
 .verdict{

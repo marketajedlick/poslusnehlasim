@@ -2,7 +2,7 @@
   "slug": "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-",
   "nazev": "Vl.n.z., kt. se mění některé z. v oblasti veřejných rozpočtů",
   "datum": "15.05.2026",
-  "verdikt": "schvaleno",
+  "verdikt": "zamiteno",
   "predmet_lidsky": ", kt. se mění některé z. v oblasti veřejných rozpočtů",
   "koho": [
     "Koho se to týká? Každého, kdo platí daně. Jde o to, jak moc může stát utrácet nad rámec a jaké výjimky z limitů výdajů platí."
@@ -36,7 +36,7 @@
   "priorita": 3,
   "nadpis": "Rozpočtové brzdy padly",
   "pocet_hlasovani": 36,
-  "proslo": true,
+  "proslo": false,
   "signaly": {
     "proti_max": 98,
     "pritomno_min": 152,
@@ -49,10 +49,10 @@
   "pointa": "Jakob obhajoval čtyři opoziční pozměňovací návrhy pro rezervu a silnější roli Národní rozpočtové rady. Vlček říkal, že Schillerová dříve slibovala, že limity nerozvolní, ale ve druhém kole přidala vlastní výjimky.",
   "mean": "Zákon měl upravit limity výdajů státu podle evropských pravidel. Sněmovna ho v závěrečném hlasování neschválila, rozpočtová pravidla zůstávají v dosavadní podobě.",
   "en": {
-    "nadpis": "The budgetary brakes fell",
-    "lead": "On Friday morning, the House of Representatives rejected the government's amendment to the budget laws, ninety MPs against sixty-eight. The coalition wanted to loosen the fiscal limits, the opposition talked about a deficit of over four hundred billion.",
-    "pointa": "Jakob defended four opposition amendments for the reserve and a stronger role for the National Budget Council. Vlcek said Schiller previously promised not to loosen the limits, but added her own exceptions in the second round.",
-    "mean": "The law was supposed to adjust the state spending limits according to European rules. The Chamber did not approve it in the final vote, the budget rules remain in their current form.",
+    "nadpis": "Fiscal rules vote failed",
+    "lead": "On Friday morning, The Chamber of Deputies rejected the government's amendment to the budget laws, ninety MPs against sixty-eight. The coalition wanted to loosen the fiscal limits, the opposition talked about a deficit of over CZK 400 billion.",
+    "pointa": "Jakob defended four opposition amendments for the reserve and a stronger role for the National Budget Council. Vlcek said Schiller previously promised not to loosen the limits, but added her own exceptions at second reading.",
+    "mean": "The law was supposed to adjust the state spending limits according to European rules. The Chamber of Deputies did not approve it at third reading, the budget rules remain in their current form.",
     "predmet_lidsky": ", who some of them are changing in the area of ​​public budgets",
     "koho": [
       "Who does it concern? Anyone who pays taxes. It's about how much the state can overspend and what exceptions to spending limits apply."
@@ -63,7 +63,7 @@
         "citace": "Debata probíhala na plénu v prvním i ve druhém čtení celkem 5,5 hodiny, na třech zasedáních rozpočtového výboru 6 hodin."
       },
       {
-        "text": "Jakob warned of a deficit of over four hundred billion and Schiller's exceptions.",
+        "text": "Jakob warned of a deficit of over CZK 400 billion and Schiller's exceptions.",
         "citace": "Pokud budou všechny tyto výjimky využity naplno, může se schodek státního rozpočtu příští rok dostat výrazně nad hranici 400 miliard korun."
       },
       {

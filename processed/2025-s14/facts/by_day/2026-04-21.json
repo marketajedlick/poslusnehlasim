@@ -8,8 +8,8 @@
     "pocet_hlas": 2,
     "minuty": 425,
     "end_cas": "21:13",
-    "proslo": 2,
-    "zamitnuto": 0,
+    "proslo": 0,
+    "zamitnuto": 1,
     "dlouha_debata": true
   },
   "dnesni_ucet": "Dopoledne harmonogram závěrečného účtu, večer trestní zákoník.\nZávěrečné hlasování o trestním zákoníku padlo, sedmi desítkami hlasů.",
@@ -21,12 +21,12 @@
     "* 37 hlasování o pořadu před zákony"
   ],
   "en": {
-    "dnesni_ucet": "Final account schedule in the morning, Criminal Code in the evening.\nThe final vote on the criminal code was lost by seven dozen votes.",
-    "zaver": "that on Tuesday evening the House did not decide on the final vote on the criminal code, although the second round had passed smoothly before.",
+    "dnesni_ucet": "Final account schedule in the morning, Criminal Code in the evening.\nThe third reading on the criminal code was lost by seven dozen votes.",
+    "zaver": "that on Tuesday evening The Chamber of Deputies did not decide on the third reading on the criminal code, although the second reading had passed smoothly before.",
     "vysledek": [
       "* schedule of state final account approved 142:0",
-      "* Criminal Code in the second round 154:0",
-      "* final vote on the Criminal Code rejected, only 67 votes in favor",
+      "* Criminal Code at second reading 154:0",
+      "* third reading on the Criminal Code rejected, only 67 votes in favor",
       "* 37 votes on the program before laws"
     ],
     "den": "Tuesday"

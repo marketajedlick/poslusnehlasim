@@ -8,8 +8,8 @@
     "pocet_hlas": 1,
     "minuty": 563,
     "end_cas": "18:29",
-    "proslo": 1,
-    "zamitnuto": 0,
+    "proslo": 0,
+    "zamitnuto": 1,
     "dlouha_debata": true
   },
   "dnesni_ucet": "Dopoledne boj o pořad schůze.\nStavební zákon v prvním kole padl.",
@@ -21,12 +21,12 @@
     "* dopoledne dvacet hlasování o pořadu schůze"
   ],
   "en": {
-    "dnesni_ucet": "Morning fight over meeting agenda.\nThe construction law was defeated in the first round.",
-    "zaver": "that although the deputies had been talking about the construction law since Wednesday, it still fell in the first round on Friday.",
+    "dnesni_ucet": "Morning fight over meeting agenda.\nThe construction law was defeated at first reading.",
+    "zaver": "that although the deputies had been talking about the construction law since Wednesday, it still fell at first reading on Friday.",
     "vysledek": [
       "* they approved three things",
       "* they rejected six proposals",
-      "* the construction law was passed in the first round",
+      "* the construction law failed at first reading",
       "* twenty votes in the morning on the agenda of the meeting"
     ],
     "den": "Friday"

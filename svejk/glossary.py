@@ -1297,6 +1297,42 @@ SLOVNIČEK: tuple[tuple[str, str], ...] = (
     ("Co je Rada ČT?", "Skupina, která dohlíží na Českou televizi a vybírá její vedení."),
 )
 
+# Anglické tooltipy pro /en/ stránky (delší fráze nahoře).
+GLOSSARY_EN: tuple[tuple[str, str], ...] = (
+    (
+        "third reading",
+        "Final vote on a bill in The Chamber of Deputies. Then it may go to the president for signature.",
+    ),
+    (
+        "second reading",
+        "MPs propose changes and vote on specific parts of the bill.",
+    ),
+    (
+        "first reading",
+        "The Chamber decides whether to keep working on a bill. Nothing is approved yet.",
+    ),
+    (
+        "super benefit",
+        "Plan to merge several social benefits into one system with one application. "
+        "Not a new payment on top, just combining existing ones.",
+    ),
+    (
+        "deficit",
+        "When the state spends more than it collects. A bit like a pub running on credit.",
+    ),
+    (
+        "Chamber of Deputies",
+        "The lower house of the Czech Parliament. Where laws are debated and voted on.",
+    ),
+)
+
+
+def glossary_for_locale(locale: str) -> tuple[tuple[str, str], ...]:
+    from svejk.locale import normalize_locale
+
+    return GLOSSARY_EN if normalize_locale(locale) == "en" else GLOSSARY
+
+
 # Švejkův překladač z poslanečtiny: pro rubriky a sociální sítě.
 POSLANECINY_PREKLAD: tuple[tuple[str, str], ...] = (
     ("První čtení", "Ještě se nic nerozhodlo"),

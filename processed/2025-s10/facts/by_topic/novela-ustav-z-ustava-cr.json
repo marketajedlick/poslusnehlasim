@@ -28,7 +28,7 @@
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "NKÚ by kontroloval i média",
+  "nadpis": "NKÚ dostane dohled nad financemi veřejných médií",
   "pocet_hlasovani": 4,
   "proslo": true,
   "signaly": {
@@ -43,10 +43,10 @@
   "pointa": "Urbanová ze STAN řekla, že návrh teď nepodpoří. Volpe z Motoristů naopak mluvil o veřejné kontrole peněz v médiích.",
   "mean": "Ústava není papírová úprava. Debata je o tom, jestli má kontrolor zasahovat do veřejnoprávních médií, nebo zůstane mimo.",
   "en": {
-    "nadpis": "The SAO would also control the media",
-    "lead": "The Senate sent to the Chamber of Deputies an amendment to the constitution that expands the competences of the SAO vis-à-vis Czech Television and Radio. In the first round, it passed with 154 votes, none against.",
-    "pointa": "Urbanová from STAN said that she will not support the proposal now. Volpe from Motorists, on the other hand, talked about public control of money in the media.",
-    "mean": "The Constitution is not a piece of paper. The debate is about whether the controller should intervene in the public media or stay out.",
+    "nadpis": "Audit office to oversee public media finances",
+    "lead": "The Senate sent to The Chamber of Deputies a constitutional amendment expanding the Supreme Audit Office's oversight of Czech Television and Czech Radio finances. At first reading it passed with 154 votes, none against.",
+    "pointa": "Urbanová from STAN said that she will not support the proposal now. Volpe from Motorists, on the other hand, talked about checking how public media spend public money.",
+    "mean": "This is not about editorial control. The debate is whether the audit office should check the books of public media, not their programmes.",
     "predmet_lidsky": "constitutional amendment. z. - Constitution of the Czech Republic",
     "koho": [
       "Who does it concern? More of an institution than a citizen on the street. It's about who controls the public media's money."

@@ -62,11 +62,11 @@ _KICK_RULES: tuple[tuple[tuple[str, ...], str], ...] = (
 )
 
 _VERDIKT_STAMP_EN = {
-    "schvaleno": "Passed",
-    "zvoleno": "Elected",
-    "zamiteno": "Rejected",
-    "odlozeno": "Deferred",
-    "debata": "Debate",
+    "schvaleno": "PASSED",
+    "zvoleno": "PASSED",
+    "zamiteno": "FAILED",
+    "odlozeno": "FAILED",
+    "debata": "DEBATE",
 }
 
 _DEN_CS_TO_EN = {
@@ -119,7 +119,7 @@ _VERDIKT_STAMP = {
 def _verdikt_stamp(verdikt: str, locale: str = "cs") -> str:
     loc = normalize_locale(locale)
     if loc == "en":
-        return _VERDIKT_STAMP_EN.get(verdikt, "Passed")
+        return _VERDIKT_STAMP_EN.get(verdikt, "PASSED")
     return _VERDIKT_STAMP.get(verdikt, "Schváleno")
 
 _MESICE_GEN = (
@@ -235,7 +235,7 @@ def _kick_z_fact(fact: dict[str, Any], locale: str = "cs") -> str:
         first = re.split(r"[\s\-]", nadpis, maxsplit=1)[0]
         if len(first) >= 4:
             return first
-    return "Chamber" if normalize_locale(locale) == "en" else "Sněmovna"
+    return "Chamber of Deputies" if normalize_locale(locale) == "en" else "Sněmovna"
 
 
 def _lead_kratky(fact: dict[str, Any], topic: dict[str, Any] | None) -> str:
@@ -378,18 +378,18 @@ def zaver_z_obsahu(content: DenContent, day: dict[str, Any]) -> str:
 
 
 def split_zaver(text: str, *, locale: str = "cs") -> tuple[str, str]:
-    loc = normalize_locale(locale)
-    if loc == "en":
-        m = re.match(r"^(I hereby report,?)\s*(.*)$", text, re.I)
-        if m:
-            return m.group(1), m.group(2).strip()
-    m = re.match(r"^(Poslušně hlásím,?)\s*(.*)$", text, re.I)
+    m = re.match(
+        r"^(Poslušně hlásím,?|I (?:hereby|humbly) report,?)\s*(.*)$",
+        text,
+        re.I,
+    )
     if not m:
         return "", text
     body = m.group(2).strip()
     if body and not body[0].isupper():
         body = body[0].lower() + body[1:]
-    return m.group(1), body
+    key = "Poslušně hlásím," if normalize_locale(locale) == "en" else m.group(1)
+    return key, body
 
 
 def datum_design(datum_unl: str, den: str) -> str:
@@ -614,8 +614,8 @@ def build_den_content(
                 body = body[5:].strip()
             zaver = (
                 override
-                if override.lower().startswith("i hereby report")
-                else f"I hereby report that {lcfirst_preserve_proper(body)}"
+                if override.lower().startswith("poslušně")
+                else f"Poslušně hlásím, že {lcfirst_preserve_proper(body)}"
             )
         elif override.lower().startswith("poslušně"):
             zaver = override

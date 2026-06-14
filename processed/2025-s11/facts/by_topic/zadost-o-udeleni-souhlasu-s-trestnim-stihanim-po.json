@@ -41,7 +41,7 @@
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Babiše nevydali",
+  "nadpis": "Sněmovna Babiše nevydala",
   "pocet_hlasovani": 3,
   "proslo": true,
   "signaly": {
@@ -56,10 +56,10 @@
   "pointa": "Hřib mu vyčítal fňukání a vzkazy leteckým společnostem z pultíku. Kupka připomněl, že o vině rozhodují soudy, ne výsledky voleb.",
   "mean": "Poslanec má imunitu a Sněmovna může stíhání zastavit. Bez jejího souhlasu nemůže soud v kauze dotačního podvodu kolem farmy Čapí hnízdo pokračovat.",
   "en": {
-    "nadpis": "They did not release Babis",
-    "lead": "The House of Representatives refused to consent to the prosecution in the case of the Čapí hnízdo, 104 votes in favor, 81 against. Instead of a defense, Babiš spoke for an hour about repatriation flights from the Middle East.",
+    "nadpis": "Babiš kept his immunity",
+    "lead": "The Chamber of Deputies refused to consent to the prosecution in the case of the Čapí hnízdo, 104 votes in favor, 81 against. Instead of a defense, Babiš spoke for an hour about repatriation flights from the Middle East.",
     "pointa": "Hřib reproached him for whining and texting airlines from the counter. Kupka reminded that guilt is decided by the courts, not the election results.",
-    "mean": "The MP has immunity and the Chamber can stop the prosecution. Without her consent, the court cannot proceed with the subsidy fraud case surrounding the Čapí hnízdo farm.",
+    "mean": "The MP has immunity and The Chamber of Deputies can stop the prosecution. Without her consent, the court cannot proceed with the subsidy fraud case surrounding the Čapí hnízdo farm.",
     "predmet_lidsky": "request for consent to the criminal prosecution of MP Andrej Babiš",
     "koho": [
       "Who does it concern? Rather politics and justice. It is about whether the court can continue the subsidy fraud case surrounding the Čapí hnízdo farm."
@@ -70,7 +70,7 @@
         "citace": "Žádost o udělení souhlasu s trestním stíháním poslance Andreje Babiše ve věci sp. zn. 56 T 7/2022."
       },
       {
-        "text": "The Mandates Committee recommended dissent, the House adopted the resolution.",
+        "text": "The Mandates Committee recommended dissent, The Chamber of Deputies adopted the resolution.",
         "citace": "Mandátový a imunitní výbor navrhuje, aby Poslanecká sněmovna vyslovila nesouhlas k žádosti o udělení souhlasu k trestnímu stíhání obžalovaného poslance Andreje Babiše."
       },
       {

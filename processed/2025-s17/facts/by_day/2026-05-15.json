@@ -8,8 +8,8 @@
     "pocet_hlas": 1,
     "minuty": 188,
     "end_cas": "13:20",
-    "proslo": 1,
-    "zamitnuto": 0,
+    "proslo": 0,
+    "zamitnuto": 1,
     "dlouha_debata": true
   },
   "dnesni_ucet": "Ráno na devatenácté schůzi sociální změny, odpoledne rozpočet.\nRozpočtové brzdy padly 68:90 v závěrečném hlasování.",
@@ -21,8 +21,8 @@
     "* Vlček řekl, že vláda vypíná rozpočtová pravidla"
   ],
   "en": {
-    "dnesni_ucet": "In the morning at the nineteenth social change meeting, in the afternoon the budget.\nThe budget brakes fell 68-90 in the final vote.",
-    "zaver": "that Friday ended with the rejection of the government's budget laws: the coalition wanted to loosen the limits, the opposition warned of a deficit of over four hundred billion.",
+    "dnesni_ucet": "In the morning at the nineteenth social change meeting, in the afternoon the budget.\nFiscal rules fell 68-90 at third reading.",
+    "zaver": "that Friday ended with the rejection of the government's budget laws: the coalition wanted to loosen the limits, the opposition warned of a deficit of over CZK 400 billion.",
     "vysledek": [
       "* budget bills rejected 68-90 at 1:10 p.m",
       "* thirty-six votes on amendments, eight passed",

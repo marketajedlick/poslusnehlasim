@@ -2,7 +2,7 @@
   "slug": "novela-z-stavebni-zakon",
   "nazev": "Novela z. - stavební zákon",
   "datum": "30.01.2026",
-  "verdikt": "schvaleno",
+  "verdikt": "zamiteno",
   "predmet_lidsky": "stavebním zákoně",
   "koho": [
     "Koho se to týká? Stavebníků, obcí i investorů, kteří čekají na povolení domu, haly nebo silnice."
@@ -31,7 +31,7 @@
   "priorita": 3,
   "nadpis": "Stavba si počká",
   "pocet_hlasovani": 9,
-  "proslo": true,
+  "proslo": false,
   "signaly": {
     "proti_max": 93,
     "pritomno_min": 140,
@@ -45,9 +45,9 @@
   "mean": "Páteční večer patřil poslaneckému návrhu na novou podobu stavebního zákona, který koalice chtěla protlačit zkráceně. Sněmovna ho v prvním kole zamítla a stavební úřady zůstávají u starých pravidel.",
   "en": {
     "nadpis": "Construction will wait",
-    "lead": "The coalition's amendment to the construction law failed in the first round, thirty-one to eighty-six. The coalition wanted to speed up building permits.",
+    "lead": "The coalition's amendment to the construction law failed at first reading, thirty-one to eighty-six. The coalition wanted to speed up building permits.",
     "pointa": "Mrázová (ANO) criticized Fial's amendment and Bartoš's digitization, Kučera (TOP 09) acknowledged the slow procedure, but said that speed must not lose legal certainty.",
-    "mean": "Friday evening belonged to the parliamentary proposal for a new form of the construction law, which the coalition wanted to push through in an abbreviated form. The House of Representatives rejected it in the first round, and the building authorities remain with the old rules.",
+    "mean": "Friday evening belonged to the parliamentary proposal for a new form of the construction law, which the coalition wanted to push through in an abbreviated form. The Chamber of Deputies rejected it at first reading, and the building authorities remain with the old rules.",
     "predmet_lidsky": "construction law",
     "koho": [
       "Who does it concern? Builders, municipalities and investors who are waiting for permission for a house, hall or road."

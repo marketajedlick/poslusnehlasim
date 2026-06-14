@@ -9,8 +9,8 @@
     "pocet_hlas": 2,
     "minuty": 470,
     "end_cas": "16:51",
-    "proslo": 1,
-    "zamitnuto": 0,
+    "proslo": 0,
+    "zamitnuto": 1,
     "dlouha_debata": true
   },
   "dnesni_ucet": "Mimořádná schůze místo interpelací.\nVelká reforma úřadů v prvním kole padla.",
@@ -22,11 +22,11 @@
     "* debata o přes 70 000 zaměstnancích státu a analýzách dopadů"
   ],
   "en": {
-    "dnesni_ucet": "Extraordinary meeting instead of interpellations.\nThe great reform of the authorities failed in the first round.",
-    "zaver": "that the extraordinary meeting talked about a major reform of the authorities all day, but the House stopped it in the first round.",
+    "dnesni_ucet": "Extraordinary meeting instead of interpellations.\nThe great reform of the authorities failed at first reading.",
+    "zaver": "that the extraordinary meeting talked about a major reform of the authorities all day, but The Chamber of Deputies stopped it at first reading.",
     "vysledek": [
-      "* both proposals about civil servants were rejected in the first round",
-      "* three organizational points were passed, eight laws were passed",
+      "* both proposals about civil servants were rejected at first reading",
+      "* three organizational points passed, eight laws failed",
       "* extraordinary meeting instead of Thursday interpellations",
       "* debate on over 70,000 state employees and impact analyses"
     ],

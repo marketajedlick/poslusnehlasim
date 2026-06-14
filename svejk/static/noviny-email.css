@@ -264,6 +264,11 @@ body {
   border-color: #283c6e;
   box-shadow: inset 0 0 0 1.2px #283c6e;
 }
+.stamp.debata {
+  color: #283c6e;
+  border-color: #283c6e;
+  box-shadow: inset 0 0 0 1.2px #283c6e;
+}
 .h {
   font-family: Impact, 'Arial Black', sans-serif;
   text-transform: uppercase;

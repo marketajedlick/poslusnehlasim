@@ -2,7 +2,7 @@
   "slug": "navrh-zakona-o-statnich-zamestnancich-souvisejic",
   "nazev": "Návrh zákona o státních zaměstnancích - související",
   "datum": "29.01.2026",
-  "verdikt": "schvaleno",
+  "verdikt": "zamiteno",
   "predmet_lidsky": "státních zaměstnancích - související",
   "koho": [
     "Občana se to netýká, ledaže pracujete na úřadě nebo tam čekáte ve frontě."
@@ -39,7 +39,7 @@
   "priorita": 3,
   "nadpis": "Zůstává po staru",
   "pocet_hlasovani": 5,
-  "proslo": true,
+  "proslo": false,
   "signaly": {
     "proti_max": 95,
     "pritomno_min": 161,

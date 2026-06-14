@@ -11,9 +11,13 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+SCRIPT_DIR = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
 
+from fix_en_terminology import apply_en_terminology
 from svejk.build.facts_i18n import day_needs_translation, topic_needs_translation
 from svejk.paths import SchuzePaths, processed_root
 
@@ -114,7 +118,7 @@ def translate_topic(fact: dict) -> dict:
         en["kuriozita_links"] = _translate_links(
             fact["kuriozita_links"], label_key="label"
         )
-    return en
+    return apply_en_terminology(en)
 
 
 def translate_day(day: dict) -> dict:
@@ -138,7 +142,7 @@ def translate_day(day: dict) -> dict:
             "neděle": "Sunday",
         }
         en["den"] = mapping.get(den.lower(), den)
-    return en
+    return apply_en_terminology(en)
 
 
 def _write_json(path: Path, data: dict) -> None:

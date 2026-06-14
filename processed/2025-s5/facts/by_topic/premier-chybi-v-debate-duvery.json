@@ -54,9 +54,9 @@
   "pocet_hlasovani": 0,
   "proslo": false,
   "en": {
-    "nadpis": "Prime minister in the dining room",
+    "nadpis": "Prime Minister Missing from The Chamber of Deputies",
     "lead": "Andrej Babiš asked for confidence, while he was not in the hall for an hour and a half. Richter suggested a break until he returned, Jurečka addressed him as absent. Šťastný said that they were glad that he was not here, Nacher reminded that fifteen ministers out of eighteen were missing from Fiala.",
-    "pointa": "After lunch, Barták (Motorists) asked for more government members to come. Rabbit called it pirate obstruction. Pláteník was supposed to finish his interrupted speech, and Barták made him wait until more ministers were sitting in the hall.",
+    "pointa": "After lunch, Barták (Motorists) asked for more government members to come. Králíček called it pirate obstruction. Pláteník was supposed to finish his interrupted speech, and Barták made him wait until more ministers were sitting in the hall.",
     "mean": "The vote of confidence is formally a request from the Prime Minister, not the entire government. When the applicant is absent in the middle of a debate, the opposition takes it as an indignity, the coalition defends it by comparing it to past meetings and to ministers being in the dining room or in committees.",
     "predmet_lidsky": "the presence of Prime Minister Andrej Babiš during the debate on confidence in his government",
     "koho": [
@@ -76,11 +76,11 @@
         "citace": "Vážený nepřítomný pane premiére, vážení členové vlády."
       },
       {
-        "text": "The Prime Minister is here, and through the chairman, Mrs. Deputy Richterová, she also doesn't have her chairman here, and half of you are there. So it doesn't matter, I think we're glad he's not here.",
+        "text": "Šťastný said he was glad the Prime Minister was not in the hall. (Applause from the left.)",
         "citace": "Já si myslím, že my jsme rádi, že tady není. (Potlesk vlevo.)"
       },
       {
-        "text": "So it would be good if there were more members of the government here. I am opening the afternoon session of the Chamber of Deputies.",
+        "text": "So it would be good if there were more members of the government here. I am opening the afternoon session of The Chamber of Deputies.",
         "citace": "Bylo by tedy dobré, kdyby těch členů vlády tady bylo více."
       },
       {

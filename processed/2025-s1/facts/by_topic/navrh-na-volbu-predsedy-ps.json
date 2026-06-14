@@ -35,25 +35,25 @@
   "proslo": true,
   "steno_slov": 31648,
   "en": {
-    "nadpis": "Okamura at the hammer",
-    "lead": "Wednesday's secret ballot brought Tomio Okamura to the head of the House, one hundred and sixteen votes in the first round. A separate proposal for Petr Fiala fell to eighteen against one hundred and thirty-six.",
-    "pointa": "The coalition promoted its candidate, the opposition did not find enough votes for Fiala. The leadership of the House remained in the hands of the SPD, Barták and Nacher became vice-chairmen.",
-    "mean": "The chairman directs meetings, distributes the floor and signs resolutions. The choice is secret, but the result will set the tone for the entire period.",
-    "predmet_lidsky": "election of the Speaker of the Chamber of Deputies",
+    "nadpis": "Okamura takes the gavel",
+    "lead": "Wednesday's secret ballot brought Tomio Okamura to the head of The Chamber of Deputies, one hundred and sixteen votes on the first ballot. A separate proposal for Petr Fiala fell to eighteen against one hundred and thirty-six.",
+    "pointa": "The coalition promoted its candidate, the opposition did not find enough votes for Fiala. The leadership of The Chamber of Deputies remained in the hands of the SPD, Barták and Nacher became Deputy Speakers.",
+    "mean": "The Speaker runs meetings, distributes the floor and signs resolutions. The choice is secret, but the result will set the tone for the entire period.",
+    "predmet_lidsky": "election of the Speaker of The Chamber of Deputies",
     "koho": [
-      "Who is watching, who will lead the proceedings of the House and who holds the gavel."
+      "Who is watching, who will lead the proceedings of The Chamber of Deputies and who holds the gavel."
     ],
     "fakty": [
       {
-        "text": "Tomio Okamura received one hundred and sixteen votes to nine in the first round of the secret election.",
+        "text": "Tomio Okamura received one hundred and sixteen votes to nine on the first ballot of the secret election.",
         "citace": "Hlasování číslo 7, přihlášeno 151, pro 116, proti 9."
       },
       {
-        "text": "The proposal for Petr Fiala as chairman was lost by one hundred and eighteen votes against one hundred and thirty-six.",
+        "text": "The proposal for Petr Fiala as Speaker was lost by one hundred and eighteen votes against one hundred and thirty-six.",
         "citace": "Hlasování číslo 8, přihlášeno 191, pro 18, proti 136."
       },
       {
-        "text": "Okamura took over the gavel in the evening, Barták and Nacher became vice-chairmen by his side.",
+        "text": "Okamura took over the gavel in the evening, Barták and Nacher became Deputy Speakers by his side.",
         "citace": "Blahopřeji zvoleným místopředsedům Poslanecké sněmovny a prosím, aby oba zaujali místo po mém boku."
       }
     ]

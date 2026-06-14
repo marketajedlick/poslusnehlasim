@@ -43,12 +43,12 @@
   "proslo": true,
   "en": {
     "nadpis": "Skopek the third,\nNot Richter",
-    "lead": "Friday's second round was completed by the leadership of the House: Jan Skopeček received one hundred and twenty one votes, Olga Richterová only thirty. One seat of the vice president remains vacant.",
+    "lead": "Friday's second reading was completed by the leadership of The Chamber of Deputies: Jan Skopeček received one hundred and twenty one votes, Olga Richterová only thirty. One seat of the Deputy Speaker remains vacant.",
     "pointa": "Richter spoke about half a million pirate voters, part of the coalition left the hall in the meantime. Nacher apologized for the premature gong, accidentally ending the debate, even though a secret ballot was to follow immediately.",
-    "mean": "After Barták, Nacher and Skopeček, one more person is missing from the four-member team of vice-presidents, the new choice will come at the next meeting.",
-    "predmet_lidsky": "the second round of the election of vice-presidents",
+    "mean": "After Barták, Nacher and Skopeček, one more person is missing from the four-member team of Deputy Speakers, the new choice will come at the next meeting.",
+    "predmet_lidsky": "the second round of the election of Deputy Speakers",
     "koho": [
-      "Who is watching, who is helping to manage the proceedings of the House."
+      "Who is watching, who is helping to manage the proceedings of The Chamber of Deputies."
     ],
     "fakty": [
       {
@@ -56,11 +56,11 @@
         "citace": "Olga Richterová získala 30 hlasů, nestává se místopředsedkyní Sněmovny. Jan Skopeček získal 121 hlasů a je zvolen místopředsedou Sněmovny."
       },
       {
-        "text": "Kateřina Stojanová and Eva Šrámková proposed points on the equal representation of women in management, but the Chamber did not include them.",
+        "text": "Kateřina Stojanová and Eva Šrámková proposed points on the equal representation of women in management, but The Chamber of Deputies did not include them.",
         "citace": "Navrhujeme naši předsedkyni poslaneckého klubu Olgu Richterovou jako budoucí místopředsedkyni Poslanecké sněmovny."
       },
       {
-        "text": "One vice-presidential seat remains empty, a new election will be held at the next meeting.",
+        "text": "One Deputy Speaker seat remains empty, a new election will be held at the next meeting.",
         "citace": "Jedno místo místopředsedy zůstává neobsazené."
       },
       {

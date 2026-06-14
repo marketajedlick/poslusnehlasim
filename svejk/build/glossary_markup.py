@@ -6,7 +6,7 @@ import re
 
 from markupsafe import Markup, escape
 
-from svejk.glossary import GLOSSARY, SLOVNIK_BOX
+from svejk.glossary import SLOVNIK_BOX, glossary_for_locale
 
 
 def _pattern(phrase: str) -> re.Pattern[str]:
@@ -24,13 +24,14 @@ def _wrap(label: str, tip: str) -> str:
     )
 
 
-def markup_glossary(text: str) -> str:
+def markup_glossary(text: str, *, locale: str = "cs") -> str:
     """Vrátí HTML s hover tooltipem u známých pojmů (bez překrývání)."""
     if not text or "<" in text:
         return text
 
+    glossary = glossary_for_locale(locale)
     matches: list[tuple[int, int, str, str]] = []
-    for phrase, tip in GLOSSARY:
+    for phrase, tip in glossary:
         for m in _pattern(phrase).finditer(text):
             matches.append((m.start(), m.end(), m.group(0), tip))
 
@@ -53,16 +54,17 @@ def markup_glossary(text: str) -> str:
     return out
 
 
-def glossary_markup(text: str) -> Markup:
-    return Markup(markup_glossary(text))
+def glossary_markup(text: str, *, locale: str = "cs") -> Markup:
+    return Markup(markup_glossary(text, locale=locale))
 
 
-def _tip_for_phrase(phrase: str) -> str | None:
-    for gp, tip in GLOSSARY:
+def _tip_for_phrase(phrase: str, *, locale: str = "cs") -> str | None:
+    glossary = glossary_for_locale(locale)
+    for gp, tip in glossary:
         if gp.lower() == phrase.lower():
             return tip
     pat = _pattern(phrase)
-    for gp, tip in GLOSSARY:
+    for gp, tip in glossary:
         if pat.search(gp):
             return tip
     return None
@@ -75,7 +77,7 @@ def _needle_pattern(needle: str) -> re.Pattern[str]:
     return re.compile(rf"(?<![\w]){body}", re.IGNORECASE)
 
 
-def svejkov_slovnik(*texts: str, limit: int = 6) -> list[tuple[str, str]]:
+def svejkov_slovnik(*texts: str, limit: int = 6, locale: str = "cs") -> list[tuple[str, str]]:
     """Pojmy z textu dne pro box Švejkův slovník (název, vysvětlení)."""
     combined = "\n".join(t for t in texts if t)
     if not combined.strip():
@@ -88,7 +90,7 @@ def svejkov_slovnik(*texts: str, limit: int = 6) -> list[tuple[str, str]]:
             break
         if not _needle_pattern(needle).search(combined):
             continue
-        tip = _tip_for_phrase(needle) or _tip_for_phrase(label)
+        tip = _tip_for_phrase(needle, locale=locale) or _tip_for_phrase(label, locale=locale)
         if not tip:
             continue
         key = label.lower()

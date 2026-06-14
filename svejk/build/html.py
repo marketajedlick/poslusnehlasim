@@ -8,11 +8,11 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from jinja2 import Environment, FileSystemLoader, select_autoescape
+from jinja2 import Environment, FileSystemLoader, pass_context, select_autoescape
+from markupsafe import Markup
 
 from svejk.build.day_content import DenContent, build_den_content, datum_design
 from svejk.build.io import read_json
-from svejk.build.glossary_markup import glossary_markup
 from svejk.glossary import SLOVNIČEK, slovnicek_anchor
 from svejk.build.publish import list_site_editions
 from svejk.locale import (
@@ -237,7 +237,15 @@ def _jinja_env() -> Environment:
         autoescape=select_autoescape(["html"]),
     )
     env.filters["split_paragraphs"] = _split_paragraphs
-    env.filters["glossary"] = glossary_markup
+
+    @pass_context
+    def _glossary_filter(context, text: str) -> Markup:
+        from svejk.build.glossary_markup import glossary_markup as _gm
+
+        loc = context.get("locale", "cs")
+        return _gm(text, locale=loc)
+
+    env.filters["glossary"] = _glossary_filter
     return env
 
 

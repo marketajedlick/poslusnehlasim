@@ -2,7 +2,7 @@
   "slug": "navrh-zakona-o-statnich-zamestnancich",
   "nazev": "Návrh zákona o státních zaměstnancích",
   "datum": "29.01.2026",
-  "verdikt": "schvaleno",
+  "verdikt": "zamiteno",
   "predmet_lidsky": "státních zaměstnancích",
   "koho": [
     "Koho se to týká? Přes 70 000 lidí ve státní správě a každého, kdo řeší úřady, jde o to, jestli úředníci pracují podle služebního zákona, nebo jako běžní zaměstnanci."
@@ -37,7 +37,7 @@
   "priorita": 3,
   "nadpis": "Úředníci zůstávají",
   "pocet_hlasovani": 6,
-  "proslo": true,
+  "proslo": false,
   "signaly": {
     "proti_max": 96,
     "pritomno_min": 130,
@@ -50,10 +50,10 @@
   "pointa": "Pospíšil (TOP 09) říkal, že tak velká změna má jít jako řádný vládní návrh s analýzou, ne ve spěchu. Pláteník (KDU-ČSL) varoval před oslabením státu. Kučera (TOP 09) navrhl zamítnout oba sloučené tisky.",
   "mean": "Reforma neprošla, úředníci zůstávají ve služebním poměru podle dosavadního zákona. Koalice chtěla přes sedmdesát tisíc lidí ve státní správě převést pod zákoník práce, Sněmovna to v prvním kole zastavila.",
   "en": {
-    "nadpis": "Officials remain",
-    "lead": "The coalition proposal, which is supposed to replace the Civil Service Act with the normal working relationship of civil servants, failed in the first round, 65 votes in favor, 96 against. The opposition talked about the politicization of the authorities and the lack of analysis.",
+    "nadpis": "Officials Stay Put",
+    "lead": "The coalition proposal, which is supposed to replace the Civil Service Act with the normal working relationship of civil servants, failed at first reading, 65 votes in favor, 96 against. The opposition talked about the politicization of the authorities and the lack of analysis.",
     "pointa": "Pospíšil (TOP 09) said that such a big change should go as a proper government proposal with analysis, not in a hurry. Pláteník (KDU-ČSL) warned against the weakening of the state. Kučera (TOP 09) proposed to reject both merged prints.",
-    "mean": "The reform did not pass, officials remain in the service relationship according to the existing law. The coalition wanted to transfer over seventy thousand people in the state administration to the Labor Code, but the House of Representatives stopped it in the first round.",
+    "mean": "The reform did not pass, officials stay put under the existing civil service law. The coalition wanted to transfer over seventy thousand people in the state administration to the Labor Code, but The Chamber of Deputies stopped it at first reading.",
     "predmet_lidsky": "civil servants",
     "koho": [
       "Who does it concern? For over 70,000 people in the civil service and everyone who deals with the authorities, it is a matter of whether the officials work according to the service law or as regular employees."

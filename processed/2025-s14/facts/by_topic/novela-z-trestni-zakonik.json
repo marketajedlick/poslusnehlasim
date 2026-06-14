@@ -2,7 +2,7 @@
   "slug": "novela-z-trestni-zakonik",
   "nazev": "Novela z. - trestní zákoník",
   "datum": "21.04.2026",
-  "verdikt": "schvaleno",
+  "verdikt": "zamiteno",
   "predmet_lidsky": "",
   "koho": [
     "Koho se to týká? Každého, kdo spadá pod trestní zákoník a jeho pravidla."
@@ -29,7 +29,7 @@
   "priorita": 3,
   "nadpis": "Trestní změna spadla",
   "pocet_hlasovani": 3,
-  "proslo": true,
+  "proslo": false,
   "signaly": {
     "proti_max": 89,
     "pritomno_min": 155,
@@ -42,10 +42,10 @@
   "pointa": "Změna zákona měla projít rychlou kolejí spolu s dalšími zákony čtrnácté schůze. Bez dostatečné podpory v závěrečném hlasování v sále zůstala.",
   "mean": "Úpravy trestního zákoníku tentokrát neprošly. Platí dál stávající pravidla, dokud Sněmovna nepředloží nový návrh.",
   "en": {
-    "nadpis": "Criminal amendment dropped",
-    "lead": "On Tuesday evening, the coalition did not hold a final vote on the criminal code. The second round passed with one hundred and fifty-four votes, but the final vote ended with only seven tens in favor.",
-    "pointa": "The law change was supposed to go through the fast track along with other laws of the Fourteenth Session. She remained in the hall without sufficient support in the final vote.",
-    "mean": "Amendments to the Criminal Code did not pass this time. The existing rules continue to apply until the House presents a new proposal.",
+    "nadpis": "Criminal Code Changes Failed",
+    "lead": "On Tuesday evening, the coalition did not hold a third reading on the criminal code. The second reading passed with one hundred and fifty-four votes, but the third reading ended with only seven tens in favor.",
+    "pointa": "The law change was supposed to go through the fast track along with other laws of the fourteenth session. The bill stayed in the hall without enough votes at third reading.",
+    "mean": "Amendments to the Criminal Code did not pass this time. The existing rules continue to apply until The Chamber of Deputies presents a new proposal.",
     "koho": [
       "Who does it concern? Anyone who falls under the Criminal Code and its rules."
     ],

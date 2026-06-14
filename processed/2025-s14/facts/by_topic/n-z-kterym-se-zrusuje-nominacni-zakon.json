@@ -2,7 +2,7 @@
   "slug": "n-z-kterym-se-zrusuje-nominacni-zakon",
   "nazev": "N. z., kterým se zrušuje nominační zákon",
   "datum": "22.04.2026",
-  "verdikt": "schvaleno",
+  "verdikt": "zamiteno",
   "predmet_lidsky": "n. z., kterým se zrušuje nominační zákon",
   "koho": [
     "Koho se to týká? Firmy, které soutěží o veřejné zakázky, a daňové poplatníky sledující transparentnost státu."
@@ -30,7 +30,7 @@
   "priorita": 3,
   "nadpis": "Zákon o zakázkách zůstává",
   "pocet_hlasovani": 4,
-  "proslo": true,
+  "proslo": false,
   "signaly": {
     "proti_max": 88,
     "pritomno_min": 162,
@@ -44,7 +44,7 @@
   "mean": "Zákon o veřejných zakázkách dál platí a stát musí u velkých zakázek zveřejňovat vazby na politicky exponované osoby.",
   "en": {
     "nadpis": "The contract law remains",
-    "lead": "On Wednesday afternoon, the House of Representatives rejected the proposal to repeal the Public Procurement Act, eighty-eight votes against. The Pirates talked about the return of buddying, Raven wanted a change rather than an abolition.",
+    "lead": "On Wednesday afternoon, The Chamber of Deputies rejected the proposal to repeal the Public Procurement Act, eighty-eight votes against. The Pirates talked about the return of buddying, Raven wanted a change rather than an abolition.",
     "pointa": "The coalition wanted to repeal the law outright. Both the opposition and part of the coalition argued that it is better to modify the rules for transparent contracts than to discard them.",
     "mean": "The Public Procurement Act continues to apply and the state must disclose links to politically exposed persons for large contracts.",
     "predmet_lidsky": "n. z., which repeals the Nomination Act",
