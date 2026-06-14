@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="{{ lang | default('cs') }}">
 <head>
 {% set head_noindex = true %}
 {% include "head-noviny.html" %}
-<title>Děkujeme · Poslušně hlásím</title>
-<meta name="description" content="Platba za pivo pro Švejka byla přijata." />
+<title>{{ t.thanks_page.title }}</title>
+<meta name="description" content="{{ t.thanks_page.meta }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
+{% include "hreflang.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
@@ -18,14 +19,14 @@
           <div class="grain"></div>
           <div class="pad">
             <header class="dekuju-head">
-              <div class="eyebrow">deník sněmovny</div>
+              <div class="eyebrow">{{ t.edition.eyebrow }}</div>
               <h1 class="mast">POSLUŠNĚ <span class="terra">HLÁSÍM</span></h1>
             </header>
 
             <div class="pivo-body dekuju-body">
               <blockquote class="pivo-quote dekuju-quote">
-                <p>Poslušně hlásím, že pivo bude vypito na zdraví Sněmovny.</p>
-                <span class="pivo-quote-by">Váš dobrý voják Švejk</span>
+                <p>{{ t.thanks_page.quote }}</p>
+                <span class="pivo-quote-by">{{ t.thanks_page.quote_by }}</span>
               </blockquote>
 
               {% set site_nav_modifier = "site-nav--section" %}

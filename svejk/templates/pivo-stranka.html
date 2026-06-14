@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="{{ lang | default('cs') }}">
 <head>
 {% include "head-noviny.html" %}
-<title>Kup Švejkovi pivo · Poslušně hlásím</title>
-<meta name="description" content="Dobrovolný příspěvek na provoz deníku z Poslanecké sněmovny. Noviny zůstávají zdarma." />
+<title>{{ t.beer_page.title }}</title>
+<meta name="description" content="{{ t.beer_page.meta }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
+{% include "hreflang.html" %}
 {% include "og-meta.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
@@ -18,37 +19,51 @@
           <div class="grain"></div>
           <div class="pad">
             <header class="pivo-head">
-              <div class="eyebrow">hospoda u švejka</div>
-              <h1 class="pivo-title">Kup <span class="terra">Švejkovi</span> pivo</h1>
-              <nav class="pivo-nav" aria-label="Navigace">
+              <div class="eyebrow">{{ t.beer_page.eyebrow }}</div>
+              <h1 class="pivo-title">{% if locale == 'en' %}Buy <span class="terra">Švejk</span> a beer{% else %}Kup <span class="terra">Švejkovi</span> pivo{% endif %}</h1>
+              <nav class="pivo-nav" aria-label="{{ t.nav.aria_main }}">
                 {% if latest_href %}
-                <a class="site-nav-link" href="{{ latest_href }}">Nejnovější vydání</a>
+                <a class="site-nav-link" href="{{ latest_href }}">{{ t.nav.latest }}</a>
                 {% endif %}
                 {% if archive_href %}
                 {% if latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
-                <a class="site-nav-link" href="{{ archive_href }}">Archiv vydání</a>
+                <a class="site-nav-link" href="{{ archive_href }}">{{ t.nav.archive }}</a>
                 {% endif %}
                 {% if slovnicek_href %}
                 {% if archive_href or latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
-                <a class="site-nav-link" href="{{ slovnicek_href }}">Švejkův slovníček</a>
+                <a class="site-nav-link" href="{{ slovnicek_href }}">{{ t.nav.glossary }}</a>
+                {% endif %}
+                {% if lang_switch_href %}
+                {% if archive_href or latest_href or slovnicek_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
+                <a class="site-nav-link site-nav-lang" href="{{ lang_switch_href }}" hreflang="{{ 'en' if locale == 'cs' else 'cs' }}" aria-label="{{ t.nav.lang_switch_aria }}">{{ t.nav.lang_switch }}</a>
                 {% endif %}
               </nav>
             </header>
 
             <div class="pivo-body">
+              {% if locale == 'en' %}
+              <p>I hereby report that every day the Chamber sits, I am in the gallery, listening, taking notes, and translating it into human language. It is a service to the nation and the nation does not pay for it. At least not yet, as far as I know.</p>
+              <p>The newspaper was, is, and will remain free for everyone. But the domain, server, and tools cost something, and thirst after a whole day of listening to MPs is great. If every tenth reader bought one beer a month, running costs would be covered and there would even be money left for pickled sausages.</p>
+              {% else %}
               <p>Poslušně hlásím, že každý den, kdy Sněmovna zasedá, sedím na galerii, poslouchám, zapisuju a překládám to do lidské řeči. Je to služba vlasti a vlast za to neplatí. Aspoň zatím o tom neví.</p>
               <p>Noviny byly, jsou a zůstanou zadarmo pro každého. Ale doména, server a nástroje něco stojí a žízeň po celodenním poslouchání poslanců je veliká. Kdyby každý desátý čtenář koupil jedno pivo měsíčně, mám provoz zaplacený a ještě zbyde na utopence.</p>
+              {% endif %}
 
-              <p class="pivo-promise"><strong>Noviny zůstanou zdarma pro všechny. Pivo je dobrovolné.</strong></p>
+              <p class="pivo-promise"><strong>{{ t.beer_page.promise }}</strong></p>
 
 {% include "pivo-menu.html" %}
 
               <blockquote class="pivo-quote">
-                <p>„Já jsem si vždycky myslel, že pivo<br />se má pít a politika hlásit. Tak to taky dělám."</p>
+                {% if locale == 'en' %}
+                <p>„I always thought beer was for drinking and politics for reporting. That is what I do."</p>
+                <span class="pivo-quote-by">{{ t.thanks_page.quote_by }}</span>
+                {% else %}
+                <p>„Já jsem si vždycky myslel, že pivo se má pít a politika hlásit. Tak to taky dělám."</p>
                 <span class="pivo-quote-by">Váš dobrý voják Švejk</span>
+                {% endif %}
               </blockquote>
 
-              <p class="pivo-fine">Příspěvky jsou dobrovolné a nezakládají nárok na žádné protiplnění.</p>
+              <p class="pivo-fine">{{ t.beer_page.fine }}</p>
             </div>
           </div>
         </div>

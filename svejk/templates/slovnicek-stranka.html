@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="{{ lang | default('cs') }}">
 <head>
 {% include "head-noviny.html" %}
-<title>Švejkův slovníček · Poslušně hlásím</title>
-<meta name="description" content="Poslušně hlásím, že sněmovna má vlastní jazyk. Slovníček pojmů pro lidi, kteří politiku běžně nesledují." />
+<title>{{ t.glossary_page.title }}</title>
+<meta name="description" content="{{ t.glossary_page.meta }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
+{% include "hreflang.html" %}
 {% include "og-meta.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
@@ -12,19 +13,26 @@
 <body class="slovnicek-page">
 <div class="slovnicek-wrap">
   <header class="slovnicek-head">
-    <h1 class="slovnicek-title">Švejkův slovníček</h1>
-    <p class="slovnicek-gloss">Poslušně hlásím, že sněmovna má vlastní jazyk a obyčejný člověk si občas připadá jako na vojně.</p>
-    <nav class="slovnicek-nav" aria-label="Navigace">
+    <h1 class="slovnicek-title">{{ t.glossary_page.heading }}</h1>
+    <p class="slovnicek-gloss">{{ t.glossary_page.gloss }}</p>
+    {% if locale == 'en' %}
+    <p class="locale-notice locale-notice--inline">{{ t.glossary_page.notice }}</p>
+    {% endif %}
+    <nav class="slovnicek-nav" aria-label="{{ t.nav.aria_main }}">
       {% if latest_href %}
-      <a class="site-nav-link" href="{{ latest_href }}">Nejnovější vydání</a>
+      <a class="site-nav-link" href="{{ latest_href }}">{{ t.nav.latest }}</a>
       {% endif %}
       {% if archive_href %}
       {% if latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
-      <a class="site-nav-link" href="{{ archive_href }}">Archiv vydání</a>
+      <a class="site-nav-link" href="{{ archive_href }}">{{ t.nav.archive }}</a>
       {% endif %}
       {% if pivo_href %}
       {% if archive_href or latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
-      <a class="site-nav-link" href="{{ pivo_href }}">Kup Švejkovi pivo 🍺</a>
+      <a class="site-nav-link" href="{{ pivo_href }}">{{ t.nav.beer }}</a>
+      {% endif %}
+      {% if lang_switch_href %}
+      {% if archive_href or latest_href or pivo_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
+      <a class="site-nav-link site-nav-lang" href="{{ lang_switch_href }}" hreflang="{{ 'en' if locale == 'cs' else 'cs' }}" aria-label="{{ t.nav.lang_switch_aria }}">{{ t.nav.lang_switch }}</a>
       {% endif %}
     </nav>
   </header>

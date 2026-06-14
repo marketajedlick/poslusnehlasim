@@ -1,0 +1,146 @@
+{
+  "nav": {
+    "aria_main": "Main navigation",
+    "latest": "Latest edition",
+    "archive": "Archive",
+    "glossary": "Švejk's glossary",
+    "beer": "Buy Švejk a beer 🍺",
+    "lang_switch": "Česky",
+    "lang_switch_aria": "Switch to Czech version of the site"
+  },
+  "footer": {
+    "aria": "Site footer",
+    "aria_legal": "Legal information and support",
+    "terms": "Terms of use",
+    "privacy": "Privacy",
+    "support": "Support",
+    "closings": [
+      "I hereby report that today's edition is over. The MPs went home and so did we.",
+      "The pub is closing. The next edition will come after the next session.",
+      "I hereby report that democracy is a long-distance run, and sometimes a long session too.",
+      "The MPs left. The stenographic record stayed."
+    ],
+    "stats": "{editions} editions • {schuze} • 100 % public data"
+  },
+  "cookie": {
+    "text": "I hereby report that we use Google Analytics for visitor statistics, and only with your consent.",
+    "privacy_link": "More in privacy policy",
+    "reject": "Decline",
+    "accept": "Accept"
+  },
+  "subscribe": {
+    "aria": "Newsletter signup",
+    "gloss": "You don't have to go to the Chamber. Leave your e-mail and the diary will come to you.",
+    "email_aria": "E-mail for newsletter",
+    "placeholder": "you@email.com",
+    "submit": "Subscribe",
+    "submitting": "Sending…",
+    "success": "Check your e-mail and confirm your subscription.",
+    "privacy": "By subscribing you agree to processing your e-mail address for sending the newsletter.",
+    "privacy_link": "More about privacy",
+    "error_required": "Enter your e-mail.",
+    "error_invalid": "That doesn't look like an e-mail.",
+    "error_rate_limit": "Too many attempts. Try again in a moment.",
+    "error_send": "Subscription could not be sent. Try again in a moment.",
+    "error_setup": "Subscription is being set up. Try again in a few minutes.",
+    "error_generic": "Subscription failed. Check your e-mail and try again."
+  },
+  "edition": {
+    "nav_aria": "Diary editions",
+    "prev_aria": "Older edition",
+    "next_aria": "Newer edition",
+    "schuze_title": "session",
+    "eyebrow": "parliament diary",
+    "board_kick": "Score",
+    "mean_label": "What it means for you:",
+    "kuriozita_aria": "Honours voting tables",
+    "sign": "- Your good soldier Švejk -"
+  },
+  "beer_support": {
+    "aria": "Švejk's pub",
+    "read_edition": "Read edition",
+    "archive": "All editions archive",
+    "beer": "Buy Švejk a beer 🍺"
+  },
+  "locale_notice": "This edition is in Czech. A satirical diary from real records of the Czech Chamber of Deputies.",
+  "archive": {
+    "title": "Edition archive",
+    "gloss": "All available diary editions.",
+    "meta": "All diary editions from the Czech Chamber of Deputies, term {obdobi}.",
+    "chip_meta": "session",
+    "legend": "Chamber of Deputies session number"
+  },
+  "notfound": {
+    "title": "Page not found · Poslušně hlásím",
+    "meta": "This address does not exist on Poslušně hlásím. The archive and newsletter signup are on the homepage.",
+    "heading": "I hereby report: nothing here",
+    "gloss": "The address you opened does not exist on this site. The Chamber has plenty of agenda items. This is not one of them.",
+    "latest_heading": "Or go straight to the latest edition",
+    "latest_text": "The newest diary edition",
+    "latest_cta": "Read the latest edition →"
+  },
+  "glossary_page": {
+    "title": "Švejk's glossary · Poslušně hlásím",
+    "meta": "The Chamber has its own language. A glossary for people who don't follow politics every day.",
+    "heading": "Švejk's glossary",
+    "gloss": "The Chamber has its own language and ordinary people sometimes feel like they're back in the army.",
+    "notice": "Glossary entries are in Czech for now."
+  },
+  "beer_page": {
+    "title": "Buy Švejk a beer · Poslušně hlásím",
+    "meta": "Voluntary contribution to running the Chamber diary. The newspaper stays free.",
+    "eyebrow": "švejk's pub",
+    "heading": "Buy Švejk a beer",
+    "promise": "The newspaper stays free for everyone. Beer is voluntary.",
+    "fine": "Contributions are voluntary and do not entitle you to any consideration.",
+    "menu_aria": "Contribution menu",
+    "once_title": "One-time contribution",
+    "monthly_title": "Regular",
+    "pay_note": "Payment is securely processed by Stripe. This site does not store payment details.",
+    "pay_portal": "Already a regular supporter and want to change your card or cancel? Manage your subscription here."
+  },
+  "thanks_page": {
+    "title": "Thank you · Poslušně hlásím",
+    "meta": "Payment for Švejk's beer was received.",
+    "quote": "I hereby report that the beer will be drunk to the health of the Chamber.",
+    "quote_by": "Your good soldier Švejk"
+  },
+  "confirmed_page": {
+    "title": "Subscription confirmed · Poslušně hlásím",
+    "meta": "Your Poslušně hlásím newsletter subscription is confirmed.",
+    "heading": "Welcome to the newsletter",
+    "gloss": "Everything went according to procedure. From the next edition, the Chamber diary will land in your inbox."
+  },
+  "terms_page": {
+    "title": "Terms of use · Poslušně hlásím",
+    "meta": "Rules for using Poslušně hlásím, the newsletter, and voluntary contributions."
+  },
+  "privacy_page": {
+    "title": "Privacy policy · Poslušně hlásím",
+    "meta": "How Poslušně hlásím handles e-mail, cookies, analytics, and voluntary payments."
+  },
+  "support_page": {
+    "title": "Customer support · Poslušně hlásím",
+    "meta": "Contact and help with newsletter, payments, and the Poslušně hlásím website."
+  },
+  "pivo_tiers": {
+    "velke_name": "Large beer",
+    "velke_note": "a time-tested remedy against gloom",
+    "velke_cta": "Contribute once",
+    "rum_name": "Rum",
+    "rum_note": "I don't drink spirits, only rum.",
+    "rum_cta": "Contribute once",
+    "stamgast_name": "Regular",
+    "stamgast_note": "for those who show up regularly, even when there's no alarm",
+    "stamgast_cta": "Become a regular",
+    "monthly_badge": "MONTHLY"
+  },
+  "board": {
+    "proslo_1": "item passed",
+    "proslo_2_4": "items passed",
+    "proslo_other": "items passed",
+    "zamitnuto_1": "proposal rejected",
+    "zamitnuto_2_4": "proposals rejected",
+    "zamitnuto_other": "proposals rejected"
+  }
+}

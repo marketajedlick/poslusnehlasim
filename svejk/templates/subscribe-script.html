@@ -21,15 +21,29 @@
     if (emailInput) emailInput.setAttribute("aria-invalid", "true");
   }
 
+  function formMsgs(form) {
+    return {
+      required: form.dataset.msgRequired || "Zadej e-mail.",
+      invalid: form.dataset.msgInvalid || "Tohle nevypadá jako e-mail.",
+      rateLimit: form.dataset.msgRateLimit || "Moc pokusů. Zkus to znovu za chvíli.",
+      send: form.dataset.msgSend || "Odběr se nepodařil odeslat. Zkus to znovu za chvíli.",
+      setup: form.dataset.msgSetup || "Odběr se právě nastavuje, zkus to za pár minut znovu.",
+      generic: form.dataset.msgGeneric || "Odběr se nepodařil. Zkontroluj e-mail a zkus to znovu.",
+      submit: form.dataset.labelSubmit || "Poslušně odebírat",
+      submitting: form.dataset.labelSubmitting || "Odesílám…",
+    };
+  }
+
   function validateEmailInput(form) {
     const input = form.querySelector('input[name="email"]');
+    const msgs = formMsgs(form);
     if (!input) return false;
     if (input.validity.valueMissing) {
-      showError(form, "Zadej e-mail.");
+      showError(form, msgs.required);
       return false;
     }
     if (!input.validity.valid) {
-      showError(form, "Tohle nevypadá jako e-mail.");
+      showError(form, msgs.invalid);
       return false;
     }
     hideError(form);
@@ -42,12 +56,13 @@
     input.dataset.validated = "1";
 
     input.addEventListener("blur", function () {
+      const msgs = formMsgs(form);
       if (!input.value.trim()) {
         hideError(form);
         return;
       }
       if (!input.validity.valid) {
-        showError(form, "Tohle nevypadá jako e-mail.");
+        showError(form, msgs.invalid);
         return;
       }
       hideError(form);
@@ -75,21 +90,23 @@
     if (successEl) successEl.hidden = false;
   }
 
-  function resetBtn(btn) {
+  function resetBtn(btn, form) {
     if (!btn) return;
+    const msgs = form ? formMsgs(form) : { submit: "Poslušně odebírat" };
     btn.disabled = false;
-    btn.textContent = btn.dataset.label || "Poslušně odebírat";
+    btn.textContent = btn.dataset.label || msgs.submit;
   }
 
   function submitViaApi(form, apiUrl) {
     var emailInput = form.querySelector('input[name="email"]');
     var email = emailInput?.value?.trim() || "";
     var btn = form.querySelector(".subscribe-btn");
+    var msgs = formMsgs(form);
 
     if (btn) {
       btn.disabled = true;
       btn.dataset.label = btn.textContent;
-      btn.textContent = "Odesílám…";
+      btn.textContent = msgs.submitting;
     }
 
     return fetch(apiUrl, {
@@ -107,12 +124,12 @@
             return;
           }
           if (res.status === 429) {
-            showError(form, "Moc pokusů. Zkus to znovu za chvíli.");
-            resetBtn(btn);
+            showError(form, msgs.rateLimit);
+            resetBtn(btn, form);
             return;
           }
-          showError(form, "Odběr se nepodařil odeslat. Zkus to znovu za chvíli.");
-          resetBtn(btn);
+          showError(form, msgs.send);
+          resetBtn(btn, form);
         });
       })
       .catch(function () {
@@ -133,8 +150,8 @@
   }
 
   function showSetupError(form, btn, email) {
-    showError(form, "Odběr se právě nastavuje, zkus to za pár minut znovu.");
-    resetBtn(btn);
+    showError(form, formMsgs(form).setup);
+    resetBtn(btn, form);
   }
 
   function tryWorkerSubscribe(form, email, btn) {
@@ -158,8 +175,8 @@
             return;
           }
           if (res.status === 429) {
-            showError(form, "Moc pokusů. Zkus to znovu za chvíli.");
-            resetBtn(btn);
+            showError(form, formMsgs(form).rateLimit);
+            resetBtn(btn, form);
             return;
           }
           showSetupError(form, btn, email);
@@ -194,8 +211,8 @@
           return;
         }
         if (!res.ok) {
-          showError(form, "Odběr se nepodařil odeslat. Zkus to znovu za chvíli.");
-          resetBtn(btn);
+          showError(form, formMsgs(form).send);
+          resetBtn(btn, form);
           return;
         }
         return res.text().then(function (html) {
@@ -204,8 +221,8 @@
             showSuccess(form);
             return;
           }
-          showError(form, parsed.message || "Odběr se nepodařil. Zkontroluj e-mail a zkus to znovu.");
-          resetBtn(btn);
+          showError(form, parsed.message || formMsgs(form).generic);
+          resetBtn(btn, form);
         });
       })
       .catch(function () {

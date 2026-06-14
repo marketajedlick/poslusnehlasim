@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="{{ lang | default('cs') }}">
 <head>
 {% set head_noindex = true %}
 {% include "head-noviny.html" %}
-<title>Stránka nenalezena · Poslušně hlásím</title>
-<meta name="description" content="Tahle adresa na webu Poslušně hlásím neexistuje. Archiv vydání a odběr novinek jsou na úvodní stránce." />
+<title>{{ t.notfound.title }}</title>
+<meta name="description" content="{{ t.notfound.meta }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
+{% include "hreflang.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
@@ -13,8 +14,8 @@
 <div class="archiv-wrap notfound-wrap">
   <header class="archiv-head">
     <p class="notfound-code" aria-hidden="true">404</p>
-    <h1 class="archiv-title">Poslušně hlásím: tady nic není</h1>
-    <p class="archiv-gloss">Adresa, kterou jste otevřeli, na webu neexistuje. Sněmovna má spoustu bodů programu. Tento nepatří mezi ně.</p>
+    <h1 class="archiv-title">{{ t.notfound.heading }}</h1>
+    <p class="archiv-gloss">{{ t.notfound.gloss }}</p>
     {% set site_nav_modifier = "site-nav--section" %}
     {% include "site-nav.html" %}
   </header>
@@ -22,10 +23,10 @@
   <div class="notfound-body">
     {% if latest_href %}
     <section class="soukromi-section notfound-latest">
-      <h2 class="soukromi-heading">Nebo rovnou poslední vydání</h2>
-      <p>Nejnovější číslo deníku{% if latest_label %}: {{ latest_label }}{% endif %}.</p>
+      <h2 class="soukromi-heading">{{ t.notfound.latest_heading }}</h2>
+      <p>{{ t.notfound.latest_text }}{% if latest_label %}: {{ latest_label }}{% endif %}.</p>
       <p class="notfound-cta-wrap">
-        <a class="potvrzeno-cta" href="{{ latest_href }}">Přečíst poslední vydání →</a>
+        <a class="potvrzeno-cta" href="{{ latest_href }}">{{ t.notfound.latest_cta }}</a>
       </p>
     </section>
     {% endif %}

@@ -97,9 +97,10 @@ def vyznamenani_href(
     *,
     link_mode: str,
     base_path: str = "",
+    locale: str = "cs",
 ) -> str:
     if link_mode == "pages":
-        return vyznamenani_pages_href(obdobi, schuze, datum_unl, kind, base_path)
+        return vyznamenani_pages_href(obdobi, schuze, datum_unl, kind, base_path, locale)
     from datetime import datetime
 
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
@@ -128,6 +129,7 @@ def resolve_vyznamenani_page_links(
     schuze: int,
     link_mode: str,
     base_path: str = "",
+    locale: str = "cs",
 ) -> list[tuple[str, str]]:
     """Přeloží (popisek, prosli|neprosli) na (popisek, href) jen když data existují."""
     out: list[tuple[str, str]] = []
@@ -138,7 +140,13 @@ def resolve_vyznamenani_page_links(
         if not load_vyznamenani(paths, datum_unl, kind):
             continue
         href = vyznamenani_href(
-            obdobi, schuze, datum_unl, kind, link_mode=link_mode, base_path=base_path
+            obdobi,
+            schuze,
+            datum_unl,
+            kind,
+            link_mode=link_mode,
+            base_path=base_path,
+            locale=locale,
         )
         out.append((label, href))
     return out

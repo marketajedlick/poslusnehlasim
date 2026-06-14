@@ -1,3 +1,13 @@
-        <section class="hospoda" aria-label="Hospoda u Švejka">
-          <p class="hospoda-gloss">Jestli vám dnešní hlášení přišlo vhod, můžete{% if pivo_href %} <a class="hospoda-link hospoda-link--inline" href="{{ pivo_href }}#stamgast">Švejkovi koupit jedno pivo</a>{% else %} Švejkovi koupit jedno pivo{% endif %}. Noviny zůstanou zdarma tak jako tak. 🍺</p>
+        <section class="hospoda" aria-label="{{ t.beer_support.aria }}">
+          <nav class="hospoda-nav" aria-label="{{ t.beer_support.aria }}">
+            {% if canonical_url %}
+            <a class="hospoda-link" href="{{ canonical_url }}">{{ t.beer_support.read_edition }}</a>
+            {% endif %}
+            {% if archive_href %}
+            <a class="hospoda-link" href="{{ archive_href }}">{{ t.beer_support.archive }}</a>
+            {% endif %}
+            {% if pivo_href %}
+            <a class="hospoda-link" href="{{ pivo_href }}#stamgast">{{ t.beer_support.beer }}</a>
+            {% endif %}
+          </nav>
         </section>

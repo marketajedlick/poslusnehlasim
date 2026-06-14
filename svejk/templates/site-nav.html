@@ -1,19 +1,23 @@
-{% if archive_href or latest_href or slovnicek_href or pivo_href %}
-<nav class="site-nav{% if site_nav_modifier %} {{ site_nav_modifier }}{% endif %}" aria-label="Hlavní navigace">
+{% if archive_href or latest_href or slovnicek_href or pivo_href or lang_switch_href %}
+<nav class="site-nav{% if site_nav_modifier %} {{ site_nav_modifier }}{% endif %}" aria-label="{{ t.nav.aria_main }}">
   {% if latest_href %}
-  <a class="site-nav-link" href="{{ latest_href }}">Nejnovější vydání</a>
+  <a class="site-nav-link" href="{{ latest_href }}">{{ t.nav.latest }}</a>
   {% endif %}
   {% if archive_href and not site_nav_hide_archive %}
   {% if latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
-  <a class="site-nav-link" href="{{ archive_href }}">Archiv vydání</a>
+  <a class="site-nav-link" href="{{ archive_href }}">{{ t.nav.archive }}</a>
   {% endif %}
   {% if slovnicek_href %}
   {% if (archive_href and not site_nav_hide_archive) or latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
-  <a class="site-nav-link" href="{{ slovnicek_href }}">Švejkův slovníček</a>
+  <a class="site-nav-link" href="{{ slovnicek_href }}">{{ t.nav.glossary }}</a>
   {% endif %}
   {% if pivo_href %}
   {% if (archive_href and not site_nav_hide_archive) or latest_href or slovnicek_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
-  <a class="site-nav-link" href="{{ pivo_href }}">Kup Švejkovi pivo 🍺</a>
+  <a class="site-nav-link" href="{{ pivo_href }}">{{ t.nav.beer }}</a>
+  {% endif %}
+  {% if lang_switch_href %}
+  {% if archive_href or latest_href or slovnicek_href or pivo_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
+  <a class="site-nav-link site-nav-lang" href="{{ lang_switch_href }}" hreflang="{{ 'en' if locale == 'cs' else 'cs' }}" aria-label="{{ t.nav.lang_switch_aria }}">{{ t.nav.lang_switch }}</a>
   {% endif %}
 </nav>
 {% endif %}

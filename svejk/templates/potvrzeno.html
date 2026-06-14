@@ -1,52 +1,53 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="{{ lang | default('cs') }}">
 <head>
 {% set head_noindex = true %}
 {% include "head-noviny.html" %}
-<title>Odběr potvrzen · Poslušně hlásím</title>
-<meta name="description" content="Odběr novinek Poslušně hlásím je potvrzen." />
+<title>{{ t.confirmed_page.title }}</title>
+<meta name="description" content="{{ t.confirmed_page.meta }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
+{% include "hreflang.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="archiv-page">
 <div class="archiv-wrap potvrzeno-wrap">
   <header class="archiv-head">
-    <h1 class="archiv-title">Vítej v odběru</h1>
-    <p class="archiv-gloss">Poslušně hlásím, že vše proběhlo podle předpisů. Od příštího vydání ti bude Deník sněmovny chodit do schránky.</p>
+    <h1 class="archiv-title">{{ t.confirmed_page.heading }}</h1>
+    <p class="archiv-gloss">{{ t.confirmed_page.gloss }}</p>
   </header>
 
   <div class="soukromi-body potvrzeno-welcome">
     {% if latest_href %}
     <section class="soukromi-section potvrzeno-latest">
-      <h2 class="soukromi-heading">Než dorazí další vydání</h2>
-      <p>Nejnovější číslo už je venku{% if latest_label %}: {{ latest_label }}{% endif %}. Co poslanci schválili, co neprošlo a proč na tom záleží.</p>
+      <h2 class="soukromi-heading">{% if locale == 'en' %}While you wait for the next edition{% else %}Než dorazí další vydání{% endif %}</h2>
+      <p>{% if locale == 'en' %}The newest edition is already out{% else %}Nejnovější číslo už je venku{% endif %}{% if latest_label %}: {{ latest_label }}{% endif %}. {% if locale == 'en' %}What MPs passed, what failed, and why it matters.{% else %}Co poslanci schválili, co neprošlo a proč na tom záleží.{% endif %}</p>
       <p class="potvrzeno-cta-wrap">
-        <a class="potvrzeno-cta" href="{{ latest_href }}">Přečíst poslední vydání →</a>
+        <a class="potvrzeno-cta" href="{{ latest_href }}">{% if locale == 'en' %}Read the latest edition →{% else %}Přečíst poslední vydání →{% endif %}</a>
       </p>
     </section>
     {% endif %}
 
     <section class="soukromi-section">
-      <h2 class="soukromi-heading">Co v odběru čekat</h2>
-      <p>Po každém jednacím dni poslanecké sněmovny stručně shrneme co se řešilo a co to znamená v praxi. Bez stranění. Bez politických komentářů. Bez televizního křiku.</p>
+      <h2 class="soukromi-heading">{% if locale == 'en' %}What to expect{% else %}Co v odběru čekat{% endif %}</h2>
+      <p>{% if locale == 'en' %}After each sitting day of the Chamber we briefly summarise what was discussed and what it means in practice. No party bias. No political commentary. No TV shouting.{% else %}Po každém jednacím dni poslanecké sněmovny stručně shrneme co se řešilo a co to znamená v praxi. Bez stranění. Bez politických komentářů. Bez televizního křiku.{% endif %}</p>
     </section>
 
     <section class="soukromi-section">
-      <h2 class="soukromi-heading">Jak často to chodí</h2>
-      <p>Jen když vyjde nové vydání. Někdy několikrát za týden, někdy vůbec. Když se nic neděje, neposíláme nic.</p>
+      <h2 class="soukromi-heading">{% if locale == 'en' %}How often{% else %}Jak často to chodí{% endif %}</h2>
+      <p>{% if locale == 'en' %}Only when a new edition comes out. Sometimes several times a week, sometimes not at all. When nothing happens, we send nothing.{% else %}Jen když vyjde nové vydání. Někdy několikrát za týden, někdy vůbec. Když se nic neděje, neposíláme nic.{% endif %}</p>
     </section>
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Poslušně hlásím</h2>
-      <p>Žádný marketing, žádné týdenní připomínky. Odhlásit se můžete kdykoliv.</p>
+      <p>{% if locale == 'en' %}No marketing, no weekly reminders. You can unsubscribe anytime.{% else %}Žádný marketing, žádné týdenní připomínky. Odhlásit se můžete kdykoliv.{% endif %}</p>
     </section>
   </div>
 
   {% set site_nav_modifier = "site-nav--section" %}
   {% include "site-nav.html" %}
 
-  <p class="potvrzeno-note">Tahle stránka se ukáže jen po potvrzení odběru. {% if contact_email %}Něco nesedí? Napiš na e-mail: <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.{% else %}Něco nesedí? Odpověz rovnou na potvrzovací e-mail.{% endif %}</p>
+  <p class="potvrzeno-note">{% if locale == 'en' %}This page appears only after confirming your subscription. {% if contact_email %}Something off? E-mail: <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.{% else %}Something off? Reply to the confirmation e-mail.{% endif %}{% else %}Tahle stránka se ukáže jen po potvrzení odběru. {% if contact_email %}Něco nesedí? Napiš na e-mail: <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.{% else %}Něco nesedí? Odpověz rovnou na potvrzovací e-mail.{% endif %}{% endif %}</p>
 </div>
 {% include "site-footer.html" %}
 {% include "cookie-consent.html" %}

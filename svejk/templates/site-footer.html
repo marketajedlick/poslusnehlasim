@@ -1,11 +1,11 @@
-<footer class="site-footer" aria-label="Patička webu">
+<footer class="site-footer" aria-label="{{ t.footer.aria }}">
   <div class="site-footer-inner">
     <p class="site-footer-closing">{{ footer_closing }}</p>
     <p class="site-footer-stats">{{ footer_stats }}</p>
-    <nav class="site-footer-links" aria-label="Právní informace a podpora">
-      <a href="{{ terms_href }}"{% if footer_active_page == 'terms' %} class="is-active" aria-current="page"{% endif %}>Podmínky používání</a>
-      <a href="{{ privacy_href }}"{% if footer_active_page == 'privacy' %} class="is-active" aria-current="page"{% endif %}>Ochrana údajů</a>
-      <a href="{{ support_href }}"{% if footer_active_page == 'support' %} class="is-active" aria-current="page"{% endif %}>Podpora</a>
+    <nav class="site-footer-links" aria-label="{{ t.footer.aria_legal }}">
+      <a href="{{ terms_href }}"{% if footer_active_page == 'terms' %} class="is-active" aria-current="page"{% endif %}>{{ t.footer.terms }}</a>
+      <a href="{{ privacy_href }}"{% if footer_active_page == 'privacy' %} class="is-active" aria-current="page"{% endif %}>{{ t.footer.privacy }}</a>
+      <a href="{{ support_href }}"{% if footer_active_page == 'support' %} class="is-active" aria-current="page"{% endif %}>{{ t.footer.support }}</a>
     </nav>
   </div>
 </footer>

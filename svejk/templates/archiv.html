@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="{{ lang | default('cs') }}">
 <head>
 {% include "head-noviny.html" %}
-<title>Archiv vydání · Poslušně hlásím</title>
-<meta name="description" content="Všechna vydání deníku z Poslanecké sněmovny, období {{ obdobi }}." />
+<title>{{ t.archive.title }} · Poslušně hlásím</title>
+<meta name="description" content="{{ t.archive.meta | replace('{obdobi}', obdobi|string) }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
+{% include "hreflang.html" %}
 {% include "og-meta.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
@@ -12,8 +13,8 @@
 <body class="archiv-page">
 <div class="archiv-wrap">
   <header class="archiv-head">
-    <h1 class="archiv-title">Archiv vydání</h1>
-    <p class="archiv-gloss">Všechna dostupná vydání deníku.</p>
+    <h1 class="archiv-title">{{ t.archive.title }}</h1>
+    <p class="archiv-gloss">{{ t.archive.gloss }}</p>
     {% set site_nav_hide_archive = true %}
     {% include "site-nav.html" %}
   </header>
@@ -35,7 +36,7 @@
             {% if chip.headline %}
             <span class="archive-chip-tooltip-headline">{{ chip.headline }}</span>
             {% endif %}
-            <span class="archive-chip-tooltip-meta">{{ chip.date_label }} · schůze {{ chip.schuze }}</span>
+            <span class="archive-chip-tooltip-meta">{{ chip.date_label }} · {{ t.archive.chip_meta }} {{ chip.schuze }}</span>
           </span>
         </a>
         {% endfor %}
@@ -44,7 +45,7 @@
     {% endfor %}
   </div>
 
-  <p class="archiv-legend"><span class="archiv-legend-mark">s =</span> číslo schůze Poslanecké sněmovny</p>
+  <p class="archiv-legend"><span class="archiv-legend-mark">s =</span> {{ t.archive.legend }}</p>
 </div>
 {% include "site-footer.html" %}
 {% include "cookie-consent.html" %}

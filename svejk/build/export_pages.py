@@ -52,6 +52,7 @@ from svejk.build.publish import (
     snapshot_path,
 )
 from svejk.build.seo import write_llms_txt, write_robots_txt, write_sitemap_xml
+from svejk.locale import SUPPORTED_LOCALES, localized_path, normalize_locale
 from svejk.newsletter.config import NewsletterConfig
 from svejk.newsletter.doi import export_doi_template
 from svejk.newsletter.feed import write_feed_xml
@@ -72,6 +73,18 @@ def _write_html(path: Path, html: str) -> None:
             f"Zakázaná dlouhá pomlčka (—/–) ve výstupu {path}, oprav zdrojové texty."
         )
     path.write_text(html, encoding="utf-8")
+
+
+def _locale_site_subdir(locale: str) -> Path:
+    return Path("en") if normalize_locale(locale) == "en" else Path(".")
+
+
+def _write_locale_html(out: Path, rel_path: str, html: str, locale: str) -> str:
+    sub = _locale_site_subdir(locale)
+    dest = out / sub / rel_path if sub != Path(".") else out / rel_path
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    _write_html(dest, html)
+    return str(dest.relative_to(out))
 
 
 def _base_path() -> str:
@@ -154,6 +167,7 @@ def _render_edition_html(
     base: str,
     css_href: str,
     fonts_css_href: str,
+    locale: str = "cs",
 ) -> str | None:
     paths = SchuzePaths.create(edition.obdobi, edition.schuze)
     d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
@@ -171,6 +185,7 @@ def _render_edition_html(
         link_mode="pages",
         obdobi=obdobi,
         base_path=base,
+        locale=locale,
     )
 
 
@@ -244,52 +259,62 @@ def run_export_pages(
         )
         written.append(f"og/{og_image_filename(edition.datum_unl)}")
 
-    for edition in editions:
-        dest = out / "noviny" / str(edition.obdobi) / str(edition.schuze) / f"{edition.datum_unl}.html"
-        dest.parent.mkdir(parents=True, exist_ok=True)
+    def _export_edition_page(
+        edition,
+        rel_path: str,
+        *,
+        locale: str = "cs",
+    ) -> str | None:
+        loc = normalize_locale(locale)
         src = edition_source(edition)
-        if src == "snapshot":
+        if src == "snapshot" and loc == "cs":
             raw = snapshot_path(edition).read_text(encoding="utf-8")
             raw = inject_site_footer(raw, base)
             raw = _inject_edition_og(raw, edition, base=base, site_url=site)
-            dest.write_text(raw, encoding="utf-8")
-        else:
-            html = _render_edition_html(
-                edition, obdobi, base=base, css_href=css_href, fonts_css_href=fonts_css_href
-            )
-            if html is None:
-                continue
-            dest.write_text(html, encoding="utf-8")
-        written.append(str(dest.relative_to(out)))
+            return _write_locale_html(out, rel_path, raw, loc)
+        html = _render_edition_html(
+            edition,
+            obdobi,
+            base=base,
+            css_href=css_href,
+            fonts_css_href=fonts_css_href,
+            locale=loc,
+        )
+        if html is None:
+            return None
+        return _write_locale_html(out, rel_path, html, loc)
 
-        if src == "snapshot":
+    for edition in editions:
+        rel = f"noviny/{edition.obdobi}/{edition.schuze}/{edition.datum_unl}.html"
+        for locale in SUPPORTED_LOCALES:
+            rel_written = _export_edition_page(edition, rel, locale=locale)
+            if rel_written:
+                written.append(rel_written)
+
+        if edition_source(edition) == "snapshot":
             continue
 
         paths = SchuzePaths.create(edition.obdobi, edition.schuze)
         for kind in ("neprosli", "prosli", "zvoleni"):
             if not load_vyznamenani(paths, edition.datum_unl, kind):
                 continue
-            table_html = render_vyznamenani_table_html(
-                paths,
-                edition.datum_unl,
-                kind,
-                css_href=css_href,
-                fonts_css_href=fonts_css_href,
-                base_path=base,
-                link_mode="pages",
+            table_rel = (
+                f"noviny/{edition.obdobi}/{edition.schuze}/{edition.datum_unl}-{kind}.html"
             )
-            if not table_html:
-                continue
-            table_dest = (
-                out
-                / "noviny"
-                / str(edition.obdobi)
-                / str(edition.schuze)
-                / f"{edition.datum_unl}-{kind}.html"
-            )
-            table_dest.parent.mkdir(parents=True, exist_ok=True)
-            table_dest.write_text(table_html, encoding="utf-8")
-            written.append(str(table_dest.relative_to(out)))
+            for locale in SUPPORTED_LOCALES:
+                table_html = render_vyznamenani_table_html(
+                    paths,
+                    edition.datum_unl,
+                    kind,
+                    css_href=css_href,
+                    fonts_css_href=fonts_css_href,
+                    base_path=base,
+                    link_mode="pages",
+                    locale=locale,
+                )
+                if not table_html:
+                    continue
+                written.append(_write_locale_html(out, table_rel, table_html, locale))
 
     seen_dates: set[str] = set()
     for edition in editions:
@@ -299,111 +324,81 @@ def run_export_pages(
         resolved = resolve_edition(obdobi, edition.datum_unl)
         if not resolved or edition_source(resolved) is None:
             continue
-        short = out / "noviny" / str(obdobi) / f"{edition.datum_unl}.html"
-        short.parent.mkdir(parents=True, exist_ok=True)
-        if edition_source(resolved) == "snapshot":
-            raw = snapshot_path(resolved).read_text(encoding="utf-8")
-            raw = inject_site_footer(raw, base)
-            raw = _inject_edition_og(raw, resolved, base=base, site_url=site)
-            short.write_text(raw, encoding="utf-8")
-        else:
-            html = _render_edition_html(
-                resolved, obdobi, base=base, css_href=css_href, fonts_css_href=fonts_css_href
-            )
-            if html is None:
-                continue
-            short.write_text(html, encoding="utf-8")
-        written.append(str(short.relative_to(out)))
+        short_rel = f"noviny/{obdobi}/{edition.datum_unl}.html"
+        for locale in SUPPORTED_LOCALES:
+            rel_written = _export_edition_page(resolved, short_rel, locale=locale)
+            if rel_written:
+                written.append(rel_written)
 
     approved = list_approved_editions(obdobi)
     latest = editions[-1]
-    latest_href = edition_pages_href(latest.obdobi, latest.schuze, latest.datum_unl, base)
     homepage_edition = approved[-1] if approved else latest
     paths = SchuzePaths.create(homepage_edition.obdobi, homepage_edition.schuze)
     d = datetime.strptime(homepage_edition.datum_unl, "%d.%m.%Y")
     day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
-    if edition_source(homepage_edition) == "snapshot" or not day_path.is_file():
-        (out / "index.html").write_text(_redirect_html(f"{site}{latest_href}"), encoding="utf-8")
-    else:
-        content = build_den_content(day_path, paths)
-        index_html = render_den_html(
-            content,
-            paths,
-            day_path,
-            inline_css=False,
-            css_href=css_href,
-            fonts_css_href=fonts_css_href,
-            link_mode="pages",
-            obdobi=obdobi,
-            base_path=base,
-            canonical_url=f"{site}/",
-            is_homepage=True,
+    for locale in SUPPORTED_LOCALES:
+        loc = normalize_locale(locale)
+        latest_href = edition_pages_href(
+            latest.obdobi, latest.schuze, latest.datum_unl, base, loc
         )
-        _write_html(out / "index.html", index_html)
+        if edition_source(homepage_edition) == "snapshot" or not day_path.is_file():
+            home_target = f"{site}{latest_href}"
+            written.append(_write_locale_html(out, "index.html", _redirect_html(home_target), loc))
+        else:
+            content = build_den_content(day_path, paths)
+            home_canonical = f"{site}{localized_path('/', loc)}"
+            index_html = render_den_html(
+                content,
+                paths,
+                day_path,
+                inline_css=False,
+                css_href=css_href,
+                fonts_css_href=fonts_css_href,
+                link_mode="pages",
+                obdobi=obdobi,
+                base_path=base,
+                canonical_url=home_canonical,
+                is_homepage=True,
+                locale=loc,
+            )
+            written.append(_write_locale_html(out, "index.html", index_html, loc))
+
+    latest_href = edition_pages_href(latest.obdobi, latest.schuze, latest.datum_unl, base)
 
     page_count = sum(1 for p in written if p.endswith(".html") and p.count("/") >= 3)
 
-    archiv_html = render_archiv_html(
-        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
-    )
-    _write_html(out / "archiv.html", archiv_html)
-    written.append("archiv.html")
-
-    notfound_html = render_404_html(
-        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
-    )
-    _write_html(out / "404.html", notfound_html)
-    written.append("404.html")
-
-    slovnicek_html = render_slovnicek_html(
-        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
-    )
-    _write_html(out / "slovnicek.html", slovnicek_html)
-    written.append("slovnicek.html")
-
-    pivo_html = render_pivo_html(
-        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
-    )
-    _write_html(out / "pivo.html", pivo_html)
-    written.append("pivo.html")
-
-    dekuju_html = render_dekuju_html(
-        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
-    )
-    _write_html(out / "dekuju.html", dekuju_html)
-    written.append("dekuju.html")
-
-    podminky_html = render_podminky_html(
-        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
-    )
-    podminky_dir = out / "podminky"
-    podminky_dir.mkdir(parents=True, exist_ok=True)
-    _write_html(podminky_dir / "index.html", podminky_html)
-    written.append("podminky/index.html")
-
-    podpora_html = render_podpora_html(
-        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
-    )
-    podpora_dir = out / "podpora"
-    podpora_dir.mkdir(parents=True, exist_ok=True)
-    _write_html(podpora_dir / "index.html", podpora_html)
-    written.append("podpora/index.html")
-
-    potvrzeno_html = render_potvrzeno_html(
-        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
-    )
-    potvrzeno_dir = out / "potvrzeno"
-    potvrzeno_dir.mkdir(parents=True, exist_ok=True)
-    _write_html(potvrzeno_dir / "index.html", potvrzeno_html)
-    written.append("potvrzeno/index.html")
-
-    soukromi_html = render_soukromi_html(
-        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
-    )
-    soukromi_dir = out / "soukromi"
-    soukromi_dir.mkdir(parents=True, exist_ok=True)
-    _write_html(soukromi_dir / "index.html", soukromi_html)
-    written.append("soukromi/index.html")
+    static_pages: list[tuple[str, str]] = [
+        ("archiv.html", "archiv"),
+        ("404.html", "404"),
+        ("slovnicek.html", "slovnicek"),
+        ("pivo.html", "pivo"),
+        ("dekuju.html", "dekuju"),
+        ("podminky/index.html", "podminky"),
+        ("podpora/index.html", "podpora"),
+        ("potvrzeno/index.html", "potvrzeno"),
+        ("soukromi/index.html", "soukromi"),
+    ]
+    render_map = {
+        "archiv": render_archiv_html,
+        "404": render_404_html,
+        "slovnicek": render_slovnicek_html,
+        "pivo": render_pivo_html,
+        "dekuju": render_dekuju_html,
+        "podminky": render_podminky_html,
+        "podpora": render_podpora_html,
+        "potvrzeno": render_potvrzeno_html,
+        "soukromi": render_soukromi_html,
+    }
+    for rel_path, key in static_pages:
+        for locale in SUPPORTED_LOCALES:
+            html = render_map[key](
+                obdobi,
+                css_href=css_href,
+                fonts_css_href=fonts_css_href,
+                base_path=base,
+                locale=locale,
+            )
+            written.append(_write_locale_html(out, rel_path, html, locale))
 
     doi_export = export_doi_template(out / "email", base_path=base)
     written.append("email/doi.html")

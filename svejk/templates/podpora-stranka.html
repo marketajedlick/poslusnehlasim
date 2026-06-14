@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="{{ lang | default('cs') }}">
 <head>
 {% include "head-noviny.html" %}
-<title>Zákaznická podpora · Poslušně hlásím</title>
-<meta name="description" content="Kontakt a pomoc s odběrem novinek, platbami a webem Poslušně hlásím." />
+<title>{{ t.support_page.title }}</title>
+<meta name="description" content="{{ t.support_page.meta }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
+{% include "hreflang.html" %}
 {% include "og-meta.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
@@ -12,32 +13,48 @@
 <body class="archiv-page">
 <div class="archiv-wrap soukromi-wrap">
   <header class="archiv-head">
-    <h1 class="archiv-title">Zákaznická podpora</h1>
-    <p class="archiv-gloss">Poslušně hlásím, že i ten nejlepší systém občas ztratí nit. Když se to stane, napište.</p>
+    <h1 class="archiv-title">{% if locale == 'en' %}Customer support{% else %}Zákaznická podpora{% endif %}</h1>
+    <p class="archiv-gloss">{% if locale == 'en' %}I hereby report that even the best system sometimes loses the thread. When that happens, write to us.{% else %}Poslušně hlásím, že i ten nejlepší systém občas ztratí nit. Když se to stane, napište.{% endif %}</p>
     {% set site_nav_modifier = "site-nav--section" %}
     {% include "site-nav.html" %}
   </header>
 
   <div class="soukromi-body soukromi-body--prose">
+    {% if locale == 'en' %}
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Contact</h2>
+      <p>Write to {% if contact_email %}<a href="mailto:{{ contact_email }}">{{ contact_email }}</a>{% else %}<a href="mailto:svejk@poslusnehlasim.cz">svejk@poslusnehlasim.cz</a>{% endif %}.</p>
+    </section>
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Newsletter</h2>
+      <p>We are happy to help with unsubscribing or questions about data processing.</p>
+    </section>
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Voluntary contributions (beer, rum, regular)</h2>
+      <p>We can help manage or cancel support. If you are unsure, write to us. If a payment goes astray or something goes wrong, write to us. We will sort it out amicably.</p>
+    </section>
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Website problems</h2>
+      <p>Page, newsletter, or payment not working? Tell us what happened, what you were doing, and which browser you use. The more detail, the faster we find the problem. Ideally include a link to a specific edition or a screenshot.</p>
+    </section>
+    {% else %}
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Kontakt</h2>
       <p>Napište na {% if contact_email %}<a href="mailto:{{ contact_email }}">{{ contact_email }}</a>{% else %}<a href="mailto:svejk@poslusnehlasim.cz">svejk@poslusnehlasim.cz</a>{% endif %}.</p>
     </section>
-
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Odběr novinek</h2>
       <p>S odhlášením newsletteru nebo dotazy ke zpracování údajů rádi pomůžeme.</p>
     </section>
-
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Dobrovolné příspěvky (pivo, rum, Štamgast)</h2>
       <p>Se správou nebo zrušením podpory rádi pomůžeme. Když si nebudete vědět rady, napište nám. Když se někde zatoulá platba nebo nastane omyl, napište nám. Vyřešíme to po dobrém.</p>
     </section>
-
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Problém s webem</h2>
       <p>Nefunguje stránka, odběr nebo platba? Napište nám, co se stalo, co jste zrovna dělali a jaký používáte prohlížeč. Čím více detailů pošlete, tím rychleji problém najdeme. Ideálně přiložte i odkaz na konkrétní vydání nebo screenshot.</p>
     </section>
+    {% endif %}
   </div>
 </div>
 {% include "site-footer.html" %}

@@ -67,12 +67,12 @@
 <div id="cookie-consent" class="cookie-consent" role="dialog" aria-labelledby="cookie-consent-title" aria-live="polite" hidden>
   <div class="cookie-consent-inner">
     <p id="cookie-consent-title" class="cookie-consent-text">
-      Poslušně hlásím, že pro statistiky návštěvnosti používáme Google Analytics, a to jen po tvém souhlasu.
-      <a href="{{ cookie_privacy_url | default('/soukromi/') }}" rel="noopener">Více v ochraně údajů</a>.
+      {{ t.cookie.text }}
+      <a href="{{ cookie_privacy_url | default('/soukromi/') }}" rel="noopener">{{ t.cookie.privacy_link }}</a>.
     </p>
     <div class="cookie-consent-actions">
-      <button type="button" class="cookie-consent-btn" id="cookie-reject" data-action="reject">Odmítnout</button>
-      <button type="button" class="cookie-consent-btn cookie-consent-btn--accept" id="cookie-accept" data-action="accept">Souhlasím</button>
+      <button type="button" class="cookie-consent-btn" id="cookie-reject" data-action="reject">{{ t.cookie.reject }}</button>
+      <button type="button" class="cookie-consent-btn cookie-consent-btn--accept" id="cookie-accept" data-action="accept">{{ t.cookie.accept }}</button>
     </div>
   </div>
 </div>

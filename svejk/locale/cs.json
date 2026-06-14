@@ -1,0 +1,146 @@
+{
+  "nav": {
+    "aria_main": "Hlavní navigace",
+    "latest": "Nejnovější vydání",
+    "archive": "Archiv vydání",
+    "glossary": "Švejkův slovníček",
+    "beer": "Kup Švejkovi pivo 🍺",
+    "lang_switch": "English",
+    "lang_switch_aria": "Přepnout na anglickou verzi webu"
+  },
+  "footer": {
+    "aria": "Patička webu",
+    "aria_legal": "Právní informace a podpora",
+    "terms": "Podmínky používání",
+    "privacy": "Ochrana údajů",
+    "support": "Podpora",
+    "closings": [
+      "Poslušně hlásím, že dnešní vydání končí. Poslanci šli domů a my taky.",
+      "V hospodě už zavírají. Další vydání zase po schůzi.",
+      "Poslušně hlásím, že demokracie je běh na dlouhou trať a někdy i na dlouhou schůzi.",
+      "Poslanci odešli, stenozáznam zůstal."
+    ],
+    "stats": "{editions} vydání • {schuze} • 100 % veřejná data"
+  },
+  "cookie": {
+    "text": "Poslušně hlásím, že pro statistiky návštěvnosti používáme Google Analytics, a to jen po tvém souhlasu.",
+    "privacy_link": "Více v ochraně údajů",
+    "reject": "Odmítnout",
+    "accept": "Souhlasím"
+  },
+  "subscribe": {
+    "aria": "Odběr novinek",
+    "gloss": "Do sněmovny chodit nemusíš. Nech mi tu e-mail a noviny přijdou za tebou.",
+    "email_aria": "E-mail pro odběr novinek",
+    "placeholder": "vas@email.cz",
+    "submit": "Poslušně odebírat",
+    "submitting": "Odesílám…",
+    "success": "Poslušně hlásím: zkontroluj e-mail a potvrď odběr.",
+    "privacy": "Odběrem souhlasíš se zpracováním e-mailové adresy za účelem zasílání novinek.",
+    "privacy_link": "Více o ochraně soukromí",
+    "error_required": "Zadej e-mail.",
+    "error_invalid": "Tohle nevypadá jako e-mail.",
+    "error_rate_limit": "Moc pokusů. Zkus to znovu za chvíli.",
+    "error_send": "Odběr se nepodařil odeslat. Zkus to znovu za chvíli.",
+    "error_setup": "Odběr se právě nastavuje, zkus to za pár minut znovu.",
+    "error_generic": "Odběr se nepodařil. Zkontroluj e-mail a zkus to znovu."
+  },
+  "edition": {
+    "nav_aria": "Vydání deníku",
+    "prev_aria": "Starší vydání",
+    "next_aria": "Novější vydání",
+    "schuze_title": "schůze",
+    "eyebrow": "deník sněmovny",
+    "board_kick": "Stav zápasu",
+    "mean_label": "Co to znamená pro vás:",
+    "kuriozita_aria": "Tabulky hlasování o vyznamenání",
+    "sign": "- Váš dobrý voják Švejk -"
+  },
+  "beer_support": {
+    "aria": "Hospoda u Švejka",
+    "read_edition": "Číst vydání",
+    "archive": "Archiv všech vydání",
+    "beer": "Kup Švejkovi pivo 🍺"
+  },
+  "locale_notice": "Toto vydání je v češtině. Satirický deník z reálných záznamů Poslanecké sněmovny.",
+  "archive": {
+    "title": "Archiv vydání",
+    "gloss": "Všechna dostupná vydání deníku.",
+    "meta": "Všechna vydání deníku z Poslanecké sněmovny, období {obdobi}.",
+    "chip_meta": "schůze",
+    "legend": "číslo schůze Poslanecké sněmovny"
+  },
+  "notfound": {
+    "title": "Stránka nenalezena · Poslušně hlásím",
+    "meta": "Tahle adresa na webu Poslušně hlásím neexistuje. Archiv vydání a odběr novinek jsou na úvodní stránce.",
+    "heading": "Poslušně hlásím: tady nic není",
+    "gloss": "Adresa, kterou jste otevřeli, na webu neexistuje. Sněmovna má spoustu bodů programu. Tento nepatří mezi ně.",
+    "latest_heading": "Nebo rovnou poslední vydání",
+    "latest_text": "Nejnovější číslo deníku",
+    "latest_cta": "Přečíst poslední vydání →"
+  },
+  "glossary_page": {
+    "title": "Švejkův slovníček · Poslušně hlásím",
+    "meta": "Poslušně hlásím, že sněmovna má vlastní jazyk. Slovníček pojmů pro lidi, kteří politiku běžně nesledují.",
+    "heading": "Švejkův slovníček",
+    "gloss": "Poslušně hlásím, že sněmovna má vlastní jazyk a obyčejný člověk si občas připadá jako na vojně.",
+    "notice": "Položky slovníčku jsou zatím v češtině."
+  },
+  "beer_page": {
+    "title": "Kup Švejkovi pivo · Poslušně hlásím",
+    "meta": "Dobrovolný příspěvek na provoz deníku z Poslanecké sněmovny. Noviny zůstávají zdarma.",
+    "eyebrow": "hospoda u švejka",
+    "heading": "Kup Švejkovi pivo",
+    "promise": "Noviny zůstanou zdarma pro všechny. Pivo je dobrovolné.",
+    "fine": "Příspěvky jsou dobrovolné a nezakládají nárok na žádné protiplnění.",
+    "menu_aria": "Ceník příspěvků",
+    "once_title": "Jednorázový příspěvek",
+    "monthly_title": "Štamgast",
+    "pay_note": "Platbu bezpečně zpracuje Stripe. Web sám platební údaje neukládá.",
+    "pay_portal": "Jste už Štamgast a chcete změnit kartu nebo zrušit podporu? Spravujte své předplatné zde."
+  },
+  "thanks_page": {
+    "title": "Děkujeme · Poslušně hlásím",
+    "meta": "Platba za pivo pro Švejka byla přijata.",
+    "quote": "Poslušně hlásím, že pivo bude vypito na zdraví Sněmovny.",
+    "quote_by": "Váš dobrý voják Švejk"
+  },
+  "confirmed_page": {
+    "title": "Odběr potvrzen · Poslušně hlásím",
+    "meta": "Odběr novinek Poslušně hlásím je potvrzen.",
+    "heading": "Vítej v odběru",
+    "gloss": "Poslušně hlásím, že vše proběhlo podle předpisů. Od příštího vydání ti bude Deník sněmovny chodit do schránky."
+  },
+  "terms_page": {
+    "title": "Podmínky používání · Poslušně hlásím",
+    "meta": "Pravidla používání webu Poslušně hlásím, odběru novinek a dobrovolných příspěvků."
+  },
+  "privacy_page": {
+    "title": "Zásady ochrany osobních údajů · Poslušně hlásím",
+    "meta": "Jak Poslušně hlásím zpracovává e-mail, cookies, analytiku a dobrovolné platby."
+  },
+  "support_page": {
+    "title": "Zákaznická podpora · Poslušně hlásím",
+    "meta": "Kontakt a pomoc s odběrem novinek, platbami a webem Poslušně hlásím."
+  },
+  "pivo_tiers": {
+    "velke_name": "Velké pivo",
+    "velke_note": "starý osvědčený prostředek proti trudnomyslnosti",
+    "velke_cta": "Přispět jednorázově",
+    "rum_name": "Rum",
+    "rum_note": "Kořalku nepiju, jen rum.",
+    "rum_cta": "Přispět jednorázově",
+    "stamgast_name": "Štamgast",
+    "stamgast_note": "pro ty, kdo chodí pravidelně, i když zrovna není poplach",
+    "stamgast_cta": "Stát se Štamgastem",
+    "monthly_badge": "MĚSÍČNĚ"
+  },
+  "board": {
+    "proslo_1": "věc schválili",
+    "proslo_2_4": "věci schválili",
+    "proslo_other": "věcí schválili",
+    "zamitnuto_1": "návrh zamítli",
+    "zamitnuto_2_4": "návrhy zamítli",
+    "zamitnuto_other": "návrhů zamítli"
+  }
+}

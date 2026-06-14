@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="{{ lang | default('cs') }}">
 <head>
 {% include "head-noviny.html" %}
 <style>.stagewrap,.stack{width:100%;max-width:100%;margin:0 auto}@media(min-width:721px){.stagewrap,.stack{width:840px;max-width:840px}}</style>
 <title>{{ page_title }}</title>
 <meta name="description" content="{{ meta_description }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
+{% include "hreflang.html" %}
 {% include "og-meta.html" %}
 <script type="application/ld+json">{{ article_json_ld | safe }}</script>
 {% if website_json_ld %}
@@ -21,10 +22,13 @@
 {% endif %}
 </head>
 <body>
+{% if locale == 'en' %}
+<p class="locale-notice" role="note">{{ t.locale_notice }}</p>
+{% endif %}
 {% if nav %}
-<nav class="edition-nav" aria-label="Vydání deníku">
+<nav class="edition-nav" aria-label="{{ t.edition.nav_aria }}">
   {% if nav.prev %}
-  <a class="edition-arrow prev" href="{{ nav.prev.href }}" title="{{ nav.prev.title }}" aria-label="Starší vydání: {{ nav.prev.title }}">
+  <a class="edition-arrow prev" href="{{ nav.prev.href }}" title="{{ nav.prev.title }}" aria-label="{{ t.edition.prev_aria }}: {{ nav.prev.title }}">
     <span class="edition-glyph" aria-hidden="true">←</span>
     <span class="edition-meta">{{ nav.prev.label }}</span>
   </a>
@@ -34,7 +38,7 @@
   </span>
   {% endif %}
 
-  <div class="edition-now" title="{{ datum_design }} · schůze {{ schuze }}">
+  <div class="edition-now" title="{{ datum_design }} · {{ t.edition.schuze_title }} {{ schuze }}">
     <div class="edition-now-date">
       <span class="edition-now-day">{{ content.cal_day }}</span>
       <span class="edition-now-sub">{{ content.cal_den }} · {{ content.cal_month }} · s{{ schuze }}</span>
@@ -42,7 +46,7 @@
   </div>
 
   {% if nav.next %}
-  <a class="edition-arrow next" href="{{ nav.next.href }}" title="{{ nav.next.title }}" aria-label="Novější vydání: {{ nav.next.title }}">
+  <a class="edition-arrow next" href="{{ nav.next.href }}" title="{{ nav.next.title }}" aria-label="{{ t.edition.next_aria }}: {{ nav.next.title }}">
     <span class="edition-meta">{{ nav.next.label }}</span>
     <span class="edition-glyph" aria-hidden="true">→</span>
   </a>
@@ -78,14 +82,14 @@
             {% if svejk_svg %}
             <div class="svejk">{{ svejk_svg | safe }}</div>
             {% endif %}
-            <div class="eyebrow">deník sněmovny</div>
+            <div class="eyebrow">{{ t.edition.eyebrow }}</div>
             <h1 class="mast">POSLUŠNĚ <span class="terra">HLÁSÍM</span></h1>
           </div>
         </div>
 {% include "archive-chips.html" %}
 
         <div class="board">
-          <div class="board-kick">Stav zápasu</div>
+          <div class="board-kick">{{ t.edition.board_kick }}</div>
           <div class="board-main">
             <div class="bteam l"><span class="blbl">{{ proslo_label }}</span><span class="bnum">{{ content.proslo }}</span></div>
             <span class="bcolon">:</span>
@@ -111,13 +115,13 @@
             </h2>
             <p class="p">{{ item.lead | glossary }}</p>
             {% if item.mean %}
-            <p class="mean"><b>Co to znamená pro vás: </b>{{ item.mean | glossary }}</p>
+            <p class="mean"><b>{{ t.edition.mean_label }} </b>{{ item.mean | glossary }}</p>
             {% endif %}
             {% if item.kuriozita %}
             <p class="kuriozita">{{ item.kuriozita | glossary }}</p>
             {% endif %}
             {% if item.kuriozita_nav %}
-            <nav class="kuriozita-links" aria-label="Tabulky hlasování o vyznamenání">
+            <nav class="kuriozita-links" aria-label="{{ t.edition.kuriozita_aria }}">
               {% for label, href in item.kuriozita_nav %}
               {% if not loop.first %}<span class="kuriozita-links-sep" aria-hidden="true">·</span>{% endif %}
               <a class="kuriozita-link" href="{{ href }}">{{ label }}</a>
@@ -133,7 +137,7 @@
           <p class="q">
             {% if content.zaver_key %}<span class="key">{{ content.zaver_key }}</span> {% endif %}{{ (content.zaver_body or content.zaver) | glossary }}
           </p>
-          <div class="sign">- Váš dobrý voják Švejk -</div>
+          <div class="sign">{{ t.edition.sign }}</div>
         </div>
 
 {% include "beer-support.html" %}

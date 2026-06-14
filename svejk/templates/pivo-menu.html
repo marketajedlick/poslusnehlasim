@@ -1,6 +1,6 @@
-    <section class="pivo-menu" aria-label="Ceník příspěvků">
+    <section class="pivo-menu" aria-label="{{ t.beer_page.menu_aria }}">
       <div class="pivo-menu-group">
-        <h2 class="pivo-menu-group-title">Jednorázový příspěvek</h2>
+        <h2 class="pivo-menu-group-title">{{ t.beer_page.once_title }}</h2>
         {% for tier in pivo_tiers if tier.kind == 'once' %}
         <a
           class="pivo-menu-row{% if loop.last %} pivo-menu-row--last{% endif %}"
@@ -26,7 +26,7 @@
       </div>
 
       <div class="pivo-menu-group pivo-menu-group--monthly">
-        <h2 class="pivo-menu-group-title">Štamgast</h2>
+        <h2 class="pivo-menu-group-title">{{ t.beer_page.monthly_title }}</h2>
         {% for tier in pivo_tiers if tier.kind == 'monthly' %}
         <a
           class="pivo-menu-row{% if loop.last %} pivo-menu-row--last{% endif %}"
@@ -52,5 +52,11 @@
       </div>
     </section>
     {% if pivo_menu_pay %}
-    <p class="pivo-pay-note">Platbu bezpečně zpracuje <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe</a>. Web sám platební údaje neukládá.{% if stripe_portal_href %} Jste už Štamgast a chcete změnit kartu nebo zrušit podporu? Spravujte své předplatné <a href="{{ stripe_portal_href }}" target="_blank" rel="noopener">zde</a>.{% endif %}</p>
+    <p class="pivo-pay-note">
+      {% if locale == 'en' %}
+      Payment is securely processed by <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe</a>. This site does not store payment details.{% if stripe_portal_href %} Already a regular supporter? Manage your subscription <a href="{{ stripe_portal_href }}" target="_blank" rel="noopener">here</a>.{% endif %}
+      {% else %}
+      Platbu bezpečně zpracuje <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe</a>. Web sám platební údaje neukládá.{% if stripe_portal_href %} Jste už Štamgast a chcete změnit kartu nebo zrušit podporu? Spravujte své předplatné <a href="{{ stripe_portal_href }}" target="_blank" rel="noopener">zde</a>.{% endif %}
+      {% endif %}
+    </p>
     {% endif %}
