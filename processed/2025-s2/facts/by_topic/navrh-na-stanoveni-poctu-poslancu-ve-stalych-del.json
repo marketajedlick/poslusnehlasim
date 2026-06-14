@@ -46,5 +46,30 @@
     "spor": false,
     "prazdny_sal": false
   },
-  "steno_slov": 1973
+  "steno_slov": 1973,
+  "en": {
+    "nadpis": "It passed",
+    "predmet_lidsky": "a proposal to determine the number of deputies in permanent delegations",
+    "koho": [
+      "It does not concern the citizen."
+    ],
+    "fakty": [
+      {
+        "text": "Deputy Richterová asks to speak.",
+        "citace": "(Deputy Richterová is asking to speak.)"
+      },
+      {
+        "text": "(Member of Parliament Richter takes the floor.) Yes, please, Madam President of the Pirates Club Olga Richterová.",
+        "citace": "(Member of Parliament Richter takes the floor.) Yes, please, Madam President of the Pirates Club Olga Richterová."
+      },
+      {
+        "text": "Because the numbers were half and half there, 10 MPs for the emerging coalition, 10 MPs for us, for the opposition.",
+        "citace": "Because the numbers were half and half there, 10 MPs for the emerging coalition, 10 MPs for us, for the opposition."
+      },
+      {
+        "text": "I just thought to myself: This will surely be because there is a lot of work on those things from Europe and there will be the will to cooperate as much as possible in at least this one committee.",
+        "citace": "I just thought to myself: This will surely be because there is a lot of work on those things from Europe and there will be the will to cooperate as much as possible in at least this one committee."
+      }
+    ]
+  }
 }

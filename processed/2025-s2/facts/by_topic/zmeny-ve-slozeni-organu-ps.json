@@ -20,5 +20,12 @@
     "spor": false,
     "prazdny_sal": false
   },
-  "steno_slov": 0
+  "steno_slov": 0,
+  "en": {
+    "nadpis": "It passed",
+    "predmet_lidsky": "changes in the composition of PS bodies",
+    "koho": [
+      "It does not apply to citizens, unless they know one of the MPs personally."
+    ]
+  }
 }

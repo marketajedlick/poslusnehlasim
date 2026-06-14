@@ -46,5 +46,30 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 185919
+  "steno_slov": 185919,
+  "en": {
+    "nadpis": "It passed",
+    "predmet_lidsky": "assessment of conditions for discussion of ST 163 in abbreviated proceedings",
+    "koho": [
+      "The citizen will find out when the law passes sooner than expected."
+    ],
+    "fakty": [
+      {
+        "text": "against 0",
+        "citace": "(against 0)"
+      },
+      {
+        "text": "526/1990 Coll., on prices, as amended, parliamentary press 163, in abbreviated proceedings.\" (Request from the plenary session for opt-out.) Yes, I registered the opt-out proposal.",
+        "citace": "526/1990 Coll., on prices, as amended, parliamentary press 163, in abbreviated proceedings.\" (Request from the plenary session for opt-out.) Yes, I registered the opt-out proposal."
+      },
+      {
+        "text": "Vote number 20, 161 MPs were overruled, 71 voted for, (86 against). The proposal was rejected.",
+        "citace": "Vote number 20, 161 MPs were overruled, 71 voted for, (86 against). The proposal was rejected."
+      },
+      {
+        "text": "526/1990 Coll., on prices, as amended/parliamentary press 163/, abbreviated meeting The submitted proposal will be presented by Deputy Prime Minister and Minister of Finance Alena Schillerová.",
+        "citace": "526/1990 Coll., on prices, as amended/parliamentary press 163/, abbreviated meeting The submitted proposal will be presented by Deputy Prime Minister and Minister of Finance Alena Schillerová."
+      }
+    ]
+  }
 }

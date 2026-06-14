@@ -45,5 +45,27 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 37863
+  "steno_slov": 37863,
+  "en": {
+    "nadpis": "Construction will wait",
+    "predmet_lidsky": "Building Permits Act",
+    "fakty": [
+      {
+        "text": "He looks around the hall, where it is noisy.",
+        "citace": "(He looks around the hall, where it is noisy.)"
+      },
+      {
+        "text": "(He looks around the hall, where it is noisy.).",
+        "citace": "(He looks around the hall, where it is noisy.)."
+      },
+      {
+        "text": "The minister is talking to a member of parliament.",
+        "citace": "(The minister is talking to a member of parliament.)"
+      },
+      {
+        "text": "Although the level of noise has somehow not decreased, I will still try to continue my commentary within the framework of the second reading of the amendment to the law, parliamentary press 67, which I interrupted at 11 pm I think last week.",
+        "citace": "Although the level of noise has somehow not decreased, I will still try to continue my comment during the second reading of the amendment to the law, parliamentary press 67, which I interrupted at 11 p.m. I think last week"
+      }
+    ]
+  }
 }
