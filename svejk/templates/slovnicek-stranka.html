@@ -15,15 +15,15 @@
     <h1 class="slovnicek-title">Švejkův slovníček</h1>
     <p class="slovnicek-gloss">Krátké vysvětlení pojmů ze sněmovny pro lidi, kteří politiku běžně nesledují.</p>
     <nav class="slovnicek-nav" aria-label="Navigace">
-      {% if edition_back_href %}
-      <a class="edition-back-link" href="{{ edition_back_href }}">← Zpět na nejnovější vydání</a>
+      {% if latest_href %}
+      <a class="site-nav-link" href="{{ latest_href }}">Nejnovější vydání</a>
       {% endif %}
       {% if archive_href %}
-      {% if edition_back_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
+      {% if latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
       <a class="site-nav-link" href="{{ archive_href }}">Archiv vydání</a>
       {% endif %}
       {% if pivo_href %}
-      {% if archive_href or edition_back_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
+      {% if archive_href or latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
       <a class="site-nav-link" href="{{ pivo_href }}">Kup Švejkovi pivo 🍺</a>
       {% endif %}
     </nav>

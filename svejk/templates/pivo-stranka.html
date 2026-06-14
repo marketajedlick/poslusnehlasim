@@ -20,8 +20,19 @@
             <header class="pivo-head">
               <div class="eyebrow">hospoda u švejka</div>
               <h1 class="pivo-title">Kup <span class="terra">Švejkovi</span> pivo</h1>
-              {% include "edition-back-nav.html" %}
-              {% include "site-nav.html" %}
+              <nav class="pivo-nav" aria-label="Navigace">
+                {% if latest_href %}
+                <a class="site-nav-link" href="{{ latest_href }}">Nejnovější vydání</a>
+                {% endif %}
+                {% if archive_href %}
+                {% if latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
+                <a class="site-nav-link" href="{{ archive_href }}">Archiv vydání</a>
+                {% endif %}
+                {% if slovnicek_href %}
+                {% if archive_href or latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
+                <a class="site-nav-link" href="{{ slovnicek_href }}">Švejkův slovníček</a>
+                {% endif %}
+              </nav>
             </header>
 
             <div class="pivo-body">
