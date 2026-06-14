@@ -14,7 +14,7 @@ from svejk.build.io import read_json
 from svejk.paths import SchuzePaths, processed_root
 
 from svejk.build.publish import list_site_editions
-from svejk.locale import localized_path, month_label, normalize_locale
+from svejk.locale import load_strings, localized_path, month_label, normalize_locale
 from svejk.timeline import den_v_tydnu
 
 _MESICE_NOM = (
@@ -238,6 +238,11 @@ def _link_label(edition: Edition, editions: tuple[Edition, ...]) -> str:
     return base
 
 
+def _schuze_nav_suffix(schuze: int, locale: str) -> str:
+    word = load_strings(locale).get("edition", {}).get("schuze_title", "schůze")
+    return f" · {word} {schuze}"
+
+
 def _make_link(
     edition: Edition,
     editions: tuple[Edition, ...],
@@ -260,9 +265,10 @@ def _make_link(
         from_file = from_paths.noviny_dlouhe_html(from_datum)
         to_file = target_paths.noviny_dlouhe_html(edition.datum_unl)
         href = Path(os.path.relpath(to_file, from_file.parent)).as_posix()
-    title = datum_design(edition.datum_unl, den)
+    loc = normalize_locale(locale)
+    title = datum_design(edition.datum_unl, den, locale=loc)
     if len(_editions_on_day(editions, edition.datum_unl)) > 1:
-        title = f"{title} · schůze {edition.schuze}"
+        title = f"{title}{_schuze_nav_suffix(edition.schuze, loc)}"
     return EditionLink(
         href=href,
         label=_link_label(edition, editions),
@@ -322,15 +328,18 @@ def _archive_chips(
         "base_path": base_path,
         "locale": locale,
     }
+    loc = normalize_locale(locale)
+    schuze_word = load_strings(loc).get("edition", {}).get("schuze_title", "schůze")
     for edition in subset:
         d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
         link = _make_link(edition, **kw)
         target_paths = SchuzePaths.create(edition.obdobi, edition.schuze)
         den = _den_z_index(target_paths, edition.datum_unl)
-        date_label = datum_design(edition.datum_unl, den)
+        date_label = datum_design(edition.datum_unl, den, locale=loc)
         headline = _edition_headline(edition)
-        aria = f"{headline}. {date_label}, schůze {edition.schuze}" if headline else (
-            f"{date_label}, schůze {edition.schuze}"
+        schuze_part = f"{schuze_word} {edition.schuze}"
+        aria = f"{headline}. {date_label}, {schuze_part}" if headline else (
+            f"{date_label}, {schuze_part}"
         )
         chips.append(
             ArchiveChip(

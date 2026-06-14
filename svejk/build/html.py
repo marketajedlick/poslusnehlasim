@@ -472,7 +472,7 @@ def render_den_html(
             "pivo_href": None,
         }
     )
-    datum_label = datum_design(content.datum, content.den)
+    datum_label = datum_design(content.datum, content.den, locale=loc)
     edition_title = f"Poslušně hlásím · {datum_label}"
     from svejk.build.seo import article_headline as _article_headline
     from svejk.build.seo import article_json_ld as _article_json_ld
@@ -604,7 +604,7 @@ def render_den_html(
         content=content,
         schuze=paths.schuze,
         dup_day=dup_day,
-        datum_design=datum_design(content.datum, content.den),
+        datum_design=datum_design(content.datum, content.den, locale=loc),
         proslo_label=_proslo_board_label(content.proslo, loc),
         zamitnuto_label=_zamitnuto_board_label(content.zamitnuto, loc),
         svejk_svg=svejk_svg,
