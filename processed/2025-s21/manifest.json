@@ -10,7 +10,18 @@
       ],
       "html_files": [
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s21/out/noviny-dlouhe/2026-06-02.html"
-      ]
+      ],
+      "last_partial_compose": {
+        "den": "02.06.2026",
+        "built_at": "2026-06-14T21:23:06.445025+00:00",
+        "days": 1,
+        "files": [
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s21/out/noviny-dlouhe/2026-06-02.md"
+        ],
+        "html_files": [
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s21/out/noviny-dlouhe/2026-06-02.html"
+        ]
+      }
     },
     "fetch": {
       "done": true,
@@ -31,5 +42,5 @@
       "days": 1
     }
   },
-  "built_at": "2026-06-14T19:31:07.483743+00:00"
+  "built_at": "2026-06-14T21:23:06.445164+00:00"
 }
