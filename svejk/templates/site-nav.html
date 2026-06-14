@@ -1,11 +1,11 @@
 {% if archive_href or latest_href or slovnicek_href or pivo_href %}
 <nav class="site-nav{% if site_nav_modifier %} {{ site_nav_modifier }}{% endif %}" aria-label="Hlavní navigace">
-  {% if archive_href %}
-  <a class="site-nav-link" href="{{ archive_href }}">Archiv vydání</a>
-  {% endif %}
   {% if latest_href %}
-  {% if archive_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
   <a class="site-nav-link" href="{{ latest_href }}">Nejnovější vydání</a>
+  {% endif %}
+  {% if archive_href %}
+  {% if latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
+  <a class="site-nav-link" href="{{ archive_href }}">Archiv vydání</a>
   {% endif %}
   {% if slovnicek_href %}
   {% if archive_href or latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
