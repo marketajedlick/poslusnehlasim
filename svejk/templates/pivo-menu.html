@@ -16,7 +16,12 @@
           {% endif %}
         >
           <span class="pivo-menu-name">{{ tier.name }}</span>
-          <span class="pivo-menu-price">{{ tier.price }}</span>
+          <span class="pivo-menu-price-wrap">
+            <span class="pivo-menu-price">{{ tier.price }}</span>
+            {% if tier.price_badge %}
+            <span class="pivo-menu-stamp" aria-hidden="true">{{ tier.price_badge }}</span>
+            {% endif %}
+          </span>
           <span class="pivo-menu-note">{{ tier.note }}</span>
         </a>
         {% endfor %}
@@ -37,7 +42,12 @@
           {% endif %}
         >
           <span class="pivo-menu-name">{{ tier.name }}</span>
-          <span class="pivo-menu-price">{{ tier.price }}</span>
+          <span class="pivo-menu-price-wrap">
+            <span class="pivo-menu-price">{{ tier.price }}</span>
+            {% if tier.price_badge %}
+            <span class="pivo-menu-stamp" aria-hidden="true">{{ tier.price_badge }}</span>
+            {% endif %}
+          </span>
           <span class="pivo-menu-note">{{ tier.note }}</span>
         </a>
         {% endfor %}
