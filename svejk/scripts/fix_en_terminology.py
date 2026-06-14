@@ -400,11 +400,16 @@ def main() -> None:
     parser.add_argument("--facts-root", type=Path, default=ROOT / "processed")
     args = parser.parse_args()
 
+    facts_root = args.facts_root.resolve()
     changed = 0
-    for path in sorted(args.facts_root.glob("2025-s*/facts/**/*.json")):
+    for path in sorted(facts_root.glob("2025-s*/facts/**/*.json")):
         if fix_file(path, dry_run=args.dry_run):
             changed += 1
-            print(f"{'~' if args.dry_run else '✓'} {path.relative_to(ROOT)}")
+            try:
+                rel = path.relative_to(ROOT)
+            except ValueError:
+                rel = path
+            print(f"{'~' if args.dry_run else '✓'} {rel}")
     print(json.dumps({"changed": changed, "dry_run": args.dry_run}))
 
 

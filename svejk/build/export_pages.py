@@ -407,6 +407,9 @@ def run_export_pages(
     written.append("email/doi-en.html")
 
     feed_path = write_feed_xml(obdobi, out / "feed.xml", config=cfg, base_path=base)
+    feed_en_path = write_feed_xml(
+        obdobi, out / "feed-en.xml", config=cfg, base_path=base, locale="en"
+    )
     robots_path = write_robots_txt(out, site_url=site)
     sitemap_path = write_sitemap_xml(out, editions, site_url=site, base_path=base)
     llms_path, llms_full_path = write_llms_txt(
@@ -419,6 +422,7 @@ def run_export_pages(
         "pages": page_count,
         "latest": latest_href,
         "feed": str(feed_path.relative_to(out)),
+        "feed_en": str(feed_en_path.relative_to(out)),
         "robots": str(robots_path.relative_to(out)),
         "sitemap": str(sitemap_path.relative_to(out)),
         "llms": str(llms_path.relative_to(out)),
