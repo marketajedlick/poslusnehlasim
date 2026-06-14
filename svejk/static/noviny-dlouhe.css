@@ -844,18 +844,23 @@ body.pivo-page{
   padding:calc(4px + env(safe-area-inset-top, 0px)) 0 0;
 }
 .pivo-stage .pad{
-  padding-top:4px;
+  padding-top:0;
   padding-bottom:24px;
 }
 .pivo-head{
   text-align:center;
+  padding-top:0;
 }
-.pivo-head .eyebrow{ margin-top:-15px; margin-bottom:5px; }
+.pivo-head .eyebrow{
+  margin:0 0 16px;
+  letter-spacing:.22em;
+  line-height:1.2;
+}
 .pivo-body{ padding-top:4px; }
 .pivo-title{
   font-family:'Anton',sans-serif; text-transform:uppercase;
   font-size:clamp(28px, 8vw, 42px); line-height:.92;
-  letter-spacing:.005em; margin:4px 0 0; color:var(--ink);
+  letter-spacing:.005em; margin:0; color:var(--ink);
 }
 .pivo-title .terra{ color:var(--terra); }
 .pivo-nav{
@@ -997,19 +1002,24 @@ body.pivo-page{
 }
 .pivo-pay-note a:hover{ border-bottom-color:var(--terra); }
 .pivo-quote{
-  margin:24px 0 0; padding:16px 18px;
+  margin:24px 0 0;
+  padding:16px 18px;
+  border:0;
   background:var(--ink);
   color:var(--paper);
+  text-align:center;
 }
 .pivo-quote p{
-  margin:0;
+  margin:0 auto;
+  max-width:28em;
   font-family:'Old Standard TT',serif; font-style:italic;
   font-size:16px; line-height:1.5; color:var(--paper);
   text-align:center;
 }
 .pivo-quote-by{
   display:block;
-  margin-top:10px;
+  margin:10px auto 0;
+  max-width:28em;
   font-style:normal;
   font-size:13px;
   letter-spacing:.04em;
@@ -1783,7 +1793,8 @@ body.archiv-page{
   .hospoda-gloss{ font-size:17px; }
   .hospoda-link{ font-size:13px; }
   .hospoda + .archive-link{ padding:12px 0 0; }
-  .pivo-stage .pad{ padding:10px 50px 40px; }
+  .pivo-stage .pad{ padding:0 50px 40px; }
+  .pivo-head .eyebrow{ letter-spacing:.26em; font-size:13px; margin-bottom:20px; }
   .pivo-body p{ font-size:18px; }
   .pivo-menu-name{ font-size:14px; }
   .pivo-menu-price{ font-size:24px; }
