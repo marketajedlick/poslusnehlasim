@@ -13,7 +13,7 @@ from markupsafe import Markup
 
 from svejk.build.day_content import DenContent, build_den_content, datum_design
 from svejk.build.io import read_json
-from svejk.glossary import SLOVNIČEK, slovnicek_anchor
+from svejk.glossary import slovnicek_anchor, slovnicek_for_locale
 from svejk.build.publish import list_site_editions
 from svejk.locale import (
     footer_closings,
@@ -911,7 +911,9 @@ def render_404_html(
     from svejk.timeline import den_v_tydnu
 
     loc = normalize_locale(locale)
-    latest_label = datum_design(latest.datum_unl, den_v_tydnu(latest.datum_unl))
+    latest_label = datum_design(
+        latest.datum_unl, den_v_tydnu(latest.datum_unl), locale=loc
+    )
     base = base_path.rstrip("/")
     home = localized_path("/", loc)
     home = f"{base}{home}" if base else home
@@ -962,7 +964,9 @@ def render_potvrzeno_html(
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
     from svejk.timeline import den_v_tydnu
 
-    latest_label = datum_design(latest.datum_unl, den_v_tydnu(latest.datum_unl))
+    latest_label = datum_design(
+        latest.datum_unl, den_v_tydnu(latest.datum_unl), locale=loc
+    )
     tpl = _jinja_env().get_template("potvrzeno.html")
     return tpl.render(
         latest_label=latest_label,
@@ -1140,7 +1144,7 @@ def render_slovnicek_html(
     tpl = _jinja_env().get_template("slovnicek-stranka.html")
     slovnicek = [
         {"question": q, "answer": a, "anchor": slovnicek_anchor(q)}
-        for q, a in SLOVNIČEK
+        for q, a in slovnicek_for_locale(loc)
     ]
     return tpl.render(
         slovnicek=slovnicek,

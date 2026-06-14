@@ -1297,6 +1297,42 @@ SLOVNIČEK: tuple[tuple[str, str], ...] = (
     ("Co je Rada ČT?", "Skupina, která dohlíží na Českou televizi a vybírá její vedení."),
 )
 
+# Anglický Švejkův slovníček (panel /slovnicek.html v EN).
+SLOVNIČEK_EN: tuple[tuple[str, str], ...] = (
+    ("What is an amendment?", "When someone says: \"I'd write that bit a little differently.\""),
+    ("What is first reading?", "The Chamber decides whether to keep working on a bill. Nothing is approved yet."),
+    ("What is second reading?", "MPs propose changes and vote on specific parts of the bill."),
+    ("What is third reading?", "The last stop before the final vote. Then it's yes or no."),
+    ("What is a procedural motion?", "Not about the law itself, but about how the debate will run."),
+    ("What is obstruction?", "When people talk at length mainly so voting gets delayed."),
+    ("What is a suspension of the session?", "MPs take a break and promise to come back to it."),
+    ("What is legislative urgency?", "A fast-track mode where bills move quicker than usual."),
+    ("What is an extraordinary session?", "A sitting called outside the regular calendar when something is urgent or tempers flare."),
+    ("What is an interpellation?", "Parliamentary Q&A: MPs question ministers on the record."),
+    ("What is a vote of confidence?", "A vote on whether the government still has majority support."),
+    ("What is a vote of no confidence?", "An attempt to send the government into political retirement before it leaves on its own."),
+    ("What is the coalition?", "Parties governing together and trying to sound like one voice."),
+    ("What is the opposition?", "Parties not in government, watching whether the cabinet cooks with someone else's money."),
+    ("What is the Senate?", "The upper chamber of Parliament. It reviews laws passed by The Chamber of Deputies."),
+    ("What is a Senate veto?", "Senators send a bill back or suggest changes. MPs can override them."),
+    ("What is a presidential veto?", "The president sends a bill back and asks MPs to think again."),
+    ("What are budget brakes?", "Rules that remind the state to hit the brakes when spending gets too fast."),
+    ("What are fiscal rules?", "Rules that remind the state the credit card is not bottomless."),
+    ("What is a deficit?", "When the state spends more than it collects. A bit like a pub running on credit."),
+    ("What is EET?", "Electronic sales records. Every receipt once reported to the state how much you earned."),
+    ("What is a resolution?", "A statement or decision of The Chamber of Deputies. Not a law."),
+    (
+        "What is Dozimetr?",
+        "A corruption scandal around Prague's public transport company, linked to STAN figures and public contracts.",
+    ),
+    ("What is the super benefit?", "A plan to merge several social benefits into one system with one application."),
+    ("What is the Supreme Audit Office?", "The state's top watchdog for public spending."),
+    ("What is VZP?", "The largest health insurer in the Czech Republic."),
+    ("What is a person with a disability (OZP)?", "A person with a health-related disability."),
+    ("What is the Sudeten German landsmanschaft?", "An organisation of Sudeten Germans expelled after WWII and their descendants."),
+    ("What is the Czech Television Council?", "The body that oversees Czech Television and picks its leadership."),
+)
+
 # Anglické tooltipy pro /en/ stránky (delší fráze nahoře).
 GLOSSARY_EN: tuple[tuple[str, str], ...] = (
     (
@@ -1332,7 +1368,21 @@ GLOSSARY_EN: tuple[tuple[str, str], ...] = (
         "interpellation",
         "Parliamentary Q&A session. MPs question ministers on the record.",
     ),
+    (
+        "Dozimetr",
+        "Corruption scandal around Prague's public transport company, linked to STAN figures and public contracts.",
+    ),
+    (
+        "Dozimeter",
+        "Corruption scandal around Prague's public transport company, linked to STAN figures and public contracts.",
+    ),
 )
+
+
+def slovnicek_for_locale(locale: str) -> tuple[tuple[str, str], ...]:
+    from svejk.locale import normalize_locale
+
+    return SLOVNIČEK_EN if normalize_locale(locale) == "en" else SLOVNIČEK
 
 
 def glossary_for_locale(locale: str) -> tuple[tuple[str, str], ...]:

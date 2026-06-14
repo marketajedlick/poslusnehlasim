@@ -234,6 +234,8 @@ _REGEX: list[tuple[str, str]] = [
     (r"\bof the House\b", "of The Chamber of Deputies"),
     (r"\bHouse sends\b", "The Chamber of Deputies sends"),
     (r"\bHouse bodies\b", "bodies of The Chamber of Deputies"),
+    (r"\bthe lower house\b", "The Chamber of Deputies"),
+    (r"\blower house\b", "The Chamber of Deputies"),
     (r"\bHouse Press\b", "Chamber document"),
     # Superdávka.
     (r"\bsuper dose\b", "super benefit"),

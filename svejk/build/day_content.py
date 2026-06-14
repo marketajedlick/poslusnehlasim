@@ -235,7 +235,7 @@ def _kick_z_fact(fact: dict[str, Any], locale: str = "cs") -> str:
         first = re.split(r"[\s\-]", nadpis, maxsplit=1)[0]
         if len(first) >= 4:
             return first
-    return "Chamber of Deputies" if normalize_locale(locale) == "en" else "Sněmovna"
+    return "The Chamber of Deputies" if normalize_locale(locale) == "en" else "Sněmovna"
 
 
 def _lead_kratky(fact: dict[str, Any], topic: dict[str, Any] | None) -> str:
@@ -392,9 +392,11 @@ def split_zaver(text: str, *, locale: str = "cs") -> tuple[str, str]:
     return key, body
 
 
-def datum_design(datum_unl: str, den: str) -> str:
+def datum_design(datum_unl: str, den: str, *, locale: str = "cs") -> str:
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
-    return f"{den.capitalize()} {d.day:02d} / {d.month:02d} / {d.year}"
+    loc = normalize_locale(locale)
+    den_label = _DEN_CS_TO_EN.get(den.lower(), den).capitalize() if loc == "en" else den.capitalize()
+    return f"{den_label} {d.day:02d} / {d.month:02d} / {d.year}"
 
 
 def calendar_parts(datum_unl: str, den: str, *, locale: str = "cs") -> tuple[str, str, str]:

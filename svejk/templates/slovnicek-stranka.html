@@ -16,7 +16,7 @@
   <header class="slovnicek-head">
     <h1 class="slovnicek-title">{{ t.glossary_page.heading }}</h1>
     <p class="slovnicek-gloss">{{ t.glossary_page.gloss }}</p>
-    {% if locale == 'en' %}
+    {% if locale == 'en' and t.glossary_page.notice %}
     <p class="locale-notice locale-notice--inline">{{ t.glossary_page.notice }}</p>
     {% endif %}
     <nav class="slovnicek-nav" aria-label="{{ t.nav.aria_main }}">

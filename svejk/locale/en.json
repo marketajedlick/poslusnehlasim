@@ -54,7 +54,7 @@
     "next_aria": "Newer edition",
     "schuze_title": "session",
     "eyebrow": "parliament diary",
-    "board_kick": "Score",
+    "board_kick": "Match score",
     "mean_label": "What it means for you:",
     "kuriozita_aria": "Honours voting tables",
     "sign": "- Your good soldier Švejk -"
@@ -70,7 +70,7 @@
     "gloss": "All available diary editions.",
     "meta": "All diary editions from the Czech Chamber of Deputies, term {obdobi}.",
     "chip_meta": "session",
-    "legend": "Chamber of Deputies session number"
+    "legend": "The Chamber of Deputies session number"
   },
   "notfound": {
     "title": "Page not found · Poslušně hlásím",
@@ -86,7 +86,7 @@
     "meta": "The Chamber of Deputies has its own language. A glossary for people who don't follow politics every day.",
     "heading": "Švejk's glossary",
     "gloss": "The Chamber of Deputies has its own language and ordinary people sometimes feel like they're back in the army.",
-    "notice": "Glossary entries are in Czech for now."
+    "notice": ""
   },
   "beer_page": {
     "title": "Buy Švejk a Pint · Poslušně hlásím",
@@ -97,9 +97,9 @@
     "fine": "Contributions are voluntary and do not entitle you to any consideration.",
     "menu_aria": "Contribution menu",
     "once_title": "One-time contribution",
-    "monthly_title": "Regular",
+    "monthly_title": "Štamgast",
     "pay_note": "Payment is securely processed by Stripe. This site does not store payment details.",
-    "pay_portal": "Already a regular supporter and want to change your card or cancel? Manage your subscription here."
+    "pay_portal": "Already a Štamgast and want to change your card or cancel? Manage your subscription here."
   },
   "thanks_page": {
     "title": "Thank you · Poslušně hlásím",
@@ -132,9 +132,9 @@
     "rum_name": "Rum",
     "rum_note": "I don't drink spirits, only rum.",
     "rum_cta": "Contribute once",
-    "stamgast_name": "Regular",
+    "stamgast_name": "Štamgast",
     "stamgast_note": "for those who show up regularly, even when there's no alarm",
-    "stamgast_cta": "Become a regular",
+    "stamgast_cta": "Become a Štamgast",
     "monthly_badge": "MONTHLY"
   },
   "doi": {
