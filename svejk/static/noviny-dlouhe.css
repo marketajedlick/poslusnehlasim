@@ -837,10 +837,10 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
 
 /* ---------- pivo page ---------- */
 body.pivo-page{
-  padding:calc(8px + env(safe-area-inset-top, 0px)) 0 0;
+  padding:calc(4px + env(safe-area-inset-top, 0px)) 0 0;
 }
 .pivo-stage .pad{
-  padding-top:8px;
+  padding-top:4px;
   padding-bottom:24px;
 }
 .pivo-head{
@@ -1807,7 +1807,7 @@ body.archiv-page{
   .hospoda-gloss{ font-size:17px; }
   .hospoda-link{ font-size:13px; }
   .hospoda + .archive-link{ padding:12px 0 0; }
-  .pivo-stage .pad{ padding:16px 50px 40px; }
+  .pivo-stage .pad{ padding:10px 50px 40px; }
   .pivo-body p{ font-size:18px; }
   .pivo-menu-name{ font-size:14px; }
   .pivo-menu-price{ font-size:20px; }
