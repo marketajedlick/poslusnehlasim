@@ -39,5 +39,33 @@
   "pointa": "Hřib mluvil o hazardu s budoucností bydlení a chtěl bod odložit o rok. Koalice návrh o pořadu neprosadila, závěrečné hlasování o zákonu přišlo až ve středu.",
   "mean": "Změna zákona upravuje systém podpory v bydlení a práci kontaktních míst obcí. V pátek se nestihlo rozhodnout o celém zákoně, debata pokračovala ve středu 3. června.",
   "pocet_hlasovani": 0,
-  "proslo": false
+  "proslo": false,
+  "en": {
+    "nadpis": "Living without a final",
+    "lead": "On Friday morning, the House began the final vote on the housing support law, but four votes on amendments fell and the meeting was adjourned until June 3.",
+    "pointa": "Hřib talked about gambling with the future of housing and wanted to postpone the point for a year. The coalition did not pass the proposal on the program, the final vote on the law did not come until Wednesday.",
+    "mean": "The change in the law regulates the system of support in housing and work of municipal contact points. They did not have time to decide on the entire law on Friday, the debate continued on Wednesday, June 3.",
+    "predmet_lidsky": "the third reading of the amendment to the Housing Support Act",
+    "koho": [
+      "Who does it concern? People in need of housing, young families and communities. The amendment regulates contact points for housing and support measures."
+    ],
+    "fakty": [
+      {
+        "text": "Right from the start, Hřib proposed postponing the point for a year, the vote was lost.",
+        "citace": "Navrhuji procedurální hlasování o tom, že odložíme projednávání a vrátíme se k němu znovu za rok."
+      },
+      {
+        "text": "Hřib said that the government is erasing the definition of affordable housing.",
+        "citace": "Je naprosto nepřijatelné, aby z legislativy byla vyškrtnuta definice dostupného bydlení."
+      },
+      {
+        "text": "The four morning votes on the amendments came as close as twenty-nine to seventy-one.",
+        "citace": "Hlasování číslo 46 až 49, všechna zamítnuta."
+      },
+      {
+        "text": "At 14:11 the meeting adjourned to the third of June.",
+        "citace": "Návrh na přerušení 17. schůze na 3. června na 9 hodin."
+      }
+    ]
+  }
 }

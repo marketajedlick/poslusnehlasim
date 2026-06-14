@@ -47,5 +47,33 @@
   "steno_slov": 636,
   "lead": "Úterý ráno šlo nejdřív o jednu tabulku. Výbor pro evropské záležitosti měl jako jediný na papíře deset míst pro koalici a deset pro opozici. Koalice pak počet změnila z dvaceti na dvacet dva členů a Taťána Malá mluvila o chybě při načítání.",
   "pointa": "Richterová říkala, že deset ku deseti vypadalo jako ochota ke spolupráci, ale po přečíslování si koalice vezme většinu jako u všech ostatních výborů. Kolovratník se ptal, kde je férovost a připomněl minulost: Piráti čtyři poslanci, přesto Richterová místopředsedkyně Sněmovny; SPD dvacet poslanců a ve vedení Sněmovny nebylo. Jenže debata šla o předsedy výborů, ne o křesla u kladívka. Richterová bránila poměrné zastoupení ve výborech. Hřib dodal, že SPD předsedy výborů měla a že místopředsedkyně Sněmovny s předsedou výboru jsou dvě různé volby.",
-  "mean": "Výbor je jako malá sněmovna: kdo má víc míst, svolává jednání a má většinu hlasů. Když evropský výbor přešel z rovného deseti ku deseti na 22 členů, koalice získala převahu stejně jako jinde."
+  "mean": "Výbor je jako malá sněmovna: kdo má víc míst, svolává jednání a má většinu hlasů. Když evropský výbor přešel z rovného deseti ku deseti na 22 členů, koalice získala převahu stejně jako jinde.",
+  "en": {
+    "nadpis": "European Committee in half",
+    "lead": "Tuesday morning it was about one table first. The European Affairs Committee was the only one with ten seats for the coalition and ten for the opposition. The coalition then changed the number from twenty to twenty-two members, and Taťána Malá talked about a loading error.",
+    "pointa": "Richter said that 10 to 10 seemed like a willingness to cooperate, but after the renumbering, the coalition would take the majority as with all other committees. Kolovratník asked where there was fairness and recalled the past: Pirates, four MPs, yet Richter is the deputy speaker of the House; The SPD had twenty MPs and was not in the leadership of the House. But the debate was about committee chairs, not chairs at the gavel. Richter defended proportional representation in committees. Hřib added that the SPD had committee chairmen and that the deputy chairwoman of the House of Representatives and the chairperson of the committee are two different elections.",
+    "mean": "The committee is like a small house: whoever has more seats calls the meeting and has the majority of votes. When the European Committee went from an equal ten to ten to 22 members, the coalition gained the upper hand as elsewhere.",
+    "predmet_lidsky": "change of US PS No. 13 of 5 November 2025",
+    "koho": [
+      "Who cares about European politics and the distribution of committee seats."
+    ],
+    "fakty": [
+      {
+        "text": "Taťána Malá proposed a change due to a technical error: instead of 20 members of the European Committee, 22 were read by mistake.",
+        "citace": "Navrhla jsem zařazení tohoto bodu z důvodu technické chyby při načtení počtu členů výboru pro evropské záležitosti."
+      },
+      {
+        "text": "Richter said the single 10-10 caucus looked like an exception, but the coalition still counted it in its favor.",
+        "citace": "Protože tam ty počty seděly půl na půl, 10 poslanců za vznikající koalici, 10 poslanců za nás, za opozici."
+      },
+      {
+        "text": "Vote number 5: one hundred and forty-nine in favor, one against, the amendment to the resolution passed.",
+        "citace": "Hlasování číslo 5, přihlášeno 189, pro 149, proti 1."
+      },
+      {
+        "text": "Kolovratník asked where is the fairness: last term Pirates 4 MPs, yet Richterová in the leadership of the House; The SPD had 20 deputies and was not in the leadership of the House.",
+        "citace": "Ještě to minulé období měli Piráti 4 poslance a SPD 20. Paní Richterová byla ve vedení Sněmovny a SPD nebylo. Kdo má 4 poslance, je ve vedení, a kdo má 20 poslanců, není."
+      }
+    ]
+  }
 }

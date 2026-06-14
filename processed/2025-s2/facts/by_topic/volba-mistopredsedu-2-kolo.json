@@ -40,5 +40,33 @@
   "pointa": "Richterová mluvila o půl milionu pirátských voličů, část koalice mezitím opustila sál. Nacher se omluvil za předčasný gong, omylem ukončil rozpravu, i když měla hned navazovat tajná volba lístky.",
   "mean": "Po Bartákovi, Nacherovi a Skopečkovi chybí ještě jeden člověk do čtyřčlenného týmu místopředsedů, nová volba přijde na další schůzi.",
   "pocet_hlasovani": 0,
-  "proslo": true
+  "proslo": true,
+  "en": {
+    "nadpis": "Skopek the third,\nNot Richter",
+    "lead": "Friday's second round was completed by the leadership of the House: Jan Skopeček received one hundred and twenty one votes, Olga Richterová only thirty. One seat of the vice president remains vacant.",
+    "pointa": "Richter spoke about half a million pirate voters, part of the coalition left the hall in the meantime. Nacher apologized for the premature gong, accidentally ending the debate, even though a secret ballot was to follow immediately.",
+    "mean": "After Barták, Nacher and Skopeček, one more person is missing from the four-member team of vice-presidents, the new choice will come at the next meeting.",
+    "predmet_lidsky": "the second round of the election of vice-presidents",
+    "koho": [
+      "Who is watching, who is helping to manage the proceedings of the House."
+    ],
+    "fakty": [
+      {
+        "text": "Olga Richterová appealed to 505,000 pirate voters in her speech, Skopeček got 121 votes, she got 30.",
+        "citace": "Olga Richterová získala 30 hlasů, nestává se místopředsedkyní Sněmovny. Jan Skopeček získal 121 hlasů a je zvolen místopředsedou Sněmovny."
+      },
+      {
+        "text": "Kateřina Stojanová and Eva Šrámková proposed points on the equal representation of women in management, but the Chamber did not include them.",
+        "citace": "Navrhujeme naši předsedkyni poslaneckého klubu Olgu Richterovou jako budoucí místopředsedkyni Poslanecké sněmovny."
+      },
+      {
+        "text": "One vice-presidential seat remains empty, a new election will be held at the next meeting.",
+        "citace": "Jedno místo místopředsedy zůstává neobsazené."
+      },
+      {
+        "text": "Coalition MPs left part of the meeting during Richter's speech, Nacher then used the gong by mistake.",
+        "citace": "Koaliční poslanci ve velkém počtu odcházejí ze sálu."
+      }
+    ]
+  }
 }

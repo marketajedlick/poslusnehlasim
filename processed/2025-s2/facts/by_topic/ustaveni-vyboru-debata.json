@@ -39,5 +39,33 @@
   "pointa": "U všech výborů Piráti tvrdili, že koalice jim bere místa ve vedení. Kolovratník Hřibovi připomněl zastavené metro D a záměrně ho oslovil Hřibkem, Richterová mu vyčítala chování jako ze čtvrté třídy. Večer přišly stálé komise a delegace.",
   "mean": "Výbory připravují zákony před plénem. Kdo v nich sedí, určuje, jaké téma dostane prostor a kdo má většinu při hlasování.",
   "pocet_hlasovani": 0,
-  "proslo": true
+  "proslo": true,
+  "en": {
+    "nadpis": "Committees on the edge",
+    "lead": "Tuesday was a committee marathon and loud debate. Lang reminded Hřib that he is no longer the mayor. Nevertheless, all twenty-nine votes on committees passed.",
+    "pointa": "In all committees, the Pirates claimed that the coalition was taking away their leadership positions. The spinning wheel reminded Hřib of the stopped metro D and deliberately addressed him as Hřibek, Richterová reproached him for his behavior as if he was in the fourth grade. In the evening, permanent commissions and delegations arrived.",
+    "mean": "Committees prepare laws before the plenary. Who sits in them determines which topic gets space and who has the majority in voting.",
+    "predmet_lidsky": "composition of parliamentary committees",
+    "koho": [
+      "Who cares who will decide on laws in which committee."
+    ],
+    "fakty": [
+      {
+        "text": "Richter accused the coalition of breaking the 30-year custom of proportional representation in committee leadership.",
+        "citace": "Odmítáme přístup, kdy má Sněmovna přestat reprezentovat poměrným způsobem voliče a jejich vůli."
+      },
+      {
+        "text": "Kolovratník asked where is the fairness: Pirates 4 MPs, yet Richter is the deputy speaker of the House; The SPD had 20 deputies and was not in the leadership of the House.",
+        "citace": "Ještě to minulé období měli Piráti 4 poslance a SPD 20. Paní Richterová byla ve vedení Sněmovny a SPD nebylo. Kdo má 4 poslance, je ve vedení, a kdo má 20 poslanců, není."
+      },
+      {
+        "text": "Hubert Lang reproached Hřib for speaking as the mayor of Prague, not as a member of parliament.",
+        "citace": "Všechna vaše vystoupení se pořád odkazujete na Magistrát hlavního města Prahy, pane kolego."
+      },
+      {
+        "text": "By twenty-nine votes, the House successively established all the committees, mostly without a single opposition.",
+        "citace": "Hlasování číslo 6 až 32, všechna přijata s převahou nad 180 hlasy pro."
+      }
+    ]
+  }
 }

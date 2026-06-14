@@ -376,8 +376,8 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
   .site-footer-inner{ gap:12px; }
   .site-footer-closing{
     font-size:12px;
-    max-width:28em;
-    padding:0 4px;
+    max-width:none;
+    padding:0 12px;
   }
   .site-footer-stats{
     font-size:9px;
@@ -595,12 +595,14 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
 }
 .site-footer-closing{
   margin:0;
-  max-width:36em;
+  max-width:none;
+  padding:0 12px;
   font-family:'Old Standard TT',serif;
   font-size:13px;
   font-style:italic;
   line-height:1.55;
   color:rgba(33,28,20,.62);
+  text-align:center;
 }
 .site-footer-stats{
   margin:0;
@@ -1888,6 +1890,7 @@ body.archiv-page{
   .slovnicek-wrap{ padding:32px 28px 36px; }
 
   .site-footer{ margin-top:56px; padding-top:28px; padding-bottom:calc(28px + env(safe-area-inset-bottom, 0px)); }
+  .site-footer-closing{ white-space:nowrap; }
 
   .subscribe{ margin-top:28px; padding-top:24px; }
   .subscribe-gloss{ font-size:18px; max-width:none; }
