@@ -1,11 +1,17 @@
 <footer class="site-footer" aria-label="Patička webu">
   <div class="site-footer-inner">
+    <p class="site-footer-closing">{{ footer_closing }}</p>
+    <p class="site-footer-stats">{{ footer_stats }}</p>
     <nav class="site-footer-links" aria-label="Právní informace a podpora">
-      <a href="{{ terms_href }}">Podmínky používání</a>
+      <a href="{{ terms_href }}"{% if footer_active_page == 'terms' %} class="is-active" aria-current="page"{% endif %}>Podmínky používání</a>
       <span class="site-footer-sep" aria-hidden="true">·</span>
-      <a href="{{ privacy_href }}">Ochrana údajů</a>
+      <a href="{{ privacy_href }}"{% if footer_active_page == 'privacy' %} class="is-active" aria-current="page"{% endif %}>Ochrana údajů</a>
       <span class="site-footer-sep" aria-hidden="true">·</span>
-      <a href="{{ support_href }}">Podpora</a>
+      <a href="{{ support_href }}"{% if footer_active_page == 'support' %} class="is-active" aria-current="page"{% endif %}>Podpora</a>
     </nav>
+    <p class="site-footer-contact">
+      Dotazy a chyby:
+      <a href="mailto:{{ footer_contact_email }}">{{ footer_contact_email }}</a>
+    </p>
   </div>
 </footer>

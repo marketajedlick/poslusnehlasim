@@ -12,7 +12,7 @@ if sys.version_info[0] < 3:
     )
     sys.exit(1)
 
-"""CLI pro Svejk do snemovny — ingest, generovani, web."""
+"""CLI pro Svejk do snemovny, ingest, generovani, web."""
 
 if sys.version_info < (3, 10):
     raise SystemExit(
@@ -31,7 +31,7 @@ from svejk.config import HLIDAC_TOKEN
 
 
 def _require_db():
-    """SQLite/ORM vrstva — volitelná; build a export-pages ji nepotřebují."""
+    """SQLite/ORM vrstva, volitelná; build a export-pages ji nepotřebují."""
     try:
         from svejk.db import Bod, Schuze, StavZapisu, Zapisek, get_session, init_db
     except ModuleNotFoundError as e:
@@ -343,7 +343,7 @@ def cmd_timeline(args: argparse.Namespace) -> int:
 
 
 def cmd_seed(args: argparse.Namespace) -> int:
-    """Demo data bez API — pro lokální test webu."""
+    """Demo data bez API, pro lokální test webu."""
     Bod, Schuze, StavZapisu, Zapisek, get_session, init_db = _require_db()
     init_db()
     with get_session() as session:
@@ -374,9 +374,9 @@ def cmd_seed(args: argparse.Namespace) -> int:
                 bod_id=bod.id,
                 svejk_text=(
                     "Když jsem sloužil u 11. pěšího pluku, taky se občas mluvilo "
-                    "o penězích — jenže tam šlo o cigarety, ne o pojistné. Tady poslanci hlasovali "
+                    "o penězích, jenže tam šlo o cigarety, ne o pojistné. Tady poslanci hlasovali "
                     "o tom, že živnostník ušetří sedm set korun měsíčně. Zaměstnanec u piva? "
-                    "To se vás netýká — vy máte mzdu a oni mají faktury."
+                    "To se vás netýká, vy máte mzdu a oni mají faktury."
                 ),
                 fakticke_shrnuti=(
                     "Poslanecká sněmovna schválila snížení minimálního pojistného na sociální "
@@ -480,7 +480,7 @@ def cmd_newsletter_notify(args: argparse.Namespace) -> int:
         return 1
     print(json.dumps(result, ensure_ascii=False, indent=2))
     if result.get("drafted"):
-        print("Koncept kampaně vytvořen v Ecomailu — odeslání ručně v UI.", file=sys.stderr)
+        print("Koncept kampaně vytvořen v Ecomailu, odeslání ručně v UI.", file=sys.stderr)
     elif result.get("skipped"):
         print(f"Přeskočeno: {result.get('reason', '?')}", file=sys.stderr)
     return 0
@@ -523,7 +523,7 @@ def cmd_newsletter_doi_sync(args: argparse.Namespace) -> int:
     if result.get("synced"):
         print("DOI šablona nahrána do Ecomailu.", file=sys.stderr)
     elif result.get("dry_run"):
-        print("Náhled — pro zápis přidej --apply", file=sys.stderr)
+        print("Náhled, pro zápis přidej --apply", file=sys.stderr)
     return 0
 
 
@@ -660,12 +660,12 @@ def cmd_status(_: argparse.Namespace) -> int:
     for z in zapisy:
         print(f"  #{z.id} bod={z.bod_id} stav={z.stav}")
     if not HLIDAC_TOKEN:
-        print("(HLIDAC_TOKEN není nastaven — ingest nebude fungovat)")
+        print("(HLIDAC_TOKEN není nastaven, ingest nebude fungovat)")
     return 0
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Švejk do sněmovny — MVP")
+    parser = argparse.ArgumentParser(description="Švejk do sněmovny, MVP")
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     p_init = sub.add_parser("db", help="Databáze")
@@ -864,7 +864,7 @@ def main() -> int:
     p_nwl.add_argument(
         "--out",
         default="",
-        help="Složka z export-pages — ověří, že stránka vydání v exportu existuje",
+        help="Složka z export-pages, ověří, že stránka vydání v exportu existuje",
     )
     p_nwl.set_defaults(func=cmd_newsletter_notify)
 

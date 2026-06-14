@@ -89,7 +89,7 @@ def _edition_date_label(datum_unl: str, den: str = "") -> str:
 
 
 def _dnesni_ucet_headline(dnesni_ucet: str) -> str:
-    """První věta z dnešního účtu — záloha, když chybí nadpis článku."""
+    """První věta z dnešního účtu, záloha, když chybí nadpis článku."""
     raw = " ".join((dnesni_ucet or "").split())
     if not raw:
         return ""
@@ -105,7 +105,7 @@ def article_headline(
     edition_title: str = "",
     max_len: int = 110,
 ) -> str:
-    """Téma dne pro <title> a schema.org — nadpis článku, ne meta description."""
+    """Téma dne pro <title> a schema.org, nadpis článku, ne meta description."""
     _ = meta_description
     if first_item_nadpis.strip():
         return _truncate_text(first_item_nadpis.strip(), max_len=max_len)
@@ -123,7 +123,7 @@ def edition_meta_description(
     zamitnuto: int = 0,
     max_len: int = 155,
 ) -> str:
-    """Unikátní meta description — skóre dne + shrnutí, ne kopie <title>."""
+    """Unikátní meta description, skóre dne + shrnutí, ne kopie <title>."""
     parts: list[str] = []
     if proslo or zamitnuto:
         parts.append(f"Skóre dne {proslo}:{zamitnuto}.")
@@ -146,10 +146,10 @@ def edition_page_title(
     datum_design: str = "",
     max_len: int = 72,
 ) -> str:
-    """<title> pro vydání: Poslušně hlásím — datum: téma dne."""
+    """<title> pro vydání: Poslušně hlásím, datum: téma dne."""
     _ = meta_description
     date_label = _edition_date_label(datum_unl, den) if datum_unl else (datum_design or "")
-    prefix = f"Poslušně hlásím — {date_label}: " if date_label else "Poslušně hlásím: "
+    prefix = f"Poslušně hlásím, {date_label}: " if date_label else "Poslušně hlásím: "
     budget = max(12, max_len - len(prefix))
     headline = article_headline(
         dnesni_ucet=dnesni_ucet,
@@ -159,7 +159,7 @@ def edition_page_title(
     )
     if not headline.strip():
         return _truncate_text(
-            f"Poslušně hlásím — {date_label}" if date_label else "Poslušně hlásím",
+            f"Poslušně hlásím, {date_label}" if date_label else "Poslušně hlásím",
             max_len=max_len,
         )
     title = f"{prefix}{headline}"
@@ -250,7 +250,7 @@ def article_json_ld(
 
 
 _WEBSITE_DESCRIPTION = (
-    "Deník z jednání Poslanecké sněmovny ve stylu Haška — "
+    "Deník z jednání Poslanecké sněmovny ve stylu Haška, "
     "srozumitelné shrnutí hlasování a zákonů pro lidi, kteří do sněmovny nemusí."
 )
 

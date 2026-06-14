@@ -248,11 +248,52 @@ def _jinja_env() -> Environment:
     return env
 
 
-def _site_footer_ctx(base_path: str = "") -> dict[str, str]:
+_FOOTER_CLOSINGS = (
+    "Poslušně hlásím, že dnešní vydání končí. Poslanci šli domů a my taky.",
+    "V hospodě už zavírají. Další vydání zase po schůzi.",
+    "Poslušně hlásím, že demokracie je běh na dlouhou trať a někdy i na dlouhou schůzi.",
+    "Poslanci odešli, stenozáznam zůstal.",
+)
+
+_DEFAULT_FOOTER_CONTACT = "svejk@poslusnehlasim.cz"
+
+
+def _footer_closing(seed: str) -> str:
+    idx = sum(ord(c) for c in seed) % len(_FOOTER_CLOSINGS)
+    return _FOOTER_CLOSINGS[idx]
+
+
+def _footer_stats_line(obdobi: int) -> str:
+    editions = list_site_editions(obdobi)
+    n_editions = len(editions)
+    n_schuze = len({e.schuze for e in editions})
+    if n_schuze == 1:
+        schuze_part = "1 schůze"
+    elif 2 <= n_schuze <= 4:
+        schuze_part = f"{n_schuze} schůze"
+    else:
+        schuze_part = f"{n_schuze} schůzí"
+    return f"{n_editions} vydání • {schuze_part} • 100 % veřejná data"
+
+
+def _site_footer_ctx(
+    base_path: str = "",
+    *,
+    obdobi: int = 2025,
+    active_page: str = "",
+    closing_seed: str = "",
+) -> dict[str, str]:
+    cfg = NewsletterConfig.from_env()
+    seed = closing_seed or active_page or base_path or "site"
+    contact = (cfg.contact_email or _DEFAULT_FOOTER_CONTACT).strip()
     return {
         "terms_href": podminky_pages_href(base_path),
         "privacy_href": soukromi_pages_href(base_path),
         "support_href": podpora_pages_href(base_path),
+        "footer_closing": _footer_closing(seed),
+        "footer_stats": _footer_stats_line(obdobi),
+        "footer_contact_email": contact,
+        "footer_active_page": active_page,
     }
 
 
@@ -283,9 +324,11 @@ def _site_nav_ctx(obdobi: int, base_path: str = "") -> dict[str, str]:
     }
 
 
-def render_site_footer_html(base_path: str = "") -> str:
+def render_site_footer_html(base_path: str = "", *, obdobi: int = 2025) -> str:
     env = _jinja_env()
-    return env.get_template("site-footer.html").render(**_site_footer_ctx(base_path))
+    return env.get_template("site-footer.html").render(
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="snapshot")
+    )
 
 
 def inject_site_footer(html: str, base_path: str = "") -> str:
@@ -497,7 +540,11 @@ def render_den_html(
         **og,
         pivo_tiers=pivo_tiers(),
         **nav_ctx,
-        **_site_footer_ctx(base_path),
+        **_site_footer_ctx(
+            base_path,
+            obdobi=ob,
+            closing_seed=f"{ob}/{paths.schuze}/{content.datum}",
+        ),
         **favicons,
     )
 
@@ -745,7 +792,7 @@ def render_archiv_html(
         css_href=css_href,
         fonts_css_href=fonts_css_href,
         **_site_nav_ctx(obdobi, base_path),
-        **_site_footer_ctx(base_path),
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="archiv"),
         **favicons,
     )
 
@@ -787,7 +834,7 @@ def render_potvrzeno_html(
         css_href=css_href,
         fonts_css_href=fonts_css_href,
         **_site_nav_ctx(obdobi, base_path),
-        **_site_footer_ctx(base_path),
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="potvrzeno"),
         **favicons,
     )
 
@@ -881,7 +928,11 @@ def render_vyznamenani_table_html(
         css_href=css_href,
         fonts_css_href=fonts_css_href,
         **_site_nav_ctx(paths.obdobi, base_path),
-        **_site_footer_ctx(base_path),
+        **_site_footer_ctx(
+            base_path,
+            obdobi=paths.obdobi,
+            closing_seed=f"vyznamenani/{kind}/{datum_unl}",
+        ),
         **favicons,
         **og,
     )
@@ -932,7 +983,7 @@ def render_slovnicek_html(
         css_href=css_href,
         fonts_css_href=fonts_css_href,
         **_site_nav_ctx(obdobi, base_path),
-        **_site_footer_ctx(base_path),
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="slovnicek"),
         **favicons,
     )
 
@@ -976,7 +1027,7 @@ def render_pivo_html(
         css_href=css_href,
         fonts_css_href=fonts_css_href,
         **_site_nav_ctx(obdobi, base_path),
-        **_site_footer_ctx(base_path),
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="pivo"),
         **favicons,
     )
 
@@ -1011,7 +1062,7 @@ def render_dekuju_html(
         css_href=css_href,
         fonts_css_href=fonts_css_href,
         **_site_nav_ctx(obdobi, base_path),
-        **_site_footer_ctx(base_path),
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="dekuju"),
         **favicons,
     )
 
@@ -1050,7 +1101,12 @@ def render_soukromi_html(
         css_href=css_href,
         fonts_css_href=fonts_css_href,
         **_site_nav_ctx(obdobi, base_path),
-        **_site_footer_ctx(base_path),
+        **_site_footer_ctx(
+            base_path,
+            obdobi=obdobi,
+            active_page="privacy",
+            closing_seed="soukromi",
+        ),
         **favicons,
     )
 
@@ -1089,7 +1145,12 @@ def render_podminky_html(
         css_href=css_href,
         fonts_css_href=fonts_css_href,
         **_site_nav_ctx(obdobi, base_path),
-        **_site_footer_ctx(base_path),
+        **_site_footer_ctx(
+            base_path,
+            obdobi=obdobi,
+            active_page="terms",
+            closing_seed="podminky",
+        ),
         **favicons,
     )
 
@@ -1128,6 +1189,11 @@ def render_podpora_html(
         css_href=css_href,
         fonts_css_href=fonts_css_href,
         **_site_nav_ctx(obdobi, base_path),
-        **_site_footer_ctx(base_path),
+        **_site_footer_ctx(
+            base_path,
+            obdobi=obdobi,
+            active_page="support",
+            closing_seed="podpora",
+        ),
         **favicons,
     )

@@ -1,4 +1,4 @@
-/** Cloudflare Worker — odběr novinek přes Ecomail API (bez robotchecku ve formuláři). */
+/** Cloudflare Worker, odběr novinek přes Ecomail API (bez robotchecku ve formuláři). */
 
 const CORS = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
@@ -58,7 +58,7 @@ export default {
           trigger_autoresponders: true,
           update_existing: true,
           resubscribe: true,
-          // Nechá Ecomail poslat DOI — kontakt skončí jako nepotvrzený (status 6).
+          // Nechá Ecomail poslat DOI, kontakt skončí jako nepotvrzený (status 6).
           skip_confirmation: false,
         }),
       },
