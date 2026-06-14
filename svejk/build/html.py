@@ -275,7 +275,13 @@ def _edition_back_label(datum_unl: str) -> str:
     return f"{d.day}. {d.month}. {d.year}"
 
 
-def _site_nav_ctx(obdobi: int, base_path: str = "") -> dict[str, str]:
+def _site_nav_ctx(
+    obdobi: int,
+    base_path: str = "",
+    *,
+    current_schuze: int | None = None,
+    current_datum: str | None = None,
+) -> dict[str, str]:
     editions = list_site_editions(obdobi)
     latest_href = ""
     edition_back_href = ""
@@ -285,7 +291,16 @@ def _site_nav_ctx(obdobi: int, base_path: str = "") -> dict[str, str]:
         latest_href = edition_pages_href(
             latest.obdobi, latest.schuze, latest.datum_unl, base_path
         )
-        edition_back_href = latest_href
+        if (
+            current_schuze is not None
+            and current_datum is not None
+            and latest.schuze == current_schuze
+            and latest.datum_unl == current_datum
+        ):
+            latest_href = ""
+        edition_back_href = edition_pages_href(
+            latest.obdobi, latest.schuze, latest.datum_unl, base_path
+        )
         edition_back_label = _edition_back_label(latest.datum_unl)
     return {
         "archive_href": archiv_pages_href(base_path),
@@ -365,12 +380,21 @@ def render_den_html(
     if not canonical_url:
         href = edition_pages_href(ob, paths.schuze, content.datum, base_path)
         canonical_url = f"{cfg.site_url.rstrip('/')}{href}"
-    nav_ctx = _site_nav_ctx(ob, base_path) if link_mode == "pages" else {
-        "archive_href": None,
-        "latest_href": None,
-        "slovnicek_href": None,
-        "pivo_href": None,
-    }
+    nav_ctx = (
+        _site_nav_ctx(
+            ob,
+            base_path,
+            current_schuze=paths.schuze,
+            current_datum=content.datum,
+        )
+        if link_mode == "pages"
+        else {
+            "archive_href": None,
+            "latest_href": None,
+            "slovnicek_href": None,
+            "pivo_href": None,
+        }
+    )
     datum_label = datum_design(content.datum, content.den)
     edition_title = f"Poslušně hlásím · {datum_label}"
     from svejk.build.seo import article_headline as _article_headline
@@ -928,7 +952,12 @@ def render_vyznamenani_table_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
-        **_site_nav_ctx(paths.obdobi, base_path),
+        **_site_nav_ctx(
+            paths.obdobi,
+            base_path,
+            current_schuze=schuze,
+            current_datum=datum_unl,
+        ),
         **_site_footer_ctx(
             base_path,
             obdobi=paths.obdobi,
