@@ -3,7 +3,7 @@
 <head>
 {% include "head-noviny.html" %}
 <title>Švejkův slovníček · Poslušně hlásím</title>
-<meta name="description" content="Krátké vysvětlení pojmů z Poslanecké sněmovny pro lidi, kteří politiku běžně nesledují." />
+<meta name="description" content="Poslušně hlásím, že sněmovna má vlastní jazyk — slovníček pojmů pro lidi, kteří politiku běžně nesledují." />
 <link rel="canonical" href="{{ canonical_url }}" />
 {% include "og-meta.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
@@ -13,7 +13,7 @@
 <div class="slovnicek-wrap">
   <header class="slovnicek-head">
     <h1 class="slovnicek-title">Švejkův slovníček</h1>
-    <p class="slovnicek-gloss">Krátké vysvětlení pojmů ze sněmovny pro lidi, kteří politiku běžně nesledují.</p>
+    <p class="slovnicek-gloss">Poslušně hlásím, že sněmovna má vlastní jazyk a obyčejný člověk si občas připadá jako na vojně.</p>
     <nav class="slovnicek-nav" aria-label="Navigace">
       {% if latest_href %}
       <a class="site-nav-link" href="{{ latest_href }}">Nejnovější vydání</a>
@@ -30,10 +30,10 @@
   </header>
 
   <dl class="slovnicek-list slovnicek-list--page">
-    {% for question, answer in slovnicek %}
-    <div class="slovnicek-entry">
-      <dt>{{ question }}</dt>
-      <dd>{{ answer }}</dd>
+    {% for entry in slovnicek %}
+    <div class="slovnicek-entry" id="{{ entry.anchor }}">
+      <dt>{{ entry.question }}</dt>
+      <dd>{{ entry.answer }}</dd>
     </div>
     {% endfor %}
   </dl>

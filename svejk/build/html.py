@@ -12,7 +12,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from svejk.build.day_content import DenContent, build_den_content, datum_design
 from svejk.build.glossary_markup import glossary_markup
-from svejk.glossary import SLOVNIČEK
+from svejk.glossary import SLOVNIČEK, slovnicek_anchor
 from svejk.build.publish import list_site_editions
 from svejk.build.nav import (
     Edition,
@@ -1001,11 +1001,15 @@ def render_slovnicek_html(
         site_url=cfg.site_url,
         base_path=base_path,
         title="Švejkův slovníček · Poslušně hlásím",
-        description="Krátké vysvětlení pojmů z Poslanecké sněmovny pro lidi, kteří politiku běžně nesledují.",
+        description="Poslušně hlásím, že sněmovna má vlastní jazyk — slovníček pojmů pro lidi, kteří politiku běžně nesledují.",
     )
     tpl = _jinja_env().get_template("slovnicek-stranka.html")
+    slovnicek = [
+        {"question": q, "answer": a, "anchor": slovnicek_anchor(q)}
+        for q, a in SLOVNIČEK
+    ]
     return tpl.render(
-        slovnicek=SLOVNIČEK,
+        slovnicek=slovnicek,
         canonical_url=canonical_url,
         **og,
         inline_css=inline_css,

@@ -1099,6 +1099,7 @@ body.slovnicek-page{
   margin:0 0 18px;
   padding-bottom:18px;
   border-bottom:1px solid rgba(33,28,20,.1);
+  scroll-margin-top:24px;
 }
 .slovnicek-list--page .slovnicek-entry:last-child{
   margin-bottom:0; padding-bottom:0; border-bottom:none;

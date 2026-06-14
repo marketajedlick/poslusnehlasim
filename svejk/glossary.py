@@ -5,6 +5,9 @@ Pořadí: delší fráze nahoře, aby se neshodily s kratšími prefixy.
 
 from __future__ import annotations
 
+import re
+import unicodedata
+
 GLOSSARY: tuple[tuple[str, str], ...] = (
     # --- vyznamenání 4. 6. 2026 (s20) ---
     (
@@ -616,19 +619,19 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "sudetoněmecký landsmanšaft",
-        "Organizace sdružující Němce vysídlené po druhé světové válce z Československa a jejich potomky.",
+        "Organizace sdružující část sudetských Němců a jejich potomků po poválečném vysídlení.",
     ),
     (
         "Sudetoněmecký landsmanšaft",
-        "Organizace sdružující Němce vysídlené po druhé světové válce z Československa a jejich potomky.",
+        "Organizace sdružující část sudetských Němců a jejich potomků po poválečném vysídlení.",
     ),
     (
         "landsmanšaft",
-        "Organizace sdružující Němce vysídlené po druhé světové válce z Československa a jejich potomky.",
+        "Organizace sdružující část sudetských Němců a jejich potomků po poválečném vysídlení.",
     ),
     (
         "landsmanšaftu",
-        "Organizace sdružující Němce vysídlené po druhé světové válce z Československa a jejich potomky.",
+        "Organizace sdružující část sudetských Němců a jejich potomků po poválečném vysídlení.",
     ),
     (
         "Benešových dekretů",
@@ -932,11 +935,11 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "Dozimetr",
-        "Korupční kauza kolem pražského dopravního podniku a lidí napojených na hnutí STAN.",
+        "Korupční kauza spojená s pražským dopravním podnikem, kterou vyšetřuje policie.",
     ),
     (
         "dozimetr",
-        "Korupční kauza kolem pražského dopravního podniku a lidí napojených na hnutí STAN.",
+        "Korupční kauza spojená s pražským dopravním podnikem, kterou vyšetřuje policie.",
     ),
     (
         "Agrofert",
@@ -1248,26 +1251,49 @@ SLOVNIK_BOX: tuple[tuple[str, str], ...] = (
     ("Mimořádná schůze", "mimořádn"),
 )
 
+def slovnicek_anchor(question: str) -> str:
+    """URL kotva z otázky ve slovníčku (např. „Co je obstrukce?“ → obstrukce)."""
+    text = question.strip()
+    for prefix in ("Co jsou ", "Co je ", "Co je to "):
+        if text.startswith(prefix):
+            text = text[len(prefix) :]
+            break
+    text = text.rstrip("?").strip().lower()
+    normalized = unicodedata.normalize("NFKD", text)
+    ascii_text = "".join(c for c in normalized if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9]+", "-", ascii_text).strip("-")
+
+
 # Švejkův slovníček: panel vpravo na webu (otázka → odpověď).
 SLOVNIČEK: tuple[tuple[str, str], ...] = (
-    ("Co je pozměňovací návrh?", "Pokus poslance přepsat kus zákona, než se o něm definitivně hlasuje."),
-    ("Co je první čtení?", "Poslanci zatím neřeší detaily. Jen rozhodují, jestli má smysl se zákonem zabývat."),
-    ("Co je druhé čtení?", "Teď začíná vrtání v detailech a přibývají pozměňovací návrhy."),
-    ("Co je třetí čtení?", "Poslední šance něco změnit. Pak už se hlasuje ano nebo ne."),
-    ("Co je procedurální návrh?", "Hlasuje se o tom, kdy a jak se bude jednat, ne o obsahu zákona."),
+    ("Co je pozměňovací návrh?", "Chvíle, kdy někdo řekne: „Já bych to napsal trochu jinak.“"),
+    ("Co je první čtení?", "Rozhoduje se, jestli má zákon pokračovat dál, nebo skončit dřív, než začne."),
+    ("Co je druhé čtení?", "Začíná vrtání v detailech a přepisování jednotlivých částí zákona."),
+    ("Co je třetí čtení?", "Poslední zastávka před hlasováním. Pak už padne ano, nebo ne."),
+    ("Co je procedurální návrh?", "Neřeší se zákon, ale způsob, jak se o něm bude mluvit."),
+    ("Co je obstrukce?", "Když se dlouze mluví proto, aby se co nejdéle nehlasovalo."),
     ("Co je přerušení schůze?", "Poslanci si dali pauzu a slíbili, že se k tomu vrátí."),
+    ("Co je legislativní nouze?", "Režim, kdy se zákony schvalují rychleji než obvykle."),
+    ("Co je mimořádná schůze?", "Schůze svolaná mimo běžný program, když něco spěchá nebo se někdo hodně rozčílí."),
+    ("Co je interpelace?", "Čas, kdy se poslanci ptají vlády a vláda odpovídá. Někdy i na položenou otázku."),
+    ("Co je důvěra vládě?", "Hlasování, jestli má vláda podporu většiny poslanců."),
+    ("Co je nedůvěra vládě?", "Pokus vládu poslat do politického důchodu dřív, než odejde sama."),
+    ("Co je koalice?", "Strany, které spolu vládnou a snaží se najít společnou řeč."),
+    ("Co je opozice?", "Strany, které nevládnou a hlídají, jestli vláda nevaří z cizích peněz příliš odvážně."),
+    ("Co je Senát?", "Druhá komora Parlamentu. Kontroluje zákony, které schválila Sněmovna."),
+    ("Co je veto Senátu?", "Senát zákon vrátí nebo navrhne změny. Poslanci ale mohou jeho nesouhlas přehlasovat."),
+    ("Co je veto prezidenta?", "Když prezident zákon vrátí poslancům s tím, aby si ho ještě jednou rozmysleli."),
     ("Co jsou rozpočtové brzdy?", "Zákon, který státu připomíná šlápnout na brzdu, když utrácí moc rychle."),
     ("Co jsou fiskální pravidla?", "Pravidla, která mají státu připomínat, že kreditka není bezedná."),
-    ("Co je schodek?", "Rozdíl mezi tím, co stát vybral, a tím, co utratil navíc."),
+    ("Co je schodek?", "Když stát utratí víc, než vybere. Něco jako když hospoda jede na sekeru."),
     ("Co je EET?", "Elektronická evidence tržeb, každá účtenka hlásila státu, kolik kdo utržil."),
     ("Co je usnesení?", "Stanovisko nebo rozhodnutí sněmovny. Nejde o zákon."),
-    ("Co je interpelace?", "Část jednání, kdy poslanci pokládají otázky členům vlády."),
-    ("Co je Dozimetr?", "Korupční kauza kolem pražského dopravního podniku a lidí napojených na STAN."),
+    ("Co je Dozimetr?", "Korupční kauza spojená s pražským dopravním podnikem, kterou vyšetřuje policie."),
     ("Co je superdávka?", "Plán na sloučení několika sociálních dávek do jednoho systému."),
     ("Co je NKÚ?", "Nejvyšší kontrolní úřad. Kontroluje, jak stát hospodaří s veřejnými penězi."),
     ("Co je VZP?", "Největší česká zdravotní pojišťovna."),
     ("Co je OZP?", "Osoba se zdravotním postižením."),
-    ("Co je landsmanšaft?", "Organizace sudetoněmeckých krajanů vysídlených po válce."),
+    ("Co je landsmanšaft?", "Organizace sdružující část sudetských Němců a jejich potomků po poválečném vysídlení."),
     ("Co je Rada ČT?", "Skupina, která dohlíží na Českou televizi a vybírá její vedení."),
 )
 
