@@ -551,9 +551,85 @@ def cmd_newsletter_subscribers(_args: argparse.Namespace) -> int:
     return 0
 
 
+def _serve_export_site(args: argparse.Namespace) -> dict | None:
+    from svejk.build.export_pages import run_export_pages
+
+    try:
+        return run_export_pages(
+            args.obdobi,
+            args.out,
+            base_path=args.base_path or None,
+            cname=args.cname if args.cname != "" else None,
+        )
+    except (ValueError, OSError, FileNotFoundError) as e:
+        print(f"Chyba: {e}", file=sys.stderr)
+        return None
+
+
+def _serve_reload_watch(args: argparse.Namespace) -> None:
+    try:
+        from watchfiles import watch
+    except ImportError:
+        print(
+            "Varování: --reload vyžaduje watchfiles (uvicorn[standard]); "
+            "automatický re-export je vypnutý.",
+            file=sys.stderr,
+        )
+        return
+
+    root = Path.cwd()
+    watch_paths = [p for p in (root / "svejk", root / "processed") if p.exists()]
+    if not watch_paths:
+        return
+
+    print("Sleduji změny ve svejk/ a processed/ pro re-export…", file=sys.stderr)
+    for _changes in watch(*watch_paths, recursive=True):
+        result = _serve_export_site(args)
+        if result is not None:
+            print(
+                f"Re-export: {result['out_dir']} ({result['pages']} vydání)",
+                file=sys.stderr,
+            )
+
+
 def cmd_serve(args: argparse.Namespace) -> int:
-    import uvicorn
-    uvicorn.run("svejk.app:app", host=args.host, port=args.port, reload=args.reload)
+    import functools
+    import http.server
+    import threading
+
+    site_dir = args.out.resolve()
+    if not args.skip_export:
+        result = _serve_export_site(args)
+        if result is None:
+            return 1
+        print(
+            f"Export: {result['out_dir']} ({result['pages']} vydání)",
+            file=sys.stderr,
+        )
+    elif not site_dir.is_dir():
+        print(
+            f"Chyba: {site_dir} neexistuje — spusť export-pages nebo serve bez --skip-export",
+            file=sys.stderr,
+        )
+        return 1
+
+    if args.reload:
+        threading.Thread(
+            target=_serve_reload_watch,
+            args=(args,),
+            daemon=True,
+        ).start()
+
+    handler = functools.partial(
+        http.server.SimpleHTTPRequestHandler,
+        directory=str(site_dir),
+    )
+    with http.server.ThreadingHTTPServer((args.host, args.port), handler) as httpd:
+        print(f"Server: http://{args.host}:{args.port}/", file=sys.stderr)
+        try:
+            httpd.serve_forever()
+        except KeyboardInterrupt:
+            print("\nUkončeno.", file=sys.stderr)
     return 0
 
 
@@ -917,10 +993,34 @@ def main() -> int:
         help="Odběratelé ze sběrového seznamu (ECOMAIL_SUBSCRIBE_LIST_ID)",
     ).set_defaults(func=cmd_newsletter_subscribers)
 
-    p_serve = sub.add_parser("serve", help="Spusť web")
+    p_serve = sub.add_parser(
+        "serve",
+        help="Export do site/ a lokální preview (http.server)",
+    )
+    p_serve.add_argument("--obdobi", type=int, default=2025)
+    p_serve.add_argument("-o", "--out", type=Path, default=Path("site"))
+    p_serve.add_argument(
+        "--base-path",
+        default="",
+        help="Prefix cest (např. /nazev-repa pro github.io/repo bez vlastní domény)",
+    )
+    p_serve.add_argument(
+        "--cname",
+        default="poslusnehlasim.cz",
+        help="Doména do souboru CNAME (prázdné = nevytvářet)",
+    )
+    p_serve.add_argument(
+        "--skip-export",
+        action="store_true",
+        help="Nepřegenerovat site/ — jen spustit server nad existujícím exportem",
+    )
     p_serve.add_argument("--host", default="127.0.0.1")
     p_serve.add_argument("--port", type=int, default=8000)
-    p_serve.add_argument("--reload", action="store_true")
+    p_serve.add_argument(
+        "--reload",
+        action="store_true",
+        help="Při změně ve svejk/ nebo processed/ znovu spustit export-pages",
+    )
     p_serve.set_defaults(func=cmd_serve)
 
     sub.add_parser("status", help="Stav DB").set_defaults(func=cmd_status)
