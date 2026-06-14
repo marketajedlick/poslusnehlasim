@@ -760,7 +760,7 @@ def render_archiv_html(
     paths = SchuzePaths.create(latest.obdobi, latest.schuze)
     months = archive_by_month(
         paths,
-        "",
+        latest.datum_unl,
         link_mode="pages",
         obdobi=obdobi,
         base_path=base_path,

@@ -711,6 +711,10 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
   color:var(--paper);
   pointer-events:none;
 }
+.archiv-page .archive-chip.is-current{
+  pointer-events:auto;
+  cursor:pointer;
+}
 .archive-chip-tooltip{
   position:absolute;
   left:50%;
