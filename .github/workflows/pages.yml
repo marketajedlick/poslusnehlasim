@@ -67,6 +67,9 @@ jobs:
     #      ./run-svejk.sh build --obdobi 2025 --vsechny-schuze -q \
      #       || ./run-svejk.sh build --obdobi 2025 --vsechny-schuze --only align,extract,compose -q
 
+      - name: i18n audit
+        run: ./run-svejk.sh i18n-audit --obdobi 2025
+
       - name: Publish gate check
         run: ./run-svejk.sh publish-check --obdobi 2025
 

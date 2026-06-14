@@ -1,0 +1,46 @@
+name: i18n audit
+
+on:
+  pull_request:
+    branches: [main, master]
+    paths:
+      - "svejk/locale/**"
+      - "svejk/glossary.py"
+      - "svejk/build/facts_i18n.py"
+      - "svejk/scripts/audit_i18n.py"
+      - "processed/**/facts/**"
+      - "processed/publish-approved.json"
+      - ".github/workflows/i18n-audit.yml"
+  push:
+    branches: [main, master]
+    paths:
+      - "svejk/locale/**"
+      - "svejk/glossary.py"
+      - "svejk/build/facts_i18n.py"
+      - "svejk/scripts/audit_i18n.py"
+      - "processed/**/facts/**"
+      - "processed/publish-approved.json"
+      - ".github/workflows/i18n-audit.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: i18n-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-svejk.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements-svejk.txt
+
+      - name: Audit English translations
+        run: ./run-svejk.sh i18n-audit --obdobi 2025

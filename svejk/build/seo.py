@@ -452,21 +452,24 @@ def write_llms_txt(
 
 > Deník z jednání Poslanecké sněmovny ČR ve stylu Haška: srozumitelné shrnutí hlasování a zákonů pro lidi, kteří do sněmovny nemusí.
 
-Poslušně hlásím publikuje po každém jednacím dni stručné vydání: kolik věcí prošlo, co se schválilo nebo zamítlo a co to znamená v praxi. Texty jsou v češtině; anglická verze webu je na [{base}/en/]({base}/en/).
+Poslušně hlásím publikuje po každém jednacím dni stručné vydání: kolik věcí prošlo, co se schválilo nebo zamítlo a co to znamená v praxi.
 
 ## Hlavní stránky
 
-- [Úvod / nejnovější vydání]({base}/): aktuální deník (čeština)
-- [English homepage]({base}/en/): same diary in English
+- [Úvod / nejnovější vydání]({base}/): aktuální deník
 - [Nejnovější vydání ({latest.datum_unl})]({base}{latest_href}): poslední schůze
-- [RSS kanál nových vydání]({base}/feed.xml): český kanál pro odběr a agregátory
-- [English RSS feed]({base}/feed-en.xml): English editions for readers and aggregators
+- [RSS kanál nových vydání]({base}/feed.xml): odběr nových vydání
 - [Mapa webu]({base}/sitemap.xml): všechna vydání
 - [Podrobný index pro AI]({base}/llms-full.txt): seznam vydání s popisky
 
 ## Ostatní stránky
 
 {static_links}
+
+## Anglická verze
+
+- [Web v angličtině]({base}/en/)
+- [RSS v angličtině]({base}/feed-en.xml)
 
 ## Odběr
 

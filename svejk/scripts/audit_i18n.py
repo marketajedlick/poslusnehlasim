@@ -123,12 +123,16 @@ def audit_glossary() -> list[str]:
     return issues
 
 
+def run_audit(obdobi: int = 2025) -> list[str]:
+    return audit_locale() + audit_approved_facts(obdobi) + audit_glossary()
+
+
 def main() -> int:
     p = argparse.ArgumentParser(description="Audit anglických překladů webu.")
     p.add_argument("--obdobi", type=int, default=2025)
     args = p.parse_args()
 
-    issues = audit_locale() + audit_approved_facts(args.obdobi) + audit_glossary()
+    issues = run_audit(args.obdobi)
     if issues:
         for line in issues:
             print(line)
