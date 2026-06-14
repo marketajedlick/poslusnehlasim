@@ -294,10 +294,15 @@ def website_json_ld(
     return json.dumps(data, ensure_ascii=False)
 
 
-def _static_page_links(*, site_url: str, base_path: str = "") -> list[tuple[str, str]]:
+def _static_page_links(
+    *,
+    site_url: str,
+    base_path: str = "",
+    locale: str = "cs",
+) -> list[tuple[str, str]]:
     base = site_url.rstrip("/")
     return [
-        (label, f"{base}{_STATIC_HREF_FN[key](base_path)}")
+        (label, f"{base}{_STATIC_HREF_FN[key](base_path, locale)}")
         for label, key in _STATIC_PAGES
     ]
 
@@ -351,22 +356,38 @@ def write_sitemap_xml(
 
     add_url(f"{base}/", editions[-1].when if editions else datetime.now(timezone.utc))
     if editions:
-        add_url(f"{base}{archiv_pages_href(base_path)}", editions[-1].when)
-        add_url(f"{base}{slovnicek_pages_href(base_path)}", editions[-1].when)
-        add_url(f"{base}{pivo_pages_href(base_path)}", editions[-1].when)
-        add_url(f"{base}{podminky_pages_href(base_path)}", editions[-1].when)
-        add_url(f"{base}{podpora_pages_href(base_path)}", editions[-1].when)
-        add_url(f"{base}{soukromi_pages_href(base_path)}", editions[-1].when)
+        last = editions[-1].when
+        add_url(f"{base}{archiv_pages_href(base_path)}", last)
+        add_url(f"{base}{slovnicek_pages_href(base_path)}", last)
+        add_url(f"{base}{pivo_pages_href(base_path)}", last)
+        add_url(f"{base}{podminky_pages_href(base_path)}", last)
+        add_url(f"{base}{podpora_pages_href(base_path)}", last)
+        add_url(f"{base}{soukromi_pages_href(base_path)}", last)
+        add_url(f"{base}{archiv_pages_href(base_path, 'en')}", last)
+        add_url(f"{base}{slovnicek_pages_href(base_path, 'en')}", last)
+        add_url(f"{base}{pivo_pages_href(base_path, 'en')}", last)
+        add_url(f"{base}{podminky_pages_href(base_path, 'en')}", last)
+        add_url(f"{base}{podpora_pages_href(base_path, 'en')}", last)
+        add_url(f"{base}{soukromi_pages_href(base_path, 'en')}", last)
+        add_url(f"{base}/en/", last)
 
     for edition in editions:
         href = edition_pages_href(edition.obdobi, edition.schuze, edition.datum_unl, base_path)
         add_url(f"{base}{href}", edition.when)
+        href_en = edition_pages_href(
+            edition.obdobi, edition.schuze, edition.datum_unl, base_path, "en"
+        )
+        add_url(f"{base}{href_en}", edition.when)
 
     for edition, kind in _iter_vyznamenani_editions(editions):
         href = vyznamenani_pages_href(
             edition.obdobi, edition.schuze, edition.datum_unl, kind, base_path
         )
         add_url(f"{base}{href}", edition.when)
+        href_en = vyznamenani_pages_href(
+            edition.obdobi, edition.schuze, edition.datum_unl, kind, base_path, "en"
+        )
+        add_url(f"{base}{href_en}", edition.when)
 
     xml = b'<?xml version="1.0" encoding="UTF-8"?>\n' + tostring(urlset, encoding="utf-8")
     path = out_dir / "sitemap.xml"
@@ -397,13 +418,14 @@ def write_llms_txt(
 
 > Deník z jednání Poslanecké sněmovny ČR ve stylu Haška: srozumitelné shrnutí hlasování a zákonů pro lidi, kteří do sněmovny nemusí.
 
-Poslušně hlásím publikuje po každém jednacím dni stručné vydání: kolik věcí prošlo, co se schválilo nebo zamítlo a co to znamená v praxi. Texty jsou v češtině.
+Poslušně hlásím publikuje po každém jednacím dni stručné vydání: kolik věcí prošlo, co se schválilo nebo zamítlo a co to znamená v praxi. Texty jsou v češtině; anglická verze webu je na [{base}/en/]({base}/en/).
 
 ## Hlavní stránky
 
-- [Úvod / nejnovější vydání]({base}/): aktuální deník
+- [Úvod / nejnovější vydání]({base}/): aktuální deník (čeština)
+- [English homepage]({base}/en/): same diary in English
 - [Nejnovější vydání ({latest.datum_unl})]({base}{latest_href}): poslední schůze
-- [RSS kanál nových vydání]({base}/feed.xml): pro odběr a agregátory
+- [RSS kanál nových vydání]({base}/feed.xml): český kanál pro odběr a agregátory
 - [Mapa webu]({base}/sitemap.xml): všechna vydání
 - [Podrobný index pro AI]({base}/llms-full.txt): seznam vydání s popisky
 

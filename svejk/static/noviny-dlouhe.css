@@ -454,6 +454,7 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
   font-family:'Old Standard TT',serif; font-style:italic;
   font-size:17px; line-height:1.45; color:var(--ink-soft);
   max-width:48ch; text-align:center;
+  white-space:pre-line;
 }
 .subscribe-form{
   margin:0; width:100%; max-width:22rem;

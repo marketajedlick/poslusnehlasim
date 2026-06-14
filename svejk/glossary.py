@@ -8,6 +8,8 @@ from __future__ import annotations
 import re
 import unicodedata
 
+from svejk.glossary_en_core import GLOSSARY_EN_CORE, POSLANECINY_PREKLAD_EN, SLOVNIK_BOX_EN
+
 GLOSSARY: tuple[tuple[str, str], ...] = (
     # --- vyznamenání 4. 6. 2026 (s20) ---
     (
@@ -1344,8 +1346,8 @@ SLOVNIČEK_EN: tuple[tuple[str, str], ...] = (
     ("What is the Czech Television Council?", "The body that oversees Czech Television and picks its leadership."),
 )
 
-# Anglické tooltipy pro /en/ stránky (delší fráze nahoře).
-GLOSSARY_EN: tuple[tuple[str, str], ...] = (
+# Anglické tooltipy pro /en/ stránky (session-specific nahoře, pak obecné pojmy).
+GLOSSARY_EN_SESSION: tuple[tuple[str, str], ...] = (
     (
         "his own statements about female journalists",
         "Talíř (STAN) on 5 Jun 2026 read aloud Veselý's court-ordered apology for calling journalist "
@@ -1399,11 +1401,25 @@ GLOSSARY_EN: tuple[tuple[str, str], ...] = (
     ),
 )
 
+GLOSSARY_EN: tuple[tuple[str, str], ...] = GLOSSARY_EN_SESSION + GLOSSARY_EN_CORE
+
+
+def slovnicek_box_for_locale(locale: str) -> tuple[tuple[str, str], ...]:
+    from svejk.locale import normalize_locale
+
+    return SLOVNIK_BOX_EN if normalize_locale(locale) == "en" else SLOVNIK_BOX
+
 
 def slovnicek_for_locale(locale: str) -> tuple[tuple[str, str], ...]:
     from svejk.locale import normalize_locale
 
     return SLOVNIČEK_EN if normalize_locale(locale) == "en" else SLOVNIČEK
+
+
+def poslaneciny_for_locale(locale: str) -> tuple[tuple[str, str], ...]:
+    from svejk.locale import normalize_locale
+
+    return POSLANECINY_PREKLAD_EN if normalize_locale(locale) == "en" else POSLANECINY_PREKLAD
 
 
 def glossary_for_locale(locale: str) -> tuple[tuple[str, str], ...]:

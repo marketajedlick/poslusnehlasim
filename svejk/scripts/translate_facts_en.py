@@ -73,18 +73,48 @@ def _translate_list(items: list[str]) -> list[str]:
     return [_translate(x) for x in items if (x or "").strip()]
 
 
-def _translate_fakty(fakty: list[dict]) -> list[dict]:
+def _translate_fakty(fakty: list[dict], *, citace_only: bool = False) -> list[dict]:
     out: list[dict] = []
     for row in fakty:
         if not isinstance(row, dict):
             continue
         en_row: dict = {}
-        if (row.get("text") or "").strip():
+        if not citace_only and (row.get("text") or "").strip():
             en_row["text"] = _translate(str(row["text"]))
-        if row.get("citace"):
-            en_row["citace"] = row["citace"]
-        out.append(en_row)
+        citace = (row.get("citace") or "").strip()
+        if citace:
+            en_row["citace"] = _translate(str(row["citace"]))
+        if en_row:
+            out.append(en_row)
     return out
+
+
+def _backfill_topic_citace(fact: dict) -> dict | None:
+    """Doplní/přepíše en.fakty[].citace z českých fakty."""
+    cs_fakty = fact.get("fakty") or []
+    if not cs_fakty:
+        return None
+    en = dict(fact.get("en") or {})
+    en_fakty = list(en.get("fakty") or [])
+    changed = False
+    for i, row in enumerate(cs_fakty):
+        if not isinstance(row, dict):
+            continue
+        citace = (row.get("citace") or "").strip()
+        if not citace:
+            continue
+        while len(en_fakty) <= i:
+            en_fakty.append({})
+        en_row = dict(en_fakty[i]) if isinstance(en_fakty[i], dict) else {}
+        translated = apply_en_terminology(_translate(citace))
+        if en_row.get("citace") != translated:
+            en_row["citace"] = translated
+            en_fakty[i] = en_row
+            changed = True
+    if not changed:
+        return None
+    en["fakty"] = en_fakty
+    return en
 
 
 def _translate_links(links: list[dict], *, label_key: str) -> list[dict]:
@@ -165,6 +195,111 @@ def _edition_from_key(key: str):
     return int(obdobi_s), int(schuze_s), datum, datetime.strptime(datum, "%d.%m.%Y")
 
 
+def _all_published_paths(obdobi: int) -> tuple[set[Path], set[Path]]:
+    day_paths: set[Path] = set()
+    topic_paths: set[Path] = set()
+    root = processed_root()
+    for ob_dir in sorted(root.glob(f"{obdobi}-s*")):
+        facts = ob_dir / "facts"
+        if not facts.is_dir():
+            continue
+        for dp in (facts / "by_day").glob("*.json"):
+            day = read_json(dp)
+            if day.get("dnesni_ucet") or day.get("zaver"):
+                day_paths.add(dp)
+        for tp in (facts / "by_topic").glob("*.json"):
+            fact = read_json(tp)
+            if fact.get("publikovat"):
+                topic_paths.add(tp)
+    return day_paths, topic_paths
+
+
+_HLASOVANI_PREFIXES = ("hlasovani-neprosli", "hlasovani-prosli", "hlasovani-zvoleni")
+
+
+def _approved_hlasovani_paths(obdobi: int) -> set[Path]:
+    paths_out: set[Path] = set()
+    for key in _load_approved_keys(obdobi):
+        ob, schuze_s, datum = key.split("/", 2)
+        paths = SchuzePaths.create(int(ob), int(schuze_s))
+        when = _edition_from_key(key)[3]
+        date_s = when.strftime("%Y-%m-%d")
+        for prefix in _HLASOVANI_PREFIXES:
+            hp = paths.facts / f"{prefix}-{date_s}.json"
+            if hp.is_file():
+                paths_out.add(hp)
+    return paths_out
+
+
+def _translate_varovani_citace(val: str) -> str:
+    return apply_en_terminology(_translate(val))
+
+
+def translate_hlasovani(data: dict) -> dict:
+    en_rows: list[dict] = []
+    for row in data.get("radky") or []:
+        if not isinstance(row, dict):
+            continue
+        jmeno = (row.get("jmeno") or "").strip()
+        var = row.get("varovani") or {}
+        if not jmeno or not isinstance(var, dict):
+            continue
+        en_var: dict = {}
+        shrnuti = (var.get("shrnuti") or "").strip()
+        citace = var.get("citace")
+        if shrnuti:
+            en_var["shrnuti"] = _translate_varovani_citace(shrnuti)
+        if citace:
+            if isinstance(citace, list):
+                en_var["citace"] = [
+                    _translate_varovani_citace(str(c)) for c in citace if str(c).strip()
+                ]
+            elif isinstance(citace, str) and citace.strip():
+                en_var["citace"] = _translate_varovani_citace(citace)
+        if en_var:
+            en_rows.append({"jmeno": jmeno, "varovani": en_var})
+    return {"radky": en_rows}
+
+
+def _backfill_hlasovani_citace(data: dict) -> dict | None:
+    en = dict(data.get("en") or {})
+    en_by_name: dict[str, dict] = {}
+    for row in en.get("radky") or []:
+        if isinstance(row, dict) and (row.get("jmeno") or "").strip():
+            en_by_name[str(row["jmeno"]).strip()] = dict(row)
+    changed = False
+    for row in data.get("radky") or []:
+        if not isinstance(row, dict):
+            continue
+        jmeno = (row.get("jmeno") or "").strip()
+        var = row.get("varovani") or {}
+        if not jmeno or not isinstance(var, dict):
+            continue
+        citace = var.get("citace")
+        if not citace:
+            continue
+        en_row = en_by_name.setdefault(jmeno, {"jmeno": jmeno, "varovani": {}})
+        en_var = dict(en_row.get("varovani") or {})
+        if isinstance(citace, list):
+            translated = [
+                _translate_varovani_citace(str(c)) for c in citace if str(c).strip()
+            ]
+            if en_var.get("citace") != translated:
+                en_var["citace"] = translated
+                changed = True
+        elif isinstance(citace, str) and citace.strip():
+            translated = _translate_varovani_citace(citace)
+            if en_var.get("citace") != translated:
+                en_var["citace"] = translated
+                changed = True
+        en_row["varovani"] = en_var
+        en_by_name[jmeno] = en_row
+    if not changed:
+        return None
+    en["radky"] = list(en_by_name.values())
+    return en
+
+
 def _approved_paths(obdobi: int) -> tuple[set[Path], set[Path]]:
     day_paths: set[Path] = set()
     topic_paths: set[Path] = set()
@@ -187,8 +322,60 @@ def run(
     *,
     force: bool = False,
     dry_run: bool = False,
+    citace_only: bool = False,
+    all_published: bool = False,
+    hlasovani: bool = False,
 ) -> dict[str, int]:
-    day_paths, topic_paths = _approved_paths(obdobi)
+    if hlasovani or citace_only:
+        hlasovani_paths = _approved_hlasovani_paths(obdobi)
+        stats = {"hlasovani": 0, "topics_citace": 0, "skipped": 0}
+        for hp in sorted(hlasovani_paths):
+            data = read_json(hp)
+            if citace_only and not hlasovani:
+                new_en = _backfill_hlasovani_citace(data)
+            elif force or not data.get("en"):
+                new_en = translate_hlasovani(data)
+            else:
+                new_en = _backfill_hlasovani_citace(data)
+            if new_en is None:
+                stats["skipped"] += 1
+                continue
+            if dry_run:
+                print(f"hlasovani: {hp.relative_to(processed_root())}")
+                stats["hlasovani"] += 1
+                continue
+            data["en"] = new_en
+            _write_json(hp, data)
+            stats["hlasovani"] += 1
+            print(f"✓ hlasovani {hp.name}")
+        if citace_only:
+            if all_published:
+                _, topic_paths = _all_published_paths(obdobi)
+            else:
+                _, topic_paths = _approved_paths(obdobi)
+            for tp in sorted(topic_paths):
+                fact = read_json(tp)
+                if not fact.get("en"):
+                    stats["skipped"] += 1
+                    continue
+                new_en = _backfill_topic_citace(fact)
+                if new_en is None:
+                    stats["skipped"] += 1
+                    continue
+                if dry_run:
+                    print(f"citace: {tp.relative_to(processed_root())}")
+                    stats["topics_citace"] += 1
+                    continue
+                fact["en"] = new_en
+                _write_json(tp, fact)
+                stats["topics_citace"] += 1
+                print(f"✓ citace {tp.name}")
+        return stats
+
+    if all_published:
+        day_paths, topic_paths = _all_published_paths(obdobi)
+    else:
+        day_paths, topic_paths = _approved_paths(obdobi)
     stats = {"topics": 0, "days": 0, "skipped": 0}
 
     for tp in sorted(topic_paths):
@@ -227,8 +414,30 @@ def main() -> int:
     p.add_argument("--obdobi", type=int, default=2025)
     p.add_argument("--force", action="store_true", help="Přepsat existující en bloky")
     p.add_argument("--dry-run", action="store_true")
+    p.add_argument(
+        "--citace-only",
+        action="store_true",
+        help="Přeložit jen citace ve faktech a varovani (bez přepisu ostatního en)",
+    )
+    p.add_argument(
+        "--all-published",
+        action="store_true",
+        help="Všechna publikovaná témata/dny, ne jen schválená vydání",
+    )
+    p.add_argument(
+        "--hlasovani",
+        action="store_true",
+        help="Přeložit hlasovani-*.json (vyznamenání tabulky)",
+    )
     args = p.parse_args()
-    stats = run(args.obdobi, force=args.force, dry_run=args.dry_run)
+    stats = run(
+        args.obdobi,
+        force=args.force,
+        dry_run=args.dry_run,
+        citace_only=args.citace_only,
+        all_published=args.all_published,
+        hlasovani=args.hlasovani,
+    )
     print(json.dumps(stats, ensure_ascii=False))
     return 0
 

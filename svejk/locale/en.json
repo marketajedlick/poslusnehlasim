@@ -33,7 +33,7 @@
   },
   "subscribe": {
     "aria": "Newsletter signup",
-    "gloss": "You don't have to go to The Chamber of Deputies. Leave your e-mail and the diary will come to you.",
+    "gloss": "You don't have to go to The Chamber of Deputies.\nLeave your e-mail and the diary will come to you.",
     "email_aria": "E-mail for newsletter",
     "placeholder": "you@email.com",
     "submit": "Subscribe",
@@ -111,7 +111,20 @@
     "title": "Subscription confirmed · Poslušně hlásím",
     "meta": "Your Poslušně hlásím newsletter subscription is confirmed.",
     "heading": "Welcome to the newsletter",
-    "gloss": "Everything went according to procedure. From the next edition, the parliamentary diary will land in your inbox."
+    "gloss": "Everything went according to procedure. From the next edition, the parliamentary diary will land in your inbox.",
+    "latest_heading": "While you wait for the next edition",
+    "latest_text": "The newest edition is already out",
+    "latest_suffix": "What MPs passed, what failed, and why it matters.",
+    "latest_cta": "Read the latest edition →",
+    "expect_heading": "What to expect",
+    "expect_text": "After each sitting day of The Chamber of Deputies we briefly summarise what was discussed and what it means in practice. No party bias. No political commentary. No TV shouting.",
+    "frequency_heading": "How often",
+    "frequency_text": "Only when a new edition comes out. Sometimes several times a week, sometimes not at all. When nothing happens, we send nothing.",
+    "no_marketing_heading": "Poslušně hlásím",
+    "no_marketing_text": "No marketing, no weekly reminders. You can unsubscribe anytime.",
+    "note_prefix": "This page appears only after confirming your subscription.",
+    "note_contact": "Something off? E-mail:",
+    "note_reply": "Something off? Reply to the confirmation e-mail."
   },
   "terms_page": {
     "title": "Terms of use · Poslušně hlásím",

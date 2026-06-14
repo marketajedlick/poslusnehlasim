@@ -60,6 +60,8 @@ def localized_fakty(fact: dict[str, Any], locale: str = "cs") -> list[dict[str, 
             en_row = en_fakty[i]
             if (en_row.get("text") or "").strip():
                 merged["text"] = en_row["text"]
+            if (en_row.get("citace") or "").strip():
+                merged["citace"] = en_row["citace"]
         out.append(merged)
     return out
 

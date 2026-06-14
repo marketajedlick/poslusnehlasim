@@ -33,7 +33,7 @@
   },
   "subscribe": {
     "aria": "Odběr novinek",
-    "gloss": "Do sněmovny chodit nemusíš. Nech mi tu e-mail a noviny přijdou za tebou.",
+    "gloss": "Do sněmovny chodit nemusíš.\nNech mi tu e-mail a noviny přijdou za tebou.",
     "email_aria": "E-mail pro odběr novinek",
     "placeholder": "vas@email.cz",
     "submit": "Poslušně odebírat",
@@ -111,7 +111,20 @@
     "title": "Odběr potvrzen · Poslušně hlásím",
     "meta": "Odběr novinek Poslušně hlásím je potvrzen.",
     "heading": "Vítej v odběru",
-    "gloss": "Poslušně hlásím, že vše proběhlo podle předpisů. Od příštího vydání ti bude Deník sněmovny chodit do schránky."
+    "gloss": "Poslušně hlásím, že vše proběhlo podle předpisů. Od příštího vydání ti bude Deník sněmovny chodit do schránky.",
+    "latest_heading": "Než dorazí další vydání",
+    "latest_text": "Nejnovější číslo už je venku",
+    "latest_suffix": "Co poslanci schválili, co neprošlo a proč na tom záleží.",
+    "latest_cta": "Přečíst poslední vydání →",
+    "expect_heading": "Co v odběru čekat",
+    "expect_text": "Po každém jednacím dni poslanecké sněmovny stručně shrneme co se řešilo a co to znamená v praxi. Bez stranění. Bez politických komentářů. Bez televizního křiku.",
+    "frequency_heading": "Jak často to chodí",
+    "frequency_text": "Jen když vyjde nové vydání. Někdy několikrát za týden, někdy vůbec. Když se nic neděje, neposíláme nic.",
+    "no_marketing_heading": "Poslušně hlásím",
+    "no_marketing_text": "Žádný marketing, žádné týdenní připomínky. Odhlásit se můžete kdykoliv.",
+    "note_prefix": "Tahle stránka se ukáže jen po potvrzení odběru.",
+    "note_contact": "Něco nesedí? Napiš na e-mail:",
+    "note_reply": "Něco nesedí? Odpověz rovnou na potvrzovací e-mail."
   },
   "terms_page": {
     "title": "Podmínky používání · Poslušně hlásím",

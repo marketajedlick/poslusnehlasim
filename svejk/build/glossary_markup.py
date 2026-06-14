@@ -6,7 +6,7 @@ import re
 
 from markupsafe import Markup, escape
 
-from svejk.glossary import SLOVNIK_BOX, glossary_for_locale
+from svejk.glossary import glossary_for_locale, slovnicek_box_for_locale
 
 
 def _pattern(phrase: str) -> re.Pattern[str]:
@@ -102,7 +102,7 @@ def svejkov_slovnik(*texts: str, limit: int = 6, locale: str = "cs") -> list[tup
 
     found: list[tuple[str, str]] = []
     seen: set[str] = set()
-    for label, needle in SLOVNIK_BOX:
+    for label, needle in slovnicek_box_for_locale(locale):
         if len(found) >= limit:
             break
         if not _needle_pattern(needle).search(combined):

@@ -21,7 +21,7 @@
           <div class="pad">
             <header class="pivo-head">
               <div class="eyebrow">{{ t.beer_page.eyebrow }}</div>
-              <h1 class="pivo-title">{% if locale == 'en' %}Buy <span class="terra">Švejk</span> a beer{% else %}Kup <span class="terra">Švejkovi</span> pivo{% endif %}</h1>
+              <h1 class="pivo-title">{{ t.beer_page.heading }}</h1>
               <nav class="pivo-nav" aria-label="{{ t.nav.aria_main }}">
                 {% if latest_href %}
                 <a class="site-nav-link" href="{{ latest_href }}">{{ t.nav.latest }}</a>
