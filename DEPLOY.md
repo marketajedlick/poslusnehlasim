@@ -138,7 +138,7 @@ npx wrangler pages secret put ECOMAIL_API_KEY --project-name=poslusnehlasim-odeb
 npx wrangler pages deploy public --project-name=poslusnehlasim-odebir --branch=main
 ```
 
-Worker má **rate limit** přes Cloudflare KV (výchozí: 10 POST/hod z IP, 3 odběry/den na e-mail). Admin notifikace při selhání odběru posílá jen server po chybě Ecomail API (ne veřejný endpoint z klienta). CI vytvoří KV namespace `poslusnehlasim-odebir-rl` automaticky.
+Worker má **rate limit** přes Cloudflare KV (výchozí: 10 POST/hod z IP, 3 odběry/den na e-mail). Admin notifikace při selhání odběru posílá jen server po chybě Ecomail API (ne veřejný endpoint z klienta). CI (`scripts/deploy-subscribe-worker.sh` z `pages.yml` i `subscribe-worker.yml`) vytvoří KV namespace `poslusnehlasim-odebir-rl` automaticky.
 
 (Pozor: `pip install wrangler` v conda je jiný balíček — vždy `npx wrangler@4`.)
 
