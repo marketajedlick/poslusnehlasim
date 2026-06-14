@@ -1561,6 +1561,12 @@ body.archiv-page{
 .soukromi-body{
   display:flex; flex-direction:column; gap:18px;
 }
+.soukromi-body--prose{
+  gap:28px;
+}
+.soukromi-body--prose .soukromi-section p + p{
+  margin-top:10px;
+}
 .soukromi-section p{
   margin:0;
   font-family:'Old Standard TT',serif;

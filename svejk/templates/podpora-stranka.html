@@ -13,37 +13,35 @@
 <div class="archiv-wrap soukromi-wrap">
   <header class="archiv-head">
     <h1 class="archiv-title">Zákaznická podpora</h1>
-    <p class="archiv-gloss">Poslušně hlásím, že když něco nefunguje,<br />napište, odpovíme, jak to půjde.</p>
+    <p class="archiv-gloss">Poslušně hlásím, že i ten nejlepší systém občas ztratí nit. Když se to stane, napište.</p>
   </header>
 
-  <div class="soukromi-body">
+  <div class="soukromi-body soukromi-body--prose">
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Kontakt</h2>
       {% if contact_email %}
-      <p>Napište na <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.</p>
+      <p>Napište na <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>. Odpovídáme obvykle do několika pracovních dnů a stačí i odpověď na kterýkoliv e-mail od nás.</p>
+      {% else %}
+      <p>Odpovídáme obvykle do několika pracovních dnů a stačí i odpověď na kterýkoliv e-mail od nás.</p>
       {% endif %}
-      <p>Odpovídáme obvykle do několika pracovních dnů.</p>
-      <p>Stačí i odpověď na kterýkoliv e-mail od nás.</p>
     </section>
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Odběr novinek</h2>
-      <p>Odhlásit se můžete jedním kliknutím v každém e-mailu.</p>
-      <p>Dotazy ke zpracování údajů najdete v <a href="{{ privacy_href }}">zásadách ochrany osobních údajů</a>.</p>
+      <p>Odhlásit se můžete jedním kliknutím v každém e-mailu. Dotazy ke zpracování osobních údajů najdete v <a href="{{ privacy_href }}">zásadách ochrany osobních údajů</a>.</p>
     </section>
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Dobrovolné příspěvky (pivo, rum, Štamgast)</h2>
-      <p>Platby zpracovává <a href="https://stripe.com" rel="noopener">Stripe</a>. Web sám platební údaje neukládá.</p>
-      <p>Jde o dobrovolný příspěvek na provoz deníku, ne nákup zboží ani služby.</p>
-      <p><strong>Štamgast (měsíční):</strong> předplatné zrušíte ve Stripe, odkaz je v e-mailu od Stripe po platbě. Když si s tím neporadíte, napište nám.</p>
-      <p><strong>Reklamace nebo vrácení:</strong> napište na kontaktní e-mail, uveďte datum a částku. Vyřídíme podle situace.</p>
+      <p>Platby zpracovává <a href="https://stripe.com" rel="noopener">Stripe</a> a web platební údaje neukládá. Pivo, rum i Štamgast jsou dobrovolné příspěvky na provoz deníku, nikoli nákup zboží nebo služby.</p>
+      <p>Štamgasta můžete kdykoliv zrušit ve Stripe pomocí odkazu v potvrzovacím e-mailu. Pokud si nebudete vědět rady, napište nám.</p>
+      <p>Reklamace nebo vrácení řešíme individuálně – uveďte prosím datum a částku platby.</p>
     </section>
 
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Problém s webem</h2>
-      <p>Nefunguje stránka, odběr nebo platba? Napište, co jste dělali, jaký prohlížeč používáte a co se stalo.</p>
-      <p>Ideálně rovnou s odkazem na konkrétní vydání.</p>
+      <p>Nefunguje stránka, odběr nebo platba? Napište nám, co se stalo, co jste zrovna dělali a jaký používáte prohlížeč. Čím více detailů pošlete, tím rychleji problém najdeme.</p>
+      <p>Ideálně přiložte i odkaz na konkrétní vydání nebo screenshot.</p>
     </section>
   </div>
 
