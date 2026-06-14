@@ -46,5 +46,33 @@
   "steno_slov": 14898,
   "lead": "Večer na čtrnácté schůzi schválili zkrácenou debatu o cenách benzínu a první kolo stovkou hlasů. Středeční noc a pátek čtyřiadvacátého dubna na tento zákon navážou.",
   "pointa": "Vláda spustila zrychlené projednávání kvůli cenám na čerpacích stanicích. Opozice mluvila o socialistických experimentech, ale první kolo prošlo bez odporu.",
-  "mean": "Zákon má vládě dát nástroj na regulaci cen benzínu a nafty v krizových situacích. Ve zkrácené debatě jde o rychlou cestu bez standardních lhůt."
+  "mean": "Zákon má vládě dát nástroj na regulaci cen benzínu a nafty v krizových situacích. Ve zkrácené debatě jde o rychlou cestu bez standardních lhůt.",
+  "en": {
+    "nadpis": "Gasoline under state supervision",
+    "lead": "In the evening of the fourteenth meeting, they approved the abbreviated debate on gasoline prices and the first round by a hundred votes. Wednesday night and Friday the twenty-fourth of April will follow up on this law.",
+    "pointa": "The government has launched an accelerated debate over prices at petrol stations. The opposition talked about socialist experiments, but the first round passed without opposition.",
+    "mean": "The law is supposed to give the government a tool to regulate gasoline and diesel prices in crisis situations. In the abbreviated debate, it is a fast track without standard deadlines.",
+    "predmet_lidsky": "prices",
+    "koho": [
+      "Who does it concern? Motorists. The law is intended to allow the government to intervene in petrol and diesel prices when the market fails."
+    ],
+    "fakty": [
+      {
+        "text": "Okamura declared a legislative emergency over House Press 163 on fuel prices.",
+        "citace": "Dne 13. dubna tohoto roku jsem svým rozhodnutím vyhlásil stav legislativní nouze na dobu od 13. dubna 2026 do 29. května 2026."
+      },
+      {
+        "text": "Schillerová presented the government's proposal on the regulation of fuel prices.",
+        "citace": "Předložený návrh uvede místopředsedkyně vlády a ministryně financí Alena Schillerová."
+      },
+      {
+        "text": "Abbreviated meeting approved 79-51, first reading 100-0.",
+        "citace": "Hlasování číslo 48 pro 79 proti 51, hlasování číslo 49 pro 100."
+      },
+      {
+        "text": "The second reading attempt of the evening fell 64-89.",
+        "citace": "Hlasování číslo 50, pro 64, proti 89. Návrh byl zamítnut."
+      }
+    ]
+  }
 }

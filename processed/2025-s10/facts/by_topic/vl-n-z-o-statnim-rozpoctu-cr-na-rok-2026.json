@@ -36,5 +36,25 @@
   "steno_slov": 144303,
   "lead": "Státní rozpočet prošel v závěrečném hlasování, sto sedmdesát osm hlasů pro, jeden proti. Večer padly i rozpočty většiny fondů.",
   "pointa": "Den trval do večera a přinesl přes sto dílčích hlasování k pozměňovacím návrhům. Závěrečné schválení navazovalo na druhé kolo ze čtvrtka 4. března.",
-  "mean": "Závěrečné hlasování je finální schválení rozpočtu na rok 2026. Schodek kolem 310 miliard dělí politiku na dvě poloviny, peníze půjdou od armády po školství."
+  "mean": "Závěrečné hlasování je finální schválení rozpočtu na rok 2026. Schodek kolem 310 miliard dělí politiku na dvě poloviny, peníze půjdou od armády po školství.",
+  "en": {
+    "nadpis": "Budget approved",
+    "lead": "The state budget was passed in the final vote, one hundred and seventy-eight votes in favor and one against. In the evening, the budgets of most funds also fell.",
+    "pointa": "The day lasted into the evening and brought over a hundred partial votes on the amendments. The final approval followed the second round on Thursday, March 4.",
+    "mean": "The final vote is the final approval of the budget for 2026. The deficit of around 310 billion divides politics into two halves, the money will go from the army to education.",
+    "predmet_lidsky": "on the state budget of the Czech Republic for 2026",
+    "koho": [
+      "Who does it concern? All of them. The budget determines how much the state will spend on health, defense, education and benefits."
+    ],
+    "fakty": [
+      {
+        "text": "Vote number 110, for 178, against 1. The bill was agreed to.",
+        "citace": "Hlasování číslo 110, pro 178, proti 1. S návrhem zákona byl vysloven souhlas."
+      },
+      {
+        "text": "Vote number 239, for 142, against none. The draft resolution was approved.",
+        "citace": "Hlasování číslo 239, pro 142, proti nikdo. Návrh usnesení byl schválen."
+      }
+    ]
+  }
 }

@@ -113,11 +113,11 @@ def _edition_day_path(edition) -> Path | None:
     return day_path if day_path.is_file() else None
 
 
-def _edition_og_fields(edition, *, snapshot_html: str = "") -> dict[str, str | int]:
+def _edition_og_fields(edition, *, snapshot_html: str = "", locale: str = "cs") -> dict[str, str | int]:
     day_path = _edition_day_path(edition)
     if day_path is not None:
         paths = SchuzePaths.create(edition.obdobi, edition.schuze)
-        content = build_den_content(day_path, paths)
+        content = build_den_content(day_path, paths, locale=locale)
         return {
             "den": content.den,
             "dnesni_ucet": content.dnesni_ucet,
@@ -174,7 +174,7 @@ def _render_edition_html(
     day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
     if not day_path.is_file():
         return None
-    content = build_den_content(day_path, paths)
+    content = build_den_content(day_path, paths, locale=locale)
     return render_den_html(
         content,
         paths,
@@ -186,6 +186,7 @@ def _render_edition_html(
         obdobi=obdobi,
         base_path=base,
         locale=locale,
+        show_locale_notice=False,
     )
 
 
@@ -345,7 +346,7 @@ def run_export_pages(
             home_target = f"{site}{latest_href}"
             written.append(_write_locale_html(out, "index.html", _redirect_html(home_target), loc))
         else:
-            content = build_den_content(day_path, paths)
+            content = build_den_content(day_path, paths, locale=locale)
             home_canonical = f"{site}{localized_path('/', loc)}"
             index_html = render_den_html(
                 content,
@@ -360,6 +361,7 @@ def run_export_pages(
                 canonical_url=home_canonical,
                 is_homepage=True,
                 locale=loc,
+                show_locale_notice=False,
             )
             written.append(_write_locale_html(out, "index.html", index_html, loc))
 

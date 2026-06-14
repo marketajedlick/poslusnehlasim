@@ -41,5 +41,29 @@
   "steno_slov": 15863,
   "lead": "Pátek uzavřel dubnový oblouk o cenách benzínu. Sněmovna ve druhém kole zákon schválila sto dvěma hlasy proti pětačtyřiceti, přestože ho Senát po úterním prvním kole a středeční noci zamítl.",
   "pointa": "Jakob mluvil o zrychleném projednávání jako o zkratce pro sporný návrh. Koalice zákon znovu protlačila ve zkráceném režimu.",
-  "mean": "Vláda může dál usilovat o regulaci cen benzínu a nafty. Senát musí zákon znovu posoudit, tentokrát proti vůli horní komory."
+  "mean": "Vláda může dál usilovat o regulaci cen benzínu a nafty. Senát musí zákon znovu posoudit, tentokrát proti vůli horní komory.",
+  "en": {
+    "nadpis": "Gasoline passed the Senate",
+    "lead": "Friday closed the April arc on gasoline prices. In the second round, the House approved the law by one hundred and two votes to forty-five, although the Senate rejected it after Tuesday's first round and Wednesday night.",
+    "pointa": "Jakob referred to expedited hearing as shorthand for a contentious proposal. The coalition pushed the law through again in an abbreviated mode.",
+    "mean": "The government may continue to seek to regulate the prices of petrol and diesel. The Senate must consider the bill again, this time against the will of the upper chamber.",
+    "predmet_lidsky": "prices",
+    "koho": [
+      "Who does it concern? Motorists. The law is intended to allow the government to intervene in the prices of petrol and diesel."
+    ],
+    "fakty": [
+      {
+        "text": "Jakob recalled that the Senate rejected the law due to material and legal defects.",
+        "citace": "Následně jej ale zamítl Senát Parlamentu České republiky, což není drobnost, to je poměrně vážné varování."
+      },
+      {
+        "text": "The coalition asks the Senate to override without self-reflection.",
+        "citace": "Koalice dnes žádá jediné, aby svou většinou Senát přehlasovala. Bez jakékoliv sebereflexe."
+      },
+      {
+        "text": "Second reading passed 102-45, final vote 112-2.",
+        "citace": "Hlasování číslo 193 pro 102 proti 45, hlasování číslo 194 pro 112 proti 2."
+      }
+    ]
+  }
 }

@@ -22,7 +22,8 @@
 {% endif %}
 </head>
 <body>
-{% if locale == 'en' %}
+{% include "lang-switch.html" %}
+{% if show_locale_notice %}
 <p class="locale-notice" role="note">{{ t.locale_notice }}</p>
 {% endif %}
 {% if nav %}

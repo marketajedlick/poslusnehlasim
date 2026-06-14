@@ -6,7 +6,8 @@
     "glossary": "Švejk's glossary",
     "beer": "Buy Švejk a beer 🍺",
     "lang_switch": "Česky",
-    "lang_switch_aria": "Switch to Czech version of the site"
+    "lang_switch_aria": "Switch to Czech version of the site",
+    "lang_toggle_aria": "Site language"
   },
   "footer": {
     "aria": "Site footer",

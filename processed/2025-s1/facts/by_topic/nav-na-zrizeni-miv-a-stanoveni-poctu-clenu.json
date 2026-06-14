@@ -34,5 +34,29 @@
   "mean": "První den po volbách jen nastavuje kostru Sněmovny: výbory, ověřovatele a volební komisi. Na zákony se čeká až na dalších schůzích.",
   "pocet_hlasovani": 1,
   "proslo": true,
-  "steno_slov": 904
+  "steno_slov": 904,
+  "en": {
+    "nadpis": "Opening of the Chamber of Deputies",
+    "lead": "Monday's first meeting of the tenth period began with the anthem and the resignation of Richard Brabec, in the evening the House of Representatives established a mandate and immunity committee with sixteen members, one hundred and ninety-three votes against zero.",
+    "pointa": "Richard Brabec said goodbye after twelve years, MP Vlastimil Válek then took a vow on the floor. Just organization, no laws.",
+    "mean": "On the first day after the election, he just sets up the skeleton of the House: committees, verifiers and the electoral commission. Laws are expected at the next meetings.",
+    "predmet_lidsky": "establishment of mandate and immunity committee",
+    "koho": [
+      "It does not concern the citizen, it is about the start of the new parliament."
+    ],
+    "fakty": [
+      {
+        "text": "Richard Brabec resigned from his mandate after twelve years in the Chamber at the opening of the Chamber.",
+        "citace": "Tímto podle čl. 24 Ústavy a § 6 odst. c) jednacího řádu rezignuji na mandát poslance Poslanecké sněmovny Parlamentu České republiky."
+      },
+      {
+        "text": "The Credentials and Immunities Committee has sixteen members, vote number 2: 193 for, none against.",
+        "citace": "Hlasování číslo 2, přihlášeno 194 poslanců, pro 193, proti žádný."
+      },
+      {
+        "text": "Taťána Malá asked for a minute of silence in memory of Cardinal Dominik Duka.",
+        "citace": "Chtěla bych vás požádat, abychom jako Sněmovna vzdali úctu kardinálovi a emeritnímu pražskému arcibiskupovi Dominiku Dukovi."
+      }
+    ]
+  }
 }

@@ -41,5 +41,29 @@
   "steno_slov": 23812,
   "lead": "Čtvrteční dopoledne schválili změnu zákona o spotřebitelském úvěru, sto třicet čtyři hlasů proti nule. ODS prosadila zákon jako první bod dne.",
   "pointa": "Změna zákona ladí pravidla pro půjčky a splátkové prodeje. Šlo o rychlý bod mezi interpelacemi a dalšími zákony.",
-  "mean": "Změna zákona zpřísňuje informační povinnosti věřitelů a upravuje práva dlužníků u půjček a splátkového prodeje."
+  "mean": "Změna zákona zpřísňuje informační povinnosti věřitelů a upravuje práva dlužníků u půjček a splátkového prodeje.",
+  "en": {
+    "nadpis": "Loans under the new rules",
+    "lead": "On Thursday morning, they approved an amendment to the Consumer Credit Act, one hundred and thirty-four votes against zero. The ODS pushed through the law as the first item of the day.",
+    "pointa": "The change in the law adjusts the rules for loans and installment sales. It was a quick point between interpellations and other laws.",
+    "mean": "The change in the law tightens the information obligations of creditors and regulates the rights of borrowers in loans and installment sales.",
+    "predmet_lidsky": "consumer credit",
+    "koho": [
+      "Who does it concern? People who take out a loan, installment sale or credit card."
+    ],
+    "fakty": [
+      {
+        "text": "Šťastný promoted consumer credit as the first point of Thursday's meeting.",
+        "citace": "Navrhuji, abychom dnes jako první bod pokračovali v projednávání bodu číslo 28, sněmovní tisk 145, o spotřebitelském úvěru."
+      },
+      {
+        "text": "Vote number 162, one hundred and thirty-four votes in favour.",
+        "citace": "Hlasování číslo 162, pro 134, proti 0."
+      },
+      {
+        "text": "Already when the current law was adopted in 2016, we set the rules quite strictly and in a number of areas we went beyond the scope of the European regulation at the time.",
+        "citace": "Už při přijetí současného zákona v roce 2016 jsme nastavili pravidla poměrně přísně a v řadě oblastí jsme šli nad rámec tehdejší evropské úpravy."
+      }
+    ]
+  }
 }

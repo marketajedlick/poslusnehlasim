@@ -41,5 +41,29 @@
   "steno_slov": 4622,
   "lead": "Sněmovna schválila senátní návrh změny zákonů volebního zákona pro obce, sto dvacet jedna hlasů proti nule. První kolo proběhlo ve zkráceném režimu.",
   "pointa": "Zákon upravuje pravidla komunálních voleb. Senát ho poslal zpět se změnami, Sněmovna souhlasila.",
-  "mean": "Senát vrátil úpravy volebního zákona pro obce, Sněmovna je přijala ve zkráceném režimu. Jde hlavně o technické sladění pravidel komunálních voleb."
+  "mean": "Senát vrátil úpravy volebního zákona pro obce, Sněmovna je přijala ve zkráceném režimu. Jde hlavně o technické sladění pravidel komunálních voleb.",
+  "en": {
+    "nadpis": "Municipal elections are changing",
+    "lead": "The House of Representatives approved the Senate's proposal to amend the Electoral Act for Municipalities, one hundred and twenty one votes to zero. The first round took place in an abbreviated mode.",
+    "pointa": "The law regulates the rules of municipal elections. The Senate sent it back with changes, the House agreed.",
+    "mean": "The Senate returned the amendments to the electoral law for municipalities, the Chamber adopted them in an abbreviated mode. It is mainly about the technical harmonization of the rules of municipal elections.",
+    "predmet_lidsky": "elections to municipal councils",
+    "koho": [
+      "Who does it concern? Voters in municipalities and candidates for municipal elections."
+    ],
+    "fakty": [
+      {
+        "text": "The Senate proposal went as the third item after the program was rescheduled.",
+        "citace": "Třetí bod je senátní návrh o volbách do zastupitelstev obcí, bod číslo 63, jako třetí bod."
+      },
+      {
+        "text": "Proposed first reading in abbreviated mode according to § 90, paragraph 2.",
+        "citace": "Je navrženo, abychom s návrhem zákona vyslovili souhlas již v prvém čtení."
+      },
+      {
+        "text": "Vote number 165, one hundred and twenty one votes in favour.",
+        "citace": "Hlasování číslo 165, pro 121, proti 0."
+      }
+    ]
+  }
 }

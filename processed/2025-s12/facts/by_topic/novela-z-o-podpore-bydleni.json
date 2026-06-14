@@ -60,5 +60,41 @@
   "steno_slov": 31906,
   "lead": "Změna zákona o podpoře bydlení prošla první kolo, návrh na zamítnutí padl na 27 hlasů. Vláda zužuje okruh lidí u kontaktních míst, opozice varovala před devíti miliardami z EU.",
   "pointa": "Dopoledne v sále znělo NATO a připravovaný zákon o cizích vazbách (opozice ho nazývá „ruský zákon“) místo bydlení. Bartoš jako bývalý ministr hájil preventivní síť, Olšáková chtěla zákon zamítnout, Sněmovna ji nepustila.",
-  "mean": "Kontaktní místa mají pomáhat lidem v nájemní krizi dřív, než spadnou do ubytoven. Změna zákona cílí poradenství jen na zranitelné skupiny. Zákon sám byty nestaví, ale má zabránit zbytečným nákladům státu."
+  "mean": "Kontaktní místa mají pomáhat lidem v nájemní krizi dřív, než spadnou do ubytoven. Změna zákona cílí poradenství jen na zranitelné skupiny. Zákon sám byty nestaví, ale má zabránit zbytečným nákladům státu.",
+  "en": {
+    "nadpis": "Housing on the first try",
+    "lead": "The amendment to the law on housing support passed the first round, the proposal for rejection fell to 27 votes. The government is narrowing the circle of people at contact points, the opposition warned of nine billion from the EU.",
+    "pointa": "In the morning, NATO and the upcoming law on foreign ties (the opposition calls it the \"Russian law\") were discussed in the hall instead of housing. As a former minister, Bartoš defended the preventive network, Olšáková wanted to reject the law, but the Chamber did not let her go.",
+    "mean": "Contact points are supposed to help people in a rental crisis before they end up in hostels. The change in the law targets counseling only at vulnerable groups. The law itself does not build apartments, but it is intended to prevent unnecessary costs to the state.",
+    "predmet_lidsky": "housing support",
+    "koho": [
+      "Who does it concern? People in rent and in a housing crisis. Contact points are supposed to give advice before a person ends up in a hostel or on the street."
+    ],
+    "fakty": [
+      {
+        "text": "The amendment introduces the targeting of advice to selected groups of people, not to anyone.",
+        "citace": "Novela zavádí cílení na skupiny osob, které mají na kontaktních místech pro bydlení poskytováno poradenství."
+      },
+      {
+        "text": "Vote number 3, for 27, against 86. The motion to dismiss was not carried.",
+        "citace": "Hlasování číslo 3, pro 27 poslanců, proti 86 poslanců. Návrh na zamítnutí nebyl přijat."
+      },
+      {
+        "text": "Vote number 5, 126 for, none against. The proposal was ordered to the guarantee committee.",
+        "citace": "Hlasování číslo 5, pro 126 poslanců, proti žádný. Konstatuji, že tento návrh byl přikázán k projednání výboru pro veřejnou správu a regionální rozvoj jako garančnímu výboru."
+      },
+      {
+        "text": "By postponing the law, the government would jeopardize more than 9 billion crowns from the European Union fund.",
+        "citace": "Odložením zákona by vláda přímo ohrozila více než 9 miliard korun z fondu Evropské unie, které se podařilo předchozí vládě získat na výstavbu dostupného bydlení."
+      },
+      {
+        "text": "The Housing Support Act does not build any apartments, but builds a preventive counseling network.",
+        "citace": "Zákon o podpoře bydlení žádné byty nestaví. A já doufám, že už si to nebudeme opakovat, protože to nebyla ambice zákona o podpoře bydlení."
+      },
+      {
+        "text": "The impacts of the housing crisis are 4.1 billion per year.",
+        "citace": "Odborníci spočítali, že dopady bytové nouze jsou 4,1 miliardy ročně."
+      }
+    ]
+  }
 }

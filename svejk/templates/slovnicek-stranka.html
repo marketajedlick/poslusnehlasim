@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="slovnicek-page">
+{% include "lang-switch.html" %}
 <div class="slovnicek-wrap">
   <header class="slovnicek-head">
     <h1 class="slovnicek-title">{{ t.glossary_page.heading }}</h1>
@@ -29,10 +30,6 @@
       {% if pivo_href %}
       {% if archive_href or latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
       <a class="site-nav-link" href="{{ pivo_href }}">{{ t.nav.beer }}</a>
-      {% endif %}
-      {% if lang_switch_href %}
-      {% if archive_href or latest_href or pivo_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
-      <a class="site-nav-link site-nav-lang" href="{{ lang_switch_href }}" hreflang="{{ 'en' if locale == 'cs' else 'cs' }}" aria-label="{{ t.nav.lang_switch_aria }}">{{ t.nav.lang_switch }}</a>
       {% endif %}
     </nav>
   </header>

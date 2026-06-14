@@ -39,5 +39,33 @@
   "pointa": "Schillerová hájila zrychlené projednávání kvůli cenám na čerpacích stanicích, Hřib a Jakob útočili na právní vady. Po úterním prvním kole (100:0) následovalo noční závěrečné hlasování 160:0, druhé kolo v noci koalice nenatáhla (64:89).",
   "mean": "Zákon má vládě dát nástroj na regulaci cen benzínu a nafty. Ve zkrácené debatě bez standardní lhůty jde o rychlou cestu, kterou opozice považuje za obcházení parlamentu.",
   "pocet_hlasovani": 0,
-  "proslo": false
+  "proslo": false,
+  "en": {
+    "nadpis": "Gasoline price night",
+    "lead": "Wednesday followed on from Tuesday's first round (100:0) and belonged to the marathon about the regulation of fuel prices. The government pushed for an accelerated discussion, the opposition talked about socialist experiments, dozens of votes lasted until the morning.",
+    "pointa": "Schillerová defended accelerated negotiations due to prices at gas stations, Hřib and Jakob attacked legal defects. Tuesday's first round (100:0) was followed by the night's final vote of 160:0, the coalition did not win the second round at night (64:89).",
+    "mean": "The law is supposed to give the government a tool to regulate the prices of gasoline and diesel. In an abbreviated debate with no standard time limit, this is a fast track that the opposition sees as bypassing parliament.",
+    "predmet_lidsky": "regulation of fuel prices in an abbreviated meeting",
+    "koho": [
+      "Who does it concern? Motorists. The law is supposed to allow the government to intervene in the prices of petrol and diesel in crisis situations."
+    ],
+    "fakty": [
+      {
+        "text": "Schiller advocated a legislative emergency to regulate fuel prices.",
+        "citace": "Dovolte mi, abych vás jménem vlády České republiky seznámila s důvody, které nás vedly k tomu, že jsme požádali o vyhlášení stavu legislativní nouze u návrhu zákona o regulaci cen pohonných hmot vládou."
+      },
+      {
+        "text": "Hřib accused the government of a socialist experiment and legal defects in the proposal.",
+        "citace": "Vláda tady dlouho nedělala vůbec nic. Potom jste začali sledovat ty marže. A teď tady máme návrh na legislativní nouzi."
+      },
+      {
+        "text": "Jakob described the proposal as socialist experiments without meeting the conditions of the emergency.",
+        "citace": "K těmto socialistickým experimentům podrobněji vyjádřím. K němu nejsou splněny podmínky, které dává náš jednací řád."
+      },
+      {
+        "text": "First reading passed 160-0, second reading overnight 64-89.",
+        "citace": "Hlasování číslo 51 pro 160, hlasování číslo 50 pro 64 proti 89."
+      }
+    ]
+  }
 }

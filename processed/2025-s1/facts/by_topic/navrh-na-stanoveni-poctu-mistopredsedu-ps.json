@@ -47,5 +47,33 @@
     "spor": true,
     "prazdny_sal": false
   },
-  "steno_slov": 6464
+  "steno_slov": 6464,
+  "en": {
+    "nadpis": "Two vice-presidents",
+    "lead": "In the evening, the Chamber elected two vice-chairmen, Jiří Barták and Patrik Nacher. The debate on women in leadership ended with the second round being postponed until Friday.",
+    "pointa": "Hřib and Šebelová criticized the male candidate, Okamura interrupted the second round before the clubs could agree on a date. After his election, Nacher demonstrated sign language, as he promised to interpret for the deaf as the new vice president.",
+    "mean": "The vice-chairmen represent the chairman in conducting meetings. Four places should correspond to the balance of the clubs' strengths, two remain vacant and will be filled only on Friday, November 14.",
+    "predmet_lidsky": "the number of vice-presidents and their election",
+    "koho": [
+      "How many deputy speakers will there be, who raises the gavel when the speaker is not present."
+    ],
+    "fakty": [
+      {
+        "text": "The House fixed the number of vice-chairmen at four, vote number 9: one hundred and fifty-six for, one against.",
+        "citace": "Hlasování číslo 9, přihlášeno 194, pro 156, proti 1."
+      },
+      {
+        "text": "In the first round of the secret election, Jiří Barták won 113 votes, Patrik Nacher 98 votes.",
+        "citace": "Jiří Barták získal 113 hlasů a stává se místopředsedou Poslanecké sněmovny. Patrik Nacher získal 98 hlasů a stává se místopředsedou."
+      },
+      {
+        "text": "Zdeněk Hřib criticized that there was no woman on the ticket, Šebelová protested against the label \"half of the population\".",
+        "citace": "My jsme tedy za Piráty nominovali do volby místopředsedkyni Sněmovny dosavadní místopředsedkyni Olgu Richterovou."
+      },
+      {
+        "text": "Nacher promised sign language interpretation like in the Senate and showed a few signs at the counter after being elected.",
+        "citace": "Já jsem se to naučil za těch 15 minut. Děkuju za podporu."
+      }
+    ]
+  }
 }

@@ -40,5 +40,33 @@
   "pointa": "Po projevu prezidenta Pavla o konstruktivitě přišly desítky hlasování o pořadu. Večer teprve prošly ústava, rozpočtová pravidla a data.",
   "mean": "Dopoledne a odpoledne se řešilo, co vůbec Sněmovna projedná a jak reaguje na válku na Blízkém východě. Zákony přišly až večer.",
   "pocet_hlasovani": 0,
-  "proslo": false
+  "proslo": false,
+  "en": {
+    "nadpis": "The Middle East and the show",
+    "lead": "The beginning of the tenth meeting was the crisis in the Middle East and the vote on the agenda. Hřib wanted a point about the crisis line for the Czech Republic in danger, the coalition swept away most of the opposition proposals.",
+    "pointa": "After President Pavel's speech on constructivism, dozens of votes were cast on the program. In the evening, the constitution, budget rules and dates were just passed.",
+    "mean": "In the morning and in the afternoon, they discussed what the Chamber will discuss and how it reacts to the war in the Middle East. The laws did not come until the evening.",
+    "predmet_lidsky": "the crisis in the Middle East and the agenda of the tenth meeting",
+    "koho": [
+      "Who does it concern? More of an observer of politics and people watching the effects of war on energy prices."
+    ],
+    "fakty": [
+      {
+        "text": "Hřib suggested the point Your life is in danger, press one.",
+        "citace": "Jste ohroženi na životě? Stiskněte jedničku. Navrhoval bych to jako první bod dneska."
+      },
+      {
+        "text": "The safety of the population cannot be left to mere words, Hřib said after the president's speech.",
+        "citace": "Ta bezpečnost našich obyvatel nemůže zůstat jenom u slov, protože pokud chceme být důvěryhodným partnerem v NATO a zajistit tu ochranu našich občanů, tak se musíme vážně bavit o investicích do obrany."
+      },
+      {
+        "text": "The Austrian did not want to obstruct, but wanted to discuss the program of the meeting.",
+        "citace": "V rámci principu moderní Sněmovny neobstruovat, nemluvit dlouhé hodiny, ale vyjadřovat se pouze k programu schůze."
+      },
+      {
+        "text": "Dozens of votes on changes to the show before the evening acts.",
+        "citace": "Čeká nás teď opravdu dlouhé hlasování, uvidíme, na čem se domluvíme."
+      }
+    ]
+  }
 }

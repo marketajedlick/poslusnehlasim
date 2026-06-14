@@ -54,5 +54,37 @@
   "steno_slov": 7052,
   "lead": "Stejný výsledek u Okamury, 104 hlasy pro, 82 proti, Sněmovna nevydala předsedu SPD k soudu za plakát Stop migračnímu paktu EU.",
   "pointa": "Okamura mluvil o třech letech vězení za názor a citoval Johna Boka. Richterová připomněla, že jde o podněcování k nenávisti, ne o běžnou volební kampani.",
-  "mean": "Bez souhlasu sněmovny soud nemůže posoudit, jestli šlo o trestný čin verbálního charakteru. Okamura si tak ponechá imunitu, dokud Sněmovna nepřistoupí na vydání."
+  "mean": "Bez souhlasu sněmovny soud nemůže posoudit, jestli šlo o trestný čin verbálního charakteru. Okamura si tak ponechá imunitu, dokud Sněmovna nepřistoupí na vydání.",
+  "en": {
+    "nadpis": "Okamura without trial",
+    "lead": "The same result for Okamura, 104 votes for, 82 against, the House did not take the SPD chairman to court for the poster Stop the EU Migration Pact.",
+    "pointa": "Okamura talked about three years in prison for an opinion and quoted John Bok. Richter reminded that this is incitement to hatred, not a normal election campaign.",
+    "mean": "Without the consent of the House of Representatives, the court cannot assess whether it was a criminal offense of a verbal nature. Okamura will thus retain immunity until the House votes to extradite him.",
+    "predmet_lidsky": "request for consent to the criminal prosecution of MP Tomio Okamura v",
+    "koho": [
+      "Who does it concern? Rather politics and freedom of speech. The court wanted to assess whether the poster Stop the EU Migration Pact incites hatred towards migrants and Roma."
+    ],
+    "fakty": [
+      {
+        "text": "The District Court for Prague 1 requests consent to the prosecution in the case sp. stamp 1T 95/2025.",
+        "citace": "Žádost Obvodního soudu pro Prahu 1 o vyslovení souhlasu s trestním stíháním poslance Tomia Okamury v rámci řízení vedeného pod spisovou značkou 1T 95/2025."
+      },
+      {
+        "text": "I face 3 years in prison for my opinion.",
+        "citace": "Hrozí mi kvůli tomu za názor 3 roky vězení."
+      },
+      {
+        "text": "The poster was titled Stop the EU Migration Pact, the criminal complaint was filed by Jiří Pospíšil from SPOLU.",
+        "citace": "Žádost o moje vydání za pravdivý protiimigrační plakát s názvem Stop migračnímu paktu EU, na základě trestního oznámení poslance Jiřího Pospíšila z koalice SPOLU."
+      },
+      {
+        "text": "Vote number 9, for 104, against 82. The draft resolution was adopted.",
+        "citace": "V hlasování číslo 9 bylo přihlášeno 186 poslanců, pro hlasovalo 104, proti 82. Návrh usnesení byl schválen."
+      },
+      {
+        "text": "It is incitement to hatred for the court to consider whether it is a crime.",
+        "citace": "Proč má být vydán Tomio Okamura? No, prostě proto, aby soud posoudil, zda jde o podněcování k nenávisti."
+      }
+    ]
+  }
 }

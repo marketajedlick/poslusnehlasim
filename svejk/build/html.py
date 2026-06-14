@@ -11,6 +11,7 @@ from typing import Any
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from svejk.build.day_content import DenContent, build_den_content, datum_design
+from svejk.build.io import read_json
 from svejk.build.glossary_markup import glossary_markup
 from svejk.glossary import SLOVNIČEK, slovnicek_anchor
 from svejk.build.publish import list_site_editions
@@ -399,6 +400,7 @@ def render_den_html(
     meta_description: str = "",
     is_homepage: bool = False,
     locale: str = "cs",
+    show_locale_notice: bool | None = None,
 ) -> str:
     _ = day_path
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
@@ -573,6 +575,11 @@ def render_den_html(
                 locale=loc,
             )
     tpl = _jinja_env().get_template("noviny-dlouhe.html")
+    if show_locale_notice is None:
+        from svejk.build.facts_i18n import has_en_translation
+
+        day_data = read_json(day_path) if day_path.is_file() else {}
+        show_locale_notice = loc == "en" and not has_en_translation(day_data)
     return tpl.render(
         content=content,
         schuze=paths.schuze,
@@ -595,6 +602,7 @@ def render_den_html(
         **og,
         pivo_tiers=pivo_tiers(loc),
         cookie_privacy_url=soukromi_pages_href(base_path, loc),
+        show_locale_notice=show_locale_notice,
         **_locale_ctx(loc, site_url=cfg.site_url, base_path=base_path, page_path=page_path),
         **nav_ctx,
         **_site_footer_ctx(

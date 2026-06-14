@@ -48,5 +48,33 @@
   "steno_slov": 3916,
   "lead": "Sněmovna nepotvrdila vrácený návrh minima, jen pět hlasů proti senátnímu zamítnutí, osmdesát pět proti. Senát už mezitím schválil širší verzi v jiném tisku.",
   "pointa": "Večer předtím čtyřicet čtyři hlasování o pořadu, pak teprve minimum. Juchelka žádal o zamítnutí duplicitního tisku, Sněmovna souhlasila.",
-  "mean": "Hranice chudoby a superdávka se řeší jiným zákonem (tisk 88), který Senát už přijal po únorovém odkladu superdávky. Tento vrácený návrh byl nadbytečný a definitivně padl."
+  "mean": "Hranice chudoby a superdávka se řeší jiným zákonem (tisk 88), který Senát už přijal po únorovém odkladu superdávky. Tento vrácený návrh byl nadbytečný a definitivně padl.",
+  "en": {
+    "nadpis": "The minimum did not pass",
+    "lead": "The House did not approve the returned minimum proposal, only five votes against the Senate's rejection, eighty-five against. The Senate has since approved a broader version in another press.",
+    "pointa": "Forty-four votes on the show the night before, then only the minimum. Juchelka asked for the rejection of duplicate printing, the House agreed.",
+    "mean": "The poverty line and the super benefit are dealt with by another law (print 88), which the Senate already adopted after the super benefit was postponed in February. This returned proposal was redundant and definitely fell.",
+    "predmet_lidsky": "living and subsistence minimum",
+    "koho": [
+      "Who does it concern? People on benefits and employment offices. The Senate rejected the duplicate proposal, the House confirmed it."
+    ],
+    "fakty": [
+      {
+        "text": "The Senate approved the wider print 88 and returned the print 85 as redundant.",
+        "citace": "Z tohoto důvodu byl Senátem schválen sněmovní tisk 88 a jako nadbytečný zamítnut sněmovní tisk 85, který se proto nyní vrátil zpátky do Poslanecké sněmovny."
+      },
+      {
+        "text": "The approval of 101 MPs is required to adopt the resolution.",
+        "citace": "K přijetí následujícího usnesení je zapotřebí souhlasu nadpoloviční většiny všech poslanců, tedy souhlasu 101 poslance."
+      },
+      {
+        "text": "Vote number 46, for 5, against 85, the proposal was not approved.",
+        "citace": "V hlasování číslo 46 bylo přihlášeno 171 poslanců, pro hlasovalo 5 (85 proti) a návrh usnesení nebyl schválen."
+      },
+      {
+        "text": "Before that, forty-four votes on changes to the agenda of the meeting.",
+        "citace": "V hlasování číslo 45 bylo přihlášeno 175 poslanců, pro hlasovalo 96. (Proti 6.) Návrh byl přijat a já konstatuji, že jsme schválili pořad schůze."
+      }
+    ]
+  }
 }

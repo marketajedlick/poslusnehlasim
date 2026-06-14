@@ -37,5 +37,25 @@
   "steno_slov": 14905,
   "lead": "Změny ve složení orgánů sněmovny prošly 121 hlasy, nikdo proti.",
   "pointa": "Dopoledne obsazování postů, odpoledne balík evropských úprav zákonů.",
-  "mean": "Strany si rozdělily místa ve výborech. Kdo sedí ve kterém výboru, určuje, kdo vidí jaké zákony jako první."
+  "mean": "Strany si rozdělily místa ve výborech. Kdo sedí ve kterém výboru, určuje, kdo vidí jaké zákony jako první.",
+  "en": {
+    "nadpis": "Organs rearranged",
+    "lead": "Changes in the composition of the bodies of the lower house were passed by 121 votes, none opposed.",
+    "pointa": "Post filling in the morning, a package of European law amendments in the afternoon.",
+    "mean": "The parties divided committee seats. Who sits on which committee determines who sees which laws first.",
+    "predmet_lidsky": "proposal for changes in the composition of the bodies of the Chamber of Deputies",
+    "koho": [
+      "Who does it concern? Political parties. It is about filling committees and commissions."
+    ],
+    "fakty": [
+      {
+        "text": "Vote number 249, for 121, against none. The motion was accepted.",
+        "citace": "Hlasování číslo 249, pro 121, proti nikdo. Návrh byl přijat."
+      },
+      {
+        "text": "Deputy Šťastný approaches the podium",
+        "citace": "(Poslanec Šťastný přistupuje k řečništi)"
+      }
+    ]
+  }
 }

@@ -40,5 +40,33 @@
   "pointa": "Desítky řečníků představovalo pozměňovací návrhy od probačních programů po horskou službu. Babiš hájil kulturu, Černochová obranu, jednání skončilo až před půlnocí.",
   "mean": "Druhé kolo je chvíle, kdy poslanci škrtají, přidávají a přehazují konkrétní položky. Hlasování o rozpočtu přijde až v dalších dnech, tentokrát šlo čistě o řečnickou přestřelku o prioritách státu.",
   "pocet_hlasovani": 0,
-  "proslo": false
+  "proslo": false,
+  "en": {
+    "nadpis": "The second round of the budget",
+    "lead": "All day, the Chamber debated the state budget in the second round, without voting on laws. TOP 09 wanted to reduce the deficit of 310 billion by 64 billion, Bartoš pushed for the crisis line for the Czech Republic in the Middle East.",
+    "pointa": "Dozens of speakers presented amendments ranging from probation programs to mountain service. Babiš defended culture, Černoch defended, the meeting ended before midnight.",
+    "mean": "The second round is when MPs cross, add and shuffle specific items. The vote on the budget will come in the next few days, this time it was purely a rhetorical skirmish about the state's priorities.",
+    "predmet_lidsky": "the state budget for 2026 in the second reading",
+    "koho": [
+      "Who does it concern? All of them. The budget determines how much the state will spend on health, defense, education and benefits."
+    ],
+    "fakty": [
+      {
+        "text": "Today we have the second reading of the budget ahead of us, let's hear each other.",
+        "citace": "Dneska máme mít před sebou druhé čtení rozpočtu, ať se slyšíme."
+      },
+      {
+        "text": "TOP 09 reduces the deficit of 310 billion by 64 billion and strengthens defense and healthcare.",
+        "citace": "Poslanci TOP 09 předložili soubor pozměňovacích návrhů, které snižují plánovaný schodek, který naplánovala tato vláda na 310 miliard, tak tento schodek 310 miliard snižuje o 64 miliard."
+      },
+      {
+        "text": "Bartoš proposes the point Your life is in danger, press number one because of the crisis in the Middle East.",
+        "citace": "My jsme včera s Piráty navrhovali zařadit na jednání Sněmovny bod s názvem Jste ohroženi na životě, stiskněte jedničku."
+      },
+      {
+        "text": "Kršková criticizes the reduction of the defense budget, while other countries increase spending.",
+        "citace": "Za největší slabinu návrhu státního rozpočtu na rok 2026 považuji snížení rozpočtu Ministerstva obrany."
+      }
+    ]
+  }
 }

@@ -54,5 +54,37 @@
   "steno_slov": 18364,
   "lead": "Sněmovna v závěrečném hlasování schválila snížení minimálních sociálních záloh pro živnostníky, sto dvanáct hlasů pro. Předtím předsedající prohlásil první hlasování za zmatečné.",
   "pointa": "Juchelka chtěl vrátit základ z 40 na 35 procent průměrné mzdy. Doplňující usnesení o nízkých důchodech OSVČ pak padlo, protože na ně nebylo dost hlasů.",
-  "mean": "Živnostníci na hlavní činnost zaplatí nižší minimální zálohu na sociálním pojištění, úspora je zhruba sedm set korun měsíčně. Zaměstnance na výplatní pásce se to netýká."
+  "mean": "Živnostníci na hlavní činnost zaplatí nižší minimální zálohu na sociálním pojištění, úspora je zhruba sedm set korun měsíčně. Zaměstnance na výplatní pásce se to netýká.",
+  "en": {
+    "nadpis": "Taxes for self-employed people will decrease",
+    "lead": "In the final vote, the Chamber of Deputies approved the reduction of minimum social advances for self-employed persons, one hundred and twelve votes in favor. Earlier, the chairman declared the first vote confusing.",
+    "pointa": "Juchelka wanted to return the base from 40 to 35 percent of the average salary. The supplementary resolution on the low pensions of the self-employed then fell because there were not enough votes for it.",
+    "mean": "Self-employed people pay a lower minimum advance on social insurance for their main activity, the saving is roughly seven hundred crowns per month. Employees on the payroll are not affected.",
+    "predmet_lidsky": "advances on social insurance for self-employed persons",
+    "koho": [
+      "Who does it concern? Entrepreneurs and self-employed persons for the main activity. The minimum deposit will drop from 40 to 35 percent of the average salary, a saving of roughly seven hundred crowns per month."
+    ],
+    "fakty": [
+      {
+        "text": "From January 2026, the minimum assessment basis for the self-employed increased to 40 percent of the average wage.",
+        "citace": "Od 1. ledna 2026 došlo ke zvýšení minimálního měsíčního vyměřovacího základu osob samostatně výdělečně činných vykonávajících hlavní samostatnou výdělečnou činnost na 40 procent průměrné mzdy."
+      },
+      {
+        "text": "The proposal returns the basis to the level of 2025, i.e. to 35 percent.",
+        "citace": "Ten předložený návrh, který má za cíl vrátit výši minimálního vyměřovacího základu osob samostatně výdělečně činných na úroveň, která byla zákonem stanovena pro rok 2025."
+      },
+      {
+        "text": "The first vote on the law was confusing, the chairman did not read the entire resolution.",
+        "citace": "Já musím prohlásit to předchozí hlasování jako zmatečné, protože je povinností, abych vám přečetl celý návrh usnesení."
+      },
+      {
+        "text": "Vote number 80, for 112, against 9, the law passed.",
+        "citace": "Hlasování číslo 80, přihlášeno 171 poslanců, pro 112 poslanců, proti 9. Návrh usnesení byl přijat."
+      },
+      {
+        "text": "The supplementary resolution on the low pensions of the self-employed was passed by 81:3.",
+        "citace": "Hlasování číslo 81, přihlášeno 174 poslanců, pro 81, proti 3 poslanci. Návrh usnesení nebyl přijat."
+      }
+    ]
+  }
 }

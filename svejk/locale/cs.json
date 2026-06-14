@@ -6,7 +6,8 @@
     "glossary": "Švejkův slovníček",
     "beer": "Kup Švejkovi pivo 🍺",
     "lang_switch": "English",
-    "lang_switch_aria": "Přepnout na anglickou verzi webu"
+    "lang_switch_aria": "Přepnout na anglickou verzi webu",
+    "lang_toggle_aria": "Jazyk webu"
   },
   "footer": {
     "aria": "Patička webu",

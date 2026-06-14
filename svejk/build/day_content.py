@@ -37,6 +37,15 @@ from svejk.listy import (
 )
 from svejk.noviny import _new_state
 from svejk.paths import SchuzePaths
+from svejk.build.facts_i18n import (
+    localized_day,
+    localized_fact,
+    localized_kuriozita_links,
+    localized_mean_links,
+    pick_field,
+    pick_list,
+)
+from svejk.locale import normalize_locale
 from svejk.timeline import BlokDne, DenSchuze, den_v_tydnu
 
 _KICK_RULES: tuple[tuple[tuple[str, ...], str], ...] = (
@@ -52,6 +61,52 @@ _KICK_RULES: tuple[tuple[tuple[str, ...], str], ...] = (
     (("doprav", "silnic", "železn"), "Doprava"),
 )
 
+_VERDIKT_STAMP_EN = {
+    "schvaleno": "Passed",
+    "zvoleno": "Elected",
+    "zamiteno": "Rejected",
+    "odlozeno": "Deferred",
+    "debata": "Debate",
+}
+
+_DEN_CS_TO_EN = {
+    "pondělí": "Monday",
+    "úterý": "Tuesday",
+    "středa": "Wednesday",
+    "čtvrtek": "Thursday",
+    "pátek": "Friday",
+    "sobota": "Saturday",
+    "neděle": "Sunday",
+}
+
+_MESICE_GEN_EN = (
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+)
+
+_KICK_RULES_EN: tuple[tuple[tuple[str, ...], str], ...] = (
+    (("zkumav", "zdrav", "nemocnic", "laborator", "diagnost"), "Healthcare"),
+    (("sociální podpo", "dávk", "přídav", "housing"), "Benefits"),
+    (("živnost", "pojistn", "odvod", "soc. zab"), "Self-employed"),
+    (("penzij", "důchod", "spoření", "pension"), "Pensions"),
+    (("stavebn", "developersk", "územní", "building"), "Construction"),
+    (("investič", "finan", "bank"), "Finance"),
+    (("rostlin", "postřik", "pesticid", "hnojen"), "Agriculture"),
+    (("výbor", "orgán", "volba", "personál", "komis"), "Personnel"),
+    (("energ", "elektr", "plyn"), "Energy"),
+    (("doprav", "silnic", "železn"), "Transport"),
+)
+
 _VERDIKT_STAMP = {
     "schvaleno": "Schváleno",
     "zvoleno": "Zvoleno",
@@ -59,6 +114,13 @@ _VERDIKT_STAMP = {
     "odlozeno": "Odloženo",
     "debata": "Debata",
 }
+
+
+def _verdikt_stamp(verdikt: str, locale: str = "cs") -> str:
+    loc = normalize_locale(locale)
+    if loc == "en":
+        return _VERDIKT_STAMP_EN.get(verdikt, "Passed")
+    return _VERDIKT_STAMP.get(verdikt, "Schváleno")
 
 _MESICE_GEN = (
     "ledna",
@@ -93,10 +155,11 @@ class DenItem:
     mean_links: list[tuple[str, str]] = field(default_factory=list)
     kuriozita_links: list[tuple[str, str]] = field(default_factory=list)
     kuriozita_nav: list[tuple[str, str]] = field(default_factory=list)
+    locale: str = "cs"
 
     @property
     def stamp(self) -> str:
-        return _VERDIKT_STAMP.get(self.verdikt, "Schváleno")
+        return _verdikt_stamp(self.verdikt, self.locale)
 
 
 @dataclass
@@ -153,7 +216,10 @@ def dopad_z_fact(fact: dict[str, Any]) -> str:
     return " ".join(parts)
 
 
-def _kick_z_fact(fact: dict[str, Any]) -> str:
+def _kick_z_fact(fact: dict[str, Any], locale: str = "cs") -> str:
+    if (fact.get("_kick_en") or "").strip():
+        return fact["_kick_en"].strip()
+    rules = _KICK_RULES_EN if normalize_locale(locale) == "en" else _KICK_RULES
     blob = " ".join(
         [
             fact.get("nazev") or "",
@@ -161,7 +227,7 @@ def _kick_z_fact(fact: dict[str, Any]) -> str:
             fact.get("predmet_lidsky") or "",
         ]
     ).lower()
-    for keys, label in _KICK_RULES:
+    for keys, label in rules:
         if any(k in blob for k in keys):
             return label
     nadpis = (fact.get("nadpis") or "").strip()
@@ -169,7 +235,7 @@ def _kick_z_fact(fact: dict[str, Any]) -> str:
         first = re.split(r"[\s\-]", nadpis, maxsplit=1)[0]
         if len(first) >= 4:
             return first
-    return "Sněmovna"
+    return "Chamber" if normalize_locale(locale) == "en" else "Sněmovna"
 
 
 def _lead_kratky(fact: dict[str, Any], topic: dict[str, Any] | None) -> str:
@@ -311,7 +377,12 @@ def zaver_z_obsahu(content: DenContent, day: dict[str, Any]) -> str:
     )
 
 
-def split_zaver(text: str) -> tuple[str, str]:
+def split_zaver(text: str, *, locale: str = "cs") -> tuple[str, str]:
+    loc = normalize_locale(locale)
+    if loc == "en":
+        m = re.match(r"^(I hereby report,?)\s*(.*)$", text, re.I)
+        if m:
+            return m.group(1), m.group(2).strip()
     m = re.match(r"^(Poslušně hlásím,?)\s*(.*)$", text, re.I)
     if not m:
         return "", text
@@ -326,9 +397,12 @@ def datum_design(datum_unl: str, den: str) -> str:
     return f"{den.capitalize()} {d.day:02d} / {d.month:02d} / {d.year}"
 
 
-def calendar_parts(datum_unl: str, den: str) -> tuple[str, str, str]:
+def calendar_parts(datum_unl: str, den: str, *, locale: str = "cs") -> tuple[str, str, str]:
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
-    return den.capitalize(), str(d.day), f"{_MESICE_GEN[d.month - 1]} {d.year}"
+    loc = normalize_locale(locale)
+    den_label = _DEN_CS_TO_EN.get(den.lower(), den).capitalize() if loc == "en" else den.capitalize()
+    month = _MESICE_GEN_EN[d.month - 1] if loc == "en" else _MESICE_GEN[d.month - 1]
+    return den_label, str(d.day), f"{month} {d.year}"
 
 
 def _kapitalizuj_prvni_pismeno(text: str) -> str:
@@ -402,14 +476,19 @@ def build_den_content(
     paths: SchuzePaths,
     *,
     state: dict | None = None,
+    locale: str = "cs",
 ) -> DenContent:
     if state is None:
         state = _new_state()
     state["poslusne_count"] = 0
+    loc = normalize_locale(locale)
 
-    day = read_json(day_path)
+    day_raw = read_json(day_path)
+    day = localized_day(day_raw, loc)
     datum = day["datum"]
     den_cap = day.get("den") or den_v_tydnu(datum)
+    if loc == "en":
+        den_cap = _DEN_CS_TO_EN.get(den_cap.lower(), den_cap)
     stats = {
         "pocet_hlas": 0,
         "minuty": 0,
@@ -427,9 +506,9 @@ def build_den_content(
         stats["proslo"] = skore_p
         stats["zamitnuto"] = skore_z
 
-    cal_den, cal_day, cal_month = calendar_parts(datum, den_cap)
-    custom_ucet = (day.get("dnesni_ucet") or "").strip()
-    custom_note = (day.get("result_note") or "").strip()
+    cal_den, cal_day, cal_month = calendar_parts(datum, den_cap, locale=loc)
+    custom_ucet = pick_field(day, "dnesni_ucet", loc) or (day.get("dnesni_ucet") or "").strip()
+    custom_note = pick_field(day, "result_note", loc) or (day.get("result_note") or "").strip()
     if custom_note:
         result_note = custom_note
     elif custom_ucet:
@@ -442,7 +521,7 @@ def build_den_content(
         cal_den=cal_den,
         cal_day=cal_day,
         cal_month=cal_month,
-        dnesni_ucet=custom_ucet or _dnesni_ucet(stats, state=state),
+        dnesni_ucet=custom_ucet or (_dnesni_ucet(stats, state=state) if loc == "cs" else custom_ucet),
         proslo=int(stats.get("proslo") or 0),
         zamitnuto=int(stats.get("zamitnuto") or 0),
         board_stats="",
@@ -455,18 +534,21 @@ def build_den_content(
         fp = paths.facts_by_topic / f"{slug}.json"
         if not fp.is_file():
             continue
-        fact = read_json(fp)
-        if not fact.get("publikovat"):
+        fact_raw = read_json(fp)
+        if not fact_raw.get("publikovat"):
             continue
+        fact = localized_fact(fact_raw, loc)
         dopad = dopad_z_fact(fact)
         if not dopad:
             continue
 
         num += 1
         topic = topics.get(slug)
-        has_custom_lead = bool((fact.get("lead") or "").strip())
+        en_lead = pick_field(fact_raw, "lead", loc)
+        en_mean = pick_field(fact_raw, "mean", loc)
+        has_custom_lead = bool(en_lead or (fact.get("lead") or "").strip())
         parliament_lead = parliament_lead_z_fact(fact, topic)
-        nadpis = nadpis_z_clanku(fact, topic)
+        nadpis = pick_field(fact_raw, "nadpis", loc) or nadpis_z_clanku(fact, topic)
         ph = int(fact.get("pocet_hlasovani") or 0)
         has_steno_lead = any((f.get("source") or "") == "steno" for f in (fact.get("fakty") or []))
         vysv = (topic.get("tema_vysvetleni") or "").strip() if topic else ""
@@ -477,48 +559,40 @@ def build_den_content(
                 return parliament_lead
             return lead
 
-        use_poslusne = num == 1
-        svejk_lead = lead_svejkovsky(
-            fact,
-            topic,
-            state=state,
-            use_poslusne=use_poslusne,
-            fallback=_lead_fallback,
-        )
-        vysvetleni = mean_vysvetleni(
-            fact,
-            topic,
-            svejk_lead,
-            dopad_fallback=dopad,
-            mean_from_dopad=_mean_z_dopadu,
-        )
-        mean_links: list[tuple[str, str]] = []
-        for entry in fact.get("mean_links") or []:
-            phrase = (entry.get("phrase") or "").strip()
-            page = (entry.get("page") or "").strip()
-            if phrase and page:
-                mean_links.append((phrase, page))
-        legacy = fact.get("mean_link") or {}
-        legacy_phrase = (legacy.get("phrase") or "").strip()
-        legacy_page = (legacy.get("page") or "neprosli").strip()
-        if legacy_phrase and not any(p == legacy_phrase for p, _ in mean_links):
-            mean_links.append((legacy_phrase, legacy_page))
-        kuriozita_links: list[tuple[str, str]] = []
-        for entry in fact.get("kuriozita_links") or []:
-            label = (entry.get("label") or "").strip()
-            page = (entry.get("page") or "").strip()
-            if label and page:
-                kuriozita_links.append((label, page))
+        use_poslusne = num == 1 and loc == "cs"
+        if en_lead:
+            svejk_lead = en_lead
+        else:
+            svejk_lead = lead_svejkovsky(
+                fact,
+                topic,
+                state=state,
+                use_poslusne=use_poslusne,
+                fallback=_lead_fallback,
+            )
+        if en_mean:
+            vysvetleni = en_mean
+        else:
+            vysvetleni = mean_vysvetleni(
+                fact,
+                topic,
+                svejk_lead,
+                dopad_fallback=dopad,
+                mean_from_dopad=_mean_z_dopadu,
+            )
+        mean_links = localized_mean_links(fact_raw, loc)
+        kuriozita_links = localized_kuriozita_links(fact_raw, loc)
+        kuriozita = pick_field(fact_raw, "kuriozita", loc) or kuriozita_z_fact(fact)
         items_meta[str(num)] = {"pocet_hlasovani": ph, "slug": slug}
         content.items.append(
             DenItem(
                 num=num,
-                kick=_kick_z_fact(fact),
+                kick=_kick_z_fact(fact, loc),
                 nadpis=nadpis,
                 nadpis_radky=split_nadpis_radky(nadpis),
                 lead=svejk_lead,
                 mean=vysvetleni,
-                kuriozita=kuriozita_z_fact(fact),
+                kuriozita=kuriozita,
                 dopad=dopad,
                 parliament_lead=parliament_lead,
                 has_custom_lead=has_custom_lead,
@@ -526,16 +600,24 @@ def build_den_content(
                 variant="i2" if num % 2 == 0 else "",
                 mean_links=mean_links,
                 kuriozita_links=kuriozita_links,
+                locale=loc,
             )
         )
 
-    override = (day.get("zaver") or "").strip()
+    override = pick_field(day, "zaver", loc) or (day.get("zaver") or "").strip()
     if override:
-        zaver = (
-            override
-            if override.lower().startswith("poslušně")
-            else f"Poslušně hlásím, {lcfirst_preserve_proper(override)}"
-        )
+        if loc == "en":
+            zaver = (
+                override
+                if override.lower().startswith("i hereby report")
+                else f"I hereby report that {lcfirst_preserve_proper(override)}"
+            )
+        elif override.lower().startswith("poslušně"):
+            zaver = override
+        else:
+            zaver = f"Poslušně hlásím, {lcfirst_preserve_proper(override)}"
+    elif loc == "en":
+        zaver = zaver_z_obsahu(content, day)
     else:
         zaver = zaver_glosa_dne(
             content.items,
@@ -546,7 +628,7 @@ def build_den_content(
             state=state,
         )
     content.zaver = zaver
-    content.zaver_key, content.zaver_body = split_zaver(zaver)
+    content.zaver_key, content.zaver_body = split_zaver(zaver, locale=loc)
     _sanitize_den_content(content)
 
     return content
@@ -591,9 +673,10 @@ def _sanitize_den_content(content: DenContent) -> None:
         item.dopad = _sanitize_text_export(item.dopad)
         item.parliament_lead = _sanitize_text_export(item.parliament_lead)
 
-def vysledek_radky(content: DenContent, paths: SchuzePaths, day_path: Path) -> list[str]:
-    day = read_json(day_path)
-    custom = day.get("vysledek")
+def vysledek_radky(content: DenContent, paths: SchuzePaths, day_path: Path, *, locale: str = "cs") -> list[str]:
+    day_raw = read_json(day_path)
+    day = localized_day(day_raw, locale)
+    custom = pick_list(day, "vysledek", locale) or day.get("vysledek")
     if custom:
         return [str(r) for r in custom]
     slugs = day.get("topic_slugs") or []
