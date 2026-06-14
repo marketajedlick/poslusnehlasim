@@ -118,8 +118,11 @@ def audit_approved_facts(obdobi: int) -> list[str]:
 
 def audit_glossary() -> list[str]:
     issues: list[str] = []
-    if len(GLOSSARY_EN) < 50:
-        issues.append(f"glossary: GLOSSARY_EN má jen {len(GLOSSARY_EN)} položek (očekáváno 50+)")
+    if len(GLOSSARY_EN) < 150:
+        issues.append(
+            f"glossary: GLOSSARY_EN má jen {len(GLOSSARY_EN)} položek "
+            f"(očekáváno 150+, český glosář má víc variant frází)"
+        )
     return issues
 
 
