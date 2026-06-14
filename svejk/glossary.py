@@ -1324,6 +1324,14 @@ GLOSSARY_EN: tuple[tuple[str, str], ...] = (
         "Chamber of Deputies",
         "The lower house of the Czech Parliament. Where laws are debated and voted on.",
     ),
+    (
+        "EET",
+        "Electronic sales records. Every receipt once reported to the state how much you earned.",
+    ),
+    (
+        "interpellation",
+        "Parliamentary Q&A session. MPs question ministers on the record.",
+    ),
 )
 
 

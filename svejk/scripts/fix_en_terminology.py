@@ -77,7 +77,33 @@ _EXACT: list[tuple[str, str]] = [
     ),
     (
         "that after ten years the records of sales are coming back: the first round has passed, Schillerová swears that she is not obsessed with EET, and the construction law again kept the deputies in the hall until night.",
-        "that after ten years sales records are coming back: first reading passed, Schillerová swears she is not obsessed with EET, and the construction law again kept deputies in The Chamber of Deputies until night.",
+        "that after ten years sales records are coming back: first reading passed, Schillerová swears she is not EET-obsessed, and the Construction Bill again kept deputies in The Chamber of Deputies until night.",
+    ),
+    ("Metals on a conveyor belt", "State Honours on a conveyor belt"),
+    (
+        "Miloš Zeman was voted three times before it was valid.",
+        "It took three rounds of voting before Zeman's nomination passed.",
+    ),
+    (
+        "Miloš Zeman was voted three times before it was valid",
+        "It took three rounds of voting before Zeman's nomination passed",
+    ),
+    ("she is not obsessed with EET.", "she is not EET-obsessed."),
+    ("she is not obsessed with EET", "she is not EET-obsessed"),
+    ("Schillerová swears she is not obsessed with EET", "Schillerová swears she is not EET-obsessed"),
+    ("165 metal votes", "165 state honour votes"),
+    ("proposals for metals", "state honour nominations"),
+    ("candidates for metals", "candidates for state honours"),
+    ("closest to the metal", "closest to the honour"),
+    ("on 28 October", "on Czech Statehood Day (Oct. 28)"),
+    ("on October 28", "on Czech Statehood Day (Oct. 28)"),
+    (
+        "first reading of EET (electronic sales records) return in the evening",
+        "first reading of the return of EET (electronic sales records) in the evening",
+    ),
+    (
+        "that The Chamber of Deputies filled the CT Council and a Deputy Speaker's seat on Friday, sent the spraying bill back to second reading, and simply dropped the rest of the programme.",
+        "that The Chamber of Deputies filled the Czech Television Council and a Deputy Speaker's seat on Friday, sent the spraying bill back to second reading, and simply dropped the rest of the programme.",
     ),
 ]
 
@@ -186,7 +212,69 @@ _REGEX: list[tuple[str, str]] = [
     (r"\bMistrust fell\b", "No confidence failed"),
     (r"\bdistrust\b", "no confidence"),
     (r"\bDistrust\b", "No confidence"),
+    # Stavební zákon — jednotně Construction Bill.
+    (r"\bthe construction law\b", "the Construction Bill"),
+    (r"\bconstruction law\b", "Construction Bill"),
+    (r"\bthe building bill\b", "the Construction Bill"),
+    (r"\bbuilding bill\b", "Construction Bill"),
+    (r"\bbuilding law\b", "Construction Bill"),
+    # Rada ČT.
+    (r"\bCT Council\b", "Czech Television Council"),
+    (r"\bCT Board\b", "Czech Television Council"),
 ]
+
+_EET_FIRST = re.compile(r"\bEET\b(?!\s*\(electronic sales records\)|-)")
+_INTERPELLATION_FIRST = re.compile(
+    r"\binterpellations?\b(?!\s*\(parliamentary Q&A)"
+)
+
+
+def _expand_first_eet(text: str, *, done: list[bool]) -> str:
+    if done[0]:
+        return text
+    if re.search(r"\bEET\s*\(electronic sales records\)", text):
+        done[0] = True
+        return text
+    m = _EET_FIRST.search(text)
+    if not m:
+        return text
+    done[0] = True
+    return text[: m.start()] + "EET (electronic sales records)" + text[m.end() :]
+
+
+def _expand_first_interpellation(text: str, *, done: list[bool]) -> str:
+    if done[0]:
+        return text
+    if re.search(r"\binterpellations?\s*\(parliamentary Q&A", text):
+        done[0] = True
+        return text
+    m = _INTERPELLATION_FIRST.search(text)
+    if not m:
+        return text
+    done[0] = True
+    word = m.group(0)
+    if word.endswith("s"):
+        repl = "interpellations (parliamentary Q&A sessions)"
+    else:
+        repl = "interpellation (parliamentary Q&A session)"
+    return text[: m.start()] + repl + text[m.end() :]
+
+
+def _expand_first_occurrences(obj: object) -> object:
+    eet_done = [False]
+    interp_done = [False]
+
+    def walk(o: object) -> object:
+        if isinstance(o, str):
+            s = _expand_first_eet(o, done=eet_done)
+            return _expand_first_interpellation(s, done=interp_done)
+        if isinstance(o, list):
+            return [walk(x) for x in o]
+        if isinstance(o, dict):
+            return {k: walk(v) for k, v in o.items()}
+        return o
+
+    return walk(obj)
 
 
 def _apply(text: str) -> str:
@@ -229,7 +317,7 @@ def _walk(obj: object) -> object:
 
 def apply_en_terminology(obj: object) -> object:
     """Apply parliamentary terminology fixes to an ``en`` block."""
-    return _walk(obj)
+    return _expand_first_occurrences(_walk(obj))
 
 
 def fix_file(path: Path, *, dry_run: bool = False) -> bool:
@@ -237,7 +325,7 @@ def fix_file(path: Path, *, dry_run: bool = False) -> bool:
     en = data.get("en")
     if not isinstance(en, dict) or not en:
         return False
-    new_en = _walk(en)
+    new_en = apply_en_terminology(en)
     if new_en == en:
         return False
     if not dry_run:
