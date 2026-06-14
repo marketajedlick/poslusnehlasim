@@ -16,8 +16,31 @@ from svejk.build.nav import (
     podpora_pages_href,
     slovnicek_pages_href,
     soukromi_pages_href,
+    vyznamenani_pages_href,
 )
+from svejk.build.vyznamenani_neprosli import VyznamenaniKind, load_vyznamenani, page_meta
 from svejk.newsletter.feed import _edition_description
+from svejk.paths import SchuzePaths
+
+_VYZNAMENANI_KINDS: tuple[VyznamenaniKind, ...] = ("neprosli", "prosli", "zvoleni")
+
+_STATIC_PAGES: tuple[tuple[str, str], ...] = (
+    ("Archiv vydání", "archiv"),
+    ("Švejkov slovníček", "slovnicek"),
+    ("Kup Švejkovi pivo", "pivo"),
+    ("Podmínky odběru", "podminky"),
+    ("Podpořte projekt", "podpora"),
+    ("Ochrana údajů", "soukromi"),
+)
+
+_STATIC_HREF_FN = {
+    "archiv": archiv_pages_href,
+    "slovnicek": slovnicek_pages_href,
+    "pivo": pivo_pages_href,
+    "podminky": podminky_pages_href,
+    "podpora": podpora_pages_href,
+    "soukromi": soukromi_pages_href,
+}
 
 _AI_BOTS = (
     "GPTBot",
@@ -258,6 +281,26 @@ def website_json_ld(
     return json.dumps(data, ensure_ascii=False)
 
 
+def _static_page_links(*, site_url: str, base_path: str = "") -> list[tuple[str, str]]:
+    base = site_url.rstrip("/")
+    return [
+        (label, f"{base}{_STATIC_HREF_FN[key](base_path)}")
+        for label, key in _STATIC_PAGES
+    ]
+
+
+def _iter_vyznamenani_editions(
+    editions: list[Edition],
+) -> list[tuple[Edition, VyznamenaniKind]]:
+    found: list[tuple[Edition, VyznamenaniKind]] = []
+    for edition in editions:
+        paths = SchuzePaths.create(edition.obdobi, edition.schuze)
+        for kind in _VYZNAMENANI_KINDS:
+            if load_vyznamenani(paths, edition.datum_unl, kind):
+                found.append((edition, kind))
+    return found
+
+
 def write_robots_txt(out_dir: Path, *, site_url: str) -> Path:
     base = site_url.rstrip("/")
     lines = [
@@ -306,6 +349,12 @@ def write_sitemap_xml(
         href = edition_pages_href(edition.obdobi, edition.schuze, edition.datum_unl, base_path)
         add_url(f"{base}{href}", edition.when)
 
+    for edition, kind in _iter_vyznamenani_editions(editions):
+        href = vyznamenani_pages_href(
+            edition.obdobi, edition.schuze, edition.datum_unl, kind, base_path
+        )
+        add_url(f"{base}{href}", edition.when)
+
     xml = b'<?xml version="1.0" encoding="UTF-8"?>\n' + tostring(urlset, encoding="utf-8")
     path = out_dir / "sitemap.xml"
     path.write_bytes(xml)
@@ -327,6 +376,10 @@ def write_llms_txt(
         latest.obdobi, latest.schuze, latest.datum_unl, base_path
     )
 
+    static_links = "\n".join(
+        f"- [{label}]({href})"
+        for label, href in _static_page_links(site_url=site_url, base_path=base_path)
+    )
     llms = f"""# Poslušně hlásím
 
 > Deník z jednání Poslanecké sněmovny ČR ve stylu Haška: srozumitelné shrnutí hlasování a zákonů pro lidi, kteří do sněmovny nemusí.
@@ -340,6 +393,10 @@ Poslušně hlásím publikuje po každém jednacím dni stručné vydání: koli
 - [RSS kanál nových vydání]({base}/feed.xml): pro odběr a agregátory
 - [Mapa webu]({base}/sitemap.xml): všechna vydání
 - [Podrobný index pro AI]({base}/llms-full.txt): seznam vydání s popisky
+
+## Ostatní stránky
+
+{static_links}
 
 ## Odběr
 
@@ -360,9 +417,13 @@ Poslušně hlásím publikuje po každém jednacím dni stručné vydání: koli
         "",
         f"> Kompletní seznam vydání období {obdobi}. Zdroj: {base}",
         "",
-        "## Vydání",
+        "## Ostatní stránky",
         "",
+        f"- [Úvod / nejnovější vydání]({base}/)",
     ]
+    for label, href in _static_page_links(site_url=site_url, base_path=base_path):
+        full_lines.append(f"- [{label}]({href})")
+    full_lines.extend(["", "## Vydání", ""])
     for edition in editions:
         href = edition_pages_href(
             edition.obdobi, edition.schuze, edition.datum_unl, base_path
@@ -373,6 +434,25 @@ Poslušně hlásím publikuje po každém jednacím dni stručné vydání: koli
         if desc:
             line += f": {desc}"
         full_lines.append(line)
+
+    vyznamenani_entries = _iter_vyznamenani_editions(editions)
+    if vyznamenani_entries:
+        full_lines.extend(["", "## Tabulky hlasování", ""])
+        for edition, kind in vyznamenani_entries:
+            paths = SchuzePaths.create(edition.obdobi, edition.schuze)
+            data = load_vyznamenani(paths, edition.datum_unl, kind)
+            if not data:
+                continue
+            d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
+            datum_label = f"{d.day}. {d.month}. {d.year}"
+            pocet = int(data.get("pocet") or len(data.get("radky") or []))
+            meta = page_meta(kind, pocet=pocet, datum_label=datum_label)
+            href = vyznamenani_pages_href(
+                edition.obdobi, edition.schuze, edition.datum_unl, kind, base_path
+            )
+            title = datum_design(edition.datum_unl, den_v_tydnu(edition.datum_unl))
+            line = f"- [{meta['title']} · {title}]({base}{href}): {meta['gloss']}"
+            full_lines.append(line)
 
     full_path = out_dir / "llms-full.txt"
     full_path.write_text("\n".join(full_lines) + "\n", encoding="utf-8")
