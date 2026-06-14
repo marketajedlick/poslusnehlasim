@@ -29,11 +29,10 @@ Dva workflow ti pošlou **GitHub notifikaci** (selhání jobu), pokud máš u re
 | **Check new PSP data** (`data-check.yml`) | denně 05:30 a 21:30 CET (před sync) | Na PSP / Hlídači jsou nová data, která ještě nejsou lokálně |
 | **Sync PSP data** (`sync.yml`) | po stažení a commitu | Sync stáhl nová data do repa — zkontroluj facts, doplň texty, spusť **jen** `compose-changed` (ne `--vsechny-schuze`) |
 
-Lokální tajemství (token z Hlídače atd.):
+Lokální tajemství (token z Hlídače atd.) — vytvoř v kořeni repa `secrets.env` (soubor je v `.gitignore`):
 
 ```bash
-cp secrets.env.example secrets.env
-# doplň HLIDAC_TOKEN=… do secrets.env (soubor je v .gitignore)
+echo 'HLIDAC_TOKEN=…' > secrets.env
 ```
 
 `run-svejk.sh` i `svejk/config.py` načtou `secrets.env` automaticky. Proměnné už nastavené v shellu mají přednost.
