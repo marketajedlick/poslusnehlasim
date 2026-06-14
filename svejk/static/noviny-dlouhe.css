@@ -603,7 +603,7 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
   flex-wrap:wrap;
   align-items:center;
   justify-content:center;
-  width:min(100%, 38rem);
+  width:auto;
   max-width:100%;
   gap:0;
   font-family:'Oswald',sans-serif;
@@ -615,9 +615,8 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
   color:rgba(33,28,20,.72);
 }
 .site-footer-links a{
-  flex:1 1 0;
-  min-width:0;
-  padding:0 12px;
+  flex:none;
+  padding:0 8px;
   text-align:center;
   position:relative;
   color:rgba(33,28,20,.88);
@@ -631,9 +630,10 @@ a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
   position:absolute;
   left:0;
   top:50%;
-  transform:translate(-50%,-50%);
-  color:rgba(33,28,20,.32);
+  transform:translate(-50%,-50%) scale(.9);
+  color:rgba(33,28,20,.18);
   font-weight:400;
+  font-size:.9em;
   text-decoration:none;
   pointer-events:none;
 }
