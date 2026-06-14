@@ -857,7 +857,7 @@ body.pivo-page{
 .pivo-head{
   text-align:center;
 }
-.pivo-head .eyebrow{ margin-top:0; }
+.pivo-head .eyebrow{ margin-top:0; margin-bottom:5px; }
 .pivo-body{ padding-top:4px; }
 .pivo-title{
   font-family:'Anton',sans-serif; text-transform:uppercase;
