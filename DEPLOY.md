@@ -76,6 +76,19 @@ Pak v GitHub **Settings → Pages → Custom domain** zadej `www.poslusnehlasim.
 2. Zapni **Enforce HTTPS** (až DNS projde, obvykle do 24 h).
 3. U apex domény může GitHub nabídnout i přesměrování `www` → apex — podle preference.
 
+### Bezpečnostní hlavičky (HSTS, CSP, X-Frame-Options)
+
+GitHub Pages na běžných stránkách tyto hlavičky neposílá (GitHubův vlastní 404 ano). **Řešení:** doménu přes **Cloudflare proxy** a hlavičky doplnit u edge — HSTS v **SSL/TLS → Edge Certificates**, zbytek přes **Transform Rules → Modify response header**.
+
+Kompletní postup, hodnoty CSP a ověření: **[`infra/cloudflare/README.md`](infra/cloudflare/README.md)**.
+
+```bash
+chmod +x scripts/check-security-headers.sh
+./scripts/check-security-headers.sh
+```
+
+Doporučené DNS záznamy s Cloudflare proxy (oranžový mráček) jsou stejné jako varianta A výše — A na GitHub IP + volitelně CNAME `www` → `marketajedlick.github.io`.
+
 Lokální test exportu:
 
 ```bash
@@ -117,11 +130,15 @@ Veřejný Ecomail formulář vyžaduje robotcheck — skryté odeslání kontakt
 
 ```bash
 cd workers
+npx wrangler@4 kv namespace create poslusnehlasim-odebir-rl
+# id z výstupu vlož do wrangler.toml (binding RATE_LIMIT + RATE_LIMIT_ID)
 cp subscribe.js public/_worker.js
 npx wrangler@4 login
 npx wrangler pages secret put ECOMAIL_API_KEY --project-name=poslusnehlasim-odebir
 npx wrangler pages deploy public --project-name=poslusnehlasim-odebir --branch=main
 ```
+
+Worker má **rate limit** přes Cloudflare KV (výchozí: 10 POST/hod z IP, 3 odběry/den na e-mail). Admin notifikace při selhání odběru posílá jen server po chybě Ecomail API (ne veřejný endpoint z klienta). CI vytvoří KV namespace `poslusnehlasim-odebir-rl` automaticky.
 
 (Pozor: `pip install wrangler` v conda je jiný balíček — vždy `npx wrangler@4`.)
 

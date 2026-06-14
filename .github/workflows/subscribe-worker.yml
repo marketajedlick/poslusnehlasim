@@ -37,7 +37,18 @@ jobs:
             exit 0
           fi
           PROJECT=poslusnehlasim-odebir
+          KV_TITLE=poslusnehlasim-odebir-rl
           npx wrangler@4 pages project create "$PROJECT" --production-branch=main 2>/dev/null || true
+          KV_ID=$(npx wrangler@4 kv namespace list 2>/dev/null | node -e "
+            const title = process.argv[1];
+            const list = JSON.parse(require('fs').readFileSync(0, 'utf8') || '[]');
+            const ns = list.find((n) => n.title === title);
+            process.stdout.write(ns?.id || '');
+          " "$KV_TITLE")
+          if [ -z "$KV_ID" ]; then
+            KV_ID=$(npx wrangler@4 kv namespace create "$KV_TITLE" --json | node -e "process.stdout.write(JSON.parse(require('fs').readFileSync(0,'utf8')).id)")
+          fi
+          sed -i "s/00000000000000000000000000000000/$KV_ID/g" wrangler.toml
           cp subscribe.js public/_worker.js
           npm exec wrangler@4 pages secret put ECOMAIL_API_KEY --project-name="$PROJECT" <<< "$ECOMAIL_API_KEY"
           if [ -n "$ECOMAIL_FROM_EMAIL" ]; then

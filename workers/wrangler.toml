@@ -5,6 +5,18 @@ pages_build_output_dir = "public"
 [vars]
 ALLOWED_ORIGIN = "https://poslusnehlasim.cz,https://www.poslusnehlasim.cz"
 ECOMAIL_SUBSCRIBE_LIST_ID = "3"
+RATE_LIMIT_ID = "00000000000000000000000000000000"
+# Výchozí limity: 10 POST/hod z IP, 3 odběry/den na e-mail
+RATE_LIMIT_IP_MAX = "10"
+RATE_LIMIT_IP_WINDOW = "3600"
+RATE_LIMIT_EMAIL_MAX = "3"
+RATE_LIMIT_EMAIL_WINDOW = "86400"
+NOTIFY_DEDUPE_WINDOW = "86400"
+
+# KV pro rate limit — id doplní CI nebo: wrangler kv namespace create poslusnehlasim-odebir-rl
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "00000000000000000000000000000000"
 
 # Secrets (wrangler pages secret put … --project-name=poslusnehlasim-odebir):
 # ECOMAIL_API_KEY, ECOMAIL_FROM_EMAIL, NOTIFY_EMAIL

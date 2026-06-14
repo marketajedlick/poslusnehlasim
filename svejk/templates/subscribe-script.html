@@ -106,7 +106,11 @@
             showSuccess(form);
             return;
           }
-          notifyFailedSubscribe(email, apiUrl);
+          if (res.status === 429) {
+            showError(form, "Moc pokusů. Zkus to znovu za chvíli.");
+            resetBtn(btn);
+            return;
+          }
           showError(form, "Odběr se nepodařil odeslat. Zkus to znovu za chvíli.");
           resetBtn(btn);
         });
@@ -128,19 +132,9 @@
     return { ok: false, message: "" };
   }
 
-  function notifyFailedSubscribe(email, apiUrl) {
-    if (!apiUrl || !email) return;
-    fetch(apiUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: email, notify_failed: true }),
-    }).catch(function () {});
-  }
-
   function showSetupError(form, btn, email) {
     showError(form, "Odběr se právě nastavuje, zkus to za pár minut znovu.");
     resetBtn(btn);
-    notifyFailedSubscribe(email, form.dataset.subscribeApi);
   }
 
   function tryWorkerSubscribe(form, email, btn) {
@@ -161,6 +155,11 @@
         return res.json().catch(function () { return {}; }).then(function (data) {
           if (res.ok && data.ok !== false) {
             showSuccess(form);
+            return;
+          }
+          if (res.status === 429) {
+            showError(form, "Moc pokusů. Zkus to znovu za chvíli.");
+            resetBtn(btn);
             return;
           }
           showSetupError(form, btn, email);

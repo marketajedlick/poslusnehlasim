@@ -1,0 +1,15 @@
+# Bezpečnostní hlavičky pro poslusnehlasim.cz
+# Použití: Cloudflare → Rules → Transform Rules → Modify Response Header
+# (viz infra/cloudflare/README.md)
+#
+# HSTS nastav raději v SSL/TLS → Edge Certificates → Enable HSTS
+# (stejná hodnota níže, pokud ho dáváš jen přes Transform Rule).
+
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Resource-Policy: same-site
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self'; connect-src 'self' https://poslusnehlasim-odebir.pages.dev https://*.ecomailapp.cz https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://*.ecomailapp.cz; upgrade-insecure-requests
