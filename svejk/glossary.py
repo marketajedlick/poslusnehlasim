@@ -34,6 +34,17 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Daniel Vávra",
         "Herní vývojář; návrh na vyznamenání 4. 6. 2026 neprošel (85:33).",
     ),
+    # --- Rada ČT 5. 6. 2026 (s20) ---
+    (
+        "jeho vlastní výroky o novinářkách",
+        "Talíř (STAN) 5. 6. 2026 v debatě citoval soudem nařízenou omluvu Luboše Xavera Veselého "
+        "za výrok na adresu novinářky Johany Hovorkové: „je to zrůda, svině, hnát svinským krokem.“",
+    ),
+    (
+        "výroky o novinářkách",
+        "Soudem nařízená omluva za výrok Veselého o novinářce Johany Hovorkové: "
+        "„je to zrůda, svině, hnát svinským krokem.“ Opozice to 5. 6. 2026 před volbou do Rady ČT předčítala.",
+    ),
     # --- kontext konkrétních schůzí (delší fráze první) ---
     (
         "koaliční změna stavebního zákona",
@@ -1335,6 +1346,16 @@ SLOVNIČEK_EN: tuple[tuple[str, str], ...] = (
 
 # Anglické tooltipy pro /en/ stránky (delší fráze nahoře).
 GLOSSARY_EN: tuple[tuple[str, str], ...] = (
+    (
+        "his own statements about female journalists",
+        "Talíř (STAN) on 5 Jun 2026 read aloud Veselý's court-ordered apology for calling journalist "
+        'Johana Hovorková "a freak, a pig, drive her out at a pig\'s pace."',
+    ),
+    (
+        "statements about female journalists",
+        "Court-ordered apology for Veselý's words about journalist Johana Hovorková: "
+        '"a freak, a pig, drive her out at a pig\'s pace." The opposition read it aloud before the CT Council vote on 5 Jun 2026.',
+    ),
     (
         "third reading",
         "Final vote on a bill in The Chamber of Deputies. Then it may go to the president for signature.",

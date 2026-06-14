@@ -24,9 +24,12 @@ def _wrap(label: str, tip: str) -> str:
     )
 
 
-def markup_glossary(text: str, *, locale: str = "cs") -> str:
-    """Vrátí HTML s hover tooltipem u známých pojmů (bez překrývání)."""
-    if not text or "<" in text:
+_HTML_SPLIT = re.compile(r"(<[^>]+>)")
+
+
+def _markup_plain(text: str, *, locale: str = "cs") -> str:
+    """Tooltipy jen v prostém textu (bez HTML tagů)."""
+    if not text:
         return text
 
     glossary = glossary_for_locale(locale)
@@ -52,6 +55,20 @@ def markup_glossary(text: str, *, locale: str = "cs") -> str:
     for start, end, label, tip in sorted(selected, key=lambda x: x[0], reverse=True):
         out = out[:start] + _wrap(label, tip) + out[end:]
     return out
+
+
+def markup_glossary(text: str, *, locale: str = "cs") -> str:
+    """Vrátí HTML s hover tooltipem u známých pojmů (bez překrývání)."""
+    if not text:
+        return text
+    if "<" not in text:
+        return _markup_plain(text, locale=locale)
+
+    parts = _HTML_SPLIT.split(text)
+    return "".join(
+        part if part.startswith("<") else _markup_plain(part, locale=locale)
+        for part in parts
+    )
 
 
 def glossary_markup(text: str, *, locale: str = "cs") -> Markup:

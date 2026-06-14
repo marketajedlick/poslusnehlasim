@@ -93,10 +93,13 @@ from svejk.build.vyznamenani_neprosli import (
     VyznamenaniKind,
     inject_mean_links,
     load_vyznamenani,
+    localized_vyznamenani_data,
     page_explain,
     page_meta,
     resolve_vyznamenani_page_links,
+    sibling_label,
     table_rows,
+    vyznamenani_datum_label,
     vyznamenani_href,
     _load_votes_by_cislo,
 )
@@ -1001,6 +1004,8 @@ def render_vyznamenani_table_html(
     data = load_vyznamenani(paths, datum_unl, kind)
     if not data:
         return None
+    loc = normalize_locale(locale)
+    data = localized_vyznamenani_data(data, loc)
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
     if css_href is None:
         css_href = static_css_path(base_path)
@@ -1011,16 +1016,15 @@ def render_vyznamenani_table_html(
     obdobi = int(data.get("obdobi") or paths.obdobi)
     schuze = int(data.get("schuze") or paths.schuze)
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
-    datum_label = f"{d.day}. {d.month}. {d.year}"
+    datum_label = vyznamenani_datum_label(datum_unl, loc)
     pocet = int(data.get("pocet") or len(data.get("radky") or []))
-    meta = page_meta(kind, pocet=pocet, datum_label=datum_label)
+    meta = page_meta(kind, pocet=pocet, datum_label=datum_label, locale=loc)
     sibling_kind: VyznamenaniKind | None = (
         "prosli" if kind == "neprosli" else "neprosli" if kind == "prosli" else None
     )
     sibling_data = (
         load_vyznamenani(paths, datum_unl, sibling_kind) if sibling_kind else None
     )
-    loc = normalize_locale(locale)
     if link_mode == "pages":
         edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path, loc)
         canonical_url = (
@@ -1048,10 +1052,8 @@ def render_vyznamenani_table_html(
             if sibling_data
             else ""
         )
-    sibling_label = (
-        "Koho Sněmovna doporučila"
-        if sibling_kind == "prosli"
-        else "Kdo neprošel"
+    sibling_link_label = (
+        sibling_label(sibling_kind, loc) if sibling_kind else ""
     )
     page_description = meta["gloss"]
     og_title = f"{meta['title']} · {datum_label} · Poslušně hlásím"
@@ -1062,7 +1064,7 @@ def render_vyznamenani_table_html(
         description=page_description,
     )
     votes_by_cislo = _load_votes_by_cislo(paths, datum_unl)
-    explain = page_explain(kind, data, votes_by_cislo)
+    explain = page_explain(kind, data, votes_by_cislo, locale=loc)
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url) if canonical_url else ""
     tpl = _jinja_env().get_template("vyznamenani-tabulka-stranka.html")
     return tpl.render(
@@ -1073,7 +1075,7 @@ def render_vyznamenani_table_html(
         datum_label=datum_label,
         edition_href=edition_href,
         sibling_href=sibling_href if sibling_data else "",
-        sibling_label=sibling_label if sibling_data else "",
+        sibling_label=sibling_link_label if sibling_data else "",
         page_title=meta["title"],
         page_gloss=meta["gloss"],
         page_note=meta["note"],

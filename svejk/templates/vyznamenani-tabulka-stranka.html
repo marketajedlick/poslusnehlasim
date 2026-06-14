@@ -18,7 +18,7 @@
     <p class="vyznamenani-gloss">{{ page_gloss }}</p>
     {% if edition_href %}
     <nav class="vyznamenani-nav">
-      <a class="vyznamenani-back" href="{{ edition_href }}">← Zpět na vydání {{ datum_label }}</a>
+      <a class="vyznamenani-back" href="{{ edition_href }}">{{ t.vyznamenani.back_to_edition.format(date=datum_label) }}</a>
       {% if sibling_href and sibling_label %}
       <span class="vyznamenani-nav-sep" aria-hidden="true">·</span>
       <a class="vyznamenani-back" href="{{ sibling_href }}">{{ sibling_label }}</a>
@@ -41,50 +41,50 @@
       <thead>
         {% if show_vote_threshold %}
         <tr class="vyznamenani-groups">
-          <th scope="col" rowspan="2" class="vyznamenani-sticky">Jméno</th>
-          <th scope="col" rowspan="2">Výsledek</th>
-          <th scope="colgroup" colspan="{{ 3 if kind == 'neprosli' else 2 }}">Kolik stačilo</th>
-          <th scope="colgroup" colspan="2">Nehlasovali</th>
-          <th scope="colgroup" colspan="2">Po klubech</th>
+          <th scope="col" rowspan="2" class="vyznamenani-sticky">{{ t.vyznamenani.table.name }}</th>
+          <th scope="col" rowspan="2">{{ t.vyznamenani.table.result }}</th>
+          <th scope="colgroup" colspan="{{ 3 if kind == 'neprosli' else 2 }}">{{ t.vyznamenani.table.threshold_group }}</th>
+          <th scope="colgroup" colspan="2">{{ t.vyznamenani.table.abstained_group }}</th>
+          <th scope="colgroup" colspan="2">{{ t.vyznamenani.table.clubs_group }}</th>
         </tr>
         <tr class="vyznamenani-cols">
-          <th scope="col">Přítomno</th>
-          <th scope="col">Stačilo pro</th>
+          <th scope="col">{{ t.vyznamenani.table.present }}</th>
+          <th scope="col">{{ t.vyznamenani.table.needed_for }}</th>
           {% if kind == "neprosli" %}
-          <th scope="col">Chybělo</th>
+          <th scope="col">{{ t.vyznamenani.table.short }}</th>
           {% endif %}
-          <th scope="col">Zdržel se</th>
-          <th scope="col">Nehlasoval</th>
-          <th scope="col">Pro</th>
-          <th scope="col">Proti</th>
+          <th scope="col">{{ t.vyznamenani.table.abstained }}</th>
+          <th scope="col">{{ t.vyznamenani.table.did_not_vote }}</th>
+          <th scope="col">{{ t.vyznamenani.table.for }}</th>
+          <th scope="col">{{ t.vyznamenani.table.against }}</th>
         </tr>
         {% else %}
         <tr>
-          <th scope="col">Jméno</th>
-          <th scope="col">Výsledek</th>
-          <th scope="col">Kluby pro</th>
-          <th scope="col">Kluby proti</th>
+          <th scope="col">{{ t.vyznamenani.table.name }}</th>
+          <th scope="col">{{ t.vyznamenani.table.result }}</th>
+          <th scope="col">{{ t.vyznamenani.table.clubs_for }}</th>
+          <th scope="col">{{ t.vyznamenani.table.clubs_against }}</th>
         </tr>
         {% endif %}
       </thead>
       <tbody>
         {% for row in rows %}
         <tr>
-          <th scope="row" class="vyznamenani-sticky" data-label="Jméno">{{ row.jmeno }}</th>
-          <td class="vyznamenani-skore" data-label="Výsledek">
+          <th scope="row" class="vyznamenani-sticky" data-label="{{ t.vyznamenani.table.name }}">{{ row.jmeno }}</th>
+          <td class="vyznamenani-skore" data-label="{{ t.vyznamenani.table.result }}">
             <span class="vyznamenani-vote vyznamenani-vote--pro">{{ row.pro }}</span>
             <span class="vyznamenani-vote-sep">:</span>
             <span class="vyznamenani-vote vyznamenani-vote--proti">{{ row.proti }}</span>
           </td>
           {% if show_vote_threshold %}
-          <td class="vyznamenani-num" data-label="Přítomno">{{ row.pritomno or "-" }}</td>
-          <td class="vyznamenani-num vyznamenani-potreba" data-label="Stačilo pro">{{ row.potreba or "-" }}</td>
+          <td class="vyznamenani-num" data-label="{{ t.vyznamenani.table.present }}">{{ row.pritomno or "-" }}</td>
+          <td class="vyznamenani-num vyznamenani-potreba" data-label="{{ t.vyznamenani.table.needed_for }}">{{ row.potreba or "-" }}</td>
           {% if kind == "neprosli" %}
-          <td class="vyznamenani-num vyznamenani-chybelo" data-label="Chybělo">{{ row.chybelo or "-" }}</td>
+          <td class="vyznamenani-num vyznamenani-chybelo" data-label="{{ t.vyznamenani.table.short }}">{{ row.chybelo or "-" }}</td>
           {% endif %}
-          <td class="vyznamenani-num" data-label="Zdržel se">{{ row.zdrzel or "-" }}</td>
-          <td class="vyznamenani-num" data-label="Nehlasoval">{{ row.nehlasoval or "-" }}</td>
-          <td class="vyznamenani-kluby" data-label="Kluby pro">
+          <td class="vyznamenani-num" data-label="{{ t.vyznamenani.table.abstained }}">{{ row.zdrzel or "-" }}</td>
+          <td class="vyznamenani-num" data-label="{{ t.vyznamenani.table.did_not_vote }}">{{ row.nehlasoval or "-" }}</td>
+          <td class="vyznamenani-kluby" data-label="{{ t.vyznamenani.table.clubs_for }}">
             {% if row.kluby_pro_chips %}
             <div class="vyznamenani-chips">
               {% for chip in row.kluby_pro_chips %}
@@ -95,7 +95,7 @@
             <span class="vyznamenani-empty">-</span>
             {% endif %}
           </td>
-          <td class="vyznamenani-kluby" data-label="Kluby proti">
+          <td class="vyznamenani-kluby" data-label="{{ t.vyznamenani.table.clubs_against }}">
             {% if row.kluby_proti_chips %}
             <div class="vyznamenani-chips">
               {% for chip in row.kluby_proti_chips %}
@@ -107,7 +107,7 @@
             {% endif %}
           </td>
           {% else %}
-          <td class="vyznamenani-kluby" data-label="Kluby pro">
+          <td class="vyznamenani-kluby" data-label="{{ t.vyznamenani.table.clubs_for }}">
             {% if row.kluby_pro_chips %}
             <div class="vyznamenani-chips">
               {% for chip in row.kluby_pro_chips %}
@@ -116,7 +116,7 @@
             </div>
             {% else %}<span class="vyznamenani-empty">-</span>{% endif %}
           </td>
-          <td class="vyznamenani-kluby" data-label="Kluby proti">
+          <td class="vyznamenani-kluby" data-label="{{ t.vyznamenani.table.clubs_against }}">
             {% if row.kluby_proti_chips %}
             <div class="vyznamenani-chips">
               {% for chip in row.kluby_proti_chips %}
@@ -131,7 +131,7 @@
           <tr class="vyznamenani-varovani-row">
             <td colspan="8">
               <div class="vyznamenani-varovani">
-                <span class="vyznamenani-varovani-label">Varování opozice</span>
+                <span class="vyznamenani-varovani-label">{{ t.vyznamenani.opposition_warning }}</span>
                 {% if row.varovani.rečník %}
                 <span class="vyznamenani-varovani-rečník">{{ row.varovani.rečník }}</span>
                 {% endif %}

@@ -151,6 +151,50 @@
     "plain_cta": "Potvrď odběr kliknutím na odkaz v HTML verzi tohoto e-mailu.",
     "plain_after_confirm": "Po potvrzení tě přesměrujeme na:"
   },
+  "vyznamenani": {
+    "back_to_edition": "← Zpět na vydání {date}",
+    "opposition_warning": "Varování opozice",
+    "table": {
+      "name": "Jméno",
+      "result": "Výsledek",
+      "threshold_group": "Kolik stačilo",
+      "abstained_group": "Nehlasovali",
+      "clubs_group": "Po klubech",
+      "present": "Přítomno",
+      "needed_for": "Stačilo pro",
+      "short": "Chybělo",
+      "abstained": "Zdržel se",
+      "did_not_vote": "Nehlasoval",
+      "for": "Pro",
+      "against": "Proti",
+      "clubs_for": "Kluby pro",
+      "clubs_against": "Kluby proti"
+    },
+    "kinds": {
+      "neprosli": {
+        "title": "Kdo neprošel",
+        "gloss": "{count} návrhů na státní vyznamenání, které Sněmovna {date} zamítla. U každého jména souhrn hlasů po poslaneckých klubech.",
+        "note": "Sloupec Chybělo ukazuje, kolik hlasů pro ještě nestačilo na většinu přítomných.",
+        "explain": "Nestáčí mít víc hlasů pro než proti. Návrh projde jen tehdy, když je pro víc než polovina poslanců přítomných ve sněmovně ti, kdo se zdrželi nebo vůbec nehlasovali, laťku zvedají stejně jako volič proti."
+      },
+      "prosli": {
+        "title": "Koho Sněmovna doporučila",
+        "gloss": "{count} jmen, která Sněmovna {date} poslala prezidentovi jako doporučení k vyznamenání. U každého jména souhrn hlasů po poslaneckých klubech.",
+        "note": "Prezident má poslední slovo. Tady jsou jen návrhy, které ve sněmovně získaly potřebnou většinu přítomných.",
+        "explain": "Nestáčí mít víc hlasů pro než proti. Návrh projde jen tehdy, když je pro víc než polovina poslanců přítomných ve sněmovně ti, kdo se zdrželi nebo vůbec nehlasovali, laťku zvedají stejně jako volič proti."
+      },
+      "zvoleni": {
+        "title": "Koho Sněmovna zvolila do Rady ČT",
+        "gloss": "{count} nových členů Rady České televize, které Sněmovna {date} obsadila veřejnou volbou. U každého jména souhrn hlasů po poslaneckých klubech.",
+        "note": "Volba byla veřejná. Ke zvolení stačilo mít víc hlasů pro než proti a splnit kvorum přítomných.",
+        "explain": "Ke zvolení musel kandidát získat víc hlasů pro než proti a splnit kvorum přítomných poslanců."
+      }
+    },
+    "sibling": {
+      "prosli": "Koho Sněmovna doporučila",
+      "neprosli": "Kdo neprošel"
+    }
+  },
   "board": {
     "proslo_1": "věc schválili",
     "proslo_2_4": "věci schválili",

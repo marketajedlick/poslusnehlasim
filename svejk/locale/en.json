@@ -151,6 +151,50 @@
     "plain_cta": "Confirm your subscription using the link in the HTML version of this e-mail.",
     "plain_after_confirm": "After confirmation we will redirect you to:"
   },
+  "vyznamenani": {
+    "back_to_edition": "← Back to edition {date}",
+    "opposition_warning": "Opposition warning",
+    "table": {
+      "name": "Name",
+      "result": "Result",
+      "threshold_group": "What it took",
+      "abstained_group": "Did not vote",
+      "clubs_group": "By party club",
+      "present": "Present",
+      "needed_for": "Needed for",
+      "short": "Short by",
+      "abstained": "Abstained",
+      "did_not_vote": "Did not vote",
+      "for": "For",
+      "against": "Against",
+      "clubs_for": "Clubs for",
+      "clubs_against": "Clubs against"
+    },
+    "kinds": {
+      "neprosli": {
+        "title": "Who did not pass",
+        "gloss": "{count} nominations for state honours that The Chamber rejected on {date}. Vote totals by party club for each name.",
+        "note": "The Short by column shows how many votes for were still needed for a majority of those present.",
+        "explain": "More votes for than against is not enough. A proposal passes only when votes for exceed half of deputies present in the Chamber. Those who abstained or did not vote count the same as votes against."
+      },
+      "prosli": {
+        "title": "Whom The Chamber recommended",
+        "gloss": "{count} names that The Chamber sent to the president on {date} as recommendations for honours. Vote totals by party club for each name.",
+        "note": "The president has the final word. These are only proposals that won the required majority of those present in the Chamber.",
+        "explain": "More votes for than against is not enough. A proposal passes only when votes for exceed half of deputies present in the Chamber. Those who abstained or did not vote count the same as votes against."
+      },
+      "zvoleni": {
+        "title": "Whom The Chamber elected to the CT Council",
+        "gloss": "{count} new members of the Council of Czech Television that The Chamber filled on {date} in a public vote. Vote totals by party club for each name.",
+        "note": "The vote was public. Election required more votes for than against and a quorum of deputies present.",
+        "explain": "To be elected, a candidate had to receive more votes for than against and meet the quorum of deputies present."
+      }
+    },
+    "sibling": {
+      "prosli": "Whom The Chamber recommended",
+      "neprosli": "Who did not pass"
+    }
+  },
   "board": {
     "proslo_1": "item passed",
     "proslo_2_4": "items passed",
