@@ -33,8 +33,8 @@ export default {
     }
 
     const email = String(body.email || "").trim();
-    const website = String(body.website || "").trim();
-    if (website || !email || !email.includes("@")) {
+    const hp = String(body.hp || body.website || "").trim();
+    if (hp || !email || !email.includes("@")) {
       return json({ ok: false }, 400, headers);
     }
     const listId = subscribeListId(env, body.locale);
