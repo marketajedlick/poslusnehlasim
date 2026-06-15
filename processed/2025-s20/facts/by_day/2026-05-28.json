@@ -18,15 +18,5 @@
     "* žádný zákon dnes nedošel k hlasování, den patřil interpelacím",
     "* stavební zákon: dvaadvacet návrhů na přerušení padlo, třiadvacátý prošel 64:10",
     "* u jednoho hlasování zbylo v sále dvaašedesát poslanců a kvorum se nekonalo"
-  ],
-  "en": {
-    "dnesni_ucet": "The whole day of interpellation (parliamentary Q&A session), in the evening of the 23rd voting on the Building Permits Act.\nAll about when to stop; nothing was said about the content, the score was 0:0.",
-    "zaver": "that The Chamber of Deputies interpellated all day and in the evening voted twenty-three times on the construction bill only on when to go home; once a quorum was not even met and at 10:59 p.m. it finally passed 64:10.",
-    "vysledek": [
-      "* no law came to a vote today, the day belonged to interpellations (parliamentary Q&A sessions)",
-      "* Building Permits Act: twenty-two motions to adjourn failed, the twenty-third passed 64:10",
-      "* for one vote, sixty-two deputies remained in the hall and a quorum was not held"
-    ],
-    "den": "Thursday"
-  }
+  ]
 }

@@ -37,25 +37,5 @@
   "steno_slov": 6096,
   "lead": "Změna zákona o investičních společnostech prošla v prvním kole, 117 hlasů pro, nikdo proti.",
   "pointa": "Čtvrtek přinesl balík EU novel, od účetnictví po silniční provoz. Investiční zákon byl jeden z vrcholů.",
-  "mean": "Stát zpřísňuje pravidla pro fondy a investiční firmy podle EU. Cílem je ochrana investorů, ne nová daň.",
-  "en": {
-    "nadpis": "Investing under supervision",
-    "lead": "The amendment to the law on investment companies passed at first reading, 117 votes in favor, none against.",
-    "pointa": "Thursday brought a package of EU amendments, from accounting to road traffic. The Investment Act was one of the highlights.",
-    "mean": "The state is tightening the rules for funds and investment firms according to the EU. The goal is to protect investors, not a new tax.",
-    "predmet_lidsky": "supervision of investment funds and companies",
-    "koho": [
-      "Who does it concern? Investors and companies managing funds. An ordinary saver will feel it rather indirectly."
-    ],
-    "fakty": [
-      {
-        "text": "Vote number 261, for 117, against none. The draft law was approved.",
-        "citace": "Vote number 261, for 117, against none. The draft law was approved."
-      },
-      {
-        "text": "Noise in the hall.",
-        "citace": "(Noise in the hall.)"
-      }
-    ]
-  }
+  "mean": "Stát zpřísňuje pravidla pro fondy a investiční firmy podle EU. Cílem je ochrana investorů, ne nová daň."
 }

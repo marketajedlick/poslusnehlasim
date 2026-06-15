@@ -46,30 +46,5 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 144664,
-  "en": {
-    "nadpis": "It passed",
-    "predmet_lidsky": "SFPI budget proposal for 2026",
-    "koho": [
-      "It touches you when you're driving on the road, building or farming; otherwise, rather a dry number in the table."
-    ],
-    "fakty": [
-      {
-        "text": "Yes.",
-        "citace": "(Yes.)"
-      },
-      {
-        "text": "(Yes.) If I read it: Government information on the situation of migration from the Middle East, energy security of the Czech Republic and security in connection with the conflict in Iran.",
-        "citace": "(Yes.) If I read it: Government information on the situation of migration from the Middle East, energy security of the Czech Republic and security in connection with the conflict in Iran."
-      },
-      {
-        "text": "We have thus resolved the proposals for changes to today's meeting and we begin with the first item 1. The government bill on the state budget of the Czech Republic for the year 2026/parliamentary press 94/ - second reading This government bill will be introduced by the Deputy Prime Minister and Minister of Finance Alena Schillerová, whom I ask to take the floor, she is already sitting behind the table with",
-        "citace": "With this, we have resolved the proposals for changes to today's meeting and we start with the first item 1. The government bill on the state budget of the Czech Republic for the year 2026/parliamentary press 94/ - second reading This government bill will state"
-      },
-      {
-        "text": "Another rule for proposed parliamentary changes is the statutory minimum amount of the government budget reserve, which must not fall below the level of 0.3 percent of the total expenses of the state budget. In absolute terms, this is the minimum amount of this reserve in the amount of 7,283,511,440 crowns.",
-        "citace": "Another rule for proposed parliamentary changes is the statutory minimum amount of the government budget reserve, which must not fall below the level of 0.3 percent of total state budget expenditures, absolutely"
-      }
-    ]
-  }
+  "steno_slov": 144664
 }

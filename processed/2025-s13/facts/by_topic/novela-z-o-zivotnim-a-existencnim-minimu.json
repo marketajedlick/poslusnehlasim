@@ -48,33 +48,5 @@
   "steno_slov": 3916,
   "lead": "Sněmovna nepotvrdila vrácený návrh minima, jen pět hlasů proti senátnímu zamítnutí, osmdesát pět proti. Senát už mezitím schválil širší verzi v jiném tisku.",
   "pointa": "Večer předtím čtyřicet čtyři hlasování o pořadu, pak teprve minimum. Juchelka žádal o zamítnutí duplicitního tisku, Sněmovna souhlasila.",
-  "mean": "Hranice chudoby a superdávka se řeší jiným zákonem (tisk 88), který Senát už přijal po únorovém odkladu superdávky. Tento vrácený návrh byl nadbytečný a definitivně padl.",
-  "en": {
-    "nadpis": "Living Minimum Rejected",
-    "lead": "The Chamber of Deputies did not approve the returned minimum proposal, only five votes against the Senate's rejection, eighty-five against. The Senate has since approved a broader version in another press.",
-    "pointa": "Forty-four votes on the agenda the night before, then only the minimum. Juchelka asked for the rejection of duplicate printing, The Chamber of Deputies agreed.",
-    "mean": "The poverty line and the super benefit are dealt with by another law (print 88), which the Senate already adopted after the super benefit was postponed in February. This returned proposal was redundant and definitely fell.",
-    "predmet_lidsky": "living and subsistence minimum",
-    "koho": [
-      "Who does it concern? People on benefits and Labour Offices. The Senate rejected the duplicate proposal, The Chamber of Deputies confirmed it."
-    ],
-    "fakty": [
-      {
-        "text": "The Senate approved the wider print 88 and returned the print 85 as redundant.",
-        "citace": "For this reason, the Senate approved parliamentary press 88 and rejected parliamentary press 85 as redundant, which has now returned to The Chamber of Deputies."
-      },
-      {
-        "text": "The approval of 101 MPs is required to adopt the resolution.",
-        "citace": "The adoption of the following resolution requires the consent of a majority of all deputies, i.e. the consent of 101 deputies."
-      },
-      {
-        "text": "Vote number 46, for 5, against 85, the proposal was not approved.",
-        "citace": "In vote number 46, 171 deputies were registered, 5 voted for (85 against) and the draft resolution was not approved."
-      },
-      {
-        "text": "Before that, forty-four votes on changes to the agenda of the meeting.",
-        "citace": "In vote number 45, 175 deputies were registered, 96 voted for. (6 against) The proposal was accepted and I state that we have approved the agenda of the meeting."
-      }
-    ]
-  }
+  "mean": "Hranice chudoby a superdávka se řeší jiným zákonem (tisk 88), který Senát už přijal po únorovém odkladu superdávky. Tento vrácený návrh byl nadbytečný a definitivně padl."
 }

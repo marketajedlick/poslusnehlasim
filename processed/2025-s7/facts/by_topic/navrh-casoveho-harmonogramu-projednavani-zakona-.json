@@ -36,25 +36,5 @@
   "steno_slov": 100283,
   "lead": "Sněmovna schválila harmonogram projednávání rozpočtu na rok 2026, 127 hlasů pro, nikdo proti.",
   "pointa": "Zpravodaj Pikora představil dvanáctibodové usnesení rozpočtového výboru. Večer pak začala první debata o samotném návrhu.",
-  "mean": "Harmonogram říká, kdy a jak rychle půjde rozpočet výbory a plénem. Bez něj by se o schodku 310 miliard nehlasovalo podle plánu, ale pořád jen o pořadu.",
-  "en": {
-    "nadpis": "Budget calendar",
-    "lead": "The Chamber of Deputies approved the 2026 budget discussion schedule, 127 votes in favor, none against.",
-    "pointa": "Rapporteur Pikora presented the budget committee's twelve-point resolution. In the evening, the first debate on the proposal itself began.",
-    "mean": "The schedule tells when and how quickly the budget will go through committees and the plenary. Without him, the 310 billion deficit would not have been voted on as planned, but still only about the program.",
-    "predmet_lidsky": "draft timetable for the discussion of the Act on the State Budget of the Czech Republic",
-    "koho": [
-      "Who does it concern? Anyone waiting to see how much the state will spend. The schedule determines when the budget will be voted on."
-    ],
-    "fakty": [
-      {
-        "text": "This parliamentary document will be introduced by the rapporteur of the budget committee, also the committee chair, MP Vladimír Pikora, whom I ask to take the floor and at the same time present the draft resolution of The Chamber of Deputies.",
-        "citace": "This parliamentary document will be introduced by the rapporteur of the budget committee, MP Vladimír Pikora."
-      },
-      {
-        "text": "In vote number 59, 166 deputies were registered, for 127, against 0. The proposal was accepted.",
-        "citace": "In vote number 59, 166 deputies were registered, for 127, against 0. The proposal was accepted."
-      }
-    ]
-  }
+  "mean": "Harmonogram říká, kdy a jak rychle půjde rozpočet výbory a plénem. Bez něj by se o schodku 310 miliard nehlasovalo podle plánu, ale pořád jen o pořadu."
 }

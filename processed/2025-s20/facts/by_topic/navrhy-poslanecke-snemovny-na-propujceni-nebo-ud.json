@@ -57,44 +57,5 @@
       "label": "Kdo neprošel",
       "page": "neprosli"
     }
-  ],
-  "en": {
-    "nadpis": "State Honours on a conveyor belt",
-    "lead": "On Thursday morning, The Chamber of Deputies was compiling a list of proposals for state honors: 165 votes in less than three hours, ten seconds per name. Miloš Zeman passed only the third time, 99:80, Václav Moravec or Daniel Vávra did not pass at all.",
-    "pointa": "The resulting list was finally supported by 180 MPs and none opposed.",
-    "mean": "The Chamber of Deputies sends a recommendation to the president on who to honor on Czech Statehood Day (Oct. 28); the Castle has the final say. But twenty-three proposals fell under the table. It took three rounds of voting before Zeman's nomination passed.",
-    "kuriozita": "Curiosity of the day: Vojtěch Filsák had 92:16 and lacked a single vote for the majority of those present, of the twenty-three who did not pass, he was the closest to the honour. Luboš Dobrovský with 91:13 passed similarly narrowly, but also not.",
-    "predmet_lidsky": "proposals of The Chamber of Deputies to grant or grant state awards",
-    "koho": [
-      "Who does it concern? People on the list of candidates for state honours; The Chamber of Deputies only recommends, the President will distribute on Czech Statehood Day (Oct. 28)."
-    ],
-    "fakty": [
-      {
-        "text": "The Chamber of Deputies reduced the voting time from 20 to 10 seconds and in less than three hours managed to vote 165 names for the award.",
-        "citace": "I would like to point out that the time for voting on motions will be reduced from 20 seconds to 10 seconds for this item."
-      },
-      {
-        "text": "Miloš Zeman passed only on the third attempt 99:80; the first two approvals were questioned by deputies due to confused votes.",
-        "citace": "So for the third time, Miloš Zeman."
-      },
-      {
-        "text": "Twenty-three names fell under the table: Luboš Dobrovský (91:13), Karel I. (38:15), Michael Žantovský (71:22), Radim Passer (50:16), Naděžda Vlašín Johanisová (60:21), Lucie Bášová (86:6), Kristýna Cejnarová (84:6), Daniel Herman (87:20), Libuše Jarcovjáková (78:3), Milan Kňažko (85:22), Martin Kroupa (88:18), Mikuláš Kroupa (84:19), Miroslav Kundrata (92:6), Eva Lehotská (76:17), Ladislav Miko (79:61), Jesica Miňovská (86:16), Václav Moravec (82:67), Ondřej Novotný (86:10), Martin Ondráček (88:24), Zdislava Pokorná (59:55), Jiří Šlégr (55:19), Daniel Vávra (85:33) and Vojtěch Filsák (92:16).",
-        "citace": "Vote number 300: for 82, against 67, not adopted. Vote number 184: for 91, against 13, not adopted."
-      },
-      {
-        "text": "The resulting list for the Castle eventually passed 180-0.",
-        "citace": "Vote number 345, 188 MPs registered, 180 for, none against."
-      }
-    ],
-    "kuriozita_links": [
-      {
-        "label": "Who passed",
-        "page": "prosli"
-      },
-      {
-        "label": "Who didn't pass",
-        "page": "neprosli"
-      }
-    ]
-  }
+  ]
 }

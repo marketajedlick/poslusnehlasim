@@ -36,25 +36,5 @@
   "steno_slov": 141,
   "lead": "Výrobci zdravotnických pomůcek a testovacích souprav budou muset předem hlásit, když přestanou dodávat něco, bez čeho se nemocnice neobejde. Prošla senátní verze, 153 hlasů proti jednomu.",
   "pointa": "Papírová úprava bez debaty: laboratoře mají dostávat včasné varování před výpadky materiálu, ne novou byrokracii pro pacienty.",
-  "mean": "Když začnou docházet testovací soupravy nebo jiný materiál, laboratoře a úřady se to dozvědí dřív, než dojde úplně. Pro pacienta to znamená menší riziko zrušených odběrů; jinak to doma nepoznáte.",
-  "en": {
-    "nadpis": "Shortages of laboratory tubes must be reported",
-    "lead": "Manufacturers of medical devices and test kits will have to report in advance when they stop supplying something that hospitals cannot do without. The Senate version passed, 153 votes to one.",
-    "pointa": "Paperwork without debate: labs should receive early warning of material shortages, not new red tape for patients.",
-    "mean": "When testing kits or other supplies run low, labs and authorities will know before they run out. For the patient, this means less risk of canceled collections; otherwise you won't know it at home.",
-    "predmet_lidsky": "reporting a shortage of tubes in hospitals",
-    "koho": [
-      "Who does it concern? People who go for samples and tests in the hospital and staff in the laboratories."
-    ],
-    "fakty": [
-      {
-        "text": "Manufacturers will have to give advance notice when they stop supplying a product whose failure could jeopardize care; they report it to the authorities and the hospitals they supply to.",
-        "citace": "If, for any reason, manufacturers foresee an interruption or termination of the supply of their device, where it can be reasonably assumed that its unavailability could cause serious harm, they are obliged to inform the competent authority and at the same time the economic entities and health service providers to whom they directly supply such device."
-      },
-      {
-        "text": "The Chamber of Deputies adopted the version returned to it by the Senate: 153 for, 1 against.",
-        "citace": "Vote number 55, registered by 175 deputies, for 153, against 1. I note that we have accepted the draft law as approved by the Senate."
-      }
-    ]
-  }
+  "mean": "Když začnou docházet testovací soupravy nebo jiný materiál, laboratoře a úřady se to dozvědí dřív, než dojde úplně. Pro pacienta to znamená menší riziko zrušených odběrů; jinak to doma nepoznáte."
 }

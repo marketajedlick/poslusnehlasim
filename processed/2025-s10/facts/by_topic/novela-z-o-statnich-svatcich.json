@@ -45,27 +45,5 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 5901,
-  "en": {
-    "nadpis": "It passed",
-    "predmet_lidsky": "national holidays",
-    "fakty": [
-      {
-        "text": "commanded",
-        "citace": "(commanded)"
-      },
-      {
-        "text": "I note that this proposal was (ordered) to be discussed by the constitutional-legal committee as a guarantee committee.",
-        "citace": "I note that this proposal was (ordered) to be discussed by the constitutional-legal committee as a guarantee committee."
-      },
-      {
-        "text": "I therefore open another point, which is 5. Proposal by deputy Andrej Babiš to issue a law amending Act no.",
-        "citace": "I therefore open another point, which is 5. Proposal by deputy Andrej Babiš to issue a law amending Act no."
-      },
-      {
-        "text": "Applause from coalition MPs.",
-        "citace": "(Applause from coalition MPs.)"
-      }
-    ]
-  }
+  "steno_slov": 5901
 }

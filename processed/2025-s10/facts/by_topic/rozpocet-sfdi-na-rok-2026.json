@@ -46,30 +46,5 @@
     "spor": true,
     "prazdny_sal": false
   },
-  "steno_slov": 5004,
-  "en": {
-    "nadpis": "It passed",
-    "predmet_lidsky": "SFDI budget for 2026",
-    "koho": [
-      "It touches you when you're driving on the road, building or farming; otherwise, rather a dry number in the table."
-    ],
-    "fakty": [
-      {
-        "text": "And we go to item number 58. Budget of the State Transport Infrastructure Fund for 2026 and medium-term outlook for 2027 and 2028/parliamentary press 91/ This material will be presented by the Minister of Transport Ivan Bednárik.",
-        "citace": "And we go to item number 58. Budget of the State Transport Infrastructure Fund for 2026 and medium-term outlook for 2027 and 2028/parliamentary press 91/ This material will be presented by the Minister of Transport Ivan Bednárik."
-      },
-      {
-        "text": "From 8:00 p.m., MP Patrik Nacher excuses himself for personal reasons.",
-        "citace": "From 8:00 p.m., MP Patrik Nacher excuses himself for personal reasons."
-      },
-      {
-        "text": "And I would like the rapporteur of the Economic Committee, MP Martin Kolovratník, to move to the rapporteur's table here as well.",
-        "citace": "And I would like the rapporteur of the Economic Committee, MP Martin Kolovratník, to move to the rapporteur's table here as well."
-      },
-      {
-        "text": "There is a lot of noise in the hall.",
-        "citace": "(There is a lot of noise in the hall.)"
-      }
-    ]
-  }
+  "steno_slov": 5004
 }

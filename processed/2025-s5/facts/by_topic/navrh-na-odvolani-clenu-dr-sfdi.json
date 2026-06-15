@@ -46,30 +46,5 @@
     "spor": false,
     "prazdny_sal": false
   },
-  "steno_slov": 5430,
-  "en": {
-    "nadpis": "It passed",
-    "predmet_lidsky": "motion to recall members of the DR SFDI",
-    "koho": [
-      "Personal choice of who sits on a commission or board."
-    ],
-    "fakty": [
-      {
-        "text": "The next item is item number 39. Proposal for the dismissal of members and substitutes of the Board of Directors of the General Health Insurance Company of the Czech Republic.",
-        "citace": "The next point is point number 39. Proposal for the dismissal of members and substitutes of the Board of Directors of the General Health Insurance Company of the Czech Republic. Please let the chairman of the election commission, MP Martin Kolovratník"
-      },
-      {
-        "text": "Vote number 87, registered 178 deputies, 1506 for, none against.",
-        "citace": "Vote number 87, registered 178 deputies, 1506 for, none against."
-      },
-      {
-        "text": "Vote number 86, 176 MPs registered, 144 for, none against.",
-        "citace": "Vote number 86, 176 MPs registered, 144 for, none against."
-      },
-      {
-        "text": "Chairman: Yes.",
-        "citace": "(Chairman: Yes.)"
-      }
-    ]
-  }
+  "steno_slov": 5430
 }

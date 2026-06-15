@@ -36,25 +36,5 @@
   "steno_slov": 103507,
   "lead": "Sněmovna schválila státní závěrečný účet za rok 2024, 113 hlasů pro, nikdo proti.",
   "pointa": "Formální krok před rozpočtem na letošní rok. Část poslanců se zdržela, ale návrh prošel bez jediného hlasu proti.",
-  "mean": "Závěrečný účet uzavírá minulý rok: kolik stát utratil a jak sedí čísla. Není to debata o tom, kam půjdou peníze v roce 2026, ale kontrola hospodaření za rok 2024.",
-  "en": {
-    "nadpis": "Account for 2024",
-    "lead": "The Chamber of Deputies approved the state final account for 2024, 113 votes in favor, none against.",
-    "pointa": "A formal step before the budget for this year. Part of the deputies abstained, but the proposal passed without a single vote against.",
-    "mean": "The final account closes last year: how much the state spent and how the numbers fit. This is not a debate about where the money will go in 2026, but a financial review for 2024.",
-    "predmet_lidsky": "draft state final account of the Czech Republic for the year 2024",
-    "koho": [
-      "Who does it concern? Rather, the accounting closing of the state. It affects the citizen only indirectly, but it shows how much the state spent last year and how it turned out."
-    ],
-    "fakty": [
-      {
-        "text": "In vote number 58, 164 deputies were registered, 113 for, 0 against. The motion was accepted.",
-        "citace": "In vote number 58, 164 deputies were registered, 113 for, 0 against. The motion was accepted."
-      },
-      {
-        "text": "July 2025/parliamentary press 3/ - first reading The submitted proposal will be introduced by the Minister of Health, Adam Vojtěch.",
-        "citace": "July 2025/parliamentary press 3/ - first reading The submitted proposal will be introduced by the Minister of Health, Adam Vojtěch."
-      }
-    ]
-  }
+  "mean": "Závěrečný účet uzavírá minulý rok: kolik stát utratil a jak sedí čísla. Není to debata o tom, kam půjdou peníze v roce 2026, ale kontrola hospodaření za rok 2024."
 }

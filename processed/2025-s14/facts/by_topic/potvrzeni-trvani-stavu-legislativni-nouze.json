@@ -47,30 +47,5 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 77791,
-  "en": {
-    "nadpis": "It passed",
-    "predmet_lidsky": "confirmation of the duration of the state of legislative emergency",
-    "koho": [
-      "The citizen will know when the rules change, which must be done quickly."
-    ],
-    "fakty": [
-      {
-        "text": "Short discussion with the umpire.",
-        "citace": "(Brief discussion with the umpire.)"
-      },
-      {
-        "text": "(Brief discussion by the umpire.) The Organizational Committee of The Chamber of Deputies established a draft program on the 14th.",
-        "citace": "(Brief discussion by the umpire.) The Organizational Committee of The Chamber of Deputies established a draft program on the 14th."
-      },
-      {
-        "text": "Now, dear (Short discussion at the umpire.) ladies and gentlemen, on the 13",
-        "citace": "Now, dear (Short discussion at the umpire.) ladies and gentlemen, on the 13"
-      },
-      {
-        "text": "Applause from the left.",
-        "citace": "(Applause from the left.)"
-      }
-    ]
-  }
+  "steno_slov": 77791
 }

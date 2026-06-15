@@ -41,29 +41,5 @@
   "steno_slov": 49535,
   "lead": "Čtvrtek skončil finální ratifikací smlouvy se Slovenskem o spolupráci záchranných služeb, sto pět hlasů proti nule. První souhlas Sněmovna vyslovila už v únoru na sedmé schůzi.",
   "pointa": "Smlouva navazuje na dohody s Německem a Rakouskem a má pokrýt Jihomoravský, Zlínský a Moravskoslezský kraj.",
-  "mean": "Záchranka může při nehodě u hranic rychleji zasáhnout i na druhé straně. Dotkne se hlavně obyvatel příhraničních obcí.",
-  "en": {
-    "nadpis": "Rescue across the border",
-    "lead": "Thursday ended with the final ratification of the agreement with Slovakia on the cooperation of rescue services, one hundred and five votes against zero. The Chamber of Deputies gave its first approval in February at its seventh meeting.",
-    "pointa": "The contract builds on the agreements with Germany and Austria and is intended to cover the South Moravian, Zlín and Moravian-Silesian regions.",
-    "mean": "In the event of an accident at the border, the ambulance can intervene more quickly on the other side as well. It will mainly affect residents of border municipalities.",
-    "predmet_lidsky": "agreement between the Czech Republic and the Slovak Republic on cross-border spol. in the field of medical rescue",
-    "koho": [
-      "Who does it concern? People in the South Moravian, Zlín and Moravian-Silesian regions near the border with Slovakia."
-    ],
-    "fakty": [
-      {
-        "text": "Vojtěch said that the contract will help patients in the border region.",
-        "citace": "Very essential for patients living on the border with Slovakia, with the aim of ensuring the best possible availability of emergency medical services."
-      },
-      {
-        "text": "The contract builds on agreements with Germany and Austria.",
-        "citace": "This contract is based on already valid contracts with Germany and Austria."
-      },
-      {
-        "text": "Vote number 167, one hundred and five votes in favour.",
-        "citace": "Vote number 167, for 105, against 0."
-      }
-    ]
-  }
+  "mean": "Záchranka může při nehodě u hranic rychleji zasáhnout i na druhé straně. Dotkne se hlavně obyvatel příhraničních obcí."
 }

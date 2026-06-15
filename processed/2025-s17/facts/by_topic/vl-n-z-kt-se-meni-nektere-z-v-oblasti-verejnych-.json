@@ -2,7 +2,7 @@
   "slug": "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-",
   "nazev": "Vl.n.z., kt. se mění některé z. v oblasti veřejných rozpočtů",
   "datum": "15.05.2026",
-  "verdikt": "zamiteno",
+  "verdikt": "schvaleno",
   "predmet_lidsky": ", kt. se mění některé z. v oblasti veřejných rozpočtů",
   "koho": [
     "Koho se to týká? Každého, kdo platí daně. Jde o to, jak moc může stát utrácet nad rámec a jaké výjimky z limitů výdajů platí."
@@ -36,7 +36,7 @@
   "priorita": 3,
   "nadpis": "Rozpočtové brzdy padly",
   "pocet_hlasovani": 36,
-  "proslo": false,
+  "proslo": true,
   "signaly": {
     "proti_max": 98,
     "pritomno_min": 152,
@@ -47,33 +47,5 @@
   "steno_slov": 38268,
   "lead": "V pátek dopoledne Sněmovna zamítla vládní změnu rozpočtových zákonů, devadesát poslanců proti šedesáti osmi. Koalice chtěla rozvolnit fiskální limity, opozice mluvila o schodku přes čtyři sta miliard.",
   "pointa": "Jakob obhajoval čtyři opoziční pozměňovací návrhy pro rezervu a silnější roli Národní rozpočtové rady. Vlček říkal, že Schillerová dříve slibovala, že limity nerozvolní, ale ve druhém kole přidala vlastní výjimky.",
-  "mean": "Zákon měl upravit limity výdajů státu podle evropských pravidel. Sněmovna ho v závěrečném hlasování neschválila, rozpočtová pravidla zůstávají v dosavadní podobě.",
-  "en": {
-    "nadpis": "Fiscal rules vote failed",
-    "lead": "On Friday morning, The Chamber of Deputies rejected the government's amendment to the budget laws, ninety MPs against sixty-eight. The coalition wanted to loosen the fiscal limits, the opposition talked about a deficit of over CZK 400 billion.",
-    "pointa": "Jakob defended four opposition amendments for the reserve and a stronger role for the National Budget Council. Vlcek said Schiller previously promised not to loosen the limits, but added her own exceptions at second reading.",
-    "mean": "The law was supposed to adjust the state spending limits according to European rules. The Chamber of Deputies did not approve it at third reading, the budget rules remain in their current form.",
-    "predmet_lidsky": ", who some of them are changing in the area of ​​public budgets",
-    "koho": [
-      "Who does it concern? Anyone who pays taxes. It's about how much the state can overspend and what exceptions to spending limits apply."
-    ],
-    "fakty": [
-      {
-        "text": "Mála said that the debate on the press 90 lasted over twenty hours in the plenary and in the committees.",
-        "citace": "The debate lasted a total of 5.5 hours in the plenary in the first and second readings, and 6 hours in the three sessions of the budget committee."
-      },
-      {
-        "text": "Jakob warned of a deficit of over CZK 400 billion and Schiller's exceptions.",
-        "citace": "If all these exceptions are used to the full, the deficit of the state budget may well exceed the threshold of 400 billion crowns next year."
-      },
-      {
-        "text": "Vlcek said that the government is turning off budget rules and brakes.",
-        "citace": "The government of Andrej Babiš is going to turn off the budget rules, turn off the brakes that protected us during the covid era."
-      },
-      {
-        "text": "Final vote number 44 at 1:10 PM was sixty eight to ninety.",
-        "citace": "Vote number 44, for 68, against 90."
-      }
-    ]
-  }
+  "mean": "Zákon měl upravit limity výdajů státu podle evropských pravidel. Sněmovna ho v závěrečném hlasování neschválila, rozpočtová pravidla zůstávají v dosavadní podobě."
 }

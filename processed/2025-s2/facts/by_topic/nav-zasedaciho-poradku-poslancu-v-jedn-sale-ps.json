@@ -40,26 +40,5 @@
     "spor": false,
     "prazdny_sal": false
   },
-  "steno_slov": 533,
-  "en": {
-    "nadpis": "It passed",
-    "predmet_lidsky": "address of the meeting order of deputies in the single hall of the PS",
-    "koho": [
-      "Who sits where in the hall, like the division of seats in the barracks, only more expensive stools."
-    ],
-    "fakty": [
-      {
-        "text": "A cell phone rings in the hall.",
-        "citace": "(A cell phone rings in the hall.)"
-      },
-      {
-        "text": "(Vote number 2), 189 MPs registered, 188 for, none against.",
-        "citace": "(Vote number 2), 189 MPs registered, 188 for, none against."
-      },
-      {
-        "text": "November 2025, as I have already said, on the proposal to determine the number of members of the committees of The Chamber of Deputies, namely for point 1; furthermore, a proposal for changes in the composition of the bodies of The Chamber of Deputies, namely for item 16.",
-        "citace": "November 2025, as I have already said, on the proposal to determine the number of members of the committees of The Chamber of Deputies, namely for point 1; furthermore, a proposal for changes in the composition of the bodies of The Chamber of Deputies, namely for item 16."
-      }
-    ]
-  }
+  "steno_slov": 533
 }

@@ -41,29 +41,5 @@
   "steno_slov": 462,
   "lead": "Senát poslal do sněmovny úpravu ústavy, která rozšiřuje kompetence NKÚ vůči České televizi a rozhlasu. V prvním kole prošla 154 hlasy, nikdo proti.",
   "pointa": "Urbanová ze STAN řekla, že návrh teď nepodpoří. Volpe z Motoristů naopak mluvil o veřejné kontrole peněz v médiích.",
-  "mean": "Ústava není papírová úprava. Debata je o tom, jestli má kontrolor zasahovat do veřejnoprávních médií, nebo zůstane mimo.",
-  "en": {
-    "nadpis": "Audit office to oversee public media finances",
-    "lead": "The Senate sent to The Chamber of Deputies a constitutional amendment expanding the Supreme Audit Office's oversight of Czech Television and Czech Radio finances. At first reading it passed with 154 votes, none against.",
-    "pointa": "Urbanová from STAN said that she will not support the proposal now. Volpe from Motorists, on the other hand, talked about checking how public media spend public money.",
-    "mean": "This is not about editorial control. The debate is whether the audit office should check the books of public media, not their programmes.",
-    "predmet_lidsky": "constitutional amendment. z. - Constitution of the Czech Republic",
-    "koho": [
-      "Who does it concern? More of an institution than a citizen on the street. It's about who controls the public media's money."
-    ],
-    "fakty": [
-      {
-        "text": "The STAN movement will not support the constitutional amendment in question at this moment, and I underline this, at this moment.",
-        "citace": "The STAN movement will not support the constitutional amendment in question at this time."
-      },
-      {
-        "text": "I therefore consider the expansion of the scope of the SAO to be one of the most important anti-corruption proposals, as it strengthens prevention.",
-        "citace": "I consider the expansion of the scope of the SAO to be one of the most important anti-corruption proposals."
-      },
-      {
-        "text": "Vote number 47, for 154, against none. The draft constitutional law was approved.",
-        "citace": "Vote number 47, for 154, against 0."
-      }
-    ]
-  }
+  "mean": "Ústava není papírová úprava. Debata je o tom, jestli má kontrolor zasahovat do veřejnoprávních médií, nebo zůstane mimo."
 }

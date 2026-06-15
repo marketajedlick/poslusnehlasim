@@ -47,33 +47,5 @@
   "steno_slov": 73350,
   "lead": "Pozdě v noci Sněmovna schválila stanovisko ke sjezdu Sudetoněmeckého landsmanšaftu v Brně, sto devět hlasů proti jednomu. Debata trvala od úterka večer, opozice celý den brzdila obstrukcemi.",
   "pointa": "Koalice usnesení obhajovala odkazem na česko-německou deklaraci, opozice mluvila o usmíření a Benešových dekretech. Benda kritizoval název bodu jako stanovisko vládní koalice. Stejné téma se vrátí na mimořádné schůzi 18. května.",
-  "mean": "Sněmovna oficiálně odsoudila sjezd v Brně. Jde o politické usnesení, ne o zákon měnící práva občanů.",
-  "en": {
-    "nadpis": "The convention in Brno lasted well into the night",
-    "lead": "Late at night, The Chamber of Deputies approved the opinion on the congress of the Sudeten German Landsmanschaft in Brno, one hundred and nine votes against one. The debate lasted from Tuesday evening, the opposition hindered the whole day with obstructions.",
-    "pointa": "The coalition defended the resolution by referring to the Czech-German declaration, the opposition spoke of reconciliation and the Beneš decrees. Benda criticized the title of the point as the position of the government coalition. The same topic will return to the special meeting on May 18.",
-    "mean": "The Chamber of Deputies officially condemned the convention in Brno. It is a political resolution, not a law changing the rights of citizens.",
-    "predmet_lidsky": "the position of the government coalition on the convention of the Sudeten German Landsmanschaft in Br",
-    "koho": [
-      "Who does it concern? Rather, relations with Germany. The resolution condemns the congress, which, according to the coalition, threatens Czech-German relations."
-    ],
-    "fakty": [
-      {
-        "text": "Koten defended the resolution by referring to the Czech-German declaration from 1997.",
-        "citace": "It highlights the importance of the Czech-German declaration signed on January 21, 1997 for shaping modern Czech-German relations."
-      },
-      {
-        "text": "Benda said that the point should not be the opinion of the government coalition, but of The Chamber of Deputies.",
-        "citace": "We have an extremely stupid proposal. The government coalition failed to understand that the point should not be called the Opinion of the government coalition."
-      },
-      {
-        "text": "Zuna suggested dropping the item from the agenda to unblock The Chamber of Deputies.",
-        "citace": "I would like to suggest that this item be removed from the agenda of the meeting."
-      },
-      {
-        "text": "Vote number 49 at 00:51, one hundred and nine votes for, one against.",
-        "citace": "Vote number 49, for 109, against 1."
-      }
-    ]
-  }
+  "mean": "Sněmovna oficiálně odsoudila sjezd v Brně. Jde o politické usnesení, ne o zákon měnící práva občanů."
 }

@@ -20,10 +20,10 @@
       "citace": "Hlasování číslo 96, přítomno 178 (správně: 170) poslanců, pro 78 (správně: 77), proti 92."
     },
     {
-      "text": "Dalším návrhem je návrh pana poslance Zuny s názvem Naplnění, opakuji, naplnění, ano, s (písmenem) „a“, naplnění, závazků České republiky vůči NATO.",
+      "text": "Dalším návrhem je návrh pana poslance Zuny s názvem Naplnění – opakuji, naplnění, ano, s (písmenem) „a“, naplnění – závazků České republiky vůči NATO.",
       "source": "steno",
       "steno_id": "2025_14_00795",
-      "citace": "Dalším návrhem je návrh pana poslance Zuny s názvem Naplnění, opakuji, naplnění, ano, s (písmenem) „a“, naplnění, závazků České republiky vůči NATO."
+      "citace": "Dalším návrhem je návrh pana poslance Zuny s názvem Naplnění – opakuji, naplnění, ano, s (písmenem) „a“, naplnění – závazků České republiky vůči NATO."
     },
     {
       "text": "Stanoví harmonogram projednávání vládního návrhu Státního závěrečného účtu České republiky za rok 2025 a jeho kapitol, včetně vztahu státního závěrečného rozpočtu k rozpočtům státních fondů v roce 2025 takto: Za prvé.",
@@ -44,27 +44,5 @@
     "spor": false,
     "prazdny_sal": true
   },
-  "steno_slov": 102977,
-  "en": {
-    "nadpis": "It passed",
-    "predmet_lidsky": "n. of time harm. discussion of the government proposal st. of the final account of the Czech Republic",
-    "fakty": [
-      {
-        "text": "Disapproval is heard from the plenary.",
-        "citace": "(Disapproval is heard from the plenary.)"
-      },
-      {
-        "text": "Vote number 96, 178 (correct: 170) deputies present, 78 for (correct: 77), 92 against.",
-        "citace": "Vote number 96, 178 (correct: 170) deputies present, 78 for (correct: 77), 92 against."
-      },
-      {
-        "text": "Another proposal is the proposal of Mr. Zuna, entitled Fulfillment, I repeat, fulfillment, yes, with (the letter) \"a\", fulfillment of the obligations of the Czech Republic towards NATO.",
-        "citace": "Another proposal is the proposal of Mr. Zuna, entitled Fulfillment, I repeat, fulfillment, yes, with (the letter) \"a\", fulfillment of the obligations of the Czech Republic towards NATO."
-      },
-      {
-        "text": "It sets the schedule for discussing the government proposal for the State Final Account of the Czech Republic for the year 2025 and its chapters, including the relationship of the state final budget to the budgets of state funds in 2025 as follows: First.",
-        "citace": "Establishes the schedule for discussion of the government's draft of the State Final Account of the Czech Republic for 2025 and its chapters, including the relationship of the state final budget to the budgets of state funds in 2025"
-      }
-    ]
-  }
+  "steno_slov": 102977
 }

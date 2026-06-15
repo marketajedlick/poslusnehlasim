@@ -47,33 +47,5 @@
   "steno_slov": 193,
   "lead": "Ve středu odpoledne Sněmovna schválila návrh ze Senátu ústavy, která rozšiřuje pravomoci Nejvyššího kontrolního úřadu nad hospodařením České televize a Českého rozhlasu, sedmdesát jedna hlasů proti šestnácti.",
   "pointa": "Kordová Marvanová hájila kontrolu poplatků, Jakob spojil ústavu s obavami o média, Benda kritizoval koaliční pozměňovací návrh. Opozice celé dopoledne bránila pořadu kvůli rozpočtovým zákonům.",
-  "mean": "Ústava by umožnila NKÚ hlouběji zkoumat smlouvy a výdaje veřejnoprávních médií. Navazuje na dubnovou mimořádnou schůzi opozice o poplatcích ČT a předjímá červnovou volbu rady televize.",
-  "en": {
-    "nadpis": "The SAO Can Inspect Czech Television (ČT)",
-    "lead": "On Wednesday afternoon, The Chamber of Deputies approved the proposal from the Senate for a constitution that expands the powers of the Supreme Audit Office over the management of Czech Television and Czech Radio, seventy-one votes against sixteen.",
-    "pointa": "Kordová Marvanová defended the control of fees, Jakob connected the constitution with concerns about the media, Benda criticized the coalition amendment proposal. The opposition defended the program all morning because of the budget laws.",
-    "mean": "The constitution would allow the SAO to more deeply examine the contracts and expenses of public media. It follows on from the April extraordinary meeting of the opposition on Czech Television (ČT) fees and anticipates the June election of the television board.",
-    "predmet_lidsky": "constitutional amendment. z. - Constitution of the Czech Republic",
-    "koho": [
-      "Who does it concern? Anyone who pays concession fees. The SAO could control how public media spend billions from fees."
-    ],
-    "fakty": [
-      {
-        "text": "Kordová Marvanová presented the senate's proposal to control the management of ČT and CRo.",
-        "citace": "The aim is to expand the limited scope of the Supreme Audit Office's constitutional competences and to strengthen control over the management of Czech Television and Czech Radio."
-      },
-      {
-        "text": "Jakob talked about the media instead of the constitution, Babka reprimanded him for obstruction.",
-        "citace": "Here, we are discussing the extension of the powers of the Supreme Audit Office so that it can look at how Czech Television and Czech Radio are managed."
-      },
-      {
-        "text": "Benda warned against the amendment proposed by Malá, Okamura and Šťastný.",
-        "citace": "In Article 1, the words established by law are deleted. Are we aware of what this means?"
-      },
-      {
-        "text": "Vote number 5 at 16:12, seventy one votes for, sixteen against.",
-        "citace": "Vote number 5, 71 for, 16 against."
-      }
-    ]
-  }
+  "mean": "Ústava by umožnila NKÚ hlouběji zkoumat smlouvy a výdaje veřejnoprávních médií. Navazuje na dubnovou mimořádnou schůzi opozice o poplatcích ČT a předjímá červnovou volbu rady televize."
 }
