@@ -181,6 +181,30 @@ def vyznamenani_pages_href(
     return f"{base}{path}" if base else path
 
 
+def steno_sources_pages_href(
+    obdobi: int,
+    schuze: int,
+    datum_unl: str,
+    base_path: str = "",
+    locale: str = "cs",
+) -> str:
+    base = base_path.rstrip("/")
+    path = localized_path(f"/noviny/{obdobi}/{schuze}/{datum_unl}-steno.html", locale)
+    return f"{base}{path}" if base else path
+
+
+def recnici_pages_href(
+    obdobi: int,
+    schuze: int,
+    datum_unl: str,
+    base_path: str = "",
+    locale: str = "cs",
+) -> str:
+    base = base_path.rstrip("/")
+    path = localized_path(f"/noviny/{obdobi}/{schuze}/{datum_unl}-recnici.html", locale)
+    return f"{base}{path}" if base else path
+
+
 def vyznamenani_neprosli_pages_href(
     obdobi: int,
     schuze: int,

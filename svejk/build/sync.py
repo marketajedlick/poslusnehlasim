@@ -10,8 +10,6 @@ from psp.fetch_unl import refresh_unl, unl_needs_refresh
 from psp.hlidac import HlidacClient
 from psp.schuze import SchuzeAnalyzer
 
-from svejk.build.align import run_align
-from svejk.build.extract import run_extract
 from svejk.build.fetch import run_fetch
 from svejk.build.io import iter_jsonl, read_json, write_json
 from svejk.config import HLIDAC_TOKEN, PSP_DATA_DIR, PSP_ORGAN_ID
@@ -166,8 +164,9 @@ def run_sync(
 ) -> dict[str, Any]:
     """
     1. Aktualizuje hl{obdobi}s.unl z PSP (HEAD/GET ZIP).
-    2. Pro každou schůzi: porovná hlasování, doplní steno z Hlídače.
-    3. U změněných schůzí spustí align + extract (ne compose — facts ručně).
+    2. Pro každou schůzi: porovná hlasování, doplní steno z Hlídače do raw/.
+
+    Align, extract a compose se nespouští — facts jsou redakční, jen ručně pod dohledem.
     """
     analyzer = SchuzeAnalyzer(PSP_DATA_DIR, PSP_ORGAN_ID)
     state = load_sync_state()
@@ -231,7 +230,7 @@ def run_sync(
             steno_new = _steno_probe_has_new(client, obdobi, cislo, steno_stats["last_poradi"])
         pipeline_missing = _needs_pipeline(paths)
 
-        needs_work = votes_changed or steno_new or steno_missing or steno_incomplete or pipeline_missing
+        needs_work = votes_changed or steno_new or steno_missing or steno_incomplete
         action = "would_update" if check_only and needs_work else ("update" if needs_work else "skip")
 
         entry: dict[str, Any] = {
@@ -260,9 +259,6 @@ def run_sync(
                 verbose=verbose,
             )
             entry["fetch"] = fetch_info
-            run_align(paths)
-            extract_info = run_extract(paths)
-            entry["extract"] = extract_info
             steno_after = _steno_stats(paths, state, cislo)
             votes_after = _stored_vote_stats(paths)
             state["schuze"][str(cislo)] = {

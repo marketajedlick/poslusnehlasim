@@ -208,6 +208,33 @@
       "neprosli": "Who did not pass"
     }
   },
+  "steno_sources": {
+    "back_to_edition": "← Back to edition {date}",
+    "page_title": "Verbatim record",
+    "page_gloss": "For each passage you can see what we wrote and what is verbatim from the Chamber record.",
+    "in_article_aria": "Links to the verbatim record",
+    "label": "Steno",
+    "full_page": "Full verbatim record",
+    "from_article": "From our article",
+    "from_steno": "Verbatim from the record",
+    "from_votes": "Vote",
+    "from_votes_block": "Verbatim from the vote",
+    "quote_label": "Quote",
+    "context_label": "Surrounding speech",
+    "we_wrote": "In the article",
+    "speech_no": "Speech no. {n}",
+    "full_speech": "Full speech on the Chamber website →",
+    "back_to_article": "back"
+  },
+  "recnici": {
+    "title": "Who spoke how much",
+    "gloss": "Substantive speeches from the extraordinary session on {datum}, ranked by word count. Short and procedural chair interventions are not counted.",
+    "note": "The length of a speech is not the same as the strength of an argument. The value with the ~ symbol next to Martin Kupka is the sum of three speeches.",
+    "table_speaker": "Speaker",
+    "table_words": "Words",
+    "table_role": "Party / role",
+    "back_to_edition": "← Back to edition {date}"
+  },
   "board": {
     "proslo_1": "item passed",
     "proslo_2_4": "items passed",

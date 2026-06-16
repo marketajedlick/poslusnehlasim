@@ -40,6 +40,8 @@ from svejk.build.nav import (
     slovnicek_pages_href,
     soukromi_pages_href,
     vyznamenani_pages_href,
+    steno_sources_pages_href,
+    recnici_pages_href,
 )
 
 # Stripe Payment Links — redirect ve Stripe Dashboardu → /dekuju.html
@@ -104,8 +106,18 @@ from svejk.build.vyznamenani_neprosli import (
     vyznamenani_href,
     _load_votes_by_cislo,
 )
+from svejk.build.steno_sources import apply_steno_links_to_content, collect_steno_sources
+from svejk.build.recnici import (
+    load_recnici,
+    recnici_datum_label,
+    recnici_href,
+    recnici_page_meta,
+    recnici_rows,
+    resolve_recnici_page_links,
+)
 from svejk.newsletter.config import NewsletterConfig
 from svejk.paths import SchuzePaths
+from svejk.timeline import den_v_tydnu
 
 _TEMPLATES = Path(__file__).resolve().parent.parent / "templates"
 _STATIC = Path(__file__).resolve().parent.parent / "static"
@@ -220,19 +232,47 @@ def _apply_content_item_links(
             item.lead = inject_mean_links(item.lead, link_pairs)
             item.mean = inject_mean_links(item.mean, link_pairs)
         if item.kuriozita_links:
+            resolved = resolve_vyznamenani_page_links(
+                paths,
+                content.datum,
+                item.kuriozita_links,
+                obdobi=obdobi,
+                schuze=paths.schuze,
+                link_mode=link_mode,
+                base_path=base_path,
+                locale=locale,
+            ) + resolve_recnici_page_links(
+                paths,
+                content.datum,
+                item.kuriozita_links,
+                obdobi=obdobi,
+                schuze=paths.schuze,
+                link_mode=link_mode,
+                base_path=base_path,
+                locale=locale,
+            )
             item.kuriozita_nav = [
-                (label, _abs_href(href, site_url))
-                for label, href in                 resolve_vyznamenani_page_links(
-                    paths,
-                    content.datum,
-                    item.kuriozita_links,
-                    obdobi=obdobi,
-                    schuze=paths.schuze,
-                    link_mode=link_mode,
-                    base_path=base_path,
-                    locale=locale,
-                )
+                (label, _abs_href(href, site_url)) for label, href in resolved
             ]
+
+
+def _apply_steno_links(
+    content: DenContent,
+    paths: SchuzePaths,
+    *,
+    obdobi: int,
+    link_mode: str,
+    base_path: str = "",
+    locale: str = "cs",
+) -> str | None:
+    return apply_steno_links_to_content(
+        content,
+        paths,
+        obdobi=obdobi,
+        link_mode=link_mode,
+        base_path=base_path,
+        locale=locale,
+    )
 
 
 def _jinja_env() -> Environment:
@@ -561,30 +601,38 @@ def render_den_html(
         locale=loc,
     )
     for item in content.items:
-        if not item.mean_links:
-            continue
-        link_pairs: list[tuple[str, str]] = []
-        for phrase, page in item.mean_links:
-            if page not in ("neprosli", "prosli", "zvoleni"):
-                continue
-            kind: VyznamenaniKind = page  # type: ignore[assignment]
-            if not load_vyznamenani(paths, content.datum, kind):
-                continue
-            href = vyznamenani_href(
-                ob,
-                paths.schuze,
+        if item.mean_links:
+            link_pairs: list[tuple[str, str]] = []
+            for phrase, page in item.mean_links:
+                if page not in ("neprosli", "prosli", "zvoleni"):
+                    continue
+                kind: VyznamenaniKind = page  # type: ignore[assignment]
+                if not load_vyznamenani(paths, content.datum, kind):
+                    continue
+                href = vyznamenani_href(
+                    ob,
+                    paths.schuze,
+                    content.datum,
+                    kind,
+                    link_mode=link_mode,
+                    base_path=base_path,
+                    locale=loc,
+                )
+                link_pairs.append((phrase, href))
+            if link_pairs:
+                item.lead = inject_mean_links(item.lead, link_pairs)
+                item.mean = inject_mean_links(item.mean, link_pairs)
+        if item.kuriozita_links:
+            item.kuriozita_nav = resolve_vyznamenani_page_links(
+                paths,
                 content.datum,
-                kind,
+                item.kuriozita_links,
+                obdobi=ob,
+                schuze=paths.schuze,
                 link_mode=link_mode,
                 base_path=base_path,
                 locale=loc,
-            )
-            link_pairs.append((phrase, href))
-        if link_pairs:
-            item.lead = inject_mean_links(item.lead, link_pairs)
-            item.mean = inject_mean_links(item.mean, link_pairs)
-        if item.kuriozita_links:
-            item.kuriozita_nav = resolve_vyznamenani_page_links(
+            ) + resolve_recnici_page_links(
                 paths,
                 content.datum,
                 item.kuriozita_links,
@@ -1114,6 +1162,172 @@ def render_vyznamenani_neprosli_html(
     **kwargs: Any,
 ) -> str | None:
     return render_vyznamenani_table_html(paths, datum_unl, "neprosli", **kwargs)
+
+
+def render_steno_sources_html(
+    paths: SchuzePaths,
+    datum_unl: str,
+    *,
+    inline_css: bool = False,
+    css_href: str | None = None,
+    fonts_css_href: str | None = None,
+    base_path: str = "",
+    link_mode: str = "file",
+    locale: str = "cs",
+) -> str | None:
+    loc = normalize_locale(locale)
+    blocks = collect_steno_sources(paths, datum_unl, locale=loc)
+    if not blocks:
+        return None
+    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path)
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    obdobi = paths.obdobi
+    schuze = paths.schuze
+    d = datetime.strptime(datum_unl, "%d.%m.%Y")
+    datum_label = datum_design(datum_unl, den_v_tydnu(datum_unl), locale=loc)
+    t = load_strings(loc)
+    st = t.get("steno_sources", {})
+    page_title = st.get("page_title", "Stenoprotokol")
+    page_gloss = st.get("page_gloss", "")
+    page_explain = st.get("page_explain", "")
+    page_description = page_gloss or page_title
+    if link_mode == "pages":
+        edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path, loc)
+        canonical_url = (
+            f"{cfg.site_url.rstrip('/')}"
+            f"{steno_sources_pages_href(obdobi, schuze, datum_unl, base_path, loc)}"
+        )
+    else:
+        edition_href = f"{d.strftime('%Y-%m-%d')}.html"
+        canonical_url = ""
+    og_title = f"{page_title} · {datum_label} · Poslušně hlásím"
+    og = _og_context(
+        site_url=cfg.site_url,
+        base_path=base_path,
+        title=og_title,
+        description=page_description,
+    )
+    page_path = _page_path_from_canonical(canonical_url, cfg.site_url) if canonical_url else ""
+    tpl = _jinja_env().get_template("steno-zdroje-stranka.html")
+    return tpl.render(
+        blocks=blocks,
+        datum_label=datum_label,
+        edition_href=edition_href,
+        page_title=page_title,
+        page_gloss=page_gloss,
+        page_explain=page_explain,
+        page_description=page_description,
+        canonical_url=canonical_url,
+        inline_css=inline_css,
+        css=css,
+        css_href=css_href,
+        fonts_css_href=fonts_css_href,
+        cookie_privacy_url=soukromi_pages_href(base_path, loc),
+        **_locale_ctx(loc, site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        **_site_nav_ctx(
+            obdobi,
+            base_path,
+            current_schuze=schuze,
+            current_datum=datum_unl,
+            locale=loc,
+        ),
+        **_site_footer_ctx(
+            base_path,
+            obdobi=obdobi,
+            closing_seed=f"steno/{datum_unl}",
+            locale=loc,
+        ),
+        **favicons,
+        **og,
+    )
+
+
+def render_recnici_table_html(
+    paths: SchuzePaths,
+    datum_unl: str,
+    *,
+    inline_css: bool = False,
+    css_href: str | None = None,
+    fonts_css_href: str | None = None,
+    base_path: str = "",
+    link_mode: str = "file",
+    locale: str = "cs",
+) -> str | None:
+    data = load_recnici(paths, datum_unl)
+    if not data or not data.get("radky"):
+        return None
+    loc = normalize_locale(locale)
+    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path)
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    obdobi = int(data.get("obdobi") or paths.obdobi)
+    schuze = int(data.get("schuze") or paths.schuze)
+    d = datetime.strptime(datum_unl, "%d.%m.%Y")
+    datum_label = recnici_datum_label(datum_unl, loc)
+    meta = recnici_page_meta(data, datum_label=datum_label, locale=loc)
+    if link_mode == "pages":
+        edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path, loc)
+        canonical_url = (
+            f"{cfg.site_url.rstrip('/')}"
+            f"{recnici_pages_href(obdobi, schuze, datum_unl, base_path, loc)}"
+        )
+    else:
+        edition_href = f"{d.strftime('%Y-%m-%d')}.html"
+        canonical_url = ""
+    page_description = meta["gloss"]
+    og_title = f"{meta['title']} · {datum_label} · Poslušně hlásím"
+    og = _og_context(
+        site_url=cfg.site_url,
+        base_path=base_path,
+        title=og_title,
+        description=page_description,
+    )
+    page_path = _page_path_from_canonical(canonical_url, cfg.site_url) if canonical_url else ""
+    tpl = _jinja_env().get_template("recnici-tabulka-stranka.html")
+    return tpl.render(
+        rows=recnici_rows(data, locale=loc),
+        datum_label=datum_label,
+        edition_href=edition_href,
+        back_to_edition=meta["back_to_edition"].format(date=datum_label),
+        page_title=meta["title"],
+        page_gloss=meta["gloss"],
+        page_note=meta["note"],
+        table_speaker=meta["table_speaker"],
+        table_words=meta["table_words"],
+        table_role=meta["table_role"],
+        page_description=page_description,
+        canonical_url=canonical_url,
+        inline_css=inline_css,
+        css=css,
+        css_href=css_href,
+        fonts_css_href=fonts_css_href,
+        cookie_privacy_url=soukromi_pages_href(base_path, loc),
+        **_locale_ctx(loc, site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        **_site_nav_ctx(
+            obdobi,
+            base_path,
+            current_schuze=schuze,
+            current_datum=datum_unl,
+            locale=loc,
+        ),
+        **_site_footer_ctx(
+            base_path,
+            obdobi=obdobi,
+            closing_seed=f"recnici/{datum_unl}",
+            locale=loc,
+        ),
+        **favicons,
+        **og,
+    )
 
 
 def render_slovnicek_html(

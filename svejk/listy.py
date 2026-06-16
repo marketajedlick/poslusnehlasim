@@ -1025,8 +1025,10 @@ def _shrnuti_radka(stats: dict, *, state: dict) -> str:
             min_skore=0,
             konec=stats["end_cas"],
         )
-    if stats["dlouha_debata"]:
+    if stats["dlouha_debata"] and stats["proslo"]:
         return "hlavně pár zákonů prošlo až po dlouhém dohadování o pořadu"
+    if stats["dlouha_debata"] and not stats["proslo"] and not stats["zamitnuto"]:
+        return "žádný zákon se nehlasoval"
     if stats["proslo"]:
         return "hlavně pár změn prošlo, zbytek ne"
     return "víc návrhů padlo než prošlo"

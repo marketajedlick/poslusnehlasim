@@ -208,6 +208,33 @@
       "neprosli": "Kdo neprošel"
     }
   },
+  "steno_sources": {
+    "back_to_edition": "← Zpět na vydání {date}",
+    "page_title": "Stenoprotokol",
+    "page_gloss": "U každé pasáže vidíte, co jsme napsali my a co je doslovný záznam ze Sněmovny.",
+    "in_article_aria": "Odkazy do stenoprotokolu",
+    "label": "Steno",
+    "full_page": "Celý stenoprotokol",
+    "from_article": "Z našeho článku",
+    "from_steno": "Doslovně ze stenoprotokolu",
+    "from_votes": "Z hlasování",
+    "from_votes_block": "Doslovně z hlasování",
+    "quote_label": "Citace",
+    "context_label": "Okolí v projevu",
+    "we_wrote": "V článku",
+    "speech_no": "Projev č. {n}",
+    "full_speech": "Celý projev na webu Sněmovny →",
+    "back_to_article": "zpět"
+  },
+  "recnici": {
+    "title": "Kdo kolik mluvil",
+    "gloss": "Obsahové projevy z mimořádné schůze {datum}, seřazené podle počtu slov. Krátké a procedurální vstupy předsedajícího se nepočítají.",
+    "note": "Délka projevu není totéž co síla argumentu. Hodnota se symbolem ~ u Martina Kupky je součet tří vystoupení.",
+    "table_speaker": "Řečník",
+    "table_words": "Slov",
+    "table_role": "Strana / role",
+    "back_to_edition": "← Zpět na vydání {date}"
+  },
   "board": {
     "proslo_1": "věc schválili",
     "proslo_2_4": "věci schválili",

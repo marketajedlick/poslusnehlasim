@@ -89,6 +89,20 @@ class SchuzePaths:
         d = datetime.strptime(datum_unl, "%d.%m.%Y")
         return self.noviny_dlouhe_dir() / f"{d.strftime('%Y-%m-%d')}-{kind}.html"
 
+    def steno_zdroje_html(self, datum_unl: str) -> Path:
+        """datum_unl = DD.MM.RRRR → soubor YYYY-MM-DD-steno.html"""
+        from datetime import datetime
+
+        d = datetime.strptime(datum_unl, "%d.%m.%Y")
+        return self.noviny_dlouhe_dir() / f"{d.strftime('%Y-%m-%d')}-steno.html"
+
+    def recnici_html(self, datum_unl: str) -> Path:
+        """datum_unl = DD.MM.RRRR → soubor YYYY-MM-DD-recnici.html"""
+        from datetime import datetime
+
+        d = datetime.strptime(datum_unl, "%d.%m.%Y")
+        return self.noviny_dlouhe_dir() / f"{d.strftime('%Y-%m-%d')}-recnici.html"
+
     def vyznamenani_neprosli_html(self, datum_unl: str) -> Path:
         return self.vyznamenani_html(datum_unl, "neprosli")
 

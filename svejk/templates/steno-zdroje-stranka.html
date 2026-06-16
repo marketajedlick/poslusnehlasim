@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="{{ lang | default('cs') }}">
+<head>
+{% include "head-noviny.html" %}
+<title>{{ page_title }} · {{ datum_label }} · Poslušně hlásím</title>
+<meta name="description" content="{{ page_description }}" />
+<link rel="canonical" href="{{ canonical_url }}" />
+{% include "hreflang.html" %}
+{% include "og-meta.html" %}
+<link rel="stylesheet" href="{{ fonts_css_href }}" />
+<link rel="stylesheet" href="{{ css_href }}" />
+</head>
+<body class="steno-page">
+{% include "lang-switch.html" %}
+<div class="steno-wrap">
+  <header class="steno-head">
+    <h1 class="steno-title">{{ page_title }}</h1>
+    <p class="steno-gloss">{{ page_gloss }}</p>
+    {% if edition_href or archive_href or slovnicek_href or pivo_href %}
+    <nav class="steno-nav site-nav" aria-label="{{ t.nav.aria_main }}">
+      {% if edition_href %}
+      <a class="steno-back" href="{{ edition_href }}">{{ t.steno_sources.back_to_edition.format(date=datum_label) }}</a>
+      {% endif %}
+      {% set site_nav_hide_latest = true %}
+      {% set site_nav_has_prefix = edition_href %}
+      {% set site_nav_inline = true %}
+      {% include "site-nav.html" %}
+    </nav>
+    {% endif %}
+  </header>
+
+  {% if page_explain %}
+  <div class="steno-explain">
+    <p>{{ page_explain }}</p>
+  </div>
+  {% endif %}
+
+  {% for block in blocks %}
+  <section class="steno-topic" id="topic-{{ block.slug }}">
+    <h2 class="steno-topic-title"><span class="steno-topic-num">{{ "%02d"|format(block.num) }}</span> {{ block.title }}</h2>
+    {% for passage in block.passages %}
+    <article class="steno-passage" id="{{ passage.anchor }}">
+      <header class="steno-passage-head">
+        {% if edition_href %}
+        <a class="steno-back steno-passage-back" href="{{ edition_href }}">← {{ t.steno_sources.back_to_article }}</a>
+        {% endif %}
+        {% if passage.speaker %}
+        <span class="steno-speaker">{{ passage.speaker }}</span>
+        {% endif %}
+        {% if passage.poradi %}
+        <span class="steno-poradi">{{ t.steno_sources.speech_no.format(n=passage.poradi) }}</span>
+        {% endif %}
+      </header>
+
+      {% if passage.summary %}
+      <div class="steno-block steno-block--article">
+        <h3 class="steno-block-label">{{ t.steno_sources.from_article }}</h3>
+        <p class="steno-article-text">{{ passage.summary }}</p>
+      </div>
+      {% endif %}
+
+      {% if passage.citace or (passage.excerpt and passage.excerpt != passage.citace) %}
+      <div class="steno-block steno-block--verbatim{% if passage.source == 'votes' %} steno-block--votes{% endif %}">
+        <h3 class="steno-block-label">
+          {% if passage.source == "votes" %}
+          {{ t.steno_sources.from_votes_block }}
+          {% else %}
+          {{ t.steno_sources.from_steno }}
+          {% endif %}
+        </h3>
+        {% if passage.citace %}
+        <div class="steno-quote-wrap">
+          <p class="steno-field-label">{{ t.steno_sources.quote_label }}</p>
+          <blockquote class="steno-quote">„{{ passage.citace }}“</blockquote>
+        </div>
+        {% endif %}
+        {% if passage.excerpt and passage.excerpt != passage.citace %}
+        <div class="steno-excerpt-wrap">
+          <p class="steno-field-label">{{ t.steno_sources.context_label }}</p>
+          <div class="steno-excerpt">{{ passage.excerpt }}</div>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      {% if passage.psp_url %}
+      <p class="steno-psp"><a href="{{ passage.psp_url }}" target="_blank" rel="noopener">{{ t.steno_sources.full_speech }}</a></p>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </section>
+  {% endfor %}
+</div>
+{% include "site-footer.html" %}
+{% include "cookie-consent.html" %}
+</body>
+</html>

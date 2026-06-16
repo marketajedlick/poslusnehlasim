@@ -251,8 +251,8 @@ def cmd_sync(args: argparse.Namespace) -> int:
     updated = summary.get("updated_schuze") or []
     if updated and not summary.get("check_only") and not args.quiet:
         print(
-            f"Po syncu compose jen změněné schůze: "
-            f"./run-svejk.sh compose-changed --obdobi {args.obdobi}",
+            f"Staženo raw/ pro schůze {updated}. Facts ručně, pak např.: "
+            f"./run-svejk.sh build --schuze N --only align,extract,compose",
             file=sys.stderr,
         )
     if summary.get("errors"):
@@ -798,7 +798,7 @@ def main() -> int:
 
     p_build = sub.add_parser(
         "build",
-        help="File-based pipeline: fetch → align → extract → compose",
+        help="File-based pipeline: fetch → align → compose (extract jen s --only extract)",
     )
     p_build.add_argument("--schuze", type=int, help="Číslo schůze (nebo použij --vsechny-schuze)")
     p_build.add_argument("--obdobi", type=int, default=2025)
@@ -822,7 +822,7 @@ def main() -> int:
     )
     p_build.add_argument(
         "--only",
-        help="Kroky oddělené čárkou: fetch,align,extract,compose (výchozí vše)",
+        help="Kroky oddělené čárkou: fetch,align,extract,compose (výchozí fetch+align+compose, extract jen explicitně)",
     )
     p_build.add_argument(
         "--max-steno",
@@ -840,7 +840,7 @@ def main() -> int:
 
     p_sync = sub.add_parser(
         "sync",
-        help="Synchronizace UNL (PSP) + steno (Hlídač) → processed/ (align, extract)",
+        help="Stažení UNL (PSP) + steno (Hlídač) do raw/ — bez align/extract/facts",
     )
     p_sync.add_argument("--obdobi", type=int, default=2025)
     p_sync.add_argument("--schuze", help="Jen vybrané schůze, čárkou: 18,20")

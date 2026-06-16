@@ -125,7 +125,7 @@ JARGON_SEEDS: tuple[str, ...] = (
     r"online zákonodárství",
     r"kuponov(?:á|ou) debabišizac",
     r"polistopadov(?:ý|ým) kartel",
-    r"transparent(?:em|y)?",
+    r"transparent(?:em|y)\b",
     r"gong(?:em|u)?",
     r"poměrn(?:é|ého) zastoupení",
     r"závěrečný účet",
@@ -159,7 +159,7 @@ SKIP_CONTEXT = re.compile(
 
 # Krátké vzory snadno padají do běžných slov (vzpomeňte, senátor, nedůvěryhodný).
 FALSE_POSITIVE = re.compile(
-    r"(?:vzpome|senátor|senátore|nedůvěry|nedůvěryhod|transparentně|transparentni|transparentnost)",
+    r"(?:vzpome|senátor|senátore|nedůvěry|nedůvěryhod|Výborn)",
     re.I,
 )
 

@@ -25,7 +25,18 @@ from svejk.obcansky import glosa_pro_obcana
 from svejk.paths import SchuzePaths
 
 
-def _verdikt(proslo: bool, nazev: str, vysvetleni: str) -> str:
+def _steno_konec_schuze(steno_path) -> str:
+    """Čas ukončení ze scénické poznámky ve stenoprotokolu (HH:MM)."""
+    if not steno_path.is_file():
+        return ""
+    pat = re.compile(r"Schůze skončila v (\d{1,2})\.(\d{2})\s*hodin", re.I)
+    for rec in iter_jsonl(steno_path):
+        m = pat.search(rec.get("text") or "")
+        if m:
+            return f"{int(m.group(1)):02d}:{m.group(2)}"
+    return ""
+
+
     t = (nazev + " " + vysvetleni).lower()
     if any(w in t for w in ("nestihl", "odlož", "posun digitalizace", "úřady nestihly")):
         return "odlozeno"
@@ -228,26 +239,35 @@ def _topic_manually_edited(existing: dict[str, Any]) -> bool:
     return False
 
 
+def _preserve_en(existing: dict[str, Any], out: dict[str, Any]) -> dict[str, Any]:
+    en = existing.get("en")
+    if en:
+        out["en"] = en
+    return out
+
+
 def _merge_manual_fact(existing: dict[str, Any], fresh: dict[str, Any]) -> dict[str, Any]:
-    if not existing or not _topic_manually_edited(existing):
+    if not existing:
         return fresh
+    if not _topic_manually_edited(existing):
+        return _preserve_en(existing, fresh)
     out = dict(fresh)
     for key in _MANUAL_TOPIC_KEYS:
         if key in existing and existing[key] not in (None, "", []):
             out[key] = existing[key]
-    return out
+    return _preserve_en(existing, out)
 
 
 def _merge_manual_day(existing: dict[str, Any], fresh: dict[str, Any]) -> dict[str, Any]:
     if not existing:
         return fresh
     if not any(existing.get(k) for k in ("dnesni_ucet", "zaver", "vysledek")):
-        return fresh
+        return _preserve_en(existing, fresh)
     out = dict(fresh)
     for key in _MANUAL_DAY_KEYS:
         if key in existing and existing[key] not in (None, "", []):
             out[key] = existing[key]
-    return out
+    return _preserve_en(existing, out)
 
 
 def run_extract(paths: SchuzePaths) -> dict[str, Any]:
@@ -357,7 +377,7 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
         vote_proslo, vote_zamitnuto, pocet_hlas = _den_zakon_stats(day_votes)
         times = [v.get("cas", "") for v in day_votes if v.get("cas")]
         start = times[0][:5] if times else ""
-        end = times[-1][:5] if times else ""
+        end = _steno_konec_schuze(paths.steno_jsonl) or (times[-1][:5] if times else "")
         minuty = 0
         if start and end:
             sh, sm = int(start[:2]), int(start[3:5])

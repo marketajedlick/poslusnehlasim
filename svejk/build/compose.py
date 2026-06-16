@@ -14,8 +14,13 @@ from svejk.build.day_content import (
     vysledek_radky,
 )
 from svejk.cislo_slovy import nahrad_cisla_v_textu
-from svejk.text_norm import bez_dlouhych_pomlc, lcfirst_preserve_proper
-from svejk.build.html import render_den_html, render_vyznamenani_table_html
+from svejk.text_norm import bez_dlouhych_pomlc, lcfirst_preserve_proper, ma_dlouhou_pomlcku
+from svejk.build.html import (
+    render_den_html,
+    render_steno_sources_html,
+    render_vyznamenani_table_html,
+    render_recnici_table_html,
+)
 from svejk.build.vyznamenani_neprosli import (
     VyznamenaniKind,
     inject_mean_links_md,
@@ -26,7 +31,8 @@ from svejk.build.vyznamenani_neprosli import (
 from svejk.build.io import read_json
 from svejk.noviny import HLAVICKA_LISTU, _datum_cesky, _new_state
 from svejk.paths import SchuzePaths
-from svejk.text_norm import ma_dlouhou_pomlcku
+from svejk.build.steno_sources import has_steno_sources
+from svejk.build.recnici import has_recnici
 
 
 def _dnesni_ucet_radky(ucet: str) -> list[str]:
@@ -113,7 +119,16 @@ def render_den_markdown(
         if item.kuriozita:
             lines.extend(["", f"*{item.kuriozita}*"])
         if item.kuriozita_links:
+            from svejk.build.recnici import resolve_recnici_page_links
+
             nav = resolve_vyznamenani_page_links(
+                paths,
+                content.datum,
+                item.kuriozita_links,
+                obdobi=paths.obdobi,
+                schuze=paths.schuze,
+                link_mode="file",
+            ) + resolve_recnici_page_links(
                 paths,
                 content.datum,
                 item.kuriozita_links,
@@ -139,7 +154,7 @@ def render_den_markdown(
 def render_den_z_facts(day_path: Path, paths: SchuzePaths, *, state: dict | None = None) -> str:
     if state is None:
         state = _new_state()
-    content = build_den_content(day_path, paths, state=state)
+    content = build_den_content(day_path, paths, state=state, link_mode="file")
     return render_den_markdown(content, paths, day_path, state=state)
 
 
@@ -154,7 +169,7 @@ def run_compose(
 
     def _compose_one(day_path: Path, datum: str) -> None:
         state = _new_state()
-        content = build_den_content(day_path, paths, state=state)
+        content = build_den_content(day_path, paths, state=state, link_mode="file")
         md_out = paths.noviny_dlouhe_md(datum)
         md_body = render_den_markdown(content, paths, day_path, state=state) + "\n"
         md_out.write_text(md_body, encoding="utf-8")
@@ -174,6 +189,20 @@ def run_compose(
             table_out = paths.vyznamenani_html(datum, kind)
             table_out.write_text(table_html, encoding="utf-8")
             written_html.append(str(table_out))
+
+        if has_steno_sources(paths, datum):
+            steno_html = render_steno_sources_html(paths, datum, link_mode="file")
+            if steno_html:
+                steno_out = paths.steno_zdroje_html(datum)
+                steno_out.write_text(steno_html, encoding="utf-8")
+                written_html.append(str(steno_out))
+
+        if has_recnici(paths, datum):
+            recnici_html = render_recnici_table_html(paths, datum, link_mode="file")
+            if recnici_html:
+                recnici_out = paths.recnici_html(datum)
+                recnici_out.write_text(recnici_html, encoding="utf-8")
+                written_html.append(str(recnici_out))
 
         for out_path, body in ((md_out, md_body), (html_out, html_body)):
             if ma_dlouhou_pomlcku(body):

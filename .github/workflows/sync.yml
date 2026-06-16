@@ -63,9 +63,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add hl-2025ps/hl2025s.unl processed/sync-state.json
           git add processed/2025-s*/raw/votes.jsonl
-          git add processed/2025-s*/aligned/
-          git add processed/2025-s*/facts/
-          git add processed/2025-s*/manifest.json
           if git diff --staged --quiet; then
             echo "Žádné změny k commitu."
             echo "committed=false" >> "$GITHUB_OUTPUT"
@@ -80,5 +77,5 @@ jobs:
       - name: Notifikace — nová data stažena
         if: steps.commit.outputs.committed == 'true'
         run: |
-          echo "::error::Sync stáhl nová data PSP. Zkontroluj facts, doplň texty, spusť compose-changed (ne compose pro celé období)."
+          echo "::error::Sync stáhl nová data PSP (UNL + raw/). Doplň facts ručně, pak align/extract/compose lokálně."
           exit 1

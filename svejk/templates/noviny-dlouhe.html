@@ -97,7 +97,7 @@
             <div class="bteam r"><span class="bnum">{{ content.zamitnuto }}</span><span class="blbl">{{ zamitnuto_label }}</span></div>
           </div>
           {% if content.board_note_lines %}
-          <div class="board-note">{% for line in content.board_note_lines %}{{ line | glossary }}{% if not loop.last %}<br>{% endif %}{% endfor %}</div>
+          <div class="board-note">{% for line in content.board_note_lines %}<span class="board-note-line">{{ line | glossary }}</span>{% endfor %}</div>
           {% endif %}
         </div>
 
@@ -117,6 +117,14 @@
             <p class="p">{{ item.lead | glossary }}</p>
             {% if item.mean %}
             <p class="mean"><b>{{ t.edition.mean_label }} </b>{{ item.mean | glossary }}</p>
+            {% endif %}
+            {% if item.citace_text %}
+            <blockquote class="item-quote">
+              <p>„{{ item.citace_text | glossary }}“</p>
+              {% if item.citace_autor %}
+              <cite class="item-quote-by">{{ item.citace_autor }}</cite>
+              {% endif %}
+            </blockquote>
             {% endif %}
             {% if item.kuriozita %}
             <p class="kuriozita">{{ item.kuriozita | glossary }}</p>

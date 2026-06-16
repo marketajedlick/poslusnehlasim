@@ -5,6 +5,7 @@ from __future__ import annotations
 import html
 import re
 import time
+import unicodedata
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
@@ -359,3 +360,95 @@ class PspStenoFetcher:
                 )
                 if max_records is not None and poradi - start + 1 >= max_records:
                     return
+
+    @staticmethod
+    def _norm_search(text: str) -> str:
+        s = unicodedata.normalize("NFKC", text or "")
+        s = re.sub(r"\s+", " ", s).strip().lower()
+        return s
+
+    def _page_plain_text(self, html_text: str) -> str:
+        first = _ANCHOR_START.search(html_text)
+        if not first:
+            return ""
+        start = first.start()
+        end = self._page_content_end(html_text, after=start)
+        return self._html_to_text(html_text[start:end])
+
+    def list_steno_page_urls(self, obdobi: int, schuze: int) -> list[str]:
+        base = self.schuze_base_url(obdobi, schuze)
+        return [url for url, _ in self._walk_pages(base, self.first_steno_page(schuze))]
+
+    def find_speech_url(self, page_url: str, speaker: str) -> str:
+        """Najde kotvu řečníka na dané stránce PSP."""
+        if not page_url or not speaker:
+            return page_url
+        html_text = self.fetch_html(page_url)
+        if not html_text:
+            return page_url
+        surname = speaker.split()[-1].lower()
+        for speech in self._parse_speeches(page_url, html_text, None):
+            name = self._cele_jmeno(speech.speaker_label)
+            if name == speaker or name.split()[-1].lower() == surname:
+                return f"{speech.page_url}#{speech.anchor}"
+        return page_url
+
+    def resolve_url_for_citace(
+        self,
+        obdobi: int,
+        schuze: int,
+        speaker: str,
+        citace: str,
+        *,
+        fallback_url: str = "",
+        page_urls: list[str] | None = None,
+        page_text_cache: dict[str, str] | None = None,
+    ) -> str:
+        """Vrátí URL stránky PSP, kde je citace; na úvodní stránce projevu přidá kotvu."""
+        if not fallback_url:
+            return fallback_url
+        start_page = fallback_url.split("#", 1)[0]
+        base = self.find_speech_url(start_page, speaker) if speaker else fallback_url
+        if not citace.strip():
+            return base
+
+        if "#" in base:
+            start_page, anchor = base.split("#", 1)
+        else:
+            start_page, anchor = base, ""
+
+        pages = page_urls or self.list_steno_page_urls(obdobi, schuze)
+        try:
+            start_idx = pages.index(start_page)
+        except ValueError:
+            return base
+
+        cache = page_text_cache if page_text_cache is not None else {}
+        needle = self._norm_search(citace)
+        if not needle:
+            return base
+
+        def _page_text(url: str) -> str:
+            if url not in cache:
+                html_text = self.fetch_html(url)
+                cache[url] = self._norm_search(self._page_plain_text(html_text)) if html_text else ""
+            return cache[url]
+
+        def _match(page_url: str) -> bool:
+            text = _page_text(page_url)
+            if not text:
+                return False
+            if needle in text:
+                return True
+            for n in (80, 60, 40, 24):
+                chunk = needle[:n].strip()
+                if len(chunk) >= 16 and chunk in text:
+                    return True
+            return False
+
+        for page_url in pages[start_idx : start_idx + 12]:
+            if _match(page_url):
+                if page_url == start_page and anchor:
+                    return f"{start_page}#{anchor}"
+                return page_url
+        return base

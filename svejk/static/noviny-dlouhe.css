@@ -188,6 +188,7 @@ body.is-turning{ pointer-events:none; }
   border-top:1px solid rgba(240,230,207,.22);
   white-space:pre-line;
 }
+.board-note-line{ display:block; }
 
 /* ---------- items (mobile) ---------- */
 .item{
@@ -237,6 +238,25 @@ body.is-turning{ pointer-events:none; }
   font-family:'Old Standard TT',serif; font-style:italic;
   color:var(--ink-soft); overflow-wrap:anywhere;
 }
+.item-quote{
+  margin:16px 0 0; padding:14px 16px;
+  border:2px solid var(--terra);
+  border-radius:3px;
+  background:rgba(207,90,49,.06);
+  max-width:80%;
+}
+.item.i2 .item-quote{ border-color:var(--blue); background:rgba(40,60,110,.06); }
+.item-quote p{
+  margin:0; font-family:'Old Standard TT',serif;
+  font-size:16px; line-height:1.5; font-style:italic;
+  overflow-wrap:anywhere;
+}
+.item-quote-by{
+  display:block; margin-top:8px;
+  font-family:'Oswald',sans-serif; font-weight:600;
+  font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+  font-style:normal; color:var(--ink-soft);
+}
 .kuriozita-links{
   display:flex; flex-wrap:wrap; align-items:center;
   gap:6px 10px; margin-top:10px;
@@ -255,6 +275,148 @@ a.kuriozita-link{
 a.kuriozita-link:hover{ border-bottom-color:var(--terra); }
 .item.i2 a.kuriozita-link{ color:var(--blue); border-bottom-color:rgba(40,60,110,.35); }
 .item.i2 a.kuriozita-link:hover{ border-bottom-color:var(--blue); }
+
+a.steno-link{
+  font: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(33, 28, 20, .45);
+  padding-bottom: 1px;
+}
+a.steno-link:hover{
+  border-bottom-color: var(--ink);
+}
+
+body.steno-page{
+  background:var(--paper-2); color:var(--ink);
+}
+.steno-wrap{
+  max-width:840px; margin:0 auto;
+  padding:36px 20px 48px;
+}
+.steno-head{ margin-bottom:28px; }
+.steno-title{
+  font-family:'Oswald',sans-serif; font-weight:600;
+  font-size:clamp(1.6rem,4vw,2.2rem); text-transform:uppercase;
+  letter-spacing:.04em; color:var(--terra); margin:0 0 8px;
+}
+.steno-gloss{
+  font-family:'Old Standard TT',serif; font-size:1.05rem;
+  color:var(--ink-soft); margin:0 0 16px; line-height:1.45;
+}
+.steno-nav{ margin-top:4px; }
+.steno-back{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--terra); text-decoration:none;
+  border-bottom:1px solid rgba(207,90,49,.35);
+  padding-bottom:1px;
+}
+.steno-back:hover{ border-bottom-color:var(--terra); }
+.steno-explain{
+  background:var(--paper); border:1px solid rgba(33,28,20,.12);
+  padding:14px 16px; margin-bottom:28px;
+  font-size:.98rem; line-height:1.5; color:var(--ink-soft);
+}
+.steno-explain p{ margin:0; }
+.steno-topic{ margin-bottom:36px; }
+.steno-topic-title{
+  font-family:'Oswald',sans-serif; font-weight:600;
+  font-size:1.15rem; text-transform:uppercase; letter-spacing:.06em;
+  margin:0 0 18px; padding-bottom:8px;
+  border-bottom:2px solid rgba(33,28,20,.12);
+}
+.steno-topic-num{
+  color:var(--terra); margin-right:8px;
+}
+.steno-passage{
+  background:var(--paper); border:1px solid rgba(33,28,20,.1);
+  padding:16px 18px; margin-bottom:16px;
+}
+.steno-passage-head{
+  display:flex; flex-wrap:wrap; gap:8px 14px;
+  align-items:baseline; margin-bottom:14px;
+  padding-bottom:10px; border-bottom:1px solid rgba(33,28,20,.08);
+}
+.steno-passage-back{
+  font-size:10px; letter-spacing:.1em;
+  margin-right:6px;
+}
+.steno-speaker{
+  font-family:'Oswald',sans-serif; font-weight:600;
+  font-size:13px; letter-spacing:.06em; text-transform:uppercase;
+}
+.steno-poradi,
+.steno-source-tag{
+  font-family:'Oswald',sans-serif; font-size:11px;
+  letter-spacing:.08em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.steno-block{
+  margin-top:12px; padding:12px 14px;
+  border-radius:2px;
+}
+.steno-block:first-of-type{ margin-top:0; }
+.steno-block-label{
+  font-family:'Oswald',sans-serif; font-weight:600;
+  font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  margin:0 0 8px;
+}
+.steno-block--article{
+  background:rgba(33,28,20,.04);
+  border:1px dashed rgba(33,28,20,.16);
+}
+.steno-block--article .steno-block-label{ color:var(--ink-soft); }
+.steno-article-text{
+  margin:0; font-size:.98rem; line-height:1.5;
+  color:var(--ink);
+}
+.steno-block--verbatim{
+  background:rgba(207,90,49,.04);
+  border:1px solid rgba(207,90,49,.22);
+}
+.steno-block--votes{
+  background:rgba(40,60,110,.04);
+  border-color:rgba(40,60,110,.22);
+}
+.steno-block--verbatim .steno-block-label{ color:var(--terra); }
+.steno-block--votes .steno-block-label{ color:var(--blue); }
+.steno-field-label{
+  font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-soft); margin:0 0 6px;
+}
+.steno-quote-wrap{ margin-bottom:12px; }
+.steno-quote-wrap:last-child{ margin-bottom:0; }
+.steno-quote{
+  margin:0; padding:10px 12px;
+  background:var(--paper);
+  border-left:3px solid var(--terra);
+  font-family:'Old Standard TT',serif; font-size:1.05rem;
+  line-height:1.5; font-style:italic;
+}
+.steno-block--votes .steno-quote{ border-left-color:var(--blue); }
+.steno-excerpt-wrap{ margin-top:4px; }
+.steno-excerpt{
+  font-family:'Old Standard TT',serif; font-size:.95rem;
+  line-height:1.55; color:var(--ink);
+  padding:10px 12px; background:var(--paper);
+  border:1px solid rgba(33,28,20,.08);
+}
+.steno-psp{
+  margin:12px 0 0; font-size:.9rem;
+}
+.steno-psp a{
+  color:var(--blue); text-decoration:none;
+  border-bottom:1px solid rgba(40,60,110,.35);
+}
+.steno-psp a:hover{ border-bottom-color:var(--blue); }
+
+@media(max-width:720px){
+  .steno-wrap{ padding:24px 14px 36px; }
+}
 
 /* ---------- Švejkův slovníček ---------- */
 .slovnicek{
@@ -1402,6 +1564,13 @@ body.vyznamenani-page{
   border:1px solid rgba(207,90,49,.18);
 }
 .vyznamenani-empty{ color:var(--ink-soft); }
+.recnici-pozn{
+  display:inline-block;
+  margin-left:6px;
+  font-size:11px;
+  color:var(--ink-soft);
+  font-style:italic;
+}
 .vyznamenani-note{
   margin:0;
   font-size:13px; line-height:1.5; color:var(--ink-soft);
@@ -1827,11 +1996,12 @@ body.archiv-page{
   .blbl{ letter-spacing:.08em; font-size:15px; line-height:1; white-space:nowrap; max-width:none; }
   .board-stats{ letter-spacing:.08em; font-size:12.5px; margin-top:12px; padding-top:10px; }
   .board-note{
-    letter-spacing:.08em;
-    font-size:12.5px;
+    letter-spacing:.04em;
+    font-size:11.5px;
     margin-top:18px;
     padding-top:14px;
   }
+  .board-note-line{ white-space:nowrap; }
 
   .item{
     display:grid;

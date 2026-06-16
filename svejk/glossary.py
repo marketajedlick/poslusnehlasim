@@ -264,6 +264,14 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Poslanečtí „kontroloři zápisu“. Hlídají, že schůze proběhla podle pravidel.",
     ),
     (
+        "ověřovatelů",
+        "Poslanečtí „kontroloři zápisu“. Hlídají, že schůze proběhla podle pravidel.",
+    ),
+    (
+        "ověřovatelkami",
+        "Poslanečtí „kontroloři zápisu“. Hlídají, že schůze proběhla podle pravidel.",
+    ),
+    (
         "ověřovatele",
         "Poslanečtí „kontroloři zápisu“. Hlídají, že schůze proběhla podle pravidel.",
     ),
@@ -285,6 +293,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     (
         "senátní návrh",
         "Zákon, který do sněmovny posílá Senát. Sněmovna ho může schválit, upravit nebo zamítnout.",
+    ),
+    (
+        "zpravodajky",
+        "Poslanci z výboru, kteří sněmovně vysvětlují návrh zákona a doporučují, jak hlasovat.",
     ),
     (
         "zpravodajka",
@@ -320,6 +332,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "podrobnou rozpravu",
+        "Fáze debaty, kdy se čtou a projednávají konkrétní paragrafy zákona nebo usnesení.",
+    ),
+    (
+        "podrobné rozpravě",
         "Fáze debaty, kdy se čtou a projednávají konkrétní paragrafy zákona nebo usnesení.",
     ),
     (
@@ -524,6 +540,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "mimořádnou schůzi",
+        "Schůze mimo pravidelný kalendář, svolaná kvůli konkrétnímu tématu, třeba střetu zájmů premiéra.",
+    ),
+    (
+        "mimořádné schůze",
         "Schůze mimo pravidelný kalendář, svolaná kvůli konkrétnímu tématu, třeba střetu zájmů premiéra.",
     ),
     (
@@ -772,6 +792,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Pravidla hry pro poslance. Určuje, kdo, kdy a jak dlouho smí mluvit.",
     ),
     (
+        "jednacím řádem",
+        "Pravidla hry pro poslance. Určuje, kdo, kdy a jak dlouho smí mluvit.",
+    ),
+    (
         "jednacím řádu",
         "Pravidla hry pro poslance. Určuje, kdo, kdy a jak dlouho smí mluvit.",
     ),
@@ -976,8 +1000,32 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Korupční kauza spojená s pražským dopravním podnikem, kterou vyšetřuje policie.",
     ),
     (
+        "Agrofertu",
+        "Jeden z největších českých holdingů. Babiš ho převedl do svěřenských fondů; spor je, zda na něj má stále vliv.",
+    ),
+    (
+        "agrofertu",
+        "Jeden z největších českých holdingů. Babiš ho převedl do svěřenských fondů; spor je, zda na něj má stále vliv.",
+    ),
+    (
         "Agrofert",
         "Jeden z největších českých holdingů. Babiš ho převedl do svěřenských fondů; spor je, zda na něj má stále vliv.",
+    ),
+    (
+        "svěřenských fondů",
+        "Právní schránka, kam Babiš převedl Agrofert. Spor je, zda na firmu pořád reálně vliv má.",
+    ),
+    (
+        "svěřenské fondy",
+        "Právní schránka, kam Babiš převedl Agrofert. Spor je, zda na firmu pořád reálně vliv má.",
+    ),
+    (
+        "babišismu",
+        "Kupkovo označení pro styl vládnutí: stát slouží tomu, kdo sedí u moci, místo občanům.",
+    ),
+    (
+        "babišismus",
+        "Kupkovo označení pro styl vládnutí: stát slouží tomu, kdo sedí u moci, místo občanům.",
     ),
     (
         "nález Ústavního soudu",
@@ -1046,6 +1094,50 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     (
         "elektronická evidence tržeb",
         "Každá účtenka hlásila státu, kolik kdo utržil. Mladší generace už často netuší, o co šlo.",
+    ),
+    (
+        "stavebního zákona",
+        "Pravidla pro povolování staveb. Koalice ho chce zrychlit, opozice varuje před oslabením obcí a úřadů.",
+    ),
+    (
+        "stavební zákon",
+        "Pravidla pro povolování staveb. Koalice ho chce zrychlit, opozice varuje před oslabením obcí a úřadů.",
+    ),
+    (
+        "stavební řízení",
+        "Úřední koloběh kolem povolení stavby. Debata je o tom, jak ho zkrátit, aniž se rozbije právní jistota.",
+    ),
+    (
+        "stavebních úřadů",
+        "Obecní nebo krajské úřady, které rozhodují o stavebních povoleních. Zákon je chce sloučit a zdigitalizovat.",
+    ),
+    (
+        "stavební úřad",
+        "Obecní nebo krajský úřad, který rozhoduje o stavebním povolení. Zákon je chce sloučit a zdigitalizovat.",
+    ),
+    (
+        "digitalizaci stavebního řízení",
+        "Přesun stavebního úřadu do online systému. Koalice slibuje rychlejší povolení, kritici pochybují, že to funguje.",
+    ),
+    (
+        "digitalizace stavebního řízení",
+        "Přesun stavebního úřadu do online systému. Koalice slibuje rychlejší povolení, kritici pochybují, že to funguje.",
+    ),
+    (
+        "městských architektů",
+        "Úředníci obcí, kteří dohlížejí na vzhled a soulad staveb s územním plánem.",
+    ),
+    (
+        "městský architekt",
+        "Úředník obce, který dohlíží na vzhled a soulad staveb s územním plánem.",
+    ),
+    (
+        "územního plánu",
+        "Dokument obce, který určuje, kde a co se smí stavět.",
+    ),
+    (
+        "územní plán",
+        "Dokument obce, který určuje, kde a co se smí stavět.",
     ),
     (
         "lex developer",
@@ -1128,6 +1220,14 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Česká pirátská strana.",
     ),
     (
+        "Motoristů",
+        "Motoristé sobě, strana Petra Macinky, která se profiluje jako hnutí za práva řidičů.",
+    ),
+    (
+        "Motoristé",
+        "Motoristé sobě, strana Petra Macinky, která se profiluje jako hnutí za práva řidičů.",
+    ),
+    (
         "(Motoristé)",
         "Motoristé sobě, strana Petra Macinky, která se profiluje jako hnutí za práva řidičů.",
     ),
@@ -1191,6 +1291,14 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     (
         "grémium",
         "Jednání předsedů poslaneckých klubů, kde se domlouvají pořad schůze, přestávky a hlasování.",
+    ),
+    (
+        "kuloáru",
+        "Chodba vedle jednacího sálu, kam poslanci chodí domlouvat se mimo mikrofon.",
+    ),
+    (
+        "kuloár",
+        "Chodba vedle jednacího sálu, kam poslanci chodí domlouvat se mimo mikrofon.",
     ),
     (
         "QR kódy",

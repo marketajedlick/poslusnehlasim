@@ -1,0 +1,77 @@
+{
+  "datum": "11.06.2026",
+  "obdobi": 2025,
+  "schuze": 22,
+  "radky": [
+    {
+      "poradi": 5,
+      "jmeno": "Martin Kupka",
+      "slov": 3892,
+      "role": "ODS",
+      "pozn": "3 projevy",
+      "pribl": true
+    },
+    {
+      "poradi": 1,
+      "jmeno": "Zdeněk Hřib",
+      "slov": 3455,
+      "role": "Piráti"
+    },
+    {
+      "poradi": 2,
+      "jmeno": "Marian Jurečka",
+      "slov": 3192,
+      "role": "KDU-ČSL"
+    },
+    {
+      "poradi": 3,
+      "jmeno": "Matěj Ondřej Havel",
+      "slov": 2708,
+      "role": "Piráti"
+    },
+    {
+      "poradi": 4,
+      "jmeno": "Vít Rakušan",
+      "slov": 2347,
+      "role": "STAN / ministr"
+    },
+    {
+      "poradi": 6,
+      "jmeno": "Petr Macinka",
+      "slov": 1293,
+      "role": "Motoristé / ministr"
+    },
+    {
+      "poradi": 7,
+      "jmeno": "Martin Šebestyán",
+      "slov": 987,
+      "role": "MZe"
+    },
+    {
+      "poradi": 8,
+      "jmeno": "Zuzana Mrázová",
+      "slov": 778,
+      "role": "MMR"
+    },
+    {
+      "poradi": 9,
+      "jmeno": "Josef Kott",
+      "slov": 53,
+      "role": "ANO",
+      "pozn": "rozloučení"
+    }
+  ],
+  "en": {
+    "radky": [
+      { "jmeno": "Martin Kupka", "role": "ODS", "pozn": "3 speeches" },
+      { "jmeno": "Zdeněk Hřib", "role": "Pirates" },
+      { "jmeno": "Marian Jurečka", "role": "KDU-ČSL" },
+      { "jmeno": "Matěj Ondřej Havel", "role": "Pirates" },
+      { "jmeno": "Vít Rakušan", "role": "STAN", "pozn": "session proposer" },
+      { "jmeno": "Petr Macinka", "role": "Motorists", "pozn": "foreign minister" },
+      { "jmeno": "Martin Šebestyán", "role": "agriculture minister" },
+      { "jmeno": "Zuzana Mrázová", "role": "Ministry of Regional Development" },
+      { "jmeno": "Josef Kott", "role": "ANO", "pozn": "farewell" }
+    ]
+  }
+}

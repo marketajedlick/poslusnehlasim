@@ -1,4 +1,4 @@
-"""File-based build: fetch → align → extract → compose."""
+"""File-based build: fetch → align → compose (extract jen ručně)."""
 
 from __future__ import annotations
 
@@ -16,7 +16,8 @@ from svejk.config import PSP_DATA_DIR, PSP_ORGAN_ID
 from svejk.paths import SchuzePaths, processed_root
 from psp.schuze import SchuzeAnalyzer
 
-STEPS = ("fetch", "align", "extract", "compose")
+# extract vynechán — facts/ jsou redakční, jen ručně (--only fetch,align,extract)
+STEPS = ("fetch", "align", "compose")
 
 
 def compose_manifest_from_disk(paths: SchuzePaths) -> dict[str, Any]:

@@ -150,11 +150,15 @@ class DenItem:
     parliament_lead: str
     verdikt: str
     kuriozita: str = ""
+    citace_text: str = ""
+    citace_autor: str = ""
     variant: str = ""
     has_custom_lead: bool = False
     mean_links: list[tuple[str, str]] = field(default_factory=list)
     kuriozita_links: list[tuple[str, str]] = field(default_factory=list)
     kuriozita_nav: list[tuple[str, str]] = field(default_factory=list)
+    steno_nav: list[tuple[str, str]] = field(default_factory=list)
+    slug: str = ""
     locale: str = "cs"
 
     @property
@@ -473,17 +477,31 @@ def _topics_by_slug(paths: SchuzePaths) -> dict[str, dict[str, Any]]:
     return {t["slug"]: t for t in data.get("topics") or [] if t.get("slug")}
 
 
+_DEN_CONTENT_CACHE: dict[tuple, "DenContent"] = {}
+
+
+def clear_den_content_cache() -> None:
+    _DEN_CONTENT_CACHE.clear()
+
+
 def build_den_content(
     day_path: Path,
     paths: SchuzePaths,
     *,
     state: dict | None = None,
     locale: str = "cs",
+    link_mode: str = "file",
+    base_path: str = "",
 ) -> DenContent:
-    if state is None:
-        state = _new_state()
-    state["poslusne_count"] = 0
     loc = normalize_locale(locale)
+    if state is None:
+        _cache_key = (str(day_path), loc, link_mode, base_path)
+        if _cache_key in _DEN_CONTENT_CACHE:
+            return _DEN_CONTENT_CACHE[_cache_key]
+        state = _new_state()
+    else:
+        _cache_key = None
+    state["poslusne_count"] = 0
 
     day_raw = read_json(day_path)
     day = localized_day(day_raw, loc)
@@ -585,6 +603,8 @@ def build_den_content(
         mean_links = localized_mean_links(fact_raw, loc)
         kuriozita_links = localized_kuriozita_links(fact_raw, loc)
         kuriozita = pick_field(fact_raw, "kuriozita", loc) or kuriozita_z_fact(fact)
+        citace_text = pick_field(fact_raw, "citace_text", loc) or (fact.get("citace_text") or "").strip()
+        citace_autor = pick_field(fact_raw, "citace_autor", loc) or (fact.get("citace_autor") or "").strip()
         items_meta[str(num)] = {"pocet_hlasovani": ph, "slug": slug}
         content.items.append(
             DenItem(
@@ -595,6 +615,8 @@ def build_den_content(
                 lead=svejk_lead,
                 mean=vysvetleni,
                 kuriozita=kuriozita,
+                citace_text=citace_text,
+                citace_autor=citace_autor,
                 dopad=dopad,
                 parliament_lead=parliament_lead,
                 has_custom_lead=has_custom_lead,
@@ -603,6 +625,7 @@ def build_den_content(
                 mean_links=mean_links,
                 kuriozita_links=kuriozita_links,
                 locale=loc,
+                slug=slug,
             )
         )
 
@@ -636,24 +659,67 @@ def build_den_content(
         )
     content.zaver = zaver
     content.zaver_key, content.zaver_body = split_zaver(zaver, locale=loc)
+    from svejk.build.steno_sources import apply_steno_links_to_content
+
+    apply_steno_links_to_content(
+        content,
+        paths,
+        link_mode=link_mode,
+        base_path=base_path,
+        locale=loc,
+    )
     _sanitize_den_content(content, locale=loc)
 
+    if _cache_key is not None:
+        _DEN_CONTENT_CACHE[_cache_key] = content
     return content
 
 
 def _sanitize_text_export(text: str, *, locale: str = "cs") -> str:
-    out = dopln_strany_poslancu(bez_dlouhych_pomlc(text))
-    if normalize_locale(locale) == "cs":
-        out = nahrad_cisla_v_textu(out)
-    return out
+    if not (text or "").strip():
+        return text
+    if "<" not in text:
+        out = dopln_strany_poslancu(bez_dlouhych_pomlc(text))
+        if normalize_locale(locale) == "cs":
+            out = nahrad_cisla_v_textu(out)
+        return out
+    parts = re.split(r"(<[^>]+>)", text)
+    out: list[str] = []
+    for part in parts:
+        if not part:
+            continue
+        if part.startswith("<"):
+            out.append(part)
+            continue
+        chunk = dopln_strany_poslancu(bez_dlouhych_pomlc(part))
+        if normalize_locale(locale) == "cs":
+            chunk = nahrad_cisla_v_textu(chunk)
+        out.append(chunk)
+    return "".join(out)
 
 
 def _sanitize_mean_export(text: str, *, locale: str = "cs") -> str:
     """Vysvětlení pro čtenáře — bez doplňování stran u jmen v seznamech."""
-    out = bez_dlouhych_pomlc(text)
-    if normalize_locale(locale) == "cs":
-        out = nahrad_cisla_v_textu(out)
-    return out
+    if not (text or "").strip():
+        return text
+    if "<" not in text:
+        out = bez_dlouhych_pomlc(text)
+        if normalize_locale(locale) == "cs":
+            out = nahrad_cisla_v_textu(out)
+        return out
+    parts = re.split(r"(<[^>]+>)", text)
+    out: list[str] = []
+    for part in parts:
+        if not part:
+            continue
+        if part.startswith("<"):
+            out.append(part)
+            continue
+        chunk = bez_dlouhych_pomlc(part)
+        if normalize_locale(locale) == "cs":
+            chunk = nahrad_cisla_v_textu(chunk)
+        out.append(chunk)
+    return "".join(out)
 
 
 def _sanitize_vysledek_export(text: str) -> str:
@@ -684,8 +750,10 @@ def _sanitize_den_content(content: DenContent, *, locale: str = "cs") -> None:
             _sanitize_text_export(x, locale=loc) for x in item.nadpis_radky
         ]
         item.lead = _sanitize_text_export(item.lead, locale=loc)
-        item.mean = _sanitize_mean_export(item.mean, locale=loc)
-        item.kuriozita = _sanitize_mean_export(item.kuriozita, locale=loc)
+        item.mean = _sanitize_text_export(item.mean, locale=loc)
+        item.kuriozita = _sanitize_text_export(item.kuriozita, locale=loc)
+        item.citace_text = _sanitize_text_export(item.citace_text, locale=loc)
+        item.citace_autor = _sanitize_text_export(item.citace_autor, locale=loc)
         item.dopad = _sanitize_text_export(item.dopad, locale=loc)
         item.parliament_lead = _sanitize_text_export(item.parliament_lead, locale=loc)
 

@@ -4,38 +4,71 @@
   "datum": "11.06.2026",
   "verdikt": "zamiteno",
   "predmet_lidsky": "stavebním zákoně",
-  "koho": [],
+  "koho": [
+    "Koho se to týká? Každého, kdo staví dům, dělá přístavbu nebo čeká na úřad."
+  ],
   "fakty": [
     {
-      "text": "Rozhlíží se po sále, kde je hlučno.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_23_00006",
-      "citace": "(Rozhlíží se po sále, kde je hlučno.)"
-    },
-    {
-      "text": "(Rozhlíží se po sále, kde je hlučno.).",
-      "source": "steno",
-      "steno_id": "2025_23_00006",
-      "citace": "(Rozhlíží se po sále, kde je hlučno.)."
-    },
-    {
-      "text": "Ministryně hovoří s nějakým poslancem.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_23_00008",
-      "citace": "(Ministryně hovoří s nějakým poslancem.)"
-    },
-    {
-      "text": "Sice ta míra hluku se nějak nesnížila, ale já se pokusím i přesto pokračovat ve svém komentáři v rámci druhého čtení novely zákona, sněmovní tisk 67, který jsem přerušil ve 23 hodin tuším minulý týden.",
+      "text": "Debata navázala na přerušení ve 23 hodin z minulého týdne; Výborný pokračoval v hlučném sále, kde ministryně hovořila s poslancem u pultu.",
       "source": "steno",
       "steno_id": "2025_23_00008",
       "citace": "Sice ta míra hluku se nějak nesnížila, ale já se pokusím i přesto pokračovat ve svém komentáři v rámci druhého čtení novely zákona, sněmovní tisk 67, který jsem přerušil ve 23 hodin tuším minulý týden"
+    },
+    {
+      "text": "Výborný varoval před kolapsem stavebního řízení a popsal chaos: poslanecký návrh, pak přes tisíc stran komplexního pozměňovacího návrhu a desítky dalších oprav.",
+      "source": "steno",
+      "steno_id": "2025_23_00008",
+      "citace": "Tady reálně hrozí kolaps stavebního řízení"
+    },
+    {
+      "text": "Filip Turek poprvé mluvil ve Sněmovně a řekl, že kvůli nenávisti k parodii na parlament opustil Evropský parlament, ale tady má podobný pocit.",
+      "source": "steno",
+      "steno_id": "2025_23_00028",
+      "citace": "Kvůli nenávisti k parodii na parlament jsem opustil Evropský parlament a věřil jsem, že zde budu mít z celého jednání a z celého toho působení parlamentu trošku jiný pocit. Bohužel mám pocit, že ta parodie se tady trošku opakuje"
+    },
+    {
+      "text": "Kovářová mluvila přes tři a půl hodiny, cimrmanovsky skočila k EET a vyvrátila srovnání s Nigérií: horší než Nigérie stojí na metodicky problematickém žebříčku.",
+      "source": "steno",
+      "steno_id": "2025_23_00072",
+      "citace": "povolování staveb v Česku je pomalejší než v Nigérii"
+    },
+    {
+      "text": "Kršková po ní slíbila dobrou zprávu: bude stručnější. Haas na začátku vydal technické hlášení, že má sedmnáct pozměňovacích návrhů, ale bude velmi stručný.",
+      "source": "steno",
+      "steno_id": "2025_23_00098",
+      "citace": "Bylo na mě několik dotazů, jak budu dlouhý. Prosím vás, určitě nebudu nijak obstruovat a teď se nelekejte, já mám, jestli dobře počítám, 17 pozměňovacích návrhů"
+    },
+    {
+      "text": "Stojanová spočítala 626 stavebních úřadů v republice a varovala, že na nové úřady chce přejít zhruba jen třetina současných zaměstnanců.",
+      "source": "steno",
+      "steno_id": "2025_23_00100",
+      "citace": "Dnes máme v České republice 626 stavebních úřadů, z toho 206 na obcích s rozšířenou působností a dalších 420 na menších obcích"
+    },
+    {
+      "text": "Berki řekl, že zákon přišel příliš dlouhý, tak z něj teď vypařují pojistky, a poprosil, aby se nepodpořily návrhy Haase, který opět opomíjí Liberec.",
+      "source": "steno",
+      "steno_id": "2025_23_00110",
+      "citace": "přišel nám příliš dlouhý, tak teď z něj vypáráváme leckteré pojistky, které v něm byly"
+    },
+    {
+      "text": "Ožanová se v závěru podrobné rozpravy přihlásila k tisku až dodatečně: v rychlosti, jakou jedeme, neví, zda se stihla přihlásit včas.",
+      "source": "steno",
+      "steno_id": "2025_23_00192",
+      "citace": "vzhledem k rychlosti, jakou jedeme, nevím, zda jsem skutečně se přihlásila k tisku 1180 týkající se městských architektů"
+    },
+    {
+      "text": "Jediné hlasování dne skončilo 22 pro, 75 proti, přítomno 102 poslanců. Celá odpolední a večerní debata šla jen o pozměňovací návrhy.",
+      "source": "votes",
+      "citace": "Novela z. - stavební zákon: pro 22, proti 75, přítomno 102, návrh nebyl přijat"
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Stavba si počká",
+  "nadpis": "Stavební zákon: 22 pro, 75 proti",
+  "lead": "Po týdnu pauzy Sněmovna navázala na stavební zákon ve 23 hodin minulý týden. Čtyři a půl hodiny poslanci obhajovali pozměňovací návrhy, Turek přirovnal jednání k parodii na parlament a ve 19:44 padlo jediné hlasování.",
+  "pointa": "Koaliční balík pozměňovacích návrhů neprošel, zákon zůstává ve druhém kole.",
+  "kuriozita": "Kuriozita dne: Turek poprvé mluvil ve Sněmovně a řekl, že kvůli parodii na parlament opustil Evropský parlament. Haas vydal technické hlášení ke svým sedmnácti pozměňovacím návrhům a slíbil, že bude velmi stručný. Ožanová se v závěru přihlásila k tisku až dodatečně, protože nevěděla, zda stačila tempo jednání.",
+  "mean": "Ve druhém kole poslanci ladí detaily zákona pozměňovacími návrhy. Tady šlo o rychlejší povolování staveb, opozice varuje před oslabením obcí a úředníků. Hlasovalo se o balíku změn, ne o celém zákonu najednou.",
   "pocet_hlasovani": 1,
   "proslo": false,
   "signaly": {
@@ -45,5 +78,54 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 37863
+  "steno_slov": 38360,
+  "en": {
+    "nadpis": "Building Permits Act: 22 for, 75 against",
+    "lead": "After a week's break, the House followed up on the Building Permits Act at 11 p.m. last week. For four and a half hours, MPs defended the amendments, Turek compared the proceedings to a parody of parliament, and at 19:44 a single vote was taken.",
+    "pointa": "The coalition package of amendments did not pass, the law remains at second reading.",
+    "mean": "In the second reading, deputies adjust the details of the law with amendments. Here it was a question of faster building permits, the opposition warns against the weakening of municipalities and officials. A package of changes was voted on, not the entire law at once.",
+    "kuriozita": "Curiosity of the day: Turek spoke in the Chamber for the first time and said he left the European Parliament because of a parody of parliament. Haas issued a technical bulletin on his seventeen amendments and promised to be very brief. At the end, Ožanová signed up to speak on the bill only after the fact, because she was not sure she had made it in time at the pace they were moving.",
+    "predmet_lidsky": "Building Permits Act",
+    "koho": [
+      "Who does it concern? Anyone who builds a house, makes an extension or waits for office."
+    ],
+    "fakty": [
+      {
+        "text": "The debate picked up after last week's adjournment at 11 p.m.; Výborný continued in a noisy hall, where a minister was talking to an MP at the lectern.",
+        "citace": "Although the level of noise has somehow not decreased, I will still try to continue my comment during the second reading of the amendment to the law, parliamentary press 67, which I interrupted at 11 p.m. I think last week"
+      },
+      {
+        "text": "Výborný warned of a collapse in building approvals and described the chaos: an MP's draft, then a thousand-page mega-amendment and dozens more fixes on top.",
+        "citace": "Here, there is a real threat of a collapse of construction management"
+      },
+      {
+        "text": "Filip Turek spoke for the first time in The Chamber of Deputies and said that he left the European Parliament because of his hatred for the parody of the parliament, but he feels the same way here.",
+        "citace": "I left the European Parliament because of my hatred for the parody of the Parliament, and I believed that here I would have a slightly different feeling about the whole proceedings and the whole functioning of the Parliament. Unfortunately, I feel that the parody is repeating itself a bit here"
+      },
+      {
+        "text": "Kovářová spoke for over three and a half hours, Cimrman-style jumped to EET (electronic sales records) and refuted the comparison with Nigeria: worse than Nigeria is on a methodologically problematic ranking.",
+        "citace": "Building permits in the Czech Republic are slower than in Nigeria"
+      },
+      {
+        "text": "After her, Kršková promised good news: it will be more concise. Haas issued a technical statement early on that he had seventeen amendments, but would be very brief.",
+        "citace": "I have had several questions about how long I will be. Please, I will certainly not obstruct in any way and now do not panic, I have, if I count correctly, 17 amendments"
+      },
+      {
+        "text": "Stojanová counted 626 construction authorities in the republic and warned that only about a third of the current employees want to transfer to the new authorities.",
+        "citace": "Today, we have 626 building authorities in the Czech Republic, of which 206 are in municipalities with extended jurisdiction and another 420 in smaller municipalities"
+      },
+      {
+        "text": "Berki said that the law was too long, so now the fuses are evaporating from it, and he asked not to support the proposals of Haas, who once again neglects Liberec.",
+        "citace": "we thought it was too long, so now we are steaming some of the fuses that were in it"
+      },
+      {
+        "text": "At the end of the detailed debate, Ožanová signed up for the press only after the fact: at the speed at which we are going, she does not know if she managed to sign up in time.",
+        "citace": "given the speed we're going, I don't know if I actually signed up for the 1180 print on city architects"
+      },
+      {
+        "text": "The only vote of the day ended with 22 for, 75 against, 102 MPs present. The entire afternoon and evening debate was only about amendments.",
+        "citace": "Amendment z. - Building Act: for 22, against 75, present 102, the proposal was not adopted"
+      }
+    ]
+  }
 }

@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 
 from svejk.text_norm import ma_dlouhou_pomlcku
-from svejk.build.day_content import build_den_content
+from svejk.build.day_content import build_den_content, clear_den_content_cache
 from svejk.build.html import (
     css_asset_version,
     fonts_asset_version,
@@ -25,6 +25,8 @@ from svejk.build.html import (
     render_slovnicek_html,
     render_soukromi_html,
     render_vyznamenani_table_html,
+    render_steno_sources_html,
+    render_recnici_table_html,
     static_css_path,
     static_fonts_css_path,
 )
@@ -39,6 +41,8 @@ from svejk.build.og_image import (
     render_edition_og_image,
 )
 from svejk.build.vyznamenani_neprosli import load_vyznamenani
+from svejk.build.steno_sources import has_steno_sources
+from svejk.build.recnici import has_recnici
 from svejk.build.nav import (
     clear_edition_cache,
     edition_pages_href,
@@ -183,7 +187,9 @@ def _render_edition_html(
     day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
     if not day_path.is_file():
         return None
-    content = build_den_content(day_path, paths, locale=locale)
+    content = build_den_content(
+        day_path, paths, locale=locale, link_mode="pages", base_path=base
+    )
     return render_den_html(
         content,
         paths,
@@ -209,6 +215,7 @@ def run_export_pages(
     """Vyexportuje schválená vydání období do složky pro GitHub Pages."""
     clear_edition_cache()
     clear_publish_cache()
+    clear_den_content_cache()
     base = _base_path() if base_path is None else base_path.rstrip("/")
     out = Path(out_dir)
     if out.exists():
@@ -331,6 +338,40 @@ def run_export_pages(
                     continue
                 written.append(_write_locale_html(out, table_rel, table_html, locale))
 
+        if has_steno_sources(paths, edition.datum_unl):
+            steno_rel = (
+                f"noviny/{edition.obdobi}/{edition.schuze}/{edition.datum_unl}-steno.html"
+            )
+            for locale in SUPPORTED_LOCALES:
+                steno_html = render_steno_sources_html(
+                    paths,
+                    edition.datum_unl,
+                    css_href=css_href,
+                    fonts_css_href=fonts_css_href,
+                    base_path=base,
+                    link_mode="pages",
+                    locale=locale,
+                )
+                if steno_html:
+                    written.append(_write_locale_html(out, steno_rel, steno_html, locale))
+
+        if has_recnici(paths, edition.datum_unl):
+            recnici_rel = (
+                f"noviny/{edition.obdobi}/{edition.schuze}/{edition.datum_unl}-recnici.html"
+            )
+            for locale in SUPPORTED_LOCALES:
+                recnici_html = render_recnici_table_html(
+                    paths,
+                    edition.datum_unl,
+                    css_href=css_href,
+                    fonts_css_href=fonts_css_href,
+                    base_path=base,
+                    link_mode="pages",
+                    locale=locale,
+                )
+                if recnici_html:
+                    written.append(_write_locale_html(out, recnici_rel, recnici_html, locale))
+
     seen_dates: set[str] = set()
     for edition in editions:
         if edition.datum_unl in seen_dates:
@@ -360,7 +401,9 @@ def run_export_pages(
             home_target = f"{site}{latest_href}"
             written.append(_write_locale_html(out, "index.html", _redirect_html(home_target), loc))
         else:
-            content = build_den_content(day_path, paths, locale=locale)
+            content = build_den_content(
+                day_path, paths, locale=locale, link_mode="pages", base_path=base
+            )
             home_canonical = f"{site}{localized_path('/', loc)}"
             index_html = render_den_html(
                 content,
