@@ -780,24 +780,31 @@ def plain_text_from_content(
     return "\n".join(lines)
 
 
-def _make_steno_links_absolute(text: str, site_url: str) -> str:
-    """Přepíše relativní steno-link hrefs (/noviny/...) na absolutní URL."""
-    if not text or "steno-link" not in text:
+def _make_internal_links_absolute(text: str, site_url: str) -> str:
+    """Přepíše relativní href (/noviny/...) na absolutní URL pro e-mail."""
+    if not text or "href=\"/" not in text:
         return text
+    site = site_url.rstrip("/")
     return re.sub(
-        r'(href=")(/[^"]+)(#steno-[^"]+)(")',
-        lambda m: m.group(1) + site_url + m.group(2) + m.group(3) + m.group(4),
+        r'href="(/[^"]*)"',
+        lambda m: f'href="{site}{m.group(1)}"',
         text,
     )
 
 
-def _apply_steno_links_absolute(content: Any, site_url: str) -> None:
-    """Po build_den_content s link_mode='pages' udělá steno hrefs absolutní."""
+def _apply_email_links_absolute(content: Any, site_url: str) -> None:
+    """Po doplnění odkazů udělá všechny interní hrefs absolutní."""
+    site = site_url.rstrip("/")
     for item in content.items:
         for field in ("lead", "mean", "kuriozita", "citace_text"):
             val = getattr(item, field, None)
             if val:
-                setattr(item, field, _make_steno_links_absolute(val, site_url))
+                setattr(item, field, _make_internal_links_absolute(val, site_url))
+        if item.kuriozita_nav:
+            item.kuriozita_nav = [
+                (label, f"{site}{href}" if href.startswith("/") else href)
+                for label, href in item.kuriozita_nav
+            ]
 
 
 def render_email_html(
@@ -812,7 +819,6 @@ def render_email_html(
     day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
     site = site_url.rstrip("/")
     content = build_den_content(day_path, paths, link_mode="pages", base_path=base_path)
-    _apply_steno_links_absolute(content, site)
     edition_href = edition_pages_href(
         edition.obdobi, edition.schuze, edition.datum_unl, base_path
     )
@@ -823,6 +829,15 @@ def render_email_html(
     pivo_url = f"{site}{pivo_href}"
     datum_label = datum_design(edition.datum_unl, content.den)
     subject = f"Nové vydání · {datum_label}"
+    _apply_content_item_links(
+        content,
+        paths,
+        obdobi=edition.obdobi,
+        link_mode="pages",
+        base_path=base_path,
+        site_url=site,
+    )
+    _apply_email_links_absolute(content, site)
     plain = plain_text_from_content(
         content,
         datum_label=datum_label,
@@ -831,14 +846,6 @@ def render_email_html(
         pivo_url=pivo_url,
         proslo_label=_proslo_board_label(content.proslo),
         zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
-    )
-    _apply_content_item_links(
-        content,
-        paths,
-        obdobi=edition.obdobi,
-        link_mode="pages",
-        base_path=base_path,
-        site_url=site,
     )
     css = _EMAIL_CSS.read_text(encoding="utf-8")
     tpl = _jinja_env().get_template("noviny-email.html")

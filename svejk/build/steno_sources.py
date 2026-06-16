@@ -329,42 +329,8 @@ def collect_steno_sources(
 
 
 def has_steno_sources(paths: SchuzePaths, datum_unl: str) -> bool:
-    """Rychlá kontrola bez síťových požadavků: jen čte JSON, nestahuje PSP."""
-    from datetime import datetime
-
-    d = datetime.strptime(datum_unl, "%d.%m.%Y")
-    day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
-    if not day_path.is_file():
-        return False
-    day = read_json(day_path)
-    if not day.get("steno_zdroje"):
-        return False
-    steno_by_id = _load_steno_index(paths)
-    if not steno_by_id:
-        return False
-    for slug in day.get("topic_slugs") or []:
-        fp = paths.facts_by_topic / f"{slug}.json"
-        if not fp.is_file():
-            continue
-        fact = read_json(fp)
-        if not fact.get("publikovat"):
-            continue
-        for f in (fact.get("fakty") or []):
-            if not isinstance(f, dict):
-                continue
-            source = (f.get("source") or "steno").strip()
-            steno_id = (f.get("steno_id") or "").strip()
-            citace = (f.get("citace") or "").strip()
-            summary = (f.get("text") or "").strip()
-            if source == "votes" and not citace:
-                continue
-            if not citace and not summary:
-                continue
-            if source == "steno" and steno_id and steno_id in steno_by_id:
-                return True
-            if source != "steno" and (citace or summary):
-                return True
-    return False
+    """True, pokud existuje exportovatelná stránka se zdroji (shodně s collect_steno_sources)."""
+    return bool(collect_steno_sources(paths, datum_unl))
 
 
 def _speaker_clause(speaker: str, article_text: str) -> str | None:
