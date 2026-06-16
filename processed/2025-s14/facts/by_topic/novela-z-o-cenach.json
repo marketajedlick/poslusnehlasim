@@ -46,5 +46,33 @@
   "steno_slov": 14898,
   "lead": "Večer na čtrnácté schůzi schválili zkrácenou debatu o cenách benzínu a první kolo stovkou hlasů. Středeční noc a pátek čtyřiadvacátého dubna na tento zákon navážou.",
   "pointa": "Vláda spustila zrychlené projednávání kvůli cenám na čerpacích stanicích. Opozice mluvila o socialistických experimentech, ale první kolo prošlo bez odporu.",
-  "mean": "Zákon má vládě dát nástroj na regulaci cen benzínu a nafty v krizových situacích. Ve zkrácené debatě jde o rychlou cestu bez standardních lhůt."
+  "mean": "Zákon má vládě dát nástroj na regulaci cen benzínu a nafty v krizových situacích. Ve zkrácené debatě jde o rychlou cestu bez standardních lhůt.",
+  "en": {
+    "nadpis": "Government Gets Fuel Price Powers",
+    "lead": "In the evening of the fourteenth meeting, they approved the abbreviated debate on gasoline prices and first reading by a hundred votes. Wednesday night and Friday the twenty-fourth of April will follow up on this law.",
+    "pointa": "The government has launched an accelerated debate over prices at petrol stations. The opposition talked about socialist experiments, but first reading passed without opposition.",
+    "mean": "The law is supposed to give the government a tool to regulate gasoline and diesel prices in crisis situations. In the abbreviated debate, it is a fast track without standard deadlines.",
+    "predmet_lidsky": "prices",
+    "koho": [
+      "Who does it concern? Motorists. The law is intended to allow the government to intervene in petrol and diesel prices when the market fails."
+    ],
+    "fakty": [
+      {
+        "text": "Okamura declared a legislative emergency over Chamber document 163 on fuel prices.",
+        "citace": "On April 13 of this year, I declared a state of legislative emergency for the period from April 13, 2026 to May 29, 2026."
+      },
+      {
+        "text": "Schillerová presented the government's proposal on the regulation of fuel prices.",
+        "citace": "The submitted proposal will be introduced by the Deputy Prime Minister and Minister of Finance Alena Schillerová."
+      },
+      {
+        "text": "Abbreviated meeting approved 79-51, first reading 100-0.",
+        "citace": "Vote number 48 to 79 to 51, vote number 49 to 100."
+      },
+      {
+        "text": "The second reading attempt of the evening fell 64-89.",
+        "citace": "Vote number 50, for 64, against 89. The motion was rejected."
+      }
+    ]
+  }
 }

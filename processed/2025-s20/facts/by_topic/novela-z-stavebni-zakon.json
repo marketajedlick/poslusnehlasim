@@ -48,5 +48,33 @@
   "steno_slov": 107681,
   "lead": "Druhé kolo stavebního zákona se táhlo dva večery a padlo u něj 44 hlasování, jenže ani jedno o stavbách: hlasovalo se hlavně o tom, kdy jít domů. Prošel až čtvrteční návrh přerušit jednání, 64:10 minutu před jedenáctou večer.",
   "pointa": "Jurečka mezitím v sále napočítal osm koaličních poslanců a jednoho ministra, Okamura zase podezíral kolegy, že vytahováním karet shazují kvorum. (V sále se ozval smích.)",
-  "mean": "Zákon má zrychlit povolování staveb, opozice mu říká lex developer a varuje před chaosem. Zatím se ale o jeho obsahu vůbec nehlasovalo, debata pokračovala další týden a na konci schůze ji poslanci vyřadili na příště."
+  "mean": "Zákon má zrychlit povolování staveb, opozice mu říká lex developer a varuje před chaosem. Zatím se ale o jeho obsahu vůbec nehlasovalo, debata pokračovala další týden a na konci schůze ji poslanci vyřadili na příště.",
+  "en": {
+    "nadpis": "Construction bill: 44 votes for nothing",
+    "lead": "The second reading of the Building Permits Act lasted for two evenings and 44 votes were cast, but not a single one on construction: the vote was mainly on when to go home. Only Thursday's motion to adjourn passed, 64:10 a minute before eleven in the evening.",
+    "pointa": "In the meantime, Jurečka counted eight coalition MPs and one minister in the hall, while Okamura suspected that his colleagues were bringing down the quorum by drawing cards. (There was laughter in the hall.)",
+    "mean": "The law is supposed to speed up construction permits, the opposition calls it the lex developer and warns of chaos. So far, however, there was no vote on its content at all, the debate continued for another week, and at the end of the meeting, the deputies discarded it for the next time.",
+    "predmet_lidsky": "Building Permits Act",
+    "koho": [
+      "Who does it concern? Anyone who builds a house, makes an extension or waits for office."
+    ],
+    "fakty": [
+      {
+        "text": "The amendment to the Building Permits Act is submitted by members of the government clubs headed by Babiš; the opposition calls it lex developer and demands its withdrawal.",
+        "citace": "Personally, I would mainly start here with the question of why we actually need a new Building Permits Act, called by many the lex developer."
+      },
+      {
+        "text": "Forty-four votes were cast over two evenings, and all were on when to adjourn the debate; the content of the law was not voted on even once.",
+        "citace": "Vote number 82 to 148 rejected, vote number 149: for 64, against 10, motion to adjourn until tomorrow accepted."
+      },
+      {
+        "text": "On Wednesday evening, Jurečka counted eight members of the government coalition in the hall, including one minister.",
+        "citace": "1, 2, 3, 4, 5, 6 colleagues from the government coalition, 7, let me be precise, 8, one minister. A hero who pulled out a black match today to keep today's House functioning here at all."
+      },
+      {
+        "text": "On Thursday evening, the quorum fell below the threshold, with 62 MPs remaining registered for one vote, and Okamura suspected colleagues of playing cards.",
+        "citace": "Well, I just suspect that someone is playing with it, pulling out, shuffling cards when it oscillates. (Amusement and laughter in the hall.)"
+      }
+    ]
+  }
 }

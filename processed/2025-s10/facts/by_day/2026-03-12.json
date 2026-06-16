@@ -20,5 +20,15 @@
     "* orgány sněmovny a pravidla klubů schváleny",
     "* investiční společnosti, účetnictví a silniční provoz v prvním kole",
     "* většina zákonů bez jediného hlasu proti"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Investing under supervision, club rules, authorities,\nplus a package of European adjustments from accounting to roads.",
+    "zaver": "that Thursday was European technical day and on top of that they were arguing about functions.",
+    "vysledek": [
+      "* bodies of The Chamber of Deputies and club rules approved",
+      "* investment companies, accounting and road traffic at first reading",
+      "* most laws without a single vote against"
+    ],
+    "den": "Thursday"
+  }
 }

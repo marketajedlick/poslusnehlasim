@@ -40,5 +40,28 @@
   "steno_slov": 21874,
   "lead": "Úterý večer koalice nenatáhla závěrečné hlasování o trestním zákoníku. Druhé kolo sice prošlo sto padesáti čtyřmi hlasy, ale závěrečné hlasování skončilo jen sedmi desítkami pro.",
   "pointa": "Změna zákona měla projít rychlou kolejí spolu s dalšími zákony čtrnácté schůze. Bez dostatečné podpory v závěrečném hlasování v sále zůstala.",
-  "mean": "Úpravy trestního zákoníku tentokrát neprošly. Platí dál stávající pravidla, dokud Sněmovna nepředloží nový návrh."
+  "mean": "Úpravy trestního zákoníku tentokrát neprošly. Platí dál stávající pravidla, dokud Sněmovna nepředloží nový návrh.",
+  "en": {
+    "nadpis": "Criminal Code Changes Failed",
+    "lead": "On Tuesday evening, the coalition did not hold a third reading on the criminal code. The second reading passed with one hundred and fifty-four votes, but the third reading ended with only seven tens in favor.",
+    "pointa": "The law change was supposed to go through the fast track along with other laws of the Fourteenth Session. She remained in the hall without sufficient support at third reading.",
+    "mean": "Amendments to the Criminal Code did not pass this time. The existing rules continue to apply until the House presents a new proposal.",
+    "koho": [
+      "Who does it concern? Anyone who falls under the Criminal Code and its rules."
+    ],
+    "fakty": [
+      {
+        "text": "Richter criticized the government for proxy topics instead of substantive causes.",
+        "citace": "This government has been hiding behind proxy issues and proxy disputes all too often in recent weeks."
+      },
+      {
+        "text": "The second reading of the amendment passed 154:0.",
+        "citace": "Vote number 119, for 154, against 0."
+      },
+      {
+        "text": "The third reading failed, only 67 MPs voted in favor.",
+        "citace": "Vote number 120, for 67, against 0, the motion was not adopted."
+      }
+    ]
+  }
 }

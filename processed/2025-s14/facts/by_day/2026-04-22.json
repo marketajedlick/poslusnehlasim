@@ -20,5 +20,15 @@
     "* zrušení zákona o veřejných zakázkách zamítnuto 66:88",
     "* digitalizace dávek státní sociální podpory odložena, schváleno 122:0",
     "* převod péče a dávek OZP na ÚSSZ posunut na 2028, schváleno 122:0"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "The law on public contracts was passed, social reforms were passed.\nBenefits and care will be digitized later.",
+    "zaver": "that Wednesday rejected the repeal of the Public Procurement Act and approved two social reforms that postpone the digitization of benefits and the transfer of care to 2028.",
+    "vysledek": [
+      "* repeal of the Public Procurement Act rejected 66:88",
+      "* digitalization of state social support benefits postponed, approved 122:0",
+      "* transfer of PWD care and benefits to ÚSSZ postponed to 2028, approved 122:0"
+    ],
+    "den": "Wednesday"
+  }
 }

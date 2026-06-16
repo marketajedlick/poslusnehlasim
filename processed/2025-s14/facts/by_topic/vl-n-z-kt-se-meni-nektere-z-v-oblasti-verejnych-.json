@@ -40,5 +40,29 @@
   "steno_slov": 29090,
   "lead": "Odpoledne středy schválili druhé kolo změny rozpočtových zákonů, devadesát tři proti padesáti. Opoziční pozměňovací návrh předtím padl.",
   "pointa": "Zákon ladí limity státních výdajů a výjimky pro obranu či velké investice. Debata navazovala na zreálnění rozpočtu na rok 2026.",
-  "mean": "Změna zákona upravuje pravidla, kolik může stát utratit a za jakých podmínek. Dotkne se velkých investic i výdajů na obranu."
+  "mean": "Změna zákona upravuje pravidla, kolik může stát utratit a za jakých podmínek. Dotkne se velkých investic i výdajů na obranu.",
+  "en": {
+    "nadpis": "Spending rules passed",
+    "lead": "On Wednesday afternoon, they approved the second reading of changes to the budget laws, ninety-three to fifty. The opposition amendment was previously defeated.",
+    "pointa": "The law adjusts state spending limits and exemptions for defense or large investments. The debate followed on the implementation of the budget for 2026.",
+    "mean": "The change in the law regulates the rules on how much the state can spend and under what conditions. It will affect large investments and defense spending.",
+    "predmet_lidsky": ", who some of them are changing in the area of ​​public budgets",
+    "koho": [
+      "Who does it concern? Taxpayers. The law determines how much the state can spend and what exceptions apply to defense or large construction."
+    ],
+    "fakty": [
+      {
+        "text": "The beginning of the year in The Chamber of Deputies belonged to the need to implement the budget for 2026.",
+        "citace": "The beginning of the year here in the The Chamber of Deputies was marked by the need to implement the state budget for 2026, because the one that the outgoing government left here reminded us most of all of Potemkin's village."
+      },
+      {
+        "text": "The opposition amendment passed 66-88.",
+        "citace": "Vote number 67, for 66, against 88."
+      },
+      {
+        "text": "The second reading of the government amendment passed 93:50.",
+        "citace": "Vote number 68, for 93, against 50."
+      }
+    ]
+  }
 }

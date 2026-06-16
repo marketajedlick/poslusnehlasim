@@ -54,5 +54,37 @@
   "steno_slov": 18364,
   "lead": "Sněmovna v závěrečném hlasování schválila snížení minimálních sociálních záloh pro živnostníky, sto dvanáct hlasů pro. Předtím předsedající prohlásil první hlasování za zmatečné.",
   "pointa": "Juchelka chtěl vrátit základ z 40 na 35 procent průměrné mzdy. Doplňující usnesení o nízkých důchodech OSVČ pak padlo, protože na ně nebylo dost hlasů.",
-  "mean": "Živnostníci na hlavní činnost zaplatí nižší minimální zálohu na sociálním pojištění, úspora je zhruba sedm set korun měsíčně. Zaměstnance na výplatní pásce se to netýká."
+  "mean": "Živnostníci na hlavní činnost zaplatí nižší minimální zálohu na sociálním pojištění, úspora je zhruba sedm set korun měsíčně. Zaměstnance na výplatní pásce se to netýká.",
+  "en": {
+    "nadpis": "Social contributions cut for the self-employed",
+    "lead": "In the third reading, The Chamber of Deputies approved the reduction of minimum social advances for self-employed persons, one hundred and twelve votes in favor. Earlier, the Speaker declared the first vote confusing.",
+    "pointa": "Juchelka wanted to return the base from 40 to 35 percent of the average salary. The supplementary resolution on the low pensions of the self-employed then fell because there were not enough votes for it.",
+    "mean": "Self-employed people pay a lower minimum advance on social insurance for their main activity, the saving is roughly seven hundred crowns per month. Employees on the payroll are not affected.",
+    "predmet_lidsky": "advances on social insurance for self-employed persons",
+    "koho": [
+      "Who does it concern? Entrepreneurs and self-employed persons for the main activity. The minimum deposit will drop from 40 to 35 percent of the average salary, a saving of roughly seven hundred crowns per month."
+    ],
+    "fakty": [
+      {
+        "text": "From January 2026, the minimum assessment basis for the self-employed increased to 40 percent of the average wage.",
+        "citace": "As of January 1, 2026, the minimum monthly assessment base for self-employed persons performing their main self-employed activity has been increased to 40 percent of the average wage."
+      },
+      {
+        "text": "The proposal returns the basis to the level of 2025, i.e. to 35 percent.",
+        "citace": "The submitted proposal, which aims to return the amount of the minimum assessment base for self-employed persons to the level that was set by law for the year 2025."
+      },
+      {
+        "text": "The first vote on the law was confusing, the Speaker did not read the entire resolution.",
+        "citace": "I have to declare the previous vote confusing because it is my duty to read you the entire draft resolution."
+      },
+      {
+        "text": "Vote number 80, for 112, against 9, the law passed.",
+        "citace": "Vote number 80, registered by 171 deputies, for 112 deputies, against 9. The draft resolution was adopted."
+      },
+      {
+        "text": "The supplementary resolution on the low pensions of the self-employed was passed by 81:3.",
+        "citace": "Vote number 81, 174 MPs registered, 81 in favor, 3 MPs against. The draft resolution was not adopted."
+      }
+    ]
+  }
 }

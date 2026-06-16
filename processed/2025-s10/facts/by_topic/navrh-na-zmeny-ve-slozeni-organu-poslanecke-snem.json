@@ -42,5 +42,29 @@
   "steno_slov": 14735,
   "lead": "Páteční dopoledne patřilo volbám do orgánů: VZP, Český rozhlas, Česká televize i ochránce práv dětí. Všechno prošlo.",
   "pointa": "U správy VZP bylo 33 hlasů proti, u ochránce dětí 11. Jinak klidná obsazování postů bez velkého příběhu.",
-  "mean": "Sněmovna si obsadila výbory a rady, které dohlížejí na instituce od pojišťovny po média. Jde o moc uvnitř parlamentu, ne o zákon pro lidi."
+  "mean": "Sněmovna si obsadila výbory a rady, které dohlížejí na instituce od pojišťovny po média. Jde o moc uvnitř parlamentu, ne o zákon pro lidi.",
+  "en": {
+    "nadpis": "Filling of posts in the The Chamber of Deputies",
+    "lead": "Friday morning belonged to the elections for the bodies: VZP, Czech Radio, Czech Television and the Children's Rights Defender. Everything passed.",
+    "pointa": "There were 33 votes against for the VZP administration, 11 for the child protector. Otherwise, quiet filling of posts without a big story.",
+    "mean": "The House has filled committees and boards that oversee institutions from insurance companies to the media. It is about power within parliament, not law for the people.",
+    "predmet_lidsky": "proposal for changes in the composition of the bodies of The Chamber of Deputies",
+    "koho": [
+      "Who does it concern? Political parties and bodies of the The Chamber of Deputies. It doesn't hit the citizen on the street."
+    ],
+    "fakty": [
+      {
+        "text": "Vote number 70, for 168, against none. The motion was accepted.",
+        "citace": "Vote number 70, for 168, against none. The motion was accepted."
+      },
+      {
+        "text": "Vote number 72, for 117, against 33. The motion was carried.",
+        "citace": "Vote number 72, for 117, against 33. The motion was carried."
+      },
+      {
+        "text": "Vote number 75, for 120, against 11. The motion was carried.",
+        "citace": "Vote number 75, for 120, against 11. The motion was carried."
+      }
+    ]
+  }
 }

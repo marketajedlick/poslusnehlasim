@@ -42,5 +42,29 @@
   "steno_slov": 99686,
   "lead": "Koaliční změna stavebního zákona v prvním kole padla, třicet jedna proti osmdesáti šesti. Koalice chtěla zrychlit povolování staveb.",
   "pointa": "Mrázová (ANO) kritizovala Fialovu novelu a Bartošovu digitalizaci, Kučera (TOP 09) uznal pomalé řízení, ale řekl, že rychlost nesmí ztratit právní jistotu.",
-  "mean": "Páteční večer patřil poslaneckému návrhu na novou podobu stavebního zákona, který koalice chtěla protlačit zkráceně. Sněmovna ho v prvním kole zamítla a stavební úřady zůstávají u starých pravidel."
+  "mean": "Páteční večer patřil poslaneckému návrhu na novou podobu stavebního zákona, který koalice chtěla protlačit zkráceně. Sněmovna ho v prvním kole zamítla a stavební úřady zůstávají u starých pravidel.",
+  "en": {
+    "nadpis": "Construction will wait",
+    "lead": "The coalition's amendment to the Building Permits Act failed at first reading, thirty-one to eighty-six. The coalition wanted to speed up building permits.",
+    "pointa": "Mrázová (ANO) criticized Fial's amendment and Bartoš's digitization, Kučera (TOP 09) acknowledged the slow procedure, but said that speed must not lose legal certainty.",
+    "mean": "Friday evening belonged to the parliamentary proposal for a new form of the Building Permits Act, which the coalition wanted to push through abbreviated. The The Chamber of Deputies rejected it at first reading, and the building authorities are sticking to the old rules.",
+    "predmet_lidsky": "Building Permits Act",
+    "koho": [
+      "Who does it concern? Builders, municipalities and investors who are waiting for permission for a house, hall or road."
+    ],
+    "fakty": [
+      {
+        "text": "the dysfunctional amendment of the former government of Petr Fiala, despite 10 amendments until 2025, did not help the Czech construction industry, and the botched digitization of construction management by Ivan Bartoš to the building authorities",
+        "citace": "the dysfunctional amendment of the former government of Petr Fiala, despite 10 amendments until 2025, did not help the Czech construction industry, and the botched digitization of construction management by Ivan Bartoš"
+      },
+      {
+        "text": "but speed must not be bought at the expense of quality, legal certainty and protection of the public interest",
+        "citace": "but speed must not be bought at the expense of quality, legal certainty and protection of the public interest"
+      },
+      {
+        "text": "The Czech Republic has long been among the countries with the slowest and most complex permitting processes",
+        "citace": "The Czech Republic has long been among the countries with the slowest and most complex permitting processes"
+      }
+    ]
+  }
 }

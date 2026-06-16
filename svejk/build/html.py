@@ -780,6 +780,26 @@ def plain_text_from_content(
     return "\n".join(lines)
 
 
+def _make_steno_links_absolute(text: str, site_url: str) -> str:
+    """Přepíše relativní steno-link hrefs (/noviny/...) na absolutní URL."""
+    if not text or "steno-link" not in text:
+        return text
+    return re.sub(
+        r'(href=")(/[^"]+)(#steno-[^"]+)(")',
+        lambda m: m.group(1) + site_url + m.group(2) + m.group(3) + m.group(4),
+        text,
+    )
+
+
+def _apply_steno_links_absolute(content: Any, site_url: str) -> None:
+    """Po build_den_content s link_mode='pages' udělá steno hrefs absolutní."""
+    for item in content.items:
+        for field in ("lead", "mean", "kuriozita", "citace_text"):
+            val = getattr(item, field, None)
+            if val:
+                setattr(item, field, _make_steno_links_absolute(val, site_url))
+
+
 def render_email_html(
     edition: Edition,
     *,
@@ -790,13 +810,14 @@ def render_email_html(
     paths = SchuzePaths.create(edition.obdobi, edition.schuze)
     d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
     day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
-    content = build_den_content(day_path, paths)
+    site = site_url.rstrip("/")
+    content = build_den_content(day_path, paths, link_mode="pages", base_path=base_path)
+    _apply_steno_links_absolute(content, site)
     edition_href = edition_pages_href(
         edition.obdobi, edition.schuze, edition.datum_unl, base_path
     )
     archive_href = archiv_pages_href(base_path)
     pivo_href = pivo_pages_href(base_path)
-    site = site_url.rstrip("/")
     edition_url = f"{site}{edition_href}"
     archive_url = f"{site}{archive_href}"
     pivo_url = f"{site}{pivo_href}"

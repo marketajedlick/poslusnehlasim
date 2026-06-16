@@ -19,5 +19,16 @@
     "* dvacet hlasování o pozměňovacích návrzích, dvanáct prošlo",
     "* Richterová kritizovala vyškrtnutí definice dostupného bydlení",
     "* Kovářová mluvila o dopadech bytové nouze na obce"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Seventeenth meeting: housing after adjournment from Friday.\nOne hundred eighteen votes to twenty three.",
+    "zaver": "that on Wednesday morning the The Chamber of Deputies approved the law on housing support and thus ended the seventeenth extraordinary meeting.",
+    "vysledek": [
+      "* amendment to the Housing Support Act approved 118:23 at 1:01 p.m",
+      "* twenty votes on amendments, twelve passed",
+      "* Richter criticized the deletion of the definition of affordable housing",
+      "* Kovářová spoke about the effects of the housing shortage on municipalities"
+    ],
+    "den": "Wednesday"
+  }
 }

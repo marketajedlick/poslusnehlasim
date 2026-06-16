@@ -41,5 +41,29 @@
   "steno_slov": 462,
   "lead": "Senát poslal do sněmovny úpravu ústavy, která rozšiřuje kompetence NKÚ vůči České televizi a rozhlasu. V prvním kole prošla 154 hlasy, nikdo proti.",
   "pointa": "Urbanová ze STAN řekla, že návrh teď nepodpoří. Volpe z Motoristů naopak mluvil o veřejné kontrole peněz v médiích.",
-  "mean": "Ústava není papírová úprava. Debata je o tom, jestli má kontrolor zasahovat do veřejnoprávních médií, nebo zůstane mimo."
+  "mean": "Ústava není papírová úprava. Debata je o tom, jestli má kontrolor zasahovat do veřejnoprávních médií, nebo zůstane mimo.",
+  "en": {
+    "nadpis": "The SAO will oversee the finances of public media",
+    "lead": "The Senate sent to The Chamber of Deputies an amendment to the constitution that expands the competences of the SAO vis-à-vis Czech Television and Radio. In first reading, it passed with 154 votes, none against.",
+    "pointa": "Urbanová from STAN said that she will not support the proposal now. Volpe from Motorists, on the other hand, talked about public control of money in the media.",
+    "mean": "The Constitution is not a piece of paper. The debate is about whether the controller should intervene in the public media or stay out.",
+    "predmet_lidsky": "constitutional amendment. z. - Constitution of the Czech Republic",
+    "koho": [
+      "Who does it concern? More of an institution than a citizen on the street. It's about who controls the public media's money."
+    ],
+    "fakty": [
+      {
+        "text": "The STAN movement will not support the constitutional amendment in question at this moment, and I underline this, at this moment.",
+        "citace": "The STAN movement will not support the constitutional amendment in question at this time."
+      },
+      {
+        "text": "Therefore, I consider the expansion of the scope of the SAO to be one of the most important anti-corruption proposals, as it strengthens prevention.",
+        "citace": "I consider the expansion of the scope of the SAO to be one of the most important anti-corruption proposals."
+      },
+      {
+        "text": "Vote number 47, for 154, against none. The draft constitutional law was approved.",
+        "citace": "Vote number 47, for 154, against 0."
+      }
+    ]
+  }
 }

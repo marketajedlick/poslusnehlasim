@@ -21,5 +21,16 @@
     "* přerozdělení rezerv zdravotních pojišťoven schváleno 93:49",
     "* vyšetřovací komise Dozimetr zřízena 89:15",
     "* doplňující usnesení k nízkým důchodům OSVČ zamítnuto 81:3"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Self-employed people's levies will drop, VZP will redistribute reserves.\nIn the evening, the Dosimeter case commission was established.",
+    "zaver": "that the House reduced advances for self-employed people, moved eight billion from the insurance company's reserves and established an investigative commission into the Dosimeter case.",
+    "vysledek": [
+      "* social security contributions for the self-employed approved 112:9 after a confusing vote",
+      "* redistribution of health insurance company reserves approved 93:49",
+      "* Dosimeter investigation commission established 89:15",
+      "* supplementary resolution on low self-employed pensions rejected 81:3"
+    ],
+    "den": "Wednesday"
+  }
 }

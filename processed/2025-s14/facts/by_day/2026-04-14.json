@@ -20,5 +20,16 @@
     "* pořad schválen po čtyřiceti čtyřech hlasech o pořadu",
     "* zkrácená debata schváleno 79:51",
     "* první kolo zákona o cenách 100:0, druhé kolo večer padlo 64:89"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Accelerated discussion due to gasoline prices, fight for the show in the evening.\nThe abbreviated debate passed, first reading by a hundred votes.",
+    "zaver": "that the The Chamber of Deputies approved an accelerated debate due to gasoline prices, in the evening after forty-four votes on the agenda, it gave the green light to first reading of the law on prices.",
+    "vysledek": [
+      "* expedited hearing confirmed due to Gasoline Price Act",
+      "* program approved after forty-four votes on the program",
+      "* abridged debate approved 79:51",
+      "* first reading of the law on prices 100:0, the second reading in the evening fell 64:89"
+    ],
+    "den": "Tuesday"
+  }
 }

@@ -290,6 +290,7 @@ def collect_steno_sources(
     psp_resolver = PspUrlResolver(paths) if steno_by_id else None
     blocks: list[StenoTopicBlock] = []
     num = 0
+    global_passage_idx = 0
     for slug in day.get("topic_slugs") or []:
         fp = paths.facts_by_topic / f"{slug}.json"
         if not fp.is_file():
@@ -316,9 +317,10 @@ def collect_steno_sources(
                 topic_slug=slug,
                 topic_title=title,
                 article_num=num,
-                passage_idx=i,
+                passage_idx=global_passage_idx,
                 psp_resolver=psp_resolver,
             )
+            global_passage_idx += 1
             if passage:
                 block.passages.append(passage)
         if block.passages:

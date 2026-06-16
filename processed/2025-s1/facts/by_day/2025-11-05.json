@@ -21,5 +21,16 @@
     "* samostatný návrh na Fialu zamítnut 18:136",
     "* zvoleni dva místopředsedové: Barták a Nacher, další dvě místa až v pátek",
     "* druhé kolo místopředsedů přesunuto na 14. 11."
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Okamura elected Speaker, Barták and Nacher elected Deputy Speakers.\nThe second reading on Friday, Benda protested against the dictation.",
+    "zaver": "that in the evening they elected Okamura as Speaker, Barták and Nacher took the seats of Deputy Speakers and postponed the rest of the elections to Friday.",
+    "vysledek": [
+      "* Tomio Okamura elected Speaker (116 votes on the first ballot)",
+      "* separate proposal for Fiala rejected 18:136",
+      "* elected two Deputy Speakers: Barták and Nacher, two more positions until Friday",
+      "* second reading of Deputy Speakers moved to 11/14"
+    ],
+    "den": "Wednesday"
+  }
 }

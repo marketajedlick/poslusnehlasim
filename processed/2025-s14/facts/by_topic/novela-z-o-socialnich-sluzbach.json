@@ -41,5 +41,29 @@
   "steno_slov": 9218,
   "lead": "Ve středu schválili změnu sociálních služeb, sto dvacet dva hlasů proti nule. Převod péče a dávek pro hendikepované z Úřadu práce na sociální správu se posouvá na rok 2028.",
   "pointa": "Juchelka argumentoval časovou tísní a nutností sladit reformu s digitalizací dávek. První kolo proběhlo ve zkráceném režimu.",
-  "mean": "Lidé s průkazem OZP a příspěvkem na péči zatím zůstanou na Úřadu práce. Velký přesun na územní správy sociálního zabezpečení přijde až za dva roky."
+  "mean": "Lidé s průkazem OZP a příspěvkem na péči zatím zůstanou na Úřadu práce. Velký přesun na územní správy sociálního zabezpečení přijde až za dva roky.",
+  "en": {
+    "nadpis": "Disability Care Remains with the Labour Office",
+    "lead": "On Wednesday, they approved the change to social services, one hundred and twenty-two votes to zero. The transfer of care and benefits for the disabled from the Labour Office to the social administration is postponed to 2028.",
+    "pointa": "Juchelka argued the time constraints and the need to align the reform with the digitization of benefits. The first reading took place in an abbreviated mode.",
+    "mean": "For the time being, people with a PWD card and care allowance will remain at the Labour Office. The big move to territorial social security administrations will come in two years.",
+    "predmet_lidsky": "social services",
+    "koho": [
+      "Who does it concern? People with disabilities and families dealing with care, disability card or care allowance."
+    ],
+    "fakty": [
+      {
+        "text": "Juchelka postponed the transfer of competences from the Labour Office to the ÚSSZ to June 2028.",
+        "citace": "Postpone the transfer of competences from the Labour Office in the area of ​​care allowance, benefits for persons with disabilities and the issue of the OZP card to the territorial social security administrations from July 1, 2026 to June 1, 2028."
+      },
+      {
+        "text": "The amendment was passed in the first reading in an abbreviated mode according to Section 90, paragraph 2.",
+        "citace": "It is suggested that we approve the draft law already in the first reading."
+      },
+      {
+        "text": "Vote number 143, one hundred and twenty two votes in favour.",
+        "citace": "Vote number 143, for 122, against 0."
+      }
+    ]
+  }
 }

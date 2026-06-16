@@ -20,5 +20,16 @@
     "* rozpočty SFA, SFDI, SFPI a SZIF prošly",
     "* rozpočet SFŽP nejdřív spadl 58:89, v závěrečném hlasování prošel 90:32",
     "* přes sto dílčích hlasování k pozměňovacím návrhům"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "The state budget passed 178-1,\nSFŽP survived the first fall 90:32.",
+    "zaver": "that the budget marathon ended with the approval of the state budget and the environment fund, both through unsuccessful attempts.",
+    "vysledek": [
+      "* state budget at third reading 178:1",
+      "* the SFA, SFDI, SFPI and SZIF budgets were passed",
+      "* the SFŽP budget first fell 58:89, at third reading it passed 90:32",
+      "* over a hundred partial votes on amendments"
+    ],
+    "den": "Wednesday"
+  }
 }

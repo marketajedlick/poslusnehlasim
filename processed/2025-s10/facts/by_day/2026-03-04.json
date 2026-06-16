@@ -19,5 +19,16 @@
     "* debata o státním rozpočtu 2026 ve druhém kole",
     "* TOP 09 chtělo schodek snížit o 64 miliard",
     "* žádný zákon ten den nepadl"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "All day budget debate, no vote.\nTOP 09 wanted to reduce the deficit by 64 billion.",
+    "zaver": "that Wednesday belonged only to the budget debate, the law has not yet been voted on.",
+    "vysledek": [
+      "* only votes on the agenda",
+      "* debate on the 2026 state budget at second reading",
+      "* TOP 09 wanted to reduce the deficit by 64 billion",
+      "* no law passed that day"
+    ],
+    "den": "Wednesday"
+  }
 }

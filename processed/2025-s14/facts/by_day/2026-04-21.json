@@ -19,5 +19,16 @@
     "* trestní zákoník ve druhém kole 154:0",
     "* závěrečné hlasování o trestním zákoníku zamítnuto, jen 67 hlasů pro",
     "* 37 hlasování o pořadu před zákony"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Final account schedule in the morning, Criminal Code in the evening.\nThe third reading on the criminal code was lost by seven dozen votes.",
+    "zaver": "that on Tuesday evening the The Chamber of Deputies did not decide on the third reading on the criminal code, although the second reading had passed smoothly before.",
+    "vysledek": [
+      "* schedule of state final account approved 142:0",
+      "* Criminal Code at second reading 154:0",
+      "* third reading on the Criminal Code rejected, only 67 votes in favor",
+      "* 37 votes on the program before laws"
+    ],
+    "den": "Tuesday"
+  }
 }

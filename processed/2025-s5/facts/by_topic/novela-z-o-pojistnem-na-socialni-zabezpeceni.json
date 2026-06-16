@@ -42,5 +42,29 @@
   "steno_slov": 12080,
   "lead": "Odpoledne po ranním maratonu o ministry hlasovali o nižších zálohách OSVČ na sociálním pojištění. V prvním kole prošly.",
   "pointa": "Schillerová slibovala snížení základu o 715 korun měsíčně. Jurečka doplnil, že úleva ubere z důchodu tisíc šest set padesát dva korun, Schillerová to záměrně neřekla.",
-  "mean": "Zákon vrací vyměřovací základ pro sociální pojistné z čtyřiceti na třicet pět procent průměrné mzdy. Koalice slibuje úlevu u záloh teď, opozice varuje před nižším budoucím důchodem."
+  "mean": "Zákon vrací vyměřovací základ pro sociální pojistné z čtyřiceti na třicet pět procent průměrné mzdy. Koalice slibuje úlevu u záloh teď, opozice varuje před nižším budoucím důchodem.",
+  "en": {
+    "nadpis": "Lower Contributions for the Self-Employed",
+    "lead": "In the afternoon, after the morning marathon, the ministers voted on lower social security deposits for the self-employed. They passed at first reading.",
+    "pointa": "Schillerová promised to reduce the base by 715 crowns per month. Jurečka added that the relief will take one thousand six hundred and fifty-two crowns from the pension, Schillerová did not say that on purpose.",
+    "mean": "The law returns the assessment base for social insurance contributions from forty to thirty-five percent of the average wage. The coalition promises relief for advances now, the opposition warns of a lower future pension.",
+    "predmet_lidsky": "advances on social insurance for self-employed persons",
+    "koho": [
+      "Who does it concern? Entrepreneurs and other self-employed persons who pay social insurance contributions themselves, not ordinary employees on the payroll."
+    ],
+    "fakty": [
+      {
+        "text": "our coalition proposal, which aims to return the assessment base for social insurance contributions to self-employed persons from 40 percent to 35 percent of the average wage",
+        "citace": "our coalition proposal, which aims to return the assessment base for social insurance contributions to self-employed persons from 40 percent to 35 percent of the average wage"
+      },
+      {
+        "text": "this increase is already the third increase in a row and represents an increase in the levy burden by another 715 crowns per month, i.e. 8,580 crowns per year",
+        "citace": "this increase is already the third increase in a row and represents an increase in the levy burden by another 715 crowns per month, i.e. 8,580 crowns per year"
+      },
+      {
+        "text": "Reduce the future pensions of self-employed persons by 1,652 crowns per month. Alena Schillerová didn't say that on purpose.",
+        "citace": "Reduce the future pensions of self-employed persons by 1,652 crowns per month. Alena Schillerová didn't say that on purpose."
+      }
+    ]
+  }
 }

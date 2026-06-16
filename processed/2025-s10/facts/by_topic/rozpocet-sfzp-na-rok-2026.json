@@ -36,5 +36,25 @@
   "steno_slov": 7660,
   "lead": "Rozpočet fondu životního prostředí v závěrečném hlasování prošel, 90 hlasů pro, 32 proti. Předtím jeden návrh spadl 58:89, ale závěrečné hlasování koalici stačilo.",
   "pointa": "Den přinesl desítky hlasování k fondům i státnímu rozpočtu. SFŽP nakonec nezůstal sám na ocet, na rozdíl od prvního pokusu.",
-  "mean": "SFŽP platí deštníky, čističky a zelené projekty. Schválený rozpočet fondu na rok 2026 umožní čerpání dotací v plánovaném režimu."
+  "mean": "SFŽP platí deštníky, čističky a zelené projekty. Schválený rozpočet fondu na rok 2026 umožní čerpání dotací v plánovaném režimu.",
+  "en": {
+    "nadpis": "The environment budget passed",
+    "lead": "The environmental fund budget passed at third reading, 90 votes for, 32 against. Before that, one proposal fell 58-89, but the third reading was enough for the coalition.",
+    "pointa": "The day brought dozens of votes on funds and the state budget. SFŽP was not left alone in the end, unlike the first attempt.",
+    "mean": "SFŽP pays for umbrellas, cleaners and green projects. The approved budget of the fund for 2026 will enable subsidies to be drawn in the planned mode.",
+    "predmet_lidsky": "SFŽP budget for 2026",
+    "koho": [
+      "Who does it concern? Environmental projects, municipalities and companies drawing subsidies from the SFŽP."
+    ],
+    "fakty": [
+      {
+        "text": "Vote number 246, for 90, against 32. The motion was carried.",
+        "citace": "Vote number 246, for 90, against 32. The motion was carried."
+      },
+      {
+        "text": "Previously, vote number 245 ended 58-89, the motion was not adopted.",
+        "citace": "Vote number 245, for 58, against 89. The motion was not adopted."
+      }
+    ]
+  }
 }

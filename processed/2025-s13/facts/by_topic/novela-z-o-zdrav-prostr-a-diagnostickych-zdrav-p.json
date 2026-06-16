@@ -42,5 +42,29 @@
   "steno_slov": 14227,
   "lead": "Sněmovna schválila v prvním kole pravidla pro hlášení nedostatku laboratorních souprav, sto třináct hlasů pro, nikdo proti. Obecná rozprava proběhla bez řečníků.",
   "pointa": "Jde o implementaci EU nařízení, aby nemocnice věděly dopředu, že dochází zkumavky na odběry.",
-  "mean": "Výrobci budou muset hlásit nedostatek diagnostických prostředků. Na běžného pacienta to dopadne spíš nepřímo, přes kratší čekání na výsledky v nemocnici."
+  "mean": "Výrobci budou muset hlásit nedostatek diagnostických prostředků. Na běžného pacienta to dopadne spíš nepřímo, přes kratší čekání na výsledky v nemocnici.",
+  "en": {
+    "nadpis": "Shortages of laboratory tubes must be reported",
+    "lead": "The The Chamber of Deputies approved the rules for reporting shortages of laboratory kits at first reading, one hundred and thirteen votes in favor, none against. The general debate took place without speakers.",
+    "pointa": "It is about the implementation of an EU regulation so that hospitals know in advance that they are running out of collection tubes.",
+    "mean": "Manufacturers will have to report shortages of diagnostic tools. It will affect the average patient rather indirectly, through a shorter wait for results in the hospital.",
+    "predmet_lidsky": "reporting a shortage of tubes in hospitals",
+    "koho": [
+      "Who does it concern? Hospitals and laboratories rather than patients at home. Producers must report when they run out of collection kits."
+    ],
+    "fakty": [
+      {
+        "text": "The proposal adapts EU Regulation 2024/1860 on the availability of medical devices.",
+        "citace": "The draft law is an implementing legislation that adapts the national legal order to Regulation 2024/1860 of the European Parliament and of the Council of 13"
+      },
+      {
+        "text": "Vote number 52, for 111, the motion to continue the first reading passed.",
+        "citace": "Vote number 52, 169 MPs registered, 111 for, none against. The draft resolution was approved."
+      },
+      {
+        "text": "Vote number 53, for 113, the law passed on the first reading.",
+        "citace": "Vote number 53, 168 MPs registered, 113 for, none against. The draft resolution was approved."
+      }
+    ]
+  }
 }

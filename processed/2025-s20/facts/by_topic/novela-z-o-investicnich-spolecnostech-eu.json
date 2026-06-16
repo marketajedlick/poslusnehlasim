@@ -40,5 +40,28 @@
   "steno_slov": 3264,
   "lead": "Hned po penzijním spoření Sněmovna srovnala pravidla pro investiční fondy s evropskými normami; 137 pro, proti nikdo.",
   "pointa": "Bruselská harmonizace bez odporu: ani u čtyř dílčích hlasování se nikdo nezvedl proti.",
-  "mean": "Kdo investuje přes fondy, bude mít dohled a povinnosti správců sjednocené podle evropských pravidel. Běžného účtu v bance se to netýká a ve sněmovně se o tom nikdo ani nepohádal."
+  "mean": "Kdo investuje přes fondy, bude mít dohled a povinnosti správců sjednocené podle evropských pravidel. Běžného účtu v bance se to netýká a ve sněmovně se o tom nikdo ani nepohádal.",
+  "en": {
+    "nadpis": "Investment funds according to Brussels",
+    "lead": "Right after pension savings, the House compared the rules for investment funds with European standards; 137 for, none against.",
+    "pointa": "Brussels harmonization without opposition: even in the four partial votes, no one objected.",
+    "mean": "Whoever invests through the funds will have the supervision and duties of administrators unified according to European rules. This does not apply to a current bank account, and no one even argued about it in the The Chamber of Deputies.",
+    "predmet_lidsky": "supervision of investment funds and companies",
+    "koho": [
+      "Who does it concern? Mainly companies and people who invest through funds, not a current account in the bank."
+    ],
+    "fakty": [
+      {
+        "text": "The rules of supervision and obligations towards clients are compared according to European standards."
+      },
+      {
+        "text": "The bill passed 137-0, with no opposition; the dispute did not take place even for four partial modifications.",
+        "citace": "Vote number 71: for 137, against 0. I note that the bill was approved."
+      },
+      {
+        "text": "Dear Mr. Speaker, Dear Minister, colleagues, colleagues, allow me to make a few comments on this parliamentary press 13, on the bill amending Act no.",
+        "citace": "Dear Mr. Speaker, Dear Minister, colleagues, colleagues, allow me to make a few comments on this parliamentary press 13, on the bill amending Act no."
+      }
+    ]
+  }
 }

@@ -41,5 +41,29 @@
   "steno_slov": 1323,
   "lead": "Páteční dopoledne schválili druhé kolo zákona o státních zaměstnancích, sto třináct hlasů proti nule. Starostové mluvili o napravení nespravedlnosti vůči úředníkům, které nový zákon zasáhl po změně pravidel.",
   "pointa": "Vondráčkův návrh sjednocuje pravidla pro úředníky na ministerstvech a správních úřadech. Jde o dlouho připravovanou rekodifikaci personálních poměrů státu.",
-  "mean": "Zákon mění podmínky státních zaměstnanců na úřadech. Běžného občana se netýká, pokud nepracuje ve státní správě."
+  "mean": "Zákon mění podmínky státních zaměstnanců na úřadech. Běžného občana se netýká, pokud nepracuje ve státní správě.",
+  "en": {
+    "nadpis": "New law for civil servants",
+    "lead": "On Friday morning, they approved the second reading of the law on civil servants, one hundred and thirteen votes against zero. The mayors talked about correcting the unfairness against officials that the new law hit after the rule change.",
+    "pointa": "Vondráček's proposal unifies the rules for officials in ministries and administrative offices. It is a long-prepared recodification of the personnel conditions of the state.",
+    "mean": "The law changes the conditions of civil servants in offices. It does not apply to ordinary citizens, unless they work in the state administration.",
+    "predmet_lidsky": "civil servants",
+    "koho": [
+      "Who does it concern? Officials and people who solve the agenda in ministries and administrative offices."
+    ],
+    "fakty": [
+      {
+        "text": "Vondráček presented the second reading of the law on civil servants.",
+        "citace": "Proposal by MPs Radek Vondráček to issue a law on the legal status of civil servants in ministries and other administrative offices, second reading."
+      },
+      {
+        "text": "The mayors support the proposal to correct an inequity in the system.",
+        "citace": "We support this proposal and we support it because it corrects a clear injustice to the people who were left trapped in the system after the law was changed."
+      },
+      {
+        "text": "Vote number 78, one hundred and thirteen votes in favor, the law was approved in the second reading.",
+        "citace": "Vote number 78, for 113, against 0."
+      }
+    ]
+  }
 }
