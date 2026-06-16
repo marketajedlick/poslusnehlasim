@@ -47,6 +47,12 @@ def _latest_edition(obdobi: int) -> Edition | None:
     return editions[-1] if editions else None
 
 
+def _find_edition(obdobi: int, schuze: int) -> Edition | None:
+    """Vrátí nejnovější schválené vydání z konkrétní schůze."""
+    editions = [e for e in list_approved_editions(obdobi) if e.schuze == schuze]
+    return editions[-1] if editions else None
+
+
 def _edition_day_path(edition: Edition) -> Path:
     paths = SchuzePaths.create(edition.obdobi, edition.schuze)
     d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
@@ -75,6 +81,7 @@ def _build_email_body(edition: Edition, *, site_url: str, base_path: str) -> tup
 def run_newsletter_notify(
     obdobi: int,
     *,
+    schuze: int | None = None,
     dry_run: bool = False,
     force: bool = False,
     base_path: str = "",
@@ -85,6 +92,7 @@ def run_newsletter_notify(
     Odeslání vždy ručně v Ecomailu — API nikdy nerozešle.
     Stav v newsletter-state.json brání duplicitám při opakovaném deployi.
     E-maily odběratelů nejsou v repozitáři — drží je Ecomail (GDPR, double opt-in).
+    Při --schuze se cílí konkrétní schůze místo nejnovějšího vydání.
     """
     api_key = api_key_from_env()
     list_id = list_id_from_env()
@@ -103,7 +111,12 @@ def run_newsletter_notify(
         return {"skipped": True, "reason": f"chybí: {', '.join(missing)}"}
 
     cfg = NewsletterConfig.from_env()
-    latest = _latest_edition(obdobi)
+    if schuze is not None:
+        latest = _find_edition(obdobi, schuze)
+        if not latest:
+            return {"skipped": True, "reason": f"schůze {schuze} nemá schválené vydání"}
+    else:
+        latest = _latest_edition(obdobi)
     if not latest:
         return {"skipped": True, "reason": "žádné vydání"}
 

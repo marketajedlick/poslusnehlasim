@@ -14,10 +14,14 @@ from svejk.build.nav import (
     pivo_pages_href,
     podminky_pages_href,
     podpora_pages_href,
+    recnici_pages_href,
     slovnicek_pages_href,
     soukromi_pages_href,
+    steno_sources_pages_href,
     vyznamenani_pages_href,
 )
+from svejk.build.recnici import has_recnici
+from svejk.build.steno_sources import has_steno_sources
 from svejk.build.vyznamenani_neprosli import (
     VyznamenaniKind,
     load_vyznamenani,
@@ -423,6 +427,27 @@ def write_sitemap_xml(
         )
         add_url(f"{base}{href_en}", edition.when)
 
+    for edition in editions:
+        paths = SchuzePaths.create(edition.obdobi, edition.schuze)
+        if has_steno_sources(paths, edition.datum_unl):
+            href = steno_sources_pages_href(
+                edition.obdobi, edition.schuze, edition.datum_unl, base_path
+            )
+            add_url(f"{base}{href}", edition.when)
+            href_en = steno_sources_pages_href(
+                edition.obdobi, edition.schuze, edition.datum_unl, base_path, "en"
+            )
+            add_url(f"{base}{href_en}", edition.when)
+        if has_recnici(paths, edition.datum_unl):
+            href = recnici_pages_href(
+                edition.obdobi, edition.schuze, edition.datum_unl, base_path
+            )
+            add_url(f"{base}{href}", edition.when)
+            href_en = recnici_pages_href(
+                edition.obdobi, edition.schuze, edition.datum_unl, base_path, "en"
+            )
+            add_url(f"{base}{href_en}", edition.when)
+
     xml = b'<?xml version="1.0" encoding="UTF-8"?>\n' + tostring(urlset, encoding="utf-8")
     path = out_dir / "sitemap.xml"
     path.write_bytes(xml)
@@ -576,6 +601,32 @@ Poslušně hlásím publikuje po každém jednacím dni stručné vydání: koli
             )
             line = f"- [{meta['title']} · {title}]({base}{href}): {meta['gloss']}"
             full_lines.append(line)
+
+    steno_editions = [
+        e for e in editions
+        if has_steno_sources(SchuzePaths.create(e.obdobi, e.schuze), e.datum_unl)
+    ]
+    recnici_editions = [
+        e for e in editions
+        if has_recnici(SchuzePaths.create(e.obdobi, e.schuze), e.datum_unl)
+    ]
+
+    if steno_editions or recnici_editions:
+        full_lines.extend(["", "## Stenozáznamy a řečníci", ""])
+        for edition in steno_editions:
+            href = steno_sources_pages_href(
+                edition.obdobi, edition.schuze, edition.datum_unl, base_path
+            )
+            den = den_v_tydnu(edition.datum_unl)
+            title = datum_design(edition.datum_unl, den)
+            full_lines.append(f"- [Stenozáznam · {title}]({base}{href})")
+        for edition in recnici_editions:
+            href = recnici_pages_href(
+                edition.obdobi, edition.schuze, edition.datum_unl, base_path
+            )
+            den = den_v_tydnu(edition.datum_unl)
+            title = datum_design(edition.datum_unl, den)
+            full_lines.append(f"- [Řečníci · {title}]({base}{href})")
 
     full_path = out_dir / "llms-full.txt"
     full_path.write_text("\n".join(full_lines) + "\n", encoding="utf-8")

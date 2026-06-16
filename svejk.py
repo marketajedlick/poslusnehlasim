@@ -483,6 +483,7 @@ def cmd_newsletter_notify(args: argparse.Namespace) -> int:
     try:
         result = run_newsletter_notify(
             args.obdobi,
+            schuze=args.schuze or None,
             dry_run=args.dry_run,
             force=args.force,
             base_path=(args.base_path or "").rstrip("/"),
@@ -944,6 +945,12 @@ def main() -> int:
         help="Po novém vydání připravit koncept kampaně v Ecomailu (odeslání ručně)",
     )
     p_nwl.add_argument("--obdobi", type=int, default=2025)
+    p_nwl.add_argument(
+        "--schuze",
+        type=int,
+        default=0,
+        help="Číslo konkrétní schůze; bez tohoto parametru se použije nejnovější schválené vydání",
+    )
     p_nwl.add_argument(
         "--base-path",
         default="",
