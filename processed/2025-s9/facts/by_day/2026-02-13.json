@@ -21,5 +21,17 @@
     "* přechodné období superdávky prodlouženo o tři měsíce, sto třicet pro, nula proti",
     "* přes čtyři sta třináct tisíc žádostí už v systému",
     "* Piráti a Starostové nevetovali, chtějí data a úpravy definice zranitelnosti"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Extraordinary meeting due to the transition to super benefit,\ntwo laws at first reading, no one opposed.",
+    "zaver": "that the The Chamber of Deputies, at the instigation of eighty-seven deputies, extended the transition to the super benefit and postponed the change of the minimum, the opposition let it go, but promises supervision.",
+    "vysledek": [
+      "* extraordinary ninth meeting due to the transition to the super benefit",
+      "* minimum change approved at first reading, effect moved from May to July",
+      "* transitional period of super benefit extended by three months, one hundred and thirty for, zero against",
+      "* over four hundred and thirteen thousand applications already in the system",
+      "* Pirates and Mayors do not vet, they want data and vulnerability definition modifications"
+    ],
+    "den": "Friday"
+  }
 }
