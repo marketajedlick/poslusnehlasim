@@ -114,10 +114,16 @@
     "nadpis": "Agrofert without the prime minister",
     "lead": "Ninety deputies called an extraordinary meeting about Agrofert subsidies, but Andrej Babiš was absent the whole day. The opposition read headlines from the foreign press (Financial Times: EU finds the prime minister in breach of conflict-of-interest rules; Guardian: prime minister accused of conflict of interest over EU funds to businesses; Le Monde: Czech prime minister accused of conflicts of interest, election favorite; Der Spiegel: investigation into Babiš reopened; El País: Czech justice asks to lift the prime minister's immunity), Macinka spoke of a parody of democracy, and at a quarter to three the agenda of the meeting did not pass.",
     "pointa": "Jurečka warned of two billion from the Czech budget and Kupka warned against Babišism. The coalition did not approve the agenda and the debate ended without a further step.",
-    "mean": "A special meeting is a forum without voting on laws. The opposition called it because of subsidies to Agrofert and the prime minister's conflict of interests, the government responded with ministers and the foreign minister. If neither program passes, the debate ends without further action.",
+    "mean": "A special meeting is a forum without voting on laws. Ninety deputies called it to force the government to speak. The opposition had two main topics: the conflict-of-interest law, where Agrofert's trust fund does not automatically resolve the problem, and a proposal by Radek Vondráček (ANO, bill 221) that, according to the opposition, would shorten the deadline for recovering unlawful subsidies to four years and narrow the ban on public contracts to the minister's own ministry only. And then the money: if Brussels does not reimburse Agrofert's subsidies, the Czech budget will pay. Jurečka calculated that could be up to two billion crowns that the state did not count on this year.",
     "citace_autor": "Kupka",
     "citace_text": "the state ceases to really function for the people and turns into a money machine for whoever is in power. That is the definition of Babišism",
     "kuriozita": "Curiosity of the day: Hřib first handed Macinka copies of the Financial Times, the Guardian, Le Monde, Der Spiegel and El País. When the priority speakers ran out, Nacher called the MPs from the sidelines. By way of farewell, Kott thanked for his cooperation and received applause in the entire hall.",
+    "kuriozita_links": [
+      {
+        "label": "Who spoke how much",
+        "page": "recnici"
+      }
+    ],
     "predmet_lidsky": "an extraordinary meeting on Agrofert subsidies and the Prime Minister's conflict of interests",
     "koho": [
       "Who does it concern? Taxpayers who pay subsidies and European money to companies around Babiš."
