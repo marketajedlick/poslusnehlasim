@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+import time
 import urllib.request
 import zipfile
 from dataclasses import dataclass
@@ -58,9 +59,20 @@ def _ensure_poslanci_zip(data_dir: Path) -> Path:
     if path.is_file():
         return path
     path.parent.mkdir(parents=True, exist_ok=True)
-    with urllib.request.urlopen(POSLANCI_ZIP_URL, timeout=120) as resp:
-        path.write_bytes(resp.read())
-    return path
+    last_err: BaseException | None = None
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(POSLANCI_ZIP_URL, timeout=120) as resp:
+                path.write_bytes(resp.read())
+            return path
+        except OSError as e:
+            last_err = e
+            if attempt < 2:
+                time.sleep(5 * (attempt + 1))
+    raise OSError(
+        f"Nepodařilo se stáhnout poslanci.zip z {POSLANCI_ZIP_URL}. "
+        f"Umísti soubor ručně do {path}."
+    ) from last_err
 
 
 def _klub_label(zkr: str) -> str:
