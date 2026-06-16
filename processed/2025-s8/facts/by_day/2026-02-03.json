@@ -20,5 +20,17 @@
     "* Babiš: zbytečná schůze, dva dny ztráty času",
     "* jednání prodlouženo do večera, 115 proti 6",
     "* hlasování o nedůvěře až ve středu"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Extraordinary meeting, all day debate on no confidence.\nVoting on the laws only tomorrow, evening meeting until 7:00 p.m.",
+    "zaver": "that the eighth meeting began with a two-day lecture on no confidence in the government, a decision only on Wednesday evening.",
+    "vysledek": [
+      "* extraordinary meeting due to the motion of no confidence of the opposition",
+      "* Kupka: 19 days after trust, reasons for Macinky's text message and conflict of interests",
+      "* Babiš: useless meeting, two days of wasted time",
+      "* meeting extended until the evening, 115 against 6",
+      "* vote of no confidence until Wednesday"
+    ],
+    "den": "Tuesday"
+  }
 }

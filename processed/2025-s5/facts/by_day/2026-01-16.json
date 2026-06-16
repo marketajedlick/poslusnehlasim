@@ -20,5 +20,16 @@
     "* osm návrhů zamítli",
     "* dopoledne deset hlasování o usneseních ke jmenování ministrů, hlavně spor o Filipa Turka",
     "* odpoledne nižší zálohy OSVČ v prvním kole, u zrychlení 29 poslanců proti"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "Ten votes in the morning about the Turk and the ministers,\nafternoon deposits for self-employed people.",
+    "zaver": "that Friday was not calm: they argued about the ministers, but lower advances for self-employed people passed at first reading.",
+    "vysledek": [
+      "* they approved eight laws and resolutions",
+      "* they rejected eight proposals",
+      "* ten votes in the morning on resolutions to appoint ministers, mainly the dispute over Filip Turk",
+      "* in the afternoon, lower self-employed people's deposits at first reading, in the case of acceleration, 29 MPs against"
+    ],
+    "den": "Friday"
+  }
 }

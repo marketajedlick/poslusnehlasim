@@ -19,5 +19,16 @@
     "* šest bodů Jurečkova usnesení o klimatickém zmocněnci zamítli",
     "* jmenovité hlasování večer v 21:40",
     "* Rakušan: jedním slovem nevěříme"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "After three days of talks, the government received confidence.\nYesterday only a debate, tonight the vote decided.",
+    "zaver": "that after three days of speeches, the The Chamber of Deputies narrowly gave Babiš's government confidence and in the evening rejected Jureček's resolution against the climate commissioner point by point.",
+    "vysledek": [
+      "* they expressed confidence in the government 108:91",
+      "* they rejected six points of Jureček's resolution on the climate commissioner",
+      "* roll-call voting in the evening at 9:40 p.m",
+      "* Austrian: in a word, we don't believe"
+    ],
+    "den": "Thursday"
+  }
 }

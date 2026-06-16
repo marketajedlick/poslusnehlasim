@@ -20,5 +20,17 @@
     "* koalice většinu návrhů zamítla",
     "* debata o rozpočtu se schodkem 310 miliard začala, o zákoně se zatím nehlasovalo",
     "* večer začala změna jednacího řádu"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "The seventh session began with a fight over the agenda, not the law.\nThe budget continued, November already passed first reading.",
+    "zaver": "that the seventh meeting began with a guess about the agenda, not the law. The coalition swept away most of the opposition proposals and the budget was opened in the evening.",
+    "vysledek": [
+      "* forty-two votes on the agenda of the seventh meeting",
+      "* the opposition wanted to recall Okamura, solve the conflict of interests of the prime minister or protect CT and CRo",
+      "* the coalition rejected most of the proposals",
+      "* the debate on the budget with a deficit of 310 billion has started, the law has not yet been voted on",
+      "* the change of the rules of procedure started in the evening"
+    ],
+    "den": "Tuesday"
+  }
 }

@@ -20,5 +20,16 @@
     "* rozpočet na rok 2026 v prvním kole schválen, 90 proti 68",
     "* usnesení proti týrání zvířat schváleno, 139 pro, nula proti",
     "* doplnění o toulavých kočkách prošlo, 127 proti 6"
-  ]
+  ],
+  "en": {
+    "dnesni_ucet": "After an all-night marathon, the budget at first reading.\nIn the afternoon unanimously against animal cruelty.",
+    "zaver": "that after an all-night debate the coalition passed the budget at first reading and unanimously condemned animal cruelty in the afternoon.",
+    "vysledek": [
+      "* four opposition resolutions on the budget failed",
+      "* the 2026 budget was approved at first reading, 90 to 68",
+      "* resolution against animal cruelty approved, 139 for, zero against",
+      "* amendment about stray cats passed, 127 to 6"
+    ],
+    "den": "Thursday"
+  }
 }
