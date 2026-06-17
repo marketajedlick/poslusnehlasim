@@ -792,6 +792,31 @@ def _make_internal_links_absolute(text: str, site_url: str) -> str:
     )
 
 
+_FIELD_LINK_STYLE = {
+    "lead": "color:#211c14",
+    "mean": "color:#211c14",
+    "kuriozita": "color:#5a5348",
+    "citace_text": "color:#211c14",
+}
+
+
+def _inline_email_body_link_styles(text: str, *, field: str = "lead") -> str:
+    """Inline styly pro klienty, které neberou <style> z hlavičky."""
+    if not text or "<a " not in text:
+        return text
+    color = _FIELD_LINK_STYLE.get(field, _FIELD_LINK_STYLE["lead"])
+    style = (
+        f'style="{color} !important;text-decoration:underline;font-weight:inherit;"'
+    )
+    text = text.replace('class=\\"steno-link\\"', 'class="steno-link"')
+    text = text.replace('class=\\"mean-link\\"', 'class="mean-link"')
+    return re.sub(
+        r'<a class="(steno-link|mean-link)"',
+        lambda m: f'<a class="{m.group(1)}" {style}',
+        text,
+    )
+
+
 def _apply_email_links_absolute(content: Any, site_url: str) -> None:
     """Po doplnění odkazů udělá všechny interní hrefs absolutní."""
     site = site_url.rstrip("/")
@@ -799,7 +824,9 @@ def _apply_email_links_absolute(content: Any, site_url: str) -> None:
         for field in ("lead", "mean", "kuriozita", "citace_text"):
             val = getattr(item, field, None)
             if val:
-                setattr(item, field, _make_internal_links_absolute(val, site_url))
+                val = _make_internal_links_absolute(val, site_url)
+                val = _inline_email_body_link_styles(val, field=field)
+                setattr(item, field, val)
         if item.kuriozita_nav:
             item.kuriozita_nav = [
                 (label, f"{site}{href}" if href.startswith("/") else href)

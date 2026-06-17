@@ -285,13 +285,30 @@ body {
   text-align: left;
 }
 .p a.mean-link,
-.mean a.mean-link {
-  color: #cf5a31;
+.p a.steno-link,
+.mean a.mean-link,
+.mean a.steno-link,
+.kuriozita a.steno-link {
+  color: #211c14 !important;
+  font-weight: inherit !important;
   text-decoration: underline;
 }
 .item.i2 .p a.mean-link,
-.item.i2 .mean a.mean-link {
-  color: #283c6e;
+.item.i2 .p a.steno-link,
+.item.i2 .mean a.mean-link,
+.item.i2 .mean a.steno-link,
+.item.i2 .kuriozita a.steno-link {
+  color: #211c14 !important;
+}
+.kuriozita a.steno-link,
+.kuriozita a.mean-link {
+  color: #5a5348 !important;
+}
+.kuriozita-links a {
+  color: #5a5348 !important;
+  font-family: inherit;
+  font-weight: normal !important;
+  text-decoration: underline;
 }
 .mean {
   margin-top: 10px;

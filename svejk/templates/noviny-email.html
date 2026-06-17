@@ -91,7 +91,7 @@
     <p class="kuriozita-links" style="margin-top:8px;font-size:14px;line-height:1.45;text-align:left;">
       {% for label, href in item.kuriozita_nav %}
       {% if not loop.first %}<span style="color:#5a5348;"> · </span>{% endif %}
-      <a href="{{ href }}" style="color:#cf5a31;font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-decoration:underline;">{{ label }}</a>
+      <a href="{{ href }}" style="color:#5a5348 !important;font-weight:normal;text-decoration:underline;">{{ label }}</a>
       {% endfor %}
     </p>
     {% endif %}
