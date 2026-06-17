@@ -373,6 +373,14 @@ body.steno-page{
   margin:0; font-size:.98rem; line-height:1.5;
   color:var(--ink);
 }
+.steno-article-quote{
+  margin:0; padding:10px 12px;
+  background:var(--paper);
+  border-left:3px solid rgba(33,28,20,.35);
+  font-family:'Old Standard TT',serif; font-size:1.02rem;
+  line-height:1.5; font-style:italic;
+  color:var(--ink);
+}
 .steno-block--verbatim{
   background:rgba(207,90,49,.04);
   border:1px solid rgba(207,90,49,.22);

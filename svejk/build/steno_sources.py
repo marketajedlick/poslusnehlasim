@@ -606,8 +606,6 @@ def build_item_steno_links(
                 continue
             if p.link_phrase:
                 phrase = _find_phrase_in_text(text, p.link_phrase)
-                if not phrase:
-                    phrase = link_phrase_for_passage(p, text)
             else:
                 phrase = link_phrase_for_passage(p, text)
             if not phrase or phrase in used_phrases:
@@ -618,6 +616,42 @@ def build_item_steno_links(
                 used_phrases.add(phrase)
                 placed = True
                 break
+
+
+def _all_passages(blocks: list[StenoTopicBlock]) -> list[StenoPassage]:
+    out: list[StenoPassage] = []
+    for block in blocks:
+        out.extend(block.passages)
+    return out
+
+
+def link_steno_phrases_in_text(
+    text: str,
+    passages: list[StenoPassage],
+    page_href: str,
+    *,
+    used_phrases: set[str] | None = None,
+) -> str:
+    """Vloží steno odkazy do libovolného textu vydání (lead, dnesni_ucet…)."""
+    if not (text or "").strip() or not passages:
+        return text
+    used = used_phrases if used_phrases is not None else set()
+    out = text
+    ordered = sorted(
+        passages,
+        key=lambda p: (-len(p.link_phrase or ""), p.link_phrase is None),
+    )
+    for p in ordered:
+        if not p.link_phrase:
+            continue
+        phrase = _find_phrase_in_text(out, p.link_phrase)
+        if not phrase or phrase in used:
+            continue
+        new_out = inject_steno_link(out, phrase, passage_href(p, page_href))
+        if new_out != out:
+            out = new_out
+            used.add(phrase)
+    return out
 
 
 def apply_steno_links_to_content(
@@ -645,10 +679,19 @@ def apply_steno_links_to_content(
         locale=loc,
     )
     blocks = collect_steno_sources(paths, content.datum, locale=loc)
+    passages = _all_passages(blocks)
+    ucet = getattr(content, "dnesni_ucet", None)
+    if ucet:
+        content.dnesni_ucet = link_steno_phrases_in_text(ucet, passages, page_href)
+    used_phrases: set[str] = set()
     for item in content.items:
-        passages = passages_for_slug(blocks, item.slug)
-        if passages:
-            build_item_steno_links(passages, item, page_href)
+        item_passages = passages_for_slug(blocks, item.slug)
+        if item_passages:
+            build_item_steno_links(item_passages, item, page_href)
+            for field in ("lead", "mean", "kuriozita", "citace_text"):
+                raw = getattr(item, field, None) or ""
+                for m in re.finditer(r'class="steno-link"[^>]*>(.*?)</a>', raw, re.I | re.S):
+                    used_phrases.add(re.sub(r"<[^>]+>", "", m.group(1)))
     return page_href
 
 

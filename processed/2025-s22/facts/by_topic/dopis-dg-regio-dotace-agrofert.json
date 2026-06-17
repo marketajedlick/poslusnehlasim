@@ -12,7 +12,8 @@
       "text": "Premiér Babiš se celý den omluvil z pracovních důvodů; Okamura nejdřív nechal promluvit ministry, teprve pak poslance s přednostním právem.",
       "source": "steno",
       "steno_id": "2025_22_00002",
-      "citace": "Babiš Andrej celý jednací den – pracovní důvody"
+      "citace": "Babiš Andrej celý jednací den – pracovní důvody",
+      "link_phrase": "Babiš Andrej celý jednací den – pracovní důvody"
     },
     {
       "text": "První velký útok opozice mířil na chybějícího premiéra: Havel řekl, že Babiš se omluvil zrovna v den schůze o Agrofertu.",
@@ -36,14 +37,14 @@
       "link_phrase": "Šebestyán bránil dopis z bruselského ředitelství pro regionální politiku"
     },
     {
-      "text": "Ministr připomněl, že Státní zemědělský intervenční fond sám od prosince pozastavil proplácení Agrofertu. Po vložení akcií do RSVP Trustu zase rozjel administraci žádostí, zatímco Brusel dál prověřuje, jestli peníze proplatí.",
+      "text": "Ministr připomněl, že Státní zemědělský intervenční fond sám od prosince pozastavil proplácení Agrofertu. Po vložení akcií do svěřenského fondu zase rozjel administraci žádostí, zatímco Brusel dál prověřuje, jestli peníze proplatí.",
       "source": "steno",
       "steno_id": "2025_22_00003",
       "citace": "počínaje dnem 20. února 2026 jsou společnosti způsobilé k čerpání dotací poskytovaných SZIF",
       "link_phrase": "Šebestyán mluvil skoro tisíc slov"
     },
     {
-      "text": "Po vložení akcií do RSVP Trustu SZIF znovu rozjel administraci žádostí. Komise 5. června 2026 potvrdila správnost postupu SZIF, ale zároveň oznámila, že po dobu prověřování souladu RSVP Trustu s evropským právem dotace proplácet nebude. Šebestyán tomu sám říká neformální pozastavení.",
+      "text": "Po vložení akcií do svěřenského fondu SZIF znovu rozjel administraci žádostí. Komise 5. června 2026 potvrdila správnost postupu SZIF, ale zároveň oznámila, že po dobu prověřování souladu tohoto fondu s evropským právem dotace proplácet nebude. Šebestyán tomu sám říká neformální pozastavení.",
       "source": "steno",
       "steno_id": "2025_22_00003",
       "citace": "Dne 5. června 2026 potvrdila Evropská komise správnost postupu SZIF a zároveň upozornila, že doby prošetření souladu řešení RSVP Trust s evropským právem nebude dotace proplácet. Jde o takzvané neformální pozastavení.",
@@ -67,10 +68,10 @@
   "publikovat": true,
   "priorita": 2,
   "nadpis": "Dopis z Bruselu\nnení zákaz dotací",
-  "lead": "Než opozice začala útočit na chybějícího premiéra, vystoupila vláda s vysvětlováním, že bruselský dopis není zákaz dotací, jen pracovní psaníčko s úředním razítkem někde v dálce. Český úřad Agrofertu dotace nejdřív stopnul, po přesunu akcií do trustu zase rozjel papírování. Brusel ale dál říká, ještě ne tak rychle.",
-  "pointa": "Šebestyán řekl, že platby může zastavit až oficiální rozhodnutí Komise. SZIF je sám v prosinci stopl, po vložení akcií Agrofertu do RSVP Trustu zase rozjel papírování a varoval, že kdyby se akcie vrátily zpátky, dotace by znovu spadly do šuplíku. Brusel ale dál říká, ještě ne tak rychle.",
+  "lead": "Než opozice začala útočit na chybějícího premiéra, vystoupila vláda s vysvětlováním, že bruselský dopis není zákaz dotací, jen pracovní psaníčko s úředním razítkem někde v dálce. Český úřad Agrofertu dotace nejdřív stopnul, po přesunu akcií do svěřenského fondu zase rozjel papírování. Brusel ale dál říká, ještě ne tak rychle.",
+  "pointa": "Šebestyán řekl, že platby může zastavit až oficiální rozhodnutí Komise. SZIF je sám v prosinci stopl, po vložení akcií Agrofertu do svěřenského fondu zase rozjel papírování a varoval, že kdyby se akcie vrátily zpátky, dotace by znovu spadly do šuplíku. Brusel ale dál říká, ještě ne tak rychle.",
   "kuriozita": "Kuriozita dne: Šebestyán skoro tisíc slov vysvětloval, že dopis z Bruselu není zákaz, zatímco Rakušan přepočítával sedm miliard na šest set čtyřicet korun pro každého občana a tři tisíce na důchodce.",
-  "mean": "Dopis z bruselského ředitelství pro regionální politiku není rozhodnutí o zastavení dotací. Zastavit peníze může jen formální akt Evropské komise. Zemědělské dotace a evropské peníze na rozvoj regionů jsou přitom dva oddělené kanály. Prvním tečou peníze na pole, farmy a potraviny, administruje je SZIF a řeší je ministerstvo zemědělství. Druhým jdou peníze pro obce a regiony, třeba na školy, silnice nebo místní projekty, a tady má na starosti koordinaci ministerstvo pro místní rozvoj. Každý kanál má jiný bruselský úřad, jiná pravidla a jiné rozhodovací řízení. Šebestyán varoval, že kdyby se akcie z fondu vrátily, dotace by přestaly téct znovu.",
+  "mean": "Dopis z bruselského ředitelství pro regionální politiku není rozhodnutí o zastavení dotací. Zastavit peníze může jen formální akt Evropské komise. Zemědělské dotace a evropské peníze na rozvoj regionů jsou přitom dva oddělené kanály. Prvním tečou peníze na pole, farmy a potraviny, administruje je SZIF a řeší je ministerstvo zemědělství. Druhým jdou peníze pro obce a regiony, třeba na školy, silnice nebo místní projekty, a tady má na starosti koordinaci ministerstvo pro místní rozvoj. Každý kanál má jiný bruselský úřad, jiná pravidla a jiné rozhodovací řízení. Šebestyán varoval, že kdyby se akcie ze svěřenského fondu vrátily, dotace by přestaly téct znovu.",
   "pocet_hlasovani": 0,
   "proslo": false,
   "signaly": {

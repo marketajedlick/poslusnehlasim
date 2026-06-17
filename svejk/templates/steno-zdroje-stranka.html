@@ -52,9 +52,16 @@
         {% endif %}
       </header>
 
-      {% if passage.summary %}
-      <div class="steno-block steno-block--article">
-        <h3 class="steno-block-label">{{ t.steno_sources.from_article }}</h3>
+      {% if passage.article_phrase %}
+      <div class="steno-block steno-block--article steno-block--article-quote">
+        <h3 class="steno-block-label">{{ t.steno_sources.exact_from_article }}</h3>
+        <blockquote class="steno-article-quote">„{{ passage.article_phrase }}“</blockquote>
+      </div>
+      {% endif %}
+
+      {% if passage.summary and passage.summary != passage.article_phrase %}
+      <div class="steno-block steno-block--article steno-block--article-detail">
+        <h3 class="steno-block-label">{{ t.steno_sources.article_detail }}</h3>
         <p class="steno-article-text">{{ passage.summary }}</p>
       </div>
       {% endif %}
