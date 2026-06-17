@@ -31,7 +31,7 @@ from svejk.build.vyznamenani_neprosli import (
 from svejk.build.io import read_json
 from svejk.noviny import HLAVICKA_LISTU, _datum_cesky, _new_state
 from svejk.paths import SchuzePaths
-from svejk.build.steno_sources import has_steno_sources
+from svejk.build.steno_sources import has_steno_sources, write_steno_refs
 from svejk.build.recnici import has_recnici
 
 
@@ -191,6 +191,7 @@ def run_compose(
             written_html.append(str(table_out))
 
         if has_steno_sources(paths, datum):
+            write_steno_refs(paths)
             steno_html = render_steno_sources_html(paths, datum, link_mode="file")
             if steno_html:
                 steno_out = paths.steno_zdroje_html(datum)

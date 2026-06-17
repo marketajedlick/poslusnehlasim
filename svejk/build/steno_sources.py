@@ -31,6 +31,7 @@ class StenoPassage:
     source: str
     nav_label: str = ""
     link_phrase: str = ""
+    article_phrase: str = ""
 
 
 @dataclass
@@ -66,10 +67,105 @@ def _norm_ws(text: str) -> str:
     return re.sub(r"\s+", " ", unicodedata.normalize("NFKC", text or "")).strip()
 
 
-def _load_steno_index(paths: SchuzePaths) -> dict[str, dict[str, Any]]:
+def _steno_refs_path(paths: SchuzePaths):
+    return paths.aligned / "steno_refs.json"
+
+
+def write_steno_refs(paths: SchuzePaths):
+    """Z raw/steno.jsonl uloží lehký index pro CI (steno.jsonl není v gitu)."""
     if not paths.steno_jsonl.is_file():
+        return None
+    refs: dict[str, dict[str, Any]] = {}
+    for rec in iter_jsonl(paths.steno_jsonl):
+        steno_id = rec.get("id")
+        if not steno_id:
+            continue
+        refs[steno_id] = {
+            "url": rec.get("url") or "",
+            "cele_jmeno": rec.get("cele_jmeno") or "",
+            "poradi": rec.get("poradi"),
+            "text": rec.get("text") or "",
+        }
+    if not refs:
+        return None
+    paths.aligned.mkdir(parents=True, exist_ok=True)
+    out = _steno_refs_path(paths)
+    write_json(out, refs)
+    return out
+
+
+def _load_steno_index(paths: SchuzePaths) -> dict[str, dict[str, Any]]:
+    if paths.steno_jsonl.is_file():
+        return {r["id"]: r for r in iter_jsonl(paths.steno_jsonl) if r.get("id")}
+    refs_path = _steno_refs_path(paths)
+    if refs_path.is_file():
+        data = read_json(refs_path)
+        if isinstance(data, dict):
+            return data
+    return {}
+
+
+def _poradi_from_steno_id(steno_id: str) -> int | None:
+    if not steno_id:
+        return None
+    try:
+        return int(steno_id.rsplit("_", 1)[-1])
+    except ValueError:
+        return None
+
+
+def _load_poradi_urls(paths: SchuzePaths) -> dict[str, str]:
+    cache_path = _psp_index_path(paths)
+    if not cache_path.is_file():
         return {}
-    return {r["id"]: r for r in iter_jsonl(paths.steno_jsonl) if r.get("id")}
+    data = read_json(cache_path)
+    if data.get("obdobi") != paths.obdobi or data.get("schuze") != paths.schuze:
+        return {}
+    urls = data.get("poradi_urls") or {}
+    return {str(k): str(v) for k, v in urls.items() if v}
+
+
+def _lookup_cached_psp_url(url_cache: dict[str, str], fallback_url: str, citace: str) -> str:
+    if not url_cache:
+        return ""
+    citace_key = citace[:120]
+    if fallback_url and citace_key:
+        exact = url_cache.get(f"{fallback_url}|{citace_key}")
+        if exact:
+            return exact
+        base = fallback_url.split("#", 1)[0]
+        exact = url_cache.get(f"{base}|{citace_key}")
+        if exact:
+            return exact
+    if citace_key:
+        for key, val in url_cache.items():
+            if key.split("|", 1)[-1] == citace_key:
+                return val
+    return ""
+
+
+def _offline_psp_url(
+    paths: SchuzePaths,
+    steno_id: str,
+    citace: str,
+    *,
+    fallback_url: str = "",
+    url_cache: dict[str, str] | None = None,
+) -> str:
+    """PSP odkaz bez steno.jsonl — cache + poradi_urls v aligned/."""
+    cache = url_cache if url_cache is not None else {}
+    if fallback_url:
+        hit = _lookup_cached_psp_url(cache, fallback_url, citace)
+        if hit:
+            return hit
+    poradi = _poradi_from_steno_id(steno_id)
+    poradi_urls = _load_poradi_urls(paths)
+    if poradi is not None:
+        poradi_url = poradi_urls.get(str(poradi), "")
+        if poradi_url:
+            hit = _lookup_cached_psp_url(cache, poradi_url, citace)
+            return hit or poradi_url
+    return fallback_url
 
 
 def _excerpt_around(full_text: str, citace: str, *, radius: int = 420) -> str:
@@ -187,11 +283,22 @@ class PspUrlResolver:
         if "#" in fallback_url and not citace.strip():
             return fallback_url
 
-        cache_key = f"{fallback_url}|{citace[:120]}"
         url_cache = self._load_url_cache()
-        if cache_key in url_cache:
-            return url_cache[cache_key]
+        cached = _lookup_cached_psp_url(url_cache, fallback_url, citace)
+        if cached:
+            return cached
 
+        offline = _offline_psp_url(
+            self.paths,
+            "",
+            citace,
+            fallback_url=fallback_url,
+            url_cache=url_cache,
+        )
+        if offline and offline != fallback_url:
+            return offline
+
+        cache_key = f"{fallback_url}|{citace[:120]}"
         self._load_pages()
         resolved = self._fetcher_lazy().resolve_url_for_citace(
             self.paths.obdobi,
@@ -210,6 +317,7 @@ class PspUrlResolver:
 def _passage_from_fact(
     fact_entry: dict[str, Any],
     *,
+    paths: SchuzePaths,
     steno_by_id: dict[str, dict[str, Any]],
     topic_slug: str,
     topic_title: str,
@@ -229,6 +337,8 @@ def _passage_from_fact(
     rec = steno_by_id.get(steno_id) if steno_id else None
     speaker = (rec or {}).get("cele_jmeno") or ""
     poradi = (rec or {}).get("poradi")
+    if poradi is None and steno_id:
+        poradi = _poradi_from_steno_id(steno_id)
     full_text = (rec or {}).get("text") or ""
     psp_url = (rec or {}).get("url") or ""
     anchor = (
@@ -239,8 +349,19 @@ def _passage_from_fact(
 
     if not citace and full_text:
         citace = _excerpt_around(full_text, "", radius=180)
-    if psp_resolver and psp_url and source == "steno":
-        psp_url = psp_resolver.resolve(speaker, psp_url, citace)
+    if source == "steno" and steno_id:
+        cache = psp_resolver._load_url_cache() if psp_resolver else None
+        if psp_resolver and psp_url:
+            psp_url = psp_resolver.resolve(speaker, psp_url, citace)
+        elif not psp_url:
+            psp_url = _offline_psp_url(
+                paths,
+                steno_id,
+                citace,
+                url_cache=cache,
+            )
+        elif psp_resolver:
+            psp_url = psp_resolver.resolve(speaker, psp_url, citace)
     excerpt = _excerpt_around(full_text, citace) if full_text else citace
     citace = bez_dlouhych_pomlc(citace)
     excerpt = bez_dlouhych_pomlc(excerpt)
@@ -262,6 +383,24 @@ def _passage_from_fact(
         nav_label=_nav_label(speaker, citace, summary),
         link_phrase=(fact_entry.get("link_phrase") or "").strip(),
     )
+
+
+def _article_text_from_fact(fact: dict[str, Any]) -> str:
+    parts: list[str] = []
+    for key in ("lead", "pointa", "mean", "kuriozita", "citace_text"):
+        val = (fact.get(key) or "").strip()
+        if val:
+            parts.append(val)
+    return " ".join(parts)
+
+
+def _resolve_article_phrase(passage: StenoPassage, article_text: str) -> str:
+    if passage.link_phrase:
+        found = _find_phrase_in_text(article_text, passage.link_phrase)
+        if found:
+            return found
+    found = link_phrase_for_passage(passage, article_text)
+    return found or ""
 
 
 def collect_steno_sources(
@@ -287,7 +426,13 @@ def collect_steno_sources(
         return []
 
     steno_by_id = _load_steno_index(paths)
-    psp_resolver = PspUrlResolver(paths) if steno_by_id else None
+    offline_psp = bool(
+        steno_by_id
+        or _steno_refs_path(paths).is_file()
+        or _psp_url_cache_path(paths).is_file()
+        or _load_poradi_urls(paths)
+    )
+    psp_resolver = PspUrlResolver(paths) if offline_psp else None
     blocks: list[StenoTopicBlock] = []
     num = 0
     global_passage_idx = 0
@@ -302,6 +447,7 @@ def collect_steno_sources(
         num += 1
         title = pick_field(fact_raw, "nadpis", loc) or fact.get("nadpis") or slug
         block = StenoTopicBlock(slug=slug, title=title, num=num)
+        article_text = _article_text_from_fact(fact)
         en_fakty = (fact_raw.get("en") or {}).get("fakty") if loc == "en" else None
         for i, f in enumerate(fact.get("fakty") or []):
             if not isinstance(f, dict):
@@ -313,6 +459,7 @@ def collect_steno_sources(
                         merged[key] = en_fakty[i][key]
             passage = _passage_from_fact(
                 merged,
+                paths=paths,
                 steno_by_id=steno_by_id,
                 topic_slug=slug,
                 topic_title=title,
@@ -322,6 +469,9 @@ def collect_steno_sources(
             )
             global_passage_idx += 1
             if passage:
+                passage.article_phrase = bez_dlouhych_pomlc(
+                    _resolve_article_phrase(passage, article_text)
+                )
                 block.passages.append(passage)
         if block.passages:
             blocks.append(block)
