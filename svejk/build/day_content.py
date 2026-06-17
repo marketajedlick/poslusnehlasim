@@ -725,7 +725,7 @@ def _sanitize_text_export(text: str, *, locale: str = "cs") -> str:
 
 
 def _sanitize_mean_export(text: str, *, locale: str = "cs") -> str:
-    """Vysvětlení pro čtenáře — bez doplňování stran u jmen v seznamech."""
+    """Text bez doplňování stran u jmen poslanců (mean, závěr dne)."""
     if not (text or "").strip():
         return text
     if "<" not in text:
@@ -766,9 +766,9 @@ def _sanitize_den_content(content: DenContent, *, locale: str = "cs") -> None:
     content.board_note_lines = [
         ln.strip() for ln in board_raw.splitlines() if ln.strip()
     ]
-    content.zaver = _sanitize_text_export(content.zaver, locale=loc)
-    content.zaver_key = _sanitize_text_export(content.zaver_key, locale=loc)
-    content.zaver_body = _sanitize_text_export(content.zaver_body, locale=loc)
+    content.zaver = _sanitize_mean_export(content.zaver, locale=loc)
+    content.zaver_key = _sanitize_mean_export(content.zaver_key, locale=loc)
+    content.zaver_body = _sanitize_mean_export(content.zaver_body, locale=loc)
     for item in content.items:
         item.kick = _sanitize_text_export(item.kick, locale=loc)
         item.nadpis = _sanitize_text_export(item.nadpis, locale=loc)
