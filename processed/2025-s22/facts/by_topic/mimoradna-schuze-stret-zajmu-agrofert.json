@@ -20,7 +20,7 @@
       "source": "steno",
       "steno_id": "2025_22_00002",
       "citace": "Babiš Andrej celý jednací den – pracovní důvody",
-      "link_phrase": "Babiš Andrej celý jednací den – pracovní důvody"
+      "link_phrase": "Babiš se omluvil na celý den"
     },
     {
       "text": "Havel se otočil do ministerských lavic: škoda, že premiér není, to jistě není náhoda, když se řeší jeho střet zájmů.",
@@ -64,11 +64,11 @@
       "link_phrase": "stát přestává reálně fungovat pro lidi"
     },
     {
-      "text": "Kupka s Macinkou sehráli úsměvnou gestikulační vložku.",
+      "text": "Kupka při útoku na vládu několikrát otočil k Macinkovi, gestikuloval a ptal se „pamatujete?“ na billboard Pohlídáme Andreje Babiše; Macinka usmíravě přikyvoval.",
       "source": "steno",
       "steno_id": "2025_22_00019",
-      "citace": "Stát přestává reálně fungovat pro lidi a mění se na stroj na peníze pro toho, kdo je u moci. To je definice babišismu.",
-      "link_phrase": "Kupka s Macinkou sehráli úsměvnou gestikulační vložku"
+      "citace": "Pohlídáme Andreje Babiše – tam bylo, (Gestilujuje a otáčí se k ministrovi Macinkovi.) pamatujete? (Ministr Macinka s úsměvem přikyvuje.)",
+      "link_phrase": "ptal se „pamatujete?“ na billboard Pohlídáme Andreje Babiše"
     },
     {
       "text": "Když došli řečníci s přednostním právem, Nacher přizval poslance z kuloáru; pořad schůze pak neprošel hlasováním 66 pro, 85 proti.",
@@ -88,9 +88,9 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Agrofert na stole\nBabiš mimo sál",
-  "lead": "Mimořádná schůze řešila dotace do Agrofertu a střet zájmů premiéra. V omluvách zaznělo: Babiš Andrej celý jednací den – pracovní důvody.",
+  "lead": "Mimořádná schůze řešila dotace do Agrofertu a střet zájmů premiéra. Babiš se omluvil na celý den.",
   "pointa": "Havel se otočil do ministerských lavic a řekl, že premiérova absence jistě není náhoda. Hřib přinesl Financial Times, Guardian, Le Monde, Der Spiegel a El País, všechny výtisky předal Macinkovi. Jurečka varoval, že rozpočet nepočítá až se dvěma miliardami na dotace, Kupka připomněl motoristické Pohlídáme Andreje Babiše a Macinka odpověděl, že opozice jen neumí přijmout volby.",
-  "kuriozita": "Kuriozita dne: Hřib přinesl Macinkovi pět evropských novin, Kupka s Macinkou sehráli úsměvnou gestikulační vložku a Kott se rozloučil potleskem celého sálu.",
+  "kuriozita": "Kuriozita dne: Hřib přinesl Macinkovi pět evropských novin, Kupka při útoku na vládu několikrát otočil k Macinkovi, gestikuloval a ptal se „pamatujete?“ na billboard Pohlídáme Andreje Babiše; Macinka usmíravě přikyvoval a Kott se rozloučil potleskem celého sálu.",
   "kuriozita_links": [
     {
       "label": "Kdo kolik mluvil",
@@ -162,8 +162,8 @@
         "citace": "the state ceases to really function for the people and turns into a money machine for whoever is in power. That is the definition of Babišism"
       },
       {
-        "text": "Kupka and Macinka played out an amusing gestural exchange.",
-        "citace": "the state ceases to really function for the people and turns into a money machine for whoever is in power. That is the definition of Babišism"
+        "text": "While attacking the government, Kupka repeatedly turned to Macinka, gestured and asked \"remember?\" about the Motorists' billboard We will watch Andrej Babiš; Macinka nodded approvingly.",
+        "citace": "We will watch Andrej Babiš - it was there, (He gesticulates and turns to Minister Macinka.) remember? (Minister Macinka nods with a smile.)"
       },
       {
         "text": "When the privileged speakers ran out, Nacher called the MPs from the sidelines; the agenda of the meeting then failed with a vote of 66 for, 85 against.",

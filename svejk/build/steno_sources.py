@@ -688,6 +688,14 @@ def apply_steno_links_to_content(
                 raw = getattr(item, field, None) or ""
                 for m in re.finditer(r'class="steno-link"[^>]*>(.*?)</a>', raw, re.I | re.S):
                     used_phrases.add(re.sub(r"<[^>]+>", "", m.group(1)))
+    all_passages = _all_passages(blocks)
+    if all_passages and (getattr(content, "dnesni_ucet", None) or "").strip():
+        content.dnesni_ucet = link_steno_phrases_in_text(
+            content.dnesni_ucet,
+            all_passages,
+            page_href,
+            used_phrases=used_phrases,
+        )
     return page_href
 
 
