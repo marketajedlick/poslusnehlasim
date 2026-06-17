@@ -678,12 +678,38 @@ def build_den_content(
 def _sanitize_text_export(text: str, *, locale: str = "cs") -> str:
     if not (text or "").strip():
         return text
-    if "<" not in text:
-        out = dopln_strany_poslancu(bez_dlouhych_pomlc(text))
-        if normalize_locale(locale) == "cs":
+    loc = normalize_locale(locale)
+
+    def _plain_chunk(chunk: str) -> str:
+        out = dopln_strany_poslancu(bez_dlouhych_pomlc(chunk))
+        if loc == "cs":
             out = nahrad_cisla_v_textu(out)
         return out
-    parts = re.split(r"(<[^>]+>)", text)
+
+    def _steno_link_inner(inner: str) -> str:
+        out = bez_dlouhych_pomlc(inner)
+        if loc == "cs":
+            out = nahrad_cisla_v_textu(out)
+        return out
+
+    if "<" not in text:
+        return _plain_chunk(text)
+
+    steno_link_re = re.compile(
+        r'(<a\b[^>]*\bclass="[^"]*steno-link[^"]*"[^>]*>)(.*?)(</a>)',
+        re.I | re.S,
+    )
+    placeholders: dict[str, str] = {}
+
+    def _protect_link(match: re.Match[str]) -> str:
+        key = f"[[STENOLINK:{len(placeholders)}]]"
+        placeholders[key] = (
+            f"{match.group(1)}{_steno_link_inner(match.group(2))}{match.group(3)}"
+        )
+        return key
+
+    protected = steno_link_re.sub(_protect_link, text)
+    parts = re.split(r"(<[^>]+>)", protected)
     out: list[str] = []
     for part in parts:
         if not part:
@@ -691,11 +717,11 @@ def _sanitize_text_export(text: str, *, locale: str = "cs") -> str:
         if part.startswith("<"):
             out.append(part)
             continue
-        chunk = dopln_strany_poslancu(bez_dlouhych_pomlc(part))
-        if normalize_locale(locale) == "cs":
-            chunk = nahrad_cisla_v_textu(chunk)
-        out.append(chunk)
-    return "".join(out)
+        out.append(_plain_chunk(part))
+    result = "".join(out)
+    for key, val in placeholders.items():
+        result = result.replace(key, val)
+    return result
 
 
 def _sanitize_mean_export(text: str, *, locale: str = "cs") -> str:

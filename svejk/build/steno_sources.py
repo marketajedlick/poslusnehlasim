@@ -679,10 +679,6 @@ def apply_steno_links_to_content(
         locale=loc,
     )
     blocks = collect_steno_sources(paths, content.datum, locale=loc)
-    passages = _all_passages(blocks)
-    ucet = getattr(content, "dnesni_ucet", None)
-    if ucet:
-        content.dnesni_ucet = link_steno_phrases_in_text(ucet, passages, page_href)
     used_phrases: set[str] = set()
     for item in content.items:
         item_passages = passages_for_slug(blocks, item.slug)

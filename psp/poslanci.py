@@ -218,7 +218,10 @@ class PoslanecRegistry:
                     rules.append(
                         (
                             len(tvar),
-                            _MatchRule(self._surname_pattern(tvar), p.klub),
+                            _MatchRule(
+                                self._surname_pattern(tvar, block_jmeno=p.jmeno),
+                                p.klub,
+                            ),
                         )
                     )
                 rules.append(
@@ -249,7 +252,10 @@ class PoslanecRegistry:
                     rules.append(
                         (
                             len(tvar),
-                            _MatchRule(self._surname_pattern(tvar), default),
+                            _MatchRule(
+                                self._surname_pattern(tvar, block_jmeno=p0.jmeno),
+                                p.klub,
+                            ),
                         )
                     )
 
@@ -260,10 +266,13 @@ class PoslanecRegistry:
     def _word(part: str) -> str:
         return re.escape(part)
 
-    def _surname_pattern(self, tvar: str) -> re.Pattern[str]:
+    def _surname_pattern(self, tvar: str, *, block_jmeno: str = "") -> re.Pattern[str]:
         body = self._word(tvar)
+        skip_first = ""
+        if block_jmeno:
+            skip_first = rf"(?!\s+{self._word(block_jmeno)})"
         return re.compile(
-            rf"(?<![\w/]){body}(?!\s*\()(?![\w/])",
+            rf"(?<![\w/]){body}{skip_first}(?!\s*\()(?![\w/])",
             re.UNICODE,
         )
 
