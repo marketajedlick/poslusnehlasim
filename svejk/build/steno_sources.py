@@ -10,7 +10,7 @@ from typing import Any
 from svejk.build.io import iter_jsonl, read_json, write_json
 from svejk.build.nav import steno_sources_pages_href
 from svejk.paths import SchuzePaths
-from svejk.text_norm import bez_dlouhych_pomlc
+from svejk.text_norm import bez_dlouhych_pomlc, expand_szif_for_display
 
 _ANCHOR_SAFE = re.compile(r"[^a-zA-Z0-9_-]+")
 
@@ -362,8 +362,8 @@ def _passage_from_fact(
         elif psp_resolver:
             psp_url = psp_resolver.resolve(speaker, psp_url, citace)
     excerpt = _excerpt_around(full_text, citace) if full_text else citace
-    citace = bez_dlouhych_pomlc(citace)
-    excerpt = bez_dlouhych_pomlc(excerpt)
+    citace = expand_szif_for_display(bez_dlouhych_pomlc(citace))
+    excerpt = expand_szif_for_display(bez_dlouhych_pomlc(excerpt))
     summary = bez_dlouhych_pomlc(summary)
 
     return StenoPassage(

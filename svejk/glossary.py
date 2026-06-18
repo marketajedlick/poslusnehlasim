@@ -1263,6 +1263,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     # --- zkratky a specifické pojmy ---
     (
+        "SZIF",
+        "Státní zemědělský intervenční fond. Vyplácí dotace farmářům a zemědělcům.",
+    ),
+    (
         "návrh z grémia",
         "Návrh pořadu schůze, na kterém se předem domluvili předsedové poslaneckých klubů.",
     ),

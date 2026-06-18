@@ -26,6 +26,30 @@ def bez_dlouhych_pomlc(text: str) -> str:
     return t
 
 
+_SZIF_EM = re.compile(r"\bSZIFem\b", re.I)
+_SZIF_U = re.compile(r"\bSZIFu\b", re.I)
+_SZIF_POSKYTOVANYCH = re.compile(r"poskytovaných\s+SZIF\b", re.I)
+_SZIF_POSTUPU = re.compile(r"postupu\s+SZIF\b", re.I)
+_SZIF_SE_NETYKA = re.compile(r"který\s+se\s+SZIF\b", re.I)
+_SZIF = re.compile(r"\bSZIF\b", re.I)
+
+
+def expand_szif_for_display(text: str) -> str:
+    """Zkratku SZIF nahradí srozumitelnou češtinou (stenové citace, kontext)."""
+    if not text or "SZIF" not in text.upper():
+        return text
+    t = _SZIF_EM.sub("státním fondem na zemědělské dotace", text)
+    t = _SZIF_U.sub("státního fondu na zemědělské dotace", t)
+    t = _SZIF_POSKYTOVANYCH.sub(
+        "poskytovaných státním fondem na zemědělské dotace", t
+    )
+    t = _SZIF_POSTUPU.sub("postupu státního fondu na zemědělské dotace", t)
+    t = _SZIF_SE_NETYKA.sub(
+        "který se státního fondu na zemědělské dotace", t
+    )
+    return _SZIF.sub("státní fond na zemědělské dotace", t)
+
+
 def lcfirst_preserve_proper(text: str) -> str:
     """První písmeno malé, ale Sněmovna jako instituce zůstane."""
     if not text:
