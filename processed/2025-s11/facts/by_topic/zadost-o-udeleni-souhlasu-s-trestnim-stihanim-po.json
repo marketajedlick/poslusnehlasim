@@ -54,37 +54,5 @@
   "steno_slov": 7052,
   "lead": "Sněmovna odmítla souhlas se stíháním v kauze Čapí hnízdo, 104 hlasy pro, 81 proti. Babiš místo obhajoby hodinu mluvil o repatriačních letech z Blízkého východu.",
   "pointa": "Hřib mu vyčítal fňukání a vzkazy leteckým společnostem z pultíku. Kupka připomněl, že o vině rozhodují soudy, ne výsledky voleb.",
-  "mean": "Poslanec má imunitu a Sněmovna může stíhání zastavit. Bez jejího souhlasu nemůže soud v kauze dotačního podvodu kolem farmy Čapí hnízdo pokračovat.",
-  "en": {
-    "nadpis": "The Chamber of Deputies did not issue Babiš",
-    "lead": "The The Chamber of Deputies refused to approve the prosecution in the case of the Čapí hnízdo, 104 votes in favor, 81 against. Instead of a defense, Babiš spoke for an hour about repatriation flights from the Middle East.",
-    "pointa": "Hřib reproached him for whining and texting airlines from the counter. Kupka reminded that guilt is decided by the courts, not the election results.",
-    "mean": "The MP has immunity and The Chamber of Deputies can stop the prosecution. Without her consent, the court cannot proceed with the subsidy fraud case surrounding the Čapí hnízdo farm.",
-    "predmet_lidsky": "request for consent to the criminal prosecution of MP Andrej Babiš",
-    "koho": [
-      "Who does it concern? Rather politics and justice. It is about whether the court can continue the subsidy fraud case surrounding the Čapí hnízdo farm."
-    ],
-    "fakty": [
-      {
-        "text": "The Municipal Court requests consent to the prosecution in the criminal case no. stamp 56 T 7/2022, i.e. subsidy fraud and damage to EU financial interests.",
-        "citace": "Request for consent to the criminal prosecution of MP Andrej Babiš in the case sp. stamp 56 T 7/2022."
-      },
-      {
-        "text": "The Mandates Committee recommended dissent, the The Chamber of Deputies adopted the resolution.",
-        "citace": "The Mandate and Immunity Committee proposes that The Chamber of Deputies express its disapproval of the request for consent to the criminal prosecution of the indicted MP Andrej Babiš."
-      },
-      {
-        "text": "Vote number 7, for 104, against 81. The draft resolution was adopted.",
-        "citace": "In vote number 7, 186 deputies were registered, 104 voted for, 81 against. The draft resolution was adopted."
-      },
-      {
-        "text": "Stop whining, stop hiding behind papal immunity.",
-        "citace": "Stop whining. Stop hiding behind papal immunity."
-      },
-      {
-        "text": "Guilt and punishment in a rule of law are basically decided only by the courts.",
-        "citace": "Guilt and punishment in a rule of law are basically decided only by the courts."
-      }
-    ]
-  }
+  "mean": "Poslanec má imunitu a Sněmovna může stíhání zastavit. Bez jejího souhlasu nemůže soud v kauze dotačního podvodu kolem farmy Čapí hnízdo pokračovat."
 }

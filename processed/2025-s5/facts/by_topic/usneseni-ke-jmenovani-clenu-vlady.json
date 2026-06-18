@@ -35,29 +35,5 @@
   "mean": "Po schválené důvěře ještě deset hlasování o obsazení vlády, důvěra totiž neznamená klid. Prezident odmítl Turka (Motoristé) jako ministra, opozice to kritizovala, většinu Jurečkových (KDU-ČSL) návrhů stejně zamítli.",
   "pocet_hlasovani": 10,
   "proslo": false,
-  "steno_slov": 55056,
-  "en": {
-    "nadpis": "Ten votes on Turk",
-    "lead": "On Thursday, the government passed a vote of confidence, and on Friday, MPs voted ten more times on resolutions to appoint ministers, mainly because of the dispute over climate commissioner Filip Turk (Motorists).",
-    "pointa": "Jurečka (KDU-ČSL) tried to block the appointment of ministers through the resolution, eight proposals failed: Jakob (TOP 09), Zuna (TOP 09) twice, Langšádlová (TOP 09) twice, Dvořák (STAN), Jurečka (KDU-ČSL), Pospíšil (TOP 09). Skopeček (ODS) read the results one by one, the coalition continued to fill positions.",
-    "mean": "After the approved vote of confidence, there are still ten votes to fill the government, because confidence does not mean peace. The President rejected Turk (Motorists) as minister, the opposition criticized it, they rejected most of Jurečkov's (KDU-ČSL) proposals anyway.",
-    "predmet_lidsky": "resolutions by which Marian Jurečka wanted to block the appointment of government ministers",
-    "koho": [
-      "Who does it concern? More like political games about government staffing. It affects the citizen only indirectly."
-    ],
-    "fakty": [
-      {
-        "text": "The President of the Republic refused to appoint Mr. Filip Turk as Minister of the Environment, despite the fact that he was properly proposed by the Prime Minister.",
-        "citace": "The President of the Republic refused to appoint Mr. Filip Turk as Minister of the Environment, despite the fact that he was properly proposed by the Prime Minister."
-      },
-      {
-        "text": "We could have already dealt with substantive matters, social insurance, rules of procedure, the building code, and instead we are dealing with Filip Turk again and again, endlessly.",
-        "citace": "We could have already dealt with substantive matters, social insurance, rules of procedure, the building code, and instead we are dealing with Filip Turk again and again, endlessly."
-      },
-      {
-        "text": "In vote number 54, 183 deputies were registered, 82 voted for, 101 against. The proposal was rejected.",
-        "citace": "In vote number 54, 183 deputies were registered, 82 voted for, 101 against. The proposal was rejected."
-      }
-    ]
-  }
+  "steno_slov": 55056
 }

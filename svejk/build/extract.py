@@ -239,35 +239,28 @@ def _topic_manually_edited(existing: dict[str, Any]) -> bool:
     return False
 
 
-def _preserve_en(existing: dict[str, Any], out: dict[str, Any]) -> dict[str, Any]:
-    en = existing.get("en")
-    if en:
-        out["en"] = en
-    return out
-
-
 def _merge_manual_fact(existing: dict[str, Any], fresh: dict[str, Any]) -> dict[str, Any]:
     if not existing:
         return fresh
     if not _topic_manually_edited(existing):
-        return _preserve_en(existing, fresh)
+        return fresh
     out = dict(fresh)
     for key in _MANUAL_TOPIC_KEYS:
         if key in existing and existing[key] not in (None, "", []):
             out[key] = existing[key]
-    return _preserve_en(existing, out)
+    return out
 
 
 def _merge_manual_day(existing: dict[str, Any], fresh: dict[str, Any]) -> dict[str, Any]:
     if not existing:
         return fresh
     if not any(existing.get(k) for k in ("dnesni_ucet", "zaver", "vysledek")):
-        return _preserve_en(existing, fresh)
+        return fresh
     out = dict(fresh)
     for key in _MANUAL_DAY_KEYS:
         if key in existing and existing[key] not in (None, "", []):
             out[key] = existing[key]
-    return _preserve_en(existing, out)
+    return out
 
 
 def run_extract(paths: SchuzePaths) -> dict[str, Any]:

@@ -14,7 +14,6 @@
             data-msg-generic="{{ t.subscribe.error_generic }}"
             data-label-submit="{{ t.subscribe.submit }}"
             data-label-submitting="{{ t.subscribe.submitting }}"
-            data-locale="{{ locale | default('cs') }}"
             {% if newsletter.subscribe_api_url %}data-subscribe-api="{{ newsletter.subscribe_api_url }}"{% endif %}
             {% if newsletter.form_action %}data-form-action="{{ newsletter.form_action }}"{% endif %}
           >

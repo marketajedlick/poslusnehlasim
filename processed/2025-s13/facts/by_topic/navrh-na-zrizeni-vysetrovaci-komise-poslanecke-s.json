@@ -41,33 +41,5 @@
   "mean": "Třináctičlenná komise má do roka předložit zjištění a návrhy opatření. Piráti do ní pošlou zástupce, i když Hřib s mandátem nesouhlasil.",
   "pocet_hlasovani": 4,
   "proslo": true,
-  "steno_slov": 22782,
-  "en": {
-    "nadpis": "Commission on the Dosimeter case",
-    "lead": "The Chamber of Deputies set up a commission of inquiry into the Dosimeter case, eighty-nine votes for, fifteen against. He is to investigate the DPP, the Central Bohemian Road Administration and the VZP.",
-    "pointa": "Hřib supported the commission with the amendment, but abstained from the third reading due to the absence of an item on selection procedures.",
-    "mean": "The thirteen-member commission is to submit findings and proposals for measures within a year. The pirates will send a representative to it, even though Hřib did not agree with the mandate.",
-    "predmet_lidsky": "commission of inquiry into the Dosimeter case",
-    "koho": [
-      "Who does it concern? The public following the corruption case surrounding the Transport Company of Prague, KSS Central Bohemian Region and VZP."
-    ],
-    "fakty": [
-      {
-        "text": "Rajchl proposed a commission to investigate the Dosimeter case in the Transport Company of the Capital City of Prague.",
-        "citace": "Proposal for the establishment of an investigative commission of The Chamber of Deputies to investigate the circumstances, systemic connections and institutional functioning of the Transport Company of the Capital City of Prague in the case of suspected corruption, the so-called Dosimeter case."
-      },
-      {
-        "text": "Hřib expanded the commission's mandate to include the KSS of the Central Bohemian Region and the VZP.",
-        "citace": "In the title of the draft resolution of The Chamber of Deputies, the words joint-stock company in the matter of suspected corruption are replaced by the words Regional Administration and Road Maintenance of the Central Bohemian Region and General Health Insurance Company in the matter of the Dosimeter case."
-      },
-      {
-        "text": "Vote number 110, for 89, against 15, commission established.",
-        "citace": "In voting 110, 139 MPs registered, 89 for, 15 against. The motion was accepted, the resolution was adopted."
-      },
-      {
-        "text": "Hřib was delayed, he lacks the verification of tenders.",
-        "citace": "Due to the fact that in that part II. it is not stated that the methods of filling leadership and management positions in the concerned entities should be checked, in particular whether there was any circumvention of transparent selection procedures."
-      }
-    ]
-  }
+  "steno_slov": 22782
 }

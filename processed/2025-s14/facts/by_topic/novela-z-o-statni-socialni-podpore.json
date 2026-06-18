@@ -41,29 +41,5 @@
   "steno_slov": 8449,
   "lead": "Sněmovna schválila technickou novelu, která odkládá digitalizaci dávek státní sociální podpory. Úřad práce nestihne nový systém k červenci, protože kapacity žere superdávka.",
   "pointa": "Směr digitalizace zůstává, mění se tempo. Brzesková říkala, že jinak by chyby odnesli senioři, rodiče a samoživitelé.",
-  "mean": "Dávky z Úřadu práce se zatím nebudou převádět do plně digitálního režimu podle původního harmonogramu. Lidé u pokladny úřadu zatím neuvidí změnu.",
-  "en": {
-    "nadpis": "Benefits are digitized later",
-    "lead": "The The Chamber of Deputies approved a technical amendment that postpones the digitization of state social support benefits. The Labour Office will not have the new system in place by July because the capacity is being eaten up by the super benefit.",
-    "pointa": "The direction of digitization remains, the pace changes. Brzesková said that otherwise seniors, parents and single parents would bear the brunt of the mistakes.",
-    "mean": "Benefits from the Labour Office will not yet be transferred to a fully digital mode according to the original schedule. People at the office's cash desk will not see the change yet.",
-    "predmet_lidsky": "state social support",
-    "koho": [
-      "Who does it concern? Families waiting for housing benefit, child benefit or other benefits from the Labour Office."
-    ],
-    "fakty": [
-      {
-        "text": "Brzesková said that the authorities will not have time to digitize benefits by July 1, 2026.",
-        "citace": "This amendment effectively postpones the onset of digitization changes, which should have been effective from July 1, 2026."
-      },
-      {
-        "text": "The capacities of IT systems are strained by the introduction of the super benefit.",
-        "citace": "The current capacities of information systems are fully utilized by the implementation of the new batch of state social assistance."
-      },
-      {
-        "text": "Vote number 140, one hundred and twenty two votes in favor, the law passed.",
-        "citace": "Vote number 140, for 122, against 0."
-      }
-    ]
-  }
+  "mean": "Dávky z Úřadu práce se zatím nebudou převádět do plně digitálního režimu podle původního harmonogramu. Lidé u pokladny úřadu zatím neuvidí změnu."
 }

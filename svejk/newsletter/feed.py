@@ -20,19 +20,17 @@ def _edition_page_url(
     *,
     site_url: str,
     base_path: str,
-    locale: str = "cs",
 ) -> str:
     href = edition_pages_href(
         edition.obdobi,
         edition.schuze,
         edition.datum_unl,
         base_path,
-        locale,
     )
     return f"{site_url.rstrip('/')}{href}"
 
 
-def _edition_description(edition: Edition, *, locale: str = "cs") -> str:
+def _edition_description(edition: Edition) -> str:
     from svejk.build.day_content import build_den_content
 
     paths = SchuzePaths.create(edition.obdobi, edition.schuze)
@@ -40,7 +38,7 @@ def _edition_description(edition: Edition, *, locale: str = "cs") -> str:
     day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
     if not day_path.is_file():
         return ""
-    content = build_den_content(day_path, paths, locale=locale)
+    content = build_den_content(day_path, paths)
     parts: list[str] = []
     if content.dnesni_ucet:
         parts.append(content.dnesni_ucet)
@@ -57,21 +55,11 @@ def _pub_date(edition: Edition) -> str:
     return format_datetime(when, usegmt=True)
 
 
-_FEED_CHANNEL: dict[str, dict[str, str]] = {
-    "cs": {
-        "title": "Poslušně hlásím",
-        "home": "",
-        "description": "Nová vydání deníku z Poslanecké sněmovny ve stylu Švejka.",
-        "language": "cs",
-    },
-    "en": {
-        "title": "Poslušně hlásím",
-        "home": "/en/",
-        "description": (
-            "New editions of the satirical diary from the Czech Chamber of Deputies."
-        ),
-        "language": "en",
-    },
+_FEED_CHANNEL = {
+    "title": "Poslušně hlásím",
+    "home": "",
+    "description": "Nová vydání deníku z Poslanecké sněmovny ve stylu Švejka.",
+    "language": "cs",
 }
 
 
@@ -82,17 +70,13 @@ def write_feed_xml(
     config: NewsletterConfig | None = None,
     base_path: str = "",
     max_items: int = 40,
-    locale: str = "cs",
 ) -> Path:
-    from svejk.locale import normalize_locale
-
-    loc = normalize_locale(locale)
     cfg = config or NewsletterConfig.from_env()
     editions = list_site_editions(obdobi)
     if not editions:
         raise FileNotFoundError(f"Žádná vydání pro období {obdobi}")
 
-    meta = _FEED_CHANNEL[loc]
+    meta = _FEED_CHANNEL
     site = cfg.site_url.rstrip("/")
     channel = Element("channel")
     SubElement(channel, "title").text = meta["title"]
@@ -111,11 +95,11 @@ def write_feed_xml(
         from svejk.build.day_content import datum_design
 
         den = day_json.get("den") or ""
-        title = datum_design(edition.datum_unl, den, locale=loc)
+        title = datum_design(edition.datum_unl, den)
         link = _edition_page_url(
-            edition, site_url=cfg.site_url, base_path=base_path, locale=loc
+            edition, site_url=cfg.site_url, base_path=base_path
         )
-        desc = _edition_description(edition, locale=loc)
+        desc = _edition_description(edition)
         item = SubElement(channel, "item")
         SubElement(item, "title").text = title
         SubElement(item, "link").text = link

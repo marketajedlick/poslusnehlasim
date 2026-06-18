@@ -8,7 +8,6 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 from svejk.build.seo import _edition_date_label, article_headline
-from svejk.locale import localized_path, normalize_locale
 
 _STATIC = Path(__file__).resolve().parent.parent / "static"
 _SVEJK_ICON = _STATIC / "svejk-terra.png"
@@ -31,18 +30,18 @@ def og_image_filename(datum_unl: str) -> str:
     return f"{datum_unl_to_iso(datum_unl)}.png"
 
 
-def og_image_href(base_path: str, datum_unl: str, *, locale: str = "cs") -> str:
+def og_image_href(base_path: str, datum_unl: str) -> str:
     base = base_path.rstrip("/")
-    rel = localized_path(f"/og/{og_image_filename(datum_unl)}", locale)
+    rel = f"/og/{og_image_filename(datum_unl)}"
     return f"{base}{rel}" if base else rel
 
 
-def og_image_abs_url(site_url: str, base_path: str, datum_unl: str, *, locale: str = "cs") -> str:
-    return f"{site_url.rstrip('/')}{og_image_href(base_path, datum_unl, locale=locale)}"
+def og_image_abs_url(site_url: str, base_path: str, datum_unl: str) -> str:
+    return f"{site_url.rstrip('/')}{og_image_href(base_path, datum_unl)}"
 
 
-def edition_og_title(datum_unl: str, den: str = "", *, locale: str = "cs") -> str:
-    return f"Poslušně hlásím · {_edition_date_label(datum_unl, den, locale=locale)}"
+def edition_og_title(datum_unl: str, den: str = "") -> str:
+    return f"Poslušně hlásím · {_edition_date_label(datum_unl, den)}"
 
 
 def edition_og_headline(
@@ -51,12 +50,11 @@ def edition_og_headline(
     first_item_nadpis: str = "",
     datum_unl: str,
     den: str = "",
-    locale: str = "cs",
 ) -> str:
     return article_headline(
         dnesni_ucet=dnesni_ucet,
         first_item_nadpis=first_item_nadpis,
-        edition_title=edition_og_title(datum_unl, den, locale=locale),
+        edition_title=edition_og_title(datum_unl, den),
         max_len=140,
     )
 
@@ -161,7 +159,6 @@ def render_og_image(
     date_label: str,
     headline: str,
     score: str = "",
-    locale: str = "cs",
 ) -> Path:
     """Vykreslí 1200×630 PNG pro sdílení vydání."""
     out = Path(dest)
@@ -191,8 +188,7 @@ def render_og_image(
         y += 58
 
     if score:
-        score_prefix = "Match score" if normalize_locale(locale) == "en" else "Skóre dne"
-        score_text = f"{score_prefix} {score}"
+        score_text = f"Skóre dne {score}"
         score_w = draw.textlength(score_text, font=score_font)
         draw.text(
             (OG_WIDTH - margin - score_w, OG_HEIGHT - margin - 34),
@@ -227,23 +223,19 @@ def render_edition_og_image(
     first_item_nadpis: str = "",
     proslo: int = 0,
     zamitnuto: int = 0,
-    locale: str = "cs",
 ) -> Path:
-    loc = normalize_locale(locale)
     headline = edition_og_headline(
         dnesni_ucet=dnesni_ucet,
         first_item_nadpis=first_item_nadpis,
         datum_unl=datum_unl,
         den=den,
-        locale=loc,
     )
     score = f"{proslo}:{zamitnuto}" if proslo or zamitnuto else ""
     return render_og_image(
         Path(dest_dir) / og_image_filename(datum_unl),
-        date_label=_edition_date_label(datum_unl, den, locale=loc),
+        date_label=_edition_date_label(datum_unl, den),
         headline=headline,
         score=score,
-        locale=loc,
     )
 
 

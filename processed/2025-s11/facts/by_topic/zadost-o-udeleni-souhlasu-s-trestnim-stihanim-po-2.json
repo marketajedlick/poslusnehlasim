@@ -54,37 +54,5 @@
   "steno_slov": 7052,
   "lead": "Stejný výsledek u Okamury, 104 hlasy pro, 82 proti, Sněmovna nevydala předsedu SPD k soudu za plakát Stop migračnímu paktu EU.",
   "pointa": "Okamura mluvil o třech letech vězení za názor a citoval Johna Boka. Richterová připomněla, že jde o podněcování k nenávisti, ne o běžnou volební kampani.",
-  "mean": "Bez souhlasu sněmovny soud nemůže posoudit, jestli šlo o trestný čin verbálního charakteru. Okamura si tak ponechá imunitu, dokud Sněmovna nepřistoupí na vydání.",
-  "en": {
-    "nadpis": "They haven't released Okamura yet",
-    "lead": "The same result for Okamura, 104 votes for, 82 against, the The Chamber of Deputies did not take the SPD chairman to court for the poster Stop the EU Migration Pact.",
-    "pointa": "Okamura talked about three years in prison for an opinion and quoted John Bok. Richter reminded that this is incitement to hatred, not a normal election campaign.",
-    "mean": "Without the consent of the The Chamber of Deputies, the court cannot assess whether it was a criminal offense of a verbal nature. Okamura will thus retain immunity until the House votes to extradite him.",
-    "predmet_lidsky": "request for consent to the criminal prosecution of MP Tomio Okamura v",
-    "koho": [
-      "Who does it concern? Rather politics and freedom of speech. The court wanted to assess whether the poster Stop the EU Migration Pact incites hatred towards migrants and Roma."
-    ],
-    "fakty": [
-      {
-        "text": "The District Court for Prague 1 requests consent to the prosecution in the case sp. stamp 1T 95/2025.",
-        "citace": "Request from the District Court for Prague 1 to express consent to the criminal prosecution of MP Tomio Okamura in the proceedings conducted under file number 1T 95/2025."
-      },
-      {
-        "text": "I face 3 years in prison for my opinion.",
-        "citace": "I face 3 years in prison for my opinion."
-      },
-      {
-        "text": "The poster was titled Stop the EU Migration Pact, the criminal complaint was filed by Jiří Pospíšil from SPOLU.",
-        "citace": "Request for my extradition for a true anti-immigration poster entitled Stop the EU Migration Pact, based on the criminal complaint of MP Jiří Pospíšil from the SPOLU coalition."
-      },
-      {
-        "text": "Vote number 9, for 104, against 82. The draft resolution was adopted.",
-        "citace": "In vote number 9, 186 deputies were registered, 104 voted for, 82 against. The draft resolution was approved."
-      },
-      {
-        "text": "It is incitement to hatred for the court to consider whether it is a crime.",
-        "citace": "Why should Tomio Okamura be released? Well, simply for the court to judge whether it is incitement to hatred."
-      }
-    ]
-  }
+  "mean": "Bez souhlasu sněmovny soud nemůže posoudit, jestli šlo o trestný čin verbálního charakteru. Okamura si tak ponechá imunitu, dokud Sněmovna nepřistoupí na vydání."
 }

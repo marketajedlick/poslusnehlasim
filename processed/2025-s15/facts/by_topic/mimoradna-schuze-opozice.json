@@ -46,37 +46,5 @@
   "pointa": "Kupka mluvil o inflaci a ztrátě dotací, Babiš o lžích opozice, Okamura přiznal zrušení koncesionářských poplatků. Havlíček varoval před dopady konfliktu na Blízkém východě na ceny energií, Hřib připomněl soudní verdikty o lhaní premiéra. Debata o ČT naváže na úpravu ústavy z května a volbu rady v červnu.",
   "mean": "Mimořádná schůze je parlamentní tribuna bez hlasování o zákonech. Opozice tím tlačila na vládu, koalice odpovídala vlastním programem.",
   "pocet_hlasovani": 0,
-  "proslo": false,
-  "en": {
-    "nadpis": "Opposition against Babiš",
-    "lead": "Ninety deputies called an extraordinary meeting due to gasoline prices, CT fees and government issues. Throughout the day, the speakers alternated attacks and defenses, the vote on the laws did not come, and at nine o'clock in the evening Skopeček ended the meeting.",
-    "pointa": "Kupka spoke about inflation and the loss of subsidies, Babiš about the lies of the opposition, Okamura admitted the cancellation of concession fees. Havlíček warned of the effects of the conflict in the Middle East on energy prices, Hřib recalled court verdicts about the prime minister's lying. The debate on CT will follow on from the amendment of the constitution from May and the election of the council in June.",
-    "mean": "An extraordinary meeting is a parliamentary forum without voting on laws. The opposition put pressure on the government, the coalition responded with its own program.",
-    "predmet_lidsky": "an extraordinary meeting called by the opposition over prices, media and government issues",
-    "koho": [
-      "Who does it concern? All of them. It was gasoline, food, CT and CRo fees and European subsidies."
-    ],
-    "fakty": [
-      {
-        "text": "Kupka called the meeting over fuel prices, the media, security and European subsidies.",
-        "citace": "Why did we call this extraordinary meeting? Rising fuel and food prices, threats to the independent functioning of Czech Television and Czech Radio, the security chaos of Andrej Babiš's government, the risk of losing European subsidies."
-      },
-      {
-        "text": "Rakušan said that the opposition cannot speak in a proper program.",
-        "citace": "Because you won't let us speak, because we proposed points of the regular agenda to deal with the public media. Not approved."
-      },
-      {
-        "text": "Okamura confirmed the law on the abolition of CT and CRo fees.",
-        "citace": "This week, we filed a law on the complete abolition of concession fees for Czech Television and Czech Radio."
-      },
-      {
-        "text": "Hřib recalled that the prime minister has repeatedly been recognized by the court as a liar.",
-        "citace": "Mr. Prime Minister, who is repeatedly recognized by the court as a liar."
-      },
-      {
-        "text": "The meeting ended at 9 pm without extension, the fourteenth meeting continues.",
-        "citace": "It's 9 p.m. Since today's meeting was not extended by vote, I am suspending the meeting indefinitely."
-      }
-    ]
-  }
+  "proslo": false
 }

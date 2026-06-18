@@ -14,24 +14,8 @@ from svejk.build.io import read_json
 from svejk.paths import SchuzePaths, processed_root
 
 from svejk.build.publish import list_site_editions
-from svejk.locale import load_strings, localized_path, month_label, normalize_locale
+from svejk.strings import load_strings, month_label
 from svejk.timeline import den_v_tydnu
-
-_MESICE_NOM = (
-    "leden",
-    "únor",
-    "březen",
-    "duben",
-    "květen",
-    "červen",
-    "červenec",
-    "srpen",
-    "září",
-    "říjen",
-    "listopad",
-    "prosinec",
-)
-
 
 @dataclass(frozen=True)
 class EditionLink:
@@ -118,53 +102,52 @@ def edition_pages_href(
     schuze: int,
     datum_unl: str,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
     """Statická URL pro GitHub Pages (soubor .html)."""
     base = base_path.rstrip("/")
-    path = localized_path(f"/noviny/{obdobi}/{schuze}/{datum_unl}.html", locale)
+    path = f"/noviny/{obdobi}/{schuze}/{datum_unl}.html"
     return f"{base}{path}" if base else path
 
 
-def archiv_pages_href(base_path: str = "", locale: str = "cs") -> str:
+def archiv_pages_href(base_path: str = "") -> str:
     base = base_path.rstrip("/")
-    path = localized_path("/archiv.html", locale)
+    path = "/archiv.html"
     return f"{base}{path}" if base else path
 
 
-def slovnicek_pages_href(base_path: str = "", locale: str = "cs") -> str:
+def slovnicek_pages_href(base_path: str = "") -> str:
     base = base_path.rstrip("/")
-    path = localized_path("/slovnicek.html", locale)
+    path = "/slovnicek.html"
     return f"{base}{path}" if base else path
 
 
-def pivo_pages_href(base_path: str = "", locale: str = "cs") -> str:
+def pivo_pages_href(base_path: str = "") -> str:
     base = base_path.rstrip("/")
-    path = localized_path("/pivo.html", locale)
+    path = "/pivo.html"
     return f"{base}{path}" if base else path
 
 
-def soukromi_pages_href(base_path: str = "", locale: str = "cs") -> str:
+def soukromi_pages_href(base_path: str = "") -> str:
     base = base_path.rstrip("/")
-    path = localized_path("/soukromi/", locale)
+    path = "/soukromi/"
     return f"{base}{path}" if base else path
 
 
-def podpora_pages_href(base_path: str = "", locale: str = "cs") -> str:
+def podpora_pages_href(base_path: str = "") -> str:
     base = base_path.rstrip("/")
-    path = localized_path("/podpora/", locale)
+    path = "/podpora/"
     return f"{base}{path}" if base else path
 
 
-def podminky_pages_href(base_path: str = "", locale: str = "cs") -> str:
+def podminky_pages_href(base_path: str = "") -> str:
     base = base_path.rstrip("/")
-    path = localized_path("/podminky/", locale)
+    path = "/podminky/"
     return f"{base}{path}" if base else path
 
 
-def dekuju_pages_href(base_path: str = "", locale: str = "cs") -> str:
+def dekuju_pages_href(base_path: str = "") -> str:
     base = base_path.rstrip("/")
-    path = localized_path("/dekuju.html", locale)
+    path = "/dekuju.html"
     return f"{base}{path}" if base else path
 
 
@@ -174,10 +157,9 @@ def vyznamenani_pages_href(
     datum_unl: str,
     kind: str,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
     base = base_path.rstrip("/")
-    path = localized_path(f"/noviny/{obdobi}/{schuze}/{datum_unl}-{kind}.html", locale)
+    path = f"/noviny/{obdobi}/{schuze}/{datum_unl}-{kind}.html"
     return f"{base}{path}" if base else path
 
 
@@ -186,10 +168,9 @@ def steno_sources_pages_href(
     schuze: int,
     datum_unl: str,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
     base = base_path.rstrip("/")
-    path = localized_path(f"/noviny/{obdobi}/{schuze}/{datum_unl}-steno.html", locale)
+    path = f"/noviny/{obdobi}/{schuze}/{datum_unl}-steno.html"
     return f"{base}{path}" if base else path
 
 
@@ -198,10 +179,9 @@ def recnici_pages_href(
     schuze: int,
     datum_unl: str,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
     base = base_path.rstrip("/")
-    path = localized_path(f"/noviny/{obdobi}/{schuze}/{datum_unl}-recnici.html", locale)
+    path = f"/noviny/{obdobi}/{schuze}/{datum_unl}-recnici.html"
     return f"{base}{path}" if base else path
 
 
@@ -262,8 +242,8 @@ def _link_label(edition: Edition, editions: tuple[Edition, ...]) -> str:
     return base
 
 
-def _schuze_nav_suffix(schuze: int, locale: str) -> str:
-    word = load_strings(locale).get("edition", {}).get("schuze_title", "schůze")
+def _schuze_nav_suffix(schuze: int) -> str:
+    word = load_strings().get("edition", {}).get("schuze_title", "schůze")
     return f" · {word} {schuze}"
 
 
@@ -275,7 +255,6 @@ def _make_link(
     from_paths: SchuzePaths,
     from_datum: str,
     base_path: str = "",
-    locale: str = "cs",
 ) -> EditionLink:
     target_paths = SchuzePaths.create(edition.obdobi, edition.schuze)
     den = _den_z_index(target_paths, edition.datum_unl)
@@ -283,16 +262,15 @@ def _make_link(
         href = edition_web_href(edition.obdobi, edition.schuze, edition.datum_unl)
     elif link_mode == "pages":
         href = edition_pages_href(
-            edition.obdobi, edition.schuze, edition.datum_unl, base_path, locale
+            edition.obdobi, edition.schuze, edition.datum_unl, base_path
         )
     else:
         from_file = from_paths.noviny_dlouhe_html(from_datum)
         to_file = target_paths.noviny_dlouhe_html(edition.datum_unl)
         href = Path(os.path.relpath(to_file, from_file.parent)).as_posix()
-    loc = normalize_locale(locale)
-    title = datum_design(edition.datum_unl, den, locale=loc)
+    title = datum_design(edition.datum_unl, den)
     if len(_editions_on_day(editions, edition.datum_unl)) > 1:
-        title = f"{title}{_schuze_nav_suffix(edition.schuze, loc)}"
+        title = f"{title}{_schuze_nav_suffix(edition.schuze)}"
     return EditionLink(
         href=href,
         label=_link_label(edition, editions),
@@ -307,7 +285,6 @@ def edition_nav(
     link_mode: str = "file",
     obdobi: int | None = None,
     base_path: str = "",
-    locale: str = "cs",
 ) -> EditionNav:
     ob = obdobi if obdobi is not None else paths.obdobi
     editions = list_site_editions(ob)
@@ -324,7 +301,6 @@ def edition_nav(
         "from_paths": paths,
         "from_datum": datum_unl,
         "base_path": base_path,
-        "locale": locale,
     }
     prev = _make_link(editions[idx - 1], **kw) if idx > 0 else None
     nxt = _make_link(editions[idx + 1], **kw) if idx < len(editions) - 1 else None
@@ -341,7 +317,6 @@ def _archive_chips(
     from_paths: SchuzePaths,
     from_datum: str,
     base_path: str,
-    locale: str = "cs",
 ) -> tuple[ArchiveChip, ...]:
     chips: list[ArchiveChip] = []
     kw = {
@@ -350,16 +325,14 @@ def _archive_chips(
         "from_paths": from_paths,
         "from_datum": from_datum,
         "base_path": base_path,
-        "locale": locale,
     }
-    loc = normalize_locale(locale)
-    schuze_word = load_strings(loc).get("edition", {}).get("schuze_title", "schůze")
+    schuze_word = load_strings().get("edition", {}).get("schuze_title", "schůze")
     for edition in subset:
         d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
         link = _make_link(edition, **kw)
         target_paths = SchuzePaths.create(edition.obdobi, edition.schuze)
         den = _den_z_index(target_paths, edition.datum_unl)
-        date_label = datum_design(edition.datum_unl, den, locale=loc)
+        date_label = datum_design(edition.datum_unl, den)
         headline = _edition_headline(edition)
         schuze_part = f"{schuze_word} {edition.schuze}"
         aria = f"{headline}. {date_label}, {schuze_part}" if headline else (
@@ -389,7 +362,6 @@ def archive_recent(
     link_mode: str = "file",
     obdobi: int | None = None,
     base_path: str = "",
-    locale: str = "cs",
     limit: int = 30,
 ) -> tuple[ArchiveChip, ...]:
     ob = obdobi if obdobi is not None else paths.obdobi
@@ -421,7 +393,6 @@ def archive_recent(
         from_paths=paths,
         from_datum=datum_unl,
         base_path=base_path,
-        locale=locale,
     )
 
 
@@ -432,7 +403,6 @@ def archive_by_month(
     link_mode: str = "file",
     obdobi: int | None = None,
     base_path: str = "",
-    locale: str = "cs",
 ) -> tuple[ArchiveMonth, ...]:
     ob = obdobi if obdobi is not None else paths.obdobi
     editions = list_site_editions(ob)
@@ -440,10 +410,9 @@ def archive_by_month(
         return ()
 
     months: list[ArchiveMonth] = []
-    loc = normalize_locale(locale)
     for (year, month), group in groupby(editions, key=lambda e: (e.when.year, e.when.month)):
         subset = tuple(group)
-        label = month_label(month, year, loc)
+        label = month_label(month, year)
         chips = _archive_chips(
             subset,
             editions,
@@ -453,7 +422,6 @@ def archive_by_month(
             from_paths=paths,
             from_datum=datum_unl,
             base_path=base_path,
-            locale=loc,
         )
         months.append(ArchiveMonth(label=label, chips=chips))
     return tuple(months)

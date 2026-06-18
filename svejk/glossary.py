@@ -8,8 +8,6 @@ from __future__ import annotations
 import re
 import unicodedata
 
-from svejk.glossary_en_core import GLOSSARY_EN_CORE, POSLANECINY_PREKLAD_EN, SLOVNIK_BOX_EN
-
 GLOSSARY: tuple[tuple[str, str], ...] = (
     # --- vyznamenání 4. 6. 2026 (s20) ---
     (
@@ -1439,142 +1437,6 @@ SLOVNIČEK: tuple[tuple[str, str], ...] = (
     ("Co je Rada ČT?", "Skupina, která dohlíží na Českou televizi a vybírá její vedení."),
 )
 
-# Anglický Švejkův slovníček (panel /slovnicek.html v EN).
-SLOVNIČEK_EN: tuple[tuple[str, str], ...] = (
-    ("What is an amendment?", "When someone says: \"I'd write that bit a little differently.\""),
-    ("What is first reading?", "The Chamber decides whether to keep working on a bill. Nothing is approved yet."),
-    ("What is second reading?", "MPs propose changes and vote on specific parts of the bill."),
-    ("What is third reading?", "The last stop before the final vote. Then it's yes or no."),
-    ("What is a procedural motion?", "Not about the law itself, but about how the debate will run."),
-    ("What is obstruction?", "When people talk at length mainly so voting gets delayed."),
-    ("What is a suspension of the session?", "MPs take a break and promise to come back to it."),
-    ("What is legislative urgency?", "A fast-track mode where bills move quicker than usual."),
-    ("What is an extraordinary session?", "A sitting called outside the regular calendar when something is urgent or tempers flare."),
-    ("What is an interpellation?", "Parliamentary Q&A: MPs question ministers on the record."),
-    ("What is a vote of confidence?", "A vote on whether the government still has majority support."),
-    ("What is a vote of no confidence?", "An attempt to send the government into political retirement before it leaves on its own."),
-    ("What is the coalition?", "Parties governing together and trying to sound like one voice."),
-    ("What is the opposition?", "Parties not in government, watching whether the cabinet cooks with someone else's money."),
-    ("What is the Senate?", "The upper chamber of Parliament. It reviews laws passed by The Chamber of Deputies."),
-    ("What is a Senate veto?", "Senators send a bill back or suggest changes. MPs can override them."),
-    ("What is a presidential veto?", "The president sends a bill back and asks MPs to think again."),
-    ("What are budget brakes?", "Rules that remind the state to hit the brakes when spending gets too fast."),
-    ("What are fiscal rules?", "Rules that remind the state the credit card is not bottomless."),
-    ("What is a deficit?", "When the state spends more than it collects. A bit like a pub running on credit."),
-    ("What is EET?", "Electronic sales records. Every receipt once reported to the state how much you earned."),
-    ("What is a resolution?", "A statement or decision of The Chamber of Deputies. Not a law."),
-    (
-        "What is Dozimetr?",
-        "A corruption scandal around Prague's public transport company, linked to STAN figures and public contracts.",
-    ),
-    ("What is the super benefit?", "A plan to merge several social benefits into one system with one application."),
-    ("What is the Supreme Audit Office?", "The state's top watchdog for public spending."),
-    ("What is VZP?", "The largest health insurer in the Czech Republic."),
-    ("What is a person with a disability (OZP)?", "A person with a health-related disability."),
-    ("What is the Sudeten German landsmanschaft?", "An organisation of Sudeten Germans expelled after WWII and their descendants."),
-    ("What is the Czech Television Council?", "The body that oversees Czech Television and picks its leadership."),
-    ("What is quorum?", "Minimum number of MPs present without which an official vote cannot happen."),
-    ("What is the rules of procedure?", "The rulebook for MPs: who may speak, when, and for how long."),
-    ("What is a party club?", "Group of MPs from one party in The Chamber of Deputies."),
-    ("What is a rapporteur?", "MP from a committee who explains a bill to the Chamber and recommends how to vote."),
-    ("What is plenum?", "All 200 MPs in the main hall, not just a committee."),
-    ("What is the Mandate and Immunity Committee?", "The Chamber's referee: conflicts of interest, discipline, or handing an MP to the police."),
-    ("What is a caretaker government?", "A cabinet that only runs the state until a new one is sworn in."),
-    ("What is a secret ballot?", "MPs vote anonymously; nobody sees who supported whom."),
-    ("What is the Collection of Laws?", "Official place where adopted laws are published."),
-    ("What is a government bill?", "A bill the cabinet sends to The Chamber. It often moves faster than opposition proposals."),
-    ("What is first round?", "First stage in The Chamber: for a bill, deciding whether to keep working on it."),
-    ("What is second round?", "MPs propose changes and vote on specific parts of the bill."),
-    ("What is third round?", "Final vote on a bill in The Chamber of Deputies."),
-    ("What is adjournment?", "MPs pause debate and promise to return to the same item later."),
-    ("What is a TV licence fee?", "Annual fee for Czech Television and Czech Radio."),
-    ("What are Beneš decrees?", "Post-war decrees of President Beneš on property and status of Germans and Hungarians after WWII."),
-    ("What is the verifiers' role?", "Two MPs who check that the session followed the rules."),
-    ("What is an election commission?", "Group of MPs that organises and supervises all votes inside The Chamber."),
-    ("What is a constitutional law?", "Highest-rank bill. Needs a special majority in The Chamber of Deputies and Senate consent."),
-)
-
-# Anglické tooltipy pro /en/ stránky (session-specific nahoře, pak obecné pojmy).
-GLOSSARY_EN_SESSION: tuple[tuple[str, str], ...] = (
-    (
-        "his own statements about female journalists",
-        "Talíř (STAN) on 5 Jun 2026 read aloud Veselý's court-ordered apology for calling journalist "
-        'Johana Hovorková "a freak, a pig, drive her out at a pig\'s pace."',
-    ),
-    (
-        "statements about female journalists",
-        "Court-ordered apology for Veselý's words about journalist Johana Hovorková: "
-        '"a freak, a pig, drive her out at a pig\'s pace." The opposition read it aloud before the CT Council vote on 5 Jun 2026.',
-    ),
-    (
-        "third reading",
-        "Final vote on a bill in The Chamber of Deputies. Then it may go to the president for signature.",
-    ),
-    (
-        "second reading",
-        "MPs propose changes and vote on specific parts of the bill.",
-    ),
-    (
-        "first reading",
-        "The Chamber decides whether to keep working on a bill. Nothing is approved yet.",
-    ),
-    (
-        "super benefit",
-        "Plan to merge several social benefits into one system with one application. "
-        "Not a new payment on top, just combining existing ones.",
-    ),
-    (
-        "deficit",
-        "When the state spends more than it collects. A bit like a pub running on credit.",
-    ),
-    (
-        "Chamber of Deputies",
-        "The lower house of the Czech Parliament. Where laws are debated and voted on.",
-    ),
-    (
-        "EET",
-        "Electronic sales records. Every receipt once reported to the state how much you earned.",
-    ),
-    (
-        "interpellation",
-        "Parliamentary Q&A session. MPs question ministers on the record.",
-    ),
-    (
-        "Dozimetr",
-        "Corruption scandal around Prague's public transport company, linked to STAN figures and public contracts.",
-    ),
-    (
-        "Dozimeter",
-        "Corruption scandal around Prague's public transport company, linked to STAN figures and public contracts.",
-    ),
-)
-
-GLOSSARY_EN: tuple[tuple[str, str], ...] = GLOSSARY_EN_SESSION + GLOSSARY_EN_CORE
-
-
-def slovnicek_box_for_locale(locale: str) -> tuple[tuple[str, str], ...]:
-    from svejk.locale import normalize_locale
-
-    return SLOVNIK_BOX_EN if normalize_locale(locale) == "en" else SLOVNIK_BOX
-
-
-def slovnicek_for_locale(locale: str) -> tuple[tuple[str, str], ...]:
-    from svejk.locale import normalize_locale
-
-    return SLOVNIČEK_EN if normalize_locale(locale) == "en" else SLOVNIČEK
-
-
-def poslaneciny_for_locale(locale: str) -> tuple[tuple[str, str], ...]:
-    from svejk.locale import normalize_locale
-
-    return POSLANECINY_PREKLAD_EN if normalize_locale(locale) == "en" else POSLANECINY_PREKLAD
-
-
-def glossary_for_locale(locale: str) -> tuple[tuple[str, str], ...]:
-    from svejk.locale import normalize_locale
-
-    return GLOSSARY_EN if normalize_locale(locale) == "en" else GLOSSARY
-
 
 # Švejkův překladač z poslanečtiny: pro rubriky a sociální sítě.
 POSLANECINY_PREKLAD: tuple[tuple[str, str], ...] = (
@@ -1596,3 +1458,19 @@ POSLANECINY_PREKLAD: tuple[tuple[str, str], ...] = (
     ("EET", "Účtenka hlásí státu každou korunu"),
     ("Odročení", "Dneska už ne"),
 )
+
+
+def slovnicek_box() -> tuple[tuple[str, str], ...]:
+    return SLOVNIK_BOX
+
+
+def slovnicek_entries() -> tuple[tuple[str, str], ...]:
+    return SLOVNIČEK
+
+
+def poslaneciny_entries() -> tuple[tuple[str, str], ...]:
+    return POSLANECINY_PREKLAD
+
+
+def glossary_entries() -> tuple[tuple[str, str], ...]:
+    return GLOSSARY

@@ -408,19 +408,6 @@ def cmd_seed(args: argparse.Namespace) -> int:
     return 0
 
 
-def cmd_i18n_audit(args: argparse.Namespace) -> int:
-    from svejk.scripts.audit_i18n import run_audit
-
-    issues = run_audit(args.obdobi)
-    if issues:
-        for line in issues:
-            print(line)
-        print(json.dumps({"ok": False, "issues": len(issues)}, ensure_ascii=False))
-        return 1
-    print(json.dumps({"ok": True, "issues": 0}, ensure_ascii=False))
-    return 0
-
-
 def cmd_publish_check(args: argparse.Namespace) -> int:
     from svejk.build.publish import run_publish_check
 
@@ -526,8 +513,6 @@ def cmd_newsletter_doi_sync(args: argparse.Namespace) -> int:
             apply=args.apply,
             enable_double_optin=args.enable_double_optin,
             sync_template=not args.no_template,
-            locale=args.locale,
-            all_locales=args.all_locales,
         )
     except RuntimeError as e:
         print(f"Chyba: {e}", file=sys.stderr)
@@ -888,13 +873,6 @@ def main() -> int:
     p_seed.add_argument("--schvalit", action="store_true", help="Rovnou vlož schválený zápis")
     p_seed.set_defaults(func=cmd_seed)
 
-    p_i18n = sub.add_parser(
-        "i18n-audit",
-        help="Kontrola anglických překladů (locale, schválená vydání, glosář)",
-    )
-    p_i18n.add_argument("--obdobi", type=int, default=2025)
-    p_i18n.set_defaults(func=cmd_i18n_audit)
-
     p_pub_check = sub.add_parser(
         "publish-check",
         help="Kontrola, že nedoladěná vydání nemají cestu na web bez schválení",
@@ -1014,17 +992,6 @@ def main() -> int:
         "--no-template",
         action="store_true",
         help="Neaktualizovat knihovnu šablon, jen nastavení seznamu",
-    )
-    p_doi_sync.add_argument(
-        "--locale",
-        choices=("cs", "en"),
-        default="cs",
-        help="Jazyk DOI šablony a cílového seznamu (výchozí: cs = seznam 3)",
-    )
-    p_doi_sync.add_argument(
-        "--all-locales",
-        action="store_true",
-        help="Synchronizovat cs (seznam 3) i en (seznam 4)",
     )
     p_doi_sync.set_defaults(func=cmd_newsletter_doi_sync)
 

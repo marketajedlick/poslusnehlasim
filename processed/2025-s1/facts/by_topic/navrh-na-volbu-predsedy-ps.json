@@ -33,29 +33,5 @@
   "mean": "Předseda řídí schůze, rozděluje slovo a podepisuje usnesení. Volba je tajná, ale výsledek určí tón celého období.",
   "pocet_hlasovani": 2,
   "proslo": true,
-  "steno_slov": 31648,
-  "en": {
-    "nadpis": "Okamura takes the gavel",
-    "lead": "Wednesday's secret ballot brought Tomio Okamura to the head of The Chamber of Deputies, one hundred and sixteen votes on the first ballot. A separate proposal for Petr Fiala fell to eighteen against one hundred and thirty-six.",
-    "pointa": "The coalition promoted its candidate, the opposition did not find enough votes for Fiala. The leadership of The Chamber of Deputies remained in the hands of the SPD, Barták and Nacher became Deputy Speakers.",
-    "mean": "The Speaker runs meetings, distributes the floor and signs resolutions. The choice is secret, but the result will set the tone for the entire period.",
-    "predmet_lidsky": "election of the Speaker of The Chamber of Deputies",
-    "koho": [
-      "Who is watching, who will lead the proceedings of The Chamber of Deputies and who holds the gavel."
-    ],
-    "fakty": [
-      {
-        "text": "Tomio Okamura received one hundred and sixteen votes to nine on the first ballot of the secret election.",
-        "citace": "Vote number 7, registered 151, for 116, against 9."
-      },
-      {
-        "text": "The proposal for Petr Fiala as Speaker was lost by one hundred and eighteen votes against one hundred and thirty-six.",
-        "citace": "Vote number 8, 191 entered, 18 for, 136 against."
-      },
-      {
-        "text": "Okamura took over the gavel in the evening, Barták and Nacher became Deputy Speakers by his side.",
-        "citace": "I congratulate the elected Deputy Speakers of The Chamber of Deputies and ask them both to take their place by my side."
-      }
-    ]
-  }
+  "steno_slov": 31648
 }

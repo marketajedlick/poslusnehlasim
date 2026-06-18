@@ -41,29 +41,5 @@
   "steno_slov": 15863,
   "lead": "Pátek uzavřel dubnový oblouk o cenách benzínu. Sněmovna ve druhém kole zákon schválila sto dvěma hlasy proti pětačtyřiceti, přestože ho Senát po úterním prvním kole a středeční noci zamítl.",
   "pointa": "Jakob mluvil o zrychleném projednávání jako o zkratce pro sporný návrh. Koalice zákon znovu protlačila ve zkráceném režimu.",
-  "mean": "Vláda může dál usilovat o regulaci cen benzínu a nafty. Senát musí zákon znovu posoudit, tentokrát proti vůli horní komory.",
-  "en": {
-    "nadpis": "Fuel bill pushes past Senate veto",
-    "lead": "Friday closed the April arc on gasoline prices. In the second reading, the The Chamber of Deputies approved the law by one hundred and two votes to forty-five, although the Senate rejected it after Tuesday's first reading and Wednesday night.",
-    "pointa": "Jakob referred to expedited hearing as shorthand for a contentious proposal. The coalition pushed the law through again in an abbreviated mode.",
-    "mean": "The government may continue to seek to regulate the prices of petrol and diesel. The Senate must consider the law again, this time against the will of the upper chamber.",
-    "predmet_lidsky": "prices",
-    "koho": [
-      "Who does it concern? Motorists. The law is intended to allow the government to intervene in the prices of petrol and diesel."
-    ],
-    "fakty": [
-      {
-        "text": "Jakob recalled that the Senate rejected the law due to material and legal defects.",
-        "citace": "However, it was subsequently rejected by the Senate of the Parliament of the Czech Republic, which is no small thing, it is a rather serious warning."
-      },
-      {
-        "text": "The coalition asks the Senate to override without self-reflection.",
-        "citace": "The only thing the coalition is asking today is to overrule the Senate with its majority. Without any self-reflection."
-      },
-      {
-        "text": "Second reading passed 102-45, third reading 112-2.",
-        "citace": "Vote number 193 for 102 to 45, vote number 194 for 112 to 2."
-      }
-    ]
-  }
+  "mean": "Vláda může dál usilovat o regulaci cen benzínu a nafty. Senát musí zákon znovu posoudit, tentokrát proti vůli horní komory."
 }

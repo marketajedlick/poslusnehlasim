@@ -13,7 +13,6 @@ Satirický newsletter a statický web **[poslusnehlasim.cz](https://poslusnehlas
 | [`workers/`](workers/) | Cloudflare Pages worker pro odběr newsletteru (Ecomail API) |
 | [`svejk.py`](svejk.py), [`run-svejk.sh`](run-svejk.sh) | CLI vstupní bod |
 | [`.github/workflows/`](.github/workflows/) | CI — deploy webu, sync dat, kontrola nových dat |
-| [`DEPLOY.md`](DEPLOY.md) | Nasazení, doména, newsletter, GitHub Secrets |
 
 **Negeneruje se do gitu:** `site/` (statický web z `export-pages`), `raw/steno.jsonl` (velké soubory — viz `processed/.gitignore`), lokální `secrets.env`.
 
@@ -97,10 +96,7 @@ Editorial pravidla (satira, terminologie, formát článků): [`.cursor/rules/st
 
 Push na `main` s hotovými `facts/` typicky jen exportuje web (~1 min). Stahování sten z Hlídače běží v cronu nebo ručně přes `workflow_dispatch`.
 
-Nasazení, DNS, Ecomail, Cloudflare: **[DEPLOY.md](DEPLOY.md)**.
-
 ## Kam dál
 
 - **Redakce a facts** → [processed/README.md](processed/README.md)
-- **Deploy, doména, newsletter** → [DEPLOY.md](DEPLOY.md)
 - **Styl a pravidla psaní** → [.cursor/rules/steno-zapisy.mdc](.cursor/rules/steno-zapisy.mdc)

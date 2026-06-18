@@ -39,33 +39,5 @@
   "pointa": "Hřib mluvil o hazardu s budoucností bydlení a chtěl bod odložit o rok. Koalice návrh o pořadu neprosadila, závěrečné hlasování o zákonu přišlo až ve středu.",
   "mean": "Změna zákona upravuje systém podpory v bydlení a práci kontaktních míst obcí. V pátek se nestihlo rozhodnout o celém zákoně, debata pokračovala ve středu 3. června.",
   "pocet_hlasovani": 0,
-  "proslo": false,
-  "en": {
-    "nadpis": "Housing Vote Left Unfinished",
-    "lead": "On Friday morning, The Chamber of Deputies began the third reading on the housing support law, but four votes on amendments fell and the meeting was adjourned until June 3.",
-    "pointa": "Hřib talked about gambling with the future of housing and wanted to postpone the point for a year. The coalition did not pass the proposal on the program, the third reading on the law did not come until Wednesday.",
-    "mean": "The change in the law regulates the system of support in housing and work of municipal contact points. They did not have time to decide on the entire law on Friday, the debate continued on Wednesday, June 3.",
-    "predmet_lidsky": "the third reading of the amendment to the Housing Support Act",
-    "koho": [
-      "Who does it concern? People in need of housing, young families and communities. The amendment regulates contact points for housing and support measures."
-    ],
-    "fakty": [
-      {
-        "text": "Right from the start, Hřib proposed postponing the point for a year, the vote was lost.",
-        "citace": "I propose a procedural vote that we postpone the discussion and come back to it again in a year."
-      },
-      {
-        "text": "Hřib said that the government is erasing the definition of affordable housing.",
-        "citace": "It is completely unacceptable that the definition of affordable housing should be deleted from the legislation."
-      },
-      {
-        "text": "The four morning votes on the amendments came as close as twenty-nine to seventy-one.",
-        "citace": "Vote number 46 to 49, all rejected."
-      },
-      {
-        "text": "At 14:11 the meeting adjourned to the third of June.",
-        "citace": "Motion to adjourn the 17th meeting to June 3 at 9 o'clock."
-      }
-    ]
-  }
+  "proslo": false
 }

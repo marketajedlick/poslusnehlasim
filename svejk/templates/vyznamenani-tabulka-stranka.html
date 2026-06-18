@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ lang | default('cs') }}">
+<html lang="cs">
 <head>
 {% include "head-noviny.html" %}
 <title>{{ page_title }} · {{ datum_label }} · Poslušně hlásím</title>
 <meta name="description" content="{{ page_description }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
-{% include "hreflang.html" %}
 {% include "og-meta.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="vyznamenani-page vyznamenani-page--{{ kind }}">
-{% include "lang-switch.html" %}
 <div class="vyznamenani-wrap">
   <header class="vyznamenani-head">
     <h1 class="vyznamenani-title">{{ page_title }}</h1>

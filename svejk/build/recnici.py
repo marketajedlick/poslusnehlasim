@@ -8,7 +8,7 @@ from typing import Any
 
 from svejk.build.io import read_json
 from svejk.build.nav import recnici_pages_href
-from svejk.locale import load_strings, month_label, normalize_locale
+from svejk.strings import load_strings
 from svejk.paths import SchuzePaths
 
 _PAGE_FALLBACK_CS = {
@@ -25,22 +25,6 @@ _PAGE_FALLBACK_CS = {
     "table_words": "Slov",
     "table_role": "Strana / role",
     "back_to_edition": "← Zpět na vydání {date}",
-}
-
-_PAGE_FALLBACK_EN = {
-    "title": "Who spoke how much",
-    "gloss": (
-        "Substantive speeches from the extraordinary session on {datum}, ranked by word count. "
-        "Procedural and short chair interventions are not counted."
-    ),
-    "note": (
-        "Length of a speech is not the same as the strength of an argument. The \"~\" value "
-        "next to Martin Kupka is the sum of three speeches."
-    ),
-    "table_speaker": "Speaker",
-    "table_words": "Words",
-    "table_role": "Party / role",
-    "back_to_edition": "← Back to edition {date}",
 }
 
 
@@ -68,54 +52,32 @@ def recnici_href(
     *,
     link_mode: str,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
     if link_mode == "pages":
-        return recnici_pages_href(obdobi, schuze, datum_unl, base_path, locale)
+        return recnici_pages_href(obdobi, schuze, datum_unl, base_path)
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
     return f"{d.strftime('%Y-%m-%d')}-recnici.html"
 
 
-def _strings(locale: str = "cs") -> dict[str, Any]:
-    loc = normalize_locale(locale)
-    base = dict(_PAGE_FALLBACK_EN if loc == "en" else _PAGE_FALLBACK_CS)
-    override = load_strings(loc).get("recnici") or {}
+def _strings() -> dict[str, Any]:
+    base = dict(_PAGE_FALLBACK_CS)
+    override = load_strings().get("recnici") or {}
     base.update({k: v for k, v in override.items() if isinstance(v, str) and v.strip()})
     return base
 
 
-def recnici_datum_label(datum_unl: str, locale: str = "cs") -> str:
+def recnici_datum_label(datum_unl: str) -> str:
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
-    if normalize_locale(locale) == "en":
-        return f"{d.day} {month_label(d.month, d.year, 'en')}"
     return f"{d.day}. {d.month}. {d.year}"
 
 
-def _localized_rows(data: dict[str, Any], locale: str) -> list[dict[str, Any]]:
-    loc = normalize_locale(locale)
+def _localized_rows(data: dict[str, Any]) -> list[dict[str, Any]]:
     rows = data.get("radky") or []
-    if loc != "en":
-        return [dict(r) for r in rows if isinstance(r, dict)]
-    en_by_name: dict[str, dict[str, Any]] = {}
-    for r in (data.get("en") or {}).get("radky") or []:
-        if isinstance(r, dict) and (r.get("jmeno") or "").strip():
-            en_by_name[str(r["jmeno"]).strip()] = r
-    out: list[dict[str, Any]] = []
-    for r in rows:
-        if not isinstance(r, dict):
-            continue
-        merged = dict(r)
-        en_row = en_by_name.get(str(r.get("jmeno") or "").strip())
-        if en_row:
-            for key in ("role", "pozn"):
-                if (en_row.get(key) or "").strip():
-                    merged[key] = en_row[key]
-        out.append(merged)
-    return out
+    return [dict(r) for r in rows if isinstance(r, dict)]
 
 
-def recnici_rows(data: dict[str, Any], *, locale: str = "cs") -> list[dict[str, str]]:
-    rows = _localized_rows(data, locale)
+def recnici_rows(data: dict[str, Any]) -> list[dict[str, str]]:
+    rows = _localized_rows(data)
     rows.sort(key=lambda r: -int(r.get("slov") or 0))
     out: list[dict[str, str]] = []
     for r in rows:
@@ -136,9 +98,8 @@ def recnici_page_meta(
     data: dict[str, Any],
     *,
     datum_label: str,
-    locale: str = "cs",
 ) -> dict[str, str]:
-    s = _strings(locale)
+    s = _strings()
     return {
         "title": s["title"],
         "gloss": s["gloss"].format(datum=datum_label, date=datum_label),
@@ -159,7 +120,6 @@ def resolve_recnici_page_links(
     schuze: int,
     link_mode: str,
     base_path: str = "",
-    locale: str = "cs",
 ) -> list[tuple[str, str]]:
     """Přeloží (popisek, "recnici") na (popisek, href), jen když data existují."""
     out: list[tuple[str, str]] = []
@@ -174,7 +134,6 @@ def resolve_recnici_page_links(
             datum_unl,
             link_mode=link_mode,
             base_path=base_path,
-            locale=locale,
         )
         out.append((label, href))
     return out

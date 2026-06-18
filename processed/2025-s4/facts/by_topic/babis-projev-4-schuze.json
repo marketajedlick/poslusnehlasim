@@ -49,33 +49,5 @@
     "spor": false,
     "prazdny_sal": false
   },
-  "steno_slov": 0,
-  "en": {
-    "nadpis": "A Shopping Cart Takes the Floor",
-    "lead": "The leader of the ANO movement came to the lectern with a shopping basket, took out books about Agrofert and promised that the toasted bread would remain only in rhetoric.",
-    "pointa": "Ninety MPs wanted a short explanation of the conflict of interests, instead Babiš spent an hour and forty minutes defending the toast line in Cheb (617 million investments, 100 million subsidies), 3,600 toasts for Ukrainians in 2022 and the fight against the \"polystop cartel\", i.e. the old parties against him.",
-    "mean": "The extraordinary meeting was called by the opposition so that Babiš would say how he would resolve the conflict of interests with Agrofert before appointing a government. Instead of answering, he brought a shopping basket with books and presented a defense of the entire holding.",
-    "predmet_lidsky": "speech by Andrej Babiš at the opening of the 4th meeting",
-    "koho": [
-      "Who does it concern? Everyone waiting to see how the new government will resolve the conflict of interest and everyone buying toast."
-    ],
-    "fakty": [
-      {
-        "text": "And I didn't bring you toast bread, but I will tell you about it.",
-        "citace": "And I didn't bring you toast bread, but I will tell you about it."
-      },
-      {
-        "text": "The total investment in the toast line was 617 million and the subsidy was 100 million, right?",
-        "citace": "The total investment in the toast line was 617 million and the subsidy was 100 million, right?"
-      },
-      {
-        "text": "we delivered 3600 toasts to refugees from Ukraine in 2022 when they were at the main station and had nothing to eat, imagine",
-        "citace": "we delivered 3600 toasts to refugees from Ukraine in 2022 when they were at the main station and had nothing to eat, imagine"
-      },
-      {
-        "text": "He takes out books from the shopping cart he brought to the lectern and shows them to the audience.",
-        "citace": "(He takes out books from the shopping basket he brought to the lectern and shows them to the audience.)"
-      }
-    ]
-  }
+  "steno_slov": 0
 }

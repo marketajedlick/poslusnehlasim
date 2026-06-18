@@ -4,10 +4,7 @@
     "latest": "Nejnovější vydání",
     "archive": "Archiv vydání",
     "glossary": "Švejkův slovníček",
-    "beer": "Kup Švejkovi pivo 🍺",
-    "lang_switch": "English",
-    "lang_switch_aria": "Přepnout na anglickou verzi webu",
-    "lang_toggle_aria": "Jazyk webu"
+    "beer": "Kup Švejkovi pivo 🍺"
   },
   "footer": {
     "aria": "Patička webu",
@@ -64,7 +61,6 @@
     "gloss": "Poslušně hlásím, že chodit denně do Sněmovny je žízeň.",
     "cta": "Kup Švejkovi pivo 🍺"
   },
-  "locale_notice": "Toto vydání je v češtině. Satirický deník z reálných záznamů Poslanecké sněmovny.",
   "archive": {
     "title": "Archiv vydání",
     "gloss": "Všechna dostupná vydání deníku.",
@@ -85,8 +81,7 @@
     "title": "Švejkův slovníček · Poslušně hlásím",
     "meta": "Poslušně hlásím, že sněmovna má vlastní jazyk. Slovníček pojmů pro lidi, kteří politiku běžně nesledují.",
     "heading": "Švejkův slovníček",
-    "gloss": "Poslušně hlásím, že sněmovna má vlastní jazyk a obyčejný člověk si občas připadá jako na vojně.",
-    "notice": "Položky slovníčku jsou zatím v češtině."
+    "gloss": "Poslušně hlásím, že sněmovna má vlastní jazyk a obyčejný člověk si občas připadá jako na vojně."
   },
   "beer_page": {
     "title": "Kup Švejkovi pivo · Poslušně hlásím",
@@ -97,9 +92,7 @@
     "fine": "Příspěvky jsou dobrovolné a nezakládají nárok na žádné protiplnění.",
     "menu_aria": "Ceník příspěvků",
     "once_title": "Jednorázový příspěvek",
-    "monthly_title": "Štamgast",
-    "pay_note": "Platbu bezpečně zpracuje Stripe. Web sám platební údaje neukládá.",
-    "pay_portal": "Jste už Štamgast a chcete změnit kartu nebo zrušit podporu? Spravujte své předplatné zde."
+    "monthly_title": "Štamgast"
   },
   "thanks_page": {
     "title": "Děkujeme · Poslušně hlásím",

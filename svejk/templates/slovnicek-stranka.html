@@ -1,24 +1,19 @@
 <!DOCTYPE html>
-<html lang="{{ lang | default('cs') }}">
+<html lang="cs">
 <head>
 {% include "head-noviny.html" %}
 <title>{{ t.glossary_page.title }}</title>
 <meta name="description" content="{{ t.glossary_page.meta }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
-{% include "hreflang.html" %}
 {% include "og-meta.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="slovnicek-page">
-{% include "lang-switch.html" %}
 <div class="slovnicek-wrap">
   <header class="slovnicek-head">
     <h1 class="slovnicek-title">{{ t.glossary_page.heading }}</h1>
     <p class="slovnicek-gloss">{{ t.glossary_page.gloss }}</p>
-    {% if locale == 'en' and t.glossary_page.notice %}
-    <p class="locale-notice locale-notice--inline">{{ t.glossary_page.notice }}</p>
-    {% endif %}
     <nav class="slovnicek-nav" aria-label="{{ t.nav.aria_main }}">
       {% if latest_href %}
       <a class="site-nav-link" href="{{ latest_href }}">{{ t.nav.latest }}</a>

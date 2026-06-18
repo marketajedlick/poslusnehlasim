@@ -18,7 +18,6 @@ def _site_url() -> str:
 # Fallback XHR formulář (hash je per-seznam). Seznam 3 nemá veřejný formulář — odběr jde přes worker API.
 DEFAULT_ECOMAIL_FORM_ACTION = ""
 DEFAULT_ECOMAIL_SUBSCRIBE_LIST_ID = "3"
-DEFAULT_ECOMAIL_SUBSCRIBE_LIST_ID_EN = "4"
 DEFAULT_ECOMAIL_LIST_ID = "3"
 DEFAULT_ECOMAIL_WIDGET_JS = "https://d70shl7vidtft.cloudfront.net/widget.js"
 DEFAULT_SUBSCRIBE_API_URL = (
@@ -50,7 +49,6 @@ class NewsletterConfig:
     contact_email: str
     site_url: str
     feed_url: str
-    feed_url_en: str
     show_subscribe: bool
     embed_widget_id: str
     embed_mount_id: str
@@ -87,7 +85,6 @@ class NewsletterConfig:
             form_action = f"{form_action}{sep}source=poslusnehlasim"
         site = _site_url()
         feed = f"{site}/feed.xml"
-        feed_en = f"{site}/feed-en.xml"
         subscribe_api_url = (
             os.environ.get("SVEJK_SUBSCRIBE_API_URL") or DEFAULT_SUBSCRIBE_API_URL
         ).strip()
@@ -116,7 +113,6 @@ class NewsletterConfig:
             contact_email=contact_email,
             site_url=site,
             feed_url=feed,
-            feed_url_en=feed_en,
             show_subscribe=show_subscribe,
             embed_widget_id=widget_id,
             embed_mount_id=mount_id,

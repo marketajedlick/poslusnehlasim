@@ -42,29 +42,5 @@
   "steno_slov": 3715,
   "lead": "Sněmovna na první pokus schválila odklad změny zákonů životního a existenčního minima z května na červenec, 137 hlasů pro, nikdo proti. Juchelka mluvil o časové tísní a informačních systémech Úřadu práce.",
   "pointa": "Zpravodajka Šafránková řekla, že jde o papírovou úpravu bez změny sociální politiky. Opozice nevetovala, ale chce později doladit samotnou superdávku.",
-  "mean": "Životní a existenční minimum je základ pro výpočet dávek. Posun o dva měsíce má dát úřadům čas, aby nepřepočítávaly systémy dvakrát za sebou při přechodu na novou superdávku. Pro lidi v nouzi to znamená hlavně, že se nemění pravidla hned v květnu, ale až v létě.",
-  "en": {
-    "nadpis": "Living Minimum Rejected",
-    "lead": "On the first attempt, The Chamber of Deputies approved the postponement of the changes to the laws on living and subsistence minimum from May to July, 137 votes in favor, none against. Juchelka spoke about the time constraints and information systems of the Labour Office.",
-    "pointa": "The reporter Šafránková said that this is a paper adjustment without a change in social policy. The opposition has not vetoed it, but wants to fine-tune the super benefit itself later.",
-    "mean": "The living and subsistence minimum is the basis for the calculation of benefits. The two-month delay is to give the authorities time to avoid recalculating the systems twice in a row when switching to the new super benefit. For people in need, this mainly means that the rules do not change in May, but only in the summer.",
-    "predmet_lidsky": "living and subsistence minimum",
-    "koho": [
-      "Who does it concern? People on benefits and Labour Offices. The minimum determines the threshold from which it is calculated who the state will contribute to living."
-    ],
-    "fakty": [
-      {
-        "text": "The main purpose of the proposed amendments is primarily to postpone the effectiveness of the amendment to the Act on Living and Subsistence Minimum. The effectiveness of this amendment was originally set for May 1, 2026. The content of my proposal is to move the effectiveness of the amendment in question to July 1, 2026.",
-        "citace": "The content of my proposal is to postpone the effective date of the relevant amendment on the living and subsistence minimum to July 1, 2026."
-      },
-      {
-        "text": "The proposal is purely legislative and technical in nature and does not change the substantive nature of the state's social policy.",
-        "citace": "The proposal is purely legislative and technical in nature and does not change the substantive nature of the state's social policy."
-      },
-      {
-        "text": "Voting number 4, 141 MPs registered, 137 for, none against. The draft law was approved.",
-        "citace": "Vote number 4, 137 for, none against. The draft law was approved."
-      }
-    ]
-  }
+  "mean": "Životní a existenční minimum je základ pro výpočet dávek. Posun o dva měsíce má dát úřadům čas, aby nepřepočítávaly systémy dvakrát za sebou při přechodu na novou superdávku. Pro lidi v nouzi to znamená hlavně, že se nemění pravidla hned v květnu, ale až v létě."
 }

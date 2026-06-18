@@ -40,33 +40,5 @@
   "pointa": "Desítky řečníků představovalo pozměňovací návrhy od probačních programů po horskou službu. Babiš hájil kulturu, Černochová obranu, jednání skončilo až před půlnocí.",
   "mean": "Druhé kolo je chvíle, kdy poslanci škrtají, přidávají a přehazují konkrétní položky. Hlasování o rozpočtu přijde až v dalších dnech, tentokrát šlo čistě o řečnickou přestřelku o prioritách státu.",
   "pocet_hlasovani": 0,
-  "proslo": false,
-  "en": {
-    "nadpis": "The second reading of the budget",
-    "lead": "All day, The Chamber of Deputies debated the state budget at second reading, without voting on laws. TOP 09 wanted to reduce the deficit of 310 billion by 64 billion, Bartoš pushed for the crisis line for the Czech Republic in the Middle East.",
-    "pointa": "Dozens of speakers presented amendments ranging from probation programs to mountain service. Babiš defended culture, Černoch defended, the meeting ended before midnight.",
-    "mean": "The second reading is when MPs cross, add and shuffle specific items. The vote on the budget will come in the next few days, this time it was purely a rhetorical skirmish about the state's priorities.",
-    "predmet_lidsky": "the state budget for 2026 in the second reading",
-    "koho": [
-      "Who does it concern? All of them. The budget determines how much the state will spend on health, defense, education and benefits."
-    ],
-    "fakty": [
-      {
-        "text": "Today we have the second reading of the budget ahead of us, let's hear each other.",
-        "citace": "Today we have the second reading of the budget ahead of us, let's hear each other."
-      },
-      {
-        "text": "TOP 09 reduces the deficit of 310 billion by 64 billion and strengthens defense and healthcare.",
-        "citace": "TOP 09 MPs submitted a set of amendments that reduce the planned deficit that this government planned to 310 billion, so this deficit of 310 billion is reduced by 64 billion."
-      },
-      {
-        "text": "Bartoš proposes the point Your life is in danger, press number one because of the crisis in the Middle East.",
-        "citace": "Yesterday, together with the Pirates, we proposed to include in the meeting of The Chamber of Deputies an item called Your life is in danger, press number one."
-      },
-      {
-        "text": "Kršková criticizes the reduction of the defense budget, while other countries increase spending.",
-        "citace": "I consider the reduction of the budget of the Ministry of Defense to be the biggest weakness of the draft state budget for 2026."
-      }
-    ]
-  }
+  "proslo": false
 }

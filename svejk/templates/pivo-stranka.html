@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ lang | default('cs') }}">
+<html lang="cs">
 <head>
 {% include "head-noviny.html" %}
 <title>{{ t.beer_page.title }}</title>
 <meta name="description" content="{{ t.beer_page.meta }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
-{% include "hreflang.html" %}
 {% include "og-meta.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="pivo-page">
-{% include "lang-switch.html" %}
 <div class="stagewrap pivo-stage">
   <div class="stack">
     <div class="page-slot">
@@ -38,26 +36,16 @@
             </header>
 
             <div class="pivo-body">
-              {% if locale == 'en' %}
-              <p>Poslušně hlásím, že every day The Chamber of Deputies sits, I am in the gallery, listening, taking notes, and translating it into human language. It is a service to the nation and the nation does not pay for it. At least not yet, as far as I know.</p>
-              <p>The newspaper was, is, and will remain free for everyone. But the domain, server, and tools cost something, and thirst after a whole day of listening to MPs is great. If every tenth reader bought one beer a month, running costs would be covered and there would even be money left for pickled sausages.</p>
-              {% else %}
               <p>Poslušně hlásím, že každý den, kdy Sněmovna zasedá, sedím na galerii, poslouchám, zapisuju a překládám to do lidské řeči. Je to služba vlasti a vlast za to neplatí. Aspoň zatím o tom neví.</p>
               <p>Noviny byly, jsou a zůstanou zadarmo pro každého. Ale doména, server a nástroje něco stojí a žízeň po celodenním poslouchání poslanců je veliká. Kdyby každý desátý čtenář koupil jedno pivo měsíčně, mám provoz zaplacený a ještě zbyde na utopence.</p>
-              {% endif %}
 
               <p class="pivo-promise"><strong>{{ t.beer_page.promise }}</strong></p>
 
 {% include "pivo-menu.html" %}
 
               <blockquote class="pivo-quote">
-                {% if locale == 'en' %}
-                <p>„I always thought beer was for drinking and politics for reporting. That is what I do."</p>
-                <span class="pivo-quote-by">{{ t.thanks_page.quote_by }}</span>
-                {% else %}
                 <p>„Já jsem si vždycky myslel, že pivo se má pít a politika hlásit. Tak to taky dělám."</p>
                 <span class="pivo-quote-by">Váš dobrý voják Švejk</span>
-                {% endif %}
               </blockquote>
 
               <p class="pivo-fine">{{ t.beer_page.fine }}</p>

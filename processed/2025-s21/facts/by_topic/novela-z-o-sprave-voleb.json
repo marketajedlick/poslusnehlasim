@@ -48,33 +48,5 @@
   "steno_slov": 3589,
   "lead": "Nevidomí a slabozrací voliči si budou moct volební lístky rozeznat sami: nově na nich budou QR kódy. Senátní nápad prošel zrychleně rovnou v prvním kole a pro bylo všech sto padesát pět přítomných.",
   "pointa": "Senátor Canov se loučil slovy, že tu byl přesně před čtyřiceti dny a protože se mu to líbilo, je tu zase; sál se pobavil a zatleskal mu.",
-  "mean": "Kromě QR kódů se k senátním volbám vrací oddělené lístky pro každého kandidáta a stát si dá pauzu se spouštěním nového počítačového systému pro správu voleb, dokud ho pořádně neotestuje. Platit to má už pro podzimní komunální a senátní volby.",
-  "en": {
-    "nadpis": "Elections with QR codes",
-    "lead": "Blind and visually impaired voters will be able to recognize the ballots themselves: they will now have QR codes. The senate idea went straight through at first reading and all 155 were present.",
-    "pointa": "Senator Canov said goodbye by saying that he was here exactly forty days ago and because he liked it, he is here again; the hall was amused and applauded him.",
-    "mean": "In addition to QR codes, Senate elections are returning to separate ballots for each candidate, and the state is pausing the launch of a new computerized election management system until it properly tests it. It should already apply for the autumn municipal and senate elections.",
-    "predmet_lidsky": "election administration",
-    "koho": [
-      "Who does it concern? Mainly blind and partially sighted voters who, thanks to QR codes, can recognize ballots without help."
-    ],
-    "fakty": [
-      {
-        "text": "Senator Canov: QR codes are intended to allow the blind and partially sighted to vote by themselves without an assistant, or to check with an assistant.",
-        "citace": "so that if they want, they can vote by themselves without an assistant, or they can check their assistant. This means that they can distinguish individual ballots from each other, and the QR code was used for this."
-      },
-      {
-        "text": "The Minister of the Interior, Metnar, supported the postponement of the sharp launch of the election management information system, saying that the system has not been widely tested.",
-        "citace": "I consider it responsible to suggest the postponement of the sharp start of the elections, i.e. the notified election management information system"
-      },
-      {
-        "text": "Canov said goodbye that he had been here exactly forty days ago and liked it very much; the hall cheered and applauded.",
-        "citace": "I was here exactly 40 days ago, and because I liked your place so much, I'm here again. (A rare applause.)"
-      },
-      {
-        "text": "Approved straight away at first reading: all 155 present for, none against.",
-        "citace": "In vote number 7, 155 MPs were registered, all 155 MPs were in favor, none against."
-      }
-    ]
-  }
+  "mean": "Kromě QR kódů se k senátním volbám vrací oddělené lístky pro každého kandidáta a stát si dá pauzu se spouštěním nového počítačového systému pro správu voleb, dokud ho pořádně neotestuje. Platit to má už pro podzimní komunální a senátní volby."
 }

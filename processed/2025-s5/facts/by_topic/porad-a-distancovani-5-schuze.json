@@ -34,29 +34,5 @@
   "pointa": "Rakušan navrhl zařadit do pořadu usnesení, které by Okamurova slova odmítlo. Bartoš vytáhl videa se Zunou. Fiala mezitím připomněl, že důvěra není formalita, jenže formalitám se věnovalo celé dopoledne.",
   "mean": "Předseda sněmovny a premiér v jedné koalici, opozice chtěla odsoudit Okamurova slova ještě před hlasováním o vládě. Zákony přišly až odpoledne, dopoledne se hádali o to, co vůbec na programu bude.",
   "pocet_hlasovani": 0,
-  "proslo": false,
-  "en": {
-    "nadpis": "Motion to condemn failed",
-    "lead": "Before the confidence debate even began, the opposition wanted a point where The Chamber of Deputies would condemn Okamura's New Year's address on Ukraine. The coalition didn't want to hear it.",
-    "pointa": "Rakušan proposed to include a resolution in the program that would reject Okamura's words. Bartoš pulled out videos with Zuna. In the meantime, Fiala reminded that the trust is not a formality, but the whole morning was devoted to formalities.",
-    "mean": "Speaker of The Chamber of Deputies and Prime Minister in one coalition, the opposition wanted to condemn Okamura's words even before the vote on the government. The laws did not come until the afternoon, in the morning they were arguing about what would be on the agenda.",
-    "predmet_lidsky": "agenda of the first meeting and The Chamber of Deputies' distancing from Speaker Tomio Okamura's words about Ukraine",
-    "koho": [
-      "Who does it concern? More like an observer of politics. It is about the agenda and rhetoric of the Speaker of The Chamber of Deputies, not a law for citizens."
-    ],
-    "fakty": [
-      {
-        "text": "I also propose to include a new item on behalf of all the opposition parties entitled The Chamber of Deputies distances itself from the words of Speaker Tomio Okamura regarding Ukraine delivered in his New Year's speech",
-        "citace": "I propose to include also on behalf of all opposition parties a new item entitled The Chamber of Deputies distances itself from the words of the Speaker Tomio Okamura regarding Ukraine"
-      },
-      {
-        "text": "he had to respond to what, as the minister in charge of the security of the Czech Republic, he named very correctly, and that is the necessity of helping Ukraine in the war against Russia",
-        "citace": "he had to respond to what, as the minister in charge of the security of the Czech Republic, he named very correctly, and that is the necessity of helping Ukraine in the war against Russia"
-      },
-      {
-        "text": "the fact that the new government appears in front of The Chamber of Deputies and asks for our trust is not some ritual or an obligatory formality, it is a serious decision",
-        "citace": "the fact that the new government appears in front of The Chamber of Deputies and asks for our trust is not some ritual or an obligatory formality, it is a serious decision"
-      }
-    ]
-  }
+  "proslo": false
 }

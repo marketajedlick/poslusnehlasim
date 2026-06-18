@@ -40,33 +40,5 @@
   "pointa": "Hřib útočil na Motoristy za podporu Babiše, Kovářová kritizovala výjimky z limitů výdajů. Po večerním jednání předsedů klubů koalice s opozicí dohodla pokračování až patnáctého května.",
   "mean": "Zákon má upravit limity státních výdajů podle evropských pravidel. V závěrečném hlasování šlo hlavně o pozměňovací návrhy ministryně financí, závěrečné hlasování přišlo až v pátek.",
   "pocet_hlasovani": 0,
-  "proslo": false,
-  "en": {
-    "nadpis": "Marathon about fiscal rules",
-    "lead": "On Wednesday, the debate on budget laws at third reading lasted all day. Schiller defended the loosening of fiscal rules, the opposition warned against the indebtedness of future generations, and in the evening parliamentary groups postponed the session to Friday.",
-    "pointa": "Hřib attacked Motorists for supporting Babiš, Kovářová criticized the exceptions to the spending limits. After the evening meeting of the club presidents, the coalition with the opposition agreed to continue until May 15.",
-    "mean": "The law is supposed to adjust the limits of state spending according to European rules. In the third reading, it was mainly about the amendment proposals of the Minister of Finance, the third reading came only on Friday.",
-    "predmet_lidsky": "the third reading of the government proposal amending the laws in the area of ​​public budgets",
-    "koho": [
-      "Who does it concern? Every taxpayer. These are state spending limits, exemptions for defense and the budget deficit."
-    ],
-    "fakty": [
-      {
-        "text": "Hřib said that the government wants to put children in debt and bypass parliamentary control.",
-        "citace": "The government will try to convince us that we should put our children and our children's children in debt in a way that bypasses any parliamentary scrutiny."
-      },
-      {
-        "text": "Murová described Schiller's amendments to budget responsibility.",
-        "citace": "Minister Schillerová took it over after the new government took over and added her modifications, which we have in the amendments."
-      },
-      {
-        "text": "Svobodová said that the Pirates will not support the law because of debt.",
-        "citace": "The law, as it stands, will allow the Czech Republic to become indebted in the future. This is unacceptable to us."
-      },
-      {
-        "text": "In the evening, Jureček proposed to interrupt the meeting, to continue until Friday.",
-        "citace": "We agreed that we would suspend this meeting at this point and start on Friday at 10:00 am."
-      }
-    ]
-  }
+  "proslo": false
 }

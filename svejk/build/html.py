@@ -13,20 +13,9 @@ from markupsafe import Markup
 
 from svejk.build.day_content import DenContent, build_den_content, datum_design
 from svejk.build.io import read_json
-from svejk.glossary import slovnicek_anchor, slovnicek_for_locale
+from svejk.glossary import slovnicek_anchor, slovnicek_entries
 from svejk.build.publish import list_site_editions
-from svejk.locale import (
-    alternate_locale,
-    footer_closings,
-    footer_stats_line,
-    hreflang_links,
-    load_strings,
-    localized_path,
-    locale_switch_href,
-    normalize_locale,
-    og_locale_tag,
-    schuze_count_label,
-)
+from svejk.strings import footer_closings, footer_stats_line, load_strings, schuze_count_label
 from svejk.build.nav import (
     Edition,
     archiv_pages_href,
@@ -55,10 +44,9 @@ def _stripe_url(env_key: str, default: str) -> str:
     return os.environ.get(env_key, default).strip() or default
 
 
-def pivo_tiers(locale: str = "cs") -> list[dict[str, Any]]:
+def pivo_tiers() -> list[dict[str, Any]]:
     """Hospodský ceník — tři položky, pay_href vede na Stripe Payment Links."""
-    loc = normalize_locale(locale)
-    pt = load_strings(loc).get("pivo_tiers", {})
+    pt = load_strings().get("pivo_tiers", {})
     monthly_badge = pt.get("monthly_badge", "MĚSÍČNĚ")
     return [
         {
@@ -96,7 +84,6 @@ from svejk.build.vyznamenani_neprosli import (
     VyznamenaniKind,
     inject_mean_links,
     load_vyznamenani,
-    localized_vyznamenani_data,
     page_explain,
     page_meta,
     resolve_vyznamenani_page_links,
@@ -169,8 +156,8 @@ def fonts_asset_version() -> str:
     return hashlib.sha256(_FONTS_CSS.read_bytes()).hexdigest()[:10]
 
 
-def _proslo_board_label(n: int, locale: str = "cs") -> str:
-    b = load_strings(locale).get("board", {})
+def _proslo_board_label(n: int) -> str:
+    b = load_strings().get("board", {})
     if n == 1:
         return b.get("proslo_1", "věc schválili")
     if 2 <= n <= 4:
@@ -178,8 +165,8 @@ def _proslo_board_label(n: int, locale: str = "cs") -> str:
     return b.get("proslo_other", "věcí schválili")
 
 
-def _zamitnuto_board_label(n: int, locale: str = "cs") -> str:
-    b = load_strings(locale).get("board", {})
+def _zamitnuto_board_label(n: int) -> str:
+    b = load_strings().get("board", {})
     if n == 1:
         return b.get("zamitnuto_1", "návrh zamítli")
     if 2 <= n <= 4:
@@ -207,7 +194,6 @@ def _apply_content_item_links(
     link_mode: str,
     base_path: str = "",
     site_url: str | None = None,
-    locale: str = "cs",
 ) -> None:
     """Doplní odkazy v lead/mean a kuriozita_nav — stejná logika jako u webového vydání."""
     for item in content.items:
@@ -225,7 +211,6 @@ def _apply_content_item_links(
                 kind,
                 link_mode=link_mode,
                 base_path=base_path,
-                locale=locale,
             )
             link_pairs.append((phrase, _abs_href(href, site_url)))
         if link_pairs:
@@ -240,7 +225,6 @@ def _apply_content_item_links(
                 schuze=paths.schuze,
                 link_mode=link_mode,
                 base_path=base_path,
-                locale=locale,
             ) + resolve_recnici_page_links(
                 paths,
                 content.datum,
@@ -249,7 +233,6 @@ def _apply_content_item_links(
                 schuze=paths.schuze,
                 link_mode=link_mode,
                 base_path=base_path,
-                locale=locale,
             )
             item.kuriozita_nav = [
                 (label, _abs_href(href, site_url)) for label, href in resolved
@@ -263,7 +246,6 @@ def _apply_steno_links(
     obdobi: int,
     link_mode: str,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str | None:
     return apply_steno_links_to_content(
         content,
@@ -271,7 +253,6 @@ def _apply_steno_links(
         obdobi=obdobi,
         link_mode=link_mode,
         base_path=base_path,
-        locale=locale,
     )
 
 
@@ -286,35 +267,32 @@ def _jinja_env() -> Environment:
     def _glossary_filter(context, text: str) -> Markup:
         from svejk.build.glossary_markup import glossary_markup as _gm
 
-        loc = context.get("locale", "cs")
-        return _gm(text, locale=loc)
+        return _gm(text)
 
     env.filters["glossary"] = _glossary_filter
     return env
 
 
-_FOOTER_CLOSINGS = footer_closings("cs")
-
 _DEFAULT_FOOTER_CONTACT = "svejk@poslusnehlasim.cz"
 
 
-def _footer_closing(seed: str, locale: str = "cs") -> str:
-    closings = footer_closings(locale)
+def _footer_closing(seed: str) -> str:
+    closings = footer_closings()
     idx = sum(ord(c) for c in seed) % len(closings)
     return closings[idx]
 
 
-def _edition_stats_parts(obdobi: int, locale: str = "cs") -> tuple[int, str]:
+def _edition_stats_parts(obdobi: int) -> tuple[int, str]:
     editions = list_site_editions(obdobi)
     n_editions = len(editions)
     n_schuze = len({e.schuze for e in editions})
-    schuze_part = schuze_count_label(n_schuze, locale)
+    schuze_part = schuze_count_label(n_schuze)
     return n_editions, schuze_part
 
 
-def _footer_stats_line(obdobi: int, locale: str = "cs") -> str:
-    n_editions, schuze_part = _edition_stats_parts(obdobi, locale)
-    return footer_stats_line(n_editions, schuze_part, locale)
+def _footer_stats_line(obdobi: int) -> str:
+    n_editions, schuze_part = _edition_stats_parts(obdobi)
+    return footer_stats_line(n_editions, schuze_part)
 
 
 def _page_path_from_canonical(canonical_url: str, site_url: str) -> str:
@@ -325,25 +303,14 @@ def _page_path_from_canonical(canonical_url: str, site_url: str) -> str:
     return canonical_url
 
 
-def _locale_ctx(
-    locale: str,
+def _site_ctx(
     *,
     site_url: str,
     base_path: str = "",
     page_path: str = "/",
 ) -> dict[str, Any]:
-    loc = normalize_locale(locale)
-    t = load_strings(loc)
     return {
-        "locale": loc,
-        "lang": loc,
-        "t": t,
-        "og_locale": og_locale_tag(loc),
-        "og_locale_alternate": og_locale_tag(alternate_locale(loc)),
-        "hreflang_links": hreflang_links(page_path, site_url, base_path),
-        "lang_switch_href": locale_switch_href(page_path, loc, base_path),
-        "lang_switch_label": t["nav"]["lang_switch"],
-        "lang_switch_aria": t["nav"]["lang_switch_aria"],
+        "t": load_strings(),
     }
 
 
@@ -353,18 +320,16 @@ def _site_footer_ctx(
     obdobi: int = 2025,
     active_page: str = "",
     closing_seed: str = "",
-    locale: str = "cs",
 ) -> dict[str, str]:
     cfg = NewsletterConfig.from_env()
     seed = closing_seed or active_page or base_path or "site"
     contact = (cfg.contact_email or _DEFAULT_FOOTER_CONTACT).strip()
-    loc = normalize_locale(locale)
     return {
-        "terms_href": podminky_pages_href(base_path, loc),
-        "privacy_href": soukromi_pages_href(base_path, loc),
-        "support_href": podpora_pages_href(base_path, loc),
-        "footer_closing": _footer_closing(seed, loc),
-        "footer_stats": _footer_stats_line(obdobi, loc),
+        "terms_href": podminky_pages_href(base_path),
+        "privacy_href": soukromi_pages_href(base_path),
+        "support_href": podpora_pages_href(base_path),
+        "footer_closing": _footer_closing(seed),
+        "footer_stats": _footer_stats_line(obdobi),
         "footer_contact_email": contact,
         "footer_active_page": active_page,
     }
@@ -381,9 +346,7 @@ def _site_nav_ctx(
     *,
     current_schuze: int | None = None,
     current_datum: str | None = None,
-    locale: str = "cs",
 ) -> dict[str, str]:
-    loc = normalize_locale(locale)
     editions = list_site_editions(obdobi)
     latest_href = ""
     edition_back_href = ""
@@ -391,7 +354,7 @@ def _site_nav_ctx(
     if editions:
         latest = editions[-1]
         latest_href = edition_pages_href(
-            latest.obdobi, latest.schuze, latest.datum_unl, base_path, loc
+            latest.obdobi, latest.schuze, latest.datum_unl, base_path
         )
         if (
             current_schuze is not None
@@ -401,27 +364,25 @@ def _site_nav_ctx(
         ):
             latest_href = ""
         edition_back_href = edition_pages_href(
-            latest.obdobi, latest.schuze, latest.datum_unl, base_path, loc
+            latest.obdobi, latest.schuze, latest.datum_unl, base_path
         )
         edition_back_label = _edition_back_label(latest.datum_unl)
     return {
-        "archive_href": archiv_pages_href(base_path, loc),
+        "archive_href": archiv_pages_href(base_path),
         "latest_href": latest_href,
         "edition_back_href": edition_back_href,
         "edition_back_label": edition_back_label,
-        "slovnicek_href": slovnicek_pages_href(base_path, loc),
-        "pivo_href": pivo_pages_href(base_path, loc),
+        "slovnicek_href": slovnicek_pages_href(base_path),
+        "pivo_href": pivo_pages_href(base_path),
     }
 
 
-def render_site_footer_html(base_path: str = "", *, obdobi: int = 2025, locale: str = "cs") -> str:
+def render_site_footer_html(base_path: str = "", *, obdobi: int = 2025) -> str:
     env = _jinja_env()
-    loc = normalize_locale(locale)
     cfg = NewsletterConfig.from_env()
     return env.get_template("site-footer.html").render(
-        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="snapshot", locale=loc),
-        t=load_strings(loc),
-        locale=loc,
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="snapshot"),
+        t=load_strings(),
     )
 
 
@@ -452,22 +413,18 @@ def render_den_html(
     canonical_url: str = "",
     meta_description: str = "",
     is_homepage: bool = False,
-    locale: str = "cs",
-    show_locale_notice: bool | None = None,
 ) -> str:
     _ = day_path
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
     if css_href is None:
         css_href = static_css_path(base_path)
     favicons = static_favicon_paths(base_path)
-    loc = normalize_locale(locale)
     nav = edition_nav(
         paths,
         content.datum,
         link_mode=link_mode,
         obdobi=obdobi,
         base_path=base_path,
-        locale=loc,
     )
     svejk_svg = _SVEJK_SVG.read_text(encoding="utf-8") if _SVEJK_SVG.is_file() else ""
     ob = obdobi if obdobi is not None else paths.obdobi
@@ -486,14 +443,9 @@ def render_den_html(
             first_item_nadpis=content.items[0].nadpis if content.items else "",
             proslo=content.proslo,
             zamitnuto=content.zamitnuto,
-            locale=loc,
-        ) or (
-            f"Diary from the Czech Chamber of Deputies, {datum_design(content.datum, content.den)}."
-            if loc == "en"
-            else f"Deník z Poslanecké sněmovny, {datum_design(content.datum, content.den)}."
-        )
+        ) or f"Deník z Poslanecké sněmovny, {datum_design(content.datum, content.den)}."
     if not canonical_url:
-        href = edition_pages_href(ob, paths.schuze, content.datum, base_path, loc)
+        href = edition_pages_href(ob, paths.schuze, content.datum, base_path)
         canonical_url = f"{cfg.site_url.rstrip('/')}{href}"
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
     nav_ctx = (
@@ -502,7 +454,6 @@ def render_den_html(
             base_path,
             current_schuze=paths.schuze,
             current_datum=content.datum,
-            locale=loc,
         )
         if link_mode == "pages"
         else {
@@ -512,7 +463,7 @@ def render_den_html(
             "pivo_href": None,
         }
     )
-    datum_label = datum_design(content.datum, content.den, locale=loc)
+    datum_label = datum_design(content.datum, content.den)
     edition_title = f"Poslušně hlásím · {datum_label}"
     from svejk.build.seo import article_headline as _article_headline
     from svejk.build.seo import article_json_ld as _article_json_ld
@@ -534,13 +485,12 @@ def render_den_html(
         og_image_abs_url,
     )
 
-    og_share_title = edition_og_title(content.datum, content.den, locale=loc)
+    og_share_title = edition_og_title(content.datum, content.den)
     og_headline = edition_og_headline(
         dnesni_ucet=content.dnesni_ucet,
         first_item_nadpis=content.items[0].nadpis if content.items else "",
         datum_unl=content.datum,
         den=content.den,
-        locale=loc,
     )
     og = _og_context(
         site_url=cfg.site_url,
@@ -548,7 +498,7 @@ def render_den_html(
         title=og_share_title,
         description=meta_description,
         og_type="article",
-        image_url=og_image_abs_url(cfg.site_url, base_path, content.datum, locale=loc),
+        image_url=og_image_abs_url(cfg.site_url, base_path, content.datum),
         image_width=OG_WIDTH,
         image_height=OG_HEIGHT,
         image_alt=og_headline,
@@ -598,7 +548,6 @@ def render_den_html(
         article_body=" ".join(body_chunks),
         parts=schema_parts or None,
         base_path=base_path,
-        locale=loc,
     )
     for item in content.items:
         if item.mean_links:
@@ -616,7 +565,6 @@ def render_den_html(
                     kind,
                     link_mode=link_mode,
                     base_path=base_path,
-                    locale=loc,
                 )
                 link_pairs.append((phrase, href))
             if link_pairs:
@@ -631,7 +579,6 @@ def render_den_html(
                 schuze=paths.schuze,
                 link_mode=link_mode,
                 base_path=base_path,
-                locale=loc,
             ) + resolve_recnici_page_links(
                 paths,
                 content.datum,
@@ -640,21 +587,15 @@ def render_den_html(
                 schuze=paths.schuze,
                 link_mode=link_mode,
                 base_path=base_path,
-                locale=loc,
             )
     tpl = _jinja_env().get_template("noviny-dlouhe.html")
-    if show_locale_notice is None:
-        from svejk.build.facts_i18n import has_en_translation
-
-        day_data = read_json(day_path) if day_path.is_file() else {}
-        show_locale_notice = loc == "en" and not has_en_translation(day_data)
     return tpl.render(
         content=content,
         schuze=paths.schuze,
         dup_day=dup_day,
-        datum_design=datum_design(content.datum, content.den, locale=loc),
-        proslo_label=_proslo_board_label(content.proslo, loc),
-        zamitnuto_label=_zamitnuto_board_label(content.zamitnuto, loc),
+        datum_design=datum_design(content.datum, content.den),
+        proslo_label=_proslo_board_label(content.proslo),
+        zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
         svejk_svg=svejk_svg,
         inline_css=inline_css,
         css=css,
@@ -668,16 +609,14 @@ def render_den_html(
         article_json_ld=json_ld,
         website_json_ld=website_ld,
         **og,
-        pivo_tiers=pivo_tiers(loc),
-        cookie_privacy_url=soukromi_pages_href(base_path, loc),
-        show_locale_notice=show_locale_notice,
-        **_locale_ctx(loc, site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        pivo_tiers=pivo_tiers(),
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
         **nav_ctx,
         **_site_footer_ctx(
             base_path,
             obdobi=ob,
             closing_seed=f"{ob}/{paths.schuze}/{content.datum}",
-            locale=loc,
         ),
         **favicons,
     )
@@ -895,26 +834,22 @@ def render_doi_email_html(
     *,
     site_url: str | None = None,
     base_path: str = "",
-    locale: str = "cs",
 ) -> tuple[str, str, str]:
     """HTML + plain text pro potvrzovací e-mail (double opt-in) v Ecomailu."""
     from svejk.build.nav import soukromi_pages_href
-    from svejk.locale import load_strings, localized_path, normalize_locale
 
     cfg = NewsletterConfig.from_env()
     site = (site_url or cfg.site_url).rstrip("/")
-    loc = normalize_locale(locale)
-    t = load_strings(loc)
+    t = load_strings()
     doi = t["doi"]
     base = base_path.rstrip("/")
-    privacy_path = soukromi_pages_href(base, loc)
-    confirm_path = localized_path("/potvrzeno/", loc)
+    privacy_path = soukromi_pages_href(base)
+    confirm_path = "/potvrzeno/"
     privacy_url = f"{site}{privacy_path}"
     confirm_redirect_url = f"{site}{confirm_path}"
     subject = doi["subject"]
     tpl = _jinja_env().get_template("doi-email.html")
     html = tpl.render(
-        locale=loc,
         t=t,
         privacy_url=privacy_url,
         confirm_redirect_url=confirm_redirect_url,
@@ -944,7 +879,6 @@ def render_archiv_html(
     css_href: str | None = None,
     fonts_css_href: str | None = None,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
     if css_href is None:
@@ -959,18 +893,16 @@ def render_archiv_html(
 
     latest = editions[-1]
     paths = SchuzePaths.create(latest.obdobi, latest.schuze)
-    loc = normalize_locale(locale)
     months = archive_by_month(
         paths,
         latest.datum_unl,
         link_mode="pages",
         obdobi=obdobi,
         base_path=base_path,
-        locale=loc,
     )
-    canonical_url = f"{cfg.site_url.rstrip('/')}{archiv_pages_href(base_path, loc)}"
+    canonical_url = f"{cfg.site_url.rstrip('/')}{archiv_pages_href(base_path)}"
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
-    t = load_strings(loc)
+    t = load_strings()
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
@@ -987,10 +919,10 @@ def render_archiv_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
-        cookie_privacy_url=soukromi_pages_href(base_path, loc),
-        **_locale_ctx(loc, site_url=cfg.site_url, base_path=base_path, page_path=page_path),
-        **_site_nav_ctx(obdobi, base_path, locale=loc),
-        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="archiv", locale=loc),
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        **_site_nav_ctx(obdobi, base_path),
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="archiv"),
         **favicons,
     )
 
@@ -1002,7 +934,6 @@ def render_404_html(
     css_href: str | None = None,
     fonts_css_href: str | None = None,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
     """Vlastní 404 stránka pro GitHub Pages."""
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
@@ -1018,13 +949,11 @@ def render_404_html(
 
     latest = editions[-1]
     from svejk.timeline import den_v_tydnu
-
-    loc = normalize_locale(locale)
     latest_label = datum_design(
-        latest.datum_unl, den_v_tydnu(latest.datum_unl), locale=loc
+        latest.datum_unl, den_v_tydnu(latest.datum_unl)
     )
     base = base_path.rstrip("/")
-    home = localized_path("/", loc)
+    home = "/"
     home = f"{base}{home}" if base else home
     canonical_url = f"{cfg.site_url.rstrip('/')}{home}"
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
@@ -1037,10 +966,10 @@ def render_404_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
-        cookie_privacy_url=soukromi_pages_href(base_path, loc),
-        **_locale_ctx(loc, site_url=cfg.site_url, base_path=base_path, page_path=page_path),
-        **_site_nav_ctx(obdobi, base_path, locale=loc),
-        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="404", locale=loc),
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        **_site_nav_ctx(obdobi, base_path),
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="404"),
         **favicons,
     )
 
@@ -1052,7 +981,6 @@ def render_potvrzeno_html(
     css_href: str | None = None,
     fonts_css_href: str | None = None,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
     """Stránka po potvrzení double opt-in (přesměrování z Ecomailu)."""
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
@@ -1067,14 +995,13 @@ def render_potvrzeno_html(
         raise ValueError(f"Žádná vydání pro období {obdobi}")
 
     latest = editions[-1]
-    loc = normalize_locale(locale)
-    potvrzeno_path = localized_path("/potvrzeno/", loc)
+    potvrzeno_path = "/potvrzeno/"
     canonical_url = f"{cfg.site_url.rstrip('/')}{potvrzeno_path}"
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
     from svejk.timeline import den_v_tydnu
 
     latest_label = datum_design(
-        latest.datum_unl, den_v_tydnu(latest.datum_unl), locale=loc
+        latest.datum_unl, den_v_tydnu(latest.datum_unl)
     )
     tpl = _jinja_env().get_template("potvrzeno.html")
     return tpl.render(
@@ -1087,10 +1014,10 @@ def render_potvrzeno_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
-        cookie_privacy_url=soukromi_pages_href(base_path, loc),
-        **_locale_ctx(loc, site_url=cfg.site_url, base_path=base_path, page_path=page_path),
-        **_site_nav_ctx(obdobi, base_path, locale=loc),
-        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="potvrzeno", locale=loc),
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        **_site_nav_ctx(obdobi, base_path),
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="potvrzeno"),
         **favicons,
     )
 
@@ -1105,13 +1032,10 @@ def render_vyznamenani_table_html(
     fonts_css_href: str | None = None,
     base_path: str = "",
     link_mode: str = "file",
-    locale: str = "cs",
 ) -> str | None:
     data = load_vyznamenani(paths, datum_unl, kind)
     if not data:
         return None
-    loc = normalize_locale(locale)
-    data = localized_vyznamenani_data(data, loc)
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
     if css_href is None:
         css_href = static_css_path(base_path)
@@ -1122,9 +1046,9 @@ def render_vyznamenani_table_html(
     obdobi = int(data.get("obdobi") or paths.obdobi)
     schuze = int(data.get("schuze") or paths.schuze)
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
-    datum_label = vyznamenani_datum_label(datum_unl, loc)
+    datum_label = vyznamenani_datum_label(datum_unl)
     pocet = int(data.get("pocet") or len(data.get("radky") or []))
-    meta = page_meta(kind, pocet=pocet, datum_label=datum_label, locale=loc)
+    meta = page_meta(kind, pocet=pocet, datum_label=datum_label)
     sibling_kind: VyznamenaniKind | None = (
         "prosli" if kind == "neprosli" else "neprosli" if kind == "prosli" else None
     )
@@ -1132,10 +1056,10 @@ def render_vyznamenani_table_html(
         load_vyznamenani(paths, datum_unl, sibling_kind) if sibling_kind else None
     )
     if link_mode == "pages":
-        edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path, loc)
+        edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path)
         canonical_url = (
             f"{cfg.site_url.rstrip('/')}"
-            f"{vyznamenani_pages_href(obdobi, schuze, datum_unl, kind, base_path, loc)}"
+            f"{vyznamenani_pages_href(obdobi, schuze, datum_unl, kind, base_path)}"
         )
         sibling_href = (
             vyznamenani_href(
@@ -1145,7 +1069,6 @@ def render_vyznamenani_table_html(
                 sibling_kind,
                 link_mode="pages",
                 base_path=base_path,
-                locale=loc,
             )
             if sibling_data
             else ""
@@ -1159,7 +1082,7 @@ def render_vyznamenani_table_html(
             else ""
         )
     sibling_link_label = (
-        sibling_label(sibling_kind, loc) if sibling_kind else ""
+        sibling_label(sibling_kind) if sibling_kind else ""
     )
     page_description = meta["gloss"]
     og_title = f"{meta['title']} · {datum_label} · Poslušně hlásím"
@@ -1170,7 +1093,7 @@ def render_vyznamenani_table_html(
         description=page_description,
     )
     votes_by_cislo = _load_votes_by_cislo(paths, datum_unl)
-    explain = page_explain(kind, data, votes_by_cislo, locale=loc)
+    explain = page_explain(kind, data, votes_by_cislo)
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url) if canonical_url else ""
     tpl = _jinja_env().get_template("vyznamenani-tabulka-stranka.html")
     return tpl.render(
@@ -1191,20 +1114,18 @@ def render_vyznamenani_table_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
-        cookie_privacy_url=soukromi_pages_href(base_path, loc),
-        **_locale_ctx(loc, site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
         **_site_nav_ctx(
             paths.obdobi,
             base_path,
             current_schuze=schuze,
             current_datum=datum_unl,
-            locale=loc,
         ),
         **_site_footer_ctx(
             base_path,
             obdobi=paths.obdobi,
             closing_seed=f"vyznamenani/{kind}/{datum_unl}",
-            locale=loc,
         ),
         **favicons,
         **og,
@@ -1228,10 +1149,8 @@ def render_steno_sources_html(
     fonts_css_href: str | None = None,
     base_path: str = "",
     link_mode: str = "file",
-    locale: str = "cs",
 ) -> str | None:
-    loc = normalize_locale(locale)
-    blocks = collect_steno_sources(paths, datum_unl, locale=loc)
+    blocks = collect_steno_sources(paths, datum_unl)
     if not blocks:
         return None
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
@@ -1244,18 +1163,18 @@ def render_steno_sources_html(
     obdobi = paths.obdobi
     schuze = paths.schuze
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
-    datum_label = datum_design(datum_unl, den_v_tydnu(datum_unl), locale=loc)
-    t = load_strings(loc)
+    datum_label = datum_design(datum_unl, den_v_tydnu(datum_unl))
+    t = load_strings()
     st = t.get("steno_sources", {})
     page_title = st.get("page_title", "Stenoprotokol")
     page_gloss = st.get("page_gloss", "")
     page_explain = st.get("page_explain", "")
     page_description = page_gloss or page_title
     if link_mode == "pages":
-        edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path, loc)
+        edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path)
         canonical_url = (
             f"{cfg.site_url.rstrip('/')}"
-            f"{steno_sources_pages_href(obdobi, schuze, datum_unl, base_path, loc)}"
+            f"{steno_sources_pages_href(obdobi, schuze, datum_unl, base_path)}"
         )
     else:
         edition_href = f"{d.strftime('%Y-%m-%d')}.html"
@@ -1282,20 +1201,18 @@ def render_steno_sources_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
-        cookie_privacy_url=soukromi_pages_href(base_path, loc),
-        **_locale_ctx(loc, site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
         **_site_nav_ctx(
             obdobi,
             base_path,
             current_schuze=schuze,
             current_datum=datum_unl,
-            locale=loc,
         ),
         **_site_footer_ctx(
             base_path,
             obdobi=obdobi,
             closing_seed=f"steno/{datum_unl}",
-            locale=loc,
         ),
         **favicons,
         **og,
@@ -1311,12 +1228,10 @@ def render_recnici_table_html(
     fonts_css_href: str | None = None,
     base_path: str = "",
     link_mode: str = "file",
-    locale: str = "cs",
 ) -> str | None:
     data = load_recnici(paths, datum_unl)
     if not data or not data.get("radky"):
         return None
-    loc = normalize_locale(locale)
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
     if css_href is None:
         css_href = static_css_path(base_path)
@@ -1327,13 +1242,13 @@ def render_recnici_table_html(
     obdobi = int(data.get("obdobi") or paths.obdobi)
     schuze = int(data.get("schuze") or paths.schuze)
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
-    datum_label = recnici_datum_label(datum_unl, loc)
-    meta = recnici_page_meta(data, datum_label=datum_label, locale=loc)
+    datum_label = recnici_datum_label(datum_unl)
+    meta = recnici_page_meta(data, datum_label=datum_label)
     if link_mode == "pages":
-        edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path, loc)
+        edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path)
         canonical_url = (
             f"{cfg.site_url.rstrip('/')}"
-            f"{recnici_pages_href(obdobi, schuze, datum_unl, base_path, loc)}"
+            f"{recnici_pages_href(obdobi, schuze, datum_unl, base_path)}"
         )
     else:
         edition_href = f"{d.strftime('%Y-%m-%d')}.html"
@@ -1349,7 +1264,7 @@ def render_recnici_table_html(
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url) if canonical_url else ""
     tpl = _jinja_env().get_template("recnici-tabulka-stranka.html")
     return tpl.render(
-        rows=recnici_rows(data, locale=loc),
+        rows=recnici_rows(data),
         datum_label=datum_label,
         edition_href=edition_href,
         back_to_edition=meta["back_to_edition"].format(date=datum_label),
@@ -1365,20 +1280,18 @@ def render_recnici_table_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
-        cookie_privacy_url=soukromi_pages_href(base_path, loc),
-        **_locale_ctx(loc, site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
         **_site_nav_ctx(
             obdobi,
             base_path,
             current_schuze=schuze,
             current_datum=datum_unl,
-            locale=loc,
         ),
         **_site_footer_ctx(
             base_path,
             obdobi=obdobi,
             closing_seed=f"recnici/{datum_unl}",
-            locale=loc,
         ),
         **favicons,
         **og,
@@ -1392,7 +1305,6 @@ def render_slovnicek_html(
     css_href: str | None = None,
     fonts_css_href: str | None = None,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
     if css_href is None:
@@ -1404,11 +1316,9 @@ def render_slovnicek_html(
     editions = list_site_editions(obdobi)
     if not editions:
         raise ValueError(f"Žádná vydání pro období {obdobi}")
-
-    loc = normalize_locale(locale)
-    canonical_url = f"{cfg.site_url.rstrip('/')}{slovnicek_pages_href(base_path, loc)}"
+    canonical_url = f"{cfg.site_url.rstrip('/')}{slovnicek_pages_href(base_path)}"
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
-    gp = load_strings(loc)["glossary_page"]
+    gp = load_strings()["glossary_page"]
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
@@ -1418,7 +1328,7 @@ def render_slovnicek_html(
     tpl = _jinja_env().get_template("slovnicek-stranka.html")
     slovnicek = [
         {"question": q, "answer": a, "anchor": slovnicek_anchor(q)}
-        for q, a in slovnicek_for_locale(loc)
+        for q, a in slovnicek_entries()
     ]
     return tpl.render(
         slovnicek=slovnicek,
@@ -1428,10 +1338,10 @@ def render_slovnicek_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
-        cookie_privacy_url=soukromi_pages_href(base_path, loc),
-        **_locale_ctx(loc, site_url=cfg.site_url, base_path=base_path, page_path=page_path),
-        **_site_nav_ctx(obdobi, base_path, locale=loc),
-        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="slovnicek", locale=loc),
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        **_site_nav_ctx(obdobi, base_path),
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="slovnicek"),
         **favicons,
     )
 
@@ -1443,7 +1353,6 @@ def render_pivo_html(
     css_href: str | None = None,
     fonts_css_href: str | None = None,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
     if css_href is None:
@@ -1455,11 +1364,9 @@ def render_pivo_html(
     editions = list_site_editions(obdobi)
     if not editions:
         raise ValueError(f"Žádná vydání pro období {obdobi}")
-
-    loc = normalize_locale(locale)
-    canonical_url = f"{cfg.site_url.rstrip('/')}{pivo_pages_href(base_path, loc)}"
+    canonical_url = f"{cfg.site_url.rstrip('/')}{pivo_pages_href(base_path)}"
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
-    bp = load_strings(loc)["beer_page"]
+    bp = load_strings()["beer_page"]
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
@@ -1470,17 +1377,17 @@ def render_pivo_html(
     return tpl.render(
         canonical_url=canonical_url,
         **og,
-        pivo_tiers=pivo_tiers(loc),
+        pivo_tiers=pivo_tiers(),
         pivo_menu_pay=True,
         stripe_portal_href=_stripe_url("STRIPE_PORTAL_URL", STRIPE_PORTAL_URL),
         inline_css=inline_css,
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
-        cookie_privacy_url=soukromi_pages_href(base_path, loc),
-        **_locale_ctx(loc, site_url=cfg.site_url, base_path=base_path, page_path=page_path),
-        **_site_nav_ctx(obdobi, base_path, locale=loc),
-        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="pivo", locale=loc),
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        **_site_nav_ctx(obdobi, base_path),
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="pivo"),
         **favicons,
     )
 
@@ -1492,7 +1399,6 @@ def render_dekuju_html(
     css_href: str | None = None,
     fonts_css_href: str | None = None,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
     """Stránka po úspěšné platbě (redirect ze Stripe)."""
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
@@ -1505,9 +1411,7 @@ def render_dekuju_html(
     editions = list_site_editions(obdobi)
     if not editions:
         raise ValueError(f"Žádná vydání pro období {obdobi}")
-
-    loc = normalize_locale(locale)
-    canonical_url = f"{cfg.site_url.rstrip('/')}{dekuju_pages_href(base_path, loc)}"
+    canonical_url = f"{cfg.site_url.rstrip('/')}{dekuju_pages_href(base_path)}"
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
     tpl = _jinja_env().get_template("dekuju-stranka.html")
     return tpl.render(
@@ -1516,10 +1420,10 @@ def render_dekuju_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
-        cookie_privacy_url=soukromi_pages_href(base_path, loc),
-        **_locale_ctx(loc, site_url=cfg.site_url, base_path=base_path, page_path=page_path),
-        **_site_nav_ctx(obdobi, base_path, locale=loc),
-        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="dekuju", locale=loc),
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        **_site_nav_ctx(obdobi, base_path),
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="dekuju"),
         **favicons,
     )
 
@@ -1531,7 +1435,6 @@ def render_soukromi_html(
     css_href: str | None = None,
     fonts_css_href: str | None = None,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
     """Zásady ochrany osobních údajů (odběr, analytika, platby)."""
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
@@ -1541,10 +1444,9 @@ def render_soukromi_html(
         fonts_css_href = static_fonts_css_path(base_path)
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
-    loc = normalize_locale(locale)
-    canonical_url = f"{cfg.site_url.rstrip('/')}{soukromi_pages_href(base_path, loc)}"
+    canonical_url = f"{cfg.site_url.rstrip('/')}{soukromi_pages_href(base_path)}"
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
-    pp = load_strings(loc)["privacy_page"]
+    pp = load_strings()["privacy_page"]
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
@@ -1561,15 +1463,14 @@ def render_soukromi_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
-        cookie_privacy_url=soukromi_pages_href(base_path, loc),
-        **_locale_ctx(loc, site_url=cfg.site_url, base_path=base_path, page_path=page_path),
-        **_site_nav_ctx(obdobi, base_path, locale=loc),
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(
             base_path,
             obdobi=obdobi,
             active_page="privacy",
             closing_seed="soukromi",
-            locale=loc,
         ),
         **favicons,
     )
@@ -1582,7 +1483,6 @@ def render_podminky_html(
     css_href: str | None = None,
     fonts_css_href: str | None = None,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
     """Podmínky používání webu, odběru a dobrovolných příspěvků."""
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
@@ -1592,10 +1492,9 @@ def render_podminky_html(
         fonts_css_href = static_fonts_css_path(base_path)
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
-    loc = normalize_locale(locale)
-    canonical_url = f"{cfg.site_url.rstrip('/')}{podminky_pages_href(base_path, loc)}"
+    canonical_url = f"{cfg.site_url.rstrip('/')}{podminky_pages_href(base_path)}"
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
-    tp = load_strings(loc)["terms_page"]
+    tp = load_strings()["terms_page"]
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
@@ -1612,15 +1511,14 @@ def render_podminky_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
-        cookie_privacy_url=soukromi_pages_href(base_path, loc),
-        **_locale_ctx(loc, site_url=cfg.site_url, base_path=base_path, page_path=page_path),
-        **_site_nav_ctx(obdobi, base_path, locale=loc),
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(
             base_path,
             obdobi=obdobi,
             active_page="terms",
             closing_seed="podminky",
-            locale=loc,
         ),
         **favicons,
     )
@@ -1633,7 +1531,6 @@ def render_podpora_html(
     css_href: str | None = None,
     fonts_css_href: str | None = None,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
     """Zákaznická podpora — kontakt, platby, odběr."""
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
@@ -1643,10 +1540,9 @@ def render_podpora_html(
         fonts_css_href = static_fonts_css_path(base_path)
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
-    loc = normalize_locale(locale)
-    canonical_url = f"{cfg.site_url.rstrip('/')}{podpora_pages_href(base_path, loc)}"
+    canonical_url = f"{cfg.site_url.rstrip('/')}{podpora_pages_href(base_path)}"
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
-    sp = load_strings(loc)["support_page"]
+    sp = load_strings()["support_page"]
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
@@ -1663,15 +1559,14 @@ def render_podpora_html(
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
-        cookie_privacy_url=soukromi_pages_href(base_path, loc),
-        **_locale_ctx(loc, site_url=cfg.site_url, base_path=base_path, page_path=page_path),
-        **_site_nav_ctx(obdobi, base_path, locale=loc),
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(
             base_path,
             obdobi=obdobi,
             active_page="support",
             closing_seed="podpora",
-            locale=loc,
         ),
         **favicons,
     )

@@ -1,2 +1,5 @@
 # Suroviny jsou velké — drž lokálně
 */raw/steno.jsonl
+
+# Lokální HTML z compose — do produkce jde export do site/
+*/out/**/*.html

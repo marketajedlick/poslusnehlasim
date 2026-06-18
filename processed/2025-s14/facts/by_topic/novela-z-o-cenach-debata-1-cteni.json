@@ -39,33 +39,5 @@
   "pointa": "Schillerová hájila zrychlené projednávání kvůli cenám na čerpacích stanicích, Hřib a Jakob útočili na právní vady. Po úterním prvním kole (100:0) následovalo noční závěrečné hlasování 160:0, druhé kolo v noci koalice nenatáhla (64:89).",
   "mean": "Zákon má vládě dát nástroj na regulaci cen benzínu a nafty. Ve zkrácené debatě bez standardní lhůty jde o rychlou cestu, kterou opozice považuje za obcházení parlamentu.",
   "pocet_hlasovani": 0,
-  "proslo": false,
-  "en": {
-    "nadpis": "A Long Night Over Fuel Prices",
-    "lead": "Wednesday followed on from Tuesday's first reading (100:0) and belonged to the marathon about the regulation of fuel prices. The government pushed for an accelerated discussion, the opposition talked about socialist experiments, dozens of votes lasted until the morning.",
-    "pointa": "Schillerová defended accelerated negotiations due to prices at gas stations, Hřib and Jakob attacked legal defects. Tuesday's first reading (100:0) was followed by the night's third reading of 160:0, the coalition did not win the second reading at night (64:89).",
-    "mean": "The law is supposed to give the government a tool to regulate the prices of gasoline and diesel. In an abbreviated debate with no standard time limit, this is a fast track that the opposition sees as bypassing parliament.",
-    "predmet_lidsky": "regulation of fuel prices in an abbreviated meeting",
-    "koho": [
-      "Who does it concern? Motorists. The law is supposed to allow the government to intervene in the prices of petrol and diesel in crisis situations."
-    ],
-    "fakty": [
-      {
-        "text": "Schiller advocated a legislative emergency to regulate fuel prices.",
-        "citace": "Allow me, on behalf of the government of the Czech Republic, to introduce you to the reasons that led us to request the declaration of a state of legislative emergency regarding the draft law on the regulation of fuel prices by the government."
-      },
-      {
-        "text": "Hřib accused the government of a socialist experiment and legal defects in the proposal.",
-        "citace": "The government did nothing at all here for a long time. Then you started watching those margins. And now we have a proposal for a legislative emergency."
-      },
-      {
-        "text": "Jakob described the proposal as socialist experiments without meeting the conditions of the emergency.",
-        "citace": "I will comment on these socialist experiments in more detail. The conditions given by our rules of procedure are not met."
-      },
-      {
-        "text": "First reading passed 160-0, second reading overnight 64-89.",
-        "citace": "Vote number 51 for 160, vote number 50 for 64 to 89."
-      }
-    ]
-  }
+  "proslo": false
 }

@@ -41,29 +41,5 @@
   "steno_slov": 699,
   "lead": "Večer kolem deváté schůze přesunula druhé kolo volby místopředsedů na pátek 14. listopadu, sto devatenáct hlasů proti čtyřiceti osmi. Benda Okamurovi vyčítal, že jde o koaliční diktát, ne dohodu.",
   "pointa": "Malá prosadila zařazení volby místopředsedů na pátek 14. listopadu a vyřazení neprojednaného bodu z pořadu. Richterová pak chtěla opakovat hlasování, hlasovala proti, ale na obrazovce se jí objevilo „zdržel se“.",
-  "mean": "Termín další schůze určuje, kdy se Sněmovna zase sejde. Tentokrát šlo hlavně o to, kdy doplní zbývající místopředsedy.",
-  "en": {
-    "nadpis": "Second round on Friday",
-    "lead": "In the evening around the ninth meeting, she moved the second round of the election of Deputy Speakers to Friday, November 14, one hundred and nineteen votes against forty-eight. Benda blamed Okamura that it was a coalition dictate, not an agreement.",
-    "pointa": "Malá pushed for the inclusion of the election of vice presidents on Friday, November 14, and the removal of the non-discussed item from the agenda. Richter then wanted to repeat the vote, she voted against, but her screen showed \"abstain\".",
-    "mean": "The date of the next meeting determines when The Chamber of Deputies will meet again. This time, it was mainly about when they would fill in the remaining Deputy Speakers.",
-    "predmet_lidsky": "proposal for the date of the 2nd PS meeting",
-    "koho": [
-      "It does not concern the citizen."
-    ],
-    "fakty": [
-      {
-        "text": "Taťána Malá suggested including the election of Deputy Speakers on Friday, November 14 as item 17.",
-        "citace": "Include a new item Proposal for the election of deputy chairmen of The Chamber of Deputies, as item 17 for Friday 14 November."
-      },
-      {
-        "text": "Marek Benda protested against the wording \"after the agreement of the clubs\", according to him, it was a dictate of the coalition.",
-        "citace": "Do not say with the agreement of the chairmen of the caucuses, when this is the dictate you have communicated to the opposition."
-      },
-      {
-        "text": "Vote number 18 to drop the non-discussed item: one hundred and nineteen for, forty-eight against.",
-        "citace": "Vote number 18, entered 194, for 119, against 48."
-      }
-    ]
-  }
+  "mean": "Termín další schůze určuje, kdy se Sněmovna zase sejde. Tentokrát šlo hlavně o to, kdy doplní zbývající místopředsedy."
 }

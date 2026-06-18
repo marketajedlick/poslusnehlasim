@@ -6,7 +6,7 @@ import re
 
 from markupsafe import Markup, escape
 
-from svejk.glossary import glossary_for_locale, slovnicek_box_for_locale
+from svejk.glossary import glossary_entries, slovnicek_box
 
 
 def _pattern(phrase: str) -> re.Pattern[str]:
@@ -27,12 +27,12 @@ def _wrap(label: str, tip: str) -> str:
 _HTML_SPLIT = re.compile(r"(<[^>]+>)")
 
 
-def _markup_plain(text: str, *, locale: str = "cs") -> str:
+def _markup_plain(text: str) -> str:
     """Tooltipy jen v prostém textu (bez HTML tagů)."""
     if not text:
         return text
 
-    glossary = glossary_for_locale(locale)
+    glossary = glossary_entries()
     matches: list[tuple[int, int, str, str]] = []
     for phrase, tip in glossary:
         for m in _pattern(phrase).finditer(text):
@@ -57,26 +57,26 @@ def _markup_plain(text: str, *, locale: str = "cs") -> str:
     return out
 
 
-def markup_glossary(text: str, *, locale: str = "cs") -> str:
+def markup_glossary(text: str) -> str:
     """Vrátí HTML s hover tooltipem u známých pojmů (bez překrývání)."""
     if not text:
         return text
     if "<" not in text:
-        return _markup_plain(text, locale=locale)
+        return _markup_plain(text)
 
     parts = _HTML_SPLIT.split(text)
     return "".join(
-        part if part.startswith("<") else _markup_plain(part, locale=locale)
+        part if part.startswith("<") else _markup_plain(part)
         for part in parts
     )
 
 
-def glossary_markup(text: str, *, locale: str = "cs") -> Markup:
-    return Markup(markup_glossary(text, locale=locale))
+def glossary_markup(text: str) -> Markup:
+    return Markup(markup_glossary(text))
 
 
-def _tip_for_phrase(phrase: str, *, locale: str = "cs") -> str | None:
-    glossary = glossary_for_locale(locale)
+def _tip_for_phrase(phrase: str) -> str | None:
+    glossary = glossary_entries()
     for gp, tip in glossary:
         if gp.lower() == phrase.lower():
             return tip
@@ -94,7 +94,7 @@ def _needle_pattern(needle: str) -> re.Pattern[str]:
     return re.compile(rf"(?<![\w]){body}", re.IGNORECASE)
 
 
-def svejkov_slovnik(*texts: str, limit: int = 6, locale: str = "cs") -> list[tuple[str, str]]:
+def svejkov_slovnik(*texts: str, limit: int = 6) -> list[tuple[str, str]]:
     """Pojmy z textu dne pro box Švejkův slovník (název, vysvětlení)."""
     combined = "\n".join(t for t in texts if t)
     if not combined.strip():
@@ -102,12 +102,12 @@ def svejkov_slovnik(*texts: str, limit: int = 6, locale: str = "cs") -> list[tup
 
     found: list[tuple[str, str]] = []
     seen: set[str] = set()
-    for label, needle in slovnicek_box_for_locale(locale):
+    for label, needle in slovnicek_box():
         if len(found) >= limit:
             break
         if not _needle_pattern(needle).search(combined):
             continue
-        tip = _tip_for_phrase(needle, locale=locale) or _tip_for_phrase(label, locale=locale)
+        tip = _tip_for_phrase(needle) or _tip_for_phrase(label)
         if not tip:
             continue
         key = label.lower()

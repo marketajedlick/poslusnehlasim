@@ -37,7 +37,7 @@ export default {
     if (hp || !email || !email.includes("@")) {
       return json({ ok: false }, 400, headers);
     }
-    const listId = subscribeListId(env, body.locale);
+    const listId = subscribeListId(env);
     if (!env.ECOMAIL_API_KEY || !listId) {
       return json({ ok: false, error: "misconfigured" }, 500, headers);
     }
@@ -65,7 +65,7 @@ export default {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          subscriber_data: { email, source: "poslusnehlasim", locale: normalizeLocale(body.locale) },
+          subscriber_data: { email, source: "poslusnehlasim" },
           trigger_autoresponders: true,
           update_existing: true,
           resubscribe: true,
@@ -176,13 +176,6 @@ function json(data, status, headers) {
   });
 }
 
-function normalizeLocale(locale) {
-  return String(locale || "").trim().toLowerCase() === "en" ? "en" : "cs";
-}
-
-function subscribeListId(env, locale) {
-  if (normalizeLocale(locale) === "en") {
-    return env.ECOMAIL_SUBSCRIBE_LIST_ID_EN || "4";
-  }
+function subscribeListId(env) {
   return env.ECOMAIL_SUBSCRIBE_LIST_ID || env.ECOMAIL_LIST_ID || "3";
 }

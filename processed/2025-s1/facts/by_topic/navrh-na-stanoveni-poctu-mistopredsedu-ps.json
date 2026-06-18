@@ -47,33 +47,5 @@
     "spor": true,
     "prazdny_sal": false
   },
-  "steno_slov": 6464,
-  "en": {
-    "nadpis": "Two Deputy Speakers",
-    "lead": "In the evening, The Chamber of Deputies elected two Deputy Speakers, Jiří Barták and Patrik Nacher. The debate on women in leadership ended with the second reading being postponed until Friday.",
-    "pointa": "Hřib and Šebelová criticized the male candidate, Okamura interrupted the second reading before the clubs could agree on a date. After his election, Nacher demonstrated sign language, as he promised to interpret for the deaf as the new Deputy Speaker.",
-    "mean": "Deputy Speakers stand in for the Speaker when running meetings. Four places should correspond to the balance of the clubs' strengths, two remain vacant and will be filled only on Friday, November 14.",
-    "predmet_lidsky": "the number of Deputy Speakers and their election",
-    "koho": [
-      "How many Deputy Speakers there will be, and who takes the gavel when the Speaker is away."
-    ],
-    "fakty": [
-      {
-        "text": "The Chamber of Deputies fixed the number of Deputy Speakers at four, vote number 9: one hundred and fifty-six for, one against.",
-        "citace": "Vote number 9, registered 194, for 156, against 1."
-      },
-      {
-        "text": "In the first ballot of the secret election, Jiří Barták won 113 votes, Patrik Nacher 98 votes.",
-        "citace": "Jiří Barták won 113 votes and becomes the deputy chairman of The Chamber of Deputies. Patrik Nacher received 98 votes and becomes Deputy Speaker."
-      },
-      {
-        "text": "Zdeněk Hřib criticized that there was no woman on the ticket, Šebelová protested against the label \"half of the population\".",
-        "citace": "Therefore, we nominated Olga Richterová, the current Deputy Speaker, for the election of the Deputy Speaker of The Chamber of Deputies on behalf of the Pirates."
-      },
-      {
-        "text": "Nacher promised sign language interpretation like in the Senate and showed a few signs at the counter after being elected.",
-        "citace": "I learned it in 15 minutes. Thank you for your support."
-      }
-    ]
-  }
+  "steno_slov": 6464
 }

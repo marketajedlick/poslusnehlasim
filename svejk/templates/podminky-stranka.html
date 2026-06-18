@@ -1,52 +1,24 @@
 <!DOCTYPE html>
-<html lang="{{ lang | default('cs') }}">
+<html lang="cs">
 <head>
 {% include "head-noviny.html" %}
 <title>{{ t.terms_page.title }}</title>
 <meta name="description" content="{{ t.terms_page.meta }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
-{% include "hreflang.html" %}
 {% include "og-meta.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="archiv-page">
-{% include "lang-switch.html" %}
 <div class="archiv-wrap soukromi-wrap">
   <header class="archiv-head">
-    <h1 class="archiv-title">{% if locale == 'en' %}Terms of use{% else %}Podmínky používání{% endif %}</h1>
-    <p class="archiv-gloss">{% if locale == 'en' %}Poslušně hlásím, že the diary is free, a beer is voluntary, and humour is not legal advice.{% else %}Poslušně hlásím, že deník je zdarma, pivo je dobrovolné a humor není právní rada.{% endif %}</p>
+    <h1 class="archiv-title">Podmínky používání</h1>
+    <p class="archiv-gloss">Poslušně hlásím, že deník je zdarma, pivo je dobrovolné a humor není právní rada.</p>
     {% set site_nav_modifier = "site-nav--section" %}
     {% include "site-nav.html" %}
   </header>
 
   <div class="soukromi-body">
-    {% if locale == 'en' %}
-    <section class="soukromi-section">
-      <h2 class="soukromi-heading">What Poslušně hlásím is</h2>
-      <p>A diary from the Czech Chamber of Deputies: satirical texts based on real stenographic records and votes.</p>
-      <p>Poslušně hlásím, že this site is not run by the state, a ministry, or any parliamentary club. Just one citizen with access to public data.</p>
-    </section>
-    <section class="soukromi-section">
-      <h2 class="soukromi-heading">Content and responsibility</h2>
-      <p>The texts are satirical. Humour rests on real data, but this is not legal, financial, or political advice. We check articles, quotes, and numbers against public sources. If we miss something, write to us and we will fix it.</p>
-    </section>
-    <section class="soukromi-section">
-      <h2 class="soukromi-heading">Newsletter</h2>
-      <p>The e-mail newsletter is free and voluntary. After signup you will receive a confirmation e-mail. You can unsubscribe anytime via the link in every edition. Data processing is described in our <a href="{{ privacy_href }}">privacy policy</a>.</p>
-    </section>
-    <section class="soukromi-section">
-      <h2 class="soukromi-heading">Voluntary contributions</h2>
-      <p>Poslušně hlásím, že a beer, rum, and the regular supporter tier are purely voluntary. Everyone reads the newspaper the same way, whether they contribute or not. If admin gets messy, contact <a href="{{ support_href }}">customer support</a>.</p>
-    </section>
-    <section class="soukromi-section">
-      <h2 class="soukromi-heading">Contact</h2>
-      {% if contact_email %}
-      <p><a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
-      {% endif %}
-      <p class="soukromi-operator">Operator: Markéta Jedličková, ID 74980700</p>
-    </section>
-    {% else %}
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Co je Poslušně hlásím</h2>
       <p>Deník z Poslanecké sněmovny, satirické texty z reálných stenozáznamů a hlasování.</p>
@@ -71,7 +43,6 @@
       {% endif %}
       <p class="soukromi-operator">Provozovatel: Markéta Jedličková, IČO 74980700</p>
     </section>
-    {% endif %}
   </div>
 </div>
 {% include "site-footer.html" %}

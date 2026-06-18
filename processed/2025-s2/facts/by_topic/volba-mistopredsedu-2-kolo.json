@@ -40,33 +40,5 @@
   "pointa": "Richterová mluvila o půl milionu pirátských voličů, část koalice mezitím opustila sál. Nacher se omluvil za předčasný gong, omylem ukončil rozpravu, i když měla hned navazovat tajná volba lístky.",
   "mean": "Po Bartákovi, Nacherovi a Skopečkovi chybí ještě jeden člověk do čtyřčlenného týmu místopředsedů, nová volba přijde na další schůzi.",
   "pocet_hlasovani": 0,
-  "proslo": true,
-  "en": {
-    "nadpis": "Skopeček makes three,\nRichterová out",
-    "lead": "Friday's second reading was completed by the leadership of The Chamber of Deputies: Jan Skopeček received one hundred and twenty one votes, Olga Richterová only thirty. One seat of the Deputy Speaker remains vacant.",
-    "pointa": "Richter spoke about half a million pirate voters, part of the coalition left the hall in the meantime. Nacher apologized for the premature gong, accidentally ending the debate, even though a secret ballot was to follow immediately.",
-    "mean": "After Barták, Nacher and Skopeček, one more person is missing from the four-member team of Deputy Speakers, the new choice will come at the next meeting.",
-    "predmet_lidsky": "the second round of the election of Deputy Speakers",
-    "koho": [
-      "Who is watching, who is helping to manage the proceedings of The Chamber of Deputies."
-    ],
-    "fakty": [
-      {
-        "text": "Olga Richterová appealed to 505,000 pirate voters in her speech, Skopeček got 121 votes, she got 30.",
-        "citace": "Olga Richterová received 30 votes, she does not become the deputy speaker of The Chamber of Deputies. Jan Skopeček won 121 votes and is elected deputy speaker of the The Chamber of Deputies."
-      },
-      {
-        "text": "Kateřina Stojanová and Eva Šrámková proposed points on the equal representation of women in management, but The Chamber of Deputies did not include them.",
-        "citace": "We propose our deputy club chairperson Olga Richter as the future deputy chairwoman of The Chamber of Deputies."
-      },
-      {
-        "text": "One Deputy Speaker seat remains empty, a new election will be held at the next meeting.",
-        "citace": "One position of Deputy Speaker remains vacant."
-      },
-      {
-        "text": "Coalition MPs left part of the meeting during Richter's speech, Nacher then used the gong by mistake.",
-        "citace": "Coalition MPs leave the hall in large numbers."
-      }
-    ]
-  }
+  "proslo": true
 }

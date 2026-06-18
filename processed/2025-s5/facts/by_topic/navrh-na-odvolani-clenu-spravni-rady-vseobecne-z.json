@@ -41,33 +41,5 @@
   "mean": "Středa začala personálkou u největší pojišťovny: nejdřív ven staří členové správní rady, pak desítky hlasování o tom, kdo usedne na jejich místo.",
   "pocet_hlasovani": 1,
   "proslo": true,
-  "steno_slov": 5305,
-  "en": {
-    "nadpis": "Shake-up at VZP",
-    "lead": "The Chamber of Deputies dismissed the members of the board of directors of the VZP, 144 votes, none against. Then followed a long selection of new names.",
-    "pointa": "Kolovratník led the election commission at the personnel marathon. The appeal was unanimous, but the election was no longer so: 15 candidates were publicly named, among them Adámková, Farhan or Šebelová, four were not, five seats remained vacant.",
-    "mean": "Wednesday began with personnel at the largest insurance company: first the old board members out, then dozens of votes on who will take their place.",
-    "predmet_lidsky": "occupation of the board of directors of the General Health Insurance Company",
-    "koho": [
-      "Who does it concern? Management of the largest health insurance company. For the citizen, it's a personnel dispute at the top, not a change of care overnight."
-    ],
-    "fakty": [
-      {
-        "text": "Proposal for the dismissal of members and substitutes of the Board of Directors of the General Health Insurance Company of the Czech Republic",
-        "citace": "Proposal for the dismissal of members and substitutes of the Board of Directors of the General Health Insurance Company of the Czech Republic"
-      },
-      {
-        "text": "Vote number 86, 176 MPs registered, 144 for, none against.",
-        "citace": "Vote number 86, 176 MPs registered, 144 for, none against."
-      },
-      {
-        "text": "I would like the Chairman of the Electoral Commission MP Martin Kolovratník to take the floor.",
-        "citace": "I would like the Chairman of the Electoral Commission MP Martin Kolovratník to take the floor."
-      },
-      {
-        "text": "I count that we successfully elected 15 members of the board of directors, 4 proposed were not elected and 1 nomination was therefore withdrawn.",
-        "citace": "I count that we successfully elected 15 members of the board of directors, 4 proposed were not elected and 1 nomination was therefore withdrawn."
-      }
-    ]
-  }
+  "steno_slov": 5305
 }

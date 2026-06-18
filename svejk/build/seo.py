@@ -28,7 +28,6 @@ from svejk.build.vyznamenani_neprosli import (
     page_meta,
     vyznamenani_datum_label,
 )
-from svejk.locale import normalize_locale
 from svejk.newsletter.feed import _edition_description
 from svejk.paths import SchuzePaths
 
@@ -50,15 +49,6 @@ _STATIC_HREF_FN = {
     "podminky": podminky_pages_href,
     "podpora": podpora_pages_href,
     "soukromi": soukromi_pages_href,
-}
-
-_STATIC_PAGE_LABELS_EN: dict[str, str] = {
-    "archiv": "Edition archive",
-    "slovnicek": "Švejk's glossary",
-    "pivo": "Buy Švejk a Beer",
-    "podminky": "Terms of use",
-    "podpora": "Support",
-    "soukromi": "Privacy",
 }
 
 _AI_BOTS = (
@@ -96,30 +86,14 @@ def mtime_iso(path: Path) -> str:
     return datetime.fromtimestamp(ts, tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-_DEN_CS_TO_EN = {
-    "pondělí": "Monday",
-    "úterý": "Tuesday",
-    "středa": "Wednesday",
-    "čtvrtek": "Thursday",
-    "pátek": "Friday",
-    "sobota": "Saturday",
-    "neděle": "Sunday",
-}
-
-
-def _edition_date_label(datum_unl: str, den: str = "", *, locale: str = "cs") -> str:
-    loc = normalize_locale(locale)
+def _edition_date_label(datum_unl: str, den: str = "") -> str:
     if datum_unl and "." in datum_unl:
         d, m, y = datum_unl.split(".", 2)
         core = f"{int(d)}. {int(m)}. {y}"
     else:
         core = datum_unl
     if den:
-        if loc == "en":
-            day = _DEN_CS_TO_EN.get(den.lower(), den).capitalize()
-        else:
-            day = den.capitalize()
-        return f"{day} {core}"
+        return f"{den.capitalize()} {core}"
     return core
 
 
@@ -157,18 +131,11 @@ def edition_meta_description(
     proslo: int = 0,
     zamitnuto: int = 0,
     max_len: int = 155,
-    locale: str = "cs",
 ) -> str:
     """Unikátní meta description, skóre dne + shrnutí, ne kopie <title>."""
-    from svejk.locale import normalize_locale
-
-    loc = normalize_locale(locale)
     parts: list[str] = []
     if proslo or zamitnuto:
-        if loc == "en":
-            parts.append(f"Score {proslo}:{zamitnuto}.")
-        else:
-            parts.append(f"Skóre dne {proslo}:{zamitnuto}.")
+        parts.append(f"Skóre dne {proslo}:{zamitnuto}.")
     account = " ".join((dnesni_ucet or "").split())
     if account:
         parts.append(account)
@@ -245,11 +212,7 @@ def article_json_ld(
     article_body: str = "",
     parts: list[dict[str, str | int]] | None = None,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
-    from svejk.locale import normalize_locale
-
-    loc = normalize_locale(locale)
     published = datetime.strptime(date_unl, "%d.%m.%Y").strftime("%Y-%m-%d")
     logo = logo_url or publisher_logo_url(site_url, base_path)
     article_image = image_url or logo
@@ -266,11 +229,9 @@ def article_json_ld(
         "url": url,
         "datePublished": published,
         "dateModified": date_modified or published,
-        "inLanguage": loc,
+        "inLanguage": "cs",
         "isAccessibleForFree": True,
-        "articleSection": (
-            "The Chamber of Deputies" if loc == "en" else "Poslanecká sněmovna"
-        ),
+        "articleSection": "Poslanecká sněmovna",
         "author": publisher,
         "publisher": publisher,
         "image": [article_image],
@@ -333,16 +294,12 @@ def _static_page_links(
     *,
     site_url: str,
     base_path: str = "",
-    locale: str = "cs",
 ) -> list[tuple[str, str]]:
     base = site_url.rstrip("/")
-    loc = normalize_locale(locale)
-    out: list[tuple[str, str]] = []
-    for label, key in _STATIC_PAGES:
-        if loc == "en":
-            label = _STATIC_PAGE_LABELS_EN[key]
-        out.append((label, f"{base}{_STATIC_HREF_FN[key](base_path, loc)}"))
-    return out
+    return [
+        (label, f"{base}{_STATIC_HREF_FN[key](base_path)}")
+        for label, key in _STATIC_PAGES
+    ]
 
 
 def _iter_vyznamenani_editions(
@@ -401,31 +358,17 @@ def write_sitemap_xml(
         add_url(f"{base}{podminky_pages_href(base_path)}", last)
         add_url(f"{base}{podpora_pages_href(base_path)}", last)
         add_url(f"{base}{soukromi_pages_href(base_path)}", last)
-        add_url(f"{base}{archiv_pages_href(base_path, 'en')}", last)
-        add_url(f"{base}{slovnicek_pages_href(base_path, 'en')}", last)
-        add_url(f"{base}{pivo_pages_href(base_path, 'en')}", last)
-        add_url(f"{base}{podminky_pages_href(base_path, 'en')}", last)
-        add_url(f"{base}{podpora_pages_href(base_path, 'en')}", last)
-        add_url(f"{base}{soukromi_pages_href(base_path, 'en')}", last)
-        add_url(f"{base}/en/", last)
+        add_url(f"{base}/feed.xml", last)
 
     for edition in editions:
         href = edition_pages_href(edition.obdobi, edition.schuze, edition.datum_unl, base_path)
         add_url(f"{base}{href}", edition.when)
-        href_en = edition_pages_href(
-            edition.obdobi, edition.schuze, edition.datum_unl, base_path, "en"
-        )
-        add_url(f"{base}{href_en}", edition.when)
 
     for edition, kind in _iter_vyznamenani_editions(editions):
         href = vyznamenani_pages_href(
             edition.obdobi, edition.schuze, edition.datum_unl, kind, base_path
         )
         add_url(f"{base}{href}", edition.when)
-        href_en = vyznamenani_pages_href(
-            edition.obdobi, edition.schuze, edition.datum_unl, kind, base_path, "en"
-        )
-        add_url(f"{base}{href_en}", edition.when)
 
     for edition in editions:
         paths = SchuzePaths.create(edition.obdobi, edition.schuze)
@@ -434,19 +377,11 @@ def write_sitemap_xml(
                 edition.obdobi, edition.schuze, edition.datum_unl, base_path
             )
             add_url(f"{base}{href}", edition.when)
-            href_en = steno_sources_pages_href(
-                edition.obdobi, edition.schuze, edition.datum_unl, base_path, "en"
-            )
-            add_url(f"{base}{href_en}", edition.when)
         if has_recnici(paths, edition.datum_unl):
             href = recnici_pages_href(
                 edition.obdobi, edition.schuze, edition.datum_unl, base_path
             )
             add_url(f"{base}{href}", edition.when)
-            href_en = recnici_pages_href(
-                edition.obdobi, edition.schuze, edition.datum_unl, base_path, "en"
-            )
-            add_url(f"{base}{href_en}", edition.when)
 
     xml = b'<?xml version="1.0" encoding="UTF-8"?>\n' + tostring(urlset, encoding="utf-8")
     path = out_dir / "sitemap.xml"
@@ -491,11 +426,6 @@ Poslušně hlásím publikuje po každém jednacím dni stručné vydání: koli
 
 {static_links}
 
-## Anglická verze
-
-- [Web v angličtině]({base}/en/)
-- [RSS v angličtině]({base}/feed-en.xml)
-
 ## Odběr
 
 - E-mailový odběr nových vydání je na každé stránce dole (formulář „Poslušně odebírat“).
@@ -521,18 +451,6 @@ Poslušně hlásím publikuje po každém jednacím dni stručné vydání: koli
     ]
     for label, href in _static_page_links(site_url=site_url, base_path=base_path):
         full_lines.append(f"- [{label}]({href})")
-    full_lines.extend(
-        [
-            "",
-            "## Other pages (English)",
-            "",
-            f"- [English homepage]({base}/en/)",
-        ]
-    )
-    for label, href in _static_page_links(
-        site_url=site_url, base_path=base_path, locale="en"
-    ):
-        full_lines.append(f"- [{label}]({href})")
     full_lines.extend(["", "## Vydání", ""])
     for edition in editions:
         href = edition_pages_href(
@@ -541,19 +459,6 @@ Poslušně hlásím publikuje po každém jednacím dni stručné vydání: koli
         den = den_v_tydnu(edition.datum_unl)
         title = datum_design(edition.datum_unl, den)
         desc = _edition_description(edition)
-        line = f"- [{title}]({base}{href})"
-        if desc:
-            line += f": {desc}"
-        full_lines.append(line)
-
-    full_lines.extend(["", "## Editions (English)", ""])
-    for edition in editions:
-        href = edition_pages_href(
-            edition.obdobi, edition.schuze, edition.datum_unl, base_path, "en"
-        )
-        den = den_v_tydnu(edition.datum_unl)
-        title = datum_design(edition.datum_unl, den, locale="en")
-        desc = _edition_description(edition, locale="en")
         line = f"- [{title}]({base}{href})"
         if desc:
             line += f": {desc}"
@@ -574,31 +479,6 @@ Poslušně hlásím publikuje po každém jednacím dni stručné vydání: koli
                 edition.obdobi, edition.schuze, edition.datum_unl, kind, base_path
             )
             title = datum_design(edition.datum_unl, den_v_tydnu(edition.datum_unl))
-            line = f"- [{meta['title']} · {title}]({base}{href}): {meta['gloss']}"
-            full_lines.append(line)
-
-        full_lines.extend(["", "## Voting tables (English)", ""])
-        for edition, kind in vyznamenani_entries:
-            paths = SchuzePaths.create(edition.obdobi, edition.schuze)
-            data = load_vyznamenani(paths, edition.datum_unl, kind)
-            if not data:
-                continue
-            datum_label = vyznamenani_datum_label(edition.datum_unl, locale="en")
-            pocet = int(data.get("pocet") or len(data.get("radky") or []))
-            meta = page_meta(
-                kind, pocet=pocet, datum_label=datum_label, locale="en"
-            )
-            href = vyznamenani_pages_href(
-                edition.obdobi,
-                edition.schuze,
-                edition.datum_unl,
-                kind,
-                base_path,
-                "en",
-            )
-            title = datum_design(
-                edition.datum_unl, den_v_tydnu(edition.datum_unl), locale="en"
-            )
             line = f"- [{meta['title']} · {title}]({base}{href}): {meta['gloss']}"
             full_lines.append(line)
 

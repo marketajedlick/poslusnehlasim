@@ -35,29 +35,5 @@
   "mean": "Než se začalo mluvit o tom, zda vláda získá důvěru, poslanci si rozdělili peníze za kampaně.",
   "pocet_hlasovani": 1,
   "proslo": true,
-  "steno_slov": 307,
-  "en": {
-    "nadpis": "Payout before the confidence vote",
-    "lead": "The only vote of the day was on election expense contributions, none against. The parties accounted for October, then a three-day debate on the government began.",
-    "pointa": "Válková reminded that without the resolution, the finances would not send the parties anything. Okamura then finally moved on to the point everyone was waiting for.",
-    "mean": "Before there was talk of whether the government would win a vote of confidence, the MPs split their campaign money.",
-    "predmet_lidsky": "contribution to parties and movements for electoral expenses from the October elections",
-    "koho": [
-      "Who does it concern? Political parties and movements that ran for The Chamber of Deputies. It will not hit the citizen on the payroll."
-    ],
-    "fakty": [
-      {
-        "text": "without the approval of this resolution, the Ministry of Finance will not pay the relevant amounts, will not reimburse political parties, movements and coalitions for the payment of election costs",
-        "citace": "without the approval of this resolution, the Ministry of Finance will not pay the relevant amounts, will not reimburse political parties, movements and coalitions for the payment of election costs"
-      },
-      {
-        "text": "I note that 195 MPs were registered for vote number 35, 183 for, none against. The resolution was adopted.",
-        "citace": "I note that 195 MPs were registered for vote number 35, 183 for, none against. The resolution was adopted."
-      },
-      {
-        "text": "We come to today's main point, for which you are probably all waiting, which is the 51st Request of the Government of the Czech Republic for a vote of confidence",
-        "citace": "We come to today's main point, for which you are probably all waiting, which is the 51st Request of the Government of the Czech Republic for a vote of confidence"
-      }
-    ]
-  }
+  "steno_slov": 307
 }

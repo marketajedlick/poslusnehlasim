@@ -53,10 +53,6 @@
     </section>
     {% if pivo_menu_pay %}
     <p class="pivo-pay-note">
-      {% if locale == 'en' %}
-      Payment is securely processed by <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe</a>. This site does not store payment details.{% if stripe_portal_href %} Already a regular supporter? Manage your subscription <a href="{{ stripe_portal_href }}" target="_blank" rel="noopener">here</a>.{% endif %}
-      {% else %}
       Platbu bezpečně zpracuje <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe</a>. Web sám platební údaje neukládá.{% if stripe_portal_href %} Jste už Štamgast a chcete změnit kartu nebo zrušit podporu? Spravujte své předplatné <a href="{{ stripe_portal_href }}" target="_blank" rel="noopener">zde</a>.{% endif %}
-      {% endif %}
     </p>
     {% endif %}

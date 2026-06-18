@@ -38,33 +38,5 @@
   "pointa": "Kupka chtěl střet zájmů Babiše, Bureš prosadil konec nočního zákazu prodeje na pátek. Teprve ve 20:17 schválili zkrácenou debatu o cenách benzínu a v 23:22 padl pokus o druhé kolo.",
   "mean": "Sněmovna si nejdřív musela dohodnout pořad. Hodiny hlasování o pořadu oddálily zákon o regulaci cen benzínu a nafty až na noc.",
   "pocet_hlasovani": 0,
-  "proslo": false,
-  "en": {
-    "nadpis": "Agenda Battle Before Midnight",
-    "lead": "Tuesday the 14th meeting started with an accelerated discussion due to gasoline prices, but the evening belonged to the board. Forty-four votes on what would be discussed when delayed the legislation until a late hour.",
-    "pointa": "Kupka wanted a conflict of interests with Babiš, Bureš pushed for the end of the night sales ban on Friday. Only at 8:17 p.m. did they approve an abbreviated debate on gasoline prices, and at 11:22 p.m. an attempt at a second reading failed.",
-    "mean": "The Chamber of Deputies first had to agree on a program. Hours of voting on the program delayed the Gasoline and Diesel Price Regulation Act overnight.",
-    "predmet_lidsky": "agenda of the fourteenth meeting before the law on fuel prices",
-    "koho": [
-      "Who does it concern? More like an observer of politics. It is about what will be discussed when, not about a law for citizens."
-    ],
-    "fakty": [
-      {
-        "text": "Kupka wanted to include the conflict of interests of Babiš, the proposal fell 54:84.",
-        "citace": "Vote number 63, 151 MPs registered, 54 for, 84 against. The proposal was rejected."
-      },
-      {
-        "text": "Bureš pushed for the repeal of the law on sales time at Friday's meeting.",
-        "citace": "I propose that item number 61, that is parliamentary print 129, i.e. the bill repealing Act No. 223/2016 Coll., on sales hours in retail, that this item be included as the first item of our Friday meeting."
-      },
-      {
-        "text": "The program was approved only after forty-four votes on changes.",
-        "citace": "44 voting on the agenda of the meeting before the evening law on prices."
-      },
-      {
-        "text": "In the evening, an abbreviated hearing of the Act on Prices 79:51 was approved.",
-        "citace": "Vote number 48, item 902, for 79, against 51."
-      }
-    ]
-  }
+  "proslo": false
 }

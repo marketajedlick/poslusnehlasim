@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ lang | default('cs') }}">
+<html lang="cs">
 <head>
 {% set head_noindex = true %}
 {% include "head-noviny.html" %}
 <title>{{ t.thanks_page.title }}</title>
 <meta name="description" content="{{ t.thanks_page.meta }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
-{% include "hreflang.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="pivo-page dekuju-page">
-{% include "lang-switch.html" %}
 <div class="stagewrap pivo-stage">
   <div class="stack">
     <div class="page-slot">

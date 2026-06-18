@@ -60,18 +60,5 @@
       "role": "ANO",
       "pozn": "rozloučení"
     }
-  ],
-  "en": {
-    "radky": [
-      { "jmeno": "Martin Kupka", "role": "ODS", "pozn": "3 speeches" },
-      { "jmeno": "Zdeněk Hřib", "role": "Pirates" },
-      { "jmeno": "Marian Jurečka", "role": "KDU-ČSL" },
-      { "jmeno": "Matěj Ondřej Havel", "role": "Pirates" },
-      { "jmeno": "Vít Rakušan", "role": "STAN", "pozn": "session proposer" },
-      { "jmeno": "Petr Macinka", "role": "Motorists", "pozn": "foreign minister" },
-      { "jmeno": "Martin Šebestyán", "role": "agriculture minister" },
-      { "jmeno": "Zuzana Mrázová", "role": "Ministry of Regional Development" },
-      { "jmeno": "Josef Kott", "role": "ANO", "pozn": "farewell" }
-    ]
-  }
+  ]
 }

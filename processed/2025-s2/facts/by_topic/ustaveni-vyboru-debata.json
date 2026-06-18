@@ -39,33 +39,5 @@
   "pointa": "U všech výborů Piráti tvrdili, že koalice jim bere místa ve vedení. Kolovratník Hřibovi připomněl zastavené metro D a záměrně ho oslovil Hřibkem, Richterová mu vyčítala chování jako ze čtvrté třídy. Večer přišly stálé komise a delegace.",
   "mean": "Výbory připravují zákony před plénem. Kdo v nich sedí, určuje, jaké téma dostane prostor a kdo má většinu při hlasování.",
   "pocet_hlasovani": 0,
-  "proslo": true,
-  "en": {
-    "nadpis": "The Battle for Committees",
-    "lead": "Tuesday was a committee marathon and loud debate. Lang reminded Hřib that he is no longer the mayor. Nevertheless, all twenty-nine votes on committees passed.",
-    "pointa": "In all committees, the Pirates claimed that the coalition was taking away their leadership positions. The spinning wheel reminded Hřib of the stopped metro D and deliberately addressed him as Hřibek, Richterová reproached him for his behavior as if he was in the fourth grade. In the evening, permanent commissions and delegations arrived.",
-    "mean": "Committees prepare laws before the plenary. Who sits in them determines which topic gets space and who has the majority in voting.",
-    "predmet_lidsky": "composition of parliamentary committees",
-    "koho": [
-      "Who cares who will decide on laws in which committee."
-    ],
-    "fakty": [
-      {
-        "text": "Richter accused the coalition of breaking the 30-year custom of proportional representation in committee leadership.",
-        "citace": "We reject the approach where the The Chamber of Deputies should stop representing the voters and their will in a proportionate way."
-      },
-      {
-        "text": "Kolovratník asked where is the fairness: Pirates 4 MPs, yet Richter is the deputy speaker of The Chamber of Deputies; The SPD had 20 deputies and was not in the leadership of The Chamber of Deputies.",
-        "citace": "Last period, the Pirates had 4 MPs and the SPD had 20. Mrs. Richter was in the leadership of the The Chamber of Deputies and the SPD was not. Whoever has 4 MPs is in the leadership, and whoever has 20 MPs is not."
-      },
-      {
-        "text": "Hubert Lang reproached Hřib for speaking as the mayor of Prague, not as a member of parliament.",
-        "citace": "You always refer to the City Hall of the Capital City of Prague, Mr. Colleague, in all your speeches."
-      },
-      {
-        "text": "By twenty-nine votes, The Chamber of Deputies successively established all the committees, mostly without a single opposition.",
-        "citace": "Vote number 6 to 32, all passed by over 180 votes in favor."
-      }
-    ]
-  }
+  "proslo": true
 }

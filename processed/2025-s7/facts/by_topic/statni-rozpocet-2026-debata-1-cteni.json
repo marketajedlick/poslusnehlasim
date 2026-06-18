@@ -34,29 +34,5 @@
   "pointa": "Dopoledne prošly záchranná smlouva se Slovenskem, závěrečný účet a harmonogram. Odpoledne a večer se sál ponořil do rozpočtu, hlasování mělo přijít až po půlnoci.",
   "mean": "První kolo rozpočtu otevírá diskusi o příjmech, výdajích a schodku. Zákon ten den nepadl, šlo o představení parametrů a začátek hádek o každou miliardu.",
   "pocet_hlasovani": 0,
-  "proslo": false,
-  "en": {
-    "nadpis": "First round of the budget",
-    "lead": "On the evening of the seventh meeting, a marathon debate began on the budget with a deficit of 310 billion. Schiller spoke about true numbers, Kupka about an illegal deficit.",
-    "pointa": "In the morning, the rescue agreement with Slovakia, the final account and the schedule were passed. In the afternoon and evening, the hall was immersed in the budget, the vote was not supposed to come until after midnight.",
-    "mean": "The first reading of the budget opens the debate on revenue, expenditure and the deficit. The law did not fall that day, it was a presentation of parameters and the beginning of arguments about every billion.",
-    "predmet_lidsky": "the state budget for 2026 in the first reading",
-    "koho": [
-      "Who does it concern? All of them. A deficit of around 310 billion divides politics into two halves."
-    ],
-    "fakty": [
-      {
-        "text": "Schillerová: after four years, a complete, true and realistic budget is coming.",
-        "citace": "Today is an important day. After four long years, the draft state budget, which is complete, true and realistic, reaches The Chamber of Deputies."
-      },
-      {
-        "text": "Kupka: the budget with a deficit of 310 billion violates the law.",
-        "citace": "The fact that he is presenting a budget with a deficit of 310 billion crowns is not only serious in the sense that the deficit is increasing significantly, but above all because he is breaking the law."
-      },
-      {
-        "text": "After twelve hours of negotiations, Černochová was finally given the floor to defend herself.",
-        "citace": "I almost want to shout hallelujah that after 12 hours of our meeting today, I became the first female deputy with non-preferential right."
-      }
-    ]
-  }
+  "proslo": false
 }

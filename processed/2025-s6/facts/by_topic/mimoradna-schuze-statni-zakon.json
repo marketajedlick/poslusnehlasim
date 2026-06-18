@@ -40,33 +40,5 @@
   "pointa": "Vondráček hájil nestihnutí lhůt mimořádnou schůzí. Rakušan připomněl dva a půl roku práce na služebním zákoně za vlády Fialy.",
   "mean": "Šestá schůze začala sporem o proceduru: proč zákon o úřednících nešel řádnou cestou a proč ve čtvrtek místo kontroly vlády běžela mimořádná jízda.",
   "pocet_hlasovani": 0,
-  "proslo": false,
-  "en": {
-    "nadpis": "Thursday without interpellations (parliamentary Q&A sessions)",
-    "lead": "The coalition called an extraordinary meeting on a day reserved for interpellations. Rakušan criticized the silence of The Chamber of Deputies in December, Jakob said that they are not asking the ministers today.",
-    "pointa": "Vondráček defended the failure to meet the deadlines with an extraordinary meeting. Rakušan recalled the two and a half years of work on the service law under Fiala's government.",
-    "mean": "The sixth meeting began with a dispute over procedure: why the law on civil servants did not go through the proper way and why an extraordinary drive was run on Thursday instead of a government inspection.",
-    "predmet_lidsky": "an extraordinary meeting called instead of Thursday's interpellations",
-    "koho": [
-      "Who does it concern? Anyone who expects that on Thursday The Chamber of Deputies will check the ministers, that day the debate about the program and the rapid discussion of laws went."
-    ],
-    "fakty": [
-      {
-        "text": "In December, the governing majority did not convene the meeting of The Chamber of Deputies. For example, they did not have time to discuss some of the publications that were valid there",
-        "citace": "In December, the governing majority did not convene the meeting of The Chamber of Deputies. For example, they did not have time to discuss some of the publications that were valid there"
-      },
-      {
-        "text": "it clearly follows from the rules of procedure that on Thursday we should mainly devote ourselves to interpellations on members of the government and on the Prime Minister. And you will call an extraordinary meeting at this time, which means only that there will be no interpellations today",
-        "citace": "it clearly follows from the rules of procedure that on Thursday we should mainly devote ourselves to interpellations (parliamentary Q&A sessions) on members of the government. And you call an extraordinary meeting, which means only that there will be no interpellations today"
-      },
-      {
-        "text": "the proposal does not meet the ten-day deadline before the start of the meeting. Then it can't be healed",
-        "citace": "the proposal does not meet the ten-day deadline before the start of the meeting. Then it can't be healed"
-      },
-      {
-        "text": "We worked transparently and very openly on that standard for 2.5 years",
-        "citace": "We worked transparently and very openly on that standard for 2.5 years"
-      }
-    ]
-  }
+  "proslo": false
 }

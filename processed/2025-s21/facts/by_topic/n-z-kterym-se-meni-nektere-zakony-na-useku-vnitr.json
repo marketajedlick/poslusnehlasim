@@ -47,33 +47,5 @@
   "steno_slov": 5957,
   "lead": "Balík změn pro Českou poštu a státní počítače: poště se vrací stará pravidla financování, aby nenarazila u Bruselu, a elektronická sbírka zákonů se zase odkládá, protože systém pořád není hotový.",
   "pointa": "Stojanová varovala, že odklad eLegislativy nesmí být odkladem transparentnosti, a Skopeček dodal, ať se z odkladu nestane nový standard.",
-  "mean": "První kolo: návrh jde do výboru pro veřejnou správu a lhůta se zkrátila na třicet dnů. Jediné, co dnes spadlo pod stůl, byl Bendův nápad přibrat k tomu ještě ústavně-právní výbor, pro bylo jen dvaašedesát poslanců.",
-  "en": {
-    "nadpis": "Mail and eternal delays",
-    "lead": "A package of changes for the Czech Post and state computers: the old funding rules are being returned to the post office so that it does not collide with Brussels, and the electronic collection of laws is being postponed again, because the system is still not ready.",
-    "pointa": "Stojanová warned that the postponement of eLegislation must not be a postponement of transparency, and Skopeček added that the postponement should not become a new standard.",
-    "mean": "First round: the proposal goes to the public administration committee and the deadline has been reduced to thirty days. The only thing that fell under the table today was Benda's idea to add a constitutional-legal committee to it, because there were only sixty-two deputies.",
-    "predmet_lidsky": "n. z., amending some laws in the field of internal administration",
-    "koho": [
-      "Who does it concern? Czech Post and its customers, and everyone who is waiting for the electronic collection of laws and digital authorities."
-    ],
-    "fakty": [
-      {
-        "text": "Lang: the old funding rules are returning to the post office, the European Commission has only allowed support up to a billion and a half per year.",
-        "citace": "The European Commission, which approved public support for the Czech Post only up to 1.5 billion crowns per year"
-      },
-      {
-        "text": "Stojanová: postponement of eLegislation must not be a postponement of transparency at the same time.",
-        "citace": "The technical postponement of eLegislation must not be a postponement of transparency at the same time."
-      },
-      {
-        "text": "Skopeček warned that the postponement should not become a new standard and deadlines should not become meaningless numbers.",
-        "citace": "This does not mean, however, that we will make the postponement a new standard and the deadline just meaningless numbers."
-      },
-      {
-        "text": "145 votes sent to Public Administration Committee; Benda's proposal to add a constitutional-legal committee was rejected (62 for), the shortening of the deadlines to 30 days passed with 91 for, 7 against.",
-        "citace": "Vote number 8: for 145. Vote number 9: for 62, against 1, rejected. Vote number 10: for 91, against 7, passed."
-      }
-    ]
-  }
+  "mean": "První kolo: návrh jde do výboru pro veřejnou správu a lhůta se zkrátila na třicet dnů. Jediné, co dnes spadlo pod stůl, byl Bendův nápad přibrat k tomu ještě ústavně-právní výbor, pro bylo jen dvaašedesát poslanců."
 }

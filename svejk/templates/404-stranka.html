@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ lang | default('cs') }}">
+<html lang="cs">
 <head>
 {% set head_noindex = true %}
 {% include "head-noviny.html" %}
 <title>{{ t.notfound.title }}</title>
 <meta name="description" content="{{ t.notfound.meta }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
-{% include "hreflang.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="archiv-page">
-{% include "lang-switch.html" %}
 <div class="archiv-wrap notfound-wrap">
   <header class="archiv-head">
     <p class="notfound-code" aria-hidden="true">404</p>

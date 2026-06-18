@@ -37,25 +37,5 @@
   "steno_slov": 509,
   "lead": "Sněmovna schválila pravidla hospodaření poslaneckých klubů, 127 hlasů pro, nikdo proti.",
   "pointa": "Okamura vedl hlasování o rezignacích a nominacích do orgánů ještě před zákony.",
-  "mean": "Každý klub dostává z rozpočtu sněmovny peníze na provoz. Pravidla říkají, za co je může utratit.",
-  "en": {
-    "nadpis": "Rules for clubs",
-    "lead": "The The Chamber of Deputies approved the rules for the management of parliamentary clubs, 127 votes in favor, none against.",
-    "pointa": "Okamura led the vote on resignations and nominations to bodies even before the laws.",
-    "mean": "Each club receives money for operation from the budget of The Chamber of Deputies. The rules say what he can spend it on.",
-    "predmet_lidsky": "draft Rules for the management of parliamentary clubs for the year 2026",
-    "koho": [
-      "Who does it concern? Political parties in The Chamber of Deputies. The taxpayer pays for the operation of the clubs."
-    ],
-    "fakty": [
-      {
-        "text": "Vote number 251, for 127, against none. The motion was accepted.",
-        "citace": "Vote number 251, for 127, against none. The motion was accepted."
-      },
-      {
-        "text": "Deputy Vesecká asks a colleague on the bench to sign her off.",
-        "citace": "(Deputy Vesecká asks a colleague on the bench to sign her off.)"
-      }
-    ]
-  }
+  "mean": "Každý klub dostává z rozpočtu sněmovny peníze na provoz. Pravidla říkají, za co je může utratit."
 }

@@ -81,50 +81,5 @@
     "spor": false,
     "prazdny_sal": false
   },
-  "steno_slov": 4112,
-  "en": {
-    "nadpis": "The Brussels letter is not a ban",
-    "lead": "Before the opposition attacked the missing prime minister, the agriculture and regional development ministers spoke. Šebestyán defended the DG REGIO letter, Mrázová separated cohesion funds from agriculture, and Rakušan talked about risky subsidies.",
-    "pointa": "The government says no binding Brussels act stopped the payments. The opposition counted the same day how much the Czech budget would have to pay.",
-    "mean": "The letter from the Brussels directorate for regional policy is not an automatic ban on subsidies, though the media often read it that way. Agricultural subsidies and EU cohesion money are two separate channels. The first flows to fields, farms and food, administered by the State Agricultural Intervention Fund under the Ministry of Agriculture. The second goes to municipalities and regions, for example to schools, roads or local projects, coordinated by the Ministry of Regional Development. Each channel has its own Brussels office, its own rules and its own decision-making procedure. Šebestyán warned that if the shares were returned from the trust, the subsidies would stop flowing again.",
-    "kuriozita": "Curiosity of the day: Šebestyán spoke for nearly a thousand words to explain that the letter from the Brussels directorate for regional policy was just working correspondence. Rakušan meanwhile named the whole session protection of citizens from risky subsidies.",
-    "predmet_lidsky": "the letter from Brussels and subsidies to Agrofert",
-    "koho": [
-      "Who does it concern? Farmers, municipalities drawing EU money, and taxpayers who pay if Brussels does not reimburse subsidies."
-    ],
-    "fakty": [
-      {
-        "text": "Prime Minister Babiš was excused all day for work reasons; Okamura let the ministers speak first, only then the priority speakers.",
-        "citace": "Babiš Andrej the whole business day - work reasons"
-      },
-      {
-        "text": "The first major opposition attack targeted the absent prime minister: Havel said Babiš had excused himself on the very day of the Agrofert session.",
-        "citace": "it is a pity that the Prime Minister is not here, it is certainly not a coincidence that he apologized today"
-      },
-      {
-        "text": "Before the opposition spoke, first the agriculture minister Šebestyán and regional development minister Mrázová had the floor; Rakušan, one of the session's proposers, came only after.",
-        "citace": "allow me in my speech to summarise the issue of the so-called conflict of interests from the perspective of the Ministry of Agriculture"
-      },
-      {
-        "text": "Šebestyán from the agriculture ministry said the letter from the Brussels directorate for regional policy in the media did not mean payments were suspended: it is non-binding working correspondence and only an official Commission decision can stop subsidies.",
-        "citace": "This letter is interpreted as meaning that the European Commission decided to suspend payments. That interpretation is incorrect"
-      },
-      {
-        "text": "The minister recalled that the State Agricultural Intervention Fund itself paused Agrofert payments from December and restarted them after the shares went into a trust fund.",
-        "citace": "as of 20 February 2026 the companies are eligible to draw subsidies provided by the State Agricultural Intervention Fund"
-      },
-      {
-        "text": "After the shares went into RSVP Trust, the State Agricultural Intervention Fund restarted processing applications. On 5 June 2026 the Commission confirmed the SZIF procedure was correct but announced it would not reimburse subsidies while checking whether RSVP Trust complies with European law. Šebestyán himself calls it an informal suspension.",
-        "citace": "On 5 June 2026 the European Commission confirmed the correctness of the SZIF procedure and at the same time warned that during the examination of the RSVP Trust solution with European law it will not reimburse subsidies. This is the so-called informal suspension."
-      },
-      {
-        "text": "Mrázová from the regional development ministry separated cohesion funds from farm subsidies: her ministry coordinates questions from Brussels but does not decide individual applications.",
-        "citace": "I consider it essential to distinguish the different approach and view of European cohesion policy funds and the common agricultural policy"
-      },
-      {
-        "text": "Rakušan named the session Protection of Czech citizens from paying risky Agrofert subsidies and said conflict of interest is best solved by choice: either politician or businessman.",
-        "citace": "the title of this session we propose reads Protection of Czech citizens from paying risky Agrofert subsidies"
-      }
-    ]
-  }
+  "steno_slov": 4112
 }

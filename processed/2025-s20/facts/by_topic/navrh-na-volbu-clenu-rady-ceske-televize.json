@@ -65,50 +65,5 @@
     "spor": true,
     "prazdny_sal": false
   },
-  "steno_slov": 42275,
-  "en": {
-    "nadpis": "Czech Television Council filled, Xaver on board",
-    "lead": "On Friday, The Chamber of Deputies filled all six vacancies in the Council of the Czech Television by public election. Among those elected is Luboš Xaver Veselý, to whom the opposition read his own statements about female journalists before the election, for which he had to apologize in court; he got 93 votes.",
-    "pointa": "Pavel Matocha received 3 votes after the coalition agreement and the case with the recording of the bribe, and the objection was the same.",
-    "mean": "The Czech Television Council oversees Czech Television and is elected by The Chamber of Deputies, so every name is a policy. This time all six seats were filled at once; the opposition did not succeed either with the secret election or with warnings about individual candidates.",
-    "kuriozita": "Curiosity of the day: Jiří Šlégr, who was not approved by The Chamber of Deputies on Thursday, was given a seat in the Czech Television Council by the same deputies on Friday.",
-    "predmet_lidsky": "filling six seats on the Czech Television Council",
-    "koho": [
-      "Who does it concern? ČT viewers and people who follow the debate on the independence of public media."
-    ],
-    "fakty": [
-      {
-        "text": "The Chamber of Deputies swept the secret ballot 3-133 and voted on 18 candidates publicly; Berkovec, Brozda, Chalupský, Plíšková, Šlégr and Luboš Xaver Veselý were elected, all six positions are filled.",
-        "citace": "We filled 6 seats and exactly 6 seats were filled, so this election was successful in the sense that no seat was left vacant."
-      },
-      {
-        "text": "The election was long blocked due to a recording of the voices of Matocha and Bradáč discussing a bribe of 500,000 for the election; The mushroom brought testimonials about its authenticity, and the coalition promised not to vote for both.",
-        "citace": "It was said on that recording that it is therefore necessary to pay an additional 500,000 for the choice. And the basic question was, and still is, whether the recording is authentic."
-      },
-      {
-        "text": "Against Veselý, the opposition cited his own statements, for which he had to apologize in court; Macinka, on the other hand, called him the sovereign best councilman. He received 93 votes.",
-        "citace": "So let's just summarize a few statements of this supremely best councilor of the Czech Television, who said, I quote, to the address of Johana Hovorková, it's a monster, a pig, to drive with a scum step. So he had to apologize in court for that."
-      },
-      {
-        "text": "Matocha received 3 votes after the coalition agreement, after Jureček's objection, he was voted on again and received 3 again. And Jiří Šlégr, who was not approved by The Chamber of Deputies the day before, won a seat in the council with 91 votes.",
-        "citace": "I confirm that the last vote was contested, so we are voting again on the proposal for the candidate Pavel Matocha."
-      }
-    ],
-    "mean_links": [
-      {
-        "phrase": "six vacancies",
-        "page": "zvoleni"
-      },
-      {
-        "phrase": "six places",
-        "page": "zvoleni"
-      }
-    ],
-    "kuriozita_links": [
-      {
-        "label": "Voting table",
-        "page": "zvoleni"
-      }
-    ]
-  }
+  "steno_slov": 42275
 }

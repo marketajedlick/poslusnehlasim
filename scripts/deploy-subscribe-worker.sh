@@ -35,7 +35,6 @@ if [[ -z "${CLOUDFLARE_API_TOKEN:-}" || -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]]; then
     skip_deploy "Cloudflare API odběru přeskočeno (chybí CLOUDFLARE_API_TOKEN nebo CLOUDFLARE_ACCOUNT_ID)"
   fi
   echo "CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID chybí — API odběru se nenasadí."
-  echo "Viz DEPLOY.md → Odběr z webu (Cloudflare Worker)."
   exit 0
 fi
 

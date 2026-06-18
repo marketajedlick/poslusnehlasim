@@ -37,25 +37,5 @@
   "steno_slov": 5957,
   "lead": "Poslední bod večerního maratonu: zákon o správě dat prošel v prvním kole, 128 hlasů pro, nikdo proti.",
   "pointa": "Po hodinách debaty o Blízkém východu a pořadu schůze Sněmovna k zákonům usedla až po osmé hodině večer.",
-  "mean": "Stát chce mít přehled o datech, která sdílí mezi úřady. Cílem je jednodušší digitální služby, ne nová daň pro občana.",
-  "en": {
-    "nadpis": "Authorities will share data",
-    "lead": "The last point of the evening marathon: the law on data management passed at first reading, 128 votes in favor, none against.",
-    "pointa": "After hours of debate on the Middle East and the agenda of the meeting, the The Chamber of Deputies did not sit down until after eight o'clock in the evening.",
-    "mean": "The state wants to have an overview of the data it shares between authorities. The goal is simpler digital services, not a new tax for the citizen.",
-    "predmet_lidsky": "on data management and controlled access to data",
-    "koho": [
-      "Who does it concern? Authorities and companies that work with state data. The citizen will feel it with digital services."
-    ],
-    "fakty": [
-      {
-        "text": "Vote number 53, for 128, against none. The draft law was approved.",
-        "citace": "Vote number 53, for 128, against none. The draft law was approved."
-      },
-      {
-        "text": "Applause.",
-        "citace": "(Applause.)"
-      }
-    ]
-  }
+  "mean": "Stát chce mít přehled o datech, která sdílí mezi úřady. Cílem je jednodušší digitální služby, ne nová daň pro občana."
 }

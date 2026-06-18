@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ lang | default('cs') }}">
+<html lang="cs">
 <head>
 {% include "head-noviny.html" %}
 <style>.stagewrap,.stack{width:100%;max-width:100%;margin:0 auto}@media(min-width:721px){.stagewrap,.stack{width:840px;max-width:840px}}</style>
 <title>{{ page_title }}</title>
 <meta name="description" content="{{ meta_description }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
-{% include "hreflang.html" %}
 {% include "og-meta.html" %}
 <script type="application/ld+json">{{ article_json_ld | safe }}</script>
 {% if website_json_ld %}
@@ -14,7 +13,7 @@
 {% endif %}
 <link rel="alternate" type="text/plain" title="Informace pro AI (llms.txt)" href="{{ newsletter.site_url }}/llms.txt" />
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
-<link rel="alternate" type="application/rss+xml" title="{% if lang == 'en' %}Poslušně hlásím, new editions{% else %}Poslušně hlásím, nová vydání{% endif %}" href="{{ newsletter.feed_url_en if lang == 'en' else newsletter.feed_url }}" />
+<link rel="alternate" type="application/rss+xml" title="Poslušně hlásím, nová vydání" href="{{ newsletter.feed_url }}" />
 {% if inline_css %}
 <style>{{ css | safe }}</style>
 {% else %}
@@ -22,10 +21,6 @@
 {% endif %}
 </head>
 <body>
-{% include "lang-switch.html" %}
-{% if show_locale_notice %}
-<p class="locale-notice" role="note">{{ t.locale_notice }}</p>
-{% endif %}
 {% if nav %}
 <nav class="edition-nav" aria-label="{{ t.edition.nav_aria }}">
   {% if nav.prev %}

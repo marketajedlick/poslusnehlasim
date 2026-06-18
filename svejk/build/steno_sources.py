@@ -53,10 +53,9 @@ def steno_sources_href(
     *,
     link_mode: str,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
     if link_mode == "pages":
-        return steno_sources_pages_href(obdobi, schuze, datum_unl, base_path, locale)
+        return steno_sources_pages_href(obdobi, schuze, datum_unl, base_path)
     from datetime import datetime
 
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
@@ -406,15 +405,9 @@ def _resolve_article_phrase(passage: StenoPassage, article_text: str) -> str:
 def collect_steno_sources(
     paths: SchuzePaths,
     datum_unl: str,
-    *,
-    locale: str = "cs",
 ) -> list[StenoTopicBlock]:
     from datetime import datetime
 
-    from svejk.build.facts_i18n import localized_fact, pick_field
-    from svejk.locale import normalize_locale
-
-    loc = normalize_locale(locale)
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
     day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
     if not day_path.is_file():
@@ -443,20 +436,15 @@ def collect_steno_sources(
         fact_raw = read_json(fp)
         if not fact_raw.get("publikovat"):
             continue
-        fact = localized_fact(fact_raw, loc)
+        fact = fact_raw
         num += 1
-        title = pick_field(fact_raw, "nadpis", loc) or fact.get("nadpis") or slug
+        title = (fact.get("nadpis") or "").strip() or slug
         block = StenoTopicBlock(slug=slug, title=title, num=num)
         article_text = _article_text_from_fact(fact)
-        en_fakty = (fact_raw.get("en") or {}).get("fakty") if loc == "en" else None
-        for i, f in enumerate(fact.get("fakty") or []):
+        for f in fact.get("fakty") or []:
             if not isinstance(f, dict):
                 continue
             merged = dict(f)
-            if en_fakty and i < len(en_fakty):
-                for key in ("text", "citace"):
-                    if (en_fakty[i].get(key) or "").strip():
-                        merged[key] = en_fakty[i][key]
             passage = _passage_from_fact(
                 merged,
                 paths=paths,
@@ -661,14 +649,10 @@ def apply_steno_links_to_content(
     obdobi: int | None = None,
     link_mode: str = "file",
     base_path: str = "",
-    locale: str = "cs",
 ) -> str | None:
     """Doplní odkazy z článku na stenoprotokol; vrátí href stránky se zdroji."""
     if not has_steno_sources(paths, content.datum):
         return None
-    from svejk.locale import normalize_locale
-
-    loc = normalize_locale(locale)
     ob = obdobi if obdobi is not None else paths.obdobi
     page_href = steno_sources_href(
         ob,
@@ -676,9 +660,8 @@ def apply_steno_links_to_content(
         content.datum,
         link_mode=link_mode,
         base_path=base_path,
-        locale=loc,
     )
-    blocks = collect_steno_sources(paths, content.datum, locale=loc)
+    blocks = collect_steno_sources(paths, content.datum)
     used_phrases: set[str] = set()
     for item in content.items:
         item_passages = passages_for_slug(blocks, item.slug)

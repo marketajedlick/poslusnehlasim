@@ -292,50 +292,5 @@
         "citace": "na adresu Johany Hovorkové, je to zrůda, svině, hnát svinským krokem. Za to tedy se musel soudně omluvit"
       }
     }
-  ],
-  "en": {
-    "radky": [
-      {
-        "jmeno": "Stanislav Berkovec",
-        "varovani": {
-          "shrnuti": "As an observer of the Crimea referendum he claimed after returning that the vote was free, though he rejected the official EU and NATO position.",
-          "citace": "Mr. Stanislav Berkovec, Putin's voice"
-        }
-      },
-      {
-        "jmeno": "Petr Brozda",
-        "varovani": {
-          "shrnuti": "The verbatim record contained no specific objection to this name; opposition clubs still voted against.",
-          "citace": "the shortlist now includes many people with a very troubled past"
-        }
-      },
-      {
-        "jmeno": "Martin Chalupský",
-        "varovani": {
-          "shrnuti": "He won votes from ODS and STAN too; no opposition speaker raised objections to him in The Chamber of Deputies."
-        }
-      },
-      {
-        "jmeno": "Lucie Plíšková",
-        "varovani": {
-          "shrnuti": "The verbatim record contained no specific objection to this name; opposition clubs still voted against.",
-          "citace": "No one should become a councilor of Czech Television who participated in several million in damages that Czech Television now has to recover from those councilors"
-        }
-      },
-      {
-        "jmeno": "Jiří Šlégr",
-        "varovani": {
-          "shrnuti": "The opposition links him to the unlawful dismissal of a supervisory commission, which they say cost Czech Television four million crowns.",
-          "citace": "Among the councilors who voted for the illegal dismissal of the supervisory commission are Pavel Matocha, Roman Bradáč, Jiří Šlégr and Lubomír Veselý."
-        }
-      },
-      {
-        "jmeno": "Luboš Xaver Veselý",
-        "varovani": {
-          "shrnuti": "Before the vote the opposition read out court-ordered apologies for his remarks about female journalists; Jan Jakob claimed he represents the business interests of internet TV XTV on the council.",
-          "citace": "to the address of Johana Hovorková, it is a monster, a pig, to drive with a step of a pig. So he had to apologize in court for that"
-        }
-      }
-    ]
-  }
+  ]
 }

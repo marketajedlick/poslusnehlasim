@@ -9,7 +9,7 @@ from typing import Any, Literal
 
 from svejk.build.io import read_json
 from svejk.build.nav import vyznamenani_pages_href
-from svejk.locale import load_strings, month_label, normalize_locale
+from svejk.strings import load_strings
 from svejk.paths import SchuzePaths
 
 VyznamenaniKind = Literal["neprosli", "prosli", "zvoleni"]
@@ -98,10 +98,9 @@ def vyznamenani_href(
     *,
     link_mode: str,
     base_path: str = "",
-    locale: str = "cs",
 ) -> str:
     if link_mode == "pages":
-        return vyznamenani_pages_href(obdobi, schuze, datum_unl, kind, base_path, locale)
+        return vyznamenani_pages_href(obdobi, schuze, datum_unl, kind, base_path)
     from datetime import datetime
 
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
@@ -130,7 +129,6 @@ def resolve_vyznamenani_page_links(
     schuze: int,
     link_mode: str,
     base_path: str = "",
-    locale: str = "cs",
 ) -> list[tuple[str, str]]:
     """Přeloží (popisek, prosli|neprosli) na (popisek, href) jen když data existují."""
     out: list[tuple[str, str]] = []
@@ -147,7 +145,6 @@ def resolve_vyznamenani_page_links(
             kind,
             link_mode=link_mode,
             base_path=base_path,
-            locale=locale,
         )
         out.append((label, href))
     return out
@@ -348,12 +345,10 @@ def page_explain(
     kind: VyznamenaniKind,
     data: dict[str, Any],
     votes_by_cislo: dict[int, dict[str, int]],
-    locale: str = "cs",
 ) -> list[str]:
     if not votes_by_cislo:
         return []
-    loc = normalize_locale(locale)
-    kind_meta = (vyznamenani_strings(loc).get("kinds") or {}).get(kind)
+    kind_meta = (vyznamenani_strings().get("kinds") or {}).get(kind)
     if isinstance(kind_meta, dict) and (kind_meta.get("explain") or "").strip():
         return [str(kind_meta["explain"]).strip()]
     if kind == "zvoleni":
@@ -361,55 +356,15 @@ def page_explain(
     return [_MAJORITY_EXPLAIN]
 
 
-def vyznamenani_datum_label(datum_unl: str, locale: str = "cs") -> str:
+def vyznamenani_datum_label(datum_unl: str) -> str:
     from datetime import datetime
 
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
-    if normalize_locale(locale) == "en":
-        return f"{d.day} {month_label(d.month, d.year, 'en')}"
     return f"{d.day}. {d.month}. {d.year}"
 
 
-def localized_vyznamenani_data(data: dict[str, Any], locale: str = "cs") -> dict[str, Any]:
-    loc = normalize_locale(locale)
-    if loc != "en":
-        return data
-    en = data.get("en")
-    if not isinstance(en, dict):
-        return data
-    en_rows = en.get("radky")
-    if not isinstance(en_rows, list) or not en_rows:
-        return data
-    by_name: dict[str, dict[str, Any]] = {}
-    for row in en_rows:
-        if isinstance(row, dict) and (row.get("jmeno") or "").strip():
-            by_name[str(row["jmeno"]).strip()] = row
-    if not by_name:
-        return data
-    merged_rows: list[dict[str, Any]] = []
-    for row in data.get("radky") or []:
-        if not isinstance(row, dict):
-            continue
-        out = dict(row)
-        en_row = by_name.get(str(row.get("jmeno") or "").strip())
-        if not en_row:
-            merged_rows.append(out)
-            continue
-        en_var = en_row.get("varovani")
-        if isinstance(en_var, dict):
-            var = dict(row.get("varovani") or {})
-            if (en_var.get("shrnuti") or "").strip():
-                var["shrnuti"] = en_var["shrnuti"]
-            if en_var.get("citace"):
-                var["citace"] = en_var["citace"]
-            if var:
-                out["varovani"] = var
-        merged_rows.append(out)
-    return {**data, "radky": merged_rows}
-
-
-def vyznamenani_strings(locale: str = "cs") -> dict[str, Any]:
-    return load_strings(locale).get("vyznamenani") or {}
+def vyznamenani_strings() -> dict[str, Any]:
+    return load_strings().get("vyznamenani") or {}
 
 
 def page_meta(
@@ -417,10 +372,8 @@ def page_meta(
     *,
     pocet: int,
     datum_label: str,
-    locale: str = "cs",
 ) -> dict[str, str]:
-    loc = normalize_locale(locale)
-    kind_meta = (vyznamenani_strings(loc).get("kinds") or {}).get(kind)
+    kind_meta = (vyznamenani_strings().get("kinds") or {}).get(kind)
     if isinstance(kind_meta, dict) and (kind_meta.get("title") or "").strip():
         return {
             "title": str(kind_meta["title"]).strip(),
@@ -435,9 +388,8 @@ def page_meta(
     }
 
 
-def sibling_label(kind: VyznamenaniKind, locale: str = "cs") -> str:
-    loc = normalize_locale(locale)
-    siblings = vyznamenani_strings(loc).get("sibling") or {}
+def sibling_label(kind: VyznamenaniKind) -> str:
+    siblings = vyznamenani_strings().get("sibling") or {}
     label = siblings.get(kind)
     if isinstance(label, str) and label.strip():
         return label.strip()

@@ -39,33 +39,5 @@
   "pointa": "Výborný a Hladík citovali brněnskou deklaraci smíření, Hrnčíř a Výborný se přetahovali o pochod smrti. Koaliční text nakonec prošel až ve středu v noci.",
   "mean": "Sněmovna se vyjadřuje k zahraničněpoliticky citlivé akci v Brně. Zákon se nehlasoval, šlo o debatu nad usnesením.",
   "pocet_hlasovani": 0,
-  "proslo": false,
-  "en": {
-    "nadpis": "They argued about Brno well into the night",
-    "lead": "Tuesday was the congress of the Sudeten German Landsmanschaft in Brno. The coalition wanted to condemn it, the opposition talked about reconciliation and the Beneš decrees, fourteen votes on the amendment proposals took place after midnight.",
-    "pointa": "Výborný and Hladík quoted the Brno Declaration of Reconciliation, Hrnčíř and Výborný fought over the death march. The coalition text was finally passed on Wednesday night.",
-    "mean": "The Chamber of Deputies comments on a foreign-politically sensitive event in Brno. The law was not voted on, it was a debate over the resolution.",
-    "predmet_lidsky": "opinion of The Chamber of Deputies on the congress of the Sudeten German Landsmanschaft in Brno",
-    "koho": [
-      "Who does it concern? Rather, relations with Germany and Austria. It is about the history of deportation and congress in Brno, not a law for citizens."
-    ],
-    "fakty": [
-      {
-        "text": "Okamura won a point against the convention of the Sudeten German national team in Brno.",
-        "citace": "I propose to include a new point: The position of the government coalition on the congress of the Sudetenland German Landsmanschaft in Brno."
-      },
-      {
-        "text": "Jakob said that the opposition was taken by surprise and did not receive the text of the resolution in time.",
-        "citace": "We were rather taken aback by this draft resolution against the holding of the Sudeten German Assembly in Brno."
-      },
-      {
-        "text": "Ferčíková proposed a counter-resolution supporting dialogue and the Beneš decrees.",
-        "citace": "Dialogue and recognition of historical reality do not conflict with our legal order."
-      },
-      {
-        "text": "Fourteen votes on the amendments were cast, the last at 11:12 p.m.",
-        "citace": "Vote number 35 through 48, all rejected, closest to 46:75."
-      }
-    ]
-  }
+  "proslo": false
 }

@@ -27,16 +27,7 @@ jobs:
         env:
           ECOMAIL_API_KEY: ${{ secrets.ECOMAIL_API_KEY }}
           ECOMAIL_SUBSCRIBE_LIST_ID: "3"
-          ECOMAIL_SUBSCRIBE_LIST_ID_EN: "4"
-          ECOMAIL_FROM_EMAIL: ${{ secrets.ECOMAIL_FROM_EMAIL }}
-          ECOMAIL_FROM_NAME: Poslušně hlásím
-          SVEJK_SITE_URL: https://poslusnehlasim.cz
-        run: |
-          if [ -z "$ECOMAIL_API_KEY" ]; then
-            echo "ECOMAIL_API_KEY chybí"
-            exit 1
-          fi
-          ARGS="--apply --all-locales"
+          ARGS="--apply"
           if [ "${{ inputs.enable_double_optin }}" = "true" ]; then
             ARGS="$ARGS --enable-double-optin"
           fi

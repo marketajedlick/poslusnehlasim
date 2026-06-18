@@ -36,25 +36,5 @@
   "steno_slov": 2674,
   "lead": "Sněmovna schválila smlouvu se Slovenskem o spolupráci záchranných služeb, 141 hlasů pro, nikdo proti.",
   "pointa": "Ministr Vojtěch představil rámcovou smlouvu podepsanou v Praze. Dva hlasovací kroky prošly bez odporu.",
-  "mean": "Jde o technickou, ale praktickou dohodu: při zásahu u hranic má být jasné, jak česká a slovenská záchranná služba spolupracují. Pro občana to znamená spíš jistotu při nehodě na cestách než velkou politickou změnu.",
-  "en": {
-    "nadpis": "Rescue across the border",
-    "lead": "The The Chamber of Deputies approved the agreement with Slovakia on the cooperation of emergency services, 141 votes in favor, none against.",
-    "pointa": "Minister Vojtěch presented the framework agreement signed in Prague. Two ballot measures passed without opposition.",
-    "mean": "It is a technical but practical agreement: it should be clear how the Czech and Slovak rescue services cooperate during an intervention at the border. For the citizen, this means more security in the event of an accident on the road than a major political change.",
-    "predmet_lidsky": "agreement between the Czech Republic and the Slovak Republic on cross-border spol. in the field of medical rescue",
-    "koho": [
-      "Who does it concern? People at the border and on the road. When an ambulance calls in the Slovaks or here, it is clearer who will help and who pays."
-    ],
-    "fakty": [
-      {
-        "text": "Governmental proposal to be submitted to the Parliament of the Czech Republic for approval of the Framework Agreement between the Czech Republic and the Slovak Republic on cross-border cooperation in the field of emergency medical services.",
-        "citace": "Governmental proposal to express consent to the Framework Agreement between the Czech Republic and the Slovak Republic on cross-border cooperation in the field of medical emergency services."
-      },
-      {
-        "text": "In vote number 56, 158 deputies were registered, for 141, against 0. The proposal was accepted.",
-        "citace": "Vote number 56, 158 MPs registered, 141 for, none against. Vote number 57, for 146, against none."
-      }
-    ]
-  }
+  "mean": "Jde o technickou, ale praktickou dohodu: při zásahu u hranic má být jasné, jak česká a slovenská záchranná služba spolupracují. Pro občana to znamená spíš jistotu při nehodě na cestách než velkou politickou změnu."
 }
