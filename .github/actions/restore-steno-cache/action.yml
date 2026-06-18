@@ -1,0 +1,12 @@
+name: Restore steno cache
+description: Obnoví cached steno.jsonl podle processed/sync-state.json
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/cache/restore@v4
+      with:
+        path: processed/*/raw/steno.jsonl
+        key: steno-v1-${{ hashFiles('processed/sync-state.json') }}
+        restore-keys: |
+          steno-v1-

@@ -25,65 +25,31 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  SVEJK_SITE_URL: https://poslusnehlasim.cz
+  SVEJK_BASE_PATH: ""
+  ECOMAIL_FROM_NAME: Poslušně hlásím
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
-          cache-dependency-path: requirements-svejk.txt
-
-      - name: Install dependencies
-        run: pip install -r requirements-svejk.txt
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-
-      - name: Deploy subscribe API (Cloudflare Pages)
-        id: subscribe_worker
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          ECOMAIL_API_KEY: ${{ secrets.ECOMAIL_API_KEY }}
-          ECOMAIL_FROM_EMAIL: ${{ secrets.ECOMAIL_FROM_EMAIL }}
-          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
-        run: ./scripts/deploy-subscribe-worker.sh --github-output
-
-
-     # - name: Refresh data from Hlídač (cron / ručně)
-     #   if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
-     #   env:
-     #     HLIDAC_TOKEN: ${{ secrets.HLIDAC_TOKEN }}
-     #   run: |
-     #     if [ -z "$HLIDAC_TOKEN" ]; then
-    #        echo "HLIDAC_TOKEN není nastaven — používám committed processed/facts"
-     #       exit 0
-     #     fi
-    #      ./run-svejk.sh build --obdobi 2025 --vsechny-schuze -q \
-     #       || ./run-svejk.sh build --obdobi 2025 --vsechny-schuze --only align,extract,compose -q
+      - uses: ./.github/actions/setup-svejk
 
       - name: Publish gate check
         run: ./run-svejk.sh publish-check --obdobi 2025
 
       - name: Export static site
         env:
-          SVEJK_BASE_PATH: ""
           SVEJK_PAGES_CNAME: poslusnehlasim.cz
-          SVEJK_SITE_URL: https://poslusnehlasim.cz
           SVEJK_PUBLISH_GATE: "1"
           SVEJK_SHOW_SUBSCRIBE: "1"
-          SVEJK_SUBSCRIBE_API_URL: ${{ steps.subscribe_worker.outputs.url || secrets.SVEJK_SUBSCRIBE_API_URL }}
-          ECOMAIL_API_KEY: ${{ secrets.ECOMAIL_API_KEY }}
-          ECOMAIL_FROM_EMAIL: ${{ secrets.ECOMAIL_FROM_EMAIL }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          SVEJK_SUBSCRIBE_API_URL: ${{ secrets.SVEJK_SUBSCRIBE_API_URL }}
         run: |
-          if [ -n "$ECOMAIL_API_KEY" ] && [ -z "$SVEJK_SUBSCRIBE_API_URL" ]; then
-            echo "::warning::Odběr běží bez worker API — nové e-maily nemusí projít. Zkontroluj deploy krok „Deploy subscribe worker“."
+          if [ -z "$SVEJK_SUBSCRIBE_API_URL" ]; then
+            echo "::warning::SVEJK_SUBSCRIBE_API_URL chybí — odběr na webu nemusí fungovat. Nasaz worker: workflow Deploy subscribe worker."
           fi
           ./run-svejk.sh export-pages --obdobi 2025 --out site --cname poslusnehlasim.cz
 
@@ -93,9 +59,6 @@ jobs:
           ECOMAIL_API_KEY: ${{ secrets.ECOMAIL_API_KEY }}
           ECOMAIL_LIST_ID: "3"
           ECOMAIL_FROM_EMAIL: ${{ secrets.ECOMAIL_FROM_EMAIL }}
-          ECOMAIL_FROM_NAME: Poslušně hlásím
-          SVEJK_SITE_URL: https://poslusnehlasim.cz
-          SVEJK_BASE_PATH: ""
         run: |
           if [ -z "$ECOMAIL_API_KEY" ]; then
             echo "ECOMAIL_API_KEY není nastaven — přeskočeno"
@@ -105,7 +68,6 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.newsletter_force }}" = "true" ]; then
             FORCE_FLAG="--force"
           fi
-          # Jen koncept kampaně — odeslání ručně v Ecomail UI
           ./run-svejk.sh newsletter-notify --obdobi 2025 --out site $FORCE_FLAG || echo "Newsletter notify selhal — deploy pokračuje"
 
       - name: Commit newsletter state

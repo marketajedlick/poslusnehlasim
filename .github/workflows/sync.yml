@@ -22,22 +22,9 @@ jobs:
         with:
           fetch-depth: 1
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
-          cache-dependency-path: requirements-svejk.txt
+      - uses: ./.github/actions/setup-svejk
 
-      - name: Install dependencies
-        run: pip install -r requirements-svejk.txt
-
-      - name: Restore steno cache
-        uses: actions/cache/restore@v4
-        with:
-          path: processed/*/raw/steno.jsonl
-          key: steno-v1-${{ hashFiles('processed/sync-state.json') }}
-          restore-keys: |
-            steno-v1-
+      - uses: ./.github/actions/restore-steno-cache
 
       - name: Sync UNL + Hlídač → processed/
         env:

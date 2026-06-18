@@ -8,35 +8,26 @@ on:
         type: boolean
         default: true
 
+env:
+  ECOMAIL_SUBSCRIBE_LIST_ID: "3"
+  ECOMAIL_FROM_NAME: Poslušně hlásím
+  SVEJK_SITE_URL: https://poslusnehlasim.cz
+
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
-          cache-dependency-path: requirements-svejk.txt
-
-      - name: Install dependencies
-        run: pip install -r requirements-svejk.txt
+      - uses: ./.github/actions/setup-svejk
 
       - name: Sync DOI template to Ecomail
         env:
           ECOMAIL_API_KEY: ${{ secrets.ECOMAIL_API_KEY }}
-          ECOMAIL_SUBSCRIBE_LIST_ID: "3"
           ECOMAIL_FROM_EMAIL: ${{ secrets.ECOMAIL_FROM_EMAIL }}
-          ECOMAIL_FROM_NAME: Poslušně hlásím
-          SVEJK_SITE_URL: https://poslusnehlasim.cz
         run: |
-          if [ -z "$ECOMAIL_API_KEY" ]; then
-            echo "ECOMAIL_API_KEY chybí"
-            exit 1
-          fi
-          ARGS="--apply"
+          args=(--apply)
           if [ "${{ inputs.enable_double_optin }}" = "true" ]; then
-            ARGS="$ARGS --enable-double-optin"
+            args+=(--enable-double-optin)
           fi
-          ./run-svejk.sh newsletter-doi-sync $ARGS
+          ./run-svejk.sh newsletter-doi-sync "${args[@]}"

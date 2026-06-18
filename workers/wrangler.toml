@@ -5,7 +5,6 @@ pages_build_output_dir = "public"
 [vars]
 ALLOWED_ORIGIN = "https://poslusnehlasim.cz,https://www.poslusnehlasim.cz"
 ECOMAIL_SUBSCRIBE_LIST_ID = "3"
-ECOMAIL_SUBSCRIBE_LIST_ID_EN = "4"
 RATE_LIMIT_ID = "00000000000000000000000000000000"
 # Výchozí limity: 10 POST/hod z IP, 3 odběry/den na e-mail
 RATE_LIMIT_IP_MAX = "10"
