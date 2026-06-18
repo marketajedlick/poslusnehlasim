@@ -8,9 +8,9 @@ from collections import defaultdict
 from typing import Any
 
 from svejk.build.io import iter_jsonl, write_json
-from svejk.noviny import _law_kategorie
+from svejk.build.vote_logic import topic_proslo_from_votes, vote_kategorie
 from svejk.paths import SchuzePaths
-from svejk.timeline import BlokDne, tema_z_nazvu
+from svejk.timeline import tema_z_nazvu
 
 
 def _slug(text: str) -> str:
@@ -35,17 +35,6 @@ def _tema_match(nazev: str, tema: str) -> bool:
     if not nw or not tw:
         return False
     return len(nw & tw) / min(len(nw), len(tw)) >= 0.35
-
-
-def _vote_kategorie(nazev: str) -> str:
-    blok = BlokDne(
-        cas_od="",
-        cas_do="",
-        typ="law",
-        svejk="",
-        nazev=nazev,
-    )
-    return _law_kategorie(blok)
 
 
 _HLASOVANI_CISLO_RE = re.compile(r"hlasování(?:\s+pořadové)?\s+číslo\s+(\d+)", re.I)
@@ -163,7 +152,6 @@ def run_align(paths: SchuzePaths) -> dict[str, Any]:
         cisla = [int(v["cislo"]) for v in group if v.get("cislo") is not None]
         prijato = sum(1 for v in group if v.get("vysledek") == "A")
         zamitnuto = sum(1 for v in group if v.get("vysledek") == "R")
-        from svejk.build.extract import topic_proslo_from_votes
 
         proslo = topic_proslo_from_votes(group)
         slug = slug_by_key[(bod, nazev)]
@@ -185,7 +173,7 @@ def run_align(paths: SchuzePaths) -> dict[str, Any]:
                     steno_ids.append(sid)
         steno_ids.sort(key=lambda sid: steno_poradi.get(sid, 0))
 
-        kat = _vote_kategorie(nazev)
+        kat = vote_kategorie(nazev)
         topics.append(
             {
                 "slug": slug,

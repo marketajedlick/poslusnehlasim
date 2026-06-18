@@ -7,8 +7,8 @@ from collections import defaultdict
 from datetime import datetime
 from typing import Any
 
-from svejk.build.align import _vote_kategorie
 from svejk.build.io import iter_jsonl, read_json, write_json
+from svejk.build.vote_logic import topic_proslo_from_votes, vote_kategorie
 from svejk.listy import (
     KDO_KLIC,
     PREDMET_LIDSKY,
@@ -37,8 +37,24 @@ def _steno_konec_schuze(steno_path) -> str:
     return ""
 
 
-    t = (nazev + " " + vysvetleni).lower()
-    if any(w in t for w in ("nestihl", "odlož", "posun digitalizace", "úřady nestihly")):
+def _verdikt(proslo: bool, nazev: str, vysvetleni: str) -> str:
+    t = (f"{nazev} {vysvetleni}").lower()
+    if any(
+        w in t
+        for w in (
+            "odlož",
+            "odklad",
+            "odsun",
+            "odroč",
+            "přeruš",
+            "pozastav",
+            "nestihl",
+            "posun",
+            "prodlouž",
+            "lhůt",
+            "úřady nestihly",
+        )
+    ):
         return "odlozeno"
     return "schvaleno" if proslo else "zamiteno"
 
@@ -149,25 +165,6 @@ def skore_z_verdiktu(slugs: list[str], paths: SchuzePaths) -> tuple[int, int]:
     return proslo, zamitnuto
 
 
-def topic_proslo_from_votes(group: list[dict]) -> bool:
-    """Prošlo, pokud existuje rozhodující A (pro > proti); u maratonů přerušení ne."""
-    group = sorted(group, key=lambda v: (v.get("datum", ""), v.get("cas", "")))
-    if not group:
-        return False
-    prijato = sum(1 for v in group if v.get("vysledek") == "A")
-    zamitnuto = sum(1 for v in group if v.get("vysledek") == "R")
-    decisive = [
-        v
-        for v in group
-        if v.get("vysledek") == "A" and (v.get("pro") or 0) > (v.get("proti") or 0)
-    ]
-    if not decisive:
-        return False
-    if prijato <= 2 and zamitnuto >= max(10, prijato * 5):
-        return False
-    return True
-
-
 def _den_zakon_stats(day_votes: list[dict]) -> tuple[int, int, int]:
     """Počty pro tabuli stavu zápasu: jen zákony, jedno skóre na téma."""
     groups: dict[tuple[str, str], list] = defaultdict(list)
@@ -175,7 +172,7 @@ def _den_zakon_stats(day_votes: list[dict]) -> tuple[int, int, int]:
         if v.get("je_porad_schuze"):
             continue
         nazev = (v.get("nazev") or "").strip()
-        if not nazev or _vote_kategorie(nazev) != "substantivni":
+        if not nazev or vote_kategorie(nazev) != "substantivni":
             continue
         groups[(v.get("bod") or "", nazev)].append(v)
     proslo = zamitnuto = 0
