@@ -434,11 +434,6 @@ def run_export_pages(
         out, list(editions), site_url=site, base_path=base, obdobi=obdobi
     )
 
-    # Přesměrování starých /en/ URL na českou verzi
-    en_redirect_dir = out / "en"
-    en_redirect_dir.mkdir(parents=True, exist_ok=True)
-    _write_html(en_redirect_dir / "index.html", _redirect_html(f"{site}/"))
-
     return {
         "obdobi": obdobi,
         "files": len(written) + 2,
