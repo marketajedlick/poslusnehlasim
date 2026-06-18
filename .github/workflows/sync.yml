@@ -64,5 +64,4 @@ jobs:
       - name: Notifikace — nová data stažena
         if: steps.commit.outputs.committed == 'true'
         run: |
-          echo "::error::Sync stáhl nová data PSP (UNL + raw/). Doplň facts ručně, pak align/extract/compose lokálně."
-          exit 1
+          echo "::warning::Sync stáhl nová data PSP (UNL + raw/). Doplň facts ručně, pak align/extract/compose lokálně."

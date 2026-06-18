@@ -254,7 +254,7 @@ class PoslanecRegistry:
                             len(tvar),
                             _MatchRule(
                                 self._surname_pattern(tvar, block_jmeno=p0.jmeno),
-                                p.klub,
+                                p0.klub,
                             ),
                         )
                     )
