@@ -2,7 +2,7 @@
   "slug": "novela-z-stavebni-zakon",
   "nazev": "Novela z. - stavební zákon",
   "datum": "11.06.2026",
-  "verdikt": "zamiteno",
+  "verdikt": "schvaleno",
   "predmet_lidsky": "stavebním zákoně",
   "koho": [
     "Koho se to týká? Každého, kdo staví dům, dělá přístavbu nebo čeká na úřad."
@@ -52,35 +52,27 @@
       "link_phrase": "hluk v sále neustává"
     },
     {
-      "text": "Barták upozornil, že ve frontě čeká ještě čtyřicet řečníků bez přednostního práva.",
-      "source": "steno",
-      "steno_id": "2025_23_00127",
-      "kind": "scene",
-      "citace": "těch vystoupení bude celkem 40",
-      "link_phrase": "čtyřicet řečníků"
-    },
-    {
-      "text": "Ožanová se v závěru podrobné rozpravy přihlásila k tisku až dodatečně: v rychlosti, jakou jedeme, neví, zda se stihla přihlásit včas.",
-      "source": "steno",
-      "steno_id": "2025_23_00192",
-      "citace": "vzhledem k rychlosti, jakou jedeme, nevím, zda jsem skutečně se přihlásila k tisku 1180 týkající se městských architektů",
-      "link_phrase": "Ožanová se v závěře přihlásila k tisku až dodatečně"
-    },
-    {
-      "text": "Jediné hlasování dne skončilo 22 pro, 75 proti, přítomno 102 poslanců. Celá odpolední a večerní debata šla jen o pozměňovací návrhy.",
+      "text": "Neprošel návrh Lukáše Vlčka (STAN) na vrácení předlohy k novému projednání v hospodářském výboru, 22 proti 75.",
       "source": "votes",
-      "citace": "Novela z. - stavební zákon: pro 22, proti 75, přítomno 102, návrh nebyl přijat",
-      "link_phrase": "Jediné hlasování dne"
+      "citace": "Hlasování číslo 4, pro 22, proti 75. Návrh na vrácení zákona garančnímu výboru k novému projednání byl zamítnut.",
+      "link_phrase": "Návrh Lukáše Vlčka"
+    },
+    {
+      "text": "Potom proběhla podrobná rozprava, poslanci se hlásili k desítkám pozměňovacích návrhů a Barták ve 20:14 ukončil druhé čtení.",
+      "source": "steno",
+      "steno_id": "2025_23_00193",
+      "citace": "Končím tedy druhé čtení tohoto návrhu zákona. Schůze skončila v 20.14 hodin.",
+      "link_phrase": "ukončil druhé čtení"
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Balíček pozměňovacích návrhů pro stavební zákon neprošel",
-  "lead": "Na konci rozprav proběhlo jediné hlasování dne, koaliční balík změn neprošel 22:75.",
-  "pointa": "Čtyři a půl hodiny řečí o pozměňovacích návrzích skončily jediným hlasováním. Koaliční balík změn padl 22:75, zákon zůstává ve druhém kole.",
-  "mean": "Ve druhém čtení poslanci nehlasují o celém zákonu najednou, ale o balících pozměňovacích návrhů. Čtvrteční koaliční balík neprošel a zákon zůstává ve druhém čtení.",
+  "nadpis": "Druhé čtení doběhlo,\nvýbor bude třídit",
+  "lead": "Na konci rozpravy se hlasovalo o tom, jestli se novela vrátí zpátky do hospodářského výboru. Nevrátila. Návrh Lukáše Vlčka (STAN) spadl poměrem 22:75.",
+  "pointa": "Hlasování nebylo o tom, jestli padá celý zákon, ale jestli se novela vrátí do výboru. Nevrátila se, druhé čtení doběhlo a na hospodářském výboru čeká zhruba sto třicet pozměňovacích návrhů.",
+  "mean": "Čtvrteční hlasování nebylo o tom, jestli padá celý stavební zákon. Bylo o tom, jestli se vrátí na dílnu do výboru. Nevrátila. Novela prošla druhým čtením a míří dál: hospodářský výbor teď musí projít zhruba 130 pozměňovacích návrhů a pak přijde třetí čtení. Jinými slovy, papíry se nezahodily, jen se přesunuly na další hromadu.",
   "pocet_hlasovani": 1,
-  "proslo": false,
+  "proslo": true,
   "signaly": {
     "proti_max": 75,
     "pritomno_min": 102,

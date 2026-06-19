@@ -7,14 +7,23 @@
     "novela-z-stavebni-zakon"
   ],
   "steno_zdroje": true,
+  "skore_manual": true,
+  "board_proslo_label": "věcné změny schválené",
+  "board_zamitnuto_label": "návrh na vrácení zamítnut",
   "stats": {
     "pocet_hlas": 1,
-    "minuty": 283,
-    "end_cas": "19:44",
+    "minuty": 313,
+    "end_cas": "20:14",
     "proslo": 0,
     "zamitnuto": 1,
     "dlouha_debata": true
   },
-  "dnesni_ucet": "Celý den druhé kolo stavebního zákona, hlučný\nsál a dlouhá fronta řečníků, balík změn neprošel.",
-  "zaver": "že ve čtvrtek se u stavebního zákona moc nestavělo, ale zato vydatně řečnilo. Sál hučel jak nádraží před odjezdem, Turek od Motoristů po půl roce poprvé promluvil a když se konečně hlasovalo, koaliční balík změn spadl jako cihla z lešení."
+  "dnesni_ucet": "Celý den druhé kolo stavebního zákona, hlučný\nsál a dlouhá fronta řečníků, novela míří do třetího čtení.",
+  "zaver": "že stavební zákon ve čtvrtek nespadl. Jen se tak dlouho mluvilo, až spadl návrh poslat ho zpátky do výboru.",
+  "vysledek": [
+    "* 0 věcných změn schváleno",
+    "* 1 návrh na vrácení zamítnut",
+    "* jediné hlasování dne: pokus vrátit novelu do výboru neprošel 22:75",
+    "* večer ukončili druhé čtení, novela míří do třetího čtení"
+  ]
 }

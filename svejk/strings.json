@@ -260,8 +260,8 @@
     "proslo_1": "věc schválili",
     "proslo_2_4": "věci schválili",
     "proslo_other": "věcí schválili",
-    "zamitnuto_1": "návrh zamítli",
-    "zamitnuto_2_4": "návrhy zamítli",
-    "zamitnuto_other": "návrhů zamítli"
+    "zamitnuto_1": "návrh neprošel",
+    "zamitnuto_2_4": "návrhy neprošly",
+    "zamitnuto_other": "návrhů neprošlo"
   }
 }

@@ -10,7 +10,8 @@ from pathlib import Path
 from typing import Any
 
 from svejk.build.extract import skore_z_verdiktu
-from svejk.build.io import read_json
+from svejk.build.io import iter_jsonl, read_json
+from svejk.build.vote_logic import debata_vysledek_radek, spor_o_porad_schuze
 from svejk.cislo_slovy import (
     krat_hlasovali,
     krat_se_hlasovalo,
@@ -119,6 +120,8 @@ class DenContent:
     items: list[DenItem] = field(default_factory=list)
     proslo: int = 0
     zamitnuto: int = 0
+    board_proslo_label: str = ""
+    board_zamitnuto_label: str = ""
     board_stats: str = ""
     result_note: str = ""
     zaver: str = ""
@@ -420,8 +423,13 @@ def split_nadpis_radky(nadpis: str, *, max_lines: int = 2) -> list[str]:
 
 
 def _result_note(stats: dict[str, Any], *, state: dict) -> str:
-    if stats.get("dlouha_debata"):
+    debata = debata_vysledek_radek(stats).lstrip("* ").strip()
+    if debata.startswith("nejdřív se dlouho hádali"):
         return "Nejdřív se dlouho hádali o pořadu dne; zákony prošly až po dohadování."
+    if debata.startswith("celé odpoledne se mluvilo"):
+        return "Celé odpoledne se mluvilo o jednom bodu; na konci balík změn neprošel."
+    if debata.startswith("dlouhá debata"):
+        return "Dlouhá debata u jednoho bodu; závěrečné hlasování až večer."
     note = _shrnuti_radka(stats, state=state)
     if stats.get("zamitnuto", 0) > stats.get("proslo", 0):
         return note
@@ -479,7 +487,7 @@ def build_den_content(
     topics = _topics_by_slug(paths)
 
     skore_p, skore_z = skore_z_verdiktu(slugs, paths)
-    if skore_p or skore_z:
+    if not day.get("skore_manual") and (skore_p or skore_z):
         stats["proslo"] = skore_p
         stats["zamitnuto"] = skore_z
 
@@ -501,6 +509,8 @@ def build_den_content(
         dnesni_ucet=custom_ucet or _dnesni_ucet(stats, state=state),
         proslo=int(stats.get("proslo") or 0),
         zamitnuto=int(stats.get("zamitnuto") or 0),
+        board_proslo_label=(day.get("board_proslo_label") or "").strip(),
+        board_zamitnuto_label=(day.get("board_zamitnuto_label") or "").strip(),
         board_stats="",
         result_note=result_note,
     )
@@ -796,6 +806,11 @@ def vysledek_radky(content: DenContent, paths: SchuzePaths, day_path: Path) -> l
         "dlouha_debata": False,
         **(day.get("stats") or {}),
     }
+    if "spor_o_porad" not in stats:
+        day_votes = [
+            v for v in iter_jsonl(paths.votes_jsonl) if v.get("datum") == content.datum
+        ]
+        stats["spor_o_porad"] = spor_o_porad_schuze(day_votes)
     dummy_day = DenSchuze(datum=content.datum, den=content.den, bloky=[])
     zakony: list[BlokDne] = []
     for s in slugs:

@@ -168,10 +168,19 @@ def _proslo_board_label(n: int) -> str:
 def _zamitnuto_board_label(n: int) -> str:
     b = load_strings().get("board", {})
     if n == 1:
-        return b.get("zamitnuto_1", "návrh zamítli")
+        return b.get("zamitnuto_1", "návrh neprošel")
     if 2 <= n <= 4:
-        return b.get("zamitnuto_2_4", "návrhy zamítli")
-    return b.get("zamitnuto_other", "návrhů zamítli")
+        return b.get("zamitnuto_2_4", "návrhy neprošly")
+    return b.get("zamitnuto_other", "návrhů neprošlo")
+
+
+def _content_board_labels(content) -> tuple[str, str]:
+    proslo = (getattr(content, "board_proslo_label", None) or "").strip()
+    zamitnuto = (getattr(content, "board_zamitnuto_label", None) or "").strip()
+    return (
+        proslo or _proslo_board_label(content.proslo),
+        zamitnuto or _zamitnuto_board_label(content.zamitnuto),
+    )
 
 
 
@@ -589,14 +598,15 @@ def render_den_html(
                 base_path=base_path,
             )
     tpl = _jinja_env().get_template("noviny-dlouhe.html")
+    proslo_label, zamitnuto_label = _content_board_labels(content)
     return tpl.render(
         content=content,
         obdobi=ob,
         schuze=paths.schuze,
         dup_day=dup_day,
         datum_design=datum_design(content.datum, content.den),
-        proslo_label=_proslo_board_label(content.proslo),
-        zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
+        proslo_label=proslo_label,
+        zamitnuto_label=zamitnuto_label,
         svejk_svg=svejk_svg,
         inline_css=inline_css,
         css=css,
@@ -805,14 +815,15 @@ def render_email_html(
         site_url=site,
     )
     _apply_email_links_absolute(content, site)
+    proslo_label, zamitnuto_label = _content_board_labels(content)
     plain = plain_text_from_content(
         content,
         datum_label=datum_label,
         edition_url=edition_url,
         archive_url=archive_url,
         pivo_url=pivo_url,
-        proslo_label=_proslo_board_label(content.proslo),
-        zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
+        proslo_label=proslo_label,
+        zamitnuto_label=zamitnuto_label,
     )
     css = _EMAIL_CSS.read_text(encoding="utf-8")
     tpl = _jinja_env().get_template("noviny-email.html")
@@ -820,8 +831,8 @@ def render_email_html(
         content=content,
         css=css,
         datum_design=datum_label,
-        proslo_label=_proslo_board_label(content.proslo),
-        zamitnuto_label=_zamitnuto_board_label(content.zamitnuto),
+        proslo_label=proslo_label,
+        zamitnuto_label=zamitnuto_label,
         edition_url=edition_url,
         archive_url=archive_url,
         pivo_url=pivo_url,

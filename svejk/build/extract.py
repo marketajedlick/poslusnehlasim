@@ -220,7 +220,15 @@ _MANUAL_TOPIC_KEYS = (
     "koho",
     "fakty",
 )
-_MANUAL_DAY_KEYS = ("dnesni_ucet", "zaver", "vysledek", "topic_slugs")
+_MANUAL_DAY_KEYS = (
+    "dnesni_ucet",
+    "zaver",
+    "vysledek",
+    "topic_slugs",
+    "skore_manual",
+    "board_proslo_label",
+    "board_zamitnuto_label",
+)
 
 
 def _topic_manually_edited(existing: dict[str, Any]) -> bool:
@@ -257,6 +265,11 @@ def _merge_manual_day(existing: dict[str, Any], fresh: dict[str, Any]) -> dict[s
     for key in _MANUAL_DAY_KEYS:
         if key in existing and existing[key] not in (None, "", []):
             out[key] = existing[key]
+    if existing.get("skore_manual") and existing.get("stats"):
+        out.setdefault("stats", {})
+        for key in ("proslo", "zamitnuto"):
+            if key in existing["stats"]:
+                out["stats"][key] = existing["stats"][key]
     return out
 
 
@@ -365,6 +378,9 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
     for datum in days:
         day_votes = [v for v in votes if v.get("datum") == datum]
         vote_proslo, vote_zamitnuto, pocet_hlas = _den_zakon_stats(day_votes)
+        from svejk.build.vote_logic import spor_o_porad_schuze
+
+        spor_o_porad = spor_o_porad_schuze(day_votes)
         times = [v.get("cas", "") for v in day_votes if v.get("cas")]
         start = times[0][:5] if times else ""
         end = _steno_konec_schuze(paths.steno_jsonl) or (times[-1][:5] if times else "")
@@ -403,6 +419,7 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
                     "end_cas": end,
                     "proslo": proslo,
                     "zamitnuto": zamitnuto,
+                    "spor_o_porad": spor_o_porad,
                     "dlouha_debata": any(
                         read_json(paths.facts_by_topic / f"{slug}.json").get("steno_slov", 0) >= 1500
                         for slug in slugs

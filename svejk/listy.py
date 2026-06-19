@@ -5,6 +5,7 @@ from __future__ import annotations
 import re
 import unicodedata
 
+from svejk.build.vote_logic import debata_vysledek_radek
 from svejk.cislo_slovy import po_hlasovanich_cap
 from svejk.mix import SLOTS, _hash_seed, pick_slot, re_sub_space
 from svejk.noviny import HLAVICKA_LISTU, _datum_cesky, _law_kategorie, _new_state, _zkrat_nazev
@@ -1034,6 +1035,14 @@ def _shrnuti_radka(stats: dict, *, state: dict) -> str:
     return "víc návrhů padlo než prošlo"
 
 
+def _zamitnuto_vysledek_radek(n: int) -> str:
+    if n == 1:
+        return f"* {n} návrh neprošel"
+    if 2 <= n <= 4:
+        return f"* {n} návrhy neprošly"
+    return f"* {n} návrhů neprošlo"
+
+
 def _vysledek_dne(
     day: DenSchuze,
     zakony: list[BlokDne],
@@ -1043,12 +1052,9 @@ def _vysledek_dne(
 ) -> list[str]:
     lines = [
         f"* {stats['proslo']} {'věc' if stats['proslo'] == 1 else 'věci'} schválili",
-        f"* {stats['zamitnuto']} {'návrh' if stats['zamitnuto'] == 1 else 'návrhů'} zamítli",
+        _zamitnuto_vysledek_radek(stats["zamitnuto"]),
     ]
-    if stats["dlouha_debata"]:
-        lines.append("* nejdřív se dlouho hádali o pořadu dne")
-    else:
-        lines.append("* nikdo se nepohádal tak, aby to stálo za zmínku")
+    lines.append(debata_vysledek_radek(stats))
     lines.append(f"* {_shrnuti_radka(stats, state=state)}")
     return lines
 

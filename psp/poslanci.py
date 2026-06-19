@@ -38,7 +38,12 @@ _DEFAULT_PRIJMENI = {
     "Okamura": "SPD",
     "Fiala": "ODS",
     "Vondráček": "ANO",
-    "Kovářová": "STAN",
+    "Kovářová": "Piráti",
+}
+
+# Zobrazení v textu, když klub ve Sněmovně neodpovídá volební straně poslance.
+_KLUB_DISPLAY: dict[tuple[str, str], str] = {
+    ("Gabriela", "Svárovská"): "Zelení, klub Pirátů",
 }
 
 
@@ -77,6 +82,10 @@ def _ensure_poslanci_zip(data_dir: Path) -> Path:
 
 def _klub_label(zkr: str) -> str:
     return _KLUB_LABEL.get(zkr, zkr)
+
+
+def _display_klub(p: Poslanec) -> str:
+    return _KLUB_DISPLAY.get((p.jmeno, p.prijmeni), p.klub)
 
 
 def load_poslanci(
@@ -220,7 +229,7 @@ class PoslanecRegistry:
                             len(tvar),
                             _MatchRule(
                                 self._surname_pattern(tvar, block_jmeno=p.jmeno),
-                                p.klub,
+                                _display_klub(p),
                             ),
                         )
                     )
@@ -229,7 +238,7 @@ class PoslanecRegistry:
                         len(p.jmeno) + len(p.prijmeni) + 1,
                         _MatchRule(
                             self._full_name_pattern(p.jmeno, p.prijmeni, p.pohlavi),
-                            p.klub,
+                            _display_klub(p),
                         ),
                     )
                 )
@@ -241,7 +250,7 @@ class PoslanecRegistry:
                         len(p.jmeno) + len(p.prijmeni) + 1,
                         _MatchRule(
                             self._full_name_pattern(p.jmeno, p.prijmeni, p.pohlavi),
-                            p.klub,
+                            _display_klub(p),
                         ),
                     )
                 )
@@ -254,7 +263,7 @@ class PoslanecRegistry:
                             len(tvar),
                             _MatchRule(
                                 self._surname_pattern(tvar, block_jmeno=p0.jmeno),
-                                p0.klub,
+                                _display_klub(p0),
                             ),
                         )
                     )

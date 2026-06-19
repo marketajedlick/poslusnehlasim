@@ -18,17 +18,17 @@ def _load_verdikt_from_extract():
     return namespace["_verdikt"]
 
 
-def _load_topic_proslo_from_vote_logic():
+def _load_vote_logic_helpers():
     vote_logic_path = Path(__file__).resolve().parents[1] / "svejk" / "build" / "vote_logic.py"
     spec = importlib.util.spec_from_file_location("svejk_vote_logic_for_tests", vote_logic_path)
     module = importlib.util.module_from_spec(spec)
     assert spec is not None and spec.loader is not None
     spec.loader.exec_module(module)
-    return module.topic_proslo_from_votes
+    return module.topic_proslo_from_votes, module.topic_proslo_druhe_cteni_ukonceno
 
 
 _verdikt = _load_verdikt_from_extract()
-topic_proslo_from_votes = _load_topic_proslo_from_vote_logic()
+topic_proslo_from_votes, topic_proslo_druhe_cteni_ukonceno = _load_vote_logic_helpers()
 
 
 class VerdiktTests(unittest.TestCase):
@@ -93,6 +93,50 @@ class TopicProsloFromVotesTests(unittest.TestCase):
                 }
             )
         self.assertFalse(topic_proslo_from_votes(group))
+
+
+class TopicProsloSecondReadingTests(unittest.TestCase):
+    def test_detects_second_reading_concluded_after_return_vote(self) -> None:
+        texts = [
+            "Návrh na vrácení zákona garančnímu výboru k novému projednání byl zamítnut.",
+            "Končím tedy druhé čtení tohoto návrhu zákona.",
+        ]
+        self.assertTrue(topic_proslo_druhe_cteni_ukonceno(texts))
+
+    def test_ignores_without_second_reading_closure(self) -> None:
+        texts = ["Návrh na vrácení zákona garančnímu výboru k novému projednání byl zamítnut."]
+        self.assertFalse(topic_proslo_druhe_cteni_ukonceno(texts))
+
+
+def _load_spor_helpers():
+    vote_logic_path = Path(__file__).resolve().parents[1] / "svejk" / "build" / "vote_logic.py"
+    spec = importlib.util.spec_from_file_location("svejk_vote_logic_spor", vote_logic_path)
+    module = importlib.util.module_from_spec(spec)
+    assert spec is not None and spec.loader is not None
+    spec.loader.exec_module(module)
+    return module.spor_o_porad_schuze, module.debata_vysledek_radek
+
+
+spor_o_porad_schuze, debata_vysledek_radek = _load_spor_helpers()
+
+
+class SporOPoradTests(unittest.TestCase):
+    def test_s23_porad_is_not_long_dispute(self) -> None:
+        votes = [
+            {"je_porad_schuze": True, "proti": 34, "cas": "15:04"},
+            {"je_porad_schuze": True, "proti": 6, "cas": "15:04"},
+        ]
+        self.assertFalse(spor_o_porad_schuze(votes))
+
+    def test_many_proti_on_porad_counts_as_dispute(self) -> None:
+        votes = [{"je_porad_schuze": True, "proti": 45, "cas": "15:04"}]
+        self.assertTrue(spor_o_porad_schuze(votes))
+
+    def test_long_debate_without_porad_dispute(self) -> None:
+        line = debata_vysledek_radek(
+            {"dlouha_debata": True, "minuty": 283, "spor_o_porad": False}
+        )
+        self.assertIn("celé odpoledne", line)
 
 
 if __name__ == "__main__":

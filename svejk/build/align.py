@@ -8,7 +8,11 @@ from collections import defaultdict
 from typing import Any
 
 from svejk.build.io import iter_jsonl, write_json
-from svejk.build.vote_logic import topic_proslo_from_votes, vote_kategorie
+from svejk.build.vote_logic import (
+    topic_proslo_druhe_cteni_ukonceno,
+    topic_proslo_from_votes,
+    vote_kategorie,
+)
 from svejk.paths import SchuzePaths
 from svejk.timeline import tema_z_nazvu
 
@@ -153,7 +157,6 @@ def run_align(paths: SchuzePaths) -> dict[str, Any]:
         prijato = sum(1 for v in group if v.get("vysledek") == "A")
         zamitnuto = sum(1 for v in group if v.get("vysledek") == "R")
 
-        proslo = topic_proslo_from_votes(group)
         slug = slug_by_key[(bod, nazev)]
 
         ids_cislo: list[str] = []
@@ -172,6 +175,17 @@ def run_align(paths: SchuzePaths) -> dict[str, Any]:
                 if sid not in steno_ids:
                     steno_ids.append(sid)
         steno_ids.sort(key=lambda sid: steno_poradi.get(sid, 0))
+
+        proslo = topic_proslo_from_votes(group)
+        if not proslo and steno_ids:
+            steno_by_id = {s["id"]: s for s in steno}
+            steno_texts = [
+                steno_by_id[sid]["text"]
+                for sid in steno_ids
+                if sid in steno_by_id and (steno_by_id[sid].get("text") or "").strip()
+            ]
+            if topic_proslo_druhe_cteni_ukonceno(steno_texts):
+                proslo = True
 
         kat = vote_kategorie(nazev)
         topics.append(
