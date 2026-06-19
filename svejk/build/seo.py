@@ -313,6 +313,30 @@ def _iter_vyznamenani_editions(
     return found
 
 
+def write_security_txt(
+    out_dir: Path,
+    *,
+    site_url: str,
+    contact_email: str = "svejk@poslusnehlasim.cz",
+    expires: datetime | None = None,
+) -> Path:
+    """RFC 9116 security.txt v .well-known/."""
+    base = site_url.rstrip("/")
+    exp = expires or datetime.now(timezone.utc).replace(
+        year=datetime.now(timezone.utc).year + 1
+    )
+    lines = [
+        f"Contact: mailto:{contact_email}",
+        "Preferred-Languages: cs",
+        f"Canonical: {base}/.well-known/security.txt",
+        f"Expires: {exp.strftime('%Y-%m-%dT%H:%M:%SZ')}",
+    ]
+    path = out_dir / ".well-known" / "security.txt"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return path
+
+
 def write_robots_txt(out_dir: Path, *, site_url: str) -> Path:
     base = site_url.rstrip("/")
     lines = [

@@ -69,6 +69,16 @@ Soubor [`_headers`](_headers) platí **jen** když hlavní web hostuješ na **Cl
 
 Očekávané hlavičky po nasazení: `strict-transport-security`, `content-security-policy`, `x-frame-options`, `x-content-type-options`, `referrer-policy`.
 
-## 6. API odběru
+Skript akceptuje i `Content-Security-Policy-Report-Only` (varování, ne chyba). Po ověření v prohlížeči přepni na vynucující `Content-Security-Policy`.
 
-Worker `poslusnehlasim-odebir.pages.dev` běží zvlášť na Cloudflare Pages — hlavičky z této zóny se na něj nevztahují. CORS řeší `ALLOWED_ORIGIN` ve [`workers/wrangler.toml`](../../workers/wrangler.toml).
+## 6. security.txt
+
+Export webu generuje `/.well-known/security.txt` (kontakt pro reporty zranitelností). Ověření:
+
+```bash
+curl -sS https://poslusnehlasim.cz/.well-known/security.txt
+```
+
+## 7. API odběru
+
+Worker `poslusnehlasim-odebir.pages.dev` běží zvlášť na Cloudflare Pages — hlavičky z této zóny se na něj nevztahují. CORS řeší `ALLOWED_ORIGIN` ve [`workers/wrangler.toml`](../../workers/wrangler.toml). Worker sám posílá `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` a restriktivní CSP u JSON odpovědí.

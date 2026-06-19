@@ -5,13 +5,20 @@ const CORS = {
   "Access-Control-Allow-Headers": "Content-Type",
 };
 
+const SECURITY_HEADERS = {
+  "X-Content-Type-Options": "nosniff",
+  "X-Frame-Options": "DENY",
+  "Referrer-Policy": "no-referrer",
+  "Content-Security-Policy": "default-src 'none'; frame-ancestors 'none'",
+};
+
 const RATE_LIMIT_PLACEHOLDER = "00000000000000000000000000000000";
 
 const CORRECTION_KINDS = new Set(["factual", "typo", "other"]);
 
 export default {
   async fetch(request, env) {
-    const headers = corsHeaders(request, env);
+    const headers = responseHeaders(request, env);
 
     if (request.method === "OPTIONS") {
       return new Response(null, { headers });
@@ -35,7 +42,7 @@ export default {
   },
 };
 
-function corsHeaders(request, env) {
+function responseHeaders(request, env) {
   const allowed = (env.ALLOWED_ORIGIN || "https://poslusnehlasim.cz")
     .split(",")
     .map((s) => s.trim())
@@ -43,7 +50,7 @@ function corsHeaders(request, env) {
   const requestOrigin = request.headers.get("Origin") || "";
   const corsOrigin =
     requestOrigin && allowed.includes(requestOrigin) ? requestOrigin : allowed[0];
-  return { ...CORS, "Access-Control-Allow-Origin": corsOrigin };
+  return { ...SECURITY_HEADERS, ...CORS, "Access-Control-Allow-Origin": corsOrigin };
 }
 
 async function handleSubscribe(request, env, headers) {
@@ -121,7 +128,7 @@ async function handleCorrections(request, env, headers) {
   const pageUrl = String(body.page_url || "").trim();
   const edition = String(body.edition || "").trim();
 
-  if (!suggestion || suggestion.length < 8) {
+  if (!suggestion) {
     return json({ ok: false, error: "short_message" }, 400, headers);
   }
   if (suggestion.length > 4000) {

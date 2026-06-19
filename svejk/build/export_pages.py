@@ -55,7 +55,12 @@ from svejk.build.publish import (
     list_site_editions,
     snapshot_path,
 )
-from svejk.build.seo import write_llms_txt, write_robots_txt, write_sitemap_xml
+from svejk.build.seo import (
+    write_llms_txt,
+    write_robots_txt,
+    write_security_txt,
+    write_sitemap_xml,
+)
 from svejk.newsletter.config import NewsletterConfig
 from svejk.newsletter.doi import export_doi_template
 from svejk.newsletter.feed import write_feed_xml
@@ -429,6 +434,7 @@ def run_export_pages(
 
     feed_path = write_feed_xml(obdobi, out / "feed.xml", config=cfg, base_path=base)
     robots_path = write_robots_txt(out, site_url=site)
+    security_path = write_security_txt(out, site_url=site)
     sitemap_path = write_sitemap_xml(out, editions, site_url=site, base_path=base)
     llms_path, llms_full_path = write_llms_txt(
         out, list(editions), site_url=site, base_path=base, obdobi=obdobi
@@ -441,6 +447,7 @@ def run_export_pages(
         "latest": latest_href,
         "feed": str(feed_path.relative_to(out)),
         "robots": str(robots_path.relative_to(out)),
+        "security_txt": str(security_path.relative_to(out)),
         "sitemap": str(sitemap_path.relative_to(out)),
         "llms": str(llms_path.relative_to(out)),
         "llms_full": str(llms_full_path.relative_to(out)),

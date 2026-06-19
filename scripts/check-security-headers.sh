@@ -24,8 +24,17 @@ check_header() {
 }
 
 missing=0
+warnings=0
 check_header "strict-transport-security" || missing=$((missing + 1))
-check_header "content-security-policy" || missing=$((missing + 1))
+if echo "$HEADERS" | grep -qi "^content-security-policy:"; then
+  echo "OK  content-security-policy"
+elif echo "$HEADERS" | grep -qi "^content-security-policy-report-only:"; then
+  echo "VAROVÁNÍ  content-security-policy (jen Report-Only, neblokuje)"
+  warnings=$((warnings + 1))
+else
+  echo "CHYBÍ  content-security-policy"
+  missing=$((missing + 1))
+fi
 check_header "x-frame-options" || missing=$((missing + 1))
 check_header "x-content-type-options" || missing=$((missing + 1))
 check_header "referrer-policy" || missing=$((missing + 1))
@@ -42,6 +51,12 @@ if echo "$HEADERS" | grep -qi '^cf-ray:'; then
   echo "Cloudflare proxy aktivní (cf-ray v odpovědi)."
 fi
 
+if [ "$warnings" -gt 0 ]; then
+  echo
+  echo "CSP je v Report-Only režimu. Po ověření v konzoli přepni Transform Rule"
+  echo "na Content-Security-Policy (viz infra/cloudflare/README.md)."
+fi
+
 if [ "$missing" -gt 0 ]; then
   echo
   echo "Chybí $missing hlaviček. Očekávané hodnoty: $EXPECTED_FILE"
@@ -49,4 +64,9 @@ if [ "$missing" -gt 0 ]; then
 fi
 
 echo
+if [ "$warnings" -gt 0 ]; then
+  echo "Základní hlavičky OK, CSP zatím jen reportuje (ne vynucuje)."
+  exit 0
+fi
+
 echo "Všechny kontrolované hlavičky jsou přítomné."
