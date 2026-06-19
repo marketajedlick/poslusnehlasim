@@ -8,8 +8,8 @@
   ],
   "steno_zdroje": true,
   "skore_manual": true,
-  "board_proslo_label": "věcné změny schválené",
-  "board_zamitnuto_label": "návrh na vrácení zamítnut",
+  "board_proslo_label": "věcných změn",
+  "board_zamitnuto_label": "vrácení padlo",
   "stats": {
     "pocet_hlas": 1,
     "minuty": 313,

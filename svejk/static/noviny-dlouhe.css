@@ -167,7 +167,7 @@ body.is-turning{ pointer-events:none; }
   font-family:'Oswald',sans-serif; font-weight:600; text-transform:uppercase;
   letter-spacing:.06em; font-size:clamp(10px, 2.8vw, 13px); line-height:1.15;
   color:var(--paper);
-  max-width:9ch;
+  max-width:min(100%,16ch);
 }
 .board-stats{
   text-align:center; font-family:'Oswald',sans-serif; font-weight:500;
