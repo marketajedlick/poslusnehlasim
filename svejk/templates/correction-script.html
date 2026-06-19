@@ -155,6 +155,7 @@
       submitBtn.textContent = msgs().submit;
     }
     form.classList.remove("correction-form--success");
+    dialog.setAttribute("aria-labelledby", "correction-dialog-title");
   }
 
   function kindValue() {
@@ -275,8 +276,12 @@
     hideError();
     hideOffline();
     if (submitBtn) submitBtn.hidden = true;
-    if (successEl) successEl.hidden = false;
+    if (successEl) {
+      successEl.hidden = false;
+      successEl.setAttribute("role", "status");
+    }
     form.classList.add("correction-form--success");
+    dialog.setAttribute("aria-labelledby", "correction-success");
   }
 
   function submitCorrection(e) {

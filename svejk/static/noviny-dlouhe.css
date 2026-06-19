@@ -391,7 +391,30 @@ a.correction-mailto:hover{
 .correction-success{
   margin:12px 0 0; font-size:17px; color:var(--ink);
 }
-.correction-form--success .correction-actions{ display:none; }
+.correction-form--success .correction-gloss,
+.correction-form--success .correction-article,
+.correction-form--success .correction-quoted-wrap,
+.correction-form--success .correction-field,
+.correction-form--success .correction-kinds,
+.correction-form--success .correction-actions,
+.correction-form--success .correction-offline{
+  display:none;
+}
+.correction-form--success .correction-head{
+  margin-bottom:0;
+  justify-content:flex-end;
+}
+.correction-form--success .correction-title{
+  display:none;
+}
+.correction-form--success .correction-success{
+  display:block;
+  margin:0;
+  padding:4px 28px 8px 0;
+  font-size:18px;
+  line-height:1.45;
+  text-align:left;
+}
 .correction-offline{
   margin-top:14px; padding-top:12px;
   border-top:1px solid rgba(33,28,20,.1);
