@@ -1,4 +1,4 @@
-/** Cloudflare Worker: odběr novinek + návrhy korektur (Ecomail). */
+/** Cloudflare Worker: odběr novinek (Ecomail) + návrhy korektur (Resend). */
 
 const CORS = {
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
@@ -189,10 +189,47 @@ function kindLabel(kind) {
   return "Jiné";
 }
 
+function resendFrom(env) {
+  const email = (env.RESEND_FROM_EMAIL || env.ECOMAIL_FROM_EMAIL || "").trim();
+  const name = (env.RESEND_FROM_NAME || "Poslušně hlásím").trim();
+  if (!email) return "";
+  return `${name} <${email}>`;
+}
+
+function correctionsNotifyEmail(env) {
+  return (env.CORRECTIONS_NOTIFY_EMAIL || env.NOTIFY_EMAIL || env.ECOMAIL_FROM_EMAIL || "").trim();
+}
+
+async function sendResendEmail(env, { to, subject, text, html, replyTo }) {
+  const apiKey = (env.RESEND_API_KEY || "").trim();
+  const from = resendFrom(env);
+  if (!apiKey || !from || !to) return null;
+
+  const body = {
+    from,
+    to: [to],
+    subject: subject.slice(0, 120),
+    text,
+    html,
+  };
+  if (replyTo) body.reply_to = replyTo;
+
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+      "User-Agent": "poslusnehlasim-workers/1.0",
+    },
+    body: JSON.stringify(body),
+  });
+
+  return res.ok;
+}
+
 async function notifyCorrection(env, payload) {
-  const to = (env.CORRECTIONS_NOTIFY_EMAIL || env.NOTIFY_EMAIL || env.ECOMAIL_FROM_EMAIL || "").trim();
-  const from = (env.ECOMAIL_FROM_EMAIL || to).trim();
-  if (!to || !from || !env.ECOMAIL_API_KEY) return null;
+  const to = correctionsNotifyEmail(env);
+  if (!to || !(env.RESEND_API_KEY || "").trim() || !resendFrom(env)) return null;
 
   const lines = [
     "Nový návrh korektury k článku v novinách.",
@@ -225,26 +262,13 @@ async function notifyCorrection(env, payload) {
 
   const htmlParts = lines.map((line) => `<p>${esc(line)}</p>`).join("");
 
-  const res = await fetch("https://api2.ecomailapp.cz/transactional/send-message", {
-    method: "POST",
-    headers: {
-      key: env.ECOMAIL_API_KEY,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      message: {
-        subject: subject.slice(0, 120),
-        from_name: "Poslušně hlásím",
-        from_email: from,
-        text: lines.join("\n"),
-        html: htmlParts,
-        to: [{ email: to }],
-        options: { click_tracking: false, open_tracking: false },
-      },
-    }),
+  return sendResendEmail(env, {
+    to,
+    subject,
+    text: lines.join("\n"),
+    html: htmlParts,
+    replyTo: payload.replyEmail || undefined,
   });
-
-  return res.ok;
 }
 
 function clientIp(request) {

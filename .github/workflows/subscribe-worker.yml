@@ -26,4 +26,6 @@ jobs:
           ECOMAIL_API_KEY: ${{ secrets.ECOMAIL_API_KEY }}
           ECOMAIL_FROM_EMAIL: ${{ secrets.ECOMAIL_FROM_EMAIL }}
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          CORRECTIONS_NOTIFY_EMAIL: ${{ secrets.CORRECTIONS_NOTIFY_EMAIL }}
         run: ./scripts/deploy-subscribe-worker.sh

@@ -22,5 +22,7 @@ binding = "RATE_LIMIT"
 id = "00000000000000000000000000000000"
 
 # Secrets (wrangler pages secret put … --project-name=poslusnehlasim-odebir):
-# ECOMAIL_API_KEY, ECOMAIL_FROM_EMAIL, NOTIFY_EMAIL
+# ECOMAIL_API_KEY, ECOMAIL_FROM_EMAIL, NOTIFY_EMAIL — odběr novinek
+# RESEND_API_KEY — korektury („Něco nesedí?“); volitelně CORRECTIONS_NOTIFY_EMAIL
+# RESEND_FROM_EMAIL / RESEND_FROM_NAME — odesílatel korektur (fallback ECOMAIL_FROM_EMAIL)
 # ECOMAIL_SUBSCRIBE_LIST_ID je v [vars] výše (dev/test = seznam 3)

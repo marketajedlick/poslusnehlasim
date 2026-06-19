@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Nasadí Cloudflare Pages worker pro odběr novinek včetně KV rate limitu.
 # Vyžaduje: CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, ECOMAIL_API_KEY
-# Volitelně: ECOMAIL_FROM_EMAIL, NOTIFY_EMAIL
+# Volitelně: ECOMAIL_FROM_EMAIL, NOTIFY_EMAIL, RESEND_API_KEY, CORRECTIONS_NOTIFY_EMAIL
 # Přepínač --github-output: při chybějících secretech tiše přeskočí a zapíše url= do GITHUB_OUTPUT
 
 set -euo pipefail
@@ -95,6 +95,14 @@ printf '%s' "$ECOMAIL_API_KEY" | npx wrangler@4 pages secret put ECOMAIL_API_KEY
 if [[ -n "${ECOMAIL_FROM_EMAIL:-}" ]]; then
   printf '%s' "$ECOMAIL_FROM_EMAIL" | npx wrangler@4 pages secret put ECOMAIL_FROM_EMAIL --project-name="$PROJECT"
   printf '%s' "${NOTIFY_EMAIL:-$ECOMAIL_FROM_EMAIL}" | npx wrangler@4 pages secret put NOTIFY_EMAIL --project-name="$PROJECT"
+fi
+if [[ -n "${RESEND_API_KEY:-}" ]]; then
+  printf '%s' "$RESEND_API_KEY" | npx wrangler@4 pages secret put RESEND_API_KEY --project-name="$PROJECT"
+else
+  echo "::warning::RESEND_API_KEY chybí — formulář „Něco nesedí?“ nepošle e-mail (fallback mailto na webu)."
+fi
+if [[ -n "${CORRECTIONS_NOTIFY_EMAIL:-}" ]]; then
+  printf '%s' "$CORRECTIONS_NOTIFY_EMAIL" | npx wrangler@4 pages secret put CORRECTIONS_NOTIFY_EMAIL --project-name="$PROJECT"
 fi
 
 set +e
