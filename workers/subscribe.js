@@ -84,30 +84,66 @@ async function handleSubscribe(request, env, headers) {
     );
   }
 
-  const res = await fetch(
-    `https://api2.ecomailapp.cz/lists/${listId}/subscribe`,
-    {
-      method: "POST",
-      headers: {
-        key: env.ECOMAIL_API_KEY,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        subscriber_data: { email, source: "poslusnehlasim" },
-        trigger_autoresponders: true,
-        update_existing: true,
-        resubscribe: true,
-        skip_confirmation: false,
-      }),
-    },
-  );
-
-  if (!res.ok) {
+  let subscribed = await subscribeToEcomail(env, listId, email, { resubscribe: true });
+  if (!subscribed.ok) {
     await notifyAdminSubscribe(env, email);
     return json({ ok: false, error: "subscribe_failed" }, 502, headers);
   }
 
+  // Ecomail u status 6 + already_subscribed znovu neposílá potvrzovací mail.
+  if (subscribed.status === 6 && subscribed.already_subscribed) {
+    await unsubscribeFromEcomail(env, listId, email);
+    subscribed = await subscribeToEcomail(env, listId, email, { resubscribe: true });
+    if (!subscribed.ok) {
+      await notifyAdminSubscribe(env, email);
+      return json({ ok: false, error: "subscribe_failed" }, 502, headers);
+    }
+  }
+
   return json({ ok: true }, 200, headers);
+}
+
+function ecomailHeaders(env) {
+  return {
+    key: env.ECOMAIL_API_KEY,
+    "Content-Type": "application/json",
+  };
+}
+
+async function subscribeToEcomail(env, listId, email, { resubscribe }) {
+  const res = await fetch(`https://api2.ecomailapp.cz/lists/${listId}/subscribe`, {
+    method: "POST",
+    headers: ecomailHeaders(env),
+    body: JSON.stringify({
+      subscriber_data: { email, source: "poslusnehlasim" },
+      trigger_autoresponders: true,
+      update_existing: true,
+      resubscribe,
+      skip_confirmation: false,
+    }),
+  });
+  if (!res.ok) {
+    return { ok: false };
+  }
+  let data = {};
+  try {
+    data = await res.json();
+  } catch {
+    data = {};
+  }
+  return {
+    ok: true,
+    status: Number(data.status),
+    already_subscribed: Boolean(data.already_subscribed),
+  };
+}
+
+async function unsubscribeFromEcomail(env, listId, email) {
+  await fetch(`https://api2.ecomailapp.cz/lists/${listId}/unsubscribe`, {
+    method: "DELETE",
+    headers: ecomailHeaders(env),
+    body: JSON.stringify({ email }),
+  });
 }
 
 async function handleCorrections(request, env, headers) {

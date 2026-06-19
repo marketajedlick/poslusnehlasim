@@ -31,6 +31,12 @@ Korektury chodí na `CORRECTIONS_NOTIFY_EMAIL`, jinak na `NOTIFY_EMAIL`, jinak n
 
 Když čtenář vyplní e-mail, Resend nastaví `Reply-To` na jeho adresu.
 
+## Double opt-in (potvrzovací e-mail)
+
+1. Šablona a text potvrzení musí být v Ecomailu: `./run-svejk.sh newsletter-doi-sync --apply`
+2. Kontakt ve stavu **nepotvrzen** (status 6) nedostane druhý mail, když znovu vyplní formulář. Worker to obchází krátkým odhlášením a novým zápisem.
+3. U Outlooku kontroluj **Nevyžádanou poštu** a složku Hromadné. Odesílatel: `svejk@poslusnehlasim.cz`, předmět: „Poslušně hlásím: potvrď odběr novinek“.
+
 ## Deploy
 
 ```bash
