@@ -2,6 +2,8 @@
   "datum": "11.06.2026",
   "den": "čtvrtek",
   "topic_slugs": [
+    "debata-turek-stavebni-zakon",
+    "debata-kovarova-stavebni-zakon",
     "novela-z-stavebni-zakon"
   ],
   "steno_zdroje": true,
@@ -13,6 +15,6 @@
     "zamitnuto": 1,
     "dlouha_debata": true
   },
-  "dnesni_ucet": "Po týdnu pauzy ve 23 hodin navázali stavebním zákonem.\nVe 19:44 padl koaliční balík pozměňovacích návrhů 22:75.",
-  "zaver": "že čtvrtek u stavebního zákona přinesl čtyři hodiny řečí o pozměňovacích návrzích, Turek přirovnal Sněmovnu k parodii a ve 19:44 koaliční balík změn padl 22:75."
+  "dnesni_ucet": "Celý den druhé kolo stavebního zákona, hlučný\nsál a dlouhá fronta řečníků, balík změn neprošel.",
+  "zaver": "že ve čtvrtek se u stavebního zákona moc nestavělo, ale zato vydatně řečnilo. Sál hučel jak nádraží před odjezdem, Turek od Motoristů po půl roce poprvé promluvil a když se konečně hlasovalo, koaliční balík změn spadl jako cihla z lešení."
 }

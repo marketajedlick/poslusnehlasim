@@ -375,6 +375,41 @@ class PspStenoFetcher:
         end = self._page_content_end(html_text, after=start)
         return self._html_to_text(html_text[start:end])
 
+    @staticmethod
+    def _citace_in_text(haystack: str, needle: str) -> bool:
+        if not haystack or not needle:
+            return False
+        if needle in haystack:
+            return True
+        for n in (80, 60, 40, 24):
+            chunk = needle[:n].strip()
+            if len(chunk) >= 16 and chunk in haystack:
+                return True
+        return False
+
+    def _anchor_for_citace_in_page(
+        self,
+        html_text: str,
+        citace: str,
+        *,
+        default: str = "",
+    ) -> str:
+        """Vrátí kotvu rN na stránce PSP, v jejíž řeči je citace."""
+        matches = list(_ANCHOR_START.finditer(html_text))
+        if not matches:
+            return default
+        page_end = self._page_content_end(html_text, after=matches[0].start())
+        needle = self._norm_search(citace)
+        if not needle:
+            return default
+        for i, m in enumerate(matches):
+            start = m.start()
+            end = matches[i + 1].start() if i + 1 < len(matches) else page_end
+            section_text = self._norm_search(self._html_to_text(html_text[start:end]))
+            if self._citace_in_text(section_text, needle):
+                return m.group(1)
+        return default
+
     def list_steno_page_urls(self, obdobi: int, schuze: int) -> list[str]:
         base = self.schuze_base_url(obdobi, schuze)
         return [url for url, _ in self._walk_pages(base, self.first_steno_page(schuze))]
@@ -424,31 +459,36 @@ class PspStenoFetcher:
             return base
 
         cache = page_text_cache if page_text_cache is not None else {}
+        html_cache: dict[str, str] = {}
         needle = self._norm_search(citace)
         if not needle:
             return base
 
+        def _page_html(url: str) -> str:
+            if url not in html_cache:
+                html_cache[url] = self.fetch_html(url)
+            return html_cache[url]
+
         def _page_text(url: str) -> str:
             if url not in cache:
-                html_text = self.fetch_html(url)
+                html_text = _page_html(url)
                 cache[url] = self._norm_search(self._page_plain_text(html_text)) if html_text else ""
             return cache[url]
 
         def _match(page_url: str) -> bool:
-            text = _page_text(page_url)
-            if not text:
-                return False
-            if needle in text:
-                return True
-            for n in (80, 60, 40, 24):
-                chunk = needle[:n].strip()
-                if len(chunk) >= 16 and chunk in text:
-                    return True
-            return False
+            return self._citace_in_text(_page_text(page_url), needle)
 
         for page_url in pages[start_idx : start_idx + 12]:
-            if _match(page_url):
-                if page_url == start_page and anchor:
-                    return f"{start_page}#{anchor}"
-                return page_url
+            if not _match(page_url):
+                continue
+            html_text = _page_html(page_url)
+            default_anchor = anchor if page_url == start_page else ""
+            page_anchor = self._anchor_for_citace_in_page(
+                html_text,
+                citace,
+                default=default_anchor,
+            )
+            if page_anchor:
+                return f"{page_url}#{page_anchor}"
+            return page_url
         return base

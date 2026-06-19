@@ -103,7 +103,7 @@
             <div class="num">{{ "%02d"|format(item.num) }}</div>
             <span class="stamp{% if item.verdikt != 'schvaleno' %} {{ item.verdikt }}{% endif %}">{{ item.stamp }}</span>
           </div>
-          <div>
+          <div class="item-body">
             <h2 class="h">
               {% for line in item.nadpis_radky %}
               <span class="hl">{{ line }}</span>
@@ -133,6 +133,18 @@
             </nav>
             {% endif %}
           </div>
+          {% if newsletter.show_corrections and item.slug %}
+          <nav class="item-actions" aria-label="{{ t.edition.correction_aria }}" aria-busy="true">
+            <button
+              type="button"
+              class="correction-trigger"
+              hidden
+              data-slug="{{ item.slug }}"
+              data-num="{{ item.num }}"
+              data-title="{{ item.nadpis_radky | join(' ') }}"
+            >{{ t.edition.correction_trigger }}</button>
+          </nav>
+          {% endif %}
         </div>
         {% endfor %}
 
@@ -155,6 +167,7 @@
 </div>
 
 {% include "site-footer.html" %}
+{% include "correction-dialog.html" %}
 <script>
   (function(){
     const FADE = 620;
@@ -386,12 +399,10 @@
   }
 
   function placeTip(tip) {
-    if (!isMobile()) return;
     var bubble = tip.querySelector(".term-tip-bubble");
     if (!bubble) return;
 
     if (openTip && openTip !== tip) resetTip(openTip);
-    resetAll();
 
     tip.classList.add("is-tip-open");
     openTip = tip;
@@ -421,6 +432,14 @@
     bubble.style.visibility = "";
   }
 
+  function showTip(tip) {
+    placeTip(tip);
+  }
+
+  function hideTip(tip) {
+    resetTip(tip);
+  }
+
   function toggleTip(tip) {
     if (!isMobile()) return;
     if (tip.classList.contains("is-tip-open")) {
@@ -429,6 +448,25 @@
     }
     placeTip(tip);
   }
+
+  document.querySelectorAll(".term-tip").forEach(function (tip) {
+    tip.addEventListener("mouseenter", function () {
+      if (isMobile()) return;
+      showTip(tip);
+    });
+    tip.addEventListener("mouseleave", function () {
+      if (isMobile()) return;
+      hideTip(tip);
+    });
+    tip.addEventListener("focus", function () {
+      if (isMobile()) return;
+      showTip(tip);
+    });
+    tip.addEventListener("blur", function () {
+      if (isMobile()) return;
+      hideTip(tip);
+    });
+  });
 
   document.addEventListener("pointerdown", function (e) {
     if (!isMobile()) return;
@@ -445,21 +483,22 @@
   }, true);
 
   document.addEventListener("keydown", function (e) {
-    if (!isMobile() || e.key !== "Escape") return;
+    if (e.key !== "Escape") return;
     resetAll();
   });
 
   window.addEventListener("scroll", function () {
-    if (!isMobile() || !openTip) return;
+    if (!openTip) return;
     placeTip(openTip);
   }, { passive: true });
 
   window.addEventListener("resize", function () {
-    if (!isMobile() || !openTip) return;
+    if (!openTip) return;
     placeTip(openTip);
   }, { passive: true });
 })();
 </script>
+{% include "correction-script.html" %}
 {% include "cookie-consent.html" %}
 </body>
 </html>

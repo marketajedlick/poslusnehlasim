@@ -55,6 +55,8 @@ class NewsletterConfig:
     embed_account: str
     embed_widget_js: str
     subscribe_mode: str
+    corrections_api_url: str
+    show_corrections: bool
 
     @property
     def confirm_redirect_url(self) -> str:
@@ -106,6 +108,16 @@ class NewsletterConfig:
             or os.environ.get("ECOMAIL_FROM_EMAIL")
             or ""
         ).strip()
+        corrections_api_url = (
+            os.environ.get("SVEJK_CORRECTIONS_API_URL") or ""
+        ).strip()
+        if not corrections_api_url and subscribe_api_url:
+            corrections_api_url = f"{subscribe_api_url.rstrip('/')}/corrections"
+        show_corr_raw = os.environ.get("SVEJK_SHOW_CORRECTIONS", "").strip().lower()
+        if not show_corr_raw:
+            show_corrections = bool(corrections_api_url)
+        else:
+            show_corrections = show_corr_raw in ("1", "true", "yes")
         return cls(
             form_action=form_action,
             subscribe_api_url=subscribe_api_url,
@@ -119,4 +131,6 @@ class NewsletterConfig:
             embed_account=account,
             embed_widget_js=embed_widget_js,
             subscribe_mode=subscribe_mode,
+            corrections_api_url=corrections_api_url,
+            show_corrections=show_corrections,
         )

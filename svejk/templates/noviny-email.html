@@ -16,24 +16,18 @@
 
 <table role="presentation" class="head" cellpadding="0" cellspacing="0" border="0" width="100%">
 <tr>
-<td class="head-brand" valign="middle" style="vertical-align:middle;">
-  <table role="presentation" class="head-brand-inner" cellpadding="0" cellspacing="0" border="0" width="100%" height="96" style="width:100%;height:96px;">
-  <tr>
-  <td class="head-cal" width="88" height="96" valign="middle" style="width:88px;height:96px;vertical-align:middle;padding:0;">
-    <div class="cal" style="width:88px;background:#f0e6cf;border:2px solid #211c14;text-align:center;">
-      <div class="cal-wd">{{ content.cal_den }}</div>
-      <div class="cal-day">{{ content.cal_day }}</div>
-      <div class="cal-mo">{{ content.cal_month }}</div>
-    </div>
-  </td>
-  <td class="head-title" height="96" align="center" valign="middle" style="height:96px;vertical-align:middle;padding:0 8px;text-align:center;">
-    <div class="eyebrow" style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.2em;font-size:13px;color:#cf5a31;text-align:center;line-height:1.2;">deník sněmovny</div>
-    <h1 class="mast email-mast" style="margin:4px 0 0;font-family:Impact,'Arial Black',sans-serif;text-transform:uppercase;color:#211c14;font-size:38px;line-height:0.95;text-align:center;">POSLUŠNĚ <span class="terra" style="color:#cf5a31;">HLÁSÍM</span></h1>
-  </td>
-  </tr>
-  </table>
+<td class="head-cal" width="88" height="96" valign="middle" style="width:88px;height:96px;vertical-align:middle;padding:0;">
+  <div class="cal" style="width:88px;background:#f0e6cf;border:2px solid #211c14;text-align:center;">
+    <div class="cal-wd">{{ content.cal_den }}</div>
+    <div class="cal-day">{{ content.cal_day }}</div>
+    <div class="cal-mo">{{ content.cal_month }}</div>
+  </div>
 </td>
-<td class="head-svejk" width="56" height="96" align="right" valign="middle" style="width:56px;height:96px;vertical-align:middle;text-align:right;padding:0 0 0 8px;">
+<td class="head-title" height="96" align="center" valign="middle" style="vertical-align:middle;padding:0 8px;text-align:center;">
+  <div class="eyebrow" style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.2em;font-size:13px;color:#cf5a31;text-align:center;line-height:1.2;">deník sněmovny</div>
+  <h1 class="mast email-mast" style="margin:4px 0 0;font-family:Impact,'Arial Black',sans-serif;text-transform:uppercase;color:#211c14;font-size:38px;line-height:0.95;text-align:center;">POSLUŠNĚ <span class="terra" style="color:#cf5a31;">HLÁSÍM</span></h1>
+</td>
+<td class="head-svejk" width="56" height="96" align="right" valign="middle" style="width:56px;height:96px;vertical-align:middle;text-align:right;padding:0;">
   {% if svejk_img_url %}
   <img src="{{ svejk_img_url }}" alt="" width="54" height="76" style="display:block;width:54px;max-width:54px;height:76px;opacity:0.55;border:0;" />
   {% else %}
@@ -75,7 +69,7 @@
     <span class="stamp{% if item.verdikt != 'schvaleno' %} {{ item.verdikt }}{% endif %}">{{ item.stamp }}</span>
   </td>
   <td class="item-body stack-col" valign="top" style="vertical-align:top;padding-left:18px;text-align:left;">
-    <h2 class="h" style="text-align:left;margin:0;">
+    <h2 class="h" style="text-align:center;margin:0;">
       {% for line in item.nadpis_radky %}
       <span class="hl">{{ line }}</span>
       {% endfor %}

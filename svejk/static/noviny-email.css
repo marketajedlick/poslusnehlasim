@@ -23,23 +23,16 @@ body {
   width: 100%;
 }
 .head td {
-  vertical-align: top;
-}
-.head-brand {
-  width: 100%;
-}
-.head-brand-inner {
-  width: 100%;
-  height: 96px;
-}
-.head-brand-inner td {
   vertical-align: middle;
-  height: 96px;
+}
+.head-cal {
+  width: 88px;
 }
 .head-title {
   text-align: center;
 }
 .head-svejk {
+  width: 56px;
   vertical-align: middle;
   height: 96px;
 }
@@ -275,7 +268,7 @@ body {
   font-size: 20px;
   line-height: 1.1;
   margin: 0;
-  text-align: left;
+  text-align: center;
 }
 .hl { display: block; }
 .p {

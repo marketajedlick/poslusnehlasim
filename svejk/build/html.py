@@ -591,6 +591,7 @@ def render_den_html(
     tpl = _jinja_env().get_template("noviny-dlouhe.html")
     return tpl.render(
         content=content,
+        obdobi=ob,
         schuze=paths.schuze,
         dup_day=dup_day,
         datum_design=datum_design(content.datum, content.den),

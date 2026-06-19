@@ -124,22 +124,30 @@ def _load_poradi_urls(paths: SchuzePaths) -> dict[str, str]:
     return {str(k): str(v) for k, v in urls.items() if v}
 
 
+_PSP_URL_CACHE_VERSION = "v2"
+
+
+def _psp_cache_key(fallback_url: str, citace: str) -> str:
+    base = fallback_url.split("#", 1)[0]
+    return f"{_PSP_URL_CACHE_VERSION}|{base}|{citace[:120]}"
+
+
 def _lookup_cached_psp_url(url_cache: dict[str, str], fallback_url: str, citace: str) -> str:
     if not url_cache:
         return ""
     citace_key = citace[:120]
     if fallback_url and citace_key:
-        exact = url_cache.get(f"{fallback_url}|{citace_key}")
-        if exact:
-            return exact
+        for key in (
+            _psp_cache_key(fallback_url, citace),
+            f"{_PSP_URL_CACHE_VERSION}|{fallback_url}|{citace_key}",
+        ):
+            exact = url_cache.get(key)
+            if exact:
+                return exact
         base = fallback_url.split("#", 1)[0]
-        exact = url_cache.get(f"{base}|{citace_key}")
+        exact = url_cache.get(f"{_PSP_URL_CACHE_VERSION}|{base}|{citace_key}")
         if exact:
             return exact
-    if citace_key:
-        for key, val in url_cache.items():
-            if key.split("|", 1)[-1] == citace_key:
-                return val
     return ""
 
 
@@ -297,7 +305,7 @@ class PspUrlResolver:
         if offline and offline != fallback_url:
             return offline
 
-        cache_key = f"{fallback_url}|{citace[:120]}"
+        cache_key = _psp_cache_key(fallback_url, citace)
         self._load_pages()
         resolved = self._fetcher_lazy().resolve_url_for_citace(
             self.paths.obdobi,

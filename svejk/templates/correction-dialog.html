@@ -1,0 +1,86 @@
+{% if newsletter.show_corrections %}
+<dialog class="correction-dialog" id="correction-dialog" aria-labelledby="correction-dialog-title">
+  <form class="correction-form" id="correction-form" method="post" action="#" novalidate
+    data-api-url="{{ newsletter.corrections_api_url }}"
+    data-edition="{{ obdobi }}/{{ schuze }}/{{ content.datum }}"
+    data-page-url="{{ canonical_url }}"
+    data-contact-email="{{ newsletter.contact_email or 'svejk@poslusnehlasim.cz' }}"
+    data-msg-required="{{ t.correction.error_required }}"
+    data-msg-send="{{ t.correction.error_send }}"
+    data-msg-rate-limit="{{ t.correction.error_rate_limit }}"
+    data-offline-message="{{ t.correction.offline_message }}"
+    data-label-submit="{{ t.correction.submit }}"
+    data-label-submitting="{{ t.correction.submitting }}"
+    data-default-success="{{ t.correction.success }}"
+    data-mailto-subject="{{ t.correction.mailto_subject }}"
+    data-mailto-trigger="{{ t.edition.correction_trigger }}"
+  >
+    <header class="correction-head">
+      <h2 class="correction-title" id="correction-dialog-title">{{ t.correction.title }}</h2>
+      <button type="button" class="correction-close" data-correction-close aria-label="{{ t.correction.close }}">×</button>
+    </header>
+    <p class="correction-gloss">{{ t.correction.gloss }}</p>
+    <p class="correction-article">
+      <span class="correction-article-label">{{ t.correction.article_label }}:</span>
+      <span class="correction-article-value" id="correction-article-value"></span>
+    </p>
+    <div class="correction-quoted-wrap" id="correction-quoted-wrap" hidden>
+      <label class="correction-label" for="correction-quoted">{{ t.correction.quoted_label }}</label>
+      <p class="correction-quoted" id="correction-quoted"></p>
+    </div>
+    <div class="correction-field">
+      <label class="correction-label" for="correction-suggestion">{{ t.correction.suggestion_label }}</label>
+      <textarea
+        class="correction-textarea"
+        id="correction-suggestion"
+        name="suggestion"
+        rows="4"
+        required
+        minlength="8"
+        maxlength="4000"
+        placeholder="{{ t.correction.suggestion_placeholder }}"
+      ></textarea>
+      <p class="correction-error" id="correction-error" hidden role="alert"></p>
+    </div>
+    <fieldset class="correction-kinds">
+      <legend class="correction-label">{{ t.correction.kind_label }}</legend>
+      <label class="correction-kind">
+        <input type="radio" name="kind" value="factual" checked />
+        <span>{{ t.correction.kind_factual }}</span>
+      </label>
+      <label class="correction-kind">
+        <input type="radio" name="kind" value="typo" />
+        <span>{{ t.correction.kind_typo }}</span>
+      </label>
+      <label class="correction-kind">
+        <input type="radio" name="kind" value="other" />
+        <span>{{ t.correction.kind_other }}</span>
+      </label>
+    </fieldset>
+    <div class="correction-field">
+      <label class="correction-label" for="correction-email">{{ t.correction.email_label }}</label>
+      <input
+        class="correction-input"
+        type="email"
+        id="correction-email"
+        name="email"
+        autocomplete="email"
+        placeholder="{{ t.correction.email_placeholder }}"
+      />
+    </div>
+    <input type="text" name="_hp" class="correction-hp" tabindex="-1" autocomplete="new-password" aria-hidden="true" />
+    <input type="hidden" name="topic_slug" id="correction-topic-slug" value="" />
+    <input type="hidden" name="article_num" id="correction-article-num" value="" />
+    <input type="hidden" name="article_title" id="correction-article-title" value="" />
+    <input type="hidden" name="quoted" id="correction-quoted-input" value="" />
+    <footer class="correction-actions">
+      <button type="submit" class="correction-submit">{{ t.correction.submit }}</button>
+    </footer>
+    <div class="correction-offline" id="correction-offline" hidden role="status">
+      <p class="correction-offline-text" id="correction-offline-text">{{ t.correction.offline_message }}</p>
+      <a class="correction-email-link" id="correction-email-link" href="mailto:{{ newsletter.contact_email or 'svejk@poslusnehlasim.cz' }}">{{ newsletter.contact_email or 'svejk@poslusnehlasim.cz' }}</a>
+    </div>
+    <p class="correction-success" id="correction-success" hidden>{{ t.correction.success }}</p>
+  </form>
+</dialog>
+{% endif %}

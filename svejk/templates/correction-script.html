@@ -1,0 +1,373 @@
+<script>
+(function () {
+  var dialog = document.getElementById("correction-dialog");
+  if (!dialog) return;
+
+  var form = document.getElementById("correction-form");
+  if (!form) return;
+
+  var articleValue = document.getElementById("correction-article-value");
+  var quotedWrap = document.getElementById("correction-quoted-wrap");
+  var quotedText = document.getElementById("correction-quoted");
+  var quotedInput = document.getElementById("correction-quoted-input");
+  var slugInput = document.getElementById("correction-topic-slug");
+  var numInput = document.getElementById("correction-article-num");
+  var titleInput = document.getElementById("correction-article-title");
+  var suggestion = document.getElementById("correction-suggestion");
+  var errorEl = document.getElementById("correction-error");
+  var offlineEl = document.getElementById("correction-offline");
+  var offlineText = document.getElementById("correction-offline-text");
+  var emailLink = document.getElementById("correction-email-link");
+  var successEl = document.getElementById("correction-success");
+  var submitBtn = form.querySelector(".correction-submit");
+  var pendingSelection = "";
+
+  function msgs() {
+    return {
+      required: form.dataset.msgRequired || "Napište aspoň pár slov.",
+      send: form.dataset.msgSend || "Odeslání se nepodařilo.",
+      rateLimit: form.dataset.msgRateLimit || "Moc pokusů.",
+      offline: form.dataset.offlineMessage || "Odesílání je momentálně mimo provoz. Napište nám e-mailem.",
+      submit: form.dataset.labelSubmit || "Odeslat",
+      submitting: form.dataset.labelSubmitting || "Odesílám…",
+      mailtoSubject: form.dataset.mailtoSubject || "Korektura",
+      mailtoTrigger: form.dataset.mailtoTrigger || "Něco nesedí?",
+    };
+  }
+
+  function mailtoFromTrigger(trigger) {
+    return mailtoHref({
+      edition: form.dataset.edition || "",
+      page_url: form.dataset.pageUrl || location.href,
+      topic_slug: trigger.dataset.slug || "",
+      article_num: trigger.dataset.num || "",
+      article_title: trigger.dataset.title || "",
+      kind: "other",
+      quoted: "",
+      suggestion: "",
+      email: "",
+    });
+  }
+
+  function correctionsOnline(apiUrl) {
+    if (!apiUrl) return Promise.resolve(false);
+    if (isLocalPreview()) return Promise.resolve(false);
+    var url = apiUrl.replace(/\/+$/, "");
+    function probe(method) {
+      return fetch(url, { method: method, mode: "cors", cache: "no-store" })
+        .then(function (res) {
+          if (!res.ok) return false;
+          if (method === "GET") {
+            return res.json().catch(function () { return {}; }).then(function (body) {
+              return body && body.ok !== false;
+            });
+          }
+          return true;
+        })
+        .catch(function () { return false; });
+    }
+    return probe("GET").then(function (ok) {
+      if (ok) return true;
+      return probe("OPTIONS");
+    });
+  }
+
+  function setActionsReady(node) {
+    if (node) {
+      node.removeAttribute("aria-busy");
+      node.style.opacity = "";
+    }
+  }
+
+  function switchToMailto(triggers) {
+    triggers.forEach(function (btn) {
+      var nav = btn.closest(".item-actions");
+      var a = document.createElement("a");
+      a.className = "correction-mailto";
+      a.href = mailtoFromTrigger(btn);
+      a.textContent = msgs().mailtoTrigger;
+      btn.replaceWith(a);
+      setActionsReady(nav);
+    });
+    if (dialog && dialog.parentNode) dialog.parentNode.removeChild(dialog);
+  }
+
+  function switchToOnline(triggers) {
+    triggers.forEach(function (btn) {
+      btn.hidden = false;
+      setActionsReady(btn.closest(".item-actions"));
+    });
+  }
+
+  function initCorrectionMode() {
+    var triggers = document.querySelectorAll(".correction-trigger");
+    if (!triggers.length) return;
+
+    triggers.forEach(function (btn) {
+      var nav = btn.closest(".item-actions");
+      if (nav) nav.setAttribute("aria-busy", "true");
+    });
+
+    if (isLocalPreview()) {
+      switchToMailto(triggers);
+      return;
+    }
+
+    correctionsOnline(form.dataset.apiUrl || "").then(function (online) {
+      var current = document.querySelectorAll(".correction-trigger");
+      if (!current.length) return;
+      if (online) switchToOnline(current);
+      else switchToMailto(current);
+    });
+  }
+
+  function hideError() {
+    if (!errorEl) return;
+    errorEl.textContent = "";
+    errorEl.hidden = true;
+    if (suggestion) suggestion.removeAttribute("aria-invalid");
+  }
+
+  function hideOffline() {
+    if (offlineEl) offlineEl.hidden = true;
+  }
+
+  function showError(message) {
+    hideOffline();
+    if (!errorEl) return;
+    errorEl.textContent = message;
+    errorEl.hidden = false;
+    if (suggestion) suggestion.setAttribute("aria-invalid", "true");
+  }
+
+  function resetFormState() {
+    hideError();
+    hideOffline();
+    if (successEl) {
+      successEl.hidden = true;
+      if (form.dataset.defaultSuccess) {
+        successEl.textContent = form.dataset.defaultSuccess;
+      }
+    }
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.hidden = false;
+      submitBtn.textContent = msgs().submit;
+    }
+    form.classList.remove("correction-form--success");
+  }
+
+  function kindValue() {
+    var checked = form.querySelector('input[name="kind"]:checked');
+    return checked ? checked.value : "other";
+  }
+
+  function payload() {
+    return {
+      edition: form.dataset.edition || "",
+      page_url: form.dataset.pageUrl || location.href,
+      topic_slug: slugInput ? slugInput.value : "",
+      article_num: numInput ? numInput.value : "",
+      article_title: titleInput ? titleInput.value : "",
+      quoted: quotedInput ? quotedInput.value : "",
+      suggestion: suggestion ? suggestion.value.trim() : "",
+      kind: kindValue(),
+      email: (form.querySelector('input[name="email"]') || {}).value
+        ? form.querySelector('input[name="email"]').value.trim()
+        : "",
+      hp: (form.querySelector(".correction-hp") || {}).value || "",
+    };
+  }
+
+  function isLocalPreview() {
+    var host = location.hostname;
+    return (
+      location.protocol === "file:" ||
+      host === "localhost" ||
+      host === "127.0.0.1"
+    );
+  }
+
+  function mailtoHref(data) {
+    var contact = form.dataset.contactEmail || "svejk@poslusnehlasim.cz";
+    var lines = [
+      data.edition ? "Vydání: " + data.edition : "",
+      data.page_url ? "URL: " + data.page_url : "",
+      data.article_num
+        ? "Článek: " + data.article_num + (data.article_title ? ", " + data.article_title : "")
+        : data.article_title || "",
+      "Slug: " + data.topic_slug,
+      "Typ: " + data.kind,
+      data.quoted ? "Označený text: " + data.quoted : "",
+      "",
+      data.suggestion,
+      "",
+      data.email ? "Kontakt: " + data.email : "",
+    ].filter(Boolean);
+    var subject = encodeURIComponent(msgs().mailtoSubject);
+    var body = encodeURIComponent(lines.join("\n"));
+    return "mailto:" + contact + "?subject=" + subject + "&body=" + body;
+  }
+
+  function showOffline(data) {
+    hideError();
+    if (offlineText) offlineText.textContent = msgs().offline;
+    if (emailLink) {
+      emailLink.href = mailtoHref(data);
+      emailLink.textContent = form.dataset.contactEmail || "svejk@poslusnehlasim.cz";
+    }
+    if (offlineEl) offlineEl.hidden = false;
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = msgs().submit;
+    }
+  }
+
+  function openDialog(trigger) {
+    resetFormState();
+    if (suggestion) suggestion.value = "";
+    if (form.querySelector('input[name="email"]')) {
+      form.querySelector('input[name="email"]').value = "";
+    }
+    var factual = form.querySelector('input[name="kind"][value="factual"]');
+    if (factual) factual.checked = true;
+
+    var num = trigger.dataset.num || "";
+    var title = trigger.dataset.title || "";
+    var slug = trigger.dataset.slug || "";
+    if (slugInput) slugInput.value = slug;
+    if (numInput) numInput.value = num;
+    if (titleInput) titleInput.value = title;
+    if (articleValue) {
+      articleValue.textContent = (num ? String(num).padStart(2, "0") + ". " : "") + title;
+    }
+
+    var quoted = pendingSelection || "";
+    pendingSelection = "";
+    if (quotedInput) quotedInput.value = quoted;
+    if (quotedWrap && quotedText) {
+      if (quoted) {
+        quotedText.textContent = quoted;
+        quotedWrap.hidden = false;
+      } else {
+        quotedText.textContent = "";
+        quotedWrap.hidden = true;
+      }
+    }
+
+    if (typeof dialog.showModal === "function") {
+      dialog.showModal();
+    } else {
+      dialog.setAttribute("open", "");
+    }
+    if (suggestion) suggestion.focus();
+  }
+
+  function closeDialog() {
+    if (typeof dialog.close === "function") {
+      dialog.close();
+    } else {
+      dialog.removeAttribute("open");
+    }
+  }
+
+  function showSuccess() {
+    hideError();
+    hideOffline();
+    if (submitBtn) submitBtn.hidden = true;
+    if (successEl) successEl.hidden = false;
+    form.classList.add("correction-form--success");
+  }
+
+  function submitCorrection(e) {
+    e.preventDefault();
+    if (form.querySelector(".correction-hp") && form.querySelector(".correction-hp").value) {
+      return;
+    }
+    var data = payload();
+    if (!data.suggestion || data.suggestion.length < 8) {
+      showError(msgs().required);
+      if (suggestion) suggestion.focus();
+      return;
+    }
+
+    var apiUrl = form.dataset.apiUrl || "";
+    if (!apiUrl || isLocalPreview()) {
+      showOffline(data);
+      return;
+    }
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = msgs().submitting;
+    }
+    hideOffline();
+
+    fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (body) {
+          if (res.ok && body.ok !== false) {
+            showSuccess();
+            return;
+          }
+          if (res.status === 429) {
+            showError(msgs().rateLimit);
+          } else {
+            showOffline(data);
+          }
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = msgs().submit;
+          }
+        });
+      })
+      .catch(function () {
+        showOffline(data);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = msgs().submit;
+        }
+      });
+  }
+
+  document.addEventListener("click", function (e) {
+    var trigger = e.target.closest(".correction-trigger");
+    if (trigger) {
+      e.preventDefault();
+      openDialog(trigger);
+      return;
+    }
+    var closeBtn = e.target.closest("[data-correction-close]");
+    if (closeBtn) {
+      e.preventDefault();
+      closeDialog();
+    }
+  });
+
+  dialog.addEventListener("click", function (e) {
+    if (e.target === dialog) closeDialog();
+  });
+
+  dialog.addEventListener("close", resetFormState);
+  form.addEventListener("submit", submitCorrection);
+
+  document.addEventListener("mouseup", function () {
+    var sel = window.getSelection();
+    if (!sel || sel.isCollapsed) return;
+    var text = sel.toString().trim();
+    if (!text || text.length < 4) return;
+    var node = sel.anchorNode;
+    if (!node) return;
+    var item = (node.nodeType === 1 ? node : node.parentElement);
+    if (!item || !item.closest) return;
+    if (!item.closest(".item")) return;
+    pendingSelection = text.slice(0, 800);
+  });
+
+  initCorrectionMode();
+})();
+</script>

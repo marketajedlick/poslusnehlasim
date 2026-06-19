@@ -96,6 +96,21 @@
   </section>
   {% endfor %}
 </div>
+<script>
+(function () {
+  function scrollToHash() {
+    var id = location.hash.slice(1);
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (el) el.scrollIntoView({ block: "start" });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", scrollToHash);
+  } else {
+    scrollToHash();
+  }
+})();
+</script>
 {% include "site-footer.html" %}
 {% include "cookie-consent.html" %}
 </body>

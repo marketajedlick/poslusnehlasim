@@ -1,89 +1,249 @@
-/** Cloudflare Worker, odběr novinek přes Ecomail API (bez robotchecku ve formuláři). */
+/** Cloudflare Worker: odběr novinek + návrhy korektur (Ecomail). */
 
 const CORS = {
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
 
 const RATE_LIMIT_PLACEHOLDER = "00000000000000000000000000000000";
 
+const CORRECTION_KINDS = new Set(["factual", "typo", "other"]);
+
 export default {
   async fetch(request, env) {
-    const allowed = (env.ALLOWED_ORIGIN || "https://poslusnehlasim.cz")
-      .split(",")
-      .map((s) => s.trim())
-      .filter(Boolean);
-    const requestOrigin = request.headers.get("Origin") || "";
-    const corsOrigin =
-      requestOrigin && allowed.includes(requestOrigin) ? requestOrigin : allowed[0];
-    const headers = { ...CORS, "Access-Control-Allow-Origin": corsOrigin };
+    const headers = corsHeaders(request, env);
 
     if (request.method === "OPTIONS") {
       return new Response(null, { headers });
     }
+
+    const path = new URL(request.url).pathname.replace(/\/+$/, "") || "/";
+    if (path === "/corrections") {
+      if (request.method === "GET") {
+        return json({ ok: true, service: "corrections" }, 200, headers);
+      }
+      if (request.method !== "POST") {
+        return new Response("Method not allowed", { status: 405, headers });
+      }
+      return handleCorrections(request, env, headers);
+    }
+
     if (request.method !== "POST") {
       return new Response("Method not allowed", { status: 405, headers });
     }
-
-    let body;
-    try {
-      body = await request.json();
-    } catch {
-      return json({ ok: false }, 400, headers);
-    }
-
-    const email = String(body.email || "").trim();
-    const hp = String(body.hp || body.website || "").trim();
-    if (hp || !email || !email.includes("@")) {
-      return json({ ok: false }, 400, headers);
-    }
-    const listId = subscribeListId(env);
-    if (!env.ECOMAIL_API_KEY || !listId) {
-      return json({ ok: false, error: "misconfigured" }, 500, headers);
-    }
-
-    if (body.notify_failed) {
-      // Veřejný endpoint pro admin notifikace byl zneužitelný (spam, libovolný reply_to).
-      return json({ ok: false }, 400, headers);
-    }
-
-    const rate = await enforceRateLimits(request, env, email);
-    if (!rate.ok) {
-      return json(
-        { ok: false, error: "rate_limited" },
-        429,
-        { ...headers, "Retry-After": String(rate.retryAfter) },
-      );
-    }
-
-    const res = await fetch(
-      `https://api2.ecomailapp.cz/lists/${listId}/subscribe`,
-      {
-        method: "POST",
-        headers: {
-          key: env.ECOMAIL_API_KEY,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          subscriber_data: { email, source: "poslusnehlasim" },
-          trigger_autoresponders: true,
-          update_existing: true,
-          resubscribe: true,
-          // Nechá Ecomail poslat DOI, kontakt skončí jako nepotvrzený (status 6).
-          skip_confirmation: false,
-        }),
-      },
-    );
-
-    if (!res.ok) {
-      const text = await res.text();
-      await notifyAdmin(env, email);
-      return json({ ok: false, error: text.slice(0, 200) }, 502, headers);
-    }
-
-    return json({ ok: true }, 200, headers);
+    return handleSubscribe(request, env, headers);
   },
 };
+
+function corsHeaders(request, env) {
+  const allowed = (env.ALLOWED_ORIGIN || "https://poslusnehlasim.cz")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+  const requestOrigin = request.headers.get("Origin") || "";
+  const corsOrigin =
+    requestOrigin && allowed.includes(requestOrigin) ? requestOrigin : allowed[0];
+  return { ...CORS, "Access-Control-Allow-Origin": corsOrigin };
+}
+
+async function handleSubscribe(request, env, headers) {
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ ok: false }, 400, headers);
+  }
+
+  const email = String(body.email || "").trim();
+  const hp = String(body.hp || body.website || "").trim();
+  if (hp || !email || !email.includes("@")) {
+    return json({ ok: false }, 400, headers);
+  }
+  const listId = subscribeListId(env);
+  if (!env.ECOMAIL_API_KEY || !listId) {
+    return json({ ok: false, error: "misconfigured" }, 500, headers);
+  }
+
+  if (body.notify_failed) {
+    return json({ ok: false }, 400, headers);
+  }
+
+  const rate = await enforceRateLimits(request, env, email);
+  if (!rate.ok) {
+    return json(
+      { ok: false, error: "rate_limited" },
+      429,
+      { ...headers, "Retry-After": String(rate.retryAfter) },
+    );
+  }
+
+  const res = await fetch(
+    `https://api2.ecomailapp.cz/lists/${listId}/subscribe`,
+    {
+      method: "POST",
+      headers: {
+        key: env.ECOMAIL_API_KEY,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        subscriber_data: { email, source: "poslusnehlasim" },
+        trigger_autoresponders: true,
+        update_existing: true,
+        resubscribe: true,
+        skip_confirmation: false,
+      }),
+    },
+  );
+
+  if (!res.ok) {
+    const text = await res.text();
+    await notifyAdminSubscribe(env, email);
+    return json({ ok: false, error: text.slice(0, 200) }, 502, headers);
+  }
+
+  return json({ ok: true }, 200, headers);
+}
+
+async function handleCorrections(request, env, headers) {
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ ok: false }, 400, headers);
+  }
+
+  const hp = String(body.hp || body.website || "").trim();
+  if (hp) {
+    return json({ ok: false }, 400, headers);
+  }
+
+  const suggestion = String(body.suggestion || body.message || "").trim();
+  const topicSlug = String(body.topic_slug || "").trim();
+  const pageUrl = String(body.page_url || "").trim();
+  const edition = String(body.edition || "").trim();
+
+  if (!suggestion || suggestion.length < 8) {
+    return json({ ok: false, error: "short_message" }, 400, headers);
+  }
+  if (suggestion.length > 4000) {
+    return json({ ok: false, error: "long_message" }, 400, headers);
+  }
+  if (!topicSlug) {
+    return json({ ok: false, error: "missing_slug" }, 400, headers);
+  }
+  if (!pageUrl && !edition) {
+    return json({ ok: false, error: "missing_context" }, 400, headers);
+  }
+
+  const kind = CORRECTION_KINDS.has(body.kind) ? body.kind : "other";
+  const articleNum = String(body.article_num || "").trim();
+  const articleTitle = String(body.article_title || "").trim().slice(0, 300);
+  const quoted = String(body.quoted || body.selected_text || "").trim().slice(0, 800);
+  const replyEmail = String(body.email || "").trim();
+  if (replyEmail && !replyEmail.includes("@")) {
+    return json({ ok: false }, 400, headers);
+  }
+
+  const rate = await enforceCorrectionRateLimit(request, env);
+  if (!rate.ok) {
+    return json(
+      { ok: false, error: "rate_limited" },
+      429,
+      { ...headers, "Retry-After": String(rate.retryAfter) },
+    );
+  }
+
+  const sent = await notifyCorrection(env, {
+    edition,
+    pageUrl,
+    topicSlug,
+    articleNum,
+    articleTitle,
+    kind,
+    quoted,
+    suggestion,
+    replyEmail,
+  });
+  if (!sent) {
+    return json({ ok: false, error: "misconfigured" }, 500, headers);
+  }
+
+  return json({ ok: true }, 200, headers);
+}
+
+async function enforceCorrectionRateLimit(request, env) {
+  const kv = rateLimitKv(env);
+  if (!kv) return { ok: true };
+
+  const ip = clientIp(request);
+  const ipMax = parseInt(env.CORRECTIONS_RATE_LIMIT_IP_MAX || "5", 10);
+  const ipWindow = parseInt(env.CORRECTIONS_RATE_LIMIT_IP_WINDOW || "3600", 10);
+  return await consumeRateLimit(kv, `corr-ip:${ip}`, ipMax, ipWindow);
+}
+
+function kindLabel(kind) {
+  if (kind === "factual") return "Faktická chyba";
+  if (kind === "typo") return "Překlep / formulace";
+  return "Jiné";
+}
+
+async function notifyCorrection(env, payload) {
+  const to = (env.CORRECTIONS_NOTIFY_EMAIL || env.NOTIFY_EMAIL || env.ECOMAIL_FROM_EMAIL || "").trim();
+  const from = (env.ECOMAIL_FROM_EMAIL || to).trim();
+  if (!to || !from || !env.ECOMAIL_API_KEY) return false;
+
+  const lines = [
+    "Nový návrh korektury k článku v novinách.",
+    "",
+    payload.edition ? `Vydání: ${payload.edition}` : "",
+    payload.pageUrl ? `URL: ${payload.pageUrl}` : "",
+    payload.articleNum
+      ? `Článek: ${payload.articleNum}${payload.articleTitle ? `, ${payload.articleTitle}` : ""}`
+      : payload.articleTitle
+        ? `Článek: ${payload.articleTitle}`
+        : "",
+    `Slug: ${payload.topicSlug}`,
+    `Typ: ${kindLabel(payload.kind)}`,
+    payload.quoted ? `Označený text: ${payload.quoted}` : "",
+    "",
+    "Návrh:",
+    payload.suggestion,
+    "",
+    payload.replyEmail ? `Kontakt na odesílatele: ${payload.replyEmail}` : "Kontakt: neuveden",
+  ].filter(Boolean);
+
+  const subjectBits = [payload.articleNum, payload.topicSlug].filter(Boolean);
+  const subject = `Korektura: ${subjectBits.join(" · ") || "noviny"}`;
+
+  const esc = (s) =>
+    String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+
+  const htmlParts = lines.map((line) => `<p>${esc(line)}</p>`).join("");
+
+  await fetch("https://api2.ecomailapp.cz/transactional/send-message", {
+    method: "POST",
+    headers: {
+      key: env.ECOMAIL_API_KEY,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      message: {
+        subject: subject.slice(0, 120),
+        from_name: "Poslušně hlásím",
+        from_email: from,
+        text: lines.join("\n"),
+        html: htmlParts,
+        to: [{ email: to }],
+        options: { click_tracking: false, open_tracking: false },
+      },
+    }),
+  });
+
+  return true;
+}
 
 function clientIp(request) {
   const cf = request.headers.get("CF-Connecting-IP");
@@ -134,7 +294,7 @@ async function consumeRateLimit(kv, key, limit, windowSec) {
   return { ok: true };
 }
 
-async function notifyAdmin(env, failedEmail) {
+async function notifyAdminSubscribe(env, failedEmail) {
   const to = (env.NOTIFY_EMAIL || env.ECOMAIL_FROM_EMAIL || "").trim();
   const from = (env.ECOMAIL_FROM_EMAIL || to).trim();
   if (!to || !from || !env.ECOMAIL_API_KEY) return;

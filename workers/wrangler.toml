@@ -3,7 +3,7 @@ compatibility_date = "2024-01-01"
 pages_build_output_dir = "public"
 
 [vars]
-ALLOWED_ORIGIN = "https://poslusnehlasim.cz,https://www.poslusnehlasim.cz"
+ALLOWED_ORIGIN = "https://poslusnehlasim.cz,https://www.poslusnehlasim.cz,http://127.0.0.1:8765,http://localhost:8765,http://127.0.0.1:8000,http://localhost:8000"
 ECOMAIL_SUBSCRIBE_LIST_ID = "3"
 RATE_LIMIT_ID = "00000000000000000000000000000000"
 # Výchozí limity: 10 POST/hod z IP, 3 odběry/den na e-mail
@@ -12,6 +12,9 @@ RATE_LIMIT_IP_WINDOW = "3600"
 RATE_LIMIT_EMAIL_MAX = "3"
 RATE_LIMIT_EMAIL_WINDOW = "86400"
 NOTIFY_DEDUPE_WINDOW = "86400"
+# Korektury: 5 POST/hod z IP
+CORRECTIONS_RATE_LIMIT_IP_MAX = "5"
+CORRECTIONS_RATE_LIMIT_IP_WINDOW = "3600"
 
 # KV pro rate limit — id doplní CI nebo: wrangler kv namespace create poslusnehlasim-odebir-rl
 [[kv_namespaces]]
