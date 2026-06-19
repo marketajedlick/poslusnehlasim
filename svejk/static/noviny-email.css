@@ -31,23 +31,6 @@ body {
 .head-title {
   text-align: center;
 }
-.head-svejk {
-  width: 56px;
-  vertical-align: middle;
-  height: 96px;
-}
-.head-svejk img {
-  display: block;
-  width: 54px;
-  max-width: 54px;
-  height: 76px;
-  opacity: 0.55;
-  border: 0;
-}
-.svejk-placeholder {
-  width: 54px;
-  height: 76px;
-}
 .cal {
   width: 88px;
   background: #f0e6cf;
@@ -408,13 +391,6 @@ body {
   .head-title {
     padding: 0 6px !important;
     text-align: center !important;
-  }
-  .head-svejk {
-    display: none !important;
-    width: 0 !important;
-    max-height: 0 !important;
-    overflow: hidden !important;
-    padding: 0 !important;
   }
   .mast {
     font-size: 28px !important;

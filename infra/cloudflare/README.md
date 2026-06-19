@@ -55,6 +55,8 @@ Politika v `headers.txt` počítá s tím, co web reálně používá:
 
 Nejdřív můžeš nasadit **Report-Only** variantu: v Transform Rule použij hlavičku `Content-Security-Policy-Report-Only` se stejnou hodnotou, sleduj konzoli prohlížeče, pak přepni na `Content-Security-Policy`.
 
+**Obrázky v newsletteru:** hlavička `Cross-Origin-Resource-Policy` musí být `cross-origin`, ne `same-site`. Jinak náhled kampaně v Ecomailu neukáže Švejka (URL `/static/favicon.png` sice funguje v prohlížeči, ale z domény `ecomailapp.cz` prohlížeč obrázek zablokuje).
+
 ## 4. Alternativa: `_headers` (jen Cloudflare Pages)
 
 Soubor [`_headers`](_headers) platí **jen** když hlavní web hostuješ na **Cloudflare Pages**, ne na GitHub Pages. U GH Pages se `_headers` neaplikuje (zůstane jen jako soubor v repu).

@@ -836,8 +836,6 @@ def render_email_html(
         edition_url=edition_url,
         archive_url=archive_url,
         pivo_url=pivo_url,
-        # PNG místo SVG — Outlook a část Gmailu SVG v <img> nezobrazí.
-        svejk_img_url=_static_asset_url(site, base_path, "favicon.png"),
     )
     return subject, plain, html
 
