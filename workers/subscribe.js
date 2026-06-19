@@ -185,7 +185,7 @@ async function enforceCorrectionRateLimit(request, env) {
   if (!kv) return { ok: true };
 
   const ip = clientIp(request);
-  const ipMax = parseInt(env.CORRECTIONS_RATE_LIMIT_IP_MAX || "5", 10);
+  const ipMax = parseInt(env.CORRECTIONS_RATE_LIMIT_IP_MAX || "20", 10);
   const ipWindow = parseInt(env.CORRECTIONS_RATE_LIMIT_IP_WINDOW || "3600", 10);
   return await consumeRateLimit(kv, `corr-ip:${ip}`, ipMax, ipWindow);
 }

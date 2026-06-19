@@ -76,7 +76,7 @@
     "submitting": "Odesílám…",
     "close": "Zavřít",
     "success": "Díky, redakce to projde.",
-    "error_required": "Napište aspoň pár slov.",
+    "error_required": "Napište aspoň jedno slovo.",
     "error_send": "Odeslání se nepodařilo. Zkuste to znovu za chvíli.",
     "error_rate_limit": "Moc pokusů. Zkuste to znovu za chvíli.",
     "offline_message": "Odesílání je momentálně mimo provoz. Napište nám e-mailem.",

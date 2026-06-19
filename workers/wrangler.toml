@@ -12,8 +12,8 @@ RATE_LIMIT_IP_WINDOW = "3600"
 RATE_LIMIT_EMAIL_MAX = "3"
 RATE_LIMIT_EMAIL_WINDOW = "86400"
 NOTIFY_DEDUPE_WINDOW = "86400"
-# Korektury: 5 POST/hod z IP
-CORRECTIONS_RATE_LIMIT_IP_MAX = "5"
+# Korektury: 20 POST/hod z IP
+CORRECTIONS_RATE_LIMIT_IP_MAX = "20"
 CORRECTIONS_RATE_LIMIT_IP_WINDOW = "3600"
 
 # KV pro rate limit — id doplní CI nebo: wrangler kv namespace create poslusnehlasim-odebir-rl

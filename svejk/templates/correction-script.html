@@ -24,7 +24,7 @@
 
   function msgs() {
     return {
-      required: form.dataset.msgRequired || "Napište aspoň pár slov.",
+      required: form.dataset.msgRequired || "Napište aspoň jedno slovo.",
       send: form.dataset.msgSend || "Odeslání se nepodařilo.",
       rateLimit: form.dataset.msgRateLimit || "Moc pokusů.",
       offline: form.dataset.offlineMessage || "Odesílání je momentálně mimo provoz. Napište nám e-mailem.",
@@ -285,7 +285,7 @@
       return;
     }
     var data = payload();
-    if (!data.suggestion || data.suggestion.length < 8) {
+    if (!data.suggestion) {
       showError(msgs().required);
       if (suggestion) suggestion.focus();
       return;
