@@ -96,9 +96,8 @@ async function handleSubscribe(request, env, headers) {
   );
 
   if (!res.ok) {
-    const text = await res.text();
     await notifyAdminSubscribe(env, email);
-    return json({ ok: false, error: text.slice(0, 200) }, 502, headers);
+    return json({ ok: false, error: "subscribe_failed" }, 502, headers);
   }
 
   return json({ ok: true }, 200, headers);
@@ -164,8 +163,11 @@ async function handleCorrections(request, env, headers) {
     suggestion,
     replyEmail,
   });
-  if (!sent) {
+  if (sent === null) {
     return json({ ok: false, error: "misconfigured" }, 500, headers);
+  }
+  if (!sent) {
+    return json({ ok: false, error: "send_failed" }, 502, headers);
   }
 
   return json({ ok: true }, 200, headers);
@@ -190,7 +192,7 @@ function kindLabel(kind) {
 async function notifyCorrection(env, payload) {
   const to = (env.CORRECTIONS_NOTIFY_EMAIL || env.NOTIFY_EMAIL || env.ECOMAIL_FROM_EMAIL || "").trim();
   const from = (env.ECOMAIL_FROM_EMAIL || to).trim();
-  if (!to || !from || !env.ECOMAIL_API_KEY) return false;
+  if (!to || !from || !env.ECOMAIL_API_KEY) return null;
 
   const lines = [
     "Nový návrh korektury k článku v novinách.",
@@ -223,7 +225,7 @@ async function notifyCorrection(env, payload) {
 
   const htmlParts = lines.map((line) => `<p>${esc(line)}</p>`).join("");
 
-  await fetch("https://api2.ecomailapp.cz/transactional/send-message", {
+  const res = await fetch("https://api2.ecomailapp.cz/transactional/send-message", {
     method: "POST",
     headers: {
       key: env.ECOMAIL_API_KEY,
@@ -242,7 +244,7 @@ async function notifyCorrection(env, payload) {
     }),
   });
 
-  return true;
+  return res.ok;
 }
 
 function clientIp(request) {

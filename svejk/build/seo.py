@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 from datetime import datetime, timezone
 from pathlib import Path
 from xml.etree.ElementTree import Element, SubElement, tostring
@@ -212,7 +211,7 @@ def article_json_ld(
     article_body: str = "",
     parts: list[dict[str, str | int]] | None = None,
     base_path: str = "",
-) -> str:
+) -> dict:
     published = datetime.strptime(date_unl, "%d.%m.%Y").strftime("%Y-%m-%d")
     logo = logo_url or publisher_logo_url(site_url, base_path)
     article_image = image_url or logo
@@ -255,7 +254,7 @@ def article_json_ld(
             }
             for part in parts
         ]
-    return json.dumps(data, ensure_ascii=False)
+    return data
 
 
 _WEBSITE_DESCRIPTION = (
@@ -271,7 +270,7 @@ def website_json_ld(
     description: str = _WEBSITE_DESCRIPTION,
     logo_url: str | None = None,
     base_path: str = "",
-) -> str:
+) -> dict:
     """WebSite + publisher pro homepage."""
     base = site_url.rstrip("/")
     logo = logo_url or publisher_logo_url(site_url, base_path)
@@ -287,7 +286,7 @@ def website_json_ld(
             site_url=site_url, site_name=site_name, logo_url=logo
         ),
     }
-    return json.dumps(data, ensure_ascii=False)
+    return data
 
 
 def _static_page_links(

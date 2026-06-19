@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import html
 import re
 from dataclasses import dataclass, field
 from datetime import datetime
@@ -616,6 +617,82 @@ def build_den_content(
     return content
 
 
+_ALLOWED_INLINE_TAGS = frozenset({"strong", "em", "b", "i"})
+_ALLOWED_LINK_CLASSES = frozenset({"steno-link", "mean-link"})
+_OPEN_TAG_RE = re.compile(r"^<(\w+)\b([^>]*)>$", re.I)
+_CLOSE_TAG_RE = re.compile(r"^</(\w+)\s*>$", re.I)
+
+
+def _sanitize_href(href: str) -> str | None:
+    href = (href or "").strip()
+    if not href:
+        return None
+    lower = href.lower()
+    if lower.startswith(("javascript:", "data:", "vbscript:")):
+        return None
+    if href.startswith("#") or href.startswith("/"):
+        return href
+    if lower.startswith("https://") or lower.startswith("http://"):
+        return href
+    return None
+
+
+def _filter_allowed_html_tag(tag: str) -> str:
+    close = _CLOSE_TAG_RE.match(tag)
+    if close:
+        name = close.group(1).lower()
+        if name in _ALLOWED_INLINE_TAGS or name == "a":
+            return f"</{name}>"
+        return ""
+
+    open_m = _OPEN_TAG_RE.match(tag)
+    if not open_m:
+        return ""
+
+    name = open_m.group(1).lower()
+    attrs = open_m.group(2)
+
+    if name in _ALLOWED_INLINE_TAGS:
+        if attrs.strip():
+            return ""
+        return f"<{name}>"
+
+    if name == "a":
+        class_m = re.search(r'\bclass="([^"]*)"', attrs, re.I)
+        href_m = re.search(r'\bhref="([^"]*)"', attrs, re.I)
+        if not class_m or not href_m:
+            return ""
+        classes = set(class_m.group(1).split())
+        link_class = next((c for c in classes if c in _ALLOWED_LINK_CLASSES), None)
+        if not link_class:
+            return ""
+        href = _sanitize_href(href_m.group(1))
+        if not href:
+            return ""
+        safe_href = html.escape(href, quote=True)
+        return f'<a class="{link_class}" href="{safe_href}">'
+
+    return ""
+
+
+def _sanitize_html_segments(text: str, plain_chunk) -> str:
+    if "<" not in text:
+        return plain_chunk(text)
+
+    parts = re.split(r"(<[^>]+>)", text)
+    out: list[str] = []
+    for part in parts:
+        if not part:
+            continue
+        if part.startswith("<"):
+            filtered = _filter_allowed_html_tag(part)
+            if filtered:
+                out.append(filtered)
+            continue
+        out.append(plain_chunk(part))
+    return "".join(out)
+
+
 def _sanitize_text_export(text: str) -> str:
     if not (text or "").strip():
         return text
@@ -640,23 +717,17 @@ def _sanitize_text_export(text: str) -> str:
     placeholders: dict[str, str] = {}
 
     def _protect_link(match: re.Match[str]) -> str:
+        opening = _filter_allowed_html_tag(match.group(1))
+        if not opening:
+            return _steno_link_inner(match.group(2))
         key = f"[[STENOLINK:{len(placeholders)}]]"
         placeholders[key] = (
-            f"{match.group(1)}{_steno_link_inner(match.group(2))}{match.group(3)}"
+            f"{opening}{_steno_link_inner(match.group(2))}</a>"
         )
         return key
 
     protected = steno_link_re.sub(_protect_link, text)
-    parts = re.split(r"(<[^>]+>)", protected)
-    out: list[str] = []
-    for part in parts:
-        if not part:
-            continue
-        if part.startswith("<"):
-            out.append(part)
-            continue
-        out.append(_plain_chunk(part))
-    result = "".join(out)
+    result = _sanitize_html_segments(protected, _plain_chunk)
     for key, val in placeholders.items():
         result = result.replace(key, val)
     return result
@@ -666,22 +737,13 @@ def _sanitize_mean_export(text: str) -> str:
     """Text bez doplňování stran u jmen poslanců (mean, závěr dne)."""
     if not (text or "").strip():
         return text
-    if "<" not in text:
-        out = bez_dlouhych_pomlc(text)
+
+    def _plain_chunk(chunk: str) -> str:
+        out = bez_dlouhych_pomlc(chunk)
         out = nahrad_cisla_v_textu(out)
         return out
-    parts = re.split(r"(<[^>]+>)", text)
-    out: list[str] = []
-    for part in parts:
-        if not part:
-            continue
-        if part.startswith("<"):
-            out.append(part)
-            continue
-        chunk = bez_dlouhych_pomlc(part)
-        chunk = nahrad_cisla_v_textu(chunk)
-        out.append(chunk)
-    return "".join(out)
+
+    return _sanitize_html_segments(text, _plain_chunk)
 
 
 def _sanitize_vysledek_export(text: str) -> str:
