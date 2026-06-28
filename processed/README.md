@@ -1,5 +1,7 @@
 # Processed schůze (file-based build)
 
+**Redakční playbook (krok za krokem):** [WORKFLOW.md](WORKFLOW.md)
+
 ## Doladění textů (raw → export)
 
 Pipeline: **raw** (`votes.jsonl`, volitelně `steno.jsonl`) → **aligned** (`topics.json`) → **facts** (`by_topic/*.json`, ručně) → **compose** → **export-pages**.

@@ -69,6 +69,8 @@ Jedna schůze = složka `processed/2025-s20/` (období + číslo schůze). URL n
 
 Podrobnosti polí v `facts/`, pravidla textů a další příkazy: **[processed/README.md](processed/README.md)**.
 
+Redakční playbook (sync → facts → audit → publish): **[processed/WORKFLOW.md](processed/WORKFLOW.md)**.
+
 Editorial pravidla (satira, terminologie, formát článků): [`.cursor/rules/steno-zapisy.mdc`](.cursor/rules/steno-zapisy.mdc).
 
 ## Užitečné příkazy
