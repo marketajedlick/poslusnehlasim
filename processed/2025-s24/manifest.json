@@ -8,24 +8,27 @@
     },
     "compose": {
       "done": true,
-      "days": 1,
+      "days": 2,
       "files": [
-        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-06-23.md"
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-06-23.md",
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-06-24.md"
       ],
       "html_files": [
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-06-23-steno.html",
-        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-06-23.html"
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-06-23.html",
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-06-24-steno.html",
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-06-24.html"
       ],
       "last_partial_compose": {
-        "den": "23.6",
-        "built_at": "2026-06-28T12:45:33.174656+00:00",
+        "den": "24.6",
+        "built_at": "2026-06-28T12:56:19.504209+00:00",
         "days": 1,
         "files": [
-          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-06-23.md"
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-06-24.md"
         ],
         "html_files": [
-          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-06-23.html",
-          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-06-23-steno.html"
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-06-24.html",
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-06-24-steno.html"
         ]
       }
     },
@@ -37,5 +40,5 @@
       "validation_warnings": []
     }
   },
-  "built_at": "2026-06-28T12:45:33.174777+00:00"
+  "built_at": "2026-06-28T12:56:19.504344+00:00"
 }

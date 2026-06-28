@@ -28,12 +28,33 @@
       "steno_id": "2025_24_00033",
       "citace": "následující hodina bude hned o několika klíčových tématech. Ale bude především o tom, jak současná vláda Andreje Babiše se rozhodla sobě ve svůj prospěch ukrást Českou republiku.",
       "link_phrase": "krádeži republiky"
+    },
+    {
+      "text": "Bartoš tu absurditu předvedl fiktivním večerníčkem chválicím vládu.",
+      "source": "steno",
+      "steno_id": "2025_24_00037",
+      "citace": "Dobrý večer, vítejte u hlavních zpráv. Děkujeme především našim vládním politikům.",
+      "link_phrase": "fiktivním večerníčkem chválicím vládu"
+    },
+    {
+      "text": "Richterová popisovala autocenzuru, kdy si redakce hlídají jazyk kvůli hrozbě seškrtnout rozpočet.",
+      "source": "steno",
+      "steno_id": "2025_24_00011",
+      "citace": "Zcela stačí, když redakce vědí, že reportáže o nedostupném bydlení, o chudobě, o korupci, o konkrétních selháních vlády, mohou mít přímý dopad na výši rozpočtu v dalším roce.",
+      "link_phrase": "seškrtnout rozpočet"
+    },
+    {
+      "text": "Kupka mluvil o zásahu do demokratických institucí včetně veřejnopránních médií.",
+      "source": "steno",
+      "steno_id": "2025_24_00033",
+      "citace": "rozkládat demokratické fungování institucí včetně veřejnoprávních médií",
+      "link_phrase": "zásahu do demokratických institucí"
     }
   ],
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Fiktivní zpravodajství",
-  "lead": "Dnešní spor o peníze a nezávislost veřejnopránních médií se ve Sněmovně projevil hned první den. Bartoš představil fiktivní zpravodajství závislé na vládě, Richterová varovala, že reportáže o korupci mohou sáhnout na rozpočet ČT a ČRo, Kupka mluvil o krádeži republiky.\n\nVečer poslanci ještě tři hodiny stříleli pořadem schůze. Pro diváka nuda.",
+  "lead": "Dnešní spor o peníze a nezávislost veřejnopránních médií se ve Sněmovně projevil hned první den. Bartoš (Piráti) představil fiktivní zpravodajství závislé na vládě, Richterová (Piráti) varovala, že reportáže o korupci mohou sáhnout na rozpočet ČT a ČRo, Kupka (ODS) mluvil o krádeži republiky.\n\nVečer poslanci ještě tři hodiny stříleli pořadem schůze. Pro diváka nuda.",
   "pointa": "Hot téma dne byly peníze a svoboda ČT a ČRo. Maraton hlasování o pořadu večer? Politická nuda.",
   "mean": "Vláda chce u veřejnopránních médií víc rozhodování od státu, opozice varuje před autocenzurou. Když redakce ví, že nepříjemná reportáž může v dalším roce seškrtnout rozpočet, začnou si hlídat jazyk samy. Bartoš tu absurditu předvedl fiktivním večerníčkem chválicím vládu, Richterová popisovala ten tlak na ČT a ČRo, Kupka mluvil o zásahu do demokratických institucí. Zbytek dne, přísahy nových poslanců a padesát jedna hlasování o tom, co se kdy projedná, to už byl jen provoz kolem tabule.",
   "pocet_hlasovani": 51,
