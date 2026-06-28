@@ -65,6 +65,8 @@ Soubor [`_headers`](_headers) platí **jen** když hlavní web hostuješ na **Cl
 
 ```bash
 ./scripts/check-security-headers.sh
+# robots.txt (Cloudflare Managed content musí být vypnutý):
+./scripts/check-robots.sh
 # nebo konkrétní URL:
 ./scripts/check-security-headers.sh https://poslusnehlasim.cz/noviny/2025/
 ```
@@ -84,3 +86,22 @@ curl -sS https://poslusnehlasim.cz/.well-known/security.txt
 ## 7. API odběru
 
 Worker `poslusnehlasim-odebir.pages.dev` běží zvlášť na Cloudflare Pages — hlavičky z této zóny se na něj nevztahují. CORS řeší `ALLOWED_ORIGIN` ve [`workers/wrangler.toml`](../../workers/wrangler.toml). Worker sám posílá `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` a restriktivní CSP u JSON odpovědí.
+
+## 8. robots.txt — vypnout Managed content (důležité pro SEO a AI)
+
+Cloudflare umí **automaticky předřadit** blok `# BEGIN Cloudflare Managed content` do `robots.txt`. Ten pro AI boty (`GPTBot`, `ClaudeBot`, `Google-Extended`, …) vkládá `Disallow: /` **nad** Allow pravidla z GitHub Pages exportu. Crawlery pak čtou blokaci dřív než povolení.
+
+**Oprava (jednorázově v dashboardu):**
+
+1. Cloudflare → zóna `poslusnehlasim.cz`
+2. **AI Crawl Control** (někdy **AI Audit** nebo **Security → Bots**)
+3. **Managed robots.txt** → **Off** (případně „Disable robots.txt configuration“)
+4. Po ~30 s ověř: `curl -sS https://poslusnehlasim.cz/robots.txt` — **nesmí** obsahovat `BEGIN Cloudflare Managed content`
+
+Origin soubor generuje `export-pages` (`svejk/build/seo.py`): explicitní `Allow: /` pro AI boty, `Content-Signal: search=yes,ai-train=no` u `User-agent: *`, odkaz na sitemap a `llms.txt`.
+
+```bash
+./scripts/check-robots.sh
+```
+
+Volitelně (API): Bot Management `is_robots_txt_managed: false`, `cf_robots_variant: "off"`.

@@ -153,7 +153,26 @@ def homepage_page_title(**_kwargs: object) -> str:
 
 
 def homepage_og_title() -> str:
+    """Fallback og:title bez kontextu vydání (statické stránky)."""
     return "Poslušně hlásím · Deník ze Sněmovny"
+
+
+def homepage_share_og_title(
+    *,
+    dnesni_ucet: str,
+    first_item_nadpis: str = "",
+    datum_unl: str,
+    den: str = "",
+    max_len: int = 120,
+) -> str:
+    """og:title pro homepage — sdílení ukazuje aktuální vydání, ne brand <title>."""
+    return edition_page_title(
+        dnesni_ucet=dnesni_ucet,
+        first_item_nadpis=first_item_nadpis,
+        datum_unl=datum_unl,
+        den=den,
+        max_len=max_len,
+    )
 
 
 def edition_page_title(
@@ -375,15 +394,20 @@ def write_security_txt(
 
 
 def write_robots_txt(out_dir: Path, *, site_url: str) -> Path:
+    """robots.txt pro export. Vyžaduje vypnutý Cloudflare Managed robots.txt (viz infra/cloudflare/README.md)."""
     base = site_url.rstrip("/")
     lines = [
-        "User-agent: *",
-        "Allow: /",
+        "# poslusnehlasim.cz — export-pages. Cloudflare Managed robots.txt musí být vypnutý,",
+        "# jinak edge předřadí Disallow pro AI boty nad Allow níže (viz infra/cloudflare/README.md §8).",
         "",
     ]
     for bot in _AI_BOTS:
         lines.extend([f"User-agent: {bot}", "Allow: /", ""])
     lines.extend([
+        "User-agent: *",
+        "Content-Signal: search=yes,ai-train=no",
+        "Allow: /",
+        "",
         f"Sitemap: {base}/sitemap.xml",
         f"# LLM index: {base}/llms.txt",
     ])
@@ -419,30 +443,10 @@ def write_sitemap_xml(
         add_url(f"{base}{podminky_pages_href(base_path)}", last)
         add_url(f"{base}{podpora_pages_href(base_path)}", last)
         add_url(f"{base}{soukromi_pages_href(base_path)}", last)
-        add_url(f"{base}/feed.xml", last)
 
     for edition in editions:
         href = edition_pages_href(edition.obdobi, edition.schuze, edition.datum_unl, base_path)
         add_url(f"{base}{href}", edition.when)
-
-    for edition, kind in _iter_vyznamenani_editions(editions):
-        href = vyznamenani_pages_href(
-            edition.obdobi, edition.schuze, edition.datum_unl, kind, base_path
-        )
-        add_url(f"{base}{href}", edition.when)
-
-    for edition in editions:
-        paths = SchuzePaths.create(edition.obdobi, edition.schuze)
-        if has_steno_sources(paths, edition.datum_unl):
-            href = steno_sources_pages_href(
-                edition.obdobi, edition.schuze, edition.datum_unl, base_path
-            )
-            add_url(f"{base}{href}", edition.when)
-        if has_recnici(paths, edition.datum_unl):
-            href = recnici_pages_href(
-                edition.obdobi, edition.schuze, edition.datum_unl, base_path
-            )
-            add_url(f"{base}{href}", edition.when)
 
     xml = b'<?xml version="1.0" encoding="UTF-8"?>\n' + tostring(urlset, encoding="utf-8")
     path = out_dir / "sitemap.xml"

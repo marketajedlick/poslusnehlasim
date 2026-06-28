@@ -479,8 +479,8 @@ def render_den_html(
     from svejk.build.seo import article_headline as _article_headline
     from svejk.build.seo import article_json_ld as _article_json_ld
     from svejk.build.seo import edition_page_title as _edition_page_title
-    from svejk.build.seo import homepage_og_title as _homepage_og_title
     from svejk.build.seo import homepage_page_title as _homepage_page_title
+    from svejk.build.seo import homepage_share_og_title as _homepage_share_og_title
 
     if is_homepage:
         page_title = _homepage_page_title()
@@ -502,7 +502,12 @@ def render_den_html(
     )
 
     og_share_title = (
-        _homepage_og_title()
+        _homepage_share_og_title(
+            dnesni_ucet=content.dnesni_ucet,
+            first_item_nadpis=content.items[0].nadpis if content.items else "",
+            datum_unl=content.datum,
+            den=content.den,
+        )
         if is_homepage
         else edition_og_title(content.datum, content.den)
     )
@@ -511,6 +516,9 @@ def render_den_html(
         first_item_nadpis=content.items[0].nadpis if content.items else "",
         datum_unl=content.datum,
         den=content.den,
+    )
+    og_published = datetime.strptime(content.datum, "%d.%m.%Y").strftime(
+        "%Y-%m-%dT00:00:00+01:00"
     )
     og = _og_context(
         site_url=cfg.site_url,
@@ -522,6 +530,7 @@ def render_den_html(
         image_width=OG_WIDTH,
         image_height=OG_HEIGHT,
         image_alt=og_headline,
+        published_time=og_published,
     )
     schema_headline = _article_headline(
         dnesni_ucet=content.dnesni_ucet,
@@ -668,6 +677,7 @@ def _og_context(
     image_width: int | None = None,
     image_height: int | None = None,
     image_alt: str | None = None,
+    published_time: str | None = None,
 ) -> dict[str, str | int]:
     if image_url:
         og_image_url = image_url
@@ -680,7 +690,7 @@ def _og_context(
         og_image_width = image_w
         og_image_height = image_h
         og_image_alt = image_alt or "Poslušně hlásím, Švejk"
-    return {
+    ctx: dict[str, str | int] = {
         "og_title": title,
         "og_description": description,
         "og_image_url": og_image_url,
@@ -689,6 +699,9 @@ def _og_context(
         "og_image_alt": og_image_alt,
         "og_type": og_type,
     }
+    if published_time:
+        ctx["og_published_time"] = published_time
+    return ctx
 
 
 def plain_text_from_content(
@@ -1078,10 +1091,7 @@ def render_vyznamenani_table_html(
     )
     if link_mode == "pages":
         edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path)
-        canonical_url = (
-            f"{cfg.site_url.rstrip('/')}"
-            f"{vyznamenani_pages_href(obdobi, schuze, datum_unl, kind, base_path)}"
-        )
+        canonical_url = f"{cfg.site_url.rstrip('/')}{edition_href}"
         sibling_href = (
             vyznamenani_href(
                 obdobi,
@@ -1193,10 +1203,7 @@ def render_steno_sources_html(
     page_description = page_gloss or page_title
     if link_mode == "pages":
         edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path)
-        canonical_url = (
-            f"{cfg.site_url.rstrip('/')}"
-            f"{steno_sources_pages_href(obdobi, schuze, datum_unl, base_path)}"
-        )
+        canonical_url = f"{cfg.site_url.rstrip('/')}{edition_href}"
     else:
         edition_href = f"{d.strftime('%Y-%m-%d')}.html"
         canonical_url = ""
@@ -1267,10 +1274,7 @@ def render_recnici_table_html(
     meta = recnici_page_meta(data, datum_label=datum_label)
     if link_mode == "pages":
         edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path)
-        canonical_url = (
-            f"{cfg.site_url.rstrip('/')}"
-            f"{recnici_pages_href(obdobi, schuze, datum_unl, base_path)}"
-        )
+        canonical_url = f"{cfg.site_url.rstrip('/')}{edition_href}"
     else:
         edition_href = f"{d.strftime('%Y-%m-%d')}.html"
         canonical_url = ""
