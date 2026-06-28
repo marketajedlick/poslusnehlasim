@@ -1,0 +1,47 @@
+{
+  "slug": "sml-cr-malta-o-zamezeni-dvojimu-zdaneni",
+  "nazev": "Sml.ČR-Malta o zamezení dvojímu zdanění",
+  "datum": "25.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "sml.ČR-Malta o zamezení dvojímu zdanění",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "září 2025/sněmovní tisk 197/ – prvé čtení Předložený návrh uvede místopředsedkyně vlády a ministryně financí Alena Schillerová.",
+      "source": "steno",
+      "steno_id": "2025_24_00508",
+      "citace": "září 2025/sněmovní tisk 197/ – prvé čtení Předložený návrh uvede místopředsedkyně vlády a ministryně financí Alena Schillerová."
+    },
+    {
+      "text": "106.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Smlouva mezi Českou republikou a Maltskou republikou o zamezení dvojímu zdanění v oboru daní z příjmu a z majetku a o zabránění daňovému úniku a vyhýbání se daňové povinnosti, která byla podepsána v Římě dne 24.",
+      "source": "steno",
+      "steno_id": "2025_24_00508",
+      "citace": "106.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Smlouva mezi Českou republikou a Maltskou republikou o zamezení dvojímu zdanění v oboru daní z příjmu"
+    },
+    {
+      "text": "Současné hodnoty vývozu se v roce 2025 pohybovaly okolo 1,1 miliardy korun.",
+      "source": "steno",
+      "steno_id": "2025_24_00509",
+      "citace": "Současné hodnoty vývozu se v roce 2025 pohybovaly okolo 1,1 miliardy korun."
+    },
+    {
+      "text": "Ve vzájemných daňových vztazích mezi Českou republikou a Maltou se v současné době uplatňuje Smlouva mezi Českou republikou a Maltou o zamezení dvojímu zdanění a zabrání daňovému úniku v oboru daní z příjmů a z majetku, která vstoupila v platnost 6.",
+      "source": "steno",
+      "steno_id": "2025_24_00509",
+      "citace": "Ve vzájemných daňových vztazích mezi Českou republikou a Maltou se v současné době uplatňuje Smlouva mezi Českou republikou a Maltou o zamezení dvojímu zdanění a zabrání daňovému úniku v oboru daní z "
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 147,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 703
+}

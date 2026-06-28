@@ -46,7 +46,7 @@ V `facts/by_day/YYYY-MM-DD.json` volitelně `"zaver": "…"`, vlastní závěr (
 
 **Pomlčky:** ve výstupech nepoužívej em pomlčku (`—`) ani en pomlčku (`–`); místo toho čárka nebo ASCII `-`. Compose při nálezu dlouhé pomlčky spadne.
 
-`review` ukáže návrhy vět ze stena a náhled závěru dne.
+`review` ukáže návrhy vět ze stena a náhled závěru dne. **Curiosity pass** (procházka `steno.jsonl` pro scény, spory a citace mimo automatiku) je v [WORKFLOW.md](WORKFLOW.md) §2a.
 
 Jedna schůze = složka `{obdobi}-s{cislo}/`, např. `2025-s20/`.
 

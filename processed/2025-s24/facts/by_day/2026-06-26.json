@@ -1,0 +1,16 @@
+{
+  "datum": "26.06.2026",
+  "den": "pátek",
+  "topic_slugs": [
+    "navrh-zakona-o-statnich-zamestnancich"
+  ],
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 164,
+    "end_cas": "13:39",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  }
+}

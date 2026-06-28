@@ -1,0 +1,22 @@
+{
+  "datum": "25.06.2026",
+  "den": "čtvrtek",
+  "topic_slugs": [
+    "sml-mezi-cr-a-mongolskem-o-policejni-spolupraci",
+    "novela-z-o-spotrebitelskem-uveru",
+    "sml-mezi-cr-a-tanzanskou-repub-o-zamezeni-dvojim",
+    "sml-mezi-cr-a-srn-o-statnich-hranicich",
+    "sml-mezi-cr-a-kenskou-republikou-o-zamezeni-dvoj",
+    "sml-cr-malta-o-zamezeni-dvojimu-zdaneni",
+    "sml-mezi-cr-a-slovenskou-republikou-o-policejni-"
+  ],
+  "stats": {
+    "pocet_hlas": 8,
+    "minuty": 99,
+    "end_cas": "12:56",
+    "proslo": 7,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  }
+}

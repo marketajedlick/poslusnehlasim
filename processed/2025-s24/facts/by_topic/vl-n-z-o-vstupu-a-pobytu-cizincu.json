@@ -1,0 +1,48 @@
+{
+  "slug": "vl-n-z-o-vstupu-a-pobytu-cizincu",
+  "nazev": "Vl. n. z. o vstupu a pobytu cizinců",
+  "datum": "24.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "o vstupu a pobytu cizinců",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "cizinecký zákon",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_00208",
+      "citace": "(cizinecký zákon)"
+    },
+    {
+      "text": "13.Vládní návrh zákona o vstupu a pobytu cizinců (cizinecký zákon)/sněmovní tisk 144/ – druhé čtení Z pověření vlády předložený návrh zákona uvede ministr vnitra pan Lubomír Metnar.",
+      "source": "steno",
+      "steno_id": "2025_24_00208",
+      "citace": "13.Vládní návrh zákona o vstupu a pobytu cizinců (cizinecký zákon)/sněmovní tisk 144/ – druhé čtení Z pověření vlády předložený návrh zákona uvede ministr vnitra pan Lubomír Metnar."
+    },
+    {
+      "text": "Návrh dále zavádí povinnou registraci občanů Evropské unie při pobytu delším než 90 dnů, která umožní evidovat pobyt všech cizinců žijících na našem území déle než 90 dnů.",
+      "source": "steno",
+      "steno_id": "2025_24_00209",
+      "citace": "Návrh dále zavádí povinnou registraci občanů Evropské unie při pobytu delším než 90 dnů, která umožní evidovat pobyt všech cizinců žijících na našem území déle než 90 dnů."
+    },
+    {
+      "text": "Odborníci a my odhadujeme, že se může jednat nejméně o 200 000 osob, které dnes nejsou evidovány v základních registrech, jelikož registrace je v současné době dobrovolná.",
+      "source": "steno",
+      "steno_id": "2025_24_00209",
+      "citace": "Odborníci a my odhadujeme, že se může jednat nejméně o 200 000 osob, které dnes nejsou evidovány v základních registrech, jelikož registrace je v současné době dobrovolná."
+    }
+  ],
+  "publikovat": false,
+  "priorita": 3,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 6,
+    "pritomno_min": 101,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 2723
+}

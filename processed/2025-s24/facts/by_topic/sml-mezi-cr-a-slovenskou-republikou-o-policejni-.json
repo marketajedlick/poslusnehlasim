@@ -1,0 +1,47 @@
+{
+  "slug": "sml-mezi-cr-a-slovenskou-republikou-o-policejni-",
+  "nazev": "Sml. mezi ČR a Slovenskou republikou o policejní spolupráci",
+  "datum": "25.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "sml. mezi ČR a Slovenskou republikou o policejní spolupráci",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "96.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Smlouva mezi Českou republikou a Slovenskou republikou o policejní spolupráci, podepsaná dne 6.",
+      "source": "steno",
+      "steno_id": "2025_24_00493",
+      "citace": "96.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Smlouva mezi Českou republikou a Slovenskou republikou o policejní spolupráci, podepsaná dne 6."
+    },
+    {
+      "text": "února 2026 v Bratislavě/sněmovní tisk 118/ – prvé čtení Předložený návrh uvede ministr vnitra Lubomír Metnar.",
+      "source": "steno",
+      "steno_id": "2025_24_00493",
+      "citace": "února 2026 v Bratislavě/sněmovní tisk 118/ – prvé čtení Předložený návrh uvede ministr vnitra Lubomír Metnar."
+    },
+    {
+      "text": "února letošního roku v Bratislavě, ve vzájemných vztazích nahradí překonanou smlouvu z roku 2004.",
+      "source": "steno",
+      "steno_id": "2025_24_00494",
+      "citace": "února letošního roku v Bratislavě, ve vzájemných vztazích nahradí překonanou smlouvu z roku 2004."
+    },
+    {
+      "text": "Závěrem mi dovolte zdůraznit, že předkládaná smlouva představuje další konkrétní krok k posílení bezpečnosti občanů a prohloubení praktické mezinárodní spolupráce.",
+      "source": "steno",
+      "steno_id": "2025_24_00494",
+      "citace": "Závěrem mi dovolte zdůraznit, že předkládaná smlouva představuje další konkrétní krok k posílení bezpečnosti občanů a prohloubení praktické mezinárodní spolupráce."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 148,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 843
+}

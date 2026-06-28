@@ -1,0 +1,47 @@
+{
+  "slug": "sml-mezi-cr-a-srn-o-statnich-hranicich",
+  "nazev": "Sml. mezi ČR a SRN o státních hranicích",
+  "datum": "25.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "sml. mezi ČR a SRN o státních hranicích",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "105.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Smlouva mezi Českou republikou a Spolkovou republikou Německo o společných státních hranicích, podepsaná dne 12.",
+      "source": "steno",
+      "steno_id": "2025_24_00503",
+      "citace": "105.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Smlouva mezi Českou republikou a Spolkovou republikou Německo o společných státních hranicích, podeps"
+    },
+    {
+      "text": "března 2025 v Berlíně/sněmovní tisk 185/ – prvé čtení Předložený návrh uvede ministr vnitra Lubomír Metnar.",
+      "source": "steno",
+      "steno_id": "2025_24_00503",
+      "citace": "března 2025 v Berlíně/sněmovní tisk 185/ – prvé čtení Předložený návrh uvede ministr vnitra Lubomír Metnar."
+    },
+    {
+      "text": "Oblast správy státní hranice se Spolkovou republikou Německo je v současné době upravena zastaralou a technicky překonanou smlouvou mezi Českou republikou a Spolkovou republikou Německo o společných státních hranicích z roku 1994.",
+      "source": "steno",
+      "steno_id": "2025_24_00504",
+      "citace": "Oblast správy státní hranice se Spolkovou republikou Německo je v současné době upravena zastaralou a technicky překonanou smlouvou mezi Českou republikou a Spolkovou republikou Německo o společných s"
+    },
+    {
+      "text": "Obdobná smlouva byla v roce 2023 uzavřena se Slovenskou republikou.",
+      "source": "steno",
+      "steno_id": "2025_24_00504",
+      "citace": "Obdobná smlouva byla v roce 2023 uzavřena se Slovenskou republikou."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 148,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 589
+}

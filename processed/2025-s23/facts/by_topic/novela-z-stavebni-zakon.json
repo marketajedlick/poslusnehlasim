@@ -23,18 +23,39 @@
       "link_phrase": "varoval před kolapsem stavebního řízení"
     },
     {
-      "text": "Haas na začátku vydal technické hlášení, že má sedmnáct pozměňovacích návrhů, ale bude velmi stručný.",
+      "text": "Výborný popsal legislativní balík: nejdřív poslanecký návrh, pak přes tisíc stran komplexního pozměňovacího návrhu a desítky dalších oprav.",
       "source": "steno",
-      "steno_id": "2025_23_00098",
-      "citace": "Bylo na mě několik dotazů, jak budu dlouhý. Prosím vás, určitě nebudu nijak obstruovat a teď se nelekejte, já mám, jestli dobře počítám, 17 pozměňovacích návrhů",
-      "link_phrase": "sedmnácti pozměňovacích návrhů"
+      "steno_id": "2025_23_00008",
+      "citace": "k tomu pak napíšeme přes tisíc stran komplexního pozměňovacího návrhu",
+      "link_phrase": "přes tisíc stran komplexního pozměňovacího návrhu"
     },
     {
-      "text": "Stojanová spočítala 626 stavebních úřadů v republice a varovala, že na nové úřady chce přejít zhruba jen třetina současných zaměstnanců.",
+      "text": "Haas na začátku vydal technické hlášení, že má sedmnáct pozměňovacích návrhů, sliboval stručnost a sál se smál, když je začal rychle odškrtávat.",
+      "source": "steno",
+      "steno_id": "2025_23_00098",
+      "citace": "jestli dobře počítám, 17 pozměňovacích návrhů",
+      "link_phrase": "sedmnáct pozměňovacích návrhů"
+    },
+    {
+      "text": "Haas u prvního návrhu reagoval na smích v sále větou, že to je neobstrukční.",
+      "source": "steno",
+      "steno_id": "2025_23_00098",
+      "citace": "Snad vidíte, že to je neobstrukční",
+      "link_phrase": "neobstrukční"
+    },
+    {
+      "text": "Stojanová spočítala 626 stavebních úřadů v republice a varovala, že na nové úřady chce přejít zhruba jen třetina současných zaměstnanců, dvě třetiny zvažují odchod.",
       "source": "steno",
       "steno_id": "2025_23_00100",
-      "citace": "Dnes máme v České republice 626 stavebních úřadů, z toho 206 na obcích s rozšířenou působností a dalších 420 na menších obcích",
-      "link_phrase": "spočítala 626 stavebních úřadů"
+      "citace": "na nové stavební úřady přejít přibližně jen třetina současných zaměstnanců",
+      "link_phrase": "jen třetina současných zaměstnanců"
+    },
+    {
+      "text": "Vlček přirovnal stavební zákon k Lex developerovi: vlajková loď, která je děravá jak cedník.",
+      "source": "steno",
+      "steno_id": "2025_23_00102",
+      "citace": "Lex developerem, který bohužel je takovou vlajkovou lodí",
+      "link_phrase": "děravá jak cedník"
     },
     {
       "text": "Berki řekl, že zákon přišel příliš dlouhý, tak z něj teď vypařují pojistky, a poprosil, aby se nepodpořily návrhy Haase, který opět opomíjí Liberec.",
@@ -42,6 +63,13 @@
       "steno_id": "2025_23_00110",
       "citace": "přišel nám příliš dlouhý, tak teď z něj vypáráváme leckteré pojistky, které v něm byly",
       "link_phrase": "z příliš dlouhého zákona teď vypařují pojistky"
+    },
+    {
+      "text": "Berki upozornil, že Haas znovu opomíjí Liberec u městských stavebních předpisů.",
+      "source": "steno",
+      "steno_id": "2025_23_00110",
+      "citace": "Liberec opět opomíjí",
+      "link_phrase": "Liberec opět opomíjí"
     },
     {
       "text": "Barták hlásil, že hluk v sále neustává, a upozornil, že ve frontě je ještě čtyřicet řečníků bez přednostního práva.",
@@ -68,7 +96,7 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Druhé čtení doběhlo,\nvýbor bude třídit",
-  "lead": "Na konci rozpravy se hlasovalo o tom, jestli se novela vrátí zpátky do hospodářského výboru. Nevrátila. Návrh Lukáše Vlčka (STAN) spadl poměrem 22:75.",
+  "lead": "Rozprava navázala tam, kde minulý týden skončila ve 23 hodin. Výborný varoval před kolapsem stavebního řízení a popsal balík přes tisíc stran komplexního pozměňovacího návrhu navíc k desítkám dalších oprav.\n\nStojanová spočítala 626 stavebních úřadů a varovala, že na nové úřady chce přejít jen třetina současných zaměstnanců. Haas hlásil sedmnáct pozměňovacích návrhů, sliboval stručnost a sál se smál, když je odškrtával jako neobstrukční. Vlček přirovnal zákon k Lex developerovi, vlajkové lodi děravé jak cedník. Berki řekl, že z příliš dlouhého zákona teď vypařují pojistky, a Haase kritizoval, že opět opomíjí Liberec.\n\nPředsedající Barták mezitím hlásil, že hluk v sále neustává a ve frontě je ještě čtyřicet řečníků. Na konci se hlasovalo, jestli novela padne zpátky do výboru. Nevrátila. Návrh Lukáše Vlčka spadl poměrem 22:75.",
   "pointa": "Hlasování nebylo o tom, jestli padá celý zákon, ale jestli se novela vrátí do výboru. Nevrátila se, druhé čtení doběhlo a na hospodářském výboru čeká zhruba sto třicet pozměňovacích návrhů.",
   "mean": "Čtvrteční hlasování nebylo o tom, jestli padá celý stavební zákon. Bylo o tom, jestli se vrátí na dílnu do výboru. Nevrátila. Novela prošla druhým čtením a míří dál: hospodářský výbor teď musí projít zhruba 130 pozměňovacích návrhů a pak přijde třetí čtení. Jinými slovy, papíry se nezahodily, jen se přesunuly na další hromadu.",
   "pocet_hlasovani": 1,

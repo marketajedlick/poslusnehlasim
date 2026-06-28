@@ -1,0 +1,18 @@
+{
+  "datum": "24.06.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem",
+    "novela-z-o-nekt-opatr-v-souv-s-ozbrojenym-konfli",
+    "novela-z-o-silnicnim-provozu-eu"
+  ],
+  "stats": {
+    "pocet_hlas": 5,
+    "minuty": 525,
+    "end_cas": "18:00",
+    "proslo": 3,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  }
+}

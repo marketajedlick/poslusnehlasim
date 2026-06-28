@@ -1,0 +1,51 @@
+{
+  "slug": "navrh-zakona-o-statnich-zamestnancich",
+  "nazev": "Návrh zákona o státních zaměstnancích",
+  "datum": "26.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "státních zaměstnancích",
+  "koho": [
+    "Občana se to netýká, ledaže pracujete na úřadě nebo tam čekáte ve frontě."
+  ],
+  "fakty": [
+    {
+      "text": "zákon o státních zaměstnancích",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_00073",
+      "citace": "(zákon o státních zaměstnancích)"
+    },
+    {
+      "text": "111.Návrh poslanců Radka Vondráčka, Renaty Vesecké, Libora Vondráčka a Zuzany Ožanové na vydání zákona o právních poměrech státních zaměstnanců v ministerstvech a jiných správních úřadech (zákon o státních zaměstnancích)/sněmovní tisk 76/ – třetí čtení Projednávání tohoto bodu jsme přerušili v rozpravě ve středu 27.",
+      "source": "steno",
+      "steno_id": "2025_24_00073",
+      "citace": "111.Návrh poslanců Radka Vondráčka, Renaty Vesecké, Libora Vondráčka a Zuzany Ožanové na vydání zákona o právních poměrech státních zaměstnanců v ministerstvech a jiných správních úřadech (zákon o stá"
+    },
+    {
+      "text": "A připomínám, že návrh na zamítnutí a pozměňovací návrhy jsou uvedeny ve sněmovním tisku 76/4, který byl doručen dne 21.",
+      "source": "steno",
+      "steno_id": "2025_24_00073",
+      "citace": "A připomínám, že návrh na zamítnutí a pozměňovací návrhy jsou uvedeny ve sněmovním tisku 76/4, který byl doručen dne 21."
+    },
+    {
+      "text": "Poslankyně Šebelová si stěžuje, že v sále není žádný ministr.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_00074",
+      "citace": "(Poslankyně Šebelová si stěžuje, že v sále není žádný ministr.)"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 29,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 95,
+    "pritomno_min": 136,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 55147
+}

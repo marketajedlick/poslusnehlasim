@@ -1,0 +1,51 @@
+{
+  "slug": "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem",
+  "nazev": "Návrh na změny ve složení orgánů Poslanecké sněmovny",
+  "datum": "24.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "návrh na změny ve složení orgánů Poslanecké sněmovny",
+  "koho": [
+    "Občana se netýká, leda že zná někoho z poslanců osobně."
+  ],
+  "fakty": [
+    {
+      "text": "Potlesk z pravé strany sálu.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_00190",
+      "citace": "(Potlesk z pravé strany sálu.)"
+    },
+    {
+      "text": "Návrh na změny ve složení orgánů Poslanecké sněmovny – to je bod 130 – a Návrh na volbu člena Nejvyššího kontrolního úřadu – to je bod 131.",
+      "source": "steno",
+      "steno_id": "2025_24_00190",
+      "citace": "Návrh na změny ve složení orgánů Poslanecké sněmovny – to je bod 130 – a Návrh na volbu člena Nejvyššího kontrolního úřadu – to je bod 131."
+    },
+    {
+      "text": "(Potlesk z pravé strany sálu.) Připomínám členům organizačního výboru, že schůze se bude konat po skončení.",
+      "source": "steno",
+      "steno_id": "2025_24_00190",
+      "citace": "(Potlesk z pravé strany sálu.) Připomínám členům organizačního výboru, že schůze se bude konat po skončení."
+    },
+    {
+      "text": "Silný hluk v sále.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_00191",
+      "citace": "(Silný hluk v sále.)"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 154,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 665
+}

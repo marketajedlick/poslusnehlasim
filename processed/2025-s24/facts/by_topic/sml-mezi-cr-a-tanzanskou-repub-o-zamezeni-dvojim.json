@@ -1,0 +1,48 @@
+{
+  "slug": "sml-mezi-cr-a-tanzanskou-repub-o-zamezeni-dvojim",
+  "nazev": "Sml. mezi ČR a Tanzanskou repub. o zamezení dvojímu zdanění",
+  "datum": "25.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "sml. mezi ČR a Tanzanskou repub. o zamezení dvojímu zdanění",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "U pultíku se hlásí o slovo poslanec Radim Fiala.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_00477",
+      "citace": "(U pultíku se hlásí o slovo poslanec Radim Fiala.)"
+    },
+    {
+      "text": "května 2025/sněmovní tisk 84/ – prvé čtení Z pověření vlády předložený návrh uvede místopředsedkyně vlády a ministryně financí Alena Schillerová.",
+      "source": "steno",
+      "steno_id": "2025_24_00477",
+      "citace": "května 2025/sněmovní tisk 84/ – prvé čtení Z pověření vlády předložený návrh uvede místopředsedkyně vlády a ministryně financí Alena Schillerová."
+    },
+    {
+      "text": "(U pultíku se hlásí o slovo poslanec Radim Fiala.) No tak my jsme teď v bodě, tak já poprosím, já už jsem vyzval Alenu Schillerovou, aby měla úvodní slovo, a potom s přednostním právem předseda klubu.",
+      "source": "steno",
+      "steno_id": "2025_24_00477",
+      "citace": "(U pultíku se hlásí o slovo poslanec Radim Fiala.) No tak my jsme teď v bodě, tak já poprosím, já už jsem vyzval Alenu Schillerovou, aby měla úvodní slovo, a potom s přednostním právem předseda klubu."
+    },
+    {
+      "text": "Na jednání vaší schůze se nyní předkládá dokument, který souvisí s mezinárodním zdaňováním, takže jedná se o historicky první smlouvu o zamezení dvojímu zdanění s Tanzanií, která byla podepsána dne 14.",
+      "source": "steno",
+      "steno_id": "2025_24_00478",
+      "citace": "Na jednání vaší schůze se nyní předkládá dokument, který souvisí s mezinárodním zdaňováním, takže jedná se o historicky první smlouvu o zamezení dvojímu zdanění s Tanzanií, která byla podepsána dne 14"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 142,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 1389
+}

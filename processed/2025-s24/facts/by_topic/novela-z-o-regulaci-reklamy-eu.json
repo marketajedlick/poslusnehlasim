@@ -1,0 +1,47 @@
+{
+  "slug": "novela-z-o-regulaci-reklamy-eu",
+  "nazev": "Novela z. o regulaci reklamy - EU",
+  "datum": "24.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "regulaci reklamy",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "375/2022 Sb., o zdravotnických prostředcích a diagnostických zdravotnických prostředcích in vitro, ve znění pozdějších předpisů/sněmovní tisk 153/ – prvé čtení Z pověření vlády předložený návrh uvede místopředseda vlády a ministr průmyslu a obchodu pan ministr Karel Havlíček.",
+      "source": "steno",
+      "steno_id": "2025_24_00337",
+      "citace": "375/2022 Sb., o zdravotnických prostředcích a diagnostických zdravotnických prostředcích in vitro, ve znění pozdějších předpisů/sněmovní tisk 153/ – prvé čtení Z pověření vlády předložený návrh uvede "
+    },
+    {
+      "text": "468/1991 Sb., o provozování rozhlasového a televizního vysílání, ve znění pozdějších předpisů, ve znění pozdějších předpisů, a zákon č.",
+      "source": "steno",
+      "steno_id": "2025_24_00337",
+      "citace": "468/1991 Sb., o provozování rozhlasového a televizního vysílání, ve znění pozdějších předpisů, ve znění pozdějších předpisů, a zákon č."
+    },
+    {
+      "text": "40/1995 Sb., o regulaci reklamy a o změně a doplnění zákona č.",
+      "source": "steno",
+      "steno_id": "2025_24_00337",
+      "citace": "40/1995 Sb., o regulaci reklamy a o změně a doplnění zákona č."
+    },
+    {
+      "text": "Následně návrh prošel meziresortem, byl předložen vládě a tím byl splněn úkol vyplývající z usnesení vlády z roku 2023.",
+      "source": "steno",
+      "steno_id": "2025_24_00338",
+      "citace": "Následně návrh prošel meziresortem, byl předložen vládě a tím byl splněn úkol vyplývající z usnesení vlády z roku 2023."
+    }
+  ],
+  "publikovat": false,
+  "priorita": 2,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 106,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 21580
+}

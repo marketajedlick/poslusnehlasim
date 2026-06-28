@@ -1,0 +1,48 @@
+{
+  "slug": "novela-z-o-spotrebitelskem-uveru",
+  "nazev": "Novela z. o spotřebitelském úvěru",
+  "datum": "25.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "spotřebitelském úvěru",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "257/2016 Sb., o spotřebitelském úvěru, ve znění pozdějších předpisů, a další související zákony/sněmovní tisk 145/ – druhé čtení A z pověření vlády předložený návrh zákona uvede místopředsedkyně vlády a ministryně financí Alena Schillerová a já ji prosím, aby se ujala slova.",
+      "source": "steno",
+      "steno_id": "2025_24_00526",
+      "citace": "257/2016 Sb., o spotřebitelském úvěru, ve znění pozdějších předpisů, a další související zákony/sněmovní tisk 145/ – druhé čtení A z pověření vlády předložený návrh zákona uvede místopředsedkyně vlády"
+    },
+    {
+      "text": "14.Vládní návrh zákona, kterým se mění zákon č.",
+      "source": "steno",
+      "steno_id": "2025_24_00526",
+      "citace": "14.Vládní návrh zákona, kterým se mění zákon č."
+    },
+    {
+      "text": "Obrací se na předsedajícího: To je fakt peklo dneska.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_00527",
+      "citace": "(Obrací se na předsedajícího: To je fakt peklo dneska.)"
+    },
+    {
+      "text": "Jedním z klíčových prvků (Obrací se na předsedajícího: To je fakt peklo dneska.).",
+      "source": "steno",
+      "steno_id": "2025_24_00527",
+      "citace": "Jedním z klíčových prvků (Obrací se na předsedajícího: To je fakt peklo dneska.)."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 2,
+    "pritomno_min": 99,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 44339
+}
