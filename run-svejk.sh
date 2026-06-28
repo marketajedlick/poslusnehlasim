@@ -38,8 +38,7 @@ PY="$(find_python)" || {
   exit 1
 }
 
-# conda env bez balicku -> doinstaluj
-if ! "$PY" -c "import sqlalchemy" 2>/dev/null; then
+if ! "$PY" -c "import jinja2" 2>/dev/null; then
   echo "Doinstalovavam zavislosti do $PY ..."
   "$PY" -m pip install -r "$ROOT/requirements-svejk.txt"
 fi

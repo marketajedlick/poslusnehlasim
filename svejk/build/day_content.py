@@ -20,7 +20,7 @@ from svejk.cislo_slovy import (
     po_hlasovanich,
     po_hlasovanich_cap,
 )
-from svejk.poslanec_strany import dopln_strany_poslancu
+from psp.poslanci import poslanec_registry
 from svejk.text_norm import bez_dlouhych_pomlc, lcfirst_preserve_proper
 from svejk.build.witty import (
     glosa_generic,
@@ -708,7 +708,7 @@ def _sanitize_text_export(text: str) -> str:
         return text
 
     def _plain_chunk(chunk: str) -> str:
-        out = dopln_strany_poslancu(bez_dlouhych_pomlc(chunk))
+        out = poslanec_registry().annotate(bez_dlouhych_pomlc(chunk)) if chunk.strip() else chunk
         out = nahrad_cisla_v_textu(out)
         return out
 
@@ -758,7 +758,8 @@ def _sanitize_mean_export(text: str) -> str:
 
 def _sanitize_vysledek_export(text: str) -> str:
     """Výsledek dne: čísla ponechat (stav zápasu), zbytek stejně jako v textu."""
-    return dopln_strany_poslancu(bez_dlouhych_pomlc(text))
+    text = bez_dlouhych_pomlc(text)
+    return poslanec_registry().annotate(text) if text.strip() else text
 
 
 def _sanitize_den_content(content: DenContent) -> None:

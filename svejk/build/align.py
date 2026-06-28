@@ -14,7 +14,7 @@ from svejk.build.vote_logic import (
     vote_kategorie,
 )
 from svejk.paths import SchuzePaths
-from svejk.timeline import tema_z_nazvu
+from svejk.obcansky import tema_z_nazvu
 
 
 def _slug(text: str) -> str:
@@ -201,8 +201,8 @@ def run_align(paths: SchuzePaths) -> dict[str, Any]:
                 "pocet_prijato": prijato,
                 "pocet_zamitnuto": zamitnuto,
                 "kategorie": kat,
-                "tema_svejk": tema_z_nazvu(nazev).svejk,
-                "tema_vysvetleni": tema_z_nazvu(nazev).vysvetleni,
+                "tema_svejk": (t := tema_z_nazvu(nazev))[0],
+                "tema_vysvetleni": t[1],
             }
         )
 

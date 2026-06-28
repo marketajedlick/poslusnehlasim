@@ -34,9 +34,6 @@ def load_secrets_env(path: Path | None = None) -> None:
 
 load_secrets_env()
 
-DATABASE_URL = os.environ.get("DATABASE_URL", f"sqlite:///{ROOT / 'svejk.db'}")
 PSP_DATA_DIR = Path(os.environ.get("PSP_DATA_DIR", ROOT))
 HLIDAC_TOKEN = (os.environ.get("HLIDAC_TOKEN") or "").strip()
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
-ANTHROPIC_MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-20250514")
 PSP_ORGAN_ID = os.environ.get("PSP_ORGAN_ID", "174")

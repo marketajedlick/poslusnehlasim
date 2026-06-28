@@ -4,11 +4,12 @@ from __future__ import annotations
 
 import re
 import time
-import urllib.request
 import zipfile
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
+
+from psp.http import get_bytes
 
 from svejk.config import PSP_DATA_DIR, ROOT
 
@@ -67,8 +68,7 @@ def _ensure_poslanci_zip(data_dir: Path) -> Path:
     last_err: BaseException | None = None
     for attempt in range(3):
         try:
-            with urllib.request.urlopen(POSLANCI_ZIP_URL, timeout=120) as resp:
-                path.write_bytes(resp.read())
+            path.write_bytes(get_bytes(POSLANCI_ZIP_URL, timeout=120))
             return path
         except OSError as e:
             last_err = e

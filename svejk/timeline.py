@@ -46,99 +46,6 @@ class SchuzeCasovaOsa:
     shrnuti: str = ""
 
 
-# klicova slova | svejkova hlaska | vysvetleni pro obcany
-TEMA_PRAVIDLA: list[tuple[list[str], str, str]] = [
-    (
-        ["in vitro", "diagnostick", "zdrav. prost"],
-        " Poslušně hlásím, schválili pravidla pro laboratorní testy, diagnostiku v zkumavce.",
-        "Výrobci musí hlásit, když dochází soupravy na odběry. "
-        "Vás doma to netankuje, spíš nemocnice, ať vědí, že došly zkumavky.",
-    ),
-    (
-        ["pojistn", "sociální zabezpe"],
-        "Živnostníkům klesnou odvody na sociálním pojištění.",
-        "Minimální záloha klesne z 5 720 Kč na 5 005 Kč měsíčně, ušetří cca 715 korun. "
-        "Platí od ledna, přeplatek vrátí. Zaměstnanec? To se vás netýká. Míň odvodů, míň důchod.",
-    ),
-    (
-        ["státní sociální podpo", "statni socialni podpo"],
-        "Posun digitalizace dávek státní sociální podpory, úřady nestihly systém k 1. 7. 2026.",
-        "Technická novela k reformě sociálních dávek, posun termínů u úřadu práce.",
-    ),
-    (
-        ["sociálních služb", "socialnich sluzb"],
-        "Sociální služby, posun převodu péče a dávek OZP z ÚP na ÚSSZ na rok 2028.",
-        "Novela sociálních služeb, péče, dávky pro hendikepované, průkazy OZP.",
-    ),
-    (
-        ["státním rozpočtu", "státní rozpočet", "rozpočtu čr na rok"],
-        "Státní rozpočet, kolik smí vláda utratit příští rok.",
-        "Hlasování o státním rozpočtu, daně, silnice, školy, armáda.",
-    ),
-    (
-        ["veřejných rozpočt", "verejnych rozpoct"],
-        "Veřejné rozpočty, limity výdajů, výjimky pro obranu a velké stavby.",
-        "Novela rozpočtových zákonů, pravidla pro státní výdaje.",
-    ),
-    (
-        ["důvěry vládě", "důvěru vládě"],
-        "Vláda dostala důvěru sněmovny, může vládnout.",
-        "Hlasování o důvěře vládě.",
-    ),
-    (
-        ["nedůvěry vládě", "nedůvěru vládě"],
-        "Hlasovalo se o pádu vlády, nedůvěra.",
-        "Nedůvěra vládě, opozice chtěla svrhnout kabinet.",
-    ),
-    (
-        ["životním a existenčním minimu", "životní minimum"],
-        "Životní a existenční minimum, hranice chudoby pro dávky.",
-        "Novela minima, od toho se odvíjí sociální dávky.",
-    ),
-    (
-        ["dávce státní sociální pomoci"],
-        "Dávka státní sociální pomoci, pomoc lidem v nouzi.",
-        "Novela dávek SSP.",
-    ),
-    (
-        ["stavebn"],
-        "Stavební zákon, další kolo.",
-        "Hlasování o pozměňovacích návrzích ke stavebnímu zákonu. "
-        "Dlouhodobě se týká každého, kdo staví nebo rekonstruuje.",
-    ),
-    (
-        ["penzijn"],
-        "Penze, třikrát ne, pak jo. Typická sněmovní logika.",
-        "Návrh o penzijním spoření nejdřív zamítli, pak jiné varianty prošly.",
-    ),
-    (
-        ["interpelac"],
-        "Interpelace, ministr odpovídal, poslanci nebyli spokojeni.",
-        "Hlasovalo se, jestli jsou odpovědi ministrů dostačující.",
-    ),
-    (
-        ["investiční společnost"],
-        "EU finance, prošlo jak vagón munice do Budějovic. Exemplárně.",
-        "Papírová úprava pravidel pro investiční společnosti. Běžného člověka se netýká.",
-    ),
-    (
-        ["rostlinolékař"],
-        "EU pravidla pro postřiky, prošlo bez velkého povyku.",
-        "Technická novela o rostlinolékařské péči.",
-    ),
-    (
-        ["orgánů poslanecké", "orgánů ps"],
-        "Přesadili lidi ve výborech. Personálka ve velkém.",
-        "Změny ve složení sněmovních orgánů, kdo sedí v kterém výboru.",
-    ),
-    (
-        ["dozimetr"],
-        "Dosadili lidi do komise Dozimetr.",
-        "Personální volba, kdo bude ve vyšetřovací komisi kolem kauzy Dozimetr.",
-    ),
-]
-
-
 def normalize_day(day: str | date, *, default_year: int | None = None) -> str:
     if isinstance(day, date):
         return day.strftime("%d.%m.%Y")
@@ -232,15 +139,10 @@ def den_v_tydnu(datum_unl: str) -> str:
 
 
 def tema_z_nazvu(nazev: str) -> TemaSvejka:
-    lower = nazev.lower()
-    for klicova, svejk, vysvetleni in TEMA_PRAVIDLA:
-        if any(kw in lower for kw in klicova):
-            return TemaSvejka(svejk=svejk, vysvetleni=vysvetleni)
-    short = nazev[:60] + ("…" if len(nazev) > 60 else "") if nazev else "organizační hlasování"
-    return TemaSvejka(
-        svejk=f"Hlasovali o: {short}",
-        vysvetleni="Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu.",
-    )
+    from svejk.obcansky import tema_z_nazvu as _tema_z_nazvu
+
+    svejk, vysvetleni = _tema_z_nazvu(nazev)
+    return TemaSvejka(svejk=svejk, vysvetleni=vysvetleni)
 
 
 def _parse_time(cas: str) -> datetime:
@@ -612,43 +514,3 @@ class SvejkTimelineGenerator:
         dny = [build_den(votes, d) for d in sorted({v.datum for v in votes})]
         shrnuti = " ".join(d.shrnuti for d in dny if d.shrnuti)
         return SchuzeCasovaOsa(cislo=cislo_schuze, obdobi=obdobi, dny=dny, shrnuti=shrnuti)
-
-    def for_den(
-        self,
-        obdobi: int,
-        cislo_schuze: int,
-        den: str | date,
-    ) -> DenSchuze:
-        votes = self.analyzer.load_votes(obdobi, cislo_schuze)
-        return build_den(votes, normalize_day(den))
-
-    def for_schuze_dny(
-        self,
-        obdobi: int,
-        cislo_schuze: int,
-        den: str | date | None = None,
-    ) -> list[DenSchuze]:
-        votes = self.analyzer.load_votes(obdobi, cislo_schuze)
-        days = sorted({v.datum for v in votes})
-        if den is not None:
-            target = normalize_day(den)
-            days = [d for d in days if d == target]
-        return [build_den(votes, d) for d in days]
-
-    def svejk_text(self, obdobi: int, cislo_schuze: int, *, noviny: bool = True) -> str:
-        osa = self.for_schuze(obdobi, cislo_schuze)
-        if noviny:
-            from svejk.noviny import render_schuze_noviny
-            return render_schuze_noviny(osa)
-        return render_cela_schuze(osa)
-
-    def noviny_text(self, obdobi: int, cislo_schuze: int) -> str:
-        from svejk.noviny import render_schuze_noviny
-        return render_schuze_noviny(self.for_schuze(obdobi, cislo_schuze))
-
-    def timeline_text(self, obdobi: int, cislo_schuze: int) -> str:
-        return render_cela_schuze(self.for_schuze(obdobi, cislo_schuze))
-
-    def fakticke_shrnuti(self, obdobi: int, cislo_schuze: int) -> str:
-        osa = self.for_schuze(obdobi, cislo_schuze)
-        return render_fakticke_dny(osa.dny, self.analyzer, obdobi, cislo_schuze)

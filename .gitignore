@@ -6,6 +6,7 @@ __pycache__/
 .cursor/
 svejk.db
 site/
+psp/poslanci.zip
 grammer_check/
 # Velké PSP exporty — pro build stačí hl2025s.unl + zmatecne.unl
 hl-2025ps/omluvy.unl

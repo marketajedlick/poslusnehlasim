@@ -1,24 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+"""CLI pro Poslušně hlásím: sync, build, export-pages, review."""
+
 import sys
-
-if sys.version_info[0] < 3:
-    sys.stderr.write(
-        "Tento skript vyzaduje Python 3 (tvuj 'python' je Python 2).\n\n"
-        "Spust:\n"
-        "  ./run-svejk.sh db init\n"
-        "Nebo:\n"
-        "  source .venv/bin/activate && python svejk.py db init\n"
-    )
-    sys.exit(1)
-
-"""CLI pro Svejk do snemovny, ingest, generovani, web."""
 
 if sys.version_info < (3, 10):
     raise SystemExit(
-        "Potrebujes Python 3.10+, mas {}.\n"
-        "Spust:  ./run-svejk.sh db init\n"
-        "Nebo:   source .venv/bin/activate && python svejk.py db init".format(
+        "Potřebuješ Python 3.10+, máš {}.\n"
+        "Spusť:  ./run-svejk.sh export-pages --obdobi 2025 --out site".format(
             sys.version.split()[0]
         )
     )
@@ -26,86 +15,6 @@ if sys.version_info < (3, 10):
 import argparse
 import json
 from pathlib import Path
-
-from svejk.config import HLIDAC_TOKEN
-
-
-def _require_db():
-    """SQLite/ORM vrstva, volitelná; build a export-pages ji nepotřebují."""
-    try:
-        from svejk.db import Bod, Schuze, StavZapisu, Zapisek, get_session, init_db
-    except ModuleNotFoundError as e:
-        if e.name == "svejk.db":
-            raise SystemExit(
-                "Příkaz vyžaduje modul svejk.db (lokální admin DB), který v tomto repu není.\n"
-                "Pro GitHub Pages použij: build, export-pages, timeline."
-            ) from e
-        raise
-    return Bod, Schuze, StavZapisu, Zapisek, get_session, init_db
-
-
-def _require_ingest():
-    try:
-        from svejk.ingest import ingest_schuze
-    except ModuleNotFoundError as e:
-        if e.name in ("svejk.ingest", "svejk.db"):
-            raise SystemExit(
-                "Příkaz ingest není v tomto repu k dispozici (chybí svejk.ingest / svejk.db)."
-            ) from e
-        raise
-    return ingest_schuze
-
-
-def _require_generate():
-    try:
-        from svejk.generate import generate_for_bod, generate_pending
-    except ModuleNotFoundError as e:
-        if e.name in ("svejk.generate", "svejk.db"):
-            raise SystemExit(
-                "Příkaz generate není v tomto repu k dispozici (chybí svejk.generate / svejk.db)."
-            ) from e
-        raise
-    return generate_for_bod, generate_pending
-
-
-def cmd_db_init(_: argparse.Namespace) -> int:
-    *_, init_db = _require_db()
-    init_db()
-    print("Databáze inicializována.")
-    return 0
-
-
-def cmd_ingest(args: argparse.Namespace) -> int:
-    ingest_schuze = _require_ingest()
-    try:
-        result = ingest_schuze(
-            args.obdobi,
-            args.schuze,
-            tema=args.tema,
-            max_steno=args.max_steno,
-            verbose=not args.quiet,
-        )
-    except (ValueError, OSError) as e:
-        print(f"Chyba: {e}", file=sys.stderr)
-        return 1
-    print(json.dumps(result, ensure_ascii=False, indent=2))
-    return 0
-
-
-def cmd_generate(args: argparse.Namespace) -> int:
-    generate_for_bod, generate_pending = _require_generate()
-    try:
-        if args.bod_id:
-            result = generate_for_bod(
-                args.bod_id, dry_run=args.dry_run, use_claude=args.claude,
-            )
-        else:
-            result = generate_pending(dry_run=args.dry_run, use_claude=args.claude)
-    except ValueError as e:
-        print(f"Chyba: {e}", file=sys.stderr)
-        return 1
-    print(json.dumps(result, ensure_ascii=False, indent=2))
-    return 0
 
 
 def _timeline_z_cache(args: argparse.Namespace, fmt: str) -> str | None:
@@ -282,12 +191,8 @@ def cmd_timeline(args: argparse.Namespace) -> int:
     from datetime import datetime
 
     from svejk.config import PSP_DATA_DIR, PSP_ORGAN_ID
-    from svejk.noviny import (
-        render_den_noviny,
-        render_den_noviny_dlouhe,
-        render_schuze_noviny,
-        render_schuze_noviny_dlouhe,
-    )
+    from svejk.listy import render_den_listy, render_schuze_listy
+    from svejk.noviny import render_den_noviny, render_schuze_noviny
     from svejk.timeline import SvejkTimelineGenerator, normalize_day, render_cela_schuze, render_den
 
     fmt = getattr(args, "format", "noviny")
@@ -326,9 +231,9 @@ def cmd_timeline(args: argparse.Namespace) -> int:
         text = render_den_noviny(sch.dny[0]) if len(sch.dny) == 1 else render_schuze_noviny(sch)
     elif fmt == "noviny-dlouhe":
         text = (
-            render_den_noviny_dlouhe(sch.dny[0])
+            render_den_listy(sch.dny[0])
             if len(sch.dny) == 1
-            else render_schuze_noviny_dlouhe(sch)
+            else render_schuze_listy(sch)
         )
     elif len(sch.dny) == 1:
         text = render_den(sch.dny[0])
@@ -339,72 +244,6 @@ def cmd_timeline(args: argparse.Namespace) -> int:
         args.out.parent.mkdir(parents=True, exist_ok=True)
         args.out.write_text(text, encoding="utf-8")
         print(f"Ulozeno: {args.out}", file=sys.stderr)
-    return 0
-
-
-def cmd_seed(args: argparse.Namespace) -> int:
-    """Demo data bez API, pro lokální test webu."""
-    Bod, Schuze, StavZapisu, Zapisek, get_session, init_db = _require_db()
-    init_db()
-    with get_session() as session:
-        schuze = Schuze(cislo_schuze=args.schuze, obdobi=args.obdobi, datum_od="2026-05-26", datum_do="2026-05-28")
-        session.add(schuze)
-        session.flush()
-
-        bod = Bod(
-            schuze_id=schuze.id,
-            nazev="Pojistné na sociální zabezpečení",
-            zdroj_url="https://www.psp.cz",
-            surovy_text=(
-                "--- Ing. Jan Novák (26.05.2026, poř. 142) ---\n"
-                "Navrhujeme snížení minimálního pojistného pro OSVČ z 5720 na 5005 korun měsíčně, "
-                "platnost od ledna 2026 se zpětným účinkem.\n\n"
-                "--- PhDr. Marie Svobodová (26.05.2026, poř. 145) ---\n"
-                "Opozice navrhuje zamítnutí, argumentuje nestabilitou systému.\n\n"
-                "--- Mgr. Petr Dvořák (26.05.2026, poř. 148) ---\n"
-                "Vládní koalice podporuje návrh, poukazuje na úsporu cca 715 Kč měsíčně."
-            ),
-        )
-        bod.set_meta({"pocet_projevu": 3, "pocet_slov": 120, "steno_ids": [], "cisla_hlasovani": []})
-        session.add(bod)
-        session.flush()
-
-        if args.schvalit:
-            z = Zapisek(
-                bod_id=bod.id,
-                svejk_text=(
-                    "Když jsem sloužil u 11. pěšího pluku, taky se občas mluvilo "
-                    "o penězích, jenže tam šlo o cigarety, ne o pojistné. Tady poslanci hlasovali "
-                    "o tom, že živnostník ušetří sedm set korun měsíčně. Zaměstnanec u piva? "
-                    "To se vás netýká, vy máte mzdu a oni mají faktury."
-                ),
-                fakticke_shrnuti=(
-                    "Poslanecká sněmovna schválila snížení minimálního pojistného na sociální "
-                    "zabezpečení pro OSVČ z 5 720 Kč na 5 005 Kč měsíčně. Platí od ledna 2026 "
-                    "se zpětným účinkem. Hlasování dopadlo 118:0."
-                ),
-                stav=StavZapisu.SCHVALENO.value,
-            )
-            z.set_statistiky({
-                "pocet_recniku": 3,
-                "pocet_projevu": 3,
-                "pocet_slov": 120,
-                "hlasovani": {
-                    "cislo": 99,
-                    "vysledek": "PŘIJATO",
-                    "pro": 118,
-                    "proti": 0,
-                    "zdrzel": 0,
-                    "nehlasoval": 0,
-                    "pritomno": 118,
-                },
-            })
-            from datetime import datetime, timezone
-            z.schvaleno_kdy = datetime.now(timezone.utc)
-            session.add(z)
-
-        session.commit()
-        print(f"Seed hotový: schuze_id={schuze.id}, bod_id={bod.id}")
     return 0
 
 
@@ -567,36 +406,9 @@ def _serve_export_site(args: argparse.Namespace) -> dict | None:
         return None
 
 
-def _serve_reload_watch(args: argparse.Namespace) -> None:
-    try:
-        from watchfiles import watch
-    except ImportError:
-        print(
-            "Varování: --reload vyžaduje watchfiles (uvicorn[standard]); "
-            "automatický re-export je vypnutý.",
-            file=sys.stderr,
-        )
-        return
-
-    root = Path.cwd()
-    watch_paths = [p for p in (root / "svejk", root / "processed") if p.exists()]
-    if not watch_paths:
-        return
-
-    print("Sleduji změny ve svejk/ a processed/ pro re-export…", file=sys.stderr)
-    for _changes in watch(*watch_paths, recursive=True):
-        result = _serve_export_site(args)
-        if result is not None:
-            print(
-                f"Re-export: {result['out_dir']} ({result['pages']} vydání)",
-                file=sys.stderr,
-            )
-
-
 def cmd_serve(args: argparse.Namespace) -> int:
     import functools
     import http.server
-    import threading
 
     site_dir = args.out.resolve()
     if not args.skip_export:
@@ -609,17 +421,10 @@ def cmd_serve(args: argparse.Namespace) -> int:
         )
     elif not site_dir.is_dir():
         print(
-            f"Chyba: {site_dir} neexistuje — spusť export-pages nebo serve bez --skip-export",
+            f"Chyba: {site_dir} neexistuje — spusť export-pages nebo serve s exportem",
             file=sys.stderr,
         )
         return 1
-
-    if args.reload:
-        threading.Thread(
-            target=_serve_reload_watch,
-            args=(args,),
-            daemon=True,
-        ).start()
 
     handler = functools.partial(
         http.server.SimpleHTTPRequestHandler,
@@ -632,26 +437,6 @@ def cmd_serve(args: argparse.Namespace) -> int:
         except KeyboardInterrupt:
             print("\nUkončeno.", file=sys.stderr)
     return 0
-
-
-def cmd_validate(args: argparse.Namespace) -> int:
-    from svejk.validate import format_validate_report, validate_obdobi
-
-    if args.schuze:
-        args.od = args.do = args.schuze
-    report = validate_obdobi(
-        args.obdobi,
-        args.od,
-        args.do,
-        max_slov_odstavec=args.max_slov,
-    )
-    text = format_validate_report(report)
-    print(text)
-    if args.out:
-        args.out.parent.mkdir(parents=True, exist_ok=True)
-        args.out.write_text(text, encoding="utf-8")
-        print(f"Ulozeno: {args.out}", file=sys.stderr)
-    return 1 if report.chyby else 0
 
 
 def cmd_review(args: argparse.Namespace) -> int:
@@ -710,59 +495,9 @@ def cmd_glossary_audit(args: argparse.Namespace) -> int:
     return 1 if gaps else 0
 
 
-def cmd_audit(args: argparse.Namespace) -> int:
-    from svejk.audit import audit_obdobi, format_audit_report
-
-    temata = audit_obdobi(args.obdobi, args.od, args.do)
-    report = format_audit_report(temata)
-    print(report)
-    if args.out:
-        args.out.parent.mkdir(parents=True, exist_ok=True)
-        args.out.write_text(report, encoding="utf-8")
-        print(f"Ulozeno: {args.out}", file=sys.stderr)
-    chybi = sum(1 for t in temata if t.proslo_alespon_jednou and not t.ma_glosu)
-    return 1 if chybi else 0
-
-
-def cmd_status(_: argparse.Namespace) -> int:
-    from sqlalchemy import func, select
-
-    Bod, Schuze, _, Zapisek, get_session, init_db = _require_db()
-    init_db()
-    with get_session() as session:
-        schuze_count = session.scalar(select(func.count()).select_from(Schuze)) or 0
-        bod_count = session.scalar(select(func.count()).select_from(Bod)) or 0
-        zapisy = list(session.scalars(select(Zapisek)).all())
-    print(f"Schůze: {schuze_count}, body: {bod_count}, zápisy: {len(zapisy)}")
-    for z in zapisy:
-        print(f"  #{z.id} bod={z.bod_id} stav={z.stav}")
-    if not HLIDAC_TOKEN:
-        print("(HLIDAC_TOKEN není nastaven, ingest nebude fungovat)")
-    return 0
-
-
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Švejk do sněmovny, MVP")
+    parser = argparse.ArgumentParser(description="Poslušně hlásím — build a export")
     sub = parser.add_subparsers(dest="cmd", required=True)
-
-    p_init = sub.add_parser("db", help="Databáze")
-    p_init_sub = p_init.add_subparsers(dest="db_cmd", required=True)
-    p_init_sub.add_parser("init", help="Vytvoř tabulky").set_defaults(func=cmd_db_init)
-
-    p_ingest = sub.add_parser("ingest", help="Stahni celou schuzi z Hlidace")
-    p_ingest.add_argument("--schuze", type=int, required=True)
-    p_ingest.add_argument("--obdobi", type=int, default=2025)
-    p_ingest.add_argument("--tema", help="Volitelne: jen jedno tema misto cele schuze")
-    p_ingest.add_argument("--max-steno", type=int, default=0,
-                          help="Limit zaznamu (0 = stahni celou schuzi, ~3-5 min)")
-    p_ingest.add_argument("-q", "--quiet", action="store_true", help="Bez prubezneho vypisu")
-    p_ingest.set_defaults(func=cmd_ingest)
-
-    p_gen = sub.add_parser("generate", help="Vygeneruj švejkovský zápis")
-    p_gen.add_argument("--bod-id", type=int, help="Konkrétní bod")
-    p_gen.add_argument("--dry-run", action="store_true", help="Bez ulozeni / mock bez API klice")
-    p_gen.add_argument("--claude", action="store_true", help="Pouzij Claude API misto pravidlove casove osy")
-    p_gen.set_defaults(func=cmd_generate)
 
     p_timeline = sub.add_parser("timeline", help="Shrnuti schuze ve stylu Svejka (bez API)")
     p_timeline.add_argument("--schuze", type=int, required=True)
@@ -866,12 +601,6 @@ def main() -> int:
     )
     p_cc.add_argument("-q", "--quiet", action="store_true")
     p_cc.set_defaults(func=cmd_compose_changed)
-
-    p_seed = sub.add_parser("seed", help="Demo data pro lokální test")
-    p_seed.add_argument("--schuze", type=int, default=20)
-    p_seed.add_argument("--obdobi", type=int, default=2025)
-    p_seed.add_argument("--schvalit", action="store_true", help="Rovnou vlož schválený zápis")
-    p_seed.set_defaults(func=cmd_seed)
 
     p_pub_check = sub.add_parser(
         "publish-check",
@@ -1023,14 +752,7 @@ def main() -> int:
     )
     p_serve.add_argument("--host", default="127.0.0.1")
     p_serve.add_argument("--port", type=int, default=8000)
-    p_serve.add_argument(
-        "--reload",
-        action="store_true",
-        help="Při změně ve svejk/ nebo processed/ znovu spustit export-pages",
-    )
     p_serve.set_defaults(func=cmd_serve)
-
-    sub.add_parser("status", help="Stav DB").set_defaults(func=cmd_status)
 
     p_review = sub.add_parser(
         "review",
@@ -1054,13 +776,6 @@ def main() -> int:
     p_review.add_argument("-o", "--out", type=Path, help="Uložit report")
     p_review.set_defaults(func=cmd_review)
 
-    p_audit = sub.add_parser("audit", help="Inventar temat bez obcanskych glos")
-    p_audit.add_argument("--obdobi", type=int, default=2025)
-    p_audit.add_argument("--od", type=int, default=1, help="Cislo schuze od")
-    p_audit.add_argument("--do", type=int, default=21, help="Cislo schuze do")
-    p_audit.add_argument("-o", "--out", type=Path, help="Ulozit report do souboru")
-    p_audit.set_defaults(func=cmd_audit)
-
     p_gloss = sub.add_parser(
         "glossary-audit",
         help="Pojmy ve facts/steno bez tooltipu v glosáři",
@@ -1076,20 +791,6 @@ def main() -> int:
     p_gloss.add_argument("--limit", type=int, default=40, help="Max. počet pojmů v reportu")
     p_gloss.add_argument("-o", "--out", type=Path, help="Uložit report")
     p_gloss.set_defaults(func=cmd_glossary_audit)
-
-    p_val = sub.add_parser("validate", help="Kontrola glos, casu a fakt z UNL")
-    p_val.add_argument("--obdobi", type=int, default=2025)
-    p_val.add_argument("--od", type=int, default=1)
-    p_val.add_argument("--do", type=int, default=21)
-    p_val.add_argument(
-        "--max-slov",
-        type=int,
-        default=80,
-        help="Varovani pokud plny odstavec v novinach ma vice slov",
-    )
-    p_val.add_argument("--schuze", type=int, help="Jen jedna schuze misto rozsahu")
-    p_val.add_argument("-o", "--out", type=Path, help="Ulozit report")
-    p_val.set_defaults(func=cmd_validate)
 
     args = parser.parse_args()
     return args.func(args)

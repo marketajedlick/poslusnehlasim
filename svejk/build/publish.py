@@ -5,7 +5,8 @@ from __future__ import annotations
 import json
 import os
 import urllib.error
-import urllib.request
+
+from psp.http import get_bytes
 from functools import lru_cache
 from pathlib import Path
 from typing import TYPE_CHECKING, Literal
@@ -179,10 +180,12 @@ def fetch_production_snapshot(
     if dest.is_file() and not overwrite:
         return dest
     url = f"{site_url.rstrip('/')}/noviny/{obdobi}/{schuze}/{datum_unl}.html"
-    req = urllib.request.Request(url, headers={"User-Agent": "poslusnehlasim-publish-snapshot/1.0"})
     try:
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            html = resp.read().decode("utf-8", errors="replace")
+        html = get_bytes(
+            url,
+            timeout=60,
+            headers={"User-Agent": "poslusnehlasim-publish-snapshot/1.0"},
+        ).decode("utf-8", errors="replace")
     except urllib.error.HTTPError as e:
         raise FileNotFoundError(f"Produkce nevrátila {url}: HTTP {e.code}") from e
     except urllib.error.URLError as e:
