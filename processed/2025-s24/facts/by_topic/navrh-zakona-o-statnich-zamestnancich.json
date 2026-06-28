@@ -3,41 +3,68 @@
   "nazev": "Návrh zákona o státních zaměstnancích",
   "datum": "26.06.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "státních zaměstnancích",
+  "predmet_lidsky": "služební zákon ve třetím čtení a dvaceti devíti hlasováních za necelých čtyřicet minut",
   "koho": [
-    "Občana se to netýká, ledaže pracujete na úřadě nebo tam čekáte ve frontě."
+    "Koho se to týká? Každého, kdo pracuje na úřadě, nebo čeká ve frontě na rozhodnutí, které má vydat stát."
   ],
   "fakty": [
     {
-      "text": "zákon o státních zaměstnancích",
+      "text": "Richterová řekla, že zákon umožní snazší vyhazování nepohodlných odborníků.",
       "source": "steno",
+      "steno_id": "2025_24_00833",
+      "citace": "Navrhli jste zákon, který vám umožní snazší vyhazování nepohodlných odborníků.",
+      "link_phrase": "snazší vyhazování nepohodlných odborníků"
+    },
+    {
+      "text": "Stojanová hovořila o destrukci služebního zákona.",
+      "source": "steno",
+      "steno_id": "2025_24_00802",
+      "citace": "Je to úplná destrukce, úplné zničení toho, co jsme tu po těch nesnadných a odborných debatách před několika lety komplikovaně a kompromisně přijímali.",
+      "link_phrase": "úplné destrukci"
+    },
+    {
+      "text": "Volpe varoval před nebezpečným zásahem do demokratického uspořádání.",
+      "source": "steno",
+      "steno_id": "2025_24_00806",
+      "citace": "Pod tímto nánosem technických termínů se totiž skrývá hluboký, koncepční a nesmírně nebezpečný zásah do samotné podstaty demokratického uspořádání České republiky.",
+      "link_phrase": "nebezpečným zásahem do samotné podstaty demokratického uspořádání"
+    },
+    {
+      "text": "Rakušan řekl, že předkladatelům dal pět konkrétních dotazů bez odpovědi.",
+      "source": "steno",
+      "steno_id": "2025_24_00888",
+      "citace": "v rámci rozpravy jsem ke služebnímu zákonu tady na tom místě dal předkladatelům 5 konkrétních dotazů.",
+      "link_phrase": "pět konkrétních dotazů"
+    },
+    {
+      "text": "Závěrečné hlasování číslo 117 skončilo 84 proti 56.",
+      "source": "steno",
+      "steno_id": "2025_24_00884",
+      "citace": "V hlasování číslo 117 přihlášeno 143 poslanců, pro 84, proti 56. Konstatuji, že s návrhem zákona byl vysloven souhlas.",
+      "link_phrase": "osmdesát čtyři proti padesát šest"
+    },
+    {
+      "text": "Po schválení zazněl potlesk poslanců koalice.",
+      "source": "steno",
+      "steno_id": "2025_24_00884",
       "kind": "scene",
-      "steno_id": "2025_24_00073",
-      "citace": "(zákon o státních zaměstnancích)"
+      "citace": "(Potlesk poslanců koalice.)",
+      "link_phrase": "Potlesk poslanců koalice"
     },
     {
-      "text": "111.Návrh poslanců Radka Vondráčka, Renaty Vesecké, Libora Vondráčka a Zuzany Ožanové na vydání zákona o právních poměrech státních zaměstnanců v ministerstvech a jiných správních úřadech (zákon o státních zaměstnancích)/sněmovní tisk 76/ – třetí čtení Projednávání tohoto bodu jsme přerušili v rozpravě ve středu 27.",
+      "text": "Destrukce pro mean.",
       "source": "steno",
-      "steno_id": "2025_24_00073",
-      "citace": "111.Návrh poslanců Radka Vondráčka, Renaty Vesecké, Libora Vondráčka a Zuzany Ožanové na vydání zákona o právních poměrech státních zaměstnanců v ministerstvech a jiných správních úřadech (zákon o stá"
-    },
-    {
-      "text": "A připomínám, že návrh na zamítnutí a pozměňovací návrhy jsou uvedeny ve sněmovním tisku 76/4, který byl doručen dne 21.",
-      "source": "steno",
-      "steno_id": "2025_24_00073",
-      "citace": "A připomínám, že návrh na zamítnutí a pozměňovací návrhy jsou uvedeny ve sněmovním tisku 76/4, který byl doručen dne 21."
-    },
-    {
-      "text": "Poslankyně Šebelová si stěžuje, že v sále není žádný ministr.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_24_00074",
-      "citace": "(Poslankyně Šebelová si stěžuje, že v sále není žádný ministr.)"
+      "steno_id": "2025_24_00802",
+      "citace": "úplná destrukce",
+      "link_phrase": "Služební zákon"
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Prošlo to",
+  "nadpis": "Vyhazování odborníků",
+  "lead": "Po obědě konečně přišlo závěrečné hlasování o služebním zákonu, stejném návrhu, o kterém se Sněmovna hádala už ve středu. Richterová (Piráti) řekla, že jde o snazší vyhazování nepohodlných odborníků. Stojanová (Piráti) mluvila o úplné destrukci toho, co Sněmovna přijala před lety. Volpe (Motoristé) varoval před nebezpečným zásahem do samotné podstaty demokratického uspořádání.\n\nMezi tím proběhlo devětadvacet hlasování za necelých čtyřicet minut, většinou o jednotlivých paragrafech. Rakušan (STAN) před finále připomněl, že předkladatelům dal 5 konkrétních dotazů a nedostal odpověď. Závěrečné hlasování skončilo 84 proti 56. Zazněl potlesk poslanců koalice.",
+  "pointa": "Služební zákon prošel těsně. Opozice mluvila o vyhazování expertů, koalice o personální flexibilitě.",
+  "mean": "Služební zákon mění pravidla pro lidi ve státní správě, kdo je zaměstná, kdo odchází a jak se řeší personální změny. Koalice tvrdí, že zrychlí a zjednoduší chod úřadů. Opozice varuje, že politici získají větší moc vyhazovat odborníky, kteří jim nesedí. V závěrečném hlasování už šlo o finální podobu zákona, ten pak míří k podpisu prezidenta.",
   "pocet_hlasovani": 29,
   "proslo": true,
   "signaly": {
@@ -45,7 +72,7 @@
     "pritomno_min": 136,
     "jednomyslne": false,
     "spor": true,
-    "prazdny_sal": true
+    "prazdny_sal": false
   },
   "steno_slov": 55147
 }

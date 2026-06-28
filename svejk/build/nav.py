@@ -115,6 +115,12 @@ def archiv_pages_href(base_path: str = "") -> str:
     return f"{base}{path}" if base else path
 
 
+def o_webu_pages_href(base_path: str = "") -> str:
+    base = base_path.rstrip("/")
+    path = "/o-webu/"
+    return f"{base}{path}" if base else path
+
+
 def slovnicek_pages_href(base_path: str = "") -> str:
     base = base_path.rstrip("/")
     path = "/slovnicek.html"

@@ -1,0 +1,55 @@
+{
+  "slug": "debata-porad-vlny-veder-26-cerven",
+  "nazev": "Debata o pořadu schůze",
+  "datum": "26.06.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "ráno boj o pořad schůze a návrhy na body o vlnách veder",
+  "koho": [
+    "Koho se to týká? Každého, kdo v pátek ráno čekal, jestli se vůbec začne projednávat služební zákon."
+  ],
+  "fakty": [
+    {
+      "text": "Šrámková navrhla bod Připravenost České republiky na vlny veder a ochrana zdraví obyvatel.",
+      "source": "steno",
+      "steno_id": "2025_24_00781",
+      "citace": "Navrhuji bod s názvem Připravenost České republiky na vlny veder a ochrana zdraví obyvatel.",
+      "link_phrase": "Připravenost České republiky na vlny veder"
+    },
+    {
+      "text": "Šrámková řekla, že horka zabíjí a nejsou to fráze.",
+      "source": "steno",
+      "steno_id": "2025_24_00781",
+      "citace": "Horka zabíjí. Není to fráze, je to fakt.",
+      "link_phrase": "Horka zabíjí"
+    },
+    {
+      "text": "Ferčíková řekla, že vlna veder je politické téma.",
+      "source": "steno",
+      "steno_id": "2025_24_00753",
+      "citace": "Tato vlna bezprecedentních veder, pane kolego a paní kolegyně a páni kolegové, je politické téma.",
+      "link_phrase": "vlna bezprecedentních veder"
+    },
+    {
+      "text": "Ferčíková žádala uklidnit Motoristy, kterým diskuse přijde směšná.",
+      "source": "steno",
+      "steno_id": "2025_24_00753",
+      "citace": "Já poprosím paní předsedající, aby uklidnila tady skupinku Motoristů, kterým tahleta diskuse přijde směšná.",
+      "link_phrase": "skupinku Motoristů"
+    },
+    {
+      "text": "Pořad pro mean.",
+      "source": "steno",
+      "steno_id": "2025_24_00781",
+      "citace": "Pořad schůze",
+      "link_phrase": "Pořad schůze"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Veder v pořadu",
+  "lead": "Pátek, závěr schůze 24. Ráno opozice znovu bojovala o pořad: místo služebního zákona, který koalice chtěla projednat jako první, chtěla zařadit bod o vlnách veder. Šrámková (Piráti) chtěla zařadit bod Připravenost České republiky na vlny veder a řekla, že horka zabíjí. Ferčíková (KSČM) dodala, že vlna bezprecedentních veder je politické téma, a poprosila předsedající, aby uklidnila skupinku Motoristů, kterým tahleta diskuse přijde směšná.\n\nNávrhy na pořad stejně padaly. Jen do oběda poslanci jedenáctkrát hlasovali o změnách pořadu a pokaždé to skončilo zamítnutím.",
+  "pointa": "Nejdřív horko v pořadu, pak až služební zákon. Procedura si vzala hodinu sama.",
+  "mean": "Pořad schůze určuje, v jakém pořadí se body projednávají. Koalice měla v programu služební zákon, opozice chtěla místo toho řešit vedro a zdravotní rizika. Když návrh na pořad neprojde, debata skončí hlasováním, ne obsahem. Služební zákon se tak odložil až na odpoledne.",
+  "pocet_hlasovani": 11,
+  "proslo": false
+}

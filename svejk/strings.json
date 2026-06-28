@@ -11,6 +11,7 @@
     "aria_legal": "Právní informace a podpora",
     "terms": "Podmínky používání",
     "privacy": "Ochrana údajů",
+    "about": "O webu",
     "support": "Podpora",
     "closings": [
       "Poslušně hlásím, že dnešní vydání končí. Poslanci šli domů a my taky.",
@@ -156,6 +157,12 @@
   "support_page": {
     "title": "Zákaznická podpora · Poslušně hlásím",
     "meta": "Kontakt a pomoc s odběrem novinek, platbami a webem Poslušně hlásím."
+  },
+  "about_page": {
+    "title": "O webu · Poslušně hlásím",
+    "meta": "Co je Poslušně hlásím, odkud bereme data ze Sněmovny, proč je to satira založená na faktech a kdo projekt dělá.",
+    "heading": "O webu",
+    "gloss": "Poslušně hlásím, že sněmovna mluví poslanecky. My to překládáme do češtiny a občas přidáme ironii. Fakta ale necháváme na místě."
   },
   "pivo_tiers": {
     "velke_name": "Velké pivo",

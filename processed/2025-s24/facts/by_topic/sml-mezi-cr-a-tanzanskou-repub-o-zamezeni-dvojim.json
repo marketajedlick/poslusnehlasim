@@ -32,7 +32,7 @@
       "citace": "Na jednání vaší schůze se nyní předkládá dokument, který souvisí s mezinárodním zdaňováním, takže jedná se o historicky první smlouvu o zamezení dvojímu zdanění s Tanzanií, která byla podepsána dne 14"
     }
   ],
-  "publikovat": true,
+  "publikovat": false,
   "priorita": 3,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,

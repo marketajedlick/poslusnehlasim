@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+{% include "head-noviny.html" %}
+<title>{{ t.about_page.title }}</title>
+<meta name="description" content="{{ t.about_page.meta }}" />
+<link rel="canonical" href="{{ canonical_url }}" />
+{% include "og-meta.html" %}
+<link rel="stylesheet" href="{{ fonts_css_href }}" />
+<link rel="stylesheet" href="{{ css_href }}" />
+</head>
+<body class="archiv-page">
+<div class="archiv-wrap soukromi-wrap">
+  <header class="archiv-head">
+    <h1 class="archiv-title">{{ t.about_page.heading }}</h1>
+    <p class="archiv-gloss">{{ t.about_page.gloss }}</p>
+    {% set site_nav_modifier = "site-nav--section" %}
+    {% include "site-nav.html" %}
+  </header>
+
+  <div class="soukromi-body soukromi-body--prose">
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Co je Poslušně hlásím</h2>
+      <p>Poslušně hlásím je deník z jednání Poslanecké sněmovny. Po každém jednacím dni shrneme, co se ve sněmovně řešilo, jak dopadla hlasování a co z toho plyne pro běžného člověka. Text je psaný srozumitelně, s lehkou satirou ve stylu Haška, ale vždy na reálných datech ze sněmovny.</p>
+    </section>
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Satira, ne vymyšlené zprávy</h2>
+      <p>Humor míří na rétoriku, absurditu situací a poslaneckou řeč. Citace jsou doslovné ze stenoprotokolů. Čísla hlasování odpovídají oficiálním záznamům. Když píšeme, že něco prošlo poměrem osmdesát čtyři proti padesát šest, je to skutečný výsledek hlasování, ne odhad redakce.</p>
+      <p>Každé vydání má u článků odkaz na korekturu. Když najdete faktickou chybu vůči stenoprotokolu, napište nám. Satira zůstává, fakta opravíme.</p>
+    </section>
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Odkud bereme data</h2>
+      <p>Stenoprotokoly a výsledky hlasování stahujeme z veřejných zdrojů Poslanecké sněmovny a doplňujeme je o strukturovaná data z projektu <a href="https://www.hlidacstatu.cz" rel="noopener">Hlídač státu</a>. Každé vydání odpovídá konkrétnímu jednacímu dni konkrétní schůze.</p>
+      <p>U kontroverzních témat uvádíme odkazy na stenozáznamy a tabulky hlasování, aby si každý mohl ověřit, co ve sněmovně zaznělo.</p>
+    </section>
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Kdo to dělá</h2>
+      <p>Projekt provozuje malý tým nadšenců, kteří chtějí, aby se dění ve Sněmovně dalo sledovat bez politického komentáře a bez nutnosti rozumět jednacímu řádu. Nejsme politická strana, nejsme placení žádnou stranou ani médiem.</p>
+      <p>Deník je zdarma. Provoz hradíme z vlastní kapsy a z dobrovolných příspěvků čtenářů (<a href="{{ pivo_href }}">Kup Švejkovi pivo</a>).</p>
+    </section>
+    <section class="soukromi-section">
+      <h2 class="soukromi-heading">Kontakt</h2>
+      <p>Dotazy, korektury nebo zpětnou vazbu pošlete na {% if contact_email %}<a href="mailto:{{ contact_email }}">{{ contact_email }}</a>{% else %}<a href="mailto:svejk@poslusnehlasim.cz">svejk@poslusnehlasim.cz</a>{% endif %}.</p>
+    </section>
+  </div>
+</div>
+{% include "site-footer.html" %}
+{% include "cookie-consent.html" %}
+</body>
+</html>

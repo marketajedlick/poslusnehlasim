@@ -3,38 +3,61 @@
   "nazev": "Novela z. o spotřebitelském úvěru",
   "datum": "25.06.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "spotřebitelském úvěru",
-  "koho": [],
+  "predmet_lidsky": "ranní expresní projednání smluv a novely o spotřebitelském úvěru",
+  "koho": [
+    "Koho se to týká? Každého, kdo někdy řešil půjčku, splátky nebo online smlouvu s bankou."
+  ],
   "fakty": [
     {
-      "text": "257/2016 Sb., o spotřebitelském úvěru, ve znění pozdějších předpisů, a další související zákony/sněmovní tisk 145/ – druhé čtení A z pověření vlády předložený návrh zákona uvede místopředsedkyně vlády a ministryně financí Alena Schillerová a já ji prosím, aby se ujala slova.",
+      "text": "Dvořák přiznal, že takto rychlý průběh pořadu schůze nečekal.",
       "source": "steno",
-      "steno_id": "2025_24_00526",
-      "citace": "257/2016 Sb., o spotřebitelském úvěru, ve znění pozdějších předpisů, a další související zákony/sněmovní tisk 145/ – druhé čtení A z pověření vlády předložený návrh zákona uvede místopředsedkyně vlády"
+      "steno_id": "2025_24_00465",
+      "citace": "Přiznám se, že takto rychlý průběh pořadu schůze jsem nečekal, určitě to je zásluha předsedajícího, díky za to.",
+      "link_phrase": "takto rychlý průběh pořadu schůze"
     },
     {
-      "text": "14.Vládní návrh zákona, kterým se mění zákon č.",
+      "text": "Metnar se chtěl hlásit, ale neměl zapnutý mikrofon.",
       "source": "steno",
-      "steno_id": "2025_24_00526",
-      "citace": "14.Vládní návrh zákona, kterým se mění zákon č."
+      "steno_id": "2025_24_00498",
+      "citace": "(Ministr Metnar se snaží promluvit – není zapnutý mikrofon.) Pardon, nemůžete do toho, když vám nezapnu mikrofon.",
+      "link_phrase": "nebyl zapnutý mikrofon"
     },
     {
-      "text": "Obrací se na předsedajícího: To je fakt peklo dneska.",
+      "text": "Schillerová si uprostřed projevu postěžovala předsedajícímu na ruch v sále: To je fakt peklo dneska.",
       "source": "steno",
+      "steno_id": "2025_24_00527",
       "kind": "scene",
-      "steno_id": "2025_24_00527",
-      "citace": "(Obrací se na předsedajícího: To je fakt peklo dneska.)"
+      "citace": "(Obrací se na předsedajícího: To je fakt peklo dneska.)",
+      "link_phrase": "To je fakt peklo dneska"
     },
     {
-      "text": "Jedním z klíčových prvků (Obrací se na předsedajícího: To je fakt peklo dneska.).",
+      "text": "Schillerová představovala novelu o spotřebitelském úvěru ve druhém čtení.",
       "source": "steno",
       "steno_id": "2025_24_00527",
-      "citace": "Jedním z klíčových prvků (Obrací se na předsedajícího: To je fakt peklo dneska.)."
+      "citace": "předkládám vám k projednání ve druhém čtení novelu zákona o spotřebitelském úvěru",
+      "link_phrase": "novelou o spotřebitelském úvěru"
+    },
+    {
+      "text": "Schillerová směrnice pro mean.",
+      "source": "steno",
+      "steno_id": "2025_24_00527",
+      "citace": "evropskou směrnici o spotřebitelských úvěrech",
+      "link_phrase": "evropskou směrnici o půjčkách"
+    },
+    {
+      "text": "Metnar Mongolsko pro lead.",
+      "source": "steno",
+      "steno_id": "2025_24_00498",
+      "citace": "U smlouvy s Mongolskem",
+      "link_phrase": "s Mongolskem"
     }
   ],
   "publikovat": true,
-  "priorita": 3,
-  "nadpis": "Prošlo to",
+  "priorita": 2,
+  "nadpis": "To je fakt peklo dneska",
+  "lead": "Schillerová (ANO) si u novely o spotřebitelském úvěru postěžovala na podmínky v sále, kde byl víc ruchu než poslechu. Uprostřed věty o evropské směrnici se obrátila na předsedajícího: To je fakt peklo dneska. Ten poslance požádal, ať se ztiší, a debata šla dál. Novela prošla druhým kolem.\n\nDopoledne mezitím Sněmovna stihla sedm mezinárodních smluv, od Tanzanie po Maltu. Poslanci je projeli rychle jako na páse. Dvořák (Piráti) přiznal, že takto rychlý průběh pořadu schůze nečekal. U smlouvy s Mongolskem chtěl promluvit Metnar (za vládu), ale nebyl zapnutý mikrofon.",
+  "pointa": "Peklo nebylo v úrocích, ale v sále. Ministryně to pojmenovala dřív, než dořekla směrnici o půjčkách.",
+  "mean": "Novela o spotřebitelském úvěru převádí do českého práva evropskou směrnici o půjčkách a ochraně lidí, kteří podepisují smlouvy online. Ve druhém kole se ladí detaily, závěrečné hlasování přijde později. Ráno k tomu přibylo sedm ratifikací smluv s cizími státy, proto Schillerové reakce dává smysl i mimo samotný úvěrový zákon.",
   "pocet_hlasovani": 1,
   "proslo": true,
   "signaly": {

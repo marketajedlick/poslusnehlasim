@@ -310,6 +310,7 @@ def cmd_newsletter_notify(args: argparse.Namespace) -> int:
         result = run_newsletter_notify(
             args.obdobi,
             schuze=args.schuze or None,
+            den=args.den or None,
             dry_run=args.dry_run,
             force=args.force,
             base_path=(args.base_path or "").rstrip("/"),
@@ -657,6 +658,10 @@ def main() -> int:
         type=int,
         default=0,
         help="Číslo konkrétní schůze; bez tohoto parametru se použije nejnovější schválené vydání",
+    )
+    p_nwl.add_argument(
+        "--den",
+        help="Konkrétní den vydání (DD.MM.RRRR nebo YYYY-MM-DD); vyžaduje --schuze",
     )
     p_nwl.add_argument(
         "--base-path",

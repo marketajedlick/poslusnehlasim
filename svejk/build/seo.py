@@ -10,6 +10,7 @@ from svejk.build.nav import (
     Edition,
     archiv_pages_href,
     edition_pages_href,
+    o_webu_pages_href,
     pivo_pages_href,
     podminky_pages_href,
     podpora_pages_href,
@@ -33,6 +34,7 @@ from svejk.paths import SchuzePaths
 _VYZNAMENANI_KINDS: tuple[VyznamenaniKind, ...] = ("neprosli", "prosli", "zvoleni")
 
 _STATIC_PAGES: tuple[tuple[str, str], ...] = (
+    ("O webu", "o-webu"),
     ("Archiv vydání", "archiv"),
     ("Švejkov slovníček", "slovnicek"),
     ("Kup Švejkovi pivo", "pivo"),
@@ -42,6 +44,7 @@ _STATIC_PAGES: tuple[tuple[str, str], ...] = (
 )
 
 _STATIC_HREF_FN = {
+    "o-webu": o_webu_pages_href,
     "archiv": archiv_pages_href,
     "slovnicek": slovnicek_pages_href,
     "pivo": pivo_pages_href,
@@ -142,6 +145,15 @@ def edition_meta_description(
         parts.append(first_item_nadpis.strip())
     raw = " ".join(parts)
     return meta_description(raw, max_len=max_len) if raw else ""
+
+
+def homepage_page_title(**_kwargs: object) -> str:
+    """Stabilní <title> pro úvodní stránku, bez denního tématu ani data."""
+    return "Poslušně hlásím · Deník ze Sněmovny"
+
+
+def homepage_og_title() -> str:
+    return "Poslušně hlásím · Deník ze Sněmovny"
 
 
 def edition_page_title(
@@ -289,6 +301,31 @@ def website_json_ld(
     return data
 
 
+def faq_json_ld(
+    *,
+    url: str,
+    entries: list[tuple[str, str]],
+) -> dict:
+    """FAQPage schema pro slovníček."""
+    return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": url,
+        "url": url,
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": answer,
+                },
+            }
+            for question, answer in entries
+        ],
+    }
+
+
 def _static_page_links(
     *,
     site_url: str,
@@ -376,6 +413,7 @@ def write_sitemap_xml(
     if editions:
         last = editions[-1].when
         add_url(f"{base}{archiv_pages_href(base_path)}", last)
+        add_url(f"{base}{o_webu_pages_href(base_path)}", last)
         add_url(f"{base}{slovnicek_pages_href(base_path)}", last)
         add_url(f"{base}{pivo_pages_href(base_path)}", last)
         add_url(f"{base}{podminky_pages_href(base_path)}", last)

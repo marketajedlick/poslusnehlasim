@@ -2,8 +2,10 @@
   "datum": "26.06.2026",
   "den": "pátek",
   "topic_slugs": [
+    "debata-porad-vlny-veder-26-cerven",
     "navrh-zakona-o-statnich-zamestnancich"
   ],
+  "steno_zdroje": true,
   "stats": {
     "pocet_hlas": 1,
     "minuty": 164,
@@ -12,5 +14,15 @@
     "zamitnuto": 0,
     "spor_o_porad": true,
     "dlouha_debata": true
-  }
+  },
+  "board_proslo_label": "zákon prošel",
+  "board_zamitnuto_label": "návrhů neprošlo",
+  "dnesni_ucet": "Pátek schůze 24: ráno jedenáct\nhlasování o pořadu, odpoledne služební zákon 84:56.",
+  "zaver": "že pátek ve Sněmovně začal hádankou o vedru v pořadu místo služebního zákona, odpoledne koalice stejný zákon schválila v závěrečném hlasování poměrem 84 proti 56, s potleskem koalice a varováním opozice, že jde o snazší vyhazování odborníků ze státní správy.",
+  "vysledek": [
+    "* Šrámková (Piráti) chtěla v pořadu bod o vlnách veder, horka zabíjí",
+    "* jedenáct hlasování o pořadu ráno skončilo zamítnutím",
+    "* Richterová (Piráti) varovala před snazším vyhazováním nepohodlných odborníků",
+    "* služební zákon prošel v závěrečném hlasování 84 proti 56"
+  ]
 }

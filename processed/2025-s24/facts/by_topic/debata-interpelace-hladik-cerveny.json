@@ -1,0 +1,76 @@
+{
+  "slug": "debata-interpelace-hladik-cerveny",
+  "nazev": "Interpelace Petra Hladíka",
+  "datum": "25.06.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "ústní interpelace Petra Hladíka k personálním a dotačním změnám na Ministerstvu životního prostředí",
+  "koho": [
+    "Koho se to týká? Každého, kdo čeká na dotaci na zateplení nebo sleduje, jak se mění resort životního prostředí."
+  ],
+  "fakty": [
+    {
+      "text": "Červený řekl, že dotační programy jsou o penězích.",
+      "source": "steno",
+      "steno_id": "2025_24_00373",
+      "citace": "Ano, pane exministře, pane poslanče, dotační programy jsou o penězích.",
+      "link_phrase": "dotační programy jsou o penězích"
+    },
+    {
+      "text": "Červený tvrdil, že Nová zelená úsporám nemá peníze.",
+      "source": "steno",
+      "steno_id": "2025_24_00373",
+      "citace": "My tam nemáme peníze.",
+      "link_phrase": "nemá peníze"
+    },
+    {
+      "text": "Hladík tvrdil, že za jejich vlády pomohli 450 000 domácnostem.",
+      "source": "steno",
+      "steno_id": "2025_24_00377",
+      "citace": "Za naší vlády jsme pomohli 450 000 domácnostem.",
+      "link_phrase": "čtyři sta padesát tisíc domácnostem"
+    },
+    {
+      "text": "Červený ve faktické poznámce reagoval smíchem, že se nedostane ke slovu.",
+      "source": "steno",
+      "steno_id": "2025_24_00385",
+      "citace": "Já využiju faktickou poznámku, protože evidentně bych se už nedostal ke slovu. (Smích.)",
+      "link_phrase": "nedostal ke slovu"
+    },
+    {
+      "text": "Červený obvinil resort, že vyhodil lidi z Mladých KDU-ČSL ze sociálních sítí.",
+      "source": "steno",
+      "steno_id": "2025_24_00403",
+      "citace": "protože jsme vyházeli členy (Mladých) KDU-ČSL, co tam pracovali na sociálních sítích a dali jsme si tam svoje lidi, na ty sociální sítě.",
+      "link_phrase": "vyházeli členy Mladých KDU-ČSL"
+    },
+    {
+      "text": "Hladík tvrdil, že současné vedení počítá s pákovým efektem do 50 miliard.",
+      "source": "steno",
+      "steno_id": "2025_24_00377",
+      "citace": "protože on počítá s pákovým efektem do 50 miliard",
+      "link_phrase": "pákovým efektem do padesát miliard"
+    },
+    {
+      "text": "Červený o penězích pro mean.",
+      "source": "steno",
+      "steno_id": "2025_24_00373",
+      "citace": "dotační programy jsou o penězích",
+      "link_phrase": "Novou zelenou úsporám"
+    },
+    {
+      "text": "Hladík NPO pro mean.",
+      "source": "steno",
+      "steno_id": "2025_24_00377",
+      "citace": "21 miliard z Národního plánu obnovy",
+      "link_phrase": "Modernizačního fondu a NPO"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "NZÚ bez peněz",
+  "lead": "Odpoledne interpelace Petra Hladíka (KDU-ČSL), bývalého ministra životního prostředí. Ptá se současného ministra Červeného (Motoristé), proč v dotaci Nová zelená úsporám, program na zateplení domů, docházejí peníze. Hladík tvrdil, že za jejich vlády pomohli 450 000 domácnostem a do ekonomiky šly stovky miliard. Červený odpověděl, že Nová zelená úsporám nemá peníze, a že dotační programy jsou o penězích.\n\nVe faktických poznámkách Červený řekl, že se evidentně nedostal ke slovu, a obvinil resort, že vyházeli členy Mladých KDU-ČSL, co dělali sociální sítě. Hladík mu vyčítal, že nové vedení počítá s pákovým efektem do 50 miliard.",
+  "pointa": "Bývalý a současný ministr se hádali o dotace, zateplení a lidi na Instagramu resortu.",
+  "mean": "Interpelace je forma, kdy poslanec veřejně vytáhne ministra k odpovědi. Tady šlo o Novou zelenou úsporám, hlavní dotaci na zateplení a úspory energií v domech, a o to, kolik domácností ji reálně zasáhne. Hladík připomínal miliardy z Modernizačního fondu a NPO, Červený zase, že bez peněz v programu se portál na žádosti moc nezahřeje.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

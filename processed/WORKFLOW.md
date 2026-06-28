@@ -272,9 +272,9 @@ Před publikací projdi **celý řetězec** článek → zdroje → PSP:
 5. Scénické poznámky (kdo opustil sál, pořadí reakcí) ověř ve stenozáznamu.
 6. Čísla (hlasy, délka projevu, `pocet_slov`) **spočítej z dat**.
 
-Chybějící odkaz = chybí nebo nesedí `link_phrase`, špatné `steno_id`, nebo `steno_zdroje: false`. Oprav v `facts/`, znovu `compose`.
+Chybějící odkaz = chybí nebo nesedí `link_phrase`, špatné `steno_id`, nebo `steno_zdroje: false`. Oprav v `facts/`, znovu `compose`. Celý řetězec projdi znovu ve **finálním průchodu vydáním** (§9).
 
-## 7. Faktický audit (před schválením)
+## 7. Faktický audit
 
 - [ ] Výklad hlasování = `votes.jsonl` (co přesně padlo / prošlo)
 - [ ] Strany u jmen sedí
@@ -283,6 +283,8 @@ Chybějící odkaz = chybí nebo nesedí `link_phrase`, špatné `steno_id`, neb
 - [ ] Skóre dne = publikované články podle `verdikt` (`schvaleno` / `zamiteno` / `odlozeno`)
 - [ ] `./run-svejk.sh glossary-audit --obdobi 2025 --export-only`
 - [ ] Žádné em/en pomlčky (compose na ně spadne)
+
+Projdi tento seznam znovu **u celého vydání najednou** v §9, ne jen po jednotlivých sekcích.
 
 ---
 
@@ -304,7 +306,23 @@ URL náhledu: `http://127.0.0.1:8765/noviny/2025/N/DD.MM.RRRR.html`
 
 ---
 
-## 9. Newsletter
+## 9. Finální průchod vydáním (před schválením)
+
+Po `compose` a lokálním náhledu **ještě jednou projdi celé vydání od první věty po závěr**. Ne kontroluj jen jednu sekci, ale celý den najednou: `dnesni_ucet`, všechny články, skóre, `zaver`.
+
+### Co dělat
+
+1. **Přečti hotové noviny** (`out/noviny-dlouhe/DD.MM.RRRR.md` nebo HTML). U každého tvrzení, citace a čísla se ptej: sedí to ve stenozáznamu nebo v `votes.jsonl`?
+2. **Doplň chybějící steno odkazy.** Každá důležitá věta nebo citát, který nemá `steno-link`, dostane v `fakty[]` vlastní `steno_id` + `link_phrase` (§4a). `link_phrase` piš podle **hotového wordingu** v článku, ne naopak.
+3. **Klikni celý řetězec** u každého odkazu: článek → stránka Zdroje → PSP. Oprav špatné kotvy, duplicity (`všechny linky na jedno místo`) a mrtvé fráze.
+4. **Zkontroluj fakta napříč vydáním:** strany u jmen, typ hlasování (vrácení do výboru ≠ pád novely), skóre vs. text, `dnesni_ucet` / `zaver` vs. tělo článků, doslovnost citací, čísla z dat (hlasy, `pocet_slov`, přítomní).
+5. **Oprav v `facts/` → znovu `compose` → znovu projdi krok 1.** Teprve když celé vydání sedí, jdi na publish.
+
+Checklist z §6 a §7 projdi **v kontextu celého dne**, ne izolovaně po sekcích. Typické chyby na konci: chybějící link u silné citace, špatná strana u jména, skóre, které neodpovídá wordingu v leadu.
+
+---
+
+## 10. Newsletter
 
 ```bash
 ./run-svejk.sh newsletter-notify --obdobi 2025 --schuze N --force
@@ -318,7 +336,7 @@ Před odesláním v Ecomailu:
 
 ---
 
-## 10. Finální checklist (typicky až na konci)
+## 11. Finální checklist (typicky až na konci)
 
 | Oblast | Co kontrolovat |
 |--------|------------------|
@@ -328,7 +346,8 @@ Před odesláním v Ecomailu:
 | Tabulka dne | krátké labely + mobil |
 | Steno | unikátní kotvy, `link_phrase` sedí s textem, PSP link funguje |
 | Styl | lead srozumitelný, `zaver` jednou větou |
-| Publish | `hidden` → `approved` až po review |
+| Finální průchod | celé vydání přečtené; odkazy doplněné; fakta ověřená ve sten/votes (§9) |
+| Publish | `hidden` → `approved` až po §9 |
 
 ---
 
@@ -339,9 +358,8 @@ sync → align → review (vyber dny/témata)
   → curiosity pass ve stenozáznamu: obohať facts o citace, spory, scény (§2a)
   → facts/by_topic (lead + texty + steno_id + link_phrase)
   → facts/by_day (skóre, zaver, steno_zdroje: true)
-  → compose → kontrola steno-link → stránka Zdroje → PSP
-  → faktický audit (steno + votes)
-  → lokální náhled
+  → compose → lokální náhled
+  → finální průchod vydáním: celý den, doplnit steno linky, zkontrolovat fakta (§9)
   → publish-approved → push
   → newsletter-notify
 ```

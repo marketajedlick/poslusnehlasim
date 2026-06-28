@@ -1,0 +1,76 @@
+{
+  "slug": "debata-sluzebni-zakon-richterova-rakusan",
+  "nazev": "Debata o služebním zákonu",
+  "datum": "24.06.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "ráno ve Sněmovně u služebního zákona a návrhu Richterové přejmenovat pořad schůze",
+  "koho": [
+    "Koho se to týká? Každého, kdo čeká ve frontě na úřadě nebo pracuje ve státní správě."
+  ],
+  "fakty": [
+    {
+      "text": "Richterová navrhla jako první bod pořadu Zákon na snazší vyhazování expertů.",
+      "source": "steno",
+      "steno_id": "2025_24_00071",
+      "citace": "Navrhuji ten bod s názvem Zákon na snazší vyhazování expertů a stručně ho odůvodním.",
+      "link_phrase": "Zákon na snazší vyhazování expertů"
+    },
+    {
+      "text": "Richterová chtěla v pořadu schůze vidět pravý název bodu.",
+      "source": "steno",
+      "steno_id": "2025_24_00071",
+      "citace": "Navrhuji ten bod s názvem Zákon na snazší vyhazování expertů a stručně ho odůvodním.",
+      "link_phrase": "Richterová (Piráti) chtěla v pořadu schůze"
+    },
+    {
+      "text": "Richterová řekla, že vláda chce ovládnout státní správu proti zájmům země.",
+      "source": "steno",
+      "steno_id": "2025_24_00071",
+      "citace": "Andrej Babiš, premiér naší země, předseda vaší vlády a potom další strany, jeho spojenci, se proti zájmům České republiky snaží ovládnout Českou republiku a její státní správu.",
+      "link_phrase": "snazší vyhazování odborníků podle politické vůle"
+    },
+    {
+      "text": "Poslanci návrh Richterové na první bod pořadu zamítli.",
+      "source": "steno",
+      "steno_id": "2025_24_00072",
+      "citace": "Hlasování číslo 53, přihlášeno 133 poslanců, pro 32, proti 79. Návrh byl zamítnut.",
+      "link_phrase": "Poslanci to zamítli"
+    },
+    {
+      "text": "Rakušan varoval, že jeho projev bude dlouhý, a pak slíbil, že nebude obzvlášť dlouhý.",
+      "source": "steno",
+      "steno_id": "2025_24_00074",
+      "citace": "kdo má strach, že to bude dlouhé to mé vyjádření, tak mu musím dát zapravdu, bude.",
+      "link_phrase": "projev bude dlouhý"
+    },
+    {
+      "text": "Po přestávce na ministra Rakušan řekl, že nebudou žádné mnohahodinové proslovy.",
+      "source": "steno",
+      "steno_id": "2025_24_00076",
+      "citace": "Nebudou to žádné mnohahodinové proslovy, jak jsme tady byli zvyklí v minulém období.",
+      "link_phrase": "nebude obzvlášť dlouhý"
+    },
+    {
+      "text": "Rakušan varoval, že návrh skončí stovkami žalob u správních soudů a odchodem kvalitních lidí.",
+      "source": "steno",
+      "steno_id": "2025_24_00076",
+      "citace": "Skončí to stovkami žalob u správních soudů. Skončí to ochromením agend. Skončí to odchodem kvalitních lidí.",
+      "link_phrase": "u soudů, ochromením agend"
+    },
+    {
+      "text": "Rakušan mluvil o služebním zákonu celé dopoledne.",
+      "source": "steno",
+      "steno_id": "2025_24_00080",
+      "citace": "vy jste chtěli dneska hlasovat o služebním zákonu.",
+      "link_phrase": "služebním zákonu"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Nebude to dlouhé",
+  "lead": "Koalice chce změnit pravidla pro státní úředníky, tzv. služební zákon. Richterová (Piráti) chtěla v pořadu schůze, v tabulce bodů toho dne, místo úředního názvu bod přejmenovat na Zákon na snazší vyhazování expertů. Poslanci to zamítli, debata o zákonu ale pokračovala celé dopoledne.\n\nRakušan (STAN) varoval, že jeho projev bude dlouhý, a pak slíbil, že nebude obzvlášť dlouhý.",
+  "pointa": "Ve středu se o služebním zákonu jen mluvilo. Rakušan slíbil krátký projev a stejně mluvil celé dopoledne.",
+  "mean": "Služební zákon má změnit pravidla pro lidi ve státní správě, kdo může nastoupit, kdo odejde a jak rychle. Koalice tvrdí, že zrychlí personální změny, opozice varuje, že půjde o snazší vyhazování odborníků podle politické vůle. Richterová proto chtěla v pořadu schůze vidět pravý název. Rakušan varoval, že návrh skončí u soudů, ochromením agend a odchodem lidí, kteří na úřadech drží chod věcí.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

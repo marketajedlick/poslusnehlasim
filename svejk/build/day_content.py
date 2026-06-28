@@ -612,6 +612,7 @@ def build_den_content(
         )
     content.zaver = zaver
     content.zaver_key, content.zaver_body = split_zaver(zaver)
+    _sanitize_den_content(content)
     from svejk.build.steno_sources import apply_steno_links_to_content
 
     apply_steno_links_to_content(
@@ -620,7 +621,6 @@ def build_den_content(
         link_mode=link_mode,
         base_path=base_path,
     )
-    _sanitize_den_content(content)
 
     if _cache_key is not None:
         _DEN_CONTENT_CACHE[_cache_key] = content

@@ -22,6 +22,7 @@ from svejk.build.nav import (
     archive_by_month,
     edition_nav,
     edition_pages_href,
+    o_webu_pages_href,
     pivo_pages_href,
     dekuju_pages_href,
     podminky_pages_href,
@@ -336,6 +337,7 @@ def _site_footer_ctx(
     return {
         "terms_href": podminky_pages_href(base_path),
         "privacy_href": soukromi_pages_href(base_path),
+        "about_href": o_webu_pages_href(base_path),
         "support_href": podpora_pages_href(base_path),
         "footer_closing": _footer_closing(seed),
         "footer_stats": _footer_stats_line(obdobi),
@@ -477,15 +479,20 @@ def render_den_html(
     from svejk.build.seo import article_headline as _article_headline
     from svejk.build.seo import article_json_ld as _article_json_ld
     from svejk.build.seo import edition_page_title as _edition_page_title
+    from svejk.build.seo import homepage_og_title as _homepage_og_title
+    from svejk.build.seo import homepage_page_title as _homepage_page_title
 
-    page_title = _edition_page_title(
-        dnesni_ucet=content.dnesni_ucet,
-        meta_description=meta_description,
-        first_item_nadpis=content.items[0].nadpis if content.items else "",
-        datum_unl=content.datum,
-        den=content.den,
-        datum_design=datum_label,
-    )
+    if is_homepage:
+        page_title = _homepage_page_title()
+    else:
+        page_title = _edition_page_title(
+            dnesni_ucet=content.dnesni_ucet,
+            meta_description=meta_description,
+            first_item_nadpis=content.items[0].nadpis if content.items else "",
+            datum_unl=content.datum,
+            den=content.den,
+            datum_design=datum_label,
+        )
     from svejk.build.og_image import (
         OG_HEIGHT,
         OG_WIDTH,
@@ -494,7 +501,11 @@ def render_den_html(
         og_image_abs_url,
     )
 
-    og_share_title = edition_og_title(content.datum, content.den)
+    og_share_title = (
+        _homepage_og_title()
+        if is_homepage
+        else edition_og_title(content.datum, content.den)
+    )
     og_headline = edition_og_headline(
         dnesni_ucet=content.dnesni_ucet,
         first_item_nadpis=content.items[0].nadpis if content.items else "",
@@ -1329,20 +1340,25 @@ def render_slovnicek_html(
     canonical_url = f"{cfg.site_url.rstrip('/')}{slovnicek_pages_href(base_path)}"
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
     gp = load_strings()["glossary_page"]
+    entries = list(slovnicek_entries())
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
         title=gp["title"],
         description=gp["meta"],
     )
+    from svejk.build.seo import faq_json_ld as _faq_json_ld
+
+    faq_ld = _faq_json_ld(url=canonical_url, entries=entries)
     tpl = _jinja_env().get_template("slovnicek-stranka.html")
     slovnicek = [
         {"question": q, "answer": a, "anchor": slovnicek_anchor(q)}
-        for q, a in slovnicek_entries()
+        for q, a in entries
     ]
     return tpl.render(
         slovnicek=slovnicek,
         canonical_url=canonical_url,
+        faq_json_ld=faq_ld,
         **og,
         inline_css=inline_css,
         css=css,
@@ -1577,6 +1593,58 @@ def render_podpora_html(
             obdobi=obdobi,
             active_page="support",
             closing_seed="podpora",
+        ),
+        **favicons,
+    )
+
+
+def render_o_webu_html(
+    obdobi: int,
+    *,
+    inline_css: bool = False,
+    css_href: str | None = None,
+    fonts_css_href: str | None = None,
+    base_path: str = "",
+) -> str:
+    """O webu — E-E-A-T stránka pro vyhledávače a nové čtenáře."""
+    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path)
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    editions = list_site_editions(obdobi)
+    if not editions:
+        raise ValueError(f"Žádná vydání pro období {obdobi}")
+    canonical_url = f"{cfg.site_url.rstrip('/')}{o_webu_pages_href(base_path)}"
+    page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
+    ap = load_strings()["about_page"]
+    og = _og_context(
+        site_url=cfg.site_url,
+        base_path=base_path,
+        title=ap["title"],
+        description=ap["meta"],
+    )
+    nav_ctx = _site_nav_ctx(obdobi, base_path)
+    tpl = _jinja_env().get_template("o-webu-stranka.html")
+    return tpl.render(
+        site_url=cfg.site_url.rstrip("/"),
+        contact_email=cfg.contact_email,
+        canonical_url=canonical_url,
+        **og,
+        inline_css=inline_css,
+        css=css,
+        css_href=css_href,
+        fonts_css_href=fonts_css_href,
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx(site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        **nav_ctx,
+        **_site_footer_ctx(
+            base_path,
+            obdobi=obdobi,
+            active_page="about",
+            closing_seed="o-webu",
         ),
         **favicons,
     )

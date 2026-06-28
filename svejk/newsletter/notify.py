@@ -53,6 +53,19 @@ def _find_edition(obdobi: int, schuze: int) -> Edition | None:
     return editions[-1] if editions else None
 
 
+def _find_edition_by_den(obdobi: int, schuze: int, den: str) -> Edition | None:
+    paths = SchuzePaths.create(obdobi, schuze)
+    from svejk.timeline import resolve_schuze_den
+
+    d_unl, day_path = resolve_schuze_den(paths, den)
+    if not day_path.is_file():
+        return None
+    for edition in list_approved_editions(obdobi):
+        if edition.schuze == schuze and edition.datum_unl == d_unl:
+            return edition
+    return None
+
+
 def _edition_day_path(edition: Edition) -> Path:
     paths = SchuzePaths.create(edition.obdobi, edition.schuze)
     d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
@@ -82,6 +95,7 @@ def run_newsletter_notify(
     obdobi: int,
     *,
     schuze: int | None = None,
+    den: str | None = None,
     dry_run: bool = False,
     force: bool = False,
     base_path: str = "",
@@ -93,6 +107,7 @@ def run_newsletter_notify(
     Stav v newsletter-state.json brání duplicitám při opakovaném deployi.
     E-maily odběratelů nejsou v repozitáři — drží je Ecomail (GDPR, double opt-in).
     Při --schuze se cílí konkrétní schůze místo nejnovějšího vydání.
+    Při --den (s --schuze) konkrétní den schůze.
     """
     api_key = api_key_from_env()
     list_id = list_id_from_env()
@@ -111,7 +126,16 @@ def run_newsletter_notify(
         return {"skipped": True, "reason": f"chybí: {', '.join(missing)}"}
 
     cfg = NewsletterConfig.from_env()
-    if schuze is not None:
+    if den is not None:
+        if schuze is None:
+            return {"skipped": True, "reason": "u --den uveď --schuze"}
+        latest = _find_edition_by_den(obdobi, schuze, den)
+        if not latest:
+            return {
+                "skipped": True,
+                "reason": f"schůze {schuze} nemá schválené vydání pro {den}",
+            }
+    elif schuze is not None:
         latest = _find_edition(obdobi, schuze)
         if not latest:
             return {"skipped": True, "reason": f"schůze {schuze} nemá schválené vydání"}

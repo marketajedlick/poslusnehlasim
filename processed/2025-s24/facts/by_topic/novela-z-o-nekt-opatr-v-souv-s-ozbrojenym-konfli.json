@@ -3,38 +3,123 @@
   "nazev": "Novela z. o někt. opatř. v souv. s ozbrojeným konfliktem - Ukrajina -",
   "datum": "24.06.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "někt. opatř. v souv. s ozbrojeným konfliktem - Ukrajina",
-  "koho": [],
+  "predmet_lidsky": "bezpečnostní novela Lex Ukrajina ve druhém kole",
+  "koho": [
+    "Koho se to týká? Ukrajinců s dočasnou ochranou v Česku a každého, kdo sleduje, jak stát mění pravidla kvůli válce na Ukrajině."
+  ],
   "fakty": [
     {
-      "text": "Takže budeme jako první hlasovat protinávrh pana poslance Langa, tedy aby zpravodajem tohoto tisku byl pan poslanec Lang.",
+      "text": "Poslanci zvolili Langa zpravodajem bezpečnostní novely, 31 hlasů proti.",
       "source": "steno",
       "steno_id": "2025_24_00229",
-      "citace": "Takže budeme jako první hlasovat protinávrh pana poslance Langa, tedy aby zpravodajem tohoto tisku byl pan poslanec Lang."
+      "citace": "Hlasování číslo 58, přihlášeno 119 poslanců, pro bylo 71, proti 31.",
+      "link_phrase": "Langa"
     },
     {
-      "text": "Zahajuji hlasování o protinávrhům pana poslance Langa, aby byl zpravodajem pan poslanec Lang.",
+      "text": "Lang zvolili zpravodajem, proti hlasovalo 31 poslanců.",
       "source": "steno",
       "steno_id": "2025_24_00229",
-      "citace": "Zahajuji hlasování o protinávrhům pana poslance Langa, aby byl zpravodajem pan poslanec Lang."
+      "citace": "Hlasování číslo 58, přihlášeno 119 poslanců, pro bylo 71, proti 31.",
+      "link_phrase": "proti třicet jedna"
     },
     {
-      "text": "Hlasování číslo 58, přihlášeno 119 poslanců, pro bylo 71, proti 31.",
+      "text": "Rakušan připomněl, že jde o Lex Ukrajina pro zhruba 300 000 lidí s dočasnou ochranou.",
       "source": "steno",
-      "steno_id": "2025_24_00229",
-      "citace": "Hlasování číslo 58, přihlášeno 119 poslanců, pro bylo 71, proti 31."
+      "steno_id": "2025_24_00232",
+      "citace": "Ten zákon dopadá zhruba na 300 000 lidí s dočasnou ochranou žijících v Česku.",
+      "link_phrase": "tři sta tisíc lidí s dočasnou ochranou"
     },
     {
-      "text": "Ťukání karet do lavic.",
+      "text": "Rakušan řekl, že tisk 213 mění sedm zákonů najednou.",
       "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_24_00257",
-      "citace": "(Ťukání karet do lavic.)"
+      "steno_id": "2025_24_00232",
+      "citace": "Sněmovní tisk 213 mění 7 zákonů najednou, což je tradiční přístup k tomu, čemu jsme vždycky říkali Lex Ukrajina.",
+      "link_phrase": "sedm zákonů najednou"
+    },
+    {
+      "text": "Odpoledne šla na řadu bezpečnostní novela Lex Ukrajina.",
+      "source": "steno",
+      "steno_id": "2025_24_00232",
+      "citace": "což je tradiční přístup k tomu, čemu jsme vždycky říkali Lex Ukrajina.",
+      "link_phrase": "Lex Ukrajina"
+    },
+    {
+      "text": "Pláteník po Rakušanově proslovu o bezpečnosti ve faktické přečetl z ČTK, že Ústavní soud nařídil vládě oznámit NATO účast prezidenta Pavla na summitu v Ankaře.",
+      "source": "steno",
+      "steno_id": "2025_24_00234",
+      "citace": "cituji tady ČTK: Ústavní soud vydal předběžné opatření, aby vláda notifikovala Severoatlantickou alianci, že prezident Pavel bude součástí delegace na červencovém summitu v Ankaře.",
+      "link_phrase": "summit do Ankary"
+    },
+    {
+      "text": "Pláteník citoval ČTK o Ústavním soudu a Pavlovi na summitu NATO.",
+      "source": "steno",
+      "steno_id": "2025_24_00234",
+      "citace": "cituji tady ČTK: Ústavní soud vydal předběžné opatření, aby vláda notifikovala Severoatlantickou alianci, že prezident Pavel bude součástí delegace na červencovém summitu v Ankaře.",
+      "link_phrase": "Ústavní soud nařídil"
+    },
+    {
+      "text": "Peštová namítla, že novina nesouvisí s bodem o Ukrajincích a poslanci si tu nebudou předčítat zpravodajské články.",
+      "source": "steno",
+      "steno_id": "2025_24_00236",
+      "citace": "Co to má společného s tímto bodem? Jako to si teď tady budeme číst všechny ČTK zprávy, abychom si to udělali veselejší?",
+      "link_phrase": "předčítat novinové zprávy"
+    },
+    {
+      "text": "Peštová namítla, že novina nesouvisí s bodem o Ukrajincích.",
+      "source": "steno",
+      "steno_id": "2025_24_00236",
+      "citace": "Co to má společného s tímto bodem? Jako to si teď tady budeme číst všechny ČTK zprávy, abychom si to udělali veselejší?",
+      "link_phrase": "co to má společného s tímto bodem"
+    },
+    {
+      "text": "Pláteník ve faktické citoval ČTK mimo téma novely.",
+      "source": "steno",
+      "steno_id": "2025_24_00234",
+      "citace": "cituji tady ČTK: Ústavní soud vydal předběžné opatření, aby vláda notifikovala Severoatlantickou alianci, že prezident Pavel bude součástí delegace na červencovém summitu v Ankaře.",
+      "link_phrase": "z ČTK"
+    },
+    {
+      "text": "Pláteník se omluvil, že se nechal unést tím tématem bezpečnosti, když do faktické vtáhl novinu o Pavlovi a NATO.",
+      "source": "steno",
+      "steno_id": "2025_24_00238",
+      "citace": "Já jsem se skutečně nechal unést tím tématem bezpečnosti. Bylo to nevhodné a paní předsedkyni i vám všem se omlouvám",
+      "link_phrase": "nechal unést tím tématem bezpečnosti"
+    },
+    {
+      "text": "Pláteník citoval ČTK o Pavlovi a summitu NATO mimo téma novely.",
+      "source": "steno",
+      "steno_id": "2025_24_00234",
+      "citace": "cituji tady ČTK: Ústavní soud vydal předběžné opatření, aby vláda notifikovala Severoatlantickou alianci, že prezident Pavel bude součástí delegace na červencovém summitu v Ankaře.",
+      "link_phrase": "prezidentovi a NATO"
+    },
+    {
+      "text": "Pláteník ve faktické přečetl novinu o Pavlovi a summitu NATO.",
+      "source": "steno",
+      "steno_id": "2025_24_00234",
+      "citace": "cituji tady ČTK: Ústavní soud vydal předběžné opatření, aby vláda notifikovala Severoatlantickou alianci, že prezident Pavel bude součástí delegace na červencovém summitu v Ankaře.",
+      "link_phrase": "novina o Pavlovi"
+    },
+    {
+      "text": "Bezpečnostní novela prošla druhým kolem.",
+      "source": "votes",
+      "cislo_hlasovani": 59,
+      "citace": "Hlasování číslo 59, přihlášeno 133 poslanců, pro 130, proti 0.",
+      "link_phrase": "prošla druhým kolem"
+    },
+    {
+      "text": "Rakušan popsal Lex Ukrajina jako balíček změn pobytových a sociálních pravidel.",
+      "source": "steno",
+      "steno_id": "2025_24_00232",
+      "citace": "Vždycky to byl komplexní návrh, který pozměňuje z pohledu více rezortů pobytové podmínky, sociální podmínky",
+      "link_phrase": "pobytových podmínek, sociálních pravidel"
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Prošlo to",
+  "nadpis": "ČTK v sále",
+  "lead": "Odpoledne téhož dne šla na řadu bezpečnostní novela Lex Ukrajina pro zhruba tři sta tisíc lidí s dočasnou ochranou v Česku. Ve druhém kole, kdy se ladí detaily před závěrečným hlasováním, nejdřív poslanci zvolili poslance, který návrh vede dál, Langa.\n\nNovela mění sedm zákonů najednou, od pravidel dočasné ochrany a humanitárních dávek přes azyl a pobyt cizinců až po správní soudy a trestní sazby za nelegální přechod hranic. Rakušan (STAN) mluvil o pobytových a sociálních podmínkách pro lidi s dočasnou ochranou. Pláteník pak ve faktické poznámce, krátké reakci na předchozího řečníka, přečetl z ČTK, že Ústavní soud nařídil vládě oznámit NATO, že prezident Pavel pojede na červencový summit do Ankary. Chtěl to napojit na bezpečnost, s novelou o Ukrajincích to ale nesouviselo. Peštová (ANO) namítla, co to má společného s tímto bodem, a že si poslanci ve sněmovně nebudou jen tak předčítat novinové zprávy. Pláteník se pak omluvil, že se nechal unést tím tématem bezpečnosti, protože celý bod i Rakušan mluvili o bezpečnosti státu, a že novina o Pavlovi do faktické nepatřila.",
+  "pointa": "Debata o Ukrajincích a odbočka k ČTK. Novela mezitím prošla druhým kolem.",
+  "mean": "Lex Ukrajina je balíček změn kvůli válce na Ukrajině. Dotkne se pobytových podmínek, sociálních pravidel a dalších oblastí najednou. Ve druhém kole poslanci upravují detaily a posílají návrh do výborů, závěrečné hlasování přijde později. Langa zvolili zpravodajem, proti třicet jedna. Faktická poznámka má reagovat na předchozího řečníka, ne odbočit kamkoliv. Pláteník proto dostal výtku, že do debaty o Ukrajincích vtáhl zprávu o prezidentovi a NATO. Novela stejně prošla druhým kolem.",
   "pocet_hlasovani": 2,
   "proslo": true,
   "signaly": {
@@ -42,7 +127,7 @@
     "pritomno_min": 119,
     "jednomyslne": false,
     "spor": true,
-    "prazdny_sal": true
+    "prazdny_sal": false
   },
   "steno_slov": 313
 }
