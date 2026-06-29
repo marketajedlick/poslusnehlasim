@@ -9,6 +9,13 @@
   ],
   "fakty": [
     {
+      "text": "Hladík kritizoval bankovní model NZÚ a tvrdil, že v cash flow fondu peníze jsou.",
+      "source": "steno",
+      "steno_id": "2025_24_00371",
+      "citace": "neargumentujte mi penězi, protože v cash flow státního fondu je peněz dost",
+      "link_phrase": "dotaci Nová zelená úsporám"
+    },
+    {
       "text": "Červený řekl, že dotační programy jsou o penězích.",
       "source": "steno",
       "steno_id": "2025_24_00373",
@@ -20,7 +27,7 @@
       "source": "steno",
       "steno_id": "2025_24_00373",
       "citace": "My tam nemáme peníze.",
-      "link_phrase": "nemá peníze"
+      "link_phrase": "Nová zelená úsporám nemá peníze"
     },
     {
       "text": "Hladík tvrdil, že za jejich vlády pomohli 450 000 domácnostem.",
@@ -30,18 +37,60 @@
       "link_phrase": "čtyři sta padesát tisíc domácnostem"
     },
     {
+      "text": "Hladík tvrdil, že do ekonomiky šly zhruba 330 miliard.",
+      "source": "steno",
+      "steno_id": "2025_24_00377",
+      "citace": "to, co se dostalo do ekonomiky je zhruba 330 miliard",
+      "link_phrase": "tři sta třicet miliard"
+    },
+    {
+      "text": "Okamura představil interpelaci Hladíka k Nové zelené úsporám.",
+      "source": "steno",
+      "steno_id": "2025_24_00370",
+      "citace": "interpelaci poslance Petra Hladíka ve věci budoucnosti programu Nová zelená úsporám",
+      "link_phrase": "interpelace Petra Hladíka"
+    },
+    {
       "text": "Červený ve faktické poznámce reagoval smíchem, že se nedostane ke slovu.",
       "source": "steno",
       "steno_id": "2025_24_00385",
       "citace": "Já využiju faktickou poznámku, protože evidentně bych se už nedostal ke slovu. (Smích.)",
-      "link_phrase": "nedostal ke slovu"
+      "link_phrase": "evidentně bych se už nedostal ke slovu"
     },
     {
-      "text": "Červený obvinil resort, že vyhodil lidi z Mladých KDU-ČSL ze sociálních sítí.",
+      "text": "Červený o ETS 2 řekl, že je to krásně socialistické.",
+      "source": "steno",
+      "steno_id": "2025_24_00385",
+      "citace": "Ono je to hrozně krásně socialistické. Vy prodražíte nám všem život a následně budete tvrdit, že tím vlastně někomu pomáháte.",
+      "link_phrase": "hrozně krásně socialistické"
+    },
+    {
+      "text": "Červený tvrdil, že ETS 2 není daň jen pro řidiče.",
+      "source": "steno",
+      "steno_id": "2025_24_00385",
+      "citace": "ETS 2 není daň pro ty, co jezdí autem. Jenom.",
+      "link_phrase": "není daň pro ty, co jezdí autem"
+    },
+    {
+      "text": "Červený začal faktickou poznámku ve faktických poznámkách.",
+      "source": "steno",
+      "steno_id": "2025_24_00385",
+      "citace": "Já využiju faktickou poznámku",
+      "link_phrase": "Ve faktických poznámkách"
+    },
+    {
+      "text": "Červený přiznal, že na sociálních sítích resortu vyhodili lidi z Mladých KDU-ČSL a dali tam svoje.",
       "source": "steno",
       "steno_id": "2025_24_00403",
       "citace": "protože jsme vyházeli členy (Mladých) KDU-ČSL, co tam pracovali na sociálních sítích a dali jsme si tam svoje lidi, na ty sociální sítě.",
       "link_phrase": "vyházeli členy Mladých KDU-ČSL"
+    },
+    {
+      "text": "Červený řekl, že nechtěli mladé lidovce u sociálních sítí resortu.",
+      "source": "steno",
+      "steno_id": "2025_24_00403",
+      "citace": "Ano, nechtěli jsme, aby členové (Mladých) KDU-ČSL dělali nám sítě.",
+      "link_phrase": "nechtěli, aby jim profily dělala opozice"
     },
     {
       "text": "Hladík tvrdil, že současné vedení počítá s pákovým efektem do 50 miliard.",
@@ -58,19 +107,40 @@
       "link_phrase": "Novou zelenou úsporám"
     },
     {
+      "text": "Červený o portálu pro žádosti pro mean.",
+      "source": "steno",
+      "steno_id": "2025_24_00373",
+      "citace": "oficiálně spuštěný portál pro příjem žádostí",
+      "link_phrase": "portál na žádosti"
+    },
+    {
+      "text": "Hladík o Modernizačním fondu pro mean.",
+      "source": "steno",
+      "steno_id": "2025_24_00377",
+      "citace": "87 miliard z Modernizačního fondu",
+      "link_phrase": "Modernizačního fondu"
+    },
+    {
       "text": "Hladík NPO pro mean.",
       "source": "steno",
       "steno_id": "2025_24_00377",
       "citace": "21 miliard z Národního plánu obnovy",
-      "link_phrase": "Modernizačního fondu a NPO"
+      "link_phrase": "NPO"
+    },
+    {
+      "text": "Hladík o pákovém efektu pro mean.",
+      "source": "steno",
+      "steno_id": "2025_24_00377",
+      "citace": "protože on počítá s pákovým efektem do 50 miliard",
+      "link_phrase": "pákovým efektem do padesát miliard"
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "NZÚ bez peněz",
-  "lead": "Odpoledne interpelace Petra Hladíka (KDU-ČSL), bývalého ministra životního prostředí. Ptá se současného ministra Červeného (Motoristé), proč v dotaci Nová zelená úsporám, program na zateplení domů, docházejí peníze. Hladík tvrdil, že za jejich vlády pomohli 450 000 domácnostem a do ekonomiky šly stovky miliard. Červený odpověděl, že Nová zelená úsporám nemá peníze, a že dotační programy jsou o penězích.\n\nVe faktických poznámkách Červený řekl, že se evidentně nedostal ke slovu, a obvinil resort, že vyházeli členy Mladých KDU-ČSL, co dělali sociální sítě. Hladík mu vyčítal, že nové vedení počítá s pákovým efektem do 50 miliard.",
-  "pointa": "Bývalý a současný ministr se hádali o dotace, zateplení a lidi na Instagramu resortu.",
-  "mean": "Interpelace je forma, kdy poslanec veřejně vytáhne ministra k odpovědi. Tady šlo o Novou zelenou úsporám, hlavní dotaci na zateplení a úspory energií v domech, a o to, kolik domácností ji reálně zasáhne. Hladík připomínal miliardy z Modernizačního fondu a NPO, Červený zase, že bez peněz v programu se portál na žádosti moc nezahřeje.",
+  "nadpis": "Nová zelená úsporám\nnemá peníze",
+  "lead": "Dopoledne interpelace Petra Hladíka (KDU-ČSL): proč v dotaci Nová zelená úsporám docházejí peníze na zateplení. Za minulé vlády pomohli čtyři sta padesát tisíc domácnostem, do ekonomiky šly zhruba tři sta třicet miliard, tvrdil Hladík (KDU-ČSL). Červený (Motoristé) odpověděl, že Nová zelená úsporám nemá peníze, a že dotační programy jsou o penězích. K personálu pak přiznal, že vyházeli členy Mladých KDU-ČSL ze sociálních sítí resortu. Nechtěli, aby jim profily dělala opozice, a dali tam svoje lidi. Hladík (KDU-ČSL) mu vyčítal, že nové vedení počítá s pákovým efektem do padesát miliard.",
+  "pointa": "Peníze na zateplení, páka padesát miliard a mladí lidovci pryč ze sítí resortu.",
+  "mean": "Program Novou zelenou úsporám zná každý, kdo řešil zateplení, nový kotel nebo solární panely. Dřív dostal majitel část peněz rovnou ze státu, žádal přes portál na žádosti a práce mohla začít. Za minulé vlády šlo sto osm miliard přímo, sedmdesát sedm miliard z Modernizačního fondu a zbytek z NPO, a zasáhlo to asi čtyři sta padesát tisíc domácností. Nové vedení říká, že na stejné dávky peněz nemá. Místo dotace dopředu chce pustit bankovní úvěry a splácet je postupně z Modernizačního fondu, s pákovým efektem do padesát miliard. Pro lidi, kteří čekají na zateplení, to znamená méně jistoty, že dostanou peníze hned. Podle Hladíka z nového plánu vychází zhruba sedmina toho dosahu.",
   "pocet_hlasovani": 0,
   "proslo": false
 }

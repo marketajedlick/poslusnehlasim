@@ -28,7 +28,6 @@ from svejk.build.vyznamenani_neprosli import (
     page_meta,
     vyznamenani_datum_label,
 )
-from svejk.newsletter.feed import _edition_description
 from svejk.paths import SchuzePaths
 
 _VYZNAMENANI_KINDS: tuple[VyznamenaniKind, ...] = ("neprosli", "prosli", "zvoleni")
@@ -553,6 +552,7 @@ def write_llms_txt(
 
     from svejk.build.day_content import datum_design
     from svejk.timeline import den_v_tydnu
+    from svejk.newsletter.feed import _edition_description
 
     full_lines = [
         "# Poslušně hlásím, index vydání",

@@ -3,7 +3,7 @@
   "nazev": "Návrh zákona o státních zaměstnancích",
   "datum": "26.06.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "služební zákon ve třetím čtení a dvaceti devíti hlasováních za necelých čtyřicet minut",
+  "predmet_lidsky": "státních zaměstnancích",
   "koho": [
     "Koho se to týká? Každého, kdo pracuje na úřadě, nebo čeká ve frontě na rozhodnutí, které má vydat stát."
   ],
@@ -62,9 +62,6 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Vyhazování odborníků",
-  "lead": "Po obědě konečně přišlo závěrečné hlasování o služebním zákonu, stejném návrhu, o kterém se Sněmovna hádala už ve středu. Richterová (Piráti) řekla, že jde o snazší vyhazování nepohodlných odborníků. Stojanová (Piráti) mluvila o úplné destrukci toho, co Sněmovna přijala před lety. Volpe (Motoristé) varoval před nebezpečným zásahem do samotné podstaty demokratického uspořádání.\n\nMezi tím proběhlo devětadvacet hlasování za necelých čtyřicet minut, většinou o jednotlivých paragrafech. Rakušan (STAN) před finále připomněl, že předkladatelům dal 5 konkrétních dotazů a nedostal odpověď. Závěrečné hlasování skončilo 84 proti 56. Zazněl potlesk poslanců koalice.",
-  "pointa": "Služební zákon prošel těsně. Opozice mluvila o vyhazování expertů, koalice o personální flexibilitě.",
-  "mean": "Služební zákon mění pravidla pro lidi ve státní správě, kdo je zaměstná, kdo odchází a jak se řeší personální změny. Koalice tvrdí, že zrychlí a zjednoduší chod úřadů. Opozice varuje, že politici získají větší moc vyhazovat odborníky, kteří jim nesedí. V závěrečném hlasování už šlo o finální podobu zákona, ten pak míří k podpisu prezidenta.",
   "pocet_hlasovani": 29,
   "proslo": true,
   "signaly": {
@@ -72,7 +69,10 @@
     "pritomno_min": 136,
     "jednomyslne": false,
     "spor": true,
-    "prazdny_sal": false
+    "prazdny_sal": true
   },
-  "steno_slov": 55147
+  "steno_slov": 55147,
+  "lead": "Po obědě konečně přišlo závěrečné hlasování o služebním zákonu, stejném návrhu, o kterém se Sněmovna hádala už ve středu. Richterová (Piráti) řekla, že jde o snazší vyhazování nepohodlných odborníků. Stojanová (Piráti) mluvila o úplné destrukci toho, co Sněmovna přijala před lety. Volpe (Motoristé) varoval před nebezpečným zásahem do samotné podstaty demokratického uspořádání.\n\nMezi tím proběhlo devětadvacet hlasování za necelých čtyřicet minut, většinou o jednotlivých paragrafech. Rakušan (STAN) před finále připomněl, že předkladatelům dal 5 konkrétních dotazů a nedostal odpověď. Závěrečné hlasování skončilo 84 proti 56. Zazněl potlesk poslanců koalice.",
+  "pointa": "Služební zákon prošel těsně. Opozice mluvila o vyhazování expertů, koalice o personální flexibilitě.",
+  "mean": "Služební zákon mění pravidla pro lidi ve státní správě, kdo je zaměstná, kdo odchází a jak se řeší personální změny. Koalice tvrdí, že zrychlí a zjednoduší chod úřadů. Opozice varuje, že politici získají větší moc vyhazovat odborníky, kteří jim nesedí. V závěrečném hlasování už šlo o finální podobu zákona, ten pak míří k podpisu prezidenta."
 }

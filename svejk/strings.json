@@ -191,6 +191,7 @@
     "footer": "Pokud tento e-mail přišel omylem, není třeba nic dělat.",
     "privacy_link": "Co děláme s e-mailovou adresou.",
     "subject": "Poslušně hlásím: potvrď odběr novinek",
+    "inbox_tip": "Až přijde první vydání, může skončit ve složce Hromadné. Přetáhni ho do Primárních - stačí jednou a Gmail si to zapamatuje.",
     "plain_lead": "POSLUŠNĚ HLÁSÍM: potvrď odběr novinek",
     "plain_cta": "Potvrď odběr kliknutím na odkaz v HTML verzi tohoto e-mailu.",
     "plain_after_confirm": "Po potvrzení tě přesměrujeme na:"

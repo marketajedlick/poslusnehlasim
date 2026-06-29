@@ -932,6 +932,8 @@ def render_doi_email_html(
             "",
             doi["plain_cta"],
             "",
+            doi["inbox_tip"],
+            "",
             f"{doi['plain_after_confirm']} {confirm_redirect_url}",
             doi["footer"],
             f"{doi['privacy_link']}: {privacy_url}",

@@ -6,24 +6,22 @@
     "debata-interpelace-hladik-cerveny"
   ],
   "steno_zdroje": true,
+  "smlouvy_slug": "mezinarodni-smlouvy-25-06",
   "stats": {
-    "pocet_hlas": 2,
+    "pocet_hlas": 8,
     "minuty": 99,
     "end_cas": "12:56",
-    "proslo": 2,
+    "proslo": 7,
     "zamitnuto": 0,
     "spor_o_porad": true,
     "dlouha_debata": true
   },
-  "board_proslo_label": "novely prošly druhým kolem",
-  "board_zamitnuto_label": "návrhů neprošlo",
-  "dnesni_ucet": "Sedm mezinárodních smluv jako na páse,\nodpoledne spor o dotace NZÚ.",
-  "zaver": "že ve čtvrtek si Schillerová (ANO) u novely o půjčkách postěžovala na ruch v sále, dopoledne Sněmovna rychle schválila sedm mezinárodních smluv, a odpoledne se bývalý ministr Hladík se současným ministrem Červeným přeli, jestli Nová zelená úsporám má peníze na zateplení domů.",
+  "dnesni_ucet": "Šest ratifikací odsouhlaseno jako na páse,\ndopoledne spor o dotace NZÚ.",
+  "zaver": "že Sněmovna rychle schválila šest ratifikací mezinárodních smluv, a dopoledne se Hladík s Červeným přeli, jestli Nová zelená úsporám má peníze na zateplení domů.",
   "vysledek": [
-    "* Dvořák (Piráti) přiznal, že takto rychlý průběh pořadu schůze nečekal",
-    "* Metnar (za vládu) chtěl mluvit u smlouvy s Mongolskem, ale neměl zapnutý mikrofon",
-    "* Schillerová (ANO) si postěžovala na ruch v sále: To je fakt peklo dneska",
-    "* Hladík (KDU-ČSL) a Červený (Motoristé) se hádali o Novou zelenou úsporám a 450 000 domácností",
-    "* dvě novely prošly druhým kolem"
-  ]
+    "* Schillerová (ANO): To je fakt peklo dneska, novela prošla druhým kolem",
+    "* Hladík (KDU-ČSL) tvrdil 450 tisíc domácností, Červený (Motoristé) páku 50 miliard a přiznal, že mladé lidovce vyhodili ze sítí resortu, nechtěli opozici u klávesnice"
+  ],
+  "board_proslo_label": "novela prošla druhým kolem",
+  "board_zamitnuto_label": "návrhů neprošlo"
 }

@@ -3,7 +3,7 @@
   "nazev": "Novela z. o spotřebitelském úvěru",
   "datum": "25.06.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "ranní expresní projednání smluv a novely o spotřebitelském úvěru",
+  "predmet_lidsky": "spotřebitelském úvěru",
   "koho": [
     "Koho se to týká? Každého, kdo někdy řešil půjčku, splátky nebo online smlouvu s bankou."
   ],
@@ -16,11 +16,11 @@
       "link_phrase": "takto rychlý průběh pořadu schůze"
     },
     {
-      "text": "Metnar se chtěl hlásit, ale neměl zapnutý mikrofon.",
+      "text": "Metnar u Mongolska mluvil o policejní spolupráci a výměně informací.",
       "source": "steno",
-      "steno_id": "2025_24_00498",
-      "citace": "(Ministr Metnar se snaží promluvit – není zapnutý mikrofon.) Pardon, nemůžete do toho, když vám nezapnu mikrofon.",
-      "link_phrase": "nebyl zapnutý mikrofon"
+      "steno_id": "2025_24_00499",
+      "citace": "Základní formou spolupráce je velmi široce pojatá výměna informací.",
+      "link_phrase": "s Mongolskem"
     },
     {
       "text": "Schillerová si uprostřed projevu postěžovala předsedajícímu na ruch v sále: To je fakt peklo dneska.",
@@ -43,21 +43,11 @@
       "steno_id": "2025_24_00527",
       "citace": "evropskou směrnici o spotřebitelských úvěrech",
       "link_phrase": "evropskou směrnici o půjčkách"
-    },
-    {
-      "text": "Metnar Mongolsko pro lead.",
-      "source": "steno",
-      "steno_id": "2025_24_00498",
-      "citace": "U smlouvy s Mongolskem",
-      "link_phrase": "s Mongolskem"
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "To je fakt peklo dneska",
-  "lead": "Schillerová (ANO) si u novely o spotřebitelském úvěru postěžovala na podmínky v sále, kde byl víc ruchu než poslechu. Uprostřed věty o evropské směrnici se obrátila na předsedajícího: To je fakt peklo dneska. Ten poslance požádal, ať se ztiší, a debata šla dál. Novela prošla druhým kolem.\n\nDopoledne mezitím Sněmovna stihla sedm mezinárodních smluv, od Tanzanie po Maltu. Poslanci je projeli rychle jako na páse. Dvořák (Piráti) přiznal, že takto rychlý průběh pořadu schůze nečekal. U smlouvy s Mongolskem chtěl promluvit Metnar (za vládu), ale nebyl zapnutý mikrofon.",
-  "pointa": "Peklo nebylo v úrocích, ale v sále. Ministryně to pojmenovala dřív, než dořekla směrnici o půjčkách.",
-  "mean": "Novela o spotřebitelském úvěru převádí do českého práva evropskou směrnici o půjčkách a ochraně lidí, kteří podepisují smlouvy online. Ve druhém kole se ladí detaily, závěrečné hlasování přijde později. Ráno k tomu přibylo sedm ratifikací smluv s cizími státy, proto Schillerové reakce dává smysl i mimo samotný úvěrový zákon.",
+  "priorita": 3,
+  "nadpis": "To je fakt\npeklo dneska",
   "pocet_hlasovani": 1,
   "proslo": true,
   "signaly": {
@@ -67,5 +57,14 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 44339
+  "steno_slov": 44339,
+  "lead": "Schillerová (ANO) si u novely o spotřebitelském úvěru postěžovala na ruch v sále: To je fakt peklo dneska. Skopeček (ODS) žádal ztišení, novela prošla druhým kolem.\n\nDříve dopoledne Sněmovna odsouhlasila šest ratifikací mezinárodních smluv, rychle jako na páse. Dvořák (Piráti) nečekal takto rychlý průběh pořadu schůze.",
+  "pointa": "Peklo nebylo v úrocích, ale v sále. Ministryně to pojmenovala dřív, než dořekla směrnici o půjčkách.",
+  "mean": "Novela převádí evropskou směrnici o půjčkách online. Ve druhém kole se ladí detaily, závěrečné hlasování přijde později. Ráno k tomu přibylo šest ratifikací mezinárodních smluv.",
+  "kuriozita_links": [
+    {
+      "label": "Šest ratifikací mezinárodních smluv",
+      "page": "smlouvy"
+    }
+  ]
 }

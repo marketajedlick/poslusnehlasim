@@ -1,0 +1,65 @@
+{
+  "slug": "mezinarodni-smlouvy-25-06",
+  "nadpis": "Mezinárodní smlouvy",
+  "datum": "25.06.2026",
+  "link_phrases": [
+    "šest ratifikací mezinárodních smluv",
+    "šest ratifikací smluv"
+  ],
+  "smlouvy": [
+    {
+      "stat": "Tanzanie",
+      "tema": "Smlouva o zamezení dvojímu zdanění",
+      "recnik": "Alena Schillerová (za vládu)",
+      "text": "Historicky první smlouva o zamezení dvojímu zdanění s Tanzanií, podepsaná v Dar es Salaam.",
+      "steno_id": "2025_24_00478",
+      "citace": "jedná se o historicky první smlouvu o zamezení dvojímu zdanění s Tanzanií",
+      "link_phrase": "Tanzanie"
+    },
+    {
+      "stat": "Keňa",
+      "tema": "Smlouva o zamezení dvojímu zdanění",
+      "recnik": "Alena Schillerová (za vládu)",
+      "text": "Daňová smlouva s jednou z nejstabilnějších zemí východní Afriky.",
+      "steno_id": "2025_24_00487",
+      "citace": "předkládám vám návrh na sjednání Smlouvy mezi Českou republikou a Keňskou republikou o zamezení dvojímu zdanění",
+      "link_phrase": "Keňou"
+    },
+    {
+      "stat": "Slovensko",
+      "tema": "Smlouva o policejní spolupráci",
+      "recnik": "Lubomír Metnar (za vládu)",
+      "text": "Nahrazuje smlouvu z roku 2004, posiluje spolupráci policistů na hranicích.",
+      "steno_id": "2025_24_00494",
+      "citace": "návrh na souhlas s ratifikací smlouvy mezi Českou republikou a Slovenskou republikou o policejní spolupráci",
+      "link_phrase": "Slovenskem"
+    },
+    {
+      "stat": "Mongolsko",
+      "tema": "Smlouva o policejní spolupráci",
+      "recnik": "Lubomír Metnar (za vládu)",
+      "text": "První smluvní rámec pro policejní spolupráci: výměna informací, společné týmy, ochrana svědků.",
+      "steno_id": "2025_24_00499",
+      "citace": "smlouvy mezi Českou republikou a Mongolskem o policejní spolupráci",
+      "link_phrase": "Mongolskem"
+    },
+    {
+      "stat": "Německo",
+      "tema": "Smlouva o společných státních hranicích",
+      "recnik": "Lubomír Metnar (za vládu)",
+      "text": "819 kilometrů hranice se Saskem a Bavorskem, nová smlouva místo úpravy z roku 1994.",
+      "steno_id": "2025_24_00504",
+      "citace": "Smlouvy mezi Českou republikou a Spolkovou republikou Německo o společných státních hranicích",
+      "link_phrase": "Německem"
+    },
+    {
+      "stat": "Malta",
+      "tema": "Smlouva o zamezení dvojímu zdanění",
+      "recnik": "Alena Schillerová (za vládu)",
+      "text": "Nahrazuje smlouvu z roku 1997, která už neodpovídá současným daňovým standardům.",
+      "steno_id": "2025_24_00509",
+      "citace": "smlouvy mezi Českou republikou a Maltskou republikou o zamezení dvojímu zdanění",
+      "link_phrase": "Maltou"
+    }
+  ]
+}
