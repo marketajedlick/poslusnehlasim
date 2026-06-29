@@ -24,7 +24,7 @@
   </div>
 </td>
 <td class="head-title" height="96" align="center" valign="middle" style="vertical-align:middle;padding:0 8px;text-align:center;">
-  <div class="eyebrow" style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.2em;font-size:13px;color:#cf5a31;text-align:center;line-height:1.2;">deník sněmovny</div>
+  <div class="eyebrow" style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.2em;font-size:13px;color:#cf5a31;text-align:center;line-height:1.2;">srozumitelný přehled ze Sněmovny</div>
   <h1 class="mast email-mast" style="margin:4px 0 0;font-family:Impact,'Arial Black',sans-serif;text-transform:uppercase;color:#211c14;font-size:38px;line-height:0.95;text-align:center;">POSLUŠNĚ <span class="terra" style="color:#cf5a31;">HLÁSÍM</span></h1>
 </td>
 </tr>
@@ -46,7 +46,7 @@
   </tr>
   </table>
   {% if content.board_note_lines %}
-  <div class="board-note">{% for line in content.board_note_lines %}{{ line }}{% if not loop.last %}<br />{% endif %}{% endfor %}</div>
+  <div class="board-note">{% for line in content.board_note_lines %}{{ line | safe }}{% if not loop.last %}<br />{% endif %}{% endfor %}</div>
   {% endif %}
 </div>
 
@@ -71,9 +71,6 @@
     {% if item.mean %}
     <p class="mean" style="margin-top:10px;font-size:15px;line-height:1.45;color:#211c14;font-weight:bold;text-align:left;"><b style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;letter-spacing:0.06em;text-transform:uppercase;font-size:11px;color:#cf5a31;">Co to znamená pro vás: </b>{{ item.mean | safe }}</p>
     {% endif %}
-    {% if item.kuriozita %}
-    <p class="kuriozita" style="margin-top:8px;font-size:15px;line-height:1.45;color:#5a5348;font-style:italic;text-align:left;">{{ item.kuriozita | safe }}</p>
-    {% endif %}
     {% if item.kuriozita_nav %}
     <p class="kuriozita-links" style="margin-top:8px;font-size:14px;line-height:1.45;text-align:left;">
       {% for label, href in item.kuriozita_nav %}
@@ -81,6 +78,9 @@
       <a href="{{ href }}" style="color:#5a5348 !important;font-weight:normal;text-decoration:underline;">{{ label }}</a>
       {% endfor %}
     </p>
+    {% endif %}
+    {% if item.kuriozita %}
+    <p class="kuriozita" style="margin-top:8px;font-size:15px;line-height:1.45;color:#5a5348;font-style:italic;text-align:left;">{{ item.kuriozita | safe }}</p>
     {% endif %}
   </td>
   </tr>
@@ -102,6 +102,7 @@
   <p style="margin:0 0 16px;"><a href="{{ pivo_url }}#stamgast" style="color:#cf5a31;font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.08em;text-decoration:none;">Kup Švejkovi pivo 🍺</a></p>
 </div>
 <div class="email-legal" style="margin-top:4px;padding-top:14px;border-top:1px solid rgba(33,28,20,0.14);text-align:center;font-size:12px;line-height:1.6;color:#5a503e;">
+  <p style="margin:0 0 8px;font-family:Arial,Helvetica,sans-serif;">Poslušně hlásím · poslusnehlasim.cz · srozumitelný přehled ze Sněmovny</p>
   <p style="margin:0 0 8px;font-family:Arial,Helvetica,sans-serif;">
     <a href="*|WEBVERSION|*" style="color:#5a503e;text-decoration:underline;">On-line verze</a>
   </p>

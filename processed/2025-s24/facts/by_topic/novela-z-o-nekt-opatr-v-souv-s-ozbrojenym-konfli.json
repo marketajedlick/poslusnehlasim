@@ -3,7 +3,7 @@
   "nazev": "Novela z. o někt. opatř. v souv. s ozbrojeným konfliktem - Ukrajina -",
   "datum": "24.06.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "bezpečnostní novela Lex Ukrajina ve druhém kole",
+  "predmet_lidsky": "někt. opatř. v souv. s ozbrojeným konfliktem - Ukrajina",
   "koho": [
     "Koho se to týká? Ukrajinců s dočasnou ochranou v Česku a každého, kdo sleduje, jak stát mění pravidla kvůli válce na Ukrajině."
   ],
@@ -117,9 +117,6 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "ČTK v sále",
-  "lead": "Odpoledne téhož dne šla na řadu bezpečnostní novela Lex Ukrajina pro zhruba tři sta tisíc lidí s dočasnou ochranou v Česku. Ve druhém kole, kdy se ladí detaily před závěrečným hlasováním, nejdřív poslanci zvolili poslance, který návrh vede dál, Langa.\n\nNovela mění sedm zákonů najednou, od pravidel dočasné ochrany a humanitárních dávek přes azyl a pobyt cizinců až po správní soudy a trestní sazby za nelegální přechod hranic. Rakušan (STAN) mluvil o pobytových a sociálních podmínkách pro lidi s dočasnou ochranou. Pláteník pak ve faktické poznámce, krátké reakci na předchozího řečníka, přečetl z ČTK, že Ústavní soud nařídil vládě oznámit NATO, že prezident Pavel pojede na červencový summit do Ankary. Chtěl to napojit na bezpečnost, s novelou o Ukrajincích to ale nesouviselo. Peštová (ANO) namítla, co to má společného s tímto bodem, a že si poslanci ve sněmovně nebudou jen tak předčítat novinové zprávy. Pláteník se pak omluvil, že se nechal unést tím tématem bezpečnosti, protože celý bod i Rakušan mluvili o bezpečnosti státu, a že novina o Pavlovi do faktické nepatřila.",
-  "pointa": "Debata o Ukrajincích a odbočka k ČTK. Novela mezitím prošla druhým kolem.",
-  "mean": "Lex Ukrajina je balíček změn kvůli válce na Ukrajině. Dotkne se pobytových podmínek, sociálních pravidel a dalších oblastí najednou. Ve druhém kole poslanci upravují detaily a posílají návrh do výborů, závěrečné hlasování přijde později. Langa zvolili zpravodajem, proti třicet jedna. Faktická poznámka má reagovat na předchozího řečníka, ne odbočit kamkoliv. Pláteník proto dostal výtku, že do debaty o Ukrajincích vtáhl zprávu o prezidentovi a NATO. Novela stejně prošla druhým kolem.",
   "pocet_hlasovani": 2,
   "proslo": true,
   "signaly": {
@@ -127,7 +124,10 @@
     "pritomno_min": 119,
     "jednomyslne": false,
     "spor": true,
-    "prazdny_sal": false
+    "prazdny_sal": true
   },
-  "steno_slov": 313
+  "steno_slov": 313,
+  "lead": "Odpoledne téhož dne šla na řadu bezpečnostní novela Lex Ukrajina pro zhruba tři sta tisíc lidí s dočasnou ochranou v Česku. Ve druhém kole, kdy se ladí detaily před závěrečným hlasováním, nejdřív poslanci zvolili poslance, který návrh vede dál, Langa.\n\nNovela mění sedm zákonů najednou, od pravidel dočasné ochrany a humanitárních dávek přes azyl a pobyt cizinců až po správní soudy a trestní sazby za nelegální přechod hranic. Rakušan (STAN) mluvil o pobytových a sociálních podmínkách pro lidi s dočasnou ochranou. Pláteník pak ve faktické poznámce, krátké reakci na předchozího řečníka, přečetl z ČTK, že Ústavní soud nařídil vládě oznámit NATO, že prezident Pavel pojede na červencový summit do Ankary. Chtěl to napojit na bezpečnost, s novelou o Ukrajincích to ale nesouviselo. Peštová (ANO) namítla, co to má společného s tímto bodem, a že si poslanci ve sněmovně nebudou jen tak předčítat novinové zprávy. Pláteník se pak omluvil, že se nechal unést tím tématem bezpečnosti, protože celý bod i Rakušan mluvili o bezpečnosti státu, a že novina o Pavlovi do faktické nepatřila.",
+  "pointa": "Debata o Ukrajincích a odbočka k ČTK. Novela mezitím prošla druhým kolem.",
+  "mean": "Lex Ukrajina je balíček změn kvůli válce na Ukrajině. Dotkne se pobytových podmínek, sociálních pravidel a dalších oblastí najednou. Ve druhém kole poslanci upravují detaily a posílají návrh do výborů, závěrečné hlasování přijde později. Langa zvolili zpravodajem, proti třicet jedna. Faktická poznámka má reagovat na předchozího řečníka, ne odbočit kamkoliv. Pláteník proto dostal výtku, že do debaty o Ukrajincích vtáhl zprávu o prezidentovi a NATO. Novela stejně prošla druhým kolem."
 }

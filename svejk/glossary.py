@@ -966,6 +966,14 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Politické rozhodnutí sněmovny: doporučení, výzva nebo schválení postupu. Není to zákon.",
     ),
     (
+        "ratifikací",
+        "Souhlas Sněmovny se smlouvou s jiným státem. Teprve po něm smlouva v Česku platí.",
+    ),
+    (
+        "ratifikace",
+        "Souhlas Sněmovny se smlouvou s jiným státem. Teprve po ratifikaci smlouva v Česku platí.",
+    ),
+    (
         "transparenty",
         "Plakáty v jednacím sále. Poslanci jimi vyjadřují názor; nesmí zakrývat řečníka u pultu.",
     ),
@@ -1377,6 +1385,7 @@ SLOVNIK_BOX: tuple[tuple[str, str], ...] = (
     ("Přerušení schůze", "přerušení"),
     ("Senát vrátil zákon", "vrácen senátem"),
     ("Usnesení", "usnesení"),
+    ("Ratifikace", "ratifikac"),
     ("Kvorum", "kvorum"),
     ("Výbor", "výbor"),
     ("EET", "EET"),
@@ -1432,6 +1441,7 @@ SLOVNIČEK: tuple[tuple[str, str], ...] = (
     ("Co je schodek?", "Když stát utratí víc, než vybere. Něco jako když hospoda jede na sekeru."),
     ("Co je EET?", "Elektronická evidence tržeb, každá účtenka hlásila státu, kolik kdo utržil."),
     ("Co je usnesení?", "Stanovisko nebo rozhodnutí sněmovny. Nejde o zákon."),
+    ("Co je ratifikace?", "Souhlas parlamentu se smlouvou s cizím státem. Bez něj u nás neplatí."),
     ("Co je Dozimetr?", "Korupční kauza spojená s pražským dopravním podnikem, kterou vyšetřuje policie."),
     ("Co je superdávka?", "Plán na sloučení několika sociálních dávek do jednoho systému."),
     ("Co je NKÚ?", "Nejvyšší kontrolní úřad. Kontroluje, jak stát hospodaří s veřejnými penězi."),

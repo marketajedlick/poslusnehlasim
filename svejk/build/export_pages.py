@@ -27,6 +27,7 @@ from svejk.build.html import (
     render_soukromi_html,
     render_vyznamenani_table_html,
     render_steno_sources_html,
+    render_smlouvy_html,
     render_recnici_table_html,
     static_css_path,
     static_fonts_css_path,
@@ -44,6 +45,7 @@ from svejk.build.og_image import (
 from svejk.build.vyznamenani_neprosli import load_vyznamenani
 from svejk.build.steno_sources import has_steno_sources
 from svejk.build.recnici import has_recnici
+from svejk.build.mezin_smlouvy import has_smlouvy
 from svejk.build.nav import (
     clear_edition_cache,
     edition_pages_href,
@@ -349,6 +351,21 @@ def run_export_pages(
             )
             if recnici_html:
                 written.append(_write_page_html(out, recnici_rel, recnici_html))
+
+        if has_smlouvy(paths, edition.datum_unl):
+            smlouvy_rel = (
+                f"noviny/{edition.obdobi}/{edition.schuze}/{edition.datum_unl}-smlouvy.html"
+            )
+            smlouvy_html = render_smlouvy_html(
+                paths,
+                edition.datum_unl,
+                css_href=css_href,
+                fonts_css_href=fonts_css_href,
+                base_path=base,
+                link_mode="pages",
+            )
+            if smlouvy_html:
+                written.append(_write_page_html(out, smlouvy_rel, smlouvy_html))
 
     seen_dates: set[str] = set()
     for edition in editions:

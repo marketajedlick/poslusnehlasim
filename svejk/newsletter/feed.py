@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import html
+import re
 from datetime import datetime, timezone
 from email.utils import format_datetime
 from pathlib import Path
@@ -11,8 +12,8 @@ from xml.etree.ElementTree import Element, SubElement, tostring
 from svejk.build.io import read_json
 from svejk.build.nav import Edition, edition_pages_href
 from svejk.build.publish import list_site_editions
-from svejk.newsletter.config import NewsletterConfig
 from svejk.paths import SchuzePaths
+from svejk.newsletter.config import NewsletterConfig
 
 
 def _edition_page_url(
@@ -30,6 +31,11 @@ def _edition_page_url(
     return f"{site_url.rstrip('/')}{href}"
 
 
+def _strip_html(text: str) -> str:
+    """Odstraní HTML tagy — pro čistý plaintext v RSS."""
+    return re.sub(r"<[^>]+>", "", text).strip()
+
+
 def _edition_description(edition: Edition) -> str:
     from svejk.build.day_content import build_den_content
 
@@ -41,13 +47,13 @@ def _edition_description(edition: Edition) -> str:
     content = build_den_content(day_path, paths)
     parts: list[str] = []
     if content.dnesni_ucet:
-        parts.append(content.dnesni_ucet)
+        parts.append(_strip_html(content.dnesni_ucet))
     for item in content.items[:3]:
-        parts.append(item.nadpis)
+        parts.append(_strip_html(item.nadpis))
     zaver = (content.zaver_body or content.zaver or "").strip()
     if zaver:
-        parts.append(zaver)
-    return " · ".join(parts)
+        parts.append(_strip_html(zaver))
+    return " · ".join(p for p in parts if p)
 
 
 def _pub_date(edition: Edition) -> str:
@@ -76,7 +82,9 @@ def write_feed_xml(
     if not editions:
         raise FileNotFoundError(f"Žádná vydání pro období {obdobi}")
 
-    meta = _FEED_CHANNEL
+    from svejk.build.seo import site_meta_description
+
+    meta = {**_FEED_CHANNEL, "description": site_meta_description()}
     site = cfg.site_url.rstrip("/")
     channel = Element("channel")
     SubElement(channel, "title").text = meta["title"]

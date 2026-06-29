@@ -4,7 +4,6 @@
   "topic_slugs": [
     "porad-24-schuze"
   ],
-  "steno_zdroje": true,
   "stats": {
     "pocet_hlas": 0,
     "minuty": 521,
@@ -12,7 +11,7 @@
     "proslo": 0,
     "zamitnuto": 0,
     "spor_o_porad": true,
-    "dlouha_debata": true
+    "dlouha_debata": false
   },
   "dnesni_ucet": "První den schůze 24: hodina o ČT a ČRo,\npak večer padesát jedna hlasování o pořadu.",
   "zaver": "že Sněmovna začala čtyřiadvacátou schůzi hádankou o nezávislosti televize a rozhlasu, Bartoš předvedl fiktivní zpravodajství chválicí vládu, Richterová varovala před seškrtáním rozpočtu kvůli nepříjemným reportážím, a večer poslanci tři hodiny jen hlasovali, co se kdy projedná.",

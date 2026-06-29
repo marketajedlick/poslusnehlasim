@@ -4,7 +4,7 @@
 {% include "head-noviny.html" %}
 <style>.stagewrap,.stack{width:100%;max-width:100%;margin:0 auto}@media(min-width:721px){.stagewrap,.stack{width:840px;max-width:840px}}</style>
 <title>{{ page_title }}</title>
-<meta name="description" content="{{ meta_description }}" />
+<meta name="description" content="{{ site_meta_description }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
 {% include "og-meta.html" %}
 <script type="application/ld+json">{{ article_json_ld | tojson }}</script>
@@ -113,6 +113,14 @@
             {% if item.mean %}
             <p class="mean"><b>{{ t.edition.mean_label }} </b>{{ item.mean | glossary }}</p>
             {% endif %}
+            {% if item.kuriozita_nav %}
+            <nav class="kuriozita-links" aria-label="{{ t.edition.kuriozita_aria }}">
+              {% for label, href in item.kuriozita_nav %}
+              {% if not loop.first %}<span class="kuriozita-links-sep" aria-hidden="true">·</span>{% endif %}
+              <a class="kuriozita-link" href="{{ href }}">{{ label }}</a>
+              {% endfor %}
+            </nav>
+            {% endif %}
             {% if item.citace_text %}
             <blockquote class="item-quote">
               <p>„{{ item.citace_text | glossary }}“</p>
@@ -123,14 +131,6 @@
             {% endif %}
             {% if item.kuriozita %}
             <p class="kuriozita">{{ item.kuriozita | glossary }}</p>
-            {% endif %}
-            {% if item.kuriozita_nav %}
-            <nav class="kuriozita-links" aria-label="{{ t.edition.kuriozita_aria }}">
-              {% for label, href in item.kuriozita_nav %}
-              {% if not loop.first %}<span class="kuriozita-links-sep" aria-hidden="true">·</span>{% endif %}
-              <a class="kuriozita-link" href="{{ href }}">{{ label }}</a>
-              {% endfor %}
-            </nav>
             {% endif %}
           </div>
           {% if newsletter.show_corrections and item.slug %}
@@ -450,11 +450,19 @@
   }
 
   document.querySelectorAll(".term-tip").forEach(function (tip) {
-    tip.addEventListener("mouseenter", function () {
+    tip.addEventListener("click", function (e) {
+      if (tip.closest("a.steno-link")) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    });
+    tip.addEventListener("mouseenter", function (e) {
+      e.stopPropagation();
       if (isMobile()) return;
       showTip(tip);
     });
-    tip.addEventListener("mouseleave", function () {
+    tip.addEventListener("mouseleave", function (e) {
+      e.stopPropagation();
       if (isMobile()) return;
       hideTip(tip);
     });

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+from typing import Any
 
 from markupsafe import Markup, escape
 
@@ -25,6 +26,10 @@ def _wrap(label: str, tip: str) -> str:
 
 
 _HTML_SPLIT = re.compile(r"(<[^>]+>)")
+_TERM_TIP_BLOCK = re.compile(
+    r'(<span class="term-tip"[^>]*>.*?</span>)',
+    re.I | re.S,
+)
 
 
 def _markup_plain(text: str) -> str:
@@ -61,6 +66,18 @@ def markup_glossary(text: str) -> str:
     """Vrátí HTML s hover tooltipem u známých pojmů (bez překrývání)."""
     if not text:
         return text
+    if "class=\"term-tip\"" in text:
+        parts = _TERM_TIP_BLOCK.split(text)
+        return "".join(
+            part if part.startswith('<span class="term-tip"') else _markup_html_fragment(part)
+            for part in parts
+        )
+    return _markup_html_fragment(text)
+
+
+def _markup_html_fragment(text: str) -> str:
+    if not text:
+        return text
     if "<" not in text:
         return _markup_plain(text)
 
@@ -69,6 +86,19 @@ def markup_glossary(text: str) -> str:
         part if part.startswith("<") else _markup_plain(part)
         for part in parts
     )
+
+
+def apply_glossary_to_content(content: Any) -> None:
+    """Tooltipy v textu dne — před vložením odkazů, které frázi rozsekají."""
+    for field in ("dnesni_ucet", "result_note", "zaver", "zaver_body"):
+        val = getattr(content, field, None)
+        if val:
+            setattr(content, field, markup_glossary(val))
+    for item in getattr(content, "items", []) or []:
+        for field in ("lead", "mean", "kuriozita", "citace_text"):
+            val = getattr(item, field, None)
+            if val:
+                setattr(item, field, markup_glossary(val))
 
 
 def glossary_markup(text: str) -> Markup:

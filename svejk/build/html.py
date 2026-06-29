@@ -13,6 +13,7 @@ from markupsafe import Markup
 
 from svejk.build.day_content import DenContent, build_den_content, datum_design
 from svejk.build.io import read_json
+from svejk.build.seo import site_meta_description
 from svejk.glossary import slovnicek_anchor, slovnicek_entries
 from svejk.build.publish import list_site_editions
 from svejk.strings import footer_closings, footer_stats_line, load_strings, schuze_count_label
@@ -31,6 +32,7 @@ from svejk.build.nav import (
     soukromi_pages_href,
     vyznamenani_pages_href,
     steno_sources_pages_href,
+    smlouvy_pages_href,
     recnici_pages_href,
 )
 
@@ -244,6 +246,17 @@ def _apply_content_item_links(
                 link_mode=link_mode,
                 base_path=base_path,
             )
+            from svejk.build.mezin_smlouvy import resolve_smlouvy_page_links
+
+            resolved += resolve_smlouvy_page_links(
+                paths,
+                content.datum,
+                item.kuriozita_links,
+                obdobi=obdobi,
+                schuze=paths.schuze,
+                link_mode=link_mode,
+                base_path=base_path,
+            )
             item.kuriozita_nav = [
                 (label, _abs_href(href, site_url)) for label, href in resolved
             ]
@@ -319,8 +332,13 @@ def _site_ctx(
     base_path: str = "",
     page_path: str = "/",
 ) -> dict[str, Any]:
+    from svejk.build.seo import site_brand_line as _site_brand_line
+    from svejk.build.seo import site_meta_description as _site_meta_description
+
     return {
         "t": load_strings(),
+        "site_meta_description": _site_meta_description(),
+        "site_brand_line": _site_brand_line(),
     }
 
 
@@ -454,7 +472,7 @@ def render_den_html(
             first_item_nadpis=content.items[0].nadpis if content.items else "",
             proslo=content.proslo,
             zamitnuto=content.zamitnuto,
-        ) or f"Deník z Poslanecké sněmovny, {datum_design(content.datum, content.den)}."
+        )
     if not canonical_url:
         href = edition_pages_href(ob, paths.schuze, content.datum, base_path)
         canonical_url = f"{cfg.site_url.rstrip('/')}{href}"
@@ -509,7 +527,12 @@ def render_den_html(
             den=content.den,
         )
         if is_homepage
-        else edition_og_title(content.datum, content.den)
+        else _edition_page_title(
+            dnesni_ucet=content.dnesni_ucet,
+            first_item_nadpis=content.items[0].nadpis if content.items else "",
+            datum_unl=content.datum,
+            den=content.den,
+        )
     )
     og_headline = edition_og_headline(
         dnesni_ucet=content.dnesni_ucet,
@@ -600,7 +623,7 @@ def render_den_html(
                 item.lead = inject_mean_links(item.lead, link_pairs)
                 item.mean = inject_mean_links(item.mean, link_pairs)
         if item.kuriozita_links:
-            item.kuriozita_nav = resolve_vyznamenani_page_links(
+            resolved = resolve_vyznamenani_page_links(
                 paths,
                 content.datum,
                 item.kuriozita_links,
@@ -609,6 +632,17 @@ def render_den_html(
                 link_mode=link_mode,
                 base_path=base_path,
             ) + resolve_recnici_page_links(
+                paths,
+                content.datum,
+                item.kuriozita_links,
+                obdobi=ob,
+                schuze=paths.schuze,
+                link_mode=link_mode,
+                base_path=base_path,
+            )
+            from svejk.build.mezin_smlouvy import resolve_smlouvy_page_links
+
+            item.kuriozita_nav = resolved + resolve_smlouvy_page_links(
                 paths,
                 content.datum,
                 item.kuriozita_links,
@@ -941,7 +975,7 @@ def render_archiv_html(
         site_url=cfg.site_url,
         base_path=base_path,
         title=t["archive"]["title"] + " · Poslušně hlásím",
-        description=t["archive"]["meta"].format(obdobi=obdobi),
+        description=site_meta_description(),
     )
     tpl = _jinja_env().get_template("archiv.html")
     return tpl.render(
@@ -1121,7 +1155,7 @@ def render_vyznamenani_table_html(
         site_url=cfg.site_url,
         base_path=base_path,
         title=og_title,
-        description=page_description,
+        description=site_meta_description(),
     )
     votes_by_cislo = _load_votes_by_cislo(paths, datum_unl)
     explain = page_explain(kind, data, votes_by_cislo)
@@ -1212,7 +1246,7 @@ def render_steno_sources_html(
         site_url=cfg.site_url,
         base_path=base_path,
         title=og_title,
-        description=page_description,
+        description=site_meta_description(),
     )
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url) if canonical_url else ""
     tpl = _jinja_env().get_template("steno-zdroje-stranka.html")
@@ -1241,6 +1275,94 @@ def render_steno_sources_html(
             base_path,
             obdobi=obdobi,
             closing_seed=f"steno/{datum_unl}",
+        ),
+        **favicons,
+        **og,
+    )
+
+
+def render_smlouvy_html(
+    paths: SchuzePaths,
+    datum_unl: str,
+    *,
+    inline_css: bool = False,
+    css_href: str | None = None,
+    fonts_css_href: str | None = None,
+    base_path: str = "",
+    link_mode: str = "file",
+) -> str | None:
+    from svejk.build.mezin_smlouvy import has_smlouvy, smlouvy_page_items
+
+    if not has_smlouvy(paths, datum_unl):
+        return None
+    items = smlouvy_page_items(
+        paths,
+        datum_unl,
+        obdobi=paths.obdobi,
+        link_mode=link_mode,
+        base_path=base_path,
+    )
+    if not items:
+        return None
+    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path)
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    obdobi = paths.obdobi
+    schuze = paths.schuze
+    datum_label = datum_design(datum_unl, den_v_tydnu(datum_unl))
+    t = load_strings()
+    sp = t.get("smlouvy_page", {})
+    page_title = sp.get("page_title", "Mezinárodní smlouvy")
+    page_gloss = sp.get("page_gloss", "")
+    page_description = page_gloss or page_title
+    steno_page_href = steno_sources_pages_href(obdobi, schuze, datum_unl, base_path)
+    if link_mode == "pages":
+        edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path)
+        canonical_url = f"{cfg.site_url.rstrip('/')}{smlouvy_pages_href(obdobi, schuze, datum_unl, base_path)}"
+    else:
+        d = datetime.strptime(datum_unl, "%d.%m.%Y")
+        edition_href = f"{d.strftime('%Y-%m-%d')}.html"
+        canonical_url = ""
+    og_title = f"{page_title} · {datum_label} · Poslušně hlásím"
+    og = _og_context(
+        site_url=cfg.site_url,
+        base_path=base_path,
+        title=og_title,
+        description=site_meta_description(),
+    )
+    page_path = _page_path_from_canonical(canonical_url, cfg.site_url) if canonical_url else ""
+    tpl = _jinja_env().get_template("smlouvy-stranka.html")
+    return tpl.render(
+        items=items,
+        datum_label=datum_label,
+        edition_href=edition_href,
+        steno_page_href=steno_page_href,
+        page_title=page_title,
+        page_gloss=page_gloss,
+        page_description=page_description,
+        steno_link_label=sp.get("steno_link", "Stenoprotokol →"),
+        psp_link_label=sp.get("psp_link", "Přesný záznam na webu Sněmovny →"),
+        canonical_url=canonical_url,
+        inline_css=inline_css,
+        css=css,
+        css_href=css_href,
+        fonts_css_href=fonts_css_href,
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx(site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        **_site_nav_ctx(
+            obdobi,
+            base_path,
+            current_schuze=schuze,
+            current_datum=datum_unl,
+        ),
+        **_site_footer_ctx(
+            base_path,
+            obdobi=obdobi,
+            closing_seed=f"smlouvy/{datum_unl}",
         ),
         **favicons,
         **og,
@@ -1284,7 +1406,7 @@ def render_recnici_table_html(
         site_url=cfg.site_url,
         base_path=base_path,
         title=og_title,
-        description=page_description,
+        description=site_meta_description(),
     )
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url) if canonical_url else ""
     tpl = _jinja_env().get_template("recnici-tabulka-stranka.html")
@@ -1349,7 +1471,7 @@ def render_slovnicek_html(
         site_url=cfg.site_url,
         base_path=base_path,
         title=gp["title"],
-        description=gp["meta"],
+        description=site_meta_description(),
     )
     from svejk.build.seo import faq_json_ld as _faq_json_ld
 
@@ -1401,7 +1523,7 @@ def render_pivo_html(
         site_url=cfg.site_url,
         base_path=base_path,
         title=bp["title"],
-        description=bp["meta"],
+        description=site_meta_description(),
     )
     tpl = _jinja_env().get_template("pivo-stranka.html")
     return tpl.render(
@@ -1481,7 +1603,7 @@ def render_soukromi_html(
         site_url=cfg.site_url,
         base_path=base_path,
         title=pp["title"],
-        description=pp["meta"],
+        description=site_meta_description(),
     )
     tpl = _jinja_env().get_template("soukromi.html")
     return tpl.render(
@@ -1529,7 +1651,7 @@ def render_podminky_html(
         site_url=cfg.site_url,
         base_path=base_path,
         title=tp["title"],
-        description=tp["meta"],
+        description=site_meta_description(),
     )
     tpl = _jinja_env().get_template("podminky-stranka.html")
     return tpl.render(
@@ -1577,7 +1699,7 @@ def render_podpora_html(
         site_url=cfg.site_url,
         base_path=base_path,
         title=sp["title"],
-        description=sp["meta"],
+        description=site_meta_description(),
     )
     tpl = _jinja_env().get_template("podpora-stranka.html")
     return tpl.render(
@@ -1628,7 +1750,7 @@ def render_o_webu_html(
         site_url=cfg.site_url,
         base_path=base_path,
         title=ap["title"],
-        description=ap["meta"],
+        description=site_meta_description(),
     )
     nav_ctx = _site_nav_ctx(obdobi, base_path)
     tpl = _jinja_env().get_template("o-webu-stranka.html")

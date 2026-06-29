@@ -3,7 +3,7 @@
 <head>
 {% include "head-noviny.html" %}
 <title>{{ t.about_page.title }}</title>
-<meta name="description" content="{{ t.about_page.meta }}" />
+<meta name="description" content="{{ site_meta_description }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
 {% include "og-meta.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
@@ -21,7 +21,7 @@
   <div class="soukromi-body soukromi-body--prose">
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Co je Poslušně hlásím</h2>
-      <p>Poslušně hlásím je deník z jednání Poslanecké sněmovny. Po každém jednacím dni shrneme, co se ve sněmovně řešilo, jak dopadla hlasování a co z toho plyne pro běžného člověka. Text je psaný srozumitelně, s lehkou satirou ve stylu Haška, ale vždy na reálných datech ze sněmovny.</p>
+      <p>{{ site_meta_description }}</p>
     </section>
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Satira, ne vymyšlené zprávy</h2>

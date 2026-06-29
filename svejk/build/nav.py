@@ -180,6 +180,17 @@ def steno_sources_pages_href(
     return f"{base}{path}" if base else path
 
 
+def smlouvy_pages_href(
+    obdobi: int,
+    schuze: int,
+    datum_unl: str,
+    base_path: str = "",
+) -> str:
+    base = base_path.rstrip("/")
+    path = f"/noviny/{obdobi}/{schuze}/{datum_unl}-smlouvy.html"
+    return f"{base}{path}" if base else path
+
+
 def recnici_pages_href(
     obdobi: int,
     schuze: int,

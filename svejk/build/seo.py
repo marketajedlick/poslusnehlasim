@@ -66,6 +66,23 @@ _AI_BOTS = (
 )
 
 
+SITE_NAME = "Poslušně hlásím"
+SITE_DOMAIN = "poslusnehlasim.cz"
+SITE_TAGLINE = "srozumitelný přehled ze Sněmovny"
+SITE_META_DESCRIPTION = (
+    "Poslušně hlásím je srozumitelný přehled z Poslanecké sněmovny: "
+    "co se projednalo, co prošlo a proč na tom záleží."
+)
+
+
+def site_meta_description() -> str:
+    return SITE_META_DESCRIPTION
+
+
+def site_brand_line() -> str:
+    return f"{SITE_NAME} · {SITE_DOMAIN} · {SITE_TAGLINE}"
+
+
 def meta_description(text: str, *, max_len: int = 155) -> str:
     one = " ".join(text.split())
     if len(one) <= max_len:
@@ -134,27 +151,42 @@ def edition_meta_description(
     zamitnuto: int = 0,
     max_len: int = 155,
 ) -> str:
-    """Unikátní meta description, skóre dne + shrnutí, ne kopie <title>."""
+    """Unikátní meta popis pro Google odvozený z obsahu vydání."""
+    import re
+
+    def _strip_html(text: str) -> str:
+        return re.sub(r"<[^>]+>", "", text).strip()
+
     parts: list[str] = []
+
+    nadpis = _strip_html(first_item_nadpis)
+    if nadpis:
+        parts.append(nadpis)
+
+    ucet = _strip_html(dnesni_ucet)
+    if ucet:
+        first_sent = ucet.split(". ")[0].rstrip(".")
+        if first_sent and first_sent not in parts:
+            parts.append(first_sent)
+
     if proslo or zamitnuto:
-        parts.append(f"Skóre dne {proslo}:{zamitnuto}.")
-    account = " ".join((dnesni_ucet or "").split())
-    if account:
-        parts.append(account)
-    elif first_item_nadpis.strip():
-        parts.append(first_item_nadpis.strip())
-    raw = " ".join(parts)
-    return meta_description(raw, max_len=max_len) if raw else ""
+        total = proslo + zamitnuto
+        parts.append(f"Prošlo {proslo} z {total} bodů.")
+
+    raw = " · ".join(p for p in parts if p)
+    if not raw:
+        return SITE_META_DESCRIPTION
+    return meta_description(raw, max_len=max_len)
 
 
 def homepage_page_title(**_kwargs: object) -> str:
     """Stabilní <title> pro úvodní stránku, bez denního tématu ani data."""
-    return "Poslušně hlásím · Deník ze Sněmovny"
+    return "Poslušně hlásím · Švejkův deník ze Sněmovny"
 
 
 def homepage_og_title() -> str:
     """Fallback og:title bez kontextu vydání (statické stránky)."""
-    return "Poslušně hlásím · Deník ze Sněmovny"
+    return "Poslušně hlásím · Švejkův deník ze Sněmovny"
 
 
 def homepage_share_og_title(
@@ -213,10 +245,17 @@ def _truncate_text(text: str, *, max_len: int) -> str:
     return cut + "…"
 
 
-def _publisher_block(*, site_url: str, site_name: str, logo_url: str) -> dict:
-    return {
-        "@type": "Organization",
+def _publisher_block(
+    *,
+    site_url: str,
+    site_name: str = SITE_NAME,
+    logo_url: str,
+    org_id: str | None = None,
+) -> dict:
+    block: dict = {
+        "@type": ["Organization", "NewsMediaOrganization"],
         "name": site_name,
+        "alternateName": SITE_DOMAIN,
         "url": site_url.rstrip("/") + "/",
         "logo": {
             "@type": "ImageObject",
@@ -225,6 +264,9 @@ def _publisher_block(*, site_url: str, site_name: str, logo_url: str) -> dict:
             "height": 280,
         },
     }
+    if org_id:
+        block["@id"] = org_id
+    return block
 
 
 def article_json_ld(
@@ -288,36 +330,43 @@ def article_json_ld(
     return data
 
 
-_WEBSITE_DESCRIPTION = (
-    "Deník z jednání Poslanecké sněmovny ve stylu Haška, "
-    "srozumitelné shrnutí hlasování a zákonů pro lidi, kteří do sněmovny nemusí."
-)
+_WEBSITE_DESCRIPTION = SITE_META_DESCRIPTION
 
 
 def website_json_ld(
     *,
     site_url: str,
-    site_name: str = "Poslušně hlásím",
+    site_name: str = SITE_NAME,
     description: str = _WEBSITE_DESCRIPTION,
     logo_url: str | None = None,
     base_path: str = "",
 ) -> dict:
-    """WebSite + publisher pro homepage."""
+    """WebSite + NewsMediaOrganization pro homepage."""
     base = site_url.rstrip("/")
     logo = logo_url or publisher_logo_url(site_url, base_path)
-    data = {
-        "@context": "https://schema.org",
+    org_id = f"{base}/#organization"
+    website_id = f"{base}/#website"
+    organization = _publisher_block(
+        site_url=site_url,
+        site_name=site_name,
+        logo_url=logo,
+        org_id=org_id,
+    )
+    organization["description"] = description
+    website = {
         "@type": "WebSite",
-        "@id": f"{base}/#website",
+        "@id": website_id,
         "url": f"{base}/",
         "name": site_name,
+        "alternateName": SITE_DOMAIN,
         "description": description,
         "inLanguage": "cs",
-        "publisher": _publisher_block(
-            site_url=site_url, site_name=site_name, logo_url=logo
-        ),
+        "publisher": {"@id": org_id},
     }
-    return data
+    return {
+        "@context": "https://schema.org",
+        "@graph": [website, organization],
+    }
 
 
 def faq_json_ld(
@@ -473,11 +522,11 @@ def write_llms_txt(
         f"- [{label}]({href})"
         for label, href in _static_page_links(site_url=site_url, base_path=base_path)
     )
-    llms = f"""# Poslušně hlásím
+    llms = f"""# {SITE_NAME}
 
-> Deník z jednání Poslanecké sněmovny ČR ve stylu Haška: srozumitelné shrnutí hlasování a zákonů pro lidi, kteří do sněmovny nemusí.
+> {SITE_META_DESCRIPTION}
 
-Poslušně hlásím publikuje po každém jednacím dni stručné vydání: kolik věcí prošlo, co se schválilo nebo zamítlo a co to znamená v praxi.
+{SITE_NAME} ({SITE_DOMAIN}) publikuje po každém jednacím dni stručné vydání: kolik věcí prošlo, co se schválilo nebo zamítlo a co to znamená v praxi.
 
 ## Hlavní stránky
 

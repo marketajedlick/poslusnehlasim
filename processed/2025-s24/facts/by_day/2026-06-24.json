@@ -5,18 +5,15 @@
     "debata-sluzebni-zakon-richterova-rakusan",
     "novela-z-o-nekt-opatr-v-souv-s-ozbrojenym-konfli"
   ],
-  "steno_zdroje": true,
   "stats": {
-    "pocet_hlas": 1,
+    "pocet_hlas": 5,
     "minuty": 525,
     "end_cas": "18:00",
-    "proslo": 1,
+    "proslo": 2,
     "zamitnuto": 0,
     "spor_o_porad": true,
     "dlouha_debata": true
   },
-  "board_proslo_label": "novely prošly druhým kolem",
-  "board_zamitnuto_label": "návrhů neprošlo",
   "dnesni_ucet": "Dopoledne debata o služebním zákonu,\nodpoledne Lex Ukrajina, novina o Pavlovi.",
   "zaver": "že ve středu Richterová (Piráti) chtěla jeden bod v pořadu schůze, místo úředního názvu přejmenovat na Zákon na snazší vyhazování expertů, a odpoledne poslanec místo reakce na řečníka přečetl novinu o Pavlovi a summitu NATO, Lex Ukrajina prošel druhým kolem.",
   "vysledek": [
@@ -25,5 +22,7 @@
     "* u Lex Ukrajina poslanci zvolili Langa zpravodajem, proti 31",
     "* Pláteník ve faktické citoval ČTK, Peštová (ANO) protestovala",
     "* bezpečnostní novela prošla druhým kolem"
-  ]
+  ],
+  "board_proslo_label": "novely prošly druhým kolem",
+  "board_zamitnuto_label": "návrhů neprošlo"
 }

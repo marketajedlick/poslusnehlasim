@@ -621,6 +621,18 @@ def build_den_content(
         link_mode=link_mode,
         base_path=base_path,
     )
+    from svejk.build.glossary_markup import apply_glossary_to_content
+
+    apply_glossary_to_content(content)
+    from svejk.build.mezin_smlouvy import apply_smlouvy_page_links
+
+    apply_smlouvy_page_links(
+        content,
+        paths,
+        link_mode=link_mode,
+        base_path=base_path,
+    )
+    _refresh_board_note_lines(content)
 
     if _cache_key is not None:
         _DEN_CONTENT_CACHE[_cache_key] = content
@@ -760,6 +772,13 @@ def _sanitize_vysledek_export(text: str) -> str:
     """Výsledek dne: čísla ponechat (stav zápasu), zbytek stejně jako v textu."""
     text = bez_dlouhych_pomlc(text)
     return poslanec_registry().annotate(text) if text.strip() else text
+
+
+def _refresh_board_note_lines(content: DenContent) -> None:
+    board_raw = (content.dnesni_ucet or content.result_note or "").strip()
+    content.board_note_lines = [
+        ln.strip() for ln in board_raw.splitlines() if ln.strip()
+    ]
 
 
 def _sanitize_den_content(content: DenContent) -> None:

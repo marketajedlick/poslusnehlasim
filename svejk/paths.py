@@ -103,6 +103,13 @@ class SchuzePaths:
         d = datetime.strptime(datum_unl, "%d.%m.%Y")
         return self.noviny_dlouhe_dir() / f"{d.strftime('%Y-%m-%d')}-recnici.html"
 
+    def smlouvy_html(self, datum_unl: str) -> Path:
+        """datum_unl = DD.MM.RRRR → soubor YYYY-MM-DD-smlouvy.html"""
+        from datetime import datetime
+
+        d = datetime.strptime(datum_unl, "%d.%m.%Y")
+        return self.noviny_dlouhe_dir() / f"{d.strftime('%Y-%m-%d')}-smlouvy.html"
+
     def vyznamenani_neprosli_html(self, datum_unl: str) -> Path:
         return self.vyznamenani_html(datum_unl, "neprosli")
 

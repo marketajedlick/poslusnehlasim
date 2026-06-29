@@ -261,6 +261,7 @@ body.is-turning{ pointer-events:none; }
   display:flex; flex-wrap:wrap; align-items:center;
   gap:6px 10px; margin-top:10px;
 }
+.mean + .kuriozita-links{ margin-top:10px; }
 .kuriozita-links-sep{
   font-family:'Oswald',sans-serif; font-weight:500;
   font-size:11px; color:var(--ink-soft); opacity:.7;
@@ -446,6 +447,11 @@ a.steno-link{
 a.steno-link:hover{
   border-bottom-color: var(--ink);
 }
+a.steno-link .term-tip{
+  border-bottom:1px dotted var(--terra);
+  cursor:help;
+}
+.item.i2 a.steno-link .term-tip{ border-bottom-color:var(--blue); }
 
 body.steno-page{
   background:var(--paper-2); color:var(--ink);
@@ -473,6 +479,34 @@ body.steno-page{
   padding-bottom:1px;
 }
 .steno-back:hover{ border-bottom-color:var(--terra); }
+.smlouvy-list{
+  list-style:none; margin:0; padding:0;
+}
+.smlouvy-item{
+  background:var(--paper); border:1px solid rgba(33,28,20,.1);
+  padding:16px 18px; margin-bottom:14px;
+}
+.smlouvy-stat{
+  font-family:'Oswald',sans-serif; font-weight:600;
+  font-size:1.05rem; text-transform:uppercase; letter-spacing:.05em;
+  margin:0 0 6px; color:var(--terra);
+}
+.smlouvy-tema{
+  font-family:'Old Standard TT',serif; font-weight:700;
+  margin:0 0 8px; font-size:1.02rem;
+}
+.smlouvy-text{
+  margin:0 0 10px; line-height:1.45; color:var(--ink-soft);
+}
+.smlouvy-steno-link{
+  margin:0; font-family:'Oswald',sans-serif;
+  font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+}
+.smlouvy-steno-link a{
+  color:var(--terra); text-decoration:none;
+  border-bottom:1px solid rgba(207,90,49,.35);
+}
+.smlouvy-steno-link a:hover{ border-bottom-color:var(--terra); }
 .steno-explain{
   background:var(--paper); border:1px solid rgba(33,28,20,.12);
   padding:14px 16px; margin-bottom:28px;
@@ -695,6 +729,9 @@ body.steno-page{
     max-width:none;
     padding:0 12px;
   }
+  .site-footer-brand{
+    font-size:10px;
+  }
   .site-footer-stats{
     font-size:9px;
     letter-spacing:.1em;
@@ -861,7 +898,7 @@ body.steno-page{
 .hospoda-gloss{
   margin:0;
   font-family:'Old Standard TT',serif; font-style:italic;
-  font-size:15px; line-height:1.45; color:var(--paper);
+  font-size:17px; line-height:1.45; color:var(--paper);
 }
 .hospoda-cta{
   margin:12px 0 0;
@@ -870,7 +907,7 @@ body.steno-page{
   display:inline-block;
   font-family:'Oswald',sans-serif; font-weight:600;
   text-transform:uppercase; letter-spacing:.1em;
-  font-size:12px; color:var(--paper);
+  font-size:14px; color:var(--paper);
   text-decoration:none;
   border-bottom:2px solid rgba(240,230,207,.55);
   padding-bottom:2px;
@@ -920,6 +957,16 @@ body.steno-page{
   font-style:italic;
   line-height:1.55;
   color:rgba(33,28,20,.62);
+  text-align:center;
+}
+.site-footer-brand{
+  margin:0;
+  font-family:'Oswald',sans-serif;
+  font-weight:500;
+  font-size:11px;
+  letter-spacing:.08em;
+  line-height:1.5;
+  color:rgba(33,28,20,.68);
   text-align:center;
 }
 .site-footer-stats{
@@ -2153,8 +2200,8 @@ body.archiv-page{
   .archive-link{ margin-top:14px; padding:6px 0 8px; }
   .archive-link + .board{ margin-top:10px; }
   .hospoda{ margin-top:22px; padding:16px 18px 14px; }
-  .hospoda-gloss{ font-size:17px; }
-  .hospoda-link{ font-size:13px; }
+  .hospoda-gloss{ font-size:19px; }
+  .hospoda-link{ font-size:15px; }
   .hospoda + .archive-link{ padding:12px 0 0; }
   .pivo-stage .pad{ padding:20px 50px 40px; }
   .pivo-head .eyebrow{ letter-spacing:.26em; font-size:13px; margin-bottom:20px; }

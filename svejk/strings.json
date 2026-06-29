@@ -1,4 +1,9 @@
 {
+  "brand": {
+    "name": "Poslušně hlásím",
+    "domain": "poslusnehlasim.cz",
+    "tagline": "srozumitelný přehled ze Sněmovny"
+  },
   "nav": {
     "aria_main": "Hlavní navigace",
     "latest": "Nejnovější vydání",
@@ -51,7 +56,7 @@
     "prev_aria": "Starší vydání",
     "next_aria": "Novější vydání",
     "schuze_title": "schůze",
-    "eyebrow": "deník sněmovny",
+    "eyebrow": "srozumitelný přehled ze Sněmovny",
     "board_kick": "Stav zápasu",
     "mean_label": "Co to znamená pro vás:",
     "kuriozita_aria": "Tabulky hlasování o vyznamenání",
@@ -160,9 +165,9 @@
   },
   "about_page": {
     "title": "O webu · Poslušně hlásím",
-    "meta": "Co je Poslušně hlásím, odkud bereme data ze Sněmovny, proč je to satira založená na faktech a kdo projekt dělá.",
+    "meta": "Poslušně hlásím je srozumitelný přehled z Poslanecké sněmovny: co se projednalo, co prošlo a proč na tom záleží.",
     "heading": "O webu",
-    "gloss": "Poslušně hlásím, že sněmovna mluví poslanecky. My to překládáme do češtiny a občas přidáme ironii. Fakta ale necháváme na místě."
+    "gloss": "Poslušně hlásím · poslusnehlasim.cz · srozumitelný přehled ze Sněmovny."
   },
   "pivo_tiers": {
     "velke_name": "Velké pivo",
@@ -178,7 +183,7 @@
   },
   "doi": {
     "title": "Potvrď odběr · Poslušně hlásím",
-    "eyebrow": "DENÍK SNĚMOVNY",
+    "eyebrow": "srozumitelný přehled ze Sněmovny",
     "intro": "Deník sněmovny už čeká. Ještě je ale třeba jeden krok. Potvrď, že e-mail patří opravdu tobě a chceš deník odebírat.",
     "cta": "Potvrdit odběr",
     "quote_key": "POSLUŠNĚ HLÁSÍM,",
@@ -233,6 +238,12 @@
       "prosli": "Koho Sněmovna doporučila",
       "neprosli": "Kdo neprošel"
     }
+  },
+  "smlouvy_page": {
+    "page_title": "Mezinárodní smlouvy",
+    "page_gloss": "Šest mezinárodních smluv s cizími státy, které Sněmovna 25. 6. 2026 projela rychle jako na páse. U každé odkaz do stenoprotokolu.",
+    "psp_link": "Přesný záznam na webu Sněmovny →",
+    "steno_link": "Stenoprotokol →"
   },
   "steno_sources": {
     "back_to_edition": "← Zpět na vydání {date}",

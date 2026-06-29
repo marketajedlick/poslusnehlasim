@@ -1,20 +1,56 @@
 from svejk.build.seo import (
+    edition_meta_description,
     faq_json_ld,
     homepage_og_title,
     homepage_page_title,
+    site_brand_line,
+    site_meta_description,
+    website_json_ld,
     write_robots_txt,
     write_sitemap_xml,
 )
 from svejk.build.nav import Edition
 
 
+def test_site_meta_description() -> None:
+    assert site_meta_description() == (
+        "Poslušně hlásím je srozumitelný přehled z Poslanecké sněmovny: "
+        "co se projednalo, co prošlo a proč na tom záleží."
+    )
+    assert (
+        edition_meta_description(
+            dnesni_ucet="Skóre dne 1:0. <span>ratifikací</span>",
+            proslo=1,
+        )
+        == site_meta_description()
+    )
+    assert site_brand_line() == (
+        "Poslušně hlásím · poslusnehlasim.cz · srozumitelný přehled ze Sněmovny"
+    )
+
+
+def test_homepage_website_json_ld() -> None:
+    data = website_json_ld(site_url="https://poslusnehlasim.cz")
+    assert data["@context"] == "https://schema.org"
+    assert len(data["@graph"]) == 2
+    website = data["@graph"][0]
+    org = data["@graph"][1]
+    assert website["@type"] == "WebSite"
+    assert website["name"] == "Poslušně hlásím"
+    assert website["alternateName"] == "poslusnehlasim.cz"
+    assert website["url"] == "https://poslusnehlasim.cz/"
+    assert org["@type"] == ["Organization", "NewsMediaOrganization"]
+    assert org["alternateName"] == "poslusnehlasim.cz"
+    assert website["publisher"] == {"@id": "https://poslusnehlasim.cz/#organization"}
+
+
 def test_homepage_page_title() -> None:
-    assert homepage_page_title() == "Poslušně hlásím · Deník ze Sněmovny"
+    assert homepage_page_title() == "Poslušně hlásím · Švejkův deník ze Sněmovny"
     assert homepage_page_title(datum_unl="23.06.2026") == homepage_page_title()
 
 
 def test_homepage_og_title() -> None:
-    assert homepage_og_title() == "Poslušně hlásím · Deník ze Sněmovny"
+    assert homepage_og_title() == "Poslušně hlásím · Švejkův deník ze Sněmovny"
 
 
 def test_homepage_share_og_title() -> None:

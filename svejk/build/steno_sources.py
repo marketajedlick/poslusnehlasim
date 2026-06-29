@@ -321,6 +321,40 @@ class PspUrlResolver:
         return resolved
 
 
+def resolve_psp_url_for_steno(
+    paths: SchuzePaths,
+    steno_id: str,
+    citace: str,
+) -> str:
+    """Odkaz na konkrétní místo ve stenoprotokolu na webu Sněmovny."""
+    steno_by_id = _load_steno_index(paths)
+    rec = steno_by_id.get(steno_id) or {}
+    fallback = (rec.get("url") or "").strip()
+    speaker = (rec.get("cele_jmeno") or "").strip()
+    citace = (citace or "").strip()
+    offline_psp = bool(
+        steno_by_id
+        or _steno_refs_path(paths).is_file()
+        or _psp_url_cache_path(paths).is_file()
+        or _load_poradi_urls(paths)
+    )
+    if offline_psp:
+        return PspUrlResolver(paths).resolve(speaker, fallback, citace)
+    if fallback and citace:
+        cache_path = _psp_url_cache_path(paths)
+        cache = read_json(cache_path).get("resolved") or {} if cache_path.is_file() else {}
+        hit = _lookup_cached_psp_url(cache, fallback, citace)
+        if hit:
+            return hit
+    resolved = _offline_psp_url(
+        paths,
+        steno_id,
+        citace,
+        fallback_url=fallback,
+    )
+    return resolved or fallback
+
+
 def _passage_from_fact(
     fact_entry: dict[str, Any],
     *,
@@ -414,6 +448,8 @@ def collect_steno_sources(
     paths: SchuzePaths,
     datum_unl: str,
 ) -> list[StenoTopicBlock]:
+    from svejk.build.mezin_smlouvy import append_smlouvy_steno_block
+
     from datetime import datetime
 
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
@@ -471,6 +507,15 @@ def collect_steno_sources(
                 block.passages.append(passage)
         if block.passages:
             blocks.append(block)
+    num, global_passage_idx = append_smlouvy_steno_block(
+        blocks,
+        paths=paths,
+        day=day,
+        steno_by_id=steno_by_id,
+        psp_resolver=psp_resolver,
+        num=num,
+        global_passage_idx=global_passage_idx,
+    )
     return blocks
 
 
@@ -541,10 +586,30 @@ def _find_phrase_in_text(text: str, phrase: str) -> str | None:
     return text[pos : pos + len(phrase)]
 
 
+def _word_in_html_pattern(word: str) -> str:
+    w = re.escape(word)
+    return (
+        rf"(?:{w}|"
+        rf'<span class="term-tip"[^>]*>{w}'
+        rf'(?:<span[^>]*>.*?</span>)*</span>)'
+    )
+
+
+def _find_phrase_in_html(text: str, phrase: str) -> str | None:
+    words = phrase.split()
+    if len(words) < 2:
+        return None
+    pat = r"\s*".join(_word_in_html_pattern(w) for w in words)
+    m = re.search(pat, text, re.I | re.S)
+    return m.group(0) if m else None
+
+
 def inject_steno_link(text: str, phrase: str, href: str) -> str:
     if not text or not phrase or not href:
         return text
     match = _find_phrase_in_text(text, phrase)
+    if not match and "<" in text:
+        match = _find_phrase_in_html(text, phrase)
     if not match:
         return text
     for m in re.finditer(r"<a\b[^>]*>.*?</a>", text, re.I | re.S):

@@ -18,6 +18,7 @@ from svejk.text_norm import bez_dlouhych_pomlc, lcfirst_preserve_proper, ma_dlou
 from svejk.build.html import (
     render_den_html,
     render_steno_sources_html,
+    render_smlouvy_html,
     render_vyznamenani_table_html,
     render_recnici_table_html,
 )
@@ -33,6 +34,7 @@ from svejk.noviny import HLAVICKA_LISTU, _datum_cesky, _new_state
 from svejk.paths import SchuzePaths
 from svejk.build.steno_sources import has_steno_sources, write_steno_refs
 from svejk.build.recnici import has_recnici
+from svejk.build.mezin_smlouvy import has_smlouvy
 
 
 def _dnesni_ucet_radky(ucet: str) -> list[str]:
@@ -109,16 +111,10 @@ def render_den_markdown(
             [
                 f"## {heading}",
                 "",
-                lead,
-                "",
-                "### Co to znamená pro vás?",
-                "",
-                co_znamena,
             ]
         )
-        if item.kuriozita:
-            lines.extend(["", f"*{item.kuriozita}*"])
         if item.kuriozita_links:
+            from svejk.build.mezin_smlouvy import resolve_smlouvy_page_links
             from svejk.build.recnici import resolve_recnici_page_links
 
             nav = resolve_vyznamenani_page_links(
@@ -135,10 +131,28 @@ def render_den_markdown(
                 obdobi=paths.obdobi,
                 schuze=paths.schuze,
                 link_mode="file",
+            ) + resolve_smlouvy_page_links(
+                paths,
+                content.datum,
+                item.kuriozita_links,
+                obdobi=paths.obdobi,
+                schuze=paths.schuze,
+                link_mode="file",
             )
             if nav:
                 md_links = " · ".join(f"[{label}]({href})" for label, href in nav)
-                lines.extend(["", md_links])
+                lines.extend([md_links, ""])
+        lines.extend(
+            [
+                lead,
+                "",
+                "### Co to znamená pro vás?",
+                "",
+                co_znamena,
+            ]
+        )
+        if item.kuriozita:
+            lines.extend(["", f"*{item.kuriozita}*"])
         lines.append("")
 
     lines.append("## Výsledek dne")
@@ -204,6 +218,13 @@ def run_compose(
                 recnici_out = paths.recnici_html(datum)
                 recnici_out.write_text(recnici_html, encoding="utf-8")
                 written_html.append(str(recnici_out))
+
+        if has_smlouvy(paths, datum):
+            smlouvy_html = render_smlouvy_html(paths, datum, link_mode="file")
+            if smlouvy_html:
+                smlouvy_out = paths.smlouvy_html(datum)
+                smlouvy_out.write_text(smlouvy_html, encoding="utf-8")
+                written_html.append(str(smlouvy_out))
 
         for out_path, body in ((md_out, md_body), (html_out, html_body)):
             if ma_dlouhou_pomlcku(body):
