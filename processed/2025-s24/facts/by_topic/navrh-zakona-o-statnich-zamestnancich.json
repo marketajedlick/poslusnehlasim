@@ -1,40 +1,33 @@
 {
   "slug": "navrh-zakona-o-statnich-zamestnancich",
-  "nazev": "Návrh zákona o státních zaměstnancích",
+  "nazev": "Zákon o státních zaměstnancích",
   "datum": "26.06.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "státních zaměstnancích",
+  "predmet_lidsky": "služební zákon, závěrečné hlasování 84 proti 56",
   "koho": [
     "Koho se to týká? Každého, kdo pracuje na úřadě, nebo čeká ve frontě na rozhodnutí, které má vydat stát."
   ],
   "fakty": [
+    {
+      "text": "Stojanová hovořila o destrukci služebního zákona.",
+      "source": "steno",
+      "steno_id": "2025_24_00802",
+      "citace": "Je to úplná destrukce, úplné zničení toho, co jsme tu po těch nesnadných a odborných debatách před několika lety komplikovaně a kompromisně přijímali.",
+      "link_phrase": "úplná destrukce"
+    },
+    {
+      "text": "Vondráček slíbil, že horší to nebude než doteď.",
+      "source": "steno",
+      "steno_id": "2025_24_00843",
+      "citace": "Můžu všem slíbit, že horší to nebude, než je to teď ve státní správě.",
+      "link_phrase": "horší to nebude"
+    },
     {
       "text": "Richterová řekla, že zákon umožní snazší vyhazování nepohodlných odborníků.",
       "source": "steno",
       "steno_id": "2025_24_00833",
       "citace": "Navrhli jste zákon, který vám umožní snazší vyhazování nepohodlných odborníků.",
       "link_phrase": "snazší vyhazování nepohodlných odborníků"
-    },
-    {
-      "text": "Stojanová hovořila o destrukci služebního zákona.",
-      "source": "steno",
-      "steno_id": "2025_24_00802",
-      "citace": "Je to úplná destrukce, úplné zničení toho, co jsme tu po těch nesnadných a odborných debatách před několika lety komplikovaně a kompromisně přijímali.",
-      "link_phrase": "úplné destrukci"
-    },
-    {
-      "text": "Volpe varoval před nebezpečným zásahem do demokratického uspořádání.",
-      "source": "steno",
-      "steno_id": "2025_24_00806",
-      "citace": "Pod tímto nánosem technických termínů se totiž skrývá hluboký, koncepční a nesmírně nebezpečný zásah do samotné podstaty demokratického uspořádání České republiky.",
-      "link_phrase": "nebezpečným zásahem do samotné podstaty demokratického uspořádání"
-    },
-    {
-      "text": "Rakušan řekl, že předkladatelům dal pět konkrétních dotazů bez odpovědi.",
-      "source": "steno",
-      "steno_id": "2025_24_00888",
-      "citace": "v rámci rozpravy jsem ke služebnímu zákonu tady na tom místě dal předkladatelům 5 konkrétních dotazů.",
-      "link_phrase": "pět konkrétních dotazů"
     },
     {
       "text": "Závěrečné hlasování číslo 117 skončilo 84 proti 56.",
@@ -50,18 +43,11 @@
       "kind": "scene",
       "citace": "(Potlesk poslanců koalice.)",
       "link_phrase": "Potlesk poslanců koalice"
-    },
-    {
-      "text": "Destrukce pro mean.",
-      "source": "steno",
-      "steno_id": "2025_24_00802",
-      "citace": "úplná destrukce",
-      "link_phrase": "Služební zákon"
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Vyhazování odborníků",
+  "nadpis": "Zákon bez přeložení do češtiny\n[retence]",
   "pocet_hlasovani": 29,
   "proslo": true,
   "signaly": {
@@ -72,7 +58,8 @@
     "prazdny_sal": true
   },
   "steno_slov": 55147,
-  "lead": "Po obědě konečně přišlo závěrečné hlasování o služebním zákonu, stejném návrhu, o kterém se Sněmovna hádala už ve středu. Richterová (Piráti) řekla, že jde o snazší vyhazování nepohodlných odborníků. Stojanová (Piráti) mluvila o úplné destrukci toho, co Sněmovna přijala před lety. Volpe (Motoristé) varoval před nebezpečným zásahem do samotné podstaty demokratického uspořádání.\n\nMezi tím proběhlo devětadvacet hlasování za necelých čtyřicet minut, většinou o jednotlivých paragrafech. Rakušan (STAN) před finále připomněl, že předkladatelům dal 5 konkrétních dotazů a nedostal odpověď. Závěrečné hlasování skončilo 84 proti 56. Zazněl potlesk poslanců koalice.",
-  "pointa": "Služební zákon prošel těsně. Opozice mluvila o vyhazování expertů, koalice o personální flexibilitě.",
-  "mean": "Služební zákon mění pravidla pro lidi ve státní správě, kdo je zaměstná, kdo odchází a jak se řeší personální změny. Koalice tvrdí, že zrychlí a zjednoduší chod úřadů. Opozice varuje, že politici získají větší moc vyhazovat odborníky, kteří jim nesedí. V závěrečném hlasování už šlo o finální podobu zákona, ten pak míří k podpisu prezidenta."
+  "lead": "Sněmovna odpoledne projednávala zákon o státních zaměstnancích. Koalice tvrdí, že jde o zjednodušení a flexibilitu, opozice říká, že jde o snazší vyhazování odborníků podle politické vůle.",
+  "pointa": "Závěrečné hlasování skončilo 84 proti 56. Senát a praxe ukážou, co z toho bude.",
+  "mean": "Služební zákon mění pravidla pro úředníky, kdo je zaměstná a kdo odchází. Koalice slibuje rychlejší personální změny, opozice varuje před politizací státní správy.",
+  "citace_text": "Sněmovna projednávala zákon o státních úřednících. Paní poslankyně Stojanová říkala, že je to úplná destrukce. Vládní poslanci říkali, že je to zjednodušení. Jak to dopadne, se dozvíme příště."
 }

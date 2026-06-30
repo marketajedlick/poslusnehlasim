@@ -96,6 +96,36 @@
           {% endif %}
         </div>
 
+        {% if content.snemovni_listy %}
+        <section class="snemovni-listy" aria-label="Sněmovní listy">
+          <h2 class="listy-title">SNĚMOVNÍ LISTY</h2>
+          {% if content.snemovni_listy.meta %}
+          <p class="listy-meta">{{ content.snemovni_listy.meta | glossary }}</p>
+          {% endif %}
+          {% if content.snemovni_listy.deck %}
+          <p class="listy-deck">{{ content.snemovni_listy.deck | glossary }}</p>
+          {% endif %}
+          {% for section in content.snemovni_listy.sections %}
+          {% if section.heading %}
+          <h3 class="listy-h">{{ section.heading | glossary }}</h3>
+          {% endif %}
+          {% for para in section.paragraphs %}
+          <p class="listy-p">{{ para | glossary }}</p>
+          {% endfor %}
+          {% if section.bullets %}
+          <ul class="listy-ul">
+            {% for bullet in section.bullets %}
+            <li>{{ bullet | glossary }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          {% endfor %}
+          {% if content.snemovni_listy.footer %}
+          <p class="listy-footer">{{ content.snemovni_listy.footer | glossary }}</p>
+          {% endif %}
+        </section>
+        {% endif %}
+
         {% for item in content.items %}
         <div class="item{% if item.variant %} {{ item.variant }}{% endif %}">
           <div class="numcol">
@@ -110,9 +140,6 @@
               {% endfor %}
             </h2>
             <p class="p">{{ item.lead | glossary }}</p>
-            {% if item.mean %}
-            <p class="mean"><b>{{ t.edition.mean_label }} </b>{{ item.mean | glossary }}</p>
-            {% endif %}
             {% if item.kuriozita_nav %}
             <nav class="kuriozita-links" aria-label="{{ t.edition.kuriozita_aria }}">
               {% for label, href in item.kuriozita_nav %}
@@ -128,6 +155,12 @@
               <cite class="item-quote-by">{{ item.citace_autor }}</cite>
               {% endif %}
             </blockquote>
+            {% endif %}
+            {% if item.pointa %}
+            <p class="p">{{ item.pointa | glossary }}</p>
+            {% endif %}
+            {% if item.mean %}
+            <p class="mean"><b>{{ t.edition.mean_label }} </b>{{ item.mean | glossary }}</p>
             {% endif %}
             {% if item.kuriozita %}
             <p class="kuriozita">{{ item.kuriozita | glossary }}</p>

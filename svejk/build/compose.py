@@ -37,6 +37,35 @@ from svejk.build.recnici import has_recnici
 from svejk.build.mezin_smlouvy import has_smlouvy
 
 
+def _listy_markdown(listy: dict) -> list[str]:
+    lines = ["## SNĚMOVNÍ LISTY", ""]
+    meta = (listy.get("meta") or "").strip()
+    deck = (listy.get("deck") or "").strip()
+    if meta:
+        lines.extend([meta, ""])
+    if deck:
+        lines.extend([f"**{deck}**", ""])
+    for section in listy.get("sections") or []:
+        heading = (section.get("heading") or "").strip()
+        if heading:
+            lines.extend([f"### {heading}", ""])
+        for para in section.get("paragraphs") or []:
+            text = (para or "").strip()
+            if text:
+                lines.extend([text, ""])
+        bullets = section.get("bullets") or []
+        if bullets:
+            for bullet in bullets:
+                text = (bullet or "").strip()
+                if text:
+                    lines.append(f"* {text}")
+            lines.append("")
+    footer = (listy.get("footer") or "").strip()
+    if footer:
+        lines.extend(["", f"*{footer}*"])
+    return lines
+
+
 def _dnesni_ucet_radky(ucet: str) -> list[str]:
     text = (ucet or "").strip()
     if not text:
@@ -64,6 +93,9 @@ def render_den_markdown(
         *_dnesni_ucet_radky(content.dnesni_ucet),
         "",
     ]
+    if content.snemovni_listy:
+        lines.extend(_listy_markdown(content.snemovni_listy))
+        lines.append("")
 
     prvni = True
     for item in content.items:
@@ -142,10 +174,16 @@ def render_den_markdown(
             if nav:
                 md_links = " · ".join(f"[{label}]({href})" for label, href in nav)
                 lines.extend([md_links, ""])
+        lines.extend([lead, ""])
+        if item.citace_text:
+            lines.extend([f"> „{item.citace_text}“", ""])
+            if item.citace_autor:
+                lines.append(f"> {item.citace_autor}")
+                lines.append("")
+        if item.pointa:
+            lines.extend([item.pointa, ""])
         lines.extend(
             [
-                lead,
-                "",
                 "### Co to znamená pro vás?",
                 "",
                 co_znamena,

@@ -223,6 +223,40 @@ body.is-turning{ pointer-events:none; }
   font-size:15px; line-height:1.5; margin:12px 0 0;
   overflow-wrap:anywhere;
 }
+.snemovni-listy{
+  margin:28px 0 8px; padding-top:8px;
+  border-top:3px double var(--ink);
+}
+.listy-title{
+  margin:0; font-family:'Oswald',sans-serif; font-weight:700;
+  font-size:clamp(22px, 5.6vw, 28px); letter-spacing:.12em;
+  text-transform:uppercase; line-height:1.05;
+}
+.listy-meta{
+  margin:10px 0 0; font-family:'Oswald',sans-serif; font-weight:500;
+  font-size:12px; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.listy-deck{
+  margin:14px 0 0; font-family:'Old Standard TT',serif;
+  font-size:clamp(18px, 4.8vw, 22px); line-height:1.25; font-weight:700;
+}
+.listy-h{
+  margin:22px 0 0; font-family:'Oswald',sans-serif; font-weight:600;
+  font-size:15px; letter-spacing:.08em; text-transform:uppercase;
+}
+.listy-p{
+  margin:12px 0 0; font-size:15px; line-height:1.55;
+  font-family:'Old Standard TT',serif; overflow-wrap:anywhere;
+}
+.listy-ul{
+  margin:10px 0 0 1.1em; padding:0;
+  font-family:'Old Standard TT',serif; font-size:15px; line-height:1.5;
+}
+.listy-footer{
+  margin:24px 0 0; font-size:13px; line-height:1.45;
+  font-style:italic; color:var(--ink-soft);
+}
 .mean{
   margin-top:10px; font-size:14px; line-height:1.45;
   color:var(--ink); font-weight:600;

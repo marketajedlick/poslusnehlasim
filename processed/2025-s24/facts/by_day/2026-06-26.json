@@ -3,8 +3,10 @@
   "den": "pátek",
   "topic_slugs": [
     "debata-porad-vlny-veder-26-cerven",
+    "pripad-dne-hrib-fotografie-26-06",
     "navrh-zakona-o-statnich-zamestnancich"
   ],
+  "steno_zdroje": true,
   "stats": {
     "pocet_hlas": 1,
     "minuty": 164,
@@ -23,5 +25,54 @@
     "* služební zákon prošel v závěrečném hlasování 84 proti 56"
   ],
   "board_proslo_label": "zákon prošel",
-  "board_zamitnuto_label": "návrhů neprošlo"
+  "board_zamitnuto_label": "návrhů neprošlo",
+  "snemovni_listy": {
+    "meta": "Pátek 26. června 2026 · 24. schůze, čtvrtý jednací den",
+    "deck": "Bytoví baroni, státní úředníci a trocha horka",
+    "sections": [
+      {
+        "paragraphs": [
+          "Pan předseda Zdeněk Hřib přišel ráno do sněmovny s fotografií a zvýrazňovačem. To samo o sobě je věc, která zasluhuje pozornost.",
+          "Na fotografii jsou dvě ruce. Jedna patří ministryni stavebnictví Zuzaně Mrázové, druhá panu Jedličkovi, který vede stavební úřad v Bílině, kde paní ministryně dřív byla starostkou. Ruka paní ministryně spočívá na stehně pana Jedličky. Ruka pana Jedličky spočívá přes rameno paní ministryně. Pan Jedlička to reportérkám vysvětlil slovy: „Tak mi dá ruku na stehno, a co? Máme profesní vztah.”",
+          "Pan Hřib fotografii zvýraznil fixem, protože na mobilech se prý ořezává. Pak ji ukázal sněmovně.",
+          "Toto bylo ráno."
+        ]
+      },
+      {
+        "heading": "Horko jako politické téma",
+        "paragraphs": [
+          "Venku bylo třicet šest stupňů. Paní poslankyně Irena Ferčíková Konečná se přišla zeptat: „Jak se těšíte na víkend?” Sněmovna odpověděla, že supr. Pak paní poslankyně pokračovala dál a bylo z toho méně supr.",
+          "Paní poslankyně se táže ministrů, co dělají s vlnou veder, která zasahuje lidi bez klimatizace, seniory a chronicky nemocné. Pan ministr zahraničí Petr Macinka odpověděl, že klimatická krize se vyznačuje tím, že „v létě je horko, v zimě je zima, v noci je tma.” Pak dodal, že paní poslankyně má klimatizaci, takže to snad brzy přejde. Upozornil také na grafiky na sociálních sítích Ministerstva zdravotnictví.",
+          "Pan Boris Šťastný, předseda klubu Motoristů, dodal, že jako lékař bere lokální vedro vážně a doporučuje v extrému dát pauzu od sportu.",
+          "Paní poslankyně na to řekla, že vidí, jak části koalice je tato diskuse k smíchu, a skutečně to bylo vidět, protože pan ministr Macinka se za jejími zády posmíval a pan ministr životního prostředí Červený na ni dělal pošklebky. (Smích v sále.)",
+          "Návrh na zařazení bodu „Krizová komunikace vlny veder” nebyl přijat."
+        ]
+      },
+      {
+        "heading": "Zákon o státních zaměstnancích",
+        "paragraphs": [
+          "Odpoledne sněmovna hlasovala o zákonu, který mění pravidla pro státní úředníky. Toto je zákon, který:",
+          "Opozice ho označovala za „úplnou destrukci” a „paskvil”. Koalice za modernizaci a zjednodušení.",
+          "Pan Radek Vondráček, který zákon navrhl, uzavřel rozpravu těmito slovy: „Můžu všem slíbit, že horší to nebude, než je to teď ve státní správě.”",
+          "To je slib.",
+          "Zákon byl přijat. Hlasování číslo 117: přihlášeno 143 poslanců, pro 84, proti 56.",
+          "Účinnost od 1. listopadu 2026."
+        ]
+      },
+      {
+        "heading": "Omluvenky",
+        "paragraphs": [
+          "Dnes se z pracovních důvodů omluvili: Bačíková, Bendl, Černochová, Filipovičová, Foldyna, Hlavatý, Hoppe a další. Pan poslanec Foldyna, který minulý týden z pracovních důvodů sledoval v sněmovně debatu o médiích a natáčel ji mobilem, byl dnes z pracovních důvodů jinde.",
+          "Pan poslanec Petr Fiala se omluvil bez udání důvodu."
+        ]
+      },
+      {
+        "heading": "Příště",
+        "paragraphs": [
+          "Sněmovna se sejde znovu. Na programu bude mimo jiné zákon o veřejných rozpočtech vrácený Senátem. To je ten zákon, o který šlo minulý týden."
+        ]
+      }
+    ],
+    "footer": "Sněmovní listy vycházejí po každé schůzi Poslanecké sněmovny. Vše výše bylo řečeno nahlas, před mikrofony, a zapsáno do stenografického záznamu, který je veřejný."
+  }
 }

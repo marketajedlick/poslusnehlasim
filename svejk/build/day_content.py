@@ -96,6 +96,7 @@ class DenItem:
     kuriozita: str = ""
     citace_text: str = ""
     citace_autor: str = ""
+    pointa: str = ""
     variant: str = ""
     has_custom_lead: bool = False
     mean_links: list[tuple[str, str]] = field(default_factory=list)
@@ -128,6 +129,7 @@ class DenContent:
     zaver_key: str = "Poslušně hlásím,"
     zaver_body: str = ""
     board_note_lines: list[str] = field(default_factory=list)
+    snemovni_listy: dict[str, Any] | None = None
 
 
 def lead_z_fact(fact: dict[str, Any]) -> str:
@@ -513,6 +515,7 @@ def build_den_content(
         board_zamitnuto_label=(day.get("board_zamitnuto_label") or "").strip(),
         board_stats="",
         result_note=result_note,
+        snemovni_listy=day.get("snemovni_listy") or None,
     )
 
     num = 0
@@ -572,6 +575,7 @@ def build_den_content(
         kuriozita = (fact.get("kuriozita") or "").strip() or kuriozita_z_fact(fact)
         citace_text = (fact.get("citace_text") or "").strip()
         citace_autor = (fact.get("citace_autor") or "").strip()
+        pointa = (fact.get("pointa") or "").strip() if has_custom_lead else ""
         items_meta[str(num)] = {"pocet_hlasovani": ph, "slug": slug}
         content.items.append(
             DenItem(
@@ -584,6 +588,7 @@ def build_den_content(
                 kuriozita=kuriozita,
                 citace_text=citace_text,
                 citace_autor=citace_autor,
+                pointa=pointa,
                 dopad=dopad,
                 parliament_lead=parliament_lead,
                 has_custom_lead=has_custom_lead,
@@ -807,6 +812,7 @@ def _sanitize_den_content(content: DenContent) -> None:
         item.kuriozita = _sanitize_text_export(item.kuriozita)
         item.citace_text = _sanitize_text_export(item.citace_text)
         item.citace_autor = _sanitize_text_export(item.citace_autor)
+        item.pointa = _sanitize_text_export(item.pointa)
         item.dopad = _sanitize_text_export(item.dopad)
         item.parliament_lead = _sanitize_text_export(item.parliament_lead)
 

@@ -23,7 +23,13 @@
       "link_phrase": "reportáže o korupci"
     },
     {
-      "text": "Kupka řekl, že následující hodina bude o tom, jak vláda Andreje Babiše ukrást Českou republiku a rozkládat demokratické fungování institucí včetně veřejnopránních médií.",
+      "text": "Kupka řekl, že svobodná média koušou a Babiš chce taková, která budou olizovat ruku, která je krmí.",
+      "source": "steno",
+      "steno_id": "2025_24_00033",
+      "citace": "svobodná média koušou.\nA Andrej Babiš chce taková, která budou olizovat ruku, která je krmí.",
+      "link_phrase": "Svobodná média koušou"
+    },
+    {
       "source": "steno",
       "steno_id": "2025_24_00033",
       "citace": "následující hodina bude hned o několika klíčových tématech. Ale bude především o tom, jak současná vláda Andreje Babiše se rozhodla sobě ve svůj prospěch ukrást Českou republiku.",
@@ -49,14 +55,24 @@
       "steno_id": "2025_24_00033",
       "citace": "rozkládat demokratické fungování institucí včetně veřejnoprávních médií",
       "link_phrase": "zásahu do demokratických institucí"
+    },
+    {
+      "text": "Rakušan přednesl pohádku o panovníkovi, dvořanech a palácové vládě.",
+      "source": "steno",
+      "steno_id": "2025_24_00017",
+      "citace": "Byl jeden takový panovník, který žil ve velkém paláci, ale obyčejní lidé se do tohohle paláce nikdy nedostanou. Jeden dvořan měl třeba levný byt na zámeckém panství. Druhý dvořan si myslel, že je lepší než ti ostatní a každého, kdo se mu znelíbil, označil za méněcenného.",
+      "link_phrase": "levný byt na zámeckém panství"
     }
   ],
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Fiktivní zpravodajství",
-  "lead": "První den čtyřiadvacáté schůze. Babišova vláda ten den představila plán pro Českou televizi a rozhlas; opozice reagovala hned v sále. Bartoš (Piráti) představil fiktivní zpravodajství závislé na vládě, Richterová (Piráti) varovala, že reportáže o korupci mohou sáhnout na rozpočet ČT a ČRo, Kupka (ODS) mluvil o krádeži republiky.\n\nVečer poslanci ještě tři hodiny hlasovali jen o tom, v jakém pořadí se budou projednávat body. Obsah zákonů se neřešil.",
-  "pointa": "Hot téma dne byly peníze a svoboda ČT a ČRo. Večer už jen hlasování o tabuli pořadu.",
+  "lead": "První den čtyřiadvacáté schůze. Babišova vláda ten den představila plán pro Českou televizi a rozhlas; opozice reagovala hned v sále. Bartoš (Piráti) představil fiktivní zpravodajství závislé na vládě, Richterová (Piráti) varovala, že reportáže o korupci mohou sáhnout na rozpočet ČT a ČRo, Kupka (ODS) mluvil o krádeži republiky, Rakušan (STAN) začal pohádkou o panovníkovi v paláci.\n\nVečer poslanci ještě tři hodiny hlasovali jen o tom, v jakém pořadí se budou projednávat body. Obsah zákonů se neřešil.",
+  "pointa": "Hot téma dne byly peníze a svoboda ČT a ČRo. Kupka řekl, že svobodná média koušou a Babiš chce olizovače. Rakušan místo úvodu přednesl pohádku o panovníkovi. Večer už jen hlasování o tabuli pořadu.",
   "mean": "Veřejnoprávní média platí z koncesionářských poplatků. Vláda chce u ČT a ČRo víc rozhodování od státu, opozice varuje, že nový model přivede autocenzuru. Když redakce ví, že nepříjemná reportáž může v dalším roce seškrtnout rozpočet, začne si hlídat jazyk sama. Bartoš tu absurditu předvedl fiktivním večerníčkem chválicím vládu, Richterová popisovala ten tlak na ČT a ČRo, Kupka mluvil o zásahu do demokratických institucí. Večer šlo už jen o pořad schůze, tedy tabuli, co se kdy projedná, ne o obsah zákonů.",
+  "kuriozita": "Byl jeden panovník v paláci, kam obyčejní lidé nedostanou. Kolem něj dvořané: jeden měl levný byt na zámeckém panství, druhý každého označil za méněcenného, třetí seděla nejblíž a rozhodovala i když panovník sám nevěděl o čem. To přednášel pan poslanec Rakušan. O kom, to neřekl. Ale čtenář asi tuší.",
+  "citace_autor": "Martin Kupka (ODS)",
+  "citace_text": "Svobodná média koušou. A Andrej Babiš chce taková, která budou olizovat ruku, která je krmí.",
   "pocet_hlasovani": 51,
   "proslo": false
 }

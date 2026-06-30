@@ -647,7 +647,7 @@ def build_item_steno_links(
         passages,
         key=lambda p: (-len(p.link_phrase or ""), p.link_phrase is None),
     )
-    all_fields = ("lead", "mean", "kuriozita", "citace_text")
+    all_fields = ("lead", "mean", "kuriozita", "citace_text", "pointa")
     for p in ordered:
         href = passage_href(p, page_href)
         if p.link_phrase:
@@ -740,7 +740,7 @@ def apply_steno_links_to_content(
         item_passages = passages_for_slug(blocks, item.slug)
         if item_passages:
             build_item_steno_links(item_passages, item, page_href)
-            for field in ("lead", "mean", "kuriozita", "citace_text"):
+            for field in ("lead", "mean", "kuriozita", "citace_text", "pointa"):
                 raw = getattr(item, field, None) or ""
                 for m in re.finditer(r'class="steno-link"[^>]*>(.*?)</a>', raw, re.I | re.S):
                     used_phrases.add(re.sub(r"<[^>]+>", "", m.group(1)))

@@ -95,7 +95,7 @@ def apply_glossary_to_content(content: Any) -> None:
         if val:
             setattr(content, field, markup_glossary(val))
     for item in getattr(content, "items", []) or []:
-        for field in ("lead", "mean", "kuriozita", "citace_text"):
+        for field in ("lead", "mean", "kuriozita", "citace_text", "pointa"):
             val = getattr(item, field, None)
             if val:
                 setattr(item, field, markup_glossary(val))
