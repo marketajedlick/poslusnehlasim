@@ -92,7 +92,7 @@
 
 <div class="verdict">
   <span class="qm">„</span>
-  <p class="q" style="font-style:italic;font-size:18px;line-height:1.25;margin:0;color:#f0e6cf;">{% if content.zaver_key %}<span class="key" style="font-family:Impact,'Arial Black',sans-serif;font-style:normal;color:#cf5a31;text-transform:uppercase;">{{ content.zaver_key }}</span> {% endif %}{{ content.zaver_body or content.zaver }}</p>
+  <p class="q" style="font-style:italic;font-size:18px;line-height:1.25;margin:0;color:#f0e6cf;">{% if content.zaver_key %}<span class="key" style="font-family:Impact,'Arial Black',sans-serif;font-style:normal;color:#cf5a31;text-transform:uppercase;">{{ content.zaver_key }}</span> {% endif %}{{ (content.zaver_body or content.zaver) | safe }}</p>
   <div class="sign">- Váš dobrý voják Švejk -</div>
 </div>
 

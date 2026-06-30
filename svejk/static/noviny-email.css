@@ -335,6 +335,10 @@ body {
   color: #cf5a31;
   text-transform: uppercase;
 }
+.verdict .q a.steno-link {
+  color: #cf5a31 !important;
+  text-decoration: underline;
+}
 .verdict .sign {
   font-family: Impact, 'Arial Black', sans-serif;
   text-transform: uppercase;

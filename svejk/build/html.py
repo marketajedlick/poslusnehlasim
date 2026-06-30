@@ -805,6 +805,9 @@ _FIELD_LINK_STYLE = {
     "mean": "color:#211c14",
     "kuriozita": "color:#5a5348",
     "citace_text": "color:#211c14",
+    "zaver": "color:#cf5a31",
+    "zaver_body": "color:#cf5a31",
+    "dnesni_ucet": "color:#211c14",
 }
 
 
@@ -840,6 +843,12 @@ def _apply_email_links_absolute(content: Any, site_url: str) -> None:
                 (label, f"{site}{href}" if href.startswith("/") else href)
                 for label, href in item.kuriozita_nav
             ]
+    for field in ("dnesni_ucet", "result_note", "zaver", "zaver_body"):
+        val = getattr(content, field, None)
+        if val:
+            val = _make_internal_links_absolute(val, site_url)
+            val = _inline_email_body_link_styles(val, field=field)
+            setattr(content, field, val)
 
 
 def _prepare_content_for_email(content: DenContent) -> None:
