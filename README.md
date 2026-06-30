@@ -1,6 +1,6 @@
 # Poslušně hlásím
 
-**poslusnehlasim.cz** · srozumitelný přehled ze Sněmovny
+**poslusnehlasim.cz** · Deník sněmovny
 
 Poslušně hlásím je srozumitelný přehled z Poslanecké sněmovny: co se projednalo, co prošlo a proč na tom záleží. Statický web **[poslusnehlasim.cz](https://poslusnehlasim.cz)** vychází ze stenozáznamů a hlasování z PSP (UNL + Hlídač státu); texty v novinách redakce dolaďuje ručně v `processed/`.
 

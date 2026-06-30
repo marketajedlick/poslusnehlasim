@@ -27,7 +27,7 @@
       "source": "steno",
       "steno_id": "2025_24_00833",
       "citace": "Navrhli jste zákon, který vám umožní snazší vyhazování nepohodlných odborníků.",
-      "link_phrase": "snazší vyhazování nepohodlných odborníků"
+      "link_phrase": "snazším vyhazováním nepohodlných odborníků"
     },
     {
       "text": "Závěrečné hlasování číslo 117 skončilo 84 proti 56.",
@@ -35,6 +35,21 @@
       "steno_id": "2025_24_00884",
       "citace": "V hlasování číslo 117 přihlášeno 143 poslanců, pro 84, proti 56. Konstatuji, že s návrhem zákona byl vysloven souhlas.",
       "link_phrase": "osmdesát čtyři proti padesát šest"
+    },
+    {
+      "text": "Stojanová v listech o destrukci.",
+      "source": "steno",
+      "steno_id": "2025_24_00802",
+      "citace": "úplná destrukce",
+      "link_phrase": "úplnou destrukci"
+    },
+    {
+      "text": "Potlesk po schválení.",
+      "source": "steno",
+      "steno_id": "2025_24_00884",
+      "kind": "scene",
+      "citace": "(Potlesk poslanců koalice.)",
+      "link_phrase": "potleskem koalice"
     },
     {
       "text": "Po schválení zazněl potlesk poslanců koalice.",
@@ -59,7 +74,7 @@
   },
   "steno_slov": 55147,
   "lead": "Sněmovna odpoledne projednávala zákon o státních zaměstnancích. Koalice tvrdí, že jde o zjednodušení a flexibilitu, opozice říká, že jde o snazší vyhazování odborníků podle politické vůle.",
-  "pointa": "Závěrečné hlasování skončilo 84 proti 56. Senát a praxe ukážou, co z toho bude.",
-  "mean": "Služební zákon mění pravidla pro úředníky, kdo je zaměstná a kdo odchází. Koalice slibuje rychlejší personální změny, opozice varuje před politizací státní správy.",
+  "pointa": "Závěrečné hlasování skončilo 84 proti 56, s potleskem koalice. Senát a praxe ukážou, co z toho bude.",
+  "mean": "Služební zákon mění pravidla pro úředníky, kdo je zaměstná a kdo odchází. Richterová (Piráti) varovala před snazším vyhazováním nepohodlných odborníků. Koalice slibuje rychlejší personální změny, opozice varuje před politizací státní správy.",
   "citace_text": "Sněmovna projednávala zákon o státních úřednících. Paní poslankyně Stojanová říkala, že je to úplná destrukce. Vládní poslanci říkali, že je to zjednodušení. Jak to dopadne, se dozvíme příště."
 }

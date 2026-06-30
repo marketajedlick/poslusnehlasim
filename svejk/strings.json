@@ -2,7 +2,7 @@
   "brand": {
     "name": "Poslušně hlásím",
     "domain": "poslusnehlasim.cz",
-    "tagline": "srozumitelný přehled ze Sněmovny"
+    "tagline": "Deník sněmovny"
   },
   "nav": {
     "aria_main": "Hlavní navigace",
@@ -56,7 +56,7 @@
     "prev_aria": "Starší vydání",
     "next_aria": "Novější vydání",
     "schuze_title": "schůze",
-    "eyebrow": "srozumitelný přehled ze Sněmovny",
+    "eyebrow": "Deník sněmovny",
     "board_kick": "Stav zápasu",
     "mean_label": "Co to znamená pro vás:",
     "kuriozita_aria": "Tabulky hlasování o vyznamenání",
@@ -167,7 +167,7 @@
     "title": "O webu · Poslušně hlásím",
     "meta": "Poslušně hlásím je srozumitelný přehled z Poslanecké sněmovny: co se projednalo, co prošlo a proč na tom záleží.",
     "heading": "O webu",
-    "gloss": "Poslušně hlásím · poslusnehlasim.cz · srozumitelný přehled ze Sněmovny."
+    "gloss": "Poslušně hlásím · poslusnehlasim.cz · Deník sněmovny."
   },
   "pivo_tiers": {
     "velke_name": "Velké pivo",
@@ -183,7 +183,7 @@
   },
   "doi": {
     "title": "Potvrď odběr · Poslušně hlásím",
-    "eyebrow": "srozumitelný přehled ze Sněmovny",
+    "eyebrow": "Deník sněmovny",
     "intro": "Deník sněmovny už čeká. Ještě je ale třeba jeden krok. Potvrď, že e-mail patří opravdu tobě a chceš deník odebírat.",
     "cta": "Potvrdit odběr",
     "quote_key": "POSLUŠNĚ HLÁSÍM,",

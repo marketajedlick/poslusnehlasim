@@ -211,6 +211,7 @@ def _validate_fact_votes(fact: dict[str, Any], votes_by_cislo: dict[int, dict], 
 
 _MANUAL_TOPIC_KEYS = (
     "lead",
+    "lead_tail",
     "pointa",
     "mean",
     "kuriozita",

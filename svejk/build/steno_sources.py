@@ -752,6 +752,31 @@ def apply_steno_links_to_content(
             page_href,
             used_phrases=used_phrases,
         )
+    for field in ("zaver_body",):
+        raw = (getattr(content, field, None) or "").strip()
+        if raw and all_passages:
+            linked = link_steno_phrases_in_text(
+                raw,
+                all_passages,
+                page_href,
+                used_phrases=used_phrases,
+            )
+            setattr(content, field, linked)
+            key = (getattr(content, "zaver_key", None) or "").strip()
+            if key:
+                content.zaver = f"{key} {linked}"
+    listy = getattr(content, "snemovni_listy", None)
+    if listy and all_passages:
+        for section in listy.get("sections") or []:
+            section["paragraphs"] = [
+                link_steno_phrases_in_text(
+                    p,
+                    all_passages,
+                    page_href,
+                    used_phrases=used_phrases,
+                )
+                for p in (section.get("paragraphs") or [])
+            ]
     return page_href
 
 

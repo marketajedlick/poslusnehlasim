@@ -16,12 +16,13 @@ from svejk.newsletter.api import (
     update_template,
 )
 from svejk.newsletter.config import NewsletterConfig
+from svejk.strings import load_strings
 
 DOI_TEMPLATE_NAME = "Poslušně hlásím · DOI"
 
 
 def _doi_sender() -> tuple[str, str, str]:
-    from_name = (os.environ.get("ECOMAIL_FROM_NAME") or "Poslušně hlásím").strip()
+    from_name = (os.environ.get("ECOMAIL_FROM_NAME") or load_strings()["brand"]["name"]).strip()
     from_email = (os.environ.get("ECOMAIL_FROM_EMAIL") or "").strip()
     reply_to = (os.environ.get("ECOMAIL_REPLY_TO") or from_email).strip()
     return from_name, from_email, reply_to

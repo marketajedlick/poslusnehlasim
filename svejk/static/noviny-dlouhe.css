@@ -272,6 +272,19 @@ body.is-turning{ pointer-events:none; }
   font-family:'Old Standard TT',serif; font-style:italic;
   color:var(--ink-soft); overflow-wrap:anywhere;
 }
+.kuriozita-box{
+  margin:14px 0 0; padding:14px 16px;
+  border:2px solid var(--terra);
+  border-radius:3px;
+  background:rgba(207,90,49,.06);
+  max-width:80%;
+  font-family:'Old Standard TT',serif;
+  font-size:15px; line-height:1.5; font-style:italic;
+  color:var(--ink-soft); overflow-wrap:anywhere;
+}
+.item.i2 .kuriozita-box{ border-color:var(--blue); background:rgba(40,60,110,.06); }
+.p + .kuriozita-box{ margin-top:14px; }
+.kuriozita-box + .p{ margin-top:14px; }
 .item-quote{
   margin:16px 0 0; padding:14px 16px;
   border:2px solid var(--terra);

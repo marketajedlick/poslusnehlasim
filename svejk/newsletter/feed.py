@@ -82,9 +82,9 @@ def write_feed_xml(
     if not editions:
         raise FileNotFoundError(f"Žádná vydání pro období {obdobi}")
 
-    from svejk.build.seo import site_meta_description
+    from svejk.build.seo import SITE_NAME, site_meta_description
 
-    meta = {**_FEED_CHANNEL, "description": site_meta_description()}
+    meta = {**_FEED_CHANNEL, "title": SITE_NAME, "description": site_meta_description()}
     site = cfg.site_url.rstrip("/")
     channel = Element("channel")
     SubElement(channel, "title").text = meta["title"]

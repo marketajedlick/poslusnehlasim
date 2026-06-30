@@ -26,8 +26,12 @@ def _wrap(label: str, tip: str) -> str:
 
 
 _HTML_SPLIT = re.compile(r"(<[^>]+>)")
-_TERM_TIP_BLOCK = re.compile(
-    r'(<span class="term-tip"[^>]*>.*?</span>)',
+_TERM_TIP_BUBBLE = re.compile(
+    r'<span class="term-tip-bubble"[^>]*>.*?</span>',
+    re.I | re.S,
+)
+_TERM_TIP_WRAP = re.compile(
+    r'<span class="term-tip"[^>]*>(.*?)</span>',
     re.I | re.S,
 )
 
@@ -60,6 +64,22 @@ def _markup_plain(text: str) -> str:
     for start, end, label, tip in sorted(selected, key=lambda x: x[0], reverse=True):
         out = out[:start] + _wrap(label, tip) + out[end:]
     return out
+
+
+def strip_glossary_markup(text: str) -> str:
+    """E-mail: tooltipy nefungují, nech jen viditelný label."""
+    if not text or "term-tip" not in text:
+        return text
+    out = _TERM_TIP_BUBBLE.sub("", text)
+    while _TERM_TIP_WRAP.search(out):
+        out = _TERM_TIP_WRAP.sub(lambda m: m.group(1), out)
+    return out
+
+
+_TERM_TIP_BLOCK = re.compile(
+    r'(<span class="term-tip"[^>]*>.*?</span>)',
+    re.I | re.S,
+)
 
 
 def markup_glossary(text: str) -> str:

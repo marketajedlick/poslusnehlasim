@@ -16,6 +16,7 @@ from svejk.newsletter.api import (
     list_id_from_env,
 )
 from svejk.newsletter.config import NewsletterConfig
+from svejk.strings import load_strings
 from svejk.paths import SchuzePaths, processed_root
 
 _STATE_NAME = "newsletter-state.json"
@@ -112,7 +113,7 @@ def run_newsletter_notify(
     api_key = api_key_from_env()
     list_id = list_id_from_env()
     from_email = (os.environ.get("ECOMAIL_FROM_EMAIL") or "").strip()
-    from_name = (os.environ.get("ECOMAIL_FROM_NAME") or "Poslušně hlásím").strip()
+    from_name = (os.environ.get("ECOMAIL_FROM_NAME") or load_strings()["brand"]["name"]).strip()
     reply_to = (os.environ.get("ECOMAIL_REPLY_TO") or from_email).strip()
 
     if not dry_run and (not api_key or not list_id or not from_email):

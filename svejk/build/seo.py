@@ -67,7 +67,7 @@ _AI_BOTS = (
 
 SITE_NAME = "Poslušně hlásím"
 SITE_DOMAIN = "poslusnehlasim.cz"
-SITE_TAGLINE = "srozumitelný přehled ze Sněmovny"
+SITE_TAGLINE = "Deník sněmovny"
 SITE_META_DESCRIPTION = (
     "Poslušně hlásím je srozumitelný přehled z Poslanecké sněmovny: "
     "co se projednalo, co prošlo a proč na tom záleží."

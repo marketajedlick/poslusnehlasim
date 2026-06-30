@@ -145,6 +145,26 @@ def render_den_markdown(
                 "",
             ]
         )
+        lines.extend([lead, ""])
+        if item.lead_tail and item.kuriozita:
+            lines.extend([f'<div class="kuriozita-box">{item.kuriozita}</div>', ""])
+            lines.extend([item.lead_tail, ""])
+        elif item.lead_tail:
+            lines.extend([item.lead_tail, ""])
+        if item.citace_text:
+            lines.extend([f"> „{item.citace_text}“", ""])
+            if item.citace_autor:
+                lines.append(f"> {item.citace_autor}")
+                lines.append("")
+        if item.pointa:
+            lines.extend([item.pointa, ""])
+        lines.extend(
+            [
+                "### Co to znamená pro vás?",
+                "",
+                co_znamena,
+            ]
+        )
         if item.kuriozita_links:
             from svejk.build.mezin_smlouvy import resolve_smlouvy_page_links
             from svejk.build.recnici import resolve_recnici_page_links
@@ -173,23 +193,8 @@ def render_den_markdown(
             )
             if nav:
                 md_links = " · ".join(f"[{label}]({href})" for label, href in nav)
-                lines.extend([md_links, ""])
-        lines.extend([lead, ""])
-        if item.citace_text:
-            lines.extend([f"> „{item.citace_text}“", ""])
-            if item.citace_autor:
-                lines.append(f"> {item.citace_autor}")
-                lines.append("")
-        if item.pointa:
-            lines.extend([item.pointa, ""])
-        lines.extend(
-            [
-                "### Co to znamená pro vás?",
-                "",
-                co_znamena,
-            ]
-        )
-        if item.kuriozita:
+                lines.extend(["", md_links])
+        if item.kuriozita and not item.lead_tail:
             lines.extend(["", f"*{item.kuriozita}*"])
         lines.append("")
 

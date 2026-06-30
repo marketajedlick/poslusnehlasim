@@ -13,7 +13,7 @@
 {% endif %}
 <link rel="alternate" type="text/plain" title="Informace pro AI (llms.txt)" href="{{ newsletter.site_url }}/llms.txt" />
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
-<link rel="alternate" type="application/rss+xml" title="Poslušně hlásím, nová vydání" href="{{ newsletter.feed_url }}" />
+<link rel="alternate" type="application/rss+xml" title="{{ t.brand.name }}, nová vydání" href="{{ newsletter.feed_url }}" />
 {% if inline_css %}
 <style>{{ css | safe }}</style>
 {% else %}
@@ -140,13 +140,11 @@
               {% endfor %}
             </h2>
             <p class="p">{{ item.lead | glossary }}</p>
-            {% if item.kuriozita_nav %}
-            <nav class="kuriozita-links" aria-label="{{ t.edition.kuriozita_aria }}">
-              {% for label, href in item.kuriozita_nav %}
-              {% if not loop.first %}<span class="kuriozita-links-sep" aria-hidden="true">·</span>{% endif %}
-              <a class="kuriozita-link" href="{{ href }}">{{ label }}</a>
-              {% endfor %}
-            </nav>
+            {% if item.lead_tail and item.kuriozita %}
+            <aside class="kuriozita-box">{{ item.kuriozita | glossary }}</aside>
+            <p class="p">{{ item.lead_tail | glossary }}</p>
+            {% elif item.lead_tail %}
+            <p class="p">{{ item.lead_tail | glossary }}</p>
             {% endif %}
             {% if item.citace_text %}
             <blockquote class="item-quote">
@@ -162,7 +160,15 @@
             {% if item.mean %}
             <p class="mean"><b>{{ t.edition.mean_label }} </b>{{ item.mean | glossary }}</p>
             {% endif %}
-            {% if item.kuriozita %}
+            {% if item.kuriozita_nav %}
+            <nav class="kuriozita-links" aria-label="{{ t.edition.kuriozita_aria }}">
+              {% for label, href in item.kuriozita_nav %}
+              {% if not loop.first %}<span class="kuriozita-links-sep" aria-hidden="true">·</span>{% endif %}
+              <a class="kuriozita-link" href="{{ href }}">{{ label }}</a>
+              {% endfor %}
+            </nav>
+            {% endif %}
+            {% if item.kuriozita and not item.lead_tail %}
             <p class="kuriozita">{{ item.kuriozita | glossary }}</p>
             {% endif %}
           </div>

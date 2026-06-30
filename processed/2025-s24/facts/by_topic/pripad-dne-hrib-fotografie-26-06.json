@@ -13,21 +13,28 @@
       "source": "steno",
       "steno_id": "2025_24_00741",
       "citace": "Tady je možné vidět, řekněme v centrální spodní zóně ruku paní Mrázové na stehně pana Jedličky.",
-      "link_phrase": "ruku paní Mrázové na stehně pana Jedličky"
+      "link_phrase": "ruku ministryně Mrázové na stehně pana Jedličky"
     },
     {
       "text": "Hřib použil zvýrazňovač místo elektronické tužky, aby bylo vidět, co je na snímku důležité.",
       "source": "steno",
       "steno_id": "2025_24_00741",
       "citace": "využili ne elektronické tužky, ale zvýrazňovače, aby bylo jasné, co je na tom obrázku důležité",
-      "link_phrase": "zvýrazňovače"
+      "link_phrase": "zvýraznil fixem"
     },
     {
       "text": "Hřib označil Mrázovou a Jedličku za papaláše a mluvil o Babišových bytových baronech.",
       "source": "steno",
       "steno_id": "2025_24_00741",
       "citace": "jsou klasickým příkladem papalášů",
-      "link_phrase": "papalášů"
+      "link_phrase": "papalášství"
+    },
+    {
+      "text": "Jedlička reportérkám vysvětlil ruku na stehně.",
+      "source": "steno",
+      "steno_id": "2025_24_00741",
+      "citace": "Tak mi dá ruku na stehno, a co? Máme profesní vztah.",
+      "link_phrase": "Tak mi dá ruku na stehno"
     }
   ],
   "publikovat": true,

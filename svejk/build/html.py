@@ -13,7 +13,7 @@ from markupsafe import Markup
 
 from svejk.build.day_content import DenContent, build_den_content, datum_design
 from svejk.build.io import read_json
-from svejk.build.seo import site_meta_description
+from svejk.build.seo import SITE_NAME, site_meta_description
 from svejk.glossary import slovnicek_anchor, slovnicek_entries
 from svejk.build.publish import list_site_editions
 from svejk.strings import footer_closings, footer_stats_line, load_strings, schuze_count_label
@@ -493,7 +493,7 @@ def render_den_html(
         }
     )
     datum_label = datum_design(content.datum, content.den)
-    edition_title = f"Poslušně hlásím · {datum_label}"
+    edition_title = f"{SITE_NAME} · {datum_label}"
     from svejk.build.seo import article_headline as _article_headline
     from svejk.build.seo import article_json_ld as _article_json_ld
     from svejk.build.seo import edition_page_title as _edition_page_title
@@ -717,13 +717,13 @@ def _og_context(
         og_image_url = image_url
         og_image_width = image_width or _OG_SHARE_SIZE[0]
         og_image_height = image_height or _OG_SHARE_SIZE[1]
-        og_image_alt = image_alt or "Poslušně hlásím"
+        og_image_alt = image_alt or SITE_NAME
     else:
         image_name, image_w, image_h = _social_image_asset()
         og_image_url = _static_asset_url(site_url, base_path, image_name)
         og_image_width = image_w
         og_image_height = image_h
-        og_image_alt = image_alt or "Poslušně hlásím, Švejk"
+        og_image_alt = image_alt or f"{SITE_NAME}, Švejk"
     ctx: dict[str, str | int] = {
         "og_title": title,
         "og_description": description,
@@ -842,6 +842,25 @@ def _apply_email_links_absolute(content: Any, site_url: str) -> None:
             ]
 
 
+def _prepare_content_for_email(content: DenContent) -> None:
+    """Tooltipy v e-mailu nefungují — nech jen viditelný text."""
+    from svejk.build.glossary_markup import strip_glossary_markup
+
+    for field in ("dnesni_ucet", "result_note", "zaver", "zaver_body"):
+        val = getattr(content, field, None)
+        if val:
+            setattr(content, field, strip_glossary_markup(val))
+    for item in content.items:
+        for field in ("lead", "mean", "kuriozita", "citace_text", "pointa"):
+            val = getattr(item, field, None)
+            if val:
+                setattr(item, field, strip_glossary_markup(val))
+    board_raw = (content.dnesni_ucet or content.result_note or "").strip()
+    content.board_note_lines = [
+        ln.strip() for ln in board_raw.splitlines() if ln.strip()
+    ]
+
+
 def render_email_html(
     edition: Edition,
     *,
@@ -873,6 +892,7 @@ def render_email_html(
         site_url=site,
     )
     _apply_email_links_absolute(content, site)
+    _prepare_content_for_email(content)
     proslo_label, zamitnuto_label = _content_board_labels(content)
     plain = plain_text_from_content(
         content,
@@ -888,6 +908,7 @@ def render_email_html(
     html = tpl.render(
         content=content,
         css=css,
+        t=load_strings(),
         datum_design=datum_label,
         proslo_label=proslo_label,
         zamitnuto_label=zamitnuto_label,
@@ -976,7 +997,7 @@ def render_archiv_html(
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
-        title=t["archive"]["title"] + " · Poslušně hlásím",
+        title=t["archive"]["title"] + f" · {SITE_NAME}",
         description=site_meta_description(),
     )
     tpl = _jinja_env().get_template("archiv.html")
@@ -1152,7 +1173,7 @@ def render_vyznamenani_table_html(
         sibling_label(sibling_kind) if sibling_kind else ""
     )
     page_description = meta["gloss"]
-    og_title = f"{meta['title']} · {datum_label} · Poslušně hlásím"
+    og_title = f"{meta['title']} · {datum_label} · {SITE_NAME}"
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
@@ -1243,7 +1264,7 @@ def render_steno_sources_html(
     else:
         edition_href = f"{d.strftime('%Y-%m-%d')}.html"
         canonical_url = ""
-    og_title = f"{page_title} · {datum_label} · Poslušně hlásím"
+    og_title = f"{page_title} · {datum_label} · {SITE_NAME}"
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
@@ -1329,7 +1350,7 @@ def render_smlouvy_html(
         d = datetime.strptime(datum_unl, "%d.%m.%Y")
         edition_href = f"{d.strftime('%Y-%m-%d')}.html"
         canonical_url = ""
-    og_title = f"{page_title} · {datum_label} · Poslušně hlásím"
+    og_title = f"{page_title} · {datum_label} · {SITE_NAME}"
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
@@ -1403,7 +1424,7 @@ def render_recnici_table_html(
         edition_href = f"{d.strftime('%Y-%m-%d')}.html"
         canonical_url = ""
     page_description = meta["gloss"]
-    og_title = f"{meta['title']} · {datum_label} · Poslušně hlásím"
+    og_title = f"{meta['title']} · {datum_label} · {SITE_NAME}"
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,

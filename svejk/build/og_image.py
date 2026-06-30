@@ -7,7 +7,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
-from svejk.build.seo import _edition_date_label, article_headline
+from svejk.build.seo import SITE_NAME, _edition_date_label, article_headline
 
 _STATIC = Path(__file__).resolve().parent.parent / "static"
 _SVEJK_ICON = _STATIC / "svejk-terra.png"
@@ -41,7 +41,7 @@ def og_image_abs_url(site_url: str, base_path: str, datum_unl: str) -> str:
 
 
 def edition_og_title(datum_unl: str, den: str = "") -> str:
-    return f"Poslušně hlásím · {_edition_date_label(datum_unl, den)}"
+    return f"{SITE_NAME} · {_edition_date_label(datum_unl, den)}"
 
 
 def edition_og_headline(

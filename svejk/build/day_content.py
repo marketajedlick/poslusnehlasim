@@ -97,6 +97,7 @@ class DenItem:
     citace_text: str = ""
     citace_autor: str = ""
     pointa: str = ""
+    lead_tail: str = ""
     variant: str = ""
     has_custom_lead: bool = False
     mean_links: list[tuple[str, str]] = field(default_factory=list)
@@ -576,6 +577,7 @@ def build_den_content(
         citace_text = (fact.get("citace_text") or "").strip()
         citace_autor = (fact.get("citace_autor") or "").strip()
         pointa = (fact.get("pointa") or "").strip() if has_custom_lead else ""
+        lead_tail = (fact.get("lead_tail") or "").strip()
         items_meta[str(num)] = {"pocet_hlasovani": ph, "slug": slug}
         content.items.append(
             DenItem(
@@ -584,6 +586,7 @@ def build_den_content(
                 nadpis=nadpis,
                 nadpis_radky=split_nadpis_radky(nadpis),
                 lead=svejk_lead,
+                lead_tail=lead_tail,
                 mean=vysvetleni,
                 kuriozita=kuriozita,
                 citace_text=citace_text,
@@ -808,6 +811,7 @@ def _sanitize_den_content(content: DenContent) -> None:
             _sanitize_text_export(x) for x in item.nadpis_radky
         ]
         item.lead = _sanitize_text_export(item.lead)
+        item.lead_tail = _sanitize_text_export(item.lead_tail)
         item.mean = _sanitize_text_export(item.mean)
         item.kuriozita = _sanitize_text_export(item.kuriozita)
         item.citace_text = _sanitize_text_export(item.citace_text)

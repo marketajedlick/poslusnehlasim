@@ -25,7 +25,7 @@ def test_site_meta_description() -> None:
         == site_meta_description()
     )
     assert site_brand_line() == (
-        "Poslušně hlásím · poslusnehlasim.cz · srozumitelný přehled ze Sněmovny"
+        "Poslušně hlásím · poslusnehlasim.cz · Deník sněmovny"
     )
 
 

@@ -2,6 +2,7 @@
   "datum": "25.06.2026",
   "den": "čtvrtek",
   "topic_slugs": [
+    "interpelace-vyborny-macinka-ustavni-soud",
     "novela-z-o-spotrebitelskem-uveru",
     "debata-interpelace-hladik-cerveny"
   ],
@@ -16,11 +17,12 @@
     "spor_o_porad": true,
     "dlouha_debata": true
   },
-  "dnesni_ucet": "Šest ratifikací odsouhlaseno jako na páse,\ndopoledne spor o dotace NZÚ.",
-  "zaver": "že Sněmovna rychle schválila šest ratifikací mezinárodních smluv, a dopoledne se Hladík s Červeným přeli, jestli Nová zelená úsporám má peníze na zateplení domů.",
+  "dnesni_ucet": "Šest ratifikací odsouhlaseno jako na páse,\nspor o NZÚ a Macinkův puč u pultu.",
+  "zaver": "že Sněmovna rychle schválila šest ratifikací mezinárodních smluv, dopoledne se Hladík s Červeným přeli o dotace Nové zelené úsporám, a odpoledne Výborný vyzval Macinku, aby u pultu odvolal výroky o ústavním puči a soudruhovi prezidentovi.",
   "vysledek": [
     "* Schillerová (ANO): To je fakt peklo dneska, novela prošla druhým kolem",
-    "* Hladík (KDU-ČSL) tvrdil 450 tisíc domácností, Červený (Motoristé) páku 50 miliard a přiznal, že mladé lidovce vyhodili ze sítí resortu, nechtěli opozici u klávesnice"
+    "* Hladík (KDU-ČSL) tvrdil 450 tisíc domácností, Červený (Motoristé) páku 50 miliard a přiznal, že mladé lidovce vyhodili ze sítí resortu, nechtěli opozici u klávesnice",
+    "* Výborný (KDU-ČSL) vyzval Macinku k pultu, ministr místo omluvy citoval Klause"
   ],
   "board_proslo_label": "novela prošla druhým kolem",
   "board_zamitnuto_label": "návrhů neprošlo"

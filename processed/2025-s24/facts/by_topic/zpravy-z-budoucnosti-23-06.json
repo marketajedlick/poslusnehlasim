@@ -1,0 +1,91 @@
+{
+  "slug": "zpravy-z-budoucnosti-23-06",
+  "nazev": "Zprávy z budoucnosti",
+  "datum": "23.06.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "debata o plánu Babišovy vlády pro veřejnoprávní média, parodie večerního zpravodajství a večerní hlasování o pořadu schůze",
+  "koho": [
+    "Koho se to týká? Každého, kdo platí poplatky za televizi a rozhlas a nechce, aby zpravodajství znělo jako tiskovka vlády."
+  ],
+  "fakty": [
+    {
+      "text": "Richterová přednesla fiktivní hlavní zprávy: veřejnoprávní média budou svobodnější, peníze budou, když nebudou vyvolávat paniku.",
+      "source": "steno",
+      "steno_id": "2025_24_00007",
+      "citace": "Dobrý večer. Vítejte u hlavních zpráv. A na úvod hned velká dobrá zpráva. Vláda dnes rozhodla, že veřejnoprávní média budou svobodnější, než kdy dřív.",
+      "link_phrase": "veřejnoprávní média budou svobodnější"
+    },
+    {
+      "text": "Richterová ukázala scénář, kdy jsou média závislá čistě na vládní přízni.",
+      "source": "steno",
+      "steno_id": "2025_24_00007",
+      "citace": "jak bude vypadat hlavní zpravodajská relace veřejnopránních médií, když budou nově závislá čistě na vládní přízni",
+      "link_phrase": "závislá čistě na vládní přízni"
+    },
+    {
+      "text": "V parodii Richterové premiér ujistil, že peníze budou.",
+      "source": "steno",
+      "steno_id": "2025_24_00007",
+      "citace": "Premiér Andrej Babiš samozřejmě ujistil, že peníze budou, když budou média pracovat normálně, když nebudou zbytečně vyvolávat nějakou paniku.",
+      "link_phrase": "samozřejmě ujistil, že peníze budou"
+    },
+    {
+      "text": "Bartoš si zahrál podobný večerníček: Dobrý večer, děkujeme vládním politikům.",
+      "source": "steno",
+      "steno_id": "2025_24_00037",
+      "citace": "Dobrý večer, vítejte u hlavních zpráv. Děkujeme především našim vládním politikům.",
+      "link_phrase": "Děkujeme především našim vládním politikům"
+    },
+    {
+      "text": "Bartoš doplnil sportovní blok se sestřihy tiskových konferencí premiéra.",
+      "source": "steno",
+      "steno_id": "2025_24_00037",
+      "citace": "místo přímých přenosů hokeje nebo fotbalu bude vysílat sestřihy tiskových konferencí pana premiéra Babiše",
+      "link_phrase": "sestřihy tiskových konferencí pana premiéra Babiše"
+    },
+    {
+      "text": "Richterová varovala před zpravodajstvím jako vládní tiskovkou.",
+      "source": "steno",
+      "steno_id": "2025_24_00009",
+      "citace": "podané jako vládní tisková zpráva nebo vládní tisková konference",
+      "link_phrase": "vládní tisková zpráva"
+    },
+    {
+      "text": "Richterová varovala, že reportáže o korupci mohou sáhnout na rozpočet médií v dalším roce.",
+      "source": "steno",
+      "steno_id": "2025_24_00011",
+      "citace": "Zcela stačí, když redakce vědí, že reportáže o nedostupném bydlení, o chudobě, o korupci, o konkrétních selháních vlády, mohou mít přímý dopad na výši rozpočtu v dalším roce.",
+      "link_phrase": "reportáže o korupci"
+    },
+    {
+      "text": "Kupka řekl, že svobodná média koušou a Babiš chce olizovače.",
+      "source": "steno",
+      "steno_id": "2025_24_00033",
+      "citace": "svobodná média koušou.\nA Andrej Babiš chce taková, která budou olizovat ruku, která je krmí.",
+      "link_phrase": "Svobodná média koušou"
+    },
+    {
+      "source": "steno",
+      "steno_id": "2025_24_00033",
+      "citace": "následující hodina bude hned o několika klíčových tématech. Ale bude především o tom, jak současná vláda Andreje Babiše se rozhodla sobě ve svůj prospěch ukrást Českou republiku.",
+      "link_phrase": "krádeži republiky"
+    },
+    {
+      "text": "Kupka mluvil o zásahu do demokratických institucí včetně veřejnopránních médií.",
+      "source": "steno",
+      "steno_id": "2025_24_00033",
+      "citace": "rozkládat demokratické fungování institucí včetně veřejnoprávních médií",
+      "link_phrase": "zásahu do demokratických institucí"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 4,
+  "nadpis": "Zprávy z budoucnosti",
+  "lead": "První den čtyřiadvacáté schůze. Babišova vláda ten den představila plán pro Českou televizi a rozhlas. Bartoš (Piráti) i Richterová (Piráti) shodně odehráli fiktivní zpravodajství poddajné ČT. Takhle podle nich zní večerní zprávy, když jsou média závislá čistě na vládní přízni:",
+  "lead_tail": "",
+  "pointa": "",
+  "mean": "Veřejnoprávní média mají platit z poplatků, ne z rozpočtu vlády. Opozice varuje, že když o penězích každoročně rozhoduje kabinet, redakce si začnou hlídat jazyk sama. Richterová (Piráti) popisovala ten tlak na ČT a ČRo, Kupka (ODS) řekl, že svobodná média koušou a Babiš (ANO) chce olizovače. Bartoš (Piráti) s Richterovou (Piráti) to ilustrovali parodií večerního zpravodajství, které zní jako vládní tisková zpráva. Ve fiktivních zprávách doplnil i sport: místo hokeje nebo fotbalu budou sestřihy tiskových konferencí premiéra Babiše (ANO). Večer šlo už jen o pořad schůze, poslanci tři hodiny hlasovali, co se kdy projedná.",
+  "citace_text": "Dobrý večer. Vítejte u hlavních zpráv. A na úvod hned velká dobrá zpráva. Vláda dnes rozhodla, že veřejnoprávní média budou svobodnější, než kdy dřív. Premiér Andrej Babiš samozřejmě ujistil, že peníze budou, když budou média pracovat normálně, když nebudou zbytečně vyvolávat nějakou paniku.",
+  "pocet_hlasovani": 51,
+  "proslo": false
+}
