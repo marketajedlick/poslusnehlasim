@@ -153,8 +153,10 @@ def edition_meta_description(
     """Unikátní meta popis pro Google odvozený z obsahu vydání."""
     import re
 
+    from svejk.build.glossary_markup import strip_glossary_markup
+
     def _strip_html(text: str) -> str:
-        return re.sub(r"<[^>]+>", "", text).strip()
+        return re.sub(r"<[^>]+>", "", strip_glossary_markup(text)).strip()
 
     parts: list[str] = []
 

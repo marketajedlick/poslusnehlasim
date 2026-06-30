@@ -17,12 +17,26 @@ def test_site_meta_description() -> None:
         "Poslušně hlásím je srozumitelný přehled z Poslanecké sněmovny: "
         "co se projednalo, co prošlo a proč na tom záleží."
     )
+    # Vydání s obsahem dává unikátní popis odvozený z textu dne (ne fallback).
     assert (
         edition_meta_description(
             dnesni_ucet="Skóre dne 1:0. <span>ratifikací</span>",
             proslo=1,
         )
-        == site_meta_description()
+        == "Skóre dne 1:0 · Prošlo 1 z 1 bodů."
+    )
+    # Prázdný vstup spadne na fallback se značkovou větou.
+    assert edition_meta_description(dnesni_ucet="") == site_meta_description()
+    # Slovníkové bubliny (tooltip) se do popisu nesmí propsat — jen viditelný label.
+    assert (
+        edition_meta_description(
+            dnesni_ucet=(
+                'Hřib <span class="term-tip" role="term" aria-label="x">'
+                '(Piráti)<span class="term-tip-bubble" role="tooltip">'
+                'Česká pirátská strana.</span></span> dorazil.'
+            ),
+        )
+        == "Hřib (Piráti) dorazil"
     )
     assert site_brand_line() == (
         "Poslušně hlásím · poslusnehlasim.cz · Deník sněmovny"

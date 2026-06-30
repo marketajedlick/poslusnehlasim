@@ -375,10 +375,13 @@ def run_export_pages(
         resolved = resolve_edition(obdobi, edition.datum_unl)
         if not resolved or edition_source(resolved) is None:
             continue
+        # Legacy „flat" URL bez čísla schůze: místo plného duplikátu jen
+        # redirect (meta-refresh + canonical) na kanonickou schůzovou verzi.
         short_rel = f"noviny/{obdobi}/{edition.datum_unl}.html"
-        rel_written = _export_edition_page(resolved, short_rel)
-        if rel_written:
-            written.append(rel_written)
+        target = edition_pages_href(
+            resolved.obdobi, resolved.schuze, resolved.datum_unl, base
+        )
+        written.append(_write_page_html(out, short_rel, _redirect_html(target)))
 
     approved = list_approved_editions(obdobi)
     latest = editions[-1]

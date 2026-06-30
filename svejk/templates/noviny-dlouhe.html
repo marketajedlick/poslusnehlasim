@@ -4,7 +4,7 @@
 {% include "head-noviny.html" %}
 <style>.stagewrap,.stack{width:100%;max-width:100%;margin:0 auto}@media(min-width:721px){.stagewrap,.stack{width:840px;max-width:840px}}</style>
 <title>{{ page_title }}</title>
-<meta name="description" content="{{ site_meta_description }}" />
+<meta name="description" content="{{ meta_description | default(site_meta_description, true) }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
 {% include "og-meta.html" %}
 <script type="application/ld+json">{{ article_json_ld | tojson }}</script>

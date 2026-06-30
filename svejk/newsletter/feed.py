@@ -32,8 +32,10 @@ def _edition_page_url(
 
 
 def _strip_html(text: str) -> str:
-    """Odstraní HTML tagy — pro čistý plaintext v RSS."""
-    return re.sub(r"<[^>]+>", "", text).strip()
+    """Odstraní slovníkové bubliny i HTML tagy — čistý plaintext pro RSS/llms."""
+    from svejk.build.glossary_markup import strip_glossary_markup
+
+    return re.sub(r"<[^>]+>", "", strip_glossary_markup(text)).strip()
 
 
 def _edition_description(edition: Edition) -> str:

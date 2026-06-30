@@ -3,7 +3,7 @@
   "nazev": "Debata o pořadu schůze",
   "datum": "26.06.2026",
   "verdikt": "debata",
-  "predmet_lidsky": "ráno boj o pořad schůze a návrhy na body o vlnách veder",
+  "predmet_lidsky": "ráno boj o pořad schůze, vlny veder a horko v sále",
   "koho": [
     "Koho se to týká? Každého, kdo v pátek ráno čekal, jestli se vůbec začne projednávat služební zákon."
   ],
@@ -51,6 +51,21 @@
       "link_phrase": "v létě je horko, v zimě je zima, v noci je tma"
     },
     {
+      "text": "Ferčíková viděla pošklebky Macinky a Červeného.",
+      "source": "steno",
+      "steno_id": "2025_24_00753",
+      "citace": "vidím, jak části koalice je tato diskuse k smíchu",
+      "link_phrase": "diskuse k smíchu"
+    },
+    {
+      "text": "Smích v sále při debatě o veder.",
+      "source": "steno",
+      "steno_id": "2025_24_00753",
+      "kind": "scene",
+      "citace": "(Smích v sále.)",
+      "link_phrase": "Smích v sále"
+    },
+    {
       "text": "Pořad pro mean.",
       "source": "steno",
       "steno_id": "2025_24_00781",
@@ -59,10 +74,10 @@
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "Veder v pořadu",
-  "lead": "Pátek, závěr schůze 24. Ráno opozice znovu bojovala o pořad: místo služebního zákona, který koalice chtěla projednat jako první, chtěla zařadit bod o vlnách veder. Šrámková (Piráti) chtěla zařadit bod Připravenost České republiky na vlny veder a řekla, že horka zabíjí. Ferčíková (KSČM) dodala, že vlna bezprecedentních veder je politické téma, a poprosila předsedající, aby uklidnila skupinku Motoristů, kterým tahleta diskuse přijde směšná.\n\nNávrhy na pořad stejně padaly. Jen do oběda poslanci jedenáctkrát hlasovali o změnách pořadu a pokaždé to skončilo zamítnutím.",
-  "pointa": "Nejdřív horko v pořadu, pak až služební zákon. Procedura si vzala hodinu sama.",
+  "priorita": 4,
+  "nadpis": "Horka zabíjí\njedenáctkrát v pořadu",
+  "lead": "Ráno opozice znovu bojovala o pořad: koalice chtěla jako první služební zákon, opozice chtěla zařadit body o vlnách veder. Šrámková (Piráti) navrhla Připravenost České republiky na vlny veder a řekla, že horka zabíjí. Jen do oběda poslanci jedenáctkrát hlasovali o změnách pořadu, pokaždé to skončilo zamítnutím.\n\nVenku bylo třicet šest stupňů. Ferčíková (KSČM) se zeptala, jak se těšíte na víkend, a pak ministrů, co dělají s vlnou veder u lidí bez klimatizace. Macinka (Motoristé) odpověděl, že v létě je horko, v zimě je zima, v noci je tma, a dodal, že paní poslankyně má klimatizaci. Ferčíková řekla, že koalici je diskuse k smíchu, což bylo vidět na pošklebcích Macinky a Červeného.",
+  "pointa": "",
   "mean": "Pořad schůze určuje, v jakém pořadí se body projednávají. Koalice měla v programu služební zákon, opozice chtěla místo toho řešit vedro a zdravotní rizika. Když návrh na pořad neprojde, debata skončí hlasováním, ne obsahem. Služební zákon se tak odložil až na odpoledne.",
   "pocet_hlasovani": 11,
   "proslo": false

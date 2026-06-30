@@ -497,20 +497,17 @@ def render_den_html(
     from svejk.build.seo import article_headline as _article_headline
     from svejk.build.seo import article_json_ld as _article_json_ld
     from svejk.build.seo import edition_page_title as _edition_page_title
-    from svejk.build.seo import homepage_page_title as _homepage_page_title
     from svejk.build.seo import homepage_share_og_title as _homepage_share_og_title
 
-    if is_homepage:
-        page_title = _homepage_page_title()
-    else:
-        page_title = _edition_page_title(
-            dnesni_ucet=content.dnesni_ucet,
-            meta_description=meta_description,
-            first_item_nadpis=content.items[0].nadpis if content.items else "",
-            datum_unl=content.datum,
-            den=content.den,
-            datum_design=datum_label,
-        )
+    # Homepage i vydání: <title> nese téma dne (sjednoceno s og:title).
+    page_title = _edition_page_title(
+        dnesni_ucet=content.dnesni_ucet,
+        meta_description=meta_description,
+        first_item_nadpis=content.items[0].nadpis if content.items else "",
+        datum_unl=content.datum,
+        den=content.den,
+        datum_design=datum_label,
+    )
     from svejk.build.og_image import (
         OG_HEIGHT,
         OG_WIDTH,
@@ -561,18 +558,27 @@ def render_den_html(
         first_item_nadpis=content.items[0].nadpis if content.items else "",
         edition_title=edition_title,
     )
+    import re as _re
+
+    from svejk.build.glossary_markup import strip_glossary_markup as _strip_gloss
+
+    def _plain(text: str) -> str:
+        return _re.sub(r"<[^>]+>", "", _strip_gloss(text or "")).strip()
+
     schema_parts: list[dict[str, str | int]] = []
     body_chunks: list[str] = []
     for item in content.items:
-        chunk = item.lead.strip()
-        if item.mean:
-            chunk = f"{chunk} {item.mean.strip()}"
-        body_chunks.append(f"{item.nadpis}. {chunk}")
+        chunk = _plain(item.lead)
+        mean = _plain(item.mean)
+        if mean:
+            chunk = f"{chunk} {mean}"
+        nadpis = _plain(item.nadpis)
+        body_chunks.append(f"{nadpis}. {chunk}")
         schema_parts.append(
-            {"headline": item.nadpis, "body": chunk, "position": item.num}
+            {"headline": nadpis, "body": chunk, "position": item.num}
         )
     if content.zaver:
-        body_chunks.append(content.zaver.strip())
+        body_chunks.append(_plain(content.zaver))
     from svejk.build.seo import mtime_iso as _mtime_iso
     from svejk.build.seo import publisher_logo_url as _publisher_logo_url
     from svejk.build.seo import website_json_ld as _website_json_ld
@@ -1269,7 +1275,9 @@ def render_steno_sources_html(
     page_description = page_gloss or page_title
     if link_mode == "pages":
         edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path)
-        canonical_url = f"{cfg.site_url.rstrip('/')}{edition_href}"
+        # Self-referenční canonical — steno je indexovatelné jako vlastní stránka.
+        steno_href = steno_sources_pages_href(obdobi, schuze, datum_unl, base_path)
+        canonical_url = f"{cfg.site_url.rstrip('/')}{steno_href}"
     else:
         edition_href = f"{d.strftime('%Y-%m-%d')}.html"
         canonical_url = ""
