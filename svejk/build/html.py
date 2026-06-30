@@ -1163,7 +1163,7 @@ def render_vyznamenani_table_html(
     )
     if link_mode == "pages":
         edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path)
-        canonical_url = f"{cfg.site_url.rstrip('/')}{edition_href}"
+        canonical_url = f"{cfg.site_url.rstrip('/')}{vyznamenani_pages_href(obdobi, schuze, datum_unl, kind, base_path)}"
         sibling_href = (
             vyznamenani_href(
                 obdobi,
@@ -1193,7 +1193,7 @@ def render_vyznamenani_table_html(
         site_url=cfg.site_url,
         base_path=base_path,
         title=og_title,
-        description=site_meta_description(),
+        description=page_description,
     )
     votes_by_cislo = _load_votes_by_cislo(paths, datum_unl)
     explain = page_explain(kind, data, votes_by_cislo)
@@ -1286,7 +1286,7 @@ def render_steno_sources_html(
         site_url=cfg.site_url,
         base_path=base_path,
         title=og_title,
-        description=site_meta_description(),
+        description=page_description,
     )
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url) if canonical_url else ""
     tpl = _jinja_env().get_template("steno-zdroje-stranka.html")
@@ -1372,7 +1372,7 @@ def render_smlouvy_html(
         site_url=cfg.site_url,
         base_path=base_path,
         title=og_title,
-        description=site_meta_description(),
+        description=page_description,
     )
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url) if canonical_url else ""
     tpl = _jinja_env().get_template("smlouvy-stranka.html")
@@ -1436,7 +1436,7 @@ def render_recnici_table_html(
     meta = recnici_page_meta(data, datum_label=datum_label)
     if link_mode == "pages":
         edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path)
-        canonical_url = f"{cfg.site_url.rstrip('/')}{edition_href}"
+        canonical_url = f"{cfg.site_url.rstrip('/')}{recnici_pages_href(obdobi, schuze, datum_unl, base_path)}"
     else:
         edition_href = f"{d.strftime('%Y-%m-%d')}.html"
         canonical_url = ""
@@ -1446,7 +1446,7 @@ def render_recnici_table_html(
         site_url=cfg.site_url,
         base_path=base_path,
         title=og_title,
-        description=site_meta_description(),
+        description=page_description,
     )
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url) if canonical_url else ""
     tpl = _jinja_env().get_template("recnici-tabulka-stranka.html")

@@ -121,7 +121,5 @@ def test_write_sitemap_includes_o_webu(tmp_path) -> None:
     assert "https://poslusnehlasim.cz/o-webu/" in xml
     assert "https://poslusnehlasim.cz/slovnicek.html" in xml
     assert "https://poslusnehlasim.cz/noviny/2025/24/26.06.2026.html" in xml
+    assert "https://poslusnehlasim.cz/noviny/2025/24/26.06.2026-steno.html" in xml
     assert "feed.xml" not in xml
-    assert "-steno.html" not in xml
-    assert "-neprosli.html" not in xml
-    assert "-recnici.html" not in xml

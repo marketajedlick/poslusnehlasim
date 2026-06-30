@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-{% set head_noindex = true %}
+{# Řečníci dne — indexovatelné (jména, délka projevů). #}
 {% include "head-noviny.html" %}
 <title>{{ page_title }} · {{ datum_label }} · {{ t.brand.name }}</title>
-<meta name="description" content="{{ site_meta_description }}" />
+<meta name="description" content="{{ page_description | default(site_meta_description, true) }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
 {% include "og-meta.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />

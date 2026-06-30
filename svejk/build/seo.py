@@ -17,9 +17,11 @@ from svejk.build.nav import (
     recnici_pages_href,
     slovnicek_pages_href,
     soukromi_pages_href,
+    smlouvy_pages_href,
     steno_sources_pages_href,
     vyznamenani_pages_href,
 )
+from svejk.build.mezin_smlouvy import has_smlouvy
 from svejk.build.recnici import has_recnici
 from svejk.build.steno_sources import has_steno_sources
 from svejk.build.vyznamenani_neprosli import (
@@ -466,6 +468,28 @@ def write_robots_txt(out_dir: Path, *, site_url: str) -> Path:
     return path
 
 
+def edition_subpage_hrefs(
+    edition: Edition,
+    *,
+    base_path: str = "",
+) -> list[str]:
+    """Indexovatelné podstránky vydání (steno, smlouvy, tabulky)."""
+    paths = SchuzePaths.create(edition.obdobi, edition.schuze)
+    datum = edition.datum_unl
+    ob, sch = edition.obdobi, edition.schuze
+    out: list[str] = []
+    if has_steno_sources(paths, datum):
+        out.append(steno_sources_pages_href(ob, sch, datum, base_path))
+    if has_smlouvy(paths, datum):
+        out.append(smlouvy_pages_href(ob, sch, datum, base_path))
+    if has_recnici(paths, datum):
+        out.append(recnici_pages_href(ob, sch, datum, base_path))
+    for kind in _VYZNAMENANI_KINDS:
+        if load_vyznamenani(paths, datum, kind):
+            out.append(vyznamenani_pages_href(ob, sch, datum, kind, base_path))
+    return out
+
+
 def write_sitemap_xml(
     out_dir: Path,
     editions: list[Edition],
@@ -497,6 +521,8 @@ def write_sitemap_xml(
     for edition in editions:
         href = edition_pages_href(edition.obdobi, edition.schuze, edition.datum_unl, base_path)
         add_url(f"{base}{href}", edition.when)
+        for sub_href in edition_subpage_hrefs(edition, base_path=base_path):
+            add_url(f"{base}{sub_href}", edition.when)
 
     xml = b'<?xml version="1.0" encoding="UTF-8"?>\n' + tostring(urlset, encoding="utf-8")
     path = out_dir / "sitemap.xml"
