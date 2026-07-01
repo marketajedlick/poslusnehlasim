@@ -120,76 +120,6 @@ body.is-turning{ pointer-events:none; }
 }
 .mast .terra{ color:var(--terra); }
 
-/* ---------- scoreboard (mobile) ---------- */
-.board{
-  background:var(--ink); color:var(--paper);
-  border-top:3px solid var(--terra);
-  margin-top:14px; padding:14px 16px 16px;
-}
-.board-kick{
-  text-align:center; font-family:'Oswald',sans-serif; font-weight:600;
-  text-transform:uppercase; letter-spacing:.16em; font-size:10px;
-  color:var(--terra); margin-bottom:10px;
-}
-.board-main{
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-  gap:10px;
-}
-.bteam{
-  display:flex;
-  align-items:baseline;
-  gap:8px;
-}
-.bteam.l{
-  justify-content:flex-end;
-  text-align:right;
-}
-.bteam.r{
-  justify-content:flex-start;
-  text-align:left;
-}
-.bcolon{
-  font-family:'Anton',sans-serif;
-  font-size:clamp(24px, 7vw, 32px);
-  color:var(--paper-3);
-  line-height:.7;
-}
-.bnum{
-  font-family:'Anton',sans-serif;
-  font-size:clamp(36px, 10vw, 48px);
-  line-height:1; color:var(--paper);
-}
-.bteam.l .bnum{ color:var(--paper); }
-.bteam.r .bnum{ color:var(--terra); }
-.blbl{
-  font-family:'Oswald',sans-serif; font-weight:600; text-transform:uppercase;
-  letter-spacing:.06em; font-size:clamp(10px, 2.8vw, 13px); line-height:1.15;
-  color:var(--paper);
-  max-width:min(100%,16ch);
-}
-.board-stats{
-  text-align:center; font-family:'Oswald',sans-serif; font-weight:500;
-  text-transform:uppercase; letter-spacing:.06em; font-size:11px;
-  color:var(--paper-3); margin-top:10px; padding-top:10px;
-  border-top:1px solid rgba(240,230,207,.22);
-}
-.board-note{
-  text-align:center;
-  font-family:'Oswald',sans-serif;
-  font-weight:500;
-  letter-spacing:.06em;
-  font-size:11px;
-  line-height:1.45;
-  color:var(--paper-3);
-  margin-top:16px;
-  padding-top:14px;
-  border-top:1px solid rgba(240,230,207,.22);
-  white-space:pre-line;
-}
-.board-note-line{ display:block; }
-
 /* ---------- items (mobile) ---------- */
 .item{
   display:block;
@@ -817,19 +747,30 @@ body.steno-page{
 .stamp.debata{ color:var(--blue); border-color:var(--blue); box-shadow:inset 0 0 0 1.2px var(--blue); }
 
 /* ---------- verdict (mobile) ---------- */
+.verdict-top{
+  border-top:3px solid var(--terra);
+  margin-top:14px;
+}
+.verdict-top .q,
+.verdict .q{
+  padding-left:0;
+}
+.verdict .q-quote,
+.verdict-top .q-quote{
+  font-style:inherit;
+}
+.verdict .sign,
+.verdict-top .sign{
+  margin-left:0;
+}
 .verdict{
   position:relative; margin-top:16px;
   padding:18px 14px 16px; background:var(--ink); color:var(--paper);
 }
-.verdict .qm{
-  font-family:'Old Standard TT',serif; font-style:italic;
-  font-size:clamp(48px, 14vw, 64px); line-height:.5;
-  color:var(--terra); position:absolute; top:12px; left:10px; opacity:.9;
-}
 .verdict .q{
   font-style:italic;
-  font-size:clamp(17px, 4.8vw, 22px); line-height:1.25;
-  padding-left:36px; text-wrap:pretty; margin:0;
+  font-size:clamp(14px, 4.1vw, 19px); line-height:1.25;
+  padding-left:0; text-wrap:pretty; margin:0;
   overflow-wrap:anywhere;
 }
 .verdict .q .key{
@@ -838,8 +779,8 @@ body.steno-page{
 }
 .verdict .sign{
   font-family:'Anton',sans-serif; text-transform:uppercase;
-  letter-spacing:.18em; font-size:9px; color:var(--paper-3);
-  margin:14px 0 0 36px;
+  letter-spacing:.18em; font-size:8px; color:var(--paper-3);
+  margin:14px 0 0 0;
 }
 
 /* ---------- subscribe ---------- */
@@ -1102,7 +1043,7 @@ body.steno-page{
   display:flex; justify-content:center;
   text-align:center;
 }
-.archive-link + .board{
+.archive-link + .verdict-top{
   margin-top:8px;
 }
 .hospoda + .archive-link{
@@ -1451,6 +1392,7 @@ body.pivo-page{
   font-size:16px; line-height:1.5; color:var(--paper);
   text-align:center;
 }
+.pivo-quote .q-quote{ font-style:inherit; }
 .pivo-quote-by{
   display:block;
   margin:10px auto 0;
@@ -2177,32 +2119,7 @@ body.archiv-page{
   .eyebrow{ letter-spacing:.26em; font-size:13px; }
   .mast{ font-size:66px; line-height:.86; margin:8px 0 0; }
 
-  .board{ border-top-width:4px; margin-top:16px; padding:16px 28px 18px; }
-  .board-kick{ letter-spacing:.24em; font-size:12px; margin-bottom:8px; }
-  .board-main{
-    display:grid;
-    grid-template-columns:1fr auto 1fr;
-    align-items:center;
-    gap:26px;
-  }
-  .bteam{ gap:14px; }
-  .bteam.l{ justify-content:flex-end; text-align:right; }
-  .bteam.r{ justify-content:flex-start; text-align:left; }
-  .bcolon{
-    display:block;
-    font-family:'Anton',sans-serif; font-size:40px;
-    color:var(--paper-3); line-height:.7;
-  }
-  .bnum{ font-size:62px; line-height:.74; }
-  .blbl{ letter-spacing:.08em; font-size:15px; line-height:1; white-space:nowrap; max-width:none; }
-  .board-stats{ letter-spacing:.08em; font-size:12.5px; margin-top:12px; padding-top:10px; }
-  .board-note{
-    letter-spacing:.04em;
-    font-size:11.5px;
-    margin-top:18px;
-    padding-top:14px;
-  }
-  .board-note-line{ white-space:normal; max-width:42em; margin:0 auto; }
+  .verdict-top{ border-top-width:4px; margin-top:16px; }
 
   .item{
     display:grid;
@@ -2240,12 +2157,11 @@ body.archiv-page{
   .stamp.odlozeno{ box-shadow:inset 0 0 0 1.6px currentColor; }
 
   .verdict{ margin-top:22px; padding:26px 30px 24px; }
-  .verdict .qm{ font-size:120px; top:22px; left:18px; }
-  .verdict .q{ font-size:38px; line-height:1.18; padding-left:74px; }
-  .verdict .sign{ letter-spacing:.26em; font-size:11px; margin:18px 0 0 74px; }
+  .verdict .q{ font-size:32px; line-height:1.18; padding-left:0; }
+  .verdict .sign{ letter-spacing:.26em; font-size:9px; margin:18px 0 0 0; }
 
   .archive-link{ margin-top:14px; padding:6px 0 8px; }
-  .archive-link + .board{ margin-top:10px; }
+  .archive-link + .verdict-top{ margin-top:10px; }
   .hospoda{ margin-top:22px; padding:16px 18px 14px; }
   .hospoda-gloss{ font-size:19px; }
   .hospoda-link{ font-size:15px; }

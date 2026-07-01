@@ -51,19 +51,39 @@
       "link_phrase": "v létě je horko, v zimě je zima, v noci je tma"
     },
     {
+      "text": "Macinka řekl, že poslankyně má klimatizaci.",
+      "source": "steno",
+      "steno_id": "2025_24_00757",
+      "citace": "Naštěstí tedy paní poslankyně má klimatizaci, tak snad to bude brzy dobré.",
+      "link_phrase": "paní poslankyně má klimatizaci"
+    },
+    {
+      "text": "Ferčíková o lidech bez klimatizace.",
+      "source": "steno",
+      "steno_id": "2025_24_00751",
+      "citace": "kteří si nemohou dovolit klimatizaci",
+      "link_phrase": "bez klimatizace"
+    },
+    {
+      "text": "Jedenáct hlasování o pořadu, všechna zamítnuta.",
+      "source": "steno",
+      "steno_id": "2025_24_00788",
+      "citace": "Hlasování číslo 88, bylo přihlášeno 142 poslanců, pro hlasovalo 50, proti 81. Návrh byl zamítnut. Tím bychom se měli vypořádat se všemi navrženými změnami v programu schůze.",
+      "link_phrase": "o změnách pořadu"
+    },
+    {
+      "text": "Ferčíková viděla pošklebky ministrů.",
+      "source": "steno",
+      "steno_id": "2025_24_00753",
+      "citace": "tady pan ministr životního prostředí na mě dělá pošklebky",
+      "link_phrase": "pošklebcích"
+    },
+    {
       "text": "Ferčíková viděla pošklebky Macinky a Červeného.",
       "source": "steno",
       "steno_id": "2025_24_00753",
       "citace": "vidím, jak části koalice je tato diskuse k smíchu",
       "link_phrase": "diskuse k smíchu"
-    },
-    {
-      "text": "Smích v sále při debatě o veder.",
-      "source": "steno",
-      "steno_id": "2025_24_00753",
-      "kind": "scene",
-      "citace": "(Smích v sále.)",
-      "link_phrase": "Smích v sále"
     },
     {
       "text": "Pořad pro mean.",
@@ -76,9 +96,9 @@
   "publikovat": true,
   "priorita": 4,
   "nadpis": "Horka zabíjí\njedenáctkrát v pořadu",
-  "lead": "Ráno opozice znovu bojovala o pořad: koalice chtěla jako první služební zákon, opozice chtěla zařadit body o vlnách veder. Šrámková (Piráti) navrhla Připravenost České republiky na vlny veder a řekla, že horka zabíjí. Jen do oběda poslanci jedenáctkrát hlasovali o změnách pořadu, pokaždé to skončilo zamítnutím.\n\nVenku bylo třicet šest stupňů. Ferčíková (KSČM) se zeptala, jak se těšíte na víkend, a pak ministrů, co dělají s vlnou veder u lidí bez klimatizace. Macinka (Motoristé) odpověděl, že v létě je horko, v zimě je zima, v noci je tma, a dodal, že paní poslankyně má klimatizaci. Ferčíková řekla, že koalici je diskuse k smíchu, což bylo vidět na pošklebcích Macinky a Červeného.",
+  "lead": "Ráno opozice znovu bojovala o pořad: koalice chtěla jako první služební zákon, opozice chtěla zařadit body o vlnách veder. Šrámková (Piráti) navrhla Připravenost České republiky na vlny veder a řekla, že horka zabíjí. Jen do oběda poslanci jedenáctkrát hlasovali o změnách pořadu, pokaždé to skončilo zamítnutím.\n\nVenku bylo třicet šest stupňů. Ferčíková (KSČM) nejdřív žádala uklidnit skupinku Motoristů, pak se zeptala, jak se těšíte na víkend, a ministrů, co dělají s vlnou veder u lidí bez klimatizace. Macinka (Motoristé) odpověděl, že v létě je horko, v zimě je zima, v noci je tma, a dodal, že paní poslankyně má klimatizaci. Ferčíková řekla, že koalici je diskuse k smíchu, což bylo vidět na pošklebcích Macinky a Červeného.",
   "pointa": "",
-  "mean": "Pořad schůze určuje, v jakém pořadí se body projednávají. Koalice měla v programu služební zákon, opozice chtěla místo toho řešit vedro a zdravotní rizika. Když návrh na pořad neprojde, debata skončí hlasováním, ne obsahem. Služební zákon se tak odložil až na odpoledne.",
+  "mean": "Pořad schůze určuje, v jakém pořadí se body projednávají. Koalice měla v programu služební zákon, opozice chtěla místo toho řešit vedro a zdravotní rizika. Když návrh na pořad neprojde, debata skončí hlasováním, ne obsahem.",
   "pocet_hlasovani": 11,
   "proslo": false
 }

@@ -76,7 +76,7 @@ body {
   font-family: Impact, 'Arial Black', sans-serif;
   text-transform: uppercase;
   color: #211c14;
-  font-size: 38px;
+  font-size: 50px;
   line-height: 0.95;
   margin: 8px 0 0;
   text-align: center;
@@ -86,79 +86,10 @@ body {
 }
 .mast .terra { color: #cf5a31; }
 
-/* ---------- scoreboard ---------- */
-.board {
-  background: #211c14;
-  color: #f0e6cf;
+/* ---------- verdict (top) ---------- */
+.verdict-top {
   border-top: 3px solid #cf5a31;
   margin-top: 14px;
-  padding: 14px 16px 16px;
-}
-.board-kick {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 10px;
-  color: #cf5a31;
-  margin-bottom: 10px;
-}
-.board-main {
-  width: 100%;
-  text-align: center;
-}
-.board-main td {
-  vertical-align: middle;
-  font-family: Impact, 'Arial Black', sans-serif;
-}
-.bteam-l,
-.bteam-r {
-  white-space: nowrap;
-}
-.blbl {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 11px;
-  line-height: 1.15;
-  color: #f0e6cf;
-  vertical-align: middle;
-}
-.bteam-l .blbl {
-  margin-right: 10px;
-}
-.bteam-r .blbl {
-  margin-left: 10px;
-}
-.bnum-l {
-  font-size: 84px;
-  line-height: 0.88;
-  color: #f0e6cf;
-  vertical-align: middle;
-}
-.bnum-r {
-  font-size: 84px;
-  line-height: 0.88;
-  color: #cf5a31;
-  vertical-align: middle;
-}
-.bcolon {
-  font-size: 54px;
-  color: #ded0ad;
-  line-height: 0.7;
-  padding: 0 8px;
-}
-.board-note {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  line-height: 1.45;
-  color: #ded0ad;
-  margin-top: 14px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(240, 230, 207, 0.22);
 }
 
 /* ---------- items ---------- */
@@ -304,30 +235,120 @@ body {
 }
 .item.i2 .mean b { color: #283c6e; }
 
+.kuriozita-box {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border: 2px solid #cf5a31;
+  border-radius: 3px;
+  background: rgba(207, 90, 49, 0.06);
+  font-size: 15px;
+  line-height: 1.45;
+  color: #5a5348;
+  font-style: italic;
+  text-align: left;
+}
+.item.i2 .kuriozita-box {
+  border-color: #283c6e;
+  background: rgba(40, 60, 110, 0.06);
+}
+.item-quote {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border: 2px solid #cf5a31;
+  border-radius: 3px;
+  background: rgba(207, 90, 49, 0.06);
+  text-align: left;
+}
+.item.i2 .item-quote {
+  border-color: #283c6e;
+  background: rgba(40, 60, 110, 0.06);
+}
+.item-quote p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-style: italic;
+  color: #211c14;
+}
+.item-quote-by {
+  display: block;
+  margin-top: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-style: normal;
+  color: #5a503e;
+}
+.kuriozita-links-sep {
+  color: #5a5348;
+}
+.kuriozita {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #5a5348;
+  font-style: italic;
+  text-align: left;
+}
+
+.snemovni-listy {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1.5px solid rgba(33, 28, 20, 0.2);
+  text-align: left;
+}
+.listy-title {
+  font-family: Impact, 'Arial Black', sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  margin: 0 0 10px;
+  color: #211c14;
+}
+.listy-meta,
+.listy-deck,
+.listy-p,
+.listy-footer {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #211c14;
+}
+.listy-h {
+  margin: 14px 0 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #cf5a31;
+}
+.listy-ul {
+  margin: 0 0 10px;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #211c14;
+}
+
 /* ---------- verdict ---------- */
 .verdict {
   margin-top: 16px;
-  padding: 18px 14px 16px 40px;
+  padding: 18px 14px 16px;
   background: #211c14;
   color: #f0e6cf;
-  position: relative;
-}
-.verdict .qm {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-style: italic;
-  font-size: 48px;
-  line-height: 0.5;
-  color: #cf5a31;
-  position: absolute;
-  top: 12px;
-  left: 10px;
-  opacity: 0.9;
 }
 .verdict .q {
   font-style: italic;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.25;
   margin: 0;
+}
+.verdict .q-quote {
+  font-style: inherit;
+  font-size: 20px;
 }
 .verdict .q .key {
   font-family: Impact, 'Arial Black', sans-serif;
@@ -343,7 +364,7 @@ body {
   font-family: Impact, 'Arial Black', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: 9px;
+  font-size: 8px;
   color: #ded0ad;
   margin: 14px 0 0;
 }
@@ -397,47 +418,12 @@ body {
     text-align: center !important;
   }
   .mast {
-    font-size: 28px !important;
+    font-size: 36px !important;
     line-height: 0.95 !important;
   }
   .eyebrow {
     font-size: 11px !important;
     letter-spacing: 0.14em !important;
-  }
-  .board {
-    padding: 12px 10px 14px !important;
-  }
-  .board-main .bteam-l,
-  .board-main .bteam-r {
-    white-space: normal !important;
-    text-align: center !important;
-  }
-  .board-main .bteam-l {
-    padding-right: 4px !important;
-  }
-  .board-main .bteam-r {
-    padding-left: 4px !important;
-  }
-  .blbl {
-    font-size: 9px !important;
-    letter-spacing: 0.04em !important;
-    display: inline-block !important;
-    max-width: 7em !important;
-    line-height: 1.1 !important;
-    vertical-align: middle !important;
-  }
-  .bteam-l .blbl {
-    margin-right: 6px !important;
-  }
-  .bteam-r .blbl {
-    margin-left: 6px !important;
-  }
-  .bnum-l,
-  .bnum-r {
-    font-size: 72px !important;
-  }
-  .bcolon {
-    font-size: 46px !important;
   }
   .item-inner tr,
   .item-inner tbody {
@@ -491,31 +477,16 @@ body {
   padding-right: 32px;
 }
 .doi-box {
-  padding: 22px 20px 20px 44px;
+  padding: 22px 20px 20px;
   background: #211c14;
   color: #f0e6cf;
-  position: relative;
 }
-.doi-box .qm {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-style: italic;
-  font-size: 48px;
-  line-height: 0.5;
-  color: #cf5a31;
-  position: absolute;
-}
-.doi-box .qm-start {
-  top: 14px;
-  left: 12px;
-}
-.doi-box .qm-end {
-  right: 14px;
-  bottom: 8px;
-  font-size: 40px;
+.doi-box .q-quote {
+  font-style: inherit;
 }
 .doi-box .q {
   font-style: italic;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.45;
   margin: 0;
 }

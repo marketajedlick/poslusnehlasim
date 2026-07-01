@@ -122,14 +122,10 @@ class DenContent:
     items: list[DenItem] = field(default_factory=list)
     proslo: int = 0
     zamitnuto: int = 0
-    board_proslo_label: str = ""
-    board_zamitnuto_label: str = ""
-    board_stats: str = ""
     result_note: str = ""
     zaver: str = ""
     zaver_key: str = "Poslušně hlásím,"
     zaver_body: str = ""
-    board_note_lines: list[str] = field(default_factory=list)
     snemovni_listy: dict[str, Any] | None = None
 
 
@@ -391,20 +387,6 @@ def _kapitalizuj_segmenty(text: str, *, sep: str = " · ") -> str:
     return sep.join(_kapitalizuj_prvni_pismeno(p.strip()) for p in text.split(sep) if p.strip())
 
 
-def board_stats_line(stats: dict[str, Any]) -> str:
-    parts: list[str] = []
-    hlas = int(stats.get("pocet_hlas") or 0)
-    if hlas:
-        parts.append(n_hlasovani(hlas))
-    minuty = int(stats.get("minuty") or 0)
-    if minuty:
-        parts.append(f"{minuty} minut v sále")
-    end = (stats.get("end_cas") or "").strip()
-    if end:
-        parts.append(f"konec ve {end}")
-    return _kapitalizuj_segmenty(" · ".join(parts))
-
-
 def split_nadpis_radky(nadpis: str, *, max_lines: int = 2) -> list[str]:
     text = (nadpis or "").strip()
     if not text:
@@ -512,9 +494,6 @@ def build_den_content(
         dnesni_ucet=custom_ucet or _dnesni_ucet(stats, state=state),
         proslo=int(stats.get("proslo") or 0),
         zamitnuto=int(stats.get("zamitnuto") or 0),
-        board_proslo_label=(day.get("board_proslo_label") or "").strip(),
-        board_zamitnuto_label=(day.get("board_zamitnuto_label") or "").strip(),
-        board_stats="",
         result_note=result_note,
         snemovni_listy=day.get("snemovni_listy") or None,
     )
@@ -640,8 +619,6 @@ def build_den_content(
         link_mode=link_mode,
         base_path=base_path,
     )
-    _refresh_board_note_lines(content)
-
     if _cache_key is not None:
         _DEN_CONTENT_CACHE[_cache_key] = content
     return content
@@ -777,30 +754,18 @@ def _sanitize_mean_export(text: str) -> str:
 
 
 def _sanitize_vysledek_export(text: str) -> str:
-    """Výsledek dne: čísla ponechat (stav zápasu), zbytek stejně jako v textu."""
+    """Výsledek dne: stejná sanitizace jako běžný text."""
     text = bez_dlouhych_pomlc(text)
     return poslanec_registry().annotate(text) if text.strip() else text
 
 
-def _refresh_board_note_lines(content: DenContent) -> None:
-    board_raw = (content.dnesni_ucet or content.result_note or "").strip()
-    content.board_note_lines = [
-        ln.strip() for ln in board_raw.splitlines() if ln.strip()
-    ]
-
-
 def _sanitize_den_content(content: DenContent) -> None:
-    content.board_stats = _sanitize_text_export(content.board_stats)
     content.result_note = _kapitalizuj_prvni_pismeno(
         _sanitize_text_export(content.result_note)
     )
     content.dnesni_ucet = _kapitalizuj_prvni_pismeno(
         _sanitize_text_export(content.dnesni_ucet)
     )
-    board_raw = (content.dnesni_ucet or content.result_note or "").strip()
-    content.board_note_lines = [
-        ln.strip() for ln in board_raw.splitlines() if ln.strip()
-    ]
     content.zaver = _sanitize_mean_export(content.zaver)
     content.zaver_key = _sanitize_mean_export(content.zaver_key)
     content.zaver_body = _sanitize_mean_export(content.zaver_body)

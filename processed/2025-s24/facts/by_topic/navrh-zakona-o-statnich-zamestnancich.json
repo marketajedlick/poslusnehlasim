@@ -13,7 +13,7 @@
       "source": "steno",
       "steno_id": "2025_24_00802",
       "citace": "Je to úplná destrukce, úplné zničení toho, co jsme tu po těch nesnadných a odborných debatách před několika lety komplikovaně a kompromisně přijímali.",
-      "link_phrase": "úplná destrukce"
+      "link_phrase": "úplnou destrukci"
     },
     {
       "text": "Vondráček slíbil, že horší to nebude než doteď.",
@@ -23,11 +23,25 @@
       "link_phrase": "horší to nebude"
     },
     {
+      "text": "Vondráček to řekl doslova při závěru rozpravy.",
+      "source": "steno",
+      "steno_id": "2025_24_00843",
+      "citace": "Můžu všem slíbit, že horší to nebude, než je to teď ve státní správě.",
+      "link_phrase": "Můžu všem slíbit"
+    },
+    {
       "text": "Richterová řekla, že zákon umožní snazší vyhazování nepohodlných odborníků.",
       "source": "steno",
       "steno_id": "2025_24_00833",
       "citace": "Navrhli jste zákon, který vám umožní snazší vyhazování nepohodlných odborníků.",
       "link_phrase": "snazším vyhazováním nepohodlných odborníků"
+    },
+    {
+      "text": "Moricová varovala před politizací státní správy.",
+      "source": "steno",
+      "steno_id": "2025_24_00808",
+      "citace": "Protože politizace státní správy většinou nevypadá jako dramatická čistka, ale je mnohem uhlazenější.",
+      "link_phrase": "politizací státní správy"
     },
     {
       "text": "Závěrečné hlasování číslo 117 skončilo 84 proti 56.",
@@ -60,7 +74,7 @@
   "steno_slov": 55147,
   "lead": "Sněmovna odpoledne dokončila zákon o státních zaměstnancích, služební zákon, o kterém se ve středu debatovalo celé dopoledne. Stojanová (Piráti) ho označila za úplnou destrukci, koalice za modernizaci. Vondráček (ANO) uzavřel rozpravu slibem, že horší to nebude, než je to teď ve státní správě.",
   "pointa": "Závěrečné hlasování skončilo 84 proti 56, s potleskem koalice. To je slib.",
-  "mean": "Služební zákon mění pravidla pro úředníky, kdo je zaměstná a kdo odchází. Richterová (Piráti) varovala před snazším vyhazováním nepohodlných odborníků. Koalice slibuje rychlejší personální změny, opozice varuje před politizací státní správy.",
+  "mean": "Služební zákon mění pravidla pro úředníky, kdo je zaměstná a kdo odchází. Richterová (Piráti) varovala před snazším vyhazováním nepohodlných odborníků. Koalice slibuje rychlejší personální změny, opozice varuje před politizací státní správy. Přes tyto námitky ho Sněmovna odpoledne v závěrečném hlasování schválila.",
   "citace_text": "Můžu všem slíbit, že horší to nebude, než je to teď ve státní správě.",
   "citace_autor": "Radek Vondráček (ANO)"
 }

@@ -253,7 +253,6 @@ Typické pasti:
 
 V `by_day/YYYY-MM-DD.json`:
 
-- `board_proslo_label` / `board_zamitnuto_label` — **krátké popisky** + čísla (např. „věcných změn“ / „vrácení padlo“)
 - `zaver` — „že …“
 - odrážky ve „Výsledku dne“ musí **sedět k tabulce**
 

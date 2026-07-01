@@ -57,7 +57,6 @@
     "next_aria": "Novější vydání",
     "schuze_title": "schůze",
     "eyebrow": "Deník sněmovny",
-    "board_kick": "Stav zápasu",
     "mean_label": "Co to znamená pro vás:",
     "kuriozita_aria": "Tabulky hlasování o vyznamenání",
     "sign": "- Váš dobrý voják Švejk -",
@@ -274,13 +273,5 @@
     "table_words": "Slov",
     "table_role": "Strana / role",
     "back_to_edition": "← Zpět na vydání {date}"
-  },
-  "board": {
-    "proslo_1": "věc schválili",
-    "proslo_2_4": "věci schválili",
-    "proslo_other": "věcí schválili",
-    "zamitnuto_1": "návrh neprošel",
-    "zamitnuto_2_4": "návrhy neprošly",
-    "zamitnuto_other": "návrhů neprošlo"
   }
 }

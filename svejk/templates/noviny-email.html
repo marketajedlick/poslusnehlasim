@@ -25,30 +25,45 @@
 </td>
 <td class="head-title" height="96" align="center" valign="middle" style="vertical-align:middle;padding:0 8px;text-align:center;">
   <div class="eyebrow" style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.2em;font-size:13px;color:#cf5a31;text-align:center;line-height:1.2;">{{ t.edition.eyebrow }}</div>
-  <h1 class="mast email-mast" style="margin:4px 0 0;font-family:Impact,'Arial Black',sans-serif;text-transform:uppercase;color:#211c14;font-size:38px;line-height:0.95;text-align:center;">POSLUŠNĚ <span class="terra" style="color:#cf5a31;">HLÁSÍM</span></h1>
+  <h1 class="mast email-mast" style="margin:4px 0 0;font-family:Impact,'Arial Black',sans-serif;text-transform:uppercase;color:#211c14;font-size:50px;line-height:0.95;text-align:center;">POSLUŠNĚ <span class="terra" style="color:#cf5a31;">HLÁSÍM</span></h1>
 </td>
 </tr>
 </table>
 
-<div class="board">
-  <div class="board-kick">Stav zápasu</div>
-  <table role="presentation" class="board-main" cellpadding="0" cellspacing="0" border="0" width="100%">
-  <tr>
-    <td class="bteam-l" align="right" style="vertical-align:middle;">
-      <span class="blbl">{{ proslo_label }}</span><span class="bnum-l" style="font-family:Impact,'Arial Black',sans-serif;font-size:84px;line-height:0.88;color:#f0e6cf;">{{ content.proslo }}</span>
-    </td>
-    <td class="bcolon-cell" align="center" width="48" style="vertical-align:middle;width:48px;">
-      <span class="bcolon" style="font-family:Impact,'Arial Black',sans-serif;font-size:54px;line-height:0.7;color:#ded0ad;">:</span>
-    </td>
-    <td class="bteam-r" align="left" style="vertical-align:middle;">
-      <span class="bnum-r" style="font-family:Impact,'Arial Black',sans-serif;font-size:84px;line-height:0.88;color:#cf5a31;">{{ content.zamitnuto }}</span><span class="blbl">{{ zamitnuto_label }}</span>
-    </td>
-  </tr>
-  </table>
-  {% if content.board_note_lines %}
-  <div class="board-note">{% for line in content.board_note_lines %}{{ line | safe }}{% if not loop.last %}<br />{% endif %}{% endfor %}</div>
+<div class="verdict verdict-top">
+  <p class="q">{% if content.zaver_key %}<span class="key">{{ content.zaver_key }}</span> {% endif %}<span class="q-quote">„{{ (content.zaver_body or content.zaver) | safe }}“</span></p>
+  <div class="sign">{{ t.edition.sign }}</div>
+</div>
+
+{% if content.snemovni_listy %}
+<div class="snemovni-listy">
+  <h2 class="listy-title">SNĚMOVNÍ LISTY</h2>
+  {% if content.snemovni_listy.meta %}
+  <p class="listy-meta">{{ content.snemovni_listy.meta | safe }}</p>
+  {% endif %}
+  {% if content.snemovni_listy.deck %}
+  <p class="listy-deck">{{ content.snemovni_listy.deck | safe }}</p>
+  {% endif %}
+  {% for section in content.snemovni_listy.sections %}
+  {% if section.heading %}
+  <h3 class="listy-h">{{ section.heading | safe }}</h3>
+  {% endif %}
+  {% for para in section.paragraphs %}
+  <p class="listy-p">{{ para | safe }}</p>
+  {% endfor %}
+  {% if section.bullets %}
+  <ul class="listy-ul">
+    {% for bullet in section.bullets %}
+    <li>{{ bullet | safe }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endfor %}
+  {% if content.snemovni_listy.footer %}
+  <p class="listy-footer">{{ content.snemovni_listy.footer | safe }}</p>
   {% endif %}
 </div>
+{% endif %}
 
 {% for item in content.items %}
 <table role="presentation" class="item{% if item.variant %} {{ item.variant }}{% endif %}" cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -67,20 +82,37 @@
       <span class="hl">{{ line }}</span>
       {% endfor %}
     </h2>
-    <p class="p" style="font-size:16px;line-height:1.5;margin:12px 0 0;color:#211c14;text-align:left;">{{ item.lead | safe }}</p>
+    <p class="p">{{ item.lead | safe }}</p>
+    {% if item.lead_tail and item.kuriozita %}
+    <div class="kuriozita-box">{{ item.kuriozita | safe }}</div>
+    <p class="p">{{ item.lead_tail | safe }}</p>
+    {% elif item.lead_tail %}
+    <p class="p">{{ item.lead_tail | safe }}</p>
+    {% endif %}
+    {% if item.citace_text %}
+    <blockquote class="item-quote">
+      <p>„{{ item.citace_text | safe }}“</p>
+      {% if item.citace_autor %}
+      <cite class="item-quote-by">{{ item.citace_autor }}</cite>
+      {% endif %}
+    </blockquote>
+    {% endif %}
+    {% if item.pointa %}
+    <p class="p">{{ item.pointa | safe }}</p>
+    {% endif %}
     {% if item.mean %}
-    <p class="mean" style="margin-top:10px;font-size:15px;line-height:1.45;color:#211c14;font-weight:bold;text-align:left;"><b style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;letter-spacing:0.06em;text-transform:uppercase;font-size:11px;color:#cf5a31;">Co to znamená pro vás: </b>{{ item.mean | safe }}</p>
+    <p class="mean"><b>{{ t.edition.mean_label }} </b>{{ item.mean | safe }}</p>
     {% endif %}
     {% if item.kuriozita_nav %}
-    <p class="kuriozita-links" style="margin-top:8px;font-size:14px;line-height:1.45;text-align:left;">
+    <p class="kuriozita-links">
       {% for label, href in item.kuriozita_nav %}
-      {% if not loop.first %}<span style="color:#5a5348;"> · </span>{% endif %}
-      <a href="{{ href }}" style="color:#cf5a31 !important;font-weight:normal;text-decoration:underline;">{{ label }}</a>
+      {% if not loop.first %}<span class="kuriozita-links-sep"> · </span>{% endif %}
+      <a href="{{ href }}">{{ label }}</a>
       {% endfor %}
     </p>
     {% endif %}
-    {% if item.kuriozita %}
-    <p class="kuriozita" style="margin-top:8px;font-size:15px;line-height:1.45;color:#5a5348;font-style:italic;text-align:left;">{{ item.kuriozita | safe }}</p>
+    {% if item.kuriozita and not item.lead_tail %}
+    <p class="kuriozita">{{ item.kuriozita | safe }}</p>
     {% endif %}
   </td>
   </tr>
@@ -90,16 +122,10 @@
 </table>
 {% endfor %}
 
-<div class="verdict">
-  <span class="qm">„</span>
-  <p class="q" style="font-style:italic;font-size:18px;line-height:1.25;margin:0;color:#f0e6cf;">{% if content.zaver_key %}<span class="key" style="font-family:Impact,'Arial Black',sans-serif;font-style:normal;color:#cf5a31;text-transform:uppercase;">{{ content.zaver_key }}</span> {% endif %}{{ (content.zaver_body or content.zaver) | safe }}</p>
-  <div class="sign">- Váš dobrý voják Švejk -</div>
-</div>
-
 <div class="email-footer">
-  <p style="margin:0 0 10px;"><a href="{{ edition_url }}" style="color:#cf5a31;font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.08em;text-decoration:none;">Číst vydání</a></p>
-  <p style="margin:0 0 10px;"><a href="{{ archive_url }}" style="color:#cf5a31;font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.08em;text-decoration:none;">Archiv všech vydání</a></p>
-  <p style="margin:0 0 16px;"><a href="{{ pivo_url }}#stamgast" style="color:#cf5a31;font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.08em;text-decoration:none;">Kup Švejkovi pivo 🍺</a></p>
+  <p style="margin:0 0 10px;"><a href="{{ edition_url }}">Číst vydání</a></p>
+  <p style="margin:0 0 10px;"><a href="{{ archive_url }}">Archiv všech vydání</a></p>
+  <p style="margin:0 0 16px;"><a href="{{ pivo_url }}#stamgast">Kup Švejkovi pivo 🍺</a></p>
 </div>
 <div class="email-legal" style="margin-top:4px;padding-top:14px;border-top:1px solid rgba(33,28,20,0.14);text-align:center;font-size:12px;line-height:1.6;color:#5a503e;">
   <p style="margin:0 0 8px;font-family:Arial,Helvetica,sans-serif;">{{ t.brand.name }} · {{ t.brand.domain }} · {{ t.brand.tagline }}</p>

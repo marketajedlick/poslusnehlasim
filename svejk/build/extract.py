@@ -227,8 +227,6 @@ _MANUAL_DAY_KEYS = (
     "vysledek",
     "topic_slugs",
     "skore_manual",
-    "board_proslo_label",
-    "board_zamitnuto_label",
 )
 
 

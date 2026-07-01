@@ -17,13 +17,11 @@
     "dlouha_debata": true
   },
   "dnesni_ucet": "Ráno Hřib s fotkou a jedenáct\nhlasování o pořadu, odpoledne služební zákon prošel.",
-  "zaver": "že pátek ve Sněmovně začal hádankou o vedru v pořadu místo služebního zákona, odpoledne koalice stejný zákon schválila v závěrečném hlasování poměrem 84 proti 56, s potleskem koalice a varováním opozice před snazším vyhazováním nepohodlných odborníků ze státní správy.",
+  "zaver": "že pátek ve Sněmovně začal Hřibovou fotkou ruky na stehně, Macinka k vlnám veder řekl, že v létě je horko, a v zimě je zima, odpoledne koalice služební zákon stejně schválila a Vondráček slíbil, že horší to nebude.",
   "vysledek": [
     "* Hřib (Piráti) ukázal sněmovně fotku ruky Mrázové na stehně Jedličky, zvýrazněnou fixem",
     "* Šrámková (Piráti) chtěla v pořadu bod o vlnách veder, horka zabíjí, Macinka: v létě je horko",
     "* jedenáct hlasování o pořadu ráno skončilo zamítnutím",
     "* služební zákon prošel v závěrečném hlasování 84 proti 56, Vondráček slíbil, že horší to nebude"
-  ],
-  "board_proslo_label": "zákon prošel",
-  "board_zamitnuto_label": "návrhů neprošlo"
+  ]
 }

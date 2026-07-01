@@ -159,34 +159,6 @@ def fonts_asset_version() -> str:
     return hashlib.sha256(_FONTS_CSS.read_bytes()).hexdigest()[:10]
 
 
-def _proslo_board_label(n: int) -> str:
-    b = load_strings().get("board", {})
-    if n == 1:
-        return b.get("proslo_1", "věc schválili")
-    if 2 <= n <= 4:
-        return b.get("proslo_2_4", "věci schválili")
-    return b.get("proslo_other", "věcí schválili")
-
-
-def _zamitnuto_board_label(n: int) -> str:
-    b = load_strings().get("board", {})
-    if n == 1:
-        return b.get("zamitnuto_1", "návrh neprošel")
-    if 2 <= n <= 4:
-        return b.get("zamitnuto_2_4", "návrhy neprošly")
-    return b.get("zamitnuto_other", "návrhů neprošlo")
-
-
-def _content_board_labels(content) -> tuple[str, str]:
-    proslo = (getattr(content, "board_proslo_label", None) or "").strip()
-    zamitnuto = (getattr(content, "board_zamitnuto_label", None) or "").strip()
-    return (
-        proslo or _proslo_board_label(content.proslo),
-        zamitnuto or _zamitnuto_board_label(content.zamitnuto),
-    )
-
-
-
 def _split_paragraphs(text: str) -> list[str]:
     parts = re.split(r"(?<=[.!?])\s+", text.strip())
     return [p for p in parts if p]
@@ -658,15 +630,12 @@ def render_den_html(
                 base_path=base_path,
             )
     tpl = _jinja_env().get_template("noviny-dlouhe.html")
-    proslo_label, zamitnuto_label = _content_board_labels(content)
     return tpl.render(
         content=content,
         obdobi=ob,
         schuze=paths.schuze,
         dup_day=dup_day,
         datum_design=datum_design(content.datum, content.den),
-        proslo_label=proslo_label,
-        zamitnuto_label=zamitnuto_label,
         svejk_svg=svejk_svg,
         inline_css=inline_css,
         css=css,
@@ -751,36 +720,46 @@ def plain_text_from_content(
     edition_url: str,
     archive_url: str,
     pivo_url: str,
-    proslo_label: str,
-    zamitnuto_label: str,
 ) -> str:
-    lines = [
-        f"POSLUŠNĚ HLÁSÍM · {datum_label}",
-        "",
-        f"Stav zápasu: {content.proslo} : {content.zamitnuto}",
-        f"{proslo_label} / {zamitnuto_label}",
-    ]
-    if content.board_note_lines:
-        lines.extend(["", *content.board_note_lines])
+    from svejk.build.glossary_markup import strip_glossary_markup
+
+    def _plain(text: str) -> str:
+        if not text:
+            return ""
+        return re.sub(r"<[^>]+>", "", strip_glossary_markup(text)).strip()
+
+    lines = [f"POSLUŠNĚ HLÁSÍM · {datum_label}", ""]
+    zaver = _plain(content.zaver_body or content.zaver or "")
+    if zaver:
+        key = (content.zaver_key or "").strip()
+        lines.append(f"{key} „{zaver}“".strip() if key else f"„{zaver}“")
     for item in content.items:
         lines.extend(
             [
                 "",
                 f"{item.num:02d} · {item.kick} · {item.stamp}",
-                item.nadpis,
-                item.lead,
+                _plain(item.nadpis),
+                _plain(item.lead),
             ]
         )
+        if item.lead_tail and item.kuriozita:
+            lines.append(_plain(item.kuriozita))
+            lines.append(_plain(item.lead_tail))
+        elif item.lead_tail:
+            lines.append(_plain(item.lead_tail))
+        if item.citace_text:
+            cite = f"„{_plain(item.citace_text)}“"
+            if item.citace_autor:
+                cite = f"{cite} — {item.citace_autor}"
+            lines.append(cite)
+        if item.pointa:
+            lines.append(_plain(item.pointa))
         if item.mean:
-            lines.append(f"Co to znamená pro vás: {item.mean}")
-        if item.kuriozita:
-            lines.append(item.kuriozita)
+            lines.append(f"Co to znamená pro vás: {_plain(item.mean)}")
         for label, href in item.kuriozita_nav:
             lines.append(f"{label}: {href}")
-    zaver = (content.zaver_body or content.zaver or "").strip()
-    if zaver:
-        key = (content.zaver_key or "").strip()
-        lines.extend(["", f"„{key} {zaver}".strip() if key else f"„{zaver}"])
+        if item.kuriozita and not item.lead_tail:
+            lines.append(_plain(item.kuriozita))
     lines.extend(
         [
             "",
@@ -838,7 +817,7 @@ def _apply_email_links_absolute(content: Any, site_url: str) -> None:
     """Po doplnění odkazů udělá všechny interní hrefs absolutní."""
     site = site_url.rstrip("/")
     for item in content.items:
-        for field in ("lead", "mean", "kuriozita", "citace_text"):
+        for field in ("lead", "lead_tail", "mean", "kuriozita", "citace_text", "pointa"):
             val = getattr(item, field, None)
             if val:
                 val = _make_internal_links_absolute(val, site_url)
@@ -866,14 +845,10 @@ def _prepare_content_for_email(content: DenContent) -> None:
         if val:
             setattr(content, field, strip_glossary_markup(val))
     for item in content.items:
-        for field in ("lead", "mean", "kuriozita", "citace_text", "pointa"):
+        for field in ("lead", "lead_tail", "mean", "kuriozita", "citace_text", "pointa"):
             val = getattr(item, field, None)
             if val:
                 setattr(item, field, strip_glossary_markup(val))
-    board_raw = (content.dnesni_ucet or content.result_note or "").strip()
-    content.board_note_lines = [
-        ln.strip() for ln in board_raw.splitlines() if ln.strip()
-    ]
 
 
 def render_email_html(
@@ -908,15 +883,12 @@ def render_email_html(
     )
     _apply_email_links_absolute(content, site)
     _prepare_content_for_email(content)
-    proslo_label, zamitnuto_label = _content_board_labels(content)
     plain = plain_text_from_content(
         content,
         datum_label=datum_label,
         edition_url=edition_url,
         archive_url=archive_url,
         pivo_url=pivo_url,
-        proslo_label=proslo_label,
-        zamitnuto_label=zamitnuto_label,
     )
     css = _EMAIL_CSS.read_text(encoding="utf-8")
     tpl = _jinja_env().get_template("noviny-email.html")
@@ -925,8 +897,6 @@ def render_email_html(
         css=css,
         t=load_strings(),
         datum_design=datum_label,
-        proslo_label=proslo_label,
-        zamitnuto_label=zamitnuto_label,
         edition_url=edition_url,
         archive_url=archive_url,
         pivo_url=pivo_url,
