@@ -742,16 +742,16 @@ def plain_text_from_content(
                 _plain(item.lead),
             ]
         )
-        if item.lead_tail and item.kuriozita:
-            lines.append(_plain(item.kuriozita))
-            lines.append(_plain(item.lead_tail))
-        elif item.lead_tail:
-            lines.append(_plain(item.lead_tail))
         if item.citace_text:
             cite = f"„{_plain(item.citace_text)}“"
             if item.citace_autor:
                 cite = f"{cite} — {item.citace_autor}"
             lines.append(cite)
+        if item.lead_tail and item.kuriozita:
+            lines.append(_plain(item.kuriozita))
+            lines.append(_plain(item.lead_tail))
+        elif item.lead_tail:
+            lines.append(_plain(item.lead_tail))
         if item.pointa:
             lines.append(_plain(item.pointa))
         if item.mean:

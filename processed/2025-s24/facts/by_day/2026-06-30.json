@@ -1,0 +1,32 @@
+{
+  "datum": "30.06.2026",
+  "den": "úterý",
+  "topic_slugs": [
+    "debata-porad-interpelace-30-06",
+    "interpelace-straznice-30-06",
+    "interpelace-hrib-nato-svacina-30-06",
+    "interpelace-hrib-agrofert-novela-30-06",
+    "interpelace-rakusan-rukojmi-30-06",
+    "interpelace-decroix-lidska-prava-30-06",
+    "novela-z-o-statni-socialni-podpore"
+  ],
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 527,
+    "end_cas": "22:55",
+    "proslo": 1,
+    "zamitnuto": 1,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "dnesni_ucet": "Sedm článků od pořadu\npo rodičovský 129:0.",
+  "steno_zdroje": true,
+  "zaver": "že Sněmovna dnes pět hodin řešila svět, který se mezitím nestihl přizpůsobit. Klimatická krize se neodvolala, delegace se nezjednodušila a rodičovské dávky se navýšily bez debaty o tom, co to znamená.",
+  "vysledek": [
+    "* 154. ústní interpelace, 42 hlasování o pořadu, 27 návrhů na nové body zamítnuto",
+    "* Macinka (Motoristé) na výzvu odvolat výrok o klimatu: neodvolám",
+    "* Decroix (ODS): z panelů k lidským právům odešlo 53 expertů",
+    "* Hřib (Piráti): banda fracků u summitu NATO, sedm miliard pro Agrofert",
+    "* rodičovský příspěvek zvýšen na 400 000 a 800 000 korun, hlasování 129:0"
+  ]
+}

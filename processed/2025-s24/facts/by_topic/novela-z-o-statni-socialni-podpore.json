@@ -1,0 +1,77 @@
+{
+  "slug": "novela-z-o-statni-socialni-podpore",
+  "nazev": "Novela z. o státní sociální podpoře",
+  "datum": "30.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "zvýšení rodičovského příspěvku ve státní sociální podpoře",
+  "koho": [
+    "Koho se to týká? Rodiče, kteří čerpají nebo plánují rodičovský příspěvek. Na příspěvek na bydlení se tím den nic neměnilo."
+  ],
+  "fakty": [
+    {
+      "text": "Silný hluk před přednesením návrhu.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_00963",
+      "citace": "(Silný hluk v sále.)",
+      "link_phrase": "Silný hluk v sále"
+    },
+    {
+      "text": "Juchelka: rodičovský 400 000 a 800 000 u dvojčat.",
+      "source": "steno",
+      "steno_id": "2025_24_00964",
+      "citace": "zvýšení rodičovského příspěvku, a to na celkovou částku 400 000 korun pro domácnost s jedním nejmladším dítětem a na celkovou částku 800 000 korun pro rodinu, v níž jsou dvě nebo více dětí narozených současně",
+      "link_phrase": "400 000 korun"
+    },
+    {
+      "text": "Činčila: lidovci navrhli, vláda se přidala.",
+      "source": "steno",
+      "steno_id": "2025_24_00988",
+      "citace": "lidovci navrhli navýšení rodičovského příspěvku ve svém balíčku Rodiče+ a já jsem moc rád, že vláda se k tomu připojila",
+      "link_phrase": "vláda se k tomu připojila"
+    },
+    {
+      "text": "Richterová: dítě ve špatném roce dostane o 50 000 méně.",
+      "source": "steno",
+      "steno_id": "2025_24_01036",
+      "citace": "že jeho dítě dostane o 50 000 méně prostě proto, že je narozené ve špatném roce, v roce 2026",
+      "link_phrase": ""
+    },
+    {
+      "text": "Richterová: výsledek hořkosladký.",
+      "source": "steno",
+      "steno_id": "2025_24_01036",
+      "citace": "ten výsledek je hořkosladký, protože tahle nespravedlnost tady bude",
+      "link_phrase": "dítě narozené v prosinci 2026 dostane o 50 000 méně než sourozenec o měsíc mladší, a výsledek nazvala hořkosladkým"
+    },
+    {
+      "text": "Juchelka: brzda druhého dítěte je velikost auta.",
+      "source": "steno",
+      "steno_id": "2025_24_01034",
+      "citace": "Třetina současných rodičů si další dítě nemůže dovolit z finančních nebo prostorových důvodů. Hraje v tom roli například i velikost auta",
+      "link_phrase": "velikost auta"
+    },
+    {
+      "text": "Výborný: Juchelka je kabrňák.",
+      "source": "steno",
+      "steno_id": "2025_24_01038",
+      "citace": "Pan ministr Juchelka je skutečně kabrňák a teď to říkám naprosto v kladném pozitivním slova smyslu",
+      "link_phrase": "Pan ministr Juchelka je skutečně kabrňák"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 4,
+  "nadpis": "400 tisíc navíc\nrodičovský bez debaty",
+  "lead": "Juchelka (ANO) navrhl zvýšit rodičovský příspěvek na 400 000 korun pro jedno dítě a 800 000 u dvojčat. Činčila (KDU-ČSL) řekl, že navýšení původně navrhli lidovci v balíčku Rodiče+ a vláda se k nim přidala.\n\nRichterová (Piráti) kritizovala, že vyšší částka platí až od ledna 2027: dítě narozené v prosinci 2026 dostane o 50 000 méně než sourozenec o měsíc mladší, a výsledek nazvala hořkosladkým. Juchelka (ANO) v odpovědi obhajoval střih podle roku narození a u druhého dítěte jmenoval mezi překážkami i velikost auta. Výborný (KDU-ČSL) řekl: „Pan ministr Juchelka je skutečně kabrňák a teď to říkám naprosto v kladném pozitivním slova smyslu.“ Závěrečné hlasování skončilo 129:0.",
+  "pointa": "",
+  "mean": "Rodičovský příspěvek je dávka pro rodiče, kteří zůstávají doma s malým dítětem. Tato novela zvedá celkovou částku, kterou si rodič může z rodičovské vybrat, ne přidává novou dávku navíc.",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 129,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": false
+  }
+}

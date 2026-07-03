@@ -146,16 +146,16 @@ def render_den_markdown(
             ]
         )
         lines.extend([lead, ""])
-        if item.lead_tail and item.kuriozita:
-            lines.extend([f'<div class="kuriozita-box">{item.kuriozita}</div>', ""])
-            lines.extend([item.lead_tail, ""])
-        elif item.lead_tail:
-            lines.extend([item.lead_tail, ""])
         if item.citace_text:
             lines.extend([f"> „{item.citace_text}“", ""])
             if item.citace_autor:
                 lines.append(f"> {item.citace_autor}")
                 lines.append("")
+        if item.lead_tail and item.kuriozita:
+            lines.extend([f'<div class="kuriozita-box">{item.kuriozita}</div>', ""])
+            lines.extend([item.lead_tail, ""])
+        elif item.lead_tail:
+            lines.extend([item.lead_tail, ""])
         if item.pointa:
             lines.extend([item.pointa, ""])
         lines.extend(

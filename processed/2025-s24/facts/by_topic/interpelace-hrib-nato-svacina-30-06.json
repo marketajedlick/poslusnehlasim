@@ -1,0 +1,43 @@
+{
+  "slug": "interpelace-hrib-nato-svacina-30-06",
+  "nazev": "Interpelace Zdeňka Hřiba o NATO",
+  "datum": "30.06.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "interpelace Zdeňka Hřiba o delegaci na summit NATO v Ankaře",
+  "koho": [
+    "Koho se to týká? Každého, kdo sleduje spor o cestu prezidenta Pavla na červencový summit NATO."
+  ],
+  "fakty": [
+    {
+      "text": "Hřib: puberťácký kabaret kolem summitu NATO.",
+      "source": "steno",
+      "steno_id": "2025_24_00905",
+      "citace": "puberťácký kabaret Ano a Motoristů sobě, zdali pojede prezident na ten summit NATO v Ankaře nebo nepojede",
+      "link_phrase": "puberťácký kabaret"
+    },
+    {
+      "text": "Hřib: zda prezident pojede, kde sedí a jestli dostane svačinu.",
+      "source": "steno",
+      "steno_id": "2025_24_00905",
+      "citace": "zdali pojede prezident na ten summit NATO v Ankaře nebo nepojede, co tam tedy vlastně bude dělat, kde bude sedět, jestli dostane svačinu, večeři",
+      "link_phrase": "zda prezident pojede, kde bude sedět a jestli dostane svačinu a večeři"
+    },
+    {
+      "text": "Hřib: vláda jako banda fracků.",
+      "source": "steno",
+      "steno_id": "2025_24_00905",
+      "citace": "Vláda se tady chová skutečně jako banda fracků. Podle protokolu je totiž naprosto jasné, že v momentě, kdy je součástí delegace prezident, tak ji prostě vede, protože je to nejvyšší ústavní činitel.",
+      "link_phrase": "Vláda se tady chová skutečně jako banda fracků."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 5,
+  "nadpis": "Svačina pro prezidenta",
+  "lead": "Hřib (Piráti) promluvil o sporu o delegaci na summit NATO v Ankaře. Měsíce prý poslanecká sněmovna řeší puberťácký kabaret, zda prezident pojede, kde bude sedět a jestli dostane svačinu a večeři. Vláda se tady chová skutečně jako banda fracků.",
+  "pointa": "",
+  "mean": "Ústavní soud nařídil vládě, aby nebránila cestě prezidenta Pavla na červencový summit NATO v Ankaře.",
+  "citace_text": "Vláda se tady chová skutečně jako banda fracků. Podle protokolu je totiž naprosto jasné, že v momentě, kdy je součástí delegace prezident, tak ji prostě vede, protože je to nejvyšší ústavní činitel.",
+  "citace_autor": "Zdeněk Hřib (Piráti)",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}
