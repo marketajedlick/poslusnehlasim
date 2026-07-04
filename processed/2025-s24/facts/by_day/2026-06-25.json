@@ -6,6 +6,8 @@
     "novela-z-o-spotrebitelskem-uveru",
     "debata-interpelace-hladik-cerveny"
   ],
+  "steno_zdroje": true,
+  "smlouvy_slug": "mezinarodni-smlouvy-25-06",
   "stats": {
     "pocet_hlas": 8,
     "minuty": 99,
