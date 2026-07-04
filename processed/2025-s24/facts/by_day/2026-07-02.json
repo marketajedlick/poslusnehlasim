@@ -1,0 +1,32 @@
+{
+  "datum": "02.07.2026",
+  "den": "čtvrtek",
+  "topic_slugs": [
+    "interpelace-mrazova-bydleni-02-07",
+    "interpelace-babis-odpovedi-02-07",
+    "novela-z-o-obalech",
+    "interpelace-kovacik-povodi-02-07",
+    "novela-z-o-podnikani-na-kapitalovem-trhu-eu"
+  ],
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 188,
+    "end_cas": "13:29",
+    "proslo": 1,
+    "zamitnuto": 1,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "dnesni_ucet": "Graf bytů, super EKO-KOM,\nKováčik u Povodí Ohře.",
+  "steno_zdroje": true,
+  "zaver": "že čtvrtek ve Sněmovně začal písemnými interpelacemi k prázdným lavicím a bytové krizi, Babiš odpoledne ukázal graf bytů a vymyslel titulek o IPO letiště, obalový zákon přežel první kolo bez ministra životního prostředí mezi hlukem a super EKO-KOMem a u Povodí Ohře se řešila trafika pro bývalého předsedu KSČM.",
+  "vysledek": [
+    "* písemné interpelace: Lipavský (Piráti) 2 888 slov, Stojanová (Piráti) 2 616, Bartoš (Piráti) 2 549",
+    "* Richterová (Piráti): prázdné lavice, návrh počkat na Babiše padl 45 proti 44",
+    "* Babiš (ANO): graf bytů v sále, 132 stran přešlapů nečetl, udavačství, kanály, IPO letiště",
+    "* Bendl (ODS): ministr chybí, téměř pohrdání Sněmovnou, debata pod špatným tématem TAČR",
+    "* Šmída (Motoristé): super EKO-KOM, silný hluk v sále",
+    "* Kováčik (KSČM) do Povodí Ohře, ministr citoval zemědělský výbor",
+    "* novela o kapitálovém trhu: první kolo 106 proti 0, druhé kolo neprošlo"
+  ]
+}

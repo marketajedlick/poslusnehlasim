@@ -1,0 +1,72 @@
+{
+  "slug": "novela-z-o-jednacim-radu-ps",
+  "nazev": "Novela z. o jednacím řádu PS",
+  "datum": "01.07.2026",
+  "verdikt": "zamiteno",
+  "predmet_lidsky": "návrh koalice zkrátit debaty ve třetím kole hlasování o zákonu",
+  "koho": [
+    "Koho se to týká? Každého, kdo čeká, jestli poslanci u závěrečného hlasování ještě mluví, nebo už jen mačkají tlačítka."
+  ],
+  "fakty": [
+    {
+      "text": "Vondráček chtěl novelizovat jednací řád po letech.",
+      "source": "steno",
+      "steno_id": "2025_24_01218",
+      "citace": "snad konečně budeme schopni po mnoha a mnoha letech novelizovat jednací řád a nějakým způsobem upravit pravidla naší debaty.",
+      "link_phrase": "novelizovat jednací řád"
+    },
+    {
+      "text": "Koalice chtěla ve třetím kole zákonů mluvit méně.",
+      "source": "steno",
+      "steno_id": "2025_24_01218",
+      "citace": "třetí čtení, když ten zákon byl přijímán před 30 lety, tak nebylo určeno k tomu, aby se opakovala debata z prvého a z druhého čtení, nicméně ta praxe se takto vyvinula.",
+      "link_phrase": "ve třetím kole zákonů tolik nemluvilo"
+    },
+    {
+      "text": "Havel varoval před změnou pravidel, když má koalice většinu.",
+      "source": "steno",
+      "steno_id": "2025_24_01220",
+      "citace": "v tom minulém volebním období my jsme tady byli svědky naprosto bezprecedentních obstrukcí, které neměly obdoby v našich moderních parlamentních dějinách.",
+      "link_phrase": "bezprecedentních obstrukcí"
+    },
+    {
+      "text": "Vondráček: Sněmovna je bojiště, ne jeviště.",
+      "source": "steno",
+      "steno_id": "2025_24_01230",
+      "citace": "opravdu považujete Poslaneckou sněmovnu za bojiště a nikoliv jeviště.",
+      "link_phrase": "bojiště a nikoliv jeviště"
+    },
+    {
+      "text": "Vondráček: obstrukce nezastaví většinu, Ústavní soud to toleruje.",
+      "source": "steno",
+      "steno_id": "2025_24_01230",
+      "citace": "není možné obstrukcemi zastavit většinu, neboť ačkoliv je to postup nezákonný, tak Ústavní soud ho shledává v souladu s Ústavou",
+      "link_phrase": "obstrukcemi zastavit většinu"
+    },
+    {
+      "text": "První hlasování o návrhu skončilo 3 proti 84.",
+      "source": "steno",
+      "steno_id": "2025_24_01229",
+      "citace": "Hlasování číslo 186, přihlášeno 142 poslanců, pro 3, proti 84. Návrh nebyl přijat.",
+      "link_phrase": "pro 3, proti 84"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 4,
+  "nadpis": "Bojiště, ne jeviště",
+  "lead": "Koalice chtěla ve středu ráno změnit jednací řád tak, aby se ve třetím kole zákonů tolik nemluvilo. Vondráček (ANO) si stěžoval na noční debatu o sportu místo služebního zákona. Havel (TOP 09) připomněl bezprecedentní obstrukce z minulého období. Pak Vondráček řekl, že opozice vidí Sněmovnu jako bojiště, ne jeviště.",
+  "pointa": "Čtyři hlasování, čtyřikrát padlo. Nejnižší skóre bylo 3 proti 84. Vondráček připomněl, že obstrukce stejně většinu nezastaví, protože Ústavní soud je toleruje.",
+  "mean": "Jednací řád určuje, kdo, kdy a jak dlouho smí ve Sněmovně mluvit. Koalice chtěla omezit opakování debaty ve třetím kole hlasování o zákonu.",
+  "citace_text": "opravdu považujete Poslaneckou sněmovnu za bojiště a nikoliv jeviště.",
+  "citace_autor": "Radek Vondráček (ANO)",
+  "pocet_hlasovani": 4,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 97,
+    "pritomno_min": 142,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 1273
+}

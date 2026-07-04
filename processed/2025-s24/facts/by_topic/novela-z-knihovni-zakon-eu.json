@@ -1,0 +1,49 @@
+{
+  "slug": "novela-z-knihovni-zakon-eu",
+  "nazev": "Novela z. - knihovní zákon - EU",
+  "datum": "01.07.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "knihovní zákon",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_01432",
+      "citace": "(knihovní zákon)"
+    },
+    {
+      "text": "46/2000 Sb., o právech a povinnostech při vydávání periodického tisku a o změně některých dalších zákonů (tiskový zákon), ve znění pozdějších předpisů/sněmovní tisk 192/ – prvé čtení *** Neprošlo jazykovou korekturou, neautorizováno!",
+      "source": "steno",
+      "steno_id": "2025_24_01432",
+      "citace": "46/2000 Sb., o právech a povinnostech při vydávání periodického tisku a o změně některých dalších zákonů (tiskový zákon), ve znění pozdějších předpisů/sněmovní tisk 192/ – prvé čtení *** Neprošlo jazy"
+    },
+    {
+      "text": "257/2001 Sb., o knihovnách a podmínkách provozování veřejných knihovnických a informačních služeb (knihovní zákon), ve znění pozdějších předpisů, zákon č.",
+      "source": "steno",
+      "steno_id": "2025_24_01432",
+      "citace": "257/2001 Sb., o knihovnách a podmínkách provozování veřejných knihovnických a informačních služeb (knihovní zákon), ve znění pozdějších předpisů, zákon č."
+    },
+    {
+      "text": "Hluk v sále.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_01433",
+      "citace": "(Hluk v sále.)"
+    }
+  ],
+  "publikovat": false,
+  "priorita": 3,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 121,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 23856
+}

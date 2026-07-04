@@ -1,0 +1,47 @@
+{
+  "slug": "novela-z-o-latkach-ktere-poskozuji-ozonovou-vrst",
+  "nazev": "Novela z. o látkách, které poškozují ozonovou vrstvu - EU",
+  "datum": "01.07.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "látkách, které poškozují ozonovou vrstvu",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "73/2012 Sb., o látkách, které poškozují ozonovou vrstvu, a o fluorovaných skleníkových plynech, ve znění pozdějších předpisů, a další související předpisy/sněmovní tisk 14/ – prvé čtení Z pověření vlády předložený návrh uvede pan ministr průmyslu Havlíček.",
+      "source": "steno",
+      "steno_id": "2025_24_01382",
+      "citace": "73/2012 Sb., o látkách, které poškozují ozonovou vrstvu, a o fluorovaných skleníkových plynech, ve znění pozdějších předpisů, a další související předpisy/sněmovní tisk 14/ – prvé čtení Z pověření vlá"
+    },
+    {
+      "text": "20.Vládní návrh zákona, kterým se mění zákon č.",
+      "source": "steno",
+      "steno_id": "2025_24_01382",
+      "citace": "20.Vládní návrh zákona, kterým se mění zákon č."
+    },
+    {
+      "text": "Ve druhé části návrhu se reaguje na výše uvedenou přímo použitelnou legislativu Evropské unie, rovněž úpravou zákona 40/2009, trestní zákoník, ve znění pozdějších předpisů.",
+      "source": "steno",
+      "steno_id": "2025_24_01383",
+      "citace": "Ve druhé části návrhu se reaguje na výše uvedenou přímo použitelnou legislativu Evropské unie, rovněž úpravou zákona 40/2009, trestní zákoník, ve znění pozdějších předpisů."
+    },
+    {
+      "text": "Důvodem na předložení uvedeného návrhu zákona je především reakce na novou evropskou legislativu, konkrétně nařízení Evropského parlamentu a rady ze dne 7.",
+      "source": "steno",
+      "steno_id": "2025_24_01383",
+      "citace": "Důvodem na předložení uvedeného návrhu zákona je především reakce na novou evropskou legislativu, konkrétně nařízení Evropského parlamentu a rady ze dne 7."
+    }
+  ],
+  "publikovat": false,
+  "priorita": 3,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 3,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 75,
+    "pritomno_min": 136,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 7165
+}

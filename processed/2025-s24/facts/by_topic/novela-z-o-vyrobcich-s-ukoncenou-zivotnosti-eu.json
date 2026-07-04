@@ -1,0 +1,47 @@
+{
+  "slug": "novela-z-o-vyrobcich-s-ukoncenou-zivotnosti-eu",
+  "nazev": "Novela z. o výrobcích s ukončenou životností - EU",
+  "datum": "01.07.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "výrobcích s ukončenou životností",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "542/2020 Sb., o výrobcích s ukončenou životností, ve znění pozdějších předpisů, a další související zákony/sněmovní tisk 58/ – prvé čtení Z pověření vlády předložený návrh uvede pan ministr Havlíček.",
+      "source": "steno",
+      "steno_id": "2025_24_01407",
+      "citace": "542/2020 Sb., o výrobcích s ukončenou životností, ve znění pozdějších předpisů, a další související zákony/sněmovní tisk 58/ – prvé čtení Z pověření vlády předložený návrh uvede pan ministr Havlíček."
+    },
+    {
+      "text": "21.Vládní návrh zákona, kterým se mění zákon č.",
+      "source": "steno",
+      "steno_id": "2025_24_01407",
+      "citace": "21.Vládní návrh zákona, kterým se mění zákon č."
+    },
+    {
+      "text": "A poprosím poslankyně a poslance, které nezajímá tento tisk, aby opustili sál a mohli jsme vyslechnout slova pana ministra.",
+      "source": "steno",
+      "steno_id": "2025_24_01407",
+      "citace": "A poprosím poslankyně a poslance, které nezajímá tento tisk, aby opustili sál a mohli jsme vyslechnout slova pana ministra."
+    },
+    {
+      "text": "Bylo tedy nutné vypustit některá ustanovení, která jsou regulována přímo použitelným nařízením, doplnit sankce za porušení povinností vyplývajících z nařízení a vyřešit některé provazby mezi národní a unijní úpravou vůči jednotlivým typům baterií.",
+      "source": "steno",
+      "steno_id": "2025_24_01408",
+      "citace": "Bylo tedy nutné vypustit některá ustanovení, která jsou regulována přímo použitelným nařízením, doplnit sankce za porušení povinností vyplývajících z nařízení a vyřešit některé provazby mezi národní a"
+    }
+  ],
+  "publikovat": false,
+  "priorita": 2,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 148,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 4147
+}

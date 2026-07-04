@@ -1,0 +1,59 @@
+{
+  "slug": "debata-rakusan-traficka-01-07",
+  "nazev": "Trafika u OSN",
+  "datum": "01.07.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "dopolední dokončení souvisejících zákonů ke služebnímu zákonu a Rakušanova reakce na pozměňovací návrhy",
+  "koho": [
+    "Koho se to týká? Každého, kdo platí daně úředníkům a nechce, aby se diplomatické mise rozdávaly bez podpisu prezidenta."
+  ],
+  "fakty": [
+    {
+      "text": "Rakušan: na pět otázek nepadla ani jedna odpověď.",
+      "source": "steno",
+      "steno_id": "2025_24_01095",
+      "citace": "na žádné z mých pěti jasně formulovaných zhutněných otázek nepadla od předkladatelů ani jedna odpověď.",
+      "link_phrase": "ani jedna odpověď"
+    },
+    {
+      "text": "Rakušan: mise u OSN je hezká trafika.",
+      "source": "steno",
+      "steno_id": "2025_24_01099",
+      "citace": "Diplomatické mise u těch mezinárodních organizací, to je myslím si, hezká trafička.",
+      "link_phrase": "hezká trafička"
+    },
+    {
+      "text": "Rakušan: mise v OSN bez podpisu prezidenta.",
+      "source": "steno",
+      "steno_id": "2025_24_01099",
+      "citace": "Jako mise u OSN v New Yorku, to je myslím docela hezká pozice v diplomatické službě. Tak od teď už bez podpisu prezidenta. Diplomatické mise u těch mezinárodních organizací, to je myslím si, hezká trafička.",
+      "link_phrase": "mění pravidla pro diplomatické mise v OSN v hezkou trafiku bez podpisu prezidenta"
+    },
+    {
+      "text": "Rakušan: tohle je msta, která se bojí denního světla.",
+      "source": "steno",
+      "steno_id": "2025_24_01099",
+      "citace": "Tohle je msta, která se bojí denního světla, to, co tady předvádíte.",
+      "link_phrase": "nazval mstou, která se bojí denního světla"
+    },
+    {
+      "text": "Po schválení zazněl potlesk koalice.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_01212",
+      "citace": "(Potlesk koaličních poslanců.)",
+      "link_phrase": "Koalice stejně hlasovala s potleskem"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Související zákony",
+  "lead": "Ve středu dopoledne dokončila Sněmovna související zákony ke služebnímu zákonu.",
+  "lead_tail": "Rakušan (STAN) řekl, že předkladatelé neodpověděli na žádnou z jeho pěti otázek. Varoval, že pozměňovací návrhy mění pravidla pro diplomatické mise v OSN v hezkou trafiku bez podpisu prezidenta.\n\nOtázky z debaty o služebním zákonu, na které podle něj nepadla odpověď:\n01 - NATO\n02 - proč nepočkat na datovou analýzu\n03 - proč rušit nemanažerskou kariérní linku\n04 - proč se nezeptat státních tajemníků\n05 - proč třicet pozměňovacích návrhů (poslanecký tisk šel narychlo)\n06 - kolik to celé bude stát",
+  "pointa": "Rakušan to nazval mstou, která se bojí denního světla. Koalice stejně hlasovala s potleskem.",
+  "mean": "Související zákony upravují detaily ke služebnímu zákonu, včetně pravidel pro jmenování lidí na zahraniční mise.",
+  "citace_text": "Tohle je msta, která se bojí denního světla, to, co tady předvádíte.",
+  "citace_autor": "Vít Rakušan (STAN)",
+  "pocet_hlasovani": 18,
+  "proslo": true
+}

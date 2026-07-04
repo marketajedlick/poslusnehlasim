@@ -1,0 +1,93 @@
+{
+  "slug": "debata-interpelace-sport-haas-01-07",
+  "nazev": "Dvacet minut o sportu",
+  "datum": "01.07.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "tisk 77, doprovod ke služebnímu zákonu (tisk 76), kde se místo úředníků debatovalo o sportu a miliardách z Národní sportovní agentury",
+  "koho": [
+    "Koho se to týká? Každého, kdo platí daně a sleduje, kam míří sportovní dotace a proč se o nich debatuje u nočního zákona o úřednících."
+  ],
+  "fakty": [
+    {
+      "text": "Haas slíbil, že to nebude dlouhé, odhadoval dvacet minut.",
+      "source": "steno",
+      "steno_id": "2025_24_01159",
+      "citace": "nebude to nijak obstrukčně dlouhé. Já věřím, že to bude věcné a objektivní. Nebude to taky na pět minutek, ale signalizuju někde, kdo chce jít na svačinu, napít se, odhaduju třeba do 20 minut.",
+      "link_phrase": "odhaduju třeba do 20 minut"
+    },
+    {
+      "text": "Haas mluvil za ODS a připomněl, že strana v roce 2014 zákon o státní službě odmítala.",
+      "source": "steno",
+      "steno_id": "2025_24_01159",
+      "citace": "Odéeska v roce 2014 z těch stran, které jsou ve Sněmovně teď a byly ve Sněmovně v roce 2014, nesvítila u zavedení zákona o státní službě.",
+      "link_phrase": "nesvítila u zavedení zákona o státní službě"
+    },
+    {
+      "text": "Haas: tisk 77 má ladit jen s jádrem tisku 76, ne být košík na vše.",
+      "source": "steno",
+      "steno_id": "2025_24_01159",
+      "citace": "Jsme ve změnovém doprovodném zákoně. Změnové doprovodné zákony mají souviset s tím svým jádrovým zákonem.",
+      "link_phrase": "s tím svým jádrovým zákonem"
+    },
+    {
+      "text": "Haas: tisk 77 je sběrný podvozek materiálních přílepků v rozporu s judikaturou ÚS.",
+      "source": "steno",
+      "steno_id": "2025_24_01159",
+      "citace": "Nemají se stát sběrným podvozkem, ve kterém si ať koalice nebo opozice vzpomenou na všechno, co jim v současném světě chybí, a narvou tam jako pejsek kočička do toho podvozku úplně všechno",
+      "link_phrase": "jako pejsek kočička"
+    },
+    {
+      "text": "Haas srovnal politiku se sportem, pravidla se nemění uprostřed závodu.",
+      "source": "steno",
+      "steno_id": "2025_24_01159",
+      "citace": "pravidla platí od začátku závodu do jeho konce",
+      "link_phrase": "od začátku závodu do jeho konce"
+    },
+    {
+      "text": "Haas napadl ANO za dětinské rozkopávání báboviček kolem prezidenta.",
+      "source": "steno",
+      "steno_id": "2025_24_01159",
+      "citace": "část koalice pokračuje v dětinském rozkopávání báboviček",
+      "link_phrase": "dětinském rozkopávání báboviček"
+    },
+    {
+      "text": "Vondráčkovi během projevu spadla lahev, Haas mu ji podal.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_01159",
+      "citace": "(Poslanci R. Vondráčkovi spadla lahev s pitím, vystupující mu ji podává.)",
+      "link_phrase": "spadla lahev s pitím"
+    },
+    {
+      "text": "Richterová: osm miliard ročně a nikdo nedohledá, kdo jmenoval vedení.",
+      "source": "steno",
+      "steno_id": "2025_24_01165",
+      "citace": "nikdo už nedohledá, kdo ho na ten stůl přinesl, kdo toho člověka navrhl a co byly skutečné důvody jeho navržení.",
+      "link_phrase": "nikdo už nedohledá, kdo ho na ten stůl přinesl"
+    },
+    {
+      "text": "Richterová připomněla kauzu veslařského svazu a vodu za tři miliony.",
+      "source": "steno",
+      "steno_id": "2025_24_01167",
+      "citace": "Předražené nákupy, kamarádšofty i voda za tři miliony. Kam jdou obří dotace pro Český veslařský svaz?",
+      "link_phrase": "voda za tři miliony"
+    },
+    {
+      "text": "Vondráček si stěžoval, že se místo služebního zákona řeší sport.",
+      "source": "steno",
+      "steno_id": "2025_24_01218",
+      "citace": "v rámci faktických poznámek se řeší sportování mladistvých, nikoliv zákon o státní službě a související.",
+      "link_phrase": "řeší sportování mladistvých"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 5,
+  "nadpis": "Dvacet minut a sběrný podvozek",
+  "lead": "Karel Haas (Motoristé) tvrdil, že tisk 77 nemá být košík na vše, co si koalice nebo opozice zrovna vzpomene. Doprovodný zákon má ladit jen s jádrem, tiskem 76, místo toho se do něj cpou věci bez vazby na úředníky, typicky sport a dotace z Národní sportovní agentury, proto noční debata o sportu místo zákona o úřednících.",
+  "pointa": "Richterová (Piráti) počítala osm miliard do sportovních dotací a kauzu veslařského svazu. Vondráček (ANO) si stěžoval, že se místo zákona o úřednících řeší sportování mladistvých.",
+  "mean": "Tisk 76 je zákon o úřednících, tisk 77 k němu jde jako doprovod a má ladit jen s tím jádrem. Národní sportovní agentura rozděluje miliardy korun ročně na sportovní dotace, právě o její vedení se v tisku 77 debatovalo místo o úřednících.",
+  "citace_text": "Nemají se stát sběrným podvozkem, ve kterém si ať koalice nebo opozice vzpomenou na všechno, co jim v současném světě chybí",
+  "citace_autor": "Karel Haas (Motoristé)",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "navrh-zakona-o-statnich-zamestnancich-souvisejic",
+  "nazev": "Návrh zákona o státních zaměstnancích - související",
+  "datum": "01.07.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "státních zaměstnancích - související",
+  "koho": [
+    "Občana se to netýká, ledaže pracujete na úřadě nebo tam čekáte ve frontě."
+  ],
+  "fakty": [
+    {
+      "text": "zákon o státních zaměstnancích",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_00885",
+      "citace": "(zákon o státních zaměstnancích)"
+    },
+    {
+      "text": "112.Návrh poslanců Radka Vondráčka, Renaty Vesecké, Libora Vondráčka a Zuzany Ožanové na vydání zákona, kterým se mění některé zákony v souvislosti s přijetím zákona o právních poměrech státních zaměstnanců v ministerstvech a jiných správních úřadech (zákon o státních zaměstnancích)/sněmovní tisk 77/ – třetí čtení Pros",
+      "source": "steno",
+      "steno_id": "2025_24_00885",
+      "citace": "112.Návrh poslanců Radka Vondráčka, Renaty Vesecké, Libora Vondráčka a Zuzany Ožanové na vydání zákona, kterým se mění některé zákony v souvislosti s přijetím zákona o právních poměrech státních zaměs"
+    },
+    {
+      "text": "Prosím, abyste měli úctu ke všem, kteří tady vystupují a dali prostor z hlediska hladiny hluku i panu poslanci Hladíkovi.",
+      "source": "steno",
+      "steno_id": "2025_24_00885",
+      "citace": "Prosím, abyste měli úctu ke všem, kteří tady vystupují a dali prostor z hlediska hladiny hluku i panu poslanci Hladíkovi."
+    },
+    {
+      "text": "O to chci velmi požádat, protože tohle je jeden ze série návrhů, které šly Poslaneckou sněmovnou bez řádného mezirezortního řízení, způsobem, kterým tady legislativu projednat nemáme.",
+      "source": "steno",
+      "steno_id": "2025_24_00886",
+      "citace": "O to chci velmi požádat, protože tohle je jeden ze série návrhů, které šly Poslaneckou sněmovnou bez řádného mezirezortního řízení, způsobem, kterým tady legislativu projednat nemáme."
+    }
+  ],
+  "publikovat": false,
+  "priorita": 3,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 18,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 120,
+    "pritomno_min": 174,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 54262
+}

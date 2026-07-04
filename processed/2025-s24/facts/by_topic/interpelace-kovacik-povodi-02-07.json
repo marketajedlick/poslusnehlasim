@@ -1,0 +1,71 @@
+{
+  "slug": "interpelace-kovacik-povodi-02-07",
+  "nazev": "Trafika u Povodí Ohře",
+  "datum": "02.07.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "interpelace na jmenování bývalého předsedy klubu KSČM Pavla Kováčika do dozorčí rady státního podniku Povodí Ohře",
+  "koho": [
+    "Koho se to týká? Každého, kdo platí daně na vodohospodářskou infrastrukturu a nechce, aby se do vody míchala politika."
+  ],
+  "fakty": [
+    {
+      "text": "Šmída interpeloval kvůli Kováčikovi do Povodí Ohře.",
+      "source": "steno",
+      "steno_id": "2025_24_01700",
+      "citace": "Skutečně to vyvolává dojem, že nejde o nominaci založenou na odbornosti, ale o politickou trafiku pro bývalého poslance.",
+      "link_phrase": "Pavla Kováčika do dozorčí rady státního podniku Povodí Ohře"
+    },
+    {
+      "text": "Šmída: jmenování Kováčika do Povodí Ohře působí jako politická trafika.",
+      "source": "steno",
+      "steno_id": "2025_24_01700",
+      "citace": "Skutečně to vyvolává dojem, že nejde o nominaci založenou na odbornosti, ale o politickou trafiku pro bývalého poslance.",
+      "link_phrase": "politickou trafiku pro bývalého poslance"
+    },
+    {
+      "text": "Ministr Sebestyán: Kováčik byl místopředsedou zemědělského výboru.",
+      "source": "steno",
+      "steno_id": "2025_24_01702",
+      "citace": "Pan Pavel Kováčik byl dlouholetým místopředsedou zemědělského výboru a členem zemědělského výboru.",
+      "link_phrase": "odpověděl zemědělským výborem"
+    },
+    {
+      "text": "Šmída: jde spíš o politickou trafiku.",
+      "source": "steno",
+      "steno_id": "2025_24_01700",
+      "citace": "Skutečně to vyvolává dojem, že nejde o nominaci založenou na odbornosti, ale o politickou trafiku pro bývalého poslance.",
+      "link_phrase": "jde spíš o politickou trafiku"
+    },
+    {
+      "text": "Sebestyán: výběrová řízení se u nominací do Povodí nikdy nedělala.",
+      "source": "steno",
+      "steno_id": "2025_24_01706",
+      "citace": "žádná výběrová řízení se tam nedělají a nikdy to tak nebylo",
+      "link_phrase": "výběrová řízení nikdy nedělala"
+    },
+    {
+      "text": "Dnesni ucet: Kováčik u Povodí Ohře.",
+      "source": "steno",
+      "steno_id": "2025_24_01700",
+      "citace": "politickou trafiku pro bývalého poslance",
+      "link_phrase": "Kováčik u Povodí Ohře"
+    },
+    {
+      "text": "Zaver: trafika pro bývalého předsedu KSČM.",
+      "source": "steno",
+      "steno_id": "2025_24_01700",
+      "citace": "politickou trafiku pro bývalého poslance",
+      "link_phrase": "trafika pro bývalého předsedu KSČM"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Trafika u Povodí Ohře",
+  "lead": "Odpoledne interpeloval Šmída (Motoristé) ministra Sebestyána kvůli jmenování bývalého předsedy klubu KSČM Pavla Kováčika do dozorčí rady státního podniku Povodí Ohře. Ptál se na odbornost a vodohospodářské zkušenosti, ministr odpověděl zemědělským výborem.",
+  "pointa": "Šmída (Motoristé) řekl, že jde spíš o politickou trafiku. Sebestyán (ANO) dodal, že u Povodí se výběrová řízení nikdy nedělala a že stejná praxe platila i dřív.",
+  "mean": "Státní podnik Povodí Ohře spravuje část vodohospodářské infrastruktury. Dozorčí rada dohlíží na jeho fungování.",
+  "citace_text": "Skutečně to vyvolává dojem, že nejde o nominaci založenou na odbornosti, ale o politickou trafiku pro bývalého poslance.",
+  "citace_autor": "Martin Šmída (Motoristé)",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

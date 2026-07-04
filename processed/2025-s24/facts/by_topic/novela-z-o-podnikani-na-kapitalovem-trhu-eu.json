@@ -1,0 +1,65 @@
+{
+  "slug": "novela-z-o-podnikani-na-kapitalovem-trhu-eu",
+  "nazev": "Novela z. o podnikání na kapitálovém trhu - EU",
+  "datum": "02.07.2026",
+  "verdikt": "odlozeno",
+  "predmet_lidsky": "evropská pravidla pro rovnost žen a mužů ve vedení kótovaných firem, zákon nepřežil druhé kolo",
+  "koho": [
+    "Koho se to týká? Spíš akcionáře šesti velkých firem na burze, ne běžného občana u pokladny."
+  ],
+  "fakty": [
+    {
+      "text": "Tejc: dotkne se šesti akciovek včetně ČEZ a Kofoly.",
+      "source": "steno",
+      "steno_id": "2025_24_01540",
+      "citace": "V českém prostředí se návrh bude dotýkat pouze 6 akciových společností, a to konkrétně: ČEZ, Komerční banka, MONETA Money Bank, Philip Morris, Kofola a COLT CZ.",
+      "link_phrase": "šesti akciovek včetně ČEZ a Kofoly"
+    },
+    {
+      "text": "První kolo prošlo 106 proti 0.",
+      "source": "steno",
+      "steno_id": "2025_24_01551",
+      "citace": "Hlasování číslo 210, přihlášeno 123 poslanců, pro 106, proti nikdo. Návrh byl přijat.",
+      "link_phrase": "sto šest proti nula"
+    },
+    {
+      "text": "Druhé kolo padlo.",
+      "source": "steno",
+      "steno_id": "2025_24_01553",
+      "citace": "Hlasování číslo 211, přihlášeno 126, pro 54, proti 7. Návrh nebyl přijat.",
+      "link_phrase": "druhé kolo už ne"
+    },
+    {
+      "text": "Tejc v citaci: šest akciových společností.",
+      "source": "steno",
+      "steno_id": "2025_24_01540",
+      "citace": "V českém prostředí se návrh bude dotýkat pouze 6 akciových společností",
+      "link_phrase": "šest akciových společností"
+    },
+    {
+      "text": "Zákon se vrací do výborů.",
+      "source": "steno",
+      "steno_id": "2025_24_01553",
+      "citace": "Návrh nebyl přijat.",
+      "link_phrase": "vrací do výborů"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "106:0 a pak pád",
+  "lead": "Odpoledne šla přes Sněmovnu evropská novela o rovnosti žen a mužů ve vedení burzovních firem. Ministr Tejc (STAN) řekl, že se dotkne jen šesti akciovek včetně ČEZ a Kofoly. První kolo prošlo 106 proti 0, druhé kolo už ne.",
+  "pointa": "Zákon se vrací do výborů. U téhle novely stačilo jedno kolo bez odporu a druhé už ne.",
+  "mean": "Jde o přepsání evropských pravidel do českého zákona o podnikání na kapitálovém trhu. Cílem je vyrovnané zastoupení žen a mužů ve vedení firem obchodovaných na burze.",
+  "citace_text": "V českém prostředí se návrh bude dotýkat pouze šest akciových společností",
+  "citace_autor": "Jeroným Tejc (STAN)",
+  "pocet_hlasovani": 3,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 58,
+    "pritomno_min": 123,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 27563
+}

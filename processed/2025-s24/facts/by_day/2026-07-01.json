@@ -1,0 +1,28 @@
+{
+  "datum": "01.07.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "novela-z-o-jednacim-radu-ps",
+    "debata-interpelace-sport-haas-01-07",
+    "debata-rakusan-traficka-01-07",
+    "novela-z-na-ochranu-zvirat-proti-tyrani"
+  ],
+  "stats": {
+    "pocet_hlas": 6,
+    "minuty": 1086,
+    "end_cas": "18:27",
+    "proslo": 4,
+    "zamitnuto": 2,
+    "spor_o_porad": false,
+    "dlouha_debata": true
+  },
+  "dnesni_ucet": "jednací řád, tisk 77,\nsouvisející zákony, trafika u OSN, Vločka.",
+  "steno_zdroje": true,
+  "zaver": "že novela jednacího řádu padla čtyřikrát, Haas tvrdil, že tisk 77 nemá být košík na vše u jádra tisku 76, Rakušan u souvisejících zákonů mluvil o trafice u OSN a Vločka přežela mezi kočkou a ptactvem.",
+  "vysledek": [
+    "* novela jednacího řádu padla čtyřikrát, nejdrsněji 3 proti 84",
+    "* Haas (Motoristé) za ODS: tisk 77 vs jádro tisku 76, sběrný podvozek, sport místo úředníků",
+    "* Rakušan (STAN): msta, která se bojí denního světla, trafička u OSN",
+    "* novela o zvířatech padla ve třetím kole 22 proti 62"
+  ]
+}

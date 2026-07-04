@@ -1,0 +1,115 @@
+{
+  "slug": "novela-z-o-obalech",
+  "nazev": "Novela z. o obalech",
+  "datum": "02.07.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "změna zákona o obalech a systému třídění, kterou navrhla poslankyně Peštová místo ministerstva",
+  "koho": [
+    "Koho se to týká? Každého, kdo třídí odpad, platí poplatky za svoz a sleduje, kam mizí peníze z recyklace."
+  ],
+  "fakty": [
+    {
+      "text": "Peštová navrhla zákon místo ministerstva životního prostředí.",
+      "source": "steno",
+      "steno_id": "2025_24_01493",
+      "citace": "Ve své podstatě když vznikal zákon o obalech nebo respektive, než vznikl EKO-KOM",
+      "link_phrase": "místo ministerstva životního prostředí"
+    },
+    {
+      "text": "Bendl: absence ministra je fatální.",
+      "source": "steno",
+      "steno_id": "2025_24_01515",
+      "citace": "považuju za fatální, že tady není ministr. On tady totiž i včera byl, ale neúčastnil se debaty k materiálu, který se týkal i Ministerstva životního prostředí.",
+      "link_phrase": "absence ministra je fatální"
+    },
+    {
+      "text": "Bendl: absence ministra je téměř pohrdání Sněmovnou.",
+      "source": "steno",
+      "steno_id": "2025_24_01515",
+      "citace": "to považuju za téměř pohrdání Poslaneckou sněmovnou, a tohle by se nemělo dít",
+      "link_phrase": "téměř pohrdání Sněmovnou"
+    },
+    {
+      "text": "Ve stenozáznamu je u debaty omylem tema odměna TAČR.",
+      "source": "steno",
+      "steno_id": "2025_24_01479",
+      "citace": "abychom dnes po bodu 150, což je ten TA ČR, zařadili v pořadí body 90, 37, 23, 27, 28 a 39.",
+      "link_phrase": "omylem odměna TAČR"
+    },
+    {
+      "text": "Šmída varoval před vznikem super EKO-KOMu a monopolu.",
+      "source": "steno",
+      "steno_id": "2025_24_01523",
+      "citace": "pracovně říkám, vznik super EKO-KOMu, protože v podstatě legalizuje monopolní postavení této jedné organizace na trhu",
+      "link_phrase": "vznik super EKO-KOMu"
+    },
+    {
+      "text": "Šmída varoval před super EKO-KOMem v pointě.",
+      "source": "steno",
+      "steno_id": "2025_24_01523",
+      "citace": "pracovně říkám, vznik super EKO-KOMu, protože v podstatě legalizuje monopolní postavení této jedné organizace na trhu",
+      "link_phrase": "super EKO-KOMem a monopolem"
+    },
+    {
+      "text": "Šmída mluvil do neustávajícího hluku v sále.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_01526",
+      "citace": "Prosím, opět se zvyšuje hluk v sále. Nezlobte se, ale pana poslance to ruší, tak ať má prostor na vystoupení.",
+      "link_phrase": "neustávajícího hluku v sále"
+    },
+    {
+      "text": "Svárovská připomněla požár skládky plastů u Rynholce.",
+      "source": "steno",
+      "steno_id": "2025_24_01511",
+      "citace": "Když vloni na jaře ve Středočeském kraji hořela skládka u Rynholce na Rakovnicku, šlo převážně o skládkované plasty.",
+      "link_phrase": "hořící plasty u Rynholce"
+    },
+    {
+      "text": "Návrh přežil první kolo.",
+      "source": "steno",
+      "steno_id": "2025_24_01538",
+      "citace": "Hlasování číslo 206, přihlášeno 136 poslanců, pro 134, proti 1. Návrh byl přijat.",
+      "link_phrase": "přežil první kolo"
+    },
+    {
+      "text": "Bendl mluvil 2 344 slov.",
+      "source": "steno",
+      "steno_id": "2025_24_01515",
+      "citace": "považuju za fatální, že tady není ministr.",
+      "link_phrase": "dvě tisíce tři sta čtyřicet čtyři slov"
+    },
+    {
+      "text": "Dnesni ucet: super EKO-KOM.",
+      "source": "steno",
+      "steno_id": "2025_24_01523",
+      "citace": "pracovně říkám, vznik super EKO-KOMu",
+      "link_phrase": "super EKO-KOM"
+    },
+    {
+      "text": "Zaver: super EKO-KOMem.",
+      "source": "steno",
+      "steno_id": "2025_24_01523",
+      "citace": "pracovně říkám, vznik super EKO-KOMu",
+      "link_phrase": "super EKO-KOMem"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 4,
+  "nadpis": "Super EKO-KOM bez ministra",
+  "lead": "Sněmovna ve čtvrtek dokončila první kolo zákona o obalech, který navrhla Peštová (ANO) místo ministerstva životního prostředí. Bendl (ODS) mluvil 2 344 slov a řekl, že absence ministra je fatální a téměř pohrdání Sněmovnou. Ve stenozáznamu je u debaty v poli tema omylem odměna TAČR.",
+  "pointa": "Šmída (Motoristé) varoval před super EKO-KOMem a monopolem, mluvil do neustávajícího hluku v sále. Svárovská (Piráti) připomněla hořící plasty u Rynholce. Sedm hlasování, návrh přežil první kolo.",
+  "mean": "Zákon o obalech určuje, kdo v Česku kontroluje třídění, sběr a recyklaci obalového odpadu a kam tečou peníze z poplatků.",
+  "citace_text": "pracovně říkám, vznik super EKO-KOMu, protože v podstatě legalizuje monopolní postavení této jedné organizace na trhu",
+  "citace_autor": "Martin Šmída (Motoristé)",
+  "pocet_hlasovani": 7,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 90,
+    "pritomno_min": 132,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 13843
+}
