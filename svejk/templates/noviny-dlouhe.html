@@ -2,7 +2,6 @@
 <html lang="cs">
 <head>
 {% include "head-noviny.html" %}
-<style>.stagewrap,.stack{width:100%;max-width:100%;margin:0 auto}@media(min-width:721px){.stagewrap,.stack{width:840px;max-width:840px}}</style>
 <title>{{ page_title }}</title>
 <meta name="description" content="{{ meta_description | default(site_meta_description, true) }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
@@ -21,517 +20,75 @@
 {% endif %}
 </head>
 <body>
-{% if nav %}
-<nav class="edition-nav" aria-label="{{ t.edition.nav_aria }}">
-  {% if nav.prev %}
-  <a class="edition-arrow prev" href="{{ nav.prev.href }}" title="{{ nav.prev.title }}" aria-label="{{ t.edition.prev_aria }}: {{ nav.prev.title }}">
-    <span class="edition-glyph" aria-hidden="true">←</span>
-    <span class="edition-meta">{{ nav.prev.label }}</span>
-  </a>
-  {% else %}
-  <span class="edition-arrow prev disabled" aria-hidden="true">
-    <span class="edition-glyph">←</span>
-  </span>
-  {% endif %}
+<div class="edition-page" id="edition-page" data-share-domain="{{ t.brand.domain }}">
+  <div class="edition-grid">
+    {% include "edition-rail.html" %}
 
-  <div class="edition-now" title="{{ datum_design }} · {{ t.edition.schuze_title }} {{ schuze }}">
-    <div class="edition-now-date">
-      <span class="edition-now-day">{{ content.cal_day }}</span>
-      <span class="edition-now-sub">{{ content.cal_den }} · {{ content.cal_month }} · s{{ schuze }}</span>
-    </div>
-  </div>
-
-  {% if nav.next %}
-  <a class="edition-arrow next" href="{{ nav.next.href }}" title="{{ nav.next.title }}" aria-label="{{ t.edition.next_aria }}: {{ nav.next.title }}">
-    <span class="edition-meta">{{ nav.next.label }}</span>
-    <span class="edition-glyph" aria-hidden="true">→</span>
-  </a>
-  {% else %}
-  <span class="edition-arrow next disabled" aria-hidden="true">
-    <span class="edition-glyph">→</span>
-  </span>
-  {% endif %}
-</nav>
-{% endif %}
-
-<div class="stagewrap" id="stage">
-  <div class="stack">
-    <div class="sheet-back b1"></div>
-    <div class="sheet-back b2"></div>
-    <div class="sheet-back b3"></div>
-    <div class="page-slot" id="page-slot">
-      <div class="page-under" id="page-under" aria-hidden="true">
-        <div class="sheet-shape" id="page-under-sheet"></div>
-      </div>
-      <div class="page-cast-shadow" id="page-cast-shadow"></div>
-      <div class="page-top" id="page-top">
-        <div class="sheet-shape" id="page-front-sheet">
-            <div class="grain"></div>
-            <div class="pad">
-        <div class="head">
-          <div class="cal">
-            <div class="cal-wd">{{ content.cal_den }}</div>
-            <div class="cal-day">{{ content.cal_day }}</div>
-            <div class="cal-mo">{{ content.cal_month }}</div>
-          </div>
-          <div class="titleblock">
-            {% if svejk_svg %}
-            <div class="svejk">{{ svejk_svg | safe }}</div>
-            {% endif %}
-            <div class="eyebrow">{{ t.edition.eyebrow }}</div>
-            <h1 class="mast">POSLUŠNĚ <span class="terra">HLÁSÍM</span></h1>
-          </div>
-        </div>
-{% include "archive-chips.html" %}
-
-        <div class="verdict verdict-top">
-          <p class="q">
-            {% if content.zaver_key %}<span class="key">{{ content.zaver_key }}</span> {% endif %}<span class="q-quote">„{{ (content.zaver_body or content.zaver) | glossary }}“</span>
-          </p>
-          <div class="sign">{{ t.edition.sign }}</div>
+    <main class="edition-main" id="edition-main">
+      <div class="edition-main-inner" id="edition-content">
+        <div class="masthead-mobile-only">
+          {% include "edition-masthead.html" %}
         </div>
 
-        {% if content.snemovni_listy %}
-        <section class="snemovni-listy" aria-label="Sněmovní listy">
-          <h2 class="listy-title">SNĚMOVNÍ LISTY</h2>
-          {% if content.snemovni_listy.meta %}
-          <p class="listy-meta">{{ content.snemovni_listy.meta | glossary }}</p>
+        {% if nav %}
+        <div class="pager pager-desktop masthead-desktop-only">
+          {% if nav.prev %}
+          <a class="pager-tag" href="{{ nav.prev.href }}" title="{{ nav.prev.title }}">← {{ nav.prev.short_label or nav.prev.label }}</a>
+          {% else %}
+          <span class="pager-tag disabled">←</span>
           {% endif %}
-          {% if content.snemovni_listy.deck %}
-          <p class="listy-deck">{{ content.snemovni_listy.deck | glossary }}</p>
+          <span class="pager-now">V&nbsp;Praze, dne {{ datum_design }}</span>
+          {% if nav.next %}
+          <a class="pager-tag" href="{{ nav.next.href }}" title="{{ nav.next.title }}">{{ nav.next.short_label or nav.next.label }} →</a>
+          {% else %}
+          <span class="pager-tag disabled">→</span>
           {% endif %}
-          {% for section in content.snemovni_listy.sections %}
-          {% if section.heading %}
-          <h3 class="listy-h">{{ section.heading | glossary }}</h3>
-          {% endif %}
-          {% for para in section.paragraphs %}
-          <p class="listy-p">{{ para | glossary }}</p>
-          {% endfor %}
-          {% if section.bullets %}
-          <ul class="listy-ul">
-            {% for bullet in section.bullets %}
-            <li>{{ bullet | glossary }}</li>
-            {% endfor %}
-          </ul>
-          {% endif %}
-          {% endfor %}
-          {% if content.snemovni_listy.footer %}
-          <p class="listy-footer">{{ content.snemovni_listy.footer | glossary }}</p>
-          {% endif %}
-        </section>
+        </div>
         {% endif %}
 
-        {% for item in content.items %}
-        <div class="item{% if item.variant %} {{ item.variant }}{% endif %}">
-          <div class="numcol">
-            <div class="kick">{{ item.kick }}</div>
-            <div class="num">{{ "%02d"|format(item.num) }}</div>
-            <span class="stamp{% if item.verdikt != 'schvaleno' %} {{ item.verdikt }}{% endif %}">{{ item.stamp }}</span>
-          </div>
-          <div class="item-body">
-            <h2 class="h">
-              {% for line in item.nadpis_radky %}
-              <span class="hl">{{ line }}</span>
-              {% endfor %}
-            </h2>
-            <p class="p">{{ item.lead | glossary }}</p>
-            {% if item.citace_text %}
-            <blockquote class="item-quote">
-              <p>„{{ item.citace_text | glossary }}“</p>
-              {% if item.citace_autor %}
-              <cite class="item-quote-by">{{ item.citace_autor }}</cite>
-              {% endif %}
-            </blockquote>
-            {% endif %}
-            {% if item.lead_tail and item.kuriozita %}
-            <aside class="kuriozita-box">{{ item.kuriozita | glossary }}</aside>
-            <p class="p">{{ item.lead_tail | glossary }}</p>
-            {% elif item.lead_tail %}
-            <p class="p">{{ item.lead_tail | glossary }}</p>
-            {% endif %}
-            {% if item.pointa %}
-            <p class="p">{{ item.pointa | glossary }}</p>
-            {% endif %}
-            {% if item.mean %}
-            <p class="mean"><b>{{ t.edition.mean_label }} </b>{{ item.mean | glossary }}</p>
-            {% endif %}
-            {% if item.kuriozita_nav %}
-            <nav class="kuriozita-links" aria-label="{{ t.edition.kuriozita_aria }}">
-              {% for label, href in item.kuriozita_nav %}
-              {% if not loop.first %}<span class="kuriozita-links-sep" aria-hidden="true">·</span>{% endif %}
-              <a class="kuriozita-link" href="{{ href }}">{{ label }}</a>
-              {% endfor %}
-            </nav>
-            {% endif %}
-            {% if item.kuriozita and not item.lead_tail %}
-            <p class="kuriozita">{{ item.kuriozita | glossary }}</p>
-            {% endif %}
-          </div>
-          {% if newsletter.show_corrections and item.slug %}
-          <nav class="item-actions" aria-label="{{ t.edition.correction_aria }}" aria-busy="true">
-            <button
-              type="button"
-              class="correction-trigger"
-              hidden
-              data-slug="{{ item.slug }}"
-              data-num="{{ item.num }}"
-              data-title="{{ item.nadpis_radky | join(' ') }}"
-            >{{ t.edition.correction_trigger }}</button>
-          </nav>
-          {% endif %}
+        <div class="edition-masthead-nav masthead-desktop-only">
+          {% include "site-nav.html" %}
         </div>
+
+        <div class="rule-double"></div>
+
+        {% include "card-hero.html" %}
+
+        <div class="section-rule" aria-hidden="true"><span>Co se dělo?!</span></div>
+
+        {% for item in content.items %}
+        {% include "card-article.html" %}
+        {% if loop.index == 1 and postreh %}
+        <div class="divider"></div>
+        {% include "card-postreh.html" %}
+        {% endif %}
+        {% if not loop.last %}
+        <div class="divider"></div>
+        {% endif %}
         {% endfor %}
 
-{% include "beer-support.html" %}
-{% include "subscribe.html" %}
-            </div>
-            <div class="dogear"></div>
-          </div>
+        {% if content.snemovni_listy %}
+        <div class="divider"></div>
+        {% include "card-plakat.html" %}
+        {% endif %}
+
+        {% if jazykolam or slovnicek_dne %}
+        {% include "section-citanka.html" %}
+        {% endif %}
+
+        {% include "card-donate.html" %}
+        {% include "edition-footer.html" %}
       </div>
-    </div>
+    </main>
   </div>
+  {% include "site-footer.html" %}
 </div>
 
-{% include "site-footer.html" %}
+{% include "term-sheet.html" %}
+{% include "share-sheet.html" %}
 {% include "correction-dialog.html" %}
-<script>
-  (function(){
-    const FADE = 620;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const mobile = window.matchMedia('(max-width: 720px)');
-    const canFetch = location.protocol !== 'file:';
-    const usePageTurn = canFetch && !mobile.matches && !reduced;
-
-    const pageTop = document.getElementById('page-top');
-    const pageSlot = document.getElementById('page-slot');
-    const under = document.getElementById('page-under');
-    const underSheet = document.getElementById('page-under-sheet');
-    const frontSheet = document.getElementById('page-front-sheet');
-    let turning = false;
-
-    function measureSheet(html){
-      const probe = document.createElement('div');
-      probe.style.cssText = 'position:absolute;left:-9999px;top:0;width:840px;visibility:hidden;pointer-events:none';
-      probe.innerHTML = '<div class="sheet-shape">' + html + '</div>';
-      document.body.appendChild(probe);
-      const h = probe.offsetHeight;
-      probe.remove();
-      return h;
-    }
-
-    function hideUnder(){
-      if (underSheet) underSheet.innerHTML = '';
-      if (under){
-        under.style.visibility = 'hidden';
-        under.style.opacity = '0';
-        under.setAttribute('aria-hidden', 'true');
-      }
-    }
-
-    function finalizeTop(){
-      if (!pageTop) return;
-      pageTop.style.opacity = '1';
-      void pageTop.offsetHeight;
-      pageTop.style.transition = '';
-      pageTop.style.opacity = '';
-    }
-
-    async function fetchPage(href){
-      const url = new URL(href, location.href).href;
-      const res = await fetch(url, { credentials: 'same-origin' });
-      if (!res.ok) throw new Error('fetch failed');
-      const doc = new DOMParser().parseFromString(await res.text(), 'text/html');
-      const sheet = doc.querySelector('.page-top .sheet-shape') || doc.querySelector('#page-front-sheet');
-      const nav = doc.querySelector('.edition-nav');
-      if (!sheet) throw new Error('no sheet');
-      return {
-        url,
-        title: doc.querySelector('title')?.textContent || document.title,
-        sheetHtml: sheet.innerHTML,
-        navEl: nav,
-      };
-    }
-
-    function syncArrow(side, srcNav){
-      const nav = document.querySelector('.edition-nav');
-      if (!nav || !srcNav) return;
-      const cur = nav.querySelector('.edition-arrow.' + side);
-      const fresh = srcNav.querySelector('.edition-arrow.' + side);
-      if (!fresh) return;
-      if (!cur){
-        const now = nav.querySelector('.edition-now');
-        nav.insertBefore(fresh.cloneNode(true), side === 'next' ? null : now);
-        return;
-      }
-      if (cur.tagName === 'A' && fresh.tagName === 'A'){
-        cur.href = fresh.href;
-        cur.title = fresh.title;
-        cur.setAttribute('aria-label', fresh.getAttribute('aria-label') || '');
-        const meta = cur.querySelector('.edition-meta');
-        const srcMeta = fresh.querySelector('.edition-meta');
-        if (meta && srcMeta) meta.textContent = srcMeta.textContent;
-        return;
-      }
-      cur.replaceWith(fresh.cloneNode(true));
-    }
-
-    function applyNav(srcNav){
-      if (!srcNav) return;
-      const nav = document.querySelector('.edition-nav');
-      if (!nav) return;
-      const now = nav.querySelector('.edition-now');
-      const srcNow = srcNav.querySelector('.edition-now');
-      if (now && srcNow) {
-        now.innerHTML = srcNow.innerHTML;
-        now.title = srcNow.title || '';
-      }
-      syncArrow('prev', srcNav);
-      syncArrow('next', srcNav);
-    }
-
-    function commitPage(page){
-      if (pageTop) pageTop.style.transition = 'none';
-      if (frontSheet) frontSheet.innerHTML = page.sheetHtml;
-      hideUnder();
-      finalizeTop();
-      if (pageSlot) pageSlot.style.minHeight = '';
-      applyNav(page.navEl);
-      document.title = page.title;
-      history.pushState({ href: page.url }, '', new URL(page.url, location.href).pathname);
-    }
-
-    function swapStack(page, done){
-      const curH = pageSlot ? pageSlot.offsetHeight : 0;
-      const nextH = measureSheet(page.sheetHtml);
-      if (pageSlot) pageSlot.style.minHeight = Math.max(curH, nextH) + 'px';
-
-      if (underSheet) underSheet.innerHTML = page.sheetHtml;
-      if (under){
-        under.style.visibility = 'visible';
-        under.style.opacity = '1';
-        under.removeAttribute('aria-hidden');
-      }
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          if (!pageTop || reduced){
-            done();
-            return;
-          }
-          let finished = false;
-          const finish = () => {
-            if (finished) return;
-            finished = true;
-            pageTop.removeEventListener('transitionend', onEnd);
-            done();
-          };
-          const onEnd = (e) => {
-            if (e.target === pageTop && e.propertyName === 'opacity') finish();
-          };
-          pageTop.addEventListener('transitionend', onEnd);
-          pageTop.style.opacity = '0';
-          setTimeout(finish, FADE + 80);
-        });
-      });
-    }
-
-    async function navigateStack(href){
-      if (!href || turning) return;
-      if (!usePageTurn || !pageTop){
-        location.href = href;
-        return;
-      }
-
-      turning = true;
-      document.body.classList.add('is-turning');
-
-      let page;
-      try {
-        page = await fetchPage(href);
-      } catch {
-        turning = false;
-        document.body.classList.remove('is-turning');
-        location.href = href;
-        return;
-      }
-
-      swapStack(page, () => {
-        commitPage(page);
-        document.body.classList.remove('is-turning');
-        turning = false;
-      });
-    }
-
-    document.addEventListener('click', (e) => {
-      const link = e.target.closest('.edition-arrow.prev:not(.disabled), .edition-arrow.next:not(.disabled)');
-      if (!link || !link.href) return;
-      e.preventDefault();
-      navigateStack(link.href);
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (!usePageTurn) return;
-      if (e.target && ['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) return;
-      const prev = document.querySelector('.edition-arrow.prev:not(.disabled)');
-      const next = document.querySelector('.edition-arrow.next:not(.disabled)');
-      if (e.key === 'ArrowLeft' && prev?.href){
-        e.preventDefault();
-        navigateStack(prev.href);
-      }
-      if (e.key === 'ArrowRight' && next?.href){
-        e.preventDefault();
-        navigateStack(next.href);
-      }
-    });
-
-    window.addEventListener('popstate', async () => {
-      if (!usePageTurn || turning) return;
-      try {
-        commitPage(await fetchPage(history.state?.href || location.href));
-      } catch {
-        location.reload();
-      }
-    });
-
-    if (usePageTurn) history.replaceState({ href: location.href }, '', location.href);
-  })();
-</script>
+{% include "edition-scripts.html" %}
 {% include "subscribe-script.html" %}
-<script>
-(function () {
-  var mq = window.matchMedia("(max-width:720px)");
-  var margin = 16;
-  var gap = 8;
-  var openTip = null;
-
-  function isMobile() {
-    return mq.matches;
-  }
-
-  function resetTip(tip) {
-    if (!tip) return;
-    var bubble = tip.querySelector(".term-tip-bubble");
-    tip.classList.remove("is-tip-open");
-    if (openTip === tip) openTip = null;
-    tip.blur();
-    if (bubble) bubble.removeAttribute("style");
-  }
-
-  function resetAll() {
-    document.querySelectorAll(".term-tip").forEach(function (tip) {
-      if (tip.classList.contains("is-tip-open")) resetTip(tip);
-      else tip.blur();
-    });
-    openTip = null;
-  }
-
-  function placeTip(tip) {
-    var bubble = tip.querySelector(".term-tip-bubble");
-    if (!bubble) return;
-
-    if (openTip && openTip !== tip) resetTip(openTip);
-
-    tip.classList.add("is-tip-open");
-    openTip = tip;
-    bubble.style.visibility = "hidden";
-    bubble.style.display = "block";
-
-    var tipRect = tip.getBoundingClientRect();
-    var maxW = window.innerWidth - margin * 2;
-    bubble.style.width = "";
-    var bubbleRect = bubble.getBoundingClientRect();
-
-    if (bubbleRect.width > maxW) {
-      bubble.style.width = maxW + "px";
-      bubbleRect = bubble.getBoundingClientRect();
-    }
-
-    var left = tipRect.left + tipRect.width / 2 - bubbleRect.width / 2;
-    left = Math.max(margin, Math.min(left, window.innerWidth - bubbleRect.width - margin));
-
-    var top = tipRect.top - bubbleRect.height - gap;
-    if (top < margin) {
-      top = tipRect.bottom + gap;
-    }
-
-    bubble.style.left = left + "px";
-    bubble.style.top = top + "px";
-    bubble.style.visibility = "";
-  }
-
-  function showTip(tip) {
-    placeTip(tip);
-  }
-
-  function hideTip(tip) {
-    resetTip(tip);
-  }
-
-  function toggleTip(tip) {
-    if (!isMobile()) return;
-    if (tip.classList.contains("is-tip-open")) {
-      resetTip(tip);
-      return;
-    }
-    placeTip(tip);
-  }
-
-  document.querySelectorAll(".term-tip").forEach(function (tip) {
-    tip.addEventListener("click", function (e) {
-      if (tip.closest("a.steno-link")) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    });
-    tip.addEventListener("mouseenter", function (e) {
-      e.stopPropagation();
-      if (isMobile()) return;
-      showTip(tip);
-    });
-    tip.addEventListener("mouseleave", function (e) {
-      e.stopPropagation();
-      if (isMobile()) return;
-      hideTip(tip);
-    });
-    tip.addEventListener("focus", function () {
-      if (isMobile()) return;
-      showTip(tip);
-    });
-    tip.addEventListener("blur", function () {
-      if (isMobile()) return;
-      hideTip(tip);
-    });
-  });
-
-  document.addEventListener("pointerdown", function (e) {
-    if (!isMobile()) return;
-    var tip = e.target.closest && e.target.closest(".term-tip");
-    if (!tip) resetAll();
-  }, true);
-
-  document.addEventListener("click", function (e) {
-    if (!isMobile()) return;
-    var tip = e.target.closest && e.target.closest(".term-tip");
-    if (!tip) return;
-    e.preventDefault();
-    toggleTip(tip);
-  }, true);
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key !== "Escape") return;
-    resetAll();
-  });
-
-  window.addEventListener("scroll", function () {
-    if (!openTip) return;
-    placeTip(openTip);
-  }, { passive: true });
-
-  window.addEventListener("resize", function () {
-    if (!openTip) return;
-    placeTip(openTip);
-  }, { passive: true });
-})();
-</script>
 {% include "correction-script.html" %}
 {% include "cookie-consent.html" %}
 </body>

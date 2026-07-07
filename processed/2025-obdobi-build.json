@@ -1,7 +1,7 @@
 {
   "obdobi": 2025,
-  "schuze_celkem": 23,
-  "ok": 23,
+  "schuze_celkem": 24,
+  "ok": 24,
   "skipped": 0,
   "failed": 0,
   "vysledky": [
@@ -119,7 +119,12 @@
       "schuze": 23,
       "ok": true,
       "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s23"
+    },
+    {
+      "schuze": 24,
+      "ok": true,
+      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24"
     }
   ],
-  "built_at": "2026-06-14T19:31:07.700061+00:00"
+  "built_at": "2026-07-06T13:57:30.972747+00:00"
 }

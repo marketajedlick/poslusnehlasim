@@ -41,7 +41,10 @@ from svejk.build.og_image import (
     og_image_abs_url,
     og_image_filename,
     render_edition_og_image,
+    render_edition_share_hero_image,
+    share_hero_filename,
 )
+from svejk.strings import load_strings
 from svejk.build.vyznamenani_neprosli import load_vyznamenani
 from svejk.build.steno_sources import has_steno_sources
 from svejk.build.recnici import has_recnici
@@ -73,9 +76,10 @@ _STATIC = Path(__file__).resolve().parent.parent / "static"
 _CSS = _STATIC / "noviny-dlouhe.css"
 _FONTS_CSS = _STATIC / "fonts.css"
 _FONTS_DIR = _STATIC / "fonts"
-_FAVICON_PNG = _STATIC / "svejk-terra.png"
-_FAVICON_SVG = _STATIC / "svejk.svg"
+_FAVICON_PNG = _STATIC / "ph-fav.png"
+_FAVICON_SVG = _STATIC / "ph-fav.svg"
 _OG_SHARE = _STATIC / "og-share.png"
+_SVEJK_TERRA = _STATIC / "svejk-terra.png"
 
 
 def _write_html(path: Path, html: str) -> None:
@@ -229,13 +233,15 @@ def run_export_pages(
     shutil.copy2(_FONTS_CSS, static_dir / "fonts.css")
     shutil.copytree(_FONTS_DIR, static_dir / "fonts")
     if _FAVICON_SVG.is_file():
-        shutil.copy2(_FAVICON_SVG, static_dir / "favicon.svg")
+        shutil.copy2(_FAVICON_SVG, static_dir / "ph-fav.svg")
     if _FAVICON_PNG.is_file():
         shutil.copy2(_FAVICON_PNG, static_dir / "favicon.png")
         shutil.copy2(_FAVICON_PNG, static_dir / "apple-touch-icon.png")
         shutil.copy2(_FAVICON_PNG, out / "favicon.ico")
     if _OG_SHARE.is_file():
         shutil.copy2(_OG_SHARE, static_dir / "og-share.png")
+    if _SVEJK_TERRA.is_file():
+        shutil.copy2(_SVEJK_TERRA, static_dir / "svejk-terra.png")
 
     cfg = NewsletterConfig.from_env()
     site = cfg.site_url.rstrip("/")
@@ -272,6 +278,25 @@ def run_export_pages(
             zamitnuto=int(fields["zamitnuto"]),
         )
         written.append(f"og/{og_image_filename(edition.datum_unl)}")
+
+        day_path = _edition_day_path(edition)
+        if day_path is not None:
+            paths = SchuzePaths.create(edition.obdobi, edition.schuze)
+            hero_content = build_den_content(day_path, paths)
+            share_subdir = out / "share"
+            share_subdir.mkdir(parents=True, exist_ok=True)
+            sign = load_strings().get("edition", {}).get(
+                "sign", "- Váš dobrý voják Švejk -"
+            )
+            if render_edition_share_hero_image(
+                share_subdir,
+                datum_unl=edition.datum_unl,
+                zaver_key=hero_content.zaver_key,
+                zaver_body=hero_content.zaver_body,
+                zaver=hero_content.zaver,
+                sign=sign,
+            ):
+                written.append(f"share/{share_hero_filename(edition.datum_unl)}")
 
     def _export_edition_page(
         edition,

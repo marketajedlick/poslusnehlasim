@@ -10,13 +10,7 @@
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="pivo-page">
-<div class="stagewrap pivo-stage">
-  <div class="stack">
-    <div class="page-slot">
-      <div class="page-top">
-        <div class="sheet-shape">
-          <div class="grain"></div>
-          <div class="pad">
+<div class="pivo-stage">
             <header class="pivo-head">
               <div class="eyebrow">{{ t.beer_page.eyebrow }}</div>
               <h1 class="pivo-title">{{ t.beer_page.heading }}</h1>
@@ -50,11 +44,6 @@
 
               <p class="pivo-fine">{{ t.beer_page.fine }}</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 {% include "site-footer.html" %}
 {% include "cookie-consent.html" %}

@@ -427,6 +427,14 @@ def _nahrad_zbyla_cisla(text: str) -> str:
         # TOP 09 – strana, ne slovní číslo
         if start >= 4 and t[start - 4 : start].upper() == "TOP ":
             return m.group(1)
+        # ponytail: očíslovaný seznam (01 - NATO) necháváme; upgrade = širší whitelist v compose
+        if (
+            len(m.group(1)) == 2
+            and m.group(1).isdigit()
+            and end + 2 <= len(t)
+            and t[end : end + 2] == " -"
+        ):
+            return m.group(1)
         return _rok_nebo_cislo(m, t)
 
     t = _RE_CAS.sub(_cas, text)

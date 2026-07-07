@@ -2,16 +2,16 @@
 body {
   margin: 0;
   padding: 0;
-  background: #c9bda3;
-  font-family: Georgia, 'Times New Roman', serif;
-  color: #211c14;
+  background: #f7f2f0;
+  font-family: 'Old Standard TT', Georgia, 'Times New Roman', serif;
+  color: #262626;
   -webkit-text-size-adjust: 100%;
 }
 .email-wrap {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  background: #f0e6cf;
+  background: #f7f2f0;
   border-radius: 3px;
 }
 .email-pad {
@@ -40,7 +40,7 @@ body {
 .cal-wd {
   background: #211c14;
   color: #f0e6cf;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -48,14 +48,14 @@ body {
   padding: 5px 2px 4px;
 }
 .cal-day {
-  font-family: Impact, 'Arial Black', sans-serif;
+  font-family: 'Archivo', 'Arial Black', Impact, sans-serif;
   color: #cf5a31;
   font-size: 42px;
   line-height: 0.9;
   padding: 6px 0 0;
 }
 .cal-mo {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -63,33 +63,83 @@ body {
   color: #211c14;
   padding: 4px 2px 7px;
 }
+.masthead {
+  text-align: center;
+  padding: 6px 0 2px;
+}
+.masthead-fav {
+  display: block;
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 10px;
+}
 .eyebrow {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  font-size: 13px;
-  color: #cf5a31;
+  font-size: 12px;
+  color: #6b6355;
   text-align: center;
 }
 .mast {
-  font-family: Impact, 'Arial Black', sans-serif;
-  text-transform: uppercase;
-  color: #211c14;
-  font-size: 50px;
-  line-height: 0.95;
-  margin: 8px 0 0;
+  font-family: 'Archivo', 'Arial Black', Arial, sans-serif;
+  font-weight: 900;
+  text-transform: none;
+  color: #262626;
+  font-size: 48px;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  margin: 6px 0 0;
   text-align: center;
 }
 .email-mast {
   text-align: center;
 }
-.mast .terra { color: #cf5a31; }
+.pager-line {
+  text-align: center;
+  margin: 12px 0 0;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #262626;
+}
+.email-nav {
+  text-align: center;
+  margin: 10px 0 0;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.email-nav a {
+  color: #ff4411;
+  text-decoration: underline;
+}
+.email-section-rule {
+  text-align: center;
+  margin: 24px 0 4px;
+  border-top: 1px solid rgba(38,38,38,0.25);
+}
+.email-section-rule span {
+  display: inline-block;
+  transform: translateY(-9px);
+  background: #f7f2f0;
+  padding: 0 12px;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6b6355;
+}
 
 /* ---------- verdict (top) ---------- */
 .verdict-top {
-  border-top: 3px solid #cf5a31;
-  margin-top: 14px;
+  margin-top: 18px;
 }
 
 /* ---------- items ---------- */
@@ -104,8 +154,8 @@ body {
   width: 100%;
 }
 .item-numcol {
-  width: 140px;
-  max-width: 140px;
+  width: 104px;
+  max-width: 104px;
   text-align: center;
   vertical-align: top;
 }
@@ -116,7 +166,7 @@ body {
 }
 .kick {
   display: block;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -126,26 +176,26 @@ body {
 }
 .num {
   display: block;
-  font-family: Impact, 'Arial Black', sans-serif;
-  font-size: 84px;
-  line-height: 0.92;
-  color: #cf5a31;
+  font-family: 'Anton', Impact, 'Arial Black', sans-serif;
+  font-size: 92px;
+  line-height: 0.82;
+  color: #f4c430;
   margin: 2px 0 0;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
-.item.i2 .num { color: #283c6e; }
+.item.i2 .num { color: #f4c430; }
 /* rotate() funguje v Apple Mail / iOS; Outlook a část Gmailu ignoruje → rovné razítko. */
 .stamp {
   display: inline-block;
-  font-family: Impact, 'Arial Black', sans-serif;
+  font-family: 'Archivo', 'Arial Black', Impact, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 12px;
-  color: #c23a2b;
+  color: #1f8a5b;
   padding: 4px 10px 3px;
-  border: 2px solid #c23a2b;
+  border: 2px solid #1f8a5b;
   border-radius: 3px;
-  box-shadow: inset 0 0 0 1.2px #c23a2b;
+  box-shadow: inset 0 0 0 1.2px #1f8a5b;
   margin-top: 10px;
   -webkit-transform: rotate(-4deg);
   -ms-transform: rotate(-4deg);
@@ -157,37 +207,42 @@ body {
   transform: rotate(3deg);
 }
 .stamp.zvoleno {
-  color: #cf5a31;
-  border-color: #cf5a31;
-  box-shadow: inset 0 0 0 1.2px #cf5a31;
+  color: #1f8a5b;
+  border-color: #1f8a5b;
+  box-shadow: inset 0 0 0 1.2px #1f8a5b;
 }
 .stamp.zamiteno {
-  color: #5a503e;
-  border-color: #5a503e;
-  box-shadow: inset 0 0 0 1.2px #5a503e;
+  color: #ff4411;
+  border-color: #ff4411;
+  box-shadow: inset 0 0 0 1.2px #ff4411;
 }
 .stamp.odlozeno {
-  color: #283c6e;
-  border-color: #283c6e;
-  box-shadow: inset 0 0 0 1.2px #283c6e;
+  color: #ff4411;
+  border-color: #ff4411;
+  box-shadow: inset 0 0 0 1.2px #ff4411;
 }
 .stamp.debata {
-  color: #283c6e;
-  border-color: #283c6e;
-  box-shadow: inset 0 0 0 1.2px #283c6e;
+  color: #f5c430;
+  border-color: #f5c430;
+  background: transparent;
+  box-shadow: inset 0 0 0 1.2px #f5c430;
 }
 .h {
-  font-family: Impact, 'Arial Black', sans-serif;
+  font-family: 'Archivo', 'Arial Black', Arial, sans-serif;
+  font-weight: 900;
   text-transform: uppercase;
-  font-size: 20px;
-  line-height: 1.1;
+  font-size: 30px;
+  line-height: 1.02;
+  letter-spacing: -0.01em;
   margin: 0;
   text-align: left;
 }
-.hl { display: block; }
+/* jen zvýraznění řádků NADPISU se stohuje pod sebe; zvýraznění v textu zůstává inline */
+.h .hl { display: block; }
+.p .hl, .mean .hl { display: inline; }
 .p {
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 17px;
+  line-height: 1.7;
   margin: 12px 0 0;
   text-align: left;
 }
@@ -226,14 +281,14 @@ body {
   text-align: left;
 }
 .mean b {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
   font-weight: bold;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-size: 11px;
-  color: #cf5a31;
+  color: #ff4411;
 }
-.item.i2 .mean b { color: #283c6e; }
+.item.i2 .mean b { color: #ff4411; }
 
 .kuriozita-box {
   margin-top: 14px;
@@ -253,33 +308,47 @@ body {
 }
 .item-quote {
   margin: 16px 0 0;
-  padding: 14px 16px;
-  border: 2px solid #cf5a31;
-  border-radius: 3px;
-  background: rgba(207, 90, 49, 0.06);
+  padding: 14px 16px 14px 18px;
+  border: 1px solid rgba(38, 38, 38, 0.3);
+  border-left: 5px solid #ff4411;
+  border-radius: 0;
+  background: rgba(38, 38, 38, 0.045);
   text-align: left;
 }
 .item.i2 .item-quote {
-  border-color: #283c6e;
-  background: rgba(40, 60, 110, 0.06);
+  border-left-color: #ff4411;
+  background: rgba(38, 38, 38, 0.045);
 }
-.item-quote p {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
-  font-style: italic;
-  color: #211c14;
+.item-quote--jazykolam {
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  background: #ffffff;
+  box-shadow: 0 3px 0 rgba(38, 38, 38, 0.1);
+}
+.item.i2 .item-quote--jazykolam {
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  background: #ffffff;
+}
+.quote-mark {
+  font-size: 1.7em;
+  line-height: 0;
+  vertical-align: -0.2em;
 }
 .item-quote-by {
-  display: block;
-  margin-top: 8px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  margin: 0;
+  font-family: 'Old Standard TT', Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.5;
+  color: #4a453f;
+}
+.item-quote-text {
+  margin: 0 0 8px;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 800;
   font-style: normal;
-  color: #5a503e;
+  color: #211c14;
 }
 .kuriozita-links-sep {
   color: #5a5348;
@@ -300,7 +369,7 @@ body {
   text-align: left;
 }
 .listy-title {
-  font-family: Impact, 'Arial Black', sans-serif;
+  font-family: 'Archivo', 'Arial Black', Impact, sans-serif;
   text-transform: uppercase;
   font-size: 18px;
   letter-spacing: 0.06em;
@@ -318,7 +387,7 @@ body {
 }
 .listy-h {
   margin: 14px 0 8px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 12px;
   letter-spacing: 0.08em;
@@ -335,38 +404,69 @@ body {
 
 /* ---------- verdict ---------- */
 .verdict {
-  margin-top: 16px;
-  padding: 18px 14px 16px;
-  background: #211c14;
-  color: #f0e6cf;
+  margin: 22px 4px 24px;
+  padding: 22px 24px 18px;
+  background: #f4c430;
+  color: #211c14;
+  border-radius: 10px;
+  box-shadow: 0 4px 0 rgba(38,38,38,0.12);
+  -webkit-transform: rotate(-1.2deg);
+  transform: rotate(-1.2deg);
 }
 .verdict .q {
   font-style: italic;
-  font-size: 15px;
-  line-height: 1.25;
+  font-size: 19px;
+  line-height: 1.5;
   margin: 0;
 }
 .verdict .q-quote {
   font-style: inherit;
-  font-size: 20px;
+  font-size: 24px;
+}
+.verdict .q-mark {
+  font-size: 34px;
+  line-height: 0;
+  vertical-align: -7px;
 }
 .verdict .q .key {
-  font-family: Impact, 'Arial Black', sans-serif;
+  font-family: 'Archivo', 'Arial Black', sans-serif;
   font-style: normal;
   color: #cf5a31;
   text-transform: uppercase;
 }
 .verdict .q a.steno-link {
-  color: #cf5a31 !important;
+  color: #211c14 !important;
   text-decoration: underline;
 }
+.verdict-foot {
+  width: 100%;
+  margin-top: 16px;
+}
+.verdict-head {
+  width: 52px;
+  vertical-align: bottom;
+}
+.verdict-head img {
+  display: block;
+  width: 52px;
+  height: 52px;
+}
 .verdict .sign {
-  font-family: Impact, 'Arial Black', sans-serif;
+  font-family: 'Archivo', Arial, sans-serif;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 8px;
-  color: #ded0ad;
-  margin: 14px 0 0;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  color: #211c14;
+  margin: 0;
+}
+.verdict .tagline {
+  font-family: 'Old Standard TT', Georgia, serif;
+  font-style: italic;
+  font-size: 13px;
+  color: #211c14;
+  opacity: 0.72;
+  margin: 4px 0 0;
 }
 .email-footer {
   margin-top: 20px;
@@ -377,8 +477,8 @@ body {
   line-height: 1.6;
 }
 .email-footer a {
-  color: #cf5a31;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #ff4411;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -491,7 +591,7 @@ body {
   margin: 0;
 }
 .doi-box .key {
-  font-family: Impact, 'Arial Black', sans-serif;
+  font-family: 'Archivo', 'Arial Black', Impact, sans-serif;
   font-style: normal;
   color: #cf5a31;
   text-transform: uppercase;
@@ -504,7 +604,7 @@ body {
   display: inline-block;
   background: #cf5a31;
   color: #f0e6cf !important;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -516,7 +616,7 @@ body {
 }
 .doi-note {
   margin-top: 16px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
   font-size: 12px;
   line-height: 1.5;
   color: #5a503e;

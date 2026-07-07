@@ -1,6 +1,8 @@
         {% if newsletter.show_subscribe %}
         <section class="subscribe" aria-label="{{ t.subscribe.aria }}">
-          <p class="subscribe-gloss">{{ t.subscribe.gloss }}</p>
+          {% for line in t.subscribe.gloss.split('\n') if line.strip() %}
+          <p class="subscribe-gloss">{{ line.strip() }}</p>
+          {% endfor %}
           <form
             class="subscribe-form"
             action="#"
@@ -36,9 +38,6 @@
             </div>
             <p class="subscribe-success" hidden>{{ t.subscribe.success }}</p>
           </form>
-          <p class="subscribe-privacy">
-            {{ t.subscribe.privacy }}
-            <a href="{{ cookie_privacy_url | default(newsletter.privacy_url) | default('/soukromi/') }}" rel="noopener">{{ t.subscribe.privacy_link }}</a>.
-          </p>
+          <p class="subscribe-privacy">{{ t.subscribe.privacy }} <a href="{{ cookie_privacy_url | default(newsletter.privacy_url) | default('/soukromi/') }}" rel="noopener">{{ t.subscribe.privacy_link }}</a>.</p>
         </section>
         {% endif %}

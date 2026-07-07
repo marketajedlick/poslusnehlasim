@@ -1,0 +1,7 @@
+<section class="card card-yellow card-tilt-r" id="card-postreh" aria-label="Švejkův postřeh">
+  <div class="card-kicker">Švejkův postřeh</div>
+  <p class="postreh-text">{{ postreh.text | glossary }}</p>
+  {% if postreh.pointa %}
+  <p class="postreh-pointa">„{{ postreh.pointa | glossary }}“</p>
+  {% endif %}
+</section>

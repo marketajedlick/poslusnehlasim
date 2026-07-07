@@ -1,0 +1,27 @@
+<section class="card card-black card-tilt-l" id="card-plakat" aria-label="Sněmovní listy">
+  <div class="card-kicker">Sněmovní listy</div>
+  {% if content.snemovni_listy.meta %}
+  <p class="plakat-desc">{{ content.snemovni_listy.meta | glossary }}</p>
+  {% endif %}
+  {% if content.snemovni_listy.deck %}
+  <p class="plakat-desc">{{ content.snemovni_listy.deck | glossary }}</p>
+  {% endif %}
+  {% for section in content.snemovni_listy.sections %}
+  {% if section.heading %}
+  <p class="plakat-note"><strong>{{ section.heading | glossary }}</strong></p>
+  {% endif %}
+  {% for para in section.paragraphs %}
+  <p class="listy-p">{{ para | glossary }}</p>
+  {% endfor %}
+  {% if section.bullets %}
+  <ul class="listy-ul">
+    {% for bullet in section.bullets %}
+    <li>{{ bullet | glossary }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endfor %}
+  {% if content.snemovni_listy.footer %}
+  <p class="plakat-footer">{{ content.snemovni_listy.footer | glossary }}</p>
+  {% endif %}
+</section>

@@ -15,11 +15,17 @@ _SVEJK_ICON = _STATIC / "svejk-terra.png"
 OG_WIDTH = 1200
 OG_HEIGHT = 630
 
-_PAPER = "#f0e6cf"
-_INK = "#211c14"
-_INK_SOFT = "#5a503e"
-_TERRA = "#cf5a31"
-_BORDER = "#ded0ad"
+# Čtverec odpovídá hero kartě na mobilu; ruční nahrání na X vypadá lépe než 1200×630.
+# OG zůstává landscape pro twitter:card / og:image u odkazu na vydání.
+SHARE_HERO_WIDTH = 1080
+SHARE_HERO_HEIGHT = 1080
+
+_PAPER = "#f7f2f0"
+_INK = "#262626"
+_INK_SOFT = "#6b6355"
+_TERRA = "#ff4411"
+_BORDER = "#c9c2ba"
+_YELLOW = "#f4c430"
 
 
 def datum_unl_to_iso(datum_unl: str) -> str:
@@ -38,6 +44,20 @@ def og_image_href(base_path: str, datum_unl: str) -> str:
 
 def og_image_abs_url(site_url: str, base_path: str, datum_unl: str) -> str:
     return f"{site_url.rstrip('/')}{og_image_href(base_path, datum_unl)}"
+
+
+def share_hero_filename(datum_unl: str) -> str:
+    return f"{datum_unl_to_iso(datum_unl)}.png"
+
+
+def share_hero_href(base_path: str, datum_unl: str) -> str:
+    base = base_path.rstrip("/")
+    rel = f"/share/{share_hero_filename(datum_unl)}"
+    return f"{base}{rel}" if base else rel
+
+
+def share_hero_abs_url(site_url: str, base_path: str, datum_unl: str) -> str:
+    return f"{site_url.rstrip('/')}{share_hero_href(base_path, datum_unl)}"
 
 
 def edition_og_title(datum_unl: str, den: str = "") -> str:
@@ -87,14 +107,31 @@ def _font_candidates() -> tuple[tuple[str, int], ...]:
     return tuple(out)
 
 
-def _load_font(size: int, *, bold: bool = False) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
-    preferred = (
-        "DejaVuSans-Bold.ttf" if bold else "DejaVuSerif.ttf",
-        "LiberationSans-Bold.ttf" if bold else "LiberationSerif-Regular.ttf",
-        "Arial Bold.ttf" if bold else "Georgia.ttf",
-        "DejaVuSans.ttf",
-        "Arial.ttf",
-    )
+def _load_font(
+    size: int, *, bold: bool = False, italic: bool = False
+) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
+    if italic:
+        preferred = (
+            "DejaVuSerif-Italic.ttf",
+            "LiberationSerif-Italic.ttf",
+            "Georgia Italic.ttf",
+            "DejaVuSerif.ttf",
+        )
+    elif bold:
+        preferred = (
+            "DejaVuSans-Bold.ttf",
+            "LiberationSans-Bold.ttf",
+            "Arial Bold.ttf",
+            "DejaVuSans.ttf",
+        )
+    else:
+        preferred = (
+            "DejaVuSerif.ttf",
+            "LiberationSerif-Regular.ttf",
+            "Georgia.ttf",
+            "DejaVuSans.ttf",
+            "Arial.ttf",
+        )
     for root in (
         "/usr/share/fonts/truetype/dejavu",
         "/usr/share/fonts/truetype/liberation",
@@ -212,6 +249,119 @@ def render_og_image(
 
     img.save(out, format="PNG", optimize=True)
     return out
+
+
+def _fit_font_size(
+    draw: ImageDraw.ImageDraw,
+    text: str,
+    max_width: int,
+    *,
+    start: int,
+    min_size: int,
+    bold: bool = False,
+    italic: bool = False,
+) -> tuple[ImageFont.FreeTypeFont | ImageFont.ImageFont, list[str]]:
+    """ponytail: jednoduché zmenšování fontu, ne přesný line-box."""
+    size = start
+    while size >= min_size:
+        font = _load_font(size, bold=bold, italic=italic)
+        lines = _wrap_text(draw, text, font, max_width)
+        if len(lines) <= 8:
+            return font, lines
+        size -= 2
+    font = _load_font(min_size, bold=bold, italic=italic)
+    return font, _wrap_text(draw, text, font, max_width)[:8]
+
+
+def render_share_hero_image(
+    dest: Path | str,
+    *,
+    zaver_key: str = "",
+    quote_body: str,
+    sign: str = "- Váš dobrý voják Švejk -",
+) -> Path:
+    """Vykreslí 1080×1080 žlutou kartu s citací (v7 hero)."""
+    out = Path(dest)
+    out.parent.mkdir(parents=True, exist_ok=True)
+
+    img = Image.new("RGB", (SHARE_HERO_WIDTH, SHARE_HERO_HEIGHT), _YELLOW)
+    draw = ImageDraw.Draw(img)
+
+    margin = 72
+    inner = 28
+    draw.rectangle(
+        (inner, inner, SHARE_HERO_WIDTH - inner, SHARE_HERO_HEIGHT - inner),
+        outline=_BORDER,
+        width=3,
+    )
+
+    text_width = SHARE_HERO_WIDTH - margin * 2
+    key_font = _load_font(40, italic=True) if zaver_key else None
+    quote_font, quote_lines = _fit_font_size(
+        draw,
+        f"„{quote_body}“",
+        text_width,
+        start=46,
+        min_size=30,
+    )
+
+    sign_font = _load_font(24, bold=True)
+    sign_text = sign.upper()
+    sign_w = draw.textlength(sign_text, font=sign_font)
+    sign_y = SHARE_HERO_HEIGHT - margin - 36
+
+    key_h = 0
+    if key_font and zaver_key:
+        key_h = 52
+    quote_h = len(quote_lines) * 58
+    block_h = key_h + quote_h
+    y = (sign_y - margin - block_h) // 2
+    if y < margin:
+        y = margin
+
+    if key_font and zaver_key:
+        draw.text((margin, y), zaver_key, fill=_INK, font=key_font)
+        y += key_h
+
+    line_h = max(44, int(quote_font.size * 1.35) if hasattr(quote_font, "size") else 58)
+    for line in quote_lines:
+        draw.text((margin, y), line, fill=_INK, font=quote_font)
+        y += line_h
+
+    draw.text(
+        ((SHARE_HERO_WIDTH - sign_w) / 2, sign_y),
+        sign_text,
+        fill=_INK,
+        font=sign_font,
+    )
+
+    img.save(out, format="PNG", optimize=True)
+    return out
+
+
+def render_edition_share_hero_image(
+    dest_dir: Path | str,
+    *,
+    datum_unl: str,
+    zaver_key: str = "",
+    zaver_body: str = "",
+    zaver: str = "",
+    sign: str = "- Váš dobrý voják Švejk -",
+) -> Path | None:
+    body = (zaver_body or zaver or "").strip()
+    if not body:
+        return None
+    key = (zaver_key or "").strip()
+    if not key and body.lower().startswith("poslušně hlásím"):
+        from svejk.build.day_content import split_zaver
+
+        key, body = split_zaver(body if not zaver_body else f"{zaver_key} {zaver_body}".strip())
+    return render_share_hero_image(
+        Path(dest_dir) / share_hero_filename(datum_unl),
+        zaver_key=key,
+        quote_body=body,
+        sign=sign,
+    )
 
 
 def render_edition_og_image(

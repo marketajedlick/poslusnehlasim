@@ -222,10 +222,17 @@
       "steno_count": 2064,
       "last_steno_poradi": 2064,
       "last_steno_datum": "2026-07-03",
+<<<<<<< HEAD
       "synced_at": "2026-07-07T08:28:14.828892+00:00"
     }
   },
   "updated_at": "2026-07-07T08:28:14.828918+00:00",
+=======
+      "synced_at": "2026-07-06T12:44:42.700646+00:00"
+    }
+  },
+  "updated_at": "2026-07-06T12:44:42.700705+00:00",
+>>>>>>> e943e18 (Updating new design)
   "last_updated_schuze": [
     1,
     2,

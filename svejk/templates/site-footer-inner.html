@@ -1,0 +1,7 @@
+<p class="site-footer-stats">{{ footer_stats }}</p>
+<nav class="site-footer-links" aria-label="{{ t.footer.aria_legal }}">
+  <a href="{{ terms_href }}"{% if footer_active_page == 'terms' %} class="is-active" aria-current="page"{% endif %}>{{ t.footer.terms }}</a>
+  <a href="{{ privacy_href }}"{% if footer_active_page == 'privacy' %} class="is-active" aria-current="page"{% endif %}>{{ t.footer.privacy }}</a>
+  <a href="{{ about_href }}"{% if footer_active_page == 'about' %} class="is-active" aria-current="page"{% endif %}>{{ t.footer.about }}</a>
+  <a href="{{ support_href }}"{% if footer_active_page == 'support' %} class="is-active" aria-current="page"{% endif %}>{{ t.footer.support }}</a>
+</nav>

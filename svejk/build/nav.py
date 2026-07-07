@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import calendar
 import os
 from dataclasses import dataclass
 from datetime import datetime
@@ -22,6 +23,16 @@ class EditionLink:
     href: str
     label: str
     title: str
+    short_label: str = ""
+
+
+@dataclass(frozen=True)
+class SessionCalendar:
+    month_label: str
+    year: int
+    weeks: tuple[tuple[dict[str, object], ...], ...]
+    prev_month: EditionLink | None = None
+    next_month: EditionLink | None = None
 
 
 @dataclass(frozen=True)
@@ -91,6 +102,11 @@ def list_obdobi_editions(obdobi: int) -> tuple[Edition, ...]:
 
 def _editions_on_day(editions: tuple[Edition, ...], datum_unl: str) -> tuple[Edition, ...]:
     return tuple(e for e in editions if e.datum_unl == datum_unl)
+
+
+def short_pager_label(datum_unl: str) -> str:
+    d = datetime.strptime(datum_unl, "%d.%m.%Y")
+    return f"{d.day}. {d.month}."
 
 
 def edition_web_href(obdobi: int, schuze: int, datum_unl: str) -> str:
@@ -292,6 +308,120 @@ def _make_link(
         href=href,
         label=_link_label(edition, editions),
         title=title,
+        short_label=short_pager_label(edition.datum_unl),
+    )
+
+
+def _shift_month(year: int, month: int, delta: int) -> tuple[int, int]:
+    month += delta
+    if month < 1:
+        return year - 1, 12
+    if month > 12:
+        return year + 1, 1
+    return year, month
+
+
+def _editions_in_month(
+    editions: tuple[Edition, ...], year: int, month: int
+) -> tuple[Edition, ...]:
+    out: list[Edition] = []
+    for edition in editions:
+        when = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
+        if when.year == year and when.month == month:
+            out.append(edition)
+    return tuple(out)
+
+
+def _calendar_month_link(
+    edition: Edition,
+    *,
+    year: int,
+    month: int,
+    link_mode: str,
+    base_path: str,
+    arrow: str,
+) -> EditionLink:
+    if link_mode == "pages":
+        href = edition_pages_href(
+            edition.obdobi, edition.schuze, edition.datum_unl, base_path
+        )
+    else:
+        href = edition_web_href(edition.obdobi, edition.schuze, edition.datum_unl)
+    label = month_label(month, year)
+    return EditionLink(href=href, label=label, title=label, short_label=arrow)
+
+
+def build_session_calendar(
+    obdobi: int,
+    datum_unl: str,
+    *,
+    base_path: str = "",
+    link_mode: str = "pages",
+) -> SessionCalendar:
+    """Mini kalendář zasedání pro levý rail (Po–Ne)."""
+    current = datetime.strptime(datum_unl, "%d.%m.%Y")
+    year, month = current.year, current.month
+    editions = list_site_editions(obdobi)
+    by_day: dict[int, Edition] = {}
+    for edition in editions:
+        when = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
+        if when.year == year and when.month == month:
+            by_day[when.day] = edition
+
+    weeks: list[tuple[dict[str, object], ...]] = []
+    for week in calendar.monthcalendar(year, month):
+        row: list[dict[str, object]] = []
+        for day in week:
+            if day == 0:
+                row.append({"empty": True})
+            elif day == current.day:
+                row.append({"n": day, "today": True})
+            elif day in by_day:
+                edition = by_day[day]
+                if link_mode == "pages":
+                    href = edition_pages_href(
+                        edition.obdobi, edition.schuze, edition.datum_unl, base_path
+                    )
+                else:
+                    href = edition_web_href(
+                        edition.obdobi, edition.schuze, edition.datum_unl
+                    )
+                row.append({"n": day, "link": href})
+            else:
+                row.append({"n": day, "muted": True})
+        weeks.append(tuple(row))
+
+    prev_month = next_month = None
+    prev_year, prev_m = _shift_month(year, month, -1)
+    prev_editions = _editions_in_month(editions, prev_year, prev_m)
+    if prev_editions:
+        prev_month = _calendar_month_link(
+            prev_editions[-1],
+            year=prev_year,
+            month=prev_m,
+            link_mode=link_mode,
+            base_path=base_path,
+            arrow="←",
+        )
+    next_year, next_m = _shift_month(year, month, 1)
+    next_editions = _editions_in_month(editions, next_year, next_m)
+    if next_editions:
+        next_month = _calendar_month_link(
+            next_editions[0],
+            year=next_year,
+            month=next_m,
+            link_mode=link_mode,
+            base_path=base_path,
+            arrow="→",
+        )
+
+    month_name = month_label(month, year).split()[0]
+    return SessionCalendar(
+        month_label=month_name,
+        year=year,
+        weeks=tuple(weeks),
+        prev_month=prev_month,
+        next_month=next_month,
     )
 
 

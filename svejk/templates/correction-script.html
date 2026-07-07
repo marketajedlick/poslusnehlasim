@@ -83,7 +83,7 @@
     triggers.forEach(function (btn) {
       var nav = btn.closest(".item-actions");
       var a = document.createElement("a");
-      a.className = "correction-mailto";
+      a.className = "correction-trigger correction-mailto";
       a.href = mailtoFromTrigger(btn);
       a.textContent = msgs().mailtoTrigger;
       btn.replaceWith(a);
@@ -369,10 +369,11 @@
     if (!node) return;
     var item = (node.nodeType === 1 ? node : node.parentElement);
     if (!item || !item.closest) return;
-    if (!item.closest(".item")) return;
+    if (!item.closest(".article, .item")) return;
     pendingSelection = text.slice(0, 800);
   });
 
   initCorrectionMode();
+  window.__phInitCorrections = initCorrectionMode;
 })();
 </script>

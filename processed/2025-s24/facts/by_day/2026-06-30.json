@@ -28,5 +28,67 @@
     "* Decroix (ODS): z panelů k lidským právům odešlo 53 expertů",
     "* Hřib (Piráti): banda fracků u summitu NATO, sedm miliard pro Agrofert",
     "* rodičovský příspěvek zvýšen na 400 000 a 800 000 korun, hlasování 129:0"
-  ]
+  ],
+  "jazykolam_kandidati": [
+    {
+      "priorita": 1,
+      "text": "Pomiňme to, že Ústavní soud vydal pouze předběžné opatření a pomiňme to, že Ústavní soud neodsuzuje, Ústavní soud pouze vykládá, zpřesňuje a jasně říká, jaký je výklad ústavy za předpokladu, že se na Ústavní soud někdo obrátí.",
+      "autor": "Petr Hladík",
+      "steno_id": "2025_24_00913",
+      "poradi": 913,
+      "psp_stranka": "s024189.htm",
+      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024189.htm",
+      "vzory": [
+        "predpony: ústx5",
+        "opakovani: ústavníx4, soudx4",
+        "ustavni soudx4"
+      ]
+    },
+    {
+      "priorita": 2,
+      "text": "S ohledem na aktuální vývoj situace si ještě dovoluji tedy předložit pozměňovací návrh právě k tomu předloženému a představenému pozměňovacímu návrhu 1487, který se týká úpravy normativních nákladů na bydlení podle zákona samozřejmě o superdávce.",
+      "autor": "Aleš Juchelka",
+      "steno_id": "2025_24_00982",
+      "poradi": 982,
+      "psp_stranka": "s024209.htm",
+      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024209.htm",
+      "vzory": [
+        "predpony: předx3, přx3",
+        "pozmenx2"
+      ]
+    },
+    {
+      "priorita": 3,
+      "text": "Já jsem na Strážnici jako ministr byl několikrát, vždycky jsem si sedl do publika, debatoval jsem s lidmi, nasával jsem atmosféru a dal jsem si také sklenku dobrého moravského vína.",
+      "autor": "Petr Hladík",
+      "steno_id": "2025_24_00913",
+      "poradi": 913,
+      "psp_stranka": "s024189.htm",
+      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024189.htm",
+      "vzory": [
+        "opakovani: jsemx5"
+      ]
+    },
+    {
+      "priorita": 4,
+      "text": "Kolik nás tyto změny a tyto dopady změn klimatu budou stát, kolik to bude stát naše zemědělce, naši ekonomiku, kolik bude stát zhoršení podmínek pro zdraví lidí?",
+      "autor": "Helena Langšádlová",
+      "steno_id": "2025_24_00939",
+      "poradi": 939,
+      "psp_stranka": "s024200.htm",
+      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024200.htm",
+      "vzory": [
+        "predpony: kox3",
+        "opakovani: kolikx3, státx3"
+      ]
+    }
+  ],
+  "jazykolam": {
+    "text": "Pomiňme to, že Ústavní soud vydal pouze předběžné opatření a pomiňme to, že Ústavní soud neodsuzuje, Ústavní soud pouze vykládá, zpřesňuje a jasně říká, jaký je výklad ústavy za předpokladu, že se na Ústavní soud někdo obrátí.",
+    "autor": "Petr Hladík",
+    "steno_id": "2025_24_00913",
+    "poradi": 913,
+    "psp_stranka": "s024189.htm",
+    "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024189.htm"
+  }
 }

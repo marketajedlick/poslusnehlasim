@@ -9,6 +9,20 @@
   ],
   "fakty": [
     {
+      "text": "Zákon o obalech, sněmovní tisk 193.",
+      "source": "steno",
+      "steno_id": "2025_24_01478",
+      "citace": "bod 90, sněmovní tisk 193, novela o obalech",
+      "link_phrase": "Zákon o obalech"
+    },
+    {
+      "text": "Sněmovní tisk 193 o obalech.",
+      "source": "steno",
+      "steno_id": "2025_24_01478",
+      "citace": "sněmovní tisk 193, novela o obalech",
+      "link_phrase": "sněmovní tisk sto devadesát tři"
+    },
+    {
       "text": "Peštová navrhla zákon místo ministerstva životního prostředí.",
       "source": "steno",
       "steno_id": "2025_24_01493",
@@ -37,25 +51,84 @@
       "link_phrase": "omylem odměna TAČR"
     },
     {
-      "text": "Šmída varoval před vznikem super EKO-KOMu a monopolu.",
+      "text": "Šmída cituje vznik super EKO-KOMu.",
       "source": "steno",
       "steno_id": "2025_24_01523",
-      "citace": "pracovně říkám, vznik super EKO-KOMu, protože v podstatě legalizuje monopolní postavení této jedné organizace na trhu",
+      "citace": "pracovně říkám, vznik super EKO-KOMu",
       "link_phrase": "vznik super EKO-KOMu"
     },
     {
-      "text": "Šmída varoval před super EKO-KOMem v pointě.",
+      "text": "Šmída: Ministerstvo odpadového hospodářství mimo stát.",
+      "source": "steno",
+      "steno_id": "2025_24_01527",
+      "citace": "Ministerstvo odpadového hospodářství, které ale není pod státem",
+      "link_phrase": "Ministerstvo odpadového hospodářství, které ale není pod státem"
+    },
+    {
+      "text": "Šmída pracovně varuje před super EKO-KOMem.",
       "source": "steno",
       "steno_id": "2025_24_01523",
       "citace": "pracovně říkám, vznik super EKO-KOMu, protože v podstatě legalizuje monopolní postavení této jedné organizace na trhu",
-      "link_phrase": "super EKO-KOMem a monopolem"
+      "link_phrase": "pracovně varuje před vznikem super EKO-KOMu"
+    },
+    {
+      "text": "Šmída: návrh legalizuje monopolní postavení EKO-KOMu.",
+      "source": "steno",
+      "steno_id": "2025_24_01523",
+      "citace": "protože v podstatě legalizuje monopolní postavení této jedné organizace na trhu",
+      "link_phrase": "legalizuje monopolní postavení"
+    },
+    {
+      "text": "Šmída: super EKO-KOM zastřeší všechny EPR systémy.",
+      "source": "steno",
+      "steno_id": "2025_24_01523",
+      "citace": "zastřeší všechny ty EPR systémy",
+      "link_phrase": "zastřeší všechny EPR systémy"
+    },
+    {
+      "text": "Šmída se bojí Ministerstva odpadového hospodářství mimo stát.",
+      "source": "steno",
+      "steno_id": "2025_24_01527",
+      "citace": "jestli bychom si takovým super EKO-KOMem nezřídili vlastně takové Ministerstvo odpadového hospodářství, které ale není pod státem, nýbrž má standardní akcionářskou strukturu",
+      "link_phrase": "Obává se Ministerstva odpadového hospodářství mimo stát"
+    },
+    {
+      "text": "Šmída: poslanecký návrh bez analýzy dopadů.",
+      "source": "steno",
+      "steno_id": "2025_24_01527",
+      "citace": "tento návrh přichází jako poslanecký, nikoliv jako vládní. Čili, neprošel standardním připomínkovým řízením, není k němu zpracována RIA, čili analýza dopadů.",
+      "link_phrase": "poslanecký bez analýzy dopadů"
+    },
+    {
+      "text": "U Šmídy ve stenozáznamu: silný hluk v sále.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_01525",
+      "citace": "(Silný hluk v sále.)",
+      "link_phrase": "třikrát objeví silný hluk v sále"
+    },
+    {
+      "text": "U Šmídy ve stenozáznamu: stále silný hluk v sále.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_01527",
+      "citace": "(Stále silný hluk v sále.)",
+      "link_phrase": "stále silný hluk v sále"
+    },
+    {
+      "text": "U Šmídy ve stenozáznamu: silný hluk v sále neustává.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_01529",
+      "citace": "(Silný hluk v sále neustává.)",
+      "link_phrase": "silný hluk v sále neustává"
     },
     {
       "text": "Šmída mluvil do neustávajícího hluku v sále.",
       "source": "steno",
       "kind": "scene",
-      "steno_id": "2025_24_01526",
-      "citace": "Prosím, opět se zvyšuje hluk v sále. Nezlobte se, ale pana poslance to ruší, tak ať má prostor na vystoupení.",
+      "steno_id": "2025_24_01529",
+      "citace": "(Silný hluk v sále neustává.)",
       "link_phrase": "neustávajícího hluku v sále"
     },
     {
@@ -64,6 +137,13 @@
       "steno_id": "2025_24_01511",
       "citace": "Když vloni na jaře ve Středočeském kraji hořela skládka u Rynholce na Rakovnicku, šlo převážně o skládkované plasty.",
       "link_phrase": "hořící plasty u Rynholce"
+    },
+    {
+      "text": "První kolo: 134 proti 1.",
+      "source": "steno",
+      "steno_id": "2025_24_01538",
+      "citace": "Hlasování číslo 206, přihlášeno 136 poslanců, pro 134, proti 1. Návrh byl přijat.",
+      "link_phrase": "134 proti 1"
     },
     {
       "text": "Návrh přežil první kolo.",
@@ -78,6 +158,20 @@
       "steno_id": "2025_24_01515",
       "citace": "považuju za fatální, že tady není ministr.",
       "link_phrase": "dvě tisíce tři sta čtyřicet čtyři slov"
+    },
+    {
+      "text": "Citace: Ministerstvo odpadového hospodářství mimo stát.",
+      "source": "steno",
+      "steno_id": "2025_24_01527",
+      "citace": "jestli bychom si takovým super EKO-KOMem nezřídili vlastně takové Ministerstvo odpadového hospodářství, které ale není pod státem, nýbrž má standardní akcionářskou strukturu",
+      "link_phrase": "Ministerstvo odpadového hospodářství, které ale není pod státem, nýbrž"
+    },
+    {
+      "text": "Zaver: obalový zákon přežil první kolo.",
+      "source": "steno",
+      "steno_id": "2025_24_01538",
+      "citace": "Hlasování číslo 206, přihlášeno 136 poslanců, pro 134, proti 1. Návrh byl přijat.",
+      "link_phrase": "přežil první kolo"
     },
     {
       "text": "Dnesni ucet: super EKO-KOM.",
@@ -96,11 +190,11 @@
   ],
   "publikovat": true,
   "priorita": 4,
-  "nadpis": "Super EKO-KOM bez ministra",
-  "lead": "Sněmovna ve čtvrtek dokončila první kolo zákona o obalech, který navrhla Peštová (ANO) místo ministerstva životního prostředí. Bendl (ODS) mluvil 2 344 slov a řekl, že absence ministra je fatální a téměř pohrdání Sněmovnou. Ve stenozáznamu je u debaty v poli tema omylem odměna TAČR.",
-  "pointa": "Šmída (Motoristé) varoval před super EKO-KOMem a monopolem, mluvil do neustávajícího hluku v sále. Svárovská (Piráti) připomněla hořící plasty u Rynholce. Sedm hlasování, návrh přežil první kolo.",
+  "nadpis": "Super EKO-KOM do hluku",
+  "lead": "Zákon o obalech, sněmovní tisk 193. Opoziční poslanec Martin Šmída (Motoristé) pracovně říká „vznik super EKO-KOMu“, varuje před monopolem a zastřešením všech EPR systémů. Obává se, že z toho vznikne „Ministerstvo odpadového hospodářství, které ale není pod státem“. Návrh je poslanecký bez analýzy dopadů a mluví do neustávajícího hluku v sále. U téhož řečníka se ve stenozáznamu třikrát objeví silný hluk v sále, stále silný hluk v sále a silný hluk v sále neustává.",
+  "pointa": "Peštová (ANO) navrhla zákon místo ministerstva životního prostředí, Bendl (ODS) mluvil 2 344 slov, ministr chyběl, absence je fatální a téměř pohrdání Sněmovnou. Ve stenozáznamu je u debaty omylem tema odměna TAČR. Svárovská (Piráti) připomněla hořící plasty u Rynholce. První kolo 134 proti 1.",
   "mean": "Zákon o obalech určuje, kdo v Česku kontroluje třídění, sběr a recyklaci obalového odpadu a kam tečou peníze z poplatků.",
-  "citace_text": "pracovně říkám, vznik super EKO-KOMu, protože v podstatě legalizuje monopolní postavení této jedné organizace na trhu",
+  "citace_text": "jestli bychom si takovým super EKO-KOMem nezřídili vlastně takové Ministerstvo odpadového hospodářství, které ale není pod státem, nýbrž má standardní akcionářskou strukturu",
   "citace_autor": "Martin Šmída (Motoristé)",
   "pocet_hlasovani": 7,
   "proslo": true,

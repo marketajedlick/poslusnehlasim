@@ -4,6 +4,7 @@
   "topic_slugs": [
     "interpelace-mrazova-bydleni-02-07",
     "interpelace-babis-odpovedi-02-07",
+    "interpelace-babis-ipo-letiste-02-07",
     "novela-z-o-obalech",
     "interpelace-kovacik-povodi-02-07",
     "novela-z-o-podnikani-na-kapitalovem-trhu-eu"
@@ -17,9 +18,9 @@
     "spor_o_porad": true,
     "dlouha_debata": true
   },
-  "dnesni_ucet": "Graf bytů, super EKO-KOM,\nKováčik u Povodí Ohře.",
+  "dnesni_ucet": "Graf bytů, IPO letiště,\nsuper EKO-KOM, Kováčik u Povodí Ohře.",
   "steno_zdroje": true,
-  "zaver": "že čtvrtek ve Sněmovně začal písemnými interpelacemi k prázdným lavicím a bytové krizi, Babiš odpoledne ukázal graf bytů a vymyslel titulek o IPO letiště, obalový zákon přežel první kolo bez ministra životního prostředí mezi hlukem a super EKO-KOMem a u Povodí Ohře se řešila trafika pro bývalého předsedu KSČM.",
+  "zaver": "že čtvrtek ve Sněmovně začal písemnými interpelacemi k prázdným lavicím a bytové krizi, Babiš odpoledne ukázal graf bytů a vymyslel titulek o IPO letiště, obalový zákon přežil první kolo mezi hlukem a super EKO-KOMem bez ministra, u Povodí Ohře padla trafika pro bývalého předsedu KSČM a novela o burze prošla sto šest proti nula, druhé kolo už ne.",
   "vysledek": [
     "* písemné interpelace: Lipavský (Piráti) 2 888 slov, Stojanová (Piráti) 2 616, Bartoš (Piráti) 2 549",
     "* Richterová (Piráti): prázdné lavice, návrh počkat na Babiše padl 45 proti 44",
@@ -28,5 +29,66 @@
     "* Šmída (Motoristé): super EKO-KOM, silný hluk v sále",
     "* Kováčik (KSČM) do Povodí Ohře, ministr citoval zemědělský výbor",
     "* novela o kapitálovém trhu: první kolo 106 proti 0, druhé kolo neprošlo"
-  ]
+  ],
+  "jazykolam_kandidati": [
+    {
+      "priorita": 1,
+      "text": "Rozumím argumentu obcí, obce nechtějí roztříštěný systém, nechtějí několik různých operátorů, několik různých smluv, několik různých metodik a několik různých míst, kam budou posílat data.",
+      "autor": "Gabriela Svárovská",
+      "steno_id": "2025_24_01511",
+      "poradi": 1511,
+      "psp_stranka": "s024320.htm",
+      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024320.htm",
+      "vzory": [
+        "opakovani: několikx4, různýchx4",
+        "nekolik ruznychx4"
+      ]
+    },
+    {
+      "priorita": 2,
+      "text": "Ta vznikla někdy tuším v šedesátých letech, ale za tu dobu se etablovala také jako instituce, která formuje, formuje nás jako lidi, formuje nás jako Čechy.",
+      "autor": "Jan Lipavský",
+      "steno_id": "2025_24_01473",
+      "poradi": 1473,
+      "psp_stranka": "s024312.htm",
+      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024312.htm",
+      "vzory": [
+        "predpony: formx3",
+        "opakovani: formujex3",
+        "formujex3"
+      ]
+    },
+    {
+      "priorita": 3,
+      "text": "Ale sdělil také, že monopolní nebo výlučný systém je slučitelný s evropským právem jen tehdy, pokud skutečně slouží veřejnému zájmu, pokud je neziskový, pokud je nastaven podle jasných environmentálních cílů a pokud podléhá přísné veřejné kontrole.",
+      "autor": "Gabriela Svárovská",
+      "steno_id": "2025_24_01511",
+      "poradi": 1511,
+      "psp_stranka": "s024320.htm",
+      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024320.htm",
+      "vzory": [
+        "opakovani: pokudx4"
+      ]
+    },
+    {
+      "priorita": 4,
+      "text": "Potřebujeme veřejnou metodiku, nezávislý audit, kontrolu surových dat a jasné rozlišení mezi tím, co bylo vytříděno, co bylo dotříděno, co bylo energeticky využito a co bylo skutečně materiálově recyklováno.",
+      "autor": "Gabriela Svárovská",
+      "steno_id": "2025_24_01511",
+      "poradi": 1511,
+      "psp_stranka": "s024320.htm",
+      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024320.htm",
+      "vzory": [
+        "opakovani: bylox4"
+      ]
+    }
+  ],
+  "jazykolam": {
+    "text": "Rozumím argumentu obcí, obce nechtějí roztříštěný systém, nechtějí několik různých operátorů, několik různých smluv, několik různých metodik a několik různých míst, kam budou posílat data.",
+    "autor": "Gabriela Svárovská",
+    "steno_id": "2025_24_01511",
+    "poradi": 1511,
+    "psp_stranka": "s024320.htm",
+    "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024320.htm"
+  }
 }

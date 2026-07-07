@@ -1,0 +1,23 @@
+<div class="masthead{% if rail %} edition-rail-mast{% endif %}">
+  <img class="masthead-fav" src="{{ ph_fav_href }}" alt="Švejk" width="96" height="96">
+  <div class="masthead-eyebrow">{{ t.edition.eyebrow }}</div>
+  <h1 class="masthead-title">Poslušně<br>hlásím!</h1>
+  {% if not rail %}
+  <div class="pager pager-mobile">
+    {% if nav.prev %}
+    <a class="pager-tag" href="{{ nav.prev.href }}" title="{{ nav.prev.title }}">← {{ nav.prev.short_label or nav.prev.label }}</a>
+    {% else %}
+    <span class="pager-tag disabled">←</span>
+    {% endif %}
+    <span class="pager-now">V&nbsp;Praze, dne {{ datum_design }}</span>
+    {% if nav.next %}
+    <a class="pager-tag" href="{{ nav.next.href }}" title="{{ nav.next.title }}">{{ nav.next.short_label or nav.next.label }} →</a>
+    {% else %}
+    <span class="pager-tag disabled">→</span>
+    {% endif %}
+  </div>
+  <div class="edition-masthead-nav">
+    {% include "site-nav.html" %}
+  </div>
+  {% endif %}
+</div>

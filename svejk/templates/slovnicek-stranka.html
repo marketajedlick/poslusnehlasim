@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="slovnicek-page">
-<div class="slovnicek-wrap">
+<div class="slovnicek-stage">
   <header class="slovnicek-head">
     <h1 class="slovnicek-title">{{ t.glossary_page.heading }}</h1>
     <p class="slovnicek-gloss">{{ t.glossary_page.gloss }}</p>
@@ -32,16 +32,25 @@
     </nav>
   </header>
 
-  <dl class="slovnicek-list slovnicek-list--page">
-    {% for entry in slovnicek %}
-    <div class="slovnicek-entry" id="{{ entry.anchor }}">
-      <dt>{{ entry.question }}</dt>
-      <dd>{{ entry.answer }}</dd>
+
+  <section class="citanka-slovnik" aria-label="{{ t.glossary_page.heading }}">
+    <div class="citanka-terms">
+      {% for entry in slovnicek %}
+      <button
+        type="button"
+        class="term-term"
+        id="{{ entry.anchor }}"
+        data-term="{{ entry.term }}"
+        data-def="{{ entry.answer }}"
+        title="{{ entry.answer }}"
+      >{{ entry.term }}</button>
+      {% endfor %}
     </div>
-    {% endfor %}
-  </dl>
+  </section>
 </div>
 {% include "site-footer.html" %}
+{% include "term-sheet.html" %}
+{% include "slovnicek-scripts.html" %}
 {% include "cookie-consent.html" %}
 </body>
 </html>

@@ -42,6 +42,20 @@
       "steno_id": "2025_24_01553",
       "citace": "Návrh nebyl přijat.",
       "link_phrase": "vrací do výborů"
+    },
+    {
+      "text": "Zaver: sto šest proti nula.",
+      "source": "steno",
+      "steno_id": "2025_24_01551",
+      "citace": "Hlasování číslo 210, přihlášeno 123 poslanců, pro 106, proti nikdo. Návrh byl přijat.",
+      "link_phrase": "sto šest proti nula"
+    },
+    {
+      "text": "Zaver: druhé kolo už ne.",
+      "source": "steno",
+      "steno_id": "2025_24_01553",
+      "citace": "Hlasování číslo 211, přihlášeno 126, pro 54, proti 7. Návrh nebyl přijat.",
+      "link_phrase": "druhé kolo už ne"
     }
   ],
   "publikovat": true,

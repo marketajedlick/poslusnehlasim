@@ -12,6 +12,8 @@
 
 * { box-sizing: border-box; }
 
+html { zoom: 0.8; }
+
 body {
   margin: 0;
   font-family: "Segoe UI", system-ui, sans-serif;

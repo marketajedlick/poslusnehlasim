@@ -1,0 +1,32 @@
+<footer class="edition-footer" id="korektura">
+  {% if newsletter.show_subscribe %}
+  {% for line in t.subscribe.gloss.split('\n') if line.strip() %}
+  <p class="edition-footer-label">{{ line.strip() }}</p>
+  {% endfor %}
+  <form
+    class="subscribe-form"
+    action="#"
+    method="post"
+    novalidate
+    data-msg-required="{{ t.subscribe.error_required }}"
+    data-msg-invalid="{{ t.subscribe.error_invalid }}"
+    data-msg-rate-limit="{{ t.subscribe.error_rate_limit }}"
+    data-msg-send="{{ t.subscribe.error_send }}"
+    data-msg-setup="{{ t.subscribe.error_setup }}"
+    data-msg-generic="{{ t.subscribe.error_generic }}"
+    data-label-submit="{{ t.subscribe.submit }}"
+    data-label-submitting="{{ t.subscribe.submitting }}"
+    {% if newsletter.subscribe_api_url %}data-subscribe-api="{{ newsletter.subscribe_api_url }}"{% endif %}
+    {% if newsletter.form_action %}data-form-action="{{ newsletter.form_action }}"{% endif %}
+  >
+    <input type="text" name="_hp" tabindex="-1" autocomplete="new-password" class="subscribe-hp" aria-hidden="true">
+    <div class="subscribe-row">
+      <input class="subscribe-input" type="email" name="email" required autocomplete="email" aria-label="{{ t.subscribe.email_aria }}" aria-describedby="subscribe-error" placeholder="{{ t.subscribe.placeholder }}">
+      <button class="subscribe-btn" type="submit">{{ t.subscribe.submit }}</button>
+    </div>
+    <p class="subscribe-error" id="subscribe-error" hidden role="alert"></p>
+    <p class="subscribe-success" hidden>{{ t.subscribe.success }}</p>
+  </form>
+  <p class="subscribe-privacy">{{ t.subscribe.privacy }} <a href="{{ cookie_privacy_url | default(newsletter.privacy_url) | default('/soukromi/') }}" rel="noopener">{{ t.subscribe.privacy_link }}</a>.</p>
+  {% endif %}
+</footer>

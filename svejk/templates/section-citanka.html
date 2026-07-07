@@ -1,0 +1,32 @@
+{% if jazykolam or slovnicek_dne %}
+<div class="section-rule" aria-hidden="true"><span>Švejkova čítanka</span></div>
+
+{% if jazykolam %}
+<section class="card card-white card-tilt-l tape-card" id="jazykolam-dne" aria-label="{{ t.edition.jazykolam_kicker }}">
+  <div class="citanka-kicker">{{ t.edition.jazykolam_kicker }}</div>
+  <p class="jazykolam-quote">„{% if steno_page_href and jazykolam.steno_anchor %}<a class="steno-link" href="{{ steno_page_href }}#{{ jazykolam.steno_anchor }}">{{ jazykolam.text }}</a>{% elif jazykolam.href %}<a class="steno-link" href="{{ jazykolam.href }}" target="_blank" rel="noopener noreferrer">{{ jazykolam.text }}</a>{% else %}{{ jazykolam.text }}{% endif %}”</p>
+  <div class="jazykolam-foot">
+    {% if jazykolam.autor %}
+    <p class="jazykolam-by">{{ jazykolam.autor }}{% if steno_page_href and jazykolam.steno_anchor and jazykolam.href %} <a class="jazykolam-psp-link" href="{{ jazykolam.href }}" target="_blank" rel="noopener noreferrer">↗ psp.cz</a>{% endif %}</p>
+    {% endif %}
+    <div class="card-share">
+      {% set jazykolam_share_text = ('„' ~ jazykolam.text ~ '"\n\n' ~ (jazykolam.autor ~ '\n\n' if jazykolam.autor else '') ~ share_page_url) %}
+      <button type="button" class="share-btn" data-share-card="Jazykolam dne" data-share-id="jazykolam-dne" data-share-text="{{ jazykolam_share_text | replace('\n', '\\n') }}" title="Poslat hlášení" aria-label="Sdílet jazykolam">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.7" x2="15.4" y2="6.3"/><line x1="8.6" y1="13.3" x2="15.4" y2="17.7"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if slovnicek_dne %}
+<section class="citanka-slovnik" aria-label="Slovníček dne">
+  <div class="citanka-kicker">Slovníček dne</div>
+  <div class="citanka-terms">
+    {% for label, tip in slovnicek_dne %}
+    <button type="button" class="term-term" data-term="{{ label }}" data-def="{{ tip }}" title="{{ tip }}">{{ label }}</button>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endif %}

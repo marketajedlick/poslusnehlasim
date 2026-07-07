@@ -42,7 +42,7 @@
     "submit": "Poslušně odebírat",
     "submitting": "Odesílám…",
     "success": "Poslušně hlásím: zkontroluj e-mail a potvrď odběr.",
-    "privacy": "Odběrem souhlasíš se zpracováním e-mailové adresy za účelem zasílání novinek.",
+    "privacy": "Odběrem souhlasíš se zpracováním e-mailové adresy za\núčelem zasílání novinek.",
     "privacy_link": "Více o ochraně soukromí",
     "error_required": "Zadej e-mail.",
     "error_invalid": "Tohle nevypadá jako e-mail.",
@@ -60,6 +60,8 @@
     "mean_label": "Co to znamená pro vás:",
     "kuriozita_aria": "Tabulky hlasování o vyznamenání",
     "sign": "- Váš dobrý voják Švejk -",
+    "jazykolam_kicker": "Jazykolam dne · přečti nahlas",
+    "citace_aria": "Citace z jednání",
     "correction_trigger": "Něco nesedí?",
     "correction_aria": "Navrhnout korekturu k článku"
   },

@@ -1,0 +1,39 @@
+<script>
+(function(){
+  var desktop = window.matchMedia('(min-width: 768px)');
+  var termRoot = document.getElementById('term-sheet-root');
+  var termOverlay = document.getElementById('term-sheet-overlay');
+  var termPanel = document.getElementById('term-sheet-panel');
+  var termLabel = document.getElementById('term-sheet-label');
+  var termDef = document.getElementById('term-sheet-def');
+  var termClose = document.getElementById('term-sheet-close');
+
+  function closeSheet(){
+    if (termRoot) termRoot.hidden = true;
+  }
+
+  function openTerm(btn){
+    if (!termRoot || !termLabel || !termDef) return;
+    termLabel.textContent = btn.getAttribute('data-term') || '';
+    termDef.textContent = btn.getAttribute('data-def') || '';
+    termRoot.hidden = false;
+    if (desktop.matches && termPanel) termPanel.classList.add('sheet-popover');
+    else if (termPanel) termPanel.classList.remove('sheet-popover');
+    termClose?.focus();
+  }
+
+  function bindTerms(){
+    document.querySelectorAll('.term-term').forEach(function(btn){
+      btn.onclick = function(e){ e.preventDefault(); openTerm(btn); };
+    });
+  }
+
+  termOverlay?.addEventListener('click', closeSheet);
+  termClose?.addEventListener('click', closeSheet);
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeSheet();
+  });
+
+  bindTerms();
+})();
+</script>

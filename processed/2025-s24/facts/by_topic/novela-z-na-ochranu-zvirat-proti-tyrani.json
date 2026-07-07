@@ -20,35 +20,28 @@
       "source": "steno",
       "steno_id": "2025_24_01087",
       "citace": "Tak já chci upozornit, že takovýhle paskvil fakt přijmout nemůžeme.",
-      "link_phrase": "takovýhle paskvil"
+      "link_phrase": "návrh označil za paskvil"
     },
     {
       "text": "Hladík: kočky jsou zásadním predátorem ptactva.",
       "source": "steno",
       "steno_id": "2025_24_01087",
-      "citace": "Jestli je někdo obrovským obrovským problémem pro naši biologickou rozmanitost a především pro ptáky, tak jsou to kočky.",
+      "citace": "Jestli je někdo obrovským problémem pro naši biologickou rozmanitost a především pro ptáky, tak jsou to kočky.",
       "link_phrase": "kočky jsou pro ptactvo větší predátor než týrání"
-    },
-    {
-      "text": "Patková: popřeju rovnou krásné dobré ráno.",
-      "source": "steno",
-      "steno_id": "2025_24_01089",
-      "citace": "A já vám popřeju rovnou krásné dobré ráno, vážené kolegyně a vážení kolegové.",
-      "link_phrase": "krásné dobré ráno"
     },
     {
       "text": "Hanzlíková: dolní sazby u § 199 a § 302 ze šesti měsíců na rok.",
       "source": "steno",
       "steno_id": "2025_24_01063",
       "citace": "týrání osoby žijící ve společném obydlí § 199 odst. 1, dosavadní trestní sazba je šest měsíců až čtyři léta, navrhovaná trestní sazba jeden rok až čtyři léta; týrání zvířat § 302 odst. 1, současná trestní sazba je šest měsíců až tři léta, navrženo je jeden rok až tři léta",
-      "link_phrase": "typicky ze šesti měsíců na rok"
+      "link_phrase": "ze šesti měsíců na rok"
     },
     {
       "text": "Hanzlíková: nová skutková podstata usmrcení psa nebo kočky ze zavrženíhodné pohnutky.",
       "source": "steno",
       "steno_id": "2025_24_01063",
       "citace": "usmrcení psa nebo kočky ze zavrženíhodného důvodu i v případech, kdy usmrcení není prováděno surovým nebo trýznivým způsobem",
-      "link_phrase": "usmrcení psa nebo kočky ze zavrženíhodné pohnutky"
+      "link_phrase": "ze zavrženíhodné pohnutky"
     },
     {
       "text": "Bureš: debata o přestupku a ochraně jen psů a koček.",
@@ -61,11 +54,12 @@
   "publikovat": true,
   "priorita": 4,
   "nadpis": "Vločka a predátor",
-  "lead": "Krátce po půlnoci ve středu hlasovala Sněmovna o novele trestního zákona na ochranu zvířat proti týrání. Ministr Hladík (KDU-ČSL) před hlasováním připomněl domácí kočku Vločku, pak ale stejný návrh označil za paskvil a varoval, že kočky jsou pro ptactvo větší predátor než týrání.",
-  "pointa": "Ve třetím kole to padlo 22 proti 62. Patková (Motoristé) mezitím popřála kolegům krásné dobré ráno.",
-  "mean": "Novela trestního zákoníku chtěla mimo jiné zvednout dolní sazby u § 302 a § 199 ze šesti měsíců na rok, zavést trest za usmrcení psa nebo kočky ze zavrženíhodné pohnutky a vyvolala spor, jestli jde o trestný čin, nebo přestupek, a proč jen dva druhy.",
-  "citace_text": "Jestli je někdo obrovským obrovským problémem pro naši biologickou rozmanitost a především pro ptáky, tak jsou to kočky.",
+  "lead": "Ve středu hlasovala Sněmovna o novele trestního zákona na ochranu zvířat:\n\n<ul class=\"listy-ul\">\n<li>vyšší minimální tresty za týrání zvířat, typicky ze šesti měsíců na rok</li>\n<li>nový trestný čin za usmrcení psa nebo kočky ze zavrženíhodné pohnutky</li>\n<li>debata, jestli jde o trestný čin nebo přestupek, a proč jen kočky a psi</li>\n</ul>\n\nMinistr Hladík (KDU-ČSL) před hlasováním připomněl domácí kočku Vločku, pak ale stejný návrh označil za paskvil a varoval, že kočky jsou pro ptactvo větší predátor než týrání.",
+  "pointa": "Ve třetím kole _novela zákona neprošla_.",
+  "mean": "Novela měla zpřísnit tresty za týrání zvířat a doplnit postih za usmrcení psa nebo kočky. Ve třetím kole ji Sněmovna zamítla.",
+  "citace_text": "Jestli je někdo obrovským problémem pro naši biologickou rozmanitost a především pro ptáky, tak jsou to kočky.",
   "citace_autor": "Petr Hladík (KDU-ČSL)",
+  "citace_href": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024231.htm#r2",
   "pocet_hlasovani": 4,
   "proslo": false,
   "signaly": {

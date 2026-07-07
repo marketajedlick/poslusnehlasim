@@ -2,9 +2,7 @@
   "datum": "01.07.2026",
   "den": "středa",
   "topic_slugs": [
-    "novela-z-o-jednacim-radu-ps",
-    "debata-interpelace-sport-haas-01-07",
-    "debata-rakusan-traficka-01-07",
+    "debata-rakusan-nato-zahranicni-sluzba-01-07",
     "novela-z-na-ochranu-zvirat-proti-tyrani"
   ],
   "stats": {
@@ -16,13 +14,73 @@
     "spor_o_porad": false,
     "dlouha_debata": true
   },
-  "dnesni_ucet": "jednací řád, tisk 77,\nsouvisející zákony, trafika u OSN, Vločka.",
+  "dnesni_ucet": "Pomsta prezidentovi, Vločka.",
   "steno_zdroje": true,
-  "zaver": "že novela jednacího řádu padla čtyřikrát, Haas tvrdil, že tisk 77 nemá být košík na vše u jádra tisku 76, Rakušan u souvisejících zákonů mluvil o trafice u OSN a Vločka přežela mezi kočkou a ptactvem.",
+  "zaver": "že kdyby kočka nastoupila na misi při OSN, obešla by se bez prezidentova podpisu. Na lepší ochranu si ale bude muset vystačit se svými sedmi životy.",
   "vysledek": [
-    "* novela jednacího řádu padla čtyřikrát, nejdrsněji 3 proti 84",
-    "* Haas (Motoristé) za ODS: tisk 77 vs jádro tisku 76, sběrný podvozek, sport místo úředníků",
-    "* Rakušan (STAN): msta, která se bojí denního světla, trafička u OSN",
+    "* Rakušan (STAN): pomsta pro prezidenta, velvyslanec u OSN bez podpisu prezidenta",
     "* novela o zvířatech padla ve třetím kole 22 proti 62"
-  ]
+  ],
+  "jazykolam_kandidati": [
+    {
+      "priorita": 1,
+      "text": "průmyslových baterií, bateriových úložišť, baterií z fotovoltaických elektráren, baterií z elektrokol a baterií z elektrokoloběžek.",
+      "autor": "Michal Kučera",
+      "steno_id": "2025_24_01420",
+      "poradi": 1420,
+      "psp_stranka": "s024293.htm",
+      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024293.htm",
+      "vzory": [
+        "predpony: baterx6",
+        "opakovani: bateriíx5",
+        "bateriix5"
+      ]
+    },
+    {
+      "priorita": 2,
+      "text": "My už je máme, máme je na obaly, máme je na baterie, máme je na pneumatiky, máme je na bílé, černé elektro, do budoucna takto bude na nápojové obaly, bude na textil, bude na velkoobjemový nábytek a další a další prostě typy materiálu.",
+      "autor": "Petr Hladík",
+      "steno_id": "2025_24_01447",
+      "poradi": 1447,
+      "psp_stranka": "s024298.htm",
+      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024298.htm",
+      "vzory": [
+        "opakovani: mámex5",
+        "mame je nax4"
+      ]
+    },
+    {
+      "priorita": 3,
+      "text": "To evropské nařízení je poměrně složité, takže tady bude skutečně důležité, aby Ministerstvo životního prostředí, a já si myslím, že by to mělo sledovat právě i Ministerstvo průmyslu nebo dneska už Ministerstvo hospodářství?",
+      "autor": "Michal Kučera",
+      "steno_id": "2025_24_01420",
+      "poradi": 1420,
+      "psp_stranka": "s024293.htm",
+      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024293.htm",
+      "vzory": [
+        "predpony: minx3, ministerx3",
+        "opakovani: ministerstvox3"
+      ]
+    },
+    {
+      "priorita": 4,
+      "text": "Samozřejmě ty vyšší náklady, které to přináší, je to taky jasné, to znamená vyšší příspěvky výrobců, vyšší administrativní náklady, náklady na certifikaci, což se samozřejmě může promítnout i do ceny baterií jako takových.",
+      "autor": "Michal Kučera",
+      "steno_id": "2025_24_01420",
+      "poradi": 1420,
+      "psp_stranka": "s024293.htm",
+      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024293.htm",
+      "vzory": [
+        "opakovani: vyššíx3, nákladyx3"
+      ]
+    }
+  ],
+  "jazykolam": {
+    "text": "průmyslových baterií, bateriových úložišť, baterií z fotovoltaických elektráren, baterií z elektrokol a baterií z elektrokoloběžek.",
+    "autor": "Michal Kučera",
+    "steno_id": "",
+    "poradi": 1538,
+    "psp_stranka": "s024293.htm",
+    "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024293.htm#r4"
+  }
 }

@@ -4,35 +4,48 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>{{ t.brand.name }} · {{ datum_design }}</title>
+{% if static_base %}<style>
+/* Reální webové fonty pro klienty, které je podporují (Apple Mail, iOS). Ostatní použijí fallback. */
+@font-face{font-family:'Archivo';font-style:normal;font-weight:500 900;src:url('{{ static_base }}/fonts/archivo-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:500 900;src:url('{{ static_base }}/fonts/archivo-latin.woff2') format('woff2');}
+@font-face{font-family:'Anton';font-style:normal;font-weight:400;src:url('{{ static_base }}/fonts/anton-400-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'Anton';font-style:normal;font-weight:400;src:url('{{ static_base }}/fonts/anton-400-latin.woff2') format('woff2');}
+@font-face{font-family:'Old Standard TT';font-style:normal;font-weight:400;src:url('{{ static_base }}/fonts/oldstandardtt-400-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'Old Standard TT';font-style:normal;font-weight:400;src:url('{{ static_base }}/fonts/oldstandardtt-400-latin.woff2') format('woff2');}
+@font-face{font-family:'Old Standard TT';font-style:normal;font-weight:700;src:url('{{ static_base }}/fonts/oldstandardtt-700-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'Old Standard TT';font-style:normal;font-weight:700;src:url('{{ static_base }}/fonts/oldstandardtt-700-latin.woff2') format('woff2');}
+@font-face{font-family:'Old Standard TT';font-style:italic;font-weight:400;src:url('{{ static_base }}/fonts/oldstandardtt-400italic-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'Old Standard TT';font-style:italic;font-weight:400;src:url('{{ static_base }}/fonts/oldstandardtt-400italic-latin.woff2') format('woff2');}
+</style>{% endif %}
 <style>{{ css | safe }}</style>
 </head>
 <body>
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#c9bda3;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f7f2f0;">
 <tr>
-<td align="center" style="padding:12px 8px;">
-<table role="presentation" class="email-wrap" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px;background:#f0e6cf;border-radius:3px;">
+<td align="center" style="padding:0;">
+<table role="presentation" class="email-wrap" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px;background:#f7f2f0;border-radius:0;">
 <tr>
 <td class="email-pad">
 
-<table role="presentation" class="head" cellpadding="0" cellspacing="0" border="0" width="100%">
-<tr>
-<td class="head-cal" width="88" height="96" valign="middle" style="width:88px;height:96px;vertical-align:middle;padding:0;">
-  <div class="cal" style="width:88px;background:#f0e6cf;border:2px solid #211c14;text-align:center;">
-    <div class="cal-wd">{{ content.cal_den }}</div>
-    <div class="cal-day">{{ content.cal_day }}</div>
-    <div class="cal-mo">{{ content.cal_month }}</div>
-  </div>
-</td>
-<td class="head-title" height="96" align="center" valign="middle" style="vertical-align:middle;padding:0 8px;text-align:center;">
-  <div class="eyebrow" style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.2em;font-size:13px;color:#cf5a31;text-align:center;line-height:1.2;">{{ t.edition.eyebrow }}</div>
-  <h1 class="mast email-mast" style="margin:4px 0 0;font-family:Impact,'Arial Black',sans-serif;text-transform:uppercase;color:#211c14;font-size:50px;line-height:0.95;text-align:center;">POSLUŠNĚ <span class="terra" style="color:#cf5a31;">HLÁSÍM</span></h1>
-</td>
-</tr>
-</table>
+<div class="masthead" style="text-align:center;padding:6px 0 2px;">
+  {% if svejk_head_url %}<img class="masthead-fav" src="{{ svejk_head_url }}" alt="Poslušně hlásím" width="84" height="84" style="display:block;width:84px;height:84px;margin:0 auto 10px;border:0;">{% endif %}
+  <div class="eyebrow" style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.2em;font-size:12px;color:#6b6355;text-align:center;line-height:1.2;">{{ t.edition.eyebrow }}</div>
+  <h1 class="mast email-mast" style="margin:6px 0 0;font-family:'Arial Black',Arial,sans-serif;font-weight:900;text-transform:none;color:#262626;font-size:46px;line-height:0.95;letter-spacing:-0.01em;text-align:center;">Poslušně<br>hlásím!</h1>
+  <div class="pager-line" style="text-align:center;margin:12px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;letter-spacing:0.05em;text-transform:uppercase;color:#262626;">V Praze, dne {{ datum_design }}</div>
+</div>
 
 <div class="verdict verdict-top">
-  <p class="q">{% if content.zaver_key %}<span class="key">{{ content.zaver_key }}</span> {% endif %}<span class="q-quote">„{{ (content.zaver_body or content.zaver) | safe }}“</span></p>
-  <div class="sign">{{ t.edition.sign }}</div>
+  {% set _ph = 'Poslušně hlásím, že ' %}
+  <p class="q"><span class="q-quote"><span class="q-mark">„</span>{% if content.zaver[:20] == _ph %}<strong style="font-weight:700;">{{ _ph }}</strong>{{ content.zaver[20:] | safe }}{% else %}{{ content.zaver | safe }}{% endif %}<span class="q-mark">“</span></span></p>
+  <table role="presentation" class="verdict-foot" cellpadding="0" cellspacing="0" border="0" width="100%">
+  <tr>
+    {% if svejk_head_url %}<td class="verdict-head" width="52" valign="bottom" style="width:52px;vertical-align:bottom;"><img src="{{ svejk_head_url }}" width="52" height="52" alt="" style="display:block;width:52px;height:52px;border:0;"></td>{% endif %}
+    <td valign="bottom" style="vertical-align:bottom;padding-left:12px;">
+      <div class="sign">{{ t.edition.sign }}</div>
+      <p class="tagline">Každý den to nejdůležitější ze Sněmovny.</p>
+    </td>
+  </tr>
+  </table>
 </div>
 
 {% if content.snemovni_listy %}
@@ -65,6 +78,8 @@
 </div>
 {% endif %}
 
+<div class="email-section-rule" style="text-align:center;margin:24px 0 4px;border-top:1px solid rgba(38,38,38,0.25);"><span style="display:inline-block;transform:translateY(-9px);background:#f7f2f0;padding:0 12px;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;letter-spacing:0.14em;text-transform:uppercase;color:#6b6355;">Co se dělo?!</span></div>
+
 {% for item in content.items %}
 <table role="presentation" class="item{% if item.variant %} {{ item.variant }}{% endif %}" cellpadding="0" cellspacing="0" border="0" width="100%">
 <tr>
@@ -82,12 +97,12 @@
       <span class="hl">{{ line }}</span>
       {% endfor %}
     </h2>
-    <p class="p">{{ item.lead | safe }}</p>
+    <div class="p">{{ item.lead | safe }}</div>
     {% if item.citace_text %}
     <blockquote class="item-quote">
-      <p>„{{ item.citace_text | safe }}“</p>
+      <p class="item-quote-text"><span class="quote-mark">„</span>{% if item.citace_href %}<a class="steno-link" href="{{ item.citace_href }}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;border-bottom:1px dotted rgba(40,60,110,.5);">{{ item.citace_text | safe }}</a>{% else %}{{ item.citace_text | safe }}{% endif %}<span class="quote-mark">“</span></p>
       {% if item.citace_autor %}
-      <cite class="item-quote-by">{{ item.citace_autor }}</cite>
+      <p class="item-quote-by">{{ item.citace_autor }}</p>
       {% endif %}
     </blockquote>
     {% endif %}
@@ -101,7 +116,7 @@
     <p class="p">{{ item.pointa | safe }}</p>
     {% endif %}
     {% if item.mean %}
-    <p class="mean"><b>{{ t.edition.mean_label }} </b>{{ item.mean | safe }}</p>
+    <p class="mean"><b style="color:#ff4411;">{{ t.edition.mean_label }} </b>{{ item.mean | safe }}</p>
     {% endif %}
     {% if item.kuriozita_nav %}
     <p class="kuriozita-links">
@@ -122,10 +137,29 @@
 </table>
 {% endfor %}
 
+{% if content.jazykolam %}
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="item item-jazykolam">
+<tr>
+<td class="item-body stack-col" style="padding:18px 0 8px;text-align:left;">
+  <p class="email-citanka-kicker" style="margin:0 0 14px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#262626;">{{ t.edition.jazykolam_kicker }}</p>
+  <div class="jazykolam-tape-wrap" style="text-align:center;line-height:0;position:relative;z-index:2;">
+    <span class="jazykolam-tape" style="display:inline-block;width:78px;height:22px;background:rgba(244,196,48,.9);box-shadow:0 1px 2px rgba(20,15,8,.14);-webkit-transform:rotate(-3deg);transform:rotate(-3deg);"></span>
+  </div>
+  <blockquote class="item-quote item-quote--jazykolam" style="margin:-11px 0 0;position:relative;z-index:1;-webkit-transform:rotate(-1.4deg);transform:rotate(-1.4deg);">
+    <p class="item-quote-text">„{% if steno_page_url and content.jazykolam.steno_anchor %}<a class="steno-link" href="{{ steno_page_url }}#{{ content.jazykolam.steno_anchor }}" style="color:inherit;text-decoration:none;border-bottom:1px dotted rgba(40,60,110,.5);">{{ content.jazykolam.text }}</a>{% elif content.jazykolam.href %}<a class="steno-link" href="{{ content.jazykolam.href }}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;border-bottom:1px dotted rgba(40,60,110,.5);">{{ content.jazykolam.text }}</a>{% else %}{{ content.jazykolam.text }}{% endif %}“</p>
+    {% if content.jazykolam.autor %}
+    <p class="item-quote-by">{{ content.jazykolam.autor }}{% if content.jazykolam.steno_anchor and content.jazykolam.href %} <a class="jazykolam-psp-link" href="{{ content.jazykolam.href }}" target="_blank" rel="noopener noreferrer" style="color:#ff4411;font-family:'Archivo',Arial,sans-serif;font-weight:bold;font-size:12px;text-decoration:none;white-space:nowrap;">↗ psp.cz</a>{% endif %}</p>
+    {% endif %}
+  </blockquote>
+</td>
+</tr>
+</table>
+{% endif %}
+
 <div class="email-footer">
-  <p style="margin:0 0 10px;"><a href="{{ edition_url }}">Číst vydání</a></p>
-  <p style="margin:0 0 10px;"><a href="{{ archive_url }}">Archiv všech vydání</a></p>
-  <p style="margin:0 0 16px;"><a href="{{ pivo_url }}#stamgast">Kup Švejkovi pivo 🍺</a></p>
+  <p style="margin:0 0 10px;"><a href="{{ edition_url }}" style="color:#ff4411;">Číst vydání</a></p>
+  <p style="margin:0 0 10px;"><a href="{{ archive_url }}" style="color:#ff4411;">Archiv všech vydání</a></p>
+  <p style="margin:0 0 16px;"><a href="{{ pivo_url }}#stamgast" style="color:#ff4411;">Kup Švejkovi pivo 🍺</a></p>
 </div>
 <div class="email-legal" style="margin-top:4px;padding-top:14px;border-top:1px solid rgba(33,28,20,0.14);text-align:center;font-size:12px;line-height:1.6;color:#5a503e;">
   <p style="margin:0 0 8px;font-family:Arial,Helvetica,sans-serif;">{{ t.brand.name }} · {{ t.brand.domain }} · {{ t.brand.tagline }}</p>

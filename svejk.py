@@ -440,6 +440,55 @@ def cmd_serve(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_jazykolam(args: argparse.Namespace) -> int:
+    from datetime import datetime
+
+    from svejk.build.jazykolam import kandidati_pro_schuze
+    from svejk.paths import SchuzePaths, processed_root
+
+    def _iso(den: str) -> str:
+        den = den.strip()
+        if "-" in den:
+            return den
+        return datetime.strptime(den, "%d.%m.%Y").strftime("%Y-%m-%d")
+
+    paths = SchuzePaths.create(args.obdobi, args.schuze)
+    lines: list[str] = []
+
+    if args.den:
+        iso = _iso(args.den)
+        cands = kandidati_pro_schuze(paths, iso, limit=args.limit)
+        lines.append(f"=== {iso} (s{args.schuze}) ===")
+        if not cands:
+            lines.append("  (žádný kandidát)")
+        for i, c in enumerate(cands, 1):
+            lines.append(f"\n{i}. [{c.skore}] {c.recnik}")
+            lines.append(f"   {c.text}")
+            lines.append(f"   steno: {c.steno_id}  |  téma: {c.tema}")
+    else:
+        root = processed_root()
+        for day_path in sorted(root.glob(f"{args.obdobi}-s{args.schuze}/facts/by_day/*.json")):
+            day = json.loads(day_path.read_text(encoding="utf-8"))
+            if not day.get("steno_zdroje"):
+                continue
+            iso = day_path.stem
+            cands = kandidati_pro_schuze(paths, iso, limit=args.limit)
+            lines.append(f"\n=== {iso} ({day.get('datum', '')}) ===")
+            if not cands:
+                lines.append("  (žádný kandidát)")
+                continue
+            c = cands[0]
+            lines.append(f"  [{c.skore}] {c.recnik}: {c.text[:140]}{'…' if len(c.text) > 140 else ''}")
+
+    text = "\n".join(lines).strip() + "\n"
+    print(text, end="")
+    if args.out:
+        args.out.parent.mkdir(parents=True, exist_ok=True)
+        args.out.write_text(text, encoding="utf-8")
+        print(f"Ulozeno: {args.out}", file=sys.stderr)
+    return 0
+
+
 def cmd_review(args: argparse.Namespace) -> int:
     from svejk.paths import SchuzePaths
     from svejk.review import (
@@ -758,6 +807,20 @@ def main() -> int:
     p_serve.add_argument("--host", default="127.0.0.1")
     p_serve.add_argument("--port", type=int, default=8000)
     p_serve.set_defaults(func=cmd_serve)
+
+    p_jazykolam = sub.add_parser(
+        "jazykolam",
+        help="Kandidáti na jazykolam dne ze stenoprotokolu",
+    )
+    p_jazykolam.add_argument("--schuze", type=int, required=True)
+    p_jazykolam.add_argument("--obdobi", type=int, default=2025)
+    p_jazykolam.add_argument(
+        "--den",
+        help="Jen jeden den (DD.MM.RRRR nebo YYYY-MM-DD); bez něj celá schůze",
+    )
+    p_jazykolam.add_argument("--limit", type=int, default=5, help="Kolik kandidátů na den")
+    p_jazykolam.add_argument("-o", "--out", type=Path, help="Uložit report")
+    p_jazykolam.set_defaults(func=cmd_jazykolam)
 
     p_review = sub.add_parser(
         "review",

@@ -23,5 +23,69 @@
     "* u Lex Ukrajina poslanci zvolili Langa zpravodajem, proti 31",
     "* Pláteník ve faktické citoval ČTK, Peštová (ANO) protestovala",
     "* bezpečnostní novela prošla druhým kolem"
-  ]
+  ],
+  "jazykolam_kandidati": [
+    {
+      "priorita": 1,
+      "text": "Protože drahé nejsou jenom platy, drahé jsou chyby, drahé jsou soudy, drahé jsou finanční korekce, drahé jsou zpožděné projekty.",
+      "autor": "Gabriela Svárovská",
+      "steno_id": "2025_24_00092",
+      "poradi": 92,
+      "psp_stranka": "s024063.htm",
+      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024063.htm",
+      "vzory": [
+        "opakovani: drahéx5",
+        "drahe jsoux4"
+      ]
+    },
+    {
+      "priorita": 2,
+      "text": "Ostatní silnice o dvou nebo více jízdních pruzích vyznačených na vozovce v jednom směru jízdy, místní komunikace první třídy a místní komunikace druhé třídy o dvou nebo více jízdních pruzích vyznačených na vozovce v jednom směru jízdy.",
+      "autor": "Lukáš Vlček",
+      "steno_id": "2025_24_00269",
+      "poradi": 269,
+      "psp_stranka": "s024097.htm",
+      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024097.htm",
+      "vzory": [
+        "predpony: jízx4",
+        "pruzx4",
+        "jizdnich pruzichx2"
+      ]
+    },
+    {
+      "priorita": 3,
+      "text": "Z těchto osob podle statistik, což dost často se lidé ptají, kolik je tady vlastně dětí, kolik je tady mužů v produktivním věku, kolik je tady seniorů, kolik je tady těch osob celkem.",
+      "autor": "Hubert Lang",
+      "steno_id": "2025_24_00250",
+      "poradi": 250,
+      "psp_stranka": "s024094.htm",
+      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024094.htm",
+      "vzory": [
+        "predpony: kox4",
+        "opakovani: kolikx4",
+        "kolik je tadyx4"
+      ]
+    },
+    {
+      "priorita": 4,
+      "text": "Ale pokud se klíčové věci země, zákon jako je tento, zákon, který mění výkon veřejné moci v této zemi, pokud zákon, jako je stavební zákon, se mění poslaneckými návrhy, tak to samozřejmě špatné je.",
+      "autor": "Jiří Pospíšil",
+      "steno_id": "2025_24_00118",
+      "poradi": 118,
+      "psp_stranka": "s024067.htm",
+      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024067.htm",
+      "vzory": [
+        "predpony: zákx4, poslx3",
+        "opakovani: zákonx4"
+      ]
+    }
+  ],
+  "jazykolam": {
+    "text": "Protože drahé nejsou jenom platy, drahé jsou chyby, drahé jsou soudy, drahé jsou finanční korekce, drahé jsou zpožděné projekty.",
+    "autor": "Gabriela Svárovská",
+    "steno_id": "2025_24_00092",
+    "poradi": 92,
+    "psp_stranka": "s024063.htm",
+    "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024063.htm"
+  }
 }

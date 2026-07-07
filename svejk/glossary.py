@@ -1404,51 +1404,75 @@ SLOVNIK_BOX: tuple[tuple[str, str], ...] = (
     ("Mimořádná schůze", "mimořádn"),
 )
 
-def slovnicek_anchor(question: str) -> str:
-    """URL kotva z otázky ve slovníčku (např. „Co je obstrukce?“ → obstrukce)."""
-    text = question.strip()
+def slovnicek_display_term(label: str) -> str:
+    """Zobrazitelný pojem bez úvodního „Co je …“ a koncového „?“."""
+    text = label.strip()
     for prefix in ("Co jsou ", "Co je ", "Co je to "):
         if text.startswith(prefix):
             text = text[len(prefix) :]
             break
-    text = text.rstrip("?").strip().lower()
+    return text.rstrip("?").strip()
+
+
+_ABBREV_PAREN = re.compile(r"^\([^)]+\)$")
+
+
+def _is_acronym_token(token: str) -> bool:
+    """Zkratka typu EET, NKÚ, ČT (všechna písmena velká)."""
+    letters = [c for c in token if c.isalpha()]
+    return len(letters) >= 2 and all(c.isupper() for c in letters)
+
+
+def slovnicek_term_label(term: str) -> str:
+    """Popisek ve Švejkově slovníčku: zkratky beze změny, ostatní malými."""
+    text = term.strip()
+    if not text or _ABBREV_PAREN.match(text):
+        return text
+    return " ".join(
+        part if _is_acronym_token(part) else part.lower() for part in text.split()
+    )
+
+
+def slovnicek_anchor(question: str) -> str:
+    """URL kotva z pojmu ve slovníčku (např. „obstrukce“ → obstrukce)."""
+    text = slovnicek_display_term(question).lower()
     normalized = unicodedata.normalize("NFKD", text)
     ascii_text = "".join(c for c in normalized if not unicodedata.combining(c))
     return re.sub(r"[^a-z0-9]+", "-", ascii_text).strip("-")
 
 
-# Švejkův slovníček: panel vpravo na webu (otázka → odpověď).
+# Švejkův slovníček: panel vpravo na webu (pojem → vysvětlení).
 SLOVNIČEK: tuple[tuple[str, str], ...] = (
-    ("Co je pozměňovací návrh?", "Chvíle, kdy někdo řekne: „Já bych to napsal trochu jinak.“"),
-    ("Co je první čtení?", "Rozhoduje se, jestli má zákon pokračovat dál, nebo skončit dřív, než začne."),
-    ("Co je druhé čtení?", "Začíná vrtání v detailech a přepisování jednotlivých částí zákona."),
-    ("Co je třetí čtení?", "Poslední zastávka před hlasováním. Pak už padne ano, nebo ne."),
-    ("Co je procedurální návrh?", "Neřeší se zákon, ale způsob, jak se o něm bude mluvit."),
-    ("Co je obstrukce?", "Když se dlouze mluví proto, aby se co nejdéle nehlasovalo."),
-    ("Co je přerušení schůze?", "Poslanci si dali pauzu a slíbili, že se k tomu vrátí."),
-    ("Co je legislativní nouze?", "Režim, kdy se zákony schvalují rychleji než obvykle."),
-    ("Co je mimořádná schůze?", "Schůze svolaná mimo běžný program, když něco spěchá nebo se někdo hodně rozčílí."),
-    ("Co je interpelace?", "Čas, kdy se poslanci ptají vlády a vláda odpovídá. Někdy i na položenou otázku."),
-    ("Co je důvěra vládě?", "Hlasování, jestli má vláda podporu většiny poslanců."),
-    ("Co je nedůvěra vládě?", "Pokus vládu poslat do politického důchodu dřív, než odejde sama."),
-    ("Co je koalice?", "Strany, které spolu vládnou a snaží se najít společnou řeč."),
-    ("Co je opozice?", "Strany, které nevládnou a hlídají, jestli vláda nevaří z cizích peněz příliš odvážně."),
-    ("Co je Senát?", "Druhá komora Parlamentu. Kontroluje zákony, které schválila Sněmovna."),
-    ("Co je veto Senátu?", "Senát zákon vrátí nebo navrhne změny. Poslanci ale mohou jeho nesouhlas přehlasovat."),
-    ("Co je veto prezidenta?", "Když prezident zákon vrátí poslancům s tím, aby si ho ještě jednou rozmysleli."),
-    ("Co jsou rozpočtové brzdy?", "Zákon, který státu připomíná šlápnout na brzdu, když utrácí moc rychle."),
-    ("Co jsou fiskální pravidla?", "Pravidla, která mají státu připomínat, že kreditka není bezedná."),
-    ("Co je schodek?", "Když stát utratí víc, než vybere. Něco jako když hospoda jede na sekeru."),
-    ("Co je EET?", "Elektronická evidence tržeb, každá účtenka hlásila státu, kolik kdo utržil."),
-    ("Co je usnesení?", "Stanovisko nebo rozhodnutí sněmovny. Nejde o zákon."),
-    ("Co je ratifikace?", "Souhlas parlamentu se smlouvou s cizím státem. Bez něj u nás neplatí."),
-    ("Co je Dozimetr?", "Korupční kauza spojená s pražským dopravním podnikem, kterou vyšetřuje policie."),
-    ("Co je superdávka?", "Plán na sloučení několika sociálních dávek do jednoho systému."),
-    ("Co je NKÚ?", "Nejvyšší kontrolní úřad. Kontroluje, jak stát hospodaří s veřejnými penězi."),
-    ("Co je VZP?", "Největší česká zdravotní pojišťovna."),
-    ("Co je OZP?", "Osoba se zdravotním postižením."),
-    ("Co je landsmanšaft?", "Organizace sdružující část sudetských Němců a jejich potomků po poválečném vysídlení."),
-    ("Co je Rada ČT?", "Skupina, která dohlíží na Českou televizi a vybírá její vedení."),
+    ("pozměňovací návrh", "Chvíle, kdy někdo řekne: „Já bych to napsal trochu jinak.“"),
+    ("první čtení", "Rozhoduje se, jestli má zákon pokračovat dál, nebo skončit dřív, než začne."),
+    ("druhé čtení", "Začíná vrtání v detailech a přepisování jednotlivých částí zákona."),
+    ("třetí čtení", "Poslední zastávka před hlasováním. Pak už padne ano, nebo ne."),
+    ("procedurální návrh", "Neřeší se zákon, ale způsob, jak se o něm bude mluvit."),
+    ("obstrukce", "Když se dlouze mluví proto, aby se co nejdéle nehlasovalo."),
+    ("přerušení schůze", "Poslanci si dali pauzu a slíbili, že se k tomu vrátí."),
+    ("legislativní nouze", "Režim, kdy se zákony schvalují rychleji než obvykle."),
+    ("mimořádná schůze", "Schůze svolaná mimo běžný program, když něco spěchá nebo se někdo hodně rozčílí."),
+    ("interpelace", "Čas, kdy se poslanci ptají vlády a vláda odpovídá. Někdy i na položenou otázku."),
+    ("důvěra vládě", "Hlasování, jestli má vláda podporu většiny poslanců."),
+    ("nedůvěra vládě", "Pokus vládu poslat do politického důchodu dřív, než odejde sama."),
+    ("koalice", "Strany, které spolu vládnou a snaží se najít společnou řeč."),
+    ("opozice", "Strany, které nevládnou a hlídají, jestli vláda nevaří z cizích peněz příliš odvážně."),
+    ("Senát", "Druhá komora Parlamentu. Kontroluje zákony, které schválila Sněmovna."),
+    ("veto Senátu", "Senát zákon vrátí nebo navrhne změny. Poslanci ale mohou jeho nesouhlas přehlasovat."),
+    ("veto prezidenta", "Když prezident zákon vrátí poslancům s tím, aby si ho ještě jednou rozmysleli."),
+    ("rozpočtové brzdy", "Zákon, který státu připomíná šlápnout na brzdu, když utrácí moc rychle."),
+    ("fiskální pravidla", "Pravidla, která mají státu připomínat, že kreditka není bezedná."),
+    ("schodek", "Když stát utratí víc, než vybere. Něco jako když hospoda jede na sekeru."),
+    ("EET", "Elektronická evidence tržeb, každá účtenka hlásila státu, kolik kdo utržil."),
+    ("usnesení", "Stanovisko nebo rozhodnutí sněmovny. Nejde o zákon."),
+    ("ratifikace", "Souhlas parlamentu se smlouvou s cizím státem. Bez něj u nás neplatí."),
+    ("Dozimetr", "Korupční kauza spojená s pražským dopravním podnikem, kterou vyšetřuje policie."),
+    ("superdávka", "Plán na sloučení několika sociálních dávek do jednoho systému."),
+    ("NKÚ", "Nejvyšší kontrolní úřad. Kontroluje, jak stát hospodaří s veřejnými penězi."),
+    ("VZP", "Největší česká zdravotní pojišťovna."),
+    ("OZP", "Osoba se zdravotním postižením."),
+    ("landsmanšaft", "Organizace sdružující část sudetských Němců a jejich potomků po poválečném vysídlení."),
+    ("Rada ČT", "Skupina, která dohlíží na Českou televizi a vybírá její vedení."),
 )
 
 

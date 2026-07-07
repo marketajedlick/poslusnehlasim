@@ -96,6 +96,7 @@ class DenItem:
     kuriozita: str = ""
     citace_text: str = ""
     citace_autor: str = ""
+    citace_href: str = ""
     pointa: str = ""
     lead_tail: str = ""
     variant: str = ""
@@ -127,6 +128,7 @@ class DenContent:
     zaver_key: str = "Poslušně hlásím,"
     zaver_body: str = ""
     snemovni_listy: dict[str, Any] | None = None
+    jazykolam: dict[str, Any] | None = None
 
 
 def lead_z_fact(fact: dict[str, Any]) -> str:
@@ -363,15 +365,15 @@ def split_zaver(text: str) -> tuple[str, str]:
 
 def datum_design(datum_unl: str, den: str) -> str:
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
-    den_label = den.capitalize()
-    return f"{den_label} {d.day:02d} / {d.month:02d} / {d.year}"
+    month = _MESICE_GEN[d.month - 1]
+    return f"{d.day}. {month} {d.year}"
 
 
 def calendar_parts(datum_unl: str, den: str) -> tuple[str, str, str]:
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
     den_label = den.capitalize()
     month = _MESICE_GEN[d.month - 1]
-    return den_label, str(d.day), f"{month} {d.year}"
+    return den_label, str(d.day), month
 
 
 def _kapitalizuj_prvni_pismeno(text: str) -> str:
@@ -496,6 +498,7 @@ def build_den_content(
         zamitnuto=int(stats.get("zamitnuto") or 0),
         result_note=result_note,
         snemovni_listy=day.get("snemovni_listy") or None,
+        jazykolam=day.get("jazykolam") or None,
     )
 
     num = 0
@@ -555,6 +558,7 @@ def build_den_content(
         kuriozita = (fact.get("kuriozita") or "").strip() or kuriozita_z_fact(fact)
         citace_text = (fact.get("citace_text") or "").strip()
         citace_autor = (fact.get("citace_autor") or "").strip()
+        citace_href = (fact.get("citace_href") or "").strip()
         pointa = (fact.get("pointa") or "").strip() if has_custom_lead else ""
         lead_tail = (fact.get("lead_tail") or "").strip()
         items_meta[str(num)] = {"pocet_hlasovani": ph, "slug": slug}
@@ -570,6 +574,7 @@ def build_den_content(
                 kuriozita=kuriozita,
                 citace_text=citace_text,
                 citace_autor=citace_autor,
+                citace_href=citace_href,
                 pointa=pointa,
                 dopad=dopad,
                 parliament_lead=parliament_lead,
@@ -599,6 +604,7 @@ def build_den_content(
         )
     content.zaver = zaver
     content.zaver_key, content.zaver_body = split_zaver(zaver)
+    _enrich_jazykolam_href(content, paths)
     _sanitize_den_content(content)
     from svejk.build.steno_sources import apply_steno_links_to_content
 
@@ -624,7 +630,10 @@ def build_den_content(
     return content
 
 
-_ALLOWED_INLINE_TAGS = frozenset({"strong", "em", "b", "i"})
+_ALLOWED_INLINE_TAGS = frozenset({"strong", "em", "b", "i", "br"})
+_ALLOWED_BLOCK_TAGS = frozenset({"ul", "li"})
+_ALLOWED_UL_CLASSES = frozenset({"listy-ul"})
+_ALLOWED_SPAN_CLASSES = frozenset({"hl"})
 _ALLOWED_LINK_CLASSES = frozenset({"steno-link", "mean-link"})
 _OPEN_TAG_RE = re.compile(r"^<(\w+)\b([^>]*)>$", re.I)
 _CLOSE_TAG_RE = re.compile(r"^</(\w+)\s*>$", re.I)
@@ -648,7 +657,12 @@ def _filter_allowed_html_tag(tag: str) -> str:
     close = _CLOSE_TAG_RE.match(tag)
     if close:
         name = close.group(1).lower()
-        if name in _ALLOWED_INLINE_TAGS or name == "a":
+        if (
+            name in _ALLOWED_INLINE_TAGS
+            or name == "a"
+            or name in _ALLOWED_BLOCK_TAGS
+            or name == "span"
+        ):
             return f"</{name}>"
         return ""
 
@@ -663,6 +677,29 @@ def _filter_allowed_html_tag(tag: str) -> str:
         if attrs.strip():
             return ""
         return f"<{name}>"
+
+    if name == "li":
+        if attrs.strip():
+            return ""
+        return "<li>"
+
+    if name == "ul":
+        class_m = re.search(r'\bclass="([^"]*)"', attrs, re.I)
+        if not class_m:
+            return ""
+        classes = set(class_m.group(1).split())
+        if not classes & _ALLOWED_UL_CLASSES:
+            return ""
+        return '<ul class="listy-ul">'
+
+    if name == "span":
+        class_m = re.search(r'\bclass="([^"]*)"', attrs, re.I)
+        if not class_m:
+            return ""
+        classes = set(class_m.group(1).split())
+        if not classes & _ALLOWED_SPAN_CLASSES:
+            return ""
+        return '<span class="hl">'
 
     if name == "a":
         class_m = re.search(r'\bclass="([^"]*)"', attrs, re.I)
@@ -704,15 +741,17 @@ def _sanitize_text_export(text: str) -> str:
     if not (text or "").strip():
         return text
 
+    from svejk.build.glossary_markup import highlight_markup
+
     def _plain_chunk(chunk: str) -> str:
         out = poslanec_registry().annotate(bez_dlouhych_pomlc(chunk)) if chunk.strip() else chunk
         out = nahrad_cisla_v_textu(out)
-        return out
+        return highlight_markup(out)
 
     def _steno_link_inner(inner: str) -> str:
         out = bez_dlouhych_pomlc(inner)
         out = nahrad_cisla_v_textu(out)
-        return out
+        return highlight_markup(out)
 
     if "<" not in text:
         return _plain_chunk(text)
@@ -745,10 +784,12 @@ def _sanitize_mean_export(text: str) -> str:
     if not (text or "").strip():
         return text
 
+    from svejk.build.glossary_markup import highlight_markup
+
     def _plain_chunk(chunk: str) -> str:
         out = bez_dlouhych_pomlc(chunk)
         out = nahrad_cisla_v_textu(out)
-        return out
+        return highlight_markup(out)
 
     return _sanitize_html_segments(text, _plain_chunk)
 
@@ -757,6 +798,23 @@ def _sanitize_vysledek_export(text: str) -> str:
     """Výsledek dne: stejná sanitizace jako běžný text."""
     text = bez_dlouhych_pomlc(text)
     return poslanec_registry().annotate(text) if text.strip() else text
+
+
+def _enrich_jazykolam_href(content: DenContent, paths: SchuzePaths) -> None:
+    j = content.jazykolam
+    if not j:
+        return
+    from svejk.build.steno_sources import resolve_psp_url_for_steno, steno_anchor
+
+    steno_id = (j.get("steno_id") or "").strip()
+    text = (j.get("text") or "").strip()
+    href = resolve_psp_url_for_steno(paths, steno_id, text) if steno_id and text else ""
+    if not href:
+        href = (j.get("url") or "").strip()
+    if href:
+        j["href"] = href
+    if steno_id:
+        j["steno_anchor"] = steno_anchor(steno_id)
 
 
 def _sanitize_den_content(content: DenContent) -> None:

@@ -14,13 +14,14 @@ from markupsafe import Markup
 from svejk.build.day_content import DenContent, build_den_content, datum_design
 from svejk.build.io import read_json
 from svejk.build.seo import SITE_NAME, site_meta_description
-from svejk.glossary import slovnicek_anchor, slovnicek_entries
+from svejk.glossary import slovnicek_anchor, slovnicek_display_term, slovnicek_entries, slovnicek_term_label
 from svejk.build.publish import list_site_editions
 from svejk.strings import footer_closings, footer_stats_line, load_strings, schuze_count_label
 from svejk.build.nav import (
     Edition,
     archiv_pages_href,
     archive_by_month,
+    build_session_calendar,
     edition_nav,
     edition_pages_href,
     o_webu_pages_href,
@@ -115,7 +116,8 @@ _CSS = _STATIC / "noviny-dlouhe.css"
 _FONTS_CSS = _STATIC / "fonts.css"
 _EMAIL_CSS = _STATIC / "noviny-email.css"
 _SVEJK_SVG = _STATIC / "svejk.svg"
-_FAVICON_PNG = _STATIC / "svejk-terra.png"
+_PH_FAV = _STATIC / "ph-fav.svg"
+_FAVICON_PNG = _STATIC / "ph-fav.png"
 _OG_SHARE = _STATIC / "og-share.png"
 _OG_SHARE_SIZE = (1200, 630)
 _FALLBACK_OG_SIZE = (200, 280)
@@ -141,10 +143,74 @@ def static_favicon_paths(base_path: str = "") -> dict[str, str]:
     base = base_path.rstrip("/")
     prefix = f"{base}/static" if base else "/static"
     return {
-        "favicon_svg": f"{prefix}/favicon.svg",
         "favicon_png": f"{prefix}/favicon.png",
         "apple_touch_icon": f"{prefix}/apple-touch-icon.png",
     }
+
+
+def _edition_postreh(content: DenContent) -> tuple[dict[str, str] | None, int | None]:
+    """Nejdelší kuriozita s lead_tail → Švejkův postřeh karta."""
+    best_num: int | None = None
+    best_len = 0
+    for item in content.items:
+        k = (item.kuriozita or "").strip()
+        if not k or not (item.lead_tail or "").strip():
+            continue
+        if len(k) > best_len:
+            best_len = len(k)
+            best_num = item.num
+    if best_num is None:
+        return None, None
+    item = next(i for i in content.items if i.num == best_num)
+    return (
+        {
+            "text": item.kuriozita,
+            "pointa": item.pointa or "",
+            "title": item.nadpis,
+        },
+        best_num,
+    )
+
+
+def _edition_slovnicek(content: DenContent) -> list[tuple[str, str]]:
+    from svejk.build.glossary_markup import slovnicek_dne
+
+    chunks: list[str] = [
+        content.zaver or "",
+        content.zaver_body or "",
+        content.dnesni_ucet or "",
+        content.result_note or "",
+    ]
+    for item in content.items:
+        chunks.extend(
+            [
+                item.nadpis,
+                item.lead,
+                item.lead_tail,
+                item.mean,
+                item.kuriozita,
+                item.pointa,
+                item.citace_text,
+            ]
+        )
+    listy = content.snemovni_listy
+    if listy:
+        for key in ("meta", "deck", "footer"):
+            val = listy.get(key)
+            if isinstance(val, str):
+                chunks.append(val)
+        for section in listy.get("sections") or []:
+            if isinstance(section, dict):
+                heading = section.get("heading")
+                if isinstance(heading, str):
+                    chunks.append(heading)
+                for para in section.get("paragraphs") or []:
+                    if isinstance(para, str):
+                        chunks.append(para)
+                for bullet in section.get("bullets") or []:
+                    if isinstance(bullet, str):
+                        chunks.append(bullet)
+    return slovnicek_dne(*chunks)
 
 
 def css_asset_version() -> str:
@@ -265,6 +331,15 @@ def _jinja_env() -> Environment:
         return _gm(text)
 
     env.filters["glossary"] = _glossary_filter
+
+    def _plain_filter(text: str) -> str:
+        from svejk.build.glossary_markup import strip_glossary_markup
+
+        if not text:
+            return ""
+        return re.sub(r"<[^>]+>", "", strip_glossary_markup(text)).strip()
+
+    env.filters["plain"] = _plain_filter
     return env
 
 
@@ -307,10 +382,14 @@ def _site_ctx(
     from svejk.build.seo import site_brand_line as _site_brand_line
     from svejk.build.seo import site_meta_description as _site_meta_description
 
+    t = load_strings()
+    domain = t["brand"]["domain"]
+    share_page_url = f"{domain}{page_path}" if page_path.startswith("/") else f"{domain}/{page_path}"
     return {
-        "t": load_strings(),
+        "t": t,
         "site_meta_description": _site_meta_description(),
         "site_brand_line": _site_brand_line(),
+        "share_page_url": share_page_url,
     }
 
 
@@ -333,6 +412,31 @@ def _site_footer_ctx(
         "footer_stats": _footer_stats_line(obdobi),
         "footer_contact_email": contact,
         "footer_active_page": active_page,
+    }
+
+
+def _edition_nav_ctx(
+    obdobi: int,
+    base_path: str,
+    *,
+    schuze: int,
+    datum: str,
+    link_mode: str,
+    site_url: str,
+) -> dict[str, str]:
+    ctx = _site_nav_ctx(
+        obdobi,
+        base_path,
+        current_schuze=schuze,
+        current_datum=datum,
+    )
+    if link_mode != "file":
+        return ctx
+    # ponytail: lokální náhled — menu vede na produkci, jako fonty
+    site = site_url.rstrip("/")
+    return {
+        k: (f"{site}{v}" if v and str(v).startswith("/") else (v or ""))
+        for k, v in ctx.items()
     }
 
 
@@ -427,7 +531,6 @@ def render_den_html(
         obdobi=obdobi,
         base_path=base_path,
     )
-    svejk_svg = _SVEJK_SVG.read_text(encoding="utf-8") if _SVEJK_SVG.is_file() else ""
     ob = obdobi if obdobi is not None else paths.obdobi
     dup_day = sum(1 for e in list_site_editions(ob) if e.datum_unl == content.datum) > 1
     cfg = NewsletterConfig.from_env()
@@ -449,20 +552,13 @@ def render_den_html(
         href = edition_pages_href(ob, paths.schuze, content.datum, base_path)
         canonical_url = f"{cfg.site_url.rstrip('/')}{href}"
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
-    nav_ctx = (
-        _site_nav_ctx(
-            ob,
-            base_path,
-            current_schuze=paths.schuze,
-            current_datum=content.datum,
-        )
-        if link_mode == "pages"
-        else {
-            "archive_href": None,
-            "latest_href": None,
-            "slovnicek_href": None,
-            "pivo_href": None,
-        }
+    nav_ctx = _edition_nav_ctx(
+        ob,
+        base_path,
+        schuze=paths.schuze,
+        datum=content.datum,
+        link_mode=link_mode,
+        site_url=cfg.site_url,
     )
     datum_label = datum_design(content.datum, content.den)
     edition_title = f"{SITE_NAME} · {datum_label}"
@@ -486,6 +582,7 @@ def render_den_html(
         edition_og_headline,
         edition_og_title,
         og_image_abs_url,
+        share_hero_href,
     )
 
     og_share_title = (
@@ -629,6 +726,21 @@ def render_den_html(
                 link_mode=link_mode,
                 base_path=base_path,
             )
+    postreh, postreh_item_num = _edition_postreh(content)
+    session_calendar = build_session_calendar(
+        ob,
+        content.datum,
+        base_path=base_path,
+        link_mode=link_mode if link_mode in ("pages", "web") else "pages",
+    )
+    slovnicek_dne = _edition_slovnicek(content)
+    fav_href = f"{base_path.rstrip('/')}/static/ph-fav.svg" if base_path else "/static/ph-fav.svg"
+    svejk_img_href = f"{base_path.rstrip('/')}/static/svejk-terra.png" if base_path else "/static/svejk-terra.png"
+    share_hero = (
+        share_hero_href(base_path, content.datum)
+        if link_mode == "pages" and (content.zaver_body or content.zaver)
+        else ""
+    )
     tpl = _jinja_env().get_template("noviny-dlouhe.html")
     return tpl.render(
         content=content,
@@ -636,12 +748,20 @@ def render_den_html(
         schuze=paths.schuze,
         dup_day=dup_day,
         datum_design=datum_design(content.datum, content.den),
-        svejk_svg=svejk_svg,
+        ph_fav_href=fav_href,
+        svejk_img_href=svejk_img_href,
+        share_hero_href=share_hero,
         inline_css=inline_css,
         css=css,
         css_href=css_href,
         fonts_css_href=fonts_css_href,
         nav=nav,
+        postreh=postreh,
+        postreh_item_num=postreh_item_num,
+        session_calendar=session_calendar,
+        slovnicek_dne=slovnicek_dne,
+        jazykolam=content.jazykolam,
+        steno_page_href=steno_sources_pages_href(ob, paths.schuze, content.datum, base_path),
         newsletter=cfg,
         canonical_url=canonical_url,
         meta_description=meta_description,
@@ -649,7 +769,6 @@ def render_den_html(
         article_json_ld=json_ld,
         website_json_ld=website_ld,
         **og,
-        pivo_tiers=pivo_tiers(),
         cookie_privacy_url=soukromi_pages_href(base_path),
         **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
         **nav_ctx,
@@ -729,10 +848,9 @@ def plain_text_from_content(
         return re.sub(r"<[^>]+>", "", strip_glossary_markup(text)).strip()
 
     lines = [f"POSLUŠNĚ HLÁSÍM · {datum_label}", ""]
-    zaver = _plain(content.zaver_body or content.zaver or "")
+    zaver = _plain(content.zaver or "")
     if zaver:
-        key = (content.zaver_key or "").strip()
-        lines.append(f"{key} „{zaver}“".strip() if key else f"„{zaver}“")
+        lines.append(f"„{zaver}“")
     for item in content.items:
         lines.extend(
             [
@@ -745,7 +863,7 @@ def plain_text_from_content(
         if item.citace_text:
             cite = f"„{_plain(item.citace_text)}“"
             if item.citace_autor:
-                cite = f"{cite} — {item.citace_autor}"
+                cite = f"{cite} ({item.citace_autor})"
             lines.append(cite)
         if item.lead_tail and item.kuriozita:
             lines.append(_plain(item.kuriozita))
@@ -798,7 +916,14 @@ _FIELD_LINK_STYLE = {
 
 def _inline_email_body_link_styles(text: str, *, field: str = "lead") -> str:
     """Inline styly pro klienty, které neberou <style> z hlavičky."""
-    if not text or "<a " not in text:
+    if not text:
+        return text
+    if '<span class="hl">' in text:
+        text = text.replace(
+            '<span class="hl">',
+            '<span class="hl" style="display:inline;background:rgba(210,60,30,.25);border-radius:2px;padding:0 2px;margin:0 -2px;">',
+        )
+    if "<a " not in text:
         return text
     color = _FIELD_LINK_STYLE.get(field, _FIELD_LINK_STYLE["lead"])
     style = (
@@ -871,6 +996,10 @@ def render_email_html(
     edition_url = f"{site}{edition_href}"
     archive_url = f"{site}{archive_href}"
     pivo_url = f"{site}{pivo_href}"
+    steno_href = steno_sources_pages_href(
+        edition.obdobi, paths.schuze, edition.datum_unl, base_path
+    )
+    steno_page_url = f"{site}{steno_href}" if steno_href else ""
     datum_label = datum_design(edition.datum_unl, content.den)
     subject = f"Nové vydání · {datum_label}"
     _apply_content_item_links(
@@ -900,6 +1029,9 @@ def render_email_html(
         edition_url=edition_url,
         archive_url=archive_url,
         pivo_url=pivo_url,
+        svejk_head_url=f"{site}/static/favicon.png",
+        static_base=f"{site}/static",
+        steno_page_url=steno_page_url,
     )
     return subject, plain, html
 
@@ -1488,7 +1620,11 @@ def render_slovnicek_html(
     faq_ld = _faq_json_ld(url=canonical_url, entries=entries)
     tpl = _jinja_env().get_template("slovnicek-stranka.html")
     slovnicek = [
-        {"question": q, "answer": a, "anchor": slovnicek_anchor(q)}
+        {
+            "term": slovnicek_term_label(slovnicek_display_term(q)),
+            "answer": a,
+            "anchor": slovnicek_anchor(q),
+        }
         for q, a in entries
     ]
     return tpl.render(

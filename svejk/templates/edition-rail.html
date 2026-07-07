@@ -1,0 +1,58 @@
+<aside class="edition-rail" aria-label="{{ t.edition.nav_aria }}">
+  {% set rail = true %}
+  {% include "edition-masthead.html" %}
+
+  <div class="cal-tear" aria-hidden="true">
+    <div class="cal-tear-head">{{ content.cal_month }}</div>
+    <div class="cal-tear-body">
+      <div class="cal-tear-day">{{ content.cal_day }}</div>
+      <div class="cal-tear-wd">{{ content.cal_den }}</div>
+    </div>
+  </div>
+
+  <div class="session-cal" aria-label="Kalendář zasedání">
+    <div class="session-cal-head">
+      {% if session_calendar.prev_month %}
+      <a class="session-cal-nav" href="{{ session_calendar.prev_month.href }}" title="{{ session_calendar.prev_month.title }}" aria-label="Předchozí měsíc: {{ session_calendar.prev_month.title }}">{{ session_calendar.prev_month.short_label }}</a>
+      {% else %}
+      <span class="session-cal-nav is-disabled" aria-hidden="true">←</span>
+      {% endif %}
+      <p class="session-cal-title">{{ session_calendar.month_label }} {{ session_calendar.year }}</p>
+      {% if session_calendar.next_month %}
+      <a class="session-cal-nav" href="{{ session_calendar.next_month.href }}" title="{{ session_calendar.next_month.title }}" aria-label="Další měsíc: {{ session_calendar.next_month.title }}">{{ session_calendar.next_month.short_label }}</a>
+      {% else %}
+      <span class="session-cal-nav is-disabled" aria-hidden="true">→</span>
+      {% endif %}
+    </div>
+    <div class="session-cal-dow" aria-hidden="true">
+      <span>Po</span><span>Út</span><span>St</span><span>Čt</span><span>Pá</span><span>So</span><span>Ne</span>
+    </div>
+    {% for week in session_calendar.weeks %}
+    <div class="session-cal-week">
+      {% for day in week %}
+      {% if day.empty %}
+      <span class="session-cal-cell" aria-hidden="true"></span>
+      {% elif day.today %}
+      <span class="session-cal-cell is-today">{{ day.n }}</span>
+      {% elif day.link %}
+      <span class="session-cal-cell is-edition"><a href="{{ day.link }}" title="Hlášení z tohoto dne">{{ day.n }}</a></span>
+      {% else %}
+      <span class="session-cal-cell">{{ day.n }}</span>
+      {% endif %}
+      {% endfor %}
+    </div>
+    {% endfor %}
+    <div class="session-cal-legend">
+      <span class="session-cal-legend-mark" aria-hidden="true"></span>
+      <span class="session-cal-legend-text">Den se zápisem</span>
+    </div>
+  </div>
+
+  {% if archive_href %}
+  <a class="rail-archiv" href="{{ archive_href }}">Archiv →</a>
+  {% endif %}
+
+  <footer class="site-footer site-footer--rail" aria-label="{{ t.footer.aria }}">
+    {% include "site-footer-inner.html" %}
+  </footer>
+</aside>
