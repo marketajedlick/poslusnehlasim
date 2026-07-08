@@ -1096,7 +1096,7 @@ a.steno-link .term-term{
   font-size:18px;
   font-weight:700;
   line-height:1.45;
-  margin:12px 0 0;
+  margin:12px 0 20px;
   color:var(--green);
 }
 .subscribe-privacy{

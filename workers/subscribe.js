@@ -148,8 +148,9 @@ async function getSubscriberStatus(env, listId, email) {
   } catch {
     return null;
   }
-  const subscriber = data.subscriber && typeof data.subscriber === "object" ? data.subscriber : data;
-  const status = Number(subscriber.status);
+  const nested =
+    data.subscriber && typeof data.subscriber === "object" ? data.subscriber : null;
+  const status = Number(data.status ?? nested?.status);
   return Number.isFinite(status) ? status : null;
 }
 
@@ -382,11 +383,47 @@ async function confirmSubscriber(env, listId, email) {
       subscriber_data: { email, status: 1 },
       trigger_autoresponders: false,
       update_existing: true,
-      resubscribe: false,
+      resubscribe: true,
       skip_confirmation: true,
     }),
   });
-  return res.ok;
+  if (!res.ok) {
+    let detail = "";
+    try {
+      detail = (await res.text()).slice(0, 300);
+    } catch {
+      detail = "";
+    }
+    console.error("confirm_subscribe_failed", email, res.status, detail);
+  }
+
+  let status = await getSubscriberStatus(env, listId, email);
+  if (status === 1) return true;
+
+  const bulkRes = await fetch(`https://api2.ecomailapp.cz/lists/${listId}/update-subscribers-bulk`, {
+    method: "PUT",
+    headers: ecomailHeaders(env),
+    body: JSON.stringify({
+      subscriber_data: [{ email, status: 1 }],
+      allow_resubscribe: true,
+    }),
+  });
+  if (!bulkRes.ok) {
+    let detail = "";
+    try {
+      detail = (await bulkRes.text()).slice(0, 300);
+    } catch {
+      detail = "";
+    }
+    console.error("confirm_bulk_failed", email, bulkRes.status, detail);
+    return false;
+  }
+
+  status = await getSubscriberStatus(env, listId, email);
+  if (status !== 1) {
+    console.error("confirm_status_still", email, status);
+  }
+  return status === 1;
 }
 
 async function handleConfirm(request, env) {
