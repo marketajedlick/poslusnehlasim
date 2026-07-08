@@ -33,6 +33,7 @@ html{
   overflow-x:clip;
   -webkit-text-size-adjust:100%;
   min-height:100%;
+  font-size:clamp(16px, 15px + 0.28vw, 20px);
 }
 body{
   margin:0;
@@ -40,7 +41,7 @@ body{
   background:var(--cream);
   color:var(--char);
   font-family:var(--font-serif);
-  font-size:17px;
+  font-size:1rem;
   line-height:1.75;
   overflow-x:clip;
 }
@@ -111,6 +112,15 @@ button{font:inherit;cursor:pointer}
     min-width:0;
   }
   .pager-desktop > :last-child{justify-self:end}
+}
+@media(min-width:1920px){
+  :root{
+    --content-w:680px;
+    --rail-w:330px;
+  }
+  .edition-page{
+    max-width:min(1240px, 92vw);
+  }
 }
 @media(max-width:1023px){
   .masthead-desktop-only{display:none}
@@ -665,23 +675,23 @@ button{font:inherit;cursor:pointer}
 .article-body .p,
 .article-body p{
   margin:0 0 14px;
-  font-size:16px;
+  font-size:0.941rem;
   line-height:1.75;
 }
 @media(min-width:1024px){
   .article-body .p,
-  .article-body p{font-size:17px;line-height:1.8}
+  .article-body p{font-size:1rem;line-height:1.8}
 }
 .article-body .p:last-child,
 .article-body p:last-child{margin-bottom:0}
 .article-body .mean{
   margin:14px 0 0;
   font-weight:700;
-  font-size:17px;
+  font-size:1rem;
   line-height:1.75;
 }
 @media(min-width:1024px){
-  .article-body .mean{font-size:18px;line-height:1.8}
+  .article-body .mean{font-size:1.059rem;line-height:1.8}
 }
 .mean-label{
   font-family:var(--font-sans);
