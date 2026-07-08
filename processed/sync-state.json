@@ -222,11 +222,21 @@
       "steno_count": 2213,
       "last_steno_poradi": 2213,
       "last_steno_datum": "2026-07-07",
-      "synced_at": "2026-07-08T13:52:31.740903+00:00"
+      "synced_at": "2026-07-08T22:12:48.364774+00:00"
+    },
+    "25": {
+      "count": 4,
+      "max_cislo": 4,
+      "last_datum": "07.07.2026",
+      "steno_count": 115,
+      "last_steno_poradi": 115,
+      "last_steno_datum": "2026-07-07",
+      "synced_at": "2026-07-08T22:14:44.277452+00:00"
     }
   },
-  "updated_at": "2026-07-08T13:52:31.740987+00:00",
+  "updated_at": "2026-07-08T22:14:44.277473+00:00",
   "last_updated_schuze": [
-    24
+    24,
+    25
   ]
 }
