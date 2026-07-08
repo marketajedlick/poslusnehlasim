@@ -1,4 +1,4 @@
-/** Cloudflare Worker: odběr novinek (Ecomail) + návrhy korektur (Resend). */
+/** Cloudflare Worker: odběr novinek (Ecomail + Resend DOI) + návrhy korektur (Resend). */
 
 const CORS = {
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
@@ -33,6 +33,13 @@ export default {
         return new Response("Method not allowed", { status: 405, headers });
       }
       return handleCorrections(request, env, headers);
+    }
+
+    if (path === "/confirm") {
+      if (request.method !== "GET") {
+        return new Response("Method not allowed", { status: 405, headers });
+      }
+      return handleConfirm(request, env);
     }
 
     if (request.method !== "POST") {
@@ -70,6 +77,9 @@ async function handleSubscribe(request, env, headers) {
   if (!env.ECOMAIL_API_KEY || !listId) {
     return json({ ok: false, error: "misconfigured" }, 500, headers);
   }
+  if (!(env.RESEND_API_KEY || "").trim() || !resendFrom(env)) {
+    return json({ ok: false, error: "misconfigured" }, 500, headers);
+  }
 
   if (body.notify_failed) {
     return json({ ok: false }, 400, headers);
@@ -84,20 +94,33 @@ async function handleSubscribe(request, env, headers) {
     );
   }
 
+  const currentStatus = await getSubscriberStatus(env, listId, email);
+  if (currentStatus === 1) {
+    return json({ ok: true }, 200, headers);
+  }
+
   let subscribed = await subscribeToEcomail(env, listId, email, { resubscribe: true });
   if (!subscribed.ok) {
     await notifyAdminSubscribe(env, email);
     return json({ ok: false, error: "subscribe_failed" }, 502, headers);
   }
 
-  // Ecomail u status 6 + already_subscribed znovu neposílá potvrzovací mail.
-  if (subscribed.status === 6 && subscribed.already_subscribed) {
-    await unsubscribeFromEcomail(env, listId, email);
-    subscribed = await subscribeToEcomail(env, listId, email, { resubscribe: true });
-    if (!subscribed.ok) {
-      await notifyAdminSubscribe(env, email);
-      return json({ ok: false, error: "subscribe_failed" }, 502, headers);
-    }
+  // Už potvrzený odběratel — formulář ukáže stejnou zprávu, mail znovu neposíláme.
+  if (subscribed.status === 1) {
+    return json({ ok: true }, 200, headers);
+  }
+
+  const sent = await sendDoiViaResend(env, {
+    listId,
+    email,
+    workerOrigin: workerOrigin(request, env),
+  });
+  if (sent === null) {
+    return json({ ok: false, error: "misconfigured" }, 500, headers);
+  }
+  if (!sent) {
+    await notifyAdminSubscribe(env, email, "doi_resend_failed");
+    return json({ ok: false, error: "send_failed" }, 502, headers);
   }
 
   return json({ ok: true }, 200, headers);
@@ -110,16 +133,33 @@ function ecomailHeaders(env) {
   };
 }
 
+async function getSubscriberStatus(env, listId, email) {
+  const res = await fetch(
+    `https://api2.ecomailapp.cz/lists/${listId}/subscriber/${encodeURIComponent(email)}`,
+    { headers: ecomailHeaders(env) },
+  );
+  if (!res.ok) return null;
+  let data = {};
+  try {
+    data = await res.json();
+  } catch {
+    return null;
+  }
+  const subscriber = data.subscriber && typeof data.subscriber === "object" ? data.subscriber : data;
+  const status = Number(subscriber.status);
+  return Number.isFinite(status) ? status : null;
+}
+
 async function subscribeToEcomail(env, listId, email, { resubscribe }) {
   const res = await fetch(`https://api2.ecomailapp.cz/lists/${listId}/subscribe`, {
     method: "POST",
     headers: ecomailHeaders(env),
     body: JSON.stringify({
-      subscriber_data: { email, source: "poslusnehlasim" },
-      trigger_autoresponders: true,
+      subscriber_data: { email, source: "poslusnehlasim", status: 6 },
+      trigger_autoresponders: false,
       update_existing: true,
       resubscribe,
-      skip_confirmation: false,
+      skip_confirmation: true,
     }),
   });
   if (!res.ok) {
@@ -138,12 +178,180 @@ async function subscribeToEcomail(env, listId, email, { resubscribe }) {
   };
 }
 
-async function unsubscribeFromEcomail(env, listId, email) {
-  await fetch(`https://api2.ecomailapp.cz/lists/${listId}/unsubscribe`, {
-    method: "DELETE",
+function confirmRedirectUrl(env) {
+  return (env.CONFIRM_REDIRECT_URL || "https://poslusnehlasim.cz/potvrzeno/").trim();
+}
+
+function privacyUrl(env) {
+  return (env.SVEJK_PRIVACY_URL || "https://poslusnehlasim.cz/soukromi/").trim();
+}
+
+function workerOrigin(request, env) {
+  const configured = (env.SUBSCRIBE_PUBLIC_URL || "").trim();
+  if (configured) return configured.replace(/\/+$/, "");
+  return new URL(request.url).origin;
+}
+
+function doiTemplateCacheTtl(env) {
+  return parseInt(env.DOI_TEMPLATE_CACHE_TTL || "3600", 10);
+}
+
+function doiTokenTtl(env) {
+  return parseInt(env.DOI_TOKEN_TTL || "604800", 10);
+}
+
+async function getDoiTemplate(env, listId) {
+  const kv = rateLimitKv(env);
+  const cacheKey = `doi-conf:${listId}`;
+  if (kv) {
+    const cached = await kv.get(cacheKey);
+    if (cached) {
+      try {
+        return JSON.parse(cached);
+      } catch {
+        /* ignore */
+      }
+    }
+  }
+
+  const res = await fetch(`https://api2.ecomailapp.cz/lists/${listId}`, {
     headers: ecomailHeaders(env),
-    body: JSON.stringify({ email }),
   });
+  if (!res.ok) return null;
+
+  let data = {};
+  try {
+    data = await res.json();
+  } catch {
+    return null;
+  }
+  const list = data.list && typeof data.list === "object" ? data.list : data;
+  const subject = String(list.conf_subject || "Poslušně hlásím: potvrď odběr novinek").trim();
+  const html = String(list.conf_message || "");
+  if (!html.includes("*|SUBCONFIRM|*")) return null;
+
+  const tpl = { subject, html };
+  if (kv) {
+    await kv.put(cacheKey, JSON.stringify(tpl), {
+      expirationTtl: doiTemplateCacheTtl(env) + 120,
+    });
+  }
+  return tpl;
+}
+
+function buildDoiPlain(confirmUrl, env) {
+  const redirect = confirmRedirectUrl(env);
+  const privacy = privacyUrl(env);
+  return [
+    "POSLUŠNĚ HLÁSÍM: potvrď odběr novinek",
+    "",
+    "Deník sněmovny už čeká. Ještě je ale třeba jeden krok. Potvrď, že e-mail patří opravdu tobě a chceš deník odebírat.",
+    "",
+    "Poslušně hlásím, že bez potvrzení ti nemůžeme poslat ani řádku. Klikni a je vyřízeno.",
+    "",
+    `Potvrď odběr: ${confirmUrl}`,
+    "",
+    "Až přijde první vydání, může skončit ve složce Hromadné. Přetáhni ho do Primárních - stačí jednou a Gmail si to zapamatuje.",
+    "",
+    `Po potvrzení tě přesměrujeme na: ${redirect}`,
+    "Pokud tento e-mail přišel omylem, není třeba nic dělat.",
+    `Co děláme s e-mailovou adresou.: ${privacy}`,
+  ].join("\n");
+}
+
+async function storeConfirmToken(env, token, email, listId) {
+  const kv = rateLimitKv(env);
+  if (!kv) return false;
+  await kv.put(
+    `doi-token:${token}`,
+    JSON.stringify({ email: email.toLowerCase(), listId: String(listId) }),
+    { expirationTtl: doiTokenTtl(env) },
+  );
+  return true;
+}
+
+async function sendDoiViaResend(env, { listId, email, workerOrigin }) {
+  const tpl = await getDoiTemplate(env, listId);
+  if (!tpl) return false;
+
+  const token = crypto.randomUUID();
+  if (!(await storeConfirmToken(env, token, email, listId))) return null;
+
+  const confirmUrl = `${workerOrigin}/confirm?token=${encodeURIComponent(token)}`;
+  const html = tpl.html.split("*|SUBCONFIRM|*").join(confirmUrl);
+  const plain = buildDoiPlain(confirmUrl, env);
+
+  return sendResendEmail(env, {
+    to: email,
+    subject: tpl.subject,
+    text: plain,
+    html,
+  });
+}
+
+async function confirmSubscriber(env, listId, email) {
+  const res = await fetch(`https://api2.ecomailapp.cz/lists/${listId}/subscribe`, {
+    method: "POST",
+    headers: ecomailHeaders(env),
+    body: JSON.stringify({
+      subscriber_data: { email, status: 1 },
+      trigger_autoresponders: false,
+      update_existing: true,
+      resubscribe: false,
+      skip_confirmation: true,
+    }),
+  });
+  return res.ok;
+}
+
+async function handleConfirm(request, env) {
+  const token = new URL(request.url).searchParams.get("token")?.trim() || "";
+  if (!token) {
+    return new Response("Chybí token.", { status: 400, headers: SECURITY_HEADERS });
+  }
+
+  const kv = rateLimitKv(env);
+  if (!kv) {
+    return new Response("Služba není nakonfigurována.", {
+      status: 503,
+      headers: SECURITY_HEADERS,
+    });
+  }
+
+  const raw = await kv.get(`doi-token:${token}`);
+  if (!raw) {
+    return new Response("Odkaz vypršel nebo už byl použit.", {
+      status: 410,
+      headers: SECURITY_HEADERS,
+    });
+  }
+
+  let payload;
+  try {
+    payload = JSON.parse(raw);
+  } catch {
+    return new Response("Neplatný odkaz.", { status: 400, headers: SECURITY_HEADERS });
+  }
+
+  const email = String(payload.email || "").trim();
+  const listId = payload.listId || subscribeListId(env);
+  if (!email || !env.ECOMAIL_API_KEY || !listId) {
+    return new Response("Služba není nakonfigurována.", {
+      status: 503,
+      headers: SECURITY_HEADERS,
+    });
+  }
+
+  const ok = await confirmSubscriber(env, listId, email);
+  if (!ok) {
+    return new Response("Potvrzení se nepodařilo. Zkus to znovu z mailu.", {
+      status: 502,
+      headers: SECURITY_HEADERS,
+    });
+  }
+
+  await kv.delete(`doi-token:${token}`);
+  return Response.redirect(confirmRedirectUrl(env), 302);
 }
 
 async function handleCorrections(request, env, headers) {
@@ -363,7 +571,7 @@ async function consumeRateLimit(kv, key, limit, windowSec) {
   return { ok: true };
 }
 
-async function notifyAdminSubscribe(env, failedEmail) {
+async function notifyAdminSubscribe(env, failedEmail, reason = "subscribe_failed") {
   const to = (env.NOTIFY_EMAIL || env.ECOMAIL_FROM_EMAIL || "").trim();
   const from = (env.ECOMAIL_FROM_EMAIL || to).trim();
   if (!to || !from || !env.ECOMAIL_API_KEY) return;
@@ -371,13 +579,25 @@ async function notifyAdminSubscribe(env, failedEmail) {
   const kv = rateLimitKv(env);
   const normalized = failedEmail.toLowerCase();
   const dedupeTtl = parseInt(env.NOTIFY_DEDUPE_WINDOW || "86400", 10);
+  const dedupeKey = `admin-notify:${reason}:${normalized}`;
   if (kv) {
-    const dedupeKey = `admin-notify:${normalized}`;
     if (await kv.get(dedupeKey)) return;
     await kv.put(dedupeKey, "1", { expirationTtl: dedupeTtl });
   }
 
   const safe = failedEmail.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const text =
+    reason === "doi_resend_failed"
+      ? `E-mail ${failedEmail} je v Ecomailu, ale potvrzovací mail přes Resend se nepodařilo odeslat.`
+      : `E-mail ${failedEmail} se nepodařilo zapsat do odběru novinek.`;
+  const subject =
+    reason === "doi_resend_failed"
+      ? "Neúspěšný potvrzovací mail (Resend)"
+      : "Neúspěšný odběr novinek";
+  const html =
+    reason === "doi_resend_failed"
+      ? `<p>E-mail <strong>${safe}</strong> je v Ecomailu, ale potvrzovací mail přes Resend se nepodařilo odeslat.</p>`
+      : `<p>E-mail <strong>${safe}</strong> se nepodařilo zapsat do odběru novinek.</p>`;
   await fetch("https://api2.ecomailapp.cz/transactional/send-message", {
     method: "POST",
     headers: {
@@ -386,11 +606,11 @@ async function notifyAdminSubscribe(env, failedEmail) {
     },
     body: JSON.stringify({
       message: {
-        subject: "Neúspěšný odběr novinek",
+        subject,
         from_name: "Poslušně hlásím",
         from_email: from,
-        text: `E-mail ${failedEmail} se nepodařilo zapsat do odběru novinek.`,
-        html: `<p>E-mail <strong>${safe}</strong> se nepodařilo zapsat do odběru novinek.</p>`,
+        text,
+        html,
         to: [{ email: to }],
         options: { click_tracking: false, open_tracking: false },
       },

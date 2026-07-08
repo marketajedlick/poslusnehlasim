@@ -4,8 +4,19 @@ Projekt `poslusnehlasim-odebir` na Cloudflare Pages.
 
 | Endpoint | Metoda | Služba |
 |----------|--------|--------|
-| `/` | POST | Odběr novinek → Ecomail |
+| `/` | POST | Odběr novinek → Ecomail (zápis) + Resend (potvrzovací mail) |
+| `/confirm` | GET | Potvrzení odběru (token z mailu) → Ecomail status 1 → redirect na web |
 | `/corrections` | POST | Návrh korektury → Resend |
+
+## Jak funguje double opt-in
+
+1. Formulář na webu pošle e-mail na worker (`POST /`).
+2. Worker zapíše kontakt do Ecomailu jako **nepotvrzený** (`status: 6`, `skip_confirmation: true`).
+3. Worker načte HTML šablonu z Ecomailu (`conf_message` seznamu), nahradí `*|SUBCONFIRM|*` vlastním odkazem a pošle mail přes **Resend**.
+4. Uživatel klikne na odkaz (`GET /confirm?token=…`).
+5. Worker potvrdí odběr v Ecomailu (`status: 1`) a přesměruje na `/potvrzeno/`.
+
+Šablona mailu se synchronizuje do Ecomailu příkazem `./run-svejk.sh newsletter-doi-sync --apply` (worker ji odtud čte).
 
 ## Secrets (Cloudflare Pages)
 
@@ -18,6 +29,8 @@ npx wrangler pages secret put RESEND_API_KEY --project-name=poslusnehlasim-odebi
 npx wrangler pages secret put CORRECTIONS_NOTIFY_EMAIL --project-name=poslusnehlasim-odebir
 ```
 
+`RESEND_API_KEY` je **povinný** pro odběr novinek (potvrzovací mail).
+
 V GitHub Actions: stejné názvy v **Repository secrets** (`RESEND_API_KEY` atd.).
 
 ## Resend: ověření domény
@@ -29,14 +42,6 @@ V GitHub Actions: stejné názvy v **Repository secrets** (`RESEND_API_KEY` atd.
 
 Korektury chodí na `CORRECTIONS_NOTIFY_EMAIL`, jinak na `NOTIFY_EMAIL`, jinak na `ECOMAIL_FROM_EMAIL`.
 
-Když čtenář vyplní e-mail, Resend nastaví `Reply-To` na jeho adresu.
-
-## Double opt-in (potvrzovací e-mail)
-
-1. Šablona a text potvrzení musí být v Ecomailu: `./run-svejk.sh newsletter-doi-sync --apply`
-2. Kontakt ve stavu **nepotvrzen** (status 6) nedostane druhý mail, když znovu vyplní formulář. Worker to obchází krátkým odhlášením a novým zápisem.
-3. U Outlooku kontroluj **Nevyžádanou poštu** a složku Hromadné. Odesílatel: `svejk@poslusnehlasim.cz`, předmět: „Poslušně hlásím: potvrď odběr novinek“.
-
 ## Deploy
 
 ```bash
@@ -47,6 +52,17 @@ RESEND_API_KEY=re_… \
 ```
 
 URL workeru ulož do GitHub secret `SVEJK_SUBSCRIBE_API_URL` (např. `https://poslusnehlasim-odebir.pages.dev`).
+
+## Test odběru
+
+```bash
+curl -sS -X POST "https://poslusnehlasim-odebir.pages.dev/" \
+  -H "Content-Type: application/json" \
+  -H "Origin: https://poslusnehlasim.cz" \
+  -d '{"email":"tvuj@email.cz"}'
+```
+
+Očekávaná odpověď: `{"ok":true}`. Potvrzovací mail přijde z Resendu (ne z Ecomailu).
 
 ## Test korektury
 

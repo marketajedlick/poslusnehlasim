@@ -1085,13 +1085,20 @@ a.steno-link .term-term{
   cursor:pointer;
 }
 .subscribe-hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
-.subscribe-error,.subscribe-success{
+.subscribe-error{
   font-family:var(--font-sans);
   font-size:13px;
   margin:6px 0 0;
+  color:var(--red);
 }
-.subscribe-error{color:var(--red)}
-.subscribe-success{color:var(--green)}
+.subscribe-success{
+  font-family:var(--font-sans);
+  font-size:18px;
+  font-weight:700;
+  line-height:1.45;
+  margin:12px 0 0;
+  color:var(--green);
+}
 .subscribe-privacy{
   font-size:13px;
   color:var(--ink);

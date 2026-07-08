@@ -4,7 +4,11 @@ pages_build_output_dir = "public"
 
 [vars]
 ALLOWED_ORIGIN = "https://poslusnehlasim.cz,https://www.poslusnehlasim.cz,http://127.0.0.1:8765,http://localhost:8765,http://127.0.0.1:8000,http://localhost:8000"
+CONFIRM_REDIRECT_URL = "https://poslusnehlasim.cz/potvrzeno/"
+SVEJK_PRIVACY_URL = "https://poslusnehlasim.cz/soukromi/"
 ECOMAIL_SUBSCRIBE_LIST_ID = "3"
+DOI_TEMPLATE_CACHE_TTL = "3600"
+DOI_TOKEN_TTL = "604800"
 RATE_LIMIT_ID = "00000000000000000000000000000000"
 # Výchozí limity: 10 POST/hod z IP, 3 odběry/den na e-mail
 RATE_LIMIT_IP_MAX = "10"
@@ -23,6 +27,6 @@ id = "00000000000000000000000000000000"
 
 # Secrets (wrangler pages secret put … --project-name=poslusnehlasim-odebir):
 # ECOMAIL_API_KEY, ECOMAIL_FROM_EMAIL, NOTIFY_EMAIL — odběr novinek
-# RESEND_API_KEY — korektury („Něco nesedí?“); volitelně CORRECTIONS_NOTIFY_EMAIL
+# RESEND_API_KEY — potvrzovací mail (DOI) + korektury; volitelně CORRECTIONS_NOTIFY_EMAIL
 # RESEND_FROM_EMAIL / RESEND_FROM_NAME — odesílatel korektur (fallback ECOMAIL_FROM_EMAIL)
 # ECOMAIL_SUBSCRIBE_LIST_ID je v [vars] výše (dev/test = seznam 3)

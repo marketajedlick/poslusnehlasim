@@ -99,7 +99,7 @@ fi
 if [[ -n "${RESEND_API_KEY:-}" ]]; then
   printf '%s' "$RESEND_API_KEY" | npx wrangler@4 pages secret put RESEND_API_KEY --project-name="$PROJECT"
 else
-  echo "::warning::RESEND_API_KEY chybí — formulář „Něco nesedí?“ nepošle e-mail (fallback mailto na webu)."
+  echo "::warning::RESEND_API_KEY chybí — odběr novinek ani korektury nepošlou e-mail."
 fi
 if [[ -n "${CORRECTIONS_NOTIFY_EMAIL:-}" ]]; then
   printf '%s' "$CORRECTIONS_NOTIFY_EMAIL" | npx wrangler@4 pages secret put CORRECTIONS_NOTIFY_EMAIL --project-name="$PROJECT"

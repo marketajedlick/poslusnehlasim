@@ -12,7 +12,7 @@ Poslušně hlásím je srozumitelný přehled z Poslanecké sněmovny: co se pro
 | [`psp/`](psp/) | Stahování a parsování dat ze sněmovny (UNL, Hlídač, steno) |
 | [`processed/`](processed/) | Hotová vydání — raw → aligned → facts → out (viz [processed/README.md](processed/README.md)) |
 | [`hl-2025ps/`](hl-2025ps/) | Seznam schůzí a hlasování z UNL (`hl2025s.unl`, `zmatecne.unl`) |
-| [`workers/`](workers/) | Cloudflare Pages worker: odběr (Ecomail), korektury (Resend) |
+| [`workers/`](workers/) | Cloudflare Pages worker: odběr (Ecomail + Resend DOI), korektury (Resend) |
 | [`svejk.py`](svejk.py), [`run-svejk.sh`](run-svejk.sh) | CLI vstupní bod |
 | [`.github/workflows/`](.github/workflows/) | CI — deploy webu, sync dat, kontrola nových dat |
 
