@@ -213,21 +213,25 @@ function templateUsable(html) {
   );
 }
 
+const ECOMAIL_OPTIN_HREF_RE =
+  /https?:\/\/[^/"'\s>]+\.ecomailapp\.cz\/public\/optin\/[^"'\s>]*/gi;
+
 function injectConfirmUrl(html, confirmUrl) {
-  if (html.includes(SUBCONFIRM_TAG)) {
-    return html.split(SUBCONFIRM_TAG).join(confirmUrl);
+  let out = html;
+  if (out.includes(SUBCONFIRM_TAG)) {
+    out = out.split(SUBCONFIRM_TAG).join(confirmUrl);
   }
-  let out = html.replace(/href=(["'])\*\|SUBCONFIRM\|\*\1/gi, `href=$1${confirmUrl}$1`);
-  if (out !== html) return out;
-  out = html.replace(
-    /(<a\b[^>]*class=["']email-cta["'][^>]*href=["'])[^"']*(["'])/i,
+  out = out.replace(ECOMAIL_OPTIN_HREF_RE, confirmUrl);
+  out = out.replace(
+    /(<a\b[^>]*class=["']email-cta["'][^>]*href=["'])[^"']*(["'])/gi,
     `$1${confirmUrl}$2`,
   );
-  if (out !== html) return out;
-  return html.replace(
-    /(<a\b[^>]*href=["'])[^"']*(["'][^>]*class=["']email-cta["'])/i,
+  out = out.replace(
+    /(<a\b[^>]*href=["'])[^"']*(["'][^>]*class=["']email-cta["'])/gi,
     `$1${confirmUrl}$2`,
   );
+  out = out.replace(/(<v:roundrect\b[^>]*href=["'])[^"']*(["'])/gi, `$1${confirmUrl}$2`);
+  return out;
 }
 
 function fallbackDoiTemplate(env) {
