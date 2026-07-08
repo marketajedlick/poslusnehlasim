@@ -1,199 +1,97 @@
 {
   "slug": "novela-z-o-obalech",
-  "nazev": "Novela z. o obalech",
+  "nazev": "Oprava, která monopol neruší",
   "datum": "02.07.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "změna zákona o obalech a systému třídění, kterou navrhla poslankyně Peštová místo ministerstva",
+  "predmet_lidsky": "novela zákona o obalech od poslankyně Peštové, debata o EKO-KOMu bez ministra životního prostředí",
   "koho": [
     "Koho se to týká? Každého, kdo třídí odpad, platí poplatky za svoz a sleduje, kam mizí peníze z recyklace."
   ],
   "fakty": [
     {
-      "text": "Zákon o obalech, sněmovní tisk 193.",
-      "source": "steno",
-      "steno_id": "2025_24_01600",
-      "citace": "Návrh poslankyně Bereniky Peštové na vydání zákona, kterým se mění zákon č. 477/2001 Sb., o obalech",
-      "link_phrase": "Zákon o obalech"
-    },
-    {
-      "text": "Sněmovní tisk 193 o obalech.",
-      "source": "steno",
-      "steno_id": "2025_24_01595",
-      "citace": "bod 90, sněmovní tisk 193, novela o obalech",
-      "link_phrase": "sněmovní tisk sto devadesát tři"
-    },
-    {
-      "text": "Peštová navrhla zákon místo ministerstva životního prostředí.",
+      "text": "Peštová obhajovala novelu zákona o obalech.",
       "source": "steno",
       "steno_id": "2025_24_01609",
-      "citace": "Ve své podstatě když vznikal zákon o obalech nebo respektive, než vznikl EKO-KOM",
-      "link_phrase": "místo ministerstva životního prostředí"
+      "citace": "vracíme se zpátky do roku 1997 – tenkrát – tím to začalo – se dávaly nějaké společnosti dohromady, vznikala nějaká sdružení, bylo 10 akcionářů",
+      "link_phrase": "poslankyně Peštová"
     },
     {
-      "text": "Bendl: absence ministra je fatální.",
+      "text": "Bendl: fatální, že tady není ministr.",
       "source": "steno",
       "steno_id": "2025_24_01631",
-      "citace": "považuju za fatální, že tady není ministr. On tady totiž i včera byl, ale neúčastnil se debaty k materiálu, který se týkal i Ministerstva životního prostředí.",
-      "link_phrase": "absence ministra je fatální"
+      "citace": "považuju za fatální, že tady není ministr. On tady totiž i včera byl, ale neúčastnil se debaty k materiálu, který se týkal i Ministerstva životního prostředí. Seděl tady místo něj ministr průmyslu.",
+      "link_phrase": "nazval fatálním"
     },
     {
-      "text": "Bendl: absence ministra je téměř pohrdání Sněmovnou.",
+      "text": "Kučera: ministr byl podle Facebooku resortu na lodi na Labi.",
       "source": "steno",
-      "steno_id": "2025_24_01631",
-      "citace": "to považuju za téměř pohrdání Poslaneckou sněmovnou, a tohle by se nemělo dít",
-      "link_phrase": "téměř pohrdání Sněmovnou"
+      "steno_id": "2025_24_01633",
+      "citace": "Pan ministr životního prostředí byl aspoň podle Facebooku Ministerstva životního prostředí na výletě lodí na Labi.",
+      "link_phrase": "na výletě lodí po Labi"
     },
     {
-      "text": "Ve stenozáznamu je u debaty omylem tema odměna TAČR.",
+      "text": "EKO-KOM vznikl v roce 1997, deset akcionářů, akciovka místo neziskovky.",
       "source": "steno",
-      "steno_id": "2025_24_01596",
-      "citace": "abychom dnes po bodu 150, což je ten TA ČR, zařadili v pořadí body 90, 37, 23, 27, 28 a 39.",
-      "link_phrase": "omylem odměna TAČR"
+      "steno_id": "2025_24_01609",
+      "citace": "než vznikl EKO-KOM – vracíme se zpátky do roku 1997 – tenkrát – tím to začalo – se dávaly nějaké společnosti dohromady, vznikala nějaká sdružení, bylo 10 akcionářů, kteří měli podíl statisícový",
+      "link_phrase": "vznikl v roce 1997"
     },
     {
-      "text": "Šmída cituje vznik super EKO-KOMu.",
+      "text": "Peštová: ze zákona neziskový charakter, ale akciová společnost.",
       "source": "steno",
-      "steno_id": "2025_24_01639",
-      "citace": "pracovně říkám, vznik super EKO-KOMu",
-      "link_phrase": "vznik super EKO-KOMu"
+      "steno_id": "2025_24_01609",
+      "citace": "oni musí být ze zákona neziskoví",
+      "link_phrase": "fungovat jako nezisková organizace"
     },
     {
-      "text": "Šmída: Ministerstvo odpadového hospodářství mimo stát.",
+      "text": "Hladík: z 10 akcionářů udělám 34, ale bez 50 procent trhu.",
       "source": "steno",
-      "steno_id": "2025_24_01643",
-      "citace": "Ministerstvo odpadového hospodářství, které ale není pod státem",
-      "link_phrase": "Ministerstvo odpadového hospodářství, které ale není pod státem"
+      "steno_id": "2025_24_01617",
+      "citace": "Vy prostě říkáte, z 10 akcionářů udělám 34, my máme legitimní pochybnosti, zda to je prostě jako ústavní nebo ne. Vy vůbec neříkáte v kontextu toho rozsudku a já ten rozsudek znám, že zajistíte to, aby akcionářská struktura obsahovala alespoň 50 procent trhu.",
+      "link_phrase": "aspoň polovinu trhu"
     },
     {
-      "text": "Šmída pracovně varuje před super EKO-KOMem.",
+      "text": "Hladík: logický rozpor, akciovka špatně, navrhuji víc akcionářů.",
+      "source": "steno",
+      "steno_id": "2025_24_01617",
+      "citace": "Tady v tomhletom je prostě jako logický rozpor.",
+      "link_phrase": "logickým rozporem"
+    },
+    {
+      "text": "Peštová: akciová společnost byla špatně, řešení je 34 akcionářů.",
+      "source": "steno",
+      "steno_id": "2025_24_01609",
+      "citace": "Už tenkrát nastavení ve smyslu toho, že to je akciová společnost, bylo špatně.",
+      "link_phrase": "akciovka byla od začátku špatná volba"
+    },
+    {
+      "text": "Peštová: jediná autorizovaná obalová společnost.",
+      "source": "steno",
+      "steno_id": "2025_24_01609",
+      "citace": "Je tam 10 akcionářů. Já akcionářskou strukturu otevírám. Říkám, že jich nebude 10. Bude akcionářů – já říkám 34.",
+      "link_phrase": "jedinou autorizovanou obalovou společnost"
+    },
+    {
+      "text": "Šmída: super EKO-KOM legalizuje monopol.",
       "source": "steno",
       "steno_id": "2025_24_01639",
       "citace": "pracovně říkám, vznik super EKO-KOMu, protože v podstatě legalizuje monopolní postavení této jedné organizace na trhu",
-      "link_phrase": "pracovně varuje před vznikem super EKO-KOMu"
-    },
-    {
-      "text": "Šmída: návrh legalizuje monopolní postavení EKO-KOMu.",
-      "source": "steno",
-      "steno_id": "2025_24_01639",
-      "citace": "protože v podstatě legalizuje monopolní postavení této jedné organizace na trhu",
-      "link_phrase": "legalizuje monopolní postavení"
-    },
-    {
-      "text": "Šmída: super EKO-KOM zastřeší všechny EPR systémy.",
-      "source": "steno",
-      "steno_id": "2025_24_01639",
-      "citace": "zastřeší všechny ty EPR systémy",
-      "link_phrase": "zastřeší všechny EPR systémy"
-    },
-    {
-      "text": "Šmída se bojí Ministerstva odpadového hospodářství mimo stát.",
-      "source": "steno",
-      "steno_id": "2025_24_01643",
-      "citace": "jestli bychom si takovým super EKO-KOMem nezřídili vlastně takové Ministerstvo odpadového hospodářství, které ale není pod státem, nýbrž má standardní akcionářskou strukturu",
-      "link_phrase": "Obává se Ministerstva odpadového hospodářství mimo stát"
-    },
-    {
-      "text": "Šmída: poslanecký návrh bez analýzy dopadů.",
-      "source": "steno",
-      "steno_id": "2025_24_01643",
-      "citace": "tento návrh přichází jako poslanecký, nikoliv jako vládní. Čili, neprošel standardním připomínkovým řízením, není k němu zpracována RIA, čili analýza dopadů.",
-      "link_phrase": "poslanecký bez analýzy dopadů"
-    },
-    {
-      "text": "U Šmídy ve stenozáznamu: silný hluk v sále.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_24_01643",
-      "citace": "(Stále silný hluk v sále.)",
-      "link_phrase": "třikrát objeví silný hluk v sále"
-    },
-    {
-      "text": "U Šmídy ve stenozáznamu: stále silný hluk v sále.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_24_01643",
-      "citace": "(Stále silný hluk v sále.)",
-      "link_phrase": "stále silný hluk v sále"
-    },
-    {
-      "text": "U Šmídy ve stenozáznamu: silný hluk v sále neustává.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_24_01645",
-      "citace": "(Silný hluk v sále neustává.)",
-      "link_phrase": "silný hluk v sále neustává"
-    },
-    {
-      "text": "Šmída mluvil do neustávajícího hluku v sále.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_24_01645",
-      "citace": "(Silný hluk v sále neustává.)",
-      "link_phrase": "neustávajícího hluku v sále"
-    },
-    {
-      "text": "Svárovská připomněla požár skládky plastů u Rynholce.",
-      "source": "steno",
-      "steno_id": "2025_24_01627",
-      "citace": "Když vloni na jaře ve Středočeském kraji hořela skládka u Rynholce na Rakovnicku, šlo převážně o skládkované plasty.",
-      "link_phrase": "hořící plasty u Rynholce"
+      "link_phrase": "monopol"
     },
     {
       "text": "První kolo: 134 proti 1.",
       "source": "steno",
       "steno_id": "2025_24_01654",
       "citace": "Takže hlasování číslo 206, přihlášeno 136 poslanců, pro 134, proti 1. Návrh byl přijat.",
-      "link_phrase": "134 proti 1"
-    },
-    {
-      "text": "Návrh přežil první kolo.",
-      "source": "steno",
-      "steno_id": "2025_24_01654",
-      "citace": "Takže hlasování číslo 206, přihlášeno 136 poslanců, pro 134, proti 1. Návrh byl přijat.",
       "link_phrase": "přežil první kolo"
-    },
-    {
-      "text": "Bendl mluvil 2 344 slov.",
-      "source": "steno",
-      "steno_id": "2025_24_01631",
-      "citace": "považuju za fatální, že tady není ministr.",
-      "link_phrase": "dvě tisíce tři sta čtyřicet čtyři slov"
-    },
-    {
-      "text": "Citace: Ministerstvo odpadového hospodářství mimo stát.",
-      "source": "steno",
-      "steno_id": "2025_24_01643",
-      "citace": "jestli bychom si takovým super EKO-KOMem nezřídili vlastně takové Ministerstvo odpadového hospodářství, které ale není pod státem, nýbrž má standardní akcionářskou strukturu",
-      "link_phrase": "Ministerstvo odpadového hospodářství, které ale není pod státem, nýbrž"
-    },
-    {
-      "text": "Zaver: obalový zákon přežil první kolo.",
-      "source": "steno",
-      "steno_id": "2025_24_01654",
-      "citace": "Takže hlasování číslo 206, přihlášeno 136 poslanců, pro 134, proti 1. Návrh byl přijat.",
-      "link_phrase": "přežil první kolo"
-    },
-    {
-      "text": "Dnesni ucet: super EKO-KOM.",
-      "source": "steno",
-      "steno_id": "2025_24_01639",
-      "citace": "pracovně říkám, vznik super EKO-KOMu",
-      "link_phrase": "super EKO-KOM"
-    },
-    {
-      "text": "Zaver: super EKO-KOMem.",
-      "source": "steno",
-      "steno_id": "2025_24_01639",
-      "citace": "pracovně říkám, vznik super EKO-KOMu",
-      "link_phrase": "super EKO-KOMem"
     }
   ],
   "publikovat": true,
   "priorita": 4,
-  "nadpis": "Super EKO-KOM do hluku",
-  "lead": "Zákon o obalech, sněmovní tisk 193. Opoziční poslanec Martin Šmída (Motoristé) pracovně říká „vznik super EKO-KOMu“, varuje před monopolem a zastřešením všech EPR systémů. Obává se, že z toho vznikne „Ministerstvo odpadového hospodářství, které ale není pod státem“. Návrh je poslanecký bez analýzy dopadů a mluví do neustávajícího hluku v sále. U téhož řečníka se ve stenozáznamu třikrát objeví silný hluk v sále, stále silný hluk v sále a silný hluk v sále neustává.",
-  "pointa": "Peštová (ANO) navrhla zákon místo ministerstva životního prostředí, Bendl (ODS) mluvil 2 344 slov, ministr chyběl, absence je fatální a téměř pohrdání Sněmovnou. Ve stenozáznamu je u debaty omylem tema odměna TAČR. Svárovská (Piráti) připomněla hořící plasty u Rynholce. První kolo 134 proti 1.",
-  "mean": "Zákon o obalech určuje, kdo v Česku kontroluje třídění, sběr a recyklaci obalového odpadu a kam tečou peníze z poplatků.",
+  "nadpis": "Oprava, která monopol neruší",
+  "lead": "Poslušně hlásím, že novelu zákona o obalech ve Sněmovně obhajovala poslankyně Peštová, protože příslušný ministr se k projednávání vlastních zákonů nedostavil. Včera za něj seděl ministr průmyslu, dnes tam nebyl nikdo. Poslanec Bendl to nazval fatálním, poslanec Kučera dodal, proč: ministr byl podle Facebooku vlastního úřadu na výletě lodí po Labi. Poslušně podotýkám, že zákon o obalech se tak nakonec projednával přesně tak, jak se u nás projednávají obaly, bez toho, kdo je za ně odpovědný.",
+  "pointa": "Stará chyba: EKO-KOM vznikl v roce 1997 jako akciová společnost, přestože má ze zákona fungovat jako nezisková organizace. Deset zakládajících akcionářů s podílem pár set tisíc korun tak dodnes ovládá firmu, přes kterou ročně tečou miliardy.\n\nProč 34 - novela zvyšuje počet akcionářů z deseti na čtyřiatřicet, ale nikde nestanoví, že musí dohromady pokrývat aspoň polovinu trhu, což by podle Hladíka žádal i rozsudek, na který se novela odvolává. Číslo 34 - tak neřeší, kdo firmu ovládá, jen kolik lidí se bude tvářit, že ji spoluvlastní.\n\nPořád jeden monopol: Pořád jde o jedinou autorizovanou obalovou společnost, pořád akciovku, jen s víc jmény na seznamu. Hladík to nazval logickým rozporem, sama Peštová přiznává, že akciovka byla od začátku špatná volba, a řešením je znovu akciovka, jen o čtyřiadvacet akcionářů větší.\n\nHlášení na velitelstvo: Firma založená na chybné právní formě dostane víc společníků, ne konkurenci. Ministr, kterého se to týká, byl mezitím na lodi.",
+  "mean": "EKO-KOM je autorizovaná obalová společnost, přes kterou výrobci platí poplatky za třídění a recyklaci obalů. Novela mění pravidla vlastnictví firmy, ne to, že je v systému jediná.",
   "citace_text": "jestli bychom si takovým super EKO-KOMem nezřídili vlastně takové Ministerstvo odpadového hospodářství, které ale není pod státem, nýbrž má standardní akcionářskou strukturu",
   "citace_autor": "Martin Šmída (Motoristé)",
   "pocet_hlasovani": 7,

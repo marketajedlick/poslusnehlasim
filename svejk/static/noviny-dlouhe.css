@@ -520,22 +520,9 @@ button{font:inherit;cursor:pointer}
 }
 /* articles */
 .article{
-  display:grid;
-  grid-template-columns:var(--article-num-w) minmax(0,1fr);
-  gap:0 var(--article-num-gap);
-  align-items:start;
   padding:18px 0 20px;
 }
-.article-num-slot{
-  grid-column:1;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-  padding-top:.35em;
-}
 .article-content{
-  grid-column:2;
   min-width:0;
 }
 .article-head{
@@ -549,16 +536,29 @@ button{font:inherit;cursor:pointer}
   .article{
     display:flex;
     flex-direction:column;
-    grid-template-columns:none;
   }
   .article-num-slot{
+    order:2;
+    display:flex;
+    flex-direction:column;
     align-items:flex-start;
     padding-top:0;
   }
-  .article-num{
+  .article-content{
+    order:1;
+  }
+  .article-head .article-num{
     font-size:clamp(44px,12vw,60px);
     line-height:1;
-    margin:0 0 4px;
+    margin:10px 0 8px;
+    text-align:left;
+    transform:scaleX(.9) scaleY(1.08);
+    transform-origin:left top;
+  }
+  .article-num-slot .article-num{
+    font-size:clamp(44px,12vw,60px);
+    line-height:1;
+    margin:10px 0 8px;
     text-align:left;
     transform:scaleX(.9) scaleY(1.08);
     transform-origin:left top;
@@ -568,7 +568,7 @@ button{font:inherit;cursor:pointer}
   }
   .article-head .stamp{
     display:inline-block;
-    margin:8px 0 0;
+    margin:0;
     transform:none;
   }
   .article-num-slot .stamp{
@@ -595,6 +595,7 @@ button{font:inherit;cursor:pointer}
 @media(min-width:1024px){
   .article{
     position:relative;
+    display:grid;
     grid-template-columns:var(--article-num-w) minmax(0,1fr);
     gap:0 var(--article-num-gap);
     margin-left:calc(-1 * (var(--article-num-w) + var(--article-num-gap)));
@@ -602,15 +603,22 @@ button{font:inherit;cursor:pointer}
     padding:22px 0 24px;
   }
   .article-num-slot{
-    align-items:center;
-    padding-top:.2em;
+    display:none;
   }
-  .article-num-slot .stamp{
-    margin-top:20px;
-    transform:rotate(-4deg);
+  .article-content{
+    grid-column:2;
   }
-  .article.i2 .article-num-slot .stamp{
-    transform:rotate(3deg);
+  .article-head .article-num{
+    position:absolute;
+    left:0;
+    top:.2em;
+    width:var(--article-num-w);
+    margin:0;
+    text-align:center;
+    font-size:108px;
+    line-height:.74;
+    transform:scaleX(.9) scaleY(1.08);
+    transform-origin:center top;
   }
   .article-head .stamp{
     position:absolute;

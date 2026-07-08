@@ -13,7 +13,7 @@
     {% else %}
     <span class="pager-tag disabled">←</span>
     {% endif %}
-    <span class="pager-now">V&nbsp;Praze, dne {{ datum_design }}</span>
+    <span class="pager-now">{{ datum_design }}</span>
     {% if nav.next %}
     <a class="pager-tag" href="{{ nav.next.href }}" title="{{ nav.next.title }}">{{ nav.next.short_label or nav.next.label }} →</a>
     {% else %}
