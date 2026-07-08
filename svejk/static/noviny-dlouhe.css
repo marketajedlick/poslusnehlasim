@@ -1561,9 +1561,7 @@ body.archiv-page{
   border-top:1px solid var(--border);
 }
 /* potvrzeno */
-.potvrzeno-wrap .soukromi-body{text-align:center}
-.potvrzeno-welcome{margin-top:4px;text-align:center}
-.potvrzeno-latest p.potvrzeno-cta-wrap{margin:12px 0 0;text-align:center}
+.potvrzeno-cta-wrap{margin-top:12px;text-align:center}
 a.potvrzeno-cta,
 .soukromi-section a.potvrzeno-cta{
   display:inline-block;
@@ -1581,15 +1579,9 @@ a.potvrzeno-cta,
 }
 a.potvrzeno-cta:hover{filter:brightness(1.05);border-bottom:none}
 .potvrzeno-note{
-  margin:20px auto 0;
-  padding-top:18px;
+  margin-top:6px;
+  padding-top:20px;
   border-top:1px solid var(--border);
-  max-width:36em;
-  font-family:var(--font-serif);
-  font-size:16px;
-  line-height:1.5;
-  color:var(--ink);
-  text-align:center;
 }
 /* 404 */
 .notfound-code{
@@ -1640,6 +1632,7 @@ a.potvrzeno-cta:hover{filter:brightness(1.05);border-bottom:none}
   align-items:center;
   gap:4px 6px;
 }
+.pivo-head .site-nav{margin-top:0}
 .pivo-body{
   font-size:18px;
   line-height:1.75;
@@ -1889,6 +1882,7 @@ a.potvrzeno-cta:hover{filter:brightness(1.05);border-bottom:none}
   align-items:center;
   gap:4px 6px;
 }
+.slovnicek-head .site-nav{margin-top:0}
 .slovnicek-page .section-rule{margin-top:18px}
 .slovnicek-page .citanka-slovnik{
   padding:28px 2px 20px;
@@ -2156,3 +2150,226 @@ table.data-table th{
 /* legacy term-tip hidden when using v7 sheets */
 .term-tip .term-tip-bubble{display:none}
 .term-tip-bubble{display:none}
+/* admin / zápis (lokální náhled) */
+.admin-page{background:var(--cream);color:var(--char)}
+.admin-wrap{
+  max-width:var(--content-w);
+  margin:0 auto;
+  padding:32px 16px 48px;
+}
+.admin-head{
+  margin-bottom:28px;
+  text-align:center;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--border);
+}
+.admin-head .eyebrow{color:var(--orange)}
+.admin-title{
+  font-family:var(--font-sans);
+  font-weight:900;
+  font-size:clamp(28px, 7vw, 36px);
+  line-height:1.05;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  margin:10px 0 12px;
+}
+.admin-gloss{
+  margin:0 auto 4px;
+  max-width:36em;
+  font-family:var(--font-serif);
+  font-style:italic;
+  font-size:17px;
+  line-height:1.45;
+  color:var(--ink);
+}
+.admin-body{font-size:17px;line-height:1.65}
+.admin-section-title{
+  font-family:var(--font-sans);
+  font-weight:800;
+  font-size:14px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin:0 0 14px;
+  color:var(--ink);
+}
+.admin-muted,.zapisek-muted{color:var(--muted);font-style:italic}
+.admin-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.admin-list-item{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 12px;
+  padding:12px 14px;
+  border:1px solid var(--border-box);
+  border-radius:6px;
+  background:var(--white);
+}
+.admin-list-link{
+  color:var(--orange);
+  font-weight:700;
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,68,17,.35);
+}
+.admin-list-link:hover{border-bottom-color:var(--orange)}
+.admin-badge{
+  font-family:var(--font-sans);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--terra);
+  background:rgba(207,90,49,.12);
+  padding:3px 8px;
+  border-radius:999px;
+}
+.admin-grid{
+  display:grid;
+  gap:20px;
+  margin-bottom:28px;
+}
+@media(min-width:960px){
+  .admin-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:start}
+}
+.admin-side{padding:18px 16px}
+.admin-side-title{
+  font-family:var(--font-sans);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin:0 0 10px;
+}
+.admin-surovy{
+  margin:0;
+  max-height:520px;
+  overflow:auto;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12px;
+  line-height:1.45;
+  white-space:pre-wrap;
+  word-break:break-word;
+  color:var(--char);
+}
+.admin-form{margin:0 0 20px}
+.admin-field{
+  display:block;
+  margin:0 0 14px;
+  font-family:var(--font-sans);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--ink);
+}
+.admin-field textarea{
+  display:block;
+  width:100%;
+  margin-top:6px;
+  padding:10px 12px;
+  font:inherit;
+  font-weight:400;
+  text-transform:none;
+  letter-spacing:0;
+  line-height:1.5;
+  border:1px solid var(--border-box);
+  border-radius:4px;
+  background:var(--white);
+  color:var(--char);
+  resize:vertical;
+}
+.admin-checkbox{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-family:var(--font-serif);
+  font-size:16px;
+  font-weight:400;
+  text-transform:none;
+  letter-spacing:0;
+  margin:0 0 14px;
+}
+.admin-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.admin-actions--row{margin-top:8px}
+.admin-btn{
+  font-family:var(--font-sans);
+  font-weight:700;
+  font-size:13px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:10px 18px;
+  border:1px solid var(--border-strong);
+  border-radius:3px;
+  background:var(--white);
+  color:var(--ink);
+  cursor:pointer;
+}
+.admin-btn--ok{background:var(--orange);border-color:var(--orange);color:var(--white)}
+.admin-btn--no{background:transparent;color:var(--terra);border-color:var(--terra)}
+.admin-back,.admin-back-link{margin:16px 0 0;font-family:var(--font-sans);font-size:14px;font-weight:700}
+.admin-back a,.admin-back-link{color:var(--orange);text-decoration:none;border-bottom:1px solid rgba(255,68,17,.35)}
+.admin-empty{padding:22px 18px}
+.admin-empty p{margin:0;line-height:1.6}
+.admin-empty code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+.zapisek-head{margin:0 0 18px;text-align:center}
+.zapisek-meta{
+  margin:0 0 8px;
+  font-family:var(--font-sans);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.zapisek-title{
+  margin:0;
+  font-family:var(--font-sans);
+  font-weight:900;
+  font-size:clamp(22px,5vw,30px);
+  line-height:1.1;
+  letter-spacing:.03em;
+  text-transform:uppercase;
+  color:var(--ink);
+}
+.zapisek-card{margin:14px 0}
+.zapisek-label{
+  font-family:var(--font-sans);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--terra);
+  margin:0 0 10px;
+}
+.zapisek-body{
+  font-family:var(--font-serif);
+  font-size:18px;
+  line-height:1.65;
+  color:var(--char);
+}
+.zapisek-body + .zapisek-meta-list{margin-top:14px}
+.zapisek-meta-list,.zapisek-list{
+  margin:0;
+  padding-left:1.2em;
+  font-family:var(--font-serif);
+  font-size:16px;
+  line-height:1.55;
+}
+.zapisek-subtitle{
+  margin:0 0 8px;
+  font-family:var(--font-sans);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.zapisek-list + .zapisek-subtitle{margin-top:14px}
+.zapisek-meta-list a,.zapisek-list a{color:var(--orange);border-bottom:1px solid rgba(255,68,17,.35);text-decoration:none}
+.zapisek-meta-list a:hover,.zapisek-list a:hover{border-bottom-color:var(--orange)}
+

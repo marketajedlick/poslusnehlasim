@@ -1,45 +1,60 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+{% include "head-noviny.html" %}
+<title>Náhled zápisu #{{ zapisek.id }} · {{ t.brand.name }}</title>
+<meta name="robots" content="noindex" />
+<link rel="stylesheet" href="{{ fonts_css_href }}" />
+<link rel="stylesheet" href="{{ css_href }}" />
+</head>
+<body class="admin-page">
+<div class="admin-wrap">
+  <header class="admin-head">
+    <div class="eyebrow">Interní nástroj</div>
+    <h1 class="admin-title">Náhled zápisu #{{ zapisek.id }}</h1>
+    {% set site_nav_modifier = "site-nav--section" %}
+    {% include "site-nav.html" %}
+  </header>
 
-{% block title %}Náhled, admin{% endblock %}
-
-{% block content %}
-<h2>Náhled zápisu #{{ zapisek.id }}</h2>
-
-<div class="admin-grid">
-  <div class="admin-preview">
-    {% include "zapisek.html" %}
-  </div>
-  <aside class="admin-side">
-    <h3>Původní stenozáznam</h3>
-    <pre class="surovy">{{ bod.surovy_text[:8000] }}{% if bod.surovy_text|length > 8000 %}
+  <div class="admin-grid">
+    <div class="admin-preview">
+      {% include "zapisek.html" %}
+    </div>
+    <aside class="admin-side card card-white">
+      <h2 class="admin-side-title">Původní stenozáznam</h2>
+      <pre class="admin-surovy">{{ bod.surovy_text[:8000] }}{% if bod.surovy_text|length > 8000 %}
 
 [… zkráceno, celkem {{ bod.surovy_text|length }} znaků …]{% endif %}</pre>
-  </aside>
-</div>
-
-<form class="edit-form" method="post" action="/admin/zapisy/{{ zapisek.id }}/ulozit">
-  <h3>Upravit a uložit</h3>
-  <label>Švejkův komentář
-    <textarea name="svejk_text" rows="8">{{ zapisek.svejk_text }}</textarea>
-  </label>
-  <label>Faktické shrnutí
-    <textarea name="fakticke_shrnuti" rows="6">{{ zapisek.fakticke_shrnuti }}</textarea>
-  </label>
-  <label class="checkbox">
-    <input type="checkbox" name="schvalit" value="1"> Uložit a schválit
-  </label>
-  <div class="actions">
-    <button type="submit">Uložit</button>
+    </aside>
   </div>
-</form>
 
-<div class="actions">
-  <form method="post" action="/admin/zapisy/{{ zapisek.id }}/schvalit" style="display:inline">
-    <button type="submit" class="btn-ok">Schválit</button>
+  <form class="admin-form edit-form" method="post" action="/admin/zapisy/{{ zapisek.id }}/ulozit">
+    <h2 class="admin-section-title">Upravit a uložit</h2>
+    <label class="admin-field">Švejkův komentář
+      <textarea name="svejk_text" rows="8">{{ zapisek.svejk_text }}</textarea>
+    </label>
+    <label class="admin-field">Faktické shrnutí
+      <textarea name="fakticke_shrnuti" rows="6">{{ zapisek.fakticke_shrnuti }}</textarea>
+    </label>
+    <label class="admin-checkbox">
+      <input type="checkbox" name="schvalit" value="1"> Uložit a schválit
+    </label>
+    <div class="admin-actions">
+      <button type="submit" class="admin-btn">Uložit</button>
+    </div>
   </form>
-  <form method="post" action="/admin/zapisy/{{ zapisek.id }}/zamitnout" style="display:inline">
-    <button type="submit" class="btn-no">Zamítnout</button>
-  </form>
-  <a href="/admin">← Zpět</a>
+
+  <div class="admin-actions admin-actions--row">
+    <form method="post" action="/admin/zapisy/{{ zapisek.id }}/schvalit">
+      <button type="submit" class="admin-btn admin-btn--ok">Schválit</button>
+    </form>
+    <form method="post" action="/admin/zapisy/{{ zapisek.id }}/zamitnout">
+      <button type="submit" class="admin-btn admin-btn--no">Zamítnout</button>
+    </form>
+    <a class="admin-back-link" href="/admin">← Zpět</a>
+  </div>
 </div>
-{% endblock %}
+{% include "site-footer.html" %}
+{% include "cookie-consent.html" %}
+</body>
+</html>

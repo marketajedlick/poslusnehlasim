@@ -1,22 +1,42 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+{% include "head-noviny.html" %}
+<title>Redakce · {{ t.brand.name }}</title>
+<meta name="robots" content="noindex" />
+<link rel="stylesheet" href="{{ fonts_css_href }}" />
+<link rel="stylesheet" href="{{ css_href }}" />
+</head>
+<body class="admin-page">
+<div class="admin-wrap">
+  <header class="admin-head">
+    <div class="eyebrow">Interní nástroj</div>
+    <h1 class="admin-title">Redakce</h1>
+    <p class="admin-gloss">Zápisy čekající na schválení před exportem na web.</p>
+    {% set site_nav_modifier = "site-nav--section" %}
+    {% include "site-nav.html" %}
+  </header>
 
-{% block title %}Admin · Poslušně hlásím{% endblock %}
-
-{% block content %}
-<h2>Redakce, čekající zápisy</h2>
-{% if not items %}
-<p class="muted">Nic nečeká na schválení.</p>
-{% else %}
-<ul class="admin-list">
-  {% for item in items %}
-  <li>
-    <a href="/admin/zapisy/{{ item.zapisek.id }}">
-      Schůze {{ item.schuze.cislo_schuze }}/{{ item.schuze.obdobi }}, {{ item.bod.nazev }}
-    </a>
-    <span class="badge">čeká</span>
-  </li>
-  {% endfor %}
-</ul>
-{% endif %}
-<p><a href="/">← Veřejná stránka</a></p>
-{% endblock %}
+  <div class="admin-body">
+    <h2 class="admin-section-title">Čekající zápisy</h2>
+    {% if not items %}
+    <p class="admin-muted">Nic nečeká na schválení.</p>
+    {% else %}
+    <ul class="admin-list">
+      {% for item in items %}
+      <li class="admin-list-item">
+        <a class="admin-list-link" href="/admin/zapisy/{{ item.zapisek.id }}">
+          Schůze {{ item.schuze.cislo_schuze }}/{{ item.schuze.obdobi }}, {{ item.bod.nazev }}
+        </a>
+        <span class="admin-badge">čeká</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <p class="admin-back"><a href="/">← Veřejná stránka</a></p>
+  </div>
+</div>
+{% include "site-footer.html" %}
+{% include "cookie-consent.html" %}
+</body>
+</html>

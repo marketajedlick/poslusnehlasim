@@ -4,121 +4,65 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>{{ t.doi.title }}</title>
+{% if static_base %}<style>
+@font-face{font-family:'Archivo';font-style:normal;font-weight:500 900;src:url('{{ static_base }}/fonts/archivo-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:500 900;src:url('{{ static_base }}/fonts/archivo-latin.woff2') format('woff2');}
+@font-face{font-family:'Old Standard TT';font-style:normal;font-weight:400;src:url('{{ static_base }}/fonts/oldstandardtt-400-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'Old Standard TT';font-style:normal;font-weight:400;src:url('{{ static_base }}/fonts/oldstandardtt-400-latin.woff2') format('woff2');}
+@font-face{font-family:'Old Standard TT';font-style:italic;font-weight:400;src:url('{{ static_base }}/fonts/oldstandardtt-400italic-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'Old Standard TT';font-style:italic;font-weight:400;src:url('{{ static_base }}/fonts/oldstandardtt-400italic-latin.woff2') format('woff2');}
+</style>{% endif %}
+<style>{{ css | safe }}</style>
 </head>
-<body style="margin:0;padding:0;background:#c9bda3;-webkit-text-size-adjust:100%;">
+<body>
 
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#c9bda3;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f7f2f0;">
 <tr>
-<td align="center" style="padding:20px 16px;">
+<td align="center" style="padding:0;">
+<table role="presentation" class="email-wrap" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px;background:#f7f2f0;border-radius:0;">
+<tr>
+<td class="email-pad">
 
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:100%;max-width:600px;background:#f0e6cf;border-radius:3px;">
-<tr>
-<td style="padding:32px 0 0;">
+<div class="masthead doi-head">
+  {% if svejk_head_url %}<img class="masthead-fav" src="{{ svejk_head_url }}" alt="Poslušně hlásím" width="84" height="84" style="display:block;width:84px;height:84px;margin:0 auto 10px;border:0;">{% endif %}
+  <div class="eyebrow">{{ t.doi.eyebrow }}</div>
+  <h1 class="mast email-mast doi-mast">Poslušně<br>hlásím!</h1>
+</div>
 
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-<tr>
-<td style="padding:0 48px;">
+<div class="doi-body">
+  <p class="doi-intro">{{ t.doi.intro }}</p>
+</div>
 
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-<tr>
-<td align="center" style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#cf5a31;padding:0 0 12px;">
-{{ t.doi.eyebrow }}
-</td>
-</tr>
-<tr>
-<td align="center" style="font-family:Impact,'Arial Black',Arial,sans-serif;font-size:40px;line-height:0.95;color:#211c14;text-transform:uppercase;letter-spacing:-0.01em;padding:0 0 16px;">
-POSLUŠNĚ <span style="color:#cf5a31;">HLÁSÍM</span>
-</td>
-</tr>
-<tr>
-<td style="border-top:2px solid #211c14;font-size:0;line-height:0;">&nbsp;</td>
-</tr>
-</table>
-
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-<tr>
-<td align="center" style="padding:24px 0 28px;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="480" style="width:100%;max-width:480px;">
-<tr>
-<td align="center" style="font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.55;color:#211c14;text-align:center;">
-{{ t.doi.intro }}
-</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-<tr>
-<td align="center" style="padding:0 0 28px;text-align:center;">
+<div class="doi-cta-wrap">
 <!--[if mso]>
-<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="*|SUBCONFIRM|*" style="height:46px;v-text-anchor:middle;width:240px;" arcsize="4%" stroke="f" fillcolor="#cf5a31">
+<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="*|SUBCONFIRM|*" style="height:46px;v-text-anchor:middle;width:240px;" arcsize="8%" stroke="f" fillcolor="#ff4411">
 <w:anchorlock/>
-<center style="color:#f0e6cf;font-family:Arial,sans-serif;font-size:14px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;">{{ t.doi.cta }}</center>
+<center style="color:#ffffff;font-family:Arial,sans-serif;font-size:14px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;">{{ t.doi.cta }}</center>
 </v:roundrect>
 <![endif]-->
 <!--[if !mso]><!-->
-<a href="*|SUBCONFIRM|*" style="display:inline-block;background:#cf5a31;color:#f0e6cf !important;font-family:Arial,Helvetica,sans-serif;font-weight:bold;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:15px 36px;border-radius:2px;mso-hide:all;">{{ t.doi.cta }}</a>
+<a href="*|SUBCONFIRM|*" class="email-cta" style="mso-hide:all;">{{ t.doi.cta }}</a>
 <!--<![endif]-->
-</td>
-</tr>
-</table>
+</div>
 
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-<tr>
-<td align="center" style="padding:0 0 24px;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="480" style="width:100%;max-width:480px;">
-<tr>
-<td align="center" style="font-family:Georgia,'Times New Roman',serif;font-size:13px;line-height:1.6;color:#5a503e;text-align:center;">
-{{ t.doi.inbox_tip }}
-</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
+<p class="doi-note">{{ t.doi.inbox_tip }}</p>
 
-</td>
-</tr>
-</table>
+<div class="doi-quote-wrap">
+<div class="verdict verdict-doi">
+  <p class="q"><span class="q-quote"><span class="q-mark">„</span><span class="key">{{ t.doi.quote_key }}</span> {{ t.doi.quote_body }}<span class="q-mark">"</span></span></p>
+</div>
+</div>
+
+<div class="email-legal doi-legal">
+  <p style="margin:0 0 8px;">{{ t.doi.footer }}</p>
+  <p style="margin:0;">
+    <a href="{{ privacy_url }}" style="color:#5a503e;text-decoration:underline;">{{ t.doi.privacy_link }}</a>
+  </p>
+</div>
 
 </td>
 </tr>
-
-<tr>
-<td style="padding:0;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#211c14;">
-<tr>
-<td align="center" style="padding:24px 32px 22px;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="460" style="width:100%;max-width:460px;">
-<tr>
-<td align="center" style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.5;color:#f0e6cf;font-style:italic;text-align:center;padding:10px 20px 8px;">
-<span style="font-family:Impact,'Arial Black',Arial,sans-serif;font-style:normal;font-weight:normal;color:#cf5a31;text-transform:uppercase;letter-spacing:0.01em;">{{ t.doi.quote_key }}</span> <span class="q-quote">„{{ t.doi.quote_body }}“</span>
-</td>
-</tr>
 </table>
-</td>
-</tr>
-</table>
-</td>
-</tr>
-
-<tr>
-<td style="padding:24px 48px 32px;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-<tr>
-<td align="center" style="font-family:Georgia,'Times New Roman',serif;font-size:12px;line-height:1.55;color:#5a503e;text-align:center;">
-{{ t.doi.footer }}<br />
-<a href="{{ privacy_url }}" style="color:#5a503e;text-decoration:underline;">{{ t.doi.privacy_link }}</a>
-</td>
-</tr>
-</table>
-</td>
-</tr>
-
-</table>
-
 </td>
 </tr>
 </table>

@@ -1054,11 +1054,15 @@ def render_doi_email_html(
     privacy_url = f"{site}{privacy_path}"
     confirm_redirect_url = f"{site}{confirm_path}"
     subject = doi["subject"]
+    css = _EMAIL_CSS.read_text(encoding="utf-8")
     tpl = _jinja_env().get_template("doi-email.html")
     html = tpl.render(
         t=t,
+        css=css,
         privacy_url=privacy_url,
         confirm_redirect_url=confirm_redirect_url,
+        svejk_head_url=f"{site}/static/favicon.png",
+        static_base=f"{site}/static",
     )
     plain = "\n".join(
         [
@@ -1920,3 +1924,83 @@ def render_o_webu_html(
         ),
         **favicons,
     )
+
+
+def _admin_shell_ctx(
+    obdobi: int,
+    *,
+    inline_css: bool = False,
+    css_href: str | None = None,
+    fonts_css_href: str | None = None,
+    base_path: str = "",
+) -> dict[str, Any]:
+    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path)
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    return {
+        "inline_css": inline_css,
+        "css": css,
+        "css_href": css_href,
+        "fonts_css_href": fonts_css_href,
+        "cookie_privacy_url": soukromi_pages_href(base_path),
+        **_site_ctx(site_url=cfg.site_url, base_path=base_path, page_path="/admin"),
+        **_site_nav_ctx(obdobi, base_path),
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="admin"),
+        **favicons,
+    }
+
+
+def render_admin_html(
+    obdobi: int,
+    items: list[dict[str, Any]] | None = None,
+    **kwargs: Any,
+) -> str:
+    """Interní seznam zápisů (noindex, mimo export)."""
+    tpl = _jinja_env().get_template("admin.html")
+    return tpl.render(items=items or [], **_admin_shell_ctx(obdobi, **kwargs))
+
+
+def render_admin_detail_html(
+    obdobi: int,
+    *,
+    zapisek: dict[str, Any],
+    bod: dict[str, Any],
+    schuze: dict[str, Any],
+    statistiky: dict[str, Any] | None = None,
+    **kwargs: Any,
+) -> str:
+    """Interní náhled jednoho zápisu (noindex, mimo export)."""
+    tpl = _jinja_env().get_template("admin_detail.html")
+    return tpl.render(
+        zapisek=zapisek,
+        bod=bod,
+        schuze=schuze,
+        statistiky=statistiky or {},
+        **_admin_shell_ctx(obdobi, **kwargs),
+    )
+
+
+def render_index_legacy_html(
+    obdobi: int,
+    *,
+    zapisek: dict[str, Any] | None = None,
+    bod: dict[str, Any] | None = None,
+    schuze: dict[str, Any] | None = None,
+    statistiky: dict[str, Any] | None = None,
+    **kwargs: Any,
+) -> str:
+    """Starý MVP náhled zápisu (noindex). Export webu používá render_den_html."""
+    ctx = _admin_shell_ctx(obdobi, **kwargs)
+    tpl = _jinja_env().get_template("index.html")
+    return tpl.render(
+        zapisek=zapisek,
+        bod=bod or {},
+        schuze=schuze or {},
+        statistiky=statistiky or {},
+        **ctx,
+    )
+

@@ -10,13 +10,15 @@
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="archiv-page">
-<div class="archiv-wrap potvrzeno-wrap">
+<div class="archiv-wrap soukromi-wrap potvrzeno-wrap">
   <header class="archiv-head">
     <h1 class="archiv-title">{{ t.confirmed_page.heading }}</h1>
     <p class="archiv-gloss">{{ t.confirmed_page.gloss }}</p>
+    {% set site_nav_modifier = "site-nav--section" %}
+    {% include "site-nav.html" %}
   </header>
 
-  <div class="soukromi-body potvrzeno-welcome">
+  <div class="soukromi-body">
     {% if latest_href %}
     <section class="soukromi-section potvrzeno-latest">
       <h2 class="soukromi-heading">{{ t.confirmed_page.latest_heading }}</h2>
@@ -41,14 +43,13 @@
       <h2 class="soukromi-heading">{{ t.confirmed_page.no_marketing_heading }}</h2>
       <p>{{ t.confirmed_page.no_marketing_text }}</p>
     </section>
+
+    <section class="soukromi-section potvrzeno-note">
+      <p>{{ t.confirmed_page.note_prefix }}
+        {% if contact_email %}{{ t.confirmed_page.note_contact }} <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.
+        {% else %}{{ t.confirmed_page.note_reply }}{% endif %}</p>
+    </section>
   </div>
-
-  {% set site_nav_modifier = "site-nav--section" %}
-  {% include "site-nav.html" %}
-
-  <p class="potvrzeno-note">{{ t.confirmed_page.note_prefix }}
-    {% if contact_email %}{{ t.confirmed_page.note_contact }} <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.
-    {% else %}{{ t.confirmed_page.note_reply }}{% endif %}</p>
 </div>
 {% include "site-footer.html" %}
 {% include "cookie-consent.html" %}

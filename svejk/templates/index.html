@@ -1,14 +1,33 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+{% include "head-noviny.html" %}
+<title>{{ t.brand.name }}</title>
+<meta name="robots" content="noindex" />
+<link rel="stylesheet" href="{{ fonts_css_href }}" />
+<link rel="stylesheet" href="{{ css_href }}" />
+</head>
+<body class="admin-page">
+<div class="admin-wrap">
+  <header class="admin-head">
+    <div class="eyebrow">{{ t.brand.tagline | default('Deník sněmovny', true) }}</div>
+    <h1 class="admin-title">{{ t.brand.name }}</h1>
+    {% set site_nav_modifier = "site-nav--section" %}
+    {% include "site-nav.html" %}
+  </header>
 
-{% block title %}Poslušně hlásím{% endblock %}
-
-{% block content %}
-{% if not zapisek %}
-<section class="empty">
-  <h2>Zatím nic schváleného</h2>
-  <p>Redakce ještě neodklikla první zápis. Spusť pipeline lokálně a schval v <a href="/admin">adminu</a>.</p>
-</section>
-{% else %}
-{% include "zapisek.html" %}
-{% endif %}
-{% endblock %}
+  <div class="admin-body">
+    {% if not zapisek %}
+    <section class="card card-white admin-empty">
+      <h2 class="admin-section-title">Zatím nic schváleného</h2>
+      <p>Redakce ještě neodklikla první zápis. Spusť pipeline lokálně a schval vydání v <code>publish-approved.json</code> nebo přes <code>./run-svejk.sh review</code>.</p>
+    </section>
+    {% else %}
+    {% include "zapisek.html" %}
+    {% endif %}
+  </div>
+</div>
+{% include "site-footer.html" %}
+{% include "cookie-consent.html" %}
+</body>
+</html>

@@ -17,19 +17,8 @@
   <header class="slovnicek-head">
     <h1 class="slovnicek-title">{{ t.glossary_page.heading }}</h1>
     <p class="slovnicek-gloss">{{ t.glossary_page.gloss }}</p>
-    <nav class="slovnicek-nav" aria-label="{{ t.nav.aria_main }}">
-      {% if latest_href %}
-      <a class="site-nav-link" href="{{ latest_href }}">{{ t.nav.latest }}</a>
-      {% endif %}
-      {% if archive_href %}
-      {% if latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
-      <a class="site-nav-link" href="{{ archive_href }}">{{ t.nav.archive }}</a>
-      {% endif %}
-      {% if pivo_href %}
-      {% if archive_href or latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
-      <a class="site-nav-link" href="{{ pivo_href }}">{{ t.nav.beer }}</a>
-      {% endif %}
-    </nav>
+    {% set site_nav_hide_glossary = true %}
+    {% include "site-nav.html" %}
   </header>
 
 

@@ -1,7 +1,9 @@
 {% set _latest = latest_href and not (site_nav_hide_latest | default(false)) %}
 {% set _archive = archive_href and not (site_nav_hide_archive | default(false)) %}
+{% set _glossary = slovnicek_href and not (site_nav_hide_glossary | default(false)) %}
+{% set _beer = pivo_href and not (site_nav_hide_beer | default(false)) %}
 {% set _prefix = site_nav_has_prefix | default(false) %}
-{% if _latest or _archive or slovnicek_href or pivo_href %}
+{% if _latest or _archive or _glossary or _beer %}
 {% if not (site_nav_inline | default(false)) %}
 <nav class="site-nav{% if site_nav_modifier %} {{ site_nav_modifier }}{% endif %}" aria-label="{{ t.nav.aria_main }}">
 {% endif %}
@@ -12,12 +14,12 @@
   {% if _latest or _prefix %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
   <a class="site-nav-link" href="{{ archive_href }}">{{ t.nav.archive }}</a>
   {% endif %}
-  {% if slovnicek_href %}
+  {% if _glossary %}
   {% if _archive or _latest or _prefix %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
   <a class="site-nav-link" href="{{ slovnicek_href }}">{{ t.nav.glossary }}</a>
   {% endif %}
-  {% if pivo_href %}
-  {% if slovnicek_href or _archive or _latest or _prefix %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
+  {% if _beer %}
+  {% if _glossary or _archive or _latest or _prefix %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
   <a class="site-nav-link" href="{{ pivo_href }}">{{ t.nav.beer }}</a>
   {% endif %}
 {% if not (site_nav_inline | default(false)) %}

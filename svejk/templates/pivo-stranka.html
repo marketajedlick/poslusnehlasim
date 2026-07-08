@@ -14,19 +14,8 @@
             <header class="pivo-head">
               <div class="eyebrow">{{ t.beer_page.eyebrow }}</div>
               <h1 class="pivo-title">{{ t.beer_page.heading }}</h1>
-              <nav class="pivo-nav" aria-label="{{ t.nav.aria_main }}">
-                {% if latest_href %}
-                <a class="site-nav-link" href="{{ latest_href }}">{{ t.nav.latest }}</a>
-                {% endif %}
-                {% if archive_href %}
-                {% if latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
-                <a class="site-nav-link" href="{{ archive_href }}">{{ t.nav.archive }}</a>
-                {% endif %}
-                {% if slovnicek_href %}
-                {% if archive_href or latest_href %}<span class="site-nav-sep" aria-hidden="true">·</span>{% endif %}
-                <a class="site-nav-link" href="{{ slovnicek_href }}">{{ t.nav.glossary }}</a>
-                {% endif %}
-              </nav>
+              {% set site_nav_hide_beer = true %}
+              {% include "site-nav.html" %}
             </header>
 
             <div class="pivo-body">
