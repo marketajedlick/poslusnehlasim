@@ -1,96 +1,47 @@
 {
   "slug": "interpelace-babis-ipo-letiste-02-07",
-  "nazev": "IPO letiště jako titulek",
+  "nazev": "Titulek na počkání",
   "datum": "02.07.2026",
   "verdikt": "debata",
-  "predmet_lidsky": "Babišova odpověď v jiné interpelaci, kde si nahlas vymyslel titulek o prodeji letiště na burze",
+  "predmet_lidsky": "Babišova odpověď v interpelaci, kde si nahlas vymyslel titulek o prodeji letiště na burze",
   "koho": [
     "Koho se to týká? Každého, kdo sleduje, jak z jedné věty v sále vznikne zítřejší titulek."
   ],
   "fakty": [
     {
-      "text": "Babiš: média nedělají monitoring.",
-      "source": "steno",
-      "steno_id": "2025_24_01736",
-      "citace": "média, která vás tak milují, to nedělají, nedělají monitoring.",
-      "link_phrase": "média nedělají monitoring"
-    },
-    {
-      "text": "Babiš: Počkejte, teďka udělám titulek.",
+      "text": "Babiš: Počkejte, teďka udělám titulek a všichni budou psát.",
       "source": "steno",
       "steno_id": "2025_24_01736",
       "citace": "Počkejte, teďka udělám titulek a všichni budou psát.",
       "link_phrase": "Počkejte, teďka udělám titulek a všichni budou psát"
     },
     {
-      "text": "Babiš si nahlas vymýšlí budoucí titulek.",
+      "text": "Babiš navrhl prodat 40 procent letiště na trh.",
       "source": "steno",
       "steno_id": "2025_24_01736",
-      "citace": "Počkejte, teďka udělám titulek a všichni budou psát.",
-      "link_phrase": "vymýšlí budoucí titulek"
+      "citace": "Například, že bychom šli z letiště na IPO, že bychom dali 40 procent na trh.",
+      "link_phrase": "40 procent na burze"
     },
     {
-      "text": "Babiš: teď udělám titulek a všichni budou psát.",
-      "source": "steno",
-      "steno_id": "2025_24_01736",
-      "citace": "Počkejte, teďka udělám titulek a všichni budou psát.",
-      "link_phrase": "všichni budou psát"
-    },
-    {
-      "text": "Babiš si nahlas vymýšlí titulek o IPO letiště.",
-      "source": "steno",
-      "steno_id": "2025_24_01736",
-      "citace": "Počkejte, teďka udělám titulek a všichni budou psát. Například, že bychom šli z letiště na IPO, že bychom dali 40 procent na trh.",
-      "link_phrase": "teď udělám titulek"
-    },
-    {
-      "text": "Babiš: šli bychom z letiště na IPO, 40 procent na trh.",
-      "source": "steno",
-      "steno_id": "2025_24_01736",
-      "citace": "Například, že bychom šli z letiště na IPO, že bychom dali 40 procent na trh. To by bylo peněz jak želez.",
-      "link_phrase": "šli z letiště na IPO"
-    },
-    {
-      "text": "Babiš: dali 40 procent na trh.",
-      "source": "steno",
-      "steno_id": "2025_24_01736",
-      "citace": "že bychom dali 40 procent na trh.",
-      "link_phrase": "dali čtyřicet procent na trh"
-    },
-    {
-      "text": "Babiš: to by bylo peněz jak želez.",
+      "text": "Babiš: To by bylo peněz jak želez.",
       "source": "steno",
       "steno_id": "2025_24_01736",
       "citace": "To by bylo peněz jak želez.",
       "link_phrase": "peněz jak želez"
     },
     {
-      "text": "Babiš ironicky cituje reakci médií.",
+      "text": "Babiš ironicky cituje reakci: ten Babiš je blbej.",
       "source": "steno",
       "steno_id": "2025_24_01736",
       "citace": "Už křičí všichni: ten Babiš je blbej.",
-      "link_phrase": "Už křičí všichni"
+      "link_phrase": "myslet, že je blbý"
     },
     {
-      "text": "Babiš: z prodeje letiště by vypadly desítky miliard.",
+      "text": "Babiš předtím vyčítal, že média nedělají monitoring.",
       "source": "steno",
       "steno_id": "2025_24_01736",
-      "citace": "Ale z toho by vypadly nějaké desítky miliard.",
-      "link_phrase": "desítky miliard"
-    },
-    {
-      "text": "Babiš: z toho by vypadly desítky miliard.",
-      "source": "steno",
-      "steno_id": "2025_24_01736",
-      "citace": "Ale z toho by vypadly nějaké desítky miliard.",
-      "link_phrase": "z toho by vypadly"
-    },
-    {
-      "text": "Babiš přirovnal titulek k Explosii.",
-      "source": "steno",
-      "steno_id": "2025_24_01736",
-      "citace": "Když jsem přišel s Explosií, říkali: jó, jajajaj.",
-      "link_phrase": "přišel s Explosií"
+      "citace": "média, která vás tak milují, to nedělají, nedělají monitoring.",
+      "link_phrase": "si pak sám premiér stěžuje"
     },
     {
       "text": "Po titulku zazněl smích a potlesk koalice.",
@@ -98,24 +49,15 @@
       "kind": "scene",
       "steno_id": "2025_24_01736",
       "citace": "(Smích a potlesk koaličních poslanců.)",
-      "link_phrase": "smích a potlesk koaličních poslanců"
-    },
-    {
-      "text": "Zaver: IPO letiště.",
-      "source": "steno",
-      "steno_id": "2025_24_01736",
-      "citace": "Například, že bychom šli z letiště na IPO, že bychom dali 40 procent na trh.",
-      "link_phrase": "IPO letiště"
+      "link_phrase": "titulek si napsal sám"
     }
   ],
   "publikovat": true,
   "priorita": 4,
   "nadpis": "Titulek na počkání",
-  "lead": "Babiš a IPO letiště jako titulek. V jiné interpelaci si premiér nahlas vymýšlí budoucí titulek: „Počkejte, teďka udělám titulek a všichni budou psát.“ Například, že bychom šli z letiště na IPO, dali 40 procent na trh, to by bylo peněz jak želez. Už křičí všichni, dodá ironicky, premiér je blbej, z toho by vypadly desítky miliard. Sklidí smích a potlesk koaličních poslanců. Přímo v sále ukázal, jak vznikají mediální kauzy.",
-  "pointa": "Babiš (ANO) předtím vyčítal, že média nedělají monitoring. K titulku o letišti přirovnal Explosii, kdy říkali jó, jajajaj.",
-  "mean": "IPO je první veřejná nabídka akcií na burze. Premiér v interpelaci popisoval hypotézu, že by stát mohl prodat část letiště investorům.",
-  "citace_text": "Počkejte, teďka udělám titulek a všichni budou psát. Například, že bychom šli z letiště na IPO, že bychom dali 40 procent na trh. To by bylo peněz jak želez.",
-  "citace_autor": "Andrej Babiš (ANO)",
+  "lead": "Poslušně hlásím, že premiér Babiš se během interpelace rozhodl usnadnit práci novinářům a titulek si napsal sám. Počkejte, teďka udělám titulek a všichni budou psát, oznámil Sněmovně a navrhl, že by se z pražského letiště mohlo prodat 40 procent na burze. To by bylo peněz jak želez, dodal, a sám se rovnou opravil, že teď si všichni budou myslet, že je blbý.",
+  "pointa": "Jak to bylo doopravdy myšleno, jako vtip nebo jako skutečný plán se v tu chvíli nedozvěděl nikdo, včetně možná samotného premiéra. Poslušně podotýkám, že takhle vzniká přesně ten typ zpráv v médiích, na který si pak sám premiér stěžuje.\n\nHlášení na velitelstvo: Prodej státního majetku formou poznámky mezi řečí. Ministerstvo financí se zatím nevyjádřilo, protože o tom pravděpodobně neví.",
+  "mean": "IPO je první veřejná nabídka akcií na burze. Premiér v interpelaci popisoval prodej části letiště spíš jako příklad titulku než hotový plán.",
   "pocet_hlasovani": 0,
   "proslo": false
 }

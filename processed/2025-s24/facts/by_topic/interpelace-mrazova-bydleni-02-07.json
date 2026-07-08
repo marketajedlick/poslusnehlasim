@@ -1,113 +1,64 @@
 {
   "slug": "interpelace-mrazova-bydleni-02-07",
-  "nazev": "Prázdné lavice a byt ministryně",
+  "nazev": "Prázdné lavice",
   "datum": "02.07.2026",
   "verdikt": "debata",
-  "predmet_lidsky": "písemné interpelace Pirátů o krizi bydlení a kauzách ministryně pro místní rozvoj Kláry Dostálové-Mrázové",
+  "predmet_lidsky": "písemné interpelace a prázdné ministerské lavice ve Sněmovně",
   "koho": [
-    "Koho se to týká? Každého, kdo čeká na byt, pronájem nebo řešení bytové krize, zatímco ministryně řeší vlastní kauzy."
+    "Koho se to týká? Každého, kdo čeká, že se poslanci ptají ministrů ve Sněmovně a ministři tam skutečně sedí."
   ],
   "fakty": [
     {
-      "text": "Richterová: za ní prázdné židle, chybí ministři.",
+      "text": "Richterová: prázdné židle, chybí ministři.",
       "source": "steno",
       "steno_id": "2025_24_01573",
       "citace": "ta spousta prázdných židlí za mnou ukazuje, že tady prostě dnes chybí téměř všichni ministři, aby mohli odpovídat na interpelace poslanců.",
-      "link_phrase": "prázdných židlí za mnou"
-    },
-    {
-      "text": "Richterová ukázala na prázdné židle za sebou.",
-      "source": "steno",
-      "steno_id": "2025_24_01573",
-      "citace": "ta spousta prázdných židlí za mnou ukazuje, že tady prostě dnes chybí téměř všichni ministři",
-      "link_phrase": "prázdné židle za sebou"
+      "link_phrase": "ohlédla za sebe"
     },
     {
       "text": "V sále zůstala jen ministryně Mrázová.",
       "source": "steno",
       "steno_id": "2025_24_01573",
       "citace": "Je tady jenom paní ministryně Mrázová.",
-      "link_phrase": "V sále zůstala jen ministryně Mrázová"
+      "link_phrase": "jen ministryně Mrázová"
     },
     {
-      "text": "Otázky mířily na nepřítomného premiéra Babiše.",
+      "text": "Černochová: Zůna se za šest sedm měsíců účastnil interpelací jen jednou.",
+      "source": "steno",
+      "steno_id": "2025_24_00604",
+      "citace": "za tu dobu pan ministr Zůna se účastnil pouze jednou interpelací.",
+      "link_phrase": "účastnil interpelací jen jednou"
+    },
+    {
+      "text": "Kučera: ministr životního prostředí byl podle Facebooku resortu na lodi na Labi.",
+      "source": "steno",
+      "steno_id": "2025_24_01633",
+      "citace": "Pan ministr životního prostředí byl aspoň podle Facebooku Ministerstva životního prostředí na výletě lodí na Labi.",
+      "link_phrase": "na lodi na Labi"
+    },
+    {
+      "text": "Piráti navrhují finanční postih za neúčast ministrů na interpelacích.",
+      "source": "steno",
+      "steno_id": "2025_24_01954",
+      "citace": "má to pak nějaké dopady do jejich finančního ohodnocení",
+      "link_phrase": "strhávaly peníze"
+    },
+    {
+      "text": "Richterová: motivovat ministry finančně chodit na interpelace.",
       "source": "steno",
       "steno_id": "2025_24_01573",
-      "citace": "ta má interpelace je směřována přímo na pana premiéra, protože on je odpovědný za složení vlády",
-      "link_phrase": "nepřítomného premiéra Babiše"
-    },
-    {
-      "text": "Stojanová: bytová krize a kauzy Mrázové.",
-      "source": "steno",
-      "steno_id": "2025_24_01579",
-      "citace": "hovořili o té probíhající krizi bydlení, do které teď bohužel ještě zasahují četné kauzy ministryně pro místní rozvoj",
-      "link_phrase": "skandálech kolem Mrázové"
-    },
-    {
-      "text": "Lipavský: interpelace ke zrušení strategické komunikace státu.",
-      "source": "steno",
-      "steno_id": "2025_24_01590",
-      "citace": "ve věci strategická komunikace státu a důvody jejího zrušení vládou vedenou Andrej Babišem k 1. 1. 2026",
-      "link_phrase": "strategické komunikaci státu"
-    },
-    {
-      "text": "Stojanová mluvila 2 616 slov.",
-      "source": "steno",
-      "steno_id": "2025_24_01579",
-      "citace": "hovořili o té probíhající krizi bydlení, do které teď bohužel ještě zasahují četné kauzy ministryně pro místní rozvoj",
-      "link_phrase": "mluvila dvě tisíce šest set šestnáct slov"
-    },
-    {
-      "text": "Bartoš: dnešní koalice ANO kdysi útočila kvůli zákonu o podpoře bydlení.",
-      "source": "steno",
-      "steno_id": "2025_24_01577",
-      "citace": "Stál jsem tady hodně často hodně pod palbou kolegů nyní z koaliční vládní strany ANO.",
-      "link_phrase": "dřív útočilo ANO"
-    },
-    {
-      "text": "Richterová chtěla přerušit jednání do příchodu premiéra.",
-      "source": "steno",
-      "steno_id": "2025_24_01587",
-      "citace": "navrhuji přerušení do přítomnosti premiéra této země",
-      "link_phrase": "dokud nepřijde Babiš"
-    },
-    {
-      "text": "Návrh na přerušení padl 45:44.",
-      "source": "steno",
-      "steno_id": "2025_24_01589",
-      "citace": "pro hlasovalo 45, proti 44. Návrh byl zamítnut.",
-      "link_phrase": "padl čtyřicet pět proti čtyřicet čtyři"
-    },
-    {
-      "text": "Bartoš mluvil 2 549 slov.",
-      "source": "steno",
-      "steno_id": "2025_24_01577",
-      "citace": "Stál jsem tady hodně často hodně pod palbou kolegů nyní z koaliční vládní strany ANO.",
-      "link_phrase": "dvě tisíce pět set čtyřicet devět"
-    },
-    {
-      "text": "Lipavský mluvil 2 888 slov.",
-      "source": "steno",
-      "steno_id": "2025_24_01590",
-      "citace": "ve věci strategická komunikace státu a důvody jejího zrušení vládou vedenou Andrej Babišem k 1. 1. 2026",
-      "link_phrase": "dvě tisíce osm set osmdesát osm"
-    },
-    {
-      "text": "Zaver: prázdné lavice.",
-      "source": "steno",
-      "steno_id": "2025_24_01573",
-      "citace": "ta spousta prázdných židlí za mnou",
-      "link_phrase": "prázdným lavicím"
+      "citace": "aby ministři byli motivováni i finančně chodit na interpelace",
+      "link_phrase": "Piráti navrhují"
     }
   ],
   "publikovat": true,
   "priorita": 5,
   "nadpis": "Prázdné lavice",
-  "lead": "U písemných interpelací Richterová (Piráti) ukázala na prázdné židle za sebou, kde měli sedět ministři. V sále zůstala jen ministryně Mrázová (ANO), přitom otázky mířily na nepřítomného premiéra Babiše a na kauzy kolem bytů.",
-  "pointa": "Stojanová (Piráti) mluvila o bytové krizi a skandálech kolem Mrázové, Bartoš (Piráti) o zákonu o podpoře bydlení a o tom, jak na něj dřív útočilo ANO, Lipavský (Piráti) četl jinou interpelaci ke strategické komunikaci státu. Projevy měly 2 616, 2 549 a 2 888 slov, formálně písemné odpovědi, fakticky plné projevy. Richterová (Piráti) navrhla přerušit jednání, dokud nepřijde Babiš, návrh padl 45 proti 44 a premiéra dopoledne nečekali.",
-  "mean": "Písemné interpelace jsou otázky poslanců vládě, které se v sále přečtou. Hlasovalo se o návrhu přerušit bod, dokud nepřijede premiér, ne o tom, zda odpověď stačí. Ministryně pro místní rozvoj má na starosti i dostupné bydlení.",
-  "citace_text": "ta spousta prázdných židlí za mnou ukazuje, že tady prostě dnes chybí téměř všichni ministři",
-  "citace_autor": "Olga Richterová (Piráti)",
-  "pocet_hlasovani": 2,
+  "lead": "Poslušně hlásím, že do Sněmovny dnes dorazili skoro všichni poslanci, ale skoro žádný ministr. Paní poslankyně Richterová (Piráti) se ohlédla za sebe a zjistila, že tam, kde má sedět vláda, sedí hlavně vzduch.",
+  "pointa": "Odpovídat jí nakonec mohla jen ministryně Mrázová, protože ta jediná se dostavila. Poslušně dodávám, že nepřítomnost má u této vlády systém. Ministr obrany Zůna se podle poslankyně Černochové za šest sedm měsíců účastnil interpelací jen jednou. A když se minulý týden projednávaly zákony přímo z gesce ministra životního prostředí, byl ministr, podle vlastního Facebooku resortu, na lodi na Labi. Řekl bych, že to je poctivé rozdělení práce: poslanci dělají zákony, ministři dělají výlety.\n\nHlášení na velitelstvo: Piráti navrhují, aby se ministrům za neúčast na interpelacích strhávaly peníze. Sněmovna o tom bude ještě jednat.",
+  "mean": "Interpelace jsou otázky poslanců na vládu přímo ve Sněmovně. Když ministr nepřijde, může odpovědět písemně do 30 dnů, ale prázdné lavice pak vypadají jako výsměch.",
+  "citace_text": "Ta spousta prázdných židlí ukazuje, že tady dnes chybí skoro všichni ministři,",
+  "citace_autor": "Olga Richterová",
+  "pocet_hlasovani": 0,
   "proslo": false
 }
