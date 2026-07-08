@@ -10,16 +10,15 @@
     "novela-z-o-podnikani-na-kapitalovem-trhu-eu"
   ],
   "stats": {
-    "pocet_hlas": 2,
+    "pocet_hlas": 3,
     "minuty": 188,
     "end_cas": "13:29",
-    "proslo": 1,
-    "zamitnuto": 1,
+    "proslo": 2,
+    "zamitnuto": 0,
     "spor_o_porad": true,
-    "dlouha_debata": true
+    "dlouha_debata": false
   },
   "dnesni_ucet": "Graf bytů, IPO letiště,\nsuper EKO-KOM, Kováčik u Povodí Ohře.",
-  "steno_zdroje": true,
   "zaver": "že schůze proběhla bez ministrů. O bydlení se dvě hodiny hádalo a nic se nevyřešilo. Do dozorčí rady u řeky stačil jeden pohovor. A zákon, který se týká šesti firem a jedné evropské pokuty, prošel rychleji než cokoli jiného za celou schůzi.",
   "vysledek": [
     "* písemné interpelace: Lipavský (Piráti) 2 888 slov, Stojanová (Piráti) 2 616, Bartoš (Piráti) 2 549",
@@ -29,66 +28,5 @@
     "* Šmída (Motoristé): super EKO-KOM, silný hluk v sále",
     "* Kováčik (KSČM) do Povodí Ohře, ministr citoval zemědělský výbor",
     "* novela o kapitálovém trhu: první kolo 106 proti 0, druhé kolo neprošlo"
-  ],
-  "jazykolam_kandidati": [
-    {
-      "priorita": 1,
-      "text": "Rozumím argumentu obcí, obce nechtějí roztříštěný systém, nechtějí několik různých operátorů, několik různých smluv, několik různých metodik a několik různých míst, kam budou posílat data.",
-      "autor": "Gabriela Svárovská",
-      "steno_id": "2025_24_01627",
-      "poradi": 1627,
-      "psp_stranka": "s024320.htm",
-      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024320.htm#r4",
-      "vzory": [
-        "opakovani: několikx4, různýchx4",
-        "nekolik ruznychx4"
-      ]
-    },
-    {
-      "priorita": 2,
-      "text": "Ta vznikla někdy tuším v šedesátých letech, ale za tu dobu se etablovala také jako instituce, která formuje, formuje nás jako lidi, formuje nás jako Čechy.",
-      "autor": "Jan Lipavský",
-      "steno_id": "2025_24_01473",
-      "poradi": 1473,
-      "psp_stranka": "s024312.htm",
-      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024312.htm",
-      "vzory": [
-        "predpony: formx3",
-        "opakovani: formujex3",
-        "formujex3"
-      ]
-    },
-    {
-      "priorita": 3,
-      "text": "Ale sdělil také, že monopolní nebo výlučný systém je slučitelný s evropským právem jen tehdy, pokud skutečně slouží veřejnému zájmu, pokud je neziskový, pokud je nastaven podle jasných environmentálních cílů a pokud podléhá přísné veřejné kontrole.",
-      "autor": "Gabriela Svárovská",
-      "steno_id": "2025_24_01627",
-      "poradi": 1627,
-      "psp_stranka": "s024320.htm",
-      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024320.htm#r4",
-      "vzory": [
-        "opakovani: pokudx4"
-      ]
-    },
-    {
-      "priorita": 4,
-      "text": "Potřebujeme veřejnou metodiku, nezávislý audit, kontrolu surových dat a jasné rozlišení mezi tím, co bylo vytříděno, co bylo dotříděno, co bylo energeticky využito a co bylo skutečně materiálově recyklováno.",
-      "autor": "Gabriela Svárovská",
-      "steno_id": "2025_24_01627",
-      "poradi": 1627,
-      "psp_stranka": "s024320.htm",
-      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024320.htm#r4",
-      "vzory": [
-        "opakovani: bylox4"
-      ]
-    }
-  ],
-  "jazykolam": {
-    "text": "Rozumím argumentu obcí, obce nechtějí roztříštěný systém, nechtějí několik různých operátorů, několik různých smluv, několik různých metodik a několik různých míst, kam budou posílat data.",
-    "autor": "Gabriela Svárovská",
-    "steno_id": "2025_24_01627",
-    "poradi": 1627,
-    "psp_stranka": "s024320.htm",
-    "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024320.htm#r4"
-  }
+  ]
 }

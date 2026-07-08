@@ -1,9 +1,9 @@
 {
   "slug": "novela-z-o-obalech",
-  "nazev": "Oprava, která monopol neruší",
+  "nazev": "Novela z. o obalech",
   "datum": "02.07.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "novela zákona o obalech od poslankyně Peštové, debata o EKO-KOMu bez ministra životního prostředí",
+  "predmet_lidsky": "obalech",
   "koho": [
     "Koho se to týká? Každého, kdo třídí odpad, platí poplatky za svoz a sleduje, kam mizí peníze z recyklace."
   ],
@@ -94,14 +94,8 @@
     }
   ],
   "publikovat": true,
-  "priorita": 4,
+  "priorita": 3,
   "nadpis": "Oprava, která monopol neruší",
-  "lead": "Poslušně hlásím, že novelu zákona o obalech ve Sněmovně obhajovala poslankyně Peštová, protože příslušný ministr se k projednávání vlastních zákonů nedostavil. Včera za něj seděl ministr průmyslu, dnes tam nebyl nikdo. Poslanec Bendl to nazval fatálním, poslanec Kučera dodal, proč: ministr byl podle Facebooku vlastního úřadu na výletě lodí po Labi. Poslušně podotýkám, že zákon o obalech se tak nakonec projednával přesně tak, jak se u nás projednávají obaly, bez toho, kdo je za ně odpovědný.",
-  "pointa": "<strong>Stará chyba:</strong> EKO-KOM vznikl v roce 1997 jako akciová společnost, přestože má ze zákona fungovat jako nezisková organizace. Deset zakládajících akcionářů s podílem pár set tisíc korun tak dodnes ovládá firmu, přes kterou ročně tečou miliardy.\n\nProč 34? Novela zvyšuje počet akcionářů z deseti na čtyřiatřicet, ale nikde nestanoví, že musí dohromady pokrývat aspoň polovinu trhu, což by podle Hladíka žádal i rozsudek, na který se novela odvolává. Číslo 34 tak neřeší, kdo firmu ovládá, jen kolik lidí se bude tvářit, že ji spoluvlastní.<br><br><strong>Pořád jeden monopol:</strong> Pořád jde o jedinou autorizovanou obalovou společnost, pořád akciovku, jen s víc jmény na seznamu. Hladík to nazval logickým rozporem, sama Peštová přiznává, že akciovka byla od začátku špatná volba, a řešením je znovu akciovka, jen o čtyřiadvacet akcionářů větší.",
-  "mean": "Firma založená na chybné právní formě dostane víc společníků, ne konkurenci. Ministr, kterého se to týká, byl mezitím na lodi.",
-  "citace_text": "jestli bychom si takovým super EKO-KOMem nezřídili vlastně takové Ministerstvo odpadového hospodářství, které ale není pod státem, nýbrž má standardní akcionářskou strukturu",
-  "citace_autor": "Martin Šmída (Motoristé)",
-  "citace_href": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024327.htm#r2",
   "pocet_hlasovani": 7,
   "proslo": true,
   "signaly": {
@@ -111,5 +105,8 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 13843
+  "steno_slov": 478,
+  "lead": "Poslušně hlásím, že novelu zákona o obalech ve Sněmovně obhajovala poslankyně Peštová, protože příslušný ministr se k projednávání vlastních zákonů nedostavil. Včera za něj seděl ministr průmyslu, dnes tam nebyl nikdo. Poslanec Bendl to nazval fatálním, poslanec Kučera dodal, proč: ministr byl podle Facebooku vlastního úřadu na výletě lodí po Labi. Poslušně podotýkám, že zákon o obalech se tak nakonec projednával přesně tak, jak se u nás projednávají obaly, bez toho, kdo je za ně odpovědný.",
+  "pointa": "<strong>Stará chyba:</strong> EKO-KOM vznikl v roce 1997 jako akciová společnost, přestože má ze zákona fungovat jako nezisková organizace. Deset zakládajících akcionářů s podílem pár set tisíc korun tak dodnes ovládá firmu, přes kterou ročně tečou miliardy.\n\nProč 34? Novela zvyšuje počet akcionářů z deseti na čtyřiatřicet, ale nikde nestanoví, že musí dohromady pokrývat aspoň polovinu trhu, což by podle Hladíka žádal i rozsudek, na který se novela odvolává. Číslo 34 tak neřeší, kdo firmu ovládá, jen kolik lidí se bude tvářit, že ji spoluvlastní.<br><br><strong>Pořád jeden monopol:</strong> Pořád jde o jedinou autorizovanou obalovou společnost, pořád akciovku, jen s víc jmény na seznamu. Hladík to nazval logickým rozporem, sama Peštová přiznává, že akciovka byla od začátku špatná volba, a řešením je znovu akciovka, jen o čtyřiadvacet akcionářů větší.",
+  "mean": "Firma založená na chybné právní formě dostane víc společníků, ne konkurenci. Ministr, kterého se to týká, byl mezitím na lodi."
 }

@@ -1,9 +1,9 @@
 {
   "slug": "novela-z-o-podnikani-na-kapitalovem-trhu-eu",
-  "nazev": "Zákon pro šest firem",
+  "nazev": "Novela z. o podnikání na kapitálovém trhu - EU",
   "datum": "02.07.2026",
-  "verdikt": "odlozeno",
-  "predmet_lidsky": "evropská pravidla pro rovnost žen a mužů ve vedení šesti kótovaných firem, první kolo bez odporu",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "podnikání na kapitálovém trhu",
   "koho": [
     "Koho se to týká? Spíš akcionáře šesti velkých firem na burze, ne běžného občana u pokladny."
   ],
@@ -73,15 +73,10 @@
     }
   ],
   "publikovat": true,
-  "priorita": 6,
+  "priorita": 3,
   "nadpis": "Zákon pro šest firem",
-  "lead": "Poslušně hlásím, že ministr spravedlnosti Tejc (STAN) předložil zákon, který má napravit nerovné zastoupení žen a mužů ve vedení firem obchodovaných na burze.",
-  "pointa": "Dvě z nich už podmínky plní. Zákon nezavádí kvóty v pravém slova smyslu, jen povinnost při srovnatelné kvalifikaci upřednostnit méně zastoupené pohlaví. Spěchá to proto, že Česku hrozí od Evropské komise pokuta od milionu a půl do tří milionů eur, plus penále až 51 000 eur za každý další den prodlení. Lhůta na transpozici směrnice totiž vypršela už v prosinci 2024.<br><br>Poslušně podotýkám, že hlasování dopadlo 106 pro, 0 proti, sedm se zdrželo, deset nehlasovalo. Ne že by to samo o sobě bylo překvapení: opozice sice na ministra útočila kvůli mlčení Fialovy vlády, ale proti návrhu samotnému nakonec nezvedl ruku nikdo.",
-  "mean": "Zákon o rovnosti pohlaví se týká šesti firem a jedné evropské pokuty. Kterou z těch dvou věcí bude Sněmovna řešit rychleji, ukáže čas.",
-  "citace_text": "V českém prostředí se návrh bude dotýkat pouze 6 akciových společností, a to konkrétně: ČEZ, Komerční banka, MONETA Money Bank, Philip Morris, Kofola a COLT CZ.",
-  "citace_autor": "Jeroným Tejc (STAN)",
   "pocet_hlasovani": 3,
-  "proslo": false,
+  "proslo": true,
   "signaly": {
     "proti_max": 58,
     "pritomno_min": 123,
@@ -89,5 +84,8 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 27563
+  "steno_slov": 673,
+  "lead": "Poslušně hlásím, že ministr spravedlnosti Tejc (STAN) předložil zákon, který má napravit nerovné zastoupení žen a mužů ve vedení firem obchodovaných na burze.",
+  "pointa": "Dvě z nich už podmínky plní. Zákon nezavádí kvóty v pravém slova smyslu, jen povinnost při srovnatelné kvalifikaci upřednostnit méně zastoupené pohlaví. Spěchá to proto, že Česku hrozí od Evropské komise pokuta od milionu a půl do tří milionů eur, plus penále až 51 000 eur za každý další den prodlení. Lhůta na transpozici směrnice totiž vypršela už v prosinci 2024.<br><br>Poslušně podotýkám, že hlasování dopadlo 106 pro, 0 proti, sedm se zdrželo, deset nehlasovalo. Ne že by to samo o sobě bylo překvapení: opozice sice na ministra útočila kvůli mlčení Fialovy vlády, ale proti návrhu samotnému nakonec nezvedl ruku nikdo.",
+  "mean": "Zákon o rovnosti pohlaví se týká šesti firem a jedné evropské pokuty. Kterou z těch dvou věcí bude Sněmovna řešit rychleji, ukáže čas."
 }

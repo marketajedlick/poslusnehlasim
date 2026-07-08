@@ -24,7 +24,7 @@
       <p class="p">{{ item.pointa | glossary }}</p>
       {% endif %}
       {% if item.mean %}
-      <p class="p mean"><strong class="mean-label">{{ t.edition.mean_label }}</strong> {{ item.mean | glossary }}</p>
+      <p class="p mean"><strong class="mean-label">{{ t.edition.mean_label }}</strong> <strong>{{ item.mean | glossary }}</strong></p>
       {% endif %}
       {% if item.kuriozita_nav %}
       <nav class="kuriozita-links" aria-label="{{ t.edition.kuriozita_aria }}">

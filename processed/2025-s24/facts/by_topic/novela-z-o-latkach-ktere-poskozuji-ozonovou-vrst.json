@@ -7,28 +7,29 @@
   "koho": [],
   "fakty": [
     {
-      "text": "73/2012 Sb., o látkách, které poškozují ozonovou vrstvu, a o fluorovaných skleníkových plynech, ve znění pozdějších předpisů, a další související předpisy/sněmovní tisk 14/ – prvé čtení Z pověření vlády předložený návrh uvede pan ministr průmyslu Havlíček.",
+      "text": "Učinili jsme to tak u všech norem, které nebyly v minulé Poslanecké sněmovně projednány, pouze u těch, které byly čistou implementací.",
       "source": "steno",
-      "steno_id": "2025_24_01382",
-      "citace": "73/2012 Sb., o látkách, které poškozují ozonovou vrstvu, a o fluorovaných skleníkových plynech, ve znění pozdějších předpisů, a další související předpisy/sněmovní tisk 14/ – prvé čtení Z pověření vlá"
+      "steno_id": "2025_24_01518",
+      "citace": "Učinili jsme to tak u všech norem, které nebyly v minulé Poslanecké sněmovně projednány, pouze u těch, které byly čistou implementací."
     },
     {
-      "text": "20.Vládní návrh zákona, kterým se mění zákon č.",
+      "text": "V minulé Poslanecké sněmovně se nikdy nedostala na pořad schůze, respektive nebyla projednána.",
       "source": "steno",
-      "steno_id": "2025_24_01382",
-      "citace": "20.Vládní návrh zákona, kterým se mění zákon č."
+      "steno_id": "2025_24_01518",
+      "citace": "V minulé Poslanecké sněmovně se nikdy nedostala na pořad schůze, respektive nebyla projednána."
     },
     {
-      "text": "Ve druhé části návrhu se reaguje na výše uvedenou přímo použitelnou legislativu Evropské unie, rovněž úpravou zákona 40/2009, trestní zákoník, ve znění pozdějších předpisů.",
+      "text": "Z tohoto důvodu byla ještě vládou Petra Fialy vrácena znovu zpátky Poslanecké sněmovně.",
       "source": "steno",
-      "steno_id": "2025_24_01383",
-      "citace": "Ve druhé části návrhu se reaguje na výše uvedenou přímo použitelnou legislativu Evropské unie, rovněž úpravou zákona 40/2009, trestní zákoník, ve znění pozdějších předpisů."
+      "steno_id": "2025_24_01518",
+      "citace": "Z tohoto důvodu byla ještě vládou Petra Fialy vrácena znovu zpátky Poslanecké sněmovně."
     },
     {
-      "text": "Důvodem na předložení uvedeného návrhu zákona je především reakce na novou evropskou legislativu, konkrétně nařízení Evropského parlamentu a rady ze dne 7.",
+      "text": "Zpravodajka: Ne.",
       "source": "steno",
-      "steno_id": "2025_24_01383",
-      "citace": "Důvodem na předložení uvedeného návrhu zákona je především reakce na novou evropskou legislativu, konkrétně nařízení Evropského parlamentu a rady ze dne 7."
+      "kind": "scene",
+      "steno_id": "2025_24_01519",
+      "citace": "(Zpravodajka: Ne.)"
     }
   ],
   "publikovat": false,
@@ -43,5 +44,5 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 7165
+  "steno_slov": 1193
 }

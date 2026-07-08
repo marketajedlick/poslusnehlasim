@@ -7,28 +7,28 @@
   "koho": [],
   "fakty": [
     {
-      "text": "105.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Smlouva mezi Českou republikou a Spolkovou republikou Německo o společných státních hranicích, podepsaná dne 12.",
+      "text": "Hlasování číslo 71, bylo přihlášeno 148 poslanců, pro hlasovalo 116, proti nebyl nikdo.",
       "source": "steno",
-      "steno_id": "2025_24_00503",
-      "citace": "105.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Smlouva mezi Českou republikou a Spolkovou republikou Německo o společných státních hranicích, podeps"
+      "steno_id": "2025_24_00488",
+      "citace": "Hlasování číslo 71, bylo přihlášeno 148 poslanců, pro hlasovalo 116, proti nebyl nikdo."
     },
     {
-      "text": "března 2025 v Berlíně/sněmovní tisk 185/ – prvé čtení Předložený návrh uvede ministr vnitra Lubomír Metnar.",
+      "text": "A prosím, aby se slova ujala zpravodajka pro prvé čtení, kterou měla být paní poslankyně Anežka Nedomová, ale mám zprávu, že místo ní nás seznámí se zpravodajskou zprávou pan poslanec Lipavský, ale protože jsme v prvém čtení, je potřeba o této změně zpravodaje hlasovat.",
       "source": "steno",
-      "steno_id": "2025_24_00503",
-      "citace": "března 2025 v Berlíně/sněmovní tisk 185/ – prvé čtení Předložený návrh uvede ministr vnitra Lubomír Metnar."
+      "steno_id": "2025_24_00488",
+      "citace": "A prosím, aby se slova ujala zpravodajka pro prvé čtení, kterou měla být paní poslankyně Anežka Nedomová, ale mám zprávu, že místo ní nás seznámí se zpravodajskou zprávou pan poslanec Lipavský, ale pr"
     },
     {
-      "text": "Oblast správy státní hranice se Spolkovou republikou Německo je v současné době upravena zastaralou a technicky překonanou smlouvou mezi Českou republikou a Spolkovou republikou Německo o společných státních hranicích z roku 1994.",
+      "text": "Čili já vás poprosím, zda souhlasíte s tím, aby se zpravodaj změnil na pana kolegu Lipavského.",
       "source": "steno",
-      "steno_id": "2025_24_00504",
-      "citace": "Oblast správy státní hranice se Spolkovou republikou Německo je v současné době upravena zastaralou a technicky překonanou smlouvou mezi Českou republikou a Spolkovou republikou Německo o společných s"
+      "steno_id": "2025_24_00488",
+      "citace": "Čili já vás poprosím, zda souhlasíte s tím, aby se zpravodaj změnil na pana kolegu Lipavského."
     },
     {
-      "text": "Obdobná smlouva byla v roce 2023 uzavřena se Slovenskou republikou.",
+      "text": "Jelikož nezazněly návrhy na zkrácení či prodloužení lhůt, tak končím projednávání bodu číslo 105.",
       "source": "steno",
-      "steno_id": "2025_24_00504",
-      "citace": "Obdobná smlouva byla v roce 2023 uzavřena se Slovenskou republikou."
+      "steno_id": "2025_24_00490",
+      "citace": "Jelikož nezazněly návrhy na zkrácení či prodloužení lhůt, tak končím projednávání bodu číslo 105."
     }
   ],
   "publikovat": true,
@@ -43,5 +43,5 @@
     "spor": false,
     "prazdny_sal": true
   },
-  "steno_slov": 589
+  "steno_slov": 241
 }

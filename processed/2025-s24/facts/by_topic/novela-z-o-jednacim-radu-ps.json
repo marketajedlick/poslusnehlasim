@@ -1,9 +1,9 @@
 {
   "slug": "novela-z-o-jednacim-radu-ps",
   "nazev": "Novela z. o jednacím řádu PS",
-  "datum": "01.07.2026",
-  "verdikt": "zamiteno",
-  "predmet_lidsky": "návrh koalice zkrátit debaty ve třetím kole hlasování o zákonu",
+  "datum": "03.07.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "jednacím řádu PS",
   "koho": [
     "Koho se to týká? Každého, kdo čeká, jestli poslanci u závěrečného hlasování ještě mluví, nebo už jen mačkají tlačítka."
   ],
@@ -11,62 +11,119 @@
     {
       "text": "Vondráček chtěl novelizovat jednací řád po letech.",
       "source": "steno",
-      "steno_id": "2025_24_01218",
-      "citace": "snad konečně budeme schopni po mnoha a mnoha letech novelizovat jednací řád a nějakým způsobem upravit pravidla naší debaty.",
-      "link_phrase": "novelizovat jednací řád"
+      "steno_id": "2025_24_01339",
+      "citace": "snad konečně budeme schopni po mnoha a mnoha letech novelizovat jednací řád",
+      "link_phrase": "změnit jednací řád"
     },
     {
       "text": "Koalice chtěla ve třetím kole zákonů mluvit méně.",
       "source": "steno",
-      "steno_id": "2025_24_01218",
-      "citace": "třetí čtení, když ten zákon byl přijímán před 30 lety, tak nebylo určeno k tomu, aby se opakovala debata z prvého a z druhého čtení, nicméně ta praxe se takto vyvinula.",
+      "steno_id": "2025_24_01339",
+      "citace": "nebylo určeno k tomu, aby se opakovala debata z prvého a z druhého čtení",
       "link_phrase": "ve třetím kole zákonů tolik nemluvilo"
     },
     {
-      "text": "Havel varoval před změnou pravidel, když má koalice většinu.",
+      "text": "Novela zavádí hlasování na pevný čas ukončení rozpravy.",
       "source": "steno",
-      "steno_id": "2025_24_01220",
-      "citace": "v tom minulém volebním období my jsme tady byli svědky naprosto bezprecedentních obstrukcí, které neměly obdoby v našich moderních parlamentních dějinách.",
-      "link_phrase": "bezprecedentních obstrukcí"
+      "steno_id": "2025_24_01351",
+      "citace": "lze hlasovat pevně načas",
+      "link_phrase": "hlasování na pevný čas"
+    },
+    {
+      "text": "Vondráček připouští, že jde o postup nezákonný, Ústavní soud ho ale toleruje.",
+      "source": "steno",
+      "steno_id": "2025_24_01351",
+      "citace": "ačkoliv je to postup nezákonný, tak Ústavní soud ho shledává v souladu s Ústavou",
+      "link_phrase": "Ústavní soud jako nezákonný"
+    },
+    {
+      "text": "Havel varoval před kontroverzními zákony a narážel na mediální novelu.",
+      "source": "steno",
+      "steno_id": "2025_24_01341",
+      "citace": "v následujících měsících vy chcete zařadit řadu velmi kontroverzních zákonů",
+      "link_phrase": "Sněmovna mění v bojiště"
+    },
+    {
+      "text": "Havel: koalice chce destruovat nezávislost veřejnoprávních médií.",
+      "source": "steno",
+      "steno_id": "2025_24_01341",
+      "citace": "destruovat svobodu a nezávislost veřejnoprávních médií",
+      "link_phrase": "chystaný zákon o ČT"
     },
     {
       "text": "Vondráček: Sněmovna je bojiště, ne jeviště.",
       "source": "steno",
-      "steno_id": "2025_24_01230",
-      "citace": "Když jsme ten jednací řád připravovali, tak jsme ani netušili, jaký zákon o České televizi a rozhlasu připutuje k nám do Poslanecké sněmovny a v jaké podobě. Je to otázka spíš opravdu stavu mysli, kdy opravdu považujete Poslaneckou sněmovnu za bojiště a nikoliv jeviště.",
-      "link_phrase": "bojiště a nikoliv jeviště"
+      "steno_id": "2025_24_01351",
+      "citace": "opravdu považujete Poslaneckou sněmovnu za bojiště a nikoliv jeviště. Ale vy sami jste nám v předchozím volebním období opakovaně, myslím, že víc jak patnáctkrát, ukázali, že není možné obstrukcemi zastavit většinu",
+      "link_phrase": "považujete Poslaneckou sněmovnu za bojiště a nikoliv jeviště"
     },
     {
-      "text": "Vondráček: obstrukce nezastaví většinu, Ústavní soud to toleruje.",
+      "text": "Vondráček: obstrukce nezastaví většinu.",
       "source": "steno",
-      "steno_id": "2025_24_01230",
-      "citace": "není možné obstrukcemi zastavit většinu, neboť ačkoliv je to postup nezákonný, tak Ústavní soud ho shledává v souladu s Ústavou",
-      "link_phrase": "obstrukcemi zastavit většinu"
+      "steno_id": "2025_24_01351",
+      "citace": "není možné obstrukcemi zastavit většinu",
+      "link_phrase": "obstrukce prý většinu stejně nezastaví"
+    },
+    {
+      "text": "Opozice si ubránila neomezený počet faktických poznámek.",
+      "source": "steno",
+      "steno_id": "2025_24_01984",
+      "citace": "návrh na zrušení navrženého omezení počtu faktických poznámek",
+      "link_phrase": "počet faktických poznámek zůstává neomezený"
     },
     {
       "text": "První hlasování o návrhu skončilo 3 proti 84.",
       "source": "steno",
-      "steno_id": "2025_24_01229",
+      "steno_id": "2025_24_01350",
       "citace": "Hlasování číslo 186, přihlášeno 142 poslanců, pro 3, proti 84. Návrh nebyl přijat.",
-      "link_phrase": "pro 3, proti 84"
+      "link_phrase": "nejhůř 3 pro, 84 proti"
+    },
+    {
+      "text": "V pátek se hlasovalo o dalších šestadvaceti pozměňovacích návrzích od A po C, šestnáct jich padlo.",
+      "source": "steno",
+      "steno_id": "2025_24_02009",
+      "citace": "Jestli mám správně poznámky, tak jsme hlasovali o všech pozměňovacích návrzích. Je to tak?",
+      "link_phrase": "dalších šestadvacet pozměňovacích návrhů, šestnáct jich neprošlo"
+    },
+    {
+      "text": "Ondřej Babka po hlasování zjistil, že sjetina zaznamenala jeho hlas obráceně.",
+      "source": "steno",
+      "steno_id": "2025_24_02012",
+      "citace": "k hlasování číslo 236 jsem hlasoval proti, na sjetině mám pro a nezpochybňuji hlasování",
+      "link_phrase": "Dva poslanci si museli opravit zápis"
+    },
+    {
+      "text": "Anežka Nedomová měla stejný problém o dvě hlasování dál, opačným směrem.",
+      "source": "steno",
+      "steno_id": "2025_24_02016",
+      "citace": "u hlasování číslo 238, na sjetině mám proti, ale byla jsem pro. Nezpochybňuji hlasování.",
+      "link_phrase": "hlasování ale nezpochybnili"
+    },
+    {
+      "text": "Zákon nakonec prošel poměrem 110 ku 12, tleskala pravá polovina sálu.",
+      "source": "steno",
+      "steno_id": "2025_24_02017",
+      "citace": "Návrh zákona byl přijat, byl s ním vysloven souhlas. (Potlesk pravé poloviny sálu.)",
+      "link_phrase": "tleskala pravá polovina sálu"
     }
   ],
-  "publikovat": false,
-  "priorita": 4,
+  "publikovat": true,
+  "priorita": 3,
   "nadpis": "Bojiště, ne jeviště",
-  "lead": "Koalice chtěla ve středu ráno změnit jednací řád tak, aby se ve třetím kole zákonů tolik nemluvilo. Vondráček (ANO) si stěžoval na noční debatu o sportu místo služebního zákona. Havel (TOP 09) připomněl bezprecedentní obstrukce z minulého období. Pak Vondráček řekl, že opozice vidí Sněmovnu jako bojiště, ne jeviště.",
-  "pointa": "Čtyři hlasování, čtyřikrát padlo. Nejnižší skóre bylo 3 proti 84. Vondráček připomněl, že obstrukce stejně většinu nezastaví, protože Ústavní soud je toleruje.",
-  "mean": "Jednací řád určuje, kdo, kdy a jak dlouho smí ve Sněmovně mluvit. Koalice chtěla omezit opakování debaty ve třetím kole hlasování o zákonu.",
-  "citace_text": "Když jsme ten jednací řád připravovali, tak jsme ani netušili, jaký zákon o České televizi a rozhlasu připutuje k nám do Poslanecké sněmovny a v jaké podobě. Je to otázka spíš opravdu stavu mysli, kdy opravdu považujete Poslaneckou sněmovnu za bojiště a nikoliv jeviště.",
-  "citace_autor": "Radek Vondráček (ANO)",
-  "pocet_hlasovani": 4,
-  "proslo": false,
+  "pocet_hlasovani": 30,
+  "proslo": true,
   "signaly": {
-    "proti_max": 97,
-    "pritomno_min": 142,
+    "proti_max": 100,
+    "pritomno_min": 131,
     "jednomyslne": false,
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 1273
+  "steno_slov": 3873,
+  "lead": "Poslušně hlásím, že Sněmovna si po středečním patu v pátek zkrátila vlastní řeči. Předmětem byl jednací řád, kdo smí mluvit, jak dlouho a kdy se hlasuje. Novela zavádí hlasování na pevný čas, většina může určit, kdy rozprava skončí, i kdyby se ještě hlásili řečníci. Tenhle postup dřív kritizoval Ústavní soud jako nezákonný, teď bude přímo v zákoně. Koalice to nazývá zrychlením práce, opozice ztrátou nástroje, jak zákon zdržet.",
+  "pointa": "Havel (TOP 09) varoval, že se Sněmovna mění v bojiště, kdykoli koalice tlačí kontroverzní věci, narážel na chystaný zákon o ČT. Vondráček (ANO) odpověděl, že bojiště vidí spíš opozice, obstrukce prý většinu stejně nezastaví. V pátek novela prošla, opozice si ubránila jen jedno, počet faktických poznámek zůstává neomezený.",
+  "citace_text": "opravdu považujete Poslaneckou sněmovnu za bojiště a nikoliv jeviště. Ale vy sami jste nám v předchozím volebním období opakovaně, myslím, že víc jak patnáctkrát, ukázali, že není možné obstrukcemi zastavit většinu",
+  "citace_autor": "Radek Vondráček (ANO)",
+  "citace_href": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024265.htm#r10",
+  "mean": "Jednací řád určuje, kdo, kdy a jak dlouho smí mluvit. Novela legalizuje hlasování na pevný čas ukončení rozpravy a prodlužuje časové okno pro závěrečné hlasování o zákonech."
 }

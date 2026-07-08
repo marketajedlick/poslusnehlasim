@@ -9,30 +9,29 @@
   ],
   "fakty": [
     {
-      "text": "Potlesk z pravé strany sálu.",
+      "text": "Obdrželi jsme návrhy od poslaneckých klubů hnutí STAN a ANO 2011, které jsme přijali usnesením formou per rollam číslo 84.",
+      "source": "steno",
+      "steno_id": "2025_24_00212",
+      "citace": "Obdrželi jsme návrhy od poslaneckých klubů hnutí STAN a ANO 2011, které jsme přijali usnesením formou per rollam číslo 84."
+    },
+    {
+      "text": "Konstatuji, že volební komise měla vyhlášenou lhůtu do včerejšího dne, do 23.",
+      "source": "steno",
+      "steno_id": "2025_24_00212",
+      "citace": "Konstatuji, že volební komise měla vyhlášenou lhůtu do včerejšího dne, do 23."
+    },
+    {
+      "text": "Rezignace z orgánů Poslanecké sněmovny, ze stálé komise Sněmovny pro rodinu a rovné příležitosti – Barbora Urbanová, dnes již místopředsedkyně Sněmovny za hnutí STAN.",
+      "source": "steno",
+      "steno_id": "2025_24_00212",
+      "citace": "Rezignace z orgánů Poslanecké sněmovny, ze stálé komise Sněmovny pro rodinu a rovné příležitosti – Barbora Urbanová, dnes již místopředsedkyně Sněmovny za hnutí STAN."
+    },
+    {
+      "text": "Žádost o odhlášení z důvodu chyby.",
       "source": "steno",
       "kind": "scene",
-      "steno_id": "2025_24_00190",
-      "citace": "(Potlesk z pravé strany sálu.)"
-    },
-    {
-      "text": "Návrh na změny ve složení orgánů Poslanecké sněmovny – to je bod 130 – a Návrh na volbu člena Nejvyššího kontrolního úřadu – to je bod 131.",
-      "source": "steno",
-      "steno_id": "2025_24_00190",
-      "citace": "Návrh na změny ve složení orgánů Poslanecké sněmovny – to je bod 130 – a Návrh na volbu člena Nejvyššího kontrolního úřadu – to je bod 131."
-    },
-    {
-      "text": "(Potlesk z pravé strany sálu.) Připomínám členům organizačního výboru, že schůze se bude konat po skončení.",
-      "source": "steno",
-      "steno_id": "2025_24_00190",
-      "citace": "(Potlesk z pravé strany sálu.) Připomínám členům organizačního výboru, že schůze se bude konat po skončení."
-    },
-    {
-      "text": "Silný hluk v sále.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_24_00191",
-      "citace": "(Silný hluk v sále.)"
+      "steno_id": "2025_24_00215",
+      "citace": "(Žádost o odhlášení z důvodu chyby.)"
     }
   ],
   "publikovat": true,
@@ -47,5 +46,5 @@
     "spor": false,
     "prazdny_sal": true
   },
-  "steno_slov": 665
+  "steno_slov": 434
 }

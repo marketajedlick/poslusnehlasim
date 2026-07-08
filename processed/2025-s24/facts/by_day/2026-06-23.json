@@ -5,7 +5,6 @@
     "zpravy-z-budoucnosti-23-06",
     "palacova-pohadka-23-06"
   ],
-  "steno_zdroje": true,
   "stats": {
     "pocet_hlas": 0,
     "minuty": 521,
@@ -23,65 +22,5 @@
     "* Kupka (ODS): Svobodná média koušou, Babiš chce olizovače",
     "* Rakušan (STAN) přednesl palácovou pohádku a pojmenoval postavy",
     "* večer padesát jedna hlasování o pořadu schůze, pro občana spíš nuda"
-  ],
-  "jazykolam_kandidati": [
-    {
-      "priorita": 1,
-      "text": "Můžeme se bavit o mandatorních výdajích, můžeme se bavit o provozních výdajích, můžeme se bavit o softwarových licencích a můžeme se bavit o platech zaměstnanců.",
-      "autor": "Ivan Bartoš",
-      "steno_id": "2025_24_00037",
-      "poradi": 37,
-      "psp_stranka": "s024023.htm",
-      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024023.htm",
-      "vzory": [
-        "predpony: můžx4",
-        "opakovani: můžemex4, bavitx4",
-        "muzeme se bavit ox4"
-      ]
-    },
-    {
-      "priorita": 2,
-      "text": "Podpořili jsme i tu studentskou iniciativu, protože si myslím, že pokud se bavíme o veřejnoprávních médiích, není to otázka Poslanecké sněmovny, Senátu, není to otázka vlády, není to otázka koalice, opozice, je to otázka všech lidí.",
-      "autor": "Ivan Bartoš",
-      "steno_id": "2025_24_00037",
-      "poradi": 37,
-      "psp_stranka": "s024023.htm",
-      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024023.htm",
-      "vzory": [
-        "opakovani: otázkax4, neníx3"
-      ]
-    },
-    {
-      "priorita": 3,
-      "text": "Ale od toho jsou veřejnoprávní média, od toho jsou svobodná média, nejen veřejnoprávní, od toho jsou média, která si prostě politici nebo jejich sponzoři, fanoušci neplatí, ale která se snaží o objektivní informovanost (v )České republice a jejich lidí.",
-      "autor": "Ivan Bartoš",
-      "steno_id": "2025_24_00037",
-      "poradi": 37,
-      "psp_stranka": "s024023.htm",
-      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024023.htm",
-      "vzory": [
-        "opakovani: tohox3, médiax3"
-      ]
-    },
-    {
-      "priorita": 4,
-      "text": "A stát od nich očekává – já myslím, že to je v pořádku – očekává od nich odpovědnost, škola od nich očekává výkon, rodina od nich v té době už očekává samostatnost, společnost od nich očekává, že se budou zajímat, že se budou vzdělávat a že se budou připravovat na dospělý život.",
-      "autor": "Matěj Ondřej Havel",
-      "steno_id": "2025_24_00021",
-      "poradi": 21,
-      "psp_stranka": "s024008.htm",
-      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024008.htm",
-      "vzory": [
-        "opakovani: nichx5, očekáváx5, budoux3"
-      ]
-    }
-  ],
-  "jazykolam": {
-    "text": "Můžeme se bavit o mandatorních výdajích, můžeme se bavit o provozních výdajích, můžeme se bavit o softwarových licencích a můžeme se bavit o platech zaměstnanců.",
-    "autor": "Ivan Bartoš",
-    "steno_id": "2025_24_00037",
-    "poradi": 37,
-    "psp_stranka": "s024023.htm",
-    "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024023.htm"
-  }
+  ]
 }

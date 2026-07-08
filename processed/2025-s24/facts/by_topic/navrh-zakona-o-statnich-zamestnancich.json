@@ -1,9 +1,9 @@
 {
   "slug": "navrh-zakona-o-statnich-zamestnancich",
-  "nazev": "Zákon o státních zaměstnancích",
+  "nazev": "Návrh zákona o státních zaměstnancích",
   "datum": "26.06.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "služební zákon, závěrečné hlasování 84 proti 56",
+  "predmet_lidsky": "státních zaměstnancích",
   "koho": [
     "Koho se to týká? Každého, kdo pracuje na úřadě, nebo čeká ve frontě na rozhodnutí, které má vydat stát."
   ],
@@ -71,10 +71,8 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 55147,
+  "steno_slov": 3690,
   "lead": "Sněmovna odpoledne dokončila zákon o státních zaměstnancích, služební zákon, o kterém se ve středu debatovalo celé dopoledne. Stojanová (Piráti) ho označila za úplnou destrukci, koalice za modernizaci. Vondráček (ANO) uzavřel rozpravu slibem, že horší to nebude, než je to teď ve státní správě.",
   "pointa": "Závěrečné hlasování skončilo 84 proti 56, s potleskem koalice. To je slib.",
-  "mean": "Služební zákon mění pravidla pro úředníky, kdo je zaměstná a kdo odchází. Richterová (Piráti) varovala před snazším vyhazováním nepohodlných odborníků. Koalice slibuje rychlejší personální změny, opozice varuje před politizací státní správy. Přes tyto námitky ho Sněmovna odpoledne v závěrečném hlasování schválila.",
-  "citace_text": "Můžu všem slíbit, že horší to nebude, než je to teď ve státní správě.",
-  "citace_autor": "Radek Vondráček (ANO)"
+  "mean": "Služební zákon mění pravidla pro úředníky, kdo je zaměstná a kdo odchází. Richterová (Piráti) varovala před snazším vyhazováním nepohodlných odborníků. Koalice slibuje rychlejší personální změny, opozice varuje před politizací státní správy. Přes tyto námitky ho Sněmovna odpoledne v závěrečném hlasování schválila."
 }

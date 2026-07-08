@@ -803,6 +803,11 @@ def _sanitize_mean_export(text: str) -> str:
     return _sanitize_html_segments(text, _plain_chunk)
 
 
+def _sanitize_nadpis_export(text: str) -> str:
+    """Titulky bez doplnění stran z registru poslanců."""
+    return bez_dlouhych_pomlc(text) if (text or "").strip() else text
+
+
 def _sanitize_vysledek_export(text: str) -> str:
     """Výsledek dne: stejná sanitizace jako běžný text."""
     text = bez_dlouhych_pomlc(text)
@@ -855,9 +860,9 @@ def _sanitize_den_content(content: DenContent) -> None:
     content.zaver_body = _sanitize_mean_export(content.zaver_body)
     for item in content.items:
         item.kick = _sanitize_text_export(item.kick)
-        item.nadpis = _sanitize_text_export(item.nadpis)
+        item.nadpis = _sanitize_nadpis_export(item.nadpis)
         item.nadpis_radky = [
-            _sanitize_text_export(x) for x in item.nadpis_radky
+            _sanitize_nadpis_export(x) for x in item.nadpis_radky
         ]
         item.lead = _sanitize_text_export(item.lead)
         item.lead_tail = _sanitize_text_export(item.lead_tail)

@@ -7,32 +7,27 @@
   "koho": [],
   "fakty": [
     {
-      "text": "září 2025/sněmovní tisk 197/ – prvé čtení Předložený návrh uvede místopředsedkyně vlády a ministryně financí Alena Schillerová.",
+      "text": "bylo",
       "source": "steno",
-      "steno_id": "2025_24_00508",
-      "citace": "září 2025/sněmovní tisk 197/ – prvé čtení Předložený návrh uvede místopředsedkyně vlády a ministryně financí Alena Schillerová."
+      "kind": "scene",
+      "steno_id": "2025_24_00494",
+      "citace": "(bylo)"
     },
     {
-      "text": "106.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Smlouva mezi Českou republikou a Maltskou republikou o zamezení dvojímu zdanění v oboru daní z příjmu a z majetku a o zabránění daňovému úniku a vyhýbání se daňové povinnosti, která byla podepsána v Římě dne 24.",
+      "text": "Hlasování číslo 73, (bylo) přihlášeno 147 poslanců, pro hlasovalo 119, proti nikdo.",
       "source": "steno",
-      "steno_id": "2025_24_00508",
-      "citace": "106.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Smlouva mezi Českou republikou a Maltskou republikou o zamezení dvojímu zdanění v oboru daní z příjmu"
+      "steno_id": "2025_24_00494",
+      "citace": "Hlasování číslo 73, (bylo) přihlášeno 147 poslanců, pro hlasovalo 119, proti nikdo."
     },
     {
-      "text": "Současné hodnoty vývozu se v roce 2025 pohybovaly okolo 1,1 miliardy korun.",
+      "text": "Protože nezazněly návrhy na zkrácení či prodloužení lhůty, končím projednávání bodu číslo 106.",
       "source": "steno",
-      "steno_id": "2025_24_00509",
-      "citace": "Současné hodnoty vývozu se v roce 2025 pohybovaly okolo 1,1 miliardy korun."
-    },
-    {
-      "text": "Ve vzájemných daňových vztazích mezi Českou republikou a Maltou se v současné době uplatňuje Smlouva mezi Českou republikou a Maltou o zamezení dvojímu zdanění a zabrání daňovému úniku v oboru daní z příjmů a z majetku, která vstoupila v platnost 6.",
-      "source": "steno",
-      "steno_id": "2025_24_00509",
-      "citace": "Ve vzájemných daňových vztazích mezi Českou republikou a Maltou se v současné době uplatňuje Smlouva mezi Českou republikou a Maltou o zamezení dvojímu zdanění a zabrání daňovému úniku v oboru daní z "
+      "steno_id": "2025_24_00494",
+      "citace": "Protože nezazněly návrhy na zkrácení či prodloužení lhůty, končím projednávání bodu číslo 106."
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
   "proslo": true,
@@ -43,5 +38,5 @@
     "spor": false,
     "prazdny_sal": true
   },
-  "steno_slov": 703
+  "steno_slov": 176
 }

@@ -7,32 +7,27 @@
   "koho": [],
   "fakty": [
     {
-      "text": "96.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Smlouva mezi Českou republikou a Slovenskou republikou o policejní spolupráci, podepsaná dne 6.",
+      "text": "Pobavení.",
       "source": "steno",
-      "steno_id": "2025_24_00493",
-      "citace": "96.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Smlouva mezi Českou republikou a Slovenskou republikou o policejní spolupráci, podepsaná dne 6."
+      "kind": "scene",
+      "steno_id": "2025_24_00482",
+      "citace": "(Pobavení.)"
     },
     {
-      "text": "února 2026 v Bratislavě/sněmovní tisk 118/ – prvé čtení Předložený návrh uvede ministr vnitra Lubomír Metnar.",
+      "text": "Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Smlouva mezi Českou republikou a Mongolskem o policejní spolupráci, podepsaná v Praze dne 10.",
       "source": "steno",
-      "steno_id": "2025_24_00493",
-      "citace": "února 2026 v Bratislavě/sněmovní tisk 118/ – prvé čtení Předložený návrh uvede ministr vnitra Lubomír Metnar."
+      "steno_id": "2025_24_00482",
+      "citace": "Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Smlouva mezi Českou republikou a Mongolskem o policejní spolupráci, podepsaná v Praze dne 10."
     },
     {
-      "text": "února letošního roku v Bratislavě, ve vzájemných vztazích nahradí překonanou smlouvu z roku 2004.",
+      "text": "března 2025 /sněmovní tisk 169/ – prvé čtení Předložený návrh, jak už jsem avizoval, uvede ministr vnitra Lubomír Metnar a připraví se zpravodaj Hayato Okamura, který už tam sedí.",
       "source": "steno",
-      "steno_id": "2025_24_00494",
-      "citace": "února letošního roku v Bratislavě, ve vzájemných vztazích nahradí překonanou smlouvu z roku 2004."
-    },
-    {
-      "text": "Závěrem mi dovolte zdůraznit, že předkládaná smlouva představuje další konkrétní krok k posílení bezpečnosti občanů a prohloubení praktické mezinárodní spolupráce.",
-      "source": "steno",
-      "steno_id": "2025_24_00494",
-      "citace": "Závěrem mi dovolte zdůraznit, že předkládaná smlouva představuje další konkrétní krok k posílení bezpečnosti občanů a prohloubení praktické mezinárodní spolupráce."
+      "steno_id": "2025_24_00482",
+      "citace": "března 2025 /sněmovní tisk 169/ – prvé čtení Předložený návrh, jak už jsem avizoval, uvede ministr vnitra Lubomír Metnar a připraví se zpravodaj Hayato Okamura, který už tam sedí."
     }
   ],
   "publikovat": true,
-  "priorita": 2,
+  "priorita": 3,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
   "proslo": true,
@@ -43,5 +38,5 @@
     "spor": false,
     "prazdny_sal": true
   },
-  "steno_slov": 843
+  "steno_slov": 240
 }

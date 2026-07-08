@@ -6,7 +6,6 @@
     "debata-porad-vlny-veder-26-cerven",
     "navrh-zakona-o-statnich-zamestnancich"
   ],
-  "steno_zdroje": true,
   "stats": {
     "pocet_hlas": 1,
     "minuty": 164,
@@ -23,67 +22,5 @@
     "* Šrámková (Piráti) chtěla v pořadu bod o vlnách veder, horka zabíjí, Macinka: v létě je horko",
     "* jedenáct hlasování o pořadu ráno skončilo zamítnutím",
     "* služební zákon prošel v závěrečném hlasování 84 proti 56, Vondráček slíbil, že horší to nebude"
-  ],
-  "jazykolam_kandidati": [
-    {
-      "priorita": 1,
-      "text": "Účast přislíbili zástupci Senátu, účast přislíbili zástupci všech opozičních stran, účast přislíbili zástupci Kanceláře prezidenta republiky.",
-      "autor": "Vít Rakušan",
-      "steno_id": "2025_24_00888",
-      "poradi": 888,
-      "psp_stranka": "s024178.htm",
-      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024178.htm",
-      "vzory": [
-        "predpony: přx3, přislíbx3",
-        "opakovani: účastx3, přislíbilix3, zástupcix3",
-        "ucast prislibilix3"
-      ]
-    },
-    {
-      "priorita": 2,
-      "text": "A otázky, které jsou ve vzduchu a byly poměrně důležité, když jsme se ptali nejenom na to, jaké bude finanční krytí tohoto návrhu, kolik budou stát nové informační systémy, kolik bude stát proškolení personalistů, kolik bude stát proškolení úředníků?",
-      "autor": "Vít Rakušan",
-      "steno_id": "2025_24_00888",
-      "poradi": 888,
-      "psp_stranka": "s024178.htm",
-      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024178.htm",
-      "vzory": [
-        "predpony: kox3",
-        "opakovani: kolikx3, státx3"
-      ]
-    },
-    {
-      "priorita": 3,
-      "text": "Musí fungovat při změně vlády, musí fungovat v době krizí, musí uchovávat institucionální paměť, musí být stabilní a musí být předvídatelný.",
-      "autor": "Kateřina Stojanová",
-      "steno_id": "2025_24_00802",
-      "poradi": 802,
-      "psp_stranka": "s024164.htm",
-      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024164.htm",
-      "vzory": [
-        "opakovani: musíx5",
-        "musi fungovatx2"
-      ]
-    },
-    {
-      "priorita": 4,
-      "text": "Vážený pane předsedající, vážené kolegyně, vážení kolegové, ráda bych se vyjádřila k pozměňovacímu návrhu k zákonu o státních zaměstnancích, který byl předložen bezprostředně před ukončením druhého čtení, bez předchozí odborné diskuse a bez možnosti uplatnit připomínky.",
-      "autor": "Zdeňka Blišťanová",
-      "steno_id": "2025_24_00894",
-      "poradi": 894,
-      "psp_stranka": "s024179.htm",
-      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024179.htm",
-      "vzory": [
-        "predpony: přx5, předx3"
-      ]
-    }
-  ],
-  "jazykolam": {
-    "text": "Účast přislíbili zástupci Senátu, účast přislíbili zástupci všech opozičních stran, účast přislíbili zástupci Kanceláře prezidenta republiky.",
-    "autor": "Vít Rakušan",
-    "steno_id": "2025_24_00888",
-    "poradi": 888,
-    "psp_stranka": "s024178.htm",
-    "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024178.htm"
-  }
+  ]
 }

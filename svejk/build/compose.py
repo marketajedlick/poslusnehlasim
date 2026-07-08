@@ -160,7 +160,7 @@ def render_den_markdown(
         if item.pointa:
             lines.extend([item.pointa, ""])
         mean_label = load_strings()["edition"]["mean_label"]
-        lines.extend([f"**{mean_label}** {co_znamena}", ""])
+        lines.extend([f"**{mean_label}** <strong>{co_znamena}</strong>", ""])
         if item.kuriozita_links:
             from svejk.build.mezin_smlouvy import resolve_smlouvy_page_links
             from svejk.build.recnici import resolve_recnici_page_links

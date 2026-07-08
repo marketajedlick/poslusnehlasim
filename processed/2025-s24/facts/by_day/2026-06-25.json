@@ -6,8 +6,6 @@
     "novela-z-o-spotrebitelskem-uveru",
     "debata-interpelace-hladik-cerveny"
   ],
-  "steno_zdroje": true,
-  "smlouvy_slug": "mezinarodni-smlouvy-25-06",
   "stats": {
     "pocet_hlas": 8,
     "minuty": 99,
@@ -15,7 +13,7 @@
     "proslo": 7,
     "zamitnuto": 0,
     "spor_o_porad": true,
-    "dlouha_debata": true
+    "dlouha_debata": false
   },
   "dnesni_ucet": "Šest ratifikací odsouhlaseno jako na páse,\nspor o NZÚ a Macinkův puč u pultu.",
   "zaver": "že Sněmovna rychle schválila šest ratifikací mezinárodních smluv, dopoledne se Hladík s Červeným přeli o dotace Nové zelené úsporám, a odpoledne Výborný vyzval Macinku, aby u pultu odvolal výroky o ústavním puči a soudruhovi prezidentovi.",
@@ -23,68 +21,5 @@
     "* Schillerová (ANO): To je fakt peklo dneska, novela prošla druhým kolem",
     "* Hladík (KDU-ČSL) tvrdil 450 tisíc domácností, Červený (Motoristé) páku 50 miliard a přiznal, že mladé lidovce vyhodili ze sítí resortu, nechtěli opozici u klávesnice",
     "* Výborný (KDU-ČSL) vyzval Macinku k pultu, ministr místo omluvy citoval Klause"
-  ],
-  "jazykolam_kandidati": [
-    {
-      "priorita": 1,
-      "text": "Tedy ke sněmovnímu dokumentu 1452, dále k pozměňovacímu návrhu pod sněmovním dokumentem 1453, dále k pozměňovacímu návrhu pod sněmovním dokumentem 1454, dále k pozměňovacímu návrhu pod sněmovním dokumentem 1455 a dále k pozměňovacímu návrhu pod sněmovním dokumentem 1456.",
-      "autor": "Marian Jurečka",
-      "steno_id": "2025_24_00559",
-      "poradi": 559,
-      "psp_stranka": "s024127.htm",
-      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024127.htm",
-      "vzory": [
-        "predpony: pozměňx4",
-        "pozmenx4",
-        "opakovani: dálex4, pozměňovacímux4, návrhux4, sněmovnímx4"
-      ]
-    },
-    {
-      "priorita": 2,
-      "text": "Protože něco jiného je transpozice směrnice, něco jiného je revidovaná směrnice a něco jiného je nařízení.",
-      "autor": "Berenika Peštová",
-      "steno_id": "2025_24_00397",
-      "poradi": 397,
-      "psp_stranka": "s024111.htm",
-      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024111.htm",
-      "vzory": [
-        "opakovani: něcox3, jinéhox3",
-        "neco jineho jex3"
-      ]
-    },
-    {
-      "priorita": 3,
-      "text": "Vzhledem k tomu, že Ministerstvo financí není expertem na zdravotnictví oslovili jsme věcně příslušné Ministerstvo zdravotnictví a požádali ho o stanovisko a Ministerstvo zdravotnictví dospělo k názoru, že vhodnou dobou je v českém prostředí sedm let.",
-      "autor": "Alena Schillerová",
-      "steno_id": "2025_24_00529",
-      "poradi": 529,
-      "psp_stranka": "s024124.htm",
-      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024124.htm",
-      "vzory": [
-        "predpony: minx3, ministerx3",
-        "opakovani: ministerstvox3, zdravotnictvíx3"
-      ]
-    },
-    {
-      "priorita": 4,
-      "text": "Bojujeme o vynětí některých průmyslů, které jsou energicky náročné, abychom ty firmy zachránili, abychom tady zachránili výrobu, abychom zachránili pracovní místa a abychom si zachránili ekonomiku.",
-      "autor": "Igor Červený",
-      "steno_id": "2025_24_00393",
-      "poradi": 393,
-      "psp_stranka": "s024109.htm",
-      "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024109.htm",
-      "vzory": [
-        "chrx4",
-        "opakovani: abychomx4, zachránilix4"
-      ]
-    }
-  ],
-  "jazykolam": {
-    "text": "Tedy ke sněmovnímu dokumentu 1452, dále k pozměňovacímu návrhu pod sněmovním dokumentem 1453, dále k pozměňovacímu návrhu pod sněmovním dokumentem 1454, dále k pozměňovacímu návrhu pod sněmovním dokumentem 1455 a dále k pozměňovacímu návrhu pod sněmovním dokumentem 1456.",
-    "autor": "Marian Jurečka",
-    "steno_id": "2025_24_00559",
-    "poradi": 559,
-    "psp_stranka": "s024127.htm",
-    "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024127.htm"
-  }
+  ]
 }

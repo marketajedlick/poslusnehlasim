@@ -7,29 +7,30 @@
   "koho": [],
   "fakty": [
     {
-      "text": "cizinecký zákon",
+      "text": "správně dokumentu",
       "source": "steno",
       "kind": "scene",
-      "steno_id": "2025_24_00208",
-      "citace": "(cizinecký zákon)"
+      "steno_id": "2025_24_00239",
+      "citace": "(správně dokumentu)"
     },
     {
-      "text": "13.Vládní návrh zákona o vstupu a pobytu cizinců (cizinecký zákon)/sněmovní tisk 144/ – druhé čtení Z pověření vlády předložený návrh zákona uvede ministr vnitra pan Lubomír Metnar.",
+      "text": "Chtěl bych se tedy každopádně v podrobné rozpravě přihlásit k číslu sněmovního tisku 1435 (správně dokumentu), který jsem podrobněji okomentoval v obecné rozpravě.",
       "source": "steno",
-      "steno_id": "2025_24_00208",
-      "citace": "13.Vládní návrh zákona o vstupu a pobytu cizinců (cizinecký zákon)/sněmovní tisk 144/ – druhé čtení Z pověření vlády předložený návrh zákona uvede ministr vnitra pan Lubomír Metnar."
+      "steno_id": "2025_24_00239",
+      "citace": "Chtěl bych se tedy každopádně v podrobné rozpravě přihlásit k číslu sněmovního tisku 1435 (správně dokumentu), který jsem podrobněji okomentoval v obecné rozpravě."
     },
     {
-      "text": "Návrh dále zavádí povinnou registraci občanů Evropské unie při pobytu delším než 90 dnů, která umožní evidovat pobyt všech cizinců žijících na našem území déle než 90 dnů.",
+      "text": "Začíná to bodem 1 samozřejmě, končí to bodem 17.",
       "source": "steno",
-      "steno_id": "2025_24_00209",
-      "citace": "Návrh dále zavádí povinnou registraci občanů Evropské unie při pobytu delším než 90 dnů, která umožní evidovat pobyt všech cizinců žijících na našem území déle než 90 dnů."
+      "steno_id": "2025_24_00239",
+      "citace": "Začíná to bodem 1 samozřejmě, končí to bodem 17."
     },
     {
-      "text": "Odborníci a my odhadujeme, že se může jednat nejméně o 200 000 osob, které dnes nejsou evidovány v základních registrech, jelikož registrace je v současné době dobrovolná.",
+      "text": "Nechtějí.",
       "source": "steno",
-      "steno_id": "2025_24_00209",
-      "citace": "Odborníci a my odhadujeme, že se může jednat nejméně o 200 000 osob, které dnes nejsou evidovány v základních registrech, jelikož registrace je v současné době dobrovolná."
+      "kind": "scene",
+      "steno_id": "2025_24_00242",
+      "citace": "(Nechtějí.)"
     }
   ],
   "publikovat": false,
@@ -44,5 +45,5 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 2723
+  "steno_slov": 455
 }

@@ -7,34 +7,32 @@
   "koho": [],
   "fakty": [
     {
-      "text": "knihovní zákon",
+      "text": "srpna 2024, kde ještě jako ministr kultury radostně oznamuji, že návrh prošel vládou a míří do Poslanecké sněmovny.",
       "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_24_01432",
-      "citace": "(knihovní zákon)"
+      "steno_id": "2025_24_01556",
+      "citace": "srpna 2024, kde ještě jako ministr kultury radostně oznamuji, že návrh prošel vládou a míří do Poslanecké sněmovny."
     },
     {
-      "text": "46/2000 Sb., o právech a povinnostech při vydávání periodického tisku a o změně některých dalších zákonů (tiskový zákon), ve znění pozdějších předpisů/sněmovní tisk 192/ – prvé čtení *** Neprošlo jazykovou korekturou, neautorizováno!",
+      "text": "Už někdy kolem roku 2008, 2009 Národní knihovna věděla, že začínají přibývat nebo se standardizovaně objevovat elektronické různé druhy publikací, myšleno teď v oblasti tisku, a už v té době před těmi mnoha a mnoha lety začala Národní knihovna připravovat legislativu, která by toto začala upravovat.",
       "source": "steno",
-      "steno_id": "2025_24_01432",
-      "citace": "46/2000 Sb., o právech a povinnostech při vydávání periodického tisku a o změně některých dalších zákonů (tiskový zákon), ve znění pozdějších předpisů/sněmovní tisk 192/ – prvé čtení *** Neprošlo jazy"
+      "steno_id": "2025_24_01556",
+      "citace": "Už někdy kolem roku 2008, 2009 Národní knihovna věděla, že začínají přibývat nebo se standardizovaně objevovat elektronické různé druhy publikací, myšleno teď v oblasti tisku, a už v té době před těmi"
     },
     {
-      "text": "257/2001 Sb., o knihovnách a podmínkách provozování veřejných knihovnických a informačních služeb (knihovní zákon), ve znění pozdějších předpisů, zákon č.",
+      "text": "Bude to pro nejenom Národní knihovnu, ale obecně pro vlastně prostředí, ve kterém se mají uchovávat informace, velmi důležitý impuls a věřím tomu, že jeho průchod Poslaneckou sněmovnou bude hladký.",
       "source": "steno",
-      "steno_id": "2025_24_01432",
-      "citace": "257/2001 Sb., o knihovnách a podmínkách provozování veřejných knihovnických a informačních služeb (knihovní zákon), ve znění pozdějších předpisů, zákon č."
+      "steno_id": "2025_24_01556",
+      "citace": "Bude to pro nejenom Národní knihovnu, ale obecně pro vlastně prostředí, ve kterém se mají uchovávat informace, velmi důležitý impuls a věřím tomu, že jeho průchod Poslaneckou sněmovnou bude hladký."
     },
     {
-      "text": "Hluk v sále.",
+      "text": "Nyní otevírám bod číslo 90, kterým je Stanovisko vlády bylo doručeno jako sněmovní tisk 193/1.",
       "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_24_01433",
-      "citace": "(Hluk v sále.)"
+      "steno_id": "2025_24_01557",
+      "citace": "Nyní otevírám bod číslo 90, kterým je Stanovisko vlády bylo doručeno jako sněmovní tisk 193/1."
     }
   ],
   "publikovat": false,
-  "priorita": 3,
+  "priorita": 2,
   "nadpis": "Prošlo to",
   "pocet_hlasovani": 1,
   "proslo": true,
@@ -45,5 +43,5 @@
     "spor": false,
     "prazdny_sal": true
   },
-  "steno_slov": 23856
+  "steno_slov": 1908
 }
