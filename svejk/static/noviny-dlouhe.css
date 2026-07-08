@@ -48,6 +48,7 @@ body{
 a{color:inherit}
 img{max-width:100%;height:auto}
 button{font:inherit;cursor:pointer}
+[hidden]{display:none!important}
 .edition-page{
   max-width:1180px;
   margin:0 auto;
