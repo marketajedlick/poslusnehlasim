@@ -1,5 +1,5 @@
 <blockquote class="article-quote" id="article-citace-{{ item.num }}" aria-label="{{ t.edition.citace_aria }}">
-  <p class="article-quote-text"><span class="quote-mark">„</span>{% if item.citace_href %}<a class="steno-link" href="{{ item.citace_href }}" target="_blank" rel="noopener noreferrer">{{ item.citace_text | glossary }}</a>{% else %}{{ item.citace_text | glossary }}{% endif %}<span class="quote-mark">”</span></p>
+  <p class="article-quote-text"><span class="quote-mark">„</span>{% if item.citace_href %}<a class="steno-link" href="{{ item.citace_href }}"{% if item.citace_href.startswith('http') %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ item.citace_text | glossary }}</a>{% else %}{{ item.citace_text | glossary }}{% endif %}<span class="quote-mark">”</span></p>
   <div class="article-quote-foot">
     {% if item.citace_autor %}
     <p class="article-quote-by">{{ item.citace_autor }}</p>

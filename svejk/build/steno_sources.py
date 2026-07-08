@@ -572,6 +572,61 @@ def passage_href(passage: StenoPassage, page_href: str) -> str:
     return f"{page_href}#{passage.anchor}"
 
 
+def _normalize_psp_url(url: str) -> str:
+    return (url or "").split("#", 1)[0].rstrip("/")
+
+
+def find_passage_for_citace(
+    passages: list[StenoPassage],
+    *,
+    citace_text: str,
+    citace_href: str = "",
+) -> StenoPassage | None:
+    """Najde pasáž odpovídající citaci v bloku (text nebo PSP URL z facts)."""
+    if not passages:
+        return None
+    text = _norm_ws(citace_text)
+    psp_base = _normalize_psp_url(citace_href)
+    if text:
+        for passage in passages:
+            pc = _norm_ws(passage.citace)
+            if not pc:
+                continue
+            if text == pc or text in pc or pc in text:
+                return passage
+            for n in (80, 60, 40, 25):
+                if len(text) >= n and text[:n] in pc:
+                    return passage
+    if psp_base:
+        for passage in passages:
+            if _normalize_psp_url(passage.psp_url) == psp_base:
+                return passage
+    return None
+
+
+def resolve_item_citace_href(
+    item: Any,
+    passages: list[StenoPassage],
+    page_href: str,
+) -> None:
+    """Citace v článku vede nejdřív na naši stránku se zdroji, ne rovnou na PSP."""
+    text = (getattr(item, "citace_text", None) or "").strip()
+    href = (getattr(item, "citace_href", None) or "").strip()
+    if not text and not href:
+        return
+    if not page_href:
+        return
+    passage = find_passage_for_citace(
+        passages,
+        citace_text=text,
+        citace_href=href,
+    )
+    if passage:
+        item.citace_href = passage_href(passage, page_href)
+    elif href.startswith("https://www.psp.cz/") or text:
+        item.citace_href = page_href
+
+
 def _find_phrase_in_text(text: str, phrase: str) -> str | None:
     """Vrátí přesnou podmnožinu textu odpovídající frázi (case-insensitive)."""
     if not text or not phrase:
@@ -647,7 +702,8 @@ def build_item_steno_links(
         passages,
         key=lambda p: (-len(p.link_phrase or ""), p.link_phrase is None),
     )
-    all_fields = ("lead", "mean", "kuriozita", "citace_text", "pointa")
+    # citace_text obaluje card-citace — odkaz řeší citace_href, ne inline fráze
+    all_fields = ("lead", "mean", "kuriozita", "pointa")
     for p in ordered:
         href = passage_href(p, page_href)
         if p.link_phrase:
@@ -739,8 +795,9 @@ def apply_steno_links_to_content(
     for item in content.items:
         item_passages = passages_for_slug(blocks, item.slug)
         if item_passages:
+            resolve_item_citace_href(item, item_passages, page_href)
             build_item_steno_links(item_passages, item, page_href)
-            for field in ("lead", "mean", "kuriozita", "citace_text", "pointa"):
+            for field in ("lead", "mean", "kuriozita", "pointa"):
                 raw = getattr(item, field, None) or ""
                 for m in re.finditer(r'class="steno-link"[^>]*>(.*?)</a>', raw, re.I | re.S):
                     used_phrases.add(re.sub(r"<[^>]+>", "", m.group(1)))

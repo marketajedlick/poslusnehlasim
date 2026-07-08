@@ -948,6 +948,9 @@ def _apply_email_links_absolute(content: Any, site_url: str) -> None:
                 val = _make_internal_links_absolute(val, site_url)
                 val = _inline_email_body_link_styles(val, field=field)
                 setattr(item, field, val)
+        citace_href = (getattr(item, "citace_href", None) or "").strip()
+        if citace_href.startswith("/"):
+            item.citace_href = f"{site}{citace_href}"
         if item.kuriozita_nav:
             item.kuriozita_nav = [
                 (label, f"{site}{href}" if href.startswith("/") else href)

@@ -581,6 +581,13 @@ body {
 .verdict-doi {
   margin: 0;
 }
+.verdict-doi .q .key {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 700;
+  text-transform: none;
+  color: #211c14;
+}
 .doi-cta-wrap {
   margin-top: 24px;
   text-align: center;

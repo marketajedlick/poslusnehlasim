@@ -100,7 +100,7 @@
     <div class="p">{{ item.lead | safe }}</div>
     {% if item.citace_text %}
     <blockquote class="item-quote">
-      <p class="item-quote-text"><span class="quote-mark">„</span>{% if item.citace_href %}<a class="steno-link" href="{{ item.citace_href }}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;border-bottom:1px dotted rgba(40,60,110,.5);">{{ item.citace_text | safe }}</a>{% else %}{{ item.citace_text | safe }}{% endif %}<span class="quote-mark">“</span></p>
+      <p class="item-quote-text"><span class="quote-mark">„</span>{% if item.citace_href %}<a class="steno-link" href="{{ item.citace_href }}"{% if item.citace_href.startswith('http') %} target="_blank" rel="noopener noreferrer"{% endif %} style="color:inherit;text-decoration:none;border-bottom:1px dotted rgba(40,60,110,.5);">{{ item.citace_text | safe }}</a>{% else %}{{ item.citace_text | safe }}{% endif %}<span class="quote-mark">“</span></p>
       {% if item.citace_autor %}
       <p class="item-quote-by">{{ item.citace_autor }}</p>
       {% endif %}
