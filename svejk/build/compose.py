@@ -151,7 +151,7 @@ def render_den_markdown(
             lines.extend([f"> „{item.citace_text}“", ""])
             if item.citace_autor:
                 lines.append(f"> {item.citace_autor}")
-                lines.append("")
+            lines.append("")
         if item.lead_tail and item.kuriozita:
             lines.extend([f'<div class="kuriozita-box">{item.kuriozita}</div>', ""])
             lines.extend([item.lead_tail, ""])
@@ -159,14 +159,8 @@ def render_den_markdown(
             lines.extend([item.lead_tail, ""])
         if item.pointa:
             lines.extend([item.pointa, ""])
-        mean_heading = load_strings()["edition"]["mean_label"].rstrip(":? ")
-        lines.extend(
-            [
-                f"### {mean_heading}",
-                "",
-                co_znamena,
-            ]
-        )
+        mean_label = load_strings()["edition"]["mean_label"]
+        lines.extend([f"**{mean_label}** {co_znamena}", ""])
         if item.kuriozita_links:
             from svejk.build.mezin_smlouvy import resolve_smlouvy_page_links
             from svejk.build.recnici import resolve_recnici_page_links

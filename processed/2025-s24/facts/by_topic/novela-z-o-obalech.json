@@ -72,6 +72,13 @@
       "link_phrase": "jedinou autorizovanou obalovou společnost"
     },
     {
+      "text": "Šmída: super EKO-KOM jako soukromé ministerstvo odpadů.",
+      "source": "steno",
+      "steno_id": "2025_24_01643",
+      "citace": "jestli bychom si takovým super EKO-KOMem nezřídili vlastně takové Ministerstvo odpadového hospodářství, které ale není pod státem, nýbrž má standardní akcionářskou strukturu",
+      "link_phrase": "jestli bychom si takovým super EKO-KOMem"
+    },
+    {
       "text": "Šmída: super EKO-KOM legalizuje monopol.",
       "source": "steno",
       "steno_id": "2025_24_01639",
@@ -94,6 +101,7 @@
   "mean": "Firma založená na chybné právní formě dostane víc společníků, ne konkurenci. Ministr, kterého se to týká, byl mezitím na lodi.",
   "citace_text": "jestli bychom si takovým super EKO-KOMem nezřídili vlastně takové Ministerstvo odpadového hospodářství, které ale není pod státem, nýbrž má standardní akcionářskou strukturu",
   "citace_autor": "Martin Šmída (Motoristé)",
+  "citace_href": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024327.htm#r2",
   "pocet_hlasovani": 7,
   "proslo": true,
   "signaly": {

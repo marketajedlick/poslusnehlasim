@@ -115,6 +115,7 @@ _STATIC = Path(__file__).resolve().parent.parent / "static"
 _CSS = _STATIC / "noviny-dlouhe.css"
 _FONTS_CSS = _STATIC / "fonts.css"
 _EMAIL_CSS = _STATIC / "noviny-email.css"
+_DOI_EMAIL_CSS = _STATIC / "doi-email.css"
 _SVEJK_SVG = _STATIC / "svejk.svg"
 _PH_FAV = _STATIC / "ph-fav.svg"
 _FAVICON_PNG = _STATIC / "ph-fav.png"
@@ -927,9 +928,7 @@ def _inline_email_body_link_styles(text: str, *, field: str = "lead") -> str:
     if "<a " not in text:
         return text
     color = _FIELD_LINK_STYLE.get(field, _FIELD_LINK_STYLE["lead"])
-    style = (
-        f'style="{color} !important;text-decoration:underline;font-weight:inherit;"'
-    )
+    style = f'style="{color};text-decoration:underline;font-weight:inherit;"'
     text = text.replace('class=\\"steno-link\\"', 'class="steno-link"')
     text = text.replace('class=\\"mean-link\\"', 'class="mean-link"')
     return re.sub(
@@ -1033,7 +1032,6 @@ def render_email_html(
         edition_url=edition_url,
         archive_url=archive_url,
         pivo_url=pivo_url,
-        svejk_head_url=f"{site}/static/favicon.png",
         static_base=f"{site}/static",
         steno_page_url=steno_page_url,
     )
@@ -1058,7 +1056,7 @@ def render_doi_email_html(
     privacy_url = f"{site}{privacy_path}"
     confirm_redirect_url = f"{site}{confirm_path}"
     subject = doi["subject"]
-    css = _EMAIL_CSS.read_text(encoding="utf-8")
+    css = _DOI_EMAIL_CSS.read_text(encoding="utf-8")
     tpl = _jinja_env().get_template("doi-email.html")
     html = tpl.render(
         t=t,

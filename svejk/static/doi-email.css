@@ -1,0 +1,165 @@
+/* Potvrzovací e-mail (double opt-in), bez !important u barev kvůli SpamAssassin. */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f7f2f0;
+  font-family: 'Old Standard TT', Georgia, 'Times New Roman', serif;
+  color: #262626;
+  -webkit-text-size-adjust: 100%;
+}
+.email-wrap {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f7f2f0;
+  border-radius: 3px;
+}
+.email-pad {
+  padding: 18px 16px 20px;
+}
+.masthead {
+  text-align: center;
+  padding: 6px 0 2px;
+}
+.eyebrow {
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  color: #6b6355;
+  text-align: center;
+}
+.mast {
+  font-family: 'Archivo', 'Arial Black', Arial, sans-serif;
+  font-weight: 900;
+  text-transform: none;
+  color: #262626;
+  font-size: 48px;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  margin: 6px 0 0;
+  text-align: center;
+}
+.email-mast {
+  text-align: center;
+}
+.verdict {
+  margin: 22px 4px 24px;
+  padding: 22px 24px 18px;
+  background: #f4c430;
+  color: #211c14;
+  border-radius: 10px;
+}
+.verdict .q {
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.5;
+  margin: 0;
+}
+.verdict .q-quote {
+  font-style: inherit;
+  font-size: 24px;
+}
+.verdict .q-mark {
+  font-size: 34px;
+  line-height: 0;
+  vertical-align: -7px;
+}
+.verdict .q .key {
+  font-family: 'Archivo', 'Arial Black', sans-serif;
+  font-style: normal;
+  color: #cf5a31;
+  text-transform: uppercase;
+}
+.email-legal {
+  margin-top: 4px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(33, 28, 20, 0.14);
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #5a503e;
+}
+.email-legal a {
+  color: #5a503e;
+  text-decoration: underline;
+}
+.doi-head {
+  text-align: center;
+  padding-bottom: 4px;
+}
+.doi-mast {
+  font-size: 46px;
+  line-height: 0.95;
+}
+.doi-body {
+  margin-top: 18px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.doi-intro {
+  margin: 0;
+  font-family: 'Old Standard TT', Georgia, 'Times New Roman', serif;
+  font-size: 17px;
+  line-height: 1.55;
+  color: #262626;
+  text-align: center;
+}
+.doi-quote-wrap {
+  margin-top: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.verdict-doi {
+  margin: 0;
+}
+.verdict-doi .q .key {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 700;
+  text-transform: none;
+  color: #211c14;
+}
+.doi-cta-wrap {
+  margin-top: 24px;
+  text-align: center;
+}
+.email-cta {
+  display: inline-block;
+  background: #ff4411;
+  color: #ffffff;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 14px;
+  line-height: 1;
+  text-decoration: none;
+  padding: 15px 36px;
+  border-radius: 3px;
+}
+.doi-note {
+  margin: 18px 16px 0;
+  font-family: 'Old Standard TT', Georgia, 'Times New Roman', serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #6b6355;
+  text-align: center;
+}
+.doi-legal {
+  margin-top: 24px;
+}
+@media only screen and (max-width: 480px) {
+  .email-pad {
+    padding: 14px 12px 18px;
+  }
+  .mast {
+    font-size: 36px;
+    line-height: 0.95;
+  }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+  }
+}

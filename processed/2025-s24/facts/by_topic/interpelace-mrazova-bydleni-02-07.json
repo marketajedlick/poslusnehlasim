@@ -9,6 +9,13 @@
   ],
   "fakty": [
     {
+      "text": "Richterová: prázdné židle, chybí skoro všichni ministři.",
+      "source": "steno",
+      "steno_id": "2025_24_01573",
+      "citace": "Ta spousta prázdných židlí ukazuje, že tady dnes chybí skoro všichni ministři",
+      "link_phrase": "Ta spousta prázdných židlí ukazuje"
+    },
+    {
       "text": "Richterová: prázdné židle, chybí ministři.",
       "source": "steno",
       "steno_id": "2025_24_01573",
@@ -59,6 +66,7 @@
   "mean": "Piráti navrhují, aby se ministrům za neúčast na interpelacích strhávaly peníze. Sněmovna o tom bude ještě jednat.",
   "citace_text": "Ta spousta prázdných židlí ukazuje, že tady dnes chybí skoro všichni ministři,",
   "citace_autor": "Olga Richterová",
+  "citace_href": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024305.htm#r1",
   "pocet_hlasovani": 0,
   "proslo": false
 }

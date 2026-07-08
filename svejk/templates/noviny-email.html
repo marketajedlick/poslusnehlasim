@@ -28,18 +28,17 @@
 <td class="email-pad">
 
 <div class="masthead" style="text-align:center;padding:6px 0 2px;">
-  {% if svejk_head_url %}<img class="masthead-fav" src="{{ svejk_head_url }}" alt="Poslušně hlásím" width="84" height="84" style="display:block;width:84px;height:84px;margin:0 auto 10px;border:0;">{% endif %}
   <div class="eyebrow" style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.2em;font-size:12px;color:#6b6355;text-align:center;line-height:1.2;">{{ t.edition.eyebrow }}</div>
   <h1 class="mast email-mast" style="margin:6px 0 0;font-family:'Arial Black',Arial,sans-serif;font-weight:900;text-transform:none;color:#262626;font-size:46px;line-height:0.95;letter-spacing:-0.01em;text-align:center;">Poslušně<br>hlásím!</h1>
   <div class="pager-line" style="text-align:center;margin:12px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;letter-spacing:0.05em;text-transform:uppercase;color:#262626;">V Praze, dne {{ datum_design }}</div>
 </div>
 
-<div class="verdict verdict-top">
+<div class="verdict verdict-top" style="margin:22px 4px 24px;padding:22px 24px 18px;background:#f4c430;color:#211c14;border-radius:10px;">
   {% set _ph = 'Poslušně hlásím, že ' %}
   <p class="q"><span class="q-quote"><span class="q-mark">„</span>{% if content.zaver[:20] == _ph %}<strong style="font-weight:700;">{{ _ph }}</strong>{{ content.zaver[20:] | safe }}{% else %}{{ content.zaver | safe }}{% endif %}<span class="q-mark">“</span></span></p>
   <table role="presentation" class="verdict-foot" cellpadding="0" cellspacing="0" border="0" width="100%">
   <tr>
-    {% if svejk_head_url %}<td class="verdict-head" width="52" valign="bottom" style="width:52px;vertical-align:bottom;"><img src="{{ svejk_head_url }}" width="52" height="52" alt="" style="display:block;width:52px;height:52px;border:0;"></td>{% endif %}
+    <td class="verdict-head" width="10" valign="bottom" style="width:10px;vertical-align:bottom;"></td>
     <td valign="bottom" style="vertical-align:bottom;padding-left:12px;">
       <div class="sign">{{ t.edition.sign }}</div>
       <p class="tagline">Každý den to nejdůležitější ze Sněmovny.</p>
@@ -86,20 +85,24 @@
 <td class="item-wrap" style="padding:18px 0 16px;border-bottom:1.5px solid rgba(33,28,20,0.25);">
   <table role="presentation" class="item-inner" cellpadding="0" cellspacing="0" border="0" width="100%">
   <tr>
-  <td class="item-numcol stack-col" width="140" valign="top" align="center" style="width:140px;max-width:140px;vertical-align:top;text-align:center;">
-    <div class="kick">{{ item.kick }}</div>
-    <div class="num">{{ "%02d"|format(item.num) }}</div>
-    <span class="stamp{% if item.verdikt != 'schvaleno' %} {{ item.verdikt }}{% endif %}">{{ item.stamp }}</span>
-  </td>
-  <td class="item-body stack-col" valign="top" style="vertical-align:top;padding-left:18px;text-align:left;">
-    <h2 class="h" style="text-align:left;margin:0;">
-      {% for line in item.nadpis_radky %}
-      <span class="hl">{{ line }}</span>
-      {% endfor %}
-    </h2>
+  <td class="item-body" valign="top" style="vertical-align:top;text-align:left;padding:0;">
+    <div class="item-head" style="margin:0 0 12px;text-align:left;">
+      <div class="num" style="display:block;font-family:'Anton',Impact,'Arial Black',sans-serif;font-size:56px;line-height:1;color:#f4c430;margin:0 0 8px;text-align:left;">{{ "%02d"|format(item.num) }}</div>
+      <h2 class="h" style="text-align:left;margin:0 0 8px;font-family:'Arial Black',Arial,sans-serif;font-weight:900;text-transform:uppercase;font-size:22px;line-height:1.05;color:#262626;">
+        {% for line in item.nadpis_radky %}{% if not loop.first %}<br>{% endif %}{{ line }}{% endfor %}
+      </h2>
+      {% if item.verdikt == 'debata' %}
+      {% set _stamp_style = "display:inline-block;margin:0;font-family:Arial,Helvetica,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:11px;color:#9a7a00;padding:4px 10px 3px;border:2px solid #f5c430;border-radius:3px;background:transparent;" %}
+      {% elif item.verdikt in ('zamiteno', 'odlozeno') %}
+      {% set _stamp_style = "display:inline-block;margin:0;font-family:Arial,Helvetica,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:11px;color:#ff4411;padding:4px 10px 3px;border:2px solid #ff4411;border-radius:3px;background:transparent;" %}
+      {% else %}
+      {% set _stamp_style = "display:inline-block;margin:0;font-family:Arial,Helvetica,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:11px;color:#1f8a5b;padding:4px 10px 3px;border:2px solid #1f8a5b;border-radius:3px;background:transparent;" %}
+      {% endif %}
+      <span class="stamp stamp--email{% if item.verdikt != 'schvaleno' %} {{ item.verdikt }}{% endif %}" style="{{ _stamp_style }}">{{ item.stamp }}</span>
+    </div>
     <div class="p">{{ item.lead | safe }}</div>
     {% if item.citace_text %}
-    <blockquote class="item-quote">
+    <blockquote class="item-quote" style="margin:16px 0 calc(12px + 1.75em);padding:14px 16px 14px 18px;border:1px solid rgba(38,38,38,0.3);border-left:5px solid #ff4411;background:rgba(38,38,38,0.045);text-align:left;">
       <p class="item-quote-text"><span class="quote-mark">„</span>{% if item.citace_href %}<a class="steno-link" href="{{ item.citace_href }}"{% if item.citace_href.startswith('http') %} target="_blank" rel="noopener noreferrer"{% endif %} style="color:inherit;text-decoration:none;border-bottom:1px dotted rgba(40,60,110,.5);">{{ item.citace_text | safe }}</a>{% else %}{{ item.citace_text | safe }}{% endif %}<span class="quote-mark">“</span></p>
       {% if item.citace_autor %}
       <p class="item-quote-by">{{ item.citace_autor }}</p>
@@ -116,7 +119,7 @@
     <p class="p">{{ item.pointa | safe }}</p>
     {% endif %}
     {% if item.mean %}
-    <p class="mean"><b style="color:#ff4411;">{{ t.edition.mean_label }} </b>{{ item.mean | safe }}</p>
+    <p class="mean"><strong class="mean-label" style="color:#ff4411;font-weight:700;">{{ t.edition.mean_label }} </strong>{{ item.mean | safe }}</p>
     {% endif %}
     {% if item.kuriozita_nav %}
     <p class="kuriozita-links">

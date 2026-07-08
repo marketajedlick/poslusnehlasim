@@ -67,12 +67,6 @@ body {
   text-align: center;
   padding: 6px 0 2px;
 }
-.masthead-fav {
-  display: block;
-  width: 84px;
-  height: 84px;
-  margin: 0 auto 10px;
-}
 .eyebrow {
   font-family: 'Archivo', Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -153,35 +147,24 @@ body {
 .item-inner {
   width: 100%;
 }
-.item-numcol {
-  width: 104px;
-  max-width: 104px;
-  text-align: center;
-  vertical-align: top;
+.item-head {
+  margin: 0 0 12px;
+  text-align: left;
 }
 .item-body {
   vertical-align: top;
-  padding-left: 18px;
+  padding: 0;
   text-align: left;
-}
-.kick {
-  display: block;
-  font-family: 'Archivo', Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 11px;
-  color: #5a503e;
-  margin-bottom: 2px;
 }
 .num {
   display: block;
   font-family: 'Anton', Impact, 'Arial Black', sans-serif;
-  font-size: 92px;
-  line-height: 0.82;
+  font-size: 56px;
+  line-height: 0.95;
   color: #f4c430;
-  margin: 2px 0 0;
+  margin: 0 0 6px;
   letter-spacing: 0;
+  text-align: left;
 }
 .item.i2 .num { color: #f4c430; }
 /* rotate() funguje v Apple Mail / iOS; Outlook a část Gmailu ignoruje → rovné razítko. */
@@ -190,55 +173,49 @@ body {
   font-family: 'Archivo', 'Arial Black', Impact, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: 12px;
+  font-size: 11px;
   color: #1f8a5b;
   padding: 4px 10px 3px;
   border: 2px solid #1f8a5b;
   border-radius: 3px;
-  box-shadow: inset 0 0 0 1.2px #1f8a5b;
-  margin-top: 10px;
-  -webkit-transform: rotate(-4deg);
-  -ms-transform: rotate(-4deg);
-  transform: rotate(-4deg);
+  background: transparent;
+  margin: 0;
+  transform: none;
+}
+.stamp--email {
+  box-shadow: none;
 }
 .item.i2 .stamp {
-  -webkit-transform: rotate(3deg);
-  -ms-transform: rotate(3deg);
-  transform: rotate(3deg);
+  transform: none;
 }
 .stamp.zvoleno {
   color: #1f8a5b;
   border-color: #1f8a5b;
-  box-shadow: inset 0 0 0 1.2px #1f8a5b;
 }
 .stamp.zamiteno {
   color: #ff4411;
   border-color: #ff4411;
-  box-shadow: inset 0 0 0 1.2px #ff4411;
 }
 .stamp.odlozeno {
   color: #ff4411;
   border-color: #ff4411;
-  box-shadow: inset 0 0 0 1.2px #ff4411;
 }
 .stamp.debata {
-  color: #f5c430;
+  color: #9a7a00;
   border-color: #f5c430;
   background: transparent;
-  box-shadow: inset 0 0 0 1.2px #f5c430;
 }
 .h {
   font-family: 'Archivo', 'Arial Black', Arial, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
-  font-size: 30px;
-  line-height: 1.02;
+  font-size: 22px;
+  line-height: 1.05;
   letter-spacing: -0.01em;
   margin: 0;
   text-align: left;
 }
-/* jen zvýraznění řádků NADPISU se stohuje pod sebe; zvýraznění v textu zůstává inline */
-.h .hl { display: block; }
+/* zvýraznění jen v textu článku, ne v nadpisech */
 .p .hl, .mean .hl { display: inline; }
 .p {
   font-size: 17px;
@@ -251,7 +228,7 @@ body {
 .mean a.mean-link,
 .mean a.steno-link,
 .kuriozita a.steno-link {
-  color: #211c14 !important;
+  color: #211c14;
   font-weight: inherit !important;
   text-decoration: underline;
 }
@@ -260,35 +237,38 @@ body {
 .item.i2 .mean a.mean-link,
 .item.i2 .mean a.steno-link,
 .item.i2 .kuriozita a.steno-link {
-  color: #211c14 !important;
+  color: #211c14;
 }
 .kuriozita a.steno-link,
 .kuriozita a.mean-link {
-  color: #5a5348 !important;
+  color: #5a5348;
 }
 .kuriozita-links a {
-  color: #cf5a31 !important;
+  color: #cf5a31;
   font-family: inherit;
   font-weight: normal !important;
   text-decoration: underline;
 }
 .mean {
   margin-top: 10px;
-  font-size: 15px;
-  line-height: 1.45;
+  font-size: 17px;
+  line-height: 1.7;
   color: #211c14;
-  font-weight: bold;
+  font-weight: normal;
   text-align: left;
 }
-.mean b {
-  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+.mean b,
+.mean-label {
+  font-family: inherit;
   font-weight: bold;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-size: 11px;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
   color: #ff4411;
 }
-.item.i2 .mean b { color: #ff4411; }
+.item.i2 .mean b,
+.item.i2 .mean-label { color: #ff4411; }
 
 .kuriozita-box {
   margin-top: 14px;
@@ -307,7 +287,7 @@ body {
   background: rgba(40, 60, 110, 0.06);
 }
 .item-quote {
-  margin: 16px 0 0;
+  margin: 16px 0 calc(12px + 1.75em);
   padding: 14px 16px 14px 18px;
   border: 1px solid rgba(38, 38, 38, 0.3);
   border-left: 5px solid #ff4411;
@@ -409,9 +389,6 @@ body {
   background: #f4c430;
   color: #211c14;
   border-radius: 10px;
-  box-shadow: 0 4px 0 rgba(38,38,38,0.12);
-  -webkit-transform: rotate(-1.2deg);
-  transform: rotate(-1.2deg);
 }
 .verdict .q {
   font-style: italic;
@@ -435,7 +412,7 @@ body {
   text-transform: uppercase;
 }
 .verdict .q a.steno-link {
-  color: #211c14 !important;
+  color: #211c14;
   text-decoration: underline;
 }
 .verdict-foot {
@@ -443,13 +420,8 @@ body {
   margin-top: 16px;
 }
 .verdict-head {
-  width: 52px;
+  width: 10px;
   vertical-align: bottom;
-}
-.verdict-head img {
-  display: block;
-  width: 52px;
-  height: 52px;
 }
 .verdict .sign {
   font-family: 'Archivo', Arial, sans-serif;
@@ -499,23 +471,10 @@ body {
   text-decoration: underline;
 }
 
-/* ---------- mobile stack ---------- */
+/* ---------- mobile tweaks (NWL je mobilní layout ve výchozím stavu) ---------- */
 @media only screen and (max-width: 480px) {
   .email-pad {
     padding: 14px 12px 18px !important;
-  }
-  .head-cal {
-    width: 72px !important;
-  }
-  .head-cal .cal {
-    width: 72px !important;
-  }
-  .head-cal .cal-day {
-    font-size: 34px !important;
-  }
-  .head-title {
-    padding: 0 6px !important;
-    text-align: center !important;
   }
   .mast {
     font-size: 36px !important;
@@ -525,26 +484,8 @@ body {
     font-size: 11px !important;
     letter-spacing: 0.14em !important;
   }
-  .item-inner tr,
-  .item-inner tbody {
-    display: block !important;
-    width: 100% !important;
-  }
-  .item-inner .stack-col {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .item-inner .item-numcol {
-    padding-bottom: 10px !important;
-    text-align: center !important;
-  }
-  .item-inner .item-body {
-    padding-left: 0 !important;
-  }
   .num {
-    font-size: 72px !important;
+    font-size: 48px !important;
   }
   .h {
     font-size: 19px !important;
@@ -595,7 +536,7 @@ body {
 .email-cta {
   display: inline-block;
   background: #ff4411;
-  color: #ffffff !important;
+  color: #ffffff;
   font-family: 'Archivo', Arial, Helvetica, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
