@@ -1513,6 +1513,107 @@ body.archiv-page{
 @media(min-width:768px){
   .archiv-wrap.soukromi-wrap{padding:59px 0 36px}
 }
+/* soukromí, podpora, o-webu */
+.soukromi-body{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  text-align:left;
+}
+.soukromi-body--prose{gap:28px}
+.soukromi-body--prose .soukromi-section p + p{margin-top:10px}
+.soukromi-section p{
+  margin:0;
+  font-family:var(--font-serif);
+  font-size:16px;
+  line-height:1.55;
+  color:var(--char);
+}
+.soukromi-section a{
+  color:var(--orange);
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,68,17,.35);
+}
+.soukromi-section a:hover{border-bottom-color:var(--orange)}
+.soukromi-heading{
+  margin:0 0 6px;
+  font-family:var(--font-sans);
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--ink);
+}
+.cookie-settings-btn{
+  font:inherit;
+  color:var(--orange);
+  background:none;
+  border:none;
+  padding:0;
+  text-decoration:underline;
+  text-underline-offset:2px;
+  cursor:pointer;
+}
+.archiv-head .site-nav--section,
+.site-nav--section{
+  margin-top:20px;
+  padding-top:20px;
+  border-top:1px solid var(--border);
+}
+/* potvrzeno */
+.potvrzeno-wrap .soukromi-body{text-align:center}
+.potvrzeno-welcome{margin-top:4px;text-align:center}
+.potvrzeno-latest p.potvrzeno-cta-wrap{margin:12px 0 0;text-align:center}
+a.potvrzeno-cta,
+.soukromi-section a.potvrzeno-cta{
+  display:inline-block;
+  font-family:var(--font-sans);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:14px;
+  padding:10px 20px;
+  background:var(--orange);
+  color:var(--white);
+  text-decoration:none;
+  border-bottom:none;
+  border-radius:3px;
+}
+a.potvrzeno-cta:hover{filter:brightness(1.05);border-bottom:none}
+.potvrzeno-note{
+  margin:20px auto 0;
+  padding-top:18px;
+  border-top:1px solid var(--border);
+  max-width:36em;
+  font-family:var(--font-serif);
+  font-size:16px;
+  line-height:1.5;
+  color:var(--ink);
+  text-align:center;
+}
+/* 404 */
+.notfound-code{
+  margin:0 0 6px;
+  font-family:var(--font-sans);
+  font-weight:900;
+  font-size:clamp(36px,10vw,52px);
+  letter-spacing:.08em;
+  color:var(--orange);
+  line-height:1;
+}
+.notfound-body{text-align:left}
+.notfound-latest{margin-bottom:8px}
+.notfound-cta-wrap{margin-top:12px;text-align:center}
+.notfound-wrap .subscribe{
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid var(--border);
+}
+.notfound-wrap .subscribe-gloss{max-width:none}
+/* dekuju */
+.dekuju-page .pivo-body{text-align:center;padding-top:8px}
+.dekuju-page .pivo-quote{max-width:34rem}
+.dekuju-page .site-nav--section{margin-top:28px}
 /* pivo page */
 .pivo-page{background:var(--cream)}
 .pivo-stage{max-width:var(--content-w);margin:0 auto;padding:32px 16px 48px}

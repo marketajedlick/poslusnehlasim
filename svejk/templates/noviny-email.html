@@ -146,9 +146,9 @@
     <span class="jazykolam-tape" style="display:inline-block;width:78px;height:22px;background:rgba(244,196,48,.9);box-shadow:0 1px 2px rgba(20,15,8,.14);-webkit-transform:rotate(-3deg);transform:rotate(-3deg);"></span>
   </div>
   <blockquote class="item-quote item-quote--jazykolam" style="margin:-11px 0 0;position:relative;z-index:1;-webkit-transform:rotate(-1.4deg);transform:rotate(-1.4deg);">
-    <p class="item-quote-text">„{% if steno_page_url and content.jazykolam.steno_anchor %}<a class="steno-link" href="{{ steno_page_url }}#{{ content.jazykolam.steno_anchor }}" style="color:inherit;text-decoration:none;border-bottom:1px dotted rgba(40,60,110,.5);">{{ content.jazykolam.text }}</a>{% elif content.jazykolam.href %}<a class="steno-link" href="{{ content.jazykolam.href }}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;border-bottom:1px dotted rgba(40,60,110,.5);">{{ content.jazykolam.text }}</a>{% else %}{{ content.jazykolam.text }}{% endif %}“</p>
+    <p class="item-quote-text">„{% if steno_page_url %}<a class="steno-link" href="{{ steno_page_url }}{% if content.jazykolam.steno_anchor %}#{{ content.jazykolam.steno_anchor }}{% endif %}" style="color:inherit;text-decoration:none;border-bottom:1px dotted rgba(40,60,110,.5);">{{ content.jazykolam.text }}</a>{% elif content.jazykolam.href %}<a class="steno-link" href="{{ content.jazykolam.href }}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;border-bottom:1px dotted rgba(40,60,110,.5);">{{ content.jazykolam.text }}</a>{% else %}{{ content.jazykolam.text }}{% endif %}“</p>
     {% if content.jazykolam.autor %}
-    <p class="item-quote-by">{{ content.jazykolam.autor }}{% if content.jazykolam.steno_anchor and content.jazykolam.href %} <a class="jazykolam-psp-link" href="{{ content.jazykolam.href }}" target="_blank" rel="noopener noreferrer" style="color:#ff4411;font-family:'Archivo',Arial,sans-serif;font-weight:bold;font-size:12px;text-decoration:none;white-space:nowrap;">↗ psp.cz</a>{% endif %}</p>
+    <p class="item-quote-by">{{ content.jazykolam.autor }}</p>
     {% endif %}
   </blockquote>
 </td>

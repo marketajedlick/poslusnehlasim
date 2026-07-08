@@ -32,5 +32,6 @@
 <meta name="twitter:image:alt" content="{{ og_image_alt }}" />
 {% endif %}
 
-{# twitter:card vždy, ne jen když je obrázek #}
-<meta name="twitter:card" content="{% if og_image_url %}summary_large_image{% else %}summary{% endif %}" />
+{# summary_large_image jen u širokého OG obrázku (vydání), ne u faviconu #}
+{% set _og_w = og_image_width | default(0) | int %}
+<meta name="twitter:card" content="{% if og_image_url and _og_w >= 600 %}summary_large_image{% else %}summary{% endif %}" />

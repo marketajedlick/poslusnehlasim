@@ -800,13 +800,30 @@ def _sanitize_vysledek_export(text: str) -> str:
     return poslanec_registry().annotate(text) if text.strip() else text
 
 
+def _resolve_jazykolam_steno_id(paths: SchuzePaths, j: dict[str, Any]) -> str:
+    steno_id = (j.get("steno_id") or "").strip()
+    if steno_id:
+        return steno_id
+    poradi = j.get("poradi")
+    if poradi is None:
+        return ""
+    from svejk.build.steno_sources import _load_steno_index
+
+    for sid, rec in _load_steno_index(paths).items():
+        if rec.get("poradi") == poradi:
+            return sid
+    return ""
+
+
 def _enrich_jazykolam_href(content: DenContent, paths: SchuzePaths) -> None:
     j = content.jazykolam
     if not j:
         return
     from svejk.build.steno_sources import resolve_psp_url_for_steno, steno_anchor
 
-    steno_id = (j.get("steno_id") or "").strip()
+    steno_id = _resolve_jazykolam_steno_id(paths, j)
+    if steno_id:
+        j["steno_id"] = steno_id
     text = (j.get("text") or "").strip()
     href = resolve_psp_url_for_steno(paths, steno_id, text) if steno_id and text else ""
     if not href:

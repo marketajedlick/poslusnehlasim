@@ -1,7 +1,11 @@
 <div class="masthead{% if rail %} edition-rail-mast{% endif %}">
   <img class="masthead-fav" src="{{ ph_fav_href }}" alt="Švejk" width="96" height="96">
   <div class="masthead-eyebrow">{{ t.edition.eyebrow }}</div>
+  {% if rail %}
+  <p class="masthead-title" aria-hidden="true">Poslušně<br>hlásím!</p>
+  {% else %}
   <h1 class="masthead-title">Poslušně<br>hlásím!</h1>
+  {% endif %}
   {% if not rail %}
   <div class="pager pager-mobile">
     {% if nav.prev %}

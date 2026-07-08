@@ -101,6 +101,12 @@
     return domain + location.pathname;
   }
 
+  function sharePageUrlFull(){
+    var plain = sharePageUrlPlain();
+    if (/^https?:\/\//i.test(plain)) return plain;
+    return 'https://' + plain;
+  }
+
   function shareTweetText(btn){
     var custom = btn.getAttribute('data-share-text');
     if (custom) return custom.replace(/\\n/g, '\n');
@@ -209,7 +215,7 @@
     if (shareCopy){
       shareCopy.disabled = false;
       shareCopy.onclick = function(){
-        copyToClipboard(text, shareCopy, '✓ Zkopírováno');
+        copyToClipboard(sharePageUrlFull(), shareCopy, '✓ Zkopírováno');
       };
     }
     shareRoot.hidden = false;

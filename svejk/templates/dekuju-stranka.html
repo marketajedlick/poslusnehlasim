@@ -10,31 +10,20 @@
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="pivo-page dekuju-page">
-<div class="stagewrap pivo-stage">
-  <div class="stack">
-    <div class="page-slot">
-      <div class="page-top">
-        <div class="sheet-shape">
-          <div class="grain"></div>
-          <div class="pad">
-            <header class="dekuju-head">
-              <div class="eyebrow">{{ t.edition.eyebrow }}</div>
-              <h1 class="mast">POSLUŠNĚ <span class="terra">HLÁSÍM</span></h1>
-            </header>
+<div class="pivo-stage">
+  <header class="pivo-head">
+    <div class="eyebrow">{{ t.edition.eyebrow }}</div>
+    <h1 class="pivo-title">Děkujeme!</h1>
+  </header>
 
-            <div class="pivo-body dekuju-body">
-              <blockquote class="pivo-quote dekuju-quote">
-                <p><span class="q-quote">„{{ t.thanks_page.quote }}“</span></p>
-                <span class="pivo-quote-by">{{ t.thanks_page.quote_by }}</span>
-              </blockquote>
+  <div class="pivo-body dekuju-body">
+    <blockquote class="pivo-quote dekuju-quote">
+      <p><span class="q-quote">„{{ t.thanks_page.quote }}“</span></p>
+      <span class="pivo-quote-by">{{ t.thanks_page.quote_by }}</span>
+    </blockquote>
 
-              {% set site_nav_modifier = "site-nav--section" %}
-              {% include "site-nav.html" %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    {% set site_nav_modifier = "site-nav--section" %}
+    {% include "site-nav.html" %}
   </div>
 </div>
 {% include "site-footer.html" %}
