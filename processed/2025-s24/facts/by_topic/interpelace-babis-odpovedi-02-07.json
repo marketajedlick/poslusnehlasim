@@ -1,6 +1,6 @@
 {
   "slug": "interpelace-babis-odpovedi-02-07",
-  "nazev": "Graf v sále",
+  "nazev": "132 stran průšvihů",
   "datum": "02.07.2026",
   "verdikt": "debata",
   "predmet_lidsky": "odpolední odpovědi premiéra Babiše na ústní interpelace o bydlení a dalších tématech",
@@ -11,139 +11,81 @@
     {
       "text": "Babiš tentokrát přišel na ústní interpelace.",
       "source": "steno",
-      "steno_id": "2025_24_01589",
+      "steno_id": "2025_24_01704",
       "citace": "Tak děkuju za dotaz.",
       "link_phrase": "tentokrát přišel"
     },
     {
       "text": "Babiš: vy mluvíte o bydlení?",
       "source": "steno",
-      "steno_id": "2025_24_01589",
+      "steno_id": "2025_24_01704",
       "citace": "Vy mluvíte o bydlení? Vy, kteří jste to zničili?",
       "link_phrase": "Vy mluvíte o bydlení"
     },
     {
-      "text": "Babiš ukázal graf bytové výstavby přímo v sále.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_24_01589",
-      "citace": "Koukejte. (Ukazuje do sálu graf.) Tady je 2018, 33 000 bytů.",
-      "link_phrase": "bytové výstavby přímo v sále"
-    },
-    {
-      "text": "Babiš v grafu: 2018 třicet tři tisíc bytů.",
-      "source": "steno",
-      "steno_id": "2025_24_01589",
-      "citace": "Tady je 2018, 33 000 bytů.",
-      "link_phrase": "rok 2018, třicet tři tisíc bytů"
-    },
-    {
-      "text": "Babiš v grafu: za vládu ANO 44 992 bytů v roce 2021.",
-      "source": "steno",
-      "steno_id": "2025_24_01589",
-      "citace": "Za nás 121 a dotáhli jsme to na 44 992 bytů v roce 2021.",
-      "link_phrase": "čtyřicet čtyři tisíc devět set devadesát dva v roce 2021"
-    },
-    {
       "text": "Babiš listoval 132stránkovým materiálem přešlapů Pirátů a nečetl ho.",
       "source": "steno",
-      "steno_id": "2025_24_01589",
+      "steno_id": "2025_24_01704",
       "citace": "Toto je 132 stran (V ruce drží písemný materiál.) vašich přešlapů v politice. Vaše průšvihy. (Listuje v materiálu.) Nebudu to číst, 132 stran.",
       "link_phrase": "132stránkovým materiálem jejich přešlapů"
     },
     {
       "text": "Babiš materiál nazval průšvihy.",
       "source": "steno",
-      "steno_id": "2025_24_01589",
+      "steno_id": "2025_24_01704",
       "citace": "Vaše průšvihy.",
       "link_phrase": "průšvihů"
     },
     {
       "text": "Babiš listuje materiálem, nečte ho.",
       "source": "steno",
-      "steno_id": "2025_24_01589",
+      "steno_id": "2025_24_01704",
       "citace": "(Listuje v materiálu.) Nebudu to číst, 132 stran.",
       "link_phrase": "listuje před kamerou"
     },
     {
       "text": "Babiš: Nebudu to číst, 132 stran.",
       "source": "steno",
-      "steno_id": "2025_24_01589",
+      "steno_id": "2025_24_01704",
       "citace": "Nebudu to číst, 132 stran.",
       "link_phrase": "Nebudu to číst"
     },
     {
-      "text": "Babiš: Vy máte v DNA to udavačství.",
-      "source": "steno",
-      "steno_id": "2025_24_01589",
-      "citace": "Vy máte v DNA to udavačství.",
-      "link_phrase": "Vy máte v DNA to udavačství"
-    },
-    {
       "text": "Babiš nečte materiál Pirátů.",
       "source": "steno",
-      "steno_id": "2025_24_01589",
+      "steno_id": "2025_24_01704",
       "citace": "Nebudu to číst, 132 stran.",
       "link_phrase": "nečte ho"
     },
     {
-      "text": "Babiš Pirátům vyčítal udavačství.",
-      "source": "steno",
-      "steno_id": "2025_24_01589",
-      "citace": "Vy máte v DNA to udavačství. No, Evropská komise a parlamenty nestačí zpracovávat vaši udání.",
-      "link_phrase": "udavačství v DNA"
-    },
-    {
-      "text": "Babiš: parlamenty nestačí zpracovávat pirátská udání.",
-      "source": "steno",
-      "steno_id": "2025_24_01589",
-      "citace": "Evropská komise a parlamenty nestačí zpracovávat vaši udání.",
-      "link_phrase": "Evropská komise a parlamenty nestačí zpracovávat jejich udání"
-    },
-    {
       "text": "Babiš: opoziční vláda by měla chodit kanály.",
       "source": "steno",
-      "steno_id": "2025_24_01577",
+      "steno_id": "2025_24_01692",
       "citace": "celá ta vaše vláda byste měli chodit kanály, jeden rok byste měli zmizet, zmizet úplně po tom, co jste tady jako předvedli.",
       "link_phrase": "vyzval ke kanálům"
     },
     {
-      "text": "Babiš: předchozí vláda prodrbala dvě celé čtyři miliardy na chlebíčcích.",
+      "text": "Babiš: předchozí vláda prodrbala 2,4 miliardy na chlebíčcích.",
       "source": "steno",
-      "steno_id": "2025_24_01605",
-      "citace": "prodrbali jste dvě celé čtyři miliardy na chlebíčcích, jako předsednictví a nic z toho nebylo, nic z toho nebylo",
+      "steno_id": "2025_24_01720",
+      "citace": "prodrbali jste 2,4 miliardy na chlebíčcích, jako předsednictví a nic z toho nebylo, nic z toho nebylo",
       "link_phrase": "dvě celé čtyři miliardy na chlebíčcích"
     },
     {
       "text": "Babiš doporučil Pirátům dva roky pryč.",
       "source": "steno",
-      "steno_id": "2025_24_01589",
+      "steno_id": "2025_24_01704",
       "citace": "Já myslím, že Piráti by měli zmizet na 2 roky, ne na rok. (Pobavení a smích v sále.)",
       "link_phrase": "doporučil Pirátům dva roky pryč"
-    },
-    {
-      "text": "Babiš ukazuje graf do sálu ve scénické poznámce.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_24_01589",
-      "citace": "(Ukazuje do sálu graf.)",
-      "link_phrase": "Ukazuje do sálu graf"
-    },
-    {
-      "text": "Zaver: graf bytů.",
-      "source": "steno",
-      "steno_id": "2025_24_01589",
-      "citace": "Koukejte. (Ukazuje do sálu graf.) Tady je 2018, 33 000 bytů.",
-      "link_phrase": "graf bytů"
     }
   ],
   "publikovat": true,
   "priorita": 5,
-  "nadpis": "Graf v sále",
-  "lead": "Babiš proti Pirátům: „Vy mluvíte o bydlení?“ Premiér reaguje na dotaz vytažením grafu bytové výstavby přímo v sále: rok 2018, třicet tři tisíc bytů, za vládu ANO čtyřicet čtyři tisíc devět set devadesát dva v roce 2021. Listuje 132stránkovým materiálem jejich přešlapů a průšvihů: „Nebudu to číst,“ říká a jen ho listuje před kamerou. Vyčítá jim: „Vy máte v DNA to udavačství.“ Evropská komise a parlamenty nestačí zpracovávat jejich udání. (Ukazuje do sálu graf.)",
-  "pointa": "Lipavský (Piráti) ráno mluvil skoro tři tisíce slov u písemných interpelací, odpoledne Babiš (ANO) doporučil Pirátům dva roky pryč, vyzval předchozí vládu ke kanálům a vyčítal dvě celé čtyři miliardy na chlebíčcích.",
+  "nadpis": "132 stran průšvihů",
+  "lead": "Babiš proti Pirátům: „Vy mluvíte o bydlení? Vy, kteří jste to zničili?“ Listuje 132stránkovým materiálem jejich přešlapů a průšvihů: „Nebudu to číst,“ říká a jen ho listuje před kamerou. Doporučil Pirátům dva roky pryč, vyzval předchozí vládu ke kanálům a vyčítal 2,4 miliardy na chlebíčcích.",
+  "pointa": "Lipavský (Piráti) ráno mluvil skoro tři tisíce slov u písemných interpelací, odpoledne Babiš (ANO) doporučil Pirátům dva roky pryč, vyzval předchozí vládu ke kanálům a vyčítal 2,4 miliardy na chlebíčcích.",
   "mean": "Ústní interpelace je část schůze, kdy poslanci pokládají otázky členům vlády přímo v sále.",
-  "citace_text": "Koukejte. (Ukazuje do sálu graf.) Tady je rok 2018, třicet tři tisíc bytů.",
+  "citace_text": "Vy mluvíte o bydlení? Vy, kteří jste to zničili?",
   "citace_autor": "Andrej Babiš (ANO)",
   "pocet_hlasovani": 0,
   "proslo": false
