@@ -9,18 +9,18 @@
   ],
   "fakty": [
     {
-      "text": "Babiš: Počkejte, teďka udělám titulek a všichni budou psát.",
+      "text": "Babiš: titulek o IPO letiště.",
       "source": "steno",
       "steno_id": "2025_24_01736",
-      "citace": "Počkejte, teďka udělám titulek a všichni budou psát.",
-      "link_phrase": "Počkejte, teďka udělám titulek a všichni budou psát"
+      "citace": "Počkejte, teďka udělám titulek a všichni budou psát. Například, že bychom šli z letiště na IPO, že bychom dali 40 procent na trh.",
+      "link_phrase": "titulek si napsal sám"
     },
     {
       "text": "Babiš navrhl prodat 40 procent letiště na trh.",
       "source": "steno",
       "steno_id": "2025_24_01736",
       "citace": "Například, že bychom šli z letiště na IPO, že bychom dali 40 procent na trh.",
-      "link_phrase": "40 procent na burze"
+      "link_phrase": "40 procent na trh"
     },
     {
       "text": "Babiš: To by bylo peněz jak želez.",
@@ -55,9 +55,11 @@
   "publikovat": true,
   "priorita": 4,
   "nadpis": "Titulek na počkání",
-  "lead": "Poslušně hlásím, že premiér Babiš se během interpelace rozhodl usnadnit práci novinářům a titulek si napsal sám. Počkejte, teďka udělám titulek a všichni budou psát, oznámil Sněmovně a navrhl, že by se z pražského letiště mohlo prodat 40 procent na burze. To by bylo peněz jak želez, dodal, a sám se rovnou opravil, že teď si všichni budou myslet, že je blbý.",
-  "pointa": "Jak to bylo doopravdy myšleno, jako vtip nebo jako skutečný plán se v tu chvíli nedozvěděl nikdo, včetně možná samotného premiéra. Poslušně podotýkám, že takhle vzniká přesně ten typ zpráv v médiích, na který si pak sám premiér stěžuje.\n\nHlášení na velitelstvo: Prodej státního majetku formou poznámky mezi řečí. Ministerstvo financí se zatím nevyjádřilo, protože o tom pravděpodobně neví.",
-  "mean": "IPO je první veřejná nabídka akcií na burze. Premiér v interpelaci popisoval prodej části letiště spíš jako příklad titulku než hotový plán.",
+  "lead": "Poslušně hlásím, že premiér Babiš se během interpelace rozhodl usnadnit práci novinářům a titulek si napsal sám.",
+  "pointa": "To by bylo peněz jak želez, dodal, a sám se rovnou opravil, že teď si všichni budou myslet, že je blbý.\n\nJak to bylo doopravdy myšleno, jako vtip nebo jako skutečný plán se v tu chvíli nedozvěděl nikdo, včetně možná samotného premiéra. Poslušně podotýkám, že takhle vzniká přesně ten typ zpráv v médiích, na který si pak sám premiér stěžuje.",
+  "mean": "Prodej státního majetku formou poznámky mezi řečí. Ministerstvo financí se zatím nevyjádřilo, protože o tom pravděpodobně neví.",
+  "citace_text": "Počkejte, teďka udělám titulek a všichni budou psát. Například, že bychom šli z letiště na IPO, že bychom dali 40 procent na trh.",
+  "citace_autor": "Andrej Babiš (ANO)",
   "pocet_hlasovani": 0,
   "proslo": false
 }

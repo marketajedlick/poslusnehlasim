@@ -10,6 +10,7 @@ from svejk.cislo_slovy import po_hlasovanich_cap
 from svejk.mix import SLOTS, _hash_seed, pick_slot, re_sub_space
 from svejk.noviny import HLAVICKA_LISTU, _datum_cesky, _law_kategorie, _new_state, _zkrat_nazev
 from svejk.obcansky import GENERIC_GLOSA_MARKERS, glosa_pro_obcana, ma_glosu
+from svejk.strings import load_strings
 from svejk.timeline import BlokDne, DenSchuze, SchuzeCasovaOsa, _cas_minuty
 
 # klíčová slova v názvu zákona → slug pro pravidla
@@ -1128,7 +1129,7 @@ def render_den_listy(day: DenSchuze, *, state: dict | None = None) -> str:
         lines.append("")
         lines.append(lead)
         lines.append("")
-        lines.append("### Co to znamená pro vás?")
+        lines.append(f"### {load_strings()['edition']['mean_label'].rstrip(':? ')}")
         lines.append("")
         lines.append(dopad)
 

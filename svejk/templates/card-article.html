@@ -1,9 +1,13 @@
 <article class="article{% if item.variant %} {{ item.variant }}{% endif %}" id="article-{{ item.num }}">
+  <div class="article-aside">
+    <div class="article-num article-num--{{ item.verdikt }}">{{ "%02d"|format(item.num) }}</div>
+    <span class="stamp {{ item.verdikt }}">{{ item.stamp }}</span>
+  </div>
   <div class="article-content">
     <header class="article-head">
+      <div class="article-num article-num--mobile article-num--{{ item.verdikt }}">{{ "%02d"|format(item.num) }}</div>
       <h2 class="article-title">{% for line in item.nadpis_radky %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</h2>
-      <div class="article-num article-num--{{ item.verdikt }}" aria-hidden="true">{{ "%02d"|format(item.num) }}</div>
-      <span class="stamp {{ item.verdikt }}">{{ item.stamp }}</span>
+      <span class="stamp stamp--mobile {{ item.verdikt }}">{{ item.stamp }}</span>
     </header>
     <div class="article-body">
       <div class="p article-lead">{{ item.lead | glossary }}</div>

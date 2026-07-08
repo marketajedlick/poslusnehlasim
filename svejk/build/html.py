@@ -873,7 +873,8 @@ def plain_text_from_content(
         if item.pointa:
             lines.append(_plain(item.pointa))
         if item.mean:
-            lines.append(f"Co to znamená pro vás: {_plain(item.mean)}")
+            mean_label = load_strings()["edition"]["mean_label"]
+            lines.append(f"{mean_label} {_plain(item.mean)}")
         for label, href in item.kuriozita_nav:
             lines.append(f"{label}: {href}")
         if item.kuriozita and not item.lead_tail:

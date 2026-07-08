@@ -1,7 +1,8 @@
 # Workflow: zpracování schůze
 
 Playbook pro redakci jedné schůze od stažení dat po newsletter.  
-Styl a terminologie textů: [`.cursor/rules/steno-zapisy.mdc`](../.cursor/rules/steno-zapisy.mdc).  
+Obohacení facts a psaní sekcí: [`.cursor/rules/poslusne-hlasim-pravidla.md`](../.cursor/rules/poslusne-hlasim-pravidla.md).  
+Terminologie a den (`dnesni_ucet`, skóre): [`.cursor/rules/steno-zapisy.mdc`](../.cursor/rules/steno-zapisy.mdc).  
 Technické detaily polí a příkazů: [processed/README.md](README.md).
 
 ## Cíl
@@ -142,8 +143,8 @@ Doporučená kostra:
 | `lead` | první odstavec pod nadpisem, srozumitelný bez jednacího řádu |
 | `fakty`, `citace` | 1–3 věty, **doslovně ze stena** |
 | `steno_id`, `link_phrase` | viz sekce 4a (odkazy na steno → PSP) |
-| `mean` | jen když čtenář nepochopí co / proč / proč ho to zajímá |
-| `pointa` | volitelně, satirický závěr sekce |
+| `pointa` | tělo sekce, glosa „Poslušně podotýkám…", protistrana |
+| `mean` | **Hlášení na velitelstvo** — jedna suchá věta, ne vysvětlivka pro laika |
 | `publikovat` | `false` = vynechat z vydání |
 
 **Z praxe:**

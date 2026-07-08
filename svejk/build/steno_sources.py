@@ -516,7 +516,79 @@ def collect_steno_sources(
         num=num,
         global_passage_idx=global_passage_idx,
     )
+    num = append_jazykolam_steno_block(
+        blocks,
+        paths=paths,
+        day=day,
+        steno_by_id=steno_by_id,
+        psp_resolver=psp_resolver,
+        num=num,
+    )
     return blocks
+
+
+def append_jazykolam_steno_block(
+    blocks: list[StenoTopicBlock],
+    *,
+    paths: SchuzePaths,
+    day: dict[str, Any],
+    steno_by_id: dict[str, dict[str, Any]],
+    psp_resolver: PspUrlResolver | None,
+    num: int,
+) -> int:
+    """Kotva steno-{id} musí sedět s jazykolam.steno_anchor na stránce vydání."""
+    j = day.get("jazykolam") or {}
+    text = (j.get("text") or "").strip()
+    if not text:
+        return num
+
+    steno_id = (j.get("steno_id") or "").strip()
+    if not steno_id:
+        poradi = j.get("poradi")
+        if poradi is not None:
+            for sid, rec in steno_by_id.items():
+                if rec.get("poradi") == poradi:
+                    steno_id = sid
+                    break
+    if not steno_id:
+        return num
+
+    rec = steno_by_id.get(steno_id) or {}
+    speaker = (j.get("autor") or rec.get("cele_jmeno") or "").strip()
+    poradi = rec.get("poradi") if rec.get("poradi") is not None else j.get("poradi")
+    full_text = (rec.get("text") or "").strip()
+    citace = expand_szif_for_display(bez_dlouhych_pomlc(text))
+    excerpt = expand_szif_for_display(
+        bez_dlouhych_pomlc(_excerpt_around(full_text, text) if full_text else text)
+    )
+    psp_url = (rec.get("url") or (j.get("url") or "")).strip()
+    if psp_resolver and psp_url:
+        psp_url = psp_resolver.resolve(speaker, psp_url, text)
+    elif steno_id and not psp_url:
+        psp_url = _offline_psp_url(paths, steno_id, text)
+
+    num += 1
+    block = StenoTopicBlock(slug="jazykolam-dne", title="Jazykolam dne", num=num)
+    block.passages.append(
+        StenoPassage(
+            steno_id=steno_id,
+            anchor=steno_anchor(steno_id),
+            speaker=speaker,
+            poradi=poradi,
+            topic_slug="jazykolam-dne",
+            topic_title="Jazykolam dne",
+            article_num=num,
+            summary="",
+            citace=citace,
+            excerpt=excerpt,
+            psp_url=psp_url,
+            source="steno",
+            nav_label=_nav_label(speaker, citace, text),
+            article_phrase=citace,
+        )
+    )
+    blocks.append(block)
+    return num
 
 
 def has_steno_sources(paths: SchuzePaths, datum_unl: str) -> bool:

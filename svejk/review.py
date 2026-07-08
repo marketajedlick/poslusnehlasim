@@ -64,6 +64,79 @@ def _topic_map(paths: SchuzePaths) -> dict[str, dict[str, Any]]:
     return {t["slug"]: t for t in data.get("topics") or [] if t.get("slug")}
 
 
+def _word_count(text: str) -> int:
+    return len((text or "").split())
+
+
+def _checklist_issues(fact: dict[str, Any]) -> list[ReviewIssue]:
+    """Kontrola podle poslusne-hlasim-pravidla.md §5."""
+    issues: list[ReviewIssue] = []
+    if not fact.get("publikovat"):
+        return issues
+
+    lead = (fact.get("lead") or "").strip()
+    if lead and not lead.lower().startswith("poslušně hlásím"):
+        issues.append(
+            ReviewIssue(
+                "info",
+                "lead_refrain",
+                "Vlastní lead nezačíná 'Poslušně hlásím…' (viz poslusne-hlasim-pravidla.md §2).",
+            )
+        )
+
+    mean = (fact.get("mean") or "").strip()
+    if not mean:
+        issues.append(
+            ReviewIssue(
+                "warn",
+                "no_mean",
+                "Chybí mean (Hlášení na velitelstvo), doplň jednu suchou větu.",
+            )
+        )
+
+    citace_text = (fact.get("citace_text") or "").strip()
+    if citace_text and _word_count(citace_text) > 15:
+        issues.append(
+            ReviewIssue(
+                "warn",
+                "long_citace",
+                f"citace_text má {_word_count(citace_text)} slov (max ~15), zkrátit nebo parafrázovat.",
+            )
+        )
+
+    for j, f in enumerate(fact.get("fakty") or [], 1):
+        if (f.get("source") or "") != "steno":
+            continue
+        sid = (f.get("steno_id") or "").strip()
+        cit = (f.get("citace") or "").strip()
+        if not sid:
+            issues.append(
+                ReviewIssue(
+                    "warn",
+                    "missing_steno_id",
+                    f"fakty[{j}] má source steno, chybí steno_id.",
+                )
+            )
+        if not cit:
+            issues.append(
+                ReviewIssue(
+                    "warn",
+                    "missing_citace",
+                    f"fakty[{j}] má source steno, chybí doslovná citace.",
+                )
+            )
+        elif _word_count(cit) > 15:
+            issues.append(
+                ReviewIssue(
+                    "info",
+                    "long_fakt_citace",
+                    f"fakty[{j}].citace má {_word_count(cit)} slov (citát v článku max ~15).",
+                )
+            )
+
+    return issues
+
+
 def _issues_for_topic(
     fact: dict[str, Any],
     topic: dict[str, Any] | None,
@@ -109,7 +182,7 @@ def _issues_for_topic(
         )
 
     if export_mean and export_lead and export_mean.strip() == export_lead.strip():
-        issues.append(ReviewIssue("warn", "duplicate", "Lead a „Co to znamená pro vás“ jsou stejné."))
+        issues.append(ReviewIssue("warn", "duplicate", "Lead a Hlášení na velitelstvo (mean) jsou stejné."))
 
     for label, txt in (("lead", export_lead), ("mean", export_mean)):
         if txt and ma_dlouhou_pomlcku(txt):
@@ -127,6 +200,7 @@ def _issues_for_topic(
     if nadpis and nadpis.lower().startswith("změna "):
         issues.append(ReviewIssue("info", "fallback_title", "Nadpis vypadá jako automatický fallback, zvaž ruční nadpis."))
 
+    issues.extend(_checklist_issues(fact))
     return issues
 
 
@@ -265,6 +339,9 @@ def format_topic_review(
 
     topic = _topic_map(paths).get(tr.slug) if tr.slug else None
     steno_ids = (topic or {}).get("steno_ids") or []
+    if steno_ids:
+        lines.append("")
+        lines.append(f"  steno_ids ({len(steno_ids)}): {steno_ids[0]} … {steno_ids[-1]}")
     if paths.steno_jsonl.is_file() and steno_ids:
         steno_all = list(iter_jsonl(paths.steno_jsonl))
         steno_by_id = {s["id"]: s for s in steno_all}
@@ -292,7 +369,8 @@ def format_topic_review(
         lines.append(f"  (steno_ids={len(steno_ids)}, ale chybí raw/steno.jsonl, spusť fetch)")
 
     lines.extend(_wrap("EXPORT lead (na stránce)", tr.export_lead))
-    lines.extend(_wrap("EXPORT mean (Co to znamená pro vás)", tr.export_mean))
+    custom_mean = (fact.get("mean") or "").strip()
+    lines.extend(_wrap("EXPORT mean (Hlášení na velitelstvo)", custom_mean or tr.export_mean))
     lines.extend(_wrap("EXPORT parliament (md úvod)", tr.export_parliament))
 
     return "\n".join(lines)
@@ -327,6 +405,7 @@ def format_day_review(
         header.append("")
     header.extend(
         [
+            "Pravidla: .cursor/rules/poslusne-hlasim-pravidla.md (curiosity pass, checklist, struktura sekce)",
             "Workflow: uprav facts → ./run-svejk.sh build --schuze N --only compose [--den D]",
             "         → export-pages / lokální http.server",
             "Volitelně v by_day JSON: \"zaver\": \"vlastní věta bez Poslušně hlásím\"",

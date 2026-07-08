@@ -14,6 +14,7 @@ from svejk.build.day_content import (
     vysledek_radky,
 )
 from svejk.cislo_slovy import nahrad_cisla_v_textu
+from svejk.strings import load_strings
 from svejk.text_norm import bez_dlouhych_pomlc, lcfirst_preserve_proper, ma_dlouhou_pomlcku
 from svejk.build.html import (
     render_den_html,
@@ -158,9 +159,10 @@ def render_den_markdown(
             lines.extend([item.lead_tail, ""])
         if item.pointa:
             lines.extend([item.pointa, ""])
+        mean_heading = load_strings()["edition"]["mean_label"].rstrip(":? ")
         lines.extend(
             [
-                "### Co to znamená pro vás?",
+                f"### {mean_heading}",
                 "",
                 co_znamena,
             ]

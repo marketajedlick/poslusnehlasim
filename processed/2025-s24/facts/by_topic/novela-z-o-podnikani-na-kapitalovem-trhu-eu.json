@@ -1,9 +1,9 @@
 {
   "slug": "novela-z-o-podnikani-na-kapitalovem-trhu-eu",
-  "nazev": "Novela z. o podnikání na kapitálovém trhu - EU",
+  "nazev": "Zákon pro šest firem",
   "datum": "02.07.2026",
   "verdikt": "odlozeno",
-  "predmet_lidsky": "evropská pravidla pro rovnost žen a mužů ve vedení kótovaných firem, zákon nepřežil druhé kolo",
+  "predmet_lidsky": "evropská pravidla pro rovnost žen a mužů ve vedení šesti kótovaných firem, první kolo bez odporu",
   "koho": [
     "Koho se to týká? Spíš akcionáře šesti velkých firem na burze, ne běžného občana u pokladny."
   ],
@@ -13,58 +13,72 @@
       "source": "steno",
       "steno_id": "2025_24_01655",
       "citace": "V českém prostředí se návrh bude dotýkat pouze 6 akciových společností, a to konkrétně: ČEZ, Komerční banka, MONETA Money Bank, Philip Morris, Kofola a COLT CZ.",
-      "link_phrase": "šesti akciovek včetně ČEZ a Kofoly"
+      "link_phrase": "šesti firem"
     },
     {
-      "text": "První kolo prošlo 106 proti 0.",
+      "text": "Tejc: třetina z šesti už cíle splňuje.",
+      "source": "steno",
+      "steno_id": "2025_24_01655",
+      "citace": "Z těchto 6 společností již třetina požadavky zákona na naplnění uvedených cílů splňuje.",
+      "link_phrase": "Dvě z nich už podmínky plní"
+    },
+    {
+      "text": "Tejc: ne kvóty, při srovnatelné kvalifikaci upřednostnit méně zastoupené pohlaví.",
+      "source": "steno",
+      "steno_id": "2025_24_01655",
+      "citace": "Pouze při srovnatelných kvalifikacích je možné upřednostnit kandidáta méně zastoupeného pohlaví.",
+      "link_phrase": "méně zastoupené pohlaví"
+    },
+    {
+      "text": "Tejc: nezavádí striktní kvóty.",
+      "source": "steno",
+      "steno_id": "2025_24_01655",
+      "citace": "Chci zdůraznit, že zákon tedy nezavádí striktní kvóty ve smyslu povinného upřednostňování mužů či žen",
+      "link_phrase": "nezavádí kvóty v pravém slova smyslu"
+    },
+    {
+      "text": "Tejc: pokuta 1,5 až 3,1 milionu eur a penále 51 000 eur denně.",
+      "source": "steno",
+      "steno_id": "2025_24_01655",
+      "citace": "hrozí sankce, a to v paušální částce v rozpětí od 1,5 do 3,1 milionu eur a další denní penále až do 51 000 eur za každý den.",
+      "link_phrase": "milionu a půl do tří milionů eur"
+    },
+    {
+      "text": "Tejc: transpoziční lhůta vypršela 28. prosince 2024.",
+      "source": "steno",
+      "steno_id": "2025_24_01655",
+      "citace": "transpoziční lhůta směrnice uplynula už 28. prosince 2024",
+      "link_phrase": "vypršela už v prosinci 2024"
+    },
+    {
+      "text": "První kolo: 106 pro, 0 proti, přihlášeno 123.",
       "source": "steno",
       "steno_id": "2025_24_01666",
       "citace": "Hlasování číslo 210, přihlášeno 123 poslanců, pro 106, proti nikdo. Návrh byl přijat.",
-      "link_phrase": "sto šest proti nula"
+      "link_phrase": "sto šest pro, nula proti"
+    },
+    {
+      "text": "Havránek: stejný tisk za Fialovy vlády, opozice kritizovala.",
+      "source": "steno",
+      "steno_id": "2025_24_01661",
+      "citace": "ten sněmovní tisk, který jsme tu měli v minulém volebním období pod číslem – pokud se nepletu – 731, je, co se týče legislativního textu, z 98 procent totožný s tím, který tu máme dnes",
+      "link_phrase": "na ministra útočila"
     },
     {
       "text": "Druhé kolo padlo.",
       "source": "steno",
       "steno_id": "2025_24_01668",
       "citace": "Hlasování číslo 211, přihlášeno 126, pro 54, proti 7. Návrh nebyl přijat.",
-      "link_phrase": "druhé kolo už ne"
-    },
-    {
-      "text": "Tejc v citaci: šest akciových společností.",
-      "source": "steno",
-      "steno_id": "2025_24_01655",
-      "citace": "V českém prostředí se návrh bude dotýkat pouze 6 akciových společností",
-      "link_phrase": "šest akciových společností"
-    },
-    {
-      "text": "Zákon se vrací do výborů.",
-      "source": "steno",
-      "steno_id": "2025_24_01668",
-      "citace": "Návrh nebyl přijat.",
-      "link_phrase": "vrací do výborů"
-    },
-    {
-      "text": "Zaver: sto šest proti nula.",
-      "source": "steno",
-      "steno_id": "2025_24_01666",
-      "citace": "Hlasování číslo 210, přihlášeno 123 poslanců, pro 106, proti nikdo. Návrh byl přijat.",
-      "link_phrase": "sto šest proti nula"
-    },
-    {
-      "text": "Zaver: druhé kolo už ne.",
-      "source": "steno",
-      "steno_id": "2025_24_01668",
-      "citace": "Hlasování číslo 211, přihlášeno 126, pro 54, proti 7. Návrh nebyl přijat.",
-      "link_phrase": "druhé kolo už ne"
+      "link_phrase": "druhé kolo"
     }
   ],
   "publikovat": true,
-  "priorita": 2,
-  "nadpis": "106:0 a pak pád",
-  "lead": "Odpoledne šla přes Sněmovnu evropská novela o rovnosti žen a mužů ve vedení burzovních firem. Ministr Tejc (STAN) řekl, že se dotkne jen šesti akciovek včetně ČEZ a Kofoly. První kolo prošlo 106 proti 0, druhé kolo už ne.",
-  "pointa": "Zákon se vrací do výborů. U téhle novely stačilo jedno kolo bez odporu a druhé už ne.",
-  "mean": "Jde o přepsání evropských pravidel do českého zákona o podnikání na kapitálovém trhu. Cílem je vyrovnané zastoupení žen a mužů ve vedení firem obchodovaných na burze.",
-  "citace_text": "V českém prostředí se návrh bude dotýkat pouze šest akciových společností",
+  "priorita": 6,
+  "nadpis": "Zákon pro šest firem",
+  "lead": "Poslušně hlásím, že ministr spravedlnosti Tejc (STAN) předložil zákon, který má napravit nerovné zastoupení žen a mužů ve vedení firem obchodovaných na burze.",
+  "pointa": "Dvě z nich už podmínky plní. Zákon nezavádí kvóty v pravém slova smyslu, jen povinnost při srovnatelné kvalifikaci upřednostnit méně zastoupené pohlaví. Spěchá to proto, že Česku hrozí od Evropské komise pokuta od milionu a půl do tří milionů eur, plus penále až 51 000 eur za každý další den prodlení. Lhůta na transpozici směrnice totiž vypršela už v prosinci 2024.<br><br>Poslušně podotýkám, že hlasování dopadlo 106 pro, 0 proti, sedm se zdrželo, deset nehlasovalo. Ne že by to samo o sobě bylo překvapení: opozice sice na ministra útočila kvůli mlčení Fialovy vlády, ale proti návrhu samotnému nakonec nezvedl ruku nikdo.",
+  "mean": "Zákon o rovnosti pohlaví se týká šesti firem a jedné evropské pokuty. Kterou z těch dvou věcí bude Sněmovna řešit rychleji, ukáže čas.",
+  "citace_text": "V českém prostředí se návrh bude dotýkat pouze 6 akciových společností, a to konkrétně: ČEZ, Komerční banka, MONETA Money Bank, Philip Morris, Kofola a COLT CZ.",
   "citace_autor": "Jeroným Tejc (STAN)",
   "pocet_hlasovani": 3,
   "proslo": false,

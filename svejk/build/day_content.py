@@ -779,6 +779,15 @@ def _sanitize_text_export(text: str) -> str:
     return result
 
 
+def _sanitize_citace_export(text: str) -> str:
+    """Citace ze stenoprotokolu — bez přepisu číslic do slov."""
+    if not (text or "").strip():
+        return text
+    from svejk.build.glossary_markup import highlight_markup
+
+    return highlight_markup(bez_dlouhych_pomlc(text))
+
+
 def _sanitize_mean_export(text: str) -> str:
     """Text bez doplňování stran u jmen poslanců (mean, závěr dne)."""
     if not (text or "").strip():
@@ -854,7 +863,7 @@ def _sanitize_den_content(content: DenContent) -> None:
         item.lead_tail = _sanitize_text_export(item.lead_tail)
         item.mean = _sanitize_text_export(item.mean)
         item.kuriozita = _sanitize_text_export(item.kuriozita)
-        item.citace_text = _sanitize_text_export(item.citace_text)
+        item.citace_text = _sanitize_citace_export(item.citace_text)
         item.citace_autor = _sanitize_text_export(item.citace_autor)
         item.pointa = _sanitize_text_export(item.pointa)
         item.dopad = _sanitize_text_export(item.dopad)

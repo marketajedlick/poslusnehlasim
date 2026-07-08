@@ -12,36 +12,43 @@
       "text": "Šmída interpeloval kvůli Kováčikovi do Povodí Ohře.",
       "source": "steno",
       "steno_id": "2025_24_01815",
-      "citace": "Skutečně to vyvolává dojem, že nejde o nominaci založenou na odbornosti, ale o politickou trafiku pro bývalého poslance.",
-      "link_phrase": "Pavla Kováčika do dozorčí rady státního podniku Povodí Ohře"
+      "citace": "obracím se na vás ve věci jmenování Pavla Kováčika do dozorčí rady státního podniku Povodí Ohře",
+      "link_phrase": "pana Pavla Kováčika"
     },
     {
-      "text": "Šmída: jmenování Kováčika do Povodí Ohře působí jako politická trafika.",
+      "text": "Kováčik: bývalý poslanec a předseda klubu KSČM.",
+      "source": "steno",
+      "steno_id": "2025_24_01815",
+      "citace": "Pan Pavel Kováčik je veřejnosti znám především jako dlouholetý poslanec a bývalý předseda poslaneckého klubu KSČM.",
+      "link_phrase": "bývalý předseda poslaneckého klubu KSČM"
+    },
+    {
+      "text": "Šmída: důvody jmenování, kvalifikace, zkušenosti s vodohospodářstvím.",
+      "source": "steno",
+      "steno_id": "2025_24_01815",
+      "citace": "jaké konkrétní důvody vedly k jeho jmenování, jakou odbornou kvalifikací, profesními zkušenostmi nebo manažerskými schopnostmi pan Kováčik disponuje pro výkon této funkce, jaké má zkušenosti v oblasti vodního hospodářství, správy vodních toků, ochrany před povodněmi nebo řízení organizací podobného typu",
+      "link_phrase": "vodním hospodářstvím"
+    },
+    {
+      "text": "Šmída: politická trafika, ne odbornost.",
       "source": "steno",
       "steno_id": "2025_24_01815",
       "citace": "Skutečně to vyvolává dojem, že nejde o nominaci založenou na odbornosti, ale o politickou trafiku pro bývalého poslance.",
-      "link_phrase": "politickou trafiku pro bývalého poslance"
+      "link_phrase": "na základě odbornosti"
     },
     {
-      "text": "Ministr Sebestyán: Kováčik byl místopředsedou zemědělského výboru.",
+      "text": "Sebestyán: pohovor na Úřadu vlády.",
       "source": "steno",
       "steno_id": "2025_24_01817",
-      "citace": "Pan Pavel Kováčik byl dlouholetým místopředsedou zemědělského výboru a členem zemědělského výboru.",
-      "link_phrase": "odpověděl zemědělským výborem"
+      "citace": "úspěšného absolvování pohovoru před výborem pro personální informace při Úřadu vlády České republiky",
+      "link_phrase": "pohovorem na Úřadu vlády"
     },
     {
-      "text": "Šmída: jde spíš o politickou trafiku.",
+      "text": "Sebestyán: místopředseda zemědělského výboru, zevrubně seznámil s Povodími.",
       "source": "steno",
-      "steno_id": "2025_24_01815",
-      "citace": "Skutečně to vyvolává dojem, že nejde o nominaci založenou na odbornosti, ale o politickou trafiku pro bývalého poslance.",
-      "link_phrase": "jde spíš o politickou trafiku"
-    },
-    {
-      "text": "Sebestyán: výběrová řízení se u nominací do Povodí nikdy nedělala.",
-      "source": "steno",
-      "steno_id": "2025_24_01821",
-      "citace": "žádná výběrová řízení se tam nedělají a nikdy to tak nebylo",
-      "link_phrase": "výběrová řízení nikdy nedělala"
+      "steno_id": "2025_24_01817",
+      "citace": "Pan Pavel Kováčik byl dlouholetým místopředsedou zemědělského výboru a členem zemědělského výboru. Za dobu jeho působení v Poslanecké sněmovně se zevrubně seznámil s problematikou státních podniků Povodí",
+      "link_phrase": "zevrubně seznámil"
     },
     {
       "text": "Dnesni ucet: Kováčik u Povodí Ohře.",
@@ -49,22 +56,15 @@
       "steno_id": "2025_24_01815",
       "citace": "politickou trafiku pro bývalého poslance",
       "link_phrase": "Kováčik u Povodí Ohře"
-    },
-    {
-      "text": "Zaver: trafika pro bývalého předsedu KSČM.",
-      "source": "steno",
-      "steno_id": "2025_24_01815",
-      "citace": "politickou trafiku pro bývalého poslance",
-      "link_phrase": "trafika pro bývalého předsedu KSČM"
     }
   ],
   "publikovat": true,
-  "priorita": 3,
+  "priorita": 5,
   "nadpis": "Trafika u Povodí Ohře",
-  "lead": "Odpoledne interpeloval Šmída (Motoristé) ministra Sebestyána kvůli jmenování bývalého předsedy klubu KSČM Pavla Kováčika do dozorčí rady státního podniku Povodí Ohře. Ptál se na odbornost a vodohospodářské zkušenosti, ministr odpověděl zemědělským výborem.",
-  "pointa": "Šmída (Motoristé) řekl, že jde spíš o politickou trafiku. Sebestyán (ANO) dodal, že u Povodí se výběrová řízení nikdy nedělala a že stejná praxe platila i dřív.",
-  "mean": "Státní podnik Povodí Ohře spravuje část vodohospodářské infrastruktury. Dozorčí rada dohlíží na jeho fungování.",
-  "citace_text": "Skutečně to vyvolává dojem, že nejde o nominaci založenou na odbornosti, ale o politickou trafiku pro bývalého poslance.",
+  "lead": "Poslušně hlásím, že Povodí Ohře je státní podnik, který se stará o řeky, přehrady a protipovodňová opatření na severozápadě Čech. A jako každý pořádný podnik má dozorčí radu, pár lidí, kteří dohlížejí, jak se podnik vede, a za to dostávají odměnu. Do téhle rady teď stát jmenoval pana Pavla Kováčika. Není to vodohospodář, je to bývalý dlouholetý poslanec a bývalý předseda poslaneckého klubu KSČM.",
+  "pointa": "Poslanec Šmída (Motoristé) se ptal naráz na všechno, co by u slušného pohovoru normálně padlo: proč právě on, jakou má kvalifikaci a co umí s vodou. A rovnou to pojmenoval, takhle se podle něj nejmenují lidé na základě odbornosti, ale rozdávají trafiky.<br><br>Trafika je v politice hovorový výraz pro dobře placenou funkci, kterou dostane bývalý politik jako poděkování za služby straně, ne za to, že se v oboru vyzná.\n\nMinistr Šebestyán na to odpověděl, že všechno proběhlo podle pravidel: pan Kováčik prošel pohovorem na Úřadu vlády a jako bývalý místopředseda zemědělského výboru se prý s tématem státních Povodí zevrubně seznámil.<br><br>Poslušně podotýkám, že sedět ve výboru, kde se o řekách mluví, a řídit skutečnou řeku, jsou dvě různé dovednosti.",
+  "mean": "Odbornost nahradil úspěšný pohovor. Řeka teče dál a s ní teď i plat pro pana Kováčika.",
+  "citace_text": "jaké konkrétní důvody vedly k jeho jmenování, jakou odbornou kvalifikací, profesními zkušenostmi nebo manažerskými schopnostmi pan Kováčik disponuje pro výkon této funkce, jaké má zkušenosti v oblasti vodního hospodářství, správy vodních toků, ochrany před povodněmi nebo řízení organizací podobného typu.",
   "citace_autor": "Martin Šmída (Motoristé)",
   "pocet_hlasovani": 0,
   "proslo": false

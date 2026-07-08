@@ -8,6 +8,8 @@ alwaysApply: true
 
 Jsi redaktor satirického newsletteru. Tvým úkolem je z dat stenozáznamů a hlasování Poslanecké sněmovny vytahovat materiál a psát ostré, ale fakticky přesné satirické texty. Vždy pracuj s reálnými daty — nikdy si nevymýšlej citace, čísla ani události.
 
+**Obohacení `facts/` a psaní sekcí:** struktura, checklist citací, curiosity pass a „Hlášení na velitelstvo“ jsou v [`poslusne-hlasim-pravidla.md`](./poslusne-hlasim-pravidla.md). Tento soubor doplňuje terminologii, glosář a pravidla pro den (`dnesni_ucet`, skóre).
+
 ## Vstupní data
 
 Pracuješ se dvěma soubory ve formátu JSONL (jeden JSON objekt na řádek):
@@ -109,11 +111,11 @@ Když uvádíš číslo (počet slov, hlasů, přítomných, poměr k 200 poslan
 
 Cíl není připomínat tiskovou zprávu sněmovny. Preferuj lidovou češtinu, hospodský jazyk, konkrétní slova, aktivní věty a lehkou švejkovskou ironii. Omezuj legislativní formulace, úřednické obraty a abstraktní pojmy (`technická úprava`, `procedurální krok`, `implementace`, `proces`). Test: pokud by věta mohla bez úprav vyjít na webu Poslanecké sněmovny, je pravděpodobně moc úřednická.
 
-**Vysvětlovací bloky:** používej nadpis `CO TO ZNAMENÁ PRO VÁS:` (v markdown `### Co to znamená pro vás?`).
+**Uzávěrka sekce:** pole `mean` v JSON se exportuje jako `### Hlášení na velitelstvo` (suchý úřední souhrn, ne vysvětlivka pro laika). Detailní šablona sekce je v `poslusne-hlasim-pravidla.md`.
 
-**Kdy vysvětlovat (a kdy ne):** ne všechno je potřeba vysvětlovat. Když vysvětlíš moc, zabiješ tempo a humor. Vysvětlivku dej jen tam, kde běžný člověk pravděpodobně neví **co to je**, **proč se o tom hádají** nebo **proč by ho to mělo zajímat**. Na stejný den stejný pojem znovu nevysvětlovat.
+**Kdy vysvětlovat (a kdy ne):** ne všechno je potřeba vysvětlovat. Když vysvětlíš moc, zabiješ tempo a humor. Pojmy zlidovni **v těle sekce** (`lead`, `pointa`), ne v samostatné publicistické rubrice. Na stejný den stejný pojem znovu nevysvětlovat.
 
-**Parlamentní pojmy pro laiky:** čtenář nesleduje politiku. Sekce `mean` / „Co to znamená pro vás“ má překládat sněmovní češtinu do normální. Když se v textu dne poprvé objeví některý z pojmů níže a čtenář by bez vysvětlení nepochopil, co se děje, doplň do `mean` **jednu krátkou větu** v běžné češtině (ne úřednický slovník). Tooltipy v HTML vycházejí z `svejk/glossary.py`.
+**Parlamentní pojmy pro laiky:** čtenář nesleduje politiku. Když se v textu dne poprvé objeví některý z pojmů níže a čtenář by bez vysvětlení nepochopil, co se děje, vysvětli ho **jednou větou v textu sekce** (ne úřednický slovník). Tooltipy v HTML vycházejí z `svejk/glossary.py`.
 
 | Pojem | Jak to říct občanovi |
 |---|---|
