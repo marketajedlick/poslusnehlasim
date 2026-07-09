@@ -249,6 +249,11 @@ body {
   font-weight: normal !important;
   text-decoration: underline;
 }
+.kuriozita-links {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
 .mean {
   margin-top: 10px;
   font-size: 17px;
@@ -334,12 +339,15 @@ body {
   color: #5a5348;
 }
 .kuriozita {
-  margin-top: 8px;
-  font-size: 15px;
-  line-height: 1.45;
+  margin-top: 12px;
+  font-size: 17px;
+  line-height: 1.5;
   color: #5a5348;
-  font-style: italic;
+  font-style: normal;
   text-align: left;
+}
+.kuriozita-label {
+  font-weight: 700;
 }
 
 .snemovni-listy {
@@ -391,7 +399,9 @@ body {
   border-radius: 10px;
 }
 .verdict .q {
-  font-style: italic;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
   font-size: 19px;
   line-height: 1.5;
   margin: 0;
@@ -400,16 +410,17 @@ body {
   font-style: inherit;
   font-size: 24px;
 }
+.verdict-top .q .key {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 700;
+  text-transform: none;
+  color: #211c14;
+}
 .verdict .q-mark {
   font-size: 34px;
   line-height: 0;
   vertical-align: -7px;
-}
-.verdict .q .key {
-  font-family: 'Archivo', 'Arial Black', sans-serif;
-  font-style: normal;
-  color: #cf5a31;
-  text-transform: uppercase;
 }
 .verdict .q a.steno-link {
   color: #211c14;

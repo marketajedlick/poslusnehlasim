@@ -30,6 +30,7 @@ from svejk.build.vyznamenani_neprosli import (
     resolve_vyznamenani_page_links,
     vyznamenani_href,
 )
+from svejk.build.witty import rozdel_kuriozitu_label
 from svejk.build.io import read_json
 from svejk.noviny import HLAVICKA_LISTU, _datum_cesky, _new_state
 from svejk.paths import SchuzePaths
@@ -161,6 +162,12 @@ def render_den_markdown(
             lines.extend([item.pointa, ""])
         mean_label = load_strings()["edition"]["mean_label"]
         lines.extend([f"**{mean_label}** <strong>{co_znamena}</strong>", ""])
+        if item.kuriozita and not item.lead_tail:
+            label, body = rozdel_kuriozitu_label(item.kuriozita)
+            if label:
+                lines.extend(["", f"**{label}** {body}"])
+            else:
+                lines.extend(["", item.kuriozita])
         if item.kuriozita_links:
             from svejk.build.mezin_smlouvy import resolve_smlouvy_page_links
             from svejk.build.recnici import resolve_recnici_page_links
@@ -190,8 +197,6 @@ def render_den_markdown(
             if nav:
                 md_links = " · ".join(f"[{label}]({href})" for label, href in nav)
                 lines.extend(["", md_links])
-        if item.kuriozita and not item.lead_tail:
-            lines.extend(["", f"*{item.kuriozita}*"])
         lines.append("")
 
     lines.append("## Výsledek dne")

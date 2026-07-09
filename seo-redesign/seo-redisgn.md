@@ -233,7 +233,7 @@ Schema musí odpovídat viditelnému obsahu stránky — nemarkupovat nic, co na
 
 ## 10. Archiv (/archiv/)
 
-- Zachovat kalendář jako UI, ale **pod něj doplnit chronologický textový seznam**: `8. 7. 2026 — Titulek na počkání` (odkaz na vydání). Crawler potřebuje `<a href>` s anchor textem, ne jen JS kalendář ⚠️ OVĚŘIT, zda je kalendář crawlovatelný.
+- Zachovat kalendář jako UI, ale **pod něj doplnit chronologický textový seznam**: `8. 7. 2026, Titulek na počkání` (odkaz na vydání). **Hotovo** — sekce „Všechna vydání" na `/archiv.html` (Fáze 0.3, 9. 7. 2026).
 - Při > ~100 vydáních stránkovat po měsících: `/archiv/2026-07/`.
 
 ---
@@ -267,10 +267,10 @@ Schema musí odpovídat viditelnému obsahu stránky — nemarkupovat nic, co na
 ## 13. Fáze a akceptační kritéria
 
 ### Fáze 0 — bez redesignu (nasadit hned, ~dny)
-- [ ] GSC ověřeno, sitemap odeslána
-- [ ] Title/description šablony dle §4–5 (lze i na stávajících URL)
-- [ ] JSON-LD Organization + WebSite na homepage, NewsArticle na vydáních
-- [ ] Archiv doplněn o textový seznam s titulky
+- [ ] GSC ověřeno, sitemap odeslána *(Markéta, po deployi)*
+- [x] Title/description šablony dle §4–5 (na stávajících URL) — *9. 7. 2026*
+- [x] JSON-LD Organization + WebSite na homepage, NewsArticle na vydáních — *9. 7. 2026*
+- [x] Archiv doplněn o textový seznam s titulky — *9. 7. 2026*
 
 ### Fáze 1 — restrukturalizace (~1–2 týdny)
 - [ ] Nové URL schéma + kompletní 301 mapa

@@ -342,6 +342,21 @@ def _jinja_env() -> Environment:
         return re.sub(r"<[^>]+>", "", strip_glossary_markup(text)).strip()
 
     env.filters["plain"] = _plain_filter
+
+    @pass_context
+    def _kuriozita_display_filter(context, text: str) -> Markup:
+        from svejk.build.glossary_markup import glossary_markup as _gm
+        from svejk.build.witty import rozdel_kuriozitu_label
+
+        text = (text or "").strip()
+        if not text:
+            return Markup("")
+        label, body = rozdel_kuriozitu_label(text)
+        if label:
+            return Markup(f'<strong class="kuriozita-label">{label}</strong> {_gm(body)}')
+        return _gm(text)
+
+    env.filters["kuriozita_display"] = _kuriozita_display_filter
     return env
 
 
@@ -883,10 +898,10 @@ def plain_text_from_content(
         if item.mean:
             mean_label = load_strings()["edition"]["mean_label"]
             lines.append(f"{mean_label} {_plain(item.mean)}")
-        for label, href in item.kuriozita_nav:
-            lines.append(f"{label}: {href}")
         if item.kuriozita and not item.lead_tail:
             lines.append(_plain(item.kuriozita))
+        for label, href in item.kuriozita_nav:
+            lines.append(f"{label}: {href}")
     lines.extend(
         [
             "",

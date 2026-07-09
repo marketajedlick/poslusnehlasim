@@ -26,6 +26,9 @@
       {% if item.mean %}
       <p class="p mean"><strong class="mean-label">{{ t.edition.mean_label }}</strong> <strong>{{ item.mean | glossary }}</strong></p>
       {% endif %}
+      {% if item.kuriozita and not item.lead_tail and item.num != postreh_item_num %}
+      <p class="kuriozita">{{ item.kuriozita | kuriozita_display }}</p>
+      {% endif %}
       {% if item.kuriozita_nav %}
       <nav class="kuriozita-links" aria-label="{{ t.edition.kuriozita_aria }}">
         {% for label, href in item.kuriozita_nav %}
@@ -33,9 +36,6 @@
         <a class="kuriozita-link" href="{{ href }}">{{ label }}</a>
         {% endfor %}
       </nav>
-      {% endif %}
-      {% if item.kuriozita and not item.lead_tail and item.num != postreh_item_num %}
-      <p class="p">{{ item.kuriozita | glossary }}</p>
       {% endif %}
     </div>
     {% if newsletter.show_corrections and item.slug %}

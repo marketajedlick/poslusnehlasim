@@ -178,6 +178,18 @@ def rozdel_kuriozitu(text: str) -> tuple[str, str]:
     return kuriozita, zbytek
 
 
+_KURIOZITA_PREFIX_START = re.compile(r"^(Kuriozita dne:)\s*", re.I)
+
+
+def rozdel_kuriozitu_label(text: str) -> tuple[str, str]:
+    """Vrátí (label, tělo) když text začíná „Kuriozita dne:“."""
+    text = (text or "").strip()
+    m = _KURIOZITA_PREFIX_START.match(text)
+    if m:
+        return m.group(1), text[m.end() :].strip()
+    return "", text
+
+
 def kuriozita_z_fact(fact: dict[str, Any]) -> str:
     explicit = (fact.get("kuriozita") or "").strip()
     if explicit:

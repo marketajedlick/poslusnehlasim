@@ -34,8 +34,7 @@
 </div>
 
 <div class="verdict verdict-top" style="margin:22px 4px 24px;padding:22px 24px 18px;background:#f4c430;color:#211c14;border-radius:10px;">
-  {% set _ph = 'Poslušně hlásím, že ' %}
-  <p class="q"><span class="q-quote"><span class="q-mark">„</span>{% if content.zaver[:20] == _ph %}<strong style="font-weight:700;">{{ _ph }}</strong>{{ content.zaver[20:] | safe }}{% else %}{{ content.zaver | safe }}{% endif %}<span class="q-mark">“</span></span></p>
+  <p class="q" style="font-family:'Archivo',Arial,Helvetica,sans-serif;font-style:normal;font-size:19px;line-height:1.5;margin:0;"><span class="q-quote" style="font-size:24px;"><span class="q-mark">„</span>{% if content.zaver_key %}<span class="key" style="font-weight:700;">{{ content.zaver_key }}</span> {{ content.zaver_body | safe }}{% else %}{{ content.zaver | safe }}{% endif %}<span class="q-mark">“</span></span></p>
   <table role="presentation" class="verdict-foot" cellpadding="0" cellspacing="0" border="0" width="100%">
   <tr>
     <td class="verdict-head" width="10" valign="bottom" style="width:10px;vertical-align:bottom;"></td>
@@ -121,6 +120,9 @@
     {% if item.mean %}
     <p class="mean"><strong class="mean-label" style="color:#ff4411;font-weight:700;">{{ t.edition.mean_label }} </strong><strong style="font-weight:700;">{{ item.mean | safe }}</strong></p>
     {% endif %}
+    {% if item.kuriozita and not item.lead_tail %}
+    <p class="kuriozita">{{ item.kuriozita | kuriozita_display }}</p>
+    {% endif %}
     {% if item.kuriozita_nav %}
     <p class="kuriozita-links">
       {% for label, href in item.kuriozita_nav %}
@@ -128,9 +130,6 @@
       <a href="{{ href }}">{{ label }}</a>
       {% endfor %}
     </p>
-    {% endif %}
-    {% if item.kuriozita and not item.lead_tail %}
-    <p class="kuriozita">{{ item.kuriozita | safe }}</p>
     {% endif %}
   </td>
   </tr>

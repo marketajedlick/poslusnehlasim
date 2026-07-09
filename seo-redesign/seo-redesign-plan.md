@@ -1,8 +1,8 @@
 # SEO redesign poslusnehlasim.cz — implementační plán
 
-**Verze:** 1.0 · 8. 7. 2026  
-**Zdrojová specifikace:** SPEC — SEO redesign poslusnehlasim.cz  
-**Přehled:** Implementace SEO redesignu ve třech fázích podle specifikace, s vycházením z existujícího Python/Jinja build pipeline. Fáze 0 je z větší části hotová; Fáze 1 přinese nové URL, stabilní homepage a rozpad slovníčku; Fáze 2 přidá entitní stránky poslanců a témat.
+**Verze:** 1.1 · 9. 7. 2026  
+**Zdrojová specifikace:** [`seo-redisgn.md`](seo-redisgn.md)  
+**Přehled:** Implementace SEO redesignu ve třech fázích podle specifikace, s vycházením z existujícího Python/Jinja build pipeline. **Fáze 0 (0.1–0.3) je hotová** (nasadit exportem). Fáze 1 přinese nové URL, stabilní homepage a rozpad slovníčku; Fáze 2 přidá entitní stránky poslanců a témat.
 
 ## Stav kódu vs. spec (ověření ⚠️)
 
@@ -11,11 +11,12 @@
 | URL vydání `DD.MM.YYYY.html` | **Potvrzeno** | [`svejk/build/nav.py`](../svejk/build/nav.py) → `/noviny/{obdobi}/{schuze}/{datum_unl}.html` |
 | Steno `-steno.html` | **Potvrzeno** | `steno_sources_pages_href()` |
 | Homepage = dnešní vydání | **Potvrzeno** | [`export_pages.py`](../svejk/build/export_pages.py) volá `render_den_html(is_homepage=True)` se šablonou [`noviny-dlouhe.html`](../svejk/templates/noviny-dlouhe.html) |
-| Duplicita obsahu | **Problém** | Stejný HTML obsah na `/` i na edition URL; H1 je vždy „Poslušně hlásím!" ([`edition-masthead.html`](../svejk/templates/edition-masthead.html)) |
+| Title/meta šablony §4–5 | **Hotovo (0.1)** | [`seo.py`](../svejk/build/seo.py): `homepage_page_title()`, `edition_page_title()`, `edition_meta_description()`, `SITE_META_DESCRIPTION` |
+| Duplicita obsahu | **Problém (Fáze 1)** | Stejný HTML obsah na `/` i na edition URL; H1 je vždy „Poslušně hlásím!" ([`edition-masthead.html`](../svejk/templates/edition-masthead.html)) |
 | HTTP 301 redirecty | **Chybí** | Jen meta-refresh v [`_redirect_html()`](../svejk/build/export_pages.py) — **záměrně ponecháno** dle rozhodnutí |
-| Archiv crawlovatelný | **Částečně** | [`archiv.html`](../svejk/templates/archiv.html) má `<a href>` chipy, ale anchor text = den (`02`), titulky jen v tooltipu |
-| JSON-LD | **Částečně hotovo** | [`seo.py`](../svejk/build/seo.py): `website_json_ld`, `article_json_ld`, `faq_json_ld` |
-| Logo URL v schema | **Jiné než spec** | Dnes `/static/apple-touch-icon.png`, spec uvádí `/assets/logo.png` |
+| Archiv crawlovatelný | **Hotovo (0.3)** | Chipy + textový seznam „Všechna vydání" s anchor textem `datum, titulek` ([`archive_text_list()`](../svejk/build/nav.py), [`archiv.html`](../svejk/templates/archiv.html)) |
+| JSON-LD | **Hotovo (0.2)** | [`seo.py`](../svejk/build/seo.py): `#org`, `website_json_ld`, `article_json_ld` s `about`, `faq_json_ld` na slovníčku |
+| Logo URL v schema | **Odchylka** | `/static/apple-touch-icon.png` (spec `/assets/logo.png` neexistuje, záměrně ponecháno) |
 | Slovníček per-pojem | **Chybí** | Jedna stránka [`slovnicek-stranka.html`](../svejk/templates/slovnicek-stranka.html), kotvy přes `slovnicek_anchor()` |
 | Poslanec/téma entity | **Data částečně** | Slugy témat v `aligned/topics.json`; poslanci anotováni v [`psp/poslanci.py`](../psp/poslanci.py), bez slug stránek |
 | Breadcrumbs | **Chybí** | Žádný `BreadcrumbList` ani UI komponenta |
@@ -54,50 +55,45 @@ flowchart TB
 
 ---
 
-## Fáze 0 — dokončit (~dny)
+## Fáze 0 — hotovo (9. 7. 2026)
 
-**Co už je hotové** (nedávné změny + existující infra):
+### 0.1 Title/meta dle spec §4–5 — hotovo
 
-- Stabilní homepage `<title>` s klíčovými slovy v [`seo.py`](../svejk/build/seo.py)
-- `edition_meta_description()` s lead větou
-- `website_json_ld` + `article_json_ld` na homepage/vydáních
-- `/o-webu/` s vlastním meta + JSON-LD
+Implementováno v [`seo.py`](../svejk/build/seo.py), testy v [`tests/test_seo.py`](../tests/test_seo.py):
+
+| Stránka | Šablona (nasazeno) |
+|---|---|
+| Homepage title | `Poslušně hlásím, denní zpravodaj z Poslanecké sněmovny` |
+| Homepage meta | `Satirický deník z Poslanecké sněmovny. Každý jednací den srozumitelně: …` |
+| Vydání title | `Sněmovna {D. M. YYYY}: {Titulek} \| Poslušně hlásím` |
+| Vydání meta | `{Perex}. Denní přehled z Poslanecké sněmovny, {datum}.` |
+
+### 0.2 JSON-LD dle spec §9 — hotovo
+
+- `@id` organizace: `#org`
+- `ORGANIZATION_DESCRIPTION` a `WEBSITE_SCHEMA_NAME` v [`seo.py`](../svejk/build/seo.py)
+- `NewsArticle`: `about` Thing, `author`/`publisher` přes `@id`, `datePublished` s `+02:00`
+- Logo: `/static/apple-touch-icon.png` (odchylka od spec)
+- `/o-webu/` má vlastní meta + `website_json_ld` (dřívější práce)
+
+### 0.3 Archiv — textový seznam — hotovo
+
+- `archive_text_list()` v [`nav.py`](../svejk/build/nav.py)
+- Sekce „Všechna vydání" v [`archiv.html`](../svejk/templates/archiv.html)
+- Styly v [`noviny-dlouhe.css`](../svejk/static/noviny-dlouhe.css)
+
+### Dříve hotová infra (bez změny URL)
+
+- Stabilní homepage `<title>` (oddělený od `og:title` při sdílení)
 - `sitemap.xml`, `robots.txt`, `llms.txt` generované v exportu
+- FAQPage JSON-LD na slovníčku
 
-**Co ještě udělat v kódu:**
+### 0.4 Mimo kód (Markéta) — otevřeno
 
-### 0.1 Sjednotit title/meta se spec §4–5
+- [ ] GSC ověření, odeslání sitemap, URL Inspection — dle spec §12
+- [ ] Po deployi: Rich Results Test na homepage a vydání
 
-Aktuální šablony se liší od spec — upravit [`seo.py`](../svejk/build/seo.py) a [`tests/test_seo.py`](../tests/test_seo.py):
-
-| Stránka | Spec | Akce |
-|---|---|---|
-| Homepage title | `Poslušně hlásím, denní zpravodaj z Poslanecké sněmovny` | Upravit `homepage_page_title()` (bez em pomlčky, dle typografických pravidel projektu) |
-| Homepage meta | `Satirický deník z Poslanecké sněmovny. Každý jednací den…` | Nahradit `SITE_META_DESCRIPTION` |
-| Vydání title | `Sněmovna {D. M. YYYY}: {Titulek} \| Poslušně hlásím` | Přepsat `edition_page_title()` — brand na konec, ne na začátek |
-| Vydání meta | `{Perex}. Denní přehled z Poslanecké sněmovny — {datum}.` | Upravit `edition_meta_description()` |
-
-### 0.2 JSON-LD sladit se spec §9
-
-V [`seo.py`](../svejk/build/seo.py):
-
-- `@id` organizace: `#org` (místo `#organization`)
-- `description` text dle spec
-- `WebSite.name`: „Poslušně hlásím, deník Poslanecké sněmovny"
-- `NewsArticle`: přidat `about` Thing, sjednotit `author`/`publisher` na `@id` org
-- Logo: ponechat existující `/static/apple-touch-icon.png` (spec `/assets/logo.png` neexistuje)
-
-### 0.3 Archiv — textový seznam pod chipy
-
-V [`nav.py`](../svejk/build/nav.py) existuje nepoužitá `archive_recent()` — využít ji.
-
-- Rozšířit `archive_by_month()` nebo přidat `archive_text_list()` vracející `(datum_label, headline, href)`
-- Do [`archiv.html`](../svejk/templates/archiv.html) přidat sekci pod chipy: `8. 7. 2026 — Titulek na počkání` jako viditelný anchor text
-- Aktualizovat test v [`test_seo.py`](../tests/test_seo.py) pokud se mění export archivu
-
-### 0.4 Mimo kód (Markéta)
-
-- GSC ověření, odeslání sitemap, URL Inspection — dle spec §12
+**Nasazení:** `./run-svejk.sh export-pages` → deploy `site/`
 
 ---
 
@@ -224,7 +220,7 @@ Rozšířit [`glossary_markup.py`](../svejk/build/glossary_markup.py) a/nebo nov
 
 ## Doporučené pořadí implementace
 
-1. Fáze 0.1–0.3 (rychlé SEO wins na stávajících URL)
+1. ~~Fáze 0.1–0.3~~ **hotovo** — nasadit exportem
 2. Fáze 1.1 URL helpery + export nových cest + meta-refresh stuby
 3. Fáze 1.2 homepage landing + H1/H2 logika
 4. Fáze 1.5 slovníček split (největší SEO přínos z Fáze 1)
@@ -239,9 +235,10 @@ Rozšířit [`glossary_markup.py`](../svejk/build/glossary_markup.py) a/nebo nov
 
 ## Úkoly
 
-- [ ] **Fáze 0:** Sjednotit title/meta šablony se spec §4–5 v `seo.py` + testy
-- [ ] **Fáze 0:** Sladit JSON-LD (Organization `#org`, popisy, NewsArticle `about`)
-- [ ] **Fáze 0:** Přidat textový seznam vydání do `archiv.html` (využít `archive_recent`)
+- [x] **Fáze 0:** Sjednotit title/meta šablony se spec §4–5 v `seo.py` + testy
+- [x] **Fáze 0:** Sladit JSON-LD (Organization `#org`, popisy, NewsArticle `about`)
+- [x] **Fáze 0:** Přidat textový seznam vydání do `archiv.html` (`archive_text_list`)
+- [ ] **Fáze 0:** GSC, odeslání sitemap, Rich Results Test (Markéta, po deployi)
 - [ ] **Fáze 1:** Nové URL schéma (`/vydani/YYYY-MM-DD/`), ISO konverze, meta-refresh stuby ze starých URL
 - [ ] **Fáze 1:** Stabilní homepage landing (H1, úvod, H2 titulek dne, sekce Z archivu)
 - [ ] **Fáze 1:** Rozpad slovníčku na `/slovnicek/{slug}/` + DefinedTerm schema + odkazy v textech
