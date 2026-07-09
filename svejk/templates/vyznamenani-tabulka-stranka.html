@@ -11,21 +11,28 @@
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="vyznamenani-page vyznamenani-page--{{ kind }}">
-<div class="vyznamenani-wrap">
+<div class="edition-page vyznamenani-edition">
+  <main class="edition-main vyznamenani-wrap">
   <header class="vyznamenani-head">
     <h1 class="vyznamenani-title">{{ page_title }}</h1>
     <p class="vyznamenani-gloss">{{ page_gloss }}</p>
-    {% if edition_href %}
-    <nav class="vyznamenani-nav">
+    {% if edition_href or sibling_href or latest_href or archive_href or slovnicek_href or pivo_href %}
+    <nav class="vyznamenani-nav site-nav" aria-label="{{ t.nav.aria_main }}">
+      {% if edition_href %}
       <a class="vyznamenani-back" href="{{ edition_href }}">{{ t.vyznamenani.back_to_edition.format(date=datum_label) }}</a>
+      {% endif %}
+      {% set site_nav_has_prefix = edition_href %}
+      {% set site_nav_inline = true %}
+      {% include "site-nav.html" %}
       {% if sibling_href and sibling_label %}
       <span class="vyznamenani-nav-sep" aria-hidden="true">·</span>
       <a class="vyznamenani-back" href="{{ sibling_href }}">{{ sibling_label }}</a>
       {% endif %}
     </nav>
     {% endif %}
-    {% include "site-nav.html" %}
   </header>
+
+  <div class="rule-double"></div>
 
   {% if page_explain %}
   <div class="vyznamenani-explain">
@@ -155,8 +162,9 @@
   </div>
 
   <p class="vyznamenani-note">{{ page_note }}</p>
+  </main>
+  {% include "site-footer.html" %}
 </div>
-{% include "site-footer.html" %}
 {% include "cookie-consent.html" %}
 </body>
 </html>

@@ -1384,8 +1384,7 @@ body.archiv-page{
   font-size:13px;
   font-weight:700;
 }
-.archiv-head .site-nav,
-.vyznamenani-head .site-nav{margin-top:14px}
+.archiv-head .site-nav{margin-top:14px}
 .site-nav-sep{
   font-family:var(--font-sans);
   font-size:11px;
@@ -2220,29 +2219,33 @@ body.steno-page{
   .steno-wrap{padding:24px 14px 36px}
 }
 /* vyznamenání / řečníci tabulky */
-body.vyznamenani-page{
-  background:var(--cream);
-  padding:calc(16px + env(safe-area-inset-top, 0px)) 0 40px;
+body.vyznamenani-page{background:var(--cream)}
+.vyznamenani-edition.edition-page{
+  max-width:min(1180px, calc(100% - 32px));
+  padding:0 16px 40px;
 }
-.vyznamenani-wrap{
-  width:min(1120px, calc(100% - 32px));
+.vyznamenani-page .edition-main.vyznamenani-wrap{
+  width:100%;
+  max-width:min(1120px, 100%);
   margin:0 auto;
-  background:var(--white);
-  border:1.5px solid var(--border-box);
-  box-shadow:0 10px 28px rgba(38,38,38,.12);
-  padding:36px 28px 44px;
+  padding:38px 0 46px;
+  background:transparent;
+  border:none;
+  box-shadow:none;
 }
 .vyznamenani-head{
-  margin-bottom:28px;
-  padding-bottom:22px;
-  border-bottom:1px solid var(--border);
+  margin-bottom:0;
+  padding-bottom:0;
+  border-bottom:none;
+  text-align:center;
 }
 .vyznamenani-title{
-  margin:0 0 8px;
+  margin:0 0 10px;
   font-family:var(--font-sans);
   font-weight:900;
-  font-size:clamp(1.5rem, 4vw, 1.85rem);
-  letter-spacing:.04em;
+  font-size:clamp(1.75rem, 5vw, 2.35rem);
+  line-height:1.05;
+  letter-spacing:.03em;
   text-transform:uppercase;
   color:var(--char);
 }
@@ -2250,19 +2253,19 @@ body.vyznamenani-page{
 .vyznamenani-page--prosli .vyznamenani-title,
 .vyznamenani-page--zvoleni .vyznamenani-title{color:var(--steno)}
 .vyznamenani-gloss{
-  margin:0 0 16px;
-  font-size:1.02rem;
+  margin:0 auto 16px;
+  max-width:36em;
+  font-family:var(--font-serif);
+  font-size:1.05rem;
   line-height:1.5;
   color:var(--ink-body);
-  max-width:52em;
 }
-.vyznamenani-nav{
+.vyznamenani-nav.site-nav{
   display:flex;
   flex-wrap:wrap;
-  justify-content:flex-start;
-  align-items:center;
-  gap:8px 12px;
-  margin-top:8px;
+  justify-content:center;
+  gap:4px 6px;
+  margin-top:12px;
 }
 .vyznamenani-nav-sep{
   font-family:var(--font-sans);
@@ -2283,11 +2286,12 @@ body.vyznamenani-page{
   padding-bottom:1px;
 }
 .vyznamenani-back:hover{border-bottom-color:var(--orange)}
+.vyznamenani-edition .rule-double{margin:22px 0 24px}
 .vyznamenani-explain{
   margin:0 0 28px;
-  padding:16px 18px;
-  background:rgba(207,90,49,.06);
-  border:1px solid rgba(207,90,49,.16);
+  padding:14px 16px;
+  background:rgba(255,255,255,.45);
+  border:1px solid var(--border);
   border-left:4px solid var(--terra);
   border-radius:0 6px 6px 0;
   font-size:.95rem;
@@ -2296,8 +2300,6 @@ body.vyznamenani-page{
 }
 .vyznamenani-page--prosli .vyznamenani-explain,
 .vyznamenani-page--zvoleni .vyznamenani-explain{
-  background:rgba(40,60,110,.06);
-  border-color:rgba(40,60,110,.14);
   border-left-color:var(--steno);
 }
 .vyznamenani-explain p{margin:0 0 10px}
@@ -2308,7 +2310,7 @@ body.vyznamenani-page{
   margin-bottom:24px;
   border:1px solid var(--border);
   border-radius:6px;
-  background:var(--white);
+  background:transparent;
   -webkit-overflow-scrolling:touch;
   max-width:100%;
 }
@@ -2343,7 +2345,7 @@ body.vyznamenani-page{
   font-size:9px;
   letter-spacing:.12em;
   color:var(--char);
-  background:#ede8e4;
+  background:rgba(255,255,255,.35);
   border-bottom:1px solid var(--border);
   text-align:center;
 }
@@ -2377,7 +2379,7 @@ body.vyznamenani-page{
   background:var(--cream);
   z-index:5;
 }
-.vyznamenani-table tr.vyznamenani-groups .vyznamenani-sticky{background:#ede8e4}
+.vyznamenani-table tr.vyznamenani-groups .vyznamenani-sticky{background:rgba(255,255,255,.35)}
 .vyznamenani-skore{
   font-variant-numeric:tabular-nums;
   white-space:nowrap;
@@ -2497,7 +2499,7 @@ body.vyznamenani-page{
   margin-bottom:3px;
 }
 @media(max-width:760px){
-  .vyznamenani-wrap{padding:28px 16px 36px}
+  .vyznamenani-page .edition-main.vyznamenani-wrap{padding:28px 0 36px}
   .table-wrapper--wide{
     width:100%;
     max-width:100%;
@@ -2513,10 +2515,10 @@ body.vyznamenani-page{
     padding:14px 14px 6px;
     border:1px solid var(--border);
     border-radius:6px;
-    background:var(--white);
+    background:rgba(255,255,255,.35);
   }
-  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody tr:nth-child(even){background:var(--white)}
-  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody tr:hover{background:var(--white)}
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody tr:nth-child(even){background:rgba(255,255,255,.35)}
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody tr:hover{background:rgba(255,255,255,.35)}
   .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody th,
   .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody td{
     display:flex;
@@ -2566,7 +2568,7 @@ body.vyznamenani-page{
     border:1px solid var(--border);
     border-top:none;
     border-radius:0 0 6px 6px;
-    background:var(--white);
+    background:rgba(255,255,255,.35);
   }
   .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-varovani-row td{
     display:block;

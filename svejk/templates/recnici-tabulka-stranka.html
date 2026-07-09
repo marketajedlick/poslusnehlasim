@@ -11,7 +11,8 @@
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="vyznamenani-page recnici-page">
-<div class="vyznamenani-wrap">
+<div class="edition-page vyznamenani-edition">
+  <main class="edition-main vyznamenani-wrap">
   <header class="vyznamenani-head">
     <h1 class="vyznamenani-title">{{ page_title }}</h1>
     <p class="vyznamenani-gloss">{{ page_gloss }}</p>
@@ -27,6 +28,8 @@
     </nav>
     {% endif %}
   </header>
+
+  <div class="rule-double"></div>
 
   <div class="vyznamenani-table-wrap table-wrapper">
     <table class="vyznamenani-table">
@@ -53,8 +56,9 @@
   </div>
 
   <p class="vyznamenani-note">{{ page_note }}</p>
+  </main>
+  {% include "site-footer.html" %}
 </div>
-{% include "site-footer.html" %}
 {% include "cookie-consent.html" %}
 </body>
 </html>
