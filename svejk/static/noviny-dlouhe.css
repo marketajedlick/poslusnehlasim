@@ -982,10 +982,22 @@ a.steno-link:hover{
 a.steno-link .term-term{
   text-decoration-color:var(--orange);
 }
-.kuriozita-links{
-  margin-top:12px;
+.kuriozita,
+.article-body .kuriozita{
+  margin-top:14px;
   font-family:var(--font-sans);
-  font-size:13px;
+  font-size:17px;
+  line-height:1.5;
+  color:#5a5348;
+  font-style:normal;
+}
+.kuriozita-label{
+  font-weight:700;
+}
+.kuriozita-links{
+  margin-top:10px;
+  font-family:var(--font-sans);
+  font-size:16px;
 }
 .kuriozita-link{
   color:var(--orange);
@@ -1372,7 +1384,8 @@ body.archiv-page{
   font-size:13px;
   font-weight:700;
 }
-.archiv-head .site-nav{margin-top:14px}
+.archiv-head .site-nav,
+.vyznamenani-head .site-nav{margin-top:14px}
 .site-nav-sep{
   font-family:var(--font-sans);
   font-size:11px;
@@ -2205,6 +2218,363 @@ body.steno-page{
 .smlouvy-steno-link a:hover{border-bottom-color:var(--orange)}
 @media(max-width:720px){
   .steno-wrap{padding:24px 14px 36px}
+}
+/* vyznamenání / řečníci tabulky */
+body.vyznamenani-page{
+  background:var(--cream);
+  padding:calc(16px + env(safe-area-inset-top, 0px)) 0 40px;
+}
+.vyznamenani-wrap{
+  width:min(1120px, calc(100% - 32px));
+  margin:0 auto;
+  background:var(--white);
+  border:1.5px solid var(--border-box);
+  box-shadow:0 10px 28px rgba(38,38,38,.12);
+  padding:36px 28px 44px;
+}
+.vyznamenani-head{
+  margin-bottom:28px;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--border);
+}
+.vyznamenani-title{
+  margin:0 0 8px;
+  font-family:var(--font-sans);
+  font-weight:900;
+  font-size:clamp(1.5rem, 4vw, 1.85rem);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--char);
+}
+.vyznamenani-page--neprosli .vyznamenani-title{color:var(--terra)}
+.vyznamenani-page--prosli .vyznamenani-title,
+.vyznamenani-page--zvoleni .vyznamenani-title{color:var(--steno)}
+.vyznamenani-gloss{
+  margin:0 0 16px;
+  font-size:1.02rem;
+  line-height:1.5;
+  color:var(--ink-body);
+  max-width:52em;
+}
+.vyznamenani-nav{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+  align-items:center;
+  gap:8px 12px;
+  margin-top:8px;
+}
+.vyznamenani-nav-sep{
+  font-family:var(--font-sans);
+  font-size:11px;
+  font-weight:500;
+  color:var(--ink);
+  opacity:.7;
+}
+.vyznamenani-back{
+  font-family:var(--font-sans);
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--orange);
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,68,17,.35);
+  padding-bottom:1px;
+}
+.vyznamenani-back:hover{border-bottom-color:var(--orange)}
+.vyznamenani-explain{
+  margin:0 0 28px;
+  padding:16px 18px;
+  background:rgba(207,90,49,.06);
+  border:1px solid rgba(207,90,49,.16);
+  border-left:4px solid var(--terra);
+  border-radius:0 6px 6px 0;
+  font-size:.95rem;
+  line-height:1.55;
+  color:var(--ink-body);
+}
+.vyznamenani-page--prosli .vyznamenani-explain,
+.vyznamenani-page--zvoleni .vyznamenani-explain{
+  background:rgba(40,60,110,.06);
+  border-color:rgba(40,60,110,.14);
+  border-left-color:var(--steno);
+}
+.vyznamenani-explain p{margin:0 0 10px}
+.vyznamenani-explain p:last-child{margin-bottom:0}
+.vyznamenani-table-wrap,
+.table-wrapper{
+  overflow-x:auto;
+  margin-bottom:24px;
+  border:1px solid var(--border);
+  border-radius:6px;
+  background:var(--white);
+  -webkit-overflow-scrolling:touch;
+  max-width:100%;
+}
+.vyznamenani-table{
+  width:100%;
+  min-width:920px;
+  border-collapse:separate;
+  border-spacing:0;
+  font-size:14px;
+  line-height:1.45;
+}
+.vyznamenani-table th,
+.vyznamenani-table td{
+  padding:10px 12px;
+  text-align:left;
+  vertical-align:top;
+  border-bottom:1px solid rgba(38,38,38,.08);
+}
+.vyznamenani-table thead th{
+  font-family:var(--font-sans);
+  font-weight:800;
+  font-size:10px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--ink);
+  background:var(--cream);
+  position:sticky;
+  top:0;
+  z-index:2;
+}
+.vyznamenani-table tr.vyznamenani-groups th{
+  font-size:9px;
+  letter-spacing:.12em;
+  color:var(--char);
+  background:#ede8e4;
+  border-bottom:1px solid var(--border);
+  text-align:center;
+}
+.vyznamenani-table tr.vyznamenani-groups th.vyznamenani-sticky{
+  text-align:left;
+  z-index:4;
+}
+.vyznamenani-table tr.vyznamenani-cols th{
+  top:27px;
+  z-index:3;
+  text-align:center;
+}
+.vyznamenani-table tr.vyznamenani-cols th:first-child{text-align:left}
+.vyznamenani-table tbody tr:nth-child(even){background:rgba(38,38,38,.02)}
+.vyznamenani-table tbody tr:hover{background:rgba(255,68,17,.04)}
+.vyznamenani-table tbody th{
+  font-weight:700;
+  font-size:15px;
+  color:var(--char);
+  background:inherit;
+}
+.vyznamenani-sticky{
+  position:sticky;
+  left:0;
+  z-index:1;
+  background:inherit;
+  box-shadow:4px 0 8px -4px rgba(38,38,38,.1);
+  min-width:11.5em;
+}
+.vyznamenani-table thead .vyznamenani-sticky{
+  background:var(--cream);
+  z-index:5;
+}
+.vyznamenani-table tr.vyznamenani-groups .vyznamenani-sticky{background:#ede8e4}
+.vyznamenani-skore{
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+  text-align:center;
+  font-family:var(--font-sans);
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:.03em;
+}
+.vyznamenani-vote--pro{color:var(--steno)}
+.vyznamenani-vote--proti{color:var(--terra)}
+.vyznamenani-vote-sep{color:var(--muted);margin:0 2px;font-weight:500}
+.vyznamenani-num{
+  font-family:var(--font-sans);
+  font-size:14px;
+  font-weight:600;
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+  text-align:center;
+  color:var(--ink-body);
+}
+.vyznamenani-potreba{font-weight:800;color:var(--char)}
+.vyznamenani-chybelo{
+  font-weight:800;
+  color:var(--terra);
+  background:rgba(207,90,49,.08);
+}
+.vyznamenani-kluby{min-width:12em;max-width:24em}
+.vyznamenani-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.vyznamenani-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:4px 8px;
+  border-radius:4px;
+  font-family:var(--font-sans);
+  font-size:11px;
+  font-weight:700;
+  line-height:1.25;
+  letter-spacing:.02em;
+  white-space:nowrap;
+}
+.vyznamenani-chip strong{
+  font-weight:900;
+  font-size:12px;
+}
+.vyznamenani-chip--pro{
+  background:rgba(40,60,110,.1);
+  color:var(--steno);
+  border:1px solid rgba(40,60,110,.16);
+}
+.vyznamenani-chip--proti{
+  background:rgba(207,90,49,.1);
+  color:var(--terra);
+  border:1px solid rgba(207,90,49,.18);
+}
+.vyznamenani-empty{color:var(--muted)}
+.recnici-pozn{
+  display:inline-block;
+  margin-left:6px;
+  font-size:12px;
+  color:var(--ink);
+  font-style:italic;
+}
+.vyznamenani-note{
+  margin:0;
+  font-size:.92rem;
+  line-height:1.5;
+  color:var(--ink);
+}
+.vyznamenani-varovani-row td{
+  padding:0 12px 14px;
+  border-bottom:1px solid var(--border);
+  background:rgba(207,90,49,.03);
+}
+.vyznamenani-varovani-row:hover td{background:rgba(207,90,49,.03)}
+.vyznamenani-varovani{
+  margin:0;
+  padding:10px 12px 12px;
+  border-left:3px solid var(--terra);
+  font-size:.95rem;
+  line-height:1.45;
+}
+.vyznamenani-varovani-label{
+  display:block;
+  font-family:var(--font-sans);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--terra);
+  margin-bottom:4px;
+}
+.vyznamenani-varovani-rečník{
+  display:block;
+  font-size:12px;
+  color:var(--ink);
+  margin-bottom:6px;
+}
+.vyznamenani-varovani-text{margin:0 0 6px;color:var(--char)}
+.vyznamenani-varovani-citace{
+  margin:6px 0 0;
+  font-size:.92rem;
+  font-style:italic;
+  color:var(--ink-body);
+}
+.vyznamenani-varovani-citace:first-of-type{margin-top:0}
+.vyznamenani-varovani-cite-author{
+  display:block;
+  font-style:normal;
+  font-size:12px;
+  color:var(--ink);
+  margin-bottom:3px;
+}
+@media(max-width:760px){
+  .vyznamenani-wrap{padding:28px 16px 36px}
+  .table-wrapper--wide{
+    width:100%;
+    max-width:100%;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+  .table-wrapper--wide .vyznamenani-table{min-width:920px}
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table{min-width:0}
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table thead{display:none}
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody tr{
+    display:block;
+    margin:0 0 14px;
+    padding:14px 14px 6px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    background:var(--white);
+  }
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody tr:nth-child(even){background:var(--white)}
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody tr:hover{background:var(--white)}
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody th,
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody td{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:12px;
+    padding:8px 0;
+    border-bottom:1px solid rgba(38,38,38,.06);
+    box-shadow:none;
+    position:static;
+    min-width:0;
+    max-width:none;
+  }
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody th{
+    font-size:1.05rem;
+    border-bottom:1px solid var(--border);
+    padding-bottom:10px;
+    margin-bottom:4px;
+  }
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody td::before{
+    content:attr(data-label);
+    flex:0 0 42%;
+    font-family:var(--font-sans);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink);
+    padding-top:2px;
+  }
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody th::before{display:none}
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-skore{justify-content:flex-end}
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-chips{
+    justify-content:flex-end;
+    max-width:56%;
+  }
+  .vyznamenani-page--zvoleni .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-table tbody tr:not(.vyznamenani-varovani-row){
+    margin-bottom:0;
+    padding-bottom:0;
+    border-bottom:none;
+    border-radius:6px 6px 0 0;
+  }
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-varovani-row{
+    display:block;
+    margin:0 0 14px;
+    padding:0 14px 12px;
+    border:1px solid var(--border);
+    border-top:none;
+    border-radius:0 0 6px 6px;
+    background:var(--white);
+  }
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-varovani-row td{
+    display:block;
+    padding:0;
+    border:none;
+  }
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-varovani-row td::before{display:none}
+  .vyznamenani-table-wrap:not(.table-wrapper--wide) .vyznamenani-varovani{padding:8px 0 0}
 }
 /* satellite / table pages */
 .table-page{background:var(--cream)}
