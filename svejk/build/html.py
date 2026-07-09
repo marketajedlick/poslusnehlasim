@@ -21,6 +21,7 @@ from svejk.build.nav import (
     Edition,
     archiv_pages_href,
     archive_by_month,
+    archive_text_list,
     build_session_calendar,
     edition_nav,
     edition_pages_href,
@@ -546,6 +547,7 @@ def render_den_html(
         meta_description = _edition_meta_description(
             dnesni_ucet=content.dnesni_ucet,
             first_item_nadpis=content.items[0].nadpis if content.items else "",
+            datum_unl=content.datum,
             proslo=content.proslo,
             zamitnuto=content.zamitnuto,
         )
@@ -566,16 +568,21 @@ def render_den_html(
     from svejk.build.seo import article_headline as _article_headline
     from svejk.build.seo import article_json_ld as _article_json_ld
     from svejk.build.seo import edition_page_title as _edition_page_title
+    from svejk.build.seo import homepage_page_title as _homepage_page_title
     from svejk.build.seo import homepage_share_og_title as _homepage_share_og_title
 
-    # Homepage i vydání: <title> nese téma dne (sjednoceno s og:title).
-    page_title = _edition_page_title(
-        dnesni_ucet=content.dnesni_ucet,
-        meta_description=meta_description,
-        first_item_nadpis=content.items[0].nadpis if content.items else "",
-        datum_unl=content.datum,
-        den=content.den,
-        datum_design=datum_label,
+    # Homepage: stabilní <title> s klíčovými slovy; vydání: datum + téma dne.
+    page_title = (
+        _homepage_page_title()
+        if is_homepage
+        else _edition_page_title(
+            dnesni_ucet=content.dnesni_ucet,
+            meta_description=meta_description,
+            first_item_nadpis=content.items[0].nadpis if content.items else "",
+            datum_unl=content.datum,
+            den=content.den,
+            datum_design=datum_label,
+        )
     )
     from svejk.build.og_image import (
         OG_HEIGHT,
@@ -1114,6 +1121,11 @@ def render_archiv_html(
         obdobi=obdobi,
         base_path=base_path,
     )
+    text_entries = archive_text_list(
+        obdobi,
+        link_mode="pages",
+        base_path=base_path,
+    )
     canonical_url = f"{cfg.site_url.rstrip('/')}{archiv_pages_href(base_path)}"
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
     t = load_strings()
@@ -1127,6 +1139,7 @@ def render_archiv_html(
     return tpl.render(
         obdobi=obdobi,
         archive_months=months,
+        archive_text_entries=text_entries,
         canonical_url=canonical_url,
         **og,
         inline_css=inline_css,
@@ -1898,11 +1911,15 @@ def render_o_webu_html(
     canonical_url = f"{cfg.site_url.rstrip('/')}{o_webu_pages_href(base_path)}"
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
     ap = load_strings()["about_page"]
+    about_meta = ap.get("meta") or site_meta_description()
+    from svejk.build.seo import publisher_logo_url as _publisher_logo_url
+    from svejk.build.seo import website_json_ld as _website_json_ld
+
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
         title=ap["title"],
-        description=site_meta_description(),
+        description=about_meta,
     )
     nav_ctx = _site_nav_ctx(obdobi, base_path)
     tpl = _jinja_env().get_template("o-webu-stranka.html")
@@ -1910,6 +1927,12 @@ def render_o_webu_html(
         site_url=cfg.site_url.rstrip("/"),
         contact_email=cfg.contact_email,
         canonical_url=canonical_url,
+        about_meta=about_meta,
+        website_json_ld=_website_json_ld(
+            site_url=cfg.site_url,
+            logo_url=_publisher_logo_url(cfg.site_url, base_path),
+            base_path=base_path,
+        ),
         **og,
         inline_css=inline_css,
         css=css,

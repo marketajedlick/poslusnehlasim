@@ -3,9 +3,12 @@
 <head>
 {% include "head-noviny.html" %}
 <title>{{ t.about_page.title }}</title>
-<meta name="description" content="{{ site_meta_description }}" />
+<meta name="description" content="{{ about_meta | default(t.about_page.meta, true) }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
 {% include "og-meta.html" %}
+{% if website_json_ld %}
+<script type="application/ld+json">{{ website_json_ld | tojson }}</script>
+{% endif %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
@@ -21,7 +24,7 @@
   <div class="soukromi-body soukromi-body--prose">
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Co je Poslušně hlásím</h2>
-      <p>{{ site_meta_description }}</p>
+      <p>{{ t.about_page.intro }}</p>
     </section>
     <section class="soukromi-section">
       <h2 class="soukromi-heading">Satira, ne vymyšlené zprávy</h2>

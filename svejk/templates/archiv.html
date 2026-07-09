@@ -45,6 +45,19 @@
   </div>
 
   <p class="archiv-legend"><span class="archiv-legend-mark">s =</span> {{ t.archive.legend }}</p>
+
+  {% if archive_text_entries %}
+  <section class="archiv-text-list" aria-labelledby="archiv-text-list-title">
+    <h2 class="archiv-text-list-title" id="archiv-text-list-title">{{ t.archive.text_list_heading }}</h2>
+    <ol class="archiv-text-list-items">
+      {% for entry in archive_text_entries %}
+      <li>
+        <a href="{{ entry.href }}">{{ entry.label }}</a>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
 </div>
 {% include "site-footer.html" %}
 {% include "cookie-consent.html" %}

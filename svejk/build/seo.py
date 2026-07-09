@@ -70,10 +70,17 @@ _AI_BOTS = (
 SITE_NAME = "Poslušně hlásím"
 SITE_DOMAIN = "poslusnehlasim.cz"
 SITE_TAGLINE = "Deník sněmovny"
+SITE_TITLE_TAGLINE = "denní zpravodaj z Poslanecké sněmovny"
 SITE_META_DESCRIPTION = (
-    "Poslušně hlásím je srozumitelný přehled z Poslanecké sněmovny: "
-    "co se projednalo, co prošlo a proč na tom záleží."
+    "Satirický deník z Poslanecké sněmovny. Každý jednací den srozumitelně: "
+    "o čem poslanci hlasovali, co zaznělo v rozpravě a co to znamená. "
+    "Bez stenoprotokolové mlhy."
 )
+ORGANIZATION_DESCRIPTION = (
+    "Satirický denní zpravodaj z jednání Poslanecké sněmovny Parlamentu ČR. "
+    "Srozumitelné shrnutí rozprav a hlasování za každý jednací den."
+)
+WEBSITE_SCHEMA_NAME = f"{SITE_NAME}, deník Poslanecké sněmovny"
 
 
 def site_meta_description() -> str:
@@ -117,6 +124,14 @@ def _edition_date_label(datum_unl: str, den: str = "") -> str:
     return core
 
 
+def _edition_date_label_short(datum_unl: str) -> str:
+    """Datum do <title> bez dne v týdnu (úspora znaků pro klíčová slova)."""
+    if datum_unl and "." in datum_unl:
+        d, m, y = datum_unl.split(".", 2)
+        return f"{int(d)}. {int(m)}. {y}"
+    return datum_unl
+
+
 def _dnesni_ucet_headline(dnesni_ucet: str) -> str:
     """První věta z dnešního účtu, záloha, když chybí nadpis článku."""
     raw = " ".join((dnesni_ucet or "").split())
@@ -148,11 +163,13 @@ def edition_meta_description(
     *,
     dnesni_ucet: str,
     first_item_nadpis: str = "",
+    datum_unl: str = "",
     proslo: int = 0,
     zamitnuto: int = 0,
     max_len: int = 155,
 ) -> str:
-    """Unikátní meta popis pro Google odvozený z obsahu vydání."""
+    """Unikátní meta popis pro Google: perex dne + kontext sněmovny a datum."""
+    _ = proslo, zamitnuto
     import re
 
     from svejk.build.glossary_markup import strip_glossary_markup
@@ -160,36 +177,30 @@ def edition_meta_description(
     def _strip_html(text: str) -> str:
         return re.sub(r"<[^>]+>", "", strip_glossary_markup(text)).strip()
 
-    parts: list[str] = []
-
-    nadpis = _strip_html(first_item_nadpis)
-    if nadpis:
-        parts.append(nadpis)
-
-    ucet = _strip_html(dnesni_ucet)
-    if ucet:
-        first_sent = ucet.split(". ")[0].rstrip(".")
-        if first_sent and first_sent not in parts:
-            parts.append(first_sent)
-
-    if proslo or zamitnuto:
-        total = proslo + zamitnuto
-        parts.append(f"Prošlo {proslo} z {total} bodů.")
-
-    raw = " · ".join(p for p in parts if p)
-    if not raw:
+    perex = article_headline(
+        dnesni_ucet=_strip_html(dnesni_ucet),
+        first_item_nadpis=_strip_html(first_item_nadpis),
+        max_len=120,
+    )
+    if not perex:
         return SITE_META_DESCRIPTION
+    perex_clean = perex.rstrip(".")
+    date_label = _edition_date_label_short(datum_unl) if datum_unl else ""
+    if date_label:
+        raw = f"{perex_clean}. Denní přehled z Poslanecké sněmovny, {date_label}."
+    else:
+        raw = f"{perex_clean}. Denní přehled z Poslanecké sněmovny."
     return meta_description(raw, max_len=max_len)
 
 
 def homepage_page_title(**_kwargs: object) -> str:
     """Stabilní <title> pro úvodní stránku, bez denního tématu ani data."""
-    return "Poslušně hlásím · Švejkův deník ze Sněmovny"
+    return f"{SITE_NAME}, {SITE_TITLE_TAGLINE}"
 
 
 def homepage_og_title() -> str:
     """Fallback og:title bez kontextu vydání (statické stránky)."""
-    return "Poslušně hlásím · Švejkův deník ze Sněmovny"
+    return f"{SITE_NAME}, {SITE_TITLE_TAGLINE}"
 
 
 def homepage_share_og_title(
@@ -218,13 +229,17 @@ def edition_page_title(
     datum_unl: str,
     den: str = "",
     datum_design: str = "",
-    max_len: int = 72,
+    max_len: int = 90,
 ) -> str:
-    """<title> pro vydání: Poslušně hlásím, datum: téma dne."""
-    _ = meta_description
-    date_label = _edition_date_label(datum_unl, den) if datum_unl else (datum_design or "")
-    prefix = f"Poslušně hlásím, {date_label}: " if date_label else "Poslušně hlásím: "
-    budget = max(12, max_len - len(prefix))
+    """<title> pro vydání: Sněmovna datum: téma | značka."""
+    _ = meta_description, den, datum_design
+    date_label = _edition_date_label_short(datum_unl) if datum_unl else ""
+    suffix = f" | {SITE_NAME}"
+    if date_label:
+        prefix = f"Sněmovna {date_label}: "
+    else:
+        prefix = "Sněmovna: "
+    budget = max(12, max_len - len(prefix) - len(suffix))
     headline = article_headline(
         dnesni_ucet=dnesni_ucet,
         first_item_nadpis=first_item_nadpis,
@@ -232,11 +247,9 @@ def edition_page_title(
         max_len=budget,
     )
     if not headline.strip():
-        return _truncate_text(
-            f"Poslušně hlásím, {date_label}" if date_label else "Poslušně hlásím",
-            max_len=max_len,
-        )
-    title = f"{prefix}{headline}"
+        core = f"{prefix.rstrip(': ')}{suffix}" if date_label else f"Sněmovna{suffix}"
+        return _truncate_text(core, max_len=max_len)
+    title = f"{prefix}{headline}{suffix}"
     return title if len(title) <= max_len else _truncate_text(title, max_len=max_len)
 
 
@@ -272,6 +285,10 @@ def _publisher_block(
     return block
 
 
+def _org_id(site_url: str) -> str:
+    return site_url.rstrip("/") + "/#org"
+
+
 def article_json_ld(
     *,
     headline: str,
@@ -288,31 +305,37 @@ def article_json_ld(
     parts: list[dict[str, str | int]] | None = None,
     base_path: str = "",
 ) -> dict:
-    published = datetime.strptime(date_unl, "%d.%m.%Y").strftime("%Y-%m-%d")
+    published_date = datetime.strptime(date_unl, "%d.%m.%Y").strftime("%Y-%m-%d")
+    published = f"{published_date}T00:00:00+02:00"
+    modified = date_modified or published
+    org_id = _org_id(site_url)
     logo = logo_url or publisher_logo_url(site_url, base_path)
     article_image = image_url or logo
-    publisher = _publisher_block(
-        site_url=site_url, site_name=site_name, logo_url=logo
-    )
     data: dict = {
         "@context": "https://schema.org",
         "@type": "NewsArticle",
         "@id": url,
-        "mainEntityOfPage": {"@type": "WebPage", "@id": url},
+        "mainEntityOfPage": url,
         "headline": headline,
         "description": description,
         "url": url,
         "datePublished": published,
-        "dateModified": date_modified or published,
+        "dateModified": modified,
         "inLanguage": "cs",
         "isAccessibleForFree": True,
         "articleSection": "Poslanecká sněmovna",
-        "author": publisher,
-        "publisher": publisher,
+        "author": {"@type": "Organization", "@id": org_id},
+        "publisher": {"@id": org_id},
         "image": [article_image],
+        "about": [
+            {
+                "@type": "Thing",
+                "name": "Poslanecká sněmovna Parlamentu České republiky",
+            }
+        ],
         "isPartOf": {
             "@type": "WebSite",
-            "name": site_name,
+            "name": WEBSITE_SCHEMA_NAME,
             "url": site_url.rstrip("/") + "/",
         },
     }
@@ -344,10 +367,10 @@ def website_json_ld(
     logo_url: str | None = None,
     base_path: str = "",
 ) -> dict:
-    """WebSite + NewsMediaOrganization pro homepage."""
+    """WebSite + Organization pro homepage."""
     base = site_url.rstrip("/")
     logo = logo_url or publisher_logo_url(site_url, base_path)
-    org_id = f"{base}/#organization"
+    org_id = f"{base}/#org"
     website_id = f"{base}/#website"
     organization = _publisher_block(
         site_url=site_url,
@@ -355,12 +378,12 @@ def website_json_ld(
         logo_url=logo,
         org_id=org_id,
     )
-    organization["description"] = description
+    organization["description"] = ORGANIZATION_DESCRIPTION
     website = {
         "@type": "WebSite",
         "@id": website_id,
         "url": f"{base}/",
-        "name": site_name,
+        "name": WEBSITE_SCHEMA_NAME,
         "alternateName": SITE_DOMAIN,
         "description": description,
         "inLanguage": "cs",
@@ -368,7 +391,7 @@ def website_json_ld(
     }
     return {
         "@context": "https://schema.org",
-        "@graph": [website, organization],
+        "@graph": [organization, website],
     }
 
 

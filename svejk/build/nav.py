@@ -60,6 +60,14 @@ class ArchiveMonth:
 
 
 @dataclass(frozen=True)
+class ArchiveTextEntry:
+    href: str
+    date_label: str
+    headline: str
+    label: str
+
+
+@dataclass(frozen=True)
 class Edition:
     obdobi: int
     schuze: int
@@ -572,6 +580,44 @@ def archive_by_month(
         )
         months.append(ArchiveMonth(label=label, chips=chips))
     return tuple(months)
+
+
+def archive_text_list(
+    obdobi: int,
+    *,
+    link_mode: str = "pages",
+    base_path: str = "",
+) -> tuple[ArchiveTextEntry, ...]:
+    """Chronologický seznam vydání s viditelným anchor textem pro crawlery."""
+    editions = list_site_editions(obdobi)
+    if not editions:
+        return ()
+    entries: list[ArchiveTextEntry] = []
+    for edition in reversed(editions):
+        paths = SchuzePaths.create(edition.obdobi, edition.schuze)
+        den = _den_z_index(paths, edition.datum_unl)
+        date_label = datum_design(edition.datum_unl, den)
+        headline = _edition_headline(edition)
+        if link_mode == "pages":
+            href = edition_pages_href(
+                edition.obdobi, edition.schuze, edition.datum_unl, base_path
+            )
+        elif link_mode == "web":
+            href = edition_web_href(edition.obdobi, edition.schuze, edition.datum_unl)
+        else:
+            href = edition_pages_href(
+                edition.obdobi, edition.schuze, edition.datum_unl, base_path
+            )
+        label = f"{date_label}, {headline}" if headline else date_label
+        entries.append(
+            ArchiveTextEntry(
+                href=href,
+                date_label=date_label,
+                headline=headline,
+                label=label,
+            )
+        )
+    return tuple(entries)
 
 
 def clear_edition_cache() -> None:

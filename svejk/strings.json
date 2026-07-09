@@ -99,7 +99,8 @@
     "gloss": "Všechna dostupná vydání deníku.",
     "meta": "Všechna vydání deníku z Poslanecké sněmovny, období {obdobi}.",
     "chip_meta": "schůze",
-    "legend": "číslo schůze Poslanecké sněmovny"
+    "legend": "číslo schůze Poslanecké sněmovny",
+    "text_list_heading": "Všechna vydání"
   },
   "notfound": {
     "title": "Stránka nenalezena · Poslušně hlásím",
@@ -165,10 +166,11 @@
     "meta": "Kontakt a pomoc s odběrem novinek, platbami a webem Poslušně hlásím."
   },
   "about_page": {
-    "title": "O webu · Poslušně hlásím",
-    "meta": "Poslušně hlásím je srozumitelný přehled z Poslanecké sněmovny: co se projednalo, co prošlo a proč na tom záleží.",
+    "title": "Poslušně hlásím | denní zpravodaj z Poslanecké sněmovny",
+    "meta": "Denní zpravodaj z jednání Poslanecké sněmovny: hlasování poslanců, stenoprotokoly a výsledky hlasování srozumitelně. Satirický deník, ne politický komentář.",
     "heading": "O webu",
-    "gloss": "Poslušně hlásím · poslusnehlasim.cz · Deník sněmovny."
+    "gloss": "Denní zpravodaj z Poslanecké sněmovny · hlasování poslanců · stenoprotokoly srozumitelně",
+    "intro": "Poslušně hlásím je satirický denní zpravodaj z Poslanecké sněmovny. Každé vydání shrnuje jeden jednací den: co poslanci projednávali, jak hlasovali a co z toho vypadlo. Stenoprotokoly a výsledky hlasování převádíme do srozumitelné řeči, bez nutnosti znát jednací řád."
   },
   "pivo_tiers": {
     "velke_name": "Velké pivo",
