@@ -829,9 +829,11 @@ def _sanitize_nadpis_export(text: str) -> str:
 
 
 def _sanitize_vysledek_export(text: str) -> str:
-    """Výsledek dne: stejná sanitizace jako běžný text."""
+    """Výsledek dne: stejná sanitizace jako běžný text včetně čísel slovně."""
     text = bez_dlouhych_pomlc(text)
-    return poslanec_registry().annotate(text) if text.strip() else text
+    if not text.strip():
+        return text
+    return poslanec_registry().annotate(nahrad_cisla_v_textu(text))
 
 
 def _resolve_jazykolam_steno_id(paths: SchuzePaths, j: dict[str, Any]) -> str:

@@ -2,7 +2,7 @@
   "slug": "novela-z-na-ochranu-zvirat-proti-tyrani",
   "nazev": "Novela z. na ochranu zvířat proti týrání",
   "datum": "01.07.2026",
-  "verdikt": "schvaleno",
+  "verdikt": "zamiteno",
   "predmet_lidsky": "",
   "koho": [
     "Koho se to týká? Každého, kdo má doma psa nebo kočku a čekal, že Sněmovna po půlnoci konečně sjednotí tresty za týrání."
@@ -20,7 +20,7 @@
       "source": "steno",
       "steno_id": "2025_24_01149",
       "citace": "který si dovolím označit za nevalně zpracovaný, předložený jakýmsi způsobem bez souvislostí, bez konkrétních analýz, bez toho, aniž bychom o tomto problému vedli širší debatu.",
-      "link_phrase": "Hladík (KDU-ČSL) před hlasováním připomněl domácí kočku Vločku"
+      "link_phrase": "stejný návrh označil za nevalně zpracovaný"
     },
     {
       "text": "Hanzlíková: dolní sazby ze šesti měsíců na rok.",
@@ -45,7 +45,7 @@
   "priorita": 3,
   "nadpis": "Vločka a nevalný návrh",
   "pocet_hlasovani": 4,
-  "proslo": true,
+  "proslo": false,
   "signaly": {
     "proti_max": 68,
     "pritomno_min": 118,
@@ -56,5 +56,8 @@
   "steno_slov": 1099,
   "lead": "Ve středu hlasovala Sněmovna o novele trestního zákona na ochranu zvířat:\n\n<ul class=\"listy-ul\">\n<li>vyšší minimální tresty za týrání zvířat, typicky ze šesti měsíců na rok</li>\n<li>nový trestný čin za usmrcení psa nebo kočky ze zavrženíhodné pohnutky</li>\n<li>debata, jestli jde o trestný čin nebo přestupek, a proč jen kočky a psi</li>\n</ul>\n\nMinistr Hladík (KDU-ČSL) před hlasováním připomněl domácí kočku Vločku, pak ale stejný návrh označil za nevalně zpracovaný.",
   "pointa": "Ve třetím kole _novela zákona neprošla_. jinak jde zpravidla jen o přestupek.",
-  "mean": "Novela měla zpřísnit tresty za týrání zvířat a doplnit postih za usmrcení psa nebo kočky. Ve třetím kole ji Sněmovna zamítla."
+  "mean": "Novela měla zpřísnit tresty za týrání zvířat a doplnit postih za usmrcení psa nebo kočky. Ve třetím kole ji Sněmovna zamítla.",
+  "citace_text": "moje rodina chová kočku, konkrétně má jméno Vločka",
+  "citace_autor": "Petr Hladík (KDU-ČSL)",
+  "steno_id": "2025_24_01149"
 }
