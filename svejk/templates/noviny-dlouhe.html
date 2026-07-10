@@ -21,6 +21,8 @@
 {% endif %}
 </head>
 <body>
+{% set skip_target = '#edition-main' %}
+{% include "skip-link.html" %}
 <div class="edition-page" id="edition-page" data-share-domain="{{ t.brand.domain }}">
   <div class="edition-grid">
     {% include "edition-rail.html" %}

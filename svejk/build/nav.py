@@ -194,7 +194,7 @@ def slovnicek_term_pages_href(slug: str, base_path: str = "") -> str:
 
 
 def pivo_pages_href(base_path: str = "") -> str:
-    return _join_href_path(base_path, "/pivo.html")
+    return _join_href_path(base_path, "/pivo/")
 
 
 def soukromi_pages_href(base_path: str = "") -> str:

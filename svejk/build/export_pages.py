@@ -56,6 +56,7 @@ from svejk.build.nav import (
     archiv_pages_href,
     clear_edition_cache,
     edition_pages_href,
+    pivo_pages_href,
     recnici_pages_href,
     resolve_edition,
     slovnicek_pages_href,
@@ -574,7 +575,7 @@ def run_export_pages(
         ("vydani/index.html", "archiv"),
         ("404.html", "404"),
         ("slovnicek/index.html", "slovnicek"),
-        ("pivo.html", "pivo"),
+        ("pivo/index.html", "pivo"),
         ("dekuju.html", "dekuju"),
         ("podminky/index.html", "podminky"),
         ("o-webu/index.html", "o-webu"),
@@ -618,6 +619,11 @@ def run_export_pages(
         )
         written.append(_write_page_html(out, f"slovnicek/{slug}/index.html", term_html))
 
+    written.append(
+        _write_redirect_page(
+            out, "pivo.html", pivo_pages_href(base), site_url=site
+        )
+    )
     written.append(
         _write_redirect_page(
             out, "archiv.html", archiv_pages_href(base), site_url=site

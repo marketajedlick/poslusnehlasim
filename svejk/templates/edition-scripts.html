@@ -6,6 +6,56 @@
   var mainEl = document.getElementById('edition-main');
   var turning = false;
 
+  function headMetaFromDoc(doc){
+    var meta = {
+      title: doc.querySelector('title')?.textContent || '',
+      description: doc.querySelector('meta[name="description"]')?.getAttribute('content') || '',
+      canonical: doc.querySelector('link[rel="canonical"]')?.getAttribute('href') || '',
+      social: [],
+      jsonLd: []
+    };
+    doc.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]').forEach(function(el){
+      meta.social.push({
+        property: el.getAttribute('property'),
+        name: el.getAttribute('name'),
+        content: el.getAttribute('content') || ''
+      });
+    });
+    doc.querySelectorAll('script[type="application/ld+json"]').forEach(function(el){
+      meta.jsonLd.push(el.textContent || '');
+    });
+    return meta;
+  }
+
+  function applyHeadMeta(meta){
+    if (meta.title) document.title = meta.title;
+    var desc = document.querySelector('meta[name="description"]');
+    if (desc && meta.description) desc.setAttribute('content', meta.description);
+    var canon = document.querySelector('link[rel="canonical"]');
+    if (canon && meta.canonical) canon.setAttribute('href', meta.canonical);
+    document.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]').forEach(function(el){
+      el.remove();
+    });
+    var insertBefore = document.querySelector('script[type="application/ld+json"]');
+    meta.social.forEach(function(tag){
+      var el = document.createElement('meta');
+      if (tag.property) el.setAttribute('property', tag.property);
+      if (tag.name) el.setAttribute('name', tag.name);
+      el.setAttribute('content', tag.content);
+      if (insertBefore) document.head.insertBefore(el, insertBefore);
+      else document.head.appendChild(el);
+    });
+    document.querySelectorAll('script[type="application/ld+json"]').forEach(function(el){
+      el.remove();
+    });
+    meta.jsonLd.forEach(function(text){
+      var script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.textContent = text;
+      document.head.appendChild(script);
+    });
+  }
+
   function fetchEdition(href){
     return fetch(new URL(href, location.href).href, { credentials: 'same-origin' })
       .then(function(res){
@@ -17,7 +67,12 @@
         var inner = doc.getElementById('edition-content');
         var rail = doc.querySelector('.edition-rail');
         if (!inner) throw new Error('no content');
-        return { title: doc.querySelector('title')?.textContent || document.title, inner: inner.innerHTML, rail: rail ? rail.innerHTML : null };
+        return {
+          title: doc.querySelector('title')?.textContent || document.title,
+          head: headMetaFromDoc(doc),
+          inner: inner.innerHTML,
+          rail: rail ? rail.innerHTML : null
+        };
       });
   }
 
@@ -31,6 +86,7 @@
     var railEl = document.querySelector('.edition-rail');
     if (railEl && page.rail) railEl.innerHTML = page.rail;
     document.title = page.title;
+    if (page.head) applyHeadMeta(page.head);
     history.pushState({ href: href }, '', new URL(href, location.href).pathname);
     bindInteractions();
     if (window.__phInitCorrections) window.__phInitCorrections();
