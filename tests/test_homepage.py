@@ -5,7 +5,7 @@ from svejk.strings import load_strings
 def test_homepage_strings() -> None:
     t = load_strings()
     assert "homepage" in t
-    assert "archive_heading" in t["homepage"]
+    assert "Poslanecké sněmovny" in t["homepage"]["h1"]
 
 
 def test_edition_day_meta() -> None:

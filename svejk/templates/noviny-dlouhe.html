@@ -42,6 +42,10 @@
 
         <div class="rule-double"></div>
 
+        {% if is_homepage %}
+        {% include "homepage-landing.html" %}
+        {% endif %}
+
         {% include "edition-day-headline.html" %}
 
         {% include "card-hero.html" %}

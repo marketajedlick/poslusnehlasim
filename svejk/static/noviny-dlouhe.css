@@ -1874,6 +1874,17 @@ body.archiv-page{
   color:var(--red);
   text-decoration:underline;
 }
+.homepage-landing{
+  margin:0 0 20px;
+}
+.homepage-title{
+  font-family:var(--serif);
+  font-size:clamp(1.35rem,3vw,1.75rem);
+  font-weight:800;
+  line-height:1.2;
+  margin:0;
+  color:var(--char);
+}
 .edition-day-headline{
   margin:0 0 18px;
 }
