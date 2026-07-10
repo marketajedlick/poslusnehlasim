@@ -57,6 +57,8 @@ class NewsletterConfig:
     subscribe_mode: str
     corrections_api_url: str
     show_corrections: bool
+    reactions_api_url: str
+    show_reactions: bool
 
     @property
     def confirm_redirect_url(self) -> str:
@@ -118,6 +120,16 @@ class NewsletterConfig:
             show_corrections = bool(corrections_api_url)
         else:
             show_corrections = show_corr_raw in ("1", "true", "yes")
+        reactions_api_url = (
+            os.environ.get("SVEJK_REACTIONS_API_URL") or ""
+        ).strip()
+        if not reactions_api_url and subscribe_api_url:
+            reactions_api_url = f"{subscribe_api_url.rstrip('/')}/reactions"
+        show_react_raw = os.environ.get("SVEJK_SHOW_REACTIONS", "").strip().lower()
+        if not show_react_raw:
+            show_reactions = bool(reactions_api_url)
+        else:
+            show_reactions = show_react_raw in ("1", "true", "yes")
         return cls(
             form_action=form_action,
             subscribe_api_url=subscribe_api_url,
@@ -133,4 +145,6 @@ class NewsletterConfig:
             subscribe_mode=subscribe_mode,
             corrections_api_url=corrections_api_url,
             show_corrections=show_corrections,
+            reactions_api_url=reactions_api_url,
+            show_reactions=show_reactions,
         )

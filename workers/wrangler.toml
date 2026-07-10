@@ -19,6 +19,9 @@ NOTIFY_DEDUPE_WINDOW = "86400"
 # Korektury: 20 POST/hod z IP
 CORRECTIONS_RATE_LIMIT_IP_MAX = "20"
 CORRECTIONS_RATE_LIMIT_IP_WINDOW = "3600"
+# Reakce: 60 POST/hod z IP
+REACTIONS_RATE_LIMIT_IP_MAX = "60"
+REACTIONS_RATE_LIMIT_IP_WINDOW = "3600"
 
 # KV pro rate limit — id doplní CI nebo: wrangler kv namespace create poslusnehlasim-odebir-rl
 [[kv_namespaces]]

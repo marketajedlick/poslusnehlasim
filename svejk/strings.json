@@ -75,6 +75,15 @@
     "correction_trigger": "Něco nesedí?",
     "correction_aria": "Navrhnout korekturu k článku"
   },
+  "reactions": {
+    "summary_aria": "Reakce čtenářů",
+    "trigger_aria": "Přidat nebo změnit reakci",
+    "menu_aria": "Vyber reakci",
+    "absurdni": "Absurdní",
+    "tosnadne": "To snad ne",
+    "libi": "Líbí se mi",
+    "nojo": "No jo"
+  },
   "correction": {
     "dialog_aria": "Návrh korektury",
     "title": "Návrh korektury",

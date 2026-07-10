@@ -15,6 +15,10 @@ const SECURITY_HEADERS = {
 const RATE_LIMIT_PLACEHOLDER = "00000000000000000000000000000000";
 
 const CORRECTION_KINDS = new Set(["factual", "typo", "other"]);
+const REACTION_TYPES = new Set(["absurdni", "tosnadne", "libi", "nojo"]);
+const REACTION_DEFAULTS = { absurdni: 0, tosnadne: 0, libi: 0, nojo: 0 };
+const EDITION_RE = /^\d{4}-\d{2}-\d{2}$/;
+const SLUG_RE = /^[a-z0-9][a-z0-9-]{0,119}$/i;
 const DOI_TEMPLATE_NAME = "Poslušně hlásím · DOI";
 const SUBCONFIRM_TAG = "*|SUBCONFIRM|*";
 
@@ -35,6 +39,16 @@ export default {
         return new Response("Method not allowed", { status: 405, headers });
       }
       return handleCorrections(request, env, headers);
+    }
+
+    if (path === "/reactions") {
+      if (request.method === "GET") {
+        return handleReactionsGet(request, env, headers);
+      }
+      if (request.method === "POST") {
+        return handleReactionsPost(request, env, headers);
+      }
+      return new Response("Method not allowed", { status: 405, headers });
     }
 
     if (path === "/confirm") {
@@ -558,6 +572,131 @@ async function enforceCorrectionRateLimit(request, env) {
   const ipMax = parseInt(env.CORRECTIONS_RATE_LIMIT_IP_MAX || "20", 10);
   const ipWindow = parseInt(env.CORRECTIONS_RATE_LIMIT_IP_WINDOW || "3600", 10);
   return await consumeRateLimit(kv, `corr-ip:${ip}`, ipMax, ipWindow);
+}
+
+function parseReactionCounts(raw) {
+  const counts = { ...REACTION_DEFAULTS };
+  if (!raw) return counts;
+  let data;
+  try {
+    data = JSON.parse(raw);
+  } catch {
+    return counts;
+  }
+  if (!data || typeof data !== "object") return counts;
+  for (const key of REACTION_TYPES) {
+    const n = Number(data[key]);
+    if (Number.isFinite(n) && n > 0) counts[key] = Math.floor(n);
+  }
+  return counts;
+}
+
+function validEdition(edition) {
+  return EDITION_RE.test(edition);
+}
+
+function validSlug(slug) {
+  return SLUG_RE.test(slug);
+}
+
+function reactionKvKey(edition, slug) {
+  return `rx:${edition}:${slug}`;
+}
+
+async function handleReactionsGet(request, env, headers) {
+  const edition = new URL(request.url).searchParams.get("edition")?.trim() || "";
+  if (!edition) {
+    return json({ ok: true, service: "reactions" }, 200, headers);
+  }
+  if (!validEdition(edition)) {
+    return json({ ok: false, error: "bad_edition" }, 400, headers);
+  }
+
+  const kv = rateLimitKv(env);
+  if (!kv) {
+    return json({ ok: false, error: "misconfigured" }, 503, headers);
+  }
+
+  const prefix = `rx:${edition}:`;
+  const articles = {};
+  let cursor;
+  do {
+    const page = await kv.list({ prefix, cursor });
+    for (const item of page.keys) {
+      const slug = item.name.slice(prefix.length);
+      if (!validSlug(slug)) continue;
+      const raw = await kv.get(item.name);
+      articles[slug] = parseReactionCounts(raw);
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+
+  return json({ ok: true, edition, articles }, 200, headers);
+}
+
+async function handleReactionsPost(request, env, headers) {
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ ok: false }, 400, headers);
+  }
+
+  const hp = String(body.hp || body.website || "").trim();
+  if (hp) {
+    return json({ ok: false }, 400, headers);
+  }
+
+  const edition = String(body.edition || "").trim();
+  const slug = String(body.slug || body.topic_slug || "").trim();
+  const reaction = String(body.reaction || "").trim();
+  const previous = String(body.previous || "").trim();
+
+  if (!validEdition(edition) || !validSlug(slug)) {
+    return json({ ok: false, error: "bad_request" }, 400, headers);
+  }
+  if (!REACTION_TYPES.has(reaction)) {
+    return json({ ok: false, error: "bad_reaction" }, 400, headers);
+  }
+  if (previous && (!REACTION_TYPES.has(previous) || previous === reaction)) {
+    return json({ ok: false, error: "bad_previous" }, 400, headers);
+  }
+
+  const rate = await enforceReactionRateLimit(request, env);
+  if (!rate.ok) {
+    return json(
+      { ok: false, error: "rate_limited" },
+      429,
+      { ...headers, "Retry-After": String(rate.retryAfter) },
+    );
+  }
+
+  const kv = rateLimitKv(env);
+  if (!kv) {
+    return json({ ok: false, error: "misconfigured" }, 503, headers);
+  }
+
+  const key = reactionKvKey(edition, slug);
+  const counts = parseReactionCounts(await kv.get(key));
+
+  if (previous) {
+    counts[previous] = Math.max(0, (counts[previous] || 0) - 1);
+  }
+  counts[reaction] = (counts[reaction] || 0) + 1;
+
+  await kv.put(key, JSON.stringify(counts));
+
+  return json({ ok: true, edition, slug, counts }, 200, headers);
+}
+
+async function enforceReactionRateLimit(request, env) {
+  const kv = rateLimitKv(env);
+  if (!kv) return { ok: true };
+
+  const ip = clientIp(request);
+  const ipMax = parseInt(env.REACTIONS_RATE_LIMIT_IP_MAX || "60", 10);
+  const ipWindow = parseInt(env.REACTIONS_RATE_LIMIT_IP_WINDOW || "3600", 10);
+  return await consumeRateLimit(kv, `rx-ip:${ip}`, ipMax, ipWindow);
 }
 
 function kindLabel(kind) {

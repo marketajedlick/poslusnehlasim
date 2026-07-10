@@ -1117,6 +1117,101 @@ a.steno-link .term-term{
   cursor:pointer;
 }
 .correction-mailto:visited{color:var(--ink)}
+.reactions{
+  margin-top:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  position:relative;
+}
+.reaction-summary{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.reaction-summary[hidden]{display:none}
+.reaction-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:3px;
+  font-family:var(--font-sans);
+  font-size:13px;
+  line-height:1;
+  color:var(--ink-body);
+}
+.reaction-chip.is-picked .reaction-count{
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+.reaction-emoji{font-size:15px;line-height:1}
+.reaction-count{font-size:12px;font-weight:600}
+.reaction-trigger{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:22px;
+  height:22px;
+  padding:0;
+  border:none;
+  background:none;
+  cursor:pointer;
+  border-radius:50%;
+}
+.reaction-trigger:hover .reaction-dot,
+.reaction-trigger:focus-visible .reaction-dot{
+  background:var(--ink);
+  transform:scale(1.1);
+}
+.reaction-dot{
+  display:block;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--ink-body);
+  opacity:.55;
+  transition:transform .12s ease, background .12s ease, opacity .12s ease;
+}
+.reaction-menu{
+  position:absolute;
+  left:50%;
+  bottom:calc(100% + 8px);
+  transform:translateX(-50%);
+  z-index:30;
+  display:flex;
+  align-items:center;
+  gap:4px;
+  padding:6px 8px;
+  background:var(--paper);
+  border:1px solid var(--border-strong);
+  box-shadow:0 4px 16px rgba(0,0,0,.08);
+}
+.reaction-menu[hidden]{display:none}
+.reaction-option{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  padding:0;
+  border:none;
+  background:none;
+  cursor:pointer;
+  border-radius:8px;
+  font-size:22px;
+  line-height:1;
+}
+.reaction-option:hover,
+.reaction-option:focus-visible{
+  background:rgba(0,0,0,.05);
+}
+.reaction-option[aria-checked="true"]{
+  background:rgba(255,68,17,.12);
+  outline:1px solid rgba(255,68,17,.35);
+}
 /* footer edition */
 .edition-footer{
   border-top:3px double var(--border-strong);

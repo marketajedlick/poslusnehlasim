@@ -34,6 +34,7 @@
     history.pushState({ href: href }, '', new URL(href, location.href).pathname);
     bindInteractions();
     if (window.__phInitCorrections) window.__phInitCorrections();
+    if (window.__phInitReactions) window.__phInitReactions();
     scrollToEditionStart();
   }
 
