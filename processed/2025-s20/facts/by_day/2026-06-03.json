@@ -9,7 +9,7 @@
     "pocet_hlas": 2,
     "minuty": 402,
     "end_cas": "21:17",
-    "proslo": 2,
+    "proslo": 1,
     "zamitnuto": 0,
     "dlouha_debata": true
   },
@@ -20,5 +20,7 @@
     "* opoziční pokusy přidat body do programu opět spadly pod stůl",
     "* výměny ve výborech prošly 158:0 a 155:0",
     "* stavební zákon: rozprava do noci, bez jediného hlasování"
-  ]
+  ],
+  "proslo": 1,
+  "zamitnuto": 0
 }

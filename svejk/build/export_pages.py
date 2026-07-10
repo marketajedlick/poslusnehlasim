@@ -91,6 +91,8 @@ from svejk.paths import SchuzePaths, processed_root
 
 _STATIC = Path(__file__).resolve().parent.parent / "static"
 _CSS = _STATIC / "noviny-dlouhe.css"
+_SATELLITE_CSS = _STATIC / "satellite.css"
+_ADMIN_CSS = _STATIC / "admin.css"
 _FONTS_CSS = _STATIC / "fonts.css"
 _FONTS_DIR = _STATIC / "fonts"
 _FAVICON_PNG = _STATIC / "ph-fav.png"
@@ -280,6 +282,10 @@ def run_export_pages(
     static_dir = out / "static"
     static_dir.mkdir()
     shutil.copy2(_CSS, static_dir / "noviny-dlouhe.css")
+    if _SATELLITE_CSS.is_file():
+        shutil.copy2(_SATELLITE_CSS, static_dir / "satellite.css")
+    if _ADMIN_CSS.is_file():
+        shutil.copy2(_ADMIN_CSS, static_dir / "admin.css")
     shutil.copy2(_FONTS_CSS, static_dir / "fonts.css")
     shutil.copytree(_FONTS_DIR, static_dir / "fonts")
     if _FAVICON_SVG.is_file():

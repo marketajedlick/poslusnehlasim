@@ -14,7 +14,8 @@
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="static-page slovnicek-page slovnicek-term-page">
-<div class="slovnicek-stage">
+{% include "skip-link.html" %}
+<div class="slovnicek-stage" id="main-content">
   {% include "breadcrumbs.html" %}
   {% set page_title = t.glossary_term.heading_prefix ~ " " ~ term ~ "?" %}
   {% set page_gloss = answer %}

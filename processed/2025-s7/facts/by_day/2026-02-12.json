@@ -10,7 +10,7 @@
     "pocet_hlas": 2,
     "minuty": 769,
     "end_cas": "13:41",
-    "proslo": 1,
+    "proslo": 2,
     "zamitnuto": 0,
     "dlouha_debata": true
   },
@@ -21,5 +21,7 @@
     "* rozpočet na rok 2026 v prvním kole schválen, 90 proti 68",
     "* usnesení proti týrání zvířat schváleno, 139 pro, nula proti",
     "* doplnění o toulavých kočkách prošlo, 127 proti 6"
-  ]
+  ],
+  "proslo": 2,
+  "zamitnuto": 0
 }

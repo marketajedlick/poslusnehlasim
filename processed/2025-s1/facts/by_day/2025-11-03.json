@@ -9,7 +9,7 @@
     "pocet_hlas": 0,
     "minuty": 3,
     "end_cas": "15:13",
-    "proslo": 0,
+    "proslo": 1,
     "zamitnuto": 0,
     "dlouha_debata": false
   },
@@ -18,5 +18,7 @@
   "vysledek": [
     "* mandátový a imunitní výbor zřízen, sto devadesát tři pro, nikdo proti",
     "* volební komise ustavena, sto devadesát jedna pro, nikdo proti"
-  ]
+  ],
+  "proslo": 1,
+  "zamitnuto": 0
 }

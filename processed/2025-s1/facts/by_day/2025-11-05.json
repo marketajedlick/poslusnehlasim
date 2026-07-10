@@ -11,7 +11,7 @@
     "pocet_hlas": 1,
     "minuty": 709,
     "end_cas": "20:57",
-    "proslo": 1,
+    "proslo": 3,
     "zamitnuto": 0,
     "dlouha_debata": false
   },
@@ -22,5 +22,7 @@
     "* samostatný návrh na Fialu zamítnut 18:136",
     "* zvoleni dva místopředsedové: Barták a Nacher, další dvě místa až v pátek",
     "* druhé kolo místopředsedů přesunuto na 14. 11."
-  ]
+  ],
+  "proslo": 3,
+  "zamitnuto": 0
 }

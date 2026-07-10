@@ -162,11 +162,10 @@ def _issues_for_topic(
     elif vysv and not fakty:
         issues.append(ReviewIssue("info", "tema_ready", "V aligned je použitelné tema_vysvetleni, zkopíruj do fakty[]."))
 
-    gloss = glosa_pro_obcana(fact.get("nazev", ""), vysv, proslo=fact.get("proslo", True))
-    if gloss and _glosa_je_nedostatecna(gloss):
-        issues.append(ReviewIssue("warn", "generic_glosa", "Automatická glosa je slabá (fallback)."))
-
     custom_lead = (fact.get("lead") or "").strip()
+    gloss = glosa_pro_obcana(fact.get("nazev", ""), vysv, proslo=fact.get("proslo", True))
+    if gloss and _glosa_je_nedostatecna(gloss) and not custom_lead:
+        issues.append(ReviewIssue("warn", "generic_glosa", "Automatická glosa je slabá (fallback)."))
     low_parl = export_parliament.lower()
     if (
         ("schválili změny v " in low_parl or "zamítli změny v " in low_parl)

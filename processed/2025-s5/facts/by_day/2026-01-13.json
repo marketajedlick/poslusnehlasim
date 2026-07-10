@@ -10,7 +10,7 @@
     "pocet_hlas": 0,
     "minuty": 118,
     "end_cas": "13:00",
-    "proslo": 0,
+    "proslo": 1,
     "zamitnuto": 0,
     "dlouha_debata": false
   },
@@ -21,5 +21,7 @@
     "* opozice chtěla odsoudit Okamurova slova o Ukrajině, koalice to smetla ze stolu",
     "* debata o důvěře začala, hlasování až ve čtvrtek",
     "* Fiala: důvěra není formalita, jen formalita trvala celé dopoledne"
-  ]
+  ],
+  "proslo": 1,
+  "zamitnuto": 0
 }

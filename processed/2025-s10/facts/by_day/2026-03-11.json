@@ -10,7 +10,7 @@
     "pocet_hlas": 7,
     "minuty": 700,
     "end_cas": "20:44",
-    "proslo": 6,
+    "proslo": 2,
     "zamitnuto": 0,
     "dlouha_debata": true
   },
@@ -21,5 +21,7 @@
     "* rozpočty SFA, SFDI, SFPI a SZIF prošly",
     "* rozpočet SFŽP nejdřív spadl 58:89, v závěrečném hlasování prošel 90:32",
     "* přes sto dílčích hlasování k pozměňovacím návrhům"
-  ]
+  ],
+  "proslo": 2,
+  "zamitnuto": 0
 }

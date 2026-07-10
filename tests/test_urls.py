@@ -2,6 +2,7 @@ from svejk.build.nav import (
     Edition,
     archiv_pages_href,
     edition_pages_href,
+    pivo_pages_href,
     slovnicek_pages_href,
     slovnicek_term_pages_href,
     steno_sources_pages_href,
@@ -37,6 +38,7 @@ def test_vydani_hrefs() -> None:
     assert archiv_pages_href() == "/vydani/"
     assert slovnicek_pages_href() == "/slovnicek/"
     assert slovnicek_term_pages_href("obstrukce") == "/slovnicek/obstrukce/"
+    assert pivo_pages_href() == "/pivo/"
 
 
 def test_slovnicek_term_slug() -> None:

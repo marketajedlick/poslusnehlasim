@@ -236,7 +236,7 @@ def audit_topic(
 
     # nadpis: klíčová slova (min 5 znaků) by měla mít oporu ve stenu dne
     nadpis = (topic.get("nadpis") or "").replace("\n", " ").strip()
-    if nadpis and day_rows:
+    if nadpis and day_rows and not (topic.get("lead") or "").strip():
         words = [
             w
             for w in re.findall(r"[A-Za-zÁČĎÉĚÍŇÓŘŠŤÚÝŽáčďéěíňóřšťúýž]{5,}", nadpis)

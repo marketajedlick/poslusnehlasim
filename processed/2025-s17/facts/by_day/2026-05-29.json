@@ -9,7 +9,7 @@
     "pocet_hlas": 1,
     "minuty": 301,
     "end_cas": "14:11",
-    "proslo": 1,
+    "proslo": 0,
     "zamitnuto": 0,
     "dlouha_debata": true
   },
@@ -20,5 +20,7 @@
     "* Hřib navrhl odložit bod o rok, návrh o pořadu neprošel",
     "* čtyři hlasování o pozměňovacích návrzích zamítnuto",
     "* schůze přerušena na 3. 6. v 14:11"
-  ]
+  ],
+  "proslo": 0,
+  "zamitnuto": 0
 }

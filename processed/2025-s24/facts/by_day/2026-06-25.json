@@ -11,7 +11,7 @@
     "pocet_hlas": 8,
     "minuty": 99,
     "end_cas": "12:56",
-    "proslo": 7,
+    "proslo": 1,
     "zamitnuto": 0,
     "spor_o_porad": true,
     "dlouha_debata": false
@@ -22,5 +22,7 @@
     "* Schillerová (ANO): To je fakt peklo dneska, novela prošla druhým kolem",
     "* Hladík (KDU-ČSL) tvrdil 450 tisíc domácností, Červený (Motoristé) páku 50 miliard a přiznal, že mladé lidovce vyhodili ze sítí resortu, nechtěli opozici u klávesnice",
     "* Výborný (KDU-ČSL) vyzval Macinku k pultu, ministr místo omluvy citoval Klause"
-  ]
+  ],
+  "proslo": 1,
+  "zamitnuto": 0
 }

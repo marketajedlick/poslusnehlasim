@@ -11,7 +11,8 @@
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="static-page pivo-page">
-<div class="pivo-stage">
+{% include "skip-link.html" %}
+<div class="pivo-stage" id="main-content">
   {% include "breadcrumbs.html" %}
   {% set page_eyebrow = t.beer_page.eyebrow %}
   {% set page_title = t.beer_page.heading %}

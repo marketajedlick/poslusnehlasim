@@ -10,7 +10,7 @@
     "minuty": 550,
     "end_cas": "23:12",
     "proslo": 0,
-    "zamitnuto": 1,
+    "zamitnuto": 0,
     "dlouha_debata": false
   },
   "dnesni_ucet": "Koalice vs. opozice o sjezdu v Brně.\nČtrnáct hlasování padlo, usnesení přišlo až v noci.",
@@ -20,5 +20,7 @@
     "* čtrnáct hlasování o pozměňovacích návrzích zamítnuto",
     "* Ferčíková navrhla protiusnesení o dialogu a Benešových dekretách",
     "* koaliční text schválen až ve středu v 00:51"
-  ]
+  ],
+  "proslo": 0,
+  "zamitnuto": 0
 }

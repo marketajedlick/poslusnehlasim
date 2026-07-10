@@ -9,7 +9,7 @@
     "pocet_hlas": 2,
     "minuty": 425,
     "end_cas": "21:13",
-    "proslo": 2,
+    "proslo": 1,
     "zamitnuto": 0,
     "dlouha_debata": true
   },
@@ -20,5 +20,7 @@
     "* trestní zákoník ve druhém kole 154:0",
     "* závěrečné hlasování o trestním zákoníku zamítnuto, jen 67 hlasů pro",
     "* 37 hlasování o pořadu před zákony"
-  ]
+  ],
+  "proslo": 1,
+  "zamitnuto": 0
 }

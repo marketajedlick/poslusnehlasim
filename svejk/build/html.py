@@ -115,6 +115,8 @@ from svejk.timeline import den_v_tydnu
 _TEMPLATES = Path(__file__).resolve().parent.parent / "templates"
 _STATIC = Path(__file__).resolve().parent.parent / "static"
 _CSS = _STATIC / "noviny-dlouhe.css"
+_SATELLITE_CSS = _STATIC / "satellite.css"
+_ADMIN_CSS = _STATIC / "admin.css"
 _FONTS_CSS = _STATIC / "fonts.css"
 _EMAIL_CSS = _STATIC / "noviny-email.css"
 _DOI_EMAIL_CSS = _STATIC / "doi-email.css"
@@ -129,6 +131,22 @@ _FALLBACK_OG_SIZE = (200, 280)
 def static_css_path(base_path: str = "", *, version: str | None = None) -> str:
     base = base_path.rstrip("/")
     path = "/static/noviny-dlouhe.css"
+    if version:
+        path = f"{path}?v={version}"
+    return f"{base}{path}" if base else path
+
+
+def static_satellite_css_path(base_path: str = "", *, version: str | None = None) -> str:
+    base = base_path.rstrip("/")
+    path = "/static/satellite.css"
+    if version:
+        path = f"{path}?v={version}"
+    return f"{base}{path}" if base else path
+
+
+def static_admin_css_path(base_path: str = "", *, version: str | None = None) -> str:
+    base = base_path.rstrip("/")
+    path = "/static/admin.css"
     if version:
         path = f"{path}?v={version}"
     return f"{base}{path}" if base else path
@@ -223,7 +241,20 @@ def _edition_slovnicek(
 def css_asset_version() -> str:
     import hashlib
 
-    return hashlib.sha256(_CSS.read_bytes()).hexdigest()[:10]
+    h = hashlib.sha256()
+    for path in (_CSS, _SATELLITE_CSS, _ADMIN_CSS):
+        if path.is_file():
+            h.update(path.read_bytes())
+    return h.hexdigest()[:10]
+
+
+def _inline_css_text(*, satellite: bool = False, admin: bool = False) -> str:
+    parts = [_CSS.read_text(encoding="utf-8")]
+    if satellite and _SATELLITE_CSS.is_file():
+        parts.append(_SATELLITE_CSS.read_text(encoding="utf-8"))
+    if admin and _ADMIN_CSS.is_file():
+        parts.append(_ADMIN_CSS.read_text(encoding="utf-8"))
+    return "\n".join(parts)
 
 
 def fonts_asset_version() -> str:
@@ -1192,11 +1223,11 @@ def render_archiv_html(
     fonts_css_href: str | None = None,
     base_path: str = "",
 ) -> str:
-    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    css = _inline_css_text() if inline_css else ""
     if css_href is None:
-        css_href = static_css_path(base_path)
+        css_href = static_css_path(base_path, version=css_asset_version())
     if fonts_css_href is None:
-        fonts_css_href = static_fonts_css_path(base_path)
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     editions = list_site_editions(obdobi)
@@ -1258,11 +1289,11 @@ def render_404_html(
     base_path: str = "",
 ) -> str:
     """Vlastní 404 stránka pro GitHub Pages."""
-    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    css = _inline_css_text() if inline_css else ""
     if css_href is None:
-        css_href = static_css_path(base_path)
+        css_href = static_css_path(base_path, version=css_asset_version())
     if fonts_css_href is None:
-        fonts_css_href = static_fonts_css_path(base_path)
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     editions = list_site_editions(obdobi)
@@ -1313,11 +1344,11 @@ def render_potvrzeno_html(
     base_path: str = "",
 ) -> str:
     """Stránka po potvrzení double opt-in (přesměrování z Ecomailu)."""
-    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    css = _inline_css_text() if inline_css else ""
     if css_href is None:
-        css_href = static_css_path(base_path)
+        css_href = static_css_path(base_path, version=css_asset_version())
     if fonts_css_href is None:
-        fonts_css_href = static_fonts_css_path(base_path)
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     editions = list_site_editions(obdobi)
@@ -1375,11 +1406,11 @@ def render_vyznamenani_table_html(
     data = load_vyznamenani(paths, datum_unl, kind)
     if not data:
         return None
-    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    css = _inline_css_text(satellite=True) if inline_css else ""
     if css_href is None:
-        css_href = static_css_path(base_path)
+        css_href = static_css_path(base_path, version=css_asset_version())
     if fonts_css_href is None:
-        fonts_css_href = static_fonts_css_path(base_path)
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     obdobi = int(data.get("obdobi") or paths.obdobi)
@@ -1449,6 +1480,7 @@ def render_vyznamenani_table_html(
         inline_css=inline_css,
         css=css,
         css_href=css_href,
+        satellite_css_href=None if inline_css else static_satellite_css_path(base_path, version=css_asset_version()),
         fonts_css_href=fonts_css_href,
         cookie_privacy_url=soukromi_pages_href(base_path),
         **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
@@ -1498,11 +1530,11 @@ def render_steno_sources_html(
     blocks = collect_steno_sources(paths, datum_unl)
     if not blocks:
         return None
-    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    css = _inline_css_text(satellite=True) if inline_css else ""
     if css_href is None:
-        css_href = static_css_path(base_path)
+        css_href = static_css_path(base_path, version=css_asset_version())
     if fonts_css_href is None:
-        fonts_css_href = static_fonts_css_path(base_path)
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     obdobi = paths.obdobi
@@ -1544,6 +1576,7 @@ def render_steno_sources_html(
         inline_css=inline_css,
         css=css,
         css_href=css_href,
+        satellite_css_href=None if inline_css else static_satellite_css_path(base_path, version=css_asset_version()),
         fonts_css_href=fonts_css_href,
         cookie_privacy_url=soukromi_pages_href(base_path),
         **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
@@ -1595,11 +1628,11 @@ def render_smlouvy_html(
     )
     if not items:
         return None
-    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    css = _inline_css_text(satellite=True) if inline_css else ""
     if css_href is None:
-        css_href = static_css_path(base_path)
+        css_href = static_css_path(base_path, version=css_asset_version())
     if fonts_css_href is None:
-        fonts_css_href = static_fonts_css_path(base_path)
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     obdobi = paths.obdobi
@@ -1641,6 +1674,7 @@ def render_smlouvy_html(
         inline_css=inline_css,
         css=css,
         css_href=css_href,
+        satellite_css_href=None if inline_css else static_satellite_css_path(base_path, version=css_asset_version()),
         fonts_css_href=fonts_css_href,
         cookie_privacy_url=soukromi_pages_href(base_path),
         **_site_ctx(site_url=cfg.site_url, base_path=base_path, page_path=page_path),
@@ -1682,11 +1716,11 @@ def render_recnici_table_html(
     data = load_recnici(paths, datum_unl)
     if not data or not data.get("radky"):
         return None
-    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    css = _inline_css_text(satellite=True) if inline_css else ""
     if css_href is None:
-        css_href = static_css_path(base_path)
+        css_href = static_css_path(base_path, version=css_asset_version())
     if fonts_css_href is None:
-        fonts_css_href = static_fonts_css_path(base_path)
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     obdobi = int(data.get("obdobi") or paths.obdobi)
@@ -1726,6 +1760,7 @@ def render_recnici_table_html(
         inline_css=inline_css,
         css=css,
         css_href=css_href,
+        satellite_css_href=None if inline_css else static_satellite_css_path(base_path, version=css_asset_version()),
         fonts_css_href=fonts_css_href,
         cookie_privacy_url=soukromi_pages_href(base_path),
         **_site_ctx( site_url=cfg.site_url, base_path=base_path, page_path=page_path),
@@ -1762,11 +1797,11 @@ def render_slovnicek_html(
     fonts_css_href: str | None = None,
     base_path: str = "",
 ) -> str:
-    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    css = _inline_css_text() if inline_css else ""
     if css_href is None:
-        css_href = static_css_path(base_path)
+        css_href = static_css_path(base_path, version=css_asset_version())
     if fonts_css_href is None:
-        fonts_css_href = static_fonts_css_path(base_path)
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     editions = list_site_editions(obdobi)
@@ -1828,11 +1863,11 @@ def render_slovnicek_term_html(
     fonts_css_href: str | None = None,
     base_path: str = "",
 ) -> str:
-    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    css = _inline_css_text() if inline_css else ""
     if css_href is None:
-        css_href = static_css_path(base_path)
+        css_href = static_css_path(base_path, version=css_asset_version())
     if fonts_css_href is None:
-        fonts_css_href = static_fonts_css_path(base_path)
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     editions = list_site_editions(obdobi)
@@ -1900,11 +1935,11 @@ def render_pivo_html(
     fonts_css_href: str | None = None,
     base_path: str = "",
 ) -> str:
-    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    css = _inline_css_text() if inline_css else ""
     if css_href is None:
-        css_href = static_css_path(base_path)
+        css_href = static_css_path(base_path, version=css_asset_version())
     if fonts_css_href is None:
-        fonts_css_href = static_fonts_css_path(base_path)
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     editions = list_site_editions(obdobi)
@@ -1955,11 +1990,11 @@ def render_dekuju_html(
     base_path: str = "",
 ) -> str:
     """Stránka po úspěšné platbě (redirect ze Stripe)."""
-    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    css = _inline_css_text() if inline_css else ""
     if css_href is None:
-        css_href = static_css_path(base_path)
+        css_href = static_css_path(base_path, version=css_asset_version())
     if fonts_css_href is None:
-        fonts_css_href = static_fonts_css_path(base_path)
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     editions = list_site_editions(obdobi)
@@ -1992,11 +2027,11 @@ def render_soukromi_html(
     base_path: str = "",
 ) -> str:
     """Zásady ochrany osobních údajů (odběr, analytika, platby)."""
-    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    css = _inline_css_text() if inline_css else ""
     if css_href is None:
-        css_href = static_css_path(base_path)
+        css_href = static_css_path(base_path, version=css_asset_version())
     if fonts_css_href is None:
-        fonts_css_href = static_fonts_css_path(base_path)
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     canonical_url = f"{cfg.site_url.rstrip('/')}{soukromi_pages_href(base_path)}"
@@ -2048,11 +2083,11 @@ def render_podminky_html(
     base_path: str = "",
 ) -> str:
     """Podmínky používání webu, odběru a dobrovolných příspěvků."""
-    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    css = _inline_css_text() if inline_css else ""
     if css_href is None:
-        css_href = static_css_path(base_path)
+        css_href = static_css_path(base_path, version=css_asset_version())
     if fonts_css_href is None:
-        fonts_css_href = static_fonts_css_path(base_path)
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     canonical_url = f"{cfg.site_url.rstrip('/')}{podminky_pages_href(base_path)}"
@@ -2104,11 +2139,11 @@ def render_podpora_html(
     base_path: str = "",
 ) -> str:
     """Zákaznická podpora — kontakt, platby, odběr."""
-    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    css = _inline_css_text() if inline_css else ""
     if css_href is None:
-        css_href = static_css_path(base_path)
+        css_href = static_css_path(base_path, version=css_asset_version())
     if fonts_css_href is None:
-        fonts_css_href = static_fonts_css_path(base_path)
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     canonical_url = f"{cfg.site_url.rstrip('/')}{podpora_pages_href(base_path)}"
@@ -2160,11 +2195,11 @@ def render_o_webu_html(
     base_path: str = "",
 ) -> str:
     """O webu — E-E-A-T stránka pro vyhledávače a nové čtenáře."""
-    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    css = _inline_css_text() if inline_css else ""
     if css_href is None:
-        css_href = static_css_path(base_path)
+        css_href = static_css_path(base_path, version=css_asset_version())
     if fonts_css_href is None:
-        fonts_css_href = static_fonts_css_path(base_path)
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     editions = list_site_editions(obdobi)
@@ -2229,17 +2264,19 @@ def _admin_shell_ctx(
     fonts_css_href: str | None = None,
     base_path: str = "",
 ) -> dict[str, Any]:
-    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    css = _inline_css_text(admin=True) if inline_css else ""
+    css_version = css_asset_version()
     if css_href is None:
-        css_href = static_css_path(base_path)
+        css_href = static_css_path(base_path, version=css_version)
     if fonts_css_href is None:
-        fonts_css_href = static_fonts_css_path(base_path)
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
     favicons = static_favicon_paths(base_path)
     cfg = NewsletterConfig.from_env()
     return {
         "inline_css": inline_css,
         "css": css,
         "css_href": css_href,
+        "admin_css_href": None if inline_css else static_admin_css_path(base_path, version=css_version),
         "fonts_css_href": fonts_css_href,
         "cookie_privacy_url": soukromi_pages_href(base_path),
         **_site_ctx(site_url=cfg.site_url, base_path=base_path, page_path="/admin"),

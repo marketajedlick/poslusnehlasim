@@ -11,7 +11,7 @@
     "pocet_hlas": 8,
     "minuty": 534,
     "end_cas": "19:44",
-    "proslo": 2,
+    "proslo": 3,
     "zamitnuto": 0,
     "dlouha_debata": true
   },
@@ -22,5 +22,7 @@
     "* přerozdělení rezerv zdravotních pojišťoven schváleno 93:49",
     "* vyšetřovací komise Dozimetr zřízena 89:15",
     "* doplňující usnesení k nízkým důchodům OSVČ zamítnuto 81:3"
-  ]
+  ],
+  "proslo": 3,
+  "zamitnuto": 0
 }

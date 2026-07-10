@@ -11,7 +11,8 @@
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="static-page archiv-page">
-<div class="archiv-wrap notfound-wrap">
+{% include "skip-link.html" %}
+<div class="archiv-wrap notfound-wrap" id="main-content">
   {% include "breadcrumbs.html" %}
   {% set page_head_notfound = true %}
   {% set page_title = t.notfound.heading %}

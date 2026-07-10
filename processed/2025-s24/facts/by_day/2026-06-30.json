@@ -16,7 +16,7 @@
     "pocet_hlas": 2,
     "minuty": 527,
     "end_cas": "22:55",
-    "proslo": 1,
+    "proslo": 0,
     "zamitnuto": 1,
     "spor_o_porad": true,
     "dlouha_debata": false
@@ -29,5 +29,7 @@
     "* Decroix (ODS): z panelů k lidským právům odešlo 53 expertů",
     "* Hřib (Piráti): banda fracků u summitu NATO, sedm miliard pro Agrofert",
     "* rodičovský příspěvek zvýšen na 400 000 a 800 000 korun, hlasování 129:0"
-  ]
+  ],
+  "proslo": 0,
+  "zamitnuto": 1
 }

@@ -226,6 +226,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Skupina poslanců, která organizuje a kontroluje všechny volby uvnitř Sněmovny.",
     ),
     (
+        "volební komisi",
+        "Skupina poslanců, která organizuje a kontroluje všechny volby uvnitř Sněmovny.",
+    ),
+    (
         "místopředsedkyně sněmovny",
         "Zástupce předsedy. Řídí schůze, když předseda není přítomen.",
     ),
@@ -239,6 +243,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "místopředsedů",
+        "Zastupují předsedu sněmovny při řízení schůze.",
+    ),
+    (
+        "místopředsedové",
         "Zastupují předsedu sněmovny při řízení schůze.",
     ),
     (
@@ -310,6 +318,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "zpravodaj",
+        "Poslanec z výboru, který sněmovně vysvětluje návrh zákona a doporučuje, jak hlasovat.",
+    ),
+    (
+        "zpravodajem",
         "Poslanec z výboru, který sněmovně vysvětluje návrh zákona a doporučuje, jak hlasovat.",
     ),
     (
@@ -619,6 +631,10 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     (
         "interpelacích",
         "Čas vyhrazený na otázky poslanců ministrům a premiérovi.",
+    ),
+    (
+        "interpelaci",
+        "Část jednání, kdy poslanci pokládají otázky členům vlády.",
     ),
     (
         "interpelace",
@@ -1147,6 +1163,14 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "lex developer",
+        "Přezdívka kritiků stavebního zákona: podle nich nahrává velkým developerům.",
+    ),
+    (
+        "lex developerem",
+        "Přezdívka kritiků stavebního zákona: podle nich nahrává velkým developerům.",
+    ),
+    (
+        "lex developerovi",
         "Přezdívka kritiků stavebního zákona: podle nich nahrává velkým developerům.",
     ),
     (

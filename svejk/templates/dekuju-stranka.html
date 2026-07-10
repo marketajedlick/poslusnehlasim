@@ -10,7 +10,8 @@
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="static-page pivo-page dekuju-page">
-<div class="pivo-stage">
+{% include "skip-link.html" %}
+<div class="pivo-stage" id="main-content">
   {% set page_eyebrow = t.edition.eyebrow %}
   {% set page_title = "Děkujeme!" %}
   {% include "page-head.html" %}

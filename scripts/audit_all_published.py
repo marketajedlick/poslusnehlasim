@@ -188,7 +188,7 @@ def audit_duplicate_steno_id(report: Report) -> None:
         for sid, refs in day_ids.items():
             if len(refs) > 1:
                 report.add(
-                    "warn",
+                    "info",
                     "duplicate_steno_id",
                     f"{sid} použito {len(refs)}×: {', '.join(refs[:4])}{'…' if len(refs) > 4 else ''}",
                     key=key,

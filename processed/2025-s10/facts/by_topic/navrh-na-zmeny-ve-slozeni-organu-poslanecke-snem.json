@@ -10,15 +10,15 @@
   "fakty": [
     {
       "text": "Hlasování číslo 70, pro 168, proti nikdo. Návrh byl přijat.",
-      "link_phrase": "168 hlasy pro, nikdo proti"
+      "link_phrase": "Všechno prošlo"
     },
     {
       "text": "Hlasování číslo 72, pro 117, proti 33. Návrh byl přijat.",
-      "link_phrase": "Návrh byl přijat."
+      "link_phrase": "33 hlasů proti"
     },
     {
       "text": "Hlasování číslo 75, pro 120, proti 11. Návrh byl přijat.",
-      "link_phrase": "Návrh byl přijat."
+      "link_phrase": "u ochránce dětí 11"
     }
   ],
   "publikovat": true,

@@ -10,7 +10,7 @@
     "pocet_hlas": 1,
     "minuty": 135,
     "end_cas": "12:07",
-    "proslo": 1,
+    "proslo": 2,
     "zamitnuto": 0,
     "dlouha_debata": false
   },
@@ -22,5 +22,7 @@
     "* návrh o postřicích vrácen do druhého kola 87:46",
     "* Urbanová zvolena místopředsedkyní sněmovny, Rajchl povede komisi k Dozimetru",
     "* zbylé body schůze vyřazeny 134:5, konec ve 13:37"
-  ]
+  ],
+  "proslo": 2,
+  "zamitnuto": 0
 }

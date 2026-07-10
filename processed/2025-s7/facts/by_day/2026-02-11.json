@@ -12,7 +12,7 @@
     "pocet_hlas": 3,
     "minuty": 126,
     "end_cas": "11:11",
-    "proslo": 2,
+    "proslo": 3,
     "zamitnuto": 0,
     "dlouha_debata": true
   },
@@ -23,5 +23,7 @@
     "* závěrečný účet za rok 2024 schválen, 113 pro, nula proti",
     "* harmonogram rozpočtu na rok 2026 schválen, 127 pro",
     "* večer začala debata o rozpočtu, hlasování až ve čtvrtek po půlnoci"
-  ]
+  ],
+  "proslo": 3,
+  "zamitnuto": 0
 }

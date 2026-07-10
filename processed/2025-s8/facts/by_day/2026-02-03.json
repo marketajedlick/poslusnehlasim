@@ -9,7 +9,7 @@
     "pocet_hlas": 1,
     "minuty": 261,
     "end_cas": "15:22",
-    "proslo": 1,
+    "proslo": 0,
     "zamitnuto": 0,
     "dlouha_debata": false
   },
@@ -21,5 +21,7 @@
     "* Babiš: zbytečná schůze, dva dny ztráty času",
     "* jednání prodlouženo do večera, 115 proti 6",
     "* hlasování o nedůvěře až ve středu"
-  ]
+  ],
+  "proslo": 0,
+  "zamitnuto": 0
 }

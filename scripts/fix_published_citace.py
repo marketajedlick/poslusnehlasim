@@ -96,10 +96,10 @@ def extract_verbatim(anchor: str, text: str, *, max_words: int = 25) -> str | No
     return None
 
 
-def find_excerpt(anchor: str, text: str) -> str | None:
+def find_excerpt(anchor: str, text: str, *, max_words: int = 25) -> str | None:
     if not anchor or not text:
         return None
-    return extract_verbatim(anchor, text)
+    return extract_verbatim(anchor, text, max_words=max_words)
 
 
 def needs_repair(cit: str, text: str) -> bool:
@@ -129,8 +129,20 @@ def fix_fact(
     repair_only: bool,
 ) -> str | None:
     cit = (f.get("citace") or "").strip()
+    sid = (f.get("steno_id") or "").strip()
+    link = (f.get("link_phrase") or "").strip()
+
     if not cit:
-        if f.get("source") == "steno" and not f.get("steno_id"):
+        if f.get("source") == "steno" and sid and sid in steno_by_id:
+            text = steno_by_id[sid].get("text", "")
+            anchor = link or (f.get("text") or "")
+            excerpt = find_excerpt(anchor, text) or find_excerpt(anchor, text, max_words=15)
+            if excerpt:
+                f["citace"] = excerpt
+                f["source"] = "steno"
+                f["steno_id"] = sid
+                return "fill_citace"
+        if f.get("source") == "steno" and not sid:
             strip_steno_fields(f)
             return "orphan_source"
         return None
@@ -181,6 +193,16 @@ def fix_fact(
     return "drop_parafraze"
 
 
+def shorten_to_words(s: str, max_words: int = 15) -> str:
+    words = s.split()
+    if len(words) <= max_words:
+        return s
+    out = " ".join(words[:max_words]).rstrip(",;:")
+    if not out.endswith((".", "!", "?")):
+        out += "…"
+    return out
+
+
 def fix_citace_text(
     data: dict,
     steno_rows: list[dict],
@@ -195,23 +217,35 @@ def fix_citace_text(
     if sid and sid in steno_by_id:
         text = steno_by_id[sid].get("text", "")
         if repair_only and not needs_repair(ct, text):
+            if len(ct.split()) > 15:
+                data["citace_text"] = shorten_to_words(ct)
+                return "citace_text_shorten"
             return None
-        excerpt = find_excerpt(ct, text)
+        excerpt = find_excerpt(ct, text, max_words=15) or find_excerpt(ct, text)
         if excerpt and excerpt != ct:
-            data["citace_text"] = excerpt
+            data["citace_text"] = shorten_to_words(excerpt)
             return "citace_text_fix"
+        if len(ct.split()) > 15:
+            data["citace_text"] = shorten_to_words(ct)
+            return "citace_text_shorten"
         if repair_only and needs_repair(ct, text):
             data.pop("steno_id", None)
             return "citace_text_drop"
         return None
     if repair_only:
+        if len(ct.split()) > 15:
+            data["citace_text"] = shorten_to_words(ct)
+            return "citace_text_shorten"
         return None
     for r in steno_rows:
-        excerpt = find_excerpt(ct, r.get("text", ""))
+        excerpt = find_excerpt(ct, r.get("text", ""), max_words=15)
         if excerpt:
             data["steno_id"] = r["id"]
-            data["citace_text"] = excerpt
+            data["citace_text"] = shorten_to_words(excerpt)
             return "citace_text_fix"
+    if len(ct.split()) > 15:
+        data["citace_text"] = shorten_to_words(ct)
+        return "citace_text_shorten"
     return None
 
 

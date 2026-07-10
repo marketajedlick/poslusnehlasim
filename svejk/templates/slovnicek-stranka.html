@@ -14,7 +14,8 @@
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="static-page slovnicek-page">
-<div class="slovnicek-stage">
+{% include "skip-link.html" %}
+<div class="slovnicek-stage" id="main-content">
   {% include "breadcrumbs.html" %}
   {% set page_title = t.glossary_page.heading %}
   {% set page_gloss = t.glossary_page.gloss %}

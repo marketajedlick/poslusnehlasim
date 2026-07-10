@@ -13,7 +13,7 @@
     "minuty": 1269,
     "end_cas": "22:00",
     "proslo": 3,
-    "zamitnuto": 0,
+    "zamitnuto": 1,
     "dlouha_debata": true
   },
   "dnesni_ucet": "Paralelně sedmnáctá schůze řeší ústavu a rozpočet.\nV noci odsouzení sjezdu v Brně, večer tři zákony.",
@@ -23,5 +23,7 @@
     "* stavební zákon ve dvou hlasováních 110:0 a 123:0",
     "* digitalizace dávek odložena, schváleno 100:1",
     "* převod péče OZP na 2028, schváleno 111:0"
-  ]
+  ],
+  "proslo": 3,
+  "zamitnuto": 1
 }

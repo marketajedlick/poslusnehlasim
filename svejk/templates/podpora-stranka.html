@@ -11,7 +11,8 @@
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="static-page archiv-page">
-<div class="archiv-wrap soukromi-wrap">
+{% include "skip-link.html" %}
+<div class="archiv-wrap soukromi-wrap" id="main-content">
   {% include "breadcrumbs.html" %}
   {% set page_title = "Zákaznická podpora" %}
   {% set page_gloss = "Poslušně hlásím, že i ten nejlepší systém občas ztratí nit. Když se to stane, napište." %}

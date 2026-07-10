@@ -10,8 +10,8 @@
     "pocet_hlas": 6,
     "minuty": 1086,
     "end_cas": "18:27",
-    "proslo": 2,
-    "zamitnuto": 0,
+    "proslo": 0,
+    "zamitnuto": 1,
     "spor_o_porad": false,
     "dlouha_debata": true
   },
@@ -20,5 +20,7 @@
   "vysledek": [
     "* Rakušan (STAN): pomsta pro prezidenta, velvyslanec u OSN bez podpisu prezidenta",
     "* novela o zvířatech padla ve třetím kole 22 proti 62"
-  ]
+  ],
+  "proslo": 0,
+  "zamitnuto": 1
 }

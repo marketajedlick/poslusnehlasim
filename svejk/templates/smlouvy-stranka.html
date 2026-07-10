@@ -10,9 +10,11 @@
 {% include "breadcrumb-jsonld.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
+{% include "satellite-css.html" %}
 </head>
 <body class="steno-page smlouvy-page">
-<div class="steno-wrap">
+{% include "skip-link.html" %}
+<div class="steno-wrap" id="main-content">
   {% include "breadcrumbs.html" %}
   {% set page_head_modifier = "page-head--steno" %}
   {% set page_head_hide_nav = true %}

@@ -10,10 +10,12 @@
 {% include "breadcrumb-jsonld.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
+{% include "satellite-css.html" %}
 </head>
 <body class="vyznamenani-page vyznamenani-page--{{ kind }}">
+{% include "skip-link.html" %}
 <div class="edition-page vyznamenani-edition">
-  <main class="edition-main vyznamenani-wrap">
+  <main class="edition-main vyznamenani-wrap" id="main-content">
   {% include "breadcrumbs.html" %}
   {% set page_head_modifier = "page-head--vyznamenani page-head--vyznamenani-" ~ kind %}
   {% set page_head_hide_nav = true %}

@@ -6,9 +6,11 @@
 <meta name="robots" content="noindex" />
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
+{% if admin_css_href %}<link rel="stylesheet" href="{{ admin_css_href }}" />{% endif %}
 </head>
 <body class="admin-page">
-<div class="admin-wrap">
+{% include "skip-link.html" %}
+<div class="admin-wrap" id="main-content">
   <header class="admin-head">
     <div class="eyebrow">Interní nástroj</div>
     <h1 class="admin-title">Náhled zápisu #{{ zapisek.id }}</h1>
