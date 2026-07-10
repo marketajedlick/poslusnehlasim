@@ -73,16 +73,15 @@ button{font:inherit;cursor:pointer}
      overflow-x:clip je schovalo — mezera rail ↔ obsah je na to dimenzovaná. */
   overflow-x:visible;
 }
-/* Úzký desktop: rail + obsah se musí vejít; čísla článků nesmí přetékat do sidebaru. */
+/* Úzký desktop: rail + obsah; články zůstávají v mobilním layoutu (číslo v hlavičce),
+   boční sloupec pro razítko by se vešel jen s překryvem textu. */
 @media(min-width:1024px) and (max-width:1199px){
   :root{
-    --article-num-w:52px;
-    --article-num-gap:12px;
-    --article-num-gap-line:36px;
     --content-w:min(625px, 100%);
     --rail-w:252px;
   }
   .edition-grid{gap:28px}
+  .edition-rail{margin-right:0}
 }
 @media(min-width:1024px){
   .edition-grid{
@@ -606,7 +605,7 @@ button{font:inherit;cursor:pointer}
 .article-body{
   min-width:0;
 }
-@media(max-width:1023px){
+@media(max-width:1199px){
   .article-head .article-num--mobile{
     font-size:clamp(44px,12vw,60px);
     line-height:1;
@@ -635,7 +634,7 @@ button{font:inherit;cursor:pointer}
     font-size:23px;
   }
 }
-@media(min-width:1024px){
+@media(min-width:1200px){
   .article{
     display:grid;
     grid-template-columns:var(--article-num-w) minmax(0,1fr);
@@ -653,6 +652,7 @@ button{font:inherit;cursor:pointer}
     text-align:center;
     padding-top:.2em;
     grid-column:1;
+    min-width:0;
   }
   .article-content{
     grid-column:2;
@@ -663,6 +663,7 @@ button{font:inherit;cursor:pointer}
   }
   .article-aside .stamp{
     margin-top:20px;
+    max-width:100%;
     transform:rotate(-4deg);
   }
   .article.i2 .article-aside .stamp{
@@ -704,13 +705,10 @@ button{font:inherit;cursor:pointer}
   padding:3px 7px 2px;
   opacity:.95;
 }
-@media(min-width:1024px){
+@media(min-width:1200px){
   .article-num{font-size:108px;line-height:.74}
   .article-title{font-size:36px;line-height:1.02}
   .stamp{font-size:12px;border-width:2.5px;padding:4px 9px 3px}
-}
-@media(min-width:1024px) and (max-width:1199px){
-  .article-num{font-size:72px;line-height:.78}
 }
 .stamp.schvaleno,.stamp.zvoleno{color:var(--green);border-color:var(--green)}
 .stamp.zamiteno,.stamp.odlozeno{color:var(--orange);border-color:var(--orange)}
