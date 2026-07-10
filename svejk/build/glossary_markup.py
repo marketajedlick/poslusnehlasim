@@ -225,7 +225,8 @@ def apply_glossary_to_content(
 
 
 def glossary_markup(text: str) -> Markup:
-    return Markup(markup_glossary(text))
+    """V textu článku jen zvýraznění _frází_; pojmy ze slovníčku jsou dole ve vydání."""
+    return Markup(highlight_markup(text))
 
 
 def _needle_pattern(needle: str) -> re.Pattern[str]:

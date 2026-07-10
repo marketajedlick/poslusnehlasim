@@ -350,7 +350,7 @@ def _jinja_env() -> Environment:
 
     @pass_context
     def _kuriozita_display_filter(context, text: str) -> Markup:
-        from svejk.build.glossary_markup import glossary_markup as _gm
+        from svejk.build.glossary_markup import highlight_markup
         from svejk.build.witty import rozdel_kuriozitu_label
 
         text = (text or "").strip()
@@ -358,8 +358,10 @@ def _jinja_env() -> Environment:
             return Markup("")
         label, body = rozdel_kuriozitu_label(text)
         if label:
-            return Markup(f'<strong class="kuriozita-label">{label}</strong> {_gm(body)}')
-        return _gm(text)
+            return Markup(
+                f'<strong class="kuriozita-label">{label}</strong> {highlight_markup(body)}'
+            )
+        return Markup(highlight_markup(text))
 
     env.filters["kuriozita_display"] = _kuriozita_display_filter
     return env

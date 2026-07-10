@@ -11,3 +11,12 @@ def test_strip_glossary_markup_keeps_label_only() -> None:
         "</span></span> odsouhlaseno jako na páse"
     )
     assert strip_glossary_markup(html) == "Šest ratifikací odsouhlaseno jako na páse"
+
+
+def test_glossary_markup_skips_inline_terms() -> None:
+    from svejk.build.glossary_markup import glossary_markup
+
+    out = str(glossary_markup("Barták (Motoristé) mluvil o interpelaci."))
+    assert "term-term" not in out
+    assert "(Motoristé)" in out
+    assert "interpelaci" in out

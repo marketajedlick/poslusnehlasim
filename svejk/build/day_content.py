@@ -634,9 +634,6 @@ def build_den_content(
         link_mode=link_mode,
         base_path=base_path,
     )
-    from svejk.build.glossary_markup import apply_glossary_to_content
-
-    apply_glossary_to_content(content, base_path=base_path, link_mode=link_mode)
     from svejk.build.mezin_smlouvy import apply_smlouvy_page_links
 
     apply_smlouvy_page_links(
