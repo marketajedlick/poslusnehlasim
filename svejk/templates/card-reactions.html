@@ -1,28 +1,50 @@
-{% if newsletter.show_reactions and item.slug %}
-<div class="reactions" data-edition="{{ edition_iso_date }}" data-slug="{{ item.slug }}">
+{% if item.slug and (newsletter.show_reactions or newsletter.show_corrections) %}
+<div class="article-actions{% if newsletter.show_reactions %} reactions{% endif %}"{% if newsletter.show_reactions %} data-edition="{{ edition_iso_date }}" data-slug="{{ item.slug }}"{% endif %}>
+  {% if newsletter.show_reactions %}
   <div class="reaction-summary" aria-label="{{ t.reactions.summary_aria }}" hidden></div>
-  <button
-    type="button"
-    class="reaction-trigger"
-    aria-expanded="false"
-    aria-haspopup="menu"
-    aria-label="{{ t.reactions.trigger_aria }}"
-  >
-    <span class="reaction-dot" aria-hidden="true"></span>
-  </button>
-  <div class="reaction-menu" role="menu" hidden aria-label="{{ t.reactions.menu_aria }}">
-    <button type="button" class="reaction-option" role="menuitemradio" data-reaction="absurdni" aria-checked="false" aria-label="{{ t.reactions.absurdni }}">
-      <span class="reaction-emoji" aria-hidden="true">😂</span>
-    </button>
-    <button type="button" class="reaction-option" role="menuitemradio" data-reaction="tosnadne" aria-checked="false" aria-label="{{ t.reactions.tosnadne }}">
-      <span class="reaction-emoji" aria-hidden="true">🤦</span>
-    </button>
-    <button type="button" class="reaction-option" role="menuitemradio" data-reaction="libi" aria-checked="false" aria-label="{{ t.reactions.libi }}">
-      <span class="reaction-emoji" aria-hidden="true">💛</span>
-    </button>
-    <button type="button" class="reaction-option" role="menuitemradio" data-reaction="nojo" aria-checked="false" aria-label="{{ t.reactions.nojo }}">
-      <span class="reaction-emoji" aria-hidden="true">😅</span>
-    </button>
+  {% endif %}
+  <div class="article-actions-row">
+    <div class="article-actions-side article-actions-side--left" aria-hidden="true"></div>
+    <div class="article-actions-center">
+      {% if newsletter.show_corrections %}
+      <button
+        type="button"
+        class="correction-trigger"
+        hidden
+        data-slug="{{ item.slug }}"
+        data-num="{{ item.num }}"
+        data-title="{{ item.nadpis_radky | join(' ') }}"
+      >{{ t.edition.correction_trigger }}</button>
+      {% endif %}
+    </div>
+    <div class="article-actions-side article-actions-side--right">
+      {% if newsletter.show_reactions %}
+      <button
+        type="button"
+        class="reaction-trigger"
+        aria-expanded="false"
+        aria-haspopup="menu"
+        aria-label="{{ t.reactions.trigger_aria }}"
+      >
+        <span class="reaction-dot" aria-hidden="true"></span>
+      </button>
+      <div class="reaction-menu" role="menu" hidden aria-label="{{ t.reactions.menu_aria }}">
+        <button type="button" class="reaction-option" role="menuitemradio" data-reaction="absurdni" aria-checked="false" aria-label="{{ t.reactions.absurdni }}">
+          <span class="reaction-emoji" aria-hidden="true">😂</span>
+        </button>
+        <button type="button" class="reaction-option" role="menuitemradio" data-reaction="tosnadne" aria-checked="false" aria-label="{{ t.reactions.tosnadne }}">
+          <span class="reaction-emoji" aria-hidden="true">🤦</span>
+        </button>
+        <button type="button" class="reaction-option" role="menuitemradio" data-reaction="libi" aria-checked="false" aria-label="{{ t.reactions.libi }}">
+          <span class="reaction-emoji" aria-hidden="true">💛</span>
+        </button>
+        <button type="button" class="reaction-option" role="menuitemradio" data-reaction="nojo" aria-checked="false" aria-label="{{ t.reactions.nojo }}">
+          <span class="reaction-emoji" aria-hidden="true">😅</span>
+        </button>
+        <button type="button" class="reaction-clear" role="menuitem" hidden aria-label="{{ t.reactions.clear_aria }}">×</button>
+      </div>
+      {% endif %}
+    </div>
   </div>
 </div>
 {% endif %}

@@ -41,18 +41,20 @@ class ReactionsTemplateTest(unittest.TestCase):
 
     def test_reactions_markup_when_enabled(self):
         html = self._render(show_reactions=True)
-        self.assertIn('class="reactions"', html)
+        self.assertIn('class="article-actions reactions"', html)
+        self.assertIn('class="article-actions-row"', html)
         self.assertIn('data-slug="rozpoctove-brzdy"', html)
+        self.assertIn('class="reaction-clear"', html)
         self.assertIn('data-reaction="nojo"', html)
         self.assertIn("😅", html)
 
     def test_reactions_hidden_when_disabled(self):
         html = self._render(show_reactions=False)
-        self.assertNotIn('class="reactions"', html)
+        self.assertNotIn('class="article-actions reactions"', html)
 
     def test_reactions_hidden_without_slug(self):
         html = self._render(show_reactions=True, slug="")
-        self.assertNotIn('class="reactions"', html)
+        self.assertNotIn('class="article-actions reactions"', html)
 
 
 class ReactionsScriptTemplateTest(unittest.TestCase):

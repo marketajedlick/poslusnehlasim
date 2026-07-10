@@ -39,17 +39,5 @@
       {% endif %}
     </div>
     {% include "card-reactions.html" %}
-    {% if newsletter.show_corrections and item.slug %}
-    <div class="correction-row">
-      <button
-        type="button"
-        class="correction-trigger"
-        hidden
-        data-slug="{{ item.slug }}"
-        data-num="{{ item.num }}"
-        data-title="{{ item.nadpis_radky | join(' ') }}"
-      >{{ t.edition.correction_trigger }}</button>
-    </div>
-    {% endif %}
   </div>
 </article>

@@ -651,15 +651,23 @@ async function handleReactionsPost(request, env, headers) {
   const slug = String(body.slug || body.topic_slug || "").trim();
   const reaction = String(body.reaction || "").trim();
   const previous = String(body.previous || "").trim();
+  const clear = body.clear === true || reaction === "clear";
 
   if (!validEdition(edition) || !validSlug(slug)) {
     return json({ ok: false, error: "bad_request" }, 400, headers);
   }
-  if (!REACTION_TYPES.has(reaction)) {
-    return json({ ok: false, error: "bad_reaction" }, 400, headers);
-  }
-  if (previous && (!REACTION_TYPES.has(previous) || previous === reaction)) {
-    return json({ ok: false, error: "bad_previous" }, 400, headers);
+
+  if (clear) {
+    if (!REACTION_TYPES.has(previous)) {
+      return json({ ok: false, error: "bad_previous" }, 400, headers);
+    }
+  } else {
+    if (!REACTION_TYPES.has(reaction)) {
+      return json({ ok: false, error: "bad_reaction" }, 400, headers);
+    }
+    if (previous && (!REACTION_TYPES.has(previous) || previous === reaction)) {
+      return json({ ok: false, error: "bad_previous" }, 400, headers);
+    }
   }
 
   const rate = await enforceReactionRateLimit(request, env);
@@ -679,10 +687,14 @@ async function handleReactionsPost(request, env, headers) {
   const key = reactionKvKey(edition, slug);
   const counts = parseReactionCounts(await kv.get(key));
 
-  if (previous) {
+  if (clear) {
     counts[previous] = Math.max(0, (counts[previous] || 0) - 1);
+  } else {
+    if (previous) {
+      counts[previous] = Math.max(0, (counts[previous] || 0) - 1);
+    }
+    counts[reaction] = (counts[reaction] || 0) + 1;
   }
-  counts[reaction] = (counts[reaction] || 0) + 1;
 
   await kv.put(key, JSON.stringify(counts));
 

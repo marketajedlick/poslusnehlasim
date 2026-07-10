@@ -113,6 +113,8 @@
       var active = btn.dataset.reaction === picked;
       btn.setAttribute("aria-checked", active ? "true" : "false");
     });
+    var clearBtn = wrap.querySelector(".reaction-clear");
+    if (clearBtn) clearBtn.hidden = !picked;
   }
 
   function applyArticle(edition, slug) {
@@ -165,22 +167,28 @@
       .catch(function () {});
   }
 
-  function postReaction(slug, reaction, previous, edition) {
+  function postReaction(slug, reaction, previous, edition, clear) {
     if (!apiUrl || isLocalPreview()) {
       return Promise.resolve(null);
+    }
+    var payload = {
+      edition: edition,
+      slug: slug,
+      previous: previous || "",
+      hp: "",
+    };
+    if (clear) {
+      payload.clear = true;
+      payload.reaction = "clear";
+    } else {
+      payload.reaction = reaction;
     }
     return fetch(apiUrl.replace(/\/+$/, ""), {
       method: "POST",
       mode: "cors",
       cache: "no-store",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        edition: edition,
-        slug: slug,
-        reaction: reaction,
-        previous: previous || "",
-        hp: "",
-      }),
+      body: JSON.stringify(payload),
     })
       .then(function (res) {
         return res.json().catch(function () { return {}; }).then(function (body) {
@@ -225,7 +233,7 @@
 
     if (!online) return;
 
-    postReaction(slug, reaction, previous, edition)
+    postReaction(slug, reaction, previous, edition, false)
       .then(function (body) {
         if (body && body.counts) {
           countsBySlug[slug] = body.counts;
@@ -236,6 +244,44 @@
         countsBySlug[slug] = JSON.parse(snapshot);
         if (prevVote) saveVote(edition, slug, prevVote);
         else saveVote(edition, slug, "");
+        applyArticle(edition, slug);
+      });
+  }
+
+  function clearReaction(wrap) {
+    var slug = wrap.dataset.slug || "";
+    var edition = wrap.dataset.edition || "";
+    if (!slug || !edition) return;
+
+    var previous = userVote(edition, slug);
+    if (!previous) {
+      closeMenu(wrap.querySelector(".reaction-menu"));
+      return;
+    }
+
+    var snapshot = JSON.stringify(countsBySlug[slug] || {});
+    var counts = Object.assign(
+      { absurdni: 0, tosnadne: 0, libi: 0, nojo: 0 },
+      countsBySlug[slug] || {}
+    );
+    counts[previous] = Math.max(0, (counts[previous] || 0) - 1);
+    countsBySlug[slug] = counts;
+    saveVote(edition, slug, "");
+    applyArticle(edition, slug);
+    closeMenu(wrap.querySelector(".reaction-menu"));
+
+    if (!online) return;
+
+    postReaction(slug, "", previous, edition, true)
+      .then(function (body) {
+        if (body && body.counts) {
+          countsBySlug[slug] = body.counts;
+          applyArticle(edition, slug);
+        }
+      })
+      .catch(function () {
+        countsBySlug[slug] = JSON.parse(snapshot);
+        saveVote(edition, slug, previous);
         applyArticle(edition, slug);
       });
   }
@@ -285,6 +331,15 @@
       e.stopPropagation();
       var wrap = option.closest(".reactions");
       if (wrap) chooseReaction(wrap, option.dataset.reaction || "");
+      return;
+    }
+
+    var clearBtn = e.target.closest(".reaction-clear");
+    if (clearBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      var wrap = clearBtn.closest(".reactions");
+      if (wrap) clearReaction(wrap);
       return;
     }
 
