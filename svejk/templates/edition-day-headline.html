@@ -1,9 +1,5 @@
 <header class="edition-day-headline" aria-labelledby="edition-day-title">
-  {% if is_homepage %}
-  <h2 class="edition-day-title" id="edition-day-title">{{ edition_day_headline }}</h2>
-  {% else %}
   <h1 class="edition-day-title" id="edition-day-title">{{ edition_day_headline }}</h1>
-  {% endif %}
   <p class="edition-day-meta">
     <time datetime="{{ edition_iso_date }}">{{ edition_day_meta }}</time>
   </p>

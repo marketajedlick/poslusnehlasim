@@ -26,9 +26,22 @@
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s18/out/noviny-dlouhe/2026-05-14.md"
       ],
       "html_files": [
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s18/out/noviny-dlouhe/2026-05-14-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s18/out/noviny-dlouhe/2026-05-14.html"
-      ]
+      ],
+      "last_partial_compose": {
+        "den": "14.05.2026",
+        "built_at": "2026-07-10T16:03:33.421633+00:00",
+        "days": 1,
+        "files": [
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s18/out/noviny-dlouhe/2026-05-14.md"
+        ],
+        "html_files": [
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s18/out/noviny-dlouhe/2026-05-14.html",
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s18/out/noviny-dlouhe/2026-05-14-steno.html"
+        ]
+      }
     }
   },
-  "built_at": "2026-07-06T13:57:22.451742+00:00"
+  "built_at": "2026-07-10T16:03:33.421792+00:00"
 }

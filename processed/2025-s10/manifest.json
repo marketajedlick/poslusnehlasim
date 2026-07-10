@@ -31,14 +31,32 @@
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10/out/noviny-dlouhe/2026-03-12.md"
       ],
       "html_files": [
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10/out/noviny-dlouhe/2026-03-03-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10/out/noviny-dlouhe/2026-03-03.html",
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10/out/noviny-dlouhe/2026-03-04-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10/out/noviny-dlouhe/2026-03-04.html",
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10/out/noviny-dlouhe/2026-03-06-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10/out/noviny-dlouhe/2026-03-06.html",
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10/out/noviny-dlouhe/2026-03-10-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10/out/noviny-dlouhe/2026-03-10.html",
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10/out/noviny-dlouhe/2026-03-11-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10/out/noviny-dlouhe/2026-03-11.html",
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10/out/noviny-dlouhe/2026-03-12-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10/out/noviny-dlouhe/2026-03-12.html"
-      ]
+      ],
+      "last_partial_compose": {
+        "den": "12.03.2026",
+        "built_at": "2026-07-10T16:00:13.614048+00:00",
+        "days": 1,
+        "files": [
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10/out/noviny-dlouhe/2026-03-12.md"
+        ],
+        "html_files": [
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10/out/noviny-dlouhe/2026-03-12.html",
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10/out/noviny-dlouhe/2026-03-12-steno.html"
+        ]
+      }
     }
   },
-  "built_at": "2026-07-06T13:57:19.103136+00:00"
+  "built_at": "2026-07-10T16:00:13.614179+00:00"
 }

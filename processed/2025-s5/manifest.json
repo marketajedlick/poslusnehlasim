@@ -32,14 +32,32 @@
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5/out/noviny-dlouhe/2026-01-30.md"
       ],
       "html_files": [
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5/out/noviny-dlouhe/2026-01-13-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5/out/noviny-dlouhe/2026-01-13.html",
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5/out/noviny-dlouhe/2026-01-14-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5/out/noviny-dlouhe/2026-01-14.html",
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5/out/noviny-dlouhe/2026-01-15-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5/out/noviny-dlouhe/2026-01-15.html",
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5/out/noviny-dlouhe/2026-01-16-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5/out/noviny-dlouhe/2026-01-16.html",
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5/out/noviny-dlouhe/2026-01-28-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5/out/noviny-dlouhe/2026-01-28.html",
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5/out/noviny-dlouhe/2026-01-30-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5/out/noviny-dlouhe/2026-01-30.html"
-      ]
+      ],
+      "last_partial_compose": {
+        "den": "30.01.2026",
+        "built_at": "2026-07-10T15:59:30.663755+00:00",
+        "days": 1,
+        "files": [
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5/out/noviny-dlouhe/2026-01-30.md"
+        ],
+        "html_files": [
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5/out/noviny-dlouhe/2026-01-30.html",
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5/out/noviny-dlouhe/2026-01-30-steno.html"
+        ]
+      }
     }
   },
-  "built_at": "2026-07-06T13:57:16.532903+00:00"
+  "built_at": "2026-07-10T15:59:30.663915+00:00"
 }
