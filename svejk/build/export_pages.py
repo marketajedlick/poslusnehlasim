@@ -145,18 +145,38 @@ def _edition_day_path(edition) -> Path | None:
 def _edition_og_fields(edition, *, snapshot_html: str = "") -> dict[str, str | int]:
     day_path = _edition_day_path(edition)
     if day_path is not None:
+        from svejk.build.day_content import _topics_by_slug, split_zaver
+        from svejk.build.io import read_json
+        from svejk.text_norm import lcfirst_preserve_proper
+
         paths = SchuzePaths.create(edition.obdobi, edition.schuze)
-        content = build_den_content(day_path, paths)
+        day = read_json(day_path)
+        stats = day.get("stats") or {}
+        override = (day.get("zaver") or "").strip()
+        if override:
+            zaver = (
+                override
+                if override.lower().startswith("poslušně")
+                else f"Poslušně hlásím, {lcfirst_preserve_proper(override)}"
+            )
+        else:
+            zaver = ""
+        zaver_key, zaver_body = split_zaver(zaver)
+        topics = _topics_by_slug(paths)
+        slugs = day.get("topic_slugs") or []
+        first_nadpis = ""
+        if slugs and slugs[0] in topics:
+            first_nadpis = str(topics[slugs[0]].get("nadpis") or "")
         return {
-            "den": content.den,
-            "dnesni_ucet": content.dnesni_ucet,
-            "nadpis_vydani": content.nadpis_vydani,
-            "first_item_nadpis": content.items[0].nadpis if content.items else "",
-            "proslo": content.proslo,
-            "zamitnuto": content.zamitnuto,
-            "zaver_key": content.zaver_key,
-            "zaver_body": content.zaver_body,
-            "zaver": content.zaver,
+            "den": str(day.get("den") or ""),
+            "dnesni_ucet": str(day.get("dnesni_ucet") or ""),
+            "nadpis_vydani": "",
+            "first_item_nadpis": first_nadpis,
+            "proslo": int(stats.get("proslo") or 0),
+            "zamitnuto": int(stats.get("zamitnuto") or 0),
+            "zaver_key": zaver_key,
+            "zaver_body": zaver_body,
+            "zaver": zaver,
         }
     import re
 
@@ -312,21 +332,17 @@ def run_export_pages(
         )
         written.append(f"og/{og_image_filename(edition.datum_unl)}")
 
-        day_path = _edition_day_path(edition)
-        if day_path is not None:
-            paths = SchuzePaths.create(edition.obdobi, edition.schuze)
-            hero_content = build_den_content(day_path, paths)
-            share_subdir = out / "share"
-            share_subdir.mkdir(parents=True, exist_ok=True)
-            if render_edition_share_hero_image(
-                share_subdir,
-                datum_unl=edition.datum_unl,
-                zaver_key=hero_content.zaver_key,
-                zaver_body=hero_content.zaver_body,
-                zaver=hero_content.zaver,
-                sign=sign,
-            ):
-                written.append(f"share/{share_hero_filename(edition.datum_unl)}")
+        share_subdir = out / "share"
+        share_subdir.mkdir(parents=True, exist_ok=True)
+        if render_edition_share_hero_image(
+            share_subdir,
+            datum_unl=edition.datum_unl,
+            zaver_key=str(fields.get("zaver_key") or ""),
+            zaver_body=str(fields.get("zaver_body") or ""),
+            zaver=str(fields.get("zaver") or ""),
+            sign=sign,
+        ):
+            written.append(f"share/{share_hero_filename(edition.datum_unl)}")
 
     def _export_edition_page(
         edition,
