@@ -159,6 +159,35 @@ def main() -> int:
                     counts["bad_citace"] += 1
                     by_schuze[schuze]["bad_citace"] += 1
 
+            ct = (topic.get("citace_text") or "").strip()
+            ctsid = (topic.get("steno_id") or "").strip()
+            if ct:
+                facts_checked += 1
+                if not ctsid:
+                    hits = find_correct_ids(steno, ct)
+                    if hits:
+                        issues.append(
+                            f"MISSING_TOPIC_STENO_ID {key} {slug} -> {hits[0]} ({steno[hits[0]].get('cele_jmeno')})"
+                        )
+                        counts["missing_id"] += 1
+                        by_schuze[schuze]["missing_id"] += 1
+                    continue
+                rec = steno.get(ctsid)
+                if not rec:
+                    issues.append(f"UNKNOWN_TOPIC_STENO_ID {key} {slug} {ctsid}")
+                    counts["unknown_id"] += 1
+                    by_schuze[schuze]["unknown_id"] += 1
+                elif not citace_in_text(ct, rec.get("text", "")):
+                    hits = find_correct_ids(steno, ct)
+                    correct = hits[0] if hits else "?"
+                    speaker = rec.get("cele_jmeno") or "?"
+                    correct_sp = steno.get(correct, {}).get("cele_jmeno", "?") if correct != "?" else "?"
+                    issues.append(
+                        f"BAD_TOPIC_CITACE {key} {slug} {ctsid}({speaker}) -> {correct}({correct_sp})"
+                    )
+                    counts["bad_citace"] += 1
+                    by_schuze[schuze]["bad_citace"] += 1
+
     print(f"Approved days: {len(approved)}")
     print(f"Topics checked: {topics_checked}, facts with citace: {facts_checked}")
     print(f"Missing day files: {missing_day}, missing steno.jsonl: {missing_steno_file}")

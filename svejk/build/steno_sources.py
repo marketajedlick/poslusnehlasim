@@ -372,7 +372,13 @@ def _passage_from_fact(
     if not citace and not summary:
         return None
     steno_id = (fact_entry.get("steno_id") or "").strip()
-    if source == "votes" and not citace:
+    if source == "votes":
+        if not citace:
+            return None
+    elif source in ("manual", "notes"):
+        return None
+    elif not steno_id:
+        # ponytail: redakční poznámky bez kotvy ve stenozáznamu nepatří na stránku zdrojů
         return None
 
     rec = steno_by_id.get(steno_id) if steno_id else None

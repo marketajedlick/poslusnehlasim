@@ -13,7 +13,7 @@
       "source": "steno",
       "steno_id": "2025_24_01704",
       "citace": "ruce drží písemný materiál.) vašich přešlapů v politice.",
-      "link_phrase": "Babiš proti Pirátům: „Vy mluvíte o bydlení? Vy"
+      "link_phrase": "132stránkovým materiálem"
     },
     {
       "text": "Babiš materiál nazval vašimi přešlapy.",
@@ -35,7 +35,7 @@
       "source": "steno",
       "steno_id": "2025_24_01708",
       "citace": "Byt na Malé Straně za 13 000 měsíčně?",
-      "link_phrase": "Babiš proti Pirátům: „Vy mluvíte o bydlení? Vy"
+      "link_phrase": "byt na Malé Straně za 13 000 měsíčně"
     },
     {
       "text": "Babiš: školka v Modřanech zdražila o 40 milionů.",
@@ -48,7 +48,7 @@
       "source": "steno",
       "steno_id": "2025_24_01708",
       "citace": "Za studnu místo tří stovek 10 000 korun a tak dále.",
-      "link_phrase": "Babiš proti Pirátům: „Vy mluvíte o bydlení? Vy"
+      "link_phrase": "studnu za 10 000 korun místo tří set"
     },
     {
       "text": "Richterová: stavebnictví v roce 2025 rostlo.",
@@ -74,10 +74,11 @@
   "priorita": 5,
   "nadpis": "132 stran průšvihů",
   "lead": "Babiš proti Pirátům: „Vy mluvíte o bydlení? Vy, kteří jste to zničili?“ Listuje 132stránkovým materiálem jejich přešlapů a průšvihů: „Nebudu to číst,“ říká a jen ho listuje před kamerou. Doporučil Pirátům dva roky pryč, vyzval předchozí vládu ke kanálům a vyčítal 2,4 miliardy na chlebíčcích.",
-  "pointa": "Lipavský (Piráti) ráno mluvil skoro tři tisíce slov u písemných interpelací, odpoledne Babiš (ANO) doporučil Pirátům dva roky pryč, vyzval předchozí vládu ke kanálům a vyčítal 2,4 miliardy na chlebíčcích.",
+  "pointa": "Lipavský (Piráti) ráno mluvil skoro tři tisíce slov u písemných interpelací, odpoledne Babiš (ANO) doporučil Pirátům dva roky pryč, vyzval předchozí vládu ke kanálům a vyčítal 2,4 miliardy na chlebíčcích. Z hromady stran vytáhl byt na Malé Straně za 13 000 měsíčně a studnu za 10 000 korun místo tří set.",
   "mean": "Osobní útoky nahradily věcnou debatu o dostupnosti bydlení. Co se s tím udělá, bohužel neřekl ani jeden z nich.",
   "citace_text": "To je absurdní. Vy mluvíte o bydlení? Vy, kteří jste to zničili? Vy jste zničili to bydlení.",
   "citace_autor": "Andrej Babiš",
   "pocet_hlasovani": 0,
-  "proslo": false
+  "proslo": false,
+  "steno_id": "2025_24_01704"
 }

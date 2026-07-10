@@ -1,4 +1,4 @@
-errors=0 warns=145
+errors=0 warns=146
 warn	fakt_speaker_mismatch	14.11.2025	volba-mistopredsedu-2-kolo	fakty[1]: text začíná «Kateřina», steno má «Eva Šrámková»
 warn	fakt_speaker_mismatch	14.11.2025	volba-mistopredsedu-2-kolo	fakty[2]: text začíná «Jedno», steno má «Martin Kolovratník»
 warn	fakt_speaker_mismatch	14.11.2025	volba-mistopredsedu-2-kolo	fakty[3]: text začíná «Koaliční», steno má «Patrik Nacher»
@@ -138,9 +138,10 @@ warn	fakt_speaker_mismatch	02.07.2026	interpelace-mrazova-bydleni-02-07	fakty[5]
 warn	nadpis_off_topic	02.07.2026	interpelace-mrazova-bydleni-02-07	nadpis «Prázdné lavice» – klíčová slova ['Prázdné', 'lavice'] nejsou ve stenu dne
 warn	fakt_speaker_mismatch	02.07.2026	interpelace-kovacik-povodi-02-07	fakty[4]: text začíná «Sebestyán», steno má «Martin Šebestyán»
 warn	fakt_speaker_mismatch	02.07.2026	interpelace-kovacik-povodi-02-07	fakty[6]: text začíná «Dnesni», steno má «Martin Šmída»
-warn	fakt_speaker_mismatch	03.07.2026	novela-z-o-jednacim-radu-ps	fakty[1]: text začíná «Koalice», steno má «Radek Vondráček»
-warn	fakt_speaker_mismatch	03.07.2026	novela-z-o-jednacim-radu-ps	fakty[8]: text začíná «Opozice», steno má «Renata Vesecká»
-warn	fakt_speaker_mismatch	03.07.2026	novela-z-o-jednacim-radu-ps	fakty[13]: text začíná «Zákon», steno má «Patrik Nacher»
+warn	fakt_speaker_mismatch	03.07.2026	novela-z-o-jednacim-radu-ps	fakty[1]: text začíná «Novela», steno má «Zdeňka Blišťanová»
+warn	fakt_speaker_mismatch	03.07.2026	novela-z-o-jednacim-radu-ps	fakty[5]: text začíná «Opozice», steno má «Renata Vesecká»
+warn	fakt_speaker_mismatch	03.07.2026	novela-z-o-jednacim-radu-ps	fakty[6]: text začíná «První», steno má «Patrik Nacher»
+warn	fakt_speaker_mismatch	03.07.2026	novela-z-o-jednacim-radu-ps	fakty[10]: text začíná «Zákon», steno má «Patrik Nacher»
 warn	nadpis_off_topic	03.07.2026	novela-z-o-jednacim-radu-ps	nadpis «Bojiště, ne jeviště» – klíčová slova ['Bojiště', 'jeviště'] nejsou ve stenu dne
 warn	fakt_speaker_mismatch	03.07.2026	navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2	fakty[1]: text začíná «Na», steno má «Martin Kolovratník»
 warn	fakt_speaker_mismatch	03.07.2026	navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2	fakty[3]: text začíná «Debata», steno má «Tomio Okamura»

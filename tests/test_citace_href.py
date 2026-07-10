@@ -2,10 +2,12 @@ from dataclasses import dataclass
 
 from svejk.build.steno_sources import (
     StenoPassage,
+    _passage_from_fact,
     find_passage_for_citace,
     passage_href,
     resolve_item_citace_href,
 )
+from svejk.paths import SchuzePaths
 
 
 def _passage(**kwargs) -> StenoPassage:
@@ -59,6 +61,34 @@ def test_resolve_item_citace_href_points_to_steno_page():
     )
     resolve_item_citace_href(item, [passage], "/2025/s24/01-07/steno")
     assert item.citace_href == passage_href(passage, "/2025/s24/01-07/steno")
+
+
+def test_passage_from_fact_skips_orphan_editorial_notes():
+    paths = SchuzePaths.create(2025, 24)
+    assert (
+        _passage_from_fact(
+            {"text": "Malá chtěla jednat do 19. a 21. hodiny."},
+            paths=paths,
+            steno_by_id={},
+            topic_slug="debata",
+            topic_title="Debata",
+            article_num=1,
+            passage_idx=0,
+        )
+        is None
+    )
+    assert (
+        _passage_from_fact(
+            {"text": "z glosy", "source": "manual"},
+            paths=paths,
+            steno_by_id={},
+            topic_slug="debata",
+            topic_title="Debata",
+            article_num=1,
+            passage_idx=1,
+        )
+        is None
+    )
 
 
 def test_resolve_item_citace_href_falls_back_to_steno_page():
