@@ -4,6 +4,10 @@
   hidden
   data-api-url="{{ newsletter.reactions_api_url }}"
   data-edition="{{ edition_iso_date }}"
+  data-label-absurdni="{{ t.reactions.absurdni }}"
+  data-label-tosnadne="{{ t.reactions.tosnadne }}"
+  data-label-libi="{{ t.reactions.libi }}"
+  data-label-nojo="{{ t.reactions.nojo }}"
 ></div>
 <script>
 (function () {
@@ -18,6 +22,12 @@
     tosnadne: "🤦",
     libi: "💛",
     nojo: "😅",
+  };
+  var reactionLabels = {
+    absurdni: configEl.dataset.labelAbsurdni || "Absurdní",
+    tosnadne: configEl.dataset.labelTosnadne || "To snad ne",
+    libi: configEl.dataset.labelLibi || "Líbí se mi",
+    nojo: configEl.dataset.labelNojo || "No jo",
   };
   var openMenu = null;
   var countsBySlug = {};
@@ -92,15 +102,17 @@
       any = true;
       var cls = "reaction-chip" + (picked === id ? " is-picked" : "");
       html +=
-        '<span class="' +
+        '<button type="button" class="' +
         cls +
         '" data-reaction="' +
         id +
+        '" aria-label="' +
+        reactionLabels[id] +
         '"><span class="reaction-emoji" aria-hidden="true">' +
         reactionEmoji[id] +
         '</span> <span class="reaction-count">' +
         count +
-        "</span></span>";
+        "</span></button>";
     });
 
     summary.innerHTML = html;
@@ -331,6 +343,15 @@
       e.stopPropagation();
       var wrap = option.closest(".reactions");
       if (wrap) chooseReaction(wrap, option.dataset.reaction || "");
+      return;
+    }
+
+    var chip = e.target.closest(".reaction-chip");
+    if (chip) {
+      e.preventDefault();
+      e.stopPropagation();
+      var wrap = chip.closest(".reactions");
+      if (wrap) chooseReaction(wrap, chip.dataset.reaction || "");
       return;
     }
 

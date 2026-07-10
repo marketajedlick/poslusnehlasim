@@ -72,6 +72,7 @@ class ReactionsScriptTemplateTest(unittest.TestCase):
         html = _jinja_env().get_template("reactions-script.html").render(
             newsletter=cfg,
             edition_iso_date="2026-07-02",
+            t=load_strings(),
         )
         self.assertIn('id="reactions-config"', html)
         self.assertLess(html.index('id="reactions-config"'), html.index("<script>"))
