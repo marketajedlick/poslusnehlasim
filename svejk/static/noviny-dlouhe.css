@@ -250,6 +250,22 @@ button{font:inherit;cursor:pointer}
   .masthead-mobile-only .pager,
   .masthead-mobile-only .edition-pager{margin-bottom:24px}
   .masthead-mobile-only + .rule-double{margin-top:28px}
+  .edition-pager.pager-mobile{
+    display:grid;
+    grid-template-columns:minmax(36px, max-content) 1fr minmax(36px, max-content);
+    align-items:center;
+    gap:8px;
+    width:100%;
+    flex-wrap:nowrap;
+    justify-content:stretch;
+  }
+  .edition-pager.pager-mobile .edition-pager-prev{justify-self:start}
+  .edition-pager.pager-mobile .pager-now{
+    justify-self:center;
+    text-align:center;
+    min-width:0;
+  }
+  .edition-pager.pager-mobile .edition-pager-next{justify-self:end}
 }
 .pager-tag{
   font-family:var(--font-sans);

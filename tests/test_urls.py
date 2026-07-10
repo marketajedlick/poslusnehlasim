@@ -17,6 +17,7 @@ from svejk.build.urls import (
     edition_subpage_export_relpath,
     poslanec_slug,
     vydani_pages_href,
+    vydani_schuze_href,
 )
 from svejk.glossary import slovnicek_term_slug
 from svejk.build.day_content import DenItem
@@ -75,9 +76,14 @@ def test_den_item_anchor_id() -> None:
 
 def test_export_relpaths() -> None:
     assert edition_export_relpath("26.06.2026") == "vydani/2026-06-26/index.html"
+    assert edition_export_relpath("06.05.2026", 16) == "vydani/2026-05-06/s16/index.html"
     assert edition_subpage_export_relpath("26.06.2026", "steno") == (
         "vydani/2026-06-26/steno/index.html"
     )
+
+
+def test_vydani_schuze_href() -> None:
+    assert vydani_schuze_href("06.05.2026", 16) == "/vydani/2026-05-06/s16/"
 
 
 def test_legacy_href() -> None:

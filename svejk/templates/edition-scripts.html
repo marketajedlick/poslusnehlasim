@@ -1,6 +1,5 @@
 <script>
 (function(){
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var desktop = window.matchMedia('(min-width: 768px)');
   var canFetch = location.protocol !== 'file:';
   var contentEl = document.getElementById('edition-content');
@@ -22,6 +21,11 @@
       });
   }
 
+  function scrollToEditionStart(){
+    if (mainEl) mainEl.scrollIntoView({ block: 'start' });
+    else window.scrollTo(0, 0);
+  }
+
   function applyEdition(page, href){
     if (contentEl) contentEl.innerHTML = page.inner;
     var railEl = document.querySelector('.edition-rail');
@@ -30,6 +34,7 @@
     history.pushState({ href: href }, '', new URL(href, location.href).pathname);
     bindInteractions();
     if (window.__phInitCorrections) window.__phInitCorrections();
+    scrollToEditionStart();
   }
 
   function navigate(href){

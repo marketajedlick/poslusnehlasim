@@ -341,29 +341,38 @@ def run_export_pages(
             return None
         return _write_page_html(out, rel_path, html)
 
-    exported_dates: set[str] = set()
+    exported_rels: set[str] = set()
     for edition in editions:
-        iso = datum_unl_to_iso(edition.datum_unl)
-        if iso in exported_dates:
+        if edition_source(edition) is None:
             continue
-        exported_dates.add(iso)
-        resolved = resolve_edition(obdobi, edition.datum_unl) or edition
-        rel = edition_export_relpath(resolved.datum_unl)
-        rel_written = _export_edition_page(resolved, rel)
+        canonical = resolve_edition(obdobi, edition.datum_unl)
+        siblings = tuple(e for e in editions if e.datum_unl == edition.datum_unl)
+        if len(siblings) > 1 and canonical and edition.schuze != canonical.schuze:
+            rel = edition_export_relpath(edition.datum_unl, edition.schuze)
+        else:
+            rel = edition_export_relpath(edition.datum_unl)
+        if rel in exported_rels:
+            continue
+        exported_rels.add(rel)
+
+        rel_written = _export_edition_page(edition, rel)
         if rel_written:
             written.append(rel_written)
 
-        if edition_source(resolved) == "snapshot":
+        if edition_source(edition) == "snapshot":
             continue
 
-        paths = SchuzePaths.create(resolved.obdobi, resolved.schuze)
+        if canonical and edition.schuze != canonical.schuze:
+            continue
+
+        paths = SchuzePaths.create(edition.obdobi, edition.schuze)
         for kind in ("neprosli", "prosli", "zvoleni"):
-            if not load_vyznamenani(paths, resolved.datum_unl, kind):
+            if not load_vyznamenani(paths, edition.datum_unl, kind):
                 continue
-            table_rel = edition_subpage_export_relpath(resolved.datum_unl, kind)
+            table_rel = edition_subpage_export_relpath(edition.datum_unl, kind)
             table_html = render_vyznamenani_table_html(
                 paths,
-                resolved.datum_unl,
+                edition.datum_unl,
                 kind,
                 css_href=css_href,
                 fonts_css_href=fonts_css_href,
@@ -373,11 +382,11 @@ def run_export_pages(
             if table_html:
                 written.append(_write_page_html(out, table_rel, table_html))
 
-        if has_steno_sources(paths, resolved.datum_unl):
-            steno_rel = edition_subpage_export_relpath(resolved.datum_unl, "steno")
+        if has_steno_sources(paths, edition.datum_unl):
+            steno_rel = edition_subpage_export_relpath(edition.datum_unl, "steno")
             steno_html = render_steno_sources_html(
                 paths,
-                resolved.datum_unl,
+                edition.datum_unl,
                 css_href=css_href,
                 fonts_css_href=fonts_css_href,
                 base_path=base,
@@ -386,11 +395,11 @@ def run_export_pages(
             if steno_html:
                 written.append(_write_page_html(out, steno_rel, steno_html))
 
-        if has_recnici(paths, resolved.datum_unl):
-            recnici_rel = edition_subpage_export_relpath(resolved.datum_unl, "recnici")
+        if has_recnici(paths, edition.datum_unl):
+            recnici_rel = edition_subpage_export_relpath(edition.datum_unl, "recnici")
             recnici_html = render_recnici_table_html(
                 paths,
-                resolved.datum_unl,
+                edition.datum_unl,
                 css_href=css_href,
                 fonts_css_href=fonts_css_href,
                 base_path=base,
@@ -399,11 +408,11 @@ def run_export_pages(
             if recnici_html:
                 written.append(_write_page_html(out, recnici_rel, recnici_html))
 
-        if has_smlouvy(paths, resolved.datum_unl):
-            smlouvy_rel = edition_subpage_export_relpath(resolved.datum_unl, "smlouvy")
+        if has_smlouvy(paths, edition.datum_unl):
+            smlouvy_rel = edition_subpage_export_relpath(edition.datum_unl, "smlouvy")
             smlouvy_html = render_smlouvy_html(
                 paths,
-                resolved.datum_unl,
+                edition.datum_unl,
                 css_href=css_href,
                 fonts_css_href=fonts_css_href,
                 base_path=base,
@@ -413,9 +422,10 @@ def run_export_pages(
                 written.append(_write_page_html(out, smlouvy_rel, smlouvy_html))
 
     for edition in editions:
-        resolved = resolve_edition(obdobi, edition.datum_unl) or edition
+        if edition_source(edition) is None:
+            continue
         target = edition_pages_href(
-            resolved.obdobi, resolved.schuze, resolved.datum_unl, base
+            edition.obdobi, edition.schuze, edition.datum_unl, base
         )
         written.append(
             _write_redirect_page(
@@ -430,7 +440,7 @@ def run_export_pages(
             if not load_vyznamenani(paths, edition.datum_unl, kind):
                 continue
             sub_target = vyznamenani_pages_href(
-                resolved.obdobi, resolved.schuze, resolved.datum_unl, kind, base
+                edition.obdobi, edition.schuze, edition.datum_unl, kind, base
             )
             written.append(
                 _write_redirect_page(
@@ -446,7 +456,7 @@ def run_export_pages(
                     out,
                     f"noviny/{edition.obdobi}/{edition.schuze}/{edition.datum_unl}-steno.html",
                     steno_sources_pages_href(
-                        resolved.obdobi, resolved.schuze, resolved.datum_unl, base
+                        edition.obdobi, edition.schuze, edition.datum_unl, base
                     ),
                     site_url=site,
                 )
@@ -457,7 +467,7 @@ def run_export_pages(
                     out,
                     f"noviny/{edition.obdobi}/{edition.schuze}/{edition.datum_unl}-recnici.html",
                     recnici_pages_href(
-                        resolved.obdobi, resolved.schuze, resolved.datum_unl, base
+                        edition.obdobi, edition.schuze, edition.datum_unl, base
                     ),
                     site_url=site,
                 )
@@ -468,7 +478,7 @@ def run_export_pages(
                     out,
                     f"noviny/{edition.obdobi}/{edition.schuze}/{edition.datum_unl}-smlouvy.html",
                     smlouvy_pages_href(
-                        resolved.obdobi, resolved.schuze, resolved.datum_unl, base
+                        edition.obdobi, edition.schuze, edition.datum_unl, base
                     ),
                     site_url=site,
                 )

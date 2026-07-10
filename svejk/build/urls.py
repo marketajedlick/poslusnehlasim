@@ -62,14 +62,25 @@ def vydani_pages_href(datum_unl: str, base_path: str = "") -> str:
     return _join_href(base_path, f"/vydani/{iso}/")
 
 
+def edition_schuze_subpage(schuze: int) -> str:
+    return f"s{schuze}"
+
+
+def vydani_schuze_href(datum_unl: str, schuze: int, base_path: str = "") -> str:
+    return vydani_subpage_href(datum_unl, edition_schuze_subpage(schuze), base_path)
+
+
 def vydani_subpage_href(datum_unl: str, subpage: str, base_path: str = "") -> str:
     iso = datum_unl_to_iso(datum_unl)
     sub = subpage.strip("/")
     return _join_href(base_path, f"/vydani/{iso}/{sub}/")
 
 
-def edition_export_relpath(datum_unl: str) -> str:
-    return f"vydani/{datum_unl_to_iso(datum_unl)}/index.html"
+def edition_export_relpath(datum_unl: str, schuze: int | None = None) -> str:
+    iso = datum_unl_to_iso(datum_unl)
+    if schuze is not None:
+        return f"vydani/{iso}/{edition_schuze_subpage(schuze)}/index.html"
+    return f"vydani/{iso}/index.html"
 
 
 def edition_subpage_export_relpath(datum_unl: str, subpage: str) -> str:

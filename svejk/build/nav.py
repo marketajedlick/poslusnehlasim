@@ -11,7 +11,7 @@ from itertools import groupby
 from pathlib import Path
 
 from svejk.build.day_content import datum_design
-from svejk.build.urls import vydani_pages_href, vydani_subpage_href
+from svejk.build.urls import vydani_pages_href, vydani_schuze_href, vydani_subpage_href
 from svejk.build.io import read_json
 from svejk.paths import SchuzePaths, processed_root
 
@@ -113,14 +113,45 @@ def _editions_on_day(editions: tuple[Edition, ...], datum_unl: str) -> tuple[Edi
     return tuple(e for e in editions if e.datum_unl == datum_unl)
 
 
+def _canonical_on_day(
+    editions: tuple[Edition, ...], datum_unl: str
+) -> Edition | None:
+    siblings = _editions_on_day(editions, datum_unl)
+    return siblings[-1] if siblings else None
+
+
+def _edition_public_href(
+    edition: Edition,
+    editions: tuple[Edition, ...],
+    *,
+    base_path: str = "",
+) -> str:
+    canonical = _canonical_on_day(editions, edition.datum_unl)
+    if canonical and len(_editions_on_day(editions, edition.datum_unl)) > 1:
+        if edition.schuze != canonical.schuze:
+            return vydani_schuze_href(edition.datum_unl, edition.schuze, base_path)
+    return vydani_pages_href(edition.datum_unl, base_path)
+
+
 def short_pager_label(datum_unl: str) -> str:
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
     return f"{d.day}. {d.month}."
 
 
-def edition_web_href(obdobi: int, schuze: int, datum_unl: str) -> str:
-    _ = obdobi, schuze
-    return vydani_pages_href(datum_unl)
+def edition_web_href(
+    obdobi: int,
+    schuze: int,
+    datum_unl: str,
+    base_path: str = "",
+) -> str:
+    editions = list_site_editions(obdobi)
+    edition = next(
+        (e for e in editions if e.schuze == schuze and e.datum_unl == datum_unl),
+        None,
+    )
+    if edition is None:
+        return vydani_pages_href(datum_unl, base_path)
+    return _edition_public_href(edition, editions, base_path=base_path)
 
 
 def edition_pages_href(
@@ -129,9 +160,8 @@ def edition_pages_href(
     datum_unl: str,
     base_path: str = "",
 ) -> str:
-    """Kanonická URL vydání na produkčním webu."""
-    _ = obdobi, schuze
-    return vydani_pages_href(datum_unl, base_path)
+    """Veřejná URL vydání; u dvou schůzí v jeden den má nižší schůze /sN/ podstránku."""
+    return edition_web_href(obdobi, schuze, datum_unl, base_path)
 
 
 def archiv_pages_href(base_path: str = "") -> str:
@@ -282,6 +312,20 @@ def _schuze_nav_suffix(schuze: int) -> str:
     return f" · {word} {schuze}"
 
 
+def _pager_short_label(
+    target: Edition,
+    *,
+    from_datum: str,
+    editions: tuple[Edition, ...],
+) -> str:
+    if (
+        target.datum_unl == from_datum
+        and len(_editions_on_day(editions, from_datum)) > 1
+    ):
+        return f"s{target.schuze}"
+    return short_pager_label(target.datum_unl)
+
+
 def _make_link(
     edition: Edition,
     editions: tuple[Edition, ...],
@@ -294,11 +338,11 @@ def _make_link(
     target_paths = SchuzePaths.create(edition.obdobi, edition.schuze)
     den = _den_z_index(target_paths, edition.datum_unl)
     if link_mode == "web":
-        href = edition_web_href(edition.obdobi, edition.schuze, edition.datum_unl)
-    elif link_mode == "pages":
-        href = edition_pages_href(
+        href = edition_web_href(
             edition.obdobi, edition.schuze, edition.datum_unl, base_path
         )
+    elif link_mode == "pages":
+        href = _edition_public_href(edition, editions, base_path=base_path)
     else:
         from_file = from_paths.noviny_dlouhe_html(from_datum)
         to_file = target_paths.noviny_dlouhe_html(edition.datum_unl)
@@ -310,7 +354,9 @@ def _make_link(
         href=href,
         label=_link_label(edition, editions),
         title=title,
-        short_label=short_pager_label(edition.datum_unl),
+        short_label=_pager_short_label(
+            edition, from_datum=from_datum, editions=editions
+        ),
     )
 
 
@@ -483,6 +529,23 @@ def build_session_calendar(
     )
 
 
+def _pager_editions(
+    editions: tuple[Edition, ...],
+    *,
+    link_mode: str,
+) -> tuple[Edition, ...]:
+    """Jedna položka na kalendářní den (vyšší schůze = kanonická URL bez /sN/)."""
+    if link_mode == "file":
+        return editions
+    by_date: dict[str, Edition] = {}
+    for edition in editions:
+        by_date[edition.datum_unl] = edition
+    return tuple(
+        by_date[k]
+        for k in sorted(by_date, key=lambda d: datetime.strptime(d, "%d.%m.%Y"))
+    )
+
+
 def edition_nav(
     paths: SchuzePaths,
     datum_unl: str,
@@ -493,13 +556,6 @@ def edition_nav(
 ) -> EditionNav:
     ob = obdobi if obdobi is not None else paths.obdobi
     editions = list_site_editions(ob)
-    idx = next(
-        (i for i, e in enumerate(editions) if e.schuze == paths.schuze and e.datum_unl == datum_unl),
-        None,
-    )
-    if idx is None:
-        return EditionNav(None, None)
-
     kw = {
         "editions": editions,
         "link_mode": link_mode,
@@ -507,8 +563,46 @@ def edition_nav(
         "from_datum": datum_unl,
         "base_path": base_path,
     }
-    prev = _make_link(editions[idx - 1], **kw) if idx > 0 else None
-    nxt = _make_link(editions[idx + 1], **kw) if idx < len(editions) - 1 else None
+
+    if link_mode == "file":
+        idx = next(
+            (
+                i
+                for i, e in enumerate(editions)
+                if e.schuze == paths.schuze and e.datum_unl == datum_unl
+            ),
+            None,
+        )
+        if idx is None:
+            return EditionNav(None, None)
+        prev = _make_link(editions[idx - 1], **kw) if idx > 0 else None
+        nxt = _make_link(editions[idx + 1], **kw) if idx < len(editions) - 1 else None
+        return EditionNav(prev, nxt)
+
+    siblings = _editions_on_day(editions, datum_unl)
+    try:
+        pos = next(i for i, e in enumerate(siblings) if e.schuze == paths.schuze)
+    except StopIteration:
+        return EditionNav(None, None)
+
+    prev = None
+    if len(siblings) > 1 and pos > 0:
+        prev = _make_link(siblings[pos - 1], **kw)
+    else:
+        day_pager = _pager_editions(editions, link_mode=link_mode)
+        day_idx = next(i for i, e in enumerate(day_pager) if e.datum_unl == datum_unl)
+        if day_idx > 0:
+            prev = _make_link(day_pager[day_idx - 1], **kw)
+
+    nxt = None
+    if len(siblings) > 1 and pos < len(siblings) - 1:
+        nxt = _make_link(siblings[pos + 1], **kw)
+    else:
+        day_pager = _pager_editions(editions, link_mode=link_mode)
+        day_idx = next(i for i, e in enumerate(day_pager) if e.datum_unl == datum_unl)
+        if day_idx < len(day_pager) - 1:
+            nxt = _make_link(day_pager[day_idx + 1], **kw)
+
     return EditionNav(prev, nxt)
 
 

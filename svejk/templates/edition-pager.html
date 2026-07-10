@@ -9,7 +9,7 @@
     href="{{ nav.prev.href }}"
     title="{{ nav.prev.title }}"
     aria-label="{{ t.edition.prev_aria }}: {{ nav.prev.title }}"
-  >← {{ nav.prev.short_label or nav.prev.label }}</a>
+  >{% if pager_arrows_only %}←{% else %}← {{ nav.prev.short_label or nav.prev.label }}{% endif %}</a>
   {% else %}
   <span class="pager-tag disabled" aria-hidden="true">←</span>
   {% endif %}
@@ -26,7 +26,7 @@
     href="{{ nav.next.href }}"
     title="{{ nav.next.title }}"
     aria-label="{{ t.edition.next_aria }}: {{ nav.next.title }}"
-  >{{ nav.next.short_label or nav.next.label }} →</a>
+  >{% if pager_arrows_only %}→{% else %}{{ nav.next.short_label or nav.next.label }} →{% endif %}</a>
   {% else %}
   <span class="pager-tag disabled" aria-hidden="true">→</span>
   {% endif %}
