@@ -27,7 +27,7 @@ from svejk.build.steno_sources import (  # noqa: E402
     passages_for_slug,
     steno_sources_href,
 )
-from svejk.build.vote_logic import vote_kategorie  # noqa: E402
+from svejk.build.vote_logic import topic_proslo_from_votes, vote_kategorie  # noqa: E402
 from svejk.glossary_audit import audit_obdobi  # noqa: E402
 from svejk.paths import SchuzePaths  # noqa: E402
 from svejk.review import audit_weak_facts  # noqa: E402
@@ -234,23 +234,31 @@ def audit_verdikt_vs_votes(report: Report) -> None:
             group = [votes[int(c)] for c in (topic.get("vote_cisla") or []) if int(c) in votes]
             if not group:
                 continue
-            last = sorted(group, key=lambda v: (v.get("datum", ""), v.get("cas", "")))[-1]
-            proslo = last.get("vysledek") == "A" and (last.get("pro") or 0) > (last.get("proti") or 0)
+            group = sorted(group, key=lambda v: (v.get("datum", ""), v.get("cas", "")))
+            proslo = topic_proslo_from_votes(group)
+            expected = "schvaleno" if proslo else "zamiteno"
             if verdikt in ("zvoleno",):
                 expected = "zvoleno" if proslo else "zamiteno"
-            elif verdikt in ("odlozeno",):
-                expected = "odlozeno"
-            else:
-                expected = "schvaleno" if proslo else "zamiteno"
+            if verdikt in ("odlozeno",) and not proslo:
+                continue
             if verdikt == expected:
                 continue
-            if verdikt == "odlozeno" and not proslo:
+            if verdikt == "odlozeno":
+                continue
+            # Zákon mohl projít prvním kolem, ale padnout v závěrečném hlasování (např. zvířata #165 A, #167 R).
+            last = group[-1]
+            if (
+                verdikt == "zamiteno"
+                and proslo
+                and last.get("vysledek") == "R"
+                and (last.get("proti") or 0) > (last.get("pro") or 0)
+            ):
                 continue
             report.add(
                 "error",
                 "verdikt_mismatch",
-                f"verdikt={verdikt}, poslední hlasování #{last.get('cislo')} "
-                f"{last.get('vysledek')} {last.get('pro')}:{last.get('proti')} → očekáváno «{expected}»",
+                f"verdikt={verdikt}, hlasování naznačuje «{expected}» "
+                f"(poslední #{last.get('cislo')} {last.get('vysledek')} {last.get('pro')}:{last.get('proti')})",
                 key=key,
                 slug=slug,
             )
