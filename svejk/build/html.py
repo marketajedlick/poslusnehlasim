@@ -428,8 +428,8 @@ def _site_ctx(
     from svejk.build.seo import site_meta_description as _site_meta_description
 
     t = load_strings()
-    domain = t["brand"]["domain"]
-    share_page_url = f"{domain}{page_path}" if page_path.startswith("/") else f"{domain}/{page_path}"
+    page = page_path if page_path.startswith("/") else f"/{page_path}"
+    share_page_url = f"{site_url.rstrip('/')}{page}"
     return {
         "t": t,
         "site_meta_description": _site_meta_description(),

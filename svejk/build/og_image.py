@@ -19,6 +19,8 @@ _SHARE_BTN_SIZE = 28
 
 OG_WIDTH = 1200
 OG_HEIGHT = 630
+# Bump při vizuální změně OG — sociální sítě cacheují obrázek podle URL.
+OG_CACHE_VERSION = "hero-card-1"
 
 # Čtverec odpovídá hero kartě na mobilu; ruční nahrání na X vypadá lépe než 1200×630.
 # OG zůstává landscape pro twitter:card / og:image u odkazu na vydání.
@@ -39,14 +41,20 @@ def og_image_filename(datum_unl: str) -> str:
     return f"{datum_unl_to_iso(datum_unl)}.png"
 
 
-def og_image_href(base_path: str, datum_unl: str) -> str:
+def og_image_href(base_path: str, datum_unl: str, *, version: str = OG_CACHE_VERSION) -> str:
     base = base_path.rstrip("/")
-    rel = f"/og/{og_image_filename(datum_unl)}"
+    rel = f"/og/{og_image_filename(datum_unl)}?v={version}"
     return f"{base}{rel}" if base else rel
 
 
-def og_image_abs_url(site_url: str, base_path: str, datum_unl: str) -> str:
-    return f"{site_url.rstrip('/')}{og_image_href(base_path, datum_unl)}"
+def og_image_abs_url(
+    site_url: str,
+    base_path: str,
+    datum_unl: str,
+    *,
+    version: str = OG_CACHE_VERSION,
+) -> str:
+    return f"{site_url.rstrip('/')}{og_image_href(base_path, datum_unl, version=version)}"
 
 
 def share_hero_filename(datum_unl: str) -> str:
@@ -563,6 +571,8 @@ def og_meta_block(
     title = escape(og_title, quote=True) if og_title else ""
     lines = [
         f'<meta property="og:image" content="{og_image_url}" />',
+        f'<meta property="og:image:secure_url" content="{og_image_url}" />',
+        '<meta property="og:image:type" content="image/png" />',
         f'<meta property="og:image:width" content="{og_image_width}" />',
         f'<meta property="og:image:height" content="{og_image_height}" />',
         f'<meta property="og:image:alt" content="{alt}" />',
@@ -603,6 +613,16 @@ def inject_og_image(
     if 'property="og:image"' in html:
         html = re.sub(
             r'<meta property="og:image"[^>]*>\n?',
+            "",
+            html,
+        )
+        html = re.sub(
+            r'<meta property="og:image:secure_url"[^>]*>\n?',
+            "",
+            html,
+        )
+        html = re.sub(
+            r'<meta property="og:image:type"[^>]*>\n?',
             "",
             html,
         )

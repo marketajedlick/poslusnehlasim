@@ -3,10 +3,12 @@ from pathlib import Path
 from PIL import Image
 
 from svejk.build.og_image import (
+    OG_CACHE_VERSION,
     OG_HEIGHT,
     OG_WIDTH,
     SHARE_HERO_HEIGHT,
     SHARE_HERO_WIDTH,
+    og_image_abs_url,
     render_og_image,
     render_share_hero_image,
 )
@@ -28,6 +30,11 @@ def test_render_og_image_dimensions(tmp_path: Path) -> None:
         assert img.getpixel((0, 0)) == (247, 242, 240)
         # žlutá karta uprostřed, ne celé plátno
         assert img.getpixel((OG_WIDTH // 2, OG_HEIGHT // 2)) == (244, 196, 48)
+
+
+def test_og_image_abs_url_cache_bust() -> None:
+    url = og_image_abs_url("https://poslusnehlasim.cz", "", "13.02.2026")
+    assert url.endswith(f"2026-02-13.png?v={OG_CACHE_VERSION}")
 
 
 def test_render_share_hero_dimensions(tmp_path: Path) -> None:

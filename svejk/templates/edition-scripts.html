@@ -121,8 +121,18 @@
     return title ? title + '\n\n' + url : url;
   }
 
-  function twitterIntentUrl(text){
-    return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text || '');
+  function twitterIntentUrl(text, url){
+    var params = new URLSearchParams();
+    var body = (text || '').trim();
+    var link = (url || '').trim();
+    if (body && link){
+      var plain = sharePageUrlPlain();
+      if (body.endsWith(link)) body = body.slice(0, -link.length).trim();
+      else if (body.endsWith(plain)) body = body.slice(0, -plain.length).trim();
+    }
+    if (body) params.set('text', body);
+    if (link) params.set('url', link);
+    return 'https://twitter.com/intent/tweet?' + params.toString();
   }
 
   function copyToClipboard(text, btn, doneLabel){
@@ -202,7 +212,7 @@
     if (shareTwitter){
       shareTwitter.disabled = false;
       shareTwitter.onclick = function(){
-        window.open(twitterIntentUrl(text), '_blank', 'noopener,noreferrer');
+        window.open(twitterIntentUrl(text, sharePageUrlFull()), '_blank', 'noopener,noreferrer');
       };
     }
     if (shareDownload){
