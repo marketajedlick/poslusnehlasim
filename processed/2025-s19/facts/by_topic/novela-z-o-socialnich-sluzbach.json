@@ -22,11 +22,13 @@
     },
     {
       "text": "Pozměňovací návrh Pastuchové na příspěvek na mobilitu prošel.",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "příspěvek na mobilitu"
     },
     {
       "text": "Finální hlasování číslo 14 v 09:58, sto třicet dva hlasů pro.",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "sto třicet dva hlasů"
     }
   ],
   "publikovat": true,

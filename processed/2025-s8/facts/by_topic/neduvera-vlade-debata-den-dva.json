@@ -12,16 +12,19 @@
       "text": "Bartoš ráno obhajoval stanovisko Pirátů, vláda prý zdržuje práci sama.",
       "source": "steno",
       "steno_id": "2025_8_00079",
-      "citace": "Děkuji, já vám všem přeji dobré ráno."
+      "citace": "Děkuji, já vám všem přeji dobré ráno.",
+      "link_phrase": "Bartoš"
     },
     {
-      "text": "Jurečka: při debatě sedí jen jeden ministr, ostatní členové vlády chybí."
+      "text": "Jurečka: při debatě sedí jen jeden ministr, ostatní členové vlády chybí.",
+      "link_phrase": "sedí jen jeden ministr,"
     },
     {
       "text": "Skopeček: schůze by nevznikla, kdyby se vláda chovala aspoň trochu standardně.",
       "source": "steno",
       "steno_id": "2025_8_00347",
-      "citace": "Děkuji za slovo, pane předsedající, vážené kolegyně, vážení kolegové, dovolte mi také vystoupit na mimořádné schůzi, kdy se bavíme a jsme před hlasováním o nedůvěře"
+      "citace": "Děkuji za slovo, pane předsedající, vážené kolegyně, vážení kolegové, dovolte mi také vystoupit na mimořádné schůzi, kdy se bavíme a jsme před hlasováním o nedůvěře",
+      "link_phrase": "Skopeček odmítl"
     },
     {
       "text": "Poslanci schválili pokračování po 21. hodině, 139 pro, 1 proti."

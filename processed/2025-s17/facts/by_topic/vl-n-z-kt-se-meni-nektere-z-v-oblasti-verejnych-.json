@@ -15,13 +15,15 @@
       "citace": "Děkuji za slovo, pane předsedo."
     },
     {
-      "text": "Jakob varoval před schodkem přes čtyři sta miliard a výjimkami Schillerové."
+      "text": "Jakob varoval před schodkem přes čtyři sta miliard a výjimkami Schillerové.",
+      "link_phrase": "přes čtyři sta miliard"
     },
     {
       "text": "Vlček řekl, že vláda vypíná rozpočtová pravidla a brzdy.",
       "source": "steno",
       "steno_id": "2025_17_00401",
-      "citace": "Pane předsedající, já vám děkuji za slovo."
+      "citace": "Pane předsedající, já vám děkuji za slovo.",
+      "link_phrase": "Vlček říkal"
     },
     {
       "text": "Finální hlasování číslo 44 v 13:10 padlo šedesát osm proti devadesáti.",

@@ -12,10 +12,12 @@
       "text": "Schillerová předložila novou evidenci tržeb, druhou generaci EET: má platit od ledna 2027 a obejít se bez povinného tištění účtenek.",
       "source": "steno",
       "steno_id": "2025_20_01033",
-      "citace": "Děkuji vám za slovo, pane místopředsedo."
+      "citace": "Děkuji vám za slovo, pane místopředsedo.",
+      "link_phrase": "Schillerová oponovala"
     },
     {
-      "text": "Vláda slibuje 15 miliard navíc; Hřib připomněl, že první EET sliboval 10 miliard za tři roky, a označil nové číslo za hausnumero."
+      "text": "Vláda slibuje 15 miliard navíc; Hřib připomněl, že první EET sliboval 10 miliard za tři roky, a označil nové číslo za hausnumero.",
+      "link_phrase": "15 miliard navíc;"
     },
     {
       "text": "Návrhy TOP 09 a ODS na zamítnutí či vrácení spadly pod stůl (52:94 a 33:100) a zákon postoupil z prvního kola do výborů.",
@@ -26,7 +28,8 @@
       "source": "steno",
       "kind": "scene",
       "steno_id": "2025_20_01083",
-      "citace": "obecné, aby mně nebylo vyčítáno, že už na mě mohla reagovat jenom přednostní práva."
+      "citace": "obecné, aby mně nebylo vyčítáno, že už na mě mohla reagovat jenom přednostní práva.",
+      "link_phrase": "Schillerová oponovala"
     }
   ],
   "publikovat": true,

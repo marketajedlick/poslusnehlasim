@@ -9,20 +9,24 @@
   ],
   "fakty": [
     {
-      "text": "Lang: poště se vrací stará pravidla financování, Evropská komise povolila podporu jen do výše miliardy a půl ročně."
+      "text": "Lang: poště se vrací stará pravidla financování, Evropská komise povolila podporu jen do výše miliardy a půl ročně.",
+      "link_phrase": "poště se vrací stará pravidla financování,"
     },
     {
       "text": "Stojanová: odklad eLegislativy nesmí být zároveň odkladem transparentnosti.",
       "source": "steno",
       "steno_id": "2025_21_00125",
-      "citace": "Ten technický odklad eLegislativy totiž nesmí být zároveň odkladem transparentnosti."
+      "citace": "Ten technický odklad eLegislativy totiž nesmí být zároveň odkladem transparentnosti.",
+      "link_phrase": "Stojanová varovala"
     },
     {
-      "text": "Skopeček varoval, ať se z odkladu nestane nový standard a z termínů bezvýznamná čísla."
+      "text": "Skopeček varoval, ať se z odkladu nestane nový standard a z termínů bezvýznamná čísla.",
+      "link_phrase": "ať se z odkladu nestane nový standard"
     },
     {
       "text": "Do výboru pro veřejnou správu posláno 145 hlasy; Bendův návrh přibrat ústavně-právní výbor zamítnut (62 pro), zkrácení lhůt na 30 dnů prošlo 91 pro, 7 proti.",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "Do výboru pro veřejnou správu"
     }
   ],
   "publikovat": true,

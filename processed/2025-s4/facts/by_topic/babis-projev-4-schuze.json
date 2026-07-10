@@ -12,13 +12,15 @@
       "text": "A toastový chleba jsem vám nepřinesl, ale budu vám o něm povídat.",
       "source": "steno",
       "steno_id": "2025_4_00003",
-      "citace": "toastový chleba jsem vám nepřinesl, ale budu vám o něm povídat."
+      "citace": "toastový chleba jsem vám nepřinesl, ale budu vám o něm povídat.",
+      "link_phrase": "Babiš řekl"
     },
     {
       "text": "Celková investice do toastové linky byla 617 milionů a dotace byla 100 milionů, jo?",
       "source": "steno",
       "steno_id": "2025_4_00003",
-      "citace": "Celková investice do toastové linky byla 617 milionů a dotace byla 100 milionů, jo?"
+      "citace": "Celková investice do toastové linky byla 617 milionů a dotace byla 100 milionů, jo?",
+      "link_phrase": "Babiš řekl"
     },
     {
       "text": "my jsme dodali uprchlíkům z Ukrajiny 3600 toastů v roce 2022, když byli na hlavním nádraží a neměli co jíst, představte si"
@@ -28,7 +30,8 @@
       "source": "steno",
       "kind": "scene",
       "steno_id": "2025_4_00003",
-      "citace": "nákupního košíku, který si přinesl k řečništi, vytahuje knihy a ukazuje je přítomným.) Tohle je kniha o Agrofertu."
+      "citace": "nákupního košíku, který si přinesl k řečništi, vytahuje knihy a ukazuje je přítomným.) Tohle je kniha o Agrofertu.",
+      "link_phrase": "Babiš řekl"
     }
   ],
   "publikovat": true,

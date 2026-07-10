@@ -12,18 +12,21 @@
       "text": "Změnu stavebního zákona předkládají poslanci vládních klubů v čele s Babišem; opozice jí říká lex developer a žádá stažení.",
       "source": "steno",
       "steno_id": "2025_20_00426",
-      "citace": "pánové, vážená paní ministryně, dobrý podvečer."
+      "citace": "pánové, vážená paní ministryně, dobrý podvečer.",
+      "link_phrase": "říká lex developer a"
     },
     {
       "text": "Za dva večery padlo 44 hlasování a všechna byla jen o tom, kdy debatu přerušit; o obsahu zákona se nehlasovalo ani jednou.",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "o tom, kdy"
     },
     {
       "text": "Jurečka ve středu večer spočítal v sále osm poslanců vládní koalice včetně jednoho ministra."
     },
     {
       "text": "Ve čtvrtek večer kleslo kvorum pod hranici, u jednoho hlasování zbylo přihlášených 62 poslanců a Okamura podezíral kolegy, že si hrají s kartami.",
-      "kind": "scene"
+      "kind": "scene",
+      "link_phrase": "podezíral kolegy, že"
     }
   ],
   "publikovat": true,

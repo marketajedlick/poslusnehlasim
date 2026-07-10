@@ -9,13 +9,15 @@
   ],
   "fakty": [
     {
-      "text": "Krňanský prosadil bod o přeplatcích Hřiba, 167 hlasů pro, jásot v sále."
+      "text": "Krňanský prosadil bod o přeplatcích Hřiba, 167 hlasů pro, jásot v sále.",
+      "link_phrase": "bod o přeplatcích Hřiba,"
     },
     {
       "text": "Hřib řekl, že přeplatky vrátil a bude hlasovat pro projednání.",
       "citace": "mi poslali tedy údaje, kam se to má vrátit, tak jsem jim všechno do koruny vrátil.",
       "steno_id": "2025_13_00081",
-      "source": "steno"
+      "source": "steno",
+      "link_phrase": "Hřib přeplatky vrátil a slíbil hlasovat pro"
     },
     {
       "text": "Pořad schválen až po čtyřiceti čtyřech hlasováních o změnách.",

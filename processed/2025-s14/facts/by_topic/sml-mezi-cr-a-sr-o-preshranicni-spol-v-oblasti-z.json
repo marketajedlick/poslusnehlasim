@@ -12,11 +12,13 @@
       "text": "Vojtěch řekl, že smlouva pomůže pacientům v pohraničí."
     },
     {
-      "text": "Smlouva navazuje na dohody s Německem a Rakouskem."
+      "text": "Smlouva navazuje na dohody s Německem a Rakouskem.",
+      "link_phrase": "Smlouva navazuje na dohody s Německem a"
     },
     {
       "text": "Hlasování číslo 167, sto pět hlasů pro.",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "sto pět hlasů"
     }
   ],
   "publikovat": true,

@@ -26,7 +26,7 @@
       "text": "Červený tvrdil, že Nová zelená úsporám nemá peníze.",
       "source": "steno",
       "steno_id": "2025_24_00361",
-      "link_phrase": "Červený (Motoristé) odpověděl"
+      "link_phrase": "že Nová zelená úsporám nemá"
     },
     {
       "text": "Hladík tvrdil, že za jejich vlády pomohli 450 000 domácnostem.",
@@ -36,7 +36,8 @@
       "link_phrase": "Hladík (KDU-ČSL) mu vyčítal"
     },
     {
-      "text": "Hladík tvrdil, že do ekonomiky šly zhruba 330 miliard."
+      "text": "Hladík tvrdil, že do ekonomiky šly zhruba 330 miliard.",
+      "link_phrase": "do ekonomiky šly zhruba"
     },
     {
       "text": "Okamura představil interpelaci Hladíka k Nové zelené úsporám.",
@@ -85,7 +86,8 @@
       "link_phrase": "Červený (Motoristé) odpověděl"
     },
     {
-      "text": "Hladík tvrdil, že současné vedení počítá s pákovým efektem do 50 miliard."
+      "text": "Hladík tvrdil, že současné vedení počítá s pákovým efektem do 50 miliard.",
+      "link_phrase": "vedení počítá s pákovým efektem do"
     },
     {
       "text": "Červený o penězích pro mean.",
@@ -110,7 +112,8 @@
       "text": "Hladík NPO pro mean.",
       "citace": "Národního plánu obnovy. Ani korunu ze žlutých emisních povolenek.",
       "steno_id": "2025_24_00369",
-      "source": "steno"
+      "source": "steno",
+      "link_phrase": "Hladík (KDU-ČSL) mu vyčítal"
     },
     {
       "text": "Hladík o pákovém efektu pro mean."

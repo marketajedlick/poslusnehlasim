@@ -12,7 +12,8 @@
       "text": "Poslanci zvolili Langa zpravodajem bezpečnostní novely, 31 hlasů proti."
     },
     {
-      "text": "Lang zvolili zpravodajem, proti hlasovalo 31 poslanců."
+      "text": "Lang zvolili zpravodajem, proti hlasovalo 31 poslanců.",
+      "link_phrase": "zvolili zpravodajem, proti"
     },
     {
       "text": "Rakušan připomněl, že jde o Lex Ukrajina pro zhruba 300 000 lidí s dočasnou ochranou.",
@@ -72,7 +73,7 @@
       "text": "Pláteník se omluvil, že se nechal unést tím tématem bezpečnosti, když do faktické vtáhl novinu o Pavlovi a NATO.",
       "source": "steno",
       "steno_id": "2025_24_00255",
-      "link_phrase": "Pláteník pak ve faktické poznámce"
+      "link_phrase": "omluvil, že se nechal unést tím tématem bezpečnosti,"
     },
     {
       "text": "Pláteník citoval ČTK o Pavlovi a summitu NATO mimo téma novely.",
@@ -90,7 +91,8 @@
     },
     {
       "text": "Bezpečnostní novela prošla druhým kolem.",
-      "cislo_hlasovani": 59
+      "cislo_hlasovani": 59,
+      "link_phrase": "prošla druhým kolem."
     },
     {
       "text": "Rakušan popsal Lex Ukrajina jako balíček změn pobytových a sociálních pravidel.",

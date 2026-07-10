@@ -15,7 +15,8 @@
       "citace": "novela zavádí cílení na skupiny osob, které, mají..."
     },
     {
-      "text": "Hlasování číslo 3, pro 27, proti 86. Návrh na zamítnutí nebyl přijat."
+      "text": "Hlasování číslo 3, pro 27, proti 86. Návrh na zamítnutí nebyl přijat.",
+      "link_phrase": "Návrh na zamítnutí"
     },
     {
       "text": "Hlasování číslo 5, pro 126, proti nikdo. Návrh byl přikázán garančnímu výboru."
@@ -24,10 +25,12 @@
       "text": "Odložením zákona by vláda ohrozila více než 9 miliard korun z fondu Evropské unie.",
       "source": "steno",
       "steno_id": "2025_12_00059",
-      "citace": "Děkuji za slovo, pane předsedající."
+      "citace": "Děkuji za slovo, pane předsedající.",
+      "link_phrase": "Olšáková chtěla zákon zamítnout"
     },
     {
-      "text": "Zákon o podpoře bydlení žádné byty nestaví, ale staví preventivní síť poradenství."
+      "text": "Zákon o podpoře bydlení žádné byty nestaví, ale staví preventivní síť poradenství.",
+      "link_phrase": "o podpoře bydlení"
     },
     {
       "text": "Dopady bytové nouze jsou 4,1 miliardy ročně.",

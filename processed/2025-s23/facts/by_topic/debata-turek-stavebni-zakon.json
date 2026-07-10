@@ -13,7 +13,7 @@
       "source": "steno",
       "steno_id": "2025_23_00026",
       "citace": "vážení pánové, toto je má první veřejná řeč zde na půdě Poslanecké sněmovny a čekám na ni patnáct dní.",
-      "link_phrase": "Kvůli nenávisti k parodii na parlament"
+      "link_phrase": "Turek od Motoristů u stavebního zákona nemluvil ani tak o stavebních úřadech"
     },
     {
       "text": "Turek řekl, že instalovaný výkon větrných elektráren je objektivně jen na papíře.",
@@ -40,10 +40,12 @@
       "text": "Turek v faktické poznámce přirovnal emisní povolenku ke zelenému bitcoinu.",
       "citace": "Emisní povolenka je ideální nástroj, a je to brutální nástroj na prosazování řekl bych bezemisních technologií, a tím, že je to kapitálový derivát, tak se s tím obchoduje.",
       "steno_id": "2025_23_00036",
-      "source": "steno"
+      "source": "steno",
+      "link_phrase": "faktické poznámce přirovnal emisní"
     },
     {
-      "text": "Turek zakončil projev větou, že v roce 2050 asi přestaneme dýchat."
+      "text": "Turek zakončil projev větou, že v roce 2050 asi přestaneme dýchat.",
+      "link_phrase": "větou, že v roce 2050 asi přestaneme dýchat."
     },
     {
       "text": "Jurečka si všiml, že po půl roce konečně vidí Turka vystoupit u Motoristů, a opravil předsedajícího Okamuru, který ho omylem přiřadil k SPD.",

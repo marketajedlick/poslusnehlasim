@@ -12,7 +12,8 @@
       "text": "Okamura prosadil bod proti sjezdu Sudetoněmeckého landsmanšaftu v Brně.",
       "citace": "Stanovisko vládní koalice ke sjezdu sudetoněmeckého landsmanšaftu v Brně.",
       "steno_id": "2025_16_00003",
-      "source": "steno"
+      "source": "steno",
+      "link_phrase": "sjezdu Sudetoněmeckého landsmanšaftu v Brně."
     },
     {
       "text": "Jakob řekl, že opozice byla zaskočena a text usnesení nedostala včas.",
@@ -25,7 +26,8 @@
     },
     {
       "text": "Čtrnáct hlasování o pozměňovacích návrzích padlo, poslední ve 23:12.",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "Čtrnáct hlasování o pozměňovacích návrzích"
     }
   ],
   "publikovat": true,

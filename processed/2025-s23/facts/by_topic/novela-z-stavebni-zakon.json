@@ -12,13 +12,15 @@
       "text": "Debata navázala na přerušení ve 23 hodin z minulého týdne; Výborný pokračoval v hlučném sále, kde ministryně hovořila s poslancem u pultu.",
       "source": "steno",
       "steno_id": "2025_23_00006",
-      "link_phrase": "ve dvacet tři hodin"
+      "link_phrase": "ve 23 hodin"
     },
     {
-      "text": "Výborný varoval před kolapsem stavebního řízení a popsal chaos: poslanecký návrh, pak přes tisíc stran komplexního pozměňovacího návrhu a desítky dalších oprav."
+      "text": "Výborný varoval před kolapsem stavebního řízení a popsal chaos: poslanecký návrh, pak přes tisíc stran komplexního pozměňovacího návrhu a desítky dalších oprav.",
+      "link_phrase": "Výborný varoval před kolapsem stavebního řízení a popsal"
     },
     {
-      "text": "Výborný popsal legislativní balík: nejdřív poslanecký návrh, pak přes tisíc stran komplexního pozměňovacího návrhu a desítky dalších oprav."
+      "text": "Výborný popsal legislativní balík: nejdřív poslanecký návrh, pak přes tisíc stran komplexního pozměňovacího návrhu a desítky dalších oprav.",
+      "link_phrase": "přes tisíc stran komplexního pozměňovacího návrhu"
     },
     {
       "text": "Haas na začátku vydal technické hlášení, že má sedmnáct pozměňovacích návrhů, sliboval stručnost a sál se smál, když je začal rychle odškrtávat.",
@@ -31,10 +33,12 @@
       "text": "Haas u prvního návrhu reagoval na smích v sále větou, že to je neobstrukční."
     },
     {
-      "text": "Stojanová spočítala 626 stavebních úřadů v republice a varovala, že na nové úřady chce přejít zhruba jen třetina současných zaměstnanců, dvě třetiny zvažují odchod."
+      "text": "Stojanová spočítala 626 stavebních úřadů v republice a varovala, že na nové úřady chce přejít zhruba jen třetina současných zaměstnanců, dvě třetiny zvažují odchod.",
+      "link_phrase": "a varovala, že na nové úřady chce přejít"
     },
     {
-      "text": "Vlček přirovnal stavební zákon k Lex developerovi: vlajková loď, která je děravá jak cedník."
+      "text": "Vlček přirovnal stavební zákon k Lex developerovi: vlajková loď, která je děravá jak cedník.",
+      "link_phrase": "zákon k Lex"
     },
     {
       "text": "Berki řekl, že zákon přišel příliš dlouhý, tak z něj teď vypařují pojistky, a poprosil, aby se nepodpořily návrhy Haase, který opět opomíjí Liberec.",
@@ -55,11 +59,12 @@
       "source": "steno",
       "kind": "scene",
       "steno_id": "2025_23_00125",
-      "link_phrase": "hluk v sále neustává"
+      "link_phrase": "ve frontě je ještě čtyřicet řečníků"
     },
     {
       "text": "Neprošel návrh Lukáše Vlčka (STAN) na vrácení předlohy k novému projednání v hospodářském výboru, 22 proti 75.",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "návrh Lukáše Vlčka"
     },
     {
       "text": "Potom proběhla podrobná rozprava, poslanci se hlásili k desítkám pozměňovacích návrhů a Barták ve 20:14 ukončil druhé čtení.",

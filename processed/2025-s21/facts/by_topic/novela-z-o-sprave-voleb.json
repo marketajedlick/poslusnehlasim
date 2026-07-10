@@ -12,7 +12,8 @@
       "text": "Senátor Canov: QR kódy mají nevidomým a slabozrakým umožnit volit sami bez asistenta, nebo si asistenta zkontrolovat.",
       "source": "steno",
       "steno_id": "2025_21_00102",
-      "citace": "Byl jsem tady přesně před 40 dny, a protože se mi u vás moc líbilo, tak jsem tady zase."
+      "citace": "Byl jsem tady přesně před 40 dny, a protože se mi u vás moc líbilo, tak jsem tady zase.",
+      "link_phrase": "Canov se loučil slovy"
     },
     {
       "text": "Ministr vnitra Metnar podpořil odklad ostrého spuštění informačního systému správy voleb, systém prý není plošně otestovaný.",
@@ -25,10 +26,12 @@
       "source": "steno",
       "kind": "scene",
       "steno_id": "2025_21_00102",
-      "citace": "Byl jsem tady přesně před 40 dny, a protože se mi u vás moc líbilo, tak jsem tady zase."
+      "citace": "Byl jsem tady přesně před 40 dny, a protože se mi u vás moc líbilo, tak jsem tady zase.",
+      "link_phrase": "Canov se loučil slovy"
     },
     {
-      "text": "Schváleno rovnou v prvním kole: všech 155 přítomných pro, nikdo proti."
+      "text": "Schváleno rovnou v prvním kole: všech 155 přítomných pro, nikdo proti.",
+      "link_phrase": "rovnou v prvním"
     }
   ],
   "publikovat": true,

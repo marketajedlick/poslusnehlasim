@@ -9,17 +9,20 @@
   ],
   "fakty": [
     {
-      "text": "Vondráček představil druhé čtení zákona o státních zaměstnancích."
+      "text": "Vondráček představil druhé čtení zákona o státních zaměstnancích.",
+      "link_phrase": "zákona o státních"
     },
     {
       "text": "Starostové návrh podporují kvůli napravení nespravedlnosti v systému.",
       "source": "steno",
       "steno_id": "2025_14_00600",
-      "citace": "Tak děkuji, pane předsedající."
+      "citace": "Tak děkuji, pane předsedající.",
+      "link_phrase": "napravení nespravedlnosti v"
     },
     {
       "text": "Hlasování číslo 78, sto třináct hlasů pro, zákon ve druhém čtení schválen.",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "sto třináct hlasů"
     }
   ],
   "publikovat": true,
