@@ -5,6 +5,7 @@
     "navrh-zakona-o-statnich-zamestnancich",
     "mimoradna-schuze-statni-zakon"
   ],
+  "steno_zdroje": true,
   "stats": {
     "pocet_hlas": 2,
     "minuty": 470,

@@ -5,6 +5,7 @@
     "navrh-na-odvolani-clenu-spravni-rady-vseobecne-z",
     "novela-z-o-pojistnem-na-verejne-zdravotni-pojist"
   ],
+  "steno_zdroje": true,
   "stats": {
     "pocet_hlas": 3,
     "minuty": 585,

@@ -6,6 +6,7 @@
     "novela-z-o-sprave-voleb",
     "n-z-kterym-se-meni-nektere-zakony-na-useku-vnitr"
   ],
+  "steno_zdroje": true,
   "stats": {
     "pocet_hlas": 3,
     "minuty": 210,

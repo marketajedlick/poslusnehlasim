@@ -6,6 +6,7 @@
     "novela-z-o-statni-socialni-podpore",
     "novela-z-o-socialnich-sluzbach"
   ],
+  "steno_zdroje": true,
   "stats": {
     "pocet_hlas": 3,
     "minuty": 476,

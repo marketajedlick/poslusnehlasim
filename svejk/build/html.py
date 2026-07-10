@@ -688,7 +688,7 @@ def render_den_html(
     from svejk.build.urls import datum_unl_to_iso as _datum_unl_to_iso
 
     edition_day_headline = schema_headline
-    edition_day_meta_label = _edition_day_meta(content.den, content.datum, paths.schuze)
+    edition_day_meta_label = _edition_day_meta(content.den, content.datum)
     edition_iso_date = _datum_unl_to_iso(content.datum)
     homepage_archive = (
         _homepage_archive_list(

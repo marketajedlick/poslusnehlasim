@@ -6,6 +6,7 @@
     "novela-z-o-spotrebitelskem-uveru",
     "debata-interpelace-hladik-cerveny"
   ],
+  "steno_zdroje": true,
   "stats": {
     "pocet_hlas": 8,
     "minuty": 99,

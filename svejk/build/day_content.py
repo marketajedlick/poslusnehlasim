@@ -380,12 +380,12 @@ def datum_day_month(datum_unl: str) -> str:
     return f"{d.day}. {_MESICE_GEN[d.month - 1]}"
 
 
-def edition_day_meta(den: str, datum_unl: str, schuze: int) -> str:
-    """Řádek pod titulkem dne: Poslanecká sněmovna, úterý 2. července 2026 · 45. schůze."""
+def edition_day_meta(den: str, datum_unl: str) -> str:
+    """Řádek pod titulkem dne: Poslanecká sněmovna, úterý 2. července 2026."""
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
     month = _MESICE_GEN[d.month - 1]
     den_label = den.strip().capitalize() if den else ""
-    return f"Poslanecká sněmovna, {den_label} {d.day}. {month} {d.year} · {schuze}. schůze"
+    return f"Poslanecká sněmovna, {den_label} {d.day}. {month} {d.year}"
 
 
 def calendar_parts(datum_unl: str, den: str) -> tuple[str, str, str]:
@@ -824,8 +824,11 @@ def _sanitize_mean_export(text: str) -> str:
 
 
 def _sanitize_nadpis_export(text: str) -> str:
-    """Titulky bez doplnění stran z registru poslanců."""
-    return bez_dlouhych_pomlc(text) if (text or "").strip() else text
+    """Titulky bez doplnění stran z registru poslanců; první písmeno velké."""
+    t = (text or "").strip()
+    if not t:
+        return text
+    return _kapitalizuj_prvni_pismeno(bez_dlouhych_pomlc(t))
 
 
 def _sanitize_vysledek_export(text: str) -> str:
@@ -878,6 +881,7 @@ def _sanitize_den_content(content: DenContent) -> None:
     content.zaver = _sanitize_mean_export(content.zaver)
     content.zaver_key = _sanitize_mean_export(content.zaver_key)
     content.zaver_body = _sanitize_mean_export(content.zaver_body)
+    content.nadpis_vydani = _sanitize_nadpis_export(content.nadpis_vydani)
     for item in content.items:
         item.kick = _sanitize_text_export(item.kick)
         item.nadpis = _sanitize_nadpis_export(item.nadpis)
