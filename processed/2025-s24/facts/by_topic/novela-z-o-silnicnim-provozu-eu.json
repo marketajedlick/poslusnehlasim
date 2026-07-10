@@ -1,0 +1,42 @@
+{
+  "slug": "novela-z-o-silnicnim-provozu-eu",
+  "nazev": "Novela z. o silničním provozu - EU",
+  "datum": "24.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "silničním provozu",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "Zdraví příchozího ministra Havlíčka.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_00302",
+      "citace": "(Zdraví příchozího ministra Havlíčka.)"
+    },
+    {
+      "text": "Hlasování číslo 60, přihlášeno (bylo) 138 poslanců, pro (bylo) 76, proti 16, (zdrželo se 46 poslanců).",
+      "source": "steno",
+      "steno_id": "2025_24_00302",
+      "citace": "Hlasování číslo 60, přihlášeno (bylo) 138 poslanců, pro (bylo) 76, proti 16, (zdrželo se 46 poslanců)."
+    },
+    {
+      "text": "(Zdraví příchozího ministra Havlíčka.) Tak ještě jednou připomínám, ať víte o čem hlasujeme.",
+      "source": "steno",
+      "steno_id": "2025_24_00302",
+      "citace": "(Zdraví příchozího ministra Havlíčka.) Tak ještě jednou připomínám, ať víte o čem hlasujeme."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Řidiči to pocítí jen málo",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 16,
+    "pritomno_min": 138,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 296
+}

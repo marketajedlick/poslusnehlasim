@@ -5,12 +5,11 @@
     "debata-sluzebni-zakon-richterova-rakusan",
     "novela-z-o-nekt-opatr-v-souv-s-ozbrojenym-konfli"
   ],
-  "steno_zdroje": true,
   "stats": {
     "pocet_hlas": 5,
     "minuty": 525,
     "end_cas": "18:00",
-    "proslo": 1,
+    "proslo": 3,
     "zamitnuto": 0,
     "spor_o_porad": true,
     "dlouha_debata": false
@@ -23,7 +22,5 @@
     "* u Lex Ukrajina poslanci zvolili Langa zpravodajem, proti 31",
     "* Pláteník ve faktické citoval ČTK, Peštová (ANO) protestovala",
     "* bezpečnostní novela prošla druhým kolem"
-  ],
-  "proslo": 1,
-  "zamitnuto": 0
+  ]
 }

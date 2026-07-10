@@ -1,0 +1,47 @@
+{
+  "slug": "sml-mezi-cr-a-srn-o-statnich-hranicich",
+  "nazev": "Sml. mezi ČR a SRN o státních hranicích",
+  "datum": "25.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "sml. mezi ČR a SRN o státních hranicích",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "Hlasování číslo 71, bylo přihlášeno 148 poslanců, pro hlasovalo 116, proti nebyl nikdo.",
+      "source": "steno",
+      "steno_id": "2025_24_00488",
+      "citace": "Hlasování číslo 71, bylo přihlášeno 148 poslanců, pro hlasovalo 116, proti nebyl nikdo."
+    },
+    {
+      "text": "A prosím, aby se slova ujala zpravodajka pro prvé čtení, kterou měla být paní poslankyně Anežka Nedomová, ale mám zprávu, že místo ní nás seznámí se zpravodajskou zprávou pan poslanec Lipavský, ale protože jsme v prvém čtení, je potřeba o této změně zpravodaje hlasovat.",
+      "source": "steno",
+      "steno_id": "2025_24_00488",
+      "citace": "A prosím, aby se slova ujala zpravodajka pro prvé čtení, kterou měla být paní poslankyně Anežka Nedomová, ale mám zprávu, že místo ní nás seznámí se zpravodajskou zprávou pan poslanec Lipavský, ale pr"
+    },
+    {
+      "text": "Čili já vás poprosím, zda souhlasíte s tím, aby se zpravodaj změnil na pana kolegu Lipavského.",
+      "source": "steno",
+      "steno_id": "2025_24_00488",
+      "citace": "Čili já vás poprosím, zda souhlasíte s tím, aby se zpravodaj změnil na pana kolegu Lipavského."
+    },
+    {
+      "text": "Jelikož nezazněly návrhy na zkrácení či prodloužení lhůt, tak končím projednávání bodu číslo 105.",
+      "source": "steno",
+      "steno_id": "2025_24_00490",
+      "citace": "Jelikož nezazněly návrhy na zkrácení či prodloužení lhůt, tak končím projednávání bodu číslo 105."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 148,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 241
+}

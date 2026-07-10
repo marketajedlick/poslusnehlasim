@@ -66,6 +66,11 @@ def _norm_ws(text: str) -> str:
     return re.sub(r"\s+", " ", unicodedata.normalize("NFKC", text or "")).strip()
 
 
+def _citace_match_text(text: str) -> str:
+    """Citace v článku často končí … — pro párování s pasáží ji odřízneme."""
+    return re.sub(r"(…|\.\.\.)+$", "", _norm_ws(text)).strip()
+
+
 def _steno_refs_path(paths: SchuzePaths):
     return paths.aligned / "steno_refs.json"
 
@@ -677,16 +682,16 @@ def find_passage_for_citace(
     """Najde pasáž odpovídající citaci v bloku (text nebo PSP URL z facts)."""
     if not passages:
         return None
-    text = _norm_ws(citace_text)
+    text = _citace_match_text(citace_text)
     psp_base = _normalize_psp_url(citace_href)
     if text:
         # ponytail: exact citace first — long auto-excerpts match too early in substring pass
         for passage in passages:
-            pc = _norm_ws(passage.citace)
+            pc = _citace_match_text(passage.citace)
             if pc and text == pc:
                 return passage
         for passage in passages:
-            pc = _norm_ws(passage.citace)
+            pc = _citace_match_text(passage.citace)
             if not pc:
                 continue
             if text in pc or pc in text:

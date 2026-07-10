@@ -17,6 +17,8 @@ _CARD_RADIUS = 6
 _HERO_ICON_SIZE = 56
 _OG_ICON_SIZE = 80
 _OG_SIGN_SIZE = 24
+_SHARE_HERO_ICON_SIZE = 120
+_SHARE_HERO_SIGN_SIZE = 30
 _SHARE_BTN_SIZE = 28
 
 OG_WIDTH = 1200
@@ -469,8 +471,8 @@ def render_share_hero_image(
     )
     mark_font = _load_font(max(56, int(getattr(quote_font, "size", 44) * 1.55)))
     line_h = max(40, int(getattr(quote_font, "size", 44) * 1.45))
-    fav = _prepare_brand_icon(96)
-    sign_font = _load_font(22, bold=True, sans=True)
+    fav = _prepare_brand_icon(_SHARE_HERO_ICON_SIZE)
+    sign_font = _load_font(_SHARE_HERO_SIGN_SIZE, bold=True, sans=True)
     sign_h = _font_line_height(sign_font)
     fav_h = fav.height if fav is not None else 0
     quote_h = len(quote_lines) * line_h
@@ -497,6 +499,8 @@ def render_share_hero_image(
         width=text_width,
         sign=sign,
         fav=fav,
+        sign_size=_SHARE_HERO_SIGN_SIZE,
+        show_share=False,
     )
 
     img.save(out, format="PNG", optimize=True)

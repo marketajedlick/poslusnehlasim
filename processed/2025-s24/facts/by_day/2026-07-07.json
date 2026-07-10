@@ -1,8 +1,9 @@
 {
   "datum": "07.07.2026",
   "den": "úterý",
-  "topic_slugs": [],
-  "steno_zdroje": true,
+  "topic_slugs": [
+    "debata-porad-07-07"
+  ],
   "stats": {
     "pocet_hlas": 1,
     "minuty": 389,
@@ -11,5 +12,18 @@
     "zamitnuto": 0,
     "spor_o_porad": true,
     "dlouha_debata": false
-  }
+  },
+  "dnesni_ucet": "Večer devět hlasování o pořadu,\nv noci pak prošla jedna změna rozpočtových pravidel.",
+  "zaver": "že úterý večer Sněmovna zase hodinu bojovala o program, Munzar přeřekl rok hlasování a Goláň u mikrofonu řekl, že taky maká, a teprve potom se dostala k rozpočtovým pravidlům.",
+  "vysledek": [
+    "* Niemiec (STAN) chtěl jako první bod dostupné bydlení, připomněl smrt náměstka Endala",
+    "* Hoppe (Piráti) navrhl paliativní péči a při čtení strategie se přeřekl u roku",
+    "* Decroix (ODS) citovala Wünschovou: ve výborech dělám jen stafáž",
+    "* Goláň (ODS): Já tady taky makám",
+    "* Munzar (ODS) chtěl hlasovat až 8. září, nejdřív řekl 2027, pak 2026",
+    "* Skopeček (ODS) popletl Pivoňku Vaňkovou s jinou poslankyní",
+    "* devět večerních hlasování o pořadu skončilo zamítnutím",
+    "* rozpočtová pravidla: po dvou hlasováních večer prošla 97:51"
+  ],
+  "steno_zdroje": true
 }

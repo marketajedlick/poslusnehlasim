@@ -2,7 +2,7 @@
   "slug": "novela-z-na-ochranu-zvirat-proti-tyrani",
   "nazev": "Novela z. na ochranu zvířat proti týrání",
   "datum": "01.07.2026",
-  "verdikt": "zamiteno",
+  "verdikt": "schvaleno",
   "predmet_lidsky": "",
   "koho": [
     "Koho se to týká? Každého, kdo má doma psa nebo kočku a čekal, že Sněmovna po půlnoci konečně sjednotí tresty za týrání."
@@ -45,7 +45,7 @@
   "priorita": 3,
   "nadpis": "Vločka a nevalný návrh",
   "pocet_hlasovani": 4,
-  "proslo": false,
+  "proslo": true,
   "signaly": {
     "proti_max": 68,
     "pritomno_min": 118,

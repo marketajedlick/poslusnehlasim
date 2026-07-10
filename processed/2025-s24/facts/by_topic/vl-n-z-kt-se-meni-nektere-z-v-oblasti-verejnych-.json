@@ -1,0 +1,75 @@
+{
+  "slug": "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-",
+  "nazev": "Vl.n.z., kt. se mění některé z. v oblasti veřejných rozpočtů",
+  "datum": "08.07.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "pravidlech pro státní výdaje",
+  "koho": [
+    "Koho se to týká? Každého, kdo platí daně a čeká, že stát neutrácí víc, než si může dovolit."
+  ],
+  "fakty": [
+    {
+      "text": "Velmi silný hluk v sále před začátkem.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_02195",
+      "citace": "(Velmi silný hluk v sále.)",
+      "link_phrase": "úterý večer hlukem"
+    },
+    {
+      "text": "Senát vrátil návrh s pozměňovacími návrhy.",
+      "source": "steno",
+      "steno_id": "2025_24_02195",
+      "citace": "Senát vrátil návrh zákona s pozměňovacími návrhy.",
+      "link_phrase": "Senát návrh vrátil s pozměňovacími návrhy"
+    },
+    {
+      "text": "Schillerová žádala o klid v sále.",
+      "source": "steno",
+      "steno_id": "2025_24_02198",
+      "kind": "scene",
+      "citace": "Poslanci stále hlasitě diskutují.",
+      "link_phrase": "Schillerová (ANO) ho pak obhajovala u mikrofonu"
+    },
+    {
+      "text": "Goláň: neprojednáváme minulou vládu.",
+      "source": "steno",
+      "steno_id": "2025_24_02202",
+      "citace": "neprojednáváme věci, které se týkají minulé vlády",
+      "link_phrase": "neprojednáváme minulou vládu"
+    },
+    {
+      "text": "Goláň: nic takového se nestalo.",
+      "source": "steno",
+      "steno_id": "2025_24_02202",
+      "citace": "Nic takového se nestalo.",
+      "link_phrase": "Nic takového se nestalo"
+    },
+    {
+      "text": "Munzar: tleskali, že neumožnili rozpravu.",
+      "source": "steno",
+      "steno_id": "2025_24_02210",
+      "citace": "když jste si tak krásně zatleskali tomu, že jste neumožnili ani rozpravu",
+      "link_phrase": "koalice si zatleskala tomu, že neumožnila ani rozpravu"
+    },
+    {
+      "text": "Sedm hlasování, Senátem vrácený návrh prošel.",
+      "link_phrase": "Sedm hlasování, Senátem vrácený návrh prošel"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Rozpočtová pravidla\nv nočním hluku",
+  "pocet_hlasovani": 7,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 132,
+    "pritomno_min": 149,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 5515,
+  "lead": "Poslušně hlásím, že změny ve veřejných rozpočtech začaly v úterý večer hlukem, který předsedající několikrát neuměl utišit. Senát návrh vrátil s pozměňovacími návrhy a Schillerová (ANO) ho pak obhajovala u mikrofonu, zatímco v sále pořád někdo pokřikoval.\n\nSenátor Goláň (ODS) řekl, že neprojednáváme minulou vládu, a o rychlém legislativním procesu dodal: „Nic takového se nestalo.“ Munzar (ODS) pak navrhl odložit pevné hlasování na září a připomněl, že koalice si zatleskala tomu, že neumožnila ani rozpravu. Sedm hlasování, Senátem vrácený návrh prošel.",
+  "mean": "Novela upravuje pravidla, kolik může stát utrácet a za jakých podmínek. Senát ji vrátil s pozměňovacími návrhy, Sněmovna je v noci projednávala v hluku. Goláň kritizoval rychlost legislativy. Munzar chtěl hlasování odložit. Návrh po sedmi hlasováních prošel."
+}

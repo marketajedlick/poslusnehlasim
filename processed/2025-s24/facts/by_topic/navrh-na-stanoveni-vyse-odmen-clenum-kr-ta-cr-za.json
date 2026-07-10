@@ -1,0 +1,47 @@
+{
+  "slug": "navrh-na-stanoveni-vyse-odmen-clenum-kr-ta-cr-za",
+  "nazev": "Návrh na stanovení výše odměn členům KR TA ČR za rok 2025",
+  "datum": "02.07.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "návrh na stanovení výše odměn členům KR TA ČR za rok 2025",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "Ty odměny se pohybují v rozmezí nějakých 60 až 105 000 korun ročně podle klíče, které si stanovuje Technologická agentura.",
+      "source": "steno",
+      "steno_id": "2025_24_01597",
+      "citace": "Ty odměny se pohybují v rozmezí nějakých 60 až 105 000 korun ročně podle klíče, které si stanovuje Technologická agentura."
+    },
+    {
+      "text": "2027 už toto schvalování bude spadat do gesce vlády, takže pro TA ČR je tohleto hlasování poslední, zřejmě nás čeká ještě na podzim hlasování o Grantové agentuře.",
+      "source": "steno",
+      "steno_id": "2025_24_01597",
+      "citace": "2027 už toto schvalování bude spadat do gesce vlády, takže pro TA ČR je tohleto hlasování poslední, zřejmě nás čeká ještě na podzim hlasování o Grantové agentuře."
+    },
+    {
+      "text": "130/2002 Sb., o podpoře výzkumu, experimentálního vývoje a inovací, v platném znění, výši odměn členům kontrolní rady Technologické agentury ČR takto...",
+      "source": "steno",
+      "steno_id": "2025_24_01597",
+      "citace": "130/2002 Sb., o podpoře výzkumu, experimentálního vývoje a inovací, v platném znění, výši odměn členům kontrolní rady Technologické agentury ČR takto..."
+    },
+    {
+      "text": "Ano, přihlašuji se ke 44.",
+      "source": "steno",
+      "steno_id": "2025_24_01599",
+      "citace": "Ano, přihlašuji se ke 44."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 1,
+    "pritomno_min": 145,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 625
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "novela-z-o-statni-socialni-podpore-2",
+  "nazev": "Novela z. o státní sociální podpoře",
+  "datum": "30.06.2026",
+  "verdikt": "odlozeno",
+  "predmet_lidsky": "státní sociální podpoře",
+  "koho": [
+    "Pokud chodíte na Úřad práce pro příspěvek na bydlení nebo přídavek na dítě, nemusíte se zatím bát, že by se vám všechno přes noc přeházelo."
+  ],
+  "fakty": [
+    {
+      "text": "Vážená paní místopředsedkyně, vážené kolegyně, kolegové, já bych se rád přihlásil k návrhu, který je uveden pod sněmovním dokumentem 1331 a 1329.",
+      "source": "steno",
+      "steno_id": "2025_24_01031",
+      "citace": "Vážená paní místopředsedkyně, vážené kolegyně, kolegové, já bych se rád přihlásil k návrhu, který je uveden pod sněmovním dokumentem 1331 a 1329."
+    },
+    {
+      "text": "Dostatečně jsem oba dva sněmovní dokumenty zdůvodnil v podrobné rozpravě, takže ještě jednou přihlašuji se ke sněmovnímu dokumentu 1331a 1329.",
+      "source": "steno",
+      "steno_id": "2025_24_01031",
+      "citace": "Dostatečně jsem oba dva sněmovní dokumenty zdůvodnil v podrobné rozpravě, takže ještě jednou přihlašuji se ke sněmovnímu dokumentu 1331a 1329."
+    },
+    {
+      "text": "Poznámka z pléna k výslovnosti jména Richterová.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_01032",
+      "citace": "(Poznámka z pléna k výslovnosti jména Richterová.)"
+    },
+    {
+      "text": "(Poznámka z pléna k výslovnosti jména Richterová.).",
+      "source": "steno",
+      "steno_id": "2025_24_01032",
+      "citace": "(Poznámka z pléna k výslovnosti jména Richterová.)."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Dávky se mění",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 140,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 701
+}

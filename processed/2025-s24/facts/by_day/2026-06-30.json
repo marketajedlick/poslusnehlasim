@@ -1,7 +1,6 @@
 {
   "datum": "30.06.2026",
   "den": "úterý",
-  "nadpis_vydani": "Svačina pro prezidenta",
   "topic_slugs": [
     "debata-porad-interpelace-30-06",
     "interpelace-straznice-30-06",
@@ -11,13 +10,12 @@
     "interpelace-decroix-lidska-prava-30-06",
     "novela-z-o-statni-socialni-podpore"
   ],
-  "steno_zdroje": true,
   "stats": {
     "pocet_hlas": 2,
     "minuty": 527,
     "end_cas": "22:55",
     "proslo": 1,
-    "zamitnuto": 0,
+    "zamitnuto": 1,
     "spor_o_porad": true,
     "dlouha_debata": false
   },
@@ -29,7 +27,5 @@
     "* Decroix (ODS): z panelů k lidským právům odešlo 53 expertů",
     "* Hřib (Piráti): banda fracků u summitu NATO, sedm miliard pro Agrofert",
     "* rodičovský příspěvek zvýšen na 400 000 a 800 000 korun, hlasování 129:0"
-  ],
-  "proslo": 1,
-  "zamitnuto": 0
+  ]
 }

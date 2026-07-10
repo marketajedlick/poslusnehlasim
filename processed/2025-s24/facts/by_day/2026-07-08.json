@@ -2,16 +2,29 @@
   "datum": "08.07.2026",
   "den": "středa",
   "topic_slugs": [
-    "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-"
+    "novela-z-o-statni-socialni-podpore",
+    "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-",
+    "novela-z-stavebni-zakon"
   ],
-  "steno_zdroje": true,
   "stats": {
-    "pocet_hlas": 1,
-    "minuty": 9,
-    "end_cas": "01:09",
-    "proslo": 1,
+    "pocet_hlas": 3,
+    "minuty": 781,
+    "end_cas": "14:01",
+    "proslo": 3,
     "zamitnuto": 0,
     "spor_o_porad": false,
     "dlouha_debata": true
-  }
+  },
+  "dnesni_ucet": "Ráno rodičovský bez přihlášených,\nodpoledne stavební zákon jako prodej hrnců.",
+  "zaver": "že středa ve Sněmovně začala tím, že Okamura ukončil rozpravu o rodičovském, protože se nikdo nehlásil, a skončila tím, že stavební zákon prošel s dvěma hlasy proti a Adamec si vsadil, kdy ho budou opravovat.",
+  "vysledek": [
+    "* rodičovský příspěvek: Okamura ukončil rozpravu bez řečníků, Juchelka ji znovu otevřel",
+    "* Richterová (Piráti): rozdíl 50 000 podle data narození jde za ANO",
+    "* dvacet čtyři hlasování o pozměňovacích návrzích, závěrečné 158:0",
+    "* rozpočtová pravidla z noční schůze: sedm hlasování, Senátem vrácený návrh prošel",
+    "* stavební zákon: Kovářová (Piráti) přirovnala novelu k prodeji hrnců",
+    "* Kučera (TOP 09) Havlíčkovi (ANO): drzé čelo, poplužní dvůr",
+    "* závěrečné hlasování o stavebním zákoně 85:2"
+  ],
+  "steno_zdroje": true
 }

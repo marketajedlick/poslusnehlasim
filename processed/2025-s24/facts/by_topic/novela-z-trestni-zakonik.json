@@ -1,0 +1,47 @@
+{
+  "slug": "novela-z-trestni-zakonik",
+  "nazev": "Novela z. - trestní zákoník",
+  "datum": "30.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "Pane kolego Pospíšile, prostřednictvím paní předsedající, já jsem tím chtěl říct něco jiného – že člověk není zvíře a zvíře není člověk.",
+      "source": "steno",
+      "steno_id": "2025_24_01164",
+      "citace": "Pane kolego Pospíšile, prostřednictvím paní předsedající, já jsem tím chtěl říct něco jiného – že člověk není zvíře a zvíře není člověk."
+    },
+    {
+      "text": "Já jsem se na to díval z hlediska toho objektu, nikoliv toho samotného, té věcné podstaty trestného činu.",
+      "source": "steno",
+      "steno_id": "2025_24_01164",
+      "citace": "Já jsem se na to díval z hlediska toho objektu, nikoliv toho samotného, té věcné podstaty trestného činu."
+    },
+    {
+      "text": "Hlasování číslo 162, přihlášeno bylo 123 poslanců, pro bylo 40, proti 76.",
+      "source": "steno",
+      "steno_id": "2025_24_01167",
+      "citace": "Hlasování číslo 162, přihlášeno bylo 123 poslanců, pro bylo 40, proti 76."
+    },
+    {
+      "text": "Organizační výbor nenavrhl přikázat tento návrh dalšímu výboru, ale v rozpravě pan poslanec Hladík měl dva návrhy, a to přikázání zemědělskému výboru a poté výboru pro životní prostředí.",
+      "source": "steno",
+      "steno_id": "2025_24_01167",
+      "citace": "Organizační výbor nenavrhl přikázat tento návrh dalšímu výboru, ale v rozpravě pan poslanec Hladík měl dva návrhy, a to přikázání zemědělskému výboru a poté výboru pro životní prostředí."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 3,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 76,
+    "pritomno_min": 121,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 647
+}

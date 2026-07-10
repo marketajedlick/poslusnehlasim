@@ -1,0 +1,47 @@
+{
+  "slug": "vl-n-z-kterym-se-meni-nektere-z-v-souv-se-smlouv",
+  "nazev": "Vl. n. z., kterým se mění některé z. v souv. se smlouvami o fin. služ",
+  "datum": "25.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": ", kterým se mění některé z. v souv. se smlouvami o fin. služ",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "A pak je to, přihlašuji se ke svému pozměňovacímu návrhu, který se týká účinnosti, který zní – tento návrh nabývá účinnosti prvním dnem měsíce následujícím po dni jeho vyhlášení.",
+      "source": "steno",
+      "steno_id": "2025_24_00501",
+      "citace": "A pak je to, přihlašuji se ke svému pozměňovacímu návrhu, který se týká účinnosti, který zní – tento návrh nabývá účinnosti prvním dnem měsíce následujícím po dni jeho vyhlášení."
+    },
+    {
+      "text": "A jak už jsem avizovala v obecné rozpravě, tak v podrobné vlastně se hlásím ke svému návrhu nebo respektive ho znovu opakuji, a to je návrh na zkrácení lhůty na projednání mezi druhým a třetím čtením na sedm dní, protože už nám prostě implementační lhůty skoro utekly.",
+      "source": "steno",
+      "steno_id": "2025_24_00501",
+      "citace": "A jak už jsem avizovala v obecné rozpravě, tak v podrobné vlastně se hlásím ke svému návrhu nebo respektive ho znovu opakuji, a to je návrh na zkrácení lhůty na projednání mezi druhým a třetím čtením "
+    },
+    {
+      "text": "Děkuji mnohokrát, vážený pane místopředsedo, já bych si dovolil se přihlásit k pozměňovacímu návrhu kolegy Vojtěcha Munzara, který je v systému označen jako sněmovní dokument 1182.",
+      "source": "steno",
+      "steno_id": "2025_24_00503",
+      "citace": "Děkuji mnohokrát, vážený pane místopředsedo, já bych si dovolil se přihlásit k pozměňovacímu návrhu kolegy Vojtěcha Munzara, který je v systému označen jako sněmovní dokument 1182."
+    },
+    {
+      "text": "Hlasování číslo 74, bylo přihlášeno 149 poslanců, pro hlasovalo 68, proti 2.",
+      "source": "steno",
+      "steno_id": "2025_24_00504",
+      "citace": "Hlasování číslo 74, bylo přihlášeno 149 poslanců, pro hlasovalo 68, proti 2."
+    }
+  ],
+  "publikovat": false,
+  "priorita": 3,
+  "nadpis": "Prošlo to",
+  "pocet_hlasovani": 3,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 2,
+    "pritomno_min": 124,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 470
+}

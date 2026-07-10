@@ -4,7 +4,7 @@
   "steps": {
     "align": {
       "done": true,
-      "topics": 29
+      "topics": 31
     },
     "compose": {
       "done": true,
@@ -39,26 +39,39 @@
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-02.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-03-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-03.html",
+        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-07-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-07.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-08-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-08.html"
-      ]
+      ],
+      "last_partial_compose": {
+        "den": "8.7",
+        "built_at": "2026-07-10T20:35:47.576350+00:00",
+        "days": 1,
+        "files": [
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-08.md"
+        ],
+        "html_files": [
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-08.html",
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-08-steno.html"
+        ]
+      }
     },
     "extract": {
       "done": true,
-      "topics_written": 27,
-      "with_concrete_facts": 27,
+      "topics_written": 29,
+      "with_concrete_facts": 29,
       "days": 10,
       "validation_warnings": []
     },
     "fetch": {
       "done": true,
-      "votes": 260,
-      "steno": 2213,
+      "votes": 286,
+      "steno": 2442,
       "hlidac_token_used": true,
       "psp_steno_used": false,
-      "fetched_at": "2026-07-08T14:21:57.370607+00:00"
+      "fetched_at": "2026-07-10T20:27:23.815684+00:00"
     }
   },
-  "built_at": "2026-07-10T20:23:10.403505+00:00"
+  "built_at": "2026-07-10T20:35:47.576760+00:00"
 }
