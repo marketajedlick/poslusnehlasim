@@ -591,7 +591,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na odvolání členů Správní rady Všeobecné zdravotní poj…",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Středa začala personálkou u největší pojišťovny: nejdřív ven staří členové správní rady, pak desítky hlasování o tom, kdo usedne na jejich místo."
     },
     {
       "slug": "novela-z-stavebni-zakon",
@@ -1153,7 +1153,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na odvolání členů Dozorčí rady Všeobecné zdravotní poj…",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Dosazování nebo odvolávání lidí ve vedení VZP, kdo řídí největší zdravotní pojišťovnu. Pacienta to netankuje u lékaře hned, spíš kdo rozhoduje o směru pojišťovny."
     },
     {
       "slug": "navrh-na-volbu-clenu-a-nahradniku-spravni-rady-v",
@@ -1553,7 +1553,7 @@
       "pocet_zamitnuto": 6,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu členů a náhradníků Správní rady VZP",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Volba do funkce, předseda sněmovny, ombudsman, člen rady ČT nebo kontrolního úřadu. Kdo sedí kde v instituci. Občana se to netýká u pokladny, spíš kdo má moc v úřadu."
     },
     {
       "slug": "navrh-na-volbu-clenu-a-nahradniku-dozorci-rady-v",
@@ -1927,7 +1927,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu členů a náhradníků Dozorčí rady Všeobecné zdr…",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Volba do funkce, předseda sněmovny, ombudsman, člen rady ČT nebo kontrolního úřadu. Kdo sedí kde v instituci. Občana se to netýká u pokladny, spíš kdo má moc v úřadu."
     },
     {
       "slug": "navrh-na-odvolani-clenu-dr-sfdi",
@@ -2077,7 +2077,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Návrh na odvolání členů DR SFDI",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Sněmovna hlasovala o odvolání členů dozorčí rady Státního fondu dopravní infrastruktury. Jde o personální obsazení fondu, ne o silnice hned zítra."
     },
     {
       "slug": "navrh-na-volbu-clenu-dr-sfdi",
@@ -2465,7 +2465,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu členů DR SFDI",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Volba do funkce, předseda sněmovny, ombudsman, člen rady ČT nebo kontrolního úřadu. Kdo sedí kde v instituci. Občana se to netýká u pokladny, spíš kdo má moc v úřadu."
     },
     {
       "slug": "navrh-na-volbu-clena-nejvyssiho-kontrolniho-urad",
@@ -2715,7 +2715,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu člena Nejvyššího kontrolního úřadu",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Volba do funkce, předseda sněmovny, ombudsman, člen rady ČT nebo kontrolního úřadu. Kdo sedí kde v instituci. Občana se to netýká u pokladny, spíš kdo má moc v úřadu."
     },
     {
       "slug": "navrh-na-volbu-clenu-rady-ceske-tiskove-kancelar",
@@ -3093,7 +3093,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu členů Rady České tiskové kanceláře",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Volba do funkce, předseda sněmovny, ombudsman, člen rady ČT nebo kontrolního úřadu. Kdo sedí kde v instituci. Občana se to netýká u pokladny, spíš kdo má moc v úřadu."
     },
     {
       "slug": "navrh-na-volbu-clenu-dozorci-komise-narodni-spor",
@@ -3461,7 +3461,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu členů dozorčí komise Národní sportovní agentu…",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Volba do funkce, předseda sněmovny, ombudsman, člen rady ČT nebo kontrolního úřadu. Kdo sedí kde v instituci. Občana se to netýká u pokladny, spíš kdo má moc v úřadu."
     },
     {
       "slug": "navrh-na-jmenovani-clenu-kontrolni-rady-grantove",
@@ -3733,7 +3733,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na jmenování členů Kontrolní rady Grantové agentury ČR",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Odměny lidem v grantové agentuře, kdo rozděluje peníze na vědu. Občana se to netýká, spíš vědce s žádostí o grant."
     },
     {
       "slug": "navrh-na-jmenovani-clena-kontrolni-rady-technolo",
@@ -3759,7 +3759,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na jmenování člena kontrolní rady Technologické agentu…",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Personální volba, kdo sedí v komisi nebo radě. Občana se to netýká, leda že zná jména z televize."
     },
     {
       "slug": "vysloveni-duvery-vlade-ceske-republiky",
@@ -4326,7 +4326,7 @@
       "pocet_zamitnuto": 6,
       "kategorie": "substantivni",
       "tema_svejk": "Vláda dostala důvěru sněmovny, může vládnout.",
-      "tema_vysvetleni": "Hlasování o důvěře vládě."
+      "tema_vysvetleni": "Večer rozhodlo jmenovité hlasování: 108 pro, 91 proti."
     },
     {
       "slug": "navrh-usneseni-ps-upravujici-pravidla-volby-vere",
@@ -4351,7 +4351,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh usnesení PS upravující pravidla volby veřejného ochrán…",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Pravidla volby Veřejného ochránce práv, kdo hlídá stát, když vám úřad nebo policie ublíží. Občan to pozná, až bude potřebovat ombudsmana."
     },
     {
       "slug": "navrh-na-prispevek-na-uhradu-volebnich-nakladu-z",
@@ -4370,7 +4370,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na příspěvek na úhradu volebních nákladů za volby do P…",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Než se začalo mluvit o tom, zda vláda získá důvěru, poslanci si rozdělili peníze za kampaně."
     },
     {
       "slug": "usneseni-ke-jmenovani-clenu-vlady",
@@ -4672,7 +4672,7 @@
       "pocet_zamitnuto": 8,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Usnesení ke jmenování členů vlády",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Po schválené důvěře ještě deset hlasování o obsazení vlády, důvěra totiž neznamená klid."
     },
     {
       "slug": "odpoved-na-pisemnou-interpelaci-o-richterove-na-",

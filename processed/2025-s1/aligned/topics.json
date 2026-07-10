@@ -21,7 +21,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na stanovení počtu místopředsedů PS",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Místopředsedové zastupují předsedu při řízení schůzí."
     },
     {
       "slug": "navrh-na-stanoveni-poctu-overovatelu-ps",
@@ -41,7 +41,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na stanovení počtu ověřovatelů PS",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Sněmovna hlasovala o návrh na stanovení počtu ověřovatelů PS."
     },
     {
       "slug": "navrh-na-nominaci-overovatelu-ps",
@@ -59,7 +59,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na nominaci ověřovatelů PS",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Sněmovna hlasovala o návrh na nominaci ověřovatelů PS."
     },
     {
       "slug": "navrh-na-zrizeni-vyboru-ps",
@@ -79,7 +79,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na zřízení výborů PS",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Personální volba, kdo sedí v komisi nebo radě. Občana se to netýká, leda že zná jména z televize."
     },
     {
       "slug": "navrh-na-stanoveni-poctu-clenu-vyboru-ps",
@@ -99,7 +99,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na stanovení počtu členů výborů PS",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Personální volba, kdo sedí v komisi nebo radě. Občana se to netýká, leda že zná jména z televize."
     },
     {
       "slug": "navrh-terminu-2-schuze-ps",
@@ -125,7 +125,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Návrh termínu 2. schůze PS",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Termín další schůze určuje, kdy se Sněmovna zase sejde."
     },
     {
       "slug": "inf-o-ustaveni-volebni-komise-ps-a-volbe-clenu",
@@ -145,7 +145,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Inf. o ustavení volební komise PS a volbě členů",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Po volbách se nejdřív založí volební komise, ověří, že poslanci byli zvoleni legálně. Občana se to netýká, to je rozcvička sněmovny."
     },
     {
       "slug": "nav-na-zrizeni-miv-a-stanoveni-poctu-clenu",
@@ -165,7 +165,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Náv. na zřízení MIV a stanovení počtu členů",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "První den po volbách jen nastavuje kostru Sněmovny: výbory, ověřovatele a volební komisi."
     },
     {
       "slug": "navrh-na-ustaveni-miv",
@@ -234,7 +234,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na ustavení MIV",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Sněmovna hlasovala o ustavení mandátového a imunitního výboru."
     },
     {
       "slug": "navrh-na-potvrzeni-predsedy-miv",
@@ -297,7 +297,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na potvrzení předsedy MIV",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Sněmovna hlasovala o potvrzení předsedy mandátového výboru."
     },
     {
       "slug": "inf-miv-o-overeni-platnosti-volby-poslancu",
@@ -319,7 +319,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Inf. MIV o ověření platnosti volby poslanců",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Ověřovatelé, poslanci, kdo kontrolují, že volby poslanců byly v pořádku."
     },
     {
       "slug": "navrh-na-volbu-predsedy-ps",
@@ -382,7 +382,7 @@
       "pocet_zamitnuto": 1,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu předsedy PS",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Předseda řídí schůze, rozděluje slovo a podepisuje usnesení."
     }
   ]
 }

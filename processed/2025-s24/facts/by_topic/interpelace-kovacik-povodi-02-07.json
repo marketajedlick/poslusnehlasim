@@ -9,44 +9,33 @@
   ],
   "fakty": [
     {
-      "text": "Šmída interpeloval kvůli Kováčikovi do Povodí Ohře.",
-      "source": "steno",
-      "steno_id": "2025_24_01815",
-      "link_phrase": "Šmída (Piráti) se ptal naráz na všechno"
+      "text": "Šmída interpeloval kvůli Kováčikovi do Povodí Ohře."
     },
     {
-      "text": "Kováčik: bývalý poslanec a předseda klubu KSČM.",
-      "source": "steno",
-      "steno_id": "2025_24_01815",
-      "link_phrase": "Šmída (Piráti) se ptal naráz na všechno"
+      "text": "Kováčik: bývalý poslanec a předseda klubu KSČM."
     },
     {
-      "text": "Šmída: důvody jmenování, kvalifikace, zkušenosti s vodohospodářstvím.",
-      "source": "steno",
-      "steno_id": "2025_24_01815",
-      "link_phrase": "Šmída (Piráti) se ptal naráz na všechno"
+      "text": "Šmída: důvody jmenování, kvalifikace, zkušenosti s vodohospodářstvím."
     },
     {
-      "text": "Šmída: politická trafika, ne odbornost.",
-      "source": "steno",
-      "steno_id": "2025_24_01815",
-      "link_phrase": "Šmída (Piráti) se ptal naráz na všechno"
+      "text": "Šmída: politická trafika, ne odbornost."
     },
     {
-      "text": "Sebestyán: pohovor na Úřadu vlády.",
+      "text": "Šebestyán: pohovor na Úřadu vlády.",
       "source": "steno",
       "steno_id": "2025_24_01817",
       "citace": "úspěšného absolvování pohovoru před výborem pro personální informace při Úřadu vlády České republiky dne 16.",
       "link_phrase": "Šebestyán na to odpověděl"
     },
     {
-      "text": "Sebestyán: místopředseda zemědělského výboru, zevrubně seznámil s Povodími.",
+      "text": "Šebestyán: místopředseda zemědělského výboru, zevrubně seznámil s Povodími.",
       "source": "steno",
       "steno_id": "2025_24_01817",
-      "link_phrase": "Šebestyán na to odpověděl"
+      "link_phrase": "Šebestyán na to odpověděl",
+      "citace": "dlouholetým místopředsedou zemědělského výboru a členem zemědělského výboru. Za dobu jeho působení v Poslanecké sněmovně se zevrubně seznámil s problematikou státních podniků Povodí"
     },
     {
-      "text": "Dnesni ucet: Kováčik u Povodí Ohře.",
+      "text": "Šmída uvedl, že dnesni ucet: Kováčik u Povodí Ohře.",
       "source": "steno",
       "steno_id": "2025_24_01815",
       "citace": "politickou trafiku pro bývalého poslance.",

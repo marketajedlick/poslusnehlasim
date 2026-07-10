@@ -19,6 +19,8 @@ REPORT_JSON = ROOT / "grammer_check/published-review-report.json"
 sys.path.insert(0, str(ROOT))
 
 from svejk.build.extract import skore_z_verdiktu  # noqa: E402
+from svejk.build.nav import list_site_editions, _editions_on_day, resolve_edition  # noqa: E402
+from svejk.build.urls import edition_schuze_subpage, steno_export_relpath  # noqa: E402
 from svejk.build.io import iter_jsonl, read_json  # noqa: E402
 from svejk.build.steno_sources import (  # noqa: E402
     _find_phrase_in_text,
@@ -449,18 +451,29 @@ def audit_site_links(report: Report) -> None:
         report.add("info", "site_missing", "site/ neexistuje, přeskočena kontrola HTML")
         return
     approved = json.loads(APPROVED_PATH.read_text(encoding="utf-8")).get("approved") or []
+    editions = list_site_editions(2025)
     for key in approved:
-        _, _, iso, _ = parse_key(key)
-        edition = site / iso / "index.html"
-        steno = site / iso / "steno" / "index.html"
+        ob, sch, iso, cz = parse_key(key)
+        dup_day = len(_editions_on_day(editions, cz)) > 1
+        canonical = resolve_edition(ob, cz)
+        if dup_day and canonical and sch != canonical.schuze:
+            edition = site / iso / edition_schuze_subpage(sch) / "index.html"
+        else:
+            edition = site / iso / "index.html"
+        steno = ROOT / "site" / steno_export_relpath(cz, sch, dup_day=dup_day)
         if not edition.is_file():
             report.add("warn", "missing_edition_html", f"chybí {iso}/index.html", key=key)
         if not steno.is_file():
-            day_paths = list((ROOT / "processed").glob(f"*-s*/facts/by_day/{iso}.json"))
-            if day_paths:
-                day = read_json(day_paths[0])
+            day_path = ROOT / f"processed/{ob}-s{sch}/facts/by_day/{iso}.json"
+            if day_path.is_file():
+                day = read_json(day_path)
                 if day.get("steno_zdroje"):
-                    report.add("warn", "missing_steno_html", f"chybí {iso}/steno/", key=key)
+                    report.add(
+                        "warn",
+                        "missing_steno_html",
+                        f"chybí {steno.relative_to(ROOT / 'site')}",
+                        key=key,
+                    )
 
 
 def format_md(report: Report) -> str:

@@ -19,7 +19,8 @@
       "text": "Rakušan: koalice nevydávání.",
       "source": "steno",
       "steno_id": "2025_24_00887",
-      "link_phrase": "Rakušan (STAN) popsal vládu jako systém"
+      "link_phrase": "Rakušan (STAN) popsal vládu jako systém",
+      "citace": "koalice nevydávání."
     },
     {
       "text": "Rakušan: nevydávání předsedů k trestnímu stíhání.",
@@ -50,10 +51,7 @@
       "link_phrase": "Rakušan (STAN) popsal vládu jako systém"
     },
     {
-      "text": "Rakušan: kde je premiér?",
-      "source": "steno",
-      "steno_id": "2025_24_00887",
-      "link_phrase": "Rakušan (STAN) popsal vládu jako systém"
+      "text": "Rakušan: kde je premiér?"
     }
   ],
   "publikovat": true,

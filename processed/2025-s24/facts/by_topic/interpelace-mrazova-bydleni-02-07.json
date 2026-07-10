@@ -9,16 +9,10 @@
   ],
   "fakty": [
     {
-      "text": "Richterová: prázdné židle, chybí skoro všichni ministři.",
-      "source": "steno",
-      "steno_id": "2025_24_01573",
-      "link_phrase": "Richterová (Piráti) se ohlédla za sebe a zjistila"
+      "text": "Richterová: prázdné židle, chybí skoro všichni ministři."
     },
     {
-      "text": "Richterová: prázdné židle, chybí ministři.",
-      "source": "steno",
-      "steno_id": "2025_24_01573",
-      "link_phrase": "Richterová (Piráti) se ohlédla za sebe a zjistila"
+      "text": "Richterová: prázdné židle, chybí ministři."
     },
     {
       "text": "V sále zůstala jen ministryně Mrázová.",
@@ -42,17 +36,14 @@
       "link_phrase": "na lodi na Labi."
     },
     {
-      "text": "Piráti navrhují finanční postih za neúčast ministrů na interpelacích.",
+      "text": "Bartoš uvedl, že piráti navrhují finanční postih za neúčast ministrů na interpelacích.",
       "source": "steno",
       "steno_id": "2025_24_01954",
       "citace": ", má to pak nějaké dopady do jejich finančního ohodnocení.",
       "link_phrase": "Piráti navrhují finanční postih za neúčast ministrů na interpelacích"
     },
     {
-      "text": "Richterová: motivovat ministry finančně chodit na interpelace.",
-      "source": "steno",
-      "steno_id": "2025_24_01573",
-      "link_phrase": "Richterová (Piráti) se ohlédla za sebe a zjistila"
+      "text": "Richterová: motivovat ministry finančně chodit na interpelace."
     }
   ],
   "publikovat": true,

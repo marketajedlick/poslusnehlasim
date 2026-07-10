@@ -9,10 +9,7 @@
   ],
   "fakty": [
     {
-      "text": "Peštová obhajovala novelu zákona o obalech.",
-      "source": "steno",
-      "steno_id": "2025_24_01609",
-      "link_phrase": "novelu zákona o"
+      "text": "Peštová obhajovala novelu zákona o obalech."
     },
     {
       "text": "Bendl: fatální, že tady není ministr.",
@@ -23,16 +20,10 @@
     },
     {
       "text": "Kučera: ministr byl podle Facebooku resortu na lodi na Labi.",
-      "source": "steno",
-      "steno_id": "2025_24_01633",
-      "citace": "pánové, děkuju za slovo.",
-      "link_phrase": "Kučera dodal"
+      "citace": "pánové, děkuju za slovo."
     },
     {
-      "text": "EKO-KOM vznikl v roce 1997, deset akcionářů, akciovka místo neziskovky.",
-      "source": "steno",
-      "steno_id": "2025_24_01609",
-      "link_phrase": "EKO-KOM vznikl v roce"
+      "text": "EKO-KOM vznikl v roce 1997, deset akcionářů, akciovka místo neziskovky."
     },
     {
       "text": "Peštová: ze zákona neziskový charakter, ale akciová společnost.",
@@ -65,8 +56,9 @@
     {
       "text": "Peštová: jediná autorizovaná obalová společnost.",
       "source": "steno",
-      "steno_id": "2025_24_01609",
-      "link_phrase": "Peštová přiznává"
+      "steno_id": "2025_24_01558",
+      "link_phrase": "Peštová přiznává",
+      "citace": "jediná autorizovaná obalová společnost."
     },
     {
       "text": "Šmída: super EKO-KOM jako soukromé ministerstvo odpadů.",

@@ -11,8 +11,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from scripts.audit_published_steno import citace_in_text, find_correct_ids, steno_by_id  # noqa: E402
-from scripts.audit_published_text import cit_in_steno, load_approved  # noqa: E402
+from scripts.audit_published_steno import citace_in_text, find_correct_ids  # noqa: E402
+from scripts.audit_published_text import cit_in_steno, load_approved, load_steno  # noqa: E402
 
 FIRST_WORD = re.compile(r"^([A-ZÁČĎÉĚÍŇÓŘŠŤÚÝŽ][a-záčďéěíňóřšťúýž]+)")
 PROCEDURAL = re.compile(r"^(Hlasování|Konstatuji|Prosím|Další|Návrh na|Pořad|Volba|Tajnou)\b", re.I)
@@ -52,9 +52,23 @@ def pick_speaker_id(cit: str, steno: dict[str, dict], prefer: str = "") -> str |
         return None
     if prefer:
         for sid in hits:
-            if prefer in (steno[sid].get("cele_jmeno") or ""):
+            cj = steno[sid].get("cele_jmeno") or ""
+            if prefer in cj and not BAD_SPEAKER.match(cj.strip()):
                 return sid
-    return hits[0]
+    for sid in hits:
+        cj = (steno[sid].get("cele_jmeno") or "").strip()
+        if cj and not BAD_SPEAKER.match(cj):
+            return sid
+    return None
+
+
+def strip_procedural_steno(f: dict) -> bool:
+    if not f.get("steno_id"):
+        return False
+    f.pop("steno_id", None)
+    f.pop("citace", None)
+    f.pop("source", None)
+    return True
 
 
 def fix_fact(f: dict, rec: dict, steno: dict[str, dict]) -> str | None:
@@ -64,24 +78,40 @@ def fix_fact(f: dict, rec: dict, steno: dict[str, dict]) -> str | None:
         return None
 
     cj = (rec.get("cele_jmeno") or "").strip()
+    if BAD_SPEAKER.match(cj):
+        prefer = FIRST_WORD.match(ft)
+        prefer_name = prefer.group(1) if prefer else ""
+        alt = pick_speaker_id(cit, steno, prefer_name)
+        if alt:
+            f["steno_id"] = alt
+            rec = steno[alt]
+            cj = (rec.get("cele_jmeno") or "").strip()
+        elif strip_procedural_steno(f):
+            return "strip_procedural"
+        else:
+            return None
+
     if not already_attributed(ft, cj) and (f.get("kind") == "scene" or SCENE_START.match(ft)):
         f.pop("steno_id", None)
         f.pop("source", None)
         return "scene_unlink"
 
+    old_sid = f.get("steno_id")
     if not speaker_short(cj):
         prefer = FIRST_WORD.match(ft)
         prefer_name = prefer.group(1) if prefer else ""
         alt = pick_speaker_id(cit, steno, prefer_name)
-        if alt and alt != f.get("steno_id"):
+        if alt and alt != old_sid:
             f["steno_id"] = alt
             rec = steno[alt]
             cj = rec.get("cele_jmeno") or ""
         if not speaker_short(cj):
+            if strip_procedural_steno(f):
+                return "strip_procedural"
             return None
 
     if already_attributed(ft, cj):
-        return None
+        return "relink_steno" if f.get("steno_id") != old_sid else None
 
     short = speaker_short(cj)
     if PROCEDURAL.match(ft):
@@ -120,9 +150,17 @@ def main() -> int:
     fixes = 0
     for ob, sch, iso, key in load_approved():
         base = ROOT / f"processed/{ob}-s{sch}"
-        steno_path = base / "raw/steno.jsonl"
-        steno = steno_by_id(steno_path)
-        for fp in sorted((base / "facts/by_topic").glob("*.json")):
+        day_path = base / "facts/by_day" / f"{iso}.json"
+        if not day_path.is_file():
+            continue
+        steno = load_steno(sch, base)
+        if not steno:
+            continue
+        day = json.loads(day_path.read_text(encoding="utf-8"))
+        for slug in day.get("topic_slugs") or []:
+            fp = base / "facts/by_topic" / f"{slug}.json"
+            if not fp.is_file():
+                continue
             data = json.loads(fp.read_text(encoding="utf-8"))
             if not data.get("publikovat"):
                 continue
@@ -138,7 +176,7 @@ def main() -> int:
                 continue
             files += 1
             fixes += len(ch)
-            print(fp.stem, ch[:5])
+            print(slug, ch[:5])
             if not dry:
                 fp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"files {files}, fixes {fixes}, dry={dry}")

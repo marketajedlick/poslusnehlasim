@@ -2,7 +2,7 @@
   "datum": "29.05.2026",
   "den": "pátek",
   "topic_slugs": [],
-  "steno_zdroje": true,
+  "steno_zdroje": false,
   "stats": {
     "pocet_hlas": 0,
     "minuty": 0,

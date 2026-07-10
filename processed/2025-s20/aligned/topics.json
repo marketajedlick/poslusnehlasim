@@ -475,7 +475,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu členů a náhradníků Správní rady VZP",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Volba do funkce, předseda sněmovny, ombudsman, člen rady ČT nebo kontrolního úřadu. Kdo sedí kde v instituci. Občana se to netýká u pokladny, spíš kdo má moc v úřadu."
     },
     {
       "slug": "navrh-na-volbu-verejneho-ochrance-prav",
@@ -781,7 +781,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu veřejného ochránce práv",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Pravidla volby Veřejného ochránce práv, kdo hlídá stát, když vám úřad nebo policie ublíží. Občan to pozná, až bude potřebovat ombudsmana."
     },
     {
       "slug": "navrh-na-jmenovani-clena-kontrolni-rady-grantove",
@@ -819,7 +819,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na jmenování člena kontrolní rady Grantové agentury ČR",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Odměny lidem v grantové agentuře, kdo rozděluje peníze na vědu. Občana se to netýká, spíš vědce s žádostí o grant."
     },
     {
       "slug": "navrh-na-jmenovani-clenu-kr-ta-cr",
@@ -1067,7 +1067,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na jmenování členů KR TA ČR",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Personální volba, kdo sedí v komisi nebo radě. Občana se to netýká, leda že zná jména z televize."
     },
     {
       "slug": "navrh-na-volbu-clena-rady-ceskeho-rozhlasu",
@@ -1261,7 +1261,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu člena Rady Českého rozhlasu",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Volba do funkce, předseda sněmovny, ombudsman, člen rady ČT nebo kontrolního úřadu. Kdo sedí kde v instituci. Občana se to netýká u pokladny, spíš kdo má moc v úřadu."
     },
     {
       "slug": "navrh-na-volbu-clenu-nejvyssiho-kontrolniho-urad",
@@ -1522,7 +1522,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu členů Nejvyššího kontrolního úřadu",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Volba do funkce, předseda sněmovny, ombudsman, člen rady ČT nebo kontrolního úřadu. Kdo sedí kde v instituci. Občana se to netýká u pokladny, spíš kdo má moc v úřadu."
     },
     {
       "slug": "navrh-na-volbu-clenu-rady-ceske-televize",
@@ -1824,7 +1824,7 @@
       "pocet_zamitnuto": 14,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na volbu členů Rady České televize",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Sněmovna veřejnou volbou doplnila šest volných míst v Radě ČT. Týká se diváků České televize, každé jméno radního je politické rozhodnutí."
     },
     {
       "slug": "navrhy-poslanecke-snemovny-na-propujceni-nebo-ud",
@@ -2408,7 +2408,7 @@
       "pocet_zamitnuto": 26,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Návrhy Poslanecké sněmovny na propůjčení nebo udělení státní…",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Sněmovna posílá prezidentovi doporučení, koho vyznamenat 28."
     },
     {
       "slug": "odpoved-na-pisemnou-interpelaci-g-svarovske-na-a",
@@ -3422,7 +3422,7 @@
       "pocet_zamitnuto": 4,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Vl.n.z. o evidenci tržeb - EU",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Kdo podniká, tomu se od roku 2027 může vrátit povinnost evidovat tržby, tentokrát bez povinných tiskáren a účtenek."
     },
     {
       "slug": "novela-z-stavebni-zakon",
@@ -4028,7 +4028,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Novela z. o investičních společnostech - EU",
-      "tema_vysvetleni": "Technická nebo procedurální věc, dopad na občana závisí na obsahu návrhu."
+      "tema_vysvetleni": "Kdo investuje přes fondy, bude mít dohled a povinnosti správců sjednocené podle evropských pravidel."
     },
     {
       "slug": "novela-z-o-rostlinolekarske-peci-eu",
@@ -4057,7 +4057,7 @@
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "EU pravidla pro postřiky, prošlo bez velkého povyku.",
-      "tema_vysvetleni": "Technická novela o rostlinolékařské péči."
+      "tema_vysvetleni": "Farmáři si na nová pravidla pro postřiky počkají."
     }
   ]
 }

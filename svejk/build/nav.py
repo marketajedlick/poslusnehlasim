@@ -11,7 +11,12 @@ from itertools import groupby
 from pathlib import Path
 
 from svejk.build.day_content import datum_design
-from svejk.build.urls import vydani_pages_href, vydani_schuze_href, vydani_subpage_href
+from svejk.build.urls import (
+    edition_schuze_subpage,
+    vydani_pages_href,
+    vydani_schuze_href,
+    vydani_subpage_href,
+)
 from svejk.build.io import read_json
 from svejk.paths import SchuzePaths, processed_root
 
@@ -225,7 +230,12 @@ def steno_sources_pages_href(
     datum_unl: str,
     base_path: str = "",
 ) -> str:
-    _ = obdobi, schuze
+    _ = obdobi
+    dup = len(_editions_on_day(list_site_editions(obdobi), datum_unl)) > 1
+    if dup:
+        return vydani_subpage_href(
+            datum_unl, f"{edition_schuze_subpage(schuze)}/steno", base_path
+        )
     return vydani_subpage_href(datum_unl, "steno", base_path)
 
 

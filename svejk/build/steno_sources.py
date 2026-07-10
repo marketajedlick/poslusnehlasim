@@ -366,15 +366,20 @@ def _passage_from_fact(
     passage_idx: int,
     psp_resolver: PspUrlResolver | None = None,
 ) -> StenoPassage | None:
-    source = (fact_entry.get("source") or "steno").strip()
+    source = (fact_entry.get("source") or "").strip()
     citace = (fact_entry.get("citace") or "").strip()
     summary = (fact_entry.get("text") or "").strip()
     if not citace and not summary:
         return None
     steno_id = (fact_entry.get("steno_id") or "").strip()
+    if not source and not steno_id and re.match(r"^Hlasování", summary, re.I):
+        source = "votes"
+    if not source:
+        source = "steno"
+    if source == "votes" and not citace:
+        citace = summary
     if source == "votes":
-        if not citace:
-            return None
+        pass
     elif source in ("manual", "notes"):
         return None
     elif not steno_id:
@@ -675,11 +680,16 @@ def find_passage_for_citace(
     text = _norm_ws(citace_text)
     psp_base = _normalize_psp_url(citace_href)
     if text:
+        # ponytail: exact citace first — long auto-excerpts match too early in substring pass
+        for passage in passages:
+            pc = _norm_ws(passage.citace)
+            if pc and text == pc:
+                return passage
         for passage in passages:
             pc = _norm_ws(passage.citace)
             if not pc:
                 continue
-            if text == pc or text in pc or pc in text:
+            if text in pc or pc in text:
                 return passage
             for n in (80, 60, 40, 25):
                 if len(text) >= n and text[:n] in pc:

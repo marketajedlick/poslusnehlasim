@@ -16,16 +16,14 @@
       "link_phrase": "Richterová (Piráti) popisovala ten tlak na ČT a ČRo"
     },
     {
-      "text": "Richterová ukázala scénář, kdy jsou média závislá čistě na vládní přízni.",
-      "source": "steno",
-      "steno_id": "2025_24_00006",
-      "link_phrase": "jsou média závislá čistě na vládní"
+      "text": "Richterová ukázala scénář, kdy jsou média závislá čistě na vládní přízni."
     },
     {
       "text": "V parodii Richterové premiér ujistil, že peníze budou.",
       "source": "steno",
       "steno_id": "2025_24_00006",
-      "link_phrase": "Richterová (Piráti) popisovala ten tlak na ČT a ČRo"
+      "link_phrase": "Richterová (Piráti) popisovala ten tlak na ČT a ČRo",
+      "citace": "ujistil, že peníze budou, když budou média pracovat normálně, když nebudou zbytečně vyvolávat nějakou paniku."
     },
     {
       "text": "Bartoš si zahrál podobný večerníček: Dobrý večer, děkujeme vládním politikům.",
@@ -55,10 +53,7 @@
       "link_phrase": "Kupka (ODS) řekl"
     },
     {
-      "text": "Kupka mluvil o zásahu do demokratických institucí včetně veřejnopránních médií.",
-      "source": "steno",
-      "steno_id": "2025_24_00032",
-      "link_phrase": "Kupka (ODS) řekl"
+      "text": "Kupka mluvil o zásahu do demokratických institucí včetně veřejnopránních médií."
     }
   ],
   "publikovat": true,

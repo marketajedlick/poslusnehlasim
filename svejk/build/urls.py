@@ -87,6 +87,13 @@ def edition_subpage_export_relpath(datum_unl: str, subpage: str) -> str:
     return f"vydani/{datum_unl_to_iso(datum_unl)}/{subpage.strip('/')}/index.html"
 
 
+def steno_export_relpath(datum_unl: str, schuze: int, *, dup_day: bool) -> str:
+    iso = datum_unl_to_iso(datum_unl)
+    if dup_day:
+        return f"vydani/{iso}/{edition_schuze_subpage(schuze)}/steno/index.html"
+    return f"vydani/{iso}/steno/index.html"
+
+
 def edition_legacy_pages_href(
     obdobi: int,
     schuze: int,

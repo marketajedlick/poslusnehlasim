@@ -66,7 +66,9 @@ from svejk.build.nav import (
 from svejk.build.urls import (
     datum_unl_to_iso,
     edition_export_relpath,
+    edition_schuze_subpage,
     edition_subpage_export_relpath,
+    steno_export_relpath,
 )
 from svejk.build.publish import (
     clear_publish_cache,
@@ -386,14 +388,14 @@ def run_export_pages(
         if edition_source(edition) == "snapshot":
             continue
 
-        if canonical and edition.schuze != canonical.schuze:
-            continue
-
+        siblings = tuple(e for e in editions if e.datum_unl == edition.datum_unl)
+        dup_day = len(siblings) > 1
         paths = SchuzePaths.create(edition.obdobi, edition.schuze)
         for kind in ("neprosli", "prosli", "zvoleni"):
             if not load_vyznamenani(paths, edition.datum_unl, kind):
                 continue
-            table_rel = edition_subpage_export_relpath(edition.datum_unl, kind)
+            sub = f"{edition_schuze_subpage(edition.schuze)}/{kind}" if dup_day else kind
+            table_rel = edition_subpage_export_relpath(edition.datum_unl, sub)
             table_html = render_vyznamenani_table_html(
                 paths,
                 edition.datum_unl,
@@ -407,7 +409,9 @@ def run_export_pages(
                 written.append(_write_page_html(out, table_rel, table_html))
 
         if has_steno_sources(paths, edition.datum_unl):
-            steno_rel = edition_subpage_export_relpath(edition.datum_unl, "steno")
+            steno_rel = steno_export_relpath(
+                edition.datum_unl, edition.schuze, dup_day=dup_day
+            )
             steno_html = render_steno_sources_html(
                 paths,
                 edition.datum_unl,
@@ -420,7 +424,8 @@ def run_export_pages(
                 written.append(_write_page_html(out, steno_rel, steno_html))
 
         if has_recnici(paths, edition.datum_unl):
-            recnici_rel = edition_subpage_export_relpath(edition.datum_unl, "recnici")
+            sub = f"{edition_schuze_subpage(edition.schuze)}/recnici" if dup_day else "recnici"
+            recnici_rel = edition_subpage_export_relpath(edition.datum_unl, sub)
             recnici_html = render_recnici_table_html(
                 paths,
                 edition.datum_unl,
@@ -433,7 +438,8 @@ def run_export_pages(
                 written.append(_write_page_html(out, recnici_rel, recnici_html))
 
         if has_smlouvy(paths, edition.datum_unl):
-            smlouvy_rel = edition_subpage_export_relpath(edition.datum_unl, "smlouvy")
+            sub = f"{edition_schuze_subpage(edition.schuze)}/smlouvy" if dup_day else "smlouvy"
+            smlouvy_rel = edition_subpage_export_relpath(edition.datum_unl, sub)
             smlouvy_html = render_smlouvy_html(
                 paths,
                 edition.datum_unl,

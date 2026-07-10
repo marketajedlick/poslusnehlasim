@@ -9,7 +9,7 @@
   ],
   "fakty": [
     {
-      "text": "Prosím vás, chtěl jsem vás jenom požádat, protože transparent by neměl zakrývat řečníka, jo?",
+      "text": "Okamura řekl: Prosím vás, chtěl jsem vás jenom požádat, protože transparent by neměl zakrývat řečníka, jo?",
       "source": "steno",
       "steno_id": "2025_4_00004",
       "citace": "Prosím vás, chtěl jsem vás jenom požádat, protože transparent by neměl zakrývat řečníka, jo?",
@@ -22,9 +22,7 @@
     },
     {
       "text": "Hluk v sále, poslanci se vracejí do sálu, řečník vyčkává.",
-      "source": "steno",
       "kind": "scene",
-      "steno_id": "2025_4_00009",
       "citace": "sále, poslanci se vracejí do sálu, řečník vyčkává.) *** Neprošlo jazykovou korekturou, neautorizováno!",
       "link_phrase": "Okamura citoval pravidlo"
     }
