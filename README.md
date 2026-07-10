@@ -51,10 +51,10 @@ processed/.../facts/by_topic/*.json, by_day/*.json
        ↓  compose
 processed/.../out/noviny-dlouhe/*.md, *.html
        ↓  export-pages
-site/noviny/2025/{schuze}/{den}.html  →  GitHub Pages
+site/index.html, site/vydani/{YYYY-MM-DD}/index.html  →  GitHub Pages
 ```
 
-Jedna schůze = složka `processed/2025-s20/` (období + číslo schůze). URL na webu: `/noviny/2025/20/28.05.2026`.
+Jedna schůze = složka `processed/2025-s20/` (období + číslo schůze). Kanonická URL vydání: `/vydani/2026-05-28/`. Homepage `/` zobrazuje nejnovější vydání; staré cesty `/noviny/…` přesměrovávají meta-refreshem.
 
 ### Typický den redaktora
 
@@ -74,6 +74,16 @@ Podrobnosti polí v `facts/`, pravidla textů a další příkazy: **[processed/
 Redakční playbook (sync → facts → audit → publish): **[processed/WORKFLOW.md](processed/WORKFLOW.md)**.
 
 Editorial pravidla (satira, terminologie, formát článků): [`.cursor/rules/steno-zapisy.mdc`](.cursor/rules/steno-zapisy.mdc).
+
+### Web a URL
+
+| Cesta | Účel |
+|-------|------|
+| `/` | nejnovější vydání (titulek dne nahoře; SEO H1 dole pod „Celý archiv") |
+| `/vydani/{YYYY-MM-DD}/` | kanonické vydání jednoho dne |
+| `/vydani/{YYYY-MM-DD}/steno/` | stenozáznamy a citace ke dni |
+| `/vydani/` | archiv vydání |
+| `/noviny/…` | legacy, meta-refresh na `/vydani/…` |
 
 ## Užitečné příkazy
 

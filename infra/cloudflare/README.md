@@ -68,7 +68,7 @@ Soubor [`_headers`](_headers) platí **jen** když hlavní web hostuješ na **Cl
 # robots.txt (Cloudflare Managed content musí být vypnutý):
 ./scripts/check-robots.sh
 # nebo konkrétní URL:
-./scripts/check-security-headers.sh https://poslusnehlasim.cz/noviny/2025/
+./scripts/check-security-headers.sh https://poslusnehlasim.cz/vydani/2026-07-03/
 ```
 
 Očekávané hlavičky po nasazení: `strict-transport-security`, `content-security-policy`, `x-frame-options`, `x-content-type-options`, `referrer-policy`.

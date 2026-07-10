@@ -1,6 +1,6 @@
 # SEO redesign poslusnehlasim.cz — implementační plán
 
-**Verze:** 1.4 · 10. 7. 2026  
+**Verze:** 1.5 · 10. 7. 2026  
 **Zdrojová specifikace:** [`seo-redisgn.md`](seo-redisgn.md)  
 **Přehled:** Implementace SEO redesignu ve třech fázích podle specifikace. **Hotovo v kódu:** Fáze 0 (0.1–0.3), **celá Fáze 1** (1.1–1.6). **Zbývá:** Fáze 2 (entity stránky). Nasazení: `./run-svejk.sh export-pages` → deploy `site/`.
 
@@ -10,9 +10,9 @@
 |---|---|---|
 | Kanonické URL vydání | **Hotovo (1.1)** | `/vydani/{YYYY-MM-DD}/` ([`urls.py`](../svejk/build/urls.py), [`nav.py`](../svejk/build/nav.py)); staré `/noviny/…` → meta-refresh stub |
 | Steno `/vydani/…/steno/` | **Hotovo (1.1)** | `steno_sources_pages_href()` + export podstránek |
-| Homepage = dnešní vydání | **Hotovo (1.2)** | Plný obsah na `/` ([`export_pages.py`](../svejk/build/export_pages.py), `is_homepage=True`); stabilní H1 + titulek dne jako H2 |
+| Homepage = dnešní vydání | **Hotovo (1.2)** | Plný obsah na `/` ([`export_pages.py`](../svejk/build/export_pages.py), `is_homepage=True`); titulek dne nahoře (H2), stabilní SEO H1 dole pod archivem |
 | Title/meta šablony §4–5 | **Hotovo (0.1)** | [`seo.py`](../svejk/build/seo.py): `homepage_page_title()`, `edition_page_title()`, `edition_meta_description()` |
-| H1/H2 struktura | **Hotovo (1.2)** | Homepage: H1 landing + H2 titulek dne; vydání: H1 titulek dne ([`edition-day-headline.html`](../svejk/templates/edition-day-headline.html)) |
+| H1/H2 struktura | **Hotovo (1.2)** | Homepage: H2 titulek dne nahoře + H1 (`Poslušně hlásím…`) dole v [`homepage-archive.html`](../svejk/templates/homepage-archive.html); vydání: H1 titulek dne ([`edition-day-headline.html`](../svejk/templates/edition-day-headline.html)) |
 | Duplicita obsahu `/` vs. vydání | **Částečně (1.2)** | Text stále shodný, canonical na obou stránkách na sebe; odlišná nadpisová hierarchie snižuje riziko |
 | HTTP 301 redirecty | **Částečně (1.1)** | Meta-refresh stuby v [`_redirect_html()`](../svejk/build/export_pages.py) — **záměrně**, HTTP 301 až přes Cloudflare |
 | Archiv crawlovatelný | **Hotovo (0.3)** | Chipy + textový seznam „Všechna vydání" ([`archive_text_list()`](../svejk/build/nav.py), [`archiv.html`](../svejk/templates/archiv.html)) |
@@ -53,7 +53,7 @@ flowchart TB
 
 ## Rozhodnutí (potvrzeno)
 
-- **Homepage UX:** plné vydání na `/`, ale stabilní H1 jen na homepage; titulek dne = H2 na homepage, H1 na stránce vydání.
+- **Homepage UX:** plné vydání na `/`; titulek dne = H2 nahoře (hlavní vizuální nadpis); stabilní SEO H1 (`Poslušně hlásím, satirický deník…`) až dole pod „Celý archiv →" (**Poslušně hlásím** tučně). Na stránce vydání H1 = titulek dne.
 - **Redirecty:** zatím meta-refresh (ne HTTP 301). Spec §3 splněn jen částečně — později doplnit Cloudflare Bulk Redirect Rules bez migrace hostingu.
 
 ---
@@ -112,10 +112,9 @@ Implementováno v [`seo.py`](../svejk/build/seo.py), testy v [`tests/test_seo.py
 
 ### 1.2 Homepage jako stabilní landing (§4) — hotovo
 
-- [`homepage-landing.html`](../svejk/templates/homepage-landing.html): stabilní H1 + úvod
+- [`homepage-archive.html`](../svejk/templates/homepage-archive.html): sekce „Z archivu" (`homepage_archive_list()`, 5 vydání), odkaz „Celý archiv →", stabilní SEO H1 dole (`h1_lead` + `h1_tail` ve [`strings.json`](../svejk/strings.json))
 - [`edition-day-headline.html`](../svejk/templates/edition-day-headline.html): H2 na homepage, H1 na vydání + meta řádek s `<time>`
 - [`edition-masthead.html`](../svejk/templates/edition-masthead.html): dekorativní masthead (`<p>`), H1 na titulku dne
-- [`homepage-archive.html`](../svejk/templates/homepage-archive.html): sekce „Z archivu" (`homepage_archive_list()`, 5 vydání)
 - [`html.py`](../svejk/build/html.py): kontext `is_homepage`, `edition_day_headline`, `homepage_archive`
 - Canonical: `/` self-canonical, vydání na `/vydani/…`
 - Testy: [`tests/test_homepage.py`](../tests/test_homepage.py)
@@ -246,7 +245,7 @@ Rozšířit [`glossary_markup.py`](../svejk/build/glossary_markup.py) a/nebo nov
 - [x] **Fáze 0:** Přidat textový seznam vydání do `archiv.html` (`archive_text_list`)
 - [ ] **Fáze 0:** GSC, odeslání sitemap, Rich Results Test (Markéta, po deployi)
 - [x] **Fáze 1:** Nové URL schéma (`/vydani/YYYY-MM-DD/`), ISO konverze, meta-refresh stuby ze starých URL
-- [x] **Fáze 1:** Stabilní homepage landing (H1, úvod, H2 titulek dne, sekce Z archivu)
+- [x] **Fáze 1:** Stabilní homepage landing (H2 titulek dne nahoře, SEO H1 dole pod archivem, sekce Z archivu)
 - [x] **Fáze 1:** Rozpad slovníčku na `/slovnicek/{slug}/` + DefinedTerm schema + odkazy v textech
 - [x] **Fáze 1:** Breadcrumbs UI + BreadcrumbList JSON-LD na podstránkách
 - [x] **Fáze 1:** Prev/next prolinkování vydání (pager + patička, `/vydani/` URL)

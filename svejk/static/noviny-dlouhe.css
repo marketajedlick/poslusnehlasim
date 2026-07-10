@@ -1881,11 +1881,10 @@ body.archiv-page{
   text-decoration:underline;
 }
 .homepage-title{
-  font-family:var(--font-sans);
-  font-size:clamp(0.8125rem,1.7vw,0.875rem);
-  font-weight:500;
+  font-family:var(--font-serif);
+  font-size:clamp(1.25rem,2.8vw,1.5rem);
+  font-weight:400;
   line-height:1.45;
-  letter-spacing:.01em;
   margin:22px 0 0;
   color:var(--ink);
 }
@@ -2062,9 +2061,9 @@ a.potvrzeno-cta:hover{filter:brightness(1.05);border-bottom:none}
   color:var(--orange);
   line-height:1;
 }
-.notfound-body{text-align:left}
+.notfound-body{text-align:center}
 .notfound-latest{margin-bottom:8px}
-.notfound-cta-wrap{margin-top:12px;text-align:center}
+.notfound-cta-wrap{margin-top:12px}
 .notfound-wrap .subscribe{
   margin-top:24px;
   padding-top:20px;

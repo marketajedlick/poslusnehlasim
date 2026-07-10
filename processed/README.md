@@ -88,9 +88,11 @@ Struktura:
 
 Proměnná `SVEJK_PROCESSED_DIR` přepíše výchozí `processed/` v kořeni projektu.
 
-Web: `GET /noviny/{obdobi}/{schuze}/{den}`, např. `/noviny/2025/19/15.05.2026`
+Web: kanonická URL vydání `/vydani/{YYYY-MM-DD}/`, např. `/vydani/2026-05-15/`
 
-Krátká URL `/noviny/2025/15.05.2026` přesměruje na schůzi (u duplicitního data vybere novější schůzi).
+Stenozáznamy ke dni: `/vydani/{YYYY-MM-DD}/steno/` (kotvy `#steno-2025_19_00028-p2`).
+
+Staré cesty `/noviny/{obdobi}/{schuze}/{den}` přesměrovávají meta-refreshem na `/vydani/…` (u duplicitního data vybere novější schůzi).
 
 V HTML dole: šipky ←/→ mezi vydáními **chronologicky přes celé období** (všechny schůze za sebou). Listnutí stránky funguje přes web server (fetch bez reloadu); u `file://` je klasický přechod.
 
@@ -105,7 +107,7 @@ Statický web pro **poslusnehlasim.cz**:
 ./run-svejk.sh export-pages --obdobi 2025 --out site
 ```
 
-Výstup: `site/index.html`, `site/noviny/2025/{schuze}/{den}.html`, `site/static/`.
+Výstup: `site/index.html`, `site/vydani/{YYYY-MM-DD}/index.html`, `site/static/`.
 
 Deploy: GitHub Actions workflow `.github/workflows/pages.yml` (push na `main` + cron).
 V repo Settings → Pages → Source: **GitHub Actions**. Secret: `HLIDAC_TOKEN` (volitelné, build dat).

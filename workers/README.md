@@ -73,7 +73,7 @@ curl -sS -X POST "https://poslusnehlasim-odebir.pages.dev/corrections" \
   -d '{
     "suggestion": "Testovací návrh korektury z curl.",
     "topic_slug": "test",
-    "page_url": "https://poslusnehlasim.cz/noviny/2025/",
+    "page_url": "https://poslusnehlasim.cz/vydani/2026-07-03/",
     "kind": "typo"
   }'
 ```

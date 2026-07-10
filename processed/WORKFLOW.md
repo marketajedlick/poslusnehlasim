@@ -166,7 +166,7 @@ Doporučená kostra:
 ```
 
 Příklad z s23: ve větě „podle něj fouká jen dvacet procent času“ je odkaz na  
-`/noviny/2025/23/11.06.2026-steno.html#steno-2025_23_00028-p2`,  
+`/vydani/2026-06-11/steno/#steno-2025_23_00028-p2`,  
 pod citátem pak tlačítko „Celý projev na psp.cz“.
 
 ### Krok 1: Najdi pasáž ve stenozáznamu
@@ -296,7 +296,7 @@ Projdi tento seznam znovu **u celého vydání najednou** v §9, ne jen po jedno
 python3 -m http.server -d site 8765
 ```
 
-URL náhledu: `http://127.0.0.1:8765/noviny/2025/N/DD.MM.RRRR.html`
+URL náhledu: `http://127.0.0.1:8765/vydani/2026-06-11/` (ISO datum z `facts/by_day/`)
 
 **Publish gate** (`processed/publish-approved.json`):
 
