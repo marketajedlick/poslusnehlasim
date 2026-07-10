@@ -1,4 +1,10 @@
 {% if newsletter.show_reactions %}
+<div
+  id="reactions-config"
+  hidden
+  data-api-url="{{ newsletter.reactions_api_url }}"
+  data-edition="{{ edition_iso_date }}"
+></div>
 <script>
 (function () {
   var configEl = document.getElementById("reactions-config");
@@ -262,7 +268,9 @@
     var trigger = e.target.closest(".reaction-trigger");
     if (trigger) {
       e.preventDefault();
-      var menu = trigger.closest(".reactions")?.querySelector(".reaction-menu");
+      e.stopPropagation();
+      var wrap = trigger.closest(".reactions");
+      var menu = wrap && wrap.querySelector(".reaction-menu");
       if (menu && !menu.hidden) {
         closeMenu(menu);
       } else {
@@ -274,6 +282,7 @@
     var option = e.target.closest(".reaction-option");
     if (option) {
       e.preventDefault();
+      e.stopPropagation();
       var wrap = option.closest(".reactions");
       if (wrap) chooseReaction(wrap, option.dataset.reaction || "");
       return;
@@ -292,10 +301,4 @@
   initReactions();
 })();
 </script>
-<div
-  id="reactions-config"
-  hidden
-  data-api-url="{{ newsletter.reactions_api_url }}"
-  data-edition="{{ edition_iso_date }}"
-></div>
 {% endif %}

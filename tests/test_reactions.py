@@ -72,6 +72,7 @@ class ReactionsScriptTemplateTest(unittest.TestCase):
             edition_iso_date="2026-07-02",
         )
         self.assertIn('id="reactions-config"', html)
+        self.assertLess(html.index('id="reactions-config"'), html.index("<script>"))
         self.assertIn("https://worker.example/reactions", html)
         self.assertIn("__phInitReactions", html)
 

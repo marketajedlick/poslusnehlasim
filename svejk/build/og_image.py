@@ -10,7 +10,10 @@ from PIL import Image, ImageDraw, ImageFont
 from svejk.build.seo import SITE_NAME, _edition_date_label, article_headline
 
 _STATIC = Path(__file__).resolve().parent.parent / "static"
-_SVEJK_ICON = _STATIC / "svejk-terra.png"
+_BRAND_ICON = _STATIC / "ph-fav.png"
+_EYEBROW = "Deník sněmovny"
+_SIGN_DEFAULT = "- Váš dobrý voják Švejk -"
+_TAGLINE = "Každý den to nejdůležitější ze Sněmovny."
 
 OG_WIDTH = 1200
 OG_HEIGHT = 630
@@ -20,11 +23,10 @@ OG_HEIGHT = 630
 SHARE_HERO_WIDTH = 1080
 SHARE_HERO_HEIGHT = 1080
 
-_PAPER = "#f7f2f0"
-_INK = "#262626"
-_INK_SOFT = "#6b6355"
-_TERRA = "#ff4411"
-_BORDER = "#c9c2ba"
+_CREAM = "#f7f2f0"
+_CHAR = "#262626"
+_INK = "#6b6355"
+_ORANGE = "#ff4411"
 _YELLOW = "#f4c430"
 
 
@@ -110,7 +112,11 @@ def _font_candidates() -> tuple[tuple[str, int], ...]:
 
 
 def _load_font(
-    size: int, *, bold: bool = False, italic: bool = False
+    size: int,
+    *,
+    bold: bool = False,
+    italic: bool = False,
+    sans: bool = False,
 ) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
     if italic:
         preferred = (
@@ -119,12 +125,26 @@ def _load_font(
             "Georgia Italic.ttf",
             "DejaVuSerif.ttf",
         )
-    elif bold:
+    elif bold and sans:
         preferred = (
             "DejaVuSans-Bold.ttf",
             "LiberationSans-Bold.ttf",
             "Arial Bold.ttf",
             "DejaVuSans.ttf",
+        )
+    elif bold:
+        preferred = (
+            "DejaVuSerif-Bold.ttf",
+            "LiberationSerif-Bold.ttf",
+            "Georgia Bold.ttf",
+            "DejaVuSerif.ttf",
+        )
+    elif sans:
+        preferred = (
+            "DejaVuSans.ttf",
+            "LiberationSans-Regular.ttf",
+            "Arial.ttf",
+            "DejaVuSerif.ttf",
         )
     else:
         preferred = (
@@ -177,19 +197,32 @@ def _wrap_text(
     return lines
 
 
-def _prepare_svejk_icon(size: int) -> Image.Image | None:
-    if not _SVEJK_ICON.is_file():
+def _prepare_brand_icon(size: int) -> Image.Image | None:
+    if not _BRAND_ICON.is_file():
         return None
-    icon = Image.open(_SVEJK_ICON).convert("RGBA")
-    pixels = icon.load()
-    for y in range(icon.height):
-        for x in range(icon.width):
-            r, g, b, a = pixels[x, y]
-            if r < 40 and g < 40 and b < 40:
-                pixels[x, y] = (r, g, b, 0)
+    icon = Image.open(_BRAND_ICON).convert("RGBA")
     ratio = size / max(icon.width, icon.height)
     new_size = (max(1, int(icon.width * ratio)), max(1, int(icon.height * ratio)))
     return icon.resize(new_size, Image.Resampling.LANCZOS)
+
+
+def _font_line_height(font: ImageFont.FreeTypeFont | ImageFont.ImageFont) -> int:
+    size = getattr(font, "size", 16)
+    return max(16, int(size * 1.15))
+
+
+def _draw_centered(
+    draw: ImageDraw.ImageDraw,
+    text: str,
+    y: int,
+    *,
+    font: ImageFont.FreeTypeFont | ImageFont.ImageFont,
+    fill: str,
+    canvas_width: int,
+) -> int:
+    width = draw.textlength(text, font=font)
+    draw.text(((canvas_width - width) / 2, y), text, fill=fill, font=font)
+    return y + _font_line_height(font)
 
 
 def render_og_image(
@@ -199,55 +232,79 @@ def render_og_image(
     headline: str,
     score: str = "",
 ) -> Path:
-    """Vykreslí 1200×630 PNG pro sdílení vydání."""
+    """Vykreslí 1200×630 PNG pro sdílení vydání (masthead + titulek dne)."""
     out = Path(dest)
     out.parent.mkdir(parents=True, exist_ok=True)
 
-    img = Image.new("RGB", (OG_WIDTH, OG_HEIGHT), _PAPER)
+    img = Image.new("RGB", (OG_WIDTH, OG_HEIGHT), _CREAM)
     draw = ImageDraw.Draw(img)
 
     margin = 72
-    draw.rectangle((24, 24, OG_WIDTH - 24, OG_HEIGHT - 24), outline=_BORDER, width=3)
-    draw.rectangle((margin, margin + 118, margin + 220, margin + 122), fill=_TERRA)
+    cx = OG_WIDTH // 2
+    y = margin - 8
 
-    title_font = _load_font(58, bold=True)
-    date_font = _load_font(34)
-    headline_font = _load_font(46)
-    score_font = _load_font(30, bold=True)
-    site_font = _load_font(24)
+    fav = _prepare_brand_icon(112)
+    if fav is not None:
+        img.paste(fav, (cx - fav.width // 2, y), fav)
+        y += fav.height + 18
+    else:
+        y += 8
 
-    draw.text((margin, margin), "POSLUŠNĚ HLÁSÍM", fill=_TERRA, font=title_font)
-    draw.text((margin, margin + 78), date_label, fill=_INK_SOFT, font=date_font)
+    eyebrow_font = _load_font(22, bold=True, sans=True)
+    y = _draw_centered(
+        draw,
+        _EYEBROW.upper(),
+        y,
+        font=eyebrow_font,
+        fill=_INK,
+        canvas_width=OG_WIDTH,
+    )
+    y += 4
 
-    text_width = OG_WIDTH - margin * 2 - 220
+    title_font = _load_font(64, bold=True, sans=True)
+    for line in ("Poslušně", "hlásím!"):
+        y = _draw_centered(
+            draw,
+            line,
+            y,
+            font=title_font,
+            fill=_CHAR,
+            canvas_width=OG_WIDTH,
+        )
+
+    date_font = _load_font(30, sans=True)
+    y = _draw_centered(
+        draw,
+        date_label,
+        y + 6,
+        font=date_font,
+        fill=_INK,
+        canvas_width=OG_WIDTH,
+    )
+
+    headline_font = _load_font(48, bold=True)
+    text_width = OG_WIDTH - margin * 2
     lines = _wrap_text(draw, headline, headline_font, text_width)[:3]
-    y = margin + 170
+    y += 28
+    line_h = _font_line_height(headline_font) + 8
     for line in lines:
-        draw.text((margin, y), line, fill=_INK, font=headline_font)
-        y += 58
+        draw.text((margin, y), line, fill=_CHAR, font=headline_font)
+        y += line_h
+
+    site_font = _load_font(24, sans=True)
+    score_font = _load_font(26, bold=True, sans=True)
+    footer_y = OG_HEIGHT - margin - 28
+    draw.text((margin, footer_y), "poslusnehlasim.cz", fill=_INK, font=site_font)
 
     if score:
         score_text = f"Skóre dne {score}"
         score_w = draw.textlength(score_text, font=score_font)
         draw.text(
-            (OG_WIDTH - margin - score_w, OG_HEIGHT - margin - 34),
+            (OG_WIDTH - margin - score_w, footer_y),
             score_text,
-            fill=_TERRA,
+            fill=_ORANGE,
             font=score_font,
         )
-
-    draw.text(
-        (margin, OG_HEIGHT - margin - 34),
-        "poslusnehlasim.cz",
-        fill=_INK_SOFT,
-        font=site_font,
-    )
-
-    icon = _prepare_svejk_icon(300)
-    if icon is not None:
-        x = OG_WIDTH - margin - icon.width
-        y = margin + 10
-        img.paste(icon, (x, y), icon)
 
     img.save(out, format="PNG", optimize=True)
     return out
@@ -280,62 +337,69 @@ def render_share_hero_image(
     *,
     zaver_key: str = "",
     quote_body: str,
-    sign: str = "- Váš dobrý voják Švejk -",
+    sign: str = _SIGN_DEFAULT,
 ) -> Path:
-    """Vykreslí 1080×1080 žlutou kartu s citací (v7 hero)."""
+    """Vykreslí 1080×1080 žlutou hero kartu (card-hero na webu)."""
     out = Path(dest)
     out.parent.mkdir(parents=True, exist_ok=True)
 
     img = Image.new("RGB", (SHARE_HERO_WIDTH, SHARE_HERO_HEIGHT), _YELLOW)
     draw = ImageDraw.Draw(img)
+    draw.rectangle(
+        (0, SHARE_HERO_HEIGHT - 3, SHARE_HERO_WIDTH, SHARE_HERO_HEIGHT),
+        fill="#d9b82e",
+    )
 
     margin = 72
-    inner = 28
-    draw.rectangle(
-        (inner, inner, SHARE_HERO_WIDTH - inner, SHARE_HERO_HEIGHT - inner),
-        outline=_BORDER,
-        width=3,
-    )
+    fav = _prepare_brand_icon(96)
+    fav_gap = 18
+    text_x = margin + (fav.width + fav_gap if fav is not None else 0)
+    text_width = SHARE_HERO_WIDTH - margin - text_x
 
-    text_width = SHARE_HERO_WIDTH - margin * 2
-    key_font = _load_font(40, italic=True) if zaver_key else None
+    quote_text = quote_body.strip()
+    if zaver_key:
+        quote_text = f"{zaver_key.strip()} {quote_text}".strip()
+
     quote_font, quote_lines = _fit_font_size(
         draw,
-        f"„{quote_body}“",
+        quote_text,
         text_width,
-        start=46,
-        min_size=30,
+        start=44,
+        min_size=28,
     )
-
-    sign_font = _load_font(24, bold=True)
+    mark_font = _load_font(max(56, int(getattr(quote_font, "size", 44) * 1.55)))
+    sign_font = _load_font(22, bold=True, sans=True)
+    tagline_font = _load_font(20, italic=True)
     sign_text = sign.upper()
-    sign_w = draw.textlength(sign_text, font=sign_font)
-    sign_y = SHARE_HERO_HEIGHT - margin - 36
+    line_h = max(40, int(getattr(quote_font, "size", 44) * 1.45))
+    sign_h = _font_line_height(sign_font)
+    tagline_h = _font_line_height(tagline_font)
+    quote_h = len(quote_lines) * line_h
+    foot_h = sign_h + 6 + tagline_h
+    block_h = quote_h + 20 + foot_h
+    y = max(margin, (SHARE_HERO_HEIGHT - block_h) // 2)
 
-    key_h = 0
-    if key_font and zaver_key:
-        key_h = 52
-    quote_h = len(quote_lines) * 58
-    block_h = key_h + quote_h
-    y = (sign_y - margin - block_h) // 2
-    if y < margin:
-        y = margin
-
-    if key_font and zaver_key:
-        draw.text((margin, y), zaver_key, fill=_INK, font=key_font)
-        y += key_h
-
-    line_h = max(44, int(quote_font.size * 1.35) if hasattr(quote_font, "size") else 58)
-    for line in quote_lines:
-        draw.text((margin, y), line, fill=_INK, font=quote_font)
+    open_mark = "„"
+    close_mark = "“"
+    for i, line in enumerate(quote_lines):
+        prefix = open_mark if i == 0 else ""
+        suffix = close_mark if i == len(quote_lines) - 1 else ""
+        x = text_x
+        if prefix:
+            draw.text((x, y - 8), prefix, fill=_CHAR, font=mark_font)
+            x += draw.textlength(prefix, font=mark_font) * 0.55
+        body = f"{line}{suffix}"
+        draw.text((x, y), body, fill=_CHAR, font=quote_font)
         y += line_h
 
-    draw.text(
-        ((SHARE_HERO_WIDTH - sign_w) / 2, sign_y),
-        sign_text,
-        fill=_INK,
-        font=sign_font,
-    )
+    y += 20
+    draw.text((text_x, y), sign_text, fill=_CHAR, font=sign_font)
+    y += sign_h + 6
+    draw.text((text_x, y), _TAGLINE, fill=_CHAR, font=tagline_font)
+    foot_bottom = y + tagline_h
+
+    if fav is not None:
+        img.paste(fav, (margin, foot_bottom - fav.height), fav)
 
     img.save(out, format="PNG", optimize=True)
     return out
