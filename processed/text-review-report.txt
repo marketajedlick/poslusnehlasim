@@ -1,4 +1,4 @@
-errors=0 warns=146
+errors=0 warns=144
 warn	fakt_speaker_mismatch	14.11.2025	volba-mistopredsedu-2-kolo	fakty[1]: text začíná «Kateřina», steno má «Eva Šrámková»
 warn	fakt_speaker_mismatch	14.11.2025	volba-mistopredsedu-2-kolo	fakty[2]: text začíná «Jedno», steno má «Martin Kolovratník»
 warn	fakt_speaker_mismatch	14.11.2025	volba-mistopredsedu-2-kolo	fakty[3]: text začíná «Koaliční», steno má «Patrik Nacher»
@@ -122,16 +122,14 @@ warn	fakt_speaker_mismatch	11.06.2026	novela-z-stavebni-zakon	fakty[11]: text za
 warn	nadpis_off_topic	11.06.2026	novela-z-stavebni-zakon	nadpis «Druhé čtení doběhlo, výbor bude třídit» – klíčová slova ['doběhlo', 'třídit'] nejsou ve stenu dne
 warn	fakt_speaker_mismatch	23.06.2026	palacova-pohadka-23-06	fakty[1]: text začíná «Jeden», steno má «Vít Rakušan»
 warn	fakt_speaker_mismatch	23.06.2026	palacova-pohadka-23-06	fakty[2]: text začíná «Rádkyně», steno má «Vít Rakušan»
+warn	fakt_speaker_mismatch	23.06.2026	palacova-pohadka-23-06	fakty[3]: text začíná «Palácová», steno má «Vít Rakušan»
 warn	fakt_speaker_mismatch	23.06.2026	palacova-pohadka-23-06	fakty[4]: text začíná «Schillerová», steno má «Vít Rakušan»
-warn	fakt_speaker_mismatch	24.06.2026	debata-sluzebni-zakon-richterova-rakusan	fakty[5]: text začíná «Po», steno má «Vít Rakušan»
+warn	fakt_speaker_mismatch	24.06.2026	debata-sluzebni-zakon-richterova-rakusan	fakty[4]: text začíná «Po», steno má «Vít Rakušan»
 warn	fakt_speaker_mismatch	24.06.2026	novela-z-o-nekt-opatr-v-souv-s-ozbrojenym-konfli	fakty[4]: text začíná «Odpoledne», steno má «Vít Rakušan»
 warn	nadpis_off_topic	24.06.2026	novela-z-o-nekt-opatr-v-souv-s-ozbrojenym-konfli	nadpis «Debata o Ukrajincích a odbočka k ČTK» – klíčová slova ['Ukrajincích', 'odbočka'] nejsou ve stenu dne
 warn	fakt_speaker_mismatch	26.06.2026	pripad-dne-hrib-fotografie-26-06	fakty[5]: text začíná «Jedlička», steno má «Zdeněk Hřib»
 warn	fakt_speaker_mismatch	26.06.2026	navrh-zakona-o-statnich-zamestnancich	fakty[5]: text začíná «Závěrečné», steno má «Jiří Barták»
-warn	citace_autor_mismatch	30.06.2026	debata-porad-interpelace-30-06	citace_autor «Petr Macinka (Motoristé)» vs steno ['Olga Richterová']
 warn	fakt_speaker_mismatch	30.06.2026	interpelace-straznice-30-06	fakty[7]: text začíná «Šrámková», steno má «Jan Bureš»
-warn	citace_autor_mismatch	30.06.2026	interpelace-hrib-nato-svacina-30-06	citace_autor «Zdeněk Hřib (Piráti)» vs steno ['Jana Černochová']
-warn	citace_autor_mismatch	30.06.2026	interpelace-decroix-lidska-prava-30-06	citace_autor «Eva Decroix (ODS)» vs steno ['Vít Rakušan']
 warn	nadpis_off_topic	01.07.2026	debata-rakusan-nato-zahranicni-sluzba-01-07	nadpis «Pomsta prezidentovi» – klíčová slova ['Pomsta', 'prezidentovi'] nejsou ve stenu dne
 warn	nadpis_off_topic	01.07.2026	novela-z-na-ochranu-zvirat-proti-tyrani	nadpis «Vločka a nevalný návrh» – klíčová slova ['Vločka', 'nevalný'] nejsou ve stenu dne
 warn	fakt_speaker_mismatch	02.07.2026	interpelace-mrazova-bydleni-02-07	fakty[5]: text začíná «Piráti», steno má «Ivan Bartoš»

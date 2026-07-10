@@ -13,7 +13,7 @@
       "source": "steno",
       "steno_id": "2025_12_00023",
       "citace": "novela zavádí cílení na skupiny osob, které, mají...",
-      "link_phrase": "Novela zavádí cílení poradenství na vybrané skupiny osob, ne na"
+      "link_phrase": "Novela zavádí cílení poradenství na vybrané skupiny"
     },
     {
       "text": "Hlasování číslo 3, pro 27, proti 86. Návrh na zamítnutí nebyl přijat.",
@@ -21,7 +21,7 @@
     },
     {
       "text": "Hlasování číslo 5, pro 126, proti nikdo. Návrh byl přikázán garančnímu výboru.",
-      "link_phrase": "Hlasování číslo 5, pro 126, proti nikdo. Návrh byl přikázán"
+      "link_phrase": "126 hlasy pro, nikdo proti"
     },
     {
       "text": "Odložením zákona by vláda ohrozila více než 9 miliard korun z fondu Evropské unie.",
@@ -56,6 +56,6 @@
   },
   "steno_slov": 31906,
   "lead": "Změna zákona o podpoře bydlení prošla první kolo, návrh na zamítnutí padl na 27 hlasů. Vláda zužuje okruh lidí u kontaktních míst, opozice varovala před devíti miliardami z EU.",
-  "pointa": "Dopoledne v sále znělo NATO a připravovaný zákon o cizích vazbách (opozice ho nazývá „ruský zákon“) místo bydlení. Bartoš jako bývalý ministr hájil preventivní síť, Olšáková chtěla zákon zamítnout, Sněmovna ji nepustila. Novela zavádí cílení poradenství na vybrané skupiny osob, ne na. Hlasování číslo 5, pro 126, proti nikdo. Návrh byl přikázán. Dopady bytové nouze jsou 4,1 miliardy ročně.",
+  "pointa": "Dopoledne v sále znělo NATO a připravovaný zákon o cizích vazbách (opozice ho nazývá „ruský zákon“) místo bydlení. Bartoš jako bývalý ministr hájil preventivní síť, Olšáková chtěla zákon zamítnout, Sněmovna ji nepustila. Novela zavádí cílení poradenství na vybrané skupiny osob. Dopady bytové nouze jsou 4,1 miliardy ročně.",
   "mean": "Kontaktní místa mají pomáhat lidem v nájemní krizi dřív, než spadnou do ubytoven. Změna zákona cílí poradenství jen na zranitelné skupiny. Zákon sám byty nestaví, ale má zabránit zbytečným nákladům státu."
 }

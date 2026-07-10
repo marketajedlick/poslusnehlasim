@@ -84,15 +84,18 @@ def anchor_phrase(summary: str) -> str:
     return " ".join(words[:10])
 
 
-def ensure_phrase_in_article(data: dict, phrase: str) -> bool:
+def ensure_phrase_in_article(data: dict, phrase: str, summary: str = "") -> bool:
     if _find_phrase_in_text(article_text(data), phrase):
         return True
     phrase = phrase.strip().rstrip(".")
     if not phrase or len(phrase) < 8:
         return False
-    target = "mean" if (data.get("pointa") or "").strip() else "mean"
-    body = (data.get(target) or "").strip()
-    data[target] = f"{body} {phrase}." if body else f"{phrase}."
+    # ponytail: nové kotvy jen do mean, nikdy surový append do pointy
+    body = (data.get("mean") or "").strip()
+    sent = summary.strip().rstrip(".") if summary else phrase
+    if sent and sent[0].islower():
+        sent = sent[0].upper() + sent[1:]
+    data["mean"] = f"{body} {sent}." if body else f"{sent}."
     return _find_phrase_in_text(article_text(data), phrase) is not None
 
 
@@ -269,7 +272,7 @@ def fix_topic(slug: str, data: dict, steno_by_id: dict[str, dict]) -> list[str]:
 
         if not phrase and summary:
             phrase = anchor_phrase(summary)
-            if phrase and not ensure_phrase_in_article(data, phrase):
+            if phrase and not ensure_phrase_in_article(data, phrase, summary):
                 phrase = None
             else:
                 article = article_text(data)

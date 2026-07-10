@@ -10,7 +10,7 @@
   "fakty": [
     {
       "text": "Hlasování číslo 70, pro 168, proti nikdo. Návrh byl přijat.",
-      "link_phrase": "Hlasování číslo 70, pro 168, proti nikdo. Návrh byl přijat"
+      "link_phrase": "168 hlasy pro, nikdo proti"
     },
     {
       "text": "Hlasování číslo 72, pro 117, proti 33. Návrh byl přijat.",
@@ -35,6 +35,6 @@
   },
   "steno_slov": 14735,
   "lead": "Páteční dopoledne patřilo volbám do orgánů: VZP, Český rozhlas, Česká televize i ochránce práv dětí. Všechno prošlo.",
-  "pointa": "U správy VZP bylo 33 hlasů proti, u ochránce dětí 11. Jinak klidná obsazování postů bez velkého příběhu. Hlasování číslo 70, pro 168, proti nikdo. Návrh byl přijat.",
+  "pointa": "U správy VZP bylo 33 hlasů proti, u ochránce dětí 11. Jinak klidná obsazování postů bez velkého příběhu.",
   "mean": "Sněmovna si obsadila výbory a rady, které dohlížejí na instituce od pojišťovny po média. Jde o moc uvnitř parlamentu, ne o zákon pro lidi."
 }

@@ -21,7 +21,7 @@
     },
     {
       "text": "Hlasování číslo 46, pro 5, proti 85, návrh nebyl schválen.",
-      "link_phrase": "Hlasování číslo 46, pro 5, proti 85, návrh nebyl schválen"
+      "link_phrase": "5 proti 85"
     },
     {
       "text": "Před tím čtyřicet čtyři hlasování o změnách pořadu schůze.",
@@ -45,6 +45,6 @@
   },
   "steno_slov": 3916,
   "lead": "Sněmovna nepotvrdila vrácený návrh minima, jen pět hlasů proti senátnímu zamítnutí, osmdesát pět proti. Senát už mezitím schválil širší verzi v jiném tisku.",
-  "pointa": "Večer předtím čtyřicet čtyři hlasování o pořadu, pak teprve minimum. Juchelka žádal o zamítnutí duplicitního tisku, Sněmovna souhlasila. Senát schválil širší tisk 88 a tisk 85 vrátil jako. K přijetí usnesení je zapotřebí souhlasu 101 poslanců. Hlasování číslo 46, pro 5, proti 85, návrh nebyl schválen.",
-  "mean": "Hranice chudoby a superdávka se řeší jiným zákonem (tisk 88), který Senát už přijal po únorovém odkladu superdávky. Tento vrácený návrh byl nadbytečný a definitivně padl."
+  "pointa": "Večer předtím čtyřicet čtyři hlasování o pořadu, pak teprve minimum. Juchelka žádal o zamítnutí duplicitního tisku, Sněmovna souhlasila. Senát schválil širší tisk 88 a tisk 85 vrátil jako. K přijetí usnesení je zapotřebí souhlasu 101 poslanců.",
+  "mean": "Hranice chudoby a superdávka se řeší jiným zákonem (tisk 88), který Senát už přijal po únorovém odkladu superdávky. Tento vrácený návrh byl nadbytečný a definitivně padl"
 }

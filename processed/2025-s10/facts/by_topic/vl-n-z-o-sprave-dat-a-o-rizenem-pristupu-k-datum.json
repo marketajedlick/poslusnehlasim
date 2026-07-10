@@ -10,7 +10,7 @@
   "fakty": [
     {
       "text": "Hlasování číslo 53, pro 128, proti nikdo. S návrhem zákona byl vysloven souhlas.",
-      "link_phrase": "Hlasování číslo 53, pro 128, proti nikdo. S návrhem zákona"
+      "link_phrase": "128 hlasů pro, nikdo proti"
     },
     {
       "text": "Potlesk.",
@@ -31,6 +31,6 @@
   },
   "steno_slov": 5957,
   "lead": "Poslední bod večerního maratonu: zákon o správě dat prošel v prvním kole, 128 hlasů pro, nikdo proti.",
-  "pointa": "Po hodinách debaty o Blízkém východu a pořadu schůze Sněmovna k zákonům usedla až po osmé hodině večer. Hlasování číslo 53, pro 128, proti nikdo. S návrhem zákona.",
+  "pointa": "Po hodinách debaty o Blízkém východu a pořadu schůze Sněmovna k zákonům usedla až po osmé hodině večer.",
   "mean": "Stát chce mít přehled o datech, která sdílí mezi úřady. Cílem je jednodušší digitální služby, ne nová daň pro občana."
 }

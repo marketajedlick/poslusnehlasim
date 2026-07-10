@@ -10,11 +10,11 @@
   "fakty": [
     {
       "text": "Hlasování číslo 246, pro 90, proti 32. Návrh byl přijat.",
-      "link_phrase": "Hlasování číslo 246, pro 90, proti 32. Návrh byl přijat"
+      "link_phrase": "90 hlasů pro, 32 proti"
     },
     {
       "text": "Předtím hlasování číslo 245 skončilo 58:89, návrh nebyl přijat.",
-      "link_phrase": "Předtím hlasování číslo 245 skončilo 58:89, návrh nebyl přijat"
+      "link_phrase": "90 hlasů pro, 32 proti"
     }
   ],
   "publikovat": true,
@@ -31,6 +31,6 @@
   },
   "steno_slov": 7660,
   "lead": "Rozpočet fondu životního prostředí v závěrečném hlasování prošel, 90 hlasů pro, 32 proti. Předtím jeden návrh spadl 58:89, ale závěrečné hlasování koalici stačilo.",
-  "pointa": "Den přinesl desítky hlasování k fondům i státnímu rozpočtu. SFŽP nakonec nezůstal sám na ocet, na rozdíl od prvního pokusu. Hlasování číslo 246, pro 90, proti 32. Návrh byl přijat. Předtím hlasování číslo 245 skončilo 58:89, návrh nebyl přijat.",
+  "pointa": "Den přinesl desítky hlasování k fondům i státnímu rozpočtu. SFŽP nakonec nezůstal sám na ocet, na rozdíl od prvního pokusu.",
   "mean": "SFŽP platí deštníky, čističky a zelené projekty. Schválený rozpočet fondu na rok 2026 umožní čerpání dotací v plánovaném režimu."
 }

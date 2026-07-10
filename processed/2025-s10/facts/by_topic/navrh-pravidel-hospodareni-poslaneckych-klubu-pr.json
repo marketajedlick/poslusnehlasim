@@ -10,7 +10,7 @@
   "fakty": [
     {
       "text": "Hlasování číslo 251, pro 127, proti nikdo. Návrh byl přijat.",
-      "link_phrase": "Hlasování číslo 251, pro 127, proti nikdo. Návrh byl přijat"
+      "link_phrase": "127 hlasů pro, nikdo proti"
     },
     {
       "text": "Poslankyně Vesecká žádá kolegu v poslanecké lavici, aby ji odhlásil.",
@@ -35,6 +35,6 @@
   },
   "steno_slov": 509,
   "lead": "Sněmovna schválila pravidla hospodaření poslaneckých klubů, 127 hlasů pro, nikdo proti.",
-  "pointa": "Okamura vedl hlasování o rezignacích a nominacích do orgánů ještě před zákony. Hlasování číslo 251, pro 127, proti nikdo. Návrh byl přijat.",
+  "pointa": "Okamura vedl hlasování o rezignacích a nominacích do orgánů ještě před zákony.",
   "mean": "Každý klub dostává z rozpočtu sněmovny peníze na provoz. Pravidla říkají, za co je může utratit."
 }
