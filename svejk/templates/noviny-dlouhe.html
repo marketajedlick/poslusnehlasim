@@ -27,6 +27,10 @@
 
     <main class="edition-main" id="edition-main">
       <div class="edition-main-inner" id="edition-content">
+        <div class="edition-masthead-nav">
+          {% include "site-nav.html" %}
+        </div>
+
         <div class="masthead-mobile-only">
           {% set masthead_decor_only = true %}
           {% include "edition-masthead.html" %}
@@ -37,10 +41,6 @@
         {% set pager_center_prague = true %}
         {% include "edition-pager.html" %}
         {% endif %}
-
-        <div class="edition-masthead-nav masthead-desktop-only">
-          {% include "site-nav.html" %}
-        </div>
 
         {% include "breadcrumbs.html" %}
 

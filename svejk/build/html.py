@@ -11,7 +11,7 @@ from typing import Any
 from jinja2 import Environment, FileSystemLoader, pass_context, select_autoescape
 from markupsafe import Markup
 
-from svejk.build.day_content import DenContent, build_den_content, datum_design
+from svejk.build.day_content import DenContent, build_den_content, datum_day_month, datum_design
 from svejk.build.io import read_json
 from svejk.build.seo import SITE_NAME, site_meta_description
 from svejk.glossary import slovnicek_anchor, slovnicek_display_term, slovnicek_entries, slovnicek_term_label
@@ -822,6 +822,7 @@ def render_den_html(
         schuze=paths.schuze,
         dup_day=dup_day,
         datum_design=datum_design(content.datum, content.den),
+        pager_date_label=datum_day_month(content.datum),
         ph_fav_href=fav_href,
         svejk_img_href=svejk_img_href,
         share_hero_href=share_hero,

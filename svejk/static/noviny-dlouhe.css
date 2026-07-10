@@ -69,7 +69,9 @@ button{font:inherit;cursor:pointer}
 }
 .edition-main-inner{
   min-width:0;
-  overflow-x:clip;
+  /* Čísla sekcí (.article-num) stojí vlevo od sloupce přes záporný margin;
+     overflow-x:clip je schovalo — mezera rail ↔ obsah je na to dimenzovaná. */
+  overflow-x:visible;
 }
 /* Úzký desktop: rail + obsah se musí vejít; čísla článků nesmí přetékat do sidebaru. */
 @media(min-width:1024px) and (max-width:1199px){
@@ -245,9 +247,9 @@ button{font:inherit;cursor:pointer}
   color:var(--muted);
 }
 @media(max-width:1023px){
+  .edition-main-inner > .edition-masthead-nav{margin-bottom:12px}
   .masthead-mobile-only .pager,
-  .masthead-mobile-only .edition-pager{margin-bottom:12px}
-  .masthead-mobile-only .edition-masthead-nav{margin-bottom:24px}
+  .masthead-mobile-only .edition-pager{margin-bottom:24px}
   .masthead-mobile-only + .rule-double{margin-top:28px}
 }
 .pager-tag{
@@ -272,8 +274,6 @@ button{font:inherit;cursor:pointer}
   font-family:var(--font-sans);
   font-size:13px;
   font-weight:700;
-  letter-spacing:.05em;
-  text-transform:uppercase;
   color:var(--char);
 }
 @media(min-width:1024px){
@@ -284,7 +284,8 @@ button{font:inherit;cursor:pointer}
   margin:18px 0 20px;
 }
 @media(min-width:1024px){
-  .pager-desktop:has(+ .edition-masthead-nav){
+  .edition-masthead-nav:has(+ .masthead-mobile-only + .pager-desktop),
+  .edition-masthead-nav:has(+ .masthead-mobile-only + .edition-pager.pager-desktop){
     padding-bottom:10px;
   }
 }
@@ -1435,22 +1436,18 @@ body.archiv-page{
   color:var(--ink);
 }
 .edition-masthead-nav{
-  margin:4px 0 0;
+  margin:0;
 }
 @media(min-width:1024px){
-  .pager-desktop + .edition-masthead-nav,
-  .edition-pager.pager-desktop + .edition-masthead-nav{
-    margin:14px 0 0;
+  .edition-masthead-nav + .masthead-mobile-only + .pager-desktop,
+  .edition-masthead-nav + .masthead-mobile-only + .edition-pager.pager-desktop{
+    margin-top:0;
+  }
+  .edition-masthead-nav + .masthead-mobile-only + .pager-desktop,
+  .edition-masthead-nav + .masthead-mobile-only + .edition-pager.pager-desktop,
+  .edition-masthead-nav + .pager-desktop,
+  .edition-masthead-nav + .edition-pager.pager-desktop{
     padding-bottom:22px;
-  }
-  .pager-desktop + .edition-masthead-nav + .rule-double,
-  .edition-pager.pager-desktop + .edition-masthead-nav + .rule-double{
-    margin-top:0;
-  }
-  .pager-desktop + .rule-double,
-  .edition-pager.pager-desktop + .rule-double{
-    margin-top:0;
-    margin-bottom:32px;
   }
 }
 .site-nav{

@@ -374,6 +374,11 @@ def datum_design(datum_unl: str, den: str) -> str:
     return f"{d.day}. {month} {d.year}"
 
 
+def datum_day_month(datum_unl: str) -> str:
+    d = datetime.strptime(datum_unl, "%d.%m.%Y")
+    return f"{d.day}. {_MESICE_GEN[d.month - 1]}"
+
+
 def edition_day_meta(den: str, datum_unl: str, schuze: int) -> str:
     """Řádek pod titulkem dne: Poslanecká sněmovna, úterý 2. července 2026 · 45. schůze."""
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
