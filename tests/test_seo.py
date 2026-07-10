@@ -57,6 +57,15 @@ def test_site_meta_description() -> None:
         )
         == "Titulek na počkání. Denní přehled z Poslanecké sněmovny, 2. 7. 2026."
     )
+    assert (
+        edition_meta_description(
+            dnesni_ucet="",
+            nadpis_vydani="Svačina pro prezidenta",
+            first_item_nadpis="Jiný první článek",
+            datum_unl="30.06.2026",
+        )
+        == "Svačina pro prezidenta. Denní přehled z Poslanecké sněmovny, 30. 6. 2026."
+    )
     assert site_brand_line() == (
         "Poslušně hlásím · poslusnehlasim.cz · Deník sněmovny"
     )

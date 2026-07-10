@@ -125,6 +125,7 @@ class DenContent:
     cal_day: str
     cal_month: str
     dnesni_ucet: str
+    nadpis_vydani: str = ""
     items: list[DenItem] = field(default_factory=list)
     proslo: int = 0
     zamitnuto: int = 0
@@ -512,6 +513,7 @@ def build_den_content(
         cal_day=cal_day,
         cal_month=cal_month,
         dnesni_ucet=custom_ucet or _dnesni_ucet(stats, state=state),
+        nadpis_vydani=(day.get("nadpis_vydani") or "").strip(),
         proslo=int(stats.get("proslo") or 0),
         zamitnuto=int(stats.get("zamitnuto") or 0),
         result_note=result_note,

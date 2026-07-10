@@ -254,6 +254,7 @@ def _edition_headline(edition: Edition, *, max_len: int = 80) -> str:
     content = build_den_content(day_path, paths)
     return article_headline(
         dnesni_ucet=content.dnesni_ucet,
+        nadpis_vydani=content.nadpis_vydani,
         first_item_nadpis=content.items[0].nadpis if content.items else "",
         edition_title="",
         max_len=max_len,

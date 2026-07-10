@@ -150,6 +150,7 @@ def _edition_og_fields(edition, *, snapshot_html: str = "") -> dict[str, str | i
         return {
             "den": content.den,
             "dnesni_ucet": content.dnesni_ucet,
+            "nadpis_vydani": content.nadpis_vydani,
             "first_item_nadpis": content.items[0].nadpis if content.items else "",
             "proslo": content.proslo,
             "zamitnuto": content.zamitnuto,
@@ -181,6 +182,7 @@ def _inject_edition_og(
     og_title = edition_og_title(edition.datum_unl, str(fields["den"]))
     og_headline = edition_og_headline(
         dnesni_ucet=str(fields["dnesni_ucet"]),
+        nadpis_vydani=str(fields.get("nadpis_vydani") or ""),
         first_item_nadpis=str(fields["first_item_nadpis"]),
         datum_unl=edition.datum_unl,
         den=str(fields["den"]),
@@ -292,6 +294,7 @@ def run_export_pages(
             datum_unl=edition.datum_unl,
             den=str(fields["den"]),
             dnesni_ucet=str(fields["dnesni_ucet"]),
+            nadpis_vydani=str(fields.get("nadpis_vydani") or ""),
             first_item_nadpis=str(fields["first_item_nadpis"]),
             proslo=int(fields["proslo"]),
             zamitnuto=int(fields["zamitnuto"]),

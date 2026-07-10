@@ -587,6 +587,7 @@ def render_den_html(
 
         meta_description = _edition_meta_description(
             dnesni_ucet=content.dnesni_ucet,
+            nadpis_vydani=content.nadpis_vydani,
             first_item_nadpis=content.items[0].nadpis if content.items else "",
             datum_unl=content.datum,
             proslo=content.proslo,
@@ -619,6 +620,7 @@ def render_den_html(
         else _edition_page_title(
             dnesni_ucet=content.dnesni_ucet,
             meta_description=meta_description,
+            nadpis_vydani=content.nadpis_vydani,
             first_item_nadpis=content.items[0].nadpis if content.items else "",
             datum_unl=content.datum,
             den=content.den,
@@ -637,6 +639,7 @@ def render_den_html(
     og_share_title = (
         _homepage_share_og_title(
             dnesni_ucet=content.dnesni_ucet,
+            nadpis_vydani=content.nadpis_vydani,
             first_item_nadpis=content.items[0].nadpis if content.items else "",
             datum_unl=content.datum,
             den=content.den,
@@ -644,6 +647,7 @@ def render_den_html(
         if is_homepage
         else _edition_page_title(
             dnesni_ucet=content.dnesni_ucet,
+            nadpis_vydani=content.nadpis_vydani,
             first_item_nadpis=content.items[0].nadpis if content.items else "",
             datum_unl=content.datum,
             den=content.den,
@@ -651,6 +655,7 @@ def render_den_html(
     )
     og_headline = edition_og_headline(
         dnesni_ucet=content.dnesni_ucet,
+        nadpis_vydani=content.nadpis_vydani,
         first_item_nadpis=content.items[0].nadpis if content.items else "",
         datum_unl=content.datum,
         den=content.den,
@@ -673,6 +678,7 @@ def render_den_html(
     schema_headline = _article_headline(
         dnesni_ucet=content.dnesni_ucet,
         meta_description=meta_description,
+        nadpis_vydani=content.nadpis_vydani,
         first_item_nadpis=content.items[0].nadpis if content.items else "",
         edition_title=edition_title,
     )

@@ -151,12 +151,15 @@ def article_headline(
     *,
     dnesni_ucet: str,
     meta_description: str = "",
+    nadpis_vydani: str = "",
     first_item_nadpis: str = "",
     edition_title: str = "",
     max_len: int = 110,
 ) -> str:
     """Téma dne pro <title> a schema.org, nadpis článku, ne meta description."""
     _ = meta_description
+    if nadpis_vydani.strip():
+        return _truncate_text(nadpis_vydani.strip(), max_len=max_len)
     if first_item_nadpis.strip():
         return _truncate_text(first_item_nadpis.strip(), max_len=max_len)
     from_account = _dnesni_ucet_headline(dnesni_ucet)
@@ -168,6 +171,7 @@ def article_headline(
 def edition_meta_description(
     *,
     dnesni_ucet: str,
+    nadpis_vydani: str = "",
     first_item_nadpis: str = "",
     datum_unl: str = "",
     proslo: int = 0,
@@ -185,6 +189,7 @@ def edition_meta_description(
 
     perex = article_headline(
         dnesni_ucet=_strip_html(dnesni_ucet),
+        nadpis_vydani=_strip_html(nadpis_vydani),
         first_item_nadpis=_strip_html(first_item_nadpis),
         max_len=120,
     )
@@ -212,6 +217,7 @@ def homepage_og_title() -> str:
 def homepage_share_og_title(
     *,
     dnesni_ucet: str,
+    nadpis_vydani: str = "",
     first_item_nadpis: str = "",
     datum_unl: str,
     den: str = "",
@@ -220,6 +226,7 @@ def homepage_share_og_title(
     """og:title pro homepage — sdílení ukazuje aktuální vydání, ne brand <title>."""
     return edition_page_title(
         dnesni_ucet=dnesni_ucet,
+        nadpis_vydani=nadpis_vydani,
         first_item_nadpis=first_item_nadpis,
         datum_unl=datum_unl,
         den=den,
@@ -231,6 +238,7 @@ def edition_page_title(
     *,
     dnesni_ucet: str,
     meta_description: str = "",
+    nadpis_vydani: str = "",
     first_item_nadpis: str = "",
     datum_unl: str,
     den: str = "",
@@ -248,6 +256,7 @@ def edition_page_title(
     budget = max(12, max_len - len(prefix) - len(suffix))
     headline = article_headline(
         dnesni_ucet=dnesni_ucet,
+        nadpis_vydani=nadpis_vydani,
         first_item_nadpis=first_item_nadpis,
         edition_title=datum_design,
         max_len=budget,

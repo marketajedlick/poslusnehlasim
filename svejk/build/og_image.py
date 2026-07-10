@@ -67,12 +67,14 @@ def edition_og_title(datum_unl: str, den: str = "") -> str:
 def edition_og_headline(
     *,
     dnesni_ucet: str,
+    nadpis_vydani: str = "",
     first_item_nadpis: str = "",
     datum_unl: str,
     den: str = "",
 ) -> str:
     return article_headline(
         dnesni_ucet=dnesni_ucet,
+        nadpis_vydani=nadpis_vydani,
         first_item_nadpis=first_item_nadpis,
         edition_title=edition_og_title(datum_unl, den),
         max_len=140,
@@ -370,12 +372,14 @@ def render_edition_og_image(
     datum_unl: str,
     den: str = "",
     dnesni_ucet: str = "",
+    nadpis_vydani: str = "",
     first_item_nadpis: str = "",
     proslo: int = 0,
     zamitnuto: int = 0,
 ) -> Path:
     headline = edition_og_headline(
         dnesni_ucet=dnesni_ucet,
+        nadpis_vydani=nadpis_vydani,
         first_item_nadpis=first_item_nadpis,
         datum_unl=datum_unl,
         den=den,
