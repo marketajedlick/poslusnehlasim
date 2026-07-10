@@ -2,13 +2,19 @@
 {% set hero_share_text = ('„' ~ hero_zaver ~ '“\n\n' ~ t.edition.sign ~ '\n\n' ~ share_page_url) if hero_zaver else '' %}
 <section class="card card-yellow card-tilt-l card-hero" id="card-hero" aria-label="Švejkovo hlášení">
   <div class="card-hero-inner">
-    {% if ph_fav_href %}<img class="card-hero-svejk" src="{{ ph_fav_href }}" alt="" aria-hidden="true" width="72" height="72">{% endif %}
     <div class="card-hero-body">
       <p class="card-hero-text">
         {% set _ph = 'Poslušně hlásím, že ' %}
         <span class="q-quote"><span class="q-mark">„</span>{% if content.zaver[:20] == _ph %}<strong><em>{{ _ph }}</em></strong>{{ content.zaver[20:] | glossary }}{% else %}{{ content.zaver | glossary }}{% endif %}<span class="q-mark">“</span></span>
       </p>
       <div class="card-hero-foot">
+        {% if ph_fav_href and content.items %}
+        <a class="card-hero-svejk-link" href="#{{ content.items[0].anchor_id }}" aria-label="{{ content.items[0].nadpis }}">
+          <img class="card-hero-svejk" src="{{ ph_fav_href }}" alt="" aria-hidden="true" width="56" height="56">
+        </a>
+        {% elif ph_fav_href %}
+        <img class="card-hero-svejk" src="{{ ph_fav_href }}" alt="" aria-hidden="true" width="56" height="56">
+        {% endif %}
         <div class="card-sign-wrap">
           <div class="card-sign">{{ t.edition.sign }}</div>
           <p class="card-tagline">Každý den to nejdůležitější ze Sněmovny.</p>

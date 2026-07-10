@@ -1,5 +1,11 @@
 <div class="masthead{% if rail %} edition-rail-mast{% endif %}">
+  {% if content.items %}
+  <a class="masthead-fav-link" href="#{{ content.items[0].anchor_id }}" aria-label="{{ content.items[0].nadpis }}">
+    <img class="masthead-fav" src="{{ ph_fav_href }}" alt="" width="96" height="96">
+  </a>
+  {% else %}
   <img class="masthead-fav" src="{{ ph_fav_href }}" alt="Švejk" width="96" height="96">
+  {% endif %}
   <div class="masthead-eyebrow">{{ t.edition.eyebrow }}</div>
   {% if rail or masthead_decor_only %}
   <p class="masthead-title"{% if masthead_decor_only and not rail %} aria-hidden="true"{% endif %}>Poslušně<br>hlásím!</p>
