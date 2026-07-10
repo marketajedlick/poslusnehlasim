@@ -12,44 +12,40 @@
       "text": "Babiš: titulek o IPO letiště.",
       "source": "steno",
       "steno_id": "2025_24_01736",
-      "citace": "No, vláda padla proto, že ODS kradla, oni kradli od revoluce, a protože tu vládu",
+      "citace": "No, vláda padla proto, že ODS kradla, oni kradli od revoluce,a protože tu vládu řídila milenka premiéra a milenku řídil kmotr.",
       "link_phrase": "Babiš"
     },
     {
       "text": "Babiš navrhl prodat 40 procent letiště na trh.",
       "source": "steno",
       "steno_id": "2025_24_01736",
-      "citace": "Například, že bychom šli z letiště na IPO, že bychom dali 40 procent na trh.",
+      "citace": "letiště na IPO, že bychom dali 40 procent na trh. To by bylo peněz jak želez.",
       "link_phrase": "Babiš"
     },
     {
       "text": "Babiš: To by bylo peněz jak želez.",
       "source": "steno",
       "steno_id": "2025_24_01736",
-      "citace": "To by bylo peněz jak želez.",
+      "citace": "To by bylo peněz jak želez. Už křičí všichni: ten Babiš je blbej.",
       "link_phrase": "Babiš"
     },
     {
       "text": "Babiš ironicky cituje reakci: ten Babiš je blbej.",
       "source": "steno",
       "steno_id": "2025_24_01736",
-      "citace": "Už křičí všichni: ten Babiš je blbej.",
+      "citace": "Už křičí všichni: ten Babiš je blbej. (Poslankyně Věra Kovářová nesrozumitelně reaguje z místa.) Ale z toho by vypadly nějaké desítky miliard.",
       "link_phrase": "Babiš"
     },
     {
       "text": "Babiš předtím vyčítal, že média nedělají monitoring.",
       "source": "steno",
       "steno_id": "2025_24_01736",
-      "citace": "média, která vás tak milují, to nedělají, nedělají monitoring.",
+      "citace": "média, která vás tak milují, to nedělají, nedělají monitoring. No, tak teďka jsem zapomněl, co jste to říkala.",
       "link_phrase": "Babiš"
     },
     {
       "text": "Po titulku zazněl smích a potlesk koalice.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_24_01736",
-      "citace": "(Smích a potlesk koaličních poslanců.)",
-      "link_phrase": "Babiš"
+      "kind": "scene"
     }
   ],
   "publikovat": true,
@@ -58,8 +54,9 @@
   "lead": "Poslušně hlásím, že premiér Babiš se během interpelace rozhodl usnadnit práci novinářům a titulek si napsal sám.",
   "pointa": "To by bylo peněz jak želez, dodal, a sám se rovnou opravil, že teď si všichni budou myslet, že je blbý.\n\nJak to bylo doopravdy myšleno, jako vtip nebo jako skutečný plán se v tu chvíli nedozvěděl nikdo, včetně možná samotného premiéra. Poslušně podotýkám, že takhle vzniká přesně ten typ zpráv v médiích, na který si pak sám premiér stěžuje.",
   "mean": "Prodej státního majetku formou poznámky mezi řečí. Ministerstvo financí se zatím nevyjádřilo, protože o tom pravděpodobně neví.",
-  "citace_text": "Počkejte, teďka udělám titulek a všichni budou psát. Například, že bychom šli z letiště na IPO, že bychom dali 40 procent na trh.",
+  "citace_text": "letiště na IPO, že bychom dali 40 procent na trh. To by bylo peněz jak želez.",
   "citace_autor": "Andrej Babiš (ANO)",
   "pocet_hlasovani": 0,
-  "proslo": false
+  "proslo": false,
+  "steno_id": "2025_24_01736"
 }

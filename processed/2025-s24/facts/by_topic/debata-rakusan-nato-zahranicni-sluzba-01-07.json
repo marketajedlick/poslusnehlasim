@@ -12,21 +12,21 @@
       "text": "Rakušan: mise u OSN bez podpisu prezidenta.",
       "source": "steno",
       "steno_id": "2025_24_01221",
-      "citace": "Jako mise u OSN v New Yorku, to je myslím docela hezká pozice v diplomatické",
+      "citace": "New Yorku, to je myslím docela hezká pozicev diplomatické službě.",
       "link_phrase": "mise u OSN"
     },
     {
       "text": "Rakušan: msta, která se bojí denního světla.",
       "source": "steno",
       "steno_id": "2025_24_01221",
-      "citace": "Tohle je msta, která se bojí denního světla, to, co tady předvádíte.",
+      "citace": "Tohle je msta, která se bojí denního světla, to, co tady předvádíte.A ty důsledky nebudou jenom ústavní, budou i praktické.",
       "link_phrase": "msta, která se bojí denního"
     },
     {
       "text": "Rakušan: diplomatické mise jako trafika.",
       "source": "steno",
       "steno_id": "2025_24_01221",
-      "citace": "Diplomatické mise u těch mezinárodních organizací, to je myslím si, hezká trafička."
+      "citace": "těch mezinárodních organizací, to je myslím si, hezká trafička.Rozdává se, doteď se museli vytvářet zmocněnci pro Green Deal, teď třeba bude nějaká lepší možnost, protože ten zlý prezident"
     }
   ],
   "publikovat": true,
@@ -35,9 +35,10 @@
   "lead": "Rakušan (STAN) řešil zákon o zahraniční službě a roli prezidenta. Pozměňovací návrh A7 mění pravidla pro mise u mezinárodních organizací tak, aby nepotřebovaly podpis prezidenta. Rakušan (STAN) to nazval pomstou.",
   "pointa": "Podle pana Rakušana je mise u OSN v New Yorku moc pěkné místečko, zvlášť když se na něj nově nastupuje _bez prezidentova podpisu_.",
   "mean": "Zákon o zahraniční službě určuje, kdo jmenuje velvyslance. Pozměňovací návrh A7 mění pravidla pro mise u mezinárodních organizací tak, aby nepotřebovaly podpis prezidenta.",
-  "citace_text": "Tohle je msta, která se bojí denního světla, to, co tady předvádíte.",
+  "citace_text": "to, co tadyvšechno bylo řečeno, čemu všemu se musí věnovat, vy jste zapomněli ještě na směrnici o odpadních vodách.",
   "citace_autor": "Vít Rakušan (STAN)",
   "citace_href": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024246.htm#r2",
   "pocet_hlasovani": 0,
-  "proslo": false
+  "proslo": false,
+  "steno_id": "2025_24_00393"
 }

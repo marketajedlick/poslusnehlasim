@@ -10,58 +10,56 @@
   "fakty": [
     {
       "text": "Decroix: potlesk zprava po projevu.",
-      "citace": "Děkuji, pane předsedo. (Potlesk zprava.)"
+      "citace": "Děkuji, pane předsedo.Vážené paní poslankyně, vážení páni poslanci.",
+      "steno_id": "2025_24_00111",
+      "source": "steno"
     },
     {
       "text": "Decroix: z panelů odešlo 53 lidí.",
       "source": "steno",
       "steno_id": "2025_24_00905",
-      "citace": "z expertních panelů z lidskoprávní agendy odešlo 53 lidí",
+      "citace": "lidskoprávní agendy odešlo 53 lidí.Když se rozhlédneme po této Sněmovně, když se rozhlédneme po českém státu, když si dáme dohromady, kolik odborníků má tento stát na jednotlivé agendy,",
       "link_phrase": "Decroix (ODS) řekla"
     },
     {
       "text": "Decroix: citace z panelů odešlo padesát tři lidí.",
       "source": "steno",
       "steno_id": "2025_24_00905",
-      "citace": "Tak já vám velmi děkuji, pane předsedající, za to, že jsme si tady vyjasnili, jestli",
+      "citace": "Tak já vám velmi děkuji, pane předsedající, za to, že jsme si tady vyjasnili, jestlimohu vystupovat nebo nemohu vystupovat.",
       "link_phrase": "Decroix (ODS) řekla"
     },
     {
       "text": "Decroix: lidskoprávní odbor rozprášen.",
       "source": "steno",
       "steno_id": "2025_24_00905",
-      "citace": "lidskoprávní odbor na Úřadu vlády byl rozprášen",
+      "citace": "lidskoprávní odbor na Úřadu vlády byl rozprášen.Nicméně nadále máme zmocněnkyni pro lidská práva.",
       "link_phrase": "Decroix (ODS) řekla"
     },
     {
       "text": "Decroix: lidská práva jsou práva obyčejných lidí.",
       "source": "steno",
       "steno_id": "2025_24_00905",
-      "citace": "lidskoprávní agenda není nic jiného než práva obyčejných lidí",
+      "citace": "lidskoprávní agenda není nic jiného než práva obyčejných lidí.Ano, přesně těch lidí, kterým tato vláda ve svých předvolebních slibech slibovala, co ,  no že bude líp.",
       "link_phrase": "Decroix (ODS) řekla"
     },
     {
       "text": "Decroix: cizinci jsou také lidi.",
       "source": "steno",
       "steno_id": "2025_24_00905",
-      "citace": "představte si, že cizinci jsou také lidi",
+      "citace": "le představte si, že cizinci jsou také lidi.",
       "link_phrase": "Decroix (ODS) řekla"
     },
     {
-      "text": "Decroix: protidrogová politika a strategie bezpečného dětství padá pod stůl.",
-      "citace": "celá tato strategie padá pod stůl"
+      "text": "Decroix: protidrogová politika a strategie bezpečného dětství padá pod stůl."
     },
     {
-      "text": "Decroix: vládě nezáleží na bezpečí dětí.",
-      "citace": "Této vládě nezáleží na bezpečí dětí"
+      "text": "Decroix: vládě nezáleží na bezpečí dětí."
     },
     {
-      "text": "Decroix: varování před Maďarskem a dotacemi.",
-      "citace": "Maďarští občané, protože zásadním způsobem nebyli schopni čerpat evropské dotace"
+      "text": "Decroix: varování před Maďarskem a dotacemi."
     },
     {
-      "text": "Decroix: ať koalice není za blázny.",
-      "citace": "možnost koalice přihlásit se k lidským právům a nebýt za blázny"
+      "text": "Decroix: ať koalice není za blázny."
     }
   ],
   "publikovat": true,
@@ -70,8 +68,9 @@
   "lead": "V interpelaci opozice mluvila o expertech z lidskoprávní agendy. Decroix (ODS) řekla, že z expertních panelů ten den odešlo padesát tři lidí. Lidskoprávní odbor na Úřadu vlády byl podle ní rozprášen. Agenda lidských práv je podle ní práva obyčejných lidí, ne úřednická vata.\n\nUpozornila na dopad na cizince, protidrogovou politiku a strategii bezpečného dětství, která bez expertů prý padá pod stůl. Vládě podle Decroix (ODS) nezáleží na bezpečí dětí. Varovala před maďarským scénářem, kdy kvůli politice státu lidé přišli o evropské dotace. Nabídla komisi pro lidská práva jako způsob, jak se koalice může přihlásit k tématu a nebýt za blázny.",
   "pointa": "Návrh na zařazení bodu do pořadu stejně neprošel.",
   "mean": "Lidskoprávní agenda na Úřadu vlády koordinuje práva občanů napříč resorty. Expertní panely k ní dávaly odborné podklady. Když z nich odejdou desítky lidí najednou, strategie jako bezpečné dětství zůstávají na papíře.",
-  "citace_text": "A téma je to aktuální, protože dnes, tak, jak trošičku se dalo tušit, tak z expertních panelů z lidskoprávní agendy odešlo 53 lidí.",
+  "citace_text": "téma, je to dobrá věc pro Česko a jsem rád, že si tohle pan ministr také uvědomil a na naši práci bezprostředně navázal.",
   "citace_autor": "Eva Decroix (ODS)",
   "pocet_hlasovani": 0,
-  "proslo": false
+  "proslo": false,
+  "steno_id": "2025_24_00231"
 }
