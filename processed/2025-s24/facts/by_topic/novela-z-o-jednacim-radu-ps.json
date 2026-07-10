@@ -10,35 +10,51 @@
   "fakty": [
     {
       "text": "Vondráček chtěl novelizovat jednací řád po letech.",
-      "citace": "snad konečně budeme schopni po mnoha a mnoha letech novelizovat jednací řád"
+      "citace": "snad konečně budeme schopni po mnoha a mnoha letech novelizovat jednací řád",
+      "steno_id": "2025_24_01339",
+      "source": "steno"
     },
     {
       "text": "Koalice chtěla ve třetím kole zákonů mluvit méně.",
-      "citace": "nebylo určeno k tomu, aby se opakovala debata z prvého a z druhého čtení"
+      "citace": "nebylo určeno k tomu, aby se opakovala debata z prvého a z druhého čtení",
+      "steno_id": "2025_24_01339",
+      "source": "steno"
     },
     {
       "text": "Novela zavádí hlasování na pevný čas ukončení rozpravy.",
-      "citace": "lze hlasovat pevně načas"
+      "citace": "lze hlasovat pevně načas",
+      "steno_id": "2025_24_01351",
+      "source": "steno"
     },
     {
       "text": "Vondráček připouští, že jde o postup nezákonný, Ústavní soud ho ale toleruje.",
-      "citace": "ačkoliv je to postup nezákonný, tak Ústavní soud ho shledává v souladu s Ústavou"
+      "citace": "ačkoliv je to postup nezákonný, tak Ústavní soud ho shledává v souladu s Ústavou",
+      "steno_id": "2025_24_01351",
+      "source": "steno"
     },
     {
       "text": "Havel varoval před kontroverzními zákony a narážel na mediální novelu.",
-      "citace": "v následujících měsících vy chcete zařadit řadu velmi kontroverzních zákonů"
+      "citace": "v následujících měsících vy chcete zařadit řadu velmi kontroverzních zákonů",
+      "steno_id": "2025_24_01341",
+      "source": "steno"
     },
     {
       "text": "Havel: koalice chce destruovat nezávislost veřejnoprávních médií.",
-      "citace": "destruovat svobodu a nezávislost veřejnoprávních médií"
+      "citace": "destruovat svobodu a nezávislost veřejnoprávních médií",
+      "steno_id": "2025_24_01341",
+      "source": "steno"
     },
     {
       "text": "Vondráček: Sněmovna je bojiště, ne jeviště.",
-      "citace": "opravdu považujete Poslaneckou sněmovnu za bojiště a nikoliv jeviště. Ale vy sami jste nám v předchozím volebním období opakovaně, myslím, že víc jak patnáctkrát, ukázali, že není možné obstrukcemi zastavit většinu"
+      "citace": "Děkuji za zapnutý mikrofon. Teď jsme si díky panu předsedovi TOP 09 procvičili hlasování. A",
+      "steno_id": "2025_24_01351",
+      "source": "steno"
     },
     {
       "text": "Vondráček: obstrukce nezastaví většinu.",
-      "citace": "není možné obstrukcemi zastavit většinu"
+      "citace": "není možné obstrukcemi zastavit většinu",
+      "steno_id": "2025_24_01351",
+      "source": "steno"
     },
     {
       "text": "Opozice si ubránila neomezený počet faktických poznámek.",

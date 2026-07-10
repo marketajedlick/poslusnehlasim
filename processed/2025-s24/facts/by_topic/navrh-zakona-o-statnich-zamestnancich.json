@@ -53,7 +53,9 @@
     {
       "text": "Po schválení zazněl potlesk poslanců koalice.",
       "kind": "scene",
-      "citace": "(Potlesk poslanců koalice.)"
+      "citace": "(Potlesk poslanců koalice.)",
+      "steno_id": "2025_24_01970",
+      "source": "steno"
     }
   ],
   "publikovat": true,

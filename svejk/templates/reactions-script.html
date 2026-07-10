@@ -17,17 +17,19 @@
 
   var apiUrl = (configEl.dataset.apiUrl || "").trim();
   var storageKey = "ph_reaction_v1";
-  var reactionOrder = ["absurdni", "tosnadne", "libi", "nojo"];
+  var reactionOrder = ["absurdni", "tosnadne", "libi", "potlesk", "nojo"];
   var reactionEmoji = {
     absurdni: "😂",
     tosnadne: "🤦",
     libi: "💛",
+    potlesk: "👏",
     nojo: "😅",
   };
   var reactionLabels = {
     absurdni: configEl.dataset.labelAbsurdni || "Absurdní",
     tosnadne: configEl.dataset.labelTosnadne || "To snad ne",
     libi: configEl.dataset.labelLibi || "Líbí se mi",
+    potlesk: configEl.dataset.labelPotlesk || "Potlesk",
     nojo: configEl.dataset.labelNojo || "No jo",
   };
   var openMenu = null;
@@ -225,7 +227,7 @@
 
   function optimisticBump(slug, reaction, previous) {
     var counts = Object.assign(
-      { absurdni: 0, tosnadne: 0, libi: 0, nojo: 0 },
+      { absurdni: 0, tosnadne: 0, libi: 0, potlesk: 0, nojo: 0 },
       countsBySlug[slug] || {}
     );
     if (previous && previous !== reaction) {
@@ -286,7 +288,7 @@
 
     var snapshot = JSON.stringify(countsBySlug[slug] || {});
     var counts = Object.assign(
-      { absurdni: 0, tosnadne: 0, libi: 0, nojo: 0 },
+      { absurdni: 0, tosnadne: 0, libi: 0, potlesk: 0, nojo: 0 },
       countsBySlug[slug] || {}
     );
     counts[previous] = Math.max(0, (counts[previous] || 0) - 1);

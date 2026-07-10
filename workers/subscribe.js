@@ -15,8 +15,8 @@ const SECURITY_HEADERS = {
 const RATE_LIMIT_PLACEHOLDER = "00000000000000000000000000000000";
 
 const CORRECTION_KINDS = new Set(["factual", "typo", "other"]);
-const REACTION_TYPES = new Set(["absurdni", "tosnadne", "libi", "nojo"]);
-const REACTION_DEFAULTS = { absurdni: 0, tosnadne: 0, libi: 0, nojo: 0 };
+const REACTION_TYPES = new Set(["absurdni", "tosnadne", "libi", "potlesk", "nojo"]);
+const REACTION_DEFAULTS = { absurdni: 0, tosnadne: 0, libi: 0, potlesk: 0, nojo: 0 };
 const EDITION_RE = /^\d{4}-\d{2}-\d{2}$/;
 const SLUG_RE = /^[a-z0-9][a-z0-9-]{0,119}$/i;
 const DOI_TEMPLATE_NAME = "Poslušně hlásím · DOI";
