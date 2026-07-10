@@ -98,9 +98,11 @@
 
     reactionOrder.forEach(function (id) {
       var count = Number(counts[id]) || 0;
-      if (count <= 0) return;
+      var isPicked = picked === id;
+      if (count <= 0 && !isPicked) return;
       any = true;
-      var cls = "reaction-chip" + (picked === id ? " is-picked" : "");
+      if (count <= 0 && isPicked) count = 1;
+      var cls = "reaction-chip" + (isPicked ? " is-picked" : "");
       html +=
         '<button type="button" class="' +
         cls +
@@ -129,11 +131,25 @@
     if (clearBtn) clearBtn.hidden = !picked;
   }
 
+  function syncTrigger(wrap, edition, slug) {
+    var dot = wrap.querySelector(".reaction-dot");
+    if (!dot) return;
+    var picked = userVote(edition, slug);
+    if (picked && reactionEmoji[picked]) {
+      dot.textContent = reactionEmoji[picked];
+      dot.classList.add("is-picked-emoji");
+    } else {
+      dot.textContent = "";
+      dot.classList.remove("is-picked-emoji");
+    }
+  }
+
   function applyArticle(edition, slug) {
     document.querySelectorAll('.reactions[data-slug="' + slug + '"]').forEach(function (wrap) {
       var ed = wrap.dataset.edition || edition;
       renderSummary(wrap, ed, slug);
       syncMenu(wrap, ed, slug);
+      syncTrigger(wrap, ed, slug);
     });
   }
 
@@ -144,6 +160,7 @@
       if (!slug || !edition) return;
       renderSummary(wrap, edition, slug);
       syncMenu(wrap, edition, slug);
+      syncTrigger(wrap, edition, slug);
     });
   }
 

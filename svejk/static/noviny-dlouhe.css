@@ -1171,6 +1171,11 @@ a.steno-link .term-term{
 .article-actions{
   margin-top:8px;
   position:relative;
+  z-index:1;
+}
+.article:has(.reaction-menu:not([hidden])){
+  position:relative;
+  z-index:2;
 }
 .article-actions-row{
   position:relative;
@@ -1282,11 +1287,20 @@ a.steno-link .term-term{
   opacity:.55;
   transition:transform .12s ease, background .12s ease, opacity .12s ease;
 }
+.reaction-dot.is-picked-emoji{
+  width:auto;
+  height:auto;
+  border-radius:0;
+  background:none;
+  opacity:1;
+  font-size:15px;
+  line-height:1;
+}
 .reaction-menu{
   position:absolute;
   right:0;
   bottom:calc(100% + 8px);
-  z-index:20;
+  z-index:30;
   display:flex;
   align-items:center;
   gap:4px;
