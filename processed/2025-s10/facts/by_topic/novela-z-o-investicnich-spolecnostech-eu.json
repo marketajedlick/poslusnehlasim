@@ -9,14 +9,16 @@
   ],
   "fakty": [
     {
-      "text": "Hlasování číslo 261, pro 117, proti nikdo. S návrhem zákona byl vysloven souhlas."
+      "text": "Hlasování číslo 261, pro 117, proti nikdo. S návrhem zákona byl vysloven souhlas.",
+      "link_phrase": "Hlasování číslo 261, pro 117, proti nikdo. S návrhem zákona"
     },
     {
       "text": "Hluk v sále.",
       "source": "steno",
       "kind": "scene",
       "steno_id": "2025_10_01567",
-      "citace": "(Hluk v sále.)"
+      "citace": "(Hluk v sále.)",
+      "link_phrase": "Hluk v sále"
     }
   ],
   "publikovat": true,
@@ -33,6 +35,6 @@
   },
   "steno_slov": 6096,
   "lead": "Změna zákona o investičních společnostech prošla v prvním kole, 117 hlasů pro, nikdo proti.",
-  "pointa": "Čtvrtek přinesl balík EU novel, od účetnictví po silniční provoz. Investiční zákon byl jeden z vrcholů.",
+  "pointa": "Čtvrtek přinesl balík EU novel, od účetnictví po silniční provoz. Investiční zákon byl jeden z vrcholů. Hlasování číslo 261, pro 117, proti nikdo. S návrhem zákona. Hluk v sále.",
   "mean": "Stát zpřísňuje pravidla pro fondy a investiční firmy podle EU. Cílem je ochrana investorů, ne nová daň."
 }

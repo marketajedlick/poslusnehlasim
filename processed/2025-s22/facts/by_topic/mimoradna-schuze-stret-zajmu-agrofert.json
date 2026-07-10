@@ -73,7 +73,8 @@
     },
     {
       "text": "Když došli řečníci s přednostním právem, Nacher přizval poslance z kuloáru; pořad schůze pak neprošel hlasováním 66 pro, 85 proti.",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "Když došli řečníci s přednostním právem, Nacher přizval poslance z"
     },
     {
       "text": "Poslanec Kott na rozloučenou poděkoval za spolupráci, popřál zdraví a sklidil potlesk v celém sále.",
@@ -81,14 +82,14 @@
       "kind": "scene",
       "steno_id": "2025_22_00022",
       "citace": "Děkuji pěkně za slovo, pane místopředsedo.",
-      "link_phrase": ""
+      "link_phrase": "Poslanec Kott na rozloučenou poděkoval za spolupráci, popřál zdraví a"
     }
   ],
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Agrofert na stole\nBabiš mimo sál",
   "lead": "Mimořádná schůze řešila dotace do Agrofertu a střet zájmů premiéra. Babiš se omluvil na celý den.",
-  "pointa": "Havel se otočil do ministerských lavic a řekl, že premiérova absence jistě není náhoda. Hřib přinesl Financial Times, Guardian, Le Monde, Der Spiegel a El País, všechny výtisky předal Macinkovi. Jurečka varoval, že rozpočet nepočítá až se dvěma miliardami na dotace, Kupka připomněl motoristické Pohlídáme Andreje Babiše a Macinka odpověděl, že opozice jen neumí přijmout volby.",
+  "pointa": "Havel se otočil do ministerských lavic a řekl, že premiérova absence jistě není náhoda. Hřib přinesl Financial Times, Guardian, Le Monde, Der Spiegel a El País, všechny výtisky předal Macinkovi. Jurečka varoval, že rozpočet nepočítá až se dvěma miliardami na dotace, Kupka připomněl motoristické Pohlídáme Andreje Babiše a Macinka odpověděl, že opozice jen neumí přijmout volby. Když došli řečníci s přednostním právem, Nacher přizval poslance z. Poslanec Kott na rozloučenou poděkoval za spolupráci, popřál zdraví a.",
   "kuriozita": "Kuriozita dne: Hřib přinesl Macinkovi pět evropských novin. Kupka (ODS) se při útoku na vládu několikrát otočil k Macinkovi (Motoristé), gestikuloval a ptal se „pamatujete?“ na billboard Pohlídáme Andreje Babiše.",
   "kuriozita_links": [
     {

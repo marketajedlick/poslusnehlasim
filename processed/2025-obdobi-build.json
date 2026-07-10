@@ -1,130 +1,15 @@
 {
   "obdobi": 2025,
-  "schuze_celkem": 24,
-  "ok": 24,
+  "schuze_celkem": 1,
+  "ok": 1,
   "skipped": 0,
   "failed": 0,
   "vysledky": [
-    {
-      "schuze": 1,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s1"
-    },
-    {
-      "schuze": 2,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s2"
-    },
-    {
-      "schuze": 3,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s3"
-    },
-    {
-      "schuze": 4,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s4"
-    },
-    {
-      "schuze": 5,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s5"
-    },
-    {
-      "schuze": 6,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s6"
-    },
-    {
-      "schuze": 7,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s7"
-    },
-    {
-      "schuze": 8,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s8"
-    },
-    {
-      "schuze": 9,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s9"
-    },
-    {
-      "schuze": 10,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s10"
-    },
-    {
-      "schuze": 11,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s11"
-    },
-    {
-      "schuze": 12,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s12"
-    },
-    {
-      "schuze": 13,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s13"
-    },
-    {
-      "schuze": 14,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s14"
-    },
-    {
-      "schuze": 15,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s15"
-    },
-    {
-      "schuze": 16,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s16"
-    },
-    {
-      "schuze": 17,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s17"
-    },
-    {
-      "schuze": 18,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s18"
-    },
-    {
-      "schuze": 19,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s19"
-    },
-    {
-      "schuze": 20,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s20"
-    },
-    {
-      "schuze": 21,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s21"
-    },
-    {
-      "schuze": 22,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s22"
-    },
-    {
-      "schuze": 23,
-      "ok": true,
-      "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s23"
-    },
     {
       "schuze": 24,
       "ok": true,
       "root": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24"
     }
   ],
-  "built_at": "2026-07-10T17:19:30.636243+00:00"
+  "built_at": "2026-07-10T17:26:33.312659+00:00"
 }

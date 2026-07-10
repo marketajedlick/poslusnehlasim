@@ -9,10 +9,12 @@
   ],
   "fakty": [
     {
-      "text": "Hlasování číslo 110, pro 178, proti 1. S návrhem zákona byl vysloven souhlas."
+      "text": "Hlasování číslo 110, pro 178, proti 1. S návrhem zákona byl vysloven souhlas.",
+      "link_phrase": "Hlasování číslo 110, pro 178, proti 1. S návrhem zákona"
     },
     {
-      "text": "Hlasování číslo 239, pro 142, proti nikdo. Návrh usnesení byl schválen."
+      "text": "Hlasování číslo 239, pro 142, proti nikdo. Návrh usnesení byl schválen.",
+      "link_phrase": "Hlasování číslo 239, pro 142, proti nikdo. Návrh usnesení byl"
     }
   ],
   "publikovat": true,
@@ -29,6 +31,6 @@
   },
   "steno_slov": 144303,
   "lead": "Státní rozpočet prošel v závěrečném hlasování, sto sedmdesát osm hlasů pro, jeden proti. Večer padly i rozpočty většiny fondů.",
-  "pointa": "Den trval do večera a přinesl přes sto dílčích hlasování k pozměňovacím návrhům. Závěrečné schválení navazovalo na druhé kolo ze čtvrtka 4. března.",
+  "pointa": "Den trval do večera a přinesl přes sto dílčích hlasování k pozměňovacím návrhům. Závěrečné schválení navazovalo na druhé kolo ze čtvrtka 4. března. Hlasování číslo 110, pro 178, proti 1. S návrhem zákona. Hlasování číslo 239, pro 142, proti nikdo. Návrh usnesení byl.",
   "mean": "Závěrečné hlasování je finální schválení rozpočtu na rok 2026. Schodek kolem 310 miliard dělí politiku na dvě poloviny, peníze půjdou od armády po školství."
 }

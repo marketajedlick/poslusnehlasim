@@ -19,10 +19,12 @@
       "text": "Jakob řekl, že opozice byla zaskočena a text usnesení nedostala včas.",
       "citace": "poměrně zaskočeni tímto návrhem usnesení proti konání Sudetoněmeckého sněmu v Brně, tak jsme si vyžádali i text usnesení písemně.",
       "steno_id": "2025_16_00017",
-      "source": "steno"
+      "source": "steno",
+      "link_phrase": "Jakob řekl, že opozice byla zaskočena a text usnesení nedostala"
     },
     {
-      "text": "Ferčíková navrhla protiusnesení podporující dialog a Benešovy dekrety."
+      "text": "Ferčíková navrhla protiusnesení podporující dialog a Benešovy dekrety.",
+      "link_phrase": "Ferčíková navrhla protiusnesení podporující dialog a Benešovy dekrety"
     },
     {
       "text": "Čtrnáct hlasování o pozměňovacích návrzích padlo, poslední ve 23:12.",
@@ -34,7 +36,7 @@
   "priorita": 3,
   "nadpis": "O Brně se hádali do noci",
   "lead": "Úterý patřilo sjezdu Sudetoněmeckého landsmanšaftu v Brně. Koalice chtěla odsoudit jeho konání, opozice mluvila o usmíření a Benešových dekretech, čtrnáct hlasování o pozměňovacích návrzích padlo až po půlnoci.",
-  "pointa": "Výborný a Hladík citovali brněnskou deklaraci smíření, Hrnčíř a Výborný se přetahovali o pochod smrti. Koaliční text nakonec prošel až ve středu v noci.",
+  "pointa": "Výborný a Hladík citovali brněnskou deklaraci smíření, Hrnčíř a Výborný se přetahovali o pochod smrti. Koaliční text nakonec prošel až ve středu v noci. Jakob řekl, že opozice byla zaskočena a text usnesení nedostala. Ferčíková navrhla protiusnesení podporující dialog a Benešovy dekrety.",
   "mean": "Sněmovna se vyjadřuje k zahraničněpoliticky citlivé akci v Brně. Zákon se nehlasoval, šlo o debatu nad usnesením.",
   "pocet_hlasovani": 0,
   "proslo": false

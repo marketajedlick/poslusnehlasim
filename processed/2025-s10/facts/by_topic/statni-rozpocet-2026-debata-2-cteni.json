@@ -12,7 +12,8 @@
       "text": "Dneska máme mít před sebou druhé čtení rozpočtu, ať se slyšíme.",
       "source": "steno",
       "steno_id": "2025_10_00195",
-      "citace": "Dneska máme mít před sebou druhé čtení rozpočtu, ať se slyšíme."
+      "citace": "Dneska máme mít před sebou druhé čtení rozpočtu, ať se slyšíme.",
+      "link_phrase": "Dneska máme mít před sebou druhé čtení rozpočtu, ať se"
     },
     {
       "text": "TOP 09 snižuje schodek 310 miliard o 64 miliard a posiluje obranu i zdravotnictví.",
@@ -32,14 +33,15 @@
       "text": "Kršková kritizuje snížení rozpočtu obrany, zatímco ostatní země výdaje navyšují.",
       "source": "steno",
       "steno_id": "2025_10_00331",
-      "citace": "za největší slabinu návrhu státního rozpočtu na rok 2026 považuji snížení rozpočtu Ministerstva obrany."
+      "citace": "za největší slabinu návrhu státního rozpočtu na rok 2026 považuji snížení rozpočtu Ministerstva obrany.",
+      "link_phrase": "Kršková kritizuje snížení rozpočtu obrany, zatímco ostatní země výdaje navyšují"
     }
   ],
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Druhé kolo rozpočtu",
   "lead": "Celý den Sněmovna debatovala o státním rozpočtu ve druhém kole, bez hlasování o zákonech. TOP 09 chtělo schodek 310 miliard snížit o 64 miliard, Bartoš tlačil na krizovou linku pro Čechy na Blízkém východě.",
-  "pointa": "Desítky řečníků představovalo pozměňovací návrhy od probačních programů po horskou službu. Babiš hájil kulturu, Černochová obranu, jednání skončilo až před půlnocí.",
+  "pointa": "Desítky řečníků představovalo pozměňovací návrhy od probačních programů po horskou službu. Babiš hájil kulturu, Černochová obranu, jednání skončilo až před půlnocí. Dneska máme mít před sebou druhé čtení rozpočtu, ať se. Kršková kritizuje snížení rozpočtu obrany, zatímco ostatní země výdaje navyšují.",
   "mean": "Druhé kolo je chvíle, kdy poslanci škrtají, přidávají a přehazují konkrétní položky. Hlasování o rozpočtu přijde až v dalších dnech, tentokrát šlo čistě o řečnickou přestřelku o prioritách státu.",
   "pocet_hlasovani": 0,
   "proslo": false

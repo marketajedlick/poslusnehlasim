@@ -12,13 +12,16 @@
       "text": "Návrh adaptuje nařízení EU 2024/1860 o dostupnosti zdravotnických prostředků.",
       "source": "steno",
       "steno_id": "2025_13_00146",
-      "citace": "Děkuji za slovo, vážený pane předsedající."
+      "citace": "Děkuji za slovo, vážený pane předsedající.",
+      "link_phrase": "Návrh adaptuje nařízení EU 2024/1860 o dostupnosti zdravotnických prostředků"
     },
     {
-      "text": "Hlasování číslo 52, pro 111, návrh na pokračování v prvním čtení schválen."
+      "text": "Hlasování číslo 52, pro 111, návrh na pokračování v prvním čtení schválen.",
+      "link_phrase": "Hlasování číslo 52, pro 111, návrh na pokračování v prvním"
     },
     {
-      "text": "Hlasování číslo 53, pro 113, zákon schválen v prvním čtení."
+      "text": "Hlasování číslo 53, pro 113, zákon schválen v prvním čtení.",
+      "link_phrase": "Hlasování číslo 53, pro 113, zákon schválen v prvním čtení"
     }
   ],
   "publikovat": true,
@@ -35,6 +38,6 @@
   },
   "steno_slov": 14227,
   "lead": "Sněmovna schválila v prvním kole pravidla pro hlášení nedostatku laboratorních souprav, sto třináct hlasů pro, nikdo proti. Obecná rozprava proběhla bez řečníků.",
-  "pointa": "Jde o implementaci EU nařízení, aby nemocnice věděly dopředu, že dochází zkumavky na odběry.",
+  "pointa": "Jde o implementaci EU nařízení, aby nemocnice věděly dopředu, že dochází zkumavky na odběry. Návrh adaptuje nařízení EU 2024/1860 o dostupnosti zdravotnických prostředků. Hlasování číslo 52, pro 111, návrh na pokračování v prvním. Hlasování číslo 53, pro 113, zákon schválen v prvním čtení.",
   "mean": "Výrobci budou muset hlásit nedostatek diagnostických prostředků. Na běžného pacienta to dopadne spíš nepřímo, přes kratší čekání na výsledky v nemocnici."
 }

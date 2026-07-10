@@ -45,14 +45,15 @@
     },
     {
       "text": "Po titulku zazněl smích a potlesk koalice.",
-      "kind": "scene"
+      "kind": "scene",
+      "link_phrase": "Po titulku zazněl smích a potlesk koalice"
     }
   ],
   "publikovat": true,
   "priorita": 4,
   "nadpis": "Titulek na počkání",
   "lead": "Poslušně hlásím, že premiér Babiš se během interpelace rozhodl usnadnit práci novinářům a titulek si napsal sám.",
-  "pointa": "To by bylo peněz jak želez, dodal, a sám se rovnou opravil, že teď si všichni budou myslet, že je blbý.\n\nJak to bylo doopravdy myšleno, jako vtip nebo jako skutečný plán se v tu chvíli nedozvěděl nikdo, včetně možná samotného premiéra. Poslušně podotýkám, že takhle vzniká přesně ten typ zpráv v médiích, na který si pak sám premiér stěžuje.",
+  "pointa": "To by bylo peněz jak želez, dodal, a sám se rovnou opravil, že teď si všichni budou myslet, že je blbý.\n\nJak to bylo doopravdy myšleno, jako vtip nebo jako skutečný plán se v tu chvíli nedozvěděl nikdo, včetně možná samotného premiéra. Poslušně podotýkám, že takhle vzniká přesně ten typ zpráv v médiích, na který si pak sám premiér stěžuje. Po titulku zazněl smích a potlesk koalice.",
   "mean": "Prodej státního majetku formou poznámky mezi řečí. Ministerstvo financí se zatím nevyjádřilo, protože o tom pravděpodobně neví.",
   "citace_text": "letiště na IPO, že bychom dali 40 procent na trh. To by bylo peněz jak želez.",
   "citace_autor": "Andrej Babiš (ANO)",

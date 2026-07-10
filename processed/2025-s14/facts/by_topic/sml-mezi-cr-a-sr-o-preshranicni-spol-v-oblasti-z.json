@@ -9,7 +9,8 @@
   ],
   "fakty": [
     {
-      "text": "Vojtěch řekl, že smlouva pomůže pacientům v pohraničí."
+      "text": "Vojtěch řekl, že smlouva pomůže pacientům v pohraničí.",
+      "link_phrase": "Vojtěch řekl, že smlouva pomůže pacientům v pohraničí"
     },
     {
       "text": "Smlouva navazuje na dohody s Německem a Rakouskem.",
@@ -35,6 +36,6 @@
   },
   "steno_slov": 49535,
   "lead": "Čtvrtek skončil finální ratifikací smlouvy se Slovenskem o spolupráci záchranných služeb, sto pět hlasů proti nule. První souhlas Sněmovna vyslovila už v únoru na sedmé schůzi.",
-  "pointa": "Smlouva navazuje na dohody s Německem a Rakouskem a má pokrýt Jihomoravský, Zlínský a Moravskoslezský kraj.",
+  "pointa": "Smlouva navazuje na dohody s Německem a Rakouskem a má pokrýt Jihomoravský, Zlínský a Moravskoslezský kraj. Vojtěch řekl, že smlouva pomůže pacientům v pohraničí.",
   "mean": "Záchranka může při nehodě u hranic rychleji zasáhnout i na druhé straně. Dotkne se hlavně obyvatel příhraničních obcí."
 }

@@ -9,7 +9,8 @@
   ],
   "fakty": [
     {
-      "text": "Jakob připomněl, že Senát zákon zamítl kvůli věcným i právním vadám."
+      "text": "Jakob připomněl, že Senát zákon zamítl kvůli věcným i právním vadám.",
+      "link_phrase": "Jakob připomněl, že Senát zákon zamítl kvůli věcným i právním"
     },
     {
       "text": "Koalice žádá Senát přehlasovat bez sebereflexe.",
@@ -20,7 +21,8 @@
     },
     {
       "text": "Druhé čtení prošlo 102:45, závěrečné hlasování 112:2.",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "Druhé čtení prošlo 102:45, závěrečné hlasování 112:2"
     }
   ],
   "publikovat": true,
@@ -37,6 +39,6 @@
   },
   "steno_slov": 15863,
   "lead": "Pátek uzavřel dubnový oblouk o cenách benzínu. Sněmovna ve druhém kole zákon schválila sto dvěma hlasy proti pětačtyřiceti, přestože ho Senát po úterním prvním kole a středeční noci zamítl.",
-  "pointa": "Jakob mluvil o zrychleném projednávání jako o zkratce pro sporný návrh. Koalice zákon znovu protlačila ve zkráceném režimu.",
+  "pointa": "Jakob mluvil o zrychleném projednávání jako o zkratce pro sporný návrh. Koalice zákon znovu protlačila ve zkráceném režimu. Jakob připomněl, že Senát zákon zamítl kvůli věcným i právním. Druhé čtení prošlo 102:45, závěrečné hlasování 112:2.",
   "mean": "Vláda může dál usilovat o regulaci cen benzínu a nafty. Senát musí zákon znovu posoudit, tentokrát proti vůli horní komory."
 }

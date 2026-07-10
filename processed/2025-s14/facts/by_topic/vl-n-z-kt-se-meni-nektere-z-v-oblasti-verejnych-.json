@@ -9,7 +9,8 @@
   ],
   "fakty": [
     {
-      "text": "Počátek roku ve sněmovně patřil nutnosti zreálnit rozpočet na 2026."
+      "text": "Počátek roku ve sněmovně patřil nutnosti zreálnit rozpočet na 2026.",
+      "link_phrase": "Počátek roku ve sněmovně patřil nutnosti zreálnit rozpočet na 2026"
     },
     {
       "text": "Opoziční pozměňovací návrh padl 66:88.",
@@ -18,7 +19,8 @@
     },
     {
       "text": "Druhé čtení vládní novely prošlo 93:50.",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "Druhé čtení vládní novely prošlo 93:50"
     }
   ],
   "publikovat": true,
@@ -35,6 +37,6 @@
   },
   "steno_slov": 29090,
   "lead": "Odpoledne středy schválili druhé kolo změny rozpočtových zákonů, devadesát tři proti padesáti. Opoziční pozměňovací návrh předtím padl.",
-  "pointa": "Zákon ladí limity státních výdajů a výjimky pro obranu či velké investice. Debata navazovala na zreálnění rozpočtu na rok 2026.",
+  "pointa": "Zákon ladí limity státních výdajů a výjimky pro obranu či velké investice. Debata navazovala na zreálnění rozpočtu na rok 2026. Počátek roku ve sněmovně patřil nutnosti zreálnit rozpočet na 2026. Druhé čtení vládní novely prošlo 93:50.",
   "mean": "Změna zákona upravuje pravidla, kolik může stát utratit a za jakých podmínek. Dotkne se velkých investic i výdajů na obranu."
 }

@@ -9,16 +9,19 @@
   ],
   "fakty": [
     {
-      "text": "Malá chtěla jednat do 19. a 21. hodiny."
+      "text": "Malá chtěla jednat do 19. a 21. hodiny.",
+      "link_phrase": "Malá chtěla jednat do 19. a 21. hodiny"
     },
     {
-      "text": "První spor o pořad: 85 proti 63."
+      "text": "První spor o pořad: 85 proti 63.",
+      "link_phrase": "85 proti 63"
     },
     {
       "text": "Malá: hlasovala pro, na sjezdině se zdržela.",
       "source": "steno",
       "steno_id": "2025_24_00881",
-      "citace": "mám zdržela jsem se. Nezpochybňuji hlasování."
+      "citace": "mám zdržela jsem se. Nezpochybňuji hlasování.",
+      "link_phrase": "Malá"
     },
     {
       "text": "Bartoš: odvolejte výrok o konci klimatické krize.",
@@ -45,17 +48,19 @@
       "text": "Macinka: inkvizice a citát Husa neodvolám.",
       "source": "steno",
       "steno_id": "2025_24_00913",
+      "citace": "historie si pamatuje různé inkvizice, které se snažily donutit různé osobnosti",
       "link_phrase": "Macinka (Motoristé) odvolal dřívější tvrzení o konci klimatické krize"
     },
     {
-      "text": "Barták čte zamítnuté návrhy bodů."
+      "text": "Barták čte zamítnuté návrhy bodů.",
+      "link_phrase": "Barták čte zamítnuté návrhy bodů"
     }
   ],
   "publikovat": true,
   "priorita": 5,
   "nadpis": "Klimatická krize skončila\nto neodvolám",
   "lead": "Během vlny veder Bartoš (Piráti) navrhl bod do pořadu: Ministře Macinko, odvolejte svůj nesmyslný výrok o konci klimatické krize. Chtěl usnesení, které ministra k tomu donutí, a připomněl, že Macinka (Motoristé) jako ministr životního prostředí prohlásil, že s nástupem Motoristů klimatická krize skončila. Ptál se, na jakých datech to staví, když meteorologové hlásí rekordní vedra a sucho.\n\nIronicky navrhl i třetí bod: ať Macinka zastropí teplotu ve městech na dvacet pět stupňů Celsia. Macinka (Motoristé) ale reagoval hlavně na výzvu něco odvolat, přirovnal ji k inkvizici a citoval Husa: neodvolám.",
-  "pointa": "Macinka (Motoristé) odmítl vzít zpět, že klimatická krize skončila, a Bartošovy (Piráti) body stejně neprošly.",
+  "pointa": "Macinka (Motoristé) odmítl vzít zpět, že klimatická krize skončila, a Bartošovy (Piráti) body stejně neprošly. Malá chtěla jednat do 19. a 21. hodiny. 85 proti 63. Barták čte zamítnuté návrhy bodů.",
   "mean": "Bartoš (Piráti) chtěl, aby Macinka (Motoristé) odvolal dřívější tvrzení o konci klimatické krize, a ironicky navrhl i strop teploty na dvacet pět stupňů. Macinka (Motoristé) odmítl cokoli odvolat.",
   "citace_text": "Takže si půjčím slova z roku 1415 z Kostnice jednoho velikána, který řekl: neodvolám.",
   "citace_autor": "Petr Macinka (Motoristé)",

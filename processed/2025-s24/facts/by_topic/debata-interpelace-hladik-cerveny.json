@@ -26,6 +26,7 @@
       "text": "Červený tvrdil, že Nová zelená úsporám nemá peníze.",
       "source": "steno",
       "steno_id": "2025_24_00361",
+      "citace": "My tam nemáme peníze.",
       "link_phrase": "že Nová zelená úsporám nemá"
     },
     {
@@ -43,7 +44,8 @@
       "text": "Okamura představil interpelaci Hladíka k Nové zelené úsporám.",
       "source": "steno",
       "steno_id": "2025_24_00351",
-      "citace": "ěděl na interpelaci poslance Petra Hladíka ve věci environmentálního vzdělávání."
+      "citace": "zahajuji třetí jednací den 24. schůze Poslanecké sněmovny",
+      "link_phrase": "Dopoledne interpelace Petra Hladíka"
     },
     {
       "text": "Červený ve faktické poznámce reagoval smíchem, že se nedostane ke slovu.",
@@ -93,6 +95,7 @@
       "text": "Červený o penězích pro mean.",
       "source": "steno",
       "steno_id": "2025_24_00361",
+      "citace": "dotační programy jsou o penězích.",
       "link_phrase": "Červený (Motoristé) odpověděl"
     },
     {
@@ -106,6 +109,7 @@
       "text": "Hladík o Modernizačním fondu pro mean.",
       "source": "steno",
       "steno_id": "2025_24_00365",
+      "citace": "Celkem jsme vydali 87 miliard z Modernizačního fondu",
       "link_phrase": "Hladík (KDU-ČSL) mu vyčítal"
     },
     {
@@ -116,7 +120,8 @@
       "link_phrase": "Hladík (KDU-ČSL) mu vyčítal"
     },
     {
-      "text": "Hladík o pákovém efektu pro mean."
+      "text": "Hladík o pákovém efektu pro mean.",
+      "link_phrase": "Hladík o pákovém efektu pro mean"
     }
   ],
   "publikovat": true,

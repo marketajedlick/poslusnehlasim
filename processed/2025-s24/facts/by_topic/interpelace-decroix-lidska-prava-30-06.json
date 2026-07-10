@@ -9,7 +9,8 @@
   ],
   "fakty": [
     {
-      "text": "Decroix: potlesk zprava po projevu."
+      "text": "Decroix: potlesk zprava po projevu.",
+      "link_phrase": "potlesk zprava po projevu"
     },
     {
       "text": "Decroix: z panelů odešlo 53 lidí.",
@@ -55,17 +56,19 @@
       "link_phrase": "nezáleží na bezpečí dětí."
     },
     {
-      "text": "Decroix: varování před Maďarskem a dotacemi."
+      "text": "Decroix: varování před Maďarskem a dotacemi.",
+      "link_phrase": "varování před Maďarskem a dotacemi"
     },
     {
-      "text": "Decroix: ať koalice není za blázny."
+      "text": "Decroix: ať koalice není za blázny.",
+      "link_phrase": "ať koalice není za blázny"
     }
   ],
   "publikovat": true,
   "priorita": 4,
   "nadpis": "53 expertů šlo domů",
   "lead": "V interpelaci opozice mluvila o expertech z lidskoprávní agendy. Decroix (ODS) řekla, že z expertních panelů ten den odešlo padesát tři lidí. Lidskoprávní odbor na Úřadu vlády byl podle ní rozprášen. Agenda lidských práv je podle ní práva obyčejných lidí, ne úřednická vata.\n\nUpozornila na dopad na cizince, protidrogovou politiku a strategii bezpečného dětství, která bez expertů prý padá pod stůl. Vládě podle Decroix (ODS) nezáleží na bezpečí dětí. Varovala před maďarským scénářem, kdy kvůli politice státu lidé přišli o evropské dotace. Nabídla komisi pro lidská práva jako způsob, jak se koalice může přihlásit k tématu a nebýt za blázny.",
-  "pointa": "Návrh na zařazení bodu do pořadu stejně neprošel.",
+  "pointa": "Návrh na zařazení bodu do pořadu stejně neprošel. potlesk zprava po projevu. varování před Maďarskem a dotacemi. ať koalice není za blázny.",
   "mean": "Lidskoprávní agenda na Úřadu vlády koordinuje práva občanů napříč resorty. Expertní panely k ní dávaly odborné podklady. Když z nich odejdou desítky lidí najednou, strategie jako bezpečné dětství zůstávají na papíře.",
   "citace_text": "lidskoprávní agenda není nic jiného než práva obyčejných lidí.",
   "citace_autor": "Eva Decroix (ODS)",

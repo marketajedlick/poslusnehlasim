@@ -400,7 +400,10 @@ def audit_steno_nalezitosti(report: Report) -> None:
                     miss.append("summary")
                 if not (p.citace or "").strip():
                     miss.append("citace")
-                if not (p.excerpt or "").strip() or p.excerpt.strip() == (p.citace or "").strip():
+                if not (p.excerpt or "").strip() or (
+                    p.excerpt.strip() == (p.citace or "").strip()
+                    and len((p.citace or "").strip()) > 100
+                ):
                     miss.append("excerpt")
                 if miss:
                     report.add(

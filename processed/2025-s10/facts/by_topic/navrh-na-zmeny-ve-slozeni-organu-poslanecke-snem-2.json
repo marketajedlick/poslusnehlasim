@@ -9,11 +9,13 @@
   ],
   "fakty": [
     {
-      "text": "Hlasování číslo 249, pro 121, proti nikdo. Návrh byl přijat."
+      "text": "Hlasování číslo 249, pro 121, proti nikdo. Návrh byl přijat.",
+      "link_phrase": "Hlasování číslo 249, pro 121, proti nikdo. Návrh byl přijat"
     },
     {
       "text": "Poslanec Šťastný přistupuje k řečništi",
-      "kind": "scene"
+      "kind": "scene",
+      "link_phrase": "Poslanec Šťastný přistupuje k řečništi"
     }
   ],
   "publikovat": true,
@@ -30,6 +32,6 @@
   },
   "steno_slov": 14905,
   "lead": "Změny ve složení orgánů sněmovny prošly 121 hlasy, nikdo proti.",
-  "pointa": "Dopoledne obsazování postů, odpoledne balík evropských úprav zákonů.",
+  "pointa": "Dopoledne obsazování postů, odpoledne balík evropských úprav zákonů. Hlasování číslo 249, pro 121, proti nikdo. Návrh byl přijat. Poslanec Šťastný přistupuje k řečništi.",
   "mean": "Strany si rozdělily místa ve výborech. Kdo sedí ve kterém výboru, určuje, kdo vidí jaké zákony jako první."
 }

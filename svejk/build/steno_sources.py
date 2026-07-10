@@ -410,6 +410,15 @@ def _passage_from_fact(
         elif psp_resolver:
             psp_url = psp_resolver.resolve(speaker, psp_url, citace)
     excerpt = _excerpt_around(full_text, citace) if full_text else citace
+    if full_text:
+        flat_full = _norm_ws(full_text)
+        flat_ex = _norm_ws(excerpt)
+        flat_cit = _norm_ws(citace)
+        if flat_ex == flat_cit or len(flat_ex) <= len(flat_cit) + 15:
+            if len(flat_full) <= 220:
+                excerpt = full_text.strip()
+            elif flat_cit:
+                excerpt = _excerpt_around(full_text, citace, radius=720)
     citace = expand_szif_for_display(bez_dlouhych_pomlc(citace))
     excerpt = expand_szif_for_display(bez_dlouhych_pomlc(excerpt))
     summary = bez_dlouhych_pomlc(summary)
@@ -705,6 +714,25 @@ def resolve_item_citace_href(
         item.citace_href = page_href
 
 
+def _party_label_gap() -> str:
+    """Mezery a volitelné stranické značky (ANO) mezi slovy fráze."""
+    return r"(?:\s*(?:\([^)]+\))?\s*)*"
+
+
+def _find_phrase_relaxed(text: str, phrase: str) -> str | None:
+    """Fráze ve větě i s (ANO)/(Piráti) mezi slovy link_phrase."""
+    words = phrase.split()
+    if len(words) < 2:
+        return None
+    gap = _party_label_gap()
+    if "<" in text:
+        pat = gap.join(_word_in_html_pattern(w) for w in words)
+    else:
+        pat = gap.join(rf"\b{re.escape(w)}" for w in words)
+    m = re.search(pat, text, re.I | re.S)
+    return m.group(0) if m else None
+
+
 def _find_phrase_in_text(text: str, phrase: str) -> str | None:
     """Vrátí přesnou podmnožinu textu odpovídající frázi (case-insensitive)."""
     if not text or not phrase:
@@ -714,9 +742,9 @@ def _find_phrase_in_text(text: str, phrase: str) -> str | None:
     low_text = text.lower()
     low_phrase = phrase.lower()
     pos = low_text.find(low_phrase)
-    if pos < 0:
-        return None
-    return text[pos : pos + len(phrase)]
+    if pos >= 0:
+        return text[pos : pos + len(phrase)]
+    return _find_phrase_relaxed(text, phrase)
 
 
 def _word_in_html_pattern(word: str) -> str:
@@ -741,8 +769,6 @@ def inject_steno_link(text: str, phrase: str, href: str) -> str:
     if not text or not phrase or not href:
         return text
     match = _find_phrase_in_text(text, phrase)
-    if not match and "<" in text:
-        match = _find_phrase_in_html(text, phrase)
     if not match:
         return text
     for m in re.finditer(r"<a\b[^>]*>.*?</a>", text, re.I | re.S):

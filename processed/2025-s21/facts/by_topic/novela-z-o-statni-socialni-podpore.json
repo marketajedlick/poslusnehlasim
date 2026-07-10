@@ -26,11 +26,13 @@
       "text": "Debata sklouzla od peněz k urážkám, padlo slovo klerofašisti i opakované nařčení ze lhaní; Havránek odmítl obojí.",
       "source": "steno",
       "steno_id": "2025_21_00087",
-      "citace": "Krásné odpoledne, 20 vteřin by mi asi nestačilo, maximálně na to, že gratuluji paní kolegyni Pastuchové ke čtvrtému mandátu."
+      "citace": "Krásné odpoledne, 20 vteřin by mi asi nestačilo, maximálně na to, že gratuluji paní kolegyni Pastuchové ke čtvrtému mandátu.",
+      "link_phrase": "Debata sklouzla od peněz k urážkám, padlo slovo klerofašisti i"
     },
     {
       "text": "Do sociálního výboru posláno 154 hlasy, nikdo proti; lhůta na projednání zkrácena na 25 dnů (155 pro).",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "Do sociálního výboru posláno 154 hlasy, nikdo proti; lhůta na"
     }
   ],
   "publikovat": true,
@@ -47,6 +49,6 @@
   },
   "steno_slov": 11774,
   "lead": "Rodičovský příspěvek má stoupnout z tří set padesáti na čtyři sta tisíc korun, u dvojčat a vícerčat na osm set tisíc. Platit má pro děti narozené od ledna 2027 a v sále se proti tomu nezvedla jediná ruka.",
-  "pointa": "O penězích se nehádal nikdo, zato o slovech ano: rozpravou létaly výrazy „klerofašisti“ a „lhářka“, zatímco příspěvek tiše proplul jednomyslně.",
+  "pointa": "O penězích se nehádal nikdo, zato o slovech ano: rozpravou létaly výrazy „klerofašisti“ a „lhářka“, zatímco příspěvek tiše proplul jednomyslně. Debata sklouzla od peněz k urážkám, padlo slovo klerofašisti i. Do sociálního výboru posláno 154 hlasy, nikdo proti; lhůta na.",
   "mean": "Zatím jde o první kolo: návrh teď čeká kolečko po sociálním výboru a lhůtu na projednání si poslanci zkrátili na dvacet pět dnů, aby přidání stihli. Pro úplnost, loni se narodilo 77 636 dětí, nejméně za dvě stě let, takže se přidává rodičům, kterých ubývá."
 }

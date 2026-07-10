@@ -738,23 +738,23 @@ button{font:inherit;cursor:pointer}
   max-width:100%;
   font-family:var(--font-sans);
   font-weight:700;
-  font-size:12px;
+  font-size:13px;
   letter-spacing:.08em;
   text-transform:uppercase;
   border:2px solid;
   border-radius:4px;
-  padding:3px 7px 2px;
+  padding:4px 9px 3px;
   opacity:.95;
 }
 @media(min-width:1200px){
   .article-num{font-size:108px;line-height:.74}
   .article-title{font-size:36px;line-height:1.02}
-  .stamp{font-size:12px;border-width:2.5px;padding:4px 9px 3px}
+  .stamp{font-size:14px;border-width:2.5px;padding:5px 11px 4px}
   .article-aside .stamp{
-    font-size:10px;
-    letter-spacing:.05em;
-    padding:3px 5px 2px;
-    border-width:2px;
+    font-size:14px;
+    letter-spacing:.07em;
+    padding:5px 11px 4px;
+    border-width:2.5px;
     max-width:none;
   }
 }

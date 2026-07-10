@@ -23,13 +23,14 @@
       "link_phrase": "Pláteník"
     },
     {
-      "text": "když se předkládá takhle komplexní novela, která mění fungování státní služby a dotýká se víc jak 70 000 zaměstnanců státu, tak mně jako zvolené zákonodárkyni přijde jako slušnost k občanům a občankám a jako naše základní odpovědnost, abychom pokud možno takhle velké změny právě dělali na základě odborné, nezávislé, fundované a dobré analýzy"
+      "text": "když se předkládá takhle komplexní novela, která mění fungování státní služby a dotýká se víc jak 70 000 zaměstnanců státu, tak mně jako zvolené zákonodárkyni přijde jako slušnost k občanům a občankám a jako naše základní odpovědnost, abychom pokud možno takhle velké změny právě dělali na základě odborné, nezávislé, fundované a dobré analýzy",
+      "link_phrase": "když se předkládá takhle komplexní novela, která mění fungování státní"
     },
     {
       "text": "Já jsem podal návrh na zamítnutí obou dvou sloučených tisků.",
       "source": "steno",
       "steno_id": "2025_6_00135",
-      "citace": "Já jsem podal návrh na zamítnutí obou dvou sloučených tisků.",
+      "citace": "zamítnutí obou dvou sloučených tisků.",
       "link_phrase": "Kučera"
     }
   ],
@@ -47,6 +48,6 @@
   },
   "steno_slov": 5424,
   "lead": "Koaliční návrh, který má nahradit zákon o státní službě běžným pracovním poměrem úředníků, v prvním kole padl, 65 hlasů pro, 96 proti. Opozice mluvila o politizaci úřadů a chybějících analýzách.",
-  "pointa": "Pospíšil (TOP 09) říkal, že tak velká změna má jít jako řádný vládní návrh s analýzou, ne ve spěchu. Pláteník (KDU-ČSL) varoval před oslabením státu. Kučera (TOP 09) navrhl zamítnout oba sloučené tisky.",
+  "pointa": "Pospíšil (TOP 09) říkal, že tak velká změna má jít jako řádný vládní návrh s analýzou, ne ve spěchu. Pláteník (KDU-ČSL) varoval před oslabením státu. Kučera (TOP 09) navrhl zamítnout oba sloučené tisky. když se předkládá takhle komplexní novela, která mění fungování státní.",
   "mean": "Reforma neprošla, úředníci zůstávají ve služebním poměru podle dosavadního zákona. Koalice chtěla přes sedmdesát tisíc lidí ve státní správě převést pod zákoník práce, Sněmovna to v prvním kole zastavila."
 }

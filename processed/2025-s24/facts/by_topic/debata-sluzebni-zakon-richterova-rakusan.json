@@ -9,12 +9,6 @@
   ],
   "fakty": [
     {
-      "source": "steno",
-      "steno_id": "2025_24_00091",
-      "citace": "názvem Zákon na snazší vyhazování expertů a stručně ho odůvodním.",
-      "link_phrase": "Richterová (Piráti) chtěla v pořadu schůze"
-    },
-    {
       "text": "Richterová chtěla v pořadu schůze vidět pravý název bodu.",
       "source": "steno",
       "steno_id": "2025_24_00091",
@@ -29,7 +23,8 @@
       "link_phrase": "Richterová (Piráti) chtěla v pořadu schůze"
     },
     {
-      "text": "Poslanci návrh Richterové na první bod pořadu zamítli."
+      "text": "Poslanci návrh Richterové na první bod pořadu zamítli.",
+      "link_phrase": "Poslanci návrh Richterové na první bod pořadu zamítli"
     },
     {
       "text": "Rakušan varoval, že jeho projev bude dlouhý, a pak slíbil, že nebude obzvlášť dlouhý.",
@@ -63,7 +58,7 @@
   "nadpis": "Nebude to dlouhé",
   "lead": "Koalice chce změnit pravidla pro státní úředníky, tzv. služební zákon. Richterová (Piráti) chtěla v pořadu schůze, v tabulce bodů toho dne, místo úředního názvu bod přejmenovat na Zákon na snazší vyhazování expertů. Poslanci to zamítli, debata o zákonu ale pokračovala celé dopoledne.\n\nRakušan (STAN) varoval, že jeho projev bude dlouhý, a pak slíbil, že nebude obzvlášť dlouhý.",
   "pointa": "",
-  "mean": "Služební zákon má změnit pravidla pro lidi ve státní správě, kdo může nastoupit, kdo odejde a jak rychle. Koalice tvrdí, že zrychlí personální změny, opozice varuje, že půjde o snazší vyhazování odborníků podle politické vůle. Richterová proto chtěla v pořadu schůze vidět pravý název. Rakušan varoval, že návrh skončí u soudů, ochromením agend a odchodem lidí, kteří na úřadech drží chod věcí.",
+  "mean": "Služební zákon má změnit pravidla pro lidi ve státní správě, kdo může nastoupit, kdo odejde a jak rychle. Koalice tvrdí, že zrychlí personální změny, opozice varuje, že půjde o snazší vyhazování odborníků podle politické vůle. Richterová proto chtěla v pořadu schůze vidět pravý název. Rakušan varoval, že návrh skončí u soudů, ochromením agend a odchodem lidí, kteří na úřadech drží chod věcí. Poslanci návrh Richterové na první bod pořadu zamítli.",
   "pocet_hlasovani": 0,
   "proslo": false
 }

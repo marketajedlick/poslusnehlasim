@@ -19,13 +19,15 @@
       "text": "Mandátový výbor doporučil nesouhlas, sněmovna usnesení přijala.",
       "source": "steno",
       "steno_id": "2025_11_00029",
-      "citace": "Děkuji za slovo, pane předsedající."
+      "citace": "Děkuji za slovo, pane předsedající.",
+      "link_phrase": "Mandátový výbor doporučil nesouhlas, sněmovna usnesení přijala"
     },
     {
       "text": "Hlasování číslo 7, pro 104, proti 81. Návrh usnesení byl přijat.",
       "source": "steno",
       "steno_id": "2025_11_00195",
-      "citace": "Asi ano."
+      "citace": "Asi ano.",
+      "link_phrase": "Hlasování číslo 7, pro 104, proti 81. Návrh usnesení byl"
     },
     {
       "text": "Přestaňte fňukat, přestaňte se schovávat za papalášskou imunitu.",
@@ -56,6 +58,6 @@
   },
   "steno_slov": 7052,
   "lead": "Sněmovna odmítla souhlas se stíháním v kauze Čapí hnízdo, 104 hlasy pro, 81 proti. Babiš místo obhajoby hodinu mluvil o repatriačních letech z Blízkého východu.",
-  "pointa": "Hřib mu vyčítal fňukání a vzkazy leteckým společnostem z pultíku. Kupka připomněl, že o vině rozhodují soudy, ne výsledky voleb.",
+  "pointa": "Hřib mu vyčítal fňukání a vzkazy leteckým společnostem z pultíku. Kupka připomněl, že o vině rozhodují soudy, ne výsledky voleb. Mandátový výbor doporučil nesouhlas, sněmovna usnesení přijala. Hlasování číslo 7, pro 104, proti 81. Návrh usnesení byl.",
   "mean": "Poslanec má imunitu a Sněmovna může stíhání zastavit. Bez jejího souhlasu nemůže soud v kauze dotačního podvodu kolem farmy Čapí hnízdo pokračovat."
 }

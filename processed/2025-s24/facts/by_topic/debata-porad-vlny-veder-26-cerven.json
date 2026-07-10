@@ -33,7 +33,8 @@
       "text": "Ferčíková žádala uklidnit Motoristy, kterým diskuse přijde směšná.",
       "source": "steno",
       "steno_id": "2025_24_00733",
-      "citace": "Já poprosím paní předsedající, aby uklidnila tady skupinku Motoristů, kterým tahleta diskuse přijde směšná."
+      "citace": "Já poprosím paní předsedající, aby uklidnila tady skupinku Motoristů, kterým tahleta diskuse přijde směšná.",
+      "link_phrase": "Ferčíková žádala uklidnit Motoristy, kterým diskuse přijde směšná"
     },
     {
       "text": "Ferčíková se ptala na víkend.",
@@ -59,16 +60,19 @@
       "text": "Ferčíková o lidech bez klimatizace.",
       "source": "steno",
       "steno_id": "2025_24_00731",
-      "citace": "kteří si nemohou dovolit klimatizaci, seniorů anebo chronicky nemocných..."
+      "citace": "kteří si nemohou dovolit klimatizaci, seniorů anebo chronicky nemocných...",
+      "link_phrase": "Ferčíková o lidech bez klimatizace"
     },
     {
-      "text": "Jedenáct hlasování o pořadu, všechna zamítnuta."
+      "text": "Jedenáct hlasování o pořadu, všechna zamítnuta.",
+      "link_phrase": "Jedenáct hlasování o pořadu, všechna zamítnuta"
     },
     {
       "text": "Ferčíková viděla pošklebky ministrů.",
       "source": "steno",
       "steno_id": "2025_24_00733",
-      "citace": "nka, tady pan ministr životního prostředí na mě dělá pošklebky."
+      "citace": "nka, tady pan ministr životního prostředí na mě dělá pošklebky.",
+      "link_phrase": "Ferčíková viděla pošklebky ministrů"
     },
     {
       "text": "Ferčíková viděla pošklebky Macinky a Červeného.",
@@ -89,7 +93,7 @@
   "nadpis": "Horka zabíjí\njedenáctkrát v pořadu",
   "lead": "Ráno opozice znovu bojovala o pořad: koalice chtěla jako první služební zákon, opozice chtěla zařadit body o vlnách veder. Šrámková (Piráti) navrhla Připravenost České republiky na vlny veder a řekla, že horka zabíjí. Jen do oběda poslanci jedenáctkrát hlasovali o změnách pořadu, pokaždé to skončilo zamítnutím.\n\nVenku bylo třicet šest stupňů. Ferčíková (KSČM) nejdřív žádala uklidnit skupinku Motoristů, pak se zeptala, jak se těšíte na víkend, a ministrů, co dělají s vlnou veder u lidí bez klimatizace. Macinka (Motoristé) odpověděl, že v létě je horko, v zimě je zima, v noci je tma, a dodal, že paní poslankyně má klimatizaci. Ferčíková řekla, že koalici je diskuse k smíchu, což bylo vidět na pošklebcích Macinky a Červeného.",
   "pointa": "",
-  "mean": "Pořad schůze určuje, v jakém pořadí se body projednávají. Koalice měla v programu služební zákon, opozice chtěla místo toho řešit vedro a zdravotní rizika. Když návrh na pořad neprojde, debata skončí hlasováním, ne obsahem.",
+  "mean": "Pořad schůze určuje, v jakém pořadí se body projednávají. Koalice měla v programu služební zákon, opozice chtěla místo toho řešit vedro a zdravotní rizika. Když návrh na pořad neprojde, debata skončí hlasováním, ne obsahem. Ferčíková žádala uklidnit Motoristy, kterým diskuse přijde směšná. Ferčíková o lidech bez klimatizace. Jedenáct hlasování o pořadu, všechna zamítnuta. Ferčíková viděla pošklebky ministrů.",
   "pocet_hlasovani": 11,
   "proslo": false
 }

@@ -23,11 +23,13 @@
       "link_phrase": "do července, ne do dubna."
     },
     {
-      "text": "Hlasování číslo 6, přihlášeno 136 poslanců, pro 130, proti nikdo. Návrh byl přijat."
+      "text": "Hlasování číslo 6, přihlášeno 136 poslanců, pro 130, proti nikdo. Návrh byl přijat.",
+      "link_phrase": "Hlasování číslo 6, přihlášeno 136 poslanců, pro 130, proti nikdo."
     },
     {
       "text": "Potlesk zleva.",
-      "kind": "scene"
+      "kind": "scene",
+      "link_phrase": "Potlesk zleva"
     }
   ],
   "publikovat": true,
@@ -44,6 +46,6 @@
   },
   "steno_slov": 3715,
   "lead": "Mimořádná schůze schválila prodloužení přechodu na superdávku o tři měsíce, 130 hlasů pro, nikdo proti. Stávající příjemci dostanou staré dávky do července, ne do dubna.",
-  "pointa": "Juchelka děkoval koalici i opozici. Piráti a Starostové nevetovali, Richterová ale varovala před dopady na zranitelné domácnosti a chtěla jasná data.",
+  "pointa": "Juchelka děkoval koalici i opozici. Piráti a Starostové nevetovali, Richterová ale varovala před dopady na zranitelné domácnosti a chtěla jasná data. Hlasování číslo 6, přihlášeno 136 poslanců, pro 130, proti nikdo. Potlesk zleva.",
   "mean": "Superdávka mění způsob, jak stát vyplácí pomoc v hmotné nouzi. Úřad práce nestíhá převést přes 400 tisíc žádostí, proto vláda posouvá termín. Kapacity IT pak brzdí i digitalizaci dalších dávek na jaře a v létě. Lidé by neměli přijít o peníze, ale musí si v tíživé situaci říct o mimořádnou okamžitou pomoc."
 }

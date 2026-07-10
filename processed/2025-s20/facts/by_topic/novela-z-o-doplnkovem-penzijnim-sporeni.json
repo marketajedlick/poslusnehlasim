@@ -17,14 +17,16 @@
     },
     {
       "text": "Tři úpravy od Pirátek spadly pod stůl, samotný zákon pak prošel 136:7.",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "Tři úpravy od Pirátek spadly pod stůl, samotný zákon pak"
     },
     {
       "text": "Poslankyně Schillerová mimo mikrofon: Můžu i v rozpravě?",
       "source": "steno",
       "kind": "scene",
       "steno_id": "2025_20_00220",
-      "citace": "Poslankyně Schillerová mimo mikrofon: Můžu i v rozpravě?) Ano, s přednostním právem byste byla první i v rozpravě."
+      "citace": "Poslankyně Schillerová mimo mikrofon: Můžu i v rozpravě?) Ano, s přednostním právem byste byla první i v rozpravě.",
+      "link_phrase": "Můžu i v rozpravě?"
     }
   ],
   "publikovat": true,
@@ -41,6 +43,6 @@
   },
   "steno_slov": 7171,
   "lead": "Senioři, kterým stát v roce 2024 přestal posílat státní příspěvek na penzijní spoření, budou moci odejít bez pokuty a vrácené peníze dostanou zpět. Prošlo to 136:7, tři pirátské úpravy předtím spadly pod stůl.",
-  "pointa": "Stát si na opravu dá zhruba 60 milionů korun; Piráti chtěli ještě víc, ale jejich tři pozměňovací návrhy před finálem spadly.",
+  "pointa": "Stát si na opravu dá zhruba 60 milionů korun; Piráti chtěli ještě víc, ale jejich tři pozměňovací návrhy před finálem spadly. Tři úpravy od Pirátek spadly pod stůl, samotný zákon pak. Můžu i v rozpravě?.",
   "mean": "Kdo je v důchodu a zůstal ve spoření bez státního příspěvku, bude moci smlouvu opustit bez sankce; komu už peníze strhli, stát mu je vrátí. Účet pro rozpočet: zhruba 60 milionů korun."
 }

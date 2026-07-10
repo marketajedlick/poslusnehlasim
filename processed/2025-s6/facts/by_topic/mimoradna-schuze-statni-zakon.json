@@ -9,10 +9,12 @@
   ],
   "fakty": [
     {
-      "text": "V prosinci vládní většina nesvolala jednání Poslanecké sněmovny. Nestihly se třeba projednat některé tisky, které tam platily"
+      "text": "V prosinci vládní většina nesvolala jednání Poslanecké sněmovny. Nestihly se třeba projednat některé tisky, které tam platily",
+      "link_phrase": "V prosinci vládní většina nesvolala jednání Poslanecké sněmovny. Nestihly se"
     },
     {
-      "text": "z jednacího řádu jasně vyplývá, že ve čtvrtek se máme zejména věnovat interpelacím na členy vlády a na pana premiéra. A vy v této době svoláte mimořádnou schůzi, která znamená jediné, že dnes interpelace nebudou"
+      "text": "z jednacího řádu jasně vyplývá, že ve čtvrtek se máme zejména věnovat interpelacím na členy vlády a na pana premiéra. A vy v této době svoláte mimořádnou schůzi, která znamená jediné, že dnes interpelace nebudou",
+      "link_phrase": "z jednacího řádu jasně vyplývá, že ve čtvrtek se máme"
     },
     {
       "text": "návrh nesplňuje desetidenní lhůtu před zahájením schůze. To už pak nejde zhojit",
@@ -33,7 +35,7 @@
   "priorita": 2,
   "nadpis": "Čtvrtek bez interpelací",
   "lead": "Koalice svolala mimořádnou schůzi na den vyhrazený pro interpelace. Rakušan kritizoval prosincové mlčení sněmovny, Jakob řekl, že dnes se ministrů neptají.",
-  "pointa": "Vondráček hájil nestihnutí lhůt mimořádnou schůzí. Rakušan připomněl dva a půl roku práce na služebním zákoně za vlády Fialy.",
+  "pointa": "Vondráček hájil nestihnutí lhůt mimořádnou schůzí. Rakušan připomněl dva a půl roku práce na služebním zákoně za vlády Fialy. V prosinci vládní většina nesvolala jednání Poslanecké sněmovny. Nestihly se. z jednacího řádu jasně vyplývá, že ve čtvrtek se máme.",
   "mean": "Šestá schůze začala sporem o proceduru: proč zákon o úřednících nešel řádnou cestou a proč ve čtvrtek místo kontroly vlády běžela mimořádná jízda.",
   "pocet_hlasovani": 0,
   "proslo": false

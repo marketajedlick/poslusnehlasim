@@ -12,7 +12,8 @@
       "text": "Malá řekla, že debata o tisku 90 trvala přes dvacet hodin na plénu i ve výborech.",
       "source": "steno",
       "steno_id": "2025_17_00389",
-      "citace": "Děkuji za slovo, pane předsedo."
+      "citace": "Děkuji za slovo, pane předsedo.",
+      "link_phrase": "Malá řekla, že debata o tisku 90 trvala přes dvacet"
     },
     {
       "text": "Jakob varoval před schodkem přes čtyři sta miliard a výjimkami Schillerové.",
@@ -27,7 +28,8 @@
     },
     {
       "text": "Finální hlasování číslo 44 v 13:10 padlo šedesát osm proti devadesáti.",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "Finální hlasování číslo 44 v 13:10 padlo šedesát osm proti"
     }
   ],
   "publikovat": true,
@@ -44,6 +46,6 @@
   },
   "steno_slov": 38268,
   "lead": "V pátek dopoledne Sněmovna zamítla vládní změnu rozpočtových zákonů, devadesát poslanců proti šedesáti osmi. Koalice chtěla rozvolnit fiskální limity, opozice mluvila o schodku přes čtyři sta miliard.",
-  "pointa": "Jakob obhajoval čtyři opoziční pozměňovací návrhy pro rezervu a silnější roli Národní rozpočtové rady. Vlček říkal, že Schillerová dříve slibovala, že limity nerozvolní, ale ve druhém kole přidala vlastní výjimky.",
+  "pointa": "Jakob obhajoval čtyři opoziční pozměňovací návrhy pro rezervu a silnější roli Národní rozpočtové rady. Vlček říkal, že Schillerová dříve slibovala, že limity nerozvolní, ale ve druhém kole přidala vlastní výjimky. Malá řekla, že debata o tisku 90 trvala přes dvacet. Finální hlasování číslo 44 v 13:10 padlo šedesát osm proti.",
   "mean": "Zákon měl upravit limity výdajů státu podle evropských pravidel. Sněmovna ho v závěrečném hlasování neschválila, rozpočtová pravidla zůstávají v dosavadní podobě."
 }

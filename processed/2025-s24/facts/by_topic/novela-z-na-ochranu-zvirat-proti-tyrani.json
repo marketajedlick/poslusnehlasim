@@ -37,7 +37,8 @@
       "link_phrase": "usmrcení psa nebo kočky."
     },
     {
-      "text": "Hanzlíková: jinak jde zpravidla jen o přestupek."
+      "text": "Hanzlíková: jinak jde zpravidla jen o přestupek.",
+      "link_phrase": "jinak jde zpravidla jen o přestupek"
     }
   ],
   "publikovat": true,
@@ -54,6 +55,6 @@
   },
   "steno_slov": 1099,
   "lead": "Ve středu hlasovala Sněmovna o novele trestního zákona na ochranu zvířat:\n\n<ul class=\"listy-ul\">\n<li>vyšší minimální tresty za týrání zvířat, typicky ze šesti měsíců na rok</li>\n<li>nový trestný čin za usmrcení psa nebo kočky ze zavrženíhodné pohnutky</li>\n<li>debata, jestli jde o trestný čin nebo přestupek, a proč jen kočky a psi</li>\n</ul>\n\nMinistr Hladík (KDU-ČSL) před hlasováním připomněl domácí kočku Vločku, pak ale stejný návrh označil za nevalně zpracovaný.",
-  "pointa": "Ve třetím kole _novela zákona neprošla_.",
+  "pointa": "Ve třetím kole _novela zákona neprošla_. jinak jde zpravidla jen o přestupek.",
   "mean": "Novela měla zpřísnit tresty za týrání zvířat a doplnit postih za usmrcení psa nebo kočky. Ve třetím kole ji Sněmovna zamítla."
 }

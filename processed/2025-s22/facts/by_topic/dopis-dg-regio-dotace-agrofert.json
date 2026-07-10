@@ -13,13 +13,14 @@
       "source": "steno",
       "steno_id": "2025_22_00001",
       "citace": "Babiš Andrej celý jednací den , pracovní důvody",
-      "link_phrase": ""
+      "link_phrase": "Premiér Babiš se celý den omluvil z pracovních důvodů; Okamura"
     },
     {
       "text": "První velký útok opozice mířil na chybějícího premiéra: Havel řekl, že Babiš se omluvil zrovna v den schůze o Agrofertu.",
       "citace": "škoda že tady není pan premiér. To jistě není náhoda, že se dneska omluvil, když máme schůzi zrovna, která řeší jeho střet zájmů.",
       "steno_id": "2025_22_00008",
-      "source": "steno"
+      "source": "steno",
+      "link_phrase": "Havel řekl, že Babiš se omluvil zrovna v den schůze o Agrofertu"
     },
     {
       "text": "Než se rozjela opozice, mluvili nejdřív ministr zemědělství Šebestyán a Mrázová za místní rozvoj; teprve pak dostal slovo Rakušan, jeden z navrhovatelů schůze.",
@@ -56,7 +57,7 @@
   "priorita": 2,
   "nadpis": "Dopis z Bruselu\nnení zákaz dotací",
   "lead": "Než opozice začala útočit na chybějícího premiéra, vystoupila vláda s vysvětlováním, že bruselský dopis není zákaz dotací, jen pracovní psaníčko s úředním razítkem někde v dálce. Český úřad Agrofertu dotace nejdřív stopnul, po přesunu akcií do svěřenského fondu zase rozjel papírování. Brusel ale dál říká, ještě ne tak rychle.",
-  "pointa": "Šebestyán řekl, že platby může zastavit až oficiální rozhodnutí Komise. Státní fond na zemědělské dotace sám v prosinci stopl proplácení, po vložení akcií Agrofertu do svěřenského fondu zase rozjel papírování a varoval, že kdyby se akcie vrátily zpátky, dotace by znovu spadly do šuplíku. Brusel ale dál říká, ještě ne tak rychle.",
+  "pointa": "Šebestyán řekl, že platby může zastavit až oficiální rozhodnutí Komise. Státní fond na zemědělské dotace sám v prosinci stopl proplácení, po vložení akcií Agrofertu do svěřenského fondu zase rozjel papírování a varoval, že kdyby se akcie vrátily zpátky, dotace by znovu spadly do šuplíku. Brusel ale dál říká, ještě ne tak rychle. Premiér Babiš se celý den omluvil z pracovních důvodů; Okamura. Havel řekl, že Babiš se omluvil zrovna v den schůze o Agrofertu.",
   "kuriozita": "Kuriozita dne: Šebestyán skoro tisíc slov vysvětloval, že dopis z Bruselu není zákaz, zatímco Rakušan přepočítával sedm miliard na šest set čtyřicet korun pro každého občana a tři tisíce na důchodce.",
   "mean": "Dopis z bruselského ředitelství pro regionální politiku není rozhodnutí o zastavení dotací. Zastavit peníze může jen formální akt Evropské komise. Zemědělské dotace a evropské peníze na rozvoj regionů jsou přitom dva oddělené kanály. Prvním tečou peníze na pole, farmy a potraviny, administruje je státní fond na zemědělské dotace a řeší je ministerstvo zemědělství. Druhým jdou peníze pro obce a regiony, třeba na školy, silnice nebo místní projekty, a tady má na starosti koordinaci ministerstvo pro místní rozvoj. Každý kanál má jiný bruselský úřad, jiná pravidla a jiné rozhodovací řízení. Šebestyán varoval, že kdyby se akcie ze svěřenského fondu vrátily, dotace by přestaly téct znovu.",
   "pocet_hlasovani": 0,

@@ -31,7 +31,8 @@
     },
     {
       "text": "Dvaceti devíti hlasováními sněmovna postupně ustavila všechny výbory, většinou bez jediného proti.",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "Dvaceti devíti hlasováními sněmovna postupně ustavila všechny výbory, většinou bez"
     }
   ],
   "publikovat": true,
@@ -39,7 +40,7 @@
   "nadpis": "Výbory na hraně",
   "lead": "Úterý patřilo maratonu výborů a hlasité debatě. Lang Hřibovi připomněl, že už není primátorem. Přesto všech devětadvacet hlasování o výborech prošlo.",
   "pointa": "U všech výborů Piráti tvrdili, že koalice jim bere místa ve vedení. Kolovratník Hřibovi připomněl zastavené metro D a záměrně ho oslovil Hřibkem, Richterová mu vyčítala chování jako ze čtvrté třídy. Večer přišly stálé komise a delegace.",
-  "mean": "Výbory připravují zákony před plénem. Kdo v nich sedí, určuje, jaké téma dostane prostor a kdo má většinu při hlasování.",
+  "mean": "Výbory připravují zákony před plénem. Kdo v nich sedí, určuje, jaké téma dostane prostor a kdo má většinu při hlasování. Dvaceti devíti hlasováními sněmovna postupně ustavila všechny výbory, většinou bez.",
   "pocet_hlasovani": 0,
   "proslo": true
 }

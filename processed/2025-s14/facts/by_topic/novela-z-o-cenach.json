@@ -12,21 +12,25 @@
       "text": "Okamura vyhlásil legislativní nouzi kvůli sněmovnímu tisku 163 o cenách pohonných hmot.",
       "source": "steno",
       "steno_id": "2025_14_00002",
-      "citace": "Vážené paní poslankyně, vážení páni poslanci, vážení členové vlády, zahajuji 14."
+      "citace": "Vážené paní poslankyně, vážení páni poslanci, vážení členové vlády, zahajuji 14.",
+      "link_phrase": "Okamura vyhlásil legislativní nouzi kvůli sněmovnímu tisku 163 o cenách"
     },
     {
       "text": "Schillerová představila vládní návrh o regulaci cen pohonných hmot.",
       "source": "steno",
       "steno_id": "2025_14_00114",
-      "citace": "Předložený návrh uvede místopředsedkyně vlády a ministryně financí Alena Schillerová."
+      "citace": "Předložený návrh uvede místopředsedkyně vlády a ministryně financí Alena Schillerová.",
+      "link_phrase": "163"
     },
     {
       "text": "Zkrácené jednání schváleno 79:51, první čtení 100:0.",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "Zkrácené jednání schváleno 79:51, první čtení 100:0"
     },
     {
       "text": "Pokus o druhé čtení večer padl 64:89.",
-      "source": "votes"
+      "source": "votes",
+      "link_phrase": "Pokus o druhé čtení večer padl 64:89"
     }
   ],
   "publikovat": true,
@@ -43,6 +47,6 @@
   },
   "steno_slov": 14898,
   "lead": "Večer na čtrnácté schůzi schválili zkrácenou debatu o cenách benzínu a první kolo stovkou hlasů. Středeční noc a pátek čtyřiadvacátého dubna na tento zákon navážou.",
-  "pointa": "Vláda spustila zrychlené projednávání kvůli cenám na čerpacích stanicích. Opozice mluvila o socialistických experimentech, ale první kolo prošlo bez odporu.",
+  "pointa": "Vláda spustila zrychlené projednávání kvůli cenám na čerpacích stanicích. Opozice mluvila o socialistických experimentech, ale první kolo prošlo bez odporu. Okamura vyhlásil legislativní nouzi kvůli sněmovnímu tisku 163 o cenách. Zkrácené jednání schváleno 79:51, první čtení 100:0. Pokus o druhé čtení večer padl 64:89.",
   "mean": "Zákon má vládě dát nástroj na regulaci cen benzínu a nafty v krizových situacích. Ve zkrácené debatě jde o rychlou cestu bez standardních lhůt."
 }

@@ -10,7 +10,8 @@
   "fakty": [
     {
       "text": "Silný hluk před přednesením návrhu.",
-      "kind": "scene"
+      "kind": "scene",
+      "link_phrase": "Silný hluk před přednesením návrhu"
     },
     {
       "text": "Juchelka: rodičovský 400 000 a 800 000 u dvojčat.",
@@ -69,5 +70,5 @@
   },
   "steno_slov": 701,
   "lead": "Juchelka (ANO) navrhl zvýšit rodičovský příspěvek na 400 000 korun pro jedno dítě a 800 000 u dvojčat. Činčila (KDU-ČSL) řekl, že navýšení původně navrhli lidovci v balíčku Rodiče+ a vláda se k nim přidala.\n\nRichterová (Piráti) kritizovala, že vyšší částka platí až od ledna 2027: dítě narozené v prosinci 2026 dostane o 50 000 méně než sourozenec o měsíc mladší, a výsledek nazvala hořkosladkým. Juchelka (ANO) v odpovědi obhajoval střih podle roku narození a u druhého dítěte jmenoval mezi překážkami i velikost auta. Výborný (KDU-ČSL) řekl: „Pan ministr Juchelka je skutečně kabrňák a teď to říkám naprosto v kladném pozitivním slova smyslu.“ Závěrečné hlasování skončilo 129:0.",
-  "mean": "Rodičovský příspěvek je dávka pro rodiče, kteří zůstávají doma s malým dítětem. Tato novela zvedá celkovou částku, kterou si rodič může z rodičovské vybrat, ne přidává novou dávku navíc."
+  "mean": "Rodičovský příspěvek je dávka pro rodiče, kteří zůstávají doma s malým dítětem. Tato novela zvedá celkovou částku, kterou si rodič může z rodičovské vybrat, ne přidává novou dávku navíc. Silný hluk před přednesením návrhu."
 }

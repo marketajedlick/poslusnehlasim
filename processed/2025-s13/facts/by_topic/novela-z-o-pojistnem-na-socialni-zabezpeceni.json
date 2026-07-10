@@ -26,13 +26,16 @@
       "text": "První hlasování o zákonu bylo zmatečné, předsedající nepřečetl celé usnesení.",
       "source": "steno",
       "steno_id": "2025_13_00303",
-      "citace": "pánové, já musím prohlásit to předchozí hlasování jako zmatečné, protože je povinností, abych vám přečetl celý návrh usnesení."
+      "citace": "pánové, já musím prohlásit to předchozí hlasování jako zmatečné, protože je povinností, abych vám přečetl celý návrh usnesení.",
+      "link_phrase": "První hlasování o zákonu bylo zmatečné, předsedající nepřečetl celé usnesení"
     },
     {
-      "text": "Hlasování číslo 80, pro 112, proti 9, zákon schválen."
+      "text": "Hlasování číslo 80, pro 112, proti 9, zákon schválen.",
+      "link_phrase": "Hlasování číslo 80, pro 112, proti 9, zákon schválen"
     },
     {
-      "text": "Doplňující usnesení k nízkým důchodům OSVČ padlo 81:3."
+      "text": "Doplňující usnesení k nízkým důchodům OSVČ padlo 81:3.",
+      "link_phrase": "Doplňující usnesení k nízkým důchodům OSVČ padlo 81:3"
     }
   ],
   "publikovat": true,
@@ -49,6 +52,6 @@
   },
   "steno_slov": 18364,
   "lead": "Sněmovna v závěrečném hlasování schválila snížení minimálních sociálních záloh pro živnostníky, sto dvanáct hlasů pro. Předtím předsedající prohlásil první hlasování za zmatečné.",
-  "pointa": "Juchelka chtěl vrátit základ z 40 na 35 procent průměrné mzdy. Doplňující usnesení o nízkých důchodech OSVČ pak padlo, protože na ně nebylo dost hlasů.",
+  "pointa": "Juchelka chtěl vrátit základ z 40 na 35 procent průměrné mzdy. Doplňující usnesení o nízkých důchodech OSVČ pak padlo, protože na ně nebylo dost hlasů. První hlasování o zákonu bylo zmatečné, předsedající nepřečetl celé usnesení. Hlasování číslo 80, pro 112, proti 9, zákon schválen. Doplňující usnesení k nízkým důchodům OSVČ padlo 81:3.",
   "mean": "Živnostníci na hlavní činnost zaplatí nižší minimální zálohu na sociálním pojištění, úspora je zhruba sedm set korun měsíčně. Zaměstnance na výplatní pásce se to netýká."
 }

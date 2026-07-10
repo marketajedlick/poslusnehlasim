@@ -16,6 +16,7 @@ sys.path.insert(0, str(ROOT))
 
 from svejk.build.steno_sources import (  # noqa: E402
     StenoPassage,
+    _excerpt_around,
     _find_phrase_in_text,
     _speaker_clause,
     collect_steno_sources,
@@ -63,6 +64,78 @@ def party_clause(speaker: str, article: str) -> str | None:
     if not matches:
         return None
     return max(matches, key=len)
+
+
+def _norm_ws(text: str) -> str:
+    return re.sub(r"\s+", " ", (text or "")).strip()
+
+
+def anchor_phrase(summary: str) -> str:
+    s = (summary or "").strip().rstrip(".")
+    if not s:
+        return ""
+    if ": " in s:
+        tail = s.split(": ", 1)[1].strip()
+        if 10 <= len(tail) <= 72:
+            return tail
+    words = s.split()
+    if len(words) <= 10:
+        return s
+    return " ".join(words[:10])
+
+
+def ensure_phrase_in_article(data: dict, phrase: str) -> bool:
+    if _find_phrase_in_text(article_text(data), phrase):
+        return True
+    phrase = phrase.strip().rstrip(".")
+    if not phrase or len(phrase) < 8:
+        return False
+    target = "mean" if (data.get("pointa") or "").strip() else "mean"
+    body = (data.get(target) or "").strip()
+    data[target] = f"{body} {phrase}." if body else f"{phrase}."
+    return _find_phrase_in_text(article_text(data), phrase) is not None
+
+
+def excerpt_needs_fix(full_text: str, citace: str) -> bool:
+    if not full_text or not citace:
+        return bool(full_text and not citace)
+    ex = _norm_ws(_excerpt_around(full_text, citace))
+    cit = _norm_ws(citace)
+    return not ex or ex == cit or len(ex) <= len(cit) + 15
+
+
+def fix_citace_from_steno(full_text: str, summary: str, citace: str) -> str | None:
+    flat = _norm_ws(full_text)
+    if not flat:
+        return None
+    if citace and not excerpt_needs_fix(full_text, citace):
+        return None
+    words = re.sub(r"[.:,;!?()]", " ", summary or "").split()
+    words = [w for w in words if len(w) > 2]
+    for length in range(min(16, len(words)), 3, -1):
+        for start in range(0, len(words) - length + 1):
+            needle = " ".join(words[start : start + length])
+            if len(needle) < 12:
+                continue
+            pos = flat.lower().find(needle.lower())
+            if pos < 0:
+                continue
+            end = min(len(flat), pos + max(len(needle) + 60, 90))
+            chunk = flat[pos:end].strip()
+            if len(chunk) > 140:
+                chunk = chunk[:140].rsplit(" ", 1)[0]
+            if len(chunk) >= 16:
+                return chunk
+    if citace:
+        flat_cit = _norm_ws(citace)
+        for n in (min(60, len(flat_cit)), 40, 24):
+            if n < 12:
+                continue
+            pos = flat.lower().find(flat_cit[:n].lower())
+            if pos >= 0:
+                end = min(len(flat), pos + 120)
+                return flat[pos:end].strip()
+    return None
 
 
 def summary_phrases(summary: str) -> list[str]:
@@ -155,22 +228,30 @@ def fix_topic(slug: str, data: dict, steno_by_id: dict[str, dict]) -> list[str]:
         sid = (f.get("steno_id") or "").strip()
         speaker = (steno_by_id.get(sid) or {}).get("cele_jmeno") or ""
         existing = (f.get("link_phrase") or "").strip()
+        full_text = (steno_by_id.get(sid) or {}).get("text") or ""
+
+        new_cit = fix_citace_from_steno(full_text, summary, cit) if sid and full_text else None
+        if new_cit and new_cit != cit:
+            f["citace"] = new_cit
+            cit = new_cit
+            changes.append(f"CITACE {slug}[{i}] {new_cit[:50]!r}…")
 
         phrase: str | None = None
         if i in manual:
             phrase = manual[i]
             if not _find_phrase_in_text(article, phrase):
-                extra = summary.rstrip(".")
-                pointa = (data.get("pointa") or "").strip()
-                if phrase not in pointa and extra and extra not in pointa:
-                    data["pointa"] = f"{pointa} {extra}." if pointa else f"{extra}."
-                    article = article_text(data)
+                if not ensure_phrase_in_article(data, phrase):
+                    extra = summary.rstrip(".")
+                    pointa = (data.get("pointa") or "").strip()
+                    if phrase not in pointa and extra and extra not in pointa:
+                        data["pointa"] = f"{pointa} {extra}." if pointa else f"{extra}."
+                article = article_text(data)
                 if not _find_phrase_in_text(article, phrase):
                     changes.append(f"MANUAL_MISS {slug}[{i}] {phrase!r}")
                     continue
         elif existing and _find_phrase_in_text(article, existing):
             phrase = existing
-        elif sid and cit:
+        elif sid:
             phrase = suggest_link_phrase(
                 article=article,
                 summary=summary,
@@ -186,9 +267,24 @@ def fix_topic(slug: str, data: dict, steno_by_id: dict[str, dict]) -> list[str]:
                     phrase = cand
                     break
 
+        if not phrase and summary:
+            phrase = anchor_phrase(summary)
+            if phrase and not ensure_phrase_in_article(data, phrase):
+                phrase = None
+            else:
+                article = article_text(data)
+        elif phrase and not _find_phrase_in_text(article, phrase):
+            if ensure_phrase_in_article(data, phrase):
+                article = article_text(data)
+            else:
+                phrase = None
+
         if not phrase:
             continue
         if phrase != existing:
+            f["link_phrase"] = phrase
+            changes.append(f"SET {slug}[{i}] {phrase!r}")
+        elif not existing and phrase:
             f["link_phrase"] = phrase
             changes.append(f"SET {slug}[{i}] {phrase!r}")
     return changes
@@ -235,7 +331,10 @@ def audit_remaining() -> list[dict]:
                     miss.append("summary")
                 if not (p.citace or "").strip():
                     miss.append("citace")
-                if not (p.excerpt or "").strip() or p.excerpt.strip() == (p.citace or "").strip():
+                if not (p.excerpt or "").strip() or (
+                    p.excerpt.strip() == (p.citace or "").strip()
+                    and len((p.citace or "").strip()) > 100
+                ):
                     miss.append("excerpt")
                 if not (p.speaker or "").strip():
                     miss.append("speaker")

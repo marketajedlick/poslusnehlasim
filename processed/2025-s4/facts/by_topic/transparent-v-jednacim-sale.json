@@ -17,21 +17,23 @@
     },
     {
       "text": "Poslanec Hřib chodí po sále s transparentem a předstupuje s ním před poslance Babiše. Poslanci za hnutí ANO buší pěstmi do lavic na protest.",
-      "kind": "scene"
+      "kind": "scene",
+      "link_phrase": "Poslanec Hřib chodí po sále s transparentem a předstupuje s"
     },
     {
       "text": "Hluk v sále, poslanci se vracejí do sálu, řečník vyčkává.",
       "source": "steno",
       "kind": "scene",
       "steno_id": "2025_4_00009",
-      "citace": "sále, poslanci se vracejí do sálu, řečník vyčkává.) *** Neprošlo jazykovou korekturou, neautorizováno!"
+      "citace": "sále, poslanci se vracejí do sálu, řečník vyčkává.) *** Neprošlo jazykovou korekturou, neautorizováno!",
+      "link_phrase": "Hluk v sále, poslanci se vracejí do sálu, řečník vyčkává"
     }
   ],
   "publikovat": true,
   "priorita": 2,
   "nadpis": "Transparent nesmí zakrývat řečníka",
   "lead": "Uprostřed maratonu o Agrofertu vykročil Zdeněk Hřib s transparentem k řečništi a v pravé části sálu začali volat „transparent“.",
-  "pointa": "Hřib s ním šel k Babišovi a ANO bušilo do lavic. Okamura citoval pravidlo: u pultu smí stát transparent jen s vědomím řečníka.",
+  "pointa": "Hřib s ním šel k Babišovi a ANO bušilo do lavic. Okamura citoval pravidlo: u pultu smí stát transparent jen s vědomím řečníka. Poslanec Hřib chodí po sále s transparentem a předstupuje s. Hluk v sále, poslanci se vracejí do sálu, řečník vyčkává.",
   "mean": "Během Babišova projevu nesl předseda Pirátů transparent k řečnickému pultu. Předsedající Tomio Okamura a Patrik Nacher opakovaně vyzývali k dodržení pravidel a klidu v sále.",
   "pocet_hlasovani": 0,
   "proslo": false,

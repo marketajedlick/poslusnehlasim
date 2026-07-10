@@ -9,7 +9,8 @@
   ],
   "fakty": [
     {
-      "text": "nefunkční novela bývalé vlády Petra Fialy i přes 10 novelizací do roku 2025 nepomohla českému stavebnictví a zpackaná digitalizace stavebního řízení Ivana Bartoše stavebním úřadům"
+      "text": "nefunkční novela bývalé vlády Petra Fialy i přes 10 novelizací do roku 2025 nepomohla českému stavebnictví a zpackaná digitalizace stavebního řízení Ivana Bartoše stavebním úřadům",
+      "link_phrase": "nefunkční novela bývalé vlády Petra Fialy i přes 10 novelizací"
     },
     {
       "text": "rychlost ale nesmí být vykoupena ztrátou kvality, právní jistoty a ochrany veřejného zájmu",
@@ -40,6 +41,6 @@
   },
   "steno_slov": 99686,
   "lead": "Koaliční změna stavebního zákona v prvním kole padla, třicet jedna proti osmdesáti šesti. Koalice chtěla zrychlit povolování staveb.",
-  "pointa": "Mrázová (ANO) kritizovala Fialovu novelu a Bartošovu digitalizaci, Kučera (TOP 09) uznal pomalé řízení, ale řekl, že rychlost nesmí ztratit právní jistotu.",
+  "pointa": "Mrázová (ANO) kritizovala Fialovu novelu a Bartošovu digitalizaci, Kučera (TOP 09) uznal pomalé řízení, ale řekl, že rychlost nesmí ztratit právní jistotu. nefunkční novela bývalé vlády Petra Fialy i přes 10 novelizací.",
   "mean": "Páteční večer patřil poslaneckému návrhu na novou podobu stavebního zákona, který koalice chtěla protlačit zkráceně. Sněmovna ho v prvním kole zamítla a stavební úřady zůstávají u starých pravidel."
 }
