@@ -154,6 +154,9 @@ def _edition_og_fields(edition, *, snapshot_html: str = "") -> dict[str, str | i
             "first_item_nadpis": content.items[0].nadpis if content.items else "",
             "proslo": content.proslo,
             "zamitnuto": content.zamitnuto,
+            "zaver_key": content.zaver_key,
+            "zaver_body": content.zaver_body,
+            "zaver": content.zaver,
         }
     import re
 
@@ -168,6 +171,9 @@ def _edition_og_fields(edition, *, snapshot_html: str = "") -> dict[str, str | i
         "first_item_nadpis": "",
         "proslo": 0,
         "zamitnuto": 0,
+        "zaver_key": "",
+        "zaver_body": "",
+        "zaver": "",
     }
 
 
@@ -289,6 +295,9 @@ def run_export_pages(
         fields = _edition_og_fields(edition, snapshot_html=snapshot_html)
         og_subdir = out / "og"
         og_subdir.mkdir(parents=True, exist_ok=True)
+        sign = load_strings().get("edition", {}).get(
+            "sign", "- Váš dobrý voják Švejk -"
+        )
         render_edition_og_image(
             og_subdir,
             datum_unl=edition.datum_unl,
@@ -296,8 +305,10 @@ def run_export_pages(
             dnesni_ucet=str(fields["dnesni_ucet"]),
             nadpis_vydani=str(fields.get("nadpis_vydani") or ""),
             first_item_nadpis=str(fields["first_item_nadpis"]),
-            proslo=int(fields["proslo"]),
-            zamitnuto=int(fields["zamitnuto"]),
+            zaver_key=str(fields.get("zaver_key") or ""),
+            zaver_body=str(fields.get("zaver_body") or ""),
+            zaver=str(fields.get("zaver") or ""),
+            sign=sign,
         )
         written.append(f"og/{og_image_filename(edition.datum_unl)}")
 
@@ -307,9 +318,6 @@ def run_export_pages(
             hero_content = build_den_content(day_path, paths)
             share_subdir = out / "share"
             share_subdir.mkdir(parents=True, exist_ok=True)
-            sign = load_strings().get("edition", {}).get(
-                "sign", "- Váš dobrý voják Švejk -"
-            )
             if render_edition_share_hero_image(
                 share_subdir,
                 datum_unl=edition.datum_unl,

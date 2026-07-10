@@ -11,8 +11,11 @@ from svejk.build.seo import SITE_NAME, _edition_date_label, article_headline
 
 _STATIC = Path(__file__).resolve().parent.parent / "static"
 _BRAND_ICON = _STATIC / "ph-fav.png"
-_EYEBROW = "Deník sněmovny"
 _SIGN_DEFAULT = "- Váš dobrý voják Švejk -"
+_SITE_FOOTER = "www.poslusnehlasim.cz"
+_CARD_RADIUS = 6
+_HERO_ICON_SIZE = 56
+_SHARE_BTN_SIZE = 28
 
 OG_WIDTH = 1200
 OG_HEIGHT = 630
@@ -25,7 +28,6 @@ SHARE_HERO_HEIGHT = 1080
 _CREAM = "#f7f2f0"
 _CHAR = "#262626"
 _INK = "#6b6355"
-_ORANGE = "#ff4411"
 _YELLOW = "#f4c430"
 
 
@@ -210,100 +212,189 @@ def _font_line_height(font: ImageFont.FreeTypeFont | ImageFont.ImageFont) -> int
     return max(16, int(size * 1.15))
 
 
-def _draw_centered(
-    draw: ImageDraw.ImageDraw,
-    text: str,
-    y: int,
+def _compose_quote_text(
     *,
+    zaver_key: str = "",
+    quote_body: str = "",
+    fallback: str = "",
+) -> str:
+    body = (quote_body or "").strip()
+    if body:
+        key = (zaver_key or "").strip()
+        return f"{key} {body}".strip() if key else body
+    return (fallback or "").strip()
+
+
+def _apply_yellow_card(
+    img: Image.Image,
+    box: tuple[int, int, int, int],
+    *,
+    radius: int = _CARD_RADIUS,
+) -> Image.Image:
+    x0, y0, x1, y1 = box
+    layered = img.convert("RGBA")
+    shadow = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    sh = ImageDraw.Draw(shadow)
+    sh.rounded_rectangle((x0, y0 + 5, x1, y1 + 5), radius=radius, fill=(38, 38, 38, 38))
+    layered = Image.alpha_composite(layered, shadow)
+    card_layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    cd = ImageDraw.Draw(card_layer)
+    cd.rounded_rectangle(box, radius=radius, fill=_YELLOW)
+    return Image.alpha_composite(layered, card_layer).convert("RGB")
+
+
+def _draw_share_icon(
+    draw: ImageDraw.ImageDraw,
+    cx: int,
+    cy: int,
+    *,
+    size: int = _SHARE_BTN_SIZE,
+) -> None:
+    r = size / 2
+    draw.ellipse((cx - r, cy - r, cx + r, cy + r), outline=_CHAR, width=2)
+    scale = size / 28.0
+    dots = ((18, 5), (6, 12), (18, 19))
+    dot_r = 2.6 * scale
+    px = [((cx + (x - 12) * scale), (cy + (y - 12) * scale)) for x, y in dots]
+    for x, y in px:
+        draw.ellipse((x - dot_r, y - dot_r, x + dot_r, y + dot_r), fill=_CHAR)
+    draw.line((px[1][0] + dot_r, px[1][1], px[0][0] - dot_r, px[0][1]), fill=_CHAR, width=2)
+    draw.line((px[1][0] + dot_r, px[1][1], px[2][0] - dot_r, px[2][1]), fill=_CHAR, width=2)
+
+
+def _draw_quote_block(
+    draw: ImageDraw.ImageDraw,
+    *,
+    x: int,
+    y: int,
+    width: int,
+    lines: list[str],
     font: ImageFont.FreeTypeFont | ImageFont.ImageFont,
-    fill: str,
-    canvas_width: int,
+    mark_font: ImageFont.FreeTypeFont | ImageFont.ImageFont,
+    line_h: int,
 ) -> int:
-    width = draw.textlength(text, font=font)
-    draw.text(((canvas_width - width) / 2, y), text, fill=fill, font=font)
-    return y + _font_line_height(font)
+    open_mark = "„"
+    close_mark = "“"
+    for i, line in enumerate(lines):
+        prefix = open_mark if i == 0 else ""
+        suffix = close_mark if i == len(lines) - 1 else ""
+        cursor = x
+        if prefix:
+            draw.text((cursor, y - 6), prefix, fill=_CHAR, font=mark_font)
+            cursor += int(draw.textlength(prefix, font=mark_font) * 0.55)
+        draw.text((cursor, y), f"{line}{suffix}", fill=_CHAR, font=font)
+        y += line_h
+    return y
+
+
+def _draw_card_footer(
+    img: Image.Image,
+    draw: ImageDraw.ImageDraw,
+    *,
+    x: int,
+    y: int,
+    width: int,
+    sign: str,
+    fav: Image.Image | None,
+) -> None:
+    sign_font = _load_font(18, bold=True, sans=True)
+    sign_text = sign.upper()
+    sign_h = _font_line_height(sign_font)
+    fav_h = fav.height if fav is not None else 0
+    fav_gap = 14
+    foot_h = max(sign_h, fav_h)
+    foot_x = x
+    if fav is not None:
+        fav_y = y + max(0, (foot_h - fav.height) // 2)
+        img.paste(fav, (foot_x, fav_y), fav)
+        foot_x += fav.width + fav_gap
+    sign_y = y + max(0, (foot_h - sign_h) // 2)
+    draw.text((foot_x, sign_y), sign_text, fill=_CHAR, font=sign_font)
+    share_cx = x + width - _SHARE_BTN_SIZE // 2
+    share_cy = y + foot_h // 2
+    _draw_share_icon(draw, share_cx, share_cy)
 
 
 def render_og_image(
     dest: Path | str,
     *,
     date_label: str,
-    headline: str,
-    score: str = "",
+    headline: str = "",
+    zaver_key: str = "",
+    quote_body: str = "",
+    sign: str = _SIGN_DEFAULT,
 ) -> Path:
-    """Vykreslí 1200×630 PNG pro sdílení vydání (masthead + titulek dne)."""
+    """Vykreslí 1200×630 PNG ve stylu card-hero (krémové pozadí, žlutá karta)."""
     out = Path(dest)
     out.parent.mkdir(parents=True, exist_ok=True)
 
     img = Image.new("RGB", (OG_WIDTH, OG_HEIGHT), _CREAM)
+    probe = ImageDraw.Draw(img)
+
+    outer_x = 80
+    card_w = OG_WIDTH - outer_x * 2
+    pad_x = 48
+    pad_y = 40
+    text_w = card_w - pad_x * 2
+    footer_h = 44
+    footer_gap = 28
+    card_area_bottom = OG_HEIGHT - footer_h - footer_gap
+
+    quote_text = _compose_quote_text(
+        zaver_key=zaver_key,
+        quote_body=quote_body,
+        fallback=headline,
+    )
+    quote_font, quote_lines = _fit_font_size(
+        probe,
+        quote_text,
+        text_w,
+        start=34,
+        min_size=22,
+        max_lines=6,
+    )
+    mark_font = _load_font(max(44, int(getattr(quote_font, "size", 34) * 1.55)))
+    line_h = max(32, int(getattr(quote_font, "size", 34) * 1.42))
+    fav = _prepare_brand_icon(_HERO_ICON_SIZE)
+    sign_font = _load_font(18, bold=True, sans=True)
+    sign_h = _font_line_height(sign_font)
+    fav_h = fav.height if fav is not None else 0
+    foot_h = max(sign_h, fav_h)
+    quote_h = len(quote_lines) * line_h
+    card_inner_h = pad_y + quote_h + 20 + foot_h + pad_y
+    card_top = max(36, (card_area_bottom - card_inner_h) // 2)
+    card_box = (outer_x, card_top, outer_x + card_w, card_top + card_inner_h)
+    img = _apply_yellow_card(img, card_box)
     draw = ImageDraw.Draw(img)
 
-    margin = 72
-    cx = OG_WIDTH // 2
-    y = margin - 8
-
-    fav = _prepare_brand_icon(112)
-    if fav is not None:
-        img.paste(fav, (cx - fav.width // 2, y), fav)
-        y += fav.height + 18
-    else:
-        y += 8
-
-    eyebrow_font = _load_font(22, bold=True, sans=True)
-    y = _draw_centered(
+    text_x = outer_x + pad_x
+    y = card_top + pad_y
+    y = _draw_quote_block(
         draw,
-        _EYEBROW.upper(),
-        y,
-        font=eyebrow_font,
-        fill=_INK,
-        canvas_width=OG_WIDTH,
+        x=text_x,
+        y=y,
+        width=text_w,
+        lines=quote_lines,
+        font=quote_font,
+        mark_font=mark_font,
+        line_h=line_h,
     )
-    y += 4
-
-    title_font = _load_font(64, bold=True, sans=True)
-    for line in ("Poslušně", "hlásím!"):
-        y = _draw_centered(
-            draw,
-            line,
-            y,
-            font=title_font,
-            fill=_CHAR,
-            canvas_width=OG_WIDTH,
-        )
-
-    date_font = _load_font(30, sans=True)
-    y = _draw_centered(
+    y += 20
+    _draw_card_footer(
+        img,
         draw,
-        date_label,
-        y + 6,
-        font=date_font,
-        fill=_INK,
-        canvas_width=OG_WIDTH,
+        x=text_x,
+        y=y,
+        width=text_w,
+        sign=sign,
+        fav=fav,
     )
 
-    headline_font = _load_font(48, bold=True)
-    text_width = OG_WIDTH - margin * 2
-    lines = _wrap_text(draw, headline, headline_font, text_width)[:3]
-    y += 28
-    line_h = _font_line_height(headline_font) + 8
-    for line in lines:
-        draw.text((margin, y), line, fill=_CHAR, font=headline_font)
-        y += line_h
-
-    site_font = _load_font(24, sans=True)
-    score_font = _load_font(26, bold=True, sans=True)
-    footer_y = OG_HEIGHT - margin - 28
-    draw.text((margin, footer_y), "poslusnehlasim.cz", fill=_INK, font=site_font)
-
-    if score:
-        score_text = f"Skóre dne {score}"
-        score_w = draw.textlength(score_text, font=score_font)
-        draw.text(
-            (OG_WIDTH - margin - score_w, footer_y),
-            score_text,
-            fill=_ORANGE,
-            font=score_font,
-        )
+    footer_font = _load_font(22, sans=True)
+    footer_y = OG_HEIGHT - footer_h
+    draw.text((outer_x, footer_y), _SITE_FOOTER, fill=_INK, font=footer_font)
+    date_w = draw.textlength(date_label, font=footer_font)
+    draw.text((OG_WIDTH - outer_x - date_w, footer_y), date_label, fill=_INK, font=footer_font)
 
     img.save(out, format="PNG", optimize=True)
     return out
@@ -316,6 +407,7 @@ def _fit_font_size(
     *,
     start: int,
     min_size: int,
+    max_lines: int = 8,
     bold: bool = False,
     italic: bool = False,
 ) -> tuple[ImageFont.FreeTypeFont | ImageFont.ImageFont, list[str]]:
@@ -324,11 +416,11 @@ def _fit_font_size(
     while size >= min_size:
         font = _load_font(size, bold=bold, italic=italic)
         lines = _wrap_text(draw, text, font, max_width)
-        if len(lines) <= 8:
+        if len(lines) <= max_lines:
             return font, lines
         size -= 2
     font = _load_font(min_size, bold=bold, italic=italic)
-    return font, _wrap_text(draw, text, font, max_width)[:8]
+    return font, _wrap_text(draw, text, font, max_width)[:max_lines]
 
 
 def render_share_hero_image(
@@ -350,15 +442,9 @@ def render_share_hero_image(
     )
 
     margin = 72
-    fav = _prepare_brand_icon(96)
-    fav_gap = 18
     text_x = margin
     text_width = SHARE_HERO_WIDTH - margin * 2
-
-    quote_text = quote_body.strip()
-    if zaver_key:
-        quote_text = f"{zaver_key.strip()} {quote_text}".strip()
-
+    quote_text = _compose_quote_text(zaver_key=zaver_key, quote_body=quote_body)
     quote_font, quote_lines = _fit_font_size(
         draw,
         quote_text,
@@ -367,9 +453,9 @@ def render_share_hero_image(
         min_size=28,
     )
     mark_font = _load_font(max(56, int(getattr(quote_font, "size", 44) * 1.55)))
-    sign_font = _load_font(22, bold=True, sans=True)
-    sign_text = sign.upper()
     line_h = max(40, int(getattr(quote_font, "size", 44) * 1.45))
+    fav = _prepare_brand_icon(96)
+    sign_font = _load_font(22, bold=True, sans=True)
     sign_h = _font_line_height(sign_font)
     fav_h = fav.height if fav is not None else 0
     quote_h = len(quote_lines) * line_h
@@ -377,27 +463,26 @@ def render_share_hero_image(
     block_h = quote_h + 20 + foot_h
     y = max(margin, (SHARE_HERO_HEIGHT - block_h) // 2)
 
-    open_mark = "„"
-    close_mark = "“"
-    for i, line in enumerate(quote_lines):
-        prefix = open_mark if i == 0 else ""
-        suffix = close_mark if i == len(quote_lines) - 1 else ""
-        x = text_x
-        if prefix:
-            draw.text((x, y - 8), prefix, fill=_CHAR, font=mark_font)
-            x += draw.textlength(prefix, font=mark_font) * 0.55
-        body = f"{line}{suffix}"
-        draw.text((x, y), body, fill=_CHAR, font=quote_font)
-        y += line_h
-
+    y = _draw_quote_block(
+        draw,
+        x=text_x,
+        y=y,
+        width=text_width,
+        lines=quote_lines,
+        font=quote_font,
+        mark_font=mark_font,
+        line_h=line_h,
+    )
     y += 20
-    foot_x = margin
-    if fav is not None:
-        fav_y = y + max(0, (foot_h - fav.height) // 2)
-        img.paste(fav, (foot_x, fav_y), fav)
-        foot_x += fav.width + fav_gap
-    sign_y = y + max(0, (foot_h - sign_h) // 2)
-    draw.text((foot_x, sign_y), sign_text, fill=_CHAR, font=sign_font)
+    _draw_card_footer(
+        img,
+        draw,
+        x=text_x,
+        y=y,
+        width=text_width,
+        sign=sign,
+        fav=fav,
+    )
 
     img.save(out, format="PNG", optimize=True)
     return out
@@ -436,8 +521,10 @@ def render_edition_og_image(
     dnesni_ucet: str = "",
     nadpis_vydani: str = "",
     first_item_nadpis: str = "",
-    proslo: int = 0,
-    zamitnuto: int = 0,
+    zaver_key: str = "",
+    zaver_body: str = "",
+    zaver: str = "",
+    sign: str = _SIGN_DEFAULT,
 ) -> Path:
     headline = edition_og_headline(
         dnesni_ucet=dnesni_ucet,
@@ -446,12 +533,19 @@ def render_edition_og_image(
         datum_unl=datum_unl,
         den=den,
     )
-    score = f"{proslo}:{zamitnuto}" if proslo or zamitnuto else ""
+    body = (zaver_body or zaver or "").strip()
+    key = (zaver_key or "").strip()
+    if body and not key and body.lower().startswith("poslušně hlásím"):
+        from svejk.build.day_content import split_zaver
+
+        key, body = split_zaver(body if not zaver_body else f"{zaver_key} {zaver_body}".strip())
     return render_og_image(
         Path(dest_dir) / og_image_filename(datum_unl),
         date_label=_edition_date_label(datum_unl, den),
-        headline=headline,
-        score=score,
+        headline=headline if not body else "",
+        zaver_key=key,
+        quote_body=body,
+        sign=sign,
     )
 
 
