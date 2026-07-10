@@ -2,7 +2,11 @@
   "datum": "07.07.2026",
   "den": "úterý",
   "topic_slugs": [
-    "debata-porad-07-07"
+    "debata-bydleni-endal-07-07",
+    "debata-paliativni-pece-07-07",
+    "debata-lidska-prava-stafaz-07-07",
+    "debata-porad-hlasovani-07-07",
+    "vl-n-z-07-07-noc"
   ],
   "stats": {
     "pocet_hlas": 1,
@@ -13,8 +17,8 @@
     "spor_o_porad": true,
     "dlouha_debata": false
   },
-  "dnesni_ucet": "Večer devět hlasování o pořadu,\nv noci pak prošla jedna změna rozpočtových pravidel.",
-  "zaver": "že úterý večer Sněmovna zase hodinu bojovala o program, Munzar přeřekl rok hlasování a Goláň u mikrofonu řekl, že taky maká, a teprve potom se dostala k rozpočtovým pravidlům.",
+  "dnesni_ucet": "Endal a bydlení, paliativní péče,\ndevět hlasování o pořadu, v noci rozpočty.",
+  "zaver": "že úterý večer Sněmovna nejdřív bojovala o program, Niemiec připomněl smrt náměstka Endala, Hoppe se přeřekl u roku strategie a Munzar u data hlasování, a teprve v deset večer prošla první změna rozpočtových pravidel.",
   "vysledek": [
     "* Niemiec (STAN) chtěl jako první bod dostupné bydlení, připomněl smrt náměstka Endala",
     "* Hoppe (Piráti) navrhl paliativní péči a při čtení strategie se přeřekl u roku",
