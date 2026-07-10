@@ -135,13 +135,8 @@
     var dot = wrap.querySelector(".reaction-dot");
     if (!dot) return;
     var picked = userVote(edition, slug);
-    if (picked && reactionEmoji[picked]) {
-      dot.textContent = reactionEmoji[picked];
-      dot.classList.add("is-picked-emoji");
-    } else {
-      dot.textContent = "";
-      dot.classList.remove("is-picked-emoji");
-    }
+    dot.textContent = "";
+    dot.classList.toggle("is-picked", !!picked);
   }
 
   function applyArticle(edition, slug) {

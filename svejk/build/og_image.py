@@ -13,7 +13,6 @@ _STATIC = Path(__file__).resolve().parent.parent / "static"
 _BRAND_ICON = _STATIC / "ph-fav.png"
 _EYEBROW = "Deník sněmovny"
 _SIGN_DEFAULT = "- Váš dobrý voják Švejk -"
-_TAGLINE = "Každý den to nejdůležitější ze Sněmovny."
 
 OG_WIDTH = 1200
 OG_HEIGHT = 630
@@ -353,8 +352,8 @@ def render_share_hero_image(
     margin = 72
     fav = _prepare_brand_icon(96)
     fav_gap = 18
-    text_x = margin + (fav.width + fav_gap if fav is not None else 0)
-    text_width = SHARE_HERO_WIDTH - margin - text_x
+    text_x = margin
+    text_width = SHARE_HERO_WIDTH - margin * 2
 
     quote_text = quote_body.strip()
     if zaver_key:
@@ -369,13 +368,12 @@ def render_share_hero_image(
     )
     mark_font = _load_font(max(56, int(getattr(quote_font, "size", 44) * 1.55)))
     sign_font = _load_font(22, bold=True, sans=True)
-    tagline_font = _load_font(20, italic=True)
     sign_text = sign.upper()
     line_h = max(40, int(getattr(quote_font, "size", 44) * 1.45))
     sign_h = _font_line_height(sign_font)
-    tagline_h = _font_line_height(tagline_font)
+    fav_h = fav.height if fav is not None else 0
     quote_h = len(quote_lines) * line_h
-    foot_h = sign_h + 6 + tagline_h
+    foot_h = max(sign_h, fav_h)
     block_h = quote_h + 20 + foot_h
     y = max(margin, (SHARE_HERO_HEIGHT - block_h) // 2)
 
@@ -393,13 +391,13 @@ def render_share_hero_image(
         y += line_h
 
     y += 20
-    draw.text((text_x, y), sign_text, fill=_CHAR, font=sign_font)
-    y += sign_h + 6
-    draw.text((text_x, y), _TAGLINE, fill=_CHAR, font=tagline_font)
-    foot_bottom = y + tagline_h
-
+    foot_x = margin
     if fav is not None:
-        img.paste(fav, (margin, foot_bottom - fav.height), fav)
+        fav_y = y + max(0, (foot_h - fav.height) // 2)
+        img.paste(fav, (foot_x, fav_y), fav)
+        foot_x += fav.width + fav_gap
+    sign_y = y + max(0, (foot_h - sign_h) // 2)
+    draw.text((foot_x, sign_y), sign_text, fill=_CHAR, font=sign_font)
 
     img.save(out, format="PNG", optimize=True)
     return out

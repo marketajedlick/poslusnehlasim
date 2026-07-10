@@ -2,7 +2,11 @@
 {% set hero_share_text = ('„' ~ hero_zaver ~ '“\n\n' ~ t.edition.sign ~ '\n\n' ~ share_page_url) if hero_zaver else '' %}
 <section class="card card-yellow card-tilt-l card-hero" id="card-hero" aria-label="Švejkovo hlášení">
   <div class="card-hero-inner">
-    <div class="card-hero-body">
+    <p class="card-hero-text">
+      {% set _ph = 'Poslušně hlásím, že ' %}
+      <span class="q-quote"><span class="q-mark">„</span>{% if content.zaver[:20] == _ph %}<strong><em>{{ _ph }}</em></strong>{{ content.zaver[20:] | glossary }}{% else %}{{ content.zaver | glossary }}{% endif %}<span class="q-mark">“</span></span>
+    </p>
+    <div class="card-hero-foot">
       {% if ph_fav_href and edition_back_href %}
       <a class="card-hero-svejk-link" href="{{ edition_back_href }}" aria-label="{{ t.nav.latest }}">
         <img class="card-hero-svejk" src="{{ ph_fav_href }}" alt="" aria-hidden="true" width="56" height="56">
@@ -10,20 +14,11 @@
       {% elif ph_fav_href %}
       <img class="card-hero-svejk" src="{{ ph_fav_href }}" alt="" aria-hidden="true" width="56" height="56">
       {% endif %}
-      <p class="card-hero-text">
-        {% set _ph = 'Poslušně hlásím, že ' %}
-        <span class="q-quote"><span class="q-mark">„</span>{% if content.zaver[:20] == _ph %}<strong><em>{{ _ph }}</em></strong>{{ content.zaver[20:] | glossary }}{% else %}{{ content.zaver | glossary }}{% endif %}<span class="q-mark">“</span></span>
-      </p>
-      <div class="card-hero-foot">
-        <div class="card-sign-wrap">
-          <div class="card-sign">{{ t.edition.sign }}</div>
-          <p class="card-tagline">Každý den to nejdůležitější ze Sněmovny.</p>
-        </div>
-        <div class="card-share">
-          <button type="button" class="share-btn" data-share-card="Švejkovo hlášení" data-share-id="card-hero"{% if hero_share_text %} data-share-text="{{ hero_share_text | replace('\n', '\\n') }}"{% endif %}{% if share_hero_href %} data-share-image="{{ share_hero_href }}"{% endif %} title="Poslat hlášení" aria-label="Sdílet Švejkovo hlášení">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.7" x2="15.4" y2="6.3"/><line x1="8.6" y1="13.3" x2="15.4" y2="17.7"/></svg>
-          </button>
-        </div>
+      <div class="card-sign">{{ t.edition.sign }}</div>
+      <div class="card-share">
+        <button type="button" class="share-btn" data-share-card="Švejkovo hlášení" data-share-id="card-hero"{% if hero_share_text %} data-share-text="{{ hero_share_text | replace('\n', '\\n') }}"{% endif %}{% if share_hero_href %} data-share-image="{{ share_hero_href }}"{% endif %} title="Poslat hlášení" aria-label="Sdílet Švejkovo hlášení">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.7" x2="15.4" y2="6.3"/><line x1="8.6" y1="13.3" x2="15.4" y2="17.7"/></svg>
+        </button>
       </div>
     </div>
   </div>
