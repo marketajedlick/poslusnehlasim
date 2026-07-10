@@ -10,8 +10,6 @@
   "fakty": [
     {
       "text": "Novela posouvá povinnost eLegislativy pro novely zákonů na 1. ledna 2027.",
-      "source": "steno",
-      "steno_id": "2025_3_00254",
       "citace": "Od 1. ledna 2027 se posouvá příprava a projednání návrhů zákonů v systému eLegislativa, avšak pouze pro novely zákonů."
     },
     {
@@ -22,8 +20,9 @@
     },
     {
       "text": "Hlasování číslo 11 ve 22:43: sto sedmdesát dva pro, nikdo proti.",
-      "source": "votes",
-      "citace": "Hlasování číslo 11, přihlášeno 176, pro 172, proti 0."
+      "source": "steno",
+      "citace": "Hlasování číslo 11, přihlášeno 176, pro 172, proti 0.",
+      "steno_id": "2025_3_00269"
     }
   ],
   "publikovat": true,

@@ -11,63 +11,48 @@
     {
       "text": "Debata navázala na přerušení ve 23 hodin z minulého týdne; Výborný pokračoval v hlučném sále, kde ministryně hovořila s poslancem u pultu.",
       "source": "steno",
-      "steno_id": "2025_23_00008",
-      "citace": "Sice ta míra hluku se nějak nesnížila, ale já se pokusím i přesto pokračovat ve svém komentáři v rámci druhého čtení novely zákona, sněmovní tisk 67, který jsem přerušil ve 23 hodin tuším minulý týden",
+      "steno_id": "2025_23_00006",
+      "citace": "Děkuju. Vážená paní ministryně, vážené kolegyně, vážení kolegové, sice ta míra hluku se nějak nesnížila,",
       "link_phrase": "ve dvacet tři hodin"
     },
     {
       "text": "Výborný varoval před kolapsem stavebního řízení a popsal chaos: poslanecký návrh, pak přes tisíc stran komplexního pozměňovacího návrhu a desítky dalších oprav.",
-      "source": "steno",
-      "steno_id": "2025_23_00008",
-      "citace": "Tady reálně hrozí kolaps stavebního řízení",
-      "link_phrase": "varoval před kolapsem stavebního řízení"
+      "citace": "Tady reálně hrozí kolaps stavebního řízení"
     },
     {
       "text": "Výborný popsal legislativní balík: nejdřív poslanecký návrh, pak přes tisíc stran komplexního pozměňovacího návrhu a desítky dalších oprav.",
-      "source": "steno",
-      "steno_id": "2025_23_00008",
-      "citace": "k tomu pak napíšeme přes tisíc stran komplexního pozměňovacího návrhu",
-      "link_phrase": "přes tisíc stran komplexního pozměňovacího návrhu"
+      "citace": "k tomu pak napíšeme přes tisíc stran komplexního pozměňovacího návrhu"
     },
     {
       "text": "Haas na začátku vydal technické hlášení, že má sedmnáct pozměňovacích návrhů, sliboval stručnost a sál se smál, když je začal rychle odškrtávat.",
       "source": "steno",
-      "steno_id": "2025_23_00098",
+      "steno_id": "2025_23_00096",
       "citace": "jestli dobře počítám, 17 pozměňovacích návrhů",
       "link_phrase": "sedmnáct pozměňovacích návrhů"
     },
     {
       "text": "Haas u prvního návrhu reagoval na smích v sále větou, že to je neobstrukční.",
-      "source": "steno",
-      "steno_id": "2025_23_00098",
-      "citace": "Snad vidíte, že to je neobstrukční",
-      "link_phrase": "neobstrukční"
+      "citace": "Snad vidíte, že to je neobstrukční"
     },
     {
       "text": "Stojanová spočítala 626 stavebních úřadů v republice a varovala, že na nové úřady chce přejít zhruba jen třetina současných zaměstnanců, dvě třetiny zvažují odchod.",
-      "source": "steno",
-      "steno_id": "2025_23_00100",
-      "citace": "na nové stavební úřady přejít přibližně jen třetina současných zaměstnanců",
-      "link_phrase": "jen třetina současných zaměstnanců"
+      "citace": "na nové stavební úřady přejít přibližně jen třetina současných zaměstnanců"
     },
     {
       "text": "Vlček přirovnal stavební zákon k Lex developerovi: vlajková loď, která je děravá jak cedník.",
-      "source": "steno",
-      "steno_id": "2025_23_00102",
-      "citace": "Lex developerem, který bohužel je takovou vlajkovou lodí",
-      "link_phrase": "děravé jak cedník"
+      "citace": "Lex developerem, který bohužel je takovou vlajkovou lodí"
     },
     {
       "text": "Berki řekl, že zákon přišel příliš dlouhý, tak z něj teď vypařují pojistky, a poprosil, aby se nepodpořily návrhy Haase, který opět opomíjí Liberec.",
       "source": "steno",
-      "steno_id": "2025_23_00110",
+      "steno_id": "2025_23_00108",
       "citace": "přišel nám příliš dlouhý, tak teď z něj vypáráváme leckteré pojistky, které v něm byly",
       "link_phrase": "z příliš dlouhého zákona teď vypařují pojistky"
     },
     {
       "text": "Berki upozornil, že Haas znovu opomíjí Liberec u městských stavebních předpisů.",
       "source": "steno",
-      "steno_id": "2025_23_00110",
+      "steno_id": "2025_23_00108",
       "citace": "Liberec opět opomíjí",
       "link_phrase": "opět opomíjí Liberec"
     },
@@ -75,20 +60,19 @@
       "text": "Barták hlásil, že hluk v sále neustává, a upozornil, že ve frontě je ještě čtyřicet řečníků bez přednostního práva.",
       "source": "steno",
       "kind": "scene",
-      "steno_id": "2025_23_00127",
+      "steno_id": "2025_23_00125",
       "citace": "Hluk v sále neustává",
       "link_phrase": "hluk v sále neustává"
     },
     {
       "text": "Neprošel návrh Lukáše Vlčka (STAN) na vrácení předlohy k novému projednání v hospodářském výboru, 22 proti 75.",
       "source": "votes",
-      "citace": "Hlasování číslo 4, pro 22, proti 75. Návrh na vrácení zákona garančnímu výboru k novému projednání byl zamítnut.",
-      "link_phrase": "Návrh Lukáše Vlčka"
+      "citace": "Hlasování číslo 4, pro 22, proti 75. Návrh na vrácení zákona garančnímu výboru k novému projednání byl zamítnut."
     },
     {
       "text": "Potom proběhla podrobná rozprava, poslanci se hlásili k desítkám pozměňovacích návrhů a Barták ve 20:14 ukončil druhé čtení.",
       "source": "steno",
-      "steno_id": "2025_23_00193",
+      "steno_id": "2025_23_00191",
       "citace": "Končím tedy druhé čtení tohoto návrhu zákona. Schůze skončila v 20.14 hodin.",
       "link_phrase": "prošla druhým čtením"
     }

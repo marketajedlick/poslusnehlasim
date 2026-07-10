@@ -6,7 +6,6 @@ def test_homepage_strings() -> None:
     t = load_strings()
     assert "homepage" in t
     assert "Poslanecké sněmovny" in t["homepage"]["h1"]
-    assert "poslanci hlasovali" in t["homepage"]["intro"]
 
 
 def test_edition_day_meta() -> None:

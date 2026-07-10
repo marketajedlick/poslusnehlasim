@@ -10,9 +10,9 @@
   "fakty": [
     {
       "text": "Na tom, jak se tady k sobě budeme chovat, novela jednacího řádu nezmění vůbec nic. Vzájemnému respektu nás nenaučí.",
-      "source": "steno",
+      "citace": "Na tom, jak se tady k sobě budeme chovat, novela jednacího řádu nezmění vůbec nic.",
       "steno_id": "2025_7_00068",
-      "citace": "Na tom, jak se tady k sobě budeme chovat, novela jednacího řádu nezmění vůbec nic."
+      "source": "steno"
     },
     {
       "text": "Nikdo ty faktické poznámky v takovéto debatě omezovat nebude. Ten jednací řád přijímáme a snažíme se ucpat díru, protože faktické poznámky bývají obstrukčně zneužívány.",
@@ -22,8 +22,6 @@
     },
     {
       "text": "Hlasování číslo 90, hlasovalo 138 poslanců, pro 57, proti 77. Návrh na prodloužení lhůt nebyl přijat.",
-      "source": "steno",
-      "steno_id": "2025_7_00978",
       "citace": "Hlasování číslo 90, pro 57, proti 77. Návrh na prodloužení lhůt nebyl přijat."
     }
   ],

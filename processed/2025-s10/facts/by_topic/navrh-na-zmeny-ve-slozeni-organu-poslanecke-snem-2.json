@@ -10,16 +10,14 @@
   "fakty": [
     {
       "text": "Hlasování číslo 249, pro 121, proti nikdo. Návrh byl přijat.",
-      "source": "steno",
-      "steno_id": "2025_10_01487",
       "citace": "Hlasování číslo 249, pro 121, proti nikdo. Návrh byl přijat."
     },
     {
       "text": "Poslanec Šťastný přistupuje k řečništi",
-      "source": "steno",
       "kind": "scene",
+      "citace": "(Poslanec Šťastný přistupuje k řečništi)",
       "steno_id": "2025_10_00689",
-      "citace": "(Poslanec Šťastný přistupuje k řečništi)"
+      "source": "steno"
     }
   ],
   "publikovat": true,
