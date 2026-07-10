@@ -9,46 +9,39 @@
   ],
   "fakty": [
     {
-      "text": "Vondráček chtěl novelizovat jednací řád po letech.",
+      "text": "Vondráček chtěl novelizovat jednací řád a zkrátit debatu ve třetím kole.",
       "citace": "snad konečně budeme schopni po mnoha a mnoha letech novelizovat jednací řád a nějakým způsobem upravit pravidla naší debaty.",
       "steno_id": "2025_24_01339",
-      "source": "steno"
+      "source": "steno",
+      "link_phrase": "zkrátila vlastní řeči"
     },
     {
-      "text": "Koalice chtěla ve třetím kole zákonů mluvit méně.",
-      "citace": "tomu, aby se opakovala debata z prvého a z druhého čtení, nicméně ta praxe se takto vyvinula.",
-      "steno_id": "2025_24_01339",
-      "source": "steno"
-    },
-    {
-      "text": "Novela zavádí hlasování na pevný čas ukončení rozpravy."
+      "text": "Novela zavádí hlasování na pevný čas ukončení rozpravy.",
+      "citace": "Navrhovaný § 66 například umožňuje, aby Sněmovna hlasováním stanovila pevný čas ukončení rozpravy a předsedající ji v tuto chvíli ukončí bez ohledu na to, zda jsou do ní přihlášeni ještě další řečníci.",
+      "steno_id": "2025_24_01906",
+      "source": "steno",
+      "link_phrase": "Novela zavádí hlasování na pevný čas"
     },
     {
       "text": "Vondráček připouští, že jde o postup nezákonný, Ústavní soud ho ale toleruje.",
       "citace": "ačkoliv je to postup nezákonný, tak Ústavní soud ho shledává v souladu s Ústavou, lze hlasovat pevně načas.",
       "steno_id": "2025_24_01351",
-      "source": "steno"
+      "source": "steno",
+      "link_phrase": "Ústavní soud jako nezákonný"
     },
     {
       "text": "Havel varoval před kontroverzními zákony a narážel na mediální novelu.",
       "citace": "následujících měsících vy chcete zařadit řadu velmi kontroverzních zákonů, a to zejména je vaše snaha destruovat svobodu a nezávislost veřejnoprávních médií.",
       "steno_id": "2025_24_01341",
-      "source": "steno"
+      "source": "steno",
+      "link_phrase": "Havel (TOP 09) varoval"
     },
     {
-      "text": "Havel: koalice chce destruovat nezávislost veřejnoprávních médií."
-    },
-    {
-      "text": "Vondráček: Sněmovna je bojiště, ne jeviště.",
-      "citace": "Děkuji za zapnutý mikrofon.",
+      "text": "Vondráček: Sněmovna je bojiště, ne jeviště, obstrukce většinu nezastaví.",
+      "citace": "považujete Poslaneckou sněmovnu za bojiště a nikoliv jeviště.",
       "steno_id": "2025_24_01351",
-      "source": "steno"
-    },
-    {
-      "text": "Vondráček: obstrukce nezastaví většinu.",
-      "citace": "není možné obstrukcemi zastavit většinu, neboť ačkoliv je to postup nezákonný, tak Ústavní soud ho shledává v souladu s Ústavou, lze hlasovat pevně načas.",
-      "steno_id": "2025_24_01351",
-      "source": "steno"
+      "source": "steno",
+      "link_phrase": "Vondráček (ANO) odpověděl"
     },
     {
       "text": "Opozice si ubránila neomezený počet faktických poznámek.",
@@ -57,7 +50,10 @@
       "citace": "návrh na zrušení navrženého omezení počtu faktických poznámek."
     },
     {
-      "text": "První hlasování o návrhu skončilo 3 proti 84."
+      "text": "První hlasování o návrhu skončilo 3 proti 84.",
+      "citace": "Hlasování číslo 186, přihlášeno 142 poslanců, pro 3, proti 84. Návrh nebyl přijat.",
+      "steno_id": "2025_24_01350",
+      "source": "steno"
     },
     {
       "text": "V pátek se hlasovalo o dalších šestadvaceti pozměňovacích návrzích od A po C, šestnáct jich padlo.",
