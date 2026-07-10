@@ -20,7 +20,9 @@ from svejk.build.nav import (
     smlouvy_pages_href,
     steno_sources_pages_href,
     vyznamenani_pages_href,
+    resolve_edition,
 )
+from svejk.build.urls import datum_unl_to_iso
 from svejk.build.mezin_smlouvy import has_smlouvy
 from svejk.build.recnici import has_recnici
 from svejk.build.steno_sources import has_steno_sources
@@ -541,10 +543,18 @@ def write_sitemap_xml(
         add_url(f"{base}{podpora_pages_href(base_path)}", last)
         add_url(f"{base}{soukromi_pages_href(base_path)}", last)
 
+    seen_dates: set[str] = set()
     for edition in editions:
-        href = edition_pages_href(edition.obdobi, edition.schuze, edition.datum_unl, base_path)
+        iso = datum_unl_to_iso(edition.datum_unl)
+        if iso in seen_dates:
+            continue
+        seen_dates.add(iso)
+        resolved = resolve_edition(edition.obdobi, edition.datum_unl) or edition
+        href = edition_pages_href(
+            resolved.obdobi, resolved.schuze, resolved.datum_unl, base_path
+        )
         add_url(f"{base}{href}", edition.when)
-        for sub_href in edition_subpage_hrefs(edition, base_path=base_path):
+        for sub_href in edition_subpage_hrefs(resolved, base_path=base_path):
             add_url(f"{base}{sub_href}", edition.when)
 
     xml = b'<?xml version="1.0" encoding="UTF-8"?>\n' + tostring(urlset, encoding="utf-8")

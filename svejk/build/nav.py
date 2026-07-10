@@ -11,6 +11,7 @@ from itertools import groupby
 from pathlib import Path
 
 from svejk.build.day_content import datum_design
+from svejk.build.urls import vydani_pages_href, vydani_subpage_href
 from svejk.build.io import read_json
 from svejk.paths import SchuzePaths, processed_root
 
@@ -118,7 +119,8 @@ def short_pager_label(datum_unl: str) -> str:
 
 
 def edition_web_href(obdobi: int, schuze: int, datum_unl: str) -> str:
-    return f"/noviny/{obdobi}/{schuze}/{datum_unl}"
+    _ = obdobi, schuze
+    return vydani_pages_href(datum_unl)
 
 
 def edition_pages_href(
@@ -127,58 +129,53 @@ def edition_pages_href(
     datum_unl: str,
     base_path: str = "",
 ) -> str:
-    """Statická URL pro GitHub Pages (soubor .html)."""
-    base = base_path.rstrip("/")
-    path = f"/noviny/{obdobi}/{schuze}/{datum_unl}.html"
-    return f"{base}{path}" if base else path
+    """Kanonická URL vydání na produkčním webu."""
+    _ = obdobi, schuze
+    return vydani_pages_href(datum_unl, base_path)
 
 
 def archiv_pages_href(base_path: str = "") -> str:
+    return _join_href_path(base_path, "/archiv/")
+
+
+def _join_href_path(base_path: str, path: str) -> str:
     base = base_path.rstrip("/")
-    path = "/archiv.html"
+    if not path.startswith("/"):
+        path = "/" + path
     return f"{base}{path}" if base else path
 
 
 def o_webu_pages_href(base_path: str = "") -> str:
-    base = base_path.rstrip("/")
-    path = "/o-webu/"
-    return f"{base}{path}" if base else path
+    return _join_href_path(base_path, "/o-webu/")
 
 
 def slovnicek_pages_href(base_path: str = "") -> str:
-    base = base_path.rstrip("/")
-    path = "/slovnicek.html"
-    return f"{base}{path}" if base else path
+    return _join_href_path(base_path, "/slovnicek/")
+
+
+def slovnicek_term_pages_href(slug: str, base_path: str = "") -> str:
+    slug = slug.strip("/")
+    return _join_href_path(base_path, f"/slovnicek/{slug}/")
 
 
 def pivo_pages_href(base_path: str = "") -> str:
-    base = base_path.rstrip("/")
-    path = "/pivo.html"
-    return f"{base}{path}" if base else path
+    return _join_href_path(base_path, "/pivo.html")
 
 
 def soukromi_pages_href(base_path: str = "") -> str:
-    base = base_path.rstrip("/")
-    path = "/soukromi/"
-    return f"{base}{path}" if base else path
+    return _join_href_path(base_path, "/soukromi/")
 
 
 def podpora_pages_href(base_path: str = "") -> str:
-    base = base_path.rstrip("/")
-    path = "/podpora/"
-    return f"{base}{path}" if base else path
+    return _join_href_path(base_path, "/podpora/")
 
 
 def podminky_pages_href(base_path: str = "") -> str:
-    base = base_path.rstrip("/")
-    path = "/podminky/"
-    return f"{base}{path}" if base else path
+    return _join_href_path(base_path, "/podminky/")
 
 
 def dekuju_pages_href(base_path: str = "") -> str:
-    base = base_path.rstrip("/")
-    path = "/dekuju.html"
-    return f"{base}{path}" if base else path
+    return _join_href_path(base_path, "/dekuju.html")
 
 
 def vyznamenani_pages_href(
@@ -188,9 +185,8 @@ def vyznamenani_pages_href(
     kind: str,
     base_path: str = "",
 ) -> str:
-    base = base_path.rstrip("/")
-    path = f"/noviny/{obdobi}/{schuze}/{datum_unl}-{kind}.html"
-    return f"{base}{path}" if base else path
+    _ = obdobi, schuze
+    return vydani_subpage_href(datum_unl, kind, base_path)
 
 
 def steno_sources_pages_href(
@@ -199,9 +195,8 @@ def steno_sources_pages_href(
     datum_unl: str,
     base_path: str = "",
 ) -> str:
-    base = base_path.rstrip("/")
-    path = f"/noviny/{obdobi}/{schuze}/{datum_unl}-steno.html"
-    return f"{base}{path}" if base else path
+    _ = obdobi, schuze
+    return vydani_subpage_href(datum_unl, "steno", base_path)
 
 
 def smlouvy_pages_href(
@@ -210,9 +205,8 @@ def smlouvy_pages_href(
     datum_unl: str,
     base_path: str = "",
 ) -> str:
-    base = base_path.rstrip("/")
-    path = f"/noviny/{obdobi}/{schuze}/{datum_unl}-smlouvy.html"
-    return f"{base}{path}" if base else path
+    _ = obdobi, schuze
+    return vydani_subpage_href(datum_unl, "smlouvy", base_path)
 
 
 def recnici_pages_href(
@@ -221,9 +215,8 @@ def recnici_pages_href(
     datum_unl: str,
     base_path: str = "",
 ) -> str:
-    base = base_path.rstrip("/")
-    path = f"/noviny/{obdobi}/{schuze}/{datum_unl}-recnici.html"
-    return f"{base}{path}" if base else path
+    _ = obdobi, schuze
+    return vydani_subpage_href(datum_unl, "recnici", base_path)
 
 
 def vyznamenani_neprosli_pages_href(

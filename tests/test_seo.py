@@ -74,7 +74,7 @@ def test_article_json_ld() -> None:
     data = article_json_ld(
         headline="Titulek na počkání",
         description="Perex dne.",
-        url="https://poslusnehlasim.cz/noviny/2025/24/02.07.2026.html",
+        url="https://poslusnehlasim.cz/vydani/2026-07-02/",
         date_unl="02.07.2026",
         site_url="https://poslusnehlasim.cz",
     )
@@ -129,7 +129,7 @@ def test_homepage_share_og_title() -> None:
 
 def test_faq_json_ld() -> None:
     data = faq_json_ld(
-        url="https://poslusnehlasim.cz/slovnicek.html",
+        url="https://poslusnehlasim.cz/slovnicek/",
         entries=[("Co je obstrukce?", "Zdržování jednání.")],
     )
     assert data["@type"] == "FAQPage"
@@ -165,6 +165,8 @@ def test_write_sitemap_includes_o_webu(tmp_path) -> None:
     )
     xml = path.read_text(encoding="utf-8")
     assert "https://poslusnehlasim.cz/o-webu/" in xml
-    assert "https://poslusnehlasim.cz/slovnicek.html" in xml
-    assert "https://poslusnehlasim.cz/noviny/2025/24/26.06.2026.html" in xml
+    assert "https://poslusnehlasim.cz/archiv/" in xml
+    assert "https://poslusnehlasim.cz/slovnicek/" in xml
+    assert "https://poslusnehlasim.cz/vydani/2026-06-26/" in xml
+    assert "noviny/" not in xml
     assert "feed.xml" not in xml

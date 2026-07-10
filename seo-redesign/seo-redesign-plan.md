@@ -99,30 +99,13 @@ Implementováno v [`seo.py`](../svejk/build/seo.py), testy v [`tests/test_seo.py
 
 ## Fáze 1 — restrukturalizace (~1–2 týdny)
 
-### 1.1 Nové URL schéma — centrální refaktor
+### 1.1 Nové URL schéma — hotovo (10. 7. 2026)
 
-Všechny `*_href()` funkce v [`nav.py`](../svejk/build/nav.py) přepsat na nový formát:
-
-```
-/vydani/{YYYY-MM-DD}/           (místo /noviny/{obdobi}/{schuze}/{DD.MM.YYYY}.html)
-/vydani/{YYYY-MM-DD}/steno/     (místo -steno.html)
-/archiv/                        (místo /archiv.html)
-/slovnicek/                     (místo /slovnicek.html)
-/slovnicek/{slug}/              (nové)
-```
-
-**Pomocné funkce** (nový modul `svejk/build/urls.py` nebo rozšíření `nav.py`):
-
-- `datum_unl_to_iso("08.07.2026")` → `"2026-07-08"`
-- `datum_iso_to_unl("2026-07-08")` → `"08.07.2026"`
-- `edition_slug(edition)` → ISO datum (schůze řešit přes `resolve_edition()` jako dnes)
-- `poslanec_slug(jmeno, prijmeni)` → `andrej-babis` (reuse logika z [`align.py`](../svejk/build/align.py) `_slug()`)
-
-**Export** ([`export_pages.py`](../svejk/build/export_pages.py)):
-
-- Zapisovat `site/vydani/2026-07-08/index.html` (trailing slash konvence)
-- Paralelně generovat staré cesty jako meta-refresh stuby (kompletní mapa dle spec §3 + všechny podstránky: `-recnici`, `-smlouvy`, vyznamenani)
-- Aktualizovat [`write_sitemap_xml()`](../svejk/build/seo.py) na nové URL
+- [`svejk/build/urls.py`](../svejk/build/urls.py): konverze dat, slugy, export cesty, legacy href
+- [`nav.py`](../svejk/build/nav.py): kanonické URL `/vydani/{ISO}/`, `/archiv/`, `/slovnicek/`, podstránky `/steno/`, …
+- [`export_pages.py`](../svejk/build/export_pages.py): export do `vydani/…/index.html`, meta-refresh stuby ze starých `/noviny/…`
+- [`seo.py`](../svejk/build/seo.py): sitemap s novými URL, deduplikace po dni
+- Testy: [`tests/test_urls.py`](../tests/test_urls.py), aktualizované [`tests/test_seo.py`](../tests/test_seo.py)
 
 ### 1.2 Homepage jako stabilní landing (§4)
 
@@ -239,7 +222,7 @@ Rozšířit [`glossary_markup.py`](../svejk/build/glossary_markup.py) a/nebo nov
 - [x] **Fáze 0:** Sladit JSON-LD (Organization `#org`, popisy, NewsArticle `about`)
 - [x] **Fáze 0:** Přidat textový seznam vydání do `archiv.html` (`archive_text_list`)
 - [ ] **Fáze 0:** GSC, odeslání sitemap, Rich Results Test (Markéta, po deployi)
-- [ ] **Fáze 1:** Nové URL schéma (`/vydani/YYYY-MM-DD/`), ISO konverze, meta-refresh stuby ze starých URL
+- [x] **Fáze 1:** Nové URL schéma (`/vydani/YYYY-MM-DD/`), ISO konverze, meta-refresh stuby ze starých URL
 - [ ] **Fáze 1:** Stabilní homepage landing (H1, úvod, H2 titulek dne, sekce Z archivu)
 - [ ] **Fáze 1:** Rozpad slovníčku na `/slovnicek/{slug}/` + DefinedTerm schema + odkazy v textech
 - [ ] **Fáze 1:** Breadcrumbs UI + BreadcrumbList JSON-LD na podstránkách

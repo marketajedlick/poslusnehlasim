@@ -179,7 +179,9 @@ def fetch_production_snapshot(
     dest = snapshots_root() / str(obdobi) / str(schuze) / f"{datum_unl}.html"
     if dest.is_file() and not overwrite:
         return dest
-    url = f"{site_url.rstrip('/')}/noviny/{obdobi}/{schuze}/{datum_unl}.html"
+    from svejk.build.nav import edition_pages_href
+
+    url = f"{site_url.rstrip('/')}{edition_pages_href(obdobi, schuze, datum_unl)}"
     try:
         html = get_bytes(
             url,
