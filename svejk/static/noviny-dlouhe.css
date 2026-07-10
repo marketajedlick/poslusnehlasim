@@ -1265,7 +1265,7 @@ a.steno-link .term-term{
   align-items:center;
   gap:4px;
   padding:6px 8px;
-  background:var(--paper);
+  background:var(--white);
   border:1px solid var(--border-strong);
   box-shadow:0 4px 16px rgba(0,0,0,.08);
 }
