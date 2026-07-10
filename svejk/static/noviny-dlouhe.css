@@ -1880,23 +1880,28 @@ body.archiv-page{
   color:var(--red);
   text-decoration:underline;
 }
-.homepage-landing{
-  margin:0 0 4px;
-}
-.homepage-landing > h1.homepage-title{
-  font:500 0.75rem/1.45 var(--font-sans);
+.homepage-title{
+  font-family:var(--font-sans);
+  font-size:clamp(0.8125rem,1.7vw,0.875rem);
+  font-weight:500;
+  line-height:1.45;
   letter-spacing:.01em;
-  margin:0;
+  margin:22px 0 0;
   color:var(--ink);
+}
+.homepage-title strong{
+  font-weight:700;
+  color:var(--char);
 }
 .edition-day-headline{
   margin:0 0 18px;
 }
 .edition-day-title{
-  font-family:var(--serif);
-  font-size:clamp(1.5rem,3.5vw,2rem);
-  font-weight:800;
-  line-height:1.15;
+  font-family:var(--font-serif);
+  font-size:clamp(1.75rem,4.8vw,2.35rem);
+  font-weight:700;
+  line-height:1.12;
+  letter-spacing:-.015em;
   margin:0 0 6px;
   color:var(--char);
 }

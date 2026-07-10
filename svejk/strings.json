@@ -56,6 +56,8 @@
   },
   "homepage": {
     "h1": "Poslušně hlásím, satirický deník Poslanecké sněmovny",
+    "h1_lead": "Poslušně hlásím",
+    "h1_tail": ", satirický deník Poslanecké sněmovny",
     "archive_heading": "Z archivu",
     "archive_all": "Celý archiv"
   },
