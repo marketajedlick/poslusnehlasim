@@ -35,6 +35,21 @@ def poslanec_slug(jmeno: str, prijmeni: str) -> str:
     return slugify(f"{jmeno} {prijmeni}")
 
 
+def article_anchor_id(*, slug: str = "", num: int = 0) -> str:
+    """HTML fragment pro deep-link na článek ve vydání."""
+    return slug or f"article-{num}"
+
+
+def edition_article_href(
+    datum_unl: str,
+    *,
+    slug: str = "",
+    num: int = 0,
+    base_path: str = "",
+) -> str:
+    return f"{vydani_pages_href(datum_unl, base_path)}#{article_anchor_id(slug=slug, num=num)}"
+
+
 def _join_href(base_path: str, path: str) -> str:
     if not path.startswith("/"):
         path = "/" + path

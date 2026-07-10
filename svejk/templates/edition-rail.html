@@ -30,7 +30,9 @@
     {% for week in session_calendar.weeks %}
     <div class="session-cal-week">
       {% for day in week %}
-      {% if day.empty %}
+      {% if day.ghost %}
+      <span class="session-cal-cell is-ghost" aria-hidden="true">{{ day.n }}</span>
+      {% elif day.empty %}
       <span class="session-cal-cell" aria-hidden="true"></span>
       {% elif day.today %}
       <span class="session-cal-cell is-today">{{ day.n }}</span>

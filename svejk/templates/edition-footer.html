@@ -1,4 +1,7 @@
 <footer class="edition-footer" id="korektura">
+  {% set pager_class = "edition-pager--footer" %}
+  {% set pager_sep = "|" %}
+  {% include "edition-pager.html" %}
   {% if newsletter.show_subscribe %}
   {% for line in t.subscribe.gloss.split('\n') if line.strip() %}
   <p class="edition-footer-label">{{ line.strip() }}</p>

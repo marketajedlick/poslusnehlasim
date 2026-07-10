@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+{% include "head-noviny.html" %}
+<title>{{ title }}</title>
+<meta name="description" content="{{ answer }}" />
+<link rel="canonical" href="{{ canonical_url }}" />
+{% include "og-meta.html" %}
+{% if schema_json_ld %}
+<script type="application/ld+json">{{ schema_json_ld | tojson }}</script>
+{% endif %}
+{% include "breadcrumb-jsonld.html" %}
+<link rel="stylesheet" href="{{ fonts_css_href }}" />
+<link rel="stylesheet" href="{{ css_href }}" />
+</head>
+<body class="slovnicek-page slovnicek-term-page">
+<div class="slovnicek-stage">
+  {% include "breadcrumbs.html" %}
+  <header class="slovnicek-head">
+    <h1 class="slovnicek-title">{{ t.glossary_term.heading_prefix }} {{ term }}?</h1>
+    <p class="slovnicek-gloss">{{ answer }}</p>
+    <p class="slovnicek-back">
+      <a class="slovnicek-back-link" href="{{ slovnicek_index_href }}">{{ t.glossary_term.back_to_index }} →</a>
+    </p>
+    {% set site_nav_hide_glossary = true %}
+    {% include "site-nav.html" %}
+  </header>
+
+  <section class="slovnicek-mentions" aria-label="{{ t.glossary_term.mentions_heading }}">
+    <h2 class="slovnicek-mentions-title">{{ t.glossary_term.mentions_heading }}</h2>
+    {% if mentions %}
+    <ul class="slovnicek-mentions-list">
+      {% for row in mentions %}
+      <li class="slovnicek-mention">
+        <a class="slovnicek-mention-link" href="{{ row.href }}">
+          <span class="slovnicek-mention-date">{{ row.date_label }}</span>
+          <span class="slovnicek-mention-headline">{{ row.headline }}</span>
+        </a>
+        <p class="slovnicek-mention-excerpt">{{ row.excerpt }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="slovnicek-mentions-empty">{{ t.glossary_term.mentions_empty }}</p>
+    {% endif %}
+  </section>
+</div>
+{% include "site-footer.html" %}
+{% include "cookie-consent.html" %}
+</body>
+</html>

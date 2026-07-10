@@ -31,6 +31,7 @@ from svejk.build.nav import (
     podminky_pages_href,
     podpora_pages_href,
     slovnicek_pages_href,
+    slovnicek_term_pages_href,
     soukromi_pages_href,
     vyznamenani_pages_href,
     steno_sources_pages_href,
@@ -174,7 +175,11 @@ def _edition_postreh(content: DenContent) -> tuple[dict[str, str] | None, int | 
     )
 
 
-def _edition_slovnicek(content: DenContent) -> list[tuple[str, str]]:
+def _edition_slovnicek(
+    content: DenContent,
+    *,
+    base_path: str = "",
+) -> list[tuple[str, str, str | None]]:
     from svejk.build.glossary_markup import slovnicek_dne
 
     chunks: list[str] = [
@@ -212,7 +217,7 @@ def _edition_slovnicek(content: DenContent) -> list[tuple[str, str]]:
                 for bullet in section.get("bullets") or []:
                     if isinstance(bullet, str):
                         chunks.append(bullet)
-    return slovnicek_dne(*chunks)
+    return slovnicek_dne(*chunks, base_path=base_path)
 
 
 def css_asset_version() -> str:
@@ -388,6 +393,27 @@ def _page_path_from_canonical(canonical_url: str, site_url: str) -> str:
         path = canonical_url[len(site) :]
         return path if path else "/"
     return canonical_url
+
+
+def _edition_subpage_breadcrumbs(
+    *,
+    site_url: str,
+    base_path: str,
+    obdobi: int,
+    schuze: int,
+    datum_unl: str,
+    subpage_label: str,
+) -> dict:
+    from svejk.build.seo import breadcrumbs_ctx_edition_subpage
+
+    return breadcrumbs_ctx_edition_subpage(
+        site_url=site_url,
+        base_path=base_path,
+        obdobi=obdobi,
+        schuze=schuze,
+        datum_unl=datum_unl,
+        subpage_label=subpage_label,
+    )
 
 
 def _site_ctx(
@@ -650,6 +676,26 @@ def render_den_html(
         first_item_nadpis=content.items[0].nadpis if content.items else "",
         edition_title=edition_title,
     )
+    from svejk.build.seo import breadcrumbs_ctx_edition
+    from svejk.build.day_content import edition_day_meta as _edition_day_meta
+    from svejk.build.nav import homepage_archive_list as _homepage_archive_list
+    from svejk.build.urls import datum_unl_to_iso as _datum_unl_to_iso
+
+    edition_day_headline = schema_headline
+    edition_day_meta_label = _edition_day_meta(content.den, content.datum, paths.schuze)
+    edition_iso_date = _datum_unl_to_iso(content.datum)
+    homepage_archive = (
+        _homepage_archive_list(
+            paths,
+            content.datum,
+            link_mode=link_mode if link_mode in ("pages", "web") else "pages",
+            obdobi=ob,
+            base_path=base_path,
+            limit=5,
+        )
+        if is_homepage
+        else ()
+    )
     import re as _re
 
     from svejk.build.glossary_markup import strip_glossary_markup as _strip_gloss
@@ -667,7 +713,12 @@ def render_den_html(
         nadpis = _plain(item.nadpis)
         body_chunks.append(f"{nadpis}. {chunk}")
         schema_parts.append(
-            {"headline": nadpis, "body": chunk, "position": item.num}
+            {
+                "headline": nadpis,
+                "body": chunk,
+                "position": item.num,
+                "url": f"{canonical_url}#{item.anchor_id}",
+            }
         )
     if content.zaver:
         body_chunks.append(_plain(content.zaver))
@@ -756,7 +807,7 @@ def render_den_html(
         base_path=base_path,
         link_mode=link_mode if link_mode in ("pages", "web") else "pages",
     )
-    slovnicek_dne = _edition_slovnicek(content)
+    slovnicek_dne = _edition_slovnicek(content, base_path=base_path)
     fav_href = f"{base_path.rstrip('/')}/static/ph-fav.svg" if base_path else "/static/ph-fav.svg"
     svejk_img_href = f"{base_path.rstrip('/')}/static/svejk-terra.png" if base_path else "/static/svejk-terra.png"
     share_hero = (
@@ -801,6 +852,17 @@ def render_den_html(
             closing_seed=f"{ob}/{paths.schuze}/{content.datum}",
         ),
         **favicons,
+        is_homepage=is_homepage,
+        edition_day_headline=edition_day_headline,
+        edition_day_meta=edition_day_meta_label,
+        edition_iso_date=edition_iso_date,
+        homepage_archive=homepage_archive,
+        **breadcrumbs_ctx_edition(
+            site_url=cfg.site_url,
+            base_path=base_path,
+            datum_unl=content.datum,
+            is_homepage=is_homepage,
+        ),
     )
 
 
@@ -1151,6 +1213,8 @@ def render_archiv_html(
         description=site_meta_description(),
     )
     tpl = _jinja_env().get_template("archiv.html")
+    from svejk.build.seo import breadcrumbs_ctx_archiv
+
     return tpl.render(
         obdobi=obdobi,
         archive_months=months,
@@ -1166,6 +1230,7 @@ def render_archiv_html(
         **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="archiv"),
         **favicons,
+        **breadcrumbs_ctx_archiv(site_url=cfg.site_url, base_path=base_path),
     )
 
 
@@ -1368,6 +1433,14 @@ def render_vyznamenani_table_html(
         ),
         **favicons,
         **og,
+        **_edition_subpage_breadcrumbs(
+            site_url=cfg.site_url,
+            base_path=base_path,
+            obdobi=obdobi,
+            schuze=schuze,
+            datum_unl=datum_unl,
+            subpage_label=meta["title"],
+        ),
     )
 
 
@@ -1454,6 +1527,14 @@ def render_steno_sources_html(
         ),
         **favicons,
         **og,
+        **_edition_subpage_breadcrumbs(
+            site_url=cfg.site_url,
+            base_path=base_path,
+            obdobi=obdobi,
+            schuze=schuze,
+            datum_unl=datum_unl,
+            subpage_label=page_title,
+        ),
     )
 
 
@@ -1542,6 +1623,14 @@ def render_smlouvy_html(
         ),
         **favicons,
         **og,
+        **_edition_subpage_breadcrumbs(
+            site_url=cfg.site_url,
+            base_path=base_path,
+            obdobi=obdobi,
+            schuze=schuze,
+            datum_unl=datum_unl,
+            subpage_label=page_title,
+        ),
     )
 
 
@@ -1618,6 +1707,14 @@ def render_recnici_table_html(
         ),
         **favicons,
         **og,
+        **_edition_subpage_breadcrumbs(
+            site_url=cfg.site_url,
+            base_path=base_path,
+            obdobi=obdobi,
+            schuze=schuze,
+            datum_unl=datum_unl,
+            subpage_label=meta["title"],
+        ),
     )
 
 
@@ -1649,6 +1746,7 @@ def render_slovnicek_html(
         title=gp["title"],
         description=site_meta_description(),
     )
+    from svejk.build.seo import breadcrumbs_ctx_slovnicek
     from svejk.build.seo import faq_json_ld as _faq_json_ld
 
     faq_ld = _faq_json_ld(url=canonical_url, entries=entries)
@@ -1658,11 +1756,13 @@ def render_slovnicek_html(
             "term": slovnicek_term_label(slovnicek_display_term(q)),
             "answer": a,
             "anchor": slovnicek_anchor(q),
+            "href": slovnicek_term_pages_href(slovnicek_anchor(q), base_path),
         }
         for q, a in entries
     ]
     return tpl.render(
         slovnicek=slovnicek,
+        slovnicek_index_href=slovnicek_pages_href(base_path),
         canonical_url=canonical_url,
         faq_json_ld=faq_ld,
         **og,
@@ -1675,6 +1775,82 @@ def render_slovnicek_html(
         **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="slovnicek"),
         **favicons,
+        **breadcrumbs_ctx_slovnicek(site_url=cfg.site_url, base_path=base_path),
+    )
+
+
+def render_slovnicek_term_html(
+    obdobi: int,
+    *,
+    term: str,
+    answer: str,
+    slug: str,
+    mentions: tuple[Any, ...] = (),
+    inline_css: bool = False,
+    css_href: str | None = None,
+    fonts_css_href: str | None = None,
+    base_path: str = "",
+) -> str:
+    css = _CSS.read_text(encoding="utf-8") if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path)
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path)
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    editions = list_site_editions(obdobi)
+    if not editions:
+        raise ValueError(f"Žádná vydání pro období {obdobi}")
+    term_label = slovnicek_term_label(slovnicek_display_term(term))
+    term_href = slovnicek_term_pages_href(slug, base_path)
+    glossary_href = slovnicek_pages_href(base_path)
+    canonical_url = f"{cfg.site_url.rstrip('/')}{term_href}"
+    page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
+    gt = load_strings()["glossary_term"]
+    from svejk.build.seo import (
+        breadcrumbs_ctx_slovnicek_term,
+        slovnicek_term_json_ld,
+        slovnicek_term_page_title,
+    )
+
+    title = slovnicek_term_page_title(term_label)
+    description = answer
+    og = _og_context(
+        site_url=cfg.site_url,
+        base_path=base_path,
+        title=title,
+        description=description,
+    )
+    schema_ld = slovnicek_term_json_ld(
+        url=canonical_url,
+        term=term_label,
+        answer=answer,
+        glossary_url=f"{cfg.site_url.rstrip('/')}{glossary_href}",
+    )
+    tpl = _jinja_env().get_template("slovnicek-pojem.html")
+    return tpl.render(
+        term=term_label,
+        answer=answer,
+        mentions=mentions,
+        canonical_url=canonical_url,
+        schema_json_ld=schema_ld,
+        slovnicek_index_href=glossary_href,
+        title=title,
+        **og,
+        inline_css=inline_css,
+        css=css,
+        css_href=css_href,
+        fonts_css_href=fonts_css_href,
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx(site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        **_site_nav_ctx(obdobi, base_path),
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed=f"slovnicek/{slug}"),
+        **favicons,
+        **breadcrumbs_ctx_slovnicek_term(
+            site_url=cfg.site_url,
+            base_path=base_path,
+            term_label=term_label,
+        ),
     )
 
 

@@ -111,6 +111,11 @@ class DenItem:
     def stamp(self) -> str:
         return _verdikt_stamp(self.verdikt)
 
+    @property
+    def anchor_id(self) -> str:
+        """HTML `id` pro deep-link na článek (`/vydani/…/#{anchor_id}`)."""
+        return self.slug or f"article-{self.num}"
+
 
 @dataclass
 class DenContent:
@@ -369,6 +374,14 @@ def datum_design(datum_unl: str, den: str) -> str:
     return f"{d.day}. {month} {d.year}"
 
 
+def edition_day_meta(den: str, datum_unl: str, schuze: int) -> str:
+    """Řádek pod titulkem dne: Poslanecká sněmovna, úterý 2. července 2026 · 45. schůze."""
+    d = datetime.strptime(datum_unl, "%d.%m.%Y")
+    month = _MESICE_GEN[d.month - 1]
+    den_label = den.strip().capitalize() if den else ""
+    return f"Poslanecká sněmovna, {den_label} {d.day}. {month} {d.year} · {schuze}. schůze"
+
+
 def calendar_parts(datum_unl: str, den: str) -> tuple[str, str, str]:
     d = datetime.strptime(datum_unl, "%d.%m.%Y")
     den_label = den.capitalize()
@@ -616,7 +629,7 @@ def build_den_content(
     )
     from svejk.build.glossary_markup import apply_glossary_to_content
 
-    apply_glossary_to_content(content)
+    apply_glossary_to_content(content, base_path=base_path, link_mode=link_mode)
     from svejk.build.mezin_smlouvy import apply_smlouvy_page_links
 
     apply_smlouvy_page_links(

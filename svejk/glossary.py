@@ -1441,6 +1441,11 @@ def slovnicek_anchor(question: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", ascii_text).strip("-")
 
 
+def slovnicek_term_slug(term: str) -> str:
+    """Slug pro `/slovnicek/{slug}/` — stejný algoritmus jako `slovnicek_anchor`."""
+    return slovnicek_anchor(term)
+
+
 # Švejkův slovníček: panel vpravo na webu (pojem → vysvětlení).
 SLOVNIČEK: tuple[tuple[str, str], ...] = (
     ("pozměňovací návrh", "Chvíle, kdy někdo řekne: „Já bych to napsal trochu jinak.“"),

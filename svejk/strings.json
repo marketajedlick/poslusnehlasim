@@ -11,6 +11,9 @@
     "glossary": "Švejkův slovníček",
     "beer": "Kup Švejkovi pivo 🍺"
   },
+  "breadcrumbs": {
+    "aria": "Drobečková navigace"
+  },
   "footer": {
     "aria": "Patička webu",
     "aria_legal": "Právní informace a podpora",
@@ -51,8 +54,15 @@
     "error_setup": "Odběr se právě nastavuje, zkus to za pár minut znovu.",
     "error_generic": "Odběr se nepodařil. Zkontroluj e-mail a zkus to znovu."
   },
+  "homepage": {
+    "h1": "Poslušně hlásím, satirický deník Poslanecké sněmovny",
+    "intro": "Každý jednací den srozumitelně: o čem poslanci hlasovali, co zaznělo v rozpravě a co to znamená. Bez stenoprotokolové mlhy.",
+    "archive_heading": "Z archivu",
+    "archive_all": "Celý archiv"
+  },
   "edition": {
     "nav_aria": "Vydání deníku",
+    "pager_aria": "Navigace mezi vydáními",
     "prev_aria": "Starší vydání",
     "next_aria": "Novější vydání",
     "schuze_title": "schůze",
@@ -116,6 +126,12 @@
     "meta": "Poslušně hlásím, že sněmovna má vlastní jazyk. Slovníček pojmů pro lidi, kteří politiku běžně nesledují.",
     "heading": "Švejkův slovníček",
     "gloss": "Poslušně hlásím, že sněmovna má vlastní jazyk a obyčejný člověk si občas připadá jako na vojně."
+  },
+  "glossary_term": {
+    "heading_prefix": "Co je",
+    "mentions_heading": "Kde se o tom psalo",
+    "mentions_empty": "Zatím jsme o tom ve vydáních nic nenapsali. Sněmovna se zřejmě věnuje jiným věcem.",
+    "back_to_index": "Celý slovníček"
   },
   "beer_page": {
     "title": "Kup Švejkovi pivo · Poslušně hlásím",

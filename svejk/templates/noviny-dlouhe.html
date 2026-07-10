@@ -10,6 +10,7 @@
 {% if website_json_ld %}
 <script type="application/ld+json">{{ website_json_ld | tojson }}</script>
 {% endif %}
+{% include "breadcrumb-jsonld.html" %}
 <link rel="alternate" type="text/plain" title="Informace pro AI (llms.txt)" href="{{ newsletter.site_url }}/llms.txt" />
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="alternate" type="application/rss+xml" title="{{ t.brand.name }}, nová vydání" href="{{ newsletter.feed_url }}" />
@@ -27,30 +28,29 @@
     <main class="edition-main" id="edition-main">
       <div class="edition-main-inner" id="edition-content">
         <div class="masthead-mobile-only">
+          {% set masthead_decor_only = true %}
           {% include "edition-masthead.html" %}
         </div>
 
         {% if nav %}
-        <div class="pager pager-desktop masthead-desktop-only">
-          {% if nav.prev %}
-          <a class="pager-tag" href="{{ nav.prev.href }}" title="{{ nav.prev.title }}">← {{ nav.prev.short_label or nav.prev.label }}</a>
-          {% else %}
-          <span class="pager-tag disabled">←</span>
-          {% endif %}
-          <span class="pager-now">V&nbsp;Praze, dne {{ datum_design }}</span>
-          {% if nav.next %}
-          <a class="pager-tag" href="{{ nav.next.href }}" title="{{ nav.next.title }}">{{ nav.next.short_label or nav.next.label }} →</a>
-          {% else %}
-          <span class="pager-tag disabled">→</span>
-          {% endif %}
-        </div>
+        {% set pager_class = "pager pager-desktop masthead-desktop-only" %}
+        {% set pager_center_prague = true %}
+        {% include "edition-pager.html" %}
         {% endif %}
 
         <div class="edition-masthead-nav masthead-desktop-only">
           {% include "site-nav.html" %}
         </div>
 
+        {% include "breadcrumbs.html" %}
+
         <div class="rule-double"></div>
+
+        {% if is_homepage %}
+        {% include "homepage-landing.html" %}
+        {% endif %}
+
+        {% include "edition-day-headline.html" %}
 
         {% include "card-hero.html" %}
 
@@ -77,6 +77,11 @@
         {% endif %}
 
         {% include "card-donate.html" %}
+
+        {% if is_homepage %}
+        {% include "homepage-archive.html" %}
+        {% endif %}
+
         {% include "edition-footer.html" %}
       </div>
     </main>

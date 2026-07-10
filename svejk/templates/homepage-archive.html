@@ -1,0 +1,13 @@
+{% if homepage_archive %}
+<section class="homepage-archive archiv-text-list" aria-labelledby="homepage-archive-title">
+  <h2 class="archiv-text-list-title" id="homepage-archive-title">{{ t.homepage.archive_heading }}</h2>
+  <ul class="archiv-text-list-items">
+    {% for entry in homepage_archive %}
+    <li><a href="{{ entry.href }}">{{ entry.label }}</a></li>
+    {% endfor %}
+  </ul>
+  {% if archive_href %}
+  <p class="homepage-archive-more"><a href="{{ archive_href }}">{{ t.homepage.archive_all }} →</a></p>
+  {% endif %}
+</section>
+{% endif %}

@@ -1,0 +1,34 @@
+{% if nav and (nav.prev or nav.next) %}
+<nav
+  class="edition-pager{% if pager_class %} {{ pager_class }}{% endif %}"
+  aria-label="{{ t.edition.pager_aria }}"
+>
+  {% if nav.prev %}
+  <a
+    class="pager-tag edition-pager-prev"
+    href="{{ nav.prev.href }}"
+    title="{{ nav.prev.title }}"
+    aria-label="{{ t.edition.prev_aria }}: {{ nav.prev.title }}"
+  >← {{ nav.prev.short_label or nav.prev.label }}</a>
+  {% else %}
+  <span class="pager-tag disabled" aria-hidden="true">←</span>
+  {% endif %}
+  {% if pager_center_prague %}
+  <span class="pager-now">V&nbsp;Praze, dne {{ datum_design }}</span>
+  {% elif pager_center %}
+  <span class="pager-now">{{ pager_center }}</span>
+  {% elif pager_sep %}
+  <span class="edition-pager-sep" aria-hidden="true">{{ pager_sep }}</span>
+  {% endif %}
+  {% if nav.next %}
+  <a
+    class="pager-tag edition-pager-next"
+    href="{{ nav.next.href }}"
+    title="{{ nav.next.title }}"
+    aria-label="{{ t.edition.next_aria }}: {{ nav.next.title }}"
+  >{{ nav.next.short_label or nav.next.label }} →</a>
+  {% else %}
+  <span class="pager-tag disabled" aria-hidden="true">→</span>
+  {% endif %}
+</nav>
+{% endif %}

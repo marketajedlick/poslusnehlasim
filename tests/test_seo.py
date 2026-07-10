@@ -1,16 +1,25 @@
 from svejk.build.seo import (
     article_json_ld,
+    breadcrumb_json_ld,
+    breadcrumbs_ctx_archiv,
+    breadcrumbs_ctx_edition,
+    breadcrumbs_ctx_edition_subpage,
+    breadcrumbs_ctx_slovnicek,
+    breadcrumbs_ctx_slovnicek_term,
     edition_meta_description,
     edition_page_title,
     faq_json_ld,
     homepage_og_title,
     homepage_page_title,
+    slovnicek_term_json_ld,
+    slovnicek_term_page_title,
     site_brand_line,
     site_meta_description,
     website_json_ld,
     write_robots_txt,
     write_sitemap_xml,
 )
+from svejk.build.seo import BreadcrumbCrumb, SITE_NAME
 from svejk.build.nav import Edition
 
 
@@ -90,6 +99,27 @@ def test_article_json_ld() -> None:
     )
 
 
+def test_article_json_ld_has_part_urls() -> None:
+    data = article_json_ld(
+        headline="Titulek",
+        description="Perex.",
+        url="https://poslusnehlasim.cz/vydani/2026-07-02/",
+        date_unl="02.07.2026",
+        site_url="https://poslusnehlasim.cz",
+        parts=[
+            {
+                "headline": "Bod A",
+                "body": "Text A",
+                "position": 1,
+                "url": "https://poslusnehlasim.cz/vydani/2026-07-02/#novela-z-o-obalech",
+            }
+        ],
+    )
+    part = data["hasPart"][0]
+    assert part["@id"] == "https://poslusnehlasim.cz/vydani/2026-07-02/#novela-z-o-obalech"
+    assert part["url"] == part["@id"]
+
+
 def test_homepage_page_title() -> None:
     assert homepage_page_title() == (
         "Poslušně hlásím, denní zpravodaj z Poslanecké sněmovny"
@@ -167,6 +197,93 @@ def test_write_sitemap_includes_o_webu(tmp_path) -> None:
     assert "https://poslusnehlasim.cz/o-webu/" in xml
     assert "https://poslusnehlasim.cz/archiv/" in xml
     assert "https://poslusnehlasim.cz/slovnicek/" in xml
+    assert "https://poslusnehlasim.cz/slovnicek/obstrukce/" in xml
     assert "https://poslusnehlasim.cz/vydani/2026-06-26/" in xml
     assert "noviny/" not in xml
     assert "feed.xml" not in xml
+
+
+def test_breadcrumb_json_ld() -> None:
+    crumbs = (
+        BreadcrumbCrumb(label=SITE_NAME, href="/"),
+        BreadcrumbCrumb(label="Archiv vydání", href="/archiv/"),
+        BreadcrumbCrumb(label="8. 7. 2026", href=""),
+    )
+    data = breadcrumb_json_ld(
+        site_url="https://poslusnehlasim.cz",
+        crumbs=crumbs,
+    )
+    assert data["@type"] == "BreadcrumbList"
+    items = data["itemListElement"]
+    assert len(items) == 3
+    assert items[0]["name"] == SITE_NAME
+    assert items[0]["item"] == "https://poslusnehlasim.cz/"
+    assert items[1]["item"] == "https://poslusnehlasim.cz/archiv/"
+    assert "item" not in items[2]
+
+
+def test_breadcrumbs_ctx_edition_skips_homepage() -> None:
+    empty = breadcrumbs_ctx_edition(
+        site_url="https://poslusnehlasim.cz",
+        datum_unl="08.07.2026",
+        is_homepage=True,
+    )
+    assert empty["breadcrumbs"] == ()
+    assert empty["breadcrumb_json_ld"] is None
+
+    edition = breadcrumbs_ctx_edition(
+        site_url="https://poslusnehlasim.cz",
+        datum_unl="08.07.2026",
+        is_homepage=False,
+    )
+    assert len(edition["breadcrumbs"]) == 3
+    assert edition["breadcrumbs"][-1].label == "8. 7. 2026"
+    assert edition["breadcrumb_json_ld"] is not None
+
+
+def test_breadcrumbs_ctx_archiv_and_slovnicek() -> None:
+    arch = breadcrumbs_ctx_archiv(site_url="https://poslusnehlasim.cz")
+    assert arch["breadcrumbs"][-1].href == ""
+    assert arch["breadcrumbs"][0].href == "/"
+
+    sub = breadcrumbs_ctx_edition_subpage(
+        site_url="https://poslusnehlasim.cz",
+        obdobi=2025,
+        schuze=45,
+        datum_unl="08.07.2026",
+        subpage_label="Stenoprotokol",
+    )
+    assert len(sub["breadcrumbs"]) == 4
+    assert sub["breadcrumbs"][-1].label == "Stenoprotokol"
+    assert "/vydani/2026-07-08/" in sub["breadcrumbs"][2].href
+
+    gloss = breadcrumbs_ctx_slovnicek(site_url="https://poslusnehlasim.cz")
+    assert gloss["breadcrumbs"][-1].label == "Švejkův slovníček"
+
+    term = breadcrumbs_ctx_slovnicek_term(
+        site_url="https://poslusnehlasim.cz",
+        term_label="Obstrukce",
+    )
+    assert len(term["breadcrumbs"]) == 3
+    assert term["breadcrumbs"][1].href == "/slovnicek/"
+    assert term["breadcrumbs"][-1].label == "Obstrukce"
+
+
+def test_slovnicek_term_json_ld() -> None:
+    data = slovnicek_term_json_ld(
+        url="https://poslusnehlasim.cz/slovnicek/obstrukce/",
+        term="Obstrukce",
+        answer="Zdržování jednání.",
+        glossary_url="https://poslusnehlasim.cz/slovnicek/",
+    )
+    graph = data["@graph"]
+    assert graph[0]["@type"] == "DefinedTerm"
+    assert graph[0]["name"] == "Obstrukce"
+    assert graph[1]["@type"] == "FAQPage"
+    assert graph[1]["mainEntity"][0]["name"] == "Co je Obstrukce?"
+
+
+def test_slovnicek_term_page_title() -> None:
+    assert slovnicek_term_page_title("Obstrukce") == (
+        "Co je Obstrukce? Švejkov slovníček | Poslušně hlásím"
+    )

@@ -5,7 +5,7 @@ from __future__ import annotations
 import calendar
 import os
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import date, datetime
 from functools import lru_cache
 from itertools import groupby
 from pathlib import Path
@@ -333,6 +333,37 @@ def _editions_in_month(
     return tuple(out)
 
 
+def _edition_when(edition: Edition) -> datetime:
+    return datetime.strptime(edition.datum_unl, "%d.%m.%Y")
+
+
+def _nearest_edition_before(
+    editions: tuple[Edition, ...], before: date
+) -> Edition | None:
+    prior = [e for e in editions if _edition_when(e).date() < before]
+    return prior[-1] if prior else None
+
+
+def _nearest_edition_from(
+    editions: tuple[Edition, ...], start: date
+) -> Edition | None:
+    for edition in editions:
+        if _edition_when(edition).date() >= start:
+            return edition
+    return None
+
+
+def _ghost_day(year: int, month: int, week_idx: int, day_idx: int) -> int:
+    """Číslo dne z předchozího nebo následujícího měsíce (monthcalendar vrací 0)."""
+    first_weekday = calendar.weekday(year, month, 1)
+    day_offset = week_idx * 7 + day_idx - first_weekday
+    days_in_month = calendar.monthrange(year, month)[1]
+    if day_offset < 0:
+        prev_year, prev_m = _shift_month(year, month, -1)
+        return calendar.monthrange(prev_year, prev_m)[1] + day_offset + 1
+    return day_offset - days_in_month + 1
+
+
 def _calendar_month_link(
     edition: Edition,
     *,
@@ -370,11 +401,17 @@ def build_session_calendar(
             by_day[when.day] = edition
 
     weeks: list[tuple[dict[str, object], ...]] = []
-    for week in calendar.monthcalendar(year, month):
+    for week_idx, week in enumerate(calendar.monthcalendar(year, month)):
         row: list[dict[str, object]] = []
-        for day in week:
+        for day_idx, day in enumerate(week):
             if day == 0:
-                row.append({"empty": True})
+                row.append(
+                    {
+                        "n": _ghost_day(year, month, week_idx, day_idx),
+                        "ghost": True,
+                        "muted": True,
+                    }
+                )
             elif day == current.day:
                 row.append({"n": day, "today": True})
             elif day in by_day:
@@ -393,13 +430,23 @@ def build_session_calendar(
         weeks.append(tuple(row))
 
     prev_month = next_month = None
+    month_start = date(year, month, 1)
     prev_year, prev_m = _shift_month(year, month, -1)
     prev_editions = _editions_in_month(editions, prev_year, prev_m)
     if prev_editions:
+        prev_anchor = prev_editions[-1]
+        prev_label_year, prev_label_month = prev_year, prev_m
+    elif anchor := _nearest_edition_before(editions, month_start):
+        prev_anchor = anchor
+        when = _edition_when(anchor)
+        prev_label_year, prev_label_month = when.year, when.month
+    else:
+        prev_anchor = None
+    if prev_anchor is not None:
         prev_month = _calendar_month_link(
-            prev_editions[-1],
-            year=prev_year,
-            month=prev_m,
+            prev_anchor,
+            year=prev_label_year,
+            month=prev_label_month,
             link_mode=link_mode,
             base_path=base_path,
             arrow="←",
@@ -407,10 +454,19 @@ def build_session_calendar(
     next_year, next_m = _shift_month(year, month, 1)
     next_editions = _editions_in_month(editions, next_year, next_m)
     if next_editions:
+        next_anchor = next_editions[0]
+        next_label_year, next_label_month = next_year, next_m
+    elif anchor := _nearest_edition_from(editions, date(next_year, next_m, 1)):
+        next_anchor = anchor
+        when = _edition_when(anchor)
+        next_label_year, next_label_month = when.year, when.month
+    else:
+        next_anchor = None
+    if next_anchor is not None:
         next_month = _calendar_month_link(
-            next_editions[0],
-            year=next_year,
-            month=next_m,
+            next_anchor,
+            year=next_label_year,
+            month=next_label_month,
             link_mode=link_mode,
             base_path=base_path,
             arrow="→",
@@ -501,6 +557,28 @@ def _archive_chips(
             )
         )
     return tuple(chips)
+
+
+def homepage_archive_list(
+    paths: SchuzePaths,
+    datum_unl: str,
+    *,
+    link_mode: str = "pages",
+    obdobi: int | None = None,
+    base_path: str = "",
+    limit: int = 5,
+) -> tuple[ArchiveTextEntry, ...]:
+    """Poslední vydání pro homepage (bez aktuálního dne), nejnovější první."""
+    ob = obdobi if obdobi is not None else paths.obdobi
+    current_href = edition_pages_href(ob, paths.schuze, datum_unl, base_path)
+    out: list[ArchiveTextEntry] = []
+    for entry in archive_text_list(ob, link_mode=link_mode, base_path=base_path):
+        if entry.href == current_href:
+            continue
+        out.append(entry)
+        if len(out) >= limit:
+            break
+    return tuple(out)
 
 
 def archive_recent(

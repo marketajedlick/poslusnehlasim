@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from xml.etree.ElementTree import Element, SubElement, tostring
@@ -16,6 +17,7 @@ from svejk.build.nav import (
     podpora_pages_href,
     recnici_pages_href,
     slovnicek_pages_href,
+    slovnicek_term_pages_href,
     soukromi_pages_href,
     smlouvy_pages_href,
     steno_sources_pages_href,
@@ -26,6 +28,7 @@ from svejk.build.urls import datum_unl_to_iso
 from svejk.build.mezin_smlouvy import has_smlouvy
 from svejk.build.recnici import has_recnici
 from svejk.build.steno_sources import has_steno_sources
+from svejk.strings import load_strings
 from svejk.build.vyznamenani_neprosli import (
     VyznamenaniKind,
     load_vyznamenani,
@@ -33,6 +36,7 @@ from svejk.build.vyznamenani_neprosli import (
     vyznamenani_datum_label,
 )
 from svejk.paths import SchuzePaths
+from svejk.glossary import slovnicek_entries, slovnicek_term_slug
 
 _VYZNAMENANI_KINDS: tuple[VyznamenaniKind, ...] = ("neprosli", "prosli", "zvoleni")
 
@@ -346,15 +350,19 @@ def article_json_ld(
     if article_body:
         data["articleBody"] = article_body
     if parts:
-        data["hasPart"] = [
-            {
+        data["hasPart"] = []
+        for part in parts:
+            entry: dict[str, str | int] = {
                 "@type": "NewsArticle",
                 "headline": part["headline"],
                 "articleBody": part["body"],
                 "position": part["position"],
             }
-            for part in parts
-        ]
+            part_url = part.get("url")
+            if part_url:
+                entry["@id"] = part_url
+                entry["url"] = part_url
+            data["hasPart"].append(entry)
     return data
 
 
@@ -420,6 +428,211 @@ def faq_json_ld(
             for question, answer in entries
         ],
     }
+
+
+def slovnicek_term_page_title(term: str) -> str:
+    return f"Co je {term}? Švejkov slovníček | {SITE_NAME}"
+
+
+def defined_term_json_ld(
+    *,
+    url: str,
+    term: str,
+    description: str,
+    glossary_url: str,
+) -> dict:
+    return {
+        "@type": "DefinedTerm",
+        "@id": url,
+        "name": term,
+        "description": description,
+        "inDefinedTermSet": {
+            "@type": "DefinedTermSet",
+            "name": "Švejkův slovníček",
+            "url": glossary_url,
+        },
+    }
+
+
+def slovnicek_term_json_ld(
+    *,
+    url: str,
+    term: str,
+    answer: str,
+    glossary_url: str,
+) -> dict:
+    """DefinedTerm + jedna FAQ otázka pro stránku pojmu."""
+    question = f"Co je {term}?"
+    return {
+        "@context": "https://schema.org",
+        "@graph": [
+            defined_term_json_ld(
+                url=url,
+                term=term,
+                description=answer,
+                glossary_url=glossary_url,
+            ),
+            {
+                "@type": "FAQPage",
+                "@id": f"{url}#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": question,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": answer,
+                        },
+                    }
+                ],
+            },
+        ],
+    }
+
+
+@dataclass(frozen=True)
+class BreadcrumbCrumb:
+    label: str
+    href: str = ""
+
+
+def _home_href(base_path: str) -> str:
+    base = base_path.rstrip("/")
+    return f"{base}/" if base else "/"
+
+
+def _breadcrumb_abs_url(site_url: str, href: str) -> str:
+    if href.startswith("http"):
+        return href
+    site = site_url.rstrip("/")
+    path = href if href.startswith("/") else f"/{href}"
+    return f"{site}{path}"
+
+
+def breadcrumb_json_ld(
+    *,
+    site_url: str,
+    crumbs: tuple[BreadcrumbCrumb, ...],
+) -> dict:
+    """BreadcrumbList schema.org — poslední položka bez `item` = aktuální stránka."""
+    elements: list[dict[str, str | int]] = []
+    for i, crumb in enumerate(crumbs, 1):
+        item: dict[str, str | int] = {
+            "@type": "ListItem",
+            "position": i,
+            "name": crumb.label,
+        }
+        if crumb.href:
+            item["item"] = _breadcrumb_abs_url(site_url, crumb.href)
+        elements.append(item)
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": elements,
+    }
+
+
+def breadcrumb_page_ctx(
+    *,
+    site_url: str,
+    items: tuple[tuple[str, str | None], ...],
+) -> dict:
+    """Kontext pro šablonu: `breadcrumbs`, `breadcrumb_json_ld`. href None = aktuální stránka."""
+    crumbs = tuple(
+        BreadcrumbCrumb(label=label, href=href or "")
+        for label, href in items
+    )
+    if len(crumbs) < 2:
+        return {"breadcrumbs": (), "breadcrumb_json_ld": None}
+    return {
+        "breadcrumbs": crumbs,
+        "breadcrumb_json_ld": breadcrumb_json_ld(site_url=site_url, crumbs=crumbs),
+    }
+
+
+def breadcrumbs_ctx_archiv(*, site_url: str, base_path: str = "") -> dict:
+    arch = load_strings()["archive"]["title"]
+    return breadcrumb_page_ctx(
+        site_url=site_url,
+        items=(
+            (SITE_NAME, _home_href(base_path)),
+            (arch, None),
+        ),
+    )
+
+
+def breadcrumbs_ctx_edition(
+    *,
+    site_url: str,
+    base_path: str = "",
+    datum_unl: str,
+    is_homepage: bool = False,
+) -> dict:
+    if is_homepage:
+        return {"breadcrumbs": (), "breadcrumb_json_ld": None}
+    arch = load_strings()["nav"]["archive"]
+    date_label = _edition_date_label_short(datum_unl)
+    return breadcrumb_page_ctx(
+        site_url=site_url,
+        items=(
+            (SITE_NAME, _home_href(base_path)),
+            (arch, archiv_pages_href(base_path)),
+            (date_label, None),
+        ),
+    )
+
+
+def breadcrumbs_ctx_edition_subpage(
+    *,
+    site_url: str,
+    base_path: str = "",
+    obdobi: int,
+    schuze: int,
+    datum_unl: str,
+    subpage_label: str,
+    edition_href: str | None = None,
+) -> dict:
+    arch = load_strings()["nav"]["archive"]
+    date_label = _edition_date_label_short(datum_unl)
+    if edition_href is None:
+        edition_href = edition_pages_href(obdobi, schuze, datum_unl, base_path)
+    return breadcrumb_page_ctx(
+        site_url=site_url,
+        items=(
+            (SITE_NAME, _home_href(base_path)),
+            (arch, archiv_pages_href(base_path)),
+            (date_label, edition_href),
+            (subpage_label, None),
+        ),
+    )
+
+
+def breadcrumbs_ctx_slovnicek(*, site_url: str, base_path: str = "") -> dict:
+    gloss = load_strings()["glossary_page"]["heading"]
+    return breadcrumb_page_ctx(
+        site_url=site_url,
+        items=(
+            (SITE_NAME, _home_href(base_path)),
+            (gloss, None),
+        ),
+    )
+
+
+def breadcrumbs_ctx_slovnicek_term(
+    *,
+    site_url: str,
+    base_path: str = "",
+    term_label: str,
+) -> dict:
+    gloss = load_strings()["glossary_page"]["heading"]
+    return breadcrumb_page_ctx(
+        site_url=site_url,
+        items=(
+            (SITE_NAME, _home_href(base_path)),
+            (gloss, slovnicek_pages_href(base_path)),
+            (term_label, None),
+        ),
+    )
 
 
 def _static_page_links(
@@ -538,6 +751,9 @@ def write_sitemap_xml(
         add_url(f"{base}{archiv_pages_href(base_path)}", last)
         add_url(f"{base}{o_webu_pages_href(base_path)}", last)
         add_url(f"{base}{slovnicek_pages_href(base_path)}", last)
+        for term, _ in slovnicek_entries():
+            slug = slovnicek_term_slug(term)
+            add_url(f"{base}{slovnicek_term_pages_href(slug, base_path)}", last)
         add_url(f"{base}{pivo_pages_href(base_path)}", last)
         add_url(f"{base}{podminky_pages_href(base_path)}", last)
         add_url(f"{base}{podpora_pages_href(base_path)}", last)

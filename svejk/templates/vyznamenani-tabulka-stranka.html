@@ -7,12 +7,14 @@
 <meta name="description" content="{{ page_description | default(site_meta_description, true) }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
 {% include "og-meta.html" %}
+{% include "breadcrumb-jsonld.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="vyznamenani-page vyznamenani-page--{{ kind }}">
 <div class="edition-page vyznamenani-edition">
   <main class="edition-main vyznamenani-wrap">
+  {% include "breadcrumbs.html" %}
   <header class="vyznamenani-head">
     <h1 class="vyznamenani-title">{{ page_title }}</h1>
     <p class="vyznamenani-gloss">{{ page_gloss }}</p>

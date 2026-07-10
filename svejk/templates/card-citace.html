@@ -1,4 +1,4 @@
-<blockquote class="article-quote" id="article-citace-{{ item.num }}" aria-label="{{ t.edition.citace_aria }}">
+<blockquote class="article-quote" id="{{ item.anchor_id }}-citace" aria-label="{{ t.edition.citace_aria }}">
   <p class="article-quote-text"><span class="quote-mark">„</span>{% if item.citace_href %}<a class="steno-link" href="{{ item.citace_href }}"{% if item.citace_href.startswith('http') %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ item.citace_text | glossary }}</a>{% else %}{{ item.citace_text | glossary }}{% endif %}<span class="quote-mark">”</span></p>
   <div class="article-quote-foot">
     {% if item.citace_autor %}
@@ -6,7 +6,7 @@
     {% endif %}
     <div class="card-share">
       {% set citace_share_text = ('„' ~ (item.citace_text | plain) ~ '"\n\n' ~ (item.citace_autor ~ '\n\n' if item.citace_autor else '') ~ share_page_url) %}
-      <button type="button" class="share-btn" data-share-card="{{ item.citace_autor or item.nadpis }}" data-share-id="article-citace-{{ item.num }}" data-share-text="{{ citace_share_text | replace('\n', '\\n') }}" title="Poslat hlášení" aria-label="Sdílet citaci">
+      <button type="button" class="share-btn" data-share-card="{{ item.citace_autor or item.nadpis }}" data-share-id="{{ item.anchor_id }}-citace" data-share-text="{{ citace_share_text | replace('\n', '\\n') }}" title="Poslat hlášení" aria-label="Sdílet citaci">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.7" x2="15.4" y2="6.3"/><line x1="8.6" y1="13.3" x2="15.4" y2="17.7"/></svg>
       </button>
     </div>

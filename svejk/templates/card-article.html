@@ -1,4 +1,4 @@
-<article class="article{% if item.variant %} {{ item.variant }}{% endif %}" id="article-{{ item.num }}">
+<article class="article{% if item.variant %} {{ item.variant }}{% endif %}" id="{{ item.anchor_id }}">
   <div class="article-aside">
     <div class="article-num article-num--{{ item.verdikt }}">{{ "%02d"|format(item.num) }}</div>
     <span class="stamp {{ item.verdikt }}">{{ item.stamp }}</span>

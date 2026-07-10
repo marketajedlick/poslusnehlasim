@@ -1,49 +1,52 @@
 # SEO redesign poslusnehlasim.cz — implementační plán
 
-**Verze:** 1.1 · 9. 7. 2026  
+**Verze:** 1.4 · 10. 7. 2026  
 **Zdrojová specifikace:** [`seo-redisgn.md`](seo-redisgn.md)  
-**Přehled:** Implementace SEO redesignu ve třech fázích podle specifikace, s vycházením z existujícího Python/Jinja build pipeline. **Fáze 0 (0.1–0.3) je hotová** (nasadit exportem). Fáze 1 přinese nové URL, stabilní homepage a rozpad slovníčku; Fáze 2 přidá entitní stránky poslanců a témat.
+**Přehled:** Implementace SEO redesignu ve třech fázích podle specifikace. **Hotovo v kódu:** Fáze 0 (0.1–0.3), **celá Fáze 1** (1.1–1.6). **Zbývá:** Fáze 2 (entity stránky). Nasazení: `./run-svejk.sh export-pages` → deploy `site/`.
 
 ## Stav kódu vs. spec (ověření ⚠️)
 
 | Bod spec | Skutečný stav | Poznámka |
 |---|---|---|
-| URL vydání `DD.MM.YYYY.html` | **Potvrzeno** | [`svejk/build/nav.py`](../svejk/build/nav.py) → `/noviny/{obdobi}/{schuze}/{datum_unl}.html` |
-| Steno `-steno.html` | **Potvrzeno** | `steno_sources_pages_href()` |
-| Homepage = dnešní vydání | **Potvrzeno** | [`export_pages.py`](../svejk/build/export_pages.py) volá `render_den_html(is_homepage=True)` se šablonou [`noviny-dlouhe.html`](../svejk/templates/noviny-dlouhe.html) |
-| Title/meta šablony §4–5 | **Hotovo (0.1)** | [`seo.py`](../svejk/build/seo.py): `homepage_page_title()`, `edition_page_title()`, `edition_meta_description()`, `SITE_META_DESCRIPTION` |
-| Duplicita obsahu | **Problém (Fáze 1)** | Stejný HTML obsah na `/` i na edition URL; H1 je vždy „Poslušně hlásím!" ([`edition-masthead.html`](../svejk/templates/edition-masthead.html)) |
-| HTTP 301 redirecty | **Chybí** | Jen meta-refresh v [`_redirect_html()`](../svejk/build/export_pages.py) — **záměrně ponecháno** dle rozhodnutí |
-| Archiv crawlovatelný | **Hotovo (0.3)** | Chipy + textový seznam „Všechna vydání" s anchor textem `datum, titulek` ([`archive_text_list()`](../svejk/build/nav.py), [`archiv.html`](../svejk/templates/archiv.html)) |
-| JSON-LD | **Hotovo (0.2)** | [`seo.py`](../svejk/build/seo.py): `#org`, `website_json_ld`, `article_json_ld` s `about`, `faq_json_ld` na slovníčku |
+| Kanonické URL vydání | **Hotovo (1.1)** | `/vydani/{YYYY-MM-DD}/` ([`urls.py`](../svejk/build/urls.py), [`nav.py`](../svejk/build/nav.py)); staré `/noviny/…` → meta-refresh stub |
+| Steno `/vydani/…/steno/` | **Hotovo (1.1)** | `steno_sources_pages_href()` + export podstránek |
+| Homepage = dnešní vydání | **Hotovo (1.2)** | Plný obsah na `/` ([`export_pages.py`](../svejk/build/export_pages.py), `is_homepage=True`); stabilní H1 + titulek dne jako H2 |
+| Title/meta šablony §4–5 | **Hotovo (0.1)** | [`seo.py`](../svejk/build/seo.py): `homepage_page_title()`, `edition_page_title()`, `edition_meta_description()` |
+| H1/H2 struktura | **Hotovo (1.2)** | Homepage: H1 landing + H2 titulek dne; vydání: H1 titulek dne ([`edition-day-headline.html`](../svejk/templates/edition-day-headline.html)) |
+| Duplicita obsahu `/` vs. vydání | **Částečně (1.2)** | Text stále shodný, canonical na obou stránkách na sebe; odlišná nadpisová hierarchie snižuje riziko |
+| HTTP 301 redirecty | **Částečně (1.1)** | Meta-refresh stuby v [`_redirect_html()`](../svejk/build/export_pages.py) — **záměrně**, HTTP 301 až přes Cloudflare |
+| Archiv crawlovatelný | **Hotovo (0.3)** | Chipy + textový seznam „Všechna vydání" ([`archive_text_list()`](../svejk/build/nav.py), [`archiv.html`](../svejk/templates/archiv.html)) |
+| Sekce „Z archivu" na homepage | **Hotovo (1.2)** | 5 předchozích vydání ([`homepage-archive.html`](../svejk/templates/homepage-archive.html), `homepage_archive_list()`) |
+| `<time datetime>` u vydání | **Hotovo (1.2)** | V meta řádku pod titulkem dne |
+| JSON-LD | **Hotovo (0.2 + 1.5 + 1.6)** | `#org`, `website_json_ld`, `article_json_ld` s `about` a `hasPart` s fragment URL; `faq_json_ld` na indexu slovníčku; `slovnicek_term_json_ld` na pojmech |
 | Logo URL v schema | **Odchylka** | `/static/apple-touch-icon.png` (spec `/assets/logo.png` neexistuje, záměrně ponecháno) |
-| Slovníček per-pojem | **Chybí** | Jedna stránka [`slovnicek-stranka.html`](../svejk/templates/slovnicek-stranka.html), kotvy přes `slovnicek_anchor()` |
-| Poslanec/téma entity | **Data částečně** | Slugy témat v `aligned/topics.json`; poslanci anotováni v [`psp/poslanci.py`](../psp/poslanci.py), bez slug stránek |
-| Breadcrumbs | **Chybí** | Žádný `BreadcrumbList` ani UI komponenta |
+| Slovníček per-pojem | **Hotovo (1.5)** | `/slovnicek/{slug}/` ([`slovnicek-pojem.html`](../svejk/templates/slovnicek-pojem.html), [`slovnicek_index.py`](../svejk/build/slovnicek_index.py)); index odkazuje na per-pojem URL |
+| Article anchory | **Hotovo (1.6)** | `DenItem.anchor_id` → `#slug` v [`card-article.html`](../svejk/templates/card-article.html); `edition_article_href()` v [`urls.py`](../svejk/build/urls.py) |
+| Poslanec/téma entity | **Chybí (Fáze 2)** | Slugy témat v `aligned/topics.json`; poslanci v [`psp/poslanci.py`](../psp/poslanci.py), bez stránek |
+| Breadcrumbs | **Hotovo (1.3 + 1.5)** | UI + `BreadcrumbList` JSON-LD včetně stránek pojmů slovníčku |
 
 ```mermaid
 flowchart TB
-  subgraph today [Dnes]
-    Home["/ index.html"]
-  end
-  subgraph phase1 [Fáze 1]
+  subgraph done [Hotovo v kódu]
     HomeNew["/ stabilní landing"]
     Vydani["/vydani/YYYY-MM-DD/"]
-    SlovPojem["/slovnicek/slug/"]
     Redirect["meta-refresh ze starých URL"]
+    Archiv["/archiv/ textový seznam"]
+    Breadcrumbs["BreadcrumbList + UI"]
+    PrevNext["prev/next v patičce"]
+    SlovPojem["/slovnicek/slug/"]
+    Anchors["article slug anchory"]
   end
   subgraph phase2 [Fáze 2]
     Poslanec["/poslanec/slug/"]
     Tema["/tema/slug/"]
-    Linker["interní odkazy z textů"]
+    Linker["interní odkazy poslanci/témata"]
   end
-  today --> phase1
-  phase1 --> phase2
-  Home --> HomeNew
-  Home --> Redirect
+  done --> phase2
   Vydani --> Poslanec
   Vydani --> Tema
   SlovPojem --> Linker
+  Anchors --> Poslanec
 ```
 
 ---
@@ -86,62 +89,75 @@ Implementováno v [`seo.py`](../svejk/build/seo.py), testy v [`tests/test_seo.py
 
 - Stabilní homepage `<title>` (oddělený od `og:title` při sdílení)
 - `sitemap.xml`, `robots.txt`, `llms.txt` generované v exportu
-- FAQPage JSON-LD na slovníčku
+- FAQPage JSON-LD na indexu slovníčku
 
 ### 0.4 Mimo kód (Markéta) — otevřeno
 
 - [ ] GSC ověření, odeslání sitemap, URL Inspection — dle spec §12
-- [ ] Po deployi: Rich Results Test na homepage a vydání
+- [ ] Po deployi: Rich Results Test na homepage, vydání, slovníček (index + pojem)
 
 **Nasazení:** `./run-svejk.sh export-pages` → deploy `site/`
 
 ---
 
-## Fáze 1 — restrukturalizace (~1–2 týdny)
+## Fáze 1 — restrukturalizace — hotovo (10. 7. 2026)
 
-### 1.1 Nové URL schéma — hotovo (10. 7. 2026)
+### 1.1 Nové URL schéma — hotovo
 
 - [`svejk/build/urls.py`](../svejk/build/urls.py): konverze dat, slugy, export cesty, legacy href
 - [`nav.py`](../svejk/build/nav.py): kanonické URL `/vydani/{ISO}/`, `/archiv/`, `/slovnicek/`, podstránky `/steno/`, …
 - [`export_pages.py`](../svejk/build/export_pages.py): export do `vydani/…/index.html`, meta-refresh stuby ze starých `/noviny/…`
 - [`seo.py`](../svejk/build/seo.py): sitemap s novými URL, deduplikace po dni
-- Testy: [`tests/test_urls.py`](../tests/test_urls.py), aktualizované [`tests/test_seo.py`](../tests/test_seo.py)
+- Testy: [`tests/test_urls.py`](../tests/test_urls.py), [`tests/test_seo.py`](../tests/test_seo.py)
 
-### 1.2 Homepage jako stabilní landing (§4)
+### 1.2 Homepage jako stabilní landing (§4) — hotovo
 
-Nová šablona nebo podmíněné bloky v [`noviny-dlouhe.html`](../svejk/templates/noviny-dlouhe.html) pro `is_homepage`:
+- [`homepage-landing.html`](../svejk/templates/homepage-landing.html): stabilní H1 + úvod
+- [`edition-day-headline.html`](../svejk/templates/edition-day-headline.html): H2 na homepage, H1 na vydání + meta řádek s `<time>`
+- [`edition-masthead.html`](../svejk/templates/edition-masthead.html): dekorativní masthead (`<p>`), H1 na titulku dne
+- [`homepage-archive.html`](../svejk/templates/homepage-archive.html): sekce „Z archivu" (`homepage_archive_list()`, 5 vydání)
+- [`html.py`](../svejk/build/html.py): kontext `is_homepage`, `edition_day_headline`, `homepage_archive`
+- Canonical: `/` self-canonical, vydání na `/vydani/…`
+- Testy: [`tests/test_homepage.py`](../tests/test_homepage.py)
 
-1. **Stabilní H1** nad obsahem: „Poslušně hlásím, satirický deník Poslanecké sněmovny" + 1–2 věty úvodu (klíčová slova)
-2. **Masthead** ([`edition-masthead.html`](../svejk/templates/edition-masthead.html)): na homepage `<p>` místo `<h1>`; na vydání ponechat brand masthead jako dekoraci, H1 přesunout na titulek dne
-3. **Titulek dne**: nový blok `edition-day-headline.html` — na homepage `<h2>`, na vydání `<h1>` + řádek „Poslanecká sněmovna, {den} {datum} · {n}. schůze" + `<time datetime="…">`
-4. **Sekce „Z archivu"**: 5 posledních vydání (`archive_recent(limit=5)`) s titulky jako odkazy
-5. **Canonical**: `/` zůstává self-canonical; vydání self-canonical na `/vydani/…`
+### 1.3 Breadcrumbs + schema — hotovo
 
-### 1.3 Breadcrumbs + schema
+- [`breadcrumbs.html`](../svejk/templates/breadcrumbs.html) + [`breadcrumb-jsonld.html`](../svejk/templates/breadcrumb-jsonld.html)
+- [`seo.py`](../svejk/build/seo.py): `breadcrumb_json_ld()`, `breadcrumbs_ctx_*()` pro archiv, vydání, podstránky, slovníček
+- Vloženo do vydání (ne homepage), archivu, slovníčku, steno/smlouvy/řečníci/vyznamenání
+- Testy: [`tests/test_seo.py`](../tests/test_seo.py)
 
-- Nová šablona `breadcrumbs.html` + helper `breadcrumb_json_ld()` v [`seo.py`](../svejk/build/seo.py)
-- Vložit do vydání, archivu, slovníčku, podstránek vydání
-- Příklad: `Poslušně hlásím › Archiv › 8. 7. 2026`
+### 1.4 Prev/next prolinkování — hotovo
 
-### 1.4 Prev/next prolinkování
+- Sdílená šablona [`edition-pager.html`](../svejk/templates/edition-pager.html) (masthead mobile, desktop, patička vydání)
+- Patička vydání: `← datum | datum →` nad odběrem ([`edition-footer.html`](../svejk/templates/edition-footer.html))
+- `edition_nav()` generuje kanonické `/vydani/{ISO}/` URL (`link_mode="pages"`)
+- Testy: [`tests/test_nav.py`](../tests/test_nav.py)
 
-Pager v [`edition-rail.html`](../svejk/templates/edition-rail.html) a [`edition-footer.html`](../svejk/templates/edition-footer.html) už existuje — ověřit, že funguje s novými URL a je viditelný i v patičce vydání (spec požaduje `← předchozí | další →`).
+### 1.5 Slovníček — samostatné stránky (§7) — hotovo
 
-### 1.5 Slovníček — samostatné stránky (§7)
+- Export `/slovnicek/{slug}/index.html` pro každý pojem ze `SLOVNIČEK` v [`glossary.py`](../svejk/glossary.py) (`slovnicek_term_slug()`)
+- Šablona [`slovnicek-pojem.html`](../svejk/templates/slovnicek-pojem.html): H1 `Co je {pojem}?`, definice, sekce „Kde se o tom psalo"
+- Index [`slovnicek-stranka.html`](../svejk/templates/slovnicek-stranka.html): odkazy na per-pojem URL (`term-link`), bez kotev a modalu
+- [`slovnicek_index.py`](../svejk/build/slovnicek_index.py): build-time index zmínek (až 8 nejnovějších vydání na pojem)
+- [`seo.py`](../svejk/build/seo.py): `defined_term_json_ld()`, `slovnicek_term_json_ld()`, `slovnicek_term_page_title()`, `breadcrumbs_ctx_slovnicek_term()`
+- [`glossary_markup.py`](../svejk/build/glossary_markup.py): pojmy slovníčku → `<a class="term-term" href="/slovnicek/{slug}/">` (modal přes `preventDefault` jako progressive enhancement)
+- Sitemap: URL všech pojmů v `write_sitemap_xml()`
+- Title pojmu: `Co je {pojem}? Švejkov slovníček | Poslušně hlásím` (odchylka od spec „Sněmovní slovníček")
 
-- Exportovat pro každý termín ze `SLOVNIČEK` v [`glossary.py`](../svejk/glossary.py) stránku `/slovnicek/{slug}/`
-- Nová šablona `slovnicek-pojem.html`: H1 `Co je {pojem}?`, definice, satirický dovětek, sekce „Kde se o tom psalo" (průchod vydáními — grep přes `glossary_markup` nebo index zmínek)
-- Index [`slovnicek-stranka.html`](../svejk/templates/slovnicek-stranka.html): odkazy na per-pojem URL místo kotev
-- `defined_term_json_ld()` + `faq_json_ld()` dle spec §9
-- Upravit [`glossary_markup.py`](../svejk/build/glossary_markup.py): tooltip tlačítka obalit `<a href="/slovnicek/{slug}/">` (JS modal jako progressive enhancement)
+### 1.6 Article anchory pro deep-linky — hotovo
 
-### 1.6 Article anchory pro deep-linky
-
-V [`card-article.html`](../svejk/templates/card-article.html): `id="article-{{ item.num }}"` → `id="{{ item.slug }}"` (slug z `DenItem.slug`, už existuje v pipeline).
+- [`DenItem.anchor_id`](../svejk/build/day_content.py): slug z `topic_slugs`, fallback `article-{num}`
+- [`card-article.html`](../svejk/templates/card-article.html): `id="{{ item.anchor_id }}"` (např. `#novela-z-o-obalech`)
+- [`card-citace.html`](../svejk/templates/card-citace.html): `id="{{ item.anchor_id }}-citace"`
+- [`urls.py`](../svejk/build/urls.py): `article_anchor_id()`, `edition_article_href()` pro budoucí entity odkazy
+- `article_json_ld` `hasPart`: každá část má `@id` a `url` s fragmentem (`…/vydani/2026-07-02/#slug`)
+- CSS: `.article:target { scroll-margin-top: 24px }`
+- Testy: [`tests/test_urls.py`](../tests/test_urls.py), [`tests/test_seo.py`](../tests/test_seo.py)
 
 ---
 
-## Fáze 2 — entitní stránky (~2–4 týdny)
+## Fáze 2 — entitní stránky (~2–4 týdny) — zbývá
 
 ### 2.1 Index zmínek (build-time)
 
@@ -150,13 +166,14 @@ Nový modul `svejk/build/entity_index.py`:
 - **Poslanci:** projít všechna vydání + `steno.jsonl` (`cele_jmeno`), párovat přes `PoslanecRegistry`, agregovat `(datum, article_slug, excerpt, anchor)`
 - **Témata:** z `facts/by_topic/*.json` + `topics.json` slugy
 - Výstup: `processed/entity-index.json` (cache pro rychlý rebuild)
+- Anchor pro deep-linky už existuje: `edition_article_href(datum, slug=…)` z 1.6
 
 ### 2.2 `/poslanec/{slug}/` (§6)
 
 - Generovat jen při ≥ 3 zmínkách
-- Šablona `poslanec-stranka.html`: H1, strojový úvod, chronologický seznam s odkazy na `/vydani/{date}/#{slug}`
+- Šablona `poslanec-stranka.html`: H1, strojový úvod, chronologický seznam s odkazy na `/vydani/{date}/#{anchor_id}`
 - Title dle spec
-- Přidat `poslanec_slug()` do [`psp/poslanci.py`](../psp/poslanci.py)
+- `poslanec_slug()` už v [`urls.py`](../svejk/build/urls.py)
 
 ### 2.3 `/tema/{slug}/` (§6)
 
@@ -174,43 +191,49 @@ Rozšířit [`glossary_markup.py`](../svejk/build/glossary_markup.py) a/nebo nov
 
 1. První výskyt poslance → `<a href="/poslanec/{slug}/">` (jen pokud stránka existuje)
 2. První výskyt tématu → `<a href="/tema/{slug}/">`
-3. Pojmy slovníčku → `<a href="/slovnicek/{slug}/">` (nahradí čisté buttony)
+3. ~~Pojmy slovníčku → `<a href="/slovnicek/{slug}/">`~~ **hotovo (1.5)**
 4. Build-time orphan check: každá generovaná stránka musí mít ≥ 1 příchozí odkaz (jinak warning/fail exportu)
 
 ---
 
 ## Technické požadavky (§11) — checklist
 
-| Položka | Kde |
-|---|---|
-| `sitemap.xml` s novými URL | [`seo.py`](../svejk/build/seo.py) `write_sitemap_xml()` |
-| Canonical absolutní HTTPS + trailing slash | [`html.py`](../svejk/build/html.py) `_og_context()` |
-| `<time datetime>` u vydání | nový headline blok |
-| `llms.txt` aktualizace | [`write_llms_txt()`](../svejk/build/seo.py) |
-| OG per-page | už existuje přes `og-meta.html` — ověřit na nových stránkách |
-| `<html lang="cs">` | už všude |
+| Položka | Kde | Stav |
+|---|---|---|
+| `sitemap.xml` s novými URL | [`seo.py`](../svejk/build/seo.py) `write_sitemap_xml()` | ✅ 1.1 + pojmy slovníčku (1.5) |
+| Canonical absolutní HTTPS + trailing slash | [`html.py`](../svejk/build/html.py) | ✅ |
+| `<time datetime>` u vydání | [`edition-day-headline.html`](../svejk/templates/edition-day-headline.html) | ✅ 1.2 |
+| Breadcrumbs UI + JSON-LD | [`breadcrumbs.html`](../svejk/templates/breadcrumbs.html), [`seo.py`](../svejk/build/seo.py) | ✅ 1.3 + pojmy (1.5) |
+| DefinedTerm + FAQ na pojmech slovníčku | [`seo.py`](../svejk/build/seo.py), [`slovnicek-pojem.html`](../svejk/templates/slovnicek-pojem.html) | ✅ 1.5 |
+| Article fragment URL v `hasPart` | [`seo.py`](../svejk/build/seo.py) `article_json_ld()` | ✅ 1.6 |
+| `llms.txt` aktualizace | [`write_llms_txt()`](../svejk/build/seo.py) | ✅ |
+| OG per-page | `og-meta.html` | ✅ |
+| `<html lang="cs">` | šablony | ✅ |
 
 ---
 
 ## Rizika a odchylky od spec
 
 1. **Meta-refresh ≠ HTTP 301:** Google je zpracuje pomaleji a hůř než 301. Až bude čas, doplnit Cloudflare Bulk Redirect Rules ([`infra/cloudflare/README.md`](../infra/cloudflare/README.md) — doména už jde přes CF proxy) bez migrace z GitHub Pages.
-2. **Dvojí URL vydání + homepage:** canonical na obou stránách na sebe + odlišné H1/H2 sníží duplicitu, ale obsah zůstane shodný — akceptovatelné dle výběru.
+2. **Dvojí URL vydání + homepage:** canonical na obou stránkách na sebe + odlišné H1/H2 sníží duplicitu, ale obsah zůstane shodný — akceptovatelné dle výběru.
 3. **Schůze v URL:** nové URL používají jen ISO datum; při více schůzích v jeden den zůstane `resolve_edition()` (poslední schůze) — dokumentovat v `/o-webu/`.
 4. **Off-page SEO (§14):** mimo scope developer — backlinky řeší Markéta.
+5. **Slovníček title / DefinedTermSet název:** v kódu „Švejkov slovníček", spec §7 „Sněmovní slovníček" — záměrná značka webu.
 
 ---
 
 ## Doporučené pořadí implementace
 
-1. ~~Fáze 0.1–0.3~~ **hotovo** — nasadit exportem
-2. Fáze 1.1 URL helpery + export nových cest + meta-refresh stuby
-3. Fáze 1.2 homepage landing + H1/H2 logika
-4. Fáze 1.5 slovníček split (největší SEO přínos z Fáze 1)
-5. Fáze 1.3 breadcrumbs
-6. Fáze 2.1 entity index → 2.2–2.5
+1. ~~Fáze 0.1–0.3~~ **hotovo**
+2. ~~Fáze 1.1~~ **hotovo** — URL helpery, export, meta-refresh stuby
+3. ~~Fáze 1.2~~ **hotovo** — homepage landing, H1/H2 logika, „Z archivu"
+4. ~~Fáze 1.3~~ **hotovo** — breadcrumbs UI + BreadcrumbList JSON-LD
+5. ~~Fáze 1.4~~ **hotovo** — prev/next v patičce, `/vydani/` URL v pageru
+6. ~~Fáze 1.5~~ **hotovo** — slovníček split, DefinedTerm, odkazy v textech
+7. ~~Fáze 1.6~~ **hotovo** — article slug anchory, `hasPart` fragmenty
+8. **Fáze 2.1** entity index → 2.2–2.5
 
-**Testy:** rozšířit [`tests/test_seo.py`](../tests/test_seo.py) o URL konverze, redirect stuby, title šablony; přidat `tests/test_entity_index.py` ve Fázi 2.
+**Testy:** [`tests/test_seo.py`](../tests/test_seo.py) (30 testů: title, JSON-LD, breadcrumbs, sitemap, anchory), [`tests/test_urls.py`](../tests/test_urls.py), [`tests/test_homepage.py`](../tests/test_homepage.py), [`tests/test_nav.py`](../tests/test_nav.py). Ve Fázi 2 přidat `tests/test_entity_index.py`.
 
 **Akceptační kritéria:** Rich Results Test bez chyb; `site:poslusnehlasim.cz` s novým title; staré URL vrací redirect (meta-refresh minimálně, 301 ideálně později); žádné 404 na starých cestách.
 
@@ -223,7 +246,9 @@ Rozšířit [`glossary_markup.py`](../svejk/build/glossary_markup.py) a/nebo nov
 - [x] **Fáze 0:** Přidat textový seznam vydání do `archiv.html` (`archive_text_list`)
 - [ ] **Fáze 0:** GSC, odeslání sitemap, Rich Results Test (Markéta, po deployi)
 - [x] **Fáze 1:** Nové URL schéma (`/vydani/YYYY-MM-DD/`), ISO konverze, meta-refresh stuby ze starých URL
-- [ ] **Fáze 1:** Stabilní homepage landing (H1, úvod, H2 titulek dne, sekce Z archivu)
-- [ ] **Fáze 1:** Rozpad slovníčku na `/slovnicek/{slug}/` + DefinedTerm schema + odkazy v textech
-- [ ] **Fáze 1:** Breadcrumbs UI + BreadcrumbList JSON-LD na podstránkách
+- [x] **Fáze 1:** Stabilní homepage landing (H1, úvod, H2 titulek dne, sekce Z archivu)
+- [x] **Fáze 1:** Rozpad slovníčku na `/slovnicek/{slug}/` + DefinedTerm schema + odkazy v textech
+- [x] **Fáze 1:** Breadcrumbs UI + BreadcrumbList JSON-LD na podstránkách
+- [x] **Fáze 1:** Prev/next prolinkování vydání (pager + patička, `/vydani/` URL)
+- [x] **Fáze 1:** Article slug anchory (`DenItem.anchor_id`, deep-linky `#slug`)
 - [ ] **Fáze 2:** Entity index, `/poslanec/` a `/tema/` stránky, interní prolinkování, orphan check

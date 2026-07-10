@@ -23,8 +23,12 @@
 <section class="citanka-slovnik" aria-label="Slovníček dne">
   <div class="citanka-kicker">Slovníček dne</div>
   <div class="citanka-terms">
-    {% for label, tip in slovnicek_dne %}
+    {% for label, tip, href in slovnicek_dne %}
+    {% if href %}
+    <a class="term-term" href="{{ href }}" data-term="{{ label }}" data-def="{{ tip }}" title="{{ tip }}">{{ label }}</a>
+    {% else %}
     <button type="button" class="term-term" data-term="{{ label }}" data-def="{{ tip }}" title="{{ tip }}">{{ label }}</button>
+    {% endif %}
     {% endfor %}
   </div>
 </section>

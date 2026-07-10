@@ -1,10 +1,25 @@
 # SPEC — SEO redesign poslusnehlasim.cz
 
-**Verze:** 1.0 · 8. 7. 2026
-**Cíl:** Web se má zobrazovat ve výsledcích Googlu na dotazy o dění ve sněmovně (dnes je neviditelný — dotaz „poslušně hlásím" ovládá film z roku 1957 a web nemá stránky, které by cílily na jiné dotazy).
+**Verze:** 1.3 · 10. 7. 2026  
+**Cíl:** Web se má zobrazovat ve výsledcích Googlu na dotazy o dění ve sněmovně (dnes je neviditelný — dotaz „poslušně hlásím" ovládá film z roku 1957 a web nemá stránky, které by cílily na jiné dotazy).  
 **Strategie:** Neválčit o brand keyword s filmem. Vybudovat entitu „Poslušně hlásím = deník Poslanecké sněmovny" a rankovat na long-tail dotazy (poslanci, zákony, pojmy, „co se dělo ve sněmovně").
 
-Položky označené ⚠️ OVĚŘIT vycházejí z externí analýzy webu — developer nechť potvrdí proti skutečnému stavu kódu.
+**Stav implementace (10. 7. 2026):** Detailní plán a checklist v [`seo-redesign-plan.md`](seo-redesign-plan.md).
+
+| Oblast | Stav |
+|---|---|
+| Title/meta, JSON-LD, archiv textový seznam | ✅ Fáze 0 (9. 7. 2026) |
+| Nové URL `/vydani/{ISO}/`, `/archiv/`, meta-refresh ze starých cest | ✅ Fáze 1.1 (10. 7. 2026) |
+| Homepage stabilní landing (H1/H2, úvod, „Z archivu") | ✅ Fáze 1.2 (10. 7. 2026) |
+| HTTP 301 redirecty | ⏳ zatím meta-refresh (rozhodnutí); Cloudflare později |
+| Breadcrumbs | ✅ Fáze 1.3 (10. 7. 2026) |
+| Prev/next vydání (pager + patička) | ✅ Fáze 1.4 (10. 7. 2026) |
+| Slovníček per-pojem (`/slovnicek/{slug}/`) | ✅ Fáze 1.5 (10. 7. 2026) |
+| Article anchory (`#slug` deep-linky) | ✅ Fáze 1.6 (10. 7. 2026) |
+| `/poslanec/`, `/tema/`, interní prolinkování poslanců/témat | ⏳ Fáze 2 |
+| GSC, sitemap odeslání, Rich Results Test | ⏳ Markéta, po deployi |
+
+Položky označené ⚠️ OVĚŘIT vycházejí z externí analýzy webu — u hotových částí jsou potvrzeny v kódu (viz plán).
 
 ---
 
@@ -15,7 +30,7 @@ Položky označené ⚠️ OVĚŘIT vycházejí z externí analýzy webu — dev
 | Denní přehled | „co se dělo ve sněmovně", „sněmovna dnes" | Homepage / dnešní vydání |
 | Poslanec + téma | „babiš interpelace", „richterová bydlení" | `/poslanec/{slug}/` |
 | Zákon / téma | „zákon o obalech novela", „korespondenční volba hlasování" | `/tema/{slug}/` |
-| Vysvětlení pojmu | „co je interpelace", „co je sněmovní tisk" | `/slovnicek/{slug}/` |
+| Vysvětlení pojmu | „co je interpelace", „co je sněmovní tisk" | `/slovnicek/{slug}/` ✅ |
 | Brand | „poslušně hlásím sněmovna" | Homepage (dlouhodobě) |
 
 ---
@@ -23,72 +38,84 @@ Položky označené ⚠️ OVĚŘIT vycházejí z externí analýzy webu — dev
 ## 2. Cílová struktura webu
 
 ```
-Homepage (/)                          ← stabilní landing, ne měnící se článek
-├── Dnešní vydání (/vydani/2026-07-08/)
-├── Archiv (/archiv/)
-│   └── Vydání (/vydani/{YYYY-MM-DD}/)
-│       └── Stenoreport (/vydani/{YYYY-MM-DD}/steno/)   ⚠️ OVĚŘIT dnešní podobu -steno.html
-├── Poslanci (/poslanci/)
-│   └── Detail (/poslanec/{slug}/)            např. /poslanec/andrej-babis/
-├── Témata (/temata/)
-│   └── Detail (/tema/{slug}/)                např. /tema/zakon-o-obalech/
-├── Slovníček (/slovnicek/)
-│   └── Pojem (/slovnicek/{slug}/)            např. /slovnicek/interpelace/
+Homepage (/)                          ← stabilní landing ✅ (1.2), bez breadcrumbs
+├── Dnešní vydání (/vydani/2026-07-08/)   ✅ (1.1)
+├── Archiv (/archiv/)                   ✅ (1.1) + breadcrumbs (1.3)
+│   └── Vydání (/vydani/{YYYY-MM-DD}/)  ✅ + breadcrumbs (1.3)
+│       ├── Stenoreport (/vydani/…/steno/)        ✅ + breadcrumbs (1.3)
+│       ├── Smlouvy, řečníci, vyznamenání         ✅ + breadcrumbs (1.3)
+│       └── Články (#topic-slug)                  ✅ (1.6)
+├── Poslanci (/poslanci/)               ⏳ Fáze 2
+│   └── Detail (/poslanec/{slug}/)
+├── Témata (/temata/)                   ⏳ Fáze 2
+│   └── Detail (/tema/{slug}/)
+├── Slovníček (/slovnicek/)             ✅ index (1.1) + breadcrumbs (1.3)
+│   └── Pojem (/slovnicek/{slug}/)      ✅ (1.5) + breadcrumbs
 ├── O webu (/o-webu/)
 ├── Podpora (/podpora/)
 └── Pivo (/pivo/)
 ```
 
 Pravidla URL:
-- lowercase, pomlčky, bez diakritiky, bez `.html`, konzistentní trailing slash (doporučuji s lomítkem, a druhá varianta 301)
-- žádné tečky v názvech souborů (dnešní `02.07.2026.html` ⚠️ OVĚŘIT)
-- datum ve formátu ISO `YYYY-MM-DD` — řadí se, je jednoznačné, čitelné pro crawler i člověka
+- lowercase, pomlčky, bez diakritiky, bez `.html`, konzistentní trailing slash ✅
+- žádné tečky v názvech souborů ✅ (staré `02.07.2026.html` přesměrovány meta-refreshem)
+- datum ve formátu ISO `YYYY-MM-DD` ✅
 
 ---
 
 ## 3. Redirect tabulka (301)
 
-Všechny existující URL musí dostat 301 na nové. Vzor (⚠️ OVĚŘIT skutečné staré URL proti access logu / sitemap):
+Všechny existující URL musí vést na nové. **Implementováno (1.1):** meta-refresh stuby ze starých cest při exportu ([`export_pages.py`](../svejk/build/export_pages.py)). HTTP 301 zatím ne (rozhodnutí), doplnit přes Cloudflare Bulk Redirect Rules.
 
-| Stará URL | Nová URL |
-|---|---|
-| `/noviny/{rok}/{schuze}/{DD.MM.YYYY}.html` | `/vydani/{YYYY-MM-DD}/` |
-| `/noviny/{rok}/{schuze}/{DD.MM.YYYY}-steno.html` | `/vydani/{YYYY-MM-DD}/steno/` |
-| `/archiv.html` | `/archiv/` |
-| `/slovnicek.html` | `/slovnicek/` |
-| `/o-webu.html` | `/o-webu/` |
+| Stará URL | Nová URL | Stav |
+|---|---|---|
+| `/noviny/{rok}/{schuze}/{DD.MM.YYYY}.html` | `/vydani/{YYYY-MM-DD}/` | ✅ meta-refresh |
+| `/noviny/{rok}/{schuze}/{DD.MM.YYYY}-steno.html` | `/vydani/{YYYY-MM-DD}/steno/` | ✅ meta-refresh |
+| `/archiv.html` | `/archiv/` | ✅ meta-refresh |
+| `/slovnicek.html` | `/slovnicek/` | ✅ meta-refresh |
+| `/o-webu.html` | `/o-webu/` | ✅ meta-refresh |
 
-Implementace: redirect mapa na úrovni serveru (nginx map / Cloudflare rules / `_redirects`), ne JS redirect. Po nasazení projít Search Console → Pages a zkontrolovat, že staré URL hlásí „Page with redirect".
+Po nasazení projít Search Console → Pages a zkontrolovat, že staré URL hlásí „Page with redirect" (u meta-refresh může trvat déle než u 301).
 
 ---
 
 ## 4. Homepage (/)
 
-Dnes: homepage = dnešní vydání, obsah se denně přepisuje, stejný text žije i na datované URL → duplicita a nestabilní relevance.
+**Dříve:** homepage = dnešní vydání, obsah se denně přepisuje, stejný text žije i na datované URL → duplicita a nestabilní relevance.
 
-Nově:
-- **H1 (stabilní):** `Poslušně hlásím — satirický deník Poslanecké sněmovny`
-- Pod H1 jedna dvě věty o tom, co web je (obsahují slova *Poslanecká sněmovna, hlasování, poslanci, každý jednací den*).
-- Dále plný obsah **dnešního vydání** (může být identický s /vydani/…), ale `<link rel="canonical">` homepage ukazuje **na sebe** (`https://poslusnehlasim.cz/`) a datovaná URL má canonical na sebe. Aby nevznikla duplicita, homepage zobrazuje vydání *bez* jeho vlastní H1 — titulek dne je H2.
-  - Alternativa (jednodušší a SEO-čistší): homepage zobrazuje jen perex + první článek vydání a tlačítko „Číst celé vydání" → /vydani/…. Rozhodnutí nechávám na UX, obě varianty jsou přijatelné; nepřijatelné je současné 1:1 zdvojení.
-- Sekce „Z archivu" — 5 posledních vydání jako textové odkazy s titulky (interní linky s anchor textem).
-- Odkazy na /poslanci/, /temata/, /slovnicek/ v hlavní navigaci.
+**Implementováno (1.2, 10. 7. 2026):**
+- **H1 (stabilní):** `Poslušně hlásím, satirický deník Poslanecké sněmovny` ([`homepage-landing.html`](../svejk/templates/homepage-landing.html))
+- Pod H1 úvodní odstavec s klíčovými slovy (Poslanecká sněmovna, hlasování, poslanci, každý jednací den)
+- Plný obsah dnešního vydání na `/`; titulek dne je **H2**; canonical homepage na sebe (`https://poslusnehlasim.cz/`)
+- Sekce **„Z archivu"** — 5 předchozích vydání jako textové odkazy ([`homepage-archive.html`](../svejk/templates/homepage-archive.html))
+- Masthead „Poslušně hlásím!" je dekorace (`<p>`), ne H1
 
-**Title:** `Poslušně hlásím — denní zpravodaj z Poslanecké sněmovny`
-**Meta description:** `Satirický deník z Poslanecké sněmovny. Každý jednací den srozumitelně: o čem poslanci hlasovali, co zaznělo v rozpravě a co to znamená. Bez stenoprotokolové mlhy.`
+**Zbývá:** odkazy na `/poslanci/`, `/temata/` v hlavní navigaci (až Fáze 2).
+
+**Title:** `Poslušně hlásím, denní zpravodaj z Poslanecké sněmovny` ✅  
+**Meta description:** viz níže ✅
 
 ---
 
 ## 5. Stránka vydání (/vydani/{YYYY-MM-DD}/)
 
-- **H1:** `{Titulek dne}` — např. `Titulek na počkání`
-- Hned pod H1 řádek: `Poslanecká sněmovna, {den v týdnu} {D. M. YYYY} · {n}. schůze` — dostane keyword + datum do prvních 100 slov.
-- Každý článek vydání = `<article>` s `<h2>` a stabilním `id` anchorem (`#rada-ct`, `#zakon-o-obalech`) — umožní deep-linkování z entitních stránek.
-- Jména poslanců a názvy témat v textu = interní odkazy na `/poslanec/…` a `/tema/…` (viz §8). Pojmy = odkazy na `/slovnicek/…` (ne modal — modal ponechat jako progressive enhancement přes JS, ale v HTML musí být `<a href>`).
-- Patička vydání: `← předchozí vydání | další vydání →` (chronologické prolinkování, crawler projde celý archiv bez sitemap).
+**Implementováno (1.1–1.4, 1.6):**
+- **H1:** `{Titulek dne}` ([`edition-day-headline.html`](../svejk/templates/edition-day-headline.html))
+- Pod H1 řádek: `Poslanecká sněmovna, {den} {D. M. YYYY} · {n}. schůze` s `<time datetime="YYYY-MM-DD">` ✅
+- **Breadcrumbs:** `Poslušně hlásím › Archiv vydání › 8. 7. 2026` + BreadcrumbList JSON-LD ✅ (1.3)
+- **Title** a **meta description** dle šablon níže ✅
+- **Patička vydání prev/next** — pager v hlavičce i patičce (`← 1. 7. | 3. 7. →`), kanonické `/vydani/` URL ✅ (1.4)
+- **Article anchory:** každý článek má `id` = slug tématu (`#novela-z-o-obalech`), citace `#slug-citace` ✅ (1.6)
+- **JSON-LD `hasPart`:** fragment URL na každý článek ✅ (1.6)
 
-**Title šablona:** `Sněmovna {D. M. YYYY}: {Titulek dne} | Poslušně hlásím`
-**Meta description šablona:** `{Perex dne, max 150 znaků}. Denní přehled z Poslanecké sněmovny — {D. M. YYYY}.`
+**Zbývá:**
+- Jména poslanců / témata jako interní odkazy na entity stránky — Fáze 2
+- Pojmy slovníčku v textu → odkazy na `/slovnicek/{slug}/` ✅ (1.5)
+
+**Title šablona:** `Sněmovna {D. M. YYYY}: {Titulek dne} | Poslušně hlásím` ✅  
+**Meta description šablona:** `{Perex dne}. Denní přehled z Poslanecké sněmovny, {D. M. YYYY}.` ✅
+
+**Příklad deep-linku:** `https://poslusnehlasim.cz/vydani/2026-07-02/#novela-z-o-obalech`
 
 ---
 
@@ -98,7 +125,7 @@ Nově:
 Generovat automaticky z dat vydání (řečníci jsou tagovaní ⚠️ OVĚŘIT formát dat). Obsah stránky:
 1. H1: `{Jméno Příjmení} ({strana}) v Poslušně hlásím`
 2. Krátký strojový úvod: kolikrát zmíněn, v kolika vydáních, poslední zmínka.
-3. Chronologický seznam zmínek: datum → titulek článku → 1–2 věty kontextu → odkaz na `/vydani/{date}/#anchor`.
+3. Chronologický seznam zmínek: datum → titulek článku → 1–2 věty kontextu → odkaz na `/vydani/{date}/#{anchor_id}` (anchor z 1.6).
 4. Interní odkazy na související témata.
 
 **Title:** `{Jméno Příjmení} — vystoupení a hlasování ve sněmovně | Poslušně hlásím`
@@ -117,29 +144,36 @@ Abecední/řazený seznam s počtem zmínek. Zajišťují, že žádná entitní
 
 ## 7. Slovníček (/slovnicek/ + /slovnicek/{slug}/)
 
-- Rozpadnout současnou jednu stránku na samostatné URL per pojem.
-- Struktura pojmu: H1 `Co je {pojem}?` → definice v 1. odstavci (40–60 slov, přímá odpověď — featured snippet formát) → satirický dovětek → „Kde se o tom psalo" (odkazy na vydání).
-- /slovnicek/ zůstává jako index se všemi pojmy a kotvami.
-- FAQPage/DefinedTerm schema viz §9.
+**Implementováno (1.1, 1.3, 1.5):**
+- Index na `/slovnicek/` ✅, FAQPage JSON-LD na indexu ✅ (0.2), breadcrumbs ✅ (1.3)
+- Samostatná stránka pro každý pojem ze `SLOVNIČEK`: `/slovnicek/{slug}/` ✅
+- Šablona [`slovnicek-pojem.html`](../svejk/templates/slovnicek-pojem.html): H1 `Co je {pojem}?` → definice → „Kde se o tom psalo" (index zmínek z vydání)
+- DefinedTerm + FAQPage JSON-LD na stránce pojmu (`slovnicek_term_json_ld()`)
+- Index [`slovnicek-stranka.html`](../svejk/templates/slovnicek-stranka.html): odkazy na per-pojem URL (ne kotvy)
+- Pojmy v textech vydání → `<a href="/slovnicek/{slug}/">` ([`glossary_markup.py`](../svejk/build/glossary_markup.py)); modal jako JS enhancement
 
-**Title:** `Co je {pojem}? Sněmovní slovníček | Poslušně hlásím`
+**Title (nasazeno):** `Co je {pojem}? Švejkov slovníček | Poslušně hlásím`  
+*(Spec původně „Sněmovní slovníček" — v kódu značka Švejkův slovníček.)*
 
 ---
 
 ## 8. Interní prolinkování — pravidla pro generátor
 
-1. První výskyt jména poslance v článku → odkaz na `/poslanec/{slug}/` (pokud stránka existuje).
-2. První výskyt sledovaného tématu → odkaz na `/tema/{slug}/`.
-3. Pojmy ze slovníčku → `<a href="/slovnicek/{slug}/">` (modal jako JS enhancement nad odkazem).
-4. Žádná stránka bez alespoň jednoho příchozího interního odkazu (orphan check v buildu).
+1. První výskyt jména poslance v článku → odkaz na `/poslanec/{slug}/` (pokud stránka existuje). ⏳ Fáze 2
+2. První výskyt sledovaného tématu → odkaz na `/tema/{slug}/`. ⏳ Fáze 2
+3. Pojmy ze slovníčku → `<a href="/slovnicek/{slug}/">` (modal jako JS enhancement nad odkazem). ✅ *1.5*
+4. Žádná stránka bez alespoň jednoho příchozího interního odkazu (orphan check v buildu). ⏳ Fáze 2
 5. Anchor texty popisné — jméno/pojem, nikdy „zde" / „více".
-6. Breadcrumbs na všech podstránkách: `Poslušně hlásím › Archiv › 8. 7. 2026` (+ BreadcrumbList schema).
+6. Breadcrumbs na všech podstránkách: `Poslušně hlásím › Archiv › 8. 7. 2026` (+ BreadcrumbList schema). ✅ *1.3*
+7. Deep-link na článek ve vydání: `/vydani/{ISO}/#{topic-slug}`. ✅ *1.6*
 
 ---
 
 ## 9. Strukturovaná data (JSON-LD, do `<head>`)
 
 Validovat v https://search.google.com/test/rich-results před nasazením.
+
+**Stav:** Organization + WebSite na homepage ✅, NewsArticle na vydáních ✅ (0.2, `hasPart` s fragmenty ✅ 1.6). BreadcrumbList na podstránkách ✅ (1.3). DefinedTerm + FAQ na pojmech slovníčku ✅ (1.5).
 
 ### Homepage — Organization + WebSite (@graph)
 ```json
@@ -166,7 +200,7 @@ Validovat v https://search.google.com/test/rich-results před nasazením.
   ]
 }
 ```
-Pole `sameAs` doplnit o sociální profily, jakmile existují (klíčové pro odlišení od filmu). `logo` URL ⚠️ OVĚŘIT.
+Pole `sameAs` doplnit o sociální profily, jakmile existují (klíčové pro odlišení od filmu). `logo` v kódu: `/static/apple-touch-icon.png` (odchylka od spec `/assets/logo.png`).
 
 ### Stránka vydání — NewsArticle
 ```json
@@ -183,11 +217,21 @@ Pole `sameAs` doplnit o sociální profily, jakmile existují (klíčové pro od
   "mainEntityOfPage": "https://poslusnehlasim.cz/vydani/{YYYY-MM-DD}/",
   "about": [
     { "@type": "Thing", "name": "Poslanecká sněmovna Parlamentu České republiky" }
+  ],
+  "hasPart": [
+    {
+      "@type": "NewsArticle",
+      "headline": "{Nadpis článku}",
+      "articleBody": "{Perex + mean}",
+      "position": 1,
+      "@id": "https://poslusnehlasim.cz/vydani/{YYYY-MM-DD}/#{topic-slug}",
+      "url": "https://poslusnehlasim.cz/vydani/{YYYY-MM-DD}/#{topic-slug}"
+    }
   ]
 }
 ```
 
-### Pojem slovníčku — DefinedTerm + FAQPage
+### Pojem slovníčku — DefinedTerm + FAQPage ✅ (1.5)
 ```json
 {
   "@context": "https://schema.org",
@@ -198,7 +242,7 @@ Pole `sameAs` doplnit o sociální profily, jakmile existují (klíčové pro od
       "description": "{Definice, první odstavec stránky}",
       "inDefinedTermSet": {
         "@type": "DefinedTermSet",
-        "name": "Sněmovní slovníček Poslušně hlásím",
+        "name": "Švejkov slovníček",
         "url": "https://poslusnehlasim.cz/slovnicek/"
       }
     },
@@ -214,7 +258,9 @@ Pole `sameAs` doplnit o sociální profily, jakmile existují (klíčové pro od
 }
 ```
 
-### Všechny podstránky — BreadcrumbList
+### Všechny podstránky — BreadcrumbList ✅ (1.3, 1.5)
+
+Implementováno v [`breadcrumbs.html`](../svejk/templates/breadcrumbs.html) a `breadcrumb_json_ld()` v [`seo.py`](../svejk/build/seo.py). Vzor:
 ```json
 {
   "@context": "https://schema.org",
@@ -233,24 +279,26 @@ Schema musí odpovídat viditelnému obsahu stránky — nemarkupovat nic, co na
 
 ## 10. Archiv (/archiv/)
 
-- Zachovat kalendář jako UI, ale **pod něj doplnit chronologický textový seznam**: `8. 7. 2026, Titulek na počkání` (odkaz na vydání). **Hotovo** — sekce „Všechna vydání" na `/archiv.html` (Fáze 0.3, 9. 7. 2026).
+- Zachovat kalendář jako UI, ale **pod něj doplnit chronologický textový seznam**: `8. 7. 2026, Titulek na počkání` (odkaz na vydání). **Hotovo** — sekce „Všechna vydání" na `/archiv/` (Fáze 0.3); kanonická URL `/archiv/` od 1.1; breadcrumbs od 1.3.
 - Při > ~100 vydáních stránkovat po měsících: `/archiv/2026-07/`.
 
 ---
 
 ## 11. Technické požadavky
 
-| Položka | Požadavek |
-|---|---|
-| `sitemap.xml` | Generovat v buildu: homepage, všechna vydání, entitní stránky, slovníček, statické stránky. `<lastmod>` reálné. Odkaz v robots.txt. |
-| `robots.txt` | Povolit vše relevantní, `Sitemap:` řádek. Nezakazovat /vydani/. |
-| Canonical | Každá stránka self-canonical, absolutní URL, https, jednotný trailing slash. |
-| 301 | Kompletní mapa dle §3, bez řetězení redirectů. |
-| `llms.txt` | Krátký soubor v rootu: co web je, struktura sekcí, odkaz na archiv a slovníček. Pomáhá AI crawlerům (AI Overview, Perplexity) web správně zařadit. |
-| OG/Twitter | Per-page og:title, og:description, og:image (dnes existuje ⚠️ OVĚŘIT úplnost na podstránkách). |
-| `<html lang="cs">` | Zkontrolovat. |
-| Výkon | Server-side render zachovat (funguje). Žádný content za JS. |
-| Datum v HTML | `<time datetime="2026-07-08">` u vydání. |
+| Položka | Požadavek | Stav |
+|---|---|---|
+| `sitemap.xml` | Generovat v buildu: homepage, všechna vydání, slovníček (index + pojmy), statické stránky | ✅ (1.1 + 1.5); entity až Fáze 2 |
+| `robots.txt` | Povolit vše relevantní, `Sitemap:` řádek | ✅ |
+| Canonical | Každá stránka self-canonical, absolutní URL, https, trailing slash | ✅ |
+| 301 | Kompletní mapa dle §3 | ⏳ meta-refresh (1.1); HTTP 301 později |
+| `llms.txt` | Krátký soubor v rootu | ✅ |
+| OG/Twitter | Per-page og:title, og:description, og:image | ✅ na vydáních a homepage |
+| `<html lang="cs">` | Zkontrolovat | ✅ |
+| Výkon | Server-side render, žádný content za JS | ✅ |
+| Datum v HTML | `<time datetime="2026-07-08">` u vydání | ✅ (1.2) |
+| Breadcrumbs | UI + BreadcrumbList JSON-LD na podstránkách | ✅ (1.3, 1.5) |
+| Article fragmenty | Stabilní `#slug` anchory + `hasPart` URL | ✅ (1.6) |
 
 ---
 
@@ -258,31 +306,33 @@ Schema musí odpovídat viditelnému obsahu stránky — nemarkupovat nic, co na
 
 1. Ověřit vlastnictví (DNS TXT), pokud ještě není.
 2. Odeslat sitemap.xml.
-3. URL Inspection → Request indexing pro homepage, /o-webu/, /slovnicek/, 3 poslední vydání.
+3. URL Inspection → Request indexing pro homepage, /o-webu/, /slovnicek/, 2–3 pojmy slovníčku (např. `/slovnicek/obstrukce/`), 3 poslední vydání.
 4. Po 2 týdnech zkontrolovat Pages report: indexed vs. crawled-not-indexed; staré URL = „Page with redirect".
 5. Sledovat Performance na dotazy obsahující „sněmovna" — baseline pro měření redesignu.
+6. Rich Results Test: DefinedTerm/FAQ na stránce pojmu, NewsArticle `hasPart` na vydání.
 
 ---
 
 ## 13. Fáze a akceptační kritéria
 
-### Fáze 0 — bez redesignu (nasadit hned, ~dny)
+### Fáze 0 — bez redesignu (~dny)
 - [ ] GSC ověřeno, sitemap odeslána *(Markéta, po deployi)*
-- [x] Title/description šablony dle §4–5 (na stávajících URL) — *9. 7. 2026*
+- [x] Title/description šablony dle §4–5 — *9. 7. 2026*
 - [x] JSON-LD Organization + WebSite na homepage, NewsArticle na vydáních — *9. 7. 2026*
 - [x] Archiv doplněn o textový seznam s titulky — *9. 7. 2026*
 
-### Fáze 1 — restrukturalizace (~1–2 týdny)
-- [ ] Nové URL schéma + kompletní 301 mapa
-- [ ] Homepage jako stabilní landing dle §4
-- [ ] Breadcrumbs + BreadcrumbList
-- [ ] prev/next prolinkování vydání
-- [ ] Slovníček jako samostatné stránky
+### Fáze 1 — restrukturalizace — hotovo *10. 7. 2026*
+- [x] Nové URL schéma — *1.1* (meta-refresh místo HTTP 301, viz rozhodnutí)
+- [x] Homepage jako stabilní landing dle §4 — *1.2*
+- [x] Breadcrumbs + BreadcrumbList — *1.3*
+- [x] prev/next prolinkování vydání — *1.4*
+- [x] Slovníček jako samostatné stránky — *1.5*
+- [x] Article anchory (`DenItem.anchor_id`) pro deep-linky — *1.6*
 
 ### Fáze 2 — entitní stránky (~2–4 týdny)
 - [ ] /poslanec/ generované z dat (práh ≥ 3 zmínky)
 - [ ] /tema/ pro 10–20 kurátorovaných témat
-- [ ] Interní linkování z textů vydání dle §8
+- [ ] Interní linkování z textů vydání dle §8 (poslanci, témata)
 - [ ] Orphan check v build pipeline
 
 ### Definice hotovo (celek)

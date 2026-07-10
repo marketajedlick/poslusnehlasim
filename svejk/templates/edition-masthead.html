@@ -1,25 +1,14 @@
 <div class="masthead{% if rail %} edition-rail-mast{% endif %}">
   <img class="masthead-fav" src="{{ ph_fav_href }}" alt="Švejk" width="96" height="96">
   <div class="masthead-eyebrow">{{ t.edition.eyebrow }}</div>
-  {% if rail %}
-  <p class="masthead-title" aria-hidden="true">Poslušně<br>hlásím!</p>
+  {% if rail or masthead_decor_only %}
+  <p class="masthead-title"{% if masthead_decor_only and not rail %} aria-hidden="true"{% endif %}>Poslušně<br>hlásím!</p>
   {% else %}
   <h1 class="masthead-title">Poslušně<br>hlásím!</h1>
   {% endif %}
   {% if not rail %}
-  <div class="pager pager-mobile">
-    {% if nav.prev %}
-    <a class="pager-tag" href="{{ nav.prev.href }}" title="{{ nav.prev.title }}">← {{ nav.prev.short_label or nav.prev.label }}</a>
-    {% else %}
-    <span class="pager-tag disabled">←</span>
-    {% endif %}
-    <span class="pager-now">{{ datum_design }}</span>
-    {% if nav.next %}
-    <a class="pager-tag" href="{{ nav.next.href }}" title="{{ nav.next.title }}">{{ nav.next.short_label or nav.next.label }} →</a>
-    {% else %}
-    <span class="pager-tag disabled">→</span>
-    {% endif %}
-  </div>
+  {% set pager_class = "pager-mobile" %}
+  {% include "edition-pager.html" %}
   <div class="edition-masthead-nav">
     {% include "site-nav.html" %}
   </div>

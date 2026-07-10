@@ -3,11 +3,14 @@ from svejk.build.nav import (
     archiv_pages_href,
     edition_pages_href,
     slovnicek_pages_href,
+    slovnicek_term_pages_href,
     steno_sources_pages_href,
 )
 from svejk.build.urls import (
+    article_anchor_id,
     datum_iso_to_unl,
     datum_unl_to_iso,
+    edition_article_href,
     edition_export_relpath,
     edition_legacy_pages_href,
     edition_slug,
@@ -15,6 +18,8 @@ from svejk.build.urls import (
     poslanec_slug,
     vydani_pages_href,
 )
+from svejk.glossary import slovnicek_term_slug
+from svejk.build.day_content import DenItem
 from datetime import datetime, timezone
 
 
@@ -30,6 +35,42 @@ def test_vydani_hrefs() -> None:
     )
     assert archiv_pages_href() == "/archiv/"
     assert slovnicek_pages_href() == "/slovnicek/"
+    assert slovnicek_term_pages_href("obstrukce") == "/slovnicek/obstrukce/"
+
+
+def test_slovnicek_term_slug() -> None:
+    assert slovnicek_term_slug("rozpočtové brzdy") == "rozpoctove-brzdy"
+    assert slovnicek_term_slug("Dozimetr") == "dozimetr"
+
+
+def test_article_anchor_id() -> None:
+    assert article_anchor_id(slug="novela-z-o-obalech") == "novela-z-o-obalech"
+    assert article_anchor_id(slug="", num=3) == "article-3"
+
+
+def test_edition_article_href() -> None:
+    assert edition_article_href(
+        "02.07.2026",
+        slug="novela-z-o-obalech",
+    ) == "/vydani/2026-07-02/#novela-z-o-obalech"
+
+
+def test_den_item_anchor_id() -> None:
+    item = DenItem(
+        num=2,
+        kick="",
+        nadpis="Test",
+        nadpis_radky=["Test"],
+        lead="",
+        mean="",
+        dopad="",
+        parliament_lead="",
+        verdikt="schvaleno",
+        slug="novela-z-o-obalech",
+    )
+    assert item.anchor_id == "novela-z-o-obalech"
+    item.slug = ""
+    assert item.anchor_id == "article-2"
 
 
 def test_export_relpaths() -> None:

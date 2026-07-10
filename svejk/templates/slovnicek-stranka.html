@@ -9,11 +9,13 @@
 {% if faq_json_ld %}
 <script type="application/ld+json">{{ faq_json_ld | tojson }}</script>
 {% endif %}
+{% include "breadcrumb-jsonld.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="slovnicek-page">
 <div class="slovnicek-stage">
+  {% include "breadcrumbs.html" %}
   <header class="slovnicek-head">
     <h1 class="slovnicek-title">{{ t.glossary_page.heading }}</h1>
     <p class="slovnicek-gloss">{{ t.glossary_page.gloss }}</p>
@@ -25,21 +27,12 @@
   <section class="citanka-slovnik" aria-label="{{ t.glossary_page.heading }}">
     <div class="citanka-terms">
       {% for entry in slovnicek %}
-      <button
-        type="button"
-        class="term-term"
-        id="{{ entry.anchor }}"
-        data-term="{{ entry.term }}"
-        data-def="{{ entry.answer }}"
-        title="{{ entry.answer }}"
-      >{{ entry.term }}</button>
+      <a class="term-link" href="{{ entry.href }}" title="{{ entry.answer }}">{{ entry.term }}</a>
       {% endfor %}
     </div>
   </section>
 </div>
 {% include "site-footer.html" %}
-{% include "term-sheet.html" %}
-{% include "slovnicek-scripts.html" %}
 {% include "cookie-consent.html" %}
 </body>
 </html>

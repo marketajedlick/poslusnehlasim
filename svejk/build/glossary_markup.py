@@ -11,7 +11,9 @@ from svejk.glossary import (
     glossary_entries,
     slovnicek_entries,
     slovnicek_term_label,
+    slovnicek_term_slug,
 )
+from svejk.build.nav import slovnicek_term_pages_href
 
 
 def _pattern(phrase: str) -> re.Pattern[str]:
@@ -20,9 +22,46 @@ def _pattern(phrase: str) -> re.Pattern[str]:
     return re.compile(rf"(?<![\w]){body}(?![\w])", re.IGNORECASE)
 
 
-def _wrap(label: str, tip: str) -> str:
+def _slovnicek_term_for_phrase(phrase: str) -> str | None:
+    sk = _slovnicek_entry_for_needle(phrase)
+    if sk:
+        return sk[0]
+    low = phrase.lower()
+    best: str | None = None
+    best_len = 0
+    for term, _ in slovnicek_entries():
+        t = term.lower()
+        n = 0
+        for a, b in zip(low, t):
+            if a != b:
+                break
+            n += 1
+        if n >= 5 and n > best_len:
+            best_len = n
+            best = term
+    return best
+
+
+def _slovnicek_href_for_phrase(phrase: str, base_path: str = "") -> str | None:
+    term = _slovnicek_term_for_phrase(phrase)
+    if not term:
+        return None
+    return slovnicek_term_pages_href(slovnicek_term_slug(term), base_path)
+
+
+def _slovnicek_href_for_display(display: str, base_path: str = "") -> str | None:
+    return _slovnicek_href_for_phrase(display, base_path)
+
+
+def _wrap(label: str, tip: str, *, href: str | None = None) -> str:
     safe_tip = escape(tip)
     safe_label = escape(label)
+    if href:
+        safe_href = escape(href)
+        return (
+            f'<a class="term-term" href="{safe_href}" data-term="{safe_label}" '
+            f'data-def="{safe_tip}" title="{safe_tip}">{safe_label}</a>'
+        )
     return (
         f'<button type="button" class="term-term" data-term="{safe_label}" '
         f'data-def="{safe_tip}" title="{safe_tip}">{safe_label}</button>'
@@ -31,7 +70,7 @@ def _wrap(label: str, tip: str) -> str:
 
 def _strip_term_term(text: str) -> str:
     return re.sub(
-        r'<button[^>]*class="term-term"[^>]*>(.*?)</button>',
+        r'<(?:button|a)[^>]*class="term-term"[^>]*>(.*?)</(?:button|a)>',
         r"\1",
         text,
         flags=re.I | re.S,
@@ -68,16 +107,16 @@ def strip_highlight_markup(text: str) -> str:
     return _HIGHLIGHT_MARK.sub(r"\1", out)
 
 
-def _markup_plain(text: str) -> str:
+def _markup_plain(text: str, *, base_path: str = "", link_terms: bool = True) -> str:
     """Tooltipy jen v prostém textu (bez HTML tagů)."""
     if not text:
         return text
 
     glossary = glossary_entries()
-    matches: list[tuple[int, int, str, str]] = []
+    matches: list[tuple[int, int, str, str, str]] = []
     for phrase, tip in glossary:
         for m in _pattern(phrase).finditer(text):
-            matches.append((m.start(), m.end(), m.group(0), tip))
+            matches.append((m.start(), m.end(), m.group(0), tip, phrase))
 
     if not matches:
         return text
@@ -85,16 +124,17 @@ def _markup_plain(text: str) -> str:
     # Delší shoda má přednost; při stejné délce dřívější v glosáři.
     matches.sort(key=lambda x: (-(x[1] - x[0]), x[0]))
     used: list[tuple[int, int]] = []
-    selected: list[tuple[int, int, str, str]] = []
-    for start, end, label, tip in matches:
+    selected: list[tuple[int, int, str, str, str]] = []
+    for start, end, label, tip, phrase in matches:
         if any(not (end <= s or start >= e) for s, e in used):
             continue
         used.append((start, end))
-        selected.append((start, end, label, tip))
+        selected.append((start, end, label, tip, phrase))
 
     out = text
-    for start, end, label, tip in sorted(selected, key=lambda x: x[0], reverse=True):
-        out = out[:start] + _wrap(label, tip) + out[end:]
+    for start, end, label, tip, phrase in sorted(selected, key=lambda x: x[0], reverse=True):
+        href = _slovnicek_href_for_phrase(phrase, base_path) if link_terms else None
+        out = out[:start] + _wrap(label, tip, href=href) + out[end:]
     return out
 
 
@@ -117,7 +157,12 @@ _TERM_TIP_BLOCK = re.compile(
 )
 
 
-def markup_glossary(text: str) -> str:
+def markup_glossary(
+    text: str,
+    *,
+    base_path: str = "",
+    link_terms: bool = True,
+) -> str:
     """Vrátí HTML s hover tooltipem u známých pojmů (bez překrývání)."""
     if not text:
         return text
@@ -126,36 +171,57 @@ def markup_glossary(text: str) -> str:
     if "class=\"term-tip\"" in text:
         parts = _TERM_TIP_BLOCK.split(text)
         return "".join(
-            part if part.startswith('<span class="term-tip"') else _markup_html_fragment(part)
+            part
+            if part.startswith('<span class="term-tip"')
+            else _markup_html_fragment(
+                part, base_path=base_path, link_terms=link_terms
+            )
             for part in parts
         )
-    return _markup_html_fragment(text)
+    return _markup_html_fragment(text, base_path=base_path, link_terms=link_terms)
 
 
-def _markup_html_fragment(text: str) -> str:
+def _markup_html_fragment(
+    text: str,
+    *,
+    base_path: str = "",
+    link_terms: bool = True,
+) -> str:
     if not text:
         return text
     if "<" not in text:
-        return _markup_plain(text)
+        return _markup_plain(text, base_path=base_path, link_terms=link_terms)
 
     parts = _HTML_SPLIT.split(text)
     return "".join(
-        part if part.startswith("<") else _markup_plain(part)
+        part
+        if part.startswith("<")
+        else _markup_plain(part, base_path=base_path, link_terms=link_terms)
         for part in parts
     )
 
 
-def apply_glossary_to_content(content: Any) -> None:
+def apply_glossary_to_content(
+    content: Any,
+    *,
+    base_path: str = "",
+    link_mode: str = "pages",
+) -> None:
     """Tooltipy v textu dne — před vložením odkazů, které frázi rozsekají."""
+    link_terms = link_mode == "pages"
+
+    def _mark(val: str) -> str:
+        return markup_glossary(val, base_path=base_path, link_terms=link_terms)
+
     for field in ("dnesni_ucet", "result_note", "zaver", "zaver_body"):
         val = getattr(content, field, None)
         if val:
-            setattr(content, field, markup_glossary(val))
+            setattr(content, field, _mark(val))
     for item in getattr(content, "items", []) or []:
         for field in ("lead", "mean", "kuriozita", "citace_text", "pointa"):
             val = getattr(item, field, None)
             if val:
-                setattr(item, field, markup_glossary(val))
+                setattr(item, field, _mark(val))
 
 
 def glossary_markup(text: str) -> Markup:
@@ -181,10 +247,15 @@ def _slovnicek_entry_for_needle(needle: str) -> tuple[str, str] | None:
     return None
 
 
-def _glossary_matches_in_text(combined: str) -> list[tuple[int, str, str]]:
+def _glossary_matches_in_text(
+    combined: str,
+    *,
+    base_path: str = "",
+    link_terms: bool = True,
+) -> list[tuple[str, str, str | None]]:
     """Pojmy z glosáře v textu (pořadí prvního výskytu, bez překrývání)."""
     glossary = glossary_entries()
-    raw: list[tuple[int, int, str, str]] = []
+    raw: list[tuple[int, int, str, str, str]] = []
     for phrase, glossary_tip in glossary:
         for m in _pattern(phrase).finditer(combined):
             sk = _slovnicek_entry_for_needle(phrase) or _slovnicek_entry_for_needle(
@@ -192,15 +263,17 @@ def _glossary_matches_in_text(combined: str) -> list[tuple[int, str, str]]:
             )
             if sk:
                 display, tip = sk
+                src = sk[0]
             else:
                 display, tip = m.group(0), glossary_tip
-            raw.append((m.start(), m.end(), display, tip))
+                src = phrase
+            raw.append((m.start(), m.end(), display, tip, src))
 
     raw.sort(key=lambda x: (-(x[1] - x[0]), x[0]))
     used: list[tuple[int, int]] = []
-    selected: list[tuple[int, str, str]] = []
+    selected: list[tuple[int, str, str, str]] = []
     seen_display: set[str] = set()
-    for start, end, display, tip in raw:
+    for start, end, display, tip, src in raw:
         if any(not (end <= s or start >= e) for s, e in used):
             continue
         key = display.lower()
@@ -208,24 +281,43 @@ def _glossary_matches_in_text(combined: str) -> list[tuple[int, str, str]]:
             continue
         used.append((start, end))
         seen_display.add(key)
-        selected.append((start, display, tip))
+        selected.append((start, display, tip, src))
 
     selected.sort(key=lambda x: x[0])
-    return [(slovnicek_term_label(display), tip) for _, display, tip in selected]
+    out: list[tuple[str, str, str | None]] = []
+    for _, display, tip, src in selected:
+        href = _slovnicek_href_for_phrase(src, base_path) if link_terms else None
+        out.append((slovnicek_term_label(display), tip, href))
+    return out
 
 
-def svejkov_slovnik(*texts: str, limit: int = 6) -> list[tuple[str, str]]:
-    """Pojmy z textu dne pro box Švejkův slovník (název, vysvětlení)."""
-    found = _glossary_matches_in_text("\n".join(t for t in texts if t))
+def svejkov_slovnik(
+    *texts: str,
+    limit: int = 6,
+    base_path: str = "",
+    link_terms: bool = True,
+) -> list[tuple[str, str, str | None]]:
+    """Pojmy z textu dne pro box Švejkův slovník (název, vysvětlení, odkaz)."""
+    found = _glossary_matches_in_text(
+        "\n".join(t for t in texts if t),
+        base_path=base_path,
+        link_terms=link_terms,
+    )
     return found if limit <= 0 else found[:limit]
 
 
-def slovnicek_dne(*texts: str) -> list[tuple[str, str]]:
+def slovnicek_dne(
+    *texts: str,
+    base_path: str = "",
+    link_terms: bool = True,
+) -> list[tuple[str, str, str | None]]:
     """Všechny pojmy z textu dne pro sekci Slovníček dne."""
     combined = "\n".join(strip_glossary_markup(t) for t in texts if t)
     if not combined.strip():
         return []
-    return _glossary_matches_in_text(combined)
+    return _glossary_matches_in_text(
+        combined, base_path=base_path, link_terms=link_terms
+    )
 
 
 if __name__ == "__main__":
