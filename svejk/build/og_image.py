@@ -15,12 +15,14 @@ _SIGN_DEFAULT = "- Váš dobrý voják Švejk -"
 _SITE_FOOTER = "www.poslusnehlasim.cz"
 _CARD_RADIUS = 6
 _HERO_ICON_SIZE = 56
+_OG_ICON_SIZE = 80
+_OG_SIGN_SIZE = 24
 _SHARE_BTN_SIZE = 28
 
 OG_WIDTH = 1200
 OG_HEIGHT = 630
 # Bump při vizuální změně OG — sociální sítě cacheují obrázek podle URL.
-OG_CACHE_VERSION = "hero-card-1"
+OG_CACHE_VERSION = "hero-card-2"
 
 # Čtverec odpovídá hero kartě na mobilu; ruční nahrání na X vypadá lépe než 1200×630.
 # OG zůstává landscape pro twitter:card / og:image u odkazu na vydání.
@@ -304,12 +306,14 @@ def _draw_card_footer(
     width: int,
     sign: str,
     fav: Image.Image | None,
+    sign_size: int = 18,
+    show_share: bool = True,
 ) -> None:
-    sign_font = _load_font(18, bold=True, sans=True)
+    sign_font = _load_font(sign_size, bold=True, sans=True)
     sign_text = sign.upper()
     sign_h = _font_line_height(sign_font)
     fav_h = fav.height if fav is not None else 0
-    fav_gap = 14
+    fav_gap = 18 if sign_size >= _OG_SIGN_SIZE else 14
     foot_h = max(sign_h, fav_h)
     foot_x = x
     if fav is not None:
@@ -318,9 +322,10 @@ def _draw_card_footer(
         foot_x += fav.width + fav_gap
     sign_y = y + max(0, (foot_h - sign_h) // 2)
     draw.text((foot_x, sign_y), sign_text, fill=_CHAR, font=sign_font)
-    share_cx = x + width - _SHARE_BTN_SIZE // 2
-    share_cy = y + foot_h // 2
-    _draw_share_icon(draw, share_cx, share_cy)
+    if show_share:
+        share_cx = x + width - _SHARE_BTN_SIZE // 2
+        share_cy = y + foot_h // 2
+        _draw_share_icon(draw, share_cx, share_cy)
 
 
 def render_og_image(
@@ -363,8 +368,8 @@ def render_og_image(
     )
     mark_font = _load_font(max(44, int(getattr(quote_font, "size", 34) * 1.55)))
     line_h = max(32, int(getattr(quote_font, "size", 34) * 1.42))
-    fav = _prepare_brand_icon(_HERO_ICON_SIZE)
-    sign_font = _load_font(18, bold=True, sans=True)
+    fav = _prepare_brand_icon(_OG_ICON_SIZE)
+    sign_font = _load_font(_OG_SIGN_SIZE, bold=True, sans=True)
     sign_h = _font_line_height(sign_font)
     fav_h = fav.height if fav is not None else 0
     foot_h = max(sign_h, fav_h)
@@ -396,6 +401,8 @@ def render_og_image(
         width=text_w,
         sign=sign,
         fav=fav,
+        sign_size=_OG_SIGN_SIZE,
+        show_share=False,
     )
 
     footer_font = _load_font(22, sans=True)
