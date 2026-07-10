@@ -12,20 +12,23 @@
       "text": "Koten obhajoval usnesení odkazem na česko-německou deklaraci z roku 1997.",
       "source": "steno",
       "steno_id": "2025_16_00003",
-      "citace": "Vyzdvihuje význam Česko-německé deklarace podepsané 21. ledna 1997 pro utváření moderních česko-německých vztahů."
+      "citace": "vyzdvihuje význam Česko-německé deklarace podepsané 21. ledna 1997 pro utváření moderních česko-německých vztahův Evropě."
     },
     {
       "text": "Benda řekl, že bod nemá být stanovisko vládní koalice, ale sněmovny.",
-      "citace": "Máme mimořádně hloupý návrh. Vládní koalici se nepodařilo pochopit, že ten bod by se neměl jmenovat Stanovisko vládní koalice."
+      "citace": "Stanovisko vládní koaliceke sjezdu sudetoněmeckého landsmanšaftu v Brně.",
+      "steno_id": "2025_16_00003",
+      "source": "steno"
     },
     {
       "text": "Zuna navrhoval vyřadit bod z pořadu, aby se odblokovala sněmovna.",
-      "citace": "Dovolím si navrhnout vyřazení tohoto bodu z pořadu schůze."
+      "citace": "navrhnout vyřazení tohoto boduz pořadu schůze.",
+      "steno_id": "2025_16_00278",
+      "source": "steno"
     },
     {
       "text": "Hlasování číslo 49 ve 00:51, sto devět hlasů pro, jeden proti.",
-      "source": "votes",
-      "citace": "Hlasování číslo 49, pro 109, proti 1."
+      "source": "votes"
     }
   ],
   "publikovat": true,

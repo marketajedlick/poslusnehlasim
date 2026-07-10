@@ -10,19 +10,17 @@
   "fakty": [
     {
       "text": "První čtení novely stavebního zákona prošlo sto deseti hlasy.",
-      "source": "votes",
-      "citace": "Hlasování číslo 66, pro 110, proti 0."
+      "source": "votes"
     },
     {
       "text": "Druhé hlasování ve stejný večer, sto dvacet tři pro.",
-      "source": "votes",
-      "citace": "Hlasování číslo 67, pro 123, proti 0."
+      "source": "votes"
     },
     {
       "text": "63.Návrh poslankyně Zuzany Mrázové na vydání zákona, kterým se mění zákon č.",
       "source": "steno",
       "steno_id": "2025_16_00335",
-      "citace": "63.Návrh poslankyně Zuzany Mrázové na vydání zákona, kterým se mění zákon č."
+      "citace": "63.Návrh poslankyně Zuzany Mrázové na vydání zákona, kterým se mění zákonč."
     }
   ],
   "publikovat": true,

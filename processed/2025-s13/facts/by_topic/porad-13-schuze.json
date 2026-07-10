@@ -9,22 +9,25 @@
   ],
   "fakty": [
     {
-      "text": "Krňanský prosadil bod o přeplatcích Hřiba, 167 hlasů pro, jásot v sále.",
-      "citace": "V hlasování číslo 30 bylo přihlášeno 175 poslanců, pro hlasovalo 167 (proti 3). Návrh byl přijat. (Velký jásot a potlesk v sále.)"
+      "text": "Krňanský prosadil bod o přeplatcích Hřiba, 167 hlasů pro, jásot v sále."
     },
     {
       "text": "Hřib řekl, že přeplatky vrátil a bude hlasovat pro projednání.",
-      "citace": "Jakmile mi poslali tedy údaje, kam se to má vrátit, tak jsem jim všechno do koruny vrátil."
+      "citace": "mi poslali tedy údaje, kam se to má vrátit, tak jsem jim všechno do koruny vrátil.Tak s probíráním těchto odměn, pane Krňanský, já nemám vůbec žádný problém, já",
+      "steno_id": "2025_13_00081",
+      "source": "steno"
     },
     {
       "text": "Pořad schválen až po čtyřiceti čtyřech hlasováních o změnách.",
       "source": "steno",
       "steno_id": "2025_13_00082",
-      "citace": "Přeji vám dobrý večer, vystřídali jsme se v řízení schůze. Jestli tomu je tak, tak"
+      "citace": "Přeji vám dobrý večer, vystřídali jsme sev řízení schůze."
     },
     {
       "text": "Foldyna navrhl bod Zaseli jsme Kosovo a sklidili jsme Ukrajinu.",
-      "citace": "Nyní budeme hlasovat návrh pana poslance Foldyny, který zní Zaseli jsme Kosovo a sklidili jsme Ukrajinu."
+      "citace": "Zaseli jsme Kosovoa sklidili jsme Ukrajinu.",
+      "steno_id": "2025_13_00036",
+      "source": "steno"
     }
   ],
   "publikovat": true,

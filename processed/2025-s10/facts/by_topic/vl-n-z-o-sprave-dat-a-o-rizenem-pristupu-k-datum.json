@@ -9,15 +9,11 @@
   ],
   "fakty": [
     {
-      "text": "Hlasování číslo 53, pro 128, proti nikdo. S návrhem zákona byl vysloven souhlas.",
-      "citace": "Hlasování číslo 53, pro 128, proti nikdo. S návrhem zákona byl vysloven souhlas."
+      "text": "Hlasování číslo 53, pro 128, proti nikdo. S návrhem zákona byl vysloven souhlas."
     },
     {
       "text": "Potlesk.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_10_00194",
-      "citace": "(Potlesk.)"
+      "kind": "scene"
     }
   ],
   "publikovat": true,

@@ -10,22 +10,25 @@
   "fakty": [
     {
       "text": "Okamura prosadil bod proti sjezdu Sudetoněmeckého landsmanšaftu v Brně.",
-      "citace": "Navrhuji zařadit nový bod: Stanovisko vládní koalice ke sjezdu sudetoněmeckého landsmanšaftu v Brně."
+      "citace": "Stanovisko vládní koalice ke sjezdu sudetoněmeckého landsmanšaftuv Brně.",
+      "steno_id": "2025_16_00003",
+      "source": "steno"
     },
     {
       "text": "Jakob řekl, že opozice byla zaskočena a text usnesení nedostala včas.",
-      "citace": "Byli jsme poměrně zaskočeni tímto návrhem usnesení proti konání Sudetoněmeckého sněmu v Brně."
+      "citace": "poměrně zaskočeni tímto návrhem usnesení proti konání Sudetoněmeckého sněmuv Brně, tak jsme si vyžádali i text usnesení písemně.",
+      "steno_id": "2025_16_00017",
+      "source": "steno"
     },
     {
       "text": "Ferčíková navrhla protiusnesení podporující dialog a Benešovy dekrety.",
       "source": "steno",
       "steno_id": "2025_16_00047",
-      "citace": "Dialog a uznání historické reality nejsou v rozporu s naším právním řádem."
+      "citace": "uznání historické reality nejsouv rozporu s naším právním řádem."
     },
     {
       "text": "Čtrnáct hlasování o pozměňovacích návrzích padlo, poslední ve 23:12.",
-      "source": "votes",
-      "citace": "Hlasování číslo 35 až 48, všechna zamítnuta, nejblíže 46:75."
+      "source": "votes"
     }
   ],
   "publikovat": true,

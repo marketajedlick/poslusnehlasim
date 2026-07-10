@@ -10,24 +10,25 @@
   "fakty": [
     {
       "text": "Hřib hned na začátku navrhl odložit bod o rok, hlasování padlo.",
-      "citace": "Navrhuji procedurální hlasování o tom, že odložíme projednávání a vrátíme se k němu znovu za rok."
+      "citace": "němu znovu za rok.Poprosím, abychom dali hlasovat o tomto procedurálním návrhu.",
+      "steno_id": "2025_17_00540",
+      "source": "steno"
     },
     {
       "text": "Hřib řekl, že vláda vyškrtává definici dostupného bydlení.",
       "source": "steno",
       "steno_id": "2025_17_00554",
-      "citace": "Je naprosto nepřijatelné, aby z legislativy byla vyškrtnuta definice dostupného bydlení."
+      "citace": "vyškrtnuta definice dostupného bydlení.Tím ta vláda jasně dává najevo, že mladé rodiny a lidé s průměrnými příjmy pro ni nejsou prioritou."
     },
     {
       "text": "Čtyři ranní hlasování o pozměňovacích návrzích padla nejblíže devětadvacet proti sedmdesáti jedné.",
-      "source": "votes",
-      "citace": "Hlasování číslo 46 až 49, všechna zamítnuta."
+      "source": "votes"
     },
     {
       "text": "Ve čtrnáct hodin jedenáct minut schůze přerušena na třetí června.",
       "source": "steno",
       "steno_id": "2025_17_00668",
-      "citace": "Návrh na přerušení 17. schůze na 3. června na 9 hodin."
+      "citace": "návrh na přerušení 17. schůzea to návrh, který přednesla paní poslankyně Malá, která navrhla aby 17."
     }
   ],
   "publikovat": true,

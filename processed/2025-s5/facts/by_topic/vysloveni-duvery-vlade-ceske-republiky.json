@@ -12,26 +12,23 @@
       "text": "V dnešním hlasování hlasovalo 199 poslanců, 108 poslanců bylo pro návrh, 91 poslanců proti návrhu.",
       "source": "steno",
       "steno_id": "2025_5_00801",
-      "citace": "V dnešním hlasování hlasovalo 199 poslanců, 108 poslanců bylo pro návrh, 91 poslanců proti návrhu."
+      "citace": "dnešním hlasování hlasovalo 199 poslanců, 108 poslanců bylo pro návrh, 91 poslanců proti"
     },
     {
       "text": "My ve skutečnosti hlasujeme dnes o tom, zda věříme, že vládnutí a vláda Andreje Babiše a jeho koaličních partnerů prospěje této zemi, prospěje Česku, prospěje lidem, kteří tady žijí. Jedním slovem nevěříme.",
       "source": "steno",
       "steno_id": "2025_5_00114",
-      "citace": "Děkuju vám za slovo. Vážený pane místopředsedo, členky a členové vlády, kolegyně, kolegové. My máme"
+      "citace": "Děkuju vám za slovo. Vážený pane místopředsedo, členkya členové vlády, kolegyně, kolegové."
     },
     {
       "text": "Rozhodnutí, které má důsledky, dlouhodobé důsledky pro směřování naší země.",
-      "citace": "Rozhodnutí, které má důsledky, dlouhodobé důsledky pro směřování naší země.",
+      "citace": "Rozhodnutí, které má důsledky, dlouhodobé důsledky pro směřování naší země.Tím spíš, že ten okamžik teď nastává v situaci, v době, která je bez přehánění velmi složitá, plná výzev",
       "steno_id": "2025_5_00086",
       "source": "steno"
     },
     {
       "text": "Potlesk koaličních poslanců, vzájemné gratulace mezi členy vlády.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_5_00801",
-      "citace": "(Potlesk koaličních poslanců, vzájemné gratulace mezi členy vlády.)"
+      "kind": "scene"
     }
   ],
   "publikovat": true,

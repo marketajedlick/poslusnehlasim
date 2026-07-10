@@ -12,7 +12,7 @@
       "text": "Rakušan začal projev pohádkou o panovníkovi ve velkém paláci, kam obyčejní lidé nedostanou.",
       "source": "steno",
       "steno_id": "2025_24_00016",
-      "citace": "Byl jeden takový panovník, který žil ve velkém paláci, ale obyčejní lidé se do tohohle paláce nikdy nedostanou.",
+      "citace": "Byl jeden takový panovník, který žil ve velkém paláci, ale obyčejní lidé se do tohohle paláce nikdy nedostanou. On měl kolem sebe dvořany, kteří byli věrní a za",
       "link_phrase": "pohádkou o panovníkovi ve velkém paláci"
     },
     {
@@ -33,14 +33,14 @@
       "text": "Palácová vláda podle Rakušana nesnáší otázky a má ráda loajalitu, mlčení a poslušnost.",
       "source": "steno",
       "steno_id": "2025_24_00018",
-      "citace": "No a co nemá ráda ta palácová vláda, o které tady mluvím? Nemá ráda žádné otázky, má ráda loajalitu, mlčení a poslušnost",
+      "citace": "které tady mluvím? Nemá ráda žádné otázky, má ráda loajalitu, mlčenía poslušnost, takový ten řád, který vy tady často tak jako říkáte, jak by se vám to líbilo.",
       "link_phrase": "Palácová vláda prý nesnáší otázky"
     },
     {
       "text": "Schillerová v televizi: ptejte se raději na to, co se nám povedlo.",
       "source": "steno",
       "steno_id": "2025_24_00018",
-      "citace": "Ptejte se mě raději na to, co se nám povedlo.",
+      "citace": "Ptejte se mě raději na to, co se nám povedlo.Je to hezké, no já toho moc nevidím, ale ono to o něčem svědčí.",
       "link_phrase": "Ptejte se mě raději na to, co se nám povedlo"
     }
   ],
@@ -50,8 +50,9 @@
   "lead": "Úterý 23. června, debata o tom, jestli Česká televize a rozhlas budou platit z poplatků, nebo z rozpočtu vlády. Rakušan (STAN) se přihlásil s přednostním právem a začal příběhem skoro pohádkovým:",
   "pointa": "A pak Rakušan (STAN) pohádku rozbalil jako obžalobu. Panovník je Andrej Babiš (ANO), zavřený ve Strakově akademii. Levný byt na panství? Paní ministryně Mrázová (ANO). Každého méněcenného? Ministr Macinka (Motoristé). Rádkyně, co rozhoduje i když panovník neví o čem? Tünde Bartha z Úřadu vlády. Pohádka prý spíš horor a happyend zatím nevidět.\n\nPalácová vláda prý nesnáší otázky, novináře a veřejnoprávní média. Rakušan (STAN) navrhl zařadit do pořadu dva body: plán Babišovy vlády na destrukci ČT a ČRo a papalášské chování kabinetu. Poslanci je zamítli. Pohádka skončila, obstrukce pokračovala.",
   "mean": "Rakušan (STAN) nejdřív pohádku vyprávěl jako alegorii, hned potom pojmenoval postavy: Babiš (ANO) jako panovník, ministryně Mrázová (ANO) jako dvořan s levným bytem, Macinka (Motoristé) jako ten, kdo dělí lidi na méněcenné, Bartha jako rádkyni u premiéra. Celý projev směřoval proti plánu financovat ČT a ČRo ze státního rozpočtu.",
-  "citace_text": "Byl jeden takový panovník, který žil ve velkém paláci, ale obyčejní lidé se do tohohle paláce nikdy nedostanou. On měl kolem sebe dvořany, kteří byli věrní a za tu věrnost byli pravidelně a hodně a dobře odměňováni.",
+  "citace_text": "Byl jeden takový panovník, který žil ve velkém paláci, ale obyčejní lidé se do tohohle paláce nikdy nedostanou. On měl kolem sebe dvořany, kteří byli věrní a za",
   "citace_autor": "Vít Rakušan (STAN)",
   "pocet_hlasovani": 0,
-  "proslo": false
+  "proslo": false,
+  "steno_id": "2025_24_00016"
 }

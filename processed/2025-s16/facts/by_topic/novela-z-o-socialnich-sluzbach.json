@@ -10,20 +10,20 @@
   "fakty": [
     {
       "text": "Juchelka už v dubnu navrhoval posunout převod kompetencí z Úřadu práce na ÚSSZ na červen 2028.",
-      "source": "manual",
+      "source": "steno",
       "note": "citace z 14. schůze (22. 4.), steno 2025_14_01093",
-      "citace": "Posunout převod kompetencí z Úřadu práce na územní správy sociálního zabezpečení z 1. července 2026 na 1. června 2028."
+      "citace": "na územní správy sociálního zabezpečení...",
+      "steno_id": "2025_16_00509"
     },
     {
       "text": "Hlasování číslo 70, sto jedenáct hlasů pro.",
-      "source": "votes",
-      "citace": "Hlasování číslo 70, pro 111, proti 0."
+      "source": "votes"
     },
     {
       "text": "7.Návrh poslanců Aleše Juchelky a Jany Pastuchové na vydání zákona, kterým se mění zákon č.",
       "source": "steno",
       "steno_id": "2025_16_00508",
-      "citace": "7.Návrh poslanců Aleše Juchelky a Jany Pastuchové na vydání zákona, kterým se mění zákon č."
+      "citace": "Jany Pastuchové na vydání zákona, kterým se mění zákonč."
     }
   ],
   "publikovat": true,

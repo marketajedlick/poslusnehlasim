@@ -9,26 +9,21 @@
   ],
   "fakty": [
     {
-      "text": "Kupka chtěl zařadit střet zájmů Babiše, návrh padl 54:84.",
-      "source": "steno",
-      "steno_id": "2025_14_00158",
-      "citace": "Hlasování číslo 63, přihlášeno 151 poslanců, pro 54, proti 84. Návrh byl zamítnut."
+      "text": "Kupka chtěl zařadit střet zájmů Babiše, návrh padl 54:84."
     },
     {
       "text": "Bureš prosadil zrušení zákona o prodejní době na páteční schůzi.",
       "source": "steno",
       "steno_id": "2025_14_00092",
-      "citace": "Děkuji, pane místopředsedo. Někdo tu nechal brýle nebo možná pouzdro a nějaké poznámky. (Poslanec Skopeček:"
+      "citace": "Děkuji, pane místopředsedo. Někdo tu nechal brýle nebo možná pouzdroa nějaké poznámky."
     },
     {
       "text": "Pořad schválen až po čtyřiceti čtyřech hlasováních o změnách.",
-      "source": "votes",
-      "citace": "44 hlasování o pořadu schůze před večerním zákonem o cenách."
+      "source": "votes"
     },
     {
       "text": "Večer schváleno zkrácené jednání zákona o cenách 79:51.",
-      "source": "votes",
-      "citace": "Hlasování číslo 48, bod 902, pro 79, proti 51."
+      "source": "votes"
     }
   ],
   "publikovat": true,

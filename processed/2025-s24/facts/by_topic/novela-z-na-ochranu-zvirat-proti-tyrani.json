@@ -2,7 +2,7 @@
   "slug": "novela-z-na-ochranu-zvirat-proti-tyrani",
   "nazev": "Novela z. na ochranu zvířat proti týrání",
   "datum": "01.07.2026",
-  "verdikt": "schvaleno",
+  "verdikt": "zamiteno",
   "predmet_lidsky": "",
   "koho": [
     "Koho se to týká? Každého, kdo má doma psa nebo kočku a čekal, že Sněmovna po půlnoci konečně sjednotí tresty za týrání."
@@ -12,7 +12,7 @@
       "text": "Hladík: máme kočku jménem Vločka.",
       "source": "steno",
       "steno_id": "2025_24_01149",
-      "citace": "Vážený pane předsedo, vážené dámy a pánové, předkladatelky a předkladatelé, kolegyně, kolegové, krásný dobrý večer.",
+      "citace": "Já sám, moje rodina chová kočku, konkrétně má jméno Vločka, a jsem ze zemědělské, ze sedlácké rodiny.",
       "link_phrase": "Hladík (KDU-ČSL) před hlasováním připomněl domácí kočku Vločku"
     },
     {
@@ -26,14 +26,14 @@
       "text": "Hanzlíková: dolní sazby ze šesti měsíců na rok.",
       "source": "steno",
       "steno_id": "2025_24_01039",
-      "citace": "Účelem této změny je umožnit trestněprávní postih jednání spočívajícího v usmrcení psa nebo kočky ze",
+      "citace": "dosavadní trestní sazba je šest měsíců až čtyři léta, navrhovaná trestní sazba jeden rok až čtyři léta",
       "link_phrase": "ze šesti měsíců na"
     },
     {
       "text": "Hanzlíková: nová skutková podstata usmrcení psa nebo kočky.",
       "source": "steno",
       "steno_id": "2025_24_01039",
-      "citace": "Účelem této změny je umožnit trestněprávní postih jednání spočívajícího v usmrcení psa nebo kočky ze",
+      "citace": "usmrcení psa nebo kočky ze zavrženíhodného důvodu i v případech, kdy usmrcení není prováděno surovým nebo trýznivým způsobem",
       "link_phrase": "usmrcení psa nebo kočky."
     },
     {
@@ -45,9 +45,10 @@
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Vločka a predátor",
+  "nadpis": "Vločka a nevalný návrh",
   "pocet_hlasovani": 4,
-  "proslo": true,
+  "proslo": false,
+  "verdikt": "zamiteno",
   "signaly": {
     "proti_max": 68,
     "pritomno_min": 118,

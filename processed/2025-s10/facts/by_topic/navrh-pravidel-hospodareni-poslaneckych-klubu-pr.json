@@ -9,15 +9,14 @@
   ],
   "fakty": [
     {
-      "text": "Hlasování číslo 251, pro 127, proti nikdo. Návrh byl přijat.",
-      "citace": "Hlasování číslo 251, pro 127, proti nikdo. Návrh byl přijat."
+      "text": "Hlasování číslo 251, pro 127, proti nikdo. Návrh byl přijat."
     },
     {
       "text": "Poslankyně Vesecká žádá kolegu v poslanecké lavici, aby ji odhlásil.",
       "source": "steno",
       "kind": "scene",
       "steno_id": "2025_10_01487",
-      "citace": "(Poslankyně Vesecká žádá kolegu v poslanecké lavici, aby ji odhlásil.)"
+      "citace": "poslanecké lavici, aby ji odhlásil.),pro 121, proti nikdo."
     }
   ],
   "publikovat": true,

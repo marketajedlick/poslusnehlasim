@@ -12,24 +12,20 @@
       "text": "Celkem jich je 413 154. Z toho nových žádostí je 79 593.",
       "source": "steno",
       "steno_id": "2025_9_00006",
-      "citace": "Celkem jich je 413 154. Z toho nových žádostí je 79 593."
+      "citace": "toho nových žádostí je 79 593.Počet žádostí od 1."
     },
     {
       "text": "Přechod na nový systém takzvané superdávky se pro stávající příjemce rušených dávek odkládá. Lidé by tak nynější dávky na bydlení, živobytí a děti pobírali až do července, ne do dubna.",
       "source": "steno",
       "steno_id": "2025_9_00050",
-      "citace": "Lidé by tak nynější dávky pobírali až do července, ne do dubna."
+      "citace": "pobírali až do července, ne do dubna.Novou částku by pak dostali poprvé místo května v srpnu."
     },
     {
-      "text": "Hlasování číslo 6, přihlášeno 136 poslanců, pro 130, proti nikdo. Návrh byl přijat.",
-      "citace": "Hlasování číslo 6, pro 130, proti nikdo. Návrh byl přijat."
+      "text": "Hlasování číslo 6, přihlášeno 136 poslanců, pro 130, proti nikdo. Návrh byl přijat."
     },
     {
       "text": "Potlesk zleva.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_9_00068",
-      "citace": "(Potlesk zleva.)"
+      "kind": "scene"
     }
   ],
   "publikovat": true,

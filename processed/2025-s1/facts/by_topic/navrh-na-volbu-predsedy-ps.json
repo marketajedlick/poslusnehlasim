@@ -9,22 +9,16 @@
   ],
   "fakty": [
     {
-      "text": "Tomio Okamura získal v prvním kole tajné volby sto šestnáct hlasů, devět proti.",
-      "source": "steno",
-      "citace": "Hlasování číslo 7, přihlášeno 151, pro 116, proti 9.",
-      "steno_id": "2025_1_00041"
+      "text": "Tomio Okamura získal v prvním kole tajné volby sto šestnáct hlasů, devět proti."
     },
     {
-      "text": "Návrh na Petra Fialu jako předsedu padl sto osmnácti hlasy proti sto třiceti šesti.",
-      "source": "steno",
-      "citace": "Hlasování číslo 8, přihlášeno 191, pro 18, proti 136.",
-      "steno_id": "2025_1_00161"
+      "text": "Návrh na Petra Fialu jako předsedu padl sto osmnácti hlasy proti sto třiceti šesti."
     },
     {
       "text": "Okamura večer převzal kladívko, Barták a Nacher se stali místopředsedy po jeho boku.",
       "source": "steno",
       "steno_id": "2025_1_00225",
-      "citace": "Blahopřeji zvoleným místopředsedům Poslanecké sněmovny a prosím, aby oba zaujali místo po mém boku."
+      "citace": "prosím, aby oba zaujali místo po mém boku.Ještě rádi byste vystoupili, takže pan místopředseda Barták."
     }
   ],
   "publikovat": true,
