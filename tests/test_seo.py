@@ -204,7 +204,7 @@ def test_write_sitemap_includes_o_webu(tmp_path) -> None:
     )
     xml = path.read_text(encoding="utf-8")
     assert "https://poslusnehlasim.cz/o-webu/" in xml
-    assert "https://poslusnehlasim.cz/archiv/" in xml
+    assert "https://poslusnehlasim.cz/vydani/" in xml
     assert "https://poslusnehlasim.cz/slovnicek/" in xml
     assert "https://poslusnehlasim.cz/slovnicek/obstrukce/" in xml
     assert "https://poslusnehlasim.cz/vydani/2026-06-26/" in xml
@@ -215,7 +215,7 @@ def test_write_sitemap_includes_o_webu(tmp_path) -> None:
 def test_breadcrumb_json_ld() -> None:
     crumbs = (
         BreadcrumbCrumb(label=SITE_NAME, href="/"),
-        BreadcrumbCrumb(label="Archiv vydání", href="/archiv/"),
+        BreadcrumbCrumb(label="Archiv vydání", href="/vydani/"),
         BreadcrumbCrumb(label="8. 7. 2026", href=""),
     )
     data = breadcrumb_json_ld(
@@ -227,7 +227,7 @@ def test_breadcrumb_json_ld() -> None:
     assert len(items) == 3
     assert items[0]["name"] == SITE_NAME
     assert items[0]["item"] == "https://poslusnehlasim.cz/"
-    assert items[1]["item"] == "https://poslusnehlasim.cz/archiv/"
+    assert items[1]["item"] == "https://poslusnehlasim.cz/vydani/"
     assert "item" not in items[2]
 
 

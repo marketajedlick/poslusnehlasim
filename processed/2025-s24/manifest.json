@@ -41,15 +41,15 @@
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-07.html"
       ],
       "last_partial_compose": {
-        "den": "02.07.2026",
-        "built_at": "2026-07-10T16:12:02.474087+00:00",
+        "den": "03.07.2026",
+        "built_at": "2026-07-10T16:24:12.101151+00:00",
         "days": 1,
         "files": [
-          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-02.md"
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-03.md"
         ],
         "html_files": [
-          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-02.html",
-          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-02-steno.html"
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-03.html",
+          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/out/noviny-dlouhe/2026-07-03-steno.html"
         ]
       }
     },
@@ -69,5 +69,5 @@
       "fetched_at": "2026-07-08T14:21:57.370607+00:00"
     }
   },
-  "built_at": "2026-07-10T16:12:02.474235+00:00"
+  "built_at": "2026-07-10T16:24:12.101288+00:00"
 }

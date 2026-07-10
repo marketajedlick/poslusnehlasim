@@ -165,7 +165,7 @@ def edition_pages_href(
 
 
 def archiv_pages_href(base_path: str = "") -> str:
-    return _join_href_path(base_path, "/archiv/")
+    return _join_href_path(base_path, "/vydani/")
 
 
 def _join_href_path(base_path: str, path: str) -> str:

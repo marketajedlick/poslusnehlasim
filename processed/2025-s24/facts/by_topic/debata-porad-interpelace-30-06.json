@@ -9,10 +9,7 @@
   ],
   "fakty": [
     {
-      "text": "Malá chtěla jednat do 19. a 21. hodiny.",
-      "source": "steno",
-      "steno_id": "2025_24_00879",
-      "citace": "procedurálně hlasovali po 19.i 21."
+      "text": "Malá chtěla jednat do 19. a 21. hodiny."
     },
     {
       "text": "První spor o pořad: 85 proti 63."
@@ -27,7 +24,7 @@
       "text": "Bartoš: odvolejte výrok o konci klimatické krize.",
       "source": "steno",
       "steno_id": "2025_24_00907",
-      "citace": "Ministře Macinko, odvolejte svůj nesmyslný výroko konci klimatické krize.",
+      "citace": "Ministře Macinko, odvolejte svůj nesmyslný výrok o konci klimatické krize.",
       "link_phrase": "Bartoš (Piráti) navrhl bod do pořadu: Ministře Macinko"
     },
     {
@@ -41,21 +38,17 @@
       "text": "Bartoš navrhl zastropovat teplotu ve městech na 25 stupňů.",
       "source": "steno",
       "steno_id": "2025_24_00911",
-      "citace": "tady si myslím, že to bude skutečně výzva. Návrh bodu mířítedy opět na pana přítomného předsedu strany Motoristé sobě pana ministra Macinku, tentokráte již tedy ne v roli",
+      "citace": "tady si myslím, že to bude skutečně výzva.",
       "link_phrase": "Bartoš (Piráti) navrhl bod do pořadu: Ministře Macinko"
     },
     {
       "text": "Macinka: inkvizice a citát Husa neodvolám.",
       "source": "steno",
       "steno_id": "2025_24_00913",
-      "citace": "Děkuji, pane předsedající. Já když tady slyším, že mě Piráti vyzývají, ať něco odvolám, takjsem si vzpomněl, že historie si pamatuje různé inkvizice, které se snažily donutit různé",
       "link_phrase": "Macinka (Motoristé) odvolal dřívější tvrzení o konci klimatické krize"
     },
     {
-      "text": "Barták čte zamítnuté návrhy bodů.",
-      "source": "steno",
-      "steno_id": "2025_24_01209",
-      "citace": ". Návrh byl zamítnut."
+      "text": "Barták čte zamítnuté návrhy bodů."
     }
   ],
   "publikovat": true,
@@ -64,9 +57,8 @@
   "lead": "Během vlny veder Bartoš (Piráti) navrhl bod do pořadu: Ministře Macinko, odvolejte svůj nesmyslný výrok o konci klimatické krize. Chtěl usnesení, které ministra k tomu donutí, a připomněl, že Macinka (Motoristé) jako ministr životního prostředí prohlásil, že s nástupem Motoristů klimatická krize skončila. Ptál se, na jakých datech to staví, když meteorologové hlásí rekordní vedra a sucho.\n\nIronicky navrhl i třetí bod: ať Macinka zastropí teplotu ve městech na dvacet pět stupňů Celsia. Macinka (Motoristé) ale reagoval hlavně na výzvu něco odvolat, přirovnal ji k inkvizici a citoval Husa: neodvolám.",
   "pointa": "Macinka (Motoristé) odmítl vzít zpět, že klimatická krize skončila, a Bartošovy (Piráti) body stejně neprošly.",
   "mean": "Bartoš (Piráti) chtěl, aby Macinka (Motoristé) odvolal dřívější tvrzení o konci klimatické krize, a ironicky navrhl i strop teploty na dvacet pět stupňů. Macinka (Motoristé) odmítl cokoli odvolat.",
-  "citace_text": "před tím, než měl ve třetím čtení příležitost vyjádřit se předseda parlamentní strany Zdeněk Hřib za Piráty ,  tady prostě měl pár minut ,  protože vy jste na",
+  "citace_text": "před tím, než měl ve třetím čtení příležitost vyjádřit se předseda parlamentní strany Zdeněk Hřib za Piráty ,  tady prostě měl pár minut ,  protože",
   "citace_autor": "Petr Macinka (Motoristé)",
   "pocet_hlasovani": 42,
-  "proslo": false,
-  "steno_id": "2025_24_00812"
+  "proslo": false
 }

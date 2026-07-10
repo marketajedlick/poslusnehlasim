@@ -12,26 +12,24 @@
       "text": "Richterová: prázdné židle, chybí skoro všichni ministři.",
       "source": "steno",
       "steno_id": "2025_24_01573",
-      "citace": "ta spousta prázdných židlíza mnou ukazuje, že tady prostě dnes chybí téměř všichni ministři, aby mohli odpovídat na interpelace poslanců.",
       "link_phrase": "Richterová (Piráti) se ohlédla za sebe a zjistila"
     },
     {
       "text": "Richterová: prázdné židle, chybí ministři.",
       "source": "steno",
       "steno_id": "2025_24_01573",
-      "citace": "dobrý den zde ve spolek. Vážené paní poslankyně, vážení páni poslanci,na tom, že jsme se dostali až k té mojí interpelaci, je vidět, jak opravdu dobře zacílený je",
       "link_phrase": "Richterová (Piráti) se ohlédla za sebe a zjistila"
     },
     {
       "text": "V sále zůstala jen ministryně Mrázová.",
       "source": "steno",
       "steno_id": "2025_24_01573",
-      "citace": "Je tady jenom paní ministryně Mrázová.Já budu velice ráda, pokud bude paní ministryně reagovat.",
+      "citace": "Je tady jenom paní ministryně Mrázová.",
       "link_phrase": "Richterová (Piráti) se ohlédla za sebe a zjistila"
     },
     {
       "text": "Černochová: Zůna se za šest sedm měsíců účastnil interpelací jen jednou.",
-      "citace": "za tu dobu pan ministr Zůna se účastnil pouze jednou interpelací.Jestli opravdu pan ministr Zůna chce pohrdat parlamentní demokracií, tak žádám, aby opravdu pan premiér ,  aby předseda",
+      "citace": "za tu dobu pan ministr Zůna se účastnil pouze jednou interpelací.",
       "steno_id": "2025_24_00604",
       "source": "steno"
     },
@@ -39,7 +37,7 @@
       "text": "Kučera: ministr životního prostředí byl podle Facebooku resortu na lodi na Labi.",
       "source": "steno",
       "steno_id": "2025_24_01633",
-      "citace": "pánové, děkuju za slovo. Paní předsedající, dovoltei mě, abych se opravdu v krátkosti vyjádřil k této novele zákona o obalech.",
+      "citace": "pánové, děkuju za slovo.",
       "link_phrase": "na lodi na Labi."
     },
     {
@@ -52,7 +50,6 @@
       "text": "Richterová: motivovat ministry finančně chodit na interpelace.",
       "source": "steno",
       "steno_id": "2025_24_01573",
-      "citace": "aby ministři byli motivovánii finančně chodit na interpelace, protože ta spousta prázdných židlí za mnou ukazuje, že tady prostě dnes chybí téměř všichni ministři, aby mohli odpovídat na",
       "link_phrase": "Richterová (Piráti) se ohlédla za sebe a zjistila"
     }
   ],
@@ -66,6 +63,5 @@
   "citace_autor": "Olga Richterová",
   "citace_href": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024305.htm#r1",
   "pocet_hlasovani": 0,
-  "proslo": false,
-  "steno_id": "2025_24_01573"
+  "proslo": false
 }

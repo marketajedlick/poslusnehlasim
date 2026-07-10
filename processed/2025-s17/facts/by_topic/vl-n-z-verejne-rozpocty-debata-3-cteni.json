@@ -10,7 +10,7 @@
   "fakty": [
     {
       "text": "Hřib řekl, že vláda chce zadlužit děti a obejít parlamentní kontrolu.",
-      "citace": "snažit přesvědčit, že máme zadlužit naše dětia děti našich dětí způsobem, který bude úplně obcházet jakoukoliv parlamentní kontrolu.",
+      "citace": "snažit přesvědčit, že máme zadlužit naše děti a děti našich dětí způsobem, který bude úplně obcházet jakoukoliv parlamentní kontrolu.",
       "steno_id": "2025_17_00107",
       "source": "steno"
     },
@@ -18,19 +18,13 @@
       "text": "Murová popsala pozměňovací návrhy Schillerové k rozpočtové odpovědnosti.",
       "source": "steno",
       "steno_id": "2025_17_00142",
-      "citace": "Vážený pane předsedající, vážená paní ministryně, vážené kolegyněa kolegové, dovoluji si jako zpravodajka předložit zprávu ke třetímu čtení vládního návrhu zákona, kterým se mění některé zákony v oblasti"
+      "citace": "Vážený pane předsedající, vážená paní ministryně, vážené kolegyně a kolegové, dovoluji si jako zpravodajka předložit zprávu ke třetímu čtení vládního návrhu zákona, kterým se mění"
     },
     {
-      "text": "Svobodová řekla, že Piráti zákon nepodpoří kvůli zadlužení.",
-      "source": "steno",
-      "steno_id": "2025_17_00157",
-      "citace": "Děkuji za slovo. Vážené paní poslankyně, vážení páni poslanci, vážená paní ministryně, paní zpravodajko, předneslabych v tuto chvíli stanovisko klubu Pirátů."
+      "text": "Svobodová řekla, že Piráti zákon nepodpoří kvůli zadlužení."
     },
     {
-      "text": "Večer Jurečka navrhl přerušit schůzi, pokračovat až v pátek.",
-      "citace": "že bychom totoprojednávali samostatnou novelou.",
-      "steno_id": "2025_17_00247",
-      "source": "steno"
+      "text": "Večer Jurečka navrhl přerušit schůzi, pokračovat až v pátek."
     }
   ],
   "publikovat": true,

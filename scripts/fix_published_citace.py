@@ -38,52 +38,15 @@ def is_vote_summary(cit: str) -> bool:
         return False
     if VOTE_CIT_RE.search(c):
         return True
-    if c.startswith("(") and c.endswith(")") and "potlesk" in c.lower():
-        return True
-    return False
+    return c.startswith("(") and c.endswith(")") and "potlesk" in c.lower()
 
 
 def words_relaxed(s: str) -> list[str]:
     return [w for w in norm_relaxed(s).split() if len(w) >= 2]
 
 
-def find_word_span(cit: str, text: str) -> tuple[int, int] | None:
-    """Najde pozici nejdelší shody slov z citace v textu stena."""
-    cw = words_relaxed(cit)
-    if len(cw) < 3:
-        return None
-    tw = re.findall(r"\S+", text)
-    tw_norm = [norm_relaxed(w) for w in tw]
-    best: tuple[int, int, int] | None = None
-    for length in range(min(len(cw), 24), 2, -1):
-        for start in range(len(cw) - length + 1):
-            chunk = cw[start : start + length]
-            for i in range(len(tw_norm) - length + 1):
-                if tw_norm[i : i + length] == chunk:
-                    if best is None or length > best[2]:
-                        best = (i, i + length, length)
-        if best:
-            break
-    if not best:
-        return None
-    i, j, _ = best
-    start_char = sum(len(tw[k]) + 1 for k in range(i))
-    end_char = sum(len(tw[k]) + 1 for k in range(j)) - 1
-    return start_char, end_char
-
-
-def excerpt_from_span(text: str, span: tuple[int, int], max_words: int = 28) -> str:
-    start, end = span
-    chunk = text[start : end + 1].strip()
-    # rozšířit do konce věty nebo max_words
-    tail = text[end + 1 :]
-    m = re.search(r"[.!?]\s", tail)
-    if m and len(chunk.split()) < max_words:
-        chunk = (chunk + tail[: m.end()]).strip()
-    words = chunk.split()
-    if len(words) > max_words:
-        chunk = " ".join(words[:max_words])
-    return sanitize_dashes(re.sub(r"\s+", " ", chunk))
+def flex_pat(words: list[str]) -> str:
+    return r"(?i)" + r"[\W\s]*".join(re.escape(w) for w in words)
 
 
 def citace_in_text(cit: str, text: str) -> bool:
@@ -92,26 +55,63 @@ def citace_in_text(cit: str, text: str) -> bool:
     if norm(cit).strip('"') in norm(text):
         return True
     nr = norm_relaxed(cit)
-    if len(nr) >= 12 and nr in norm_relaxed(text):
+    nt = norm_relaxed(text)
+    if len(nr) >= 12 and nr in nt:
         return True
     for n in (80, 60, 40, 24):
         ch = nr[:n].strip()
-        if len(ch) >= 14 and ch in norm_relaxed(text):
+        if len(ch) >= 14 and ch in nt:
             return True
     return False
 
 
-def find_excerpt(cit: str, text: str) -> str | None:
-    if citace_in_text(cit, text):
-        span = find_word_span(cit, text)
-        if span:
-            return excerpt_from_span(text, span)
-        flat = re.sub(r"\s+", " ", cit.strip())
-        return sanitize_dashes(flat)
-    span = find_word_span(cit, text)
-    if span and span[1] - span[0] >= 3:
-        return excerpt_from_span(text, span)
+GREETING_RE = re.compile(
+    r"^(děkuj|děkuju|vážen|dobrý den|pane předsed|kolegové)\b",
+    re.IGNORECASE,
+)
+
+
+def extract_verbatim(anchor: str, text: str, *, max_words: int = 25) -> str | None:
+    words = words_relaxed(anchor)
+    if len(words) < 3:
+        return None
+    anchors = [words]
+    if len(words) > 6:
+        anchors.append(words[3:])
+        anchors.append(words[5:])
+    for aw in anchors:
+        for n in range(min(len(aw), 14), 3, -1):
+            m = re.search(flex_pat(aw[:n]), text)
+            if not m:
+                continue
+            frag = text[m.start() :]
+            sent = re.search(r"[.!?]\s", frag)
+            if sent and len(frag[: sent.end()].split()) <= max_words:
+                out = frag[: sent.end()].strip()
+            else:
+                out = " ".join(frag.split()[:max_words])
+            out = sanitize_dashes(re.sub(r"\s+", " ", out))
+            if len(out) >= 35 or not GREETING_RE.search(out):
+                return out
     return None
+
+
+def find_excerpt(anchor: str, text: str) -> str | None:
+    if not anchor or not text:
+        return None
+    return extract_verbatim(anchor, text)
+
+
+def needs_repair(cit: str, text: str) -> bool:
+    if not cit or not text:
+        return False
+    if cit in text and len(cit) >= 35 and not GREETING_RE.search(cit):
+        return False
+    if len(cit) < 35 and GREETING_RE.search(cit):
+        return True
+    if re.search(r"[a-záčďéěíňóřšťúýž]{2}[a-záčďéěíňóřšťúýž]{3,}", cit.lower()):
+        return True
+    return not citace_in_text(cit, text) or cit not in text
 
 
 def strip_steno_fields(f: dict) -> None:
@@ -121,8 +121,13 @@ def strip_steno_fields(f: dict) -> None:
         f.pop("source", None)
 
 
-def fix_fact(f: dict, steno_rows: list[dict], steno_by_id: dict[str, dict]) -> str | None:
-    """Vrátí typ změny nebo None."""
+def fix_fact(
+    f: dict,
+    steno_rows: list[dict],
+    steno_by_id: dict[str, dict],
+    *,
+    repair_only: bool,
+) -> str | None:
     cit = (f.get("citace") or "").strip()
     if not cit:
         if f.get("source") == "steno" and not f.get("steno_id"):
@@ -131,36 +136,43 @@ def fix_fact(f: dict, steno_rows: list[dict], steno_by_id: dict[str, dict]) -> s
         return None
 
     if is_vote_summary(cit):
+        if repair_only:
+            return None
         f.pop("citace", None)
         strip_steno_fields(f)
         return "vote_strip"
 
     sid = (f.get("steno_id") or "").strip()
+    link = (f.get("link_phrase") or "").strip()
+    anchor = link or cit
+
     if sid and sid in steno_by_id:
         text = steno_by_id[sid].get("text", "")
-        excerpt = find_excerpt(cit, text)
+        if repair_only and not needs_repair(cit, text):
+            return None
+        excerpt = find_excerpt(anchor, text) or find_excerpt(cit, text)
         if excerpt:
-            f["citace"] = excerpt
-            f["source"] = "steno"
-            f["steno_id"] = sid
-            return "fix_sid"
-        f.pop("citace", None)
-        if not (f.get("link_phrase") or "").strip():
-            strip_steno_fields(f)
-        return "drop_bad_sid"
+            if excerpt != cit:
+                f["citace"] = excerpt
+                f["source"] = "steno"
+                f["steno_id"] = sid
+                return "fix_sid"
+            return None
+        if repair_only:
+            f.pop("citace", None)
+            if not link:
+                strip_steno_fields(f)
+            return "drop_bad_sid"
+        return None
+
+    if repair_only:
+        return None
 
     for r in steno_rows:
-        excerpt = find_excerpt(cit, r.get("text", ""))
+        excerpt = find_excerpt(anchor, r.get("text", "")) or find_excerpt(cit, r.get("text", ""))
         if excerpt:
             f["steno_id"] = r["id"]
             f["citace"] = excerpt
-            f["source"] = "steno"
-            return "fix_search"
-        # u velmi volné shody stačí 5+ slov
-        span = find_word_span(cit, r.get("text", ""))
-        if span and span[1] - span[0] >= 5:
-            f["steno_id"] = r["id"]
-            f["citace"] = excerpt_from_span(r["text"], span)
             f["source"] = "steno"
             return "fix_search"
 
@@ -169,19 +181,31 @@ def fix_fact(f: dict, steno_rows: list[dict], steno_by_id: dict[str, dict]) -> s
     return "drop_parafraze"
 
 
-def fix_citace_text(data: dict, steno_rows: list[dict], steno_by_id: dict[str, dict]) -> str | None:
+def fix_citace_text(
+    data: dict,
+    steno_rows: list[dict],
+    steno_by_id: dict[str, dict],
+    *,
+    repair_only: bool,
+) -> str | None:
     ct = (data.get("citace_text") or "").strip()
     if not ct:
         return None
     sid = (data.get("steno_id") or "").strip()
     if sid and sid in steno_by_id:
         text = steno_by_id[sid].get("text", "")
+        if repair_only and not needs_repair(ct, text):
+            return None
         excerpt = find_excerpt(ct, text)
         if excerpt and excerpt != ct:
             data["citace_text"] = excerpt
             return "citace_text_fix"
-        if citace_in_text(ct, text):
-            return None
+        if repair_only and needs_repair(ct, text):
+            data.pop("steno_id", None)
+            return "citace_text_drop"
+        return None
+    if repair_only:
+        return None
     for r in steno_rows:
         excerpt = find_excerpt(ct, r.get("text", ""))
         if excerpt:
@@ -211,6 +235,7 @@ def load_steno(path: Path) -> tuple[list[dict], dict[str, dict]]:
 
 def main() -> int:
     dry = "--dry-run" in sys.argv
+    repair_only = "--repair" in sys.argv or repair_only_implied(dry)
     approved = json.loads(APPROVED_PATH.read_text(encoding="utf-8")).get("approved") or []
     steno_loaded: dict[int, tuple[list[dict], dict[str, dict]]] = {}
     stats: dict[str, int] = {}
@@ -240,11 +265,15 @@ def main() -> int:
             for f in data.get("fakty") or []:
                 if not isinstance(f, dict):
                     continue
-                action = fix_fact(f, steno_rows, steno_by_id)
+                action = fix_fact(
+                    f, steno_rows, steno_by_id, repair_only=repair_only
+                )
                 if action:
                     stats[action] = stats.get(action, 0) + 1
                     touched = True
-            action = fix_citace_text(data, steno_rows, steno_by_id)
+            action = fix_citace_text(
+                data, steno_rows, steno_by_id, repair_only=repair_only
+            )
             if action:
                 stats[action] = stats.get(action, 0) + 1
                 touched = True
@@ -258,12 +287,15 @@ def main() -> int:
             if not dry:
                 tpath.write_text(after, encoding="utf-8")
 
-    print(f"{'DRY ' if dry else ''}Updated {changed_files} files, {len(changed_days)} days")
+    mode = "repair" if repair_only else "full"
+    print(f"{'DRY ' if dry else ''}{mode}: {changed_files} files, {len(changed_days)} days")
     for k, v in sorted(stats.items(), key=lambda x: -x[1]):
         print(f"  {k}: {v}")
-    for obdobi, schuze, datum_cz in sorted(changed_days, key=lambda x: (x[1], x[2])):
-        print(f"  {obdobi}/s{schuze}/{datum_cz}")
     return 0
+
+
+def repair_only_implied(dry: bool) -> bool:
+    return "--full" not in sys.argv
 
 
 if __name__ == "__main__":

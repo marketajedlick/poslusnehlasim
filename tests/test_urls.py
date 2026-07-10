@@ -34,7 +34,7 @@ def test_vydani_hrefs() -> None:
     assert steno_sources_pages_href(2025, 24, "26.06.2026") == (
         "/vydani/2026-06-26/steno/"
     )
-    assert archiv_pages_href() == "/archiv/"
+    assert archiv_pages_href() == "/vydani/"
     assert slovnicek_pages_href() == "/slovnicek/"
     assert slovnicek_term_pages_href("obstrukce") == "/slovnicek/obstrukce/"
 

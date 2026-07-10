@@ -12,21 +12,20 @@
       "text": "Rakušan: premiér jako rukojmí.",
       "source": "steno",
       "steno_id": "2025_24_00887",
-      "citace": "premiér jako rukojmí držen svými koaličními partnery.Je držen v šachu a nemůže dělat žádné prudké pohyby.",
+      "citace": "premiér jako rukojmí držen svými koaličními partnery.",
       "link_phrase": "Rakušan (STAN) popsal vládu jako systém"
     },
     {
       "text": "Rakušan: koalice nevydávání.",
       "source": "steno",
       "steno_id": "2025_24_00887",
-      "citace": "Hezký den. Díky za slovo, vážený pane předsedo. Vážený pane ministře, kolegyněa kolegové, poslední dny nám ukazují, jak vypadá vláda, když je premiér jako rukojmí držen svými koaličními",
       "link_phrase": "Rakušan (STAN) popsal vládu jako systém"
     },
     {
       "text": "Rakušan: nevydávání předsedů k trestnímu stíhání.",
       "source": "steno",
       "steno_id": "2025_24_00887",
-      "citace": "Nevydávání dvou předsedů dvou koaličních strank trestnímu stíhání.",
+      "citace": "Nevydávání dvou předsedů dvou koaličních stran k trestnímu stíhání.",
       "link_phrase": "Rakušan (STAN) popsal vládu jako systém"
     },
     {
@@ -47,14 +46,13 @@
       "text": "Rakušan: Motoristé chtějí zrušit Ústavní soud.",
       "source": "steno",
       "steno_id": "2025_24_00887",
-      "citace": "ů typu: Ústavní soud by se mělzrušit.",
+      "citace": "typu: Ústavní soud by se měl zrušit.",
       "link_phrase": "Rakušan (STAN) popsal vládu jako systém"
     },
     {
       "text": "Rakušan: kde je premiér?",
       "source": "steno",
       "steno_id": "2025_24_00887",
-      "citace": "Hezký den. Díky za slovo, vážený pane předsedo. Vážený pane ministře, kolegyněa kolegové, poslední dny nám ukazují, jak vypadá vláda, když je premiér jako rukojmí držen svými koaličními",
       "link_phrase": "Rakušan (STAN) popsal vládu jako systém"
     }
   ],
@@ -64,9 +62,9 @@
   "lead": "Rakušan (STAN) popsal vládu jako systém, kde je premiér rukojmí koaličních partnerů. Vznikla prý jako koalice nevydávání: dva předsedové koaličních stran si slíbili, že se navzájem nepošlou k trestnímu stíhání. Babiš (ANO) podle něj potřebuje hlasy SPD a Motoristů, aby udržel většinu, a nemůže si dovolit prudké pohyby.\n\nMacinka (Motoristé) označil rozhodnutí Ústavního soudu za puč a Motoristé prý navrhli Ústavní soud zrušit. Rakušan (STAN) se ptal, kde je premiér, aby udělal manažerské rozhodnutí. Nikde, mlčí.",
   "pointa": "Když někdo někoho drží v šachu, nemůže podle Rakušana tvrdit, že je silný premiér.",
   "mean": "Koalice ANO, SPD a Motoristů drží pohromadě i kvůli dohodám o trestním stíhání předáků stran. Když vicepremiér útočí na soud a premiér mlčí, opozice to čte jako vzorec, ne jako ojedinělou chybu.",
-  "citace_text": "ebo to bylten odborník, stále to byl náměstek ministra.",
+  "citace_text": "premiér jako rukojmí držen svými koaličními partnery.",
   "citace_autor": "Vít Rakušan (STAN)",
+  "steno_id": "2025_24_00887",
   "pocet_hlasovani": 0,
-  "proslo": false,
-  "steno_id": "2025_24_00095"
+  "proslo": false
 }

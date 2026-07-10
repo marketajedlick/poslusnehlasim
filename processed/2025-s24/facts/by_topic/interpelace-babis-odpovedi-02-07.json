@@ -12,55 +12,48 @@
       "text": "Babiš přinesl 132 stran materiálu přešlapů Pirátů.",
       "source": "steno",
       "steno_id": "2025_24_01704",
-      "citace": "ruce drží písemný materiál.) vašich přešlapův politice.",
+      "citace": "ruce drží písemný materiál.) vašich přešlapů v politice.",
       "link_phrase": "Babiš zároveň z hromady stran vytáhl jednotlivé případy"
     },
     {
       "text": "Babiš materiál nazval vašimi přešlapy.",
       "source": "steno",
       "steno_id": "2025_24_01704",
-      "citace": "vašich přešlapů v politice",
       "link_phrase": "Babiš zároveň z hromady stran vytáhl jednotlivé případy"
     },
     {
-      "text": "Interpelace mířila na Richterovou a nedostupné bydlení.",
-      "source": "steno",
-      "steno_id": "2025_24_01575",
-      "citace": "krize bydlení je jednaz největších krizí, co u nás jsou."
+      "text": "Interpelace mířila na Richterovou a nedostupné bydlení."
     },
     {
       "text": "Babiš: To je absurdní. Vy mluvíte o bydlení? Vy, kteří jste to zničili?",
       "source": "steno",
       "steno_id": "2025_24_01704",
-      "citace": "bydlení? Vy, kteří jste to zničili?Vy jste zničili to bydlení.",
       "link_phrase": "Babiš zároveň z hromady stran vytáhl jednotlivé případy"
     },
     {
       "text": "Babiš: byt na Malé Straně za 13 000 měsíčně.",
       "source": "steno",
       "steno_id": "2025_24_01708",
-      "citace": "Byt na Malé Straně za 13 000 měsíčně?Musíte být Pirát, starousedlík.",
+      "citace": "Byt na Malé Straně za 13 000 měsíčně?",
       "link_phrase": "Babiš zároveň z hromady stran vytáhl jednotlivé případy"
     },
     {
       "text": "Babiš: školka v Modřanech zdražila o 40 milionů.",
       "source": "steno",
       "steno_id": "2025_24_01708",
-      "citace": "Modřanech zdražila aleo 40 milionů.",
       "link_phrase": "Babiš zároveň z hromady stran vytáhl jednotlivé případy"
     },
     {
       "text": "Babiš: studna za 10 000 místo tří set korun.",
       "source": "steno",
       "steno_id": "2025_24_01708",
-      "citace": "Za studnu místo tří stovek 10 000 koruna tak dále.",
+      "citace": "Za studnu místo tří stovek 10 000 korun a tak dále.",
       "link_phrase": "Babiš zároveň z hromady stran vytáhl jednotlivé případy"
     },
     {
       "text": "Richterová: stavebnictví v roce 2025 rostlo.",
       "source": "steno",
       "steno_id": "2025_24_01706",
-      "citace": "roce 2025 rostlo. To jsou statistiky, to jsou čísla. Takže prosím, za paní ministryni Mrázovou jste, pane premiére, odpovědný vy.",
       "link_phrase": "Richterová se bránila statistikou: stavebnictví v roce 2025 rostlo"
     },
     {
@@ -74,7 +67,6 @@
       "text": "Richterová: projekt 5 000 obecních bytů od Bartoše stojí nebo se staví.",
       "source": "steno",
       "steno_id": "2025_24_01706",
-      "citace": "000 obecních bytů. Ty už jsou postavené nebo rozestavěné.To je prostě přesně ta věc, kterou on připravil.",
       "link_phrase": "Richterová se bránila statistikou: stavebnictví v roce 2025 rostlo"
     }
   ],
@@ -84,9 +76,8 @@
   "lead": "Babiš proti Pirátům: „Vy mluvíte o bydlení? Vy, kteří jste to zničili?“ Listuje 132stránkovým materiálem jejich přešlapů a průšvihů: „Nebudu to číst,“ říká a jen ho listuje před kamerou. Doporučil Pirátům dva roky pryč, vyzval předchozí vládu ke kanálům a vyčítal 2,4 miliardy na chlebíčcích.",
   "pointa": "Lipavský (Piráti) ráno mluvil skoro tři tisíce slov u písemných interpelací, odpoledne Babiš (ANO) doporučil Pirátům dva roky pryč, vyzval předchozí vládu ke kanálům a vyčítal 2,4 miliardy na chlebíčcích.",
   "mean": "Osobní útoky nahradily věcnou debatu o dostupnosti bydlení. Co se s tím udělá, bohužel neřekl ani jeden z nich.",
-  "citace_text": "bydlení? Vy, kteří jste to zničili?Vy jste zničili to bydlení.",
+  "citace_text": "bydlení?",
   "citace_autor": "Andrej Babiš",
   "pocet_hlasovani": 0,
-  "proslo": false,
-  "steno_id": "2025_24_01704"
+  "proslo": false
 }

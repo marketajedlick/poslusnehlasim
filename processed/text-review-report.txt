@@ -1,115 +1,58 @@
-errors=129 warns=207
-warn	fakt_speaker_mismatch	03.11.2025	nav-na-zrizeni-miv-a-stanoveni-poctu-clenu	fakty[1]: text začíná «Mandátový», steno má «Věra Kovářová»
-warn	fakt_speaker_mismatch	05.11.2025	navrh-na-volbu-predsedy-ps	fakty[0]: text začíná «Tomio», steno má «Věra Kovářová»
-warn	fakt_speaker_mismatch	05.11.2025	navrh-na-volbu-predsedy-ps	fakty[1]: text začíná «Návrh», steno má «Věra Kovářová»
-error	fakt_citace_not_in_steno	05.11.2025	navrh-na-stanoveni-poctu-mistopredsedu-ps	fakty[0].citace není ve stenu: «Hlasování číslo 9, přihlášeno 194, pro 156, proti 1.…»
-warn	fakt_speaker_mismatch	05.11.2025	navrh-terminu-2-schuze-ps	fakty[2]: text začíná «Hlasování», steno má «Tomio Okamura»
-error	fakt_citace_not_in_steno	11.11.2025	ustaveni-vyboru-debata	fakty[3].citace není ve stenu: «Hlasování číslo 6 až 32, všechna přijata s převahou nad 180 …»
-error	fakt_citace_not_in_steno	11.11.2025	zmena-usn-ps-c-13-ze-dne-5-11-2025	fakty[2].citace není ve stenu: «Hlasování číslo 5, přihlášeno 189, pro 149, proti 1.…»
-warn	fakt_speaker_mismatch	14.11.2025	volba-mistopredsedu-2-kolo	fakty[0]: text začíná «Olga», steno má «Martin Kolovratník»
+errors=0 warns=145
 warn	fakt_speaker_mismatch	14.11.2025	volba-mistopredsedu-2-kolo	fakty[1]: text začíná «Kateřina», steno má «Eva Šrámková»
 warn	fakt_speaker_mismatch	14.11.2025	volba-mistopredsedu-2-kolo	fakty[2]: text začíná «Jedno», steno má «Martin Kolovratník»
 warn	fakt_speaker_mismatch	14.11.2025	volba-mistopredsedu-2-kolo	fakty[3]: text začíná «Koaliční», steno má «Patrik Nacher»
 warn	fakt_speaker_mismatch	26.11.2025	vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026	fakty[1]: text začíná «Debata», steno má «Zbyněk Stanjura»
-error	fakt_citace_not_in_steno	26.11.2025	vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026	fakty[2].citace není ve stenu: «Hlasování číslo 8, přihlášeno 180, pro 105, proti 64.…»
-error	fakt_citace_not_in_steno	26.11.2025	vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026	fakty[3].citace není ve stenu: «Hlasování číslo 6, pro 67, proti 105. Hlasování číslo 7, pro…»
-error	fakt_citace_not_in_steno	26.11.2025	novela-z-o-sbirce-zakonu-a-mezinarodnich-smluv	fakty[0].citace není ve stenu: «Od 1. ledna 2027 se posouvá příprava a projednání návrhů zák…»
+warn	fakt_speaker_mismatch	26.11.2025	novela-z-o-sbirce-zakonu-a-mezinarodnich-smluv	fakty[0]: text začíná «Novela», steno má «Vít Rakušan»
 warn	fakt_speaker_mismatch	26.11.2025	novela-z-o-sbirce-zakonu-a-mezinarodnich-smluv	fakty[1]: text začíná «Rakušan», steno má «Radek Vondráček»
-warn	fakt_speaker_mismatch	26.11.2025	novela-z-o-sbirce-zakonu-a-mezinarodnich-smluv	fakty[2]: text začíná «Hlasování», steno má «Tomio Okamura»
 warn	nadpis_off_topic	26.11.2025	novela-z-o-sbirce-zakonu-a-mezinarodnich-smluv	nadpis «online zákonodárství počká» – klíčová slova ['online', 'zákonodárství'] nejsou ve stenu dne
 warn	fakt_speaker_mismatch	27.11.2025	babis-projev-4-schuze	fakty[1]: text začíná «Celková», steno má «Andrej Babiš»
 warn	fakt_speaker_mismatch	27.11.2025	transparent-v-jednacim-sale	fakty[0]: text začíná «Prosím», steno má «Tomio Okamura»
-warn	fakt_speaker_mismatch	27.11.2025	transparent-v-jednacim-sale	fakty[1]: text začíná «Poslanec», steno má «Andrej Babiš»
 warn	fakt_speaker_mismatch	27.11.2025	transparent-v-jednacim-sale	fakty[2]: text začíná «Hluk», steno má «Marek Výborný»
 warn	fakt_speaker_mismatch	27.11.2025	opozice-stret-zajmu-agrofert	fakty[0]: text začíná «Čili», steno má «Marek Výborný»
 warn	fakt_speaker_mismatch	27.11.2025	opozice-stret-zajmu-agrofert	fakty[2]: text začíná «My», steno má «Vít Rakušan»
 warn	fakt_speaker_mismatch	27.11.2025	opozice-stret-zajmu-agrofert	fakty[3]: text začíná «Podle», steno má «Vít Rakušan»
 warn	fakt_speaker_mismatch	13.01.2026	navrh-na-prispevek-na-uhradu-volebnich-nakladu-z	fakty[1]: text začíná «Konstatuji», steno má «Patrik Nacher»
 warn	fakt_speaker_mismatch	13.01.2026	navrh-na-prispevek-na-uhradu-volebnich-nakladu-z	fakty[2]: text začíná «Dostáváme», steno má «Patrik Nacher»
-warn	fakt_speaker_mismatch	14.01.2026	debata-duvery-streda	fakty[0]: text začíná «Protože», steno má «Jan Skopeček»
-warn	fakt_speaker_mismatch	14.01.2026	debata-duvery-streda	fakty[1]: text začíná «My», steno má «Vít Rakušan»
 warn	fakt_speaker_mismatch	14.01.2026	debata-duvery-streda	fakty[2]: text začíná «Znalec», steno má «Olga Richterová»
 warn	fakt_speaker_mismatch	14.01.2026	premier-chybi-v-debate-duvery	fakty[0]: text začíná «Premiér», steno má «Olga Richterová»
-error	fakt_citace_not_in_steno	14.01.2026	premier-chybi-v-debate-duvery	fakty[1].citace není ve stenu: «Navrhuji pauzu do doby, než se vrátí pan premiér do sálu.…»
+warn	fakt_speaker_mismatch	14.01.2026	premier-chybi-v-debate-duvery	fakty[1]: text začíná «Já», steno má «Olga Richterová»
 warn	fakt_speaker_mismatch	14.01.2026	premier-chybi-v-debate-duvery	fakty[2]: text začíná «Dobré», steno má «Marian Jurečka»
 warn	fakt_speaker_mismatch	14.01.2026	premier-chybi-v-debate-duvery	fakty[3]: text začíná «Pan», steno má «Boris Šťastný»
 warn	fakt_speaker_mismatch	14.01.2026	premier-chybi-v-debate-duvery	fakty[4]: text začíná «Bylo», steno má «Jiří Barták»
-error	fakt_citace_not_in_steno	14.01.2026	premier-chybi-v-debate-duvery	fakty[5].citace není ve stenu: «Při důvěře Fialy tady seděli tři ministři, z osmnácti patnác…»
-warn	fakt_speaker_mismatch	15.01.2026	vysloveni-duvery-vlade-ceske-republiky	fakty[1]: text začíná «My», steno má «Vít Rakušan»
 warn	fakt_speaker_mismatch	15.01.2026	vysloveni-duvery-vlade-ceske-republiky	fakty[2]: text začíná «Rozhodnutí», steno má «Petr Fiala»
-warn	fakt_speaker_mismatch	15.01.2026	vysloveni-duvery-vlade-ceske-republiky	fakty[3]: text začíná «Potlesk», steno má «Barbora Rázga»
-warn	fakt_speaker_mismatch	16.01.2026	usneseni-ke-jmenovani-clenu-vlady	fakty[0]: text začíná «Prezident», steno má «Boris Šťastný»
 warn	fakt_speaker_mismatch	16.01.2026	usneseni-ke-jmenovani-clenu-vlady	fakty[1]: text začíná «My», steno má «Petr Hladík»
-error	fakt_citace_not_in_steno	16.01.2026	novela-z-o-pojistnem-na-socialni-zabezpeceni	fakty[0].citace není ve stenu: «náš koaliční návrh, který má živnostníkům vrátit vyměřovací …»
 warn	fakt_speaker_mismatch	16.01.2026	novela-z-o-pojistnem-na-socialni-zabezpeceni	fakty[2]: text začíná «Snížit», steno má «Marian Jurečka»
 warn	fakt_speaker_mismatch	28.01.2026	navrh-na-odvolani-clenu-spravni-rady-vseobecne-z	fakty[0]: text začíná «Návrh», steno má «Tomio Okamura»
-warn	fakt_speaker_mismatch	28.01.2026	navrh-na-odvolani-clenu-spravni-rady-vseobecne-z	fakty[1]: text začíná «Hlasování», steno má «Tomio Okamura»
 warn	fakt_speaker_mismatch	28.01.2026	navrh-na-odvolani-clenu-spravni-rady-vseobecne-z	fakty[2]: text začíná «Prosím», steno má «Tomio Okamura»
 warn	fakt_speaker_mismatch	28.01.2026	navrh-na-odvolani-clenu-spravni-rady-vseobecne-z	fakty[3]: text začíná «Počítám», steno má «Martin Kolovratník»
 warn	fakt_speaker_mismatch	28.01.2026	novela-z-o-pojistnem-na-verejne-zdravotni-pojist	fakty[1]: text začíná «Ta», steno má «Jakub Janda»
 warn	fakt_speaker_mismatch	30.01.2026	novela-z-stavebni-zakon	fakty[2]: text začíná «Česká», steno má «Michal Kučera»
 warn	fakt_speaker_mismatch	29.01.2026	navrh-zakona-o-statnich-zamestnancich	fakty[3]: text začíná «Já», steno má «Michal Kučera»
 warn	fakt_speaker_mismatch	29.01.2026	mimoradna-schuze-statni-zakon	fakty[3]: text začíná «Pracovali», steno má «Vít Rakušan»
-warn	fakt_speaker_mismatch	10.02.2026	porad-7-schuze	fakty[0]: text začíná «Nemá», steno má «Zdeněk Hřib»
-error	fakt_citace_not_in_steno	10.02.2026	porad-7-schuze	fakty[1].citace není ve stenu: «Já vystupuji k bodu, pro něj jsme sebrali jako Piráti, TOP 0…»
+warn	fakt_speaker_mismatch	10.02.2026	porad-7-schuze	fakty[1]: text začíná «Já», steno má «Olga Richterová»
 warn	fakt_speaker_mismatch	10.02.2026	porad-7-schuze	fakty[2]: text začíná «Mohli», steno má «Vít Rakušan»
 warn	fakt_speaker_mismatch	10.02.2026	porad-7-schuze	fakty[3]: text začíná «Navrhuji», steno má «Martin Kupka»
-error	fakt_citace_not_in_steno	11.02.2026	sml-mezi-cr-a-sr-o-preshranicni-spol-v-oblasti-z	fakty[0].citace není ve stenu: «Vládní návrh k vyslovení souhlasu s Rámcovou smlouvou mezi Č…»
-error	fakt_citace_not_in_steno	11.02.2026	navrh-statniho-zaverecneho-uctu-ceske-republiky-	fakty[0].citace není ve stenu: «V hlasování číslo 58 bylo přihlášeno 164 poslanců, pro 113, …»
 warn	fakt_speaker_mismatch	11.02.2026	navrh-casoveho-harmonogramu-projednavani-zakona-	fakty[0]: text začíná «Tento», steno má «Tomio Okamura»
-error	fakt_citace_not_in_steno	11.02.2026	navrh-casoveho-harmonogramu-projednavani-zakona-	fakty[1].citace není ve stenu: «V hlasování číslo 59 bylo přihlášeno 166 poslanců, pro 127, …»
 warn	fakt_speaker_mismatch	12.02.2026	vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026	fakty[0]: text začíná «Po», steno má «Alena Schillerová»
 warn	fakt_speaker_mismatch	12.02.2026	vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026	fakty[1]: text začíná «Vážený», steno má «Martin Kupka»
-warn	fakt_speaker_mismatch	12.02.2026	vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026	fakty[2]: text začíná «Hlasování», steno má «Patrik Nacher»
-warn	fakt_speaker_mismatch	12.02.2026	vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026	fakty[3]: text začíná «Bouřlivý», steno má «Patrik Nacher»
 warn	fakt_speaker_mismatch	12.02.2026	navrh-usneseni-poslanecke-snemovny-k-odsouzeni-t	fakty[0]: text začíná «Při», steno má «Lucie Šafránková»
-warn	fakt_speaker_mismatch	12.02.2026	navrh-usneseni-poslanecke-snemovny-k-odsouzeni-t	fakty[1]: text začíná «Hlasování», steno má «Jiří Barták»
-error	fakt_citace_not_in_steno	12.02.2026	navrh-usneseni-poslanecke-snemovny-k-odsouzeni-t	fakty[2].citace není ve stenu: «Dali jsme důrazný symbol, že týrání zvířat do naší společnos…»
 warn	fakt_speaker_mismatch	13.02.2026	novela-z-o-jednacim-radu-ps	fakty[0]: text začíná «Na», steno má «Radek Vondráček»
-warn	fakt_speaker_mismatch	13.02.2026	novela-z-o-jednacim-radu-ps	fakty[1]: text začíná «Nikdo», steno má «Radek Vondráček»
-error	fakt_citace_not_in_steno	13.02.2026	novela-z-o-jednacim-radu-ps	fakty[2].citace není ve stenu: «Hlasování číslo 90, pro 57, proti 77. Návrh na prodloužení l…»
-error	fakt_citace_not_in_steno	03.02.2026	neduvera-vlade-debata	fakty[0].citace není ve stenu: «Skupina 81 poslanců podala návrh na vyslovení nedůvěry vládě…»
+warn	fakt_speaker_mismatch	03.02.2026	neduvera-vlade-debata	fakty[0]: text začíná «Skupina», steno má «Tomio Okamura»
 warn	fakt_speaker_mismatch	03.02.2026	neduvera-vlade-debata	fakty[1]: text začíná «Není», steno má «Martin Kupka»
 warn	fakt_speaker_mismatch	03.02.2026	neduvera-vlade-debata	fakty[2]: text začíná «Takže», steno má «ČR Andrej Babiš»
-error	fakt_citace_not_in_steno	03.02.2026	neduvera-vlade-debata	fakty[3].citace není ve stenu: «Hlasování číslo 2, pro 115, proti 6. Jednání bude pokračovat…»
-warn	fakt_speaker_mismatch	04.02.2026	neduvera-vlade-debata-den-dva	fakty[3]: text začíná «Poslanci», steno má «Patrik Nacher»
 warn	fakt_speaker_mismatch	04.02.2026	projednani-navrhu-na-vysloveni-neduvery-vlade-ce	fakty[0]: text začíná «Hlasovalo», steno má «Miroslav Samaš»
-error	fakt_citace_not_in_steno	04.02.2026	projednani-navrhu-na-vysloveni-neduvery-vlade-ce	fakty[1].citace není ve stenu: «(Bouřlivý potlesk v sále.)…»
 warn	fakt_speaker_mismatch	04.02.2026	projednani-navrhu-na-vysloveni-neduvery-vlade-ce	fakty[2]: text začíná «Při», steno má «Martin Kupka»
 warn	fakt_speaker_mismatch	04.02.2026	projednani-navrhu-na-vysloveni-neduvery-vlade-ce	fakty[3]: text začíná «Tak», steno má «Robert Králíček»
 warn	fakt_speaker_mismatch	13.02.2026	novela-z-o-zivotnim-a-existencnim-minimu	fakty[0]: text začíná «Hlavním», steno má «Aleš Juchelka»
 warn	fakt_speaker_mismatch	13.02.2026	novela-z-o-zivotnim-a-existencnim-minimu	fakty[1]: text začíná «Návrh», steno má «Lucie Šafránková»
-error	fakt_citace_not_in_steno	13.02.2026	novela-z-o-zivotnim-a-existencnim-minimu	fakty[2].citace není ve stenu: «Hlasování číslo 4, pro 137, proti nikdo. S návrhem zákona by…»
 warn	fakt_speaker_mismatch	13.02.2026	novela-z-o-davce-statni-socialni-pomoci	fakty[0]: text začíná «Celkem», steno má «Aleš Juchelka»
 warn	fakt_speaker_mismatch	13.02.2026	novela-z-o-davce-statni-socialni-pomoci	fakty[1]: text začíná «Přechod», steno má «Monika Brzesková»
-error	fakt_citace_not_in_steno	13.02.2026	novela-z-o-davce-statni-socialni-pomoci	fakty[2].citace není ve stenu: «Hlasování číslo 6, pro 130, proti nikdo. Návrh byl přijat.…»
-warn	fakt_speaker_mismatch	13.02.2026	novela-z-o-davce-statni-socialni-pomoci	fakty[3]: text začíná «Potlesk», steno má «Aleš Juchelka»
-warn	fakt_speaker_mismatch	03.03.2026	blizky-vychod-a-porad-10-schuze	fakty[1]: text začíná «Bezpečnost», steno má «Zdeněk Hřib»
 warn	fakt_speaker_mismatch	03.03.2026	blizky-vychod-a-porad-10-schuze	fakty[3]: text začíná «Desítky», steno má «Jiří Barták»
 warn	fakt_speaker_mismatch	03.03.2026	novela-ustav-z-ustava-cr	fakty[0]: text začíná «Hnutí», steno má «Barbora Urbanová»
-warn	fakt_speaker_mismatch	03.03.2026	novela-ustav-z-ustava-cr	fakty[1]: text začíná «Rozšíření», steno má «Samuel Volpe»
-error	fakt_citace_not_in_steno	03.03.2026	novela-ustav-z-ustava-cr	fakty[2].citace není ve stenu: «Hlasování číslo 47, pro 154, proti 0.…»
-warn	fakt_speaker_mismatch	03.03.2026	vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-	fakty[0]: text začíná «Starostové», steno má «Lucie Sedmihradská»
-error	fakt_citace_not_in_steno	03.03.2026	vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-	fakty[1].citace není ve stenu: «Vláda se snaží vykostit zákon o rozpočtové odpovědnosti a vy…»
-error	fakt_citace_not_in_steno	03.03.2026	vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-	fakty[2].citace není ve stenu: «Hlasování číslo 51, pro 149, proti nikdo. S návrhem zákona b…»
-error	fakt_citace_not_in_steno	03.03.2026	vl-n-z-o-sprave-dat-a-o-rizenem-pristupu-k-datum	fakty[0].citace není ve stenu: «Hlasování číslo 53, pro 128, proti nikdo. S návrhem zákona b…»
-warn	fakt_speaker_mismatch	03.03.2026	vl-n-z-o-sprave-dat-a-o-rizenem-pristupu-k-datum	fakty[1]: text začíná «Potlesk», steno má «Patrik Nacher»
 warn	fakt_speaker_mismatch	04.03.2026	statni-rozpocet-2026-debata-2-cteni	fakty[0]: text začíná «Dneska», steno má «Patrik Nacher»
-error	fakt_citace_not_in_steno	06.03.2026	navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem	fakty[0].citace není ve stenu: «Hlasování číslo 70, pro 168, proti nikdo. Návrh byl přijat.…»
-error	fakt_citace_not_in_steno	06.03.2026	navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem	fakty[1].citace není ve stenu: «Hlasování číslo 72, pro 117, proti 33. Návrh byl přijat.…»
-error	fakt_citace_not_in_steno	06.03.2026	navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem	fakty[2].citace není ve stenu: «Hlasování číslo 75, pro 120, proti 11. Návrh byl přijat.…»
-warn	fakt_speaker_mismatch	10.03.2026	novela-z-o-rostlinolekarske-peci-eu	fakty[0]: text začíná «Stěžejním», steno má «Martin Šebestyán»
-error	fakt_citace_not_in_steno	10.03.2026	novela-z-o-rostlinolekarske-peci-eu	fakty[1].citace není ve stenu: «Hlasování číslo 100, pro 146, proti nikdo. S návrhem zákona …»
-error	fakt_citace_not_in_steno	11.03.2026	vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026	fakty[0].citace není ve stenu: «Hlasování číslo 110, pro 178, proti 1. S návrhem zákona byl …»
-error	fakt_citace_not_in_steno	11.03.2026	vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026	fakty[1].citace není ve stenu: «Hlasování číslo 239, pro 142, proti nikdo. Návrh usnesení by…»
-error	fakt_citace_not_in_steno	11.03.2026	rozpocet-sfzp-na-rok-2026	fakty[0].citace není ve stenu: «Hlasování číslo 246, pro 90, proti 32. Návrh byl přijat.…»
-error	fakt_citace_not_in_steno	11.03.2026	rozpocet-sfzp-na-rok-2026	fakty[1].citace není ve stenu: «Hlasování číslo 245, pro 58, proti 89. Návrh nebyl přijat.…»
-error	fakt_citace_not_in_steno	12.03.2026	novela-z-o-investicnich-spolecnostech-eu	fakty[0].citace není ve stenu: «Hlasování číslo 261, pro 117, proti nikdo. S návrhem zákona …»
 warn	fakt_speaker_mismatch	12.03.2026	novela-z-o-investicnich-spolecnostech-eu	fakty[1]: text začíná «Hluk», steno má «Jiří Barták»
-error	fakt_citace_not_in_steno	12.03.2026	navrh-pravidel-hospodareni-poslaneckych-klubu-pr	fakty[0].citace není ve stenu: «Hlasování číslo 251, pro 127, proti nikdo. Návrh byl přijat.…»
 warn	fakt_speaker_mismatch	12.03.2026	navrh-pravidel-hospodareni-poslaneckych-klubu-pr	fakty[1]: text začíná «Poslankyně», steno má «Tomio Okamura»
-error	fakt_citace_not_in_steno	12.03.2026	navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2	fakty[0].citace není ve stenu: «Hlasování číslo 249, pro 121, proti nikdo. Návrh byl přijat.…»
-warn	fakt_speaker_mismatch	12.03.2026	navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2	fakty[1]: text začíná «Poslanec», steno má «Jiří Barták»
 warn	fakt_speaker_mismatch	05.03.2026	zadost-o-udeleni-souhlasu-s-trestnim-stihanim-po	fakty[0]: text začíná «Městský», steno má «Michal Zuna»
 warn	fakt_speaker_mismatch	05.03.2026	zadost-o-udeleni-souhlasu-s-trestnim-stihanim-po	fakty[1]: text začíná «Mandátový», steno má «Michal Zuna»
 warn	fakt_speaker_mismatch	05.03.2026	zadost-o-udeleni-souhlasu-s-trestnim-stihanim-po	fakty[2]: text začíná «Hlasování», steno má «Jan Skopeček»
@@ -120,218 +63,84 @@ warn	fakt_speaker_mismatch	05.03.2026	zadost-o-udeleni-souhlasu-s-trestnim-stiha
 warn	fakt_speaker_mismatch	05.03.2026	zadost-o-udeleni-souhlasu-s-trestnim-stihanim-po-2	fakty[3]: text začíná «Hlasování», steno má «Jan Skopeček»
 warn	fakt_speaker_mismatch	05.03.2026	zadost-o-udeleni-souhlasu-s-trestnim-stihanim-po-2	fakty[4]: text začíná «Jde», steno má «Olga Richterová»
 warn	fakt_speaker_mismatch	13.03.2026	novela-z-o-podpore-bydleni	fakty[0]: text začíná «Novela», steno má «Zuzana Mrázová»
-error	fakt_citace_not_in_steno	13.03.2026	novela-z-o-podpore-bydleni	fakty[1].citace není ve stenu: «Hlasování číslo 3, pro 27 poslanců, proti 86 poslanců. Návrh…»
-error	fakt_citace_not_in_steno	13.03.2026	novela-z-o-podpore-bydleni	fakty[2].citace není ve stenu: «Hlasování číslo 5, pro 126 poslanců, proti žádný. Konstatuji…»
 warn	fakt_speaker_mismatch	13.03.2026	novela-z-o-podpore-bydleni	fakty[3]: text začíná «Odložením», steno má «Eliška Olšáková»
-warn	fakt_speaker_mismatch	13.03.2026	novela-z-o-podpore-bydleni	fakty[4]: text začíná «Zákon», steno má «Ivan Bartoš»
 warn	fakt_speaker_mismatch	13.03.2026	novela-z-o-podpore-bydleni	fakty[5]: text začíná «Dopady», steno má «Olga Richterová»
-error	fakt_citace_not_in_steno	24.03.2026	porad-13-schuze	fakty[0].citace není ve stenu: «V hlasování číslo 30 bylo přihlášeno 175 poslanců, pro hlaso…»
-error	fakt_citace_not_in_steno	24.03.2026	porad-13-schuze	fakty[1].citace není ve stenu: «Jakmile mi poslali tedy údaje, kam se to má vrátit, tak jsem…»
 warn	fakt_speaker_mismatch	24.03.2026	porad-13-schuze	fakty[2]: text začíná «Pořad», steno má «Jan Skopeček»
-error	fakt_citace_not_in_steno	24.03.2026	porad-13-schuze	fakty[3].citace není ve stenu: «Nyní budeme hlasovat návrh pana poslance Foldyny, který zní …»
-warn	fakt_speaker_mismatch	24.03.2026	novela-z-o-zivotnim-a-existencnim-minimu	fakty[0]: text začíná «Senát», steno má «Aleš Juchelka»
-warn	fakt_speaker_mismatch	24.03.2026	novela-z-o-zivotnim-a-existencnim-minimu	fakty[2]: text začíná «Hlasování», steno má «Jan Skopeček»
 warn	fakt_speaker_mismatch	24.03.2026	novela-z-o-zivotnim-a-existencnim-minimu	fakty[3]: text začíná «Před», steno má «Jan Skopeček»
 warn	fakt_speaker_mismatch	24.03.2026	novela-z-o-doplnkovem-penzijnim-sporeni	fakty[0]: text začíná «Fialova», steno má «Alena Schillerová»
 warn	fakt_speaker_mismatch	24.03.2026	novela-z-o-doplnkovem-penzijnim-sporeni	fakty[1]: text začíná «Návrh», steno má «Alena Schillerová»
-warn	fakt_speaker_mismatch	24.03.2026	novela-z-o-doplnkovem-penzijnim-sporeni	fakty[2]: text začíná «Hlasování», steno má «Jiří Barták»
 warn	fakt_speaker_mismatch	24.03.2026	novela-z-o-doplnkovem-penzijnim-sporeni	fakty[3]: text začíná «Stát», steno má «Alena Schillerová»
 warn	fakt_speaker_mismatch	24.03.2026	novela-z-o-zdrav-prostr-a-diagnostickych-zdrav-p	fakty[0]: text začíná «Návrh», steno má «Adam Vojtěch»
-warn	fakt_speaker_mismatch	24.03.2026	novela-z-o-zdrav-prostr-a-diagnostickych-zdrav-p	fakty[1]: text začíná «Hlasování», steno má «Jiří Barták»
-error	fakt_citace_not_in_steno	24.03.2026	novela-z-o-zdrav-prostr-a-diagnostickych-zdrav-p	fakty[2].citace není ve stenu: «Hlasování číslo 53, přihlášeno 168 poslanců, pro 113, proti …»
 warn	nadpis_off_topic	24.03.2026	novela-z-o-zdrav-prostr-a-diagnostickych-zdrav-p	nadpis «Zkumavky budou pod dohledem» – klíčová slova ['Zkumavky', 'dohledem'] nejsou ve stenu dne
 warn	fakt_speaker_mismatch	25.03.2026	novela-z-o-pojistnem-na-socialni-zabezpeceni	fakty[0]: text začíná «Od», steno má «Aleš Juchelka»
 warn	fakt_speaker_mismatch	25.03.2026	novela-z-o-pojistnem-na-socialni-zabezpeceni	fakty[1]: text začíná «Návrh», steno má «Aleš Juchelka»
 warn	fakt_speaker_mismatch	25.03.2026	novela-z-o-pojistnem-na-socialni-zabezpeceni	fakty[2]: text začíná «První», steno má «Jiří Barták»
-warn	fakt_speaker_mismatch	25.03.2026	novela-z-o-pojistnem-na-socialni-zabezpeceni	fakty[3]: text začíná «Hlasování», steno má «Jiří Barták»
-warn	fakt_speaker_mismatch	25.03.2026	novela-z-o-pojistnem-na-socialni-zabezpeceni	fakty[4]: text začíná «Doplňující», steno má «Jiří Barták»
 warn	fakt_speaker_mismatch	25.03.2026	novela-z-o-pojistnem-na-verejne-zdravotni-pojist	fakty[1]: text začíná «Cílem», steno má «Adam Vojtěch»
 warn	fakt_speaker_mismatch	25.03.2026	novela-z-o-pojistnem-na-verejne-zdravotni-pojist	fakty[2]: text začíná «Hlasování», steno má «Jiří Barták»
-warn	fakt_speaker_mismatch	25.03.2026	navrh-na-zrizeni-vysetrovaci-komise-poslanecke-s	fakty[1]: text začíná «Hřib», steno má «Jindřich Rajchl»
-warn	fakt_speaker_mismatch	25.03.2026	navrh-na-zrizeni-vysetrovaci-komise-poslanecke-s	fakty[2]: text začíná «Hlasování», steno má «Jiří Barták»
-warn	fakt_speaker_mismatch	14.04.2026	porad-14-schuze	fakty[0]: text začíná «Kupka», steno má «Tomio Okamura»
-error	fakt_citace_not_in_steno	14.04.2026	porad-14-schuze	fakty[2].citace není ve stenu: «44 hlasování o pořadu schůze před večerním zákonem o cenách.…»
-error	fakt_citace_not_in_steno	14.04.2026	porad-14-schuze	fakty[3].citace není ve stenu: «Hlasování číslo 48, bod 902, pro 79, proti 51.…»
 warn	fakt_speaker_mismatch	14.04.2026	novela-z-o-cenach	fakty[1]: text začíná «Schillerová», steno má «163»
-error	fakt_citace_not_in_steno	14.04.2026	novela-z-o-cenach	fakty[2].citace není ve stenu: «Hlasování číslo 48 pro 79 proti 51, hlasování číslo 49 pro 1…»
-error	fakt_citace_not_in_steno	14.04.2026	novela-z-o-cenach	fakty[3].citace není ve stenu: «Hlasování číslo 50, pro 64, proti 89. Návrh byl zamítnut.…»
-error	fakt_citace_not_in_steno	15.04.2026	novela-z-o-cenach-debata-1-cteni	fakty[3].citace není ve stenu: «Hlasování číslo 51 pro 160, hlasování číslo 50 pro 64 proti …»
-warn	fakt_speaker_mismatch	15.04.2026	vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-	fakty[0]: text začíná «Počátek», steno má «Alena Schillerová»
-error	fakt_citace_not_in_steno	15.04.2026	vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-	fakty[1].citace není ve stenu: «Hlasování číslo 67, pro 66, proti 88.…»
-error	fakt_citace_not_in_steno	15.04.2026	vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-	fakty[2].citace není ve stenu: «Hlasování číslo 68, pro 93, proti 50.…»
-warn	fakt_speaker_mismatch	17.04.2026	navrh-zakona-o-statnich-zamestnancich	fakty[0]: text začíná «Vondráček», steno má «76»
 warn	fakt_speaker_mismatch	17.04.2026	navrh-zakona-o-statnich-zamestnancich	fakty[1]: text začíná «Starostové», steno má «Pavla Pivoňka Vaňková»
-error	fakt_citace_not_in_steno	17.04.2026	navrh-zakona-o-statnich-zamestnancich	fakty[2].citace není ve stenu: «Hlasování číslo 78, pro 113, proti 0.…»
-error	fakt_citace_not_in_steno	21.04.2026	novela-z-trestni-zakonik	fakty[1].citace není ve stenu: «Hlasování číslo 119, pro 154, proti 0.…»
-error	fakt_citace_not_in_steno	21.04.2026	novela-z-trestni-zakonik	fakty[2].citace není ve stenu: «Hlasování číslo 120, pro 67, proti 0, návrh nebyl přijat.…»
 warn	fakt_speaker_mismatch	22.04.2026	n-z-kterym-se-zrusuje-nominacni-zakon	fakty[0]: text začíná «Piráti», steno má «Olga Richterová»
-error	fakt_citace_not_in_steno	22.04.2026	n-z-kterym-se-zrusuje-nominacni-zakon	fakty[1].citace není ve stenu: «Nepovažuju za správné, že ten návrh je o zrušení, že to není…»
-error	fakt_citace_not_in_steno	22.04.2026	n-z-kterym-se-zrusuje-nominacni-zakon	fakty[2].citace není ve stenu: «Hlasování číslo 139, pro 66, proti 88. Návrh byl zamítnut.…»
 warn	fakt_speaker_mismatch	22.04.2026	novela-z-o-statni-socialni-podpore	fakty[1]: text začíná «Kapacity», steno má «Monika Brzesková»
-error	fakt_citace_not_in_steno	22.04.2026	novela-z-o-statni-socialni-podpore	fakty[2].citace není ve stenu: «Hlasování číslo 140, pro 122, proti 0.…»
 warn	fakt_speaker_mismatch	22.04.2026	novela-z-o-socialnich-sluzbach	fakty[1]: text začíná «Novela», steno má «125»
-error	fakt_citace_not_in_steno	22.04.2026	novela-z-o-socialnich-sluzbach	fakty[2].citace není ve stenu: «Hlasování číslo 143, pro 122, proti 0.…»
-error	fakt_citace_not_in_steno	23.04.2026	novela-z-o-spotrebitelskem-uveru	fakty[1].citace není ve stenu: «Hlasování číslo 162, pro 134, proti 0.…»
 warn	fakt_speaker_mismatch	23.04.2026	novela-z-o-spotrebitelskem-uveru	fakty[2]: text začíná «Už», steno má «Alena Schillerová»
 warn	fakt_speaker_mismatch	23.04.2026	novela-z-o-volbach-do-zastupitelstev-obci	fakty[0]: text začíná «Senátní», steno má «Jan Skopeček»
 warn	fakt_speaker_mismatch	23.04.2026	novela-z-o-volbach-do-zastupitelstev-obci	fakty[1]: text začíná «Navrženo», steno má «131»
-error	fakt_citace_not_in_steno	23.04.2026	novela-z-o-volbach-do-zastupitelstev-obci	fakty[2].citace není ve stenu: «Hlasování číslo 165, pro 121, proti 0.…»
-warn	fakt_speaker_mismatch	23.04.2026	sml-mezi-cr-a-sr-o-preshranicni-spol-v-oblasti-z	fakty[1]: text začíná «Smlouva», steno má «Adam Vojtěch»
-error	fakt_citace_not_in_steno	23.04.2026	sml-mezi-cr-a-sr-o-preshranicni-spol-v-oblasti-z	fakty[2].citace není ve stenu: «Hlasování číslo 167, pro 105, proti 0.…»
 warn	fakt_speaker_mismatch	24.04.2026	novela-z-o-cenach-2	fakty[1]: text začíná «Koalice», steno má «Jan Jakob»
-error	fakt_citace_not_in_steno	24.04.2026	novela-z-o-cenach-2	fakty[2].citace není ve stenu: «Hlasování číslo 193 pro 102 proti 45, hlasování číslo 194 pr…»
-error	fakt_citace_not_in_steno	16.04.2026	mimoradna-schuze-opozice	fakty[0].citace není ve stenu: «Proč jsme vyvolali tuto mimořádnou schůzi? Zdražování cen po…»
 warn	fakt_speaker_mismatch	16.04.2026	mimoradna-schuze-opozice	fakty[4]: text začíná «Sch», steno má «Jan Skopeček»
-error	fakt_citace_not_in_steno	05.05.2026	sudetonemecky-sjezd-debata	fakty[0].citace není ve stenu: «Navrhuji zařadit nový bod: Stanovisko vládní koalice ke sjez…»
-error	fakt_citace_not_in_steno	05.05.2026	sudetonemecky-sjezd-debata	fakty[1].citace není ve stenu: «Byli jsme poměrně zaskočeni tímto návrhem usnesení proti kon…»
-error	fakt_citace_not_in_steno	05.05.2026	sudetonemecky-sjezd-debata	fakty[3].citace není ve stenu: «Hlasování číslo 35 až 48, všechna zamítnuta, nejblíže 46:75.…»
-warn	fakt_speaker_mismatch	06.05.2026	stanovisko-vladni-koalice-ke-sjezdu-sudetonemeck	fakty[0]: text začíná «Koten», steno má «Tomio Okamura»
-error	fakt_citace_not_in_steno	06.05.2026	stanovisko-vladni-koalice-ke-sjezdu-sudetonemeck	fakty[1].citace není ve stenu: «Máme mimořádně hloupý návrh. Vládní koalici se nepodařilo po…»
-error	fakt_citace_not_in_steno	06.05.2026	stanovisko-vladni-koalice-ke-sjezdu-sudetonemeck	fakty[2].citace není ve stenu: «Dovolím si navrhnout vyřazení tohoto bodu z pořadu schůze.…»
-error	fakt_citace_not_in_steno	06.05.2026	stanovisko-vladni-koalice-ke-sjezdu-sudetonemeck	fakty[3].citace není ve stenu: «Hlasování číslo 49, pro 109, proti 1.…»
-error	fakt_citace_not_in_steno	06.05.2026	novela-z-stavebni-zakon	fakty[0].citace není ve stenu: «Hlasování číslo 66, pro 110, proti 0.…»
-error	fakt_citace_not_in_steno	06.05.2026	novela-z-stavebni-zakon	fakty[1].citace není ve stenu: «Hlasování číslo 67, pro 123, proti 0.…»
-error	fakt_citace_not_in_steno	06.05.2026	novela-z-o-statni-socialni-podpore	fakty[1].citace není ve stenu: «Hlasování číslo 69, pro 100, proti 1.…»
-warn	fakt_speaker_mismatch	06.05.2026	novela-z-o-statni-socialni-podpore	fakty[2]: text začíná «Úpravy», steno má «Igor Hendrych»
-error	fakt_citace_not_in_steno	06.05.2026	novela-z-o-socialnich-sluzbach	fakty[0].citace není ve stenu: «Posunout převod kompetencí z Úřadu práce na územní správy so…»
-error	fakt_citace_not_in_steno	06.05.2026	novela-z-o-socialnich-sluzbach	fakty[1].citace není ve stenu: «Hlasování číslo 70, pro 111, proti 0.…»
-warn	fakt_speaker_mismatch	03.06.2026	novela-z-o-podpore-bydleni	fakty[1]: text začíná «Kovářová», steno má «Martin Kupka»
-error	fakt_citace_not_in_steno	03.06.2026	novela-z-o-podpore-bydleni	fakty[3].citace není ve stenu: «Hlasování číslo 70, pro 118, proti 23.…»
-warn	fakt_speaker_mismatch	06.05.2026	novela-ustav-z-ustava-cr	fakty[1]: text začíná «Jakob», steno má «Ondřej Babka»
-error	fakt_citace_not_in_steno	06.05.2026	novela-ustav-z-ustava-cr	fakty[2].citace není ve stenu: «V čl. 1 se slova zřízených zákonem vypouštějí. Jsme si vědom…»
-error	fakt_citace_not_in_steno	06.05.2026	novela-ustav-z-ustava-cr	fakty[3].citace není ve stenu: «Hlasování číslo 5, pro 71, proti 16.…»
-error	fakt_citace_not_in_steno	13.05.2026	vl-n-z-verejne-rozpocty-debata-3-cteni	fakty[0].citace není ve stenu: «Vláda se nás bude snažit přesvědčit, že máme zadlužit naše d…»
-error	fakt_citace_not_in_steno	13.05.2026	vl-n-z-verejne-rozpocty-debata-3-cteni	fakty[3].citace není ve stenu: «Dohodli jsme se, že bychom toto jednání v tento okamžik přer…»
-error	fakt_citace_not_in_steno	15.05.2026	vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-	fakty[3].citace není ve stenu: «Hlasování číslo 44, pro 68, proti 90.…»
-error	fakt_citace_not_in_steno	29.05.2026	novela-z-o-podpore-bydleni-debata-3-cteni	fakty[0].citace není ve stenu: «Navrhuji procedurální hlasování o tom, že odložíme projednáv…»
-error	fakt_citace_not_in_steno	29.05.2026	novela-z-o-podpore-bydleni-debata-3-cteni	fakty[2].citace není ve stenu: «Hlasování číslo 46 až 49, všechna zamítnuta.…»
+warn	fakt_speaker_mismatch	06.05.2026	novela-z-o-socialnich-sluzbach	fakty[0]: text začíná «Juchelka», steno má «Igor Hendrych»
 warn	fakt_speaker_mismatch	29.05.2026	novela-z-o-podpore-bydleni-debata-3-cteni	fakty[3]: text začíná «Ve», steno má «Jan Skopeček»
 warn	fakt_speaker_mismatch	14.05.2026	stanovisko-vladni-koalice-ke-sjezdu-sudetonemeck	fakty[1]: text začíná «Opozice», steno má «Tomio Okamura»
-error	fakt_citace_not_in_steno	14.05.2026	stanovisko-vladni-koalice-ke-sjezdu-sudetonemeck	fakty[4].citace není ve stenu: «Hlasování číslo 4, pro 73, proti nikdo.…»
-error	fakt_citace_not_in_steno	15.05.2026	novela-z-o-statni-socialni-podpore	fakty[2].citace není ve stenu: «Hlasování číslo 4 až 6, všechna zamítnuta.…»
-error	fakt_citace_not_in_steno	15.05.2026	novela-z-o-statni-socialni-podpore	fakty[3].citace není ve stenu: «Hlasování číslo 7, pro 128, proti nikdo.…»
-error	fakt_citace_not_in_steno	15.05.2026	novela-z-o-socialnich-sluzbach	fakty[2].citace není ve stenu: «Hlasování číslo 13, pro 147, proti nikdo.…»
-error	fakt_citace_not_in_steno	15.05.2026	novela-z-o-socialnich-sluzbach	fakty[3].citace není ve stenu: «Hlasování číslo 14, pro 132, proti nikdo.…»
-warn	fakt_speaker_mismatch	03.06.2026	vl-n-z-o-evidenci-trzeb-eu	fakty[1]: text začíná «Vláda», steno má «Zdeněk Hřib»
-error	fakt_citace_not_in_steno	03.06.2026	vl-n-z-o-evidenci-trzeb-eu	fakty[2].citace není ve stenu: «Hlasování číslo 174: pro 33, proti 100, zamítnuto. Hlasování…»
 warn	fakt_speaker_mismatch	04.06.2026	navrhy-poslanecke-snemovny-na-propujceni-nebo-ud	fakty[0]: text začíná «Sněmovna», steno má «Jiří Barták»
 warn	fakt_speaker_mismatch	04.06.2026	navrhy-poslanecke-snemovny-na-propujceni-nebo-ud	fakty[1]: text začíná «Miloš», steno má «Patrik Nacher»
-error	fakt_citace_not_in_steno	04.06.2026	navrhy-poslanecke-snemovny-na-propujceni-nebo-ud	fakty[2].citace není ve stenu: «Hlasování číslo 300: pro 82, proti 67, nepřijato. Hlasování …»
-warn	fakt_speaker_mismatch	04.06.2026	navrhy-poslanecke-snemovny-na-propujceni-nebo-ud	fakty[3]: text začíná «Výsledný», steno má «Jiří Barták»
 warn	nadpis_off_topic	04.06.2026	navrhy-poslanecke-snemovny-na-propujceni-nebo-ud	nadpis «Metály na běžícím pásu» – klíčová slova ['Metály', 'běžícím'] nejsou ve stenu dne
 warn	fakt_speaker_mismatch	05.06.2026	navrh-na-volbu-clenu-rady-ceske-televize	fakty[0]: text začíná «Tajnou», steno má «Martin Kolovratník»
 warn	fakt_speaker_mismatch	05.06.2026	navrh-na-volbu-clenu-rady-ceske-televize	fakty[1]: text začíná «Volba», steno má «Zdeněk Hřib»
-warn	fakt_speaker_mismatch	05.06.2026	navrh-na-volbu-clenu-rady-ceske-televize	fakty[2]: text začíná «Proti», steno má «František Talíř»
 warn	fakt_speaker_mismatch	05.06.2026	navrh-na-volbu-clenu-rady-ceske-televize	fakty[3]: text začíná «Matocha», steno má «Martin Kolovratník»
 warn	fakt_speaker_mismatch	05.06.2026	novela-z-o-rostlinolekarske-peci-eu	fakty[0]: text začíná «Sněmovna», steno má «Patrik Nacher»
 warn	fakt_speaker_mismatch	05.06.2026	novela-z-o-rostlinolekarske-peci-eu	fakty[1]: text začíná «Už», steno má «Patrik Nacher»
-warn	fakt_speaker_mismatch	26.05.2026	novela-z-o-zdrav-prostr-a-diagnostickych-zdrav-p	fakty[0]: text začíná «Výrobci», steno má «Adam Vojtěch»
-warn	fakt_speaker_mismatch	26.05.2026	novela-z-o-zdrav-prostr-a-diagnostickych-zdrav-p	fakty[1]: text začíná «Sněmovna», steno má «Tomio Okamura»
 warn	nadpis_off_topic	26.05.2026	novela-z-o-zdrav-prostr-a-diagnostickych-zdrav-p	nadpis «Zkumavky budou pod dohledem» – klíčová slova ['Zkumavky', 'dohledem'] nejsou ve stenu dne
 warn	fakt_speaker_mismatch	26.05.2026	novela-z-o-pojistnem-na-socialni-zabezpeceni	fakty[0]: text začíná «Minimální», steno má «Alena Schillerová»
-error	fakt_citace_not_in_steno	26.05.2026	novela-z-o-pojistnem-na-socialni-zabezpeceni	fakty[1].citace není ve stenu: «Hlasování číslo 56, pro 118, proti 0, zdrželo se 7.…»
 warn	fakt_speaker_mismatch	26.05.2026	novela-z-o-pojistnem-na-socialni-zabezpeceni	fakty[2]: text začíná «Schillerová», steno má «Ondřej Lochman»
 warn	fakt_speaker_mismatch	27.05.2026	novela-z-o-doplnkovem-penzijnim-sporeni	fakty[0]: text začíná «Senioři», steno má «Alena Schillerová»
-error	fakt_citace_not_in_steno	27.05.2026	novela-z-o-doplnkovem-penzijnim-sporeni	fakty[1].citace není ve stenu: «Hlasování číslo 63 až 65 nepřijata, hlasování číslo 66: pro …»
 warn	fakt_speaker_mismatch	27.05.2026	novela-z-o-doplnkovem-penzijnim-sporeni	fakty[2]: text začíná «Poslankyně», steno má «119»
-error	fakt_citace_not_in_steno	27.05.2026	novela-z-o-investicnich-spolecnostech-eu	fakty[1].citace není ve stenu: «Hlasování číslo 71: pro 137, proti 0. Konstatuji, že s návrh…»
 warn	fakt_speaker_mismatch	27.05.2026	novela-z-o-investicnich-spolecnostech-eu	fakty[2]: text začíná «Vážený», steno má «Libor Turek»
 warn	fakt_speaker_mismatch	28.05.2026	novela-z-stavebni-zakon	fakty[0]: text začíná «Změnu», steno má «Lukáš Vlček»
-error	fakt_citace_not_in_steno	28.05.2026	novela-z-stavebni-zakon	fakty[1].citace není ve stenu: «Hlasování číslo 82 až 148 zamítnuta, hlasování číslo 149: pr…»
-warn	fakt_speaker_mismatch	28.05.2026	novela-z-stavebni-zakon	fakty[3]: text začíná «Ve», steno má «Tomio Okamura»
 warn	fakt_speaker_mismatch	02.06.2026	novela-z-o-statni-socialni-podpore	fakty[0]: text začíná «Ministr», steno má «Aleš Juchelka»
 warn	fakt_speaker_mismatch	02.06.2026	novela-z-o-statni-socialni-podpore	fakty[2]: text začíná «Debata», steno má «Jiří Havránek»
-error	fakt_citace_not_in_steno	02.06.2026	novela-z-o-statni-socialni-podpore	fakty[3].citace není ve stenu: «Hlasování číslo 4: pro 154, proti nikdo. Hlasování číslo 5: …»
 warn	fakt_speaker_mismatch	02.06.2026	novela-z-o-sprave-voleb	fakty[0]: text začíná «Senátor», steno má «Michael Canov»
 warn	fakt_speaker_mismatch	02.06.2026	novela-z-o-sprave-voleb	fakty[1]: text začíná «Ministr», steno má «ČR Lubomír Metnar»
-warn	fakt_speaker_mismatch	02.06.2026	novela-z-o-sprave-voleb	fakty[3]: text začíná «Schváleno», steno má «Patrik Nacher»
-error	fakt_citace_not_in_steno	02.06.2026	n-z-kterym-se-meni-nektere-zakony-na-useku-vnitr	fakty[3].citace není ve stenu: «Hlasování číslo 8: pro 145. Hlasování číslo 9: pro 62, proti…»
 warn	fakt_speaker_mismatch	11.06.2026	dopis-dg-regio-dotace-agrofert	fakty[0]: text začíná «Premiér», steno má «Tomio Okamura»
-error	fakt_citace_not_in_steno	11.06.2026	dopis-dg-regio-dotace-agrofert	fakty[1].citace není ve stenu: «škoda, že tady není pan premiér, to jistě není náhoda, že se…»
+warn	fakt_speaker_mismatch	11.06.2026	dopis-dg-regio-dotace-agrofert	fakty[1]: text začíná «První», steno má «Matěj Ondřej Havel»
 warn	fakt_speaker_mismatch	11.06.2026	dopis-dg-regio-dotace-agrofert	fakty[2]: text začíná «Než», steno má «Martin Šebestyán»
-error	fakt_citace_not_in_steno	11.06.2026	dopis-dg-regio-dotace-agrofert	fakty[3].citace není ve stenu: «Dopis z bruselského ředitelství pro regionální politiku není…»
-error	fakt_citace_not_in_steno	11.06.2026	dopis-dg-regio-dotace-agrofert	fakty[4].citace není ve stenu: «počínaje dnem 20. února 2026 jsou společnosti způsobilé k če…»
-error	fakt_citace_not_in_steno	11.06.2026	dopis-dg-regio-dotace-agrofert	fakty[5].citace není ve stenu: «Dne 5. června 2026 potvrdila Evropská komise správnost postu…»
-warn	fakt_speaker_mismatch	11.06.2026	dopis-dg-regio-dotace-agrofert	fakty[6]: text začíná «Mrázová», steno má «Petr Macinka»
 warn	fakt_speaker_mismatch	11.06.2026	mimoradna-schuze-stret-zajmu-agrofert	fakty[1]: text začíná «Premiér», steno má «Tomio Okamura»
-error	fakt_citace_not_in_steno	11.06.2026	mimoradna-schuze-stret-zajmu-agrofert	fakty[2].citace není ve stenu: «škoda, že tady není pan premiér, to jistě není náhoda, že se…»
 warn	fakt_speaker_mismatch	11.06.2026	mimoradna-schuze-stret-zajmu-agrofert	fakty[6]: text začíná «Opozice», steno má «Petr Macinka»
-error	fakt_citace_not_in_steno	11.06.2026	mimoradna-schuze-stret-zajmu-agrofert	fakty[9].citace není ve stenu: «Hlasování o pořadu schůze: pro 66, proti 85, návrh nebyl při…»
 warn	fakt_speaker_mismatch	11.06.2026	mimoradna-schuze-stret-zajmu-agrofert	fakty[10]: text začíná «Poslanec», steno má «Josef Kott»
-error	fakt_citace_not_in_steno	11.06.2026	debata-turek-stavebni-zakon	fakty[4].citace není ve stenu: «Samozřejmě emisní povolenka je zelený bitcoin, je to investi…»
-error	fakt_citace_not_in_steno	11.06.2026	debata-turek-stavebni-zakon	fakty[5].citace není ve stenu: «A v roce 2050 asi přestaneme dýchat.…»
+warn	fakt_speaker_mismatch	11.06.2026	debata-turek-stavebni-zakon	fakty[4]: text začíná «Turek», steno má «Ivan Adamec»
 warn	fakt_speaker_mismatch	11.06.2026	debata-turek-stavebni-zakon	fakty[7]: text začíná «Předsedající», steno má «Marian Jurečka»
 warn	fakt_speaker_mismatch	11.06.2026	debata-turek-stavebni-zakon	fakty[10]: text začíná «Svárovská», steno má «Jan Skopeček»
-error	fakt_citace_not_in_steno	11.06.2026	debata-kovarova-stavebni-zakon	fakty[4].citace není ve stenu: «A jeden decibel prý stejně lidské ucho nerozezná.…»
-error	fakt_citace_not_in_steno	11.06.2026	debata-kovarova-stavebni-zakon	fakty[5].citace není ve stenu: «nebudou již existovat ochranná pásma z UNESCO památek…»
-error	fakt_citace_not_in_steno	11.06.2026	debata-kovarova-stavebni-zakon	fakty[6].citace není ve stenu: «opravdu tam máme nádhernou velkou keltskou vesnici…»
-warn	fakt_speaker_mismatch	11.06.2026	novela-z-stavebni-zakon	fakty[0]: text začíná «Debata», steno má «Marek Výborný»
-error	fakt_citace_not_in_steno	11.06.2026	novela-z-stavebni-zakon	fakty[1].citace není ve stenu: «Tady reálně hrozí kolaps stavebního řízení…»
-error	fakt_citace_not_in_steno	11.06.2026	novela-z-stavebni-zakon	fakty[2].citace není ve stenu: «k tomu pak napíšeme přes tisíc stran komplexního pozměňovací…»
-error	fakt_citace_not_in_steno	11.06.2026	novela-z-stavebni-zakon	fakty[4].citace není ve stenu: «Snad vidíte, že to je neobstrukční…»
-error	fakt_citace_not_in_steno	11.06.2026	novela-z-stavebni-zakon	fakty[5].citace není ve stenu: «na nové stavební úřady přejít přibližně jen třetina současný…»
-error	fakt_citace_not_in_steno	11.06.2026	novela-z-stavebni-zakon	fakty[6].citace není ve stenu: «Lex developerem, který bohužel je takovou vlajkovou lodí…»
-error	fakt_citace_not_in_steno	11.06.2026	novela-z-stavebni-zakon	fakty[10].citace není ve stenu: «Hlasování číslo 4, pro 22, proti 75. Návrh na vrácení zákona…»
 warn	fakt_speaker_mismatch	11.06.2026	novela-z-stavebni-zakon	fakty[11]: text začíná «Potom», steno má «Jiří Barták»
 warn	nadpis_off_topic	11.06.2026	novela-z-stavebni-zakon	nadpis «Druhé čtení doběhlo, výbor bude třídit» – klíčová slova ['doběhlo', 'třídit'] nejsou ve stenu dne
 warn	fakt_speaker_mismatch	23.06.2026	palacova-pohadka-23-06	fakty[1]: text začíná «Jeden», steno má «Vít Rakušan»
 warn	fakt_speaker_mismatch	23.06.2026	palacova-pohadka-23-06	fakty[2]: text začíná «Rádkyně», steno má «Vít Rakušan»
-warn	fakt_speaker_mismatch	23.06.2026	palacova-pohadka-23-06	fakty[3]: text začíná «Palácová», steno má «Vít Rakušan»
 warn	fakt_speaker_mismatch	23.06.2026	palacova-pohadka-23-06	fakty[4]: text začíná «Schillerová», steno má «Vít Rakušan»
-warn	fakt_speaker_mismatch	24.06.2026	debata-sluzebni-zakon-richterova-rakusan	fakty[3]: text začíná «Poslanci», steno má «Tomio Okamura»
 warn	fakt_speaker_mismatch	24.06.2026	debata-sluzebni-zakon-richterova-rakusan	fakty[5]: text začíná «Po», steno má «Vít Rakušan»
-warn	fakt_speaker_mismatch	24.06.2026	novela-z-o-nekt-opatr-v-souv-s-ozbrojenym-konfli	fakty[0]: text začíná «Poslanci», steno má «Místopředsedkyně PSP Barbora Urbanová»
-warn	fakt_speaker_mismatch	24.06.2026	novela-z-o-nekt-opatr-v-souv-s-ozbrojenym-konfli	fakty[1]: text začíná «Lang», steno má «Místopředsedkyně PSP Barbora Urbanová»
 warn	fakt_speaker_mismatch	24.06.2026	novela-z-o-nekt-opatr-v-souv-s-ozbrojenym-konfli	fakty[4]: text začíná «Odpoledne», steno má «Vít Rakušan»
-warn	fakt_speaker_mismatch	24.06.2026	novela-z-o-nekt-opatr-v-souv-s-ozbrojenym-konfli	fakty[13]: text začíná «Bezpečnostní», steno má «Patrik Nacher»
 warn	nadpis_off_topic	24.06.2026	novela-z-o-nekt-opatr-v-souv-s-ozbrojenym-konfli	nadpis «Debata o Ukrajincích a odbočka k ČTK» – klíčová slova ['Ukrajincích', 'odbočka'] nejsou ve stenu dne
-warn	fakt_speaker_mismatch	25.06.2026	interpelace-vyborny-macinka-ustavni-soud	fakty[1]: text začíná «Mean», steno má «Jan Jakob»
-error	fakt_citace_not_in_steno	25.06.2026	novela-z-o-spotrebitelskem-uveru	fakty[1].citace není ve stenu: «Základní formou spolupráce je velmi široce pojatá výměna inf…»
-warn	fakt_speaker_mismatch	25.06.2026	novela-z-o-spotrebitelskem-uveru	fakty[2]: text začíná «Schillerová», steno má «Samuel Volpe»
-error	fakt_citace_not_in_steno	25.06.2026	debata-interpelace-hladik-cerveny	fakty[4].citace není ve stenu: «to, co se dostalo do ekonomiky je zhruba 330 miliard…»
-error	fakt_citace_not_in_steno	25.06.2026	debata-interpelace-hladik-cerveny	fakty[12].citace není ve stenu: «protože on počítá s pákovým efektem do 50 miliard…»
-error	fakt_citace_not_in_steno	25.06.2026	debata-interpelace-hladik-cerveny	fakty[16].citace není ve stenu: «21 miliard z Národního plánu obnovy…»
-error	fakt_citace_not_in_steno	25.06.2026	debata-interpelace-hladik-cerveny	fakty[17].citace není ve stenu: «protože on počítá s pákovým efektem do 50 miliard…»
-error	citace_text_not_in_steno	26.06.2026	pripad-dne-hrib-fotografie-26-06	citace_text není ve stenu dne: «Šlo o ruku ministryně Mrázové na stehně pana Jedličky. A druhá věc, kt…»
-error	fakt_citace_not_in_steno	26.06.2026	pripad-dne-hrib-fotografie-26-06	fakty[4].citace není ve stenu: «jsou klasickým příkladem papalášů…»
 warn	fakt_speaker_mismatch	26.06.2026	pripad-dne-hrib-fotografie-26-06	fakty[5]: text začíná «Jedlička», steno má «Zdeněk Hřib»
-error	fakt_citace_not_in_steno	26.06.2026	debata-porad-vlny-veder-26-cerven	fakty[8].citace není ve stenu: «Hlasování číslo 88, bylo přihlášeno 142 poslanců, pro hlasov…»
-error	fakt_citace_not_in_steno	26.06.2026	debata-porad-vlny-veder-26-cerven	fakty[10].citace není ve stenu: «vidím, jak části koalice je tato diskuse k smíchu…»
-warn	fakt_speaker_mismatch	26.06.2026	debata-porad-vlny-veder-26-cerven	fakty[11]: text začíná «Pořad», steno má «Tomio Okamura»
 warn	fakt_speaker_mismatch	26.06.2026	navrh-zakona-o-statnich-zamestnancich	fakty[5]: text začíná «Závěrečné», steno má «Jiří Barták»
-warn	fakt_speaker_mismatch	26.06.2026	navrh-zakona-o-statnich-zamestnancich	fakty[6]: text začíná «Po», steno má «Radek Vondráček»
-warn	fakt_speaker_mismatch	30.06.2026	debata-porad-interpelace-30-06	fakty[1]: text začíná «První», steno má «Tomio Okamura»
-warn	fakt_speaker_mismatch	30.06.2026	debata-porad-interpelace-30-06	fakty[7]: text začíná «Barták», steno má «Místopředsedkyně PSP Barbora Urbanová»
-error	fakt_citace_not_in_steno	30.06.2026	interpelace-straznice-30-06	fakty[7].citace není ve stenu: «Redaktorka České televize Helena Truchlá mu položila legitim…»
-error	fakt_citace_not_in_steno	30.06.2026	interpelace-hrib-agrofert-novela-30-06	fakty[2].citace není ve stenu: «Vás zajímá jenom to, aby těch 7 miliard neoprávněně čerpanýc…»
-error	fakt_citace_not_in_steno	30.06.2026	interpelace-hrib-agrofert-novela-30-06	fakty[3].citace není ve stenu: «protože tohle je další krok směrem k Babišistánu…»
-error	fakt_citace_not_in_steno	30.06.2026	interpelace-hrib-agrofert-novela-30-06	fakty[4].citace není ve stenu: «museli skončit například Martin Ábel, expert k tématu klimat…»
-error	fakt_citace_not_in_steno	30.06.2026	interpelace-hrib-agrofert-novela-30-06	fakty[5].citace není ve stenu: «Pane premiére, vraťte 7 miliard neoprávněně čerpaných dotací…»
-error	fakt_citace_not_in_steno	30.06.2026	interpelace-decroix-lidska-prava-30-06	fakty[0].citace není ve stenu: «Děkuji, pane předsedo. (Potlesk zprava.)…»
-error	fakt_citace_not_in_steno	30.06.2026	interpelace-decroix-lidska-prava-30-06	fakty[6].citace není ve stenu: «celá tato strategie padá pod stůl…»
-error	fakt_citace_not_in_steno	30.06.2026	interpelace-decroix-lidska-prava-30-06	fakty[7].citace není ve stenu: «Této vládě nezáleží na bezpečí dětí…»
-error	fakt_citace_not_in_steno	30.06.2026	interpelace-decroix-lidska-prava-30-06	fakty[8].citace není ve stenu: «Maďarští občané, protože zásadním způsobem nebyli schopni če…»
-error	fakt_citace_not_in_steno	30.06.2026	interpelace-decroix-lidska-prava-30-06	fakty[9].citace není ve stenu: «možnost koalice přihlásit se k lidským právům a nebýt za blá…»
-warn	fakt_speaker_mismatch	30.06.2026	novela-z-o-statni-socialni-podpore	fakty[0]: text začíná «Silný», steno má «Jiří Barták»
+warn	citace_autor_mismatch	30.06.2026	debata-porad-interpelace-30-06	citace_autor «Petr Macinka (Motoristé)» vs steno ['Olga Richterová']
+warn	fakt_speaker_mismatch	30.06.2026	interpelace-straznice-30-06	fakty[7]: text začíná «Šrámková», steno má «Jan Bureš»
+warn	citace_autor_mismatch	30.06.2026	interpelace-hrib-nato-svacina-30-06	citace_autor «Zdeněk Hřib (Piráti)» vs steno ['Jana Černochová']
+warn	citace_autor_mismatch	30.06.2026	interpelace-decroix-lidska-prava-30-06	citace_autor «Eva Decroix (ODS)» vs steno ['Vít Rakušan']
 warn	nadpis_off_topic	01.07.2026	debata-rakusan-nato-zahranicni-sluzba-01-07	nadpis «Pomsta prezidentovi» – klíčová slova ['Pomsta', 'prezidentovi'] nejsou ve stenu dne
-warn	nadpis_off_topic	01.07.2026	novela-z-na-ochranu-zvirat-proti-tyrani	nadpis «Vločka a predátor» – klíčová slova ['Vločka', 'predátor'] nejsou ve stenu dne
-warn	fakt_speaker_mismatch	02.07.2026	interpelace-babis-ipo-letiste-02-07	fakty[5]: text začíná «Po», steno má «Andrej Babiš»
-error	fakt_citace_not_in_steno	02.07.2026	interpelace-babis-odpovedi-02-07	fakty[2].citace není ve stenu: «krizi bydlení je jedna z největších krizí…»
+warn	nadpis_off_topic	01.07.2026	novela-z-na-ochranu-zvirat-proti-tyrani	nadpis «Vločka a nevalný návrh» – klíčová slova ['Vločka', 'nevalný'] nejsou ve stenu dne
 warn	fakt_speaker_mismatch	02.07.2026	interpelace-mrazova-bydleni-02-07	fakty[5]: text začíná «Piráti», steno má «Ivan Bartoš»
 warn	nadpis_off_topic	02.07.2026	interpelace-mrazova-bydleni-02-07	nadpis «Prázdné lavice» – klíčová slova ['Prázdné', 'lavice'] nejsou ve stenu dne
-warn	fakt_speaker_mismatch	02.07.2026	novela-z-o-obalech	fakty[11]: text začíná «První», steno má «Místopředsedkyně PSP Barbora Urbanová»
-warn	fakt_speaker_mismatch	02.07.2026	interpelace-kovacik-povodi-02-07	fakty[1]: text začíná «Kováčik», steno má «Martin Šmída»
 warn	fakt_speaker_mismatch	02.07.2026	interpelace-kovacik-povodi-02-07	fakty[4]: text začíná «Sebestyán», steno má «Martin Šebestyán»
-warn	fakt_speaker_mismatch	02.07.2026	interpelace-kovacik-povodi-02-07	fakty[5]: text začíná «Sebestyán», steno má «Martin Šebestyán»
 warn	fakt_speaker_mismatch	02.07.2026	interpelace-kovacik-povodi-02-07	fakty[6]: text začíná «Dnesni», steno má «Martin Šmída»
-warn	fakt_speaker_mismatch	02.07.2026	novela-z-o-podnikani-na-kapitalovem-trhu-eu	fakty[6]: text začíná «První», steno má «Patrik Nacher»
-warn	fakt_speaker_mismatch	02.07.2026	novela-z-o-podnikani-na-kapitalovem-trhu-eu	fakty[8]: text začíná «Druhé», steno má «Patrik Nacher»
 warn	fakt_speaker_mismatch	03.07.2026	novela-z-o-jednacim-radu-ps	fakty[1]: text začíná «Koalice», steno má «Radek Vondráček»
-warn	fakt_speaker_mismatch	03.07.2026	novela-z-o-jednacim-radu-ps	fakty[2]: text začíná «Novela», steno má «Radek Vondráček»
 warn	fakt_speaker_mismatch	03.07.2026	novela-z-o-jednacim-radu-ps	fakty[8]: text začíná «Opozice», steno má «Renata Vesecká»
-warn	fakt_speaker_mismatch	03.07.2026	novela-z-o-jednacim-radu-ps	fakty[9]: text začíná «První», steno má «Patrik Nacher»
 warn	fakt_speaker_mismatch	03.07.2026	novela-z-o-jednacim-radu-ps	fakty[13]: text začíná «Zákon», steno má «Patrik Nacher»
 warn	nadpis_off_topic	03.07.2026	novela-z-o-jednacim-radu-ps	nadpis «Bojiště, ne jeviště» – klíčová slova ['Bojiště', 'jeviště'] nejsou ve stenu dne
 warn	fakt_speaker_mismatch	03.07.2026	navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2	fakty[1]: text začíná «Na», steno má «Martin Kolovratník»
 warn	fakt_speaker_mismatch	03.07.2026	navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2	fakty[3]: text začíná «Debata», steno má «Tomio Okamura»
-warn	fakt_speaker_mismatch	03.07.2026	navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2	fakty[4]: text začíná «Obě», steno má «Tomio Okamura»

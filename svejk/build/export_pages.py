@@ -565,7 +565,7 @@ def run_export_pages(
     page_count = sum(1 for p in written if p.endswith(".html") and p.count("/") >= 3)
 
     static_pages: list[tuple[str, str]] = [
-        ("archiv/index.html", "archiv"),
+        ("vydani/index.html", "archiv"),
         ("404.html", "404"),
         ("slovnicek/index.html", "slovnicek"),
         ("pivo.html", "pivo"),
@@ -615,6 +615,11 @@ def run_export_pages(
     written.append(
         _write_redirect_page(
             out, "archiv.html", archiv_pages_href(base), site_url=site
+        )
+    )
+    written.append(
+        _write_redirect_page(
+            out, "archiv/index.html", archiv_pages_href(base), site_url=site
         )
     )
     written.append(
