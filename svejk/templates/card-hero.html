@@ -8,8 +8,8 @@
         <span class="q-quote"><span class="q-mark">„</span>{% if content.zaver[:20] == _ph %}<strong><em>{{ _ph }}</em></strong>{{ content.zaver[20:] | glossary }}{% else %}{{ content.zaver | glossary }}{% endif %}<span class="q-mark">“</span></span>
       </p>
       <div class="card-hero-foot">
-        {% if ph_fav_href and content.items %}
-        <a class="card-hero-svejk-link" href="#{{ content.items[0].anchor_id }}" aria-label="{{ content.items[0].nadpis }}">
+        {% if ph_fav_href and edition_back_href %}
+        <a class="card-hero-svejk-link" href="{{ edition_back_href }}" aria-label="{{ t.nav.latest }}">
           <img class="card-hero-svejk" src="{{ ph_fav_href }}" alt="" aria-hidden="true" width="56" height="56">
         </a>
         {% elif ph_fav_href %}
