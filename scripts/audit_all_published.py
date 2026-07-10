@@ -26,7 +26,9 @@ from svejk.build.steno_sources import (  # noqa: E402
     _find_phrase_in_text,
     build_item_steno_links,
     collect_steno_sources,
+    find_passage_for_citace,
     passages_for_slug,
+    resolve_item_citace_href,
     steno_sources_href,
 )
 from svejk.build.vote_logic import topic_proslo_from_votes, vote_kategorie  # noqa: E402
@@ -374,6 +376,56 @@ def audit_text_quotes(report: Report) -> None:
                 report.add(issue.level, issue.code, issue.message, key=key, slug=slug)
 
 
+def audit_citace_href(report: Report) -> None:
+    """citace_text v článku musí vést na kotvu pasáže, ne jen na holou steno stránku."""
+    approved = json.loads(APPROVED_PATH.read_text(encoding="utf-8")).get("approved") or []
+    for key in approved:
+        ob, sch, iso, cz = parse_key(key)
+        paths = SchuzePaths.create(ob, sch)
+        day_path = paths.facts_by_day / f"{iso}.json"
+        if not day_path.is_file():
+            continue
+        day = read_json(day_path)
+        if not day.get("steno_zdroje"):
+            continue
+        blocks = collect_steno_sources(paths, cz)
+        page_href = steno_sources_href(ob, sch, cz, link_mode="pages")
+        for slug in day.get("topic_slugs") or []:
+            fp = paths.facts_by_topic / f"{slug}.json"
+            if not fp.is_file():
+                continue
+            fact = read_json(fp)
+            if not fact.get("publikovat"):
+                continue
+            ct = (fact.get("citace_text") or "").strip()
+            if not ct:
+                continue
+            passages = passages_for_slug(blocks, slug)
+            item = SimpleNamespace(
+                citace_text=ct,
+                citace_href=(fact.get("citace_href") or "").strip(),
+            )
+            resolve_item_citace_href(item, passages, page_href)
+            href = (item.citace_href or "").strip()
+            if "#" not in href:
+                report.add(
+                    "error",
+                    "citace_href_no_anchor",
+                    f"citace_text «{ct[:55]}…» nemá kotvu na stránce zdrojů",
+                    key=key,
+                    slug=slug,
+                )
+                continue
+            if not find_passage_for_citace(passages, citace_text=ct):
+                report.add(
+                    "error",
+                    "citace_href_no_passage",
+                    f"citace_text «{ct[:55]}…» nemá odpovídající pasáž ve zdrojích",
+                    key=key,
+                    slug=slug,
+                )
+
+
 def audit_steno_nalezitosti(report: Report) -> None:
     approved = json.loads(APPROVED_PATH.read_text(encoding="utf-8")).get("approved") or []
     for key in approved:
@@ -536,11 +588,13 @@ def main() -> int:
     audit_steno_citace(report)
     print("6/9 text quotes…", file=sys.stderr)
     audit_text_quotes(report)
-    print("7/9 steno náležitosti…", file=sys.stderr)
+    print("7/10 citace href…", file=sys.stderr)
+    audit_citace_href(report)
+    print("8/10 steno náležitosti…", file=sys.stderr)
     audit_steno_nalezitosti(report)
-    print("8/9 editorial review…", file=sys.stderr)
+    print("9/10 editorial review…", file=sys.stderr)
     audit_editorial(report)
-    print("9/9 glossary + site…", file=sys.stderr)
+    print("10/10 glossary + site…", file=sys.stderr)
     audit_glossary(report)
     audit_site_links(report)
 

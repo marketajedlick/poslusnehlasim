@@ -530,6 +530,27 @@ def collect_steno_sources(
                     _resolve_article_phrase(passage, article_text)
                 )
                 block.passages.append(passage)
+        ct = (fact.get("citace_text") or "").strip()
+        ct_sid = (fact.get("steno_id") or "").strip()
+        if ct and ct_sid and not find_passage_for_citace(block.passages, citace_text=ct):
+            ct_passage = _passage_from_fact(
+                {
+                    "source": "steno",
+                    "steno_id": ct_sid,
+                    "citace": ct,
+                    "text": (fact.get("citace_autor") or "Citát dne").strip(),
+                },
+                paths=paths,
+                steno_by_id=steno_by_id,
+                topic_slug=slug,
+                topic_title=title,
+                article_num=num,
+                passage_idx=global_passage_idx,
+                psp_resolver=psp_resolver,
+            )
+            global_passage_idx += 1
+            if ct_passage:
+                block.passages.insert(0, ct_passage)
         if block.passages:
             blocks.append(block)
     num, global_passage_idx = append_smlouvy_steno_block(
