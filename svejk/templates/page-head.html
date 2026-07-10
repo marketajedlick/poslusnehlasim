@@ -1,0 +1,16 @@
+<header class="page-head{% if page_head_modifier %} {{ page_head_modifier }}{% endif %}">
+  {% if page_head_notfound %}
+  <p class="notfound-code" aria-hidden="true">404</p>
+  {% endif %}
+  {% if ph_fav_href %}
+  <a class="page-head-fav-link" href="{{ page_head_home_href | default(latest_href, true) }}" aria-label="{{ t.nav.latest }}">
+    <img class="page-head-fav" src="{{ ph_fav_href }}" alt="" width="72" height="72">
+  </a>
+  {% endif %}
+  {% if page_eyebrow %}<div class="page-eyebrow">{{ page_eyebrow }}</div>{% endif %}
+  <h1 class="page-title">{{ page_title }}</h1>
+  {% if page_gloss %}<p class="page-gloss">{{ page_gloss }}</p>{% endif %}
+  {% if not (page_head_hide_nav | default(false)) %}
+  {% include "site-nav.html" %}
+  {% endif %}
+</header>

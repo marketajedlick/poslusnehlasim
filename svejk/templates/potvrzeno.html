@@ -6,17 +6,16 @@
 <title>{{ t.confirmed_page.title }}</title>
 <meta name="description" content="{{ site_meta_description }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
+{% include "breadcrumb-jsonld.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
-<body class="archiv-page">
+<body class="static-page archiv-page">
 <div class="archiv-wrap soukromi-wrap potvrzeno-wrap">
-  <header class="archiv-head">
-    <h1 class="archiv-title">{{ t.confirmed_page.heading }}</h1>
-    <p class="archiv-gloss">{{ t.confirmed_page.gloss }}</p>
-    {% set site_nav_modifier = "site-nav--section" %}
-    {% include "site-nav.html" %}
-  </header>
+  {% include "breadcrumbs.html" %}
+  {% set page_title = t.confirmed_page.heading %}
+  {% set page_gloss = t.confirmed_page.gloss %}
+  {% include "page-head.html" %}
 
   <div class="soukromi-body">
     {% if latest_href %}

@@ -6,18 +6,17 @@
 <title>{{ t.notfound.title }}</title>
 <meta name="description" content="{{ site_meta_description }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
+{% include "breadcrumb-jsonld.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
-<body class="archiv-page">
+<body class="static-page archiv-page">
 <div class="archiv-wrap notfound-wrap">
-  <header class="archiv-head">
-    <p class="notfound-code" aria-hidden="true">404</p>
-    <h1 class="archiv-title">{{ t.notfound.heading }}</h1>
-    <p class="archiv-gloss">{{ t.notfound.gloss }}</p>
-    {% set site_nav_modifier = "site-nav--section" %}
-    {% include "site-nav.html" %}
-  </header>
+  {% include "breadcrumbs.html" %}
+  {% set page_head_notfound = true %}
+  {% set page_title = t.notfound.heading %}
+  {% set page_gloss = t.notfound.gloss %}
+  {% include "page-head.html" %}
 
   <div class="notfound-body">
     {% if latest_href %}

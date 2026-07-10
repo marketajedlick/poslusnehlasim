@@ -13,15 +13,13 @@
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
-<body class="slovnicek-page">
+<body class="static-page slovnicek-page">
 <div class="slovnicek-stage">
   {% include "breadcrumbs.html" %}
-  <header class="slovnicek-head">
-    <h1 class="slovnicek-title">{{ t.glossary_page.heading }}</h1>
-    <p class="slovnicek-gloss">{{ t.glossary_page.gloss }}</p>
-    {% set site_nav_hide_glossary = true %}
-    {% include "site-nav.html" %}
-  </header>
+  {% set page_title = t.glossary_page.heading %}
+  {% set page_gloss = t.glossary_page.gloss %}
+  {% set site_nav_hide_glossary = true %}
+  {% include "page-head.html" %}
 
 
   <section class="citanka-slovnik" aria-label="{{ t.glossary_page.heading }}">

@@ -616,6 +616,21 @@ def breadcrumbs_ctx_edition_subpage(
     )
 
 
+def breadcrumbs_ctx_static(
+    *,
+    site_url: str,
+    base_path: str = "",
+    label: str,
+) -> dict:
+    return breadcrumb_page_ctx(
+        site_url=site_url,
+        items=(
+            (SITE_NAME, _home_href(base_path)),
+            (label, None),
+        ),
+    )
+
+
 def breadcrumbs_ctx_slovnicek(*, site_url: str, base_path: str = "") -> dict:
     gloss = load_strings()["glossary_page"]["heading"]
     return breadcrumb_page_ctx(

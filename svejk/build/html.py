@@ -816,7 +816,7 @@ def render_den_html(
         link_mode=link_mode if link_mode in ("pages", "web") else "pages",
     )
     slovnicek_dne = _edition_slovnicek(content, base_path=base_path)
-    fav_href = f"{base_path.rstrip('/')}/static/ph-fav.svg" if base_path else "/static/ph-fav.svg"
+    fav_href = _ph_fav_href(base_path)
     svejk_img_href = f"{base_path.rstrip('/')}/static/svejk-terra.png" if base_path else "/static/svejk-terra.png"
     share_hero = (
         share_hero_href(base_path, content.datum)
@@ -879,6 +879,11 @@ def _static_asset_url(site_url: str, base_path: str, name: str) -> str:
     base = base_path.rstrip("/")
     prefix = f"{base}/static" if base else "/static"
     return f"{site_url.rstrip('/')}{prefix}/{name}"
+
+
+def _ph_fav_href(base_path: str = "") -> str:
+    base = base_path.rstrip("/")
+    return f"{base}/static/ph-fav.svg" if base else "/static/ph-fav.svg"
 
 
 def _social_image_asset() -> tuple[str, int, int]:
@@ -1239,6 +1244,7 @@ def render_archiv_html(
         **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="archiv"),
         **favicons,
+        ph_fav_href=_ph_fav_href(base_path),
         **breadcrumbs_ctx_archiv(site_url=cfg.site_url, base_path=base_path),
     )
 
@@ -1273,6 +1279,8 @@ def render_404_html(
     home = f"{base}{home}" if base else home
     canonical_url = f"{cfg.site_url.rstrip('/')}{home}"
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
+    from svejk.build.seo import breadcrumbs_ctx_static
+
     tpl = _jinja_env().get_template("404-stranka.html")
     return tpl.render(
         latest_label=latest_label,
@@ -1287,6 +1295,12 @@ def render_404_html(
         **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="404"),
         **favicons,
+        ph_fav_href=_ph_fav_href(base_path),
+        **breadcrumbs_ctx_static(
+            site_url=cfg.site_url,
+            base_path=base_path,
+            label="Stránka nenalezena",
+        ),
     )
 
 
@@ -1320,6 +1334,9 @@ def render_potvrzeno_html(
         latest.datum_unl, den_v_tydnu(latest.datum_unl)
     )
     tpl = _jinja_env().get_template("potvrzeno.html")
+    from svejk.build.seo import breadcrumbs_ctx_static
+
+    cp = load_strings()["confirmed_page"]
     return tpl.render(
         latest_label=latest_label,
         site_url=cfg.site_url.rstrip("/"),
@@ -1335,6 +1352,12 @@ def render_potvrzeno_html(
         **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="potvrzeno"),
         **favicons,
+        ph_fav_href=_ph_fav_href(base_path),
+        **breadcrumbs_ctx_static(
+            site_url=cfg.site_url,
+            base_path=base_path,
+            label=cp["heading"],
+        ),
     )
 
 
@@ -1441,6 +1464,7 @@ def render_vyznamenani_table_html(
             closing_seed=f"vyznamenani/{kind}/{datum_unl}",
         ),
         **favicons,
+        ph_fav_href=_ph_fav_href(base_path),
         **og,
         **_edition_subpage_breadcrumbs(
             site_url=cfg.site_url,
@@ -1535,6 +1559,7 @@ def render_steno_sources_html(
             closing_seed=f"steno/{datum_unl}",
         ),
         **favicons,
+        ph_fav_href=_ph_fav_href(base_path),
         **og,
         **_edition_subpage_breadcrumbs(
             site_url=cfg.site_url,
@@ -1631,6 +1656,7 @@ def render_smlouvy_html(
             closing_seed=f"smlouvy/{datum_unl}",
         ),
         **favicons,
+        ph_fav_href=_ph_fav_href(base_path),
         **og,
         **_edition_subpage_breadcrumbs(
             site_url=cfg.site_url,
@@ -1715,6 +1741,7 @@ def render_recnici_table_html(
             closing_seed=f"recnici/{datum_unl}",
         ),
         **favicons,
+        ph_fav_href=_ph_fav_href(base_path),
         **og,
         **_edition_subpage_breadcrumbs(
             site_url=cfg.site_url,
@@ -1784,6 +1811,7 @@ def render_slovnicek_html(
         **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="slovnicek"),
         **favicons,
+        ph_fav_href=_ph_fav_href(base_path),
         **breadcrumbs_ctx_slovnicek(site_url=cfg.site_url, base_path=base_path),
     )
 
@@ -1855,6 +1883,7 @@ def render_slovnicek_term_html(
         **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed=f"slovnicek/{slug}"),
         **favicons,
+        ph_fav_href=_ph_fav_href(base_path),
         **breadcrumbs_ctx_slovnicek_term(
             site_url=cfg.site_url,
             base_path=base_path,
@@ -1891,6 +1920,8 @@ def render_pivo_html(
         description=site_meta_description(),
     )
     tpl = _jinja_env().get_template("pivo-stranka.html")
+    from svejk.build.seo import breadcrumbs_ctx_static
+
     return tpl.render(
         canonical_url=canonical_url,
         **og,
@@ -1906,6 +1937,12 @@ def render_pivo_html(
         **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="pivo"),
         **favicons,
+        ph_fav_href=_ph_fav_href(base_path),
+        **breadcrumbs_ctx_static(
+            site_url=cfg.site_url,
+            base_path=base_path,
+            label=bp["heading"],
+        ),
     )
 
 
@@ -1942,6 +1979,7 @@ def render_dekuju_html(
         **_site_nav_ctx(obdobi, base_path),
         **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="dekuju"),
         **favicons,
+        ph_fav_href=_ph_fav_href(base_path),
     )
 
 
@@ -1971,6 +2009,8 @@ def render_soukromi_html(
         description=site_meta_description(),
     )
     tpl = _jinja_env().get_template("soukromi.html")
+    from svejk.build.seo import breadcrumbs_ctx_static
+
     return tpl.render(
         site_url=cfg.site_url.rstrip("/"),
         contact_email=cfg.contact_email,
@@ -1990,6 +2030,12 @@ def render_soukromi_html(
             closing_seed="soukromi",
         ),
         **favicons,
+        ph_fav_href=_ph_fav_href(base_path),
+        **breadcrumbs_ctx_static(
+            site_url=cfg.site_url,
+            base_path=base_path,
+            label="Ochrana údajů",
+        ),
     )
 
 
@@ -2019,6 +2065,8 @@ def render_podminky_html(
         description=site_meta_description(),
     )
     tpl = _jinja_env().get_template("podminky-stranka.html")
+    from svejk.build.seo import breadcrumbs_ctx_static
+
     return tpl.render(
         site_url=cfg.site_url.rstrip("/"),
         contact_email=cfg.contact_email,
@@ -2038,6 +2086,12 @@ def render_podminky_html(
             closing_seed="podminky",
         ),
         **favicons,
+        ph_fav_href=_ph_fav_href(base_path),
+        **breadcrumbs_ctx_static(
+            site_url=cfg.site_url,
+            base_path=base_path,
+            label="Podmínky používání",
+        ),
     )
 
 
@@ -2067,6 +2121,8 @@ def render_podpora_html(
         description=site_meta_description(),
     )
     tpl = _jinja_env().get_template("podpora-stranka.html")
+    from svejk.build.seo import breadcrumbs_ctx_static
+
     return tpl.render(
         site_url=cfg.site_url.rstrip("/"),
         contact_email=cfg.contact_email,
@@ -2086,6 +2142,12 @@ def render_podpora_html(
             closing_seed="podpora",
         ),
         **favicons,
+        ph_fav_href=_ph_fav_href(base_path),
+        **breadcrumbs_ctx_static(
+            site_url=cfg.site_url,
+            base_path=base_path,
+            label="Zákaznická podpora",
+        ),
     )
 
 
@@ -2123,6 +2185,8 @@ def render_o_webu_html(
     )
     nav_ctx = _site_nav_ctx(obdobi, base_path)
     tpl = _jinja_env().get_template("o-webu-stranka.html")
+    from svejk.build.seo import breadcrumbs_ctx_static
+
     return tpl.render(
         site_url=cfg.site_url.rstrip("/"),
         contact_email=cfg.contact_email,
@@ -2148,6 +2212,12 @@ def render_o_webu_html(
             closing_seed="o-webu",
         ),
         **favicons,
+        ph_fav_href=_ph_fav_href(base_path),
+        **breadcrumbs_ctx_static(
+            site_url=cfg.site_url,
+            base_path=base_path,
+            label=ap["heading"],
+        ),
     )
 
 

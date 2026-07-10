@@ -6,20 +6,19 @@
 <meta name="description" content="{{ about_meta | default(t.about_page.meta, true) }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
 {% include "og-meta.html" %}
+{% include "breadcrumb-jsonld.html" %}
 {% if website_json_ld %}
 <script type="application/ld+json">{{ website_json_ld | tojson }}</script>
 {% endif %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
-<body class="archiv-page">
+<body class="static-page archiv-page">
 <div class="archiv-wrap soukromi-wrap">
-  <header class="archiv-head">
-    <h1 class="archiv-title">{{ t.about_page.heading }}</h1>
-    <p class="archiv-gloss">{{ t.about_page.gloss }}</p>
-    {% set site_nav_modifier = "site-nav--section" %}
-    {% include "site-nav.html" %}
-  </header>
+  {% include "breadcrumbs.html" %}
+  {% set page_title = t.about_page.heading %}
+  {% set page_gloss = t.about_page.gloss %}
+  {% include "page-head.html" %}
 
   <div class="soukromi-body soukromi-body--prose">
     <section class="soukromi-section">

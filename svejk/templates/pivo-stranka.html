@@ -6,33 +6,33 @@
 <meta name="description" content="{{ site_meta_description }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
 {% include "og-meta.html" %}
+{% include "breadcrumb-jsonld.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
-<body class="pivo-page">
+<body class="static-page pivo-page">
 <div class="pivo-stage">
-            <header class="pivo-head">
-              <div class="eyebrow">{{ t.beer_page.eyebrow }}</div>
-              <h1 class="pivo-title">{{ t.beer_page.heading }}</h1>
-              {% set site_nav_hide_beer = true %}
-              {% include "site-nav.html" %}
-            </header>
+  {% include "breadcrumbs.html" %}
+  {% set page_eyebrow = t.beer_page.eyebrow %}
+  {% set page_title = t.beer_page.heading %}
+  {% set site_nav_hide_beer = true %}
+  {% include "page-head.html" %}
 
-            <div class="pivo-body">
-              <p>Poslušně hlásím, že každý den, kdy Sněmovna zasedá, sedím na galerii, poslouchám, zapisuju a překládám to do lidské řeči. Je to služba vlasti a vlast za to neplatí. Aspoň zatím o tom neví.</p>
-              <p>Noviny byly, jsou a zůstanou zadarmo pro každého. Ale doména, server a nástroje něco stojí a žízeň po celodenním poslouchání poslanců je veliká. Kdyby každý desátý čtenář koupil jedno pivo měsíčně, mám provoz zaplacený a ještě zbyde na utopence.</p>
+  <div class="pivo-body">
+    <p>Poslušně hlásím, že každý den, kdy Sněmovna zasedá, sedím na galerii, poslouchám, zapisuju a překládám to do lidské řeči. Je to služba vlasti a vlast za to neplatí. Aspoň zatím o tom neví.</p>
+    <p>Noviny byly, jsou a zůstanou zadarmo pro každého. Ale doména, server a nástroje něco stojí a žízeň po celodenním poslouchání poslanců je veliká. Kdyby každý desátý čtenář koupil jedno pivo měsíčně, mám provoz zaplacený a ještě zbyde na utopence.</p>
 
-              <p class="pivo-promise"><strong>{{ t.beer_page.promise }}</strong></p>
+    <p class="pivo-promise"><strong>{{ t.beer_page.promise }}</strong></p>
 
 {% include "pivo-menu.html" %}
 
-              <blockquote class="pivo-quote">
-                <p><span class="q-quote">„Já jsem si vždycky myslel, že pivo se má pít a politika hlásit. Tak to taky dělám.“</span></p>
-                <span class="pivo-quote-by">Váš dobrý voják Švejk</span>
-              </blockquote>
+    <blockquote class="pivo-quote">
+      <p><span class="q-quote">„Já jsem si vždycky myslel, že pivo se má pít a politika hlásit. Tak to taky dělám.“</span></p>
+      <span class="pivo-quote-by">Váš dobrý voják Švejk</span>
+    </blockquote>
 
-              <p class="pivo-fine">{{ t.beer_page.fine }}</p>
-            </div>
+    <p class="pivo-fine">{{ t.beer_page.fine }}</p>
+  </div>
 </div>
 {% include "site-footer.html" %}
 {% include "cookie-consent.html" %}

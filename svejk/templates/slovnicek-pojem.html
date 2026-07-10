@@ -13,18 +13,18 @@
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
-<body class="slovnicek-page slovnicek-term-page">
+<body class="static-page slovnicek-page slovnicek-term-page">
 <div class="slovnicek-stage">
   {% include "breadcrumbs.html" %}
-  <header class="slovnicek-head">
-    <h1 class="slovnicek-title">{{ t.glossary_term.heading_prefix }} {{ term }}?</h1>
-    <p class="slovnicek-gloss">{{ answer }}</p>
-    <p class="slovnicek-back">
-      <a class="slovnicek-back-link" href="{{ slovnicek_index_href }}">{{ t.glossary_term.back_to_index }} →</a>
-    </p>
-    {% set site_nav_hide_glossary = true %}
-    {% include "site-nav.html" %}
-  </header>
+  {% set page_title = t.glossary_term.heading_prefix ~ " " ~ term ~ "?" %}
+  {% set page_gloss = answer %}
+  {% set page_head_hide_nav = true %}
+  {% include "page-head.html" %}
+  <p class="slovnicek-back">
+    <a class="slovnicek-back-link" href="{{ slovnicek_index_href }}">{{ t.glossary_term.back_to_index }} →</a>
+  </p>
+  {% set site_nav_hide_glossary = true %}
+  {% include "site-nav.html" %}
 
   <section class="slovnicek-mentions" aria-label="{{ t.glossary_term.mentions_heading }}">
     <h2 class="slovnicek-mentions-title">{{ t.glossary_term.mentions_heading }}</h2>

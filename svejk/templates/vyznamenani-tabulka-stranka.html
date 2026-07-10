@@ -15,11 +15,11 @@
 <div class="edition-page vyznamenani-edition">
   <main class="edition-main vyznamenani-wrap">
   {% include "breadcrumbs.html" %}
-  <header class="vyznamenani-head">
-    <h1 class="vyznamenani-title">{{ page_title }}</h1>
-    <p class="vyznamenani-gloss">{{ page_gloss }}</p>
-    {% if edition_href or sibling_href or latest_href or archive_href or slovnicek_href or pivo_href %}
-    <nav class="vyznamenani-nav site-nav" aria-label="{{ t.nav.aria_main }}">
+  {% set page_head_modifier = "page-head--vyznamenani page-head--vyznamenani-" ~ kind %}
+  {% set page_head_hide_nav = true %}
+  {% include "page-head.html" %}
+  {% if edition_href or sibling_href or latest_href or archive_href or slovnicek_href or pivo_href %}
+  <nav class="vyznamenani-nav site-nav" aria-label="{{ t.nav.aria_main }}">
       {% if edition_href %}
       <a class="vyznamenani-back" href="{{ edition_href }}">{{ t.vyznamenani.back_to_edition.format(date=datum_label) }}</a>
       {% endif %}
@@ -31,8 +31,7 @@
       <a class="vyznamenani-back" href="{{ sibling_href }}">{{ sibling_label }}</a>
       {% endif %}
     </nav>
-    {% endif %}
-  </header>
+  {% endif %}
 
   <div class="rule-double"></div>
 

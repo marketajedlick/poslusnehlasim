@@ -6,17 +6,16 @@
 <meta name="description" content="{{ site_meta_description }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
 {% include "og-meta.html" %}
+{% include "breadcrumb-jsonld.html" %}
 <link rel="stylesheet" href="{{ fonts_css_href }}" />
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
-<body class="archiv-page">
+<body class="static-page archiv-page">
 <div class="archiv-wrap soukromi-wrap">
-  <header class="archiv-head">
-    <h1 class="archiv-title">Zásady ochrany osobních údajů</h1>
-    <p class="archiv-gloss">Poslušně hlásím, že s e-maily zacházíme slušně. Tady je vše podstatné.</p>
-    {% set site_nav_modifier = "site-nav--section" %}
-    {% include "site-nav.html" %}
-  </header>
+  {% include "breadcrumbs.html" %}
+  {% set page_title = "Zásady ochrany osobních údajů" %}
+  {% set page_gloss = "Poslušně hlásím, že s e-maily zacházíme slušně. Tady je vše podstatné." %}
+  {% include "page-head.html" %}
 
   <div class="soukromi-body">
     <section class="soukromi-section">
