@@ -10,73 +10,58 @@
   "fakty": [
     {
       "text": "Decroix: potlesk zprava po projevu.",
-      "source": "steno",
-      "steno_id": "2025_24_00927",
-      "citace": "Děkuji, pane předsedo. (Potlesk zprava.)",
-      "link_phrase": "Potlesk zprava"
+      "citace": "Děkuji, pane předsedo. (Potlesk zprava.)"
     },
     {
       "text": "Decroix: z panelů odešlo 53 lidí.",
       "source": "steno",
-      "steno_id": "2025_24_00927",
+      "steno_id": "2025_24_00905",
       "citace": "z expertních panelů z lidskoprávní agendy odešlo 53 lidí",
-      "link_phrase": "řekla, že z expertních panelů ten den odešlo padesát tři lidí."
+      "link_phrase": "Decroix (ODS) řekla"
     },
     {
       "text": "Decroix: citace z panelů odešlo padesát tři lidí.",
       "source": "steno",
-      "steno_id": "2025_24_00927",
-      "citace": "A téma je to aktuální, protože dnes, tak, jak trošičku se dalo tušit, tak z expertních panelů z lidskoprávní agendy odešlo 53 lidí",
-      "link_phrase": "z expertních panelů z lidskoprávní agendy odešlo 53 lidí"
+      "steno_id": "2025_24_00905",
+      "citace": "Tak já vám velmi děkuji, pane předsedající, za to, že jsme si tady vyjasnili, jestli",
+      "link_phrase": "Decroix (ODS) řekla"
     },
     {
       "text": "Decroix: lidskoprávní odbor rozprášen.",
       "source": "steno",
-      "steno_id": "2025_24_00927",
+      "steno_id": "2025_24_00905",
       "citace": "lidskoprávní odbor na Úřadu vlády byl rozprášen",
-      "link_phrase": "rozprášen"
+      "link_phrase": "Decroix (ODS) řekla"
     },
     {
       "text": "Decroix: lidská práva jsou práva obyčejných lidí.",
       "source": "steno",
-      "steno_id": "2025_24_00927",
+      "steno_id": "2025_24_00905",
       "citace": "lidskoprávní agenda není nic jiného než práva obyčejných lidí",
-      "link_phrase": "Agenda lidských práv je podle ní práva obyčejných lidí, ne úřednická vata."
+      "link_phrase": "Decroix (ODS) řekla"
     },
     {
       "text": "Decroix: cizinci jsou také lidi.",
       "source": "steno",
-      "steno_id": "2025_24_00927",
+      "steno_id": "2025_24_00905",
       "citace": "představte si, že cizinci jsou také lidi",
-      "link_phrase": "cizinci jsou také lidi"
+      "link_phrase": "Decroix (ODS) řekla"
     },
     {
       "text": "Decroix: protidrogová politika a strategie bezpečného dětství padá pod stůl.",
-      "source": "steno",
-      "steno_id": "2025_24_00927",
-      "citace": "celá tato strategie padá pod stůl",
-      "link_phrase": "protidrogovou politiku a strategii bezpečného dětství, která bez expertů prý padá pod stůl"
+      "citace": "celá tato strategie padá pod stůl"
     },
     {
       "text": "Decroix: vládě nezáleží na bezpečí dětí.",
-      "source": "steno",
-      "steno_id": "2025_24_00927",
-      "citace": "Této vládě nezáleží na bezpečí dětí",
-      "link_phrase": "nezáleží na bezpečí dětí"
+      "citace": "Této vládě nezáleží na bezpečí dětí"
     },
     {
       "text": "Decroix: varování před Maďarskem a dotacemi.",
-      "source": "steno",
-      "steno_id": "2025_24_00927",
-      "citace": "Maďarští občané, protože zásadním způsobem nebyli schopni čerpat evropské dotace",
-      "link_phrase": "Varovala před maďarským scénářem, kdy kvůli politice státu lidé přišli o evropské dotace."
+      "citace": "Maďarští občané, protože zásadním způsobem nebyli schopni čerpat evropské dotace"
     },
     {
       "text": "Decroix: ať koalice není za blázny.",
-      "source": "steno",
-      "steno_id": "2025_24_00927",
-      "citace": "možnost koalice přihlásit se k lidským právům a nebýt za blázny",
-      "link_phrase": "Nabídla komisi pro lidská práva jako způsob, jak se koalice může přihlásit k tématu a nebýt za blázny."
+      "citace": "možnost koalice přihlásit se k lidským právům a nebýt za blázny"
     }
   ],
   "publikovat": true,

@@ -11,44 +11,36 @@
     {
       "text": "Hladík: máme kočku jménem Vločka.",
       "source": "steno",
-      "steno_id": "2025_24_01085",
+      "steno_id": "2025_24_01149",
       "citace": "Já sám, moje rodina chová kočku, konkrétně má jméno Vločka, a jsem ze zemědělské, ze sedlácké rodiny.",
-      "link_phrase": "domácí kočku Vločku"
+      "link_phrase": "Hladík (KDU-ČSL) před hlasováním připomněl domácí kočku Vločku"
     },
     {
-      "text": "Hladík: takový paskvil přijmout nemůžeme.",
+      "text": "Hladík: návrh je nevalně zpracovaný.",
       "source": "steno",
-      "steno_id": "2025_24_01087",
-      "citace": "Tak já chci upozornit, že takovýhle paskvil fakt přijmout nemůžeme.",
-      "link_phrase": "návrh označil za paskvil"
+      "steno_id": "2025_24_01149",
+      "citace": "který si dovolím označit za nevalně zpracovaný",
+      "link_phrase": "Hladík (KDU-ČSL) před hlasováním připomněl domácí kočku Vločku"
     },
     {
-      "text": "Hladík: kočky jsou zásadním predátorem ptactva.",
+      "text": "Hanzlíková: dolní sazby ze šesti měsíců na rok.",
       "source": "steno",
-      "steno_id": "2025_24_01087",
-      "citace": "Jestli je někdo obrovským problémem pro naši biologickou rozmanitost a především pro ptáky, tak jsou to kočky.",
-      "link_phrase": "kočky jsou pro ptactvo větší predátor než týrání"
+      "steno_id": "2025_24_01039",
+      "citace": "dosavadní trestní sazba je šest měsíců až čtyři léta, navrhovaná trestní sazba jeden rok až čtyři léta",
+      "link_phrase": "ze šesti měsíců na"
     },
     {
-      "text": "Hanzlíková: dolní sazby u § 199 a § 302 ze šesti měsíců na rok.",
+      "text": "Hanzlíková: nová skutková podstata usmrcení psa nebo kočky.",
       "source": "steno",
-      "steno_id": "2025_24_01063",
-      "citace": "týrání osoby žijící ve společném obydlí § 199 odst. 1, dosavadní trestní sazba je šest měsíců až čtyři léta, navrhovaná trestní sazba jeden rok až čtyři léta; týrání zvířat § 302 odst. 1, současná trestní sazba je šest měsíců až tři léta, navrženo je jeden rok až tři léta",
-      "link_phrase": "ze šesti měsíců na rok"
-    },
-    {
-      "text": "Hanzlíková: nová skutková podstata usmrcení psa nebo kočky ze zavrženíhodné pohnutky.",
-      "source": "steno",
-      "steno_id": "2025_24_01063",
+      "steno_id": "2025_24_01039",
       "citace": "usmrcení psa nebo kočky ze zavrženíhodného důvodu i v případech, kdy usmrcení není prováděno surovým nebo trýznivým způsobem",
-      "link_phrase": "ze zavrženíhodné pohnutky"
+      "link_phrase": "usmrcení psa nebo kočky."
     },
     {
-      "text": "Bureš: debata o přestupku a ochraně jen psů a koček.",
+      "text": "Hanzlíková: jinak jde zpravidla jen o přestupek.",
       "source": "steno",
-      "steno_id": "2025_24_01083",
-      "citace": "postihováno jako přestupek ve správním řízení",
-      "link_phrase": "jestli jde o trestný čin nebo přestupek"
+      "steno_id": "2025_24_01039",
+      "citace": "zpravidla se jedná pouze o přestupek"
     }
   ],
   "publikovat": true,
@@ -64,7 +56,7 @@
     "prazdny_sal": true
   },
   "steno_slov": 1099,
-  "lead": "Ve středu hlasovala Sněmovna o novele trestního zákona na ochranu zvířat:\n\n<ul class=\"listy-ul\">\n<li>vyšší minimální tresty za týrání zvířat, typicky ze šesti měsíců na rok</li>\n<li>nový trestný čin za usmrcení psa nebo kočky ze zavrženíhodné pohnutky</li>\n<li>debata, jestli jde o trestný čin nebo přestupek, a proč jen kočky a psi</li>\n</ul>\n\nMinistr Hladík (KDU-ČSL) před hlasováním připomněl domácí kočku Vločku, pak ale stejný návrh označil za paskvil a varoval, že kočky jsou pro ptactvo větší predátor než týrání.",
+  "lead": "Ve středu hlasovala Sněmovna o novele trestního zákona na ochranu zvířat:\n\n<ul class=\"listy-ul\">\n<li>vyšší minimální tresty za týrání zvířat, typicky ze šesti měsíců na rok</li>\n<li>nový trestný čin za usmrcení psa nebo kočky ze zavrženíhodné pohnutky</li>\n<li>debata, jestli jde o trestný čin nebo přestupek, a proč jen kočky a psi</li>\n</ul>\n\nMinistr Hladík (KDU-ČSL) před hlasováním připomněl domácí kočku Vločku, pak ale stejný návrh označil za nevalně zpracovaný.",
   "pointa": "Ve třetím kole _novela zákona neprošla_.",
   "mean": "Novela měla zpřísnit tresty za týrání zvířat a doplnit postih za usmrcení psa nebo kočky. Ve třetím kole ji Sněmovna zamítla."
 }

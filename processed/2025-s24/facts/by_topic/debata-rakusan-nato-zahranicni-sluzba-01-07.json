@@ -9,45 +9,30 @@
   ],
   "fakty": [
     {
-      "text": "Rakušan: pozměňovací návrh A7 škrtá dvě slova.",
-      "source": "steno",
-      "steno_id": "2025_24_01097",
-      "citace": "V § 10 odst. 4 se slova „a“ zrušují.",
-      "link_phrase": "škrtá dvě slova"
-    },
-    {
-      "text": "Rakušan: prezident nejmenuje velvyslance u stálých misí.",
-      "source": "steno",
-      "steno_id": "2025_24_01097",
-      "citace": "Tenhle škrt dvou slov v zákoně o zahraniční službě bere prezidentu republiky pravomoc jmenovat velvyslance při stálých misích, tedy i při OSN, při OECD a dalších klíčových národních organizacích.",
-      "link_phrase": "prezident už nejmenuje velvyslance u stálých misí"
-    },
-    {
-      "text": "Rakušan: v kontextu dnešní doby pomsta.",
-      "source": "steno",
-      "steno_id": "2025_24_01097",
-      "citace": "možná v kontextu té dnešní doby bych to nazval lex pomsta",
-      "link_phrase": "nazval pomstou"
-    },
-    {
-      "text": "Rakušan: autor návrhu A7 je Vondráček.",
-      "source": "steno",
-      "steno_id": "2025_24_01097",
-      "citace": "Autorem je pan poslanec Libor Vondráček",
-      "link_phrase": "Libor Vondráček"
-    },
-    {
       "text": "Rakušan: mise u OSN bez podpisu prezidenta.",
       "source": "steno",
-      "steno_id": "2025_24_01099",
+      "steno_id": "2025_24_01221",
       "citace": "Jako mise u OSN v New Yorku, to je myslím docela hezká pozice v diplomatické službě. Tak od teď už bez podpisu prezidenta.",
-      "link_phrase": "mise u OSN v New Yorku"
+      "link_phrase": "mise u OSN"
+    },
+    {
+      "text": "Rakušan: msta, která se bojí denního světla.",
+      "source": "steno",
+      "steno_id": "2025_24_01221",
+      "citace": "Tohle je msta, která se bojí denního světla, to, co tady předvádíte.",
+      "link_phrase": "msta, která se bojí denního"
+    },
+    {
+      "text": "Rakušan: diplomatické mise jako trafika.",
+      "source": "steno",
+      "steno_id": "2025_24_01221",
+      "citace": "Diplomatické mise u těch mezinárodních organizací, to je myslím si, hezká trafička."
     }
   ],
   "publikovat": true,
   "priorita": 5,
   "nadpis": "Pomsta prezidentovi",
-  "lead": "Rakušan (STAN) řešil zákon o zahraniční službě a roli prezidenta. Pozměňovací návrh A7 škrtá dvě slova a prezident už nejmenuje velvyslance u stálých misí. Rakušan (STAN) to v kontextu dnešní doby nazval pomstou.",
+  "lead": "Rakušan (STAN) řešil zákon o zahraniční službě a roli prezidenta. Pozměňovací návrh A7 mění pravidla pro mise u mezinárodních organizací tak, aby nepotřebovaly podpis prezidenta. Rakušan (STAN) to nazval pomstou.",
   "pointa": "Podle pana Rakušana je mise u OSN v New Yorku moc pěkné místečko, zvlášť když se na něj nově nastupuje _bez prezidentova podpisu_.",
   "mean": "Zákon o zahraniční službě určuje, kdo jmenuje velvyslance. Pozměňovací návrh A7 mění pravidla pro mise u mezinárodních organizací tak, aby nepotřebovaly podpis prezidenta.",
   "citace_text": "Tohle je msta, která se bojí denního světla, to, co tady předvádíte.",

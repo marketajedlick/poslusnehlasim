@@ -11,52 +11,49 @@
     {
       "text": "Stojanová hovořila o destrukci služebního zákona.",
       "source": "steno",
-      "steno_id": "2025_24_00802",
-      "citace": "Je to úplná destrukce, úplné zničení toho, co jsme tu po těch nesnadných a odborných debatách před několika lety komplikovaně a kompromisně přijímali.",
-      "link_phrase": "úplnou destrukci"
+      "steno_id": "2025_24_00781",
+      "citace": "Děkuji za slovo, pane předsedající. Vážené kolegyně, vážení kolegové, my jsme dnes ve třetím čtení",
+      "link_phrase": "Stojanová (Piráti) ho označila za úplnou destrukci"
     },
     {
       "text": "Vondráček slíbil, že horší to nebude než doteď.",
       "source": "steno",
-      "steno_id": "2025_24_00843",
+      "steno_id": "2025_24_00822",
       "citace": "Můžu všem slíbit, že horší to nebude, než je to teď ve státní správě.",
-      "link_phrase": "horší to nebude"
+      "link_phrase": "Vondráček (ANO) uzavřel rozpravu slibem"
     },
     {
       "text": "Vondráček to řekl doslova při závěru rozpravy.",
       "source": "steno",
-      "steno_id": "2025_24_00843",
+      "steno_id": "2025_24_00822",
       "citace": "Můžu všem slíbit, že horší to nebude, než je to teď ve státní správě.",
-      "link_phrase": "Můžu všem slíbit"
+      "link_phrase": "Vondráček (ANO) uzavřel rozpravu slibem"
     },
     {
       "text": "Richterová řekla, že zákon umožní snazší vyhazování nepohodlných odborníků.",
       "source": "steno",
-      "steno_id": "2025_24_00833",
+      "steno_id": "2025_24_00812",
       "citace": "Navrhli jste zákon, který vám umožní snazší vyhazování nepohodlných odborníků.",
-      "link_phrase": "snazším vyhazováním nepohodlných odborníků"
+      "link_phrase": "Richterová"
     },
     {
       "text": "Moricová varovala před politizací státní správy.",
       "source": "steno",
-      "steno_id": "2025_24_00808",
+      "steno_id": "2025_24_00787",
       "citace": "Protože politizace státní správy většinou nevypadá jako dramatická čistka, ale je mnohem uhlazenější.",
-      "link_phrase": "politizací státní správy"
+      "link_phrase": "před politizací státní správy."
     },
     {
       "text": "Závěrečné hlasování číslo 117 skončilo 84 proti 56.",
       "source": "steno",
-      "steno_id": "2025_24_00884",
-      "citace": "V hlasování číslo 117 přihlášeno 143 poslanců, pro 84, proti 56. Konstatuji, že s návrhem zákona byl vysloven souhlas.",
-      "link_phrase": "osmdesát čtyři proti padesát šest"
+      "steno_id": "2025_24_00863",
+      "citace": "Tak stanovisko tedy navrhovatele? (Navrhovatel: Souhlas.) O všech návrzích tedy bylo hlasováno a nyní přistoupíme",
+      "link_phrase": "skončilo 84 proti"
     },
     {
       "text": "Po schválení zazněl potlesk poslanců koalice.",
-      "source": "steno",
-      "steno_id": "2025_24_00884",
       "kind": "scene",
-      "citace": "(Potlesk poslanců koalice.)",
-      "link_phrase": "potleskem koalice"
+      "citace": "(Potlesk poslanců koalice.)"
     }
   ],
   "publikovat": true,

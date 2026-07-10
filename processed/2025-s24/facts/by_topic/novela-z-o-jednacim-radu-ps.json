@@ -10,101 +10,71 @@
   "fakty": [
     {
       "text": "Vondráček chtěl novelizovat jednací řád po letech.",
-      "source": "steno",
-      "steno_id": "2025_24_01339",
-      "citace": "snad konečně budeme schopni po mnoha a mnoha letech novelizovat jednací řád",
-      "link_phrase": "změnit jednací řád"
+      "citace": "snad konečně budeme schopni po mnoha a mnoha letech novelizovat jednací řád"
     },
     {
       "text": "Koalice chtěla ve třetím kole zákonů mluvit méně.",
-      "source": "steno",
-      "steno_id": "2025_24_01339",
-      "citace": "nebylo určeno k tomu, aby se opakovala debata z prvého a z druhého čtení",
-      "link_phrase": "ve třetím kole zákonů tolik nemluvilo"
+      "citace": "nebylo určeno k tomu, aby se opakovala debata z prvého a z druhého čtení"
     },
     {
       "text": "Novela zavádí hlasování na pevný čas ukončení rozpravy.",
-      "source": "steno",
-      "steno_id": "2025_24_01351",
-      "citace": "lze hlasovat pevně načas",
-      "link_phrase": "hlasování na pevný čas"
+      "citace": "lze hlasovat pevně načas"
     },
     {
       "text": "Vondráček připouští, že jde o postup nezákonný, Ústavní soud ho ale toleruje.",
-      "source": "steno",
-      "steno_id": "2025_24_01351",
-      "citace": "ačkoliv je to postup nezákonný, tak Ústavní soud ho shledává v souladu s Ústavou",
-      "link_phrase": "Ústavní soud jako nezákonný"
+      "citace": "ačkoliv je to postup nezákonný, tak Ústavní soud ho shledává v souladu s Ústavou"
     },
     {
       "text": "Havel varoval před kontroverzními zákony a narážel na mediální novelu.",
-      "source": "steno",
-      "steno_id": "2025_24_01341",
-      "citace": "v následujících měsících vy chcete zařadit řadu velmi kontroverzních zákonů",
-      "link_phrase": "Sněmovna mění v bojiště"
+      "citace": "v následujících měsících vy chcete zařadit řadu velmi kontroverzních zákonů"
     },
     {
       "text": "Havel: koalice chce destruovat nezávislost veřejnoprávních médií.",
-      "source": "steno",
-      "steno_id": "2025_24_01341",
-      "citace": "destruovat svobodu a nezávislost veřejnoprávních médií",
-      "link_phrase": "chystaný zákon o ČT"
+      "citace": "destruovat svobodu a nezávislost veřejnoprávních médií"
     },
     {
       "text": "Vondráček: Sněmovna je bojiště, ne jeviště.",
-      "source": "steno",
-      "steno_id": "2025_24_01351",
-      "citace": "opravdu považujete Poslaneckou sněmovnu za bojiště a nikoliv jeviště. Ale vy sami jste nám v předchozím volebním období opakovaně, myslím, že víc jak patnáctkrát, ukázali, že není možné obstrukcemi zastavit většinu",
-      "link_phrase": "považujete Poslaneckou sněmovnu za bojiště a nikoliv jeviště"
+      "citace": "opravdu považujete Poslaneckou sněmovnu za bojiště a nikoliv jeviště. Ale vy sami jste nám v předchozím volebním období opakovaně, myslím, že víc jak patnáctkrát, ukázali, že není možné obstrukcemi zastavit většinu"
     },
     {
       "text": "Vondráček: obstrukce nezastaví většinu.",
-      "source": "steno",
-      "steno_id": "2025_24_01351",
-      "citace": "není možné obstrukcemi zastavit většinu",
-      "link_phrase": "obstrukce prý většinu stejně nezastaví"
+      "citace": "není možné obstrukcemi zastavit většinu"
     },
     {
       "text": "Opozice si ubránila neomezený počet faktických poznámek.",
       "source": "steno",
       "steno_id": "2025_24_01984",
-      "citace": "návrh na zrušení navrženého omezení počtu faktických poznámek",
-      "link_phrase": "počet faktických poznámek zůstává neomezený"
+      "citace": "návrh na zrušení navrženého omezení počtu faktických poznámek"
     },
     {
       "text": "První hlasování o návrhu skončilo 3 proti 84.",
       "source": "steno",
       "steno_id": "2025_24_01350",
-      "citace": "Hlasování číslo 186, přihlášeno 142 poslanců, pro 3, proti 84. Návrh nebyl přijat.",
-      "link_phrase": "nejhůř 3 pro, 84 proti"
+      "citace": "Hlasování číslo 186, přihlášeno 142 poslanců, pro 3, proti 84. Návrh nebyl přijat."
     },
     {
       "text": "V pátek se hlasovalo o dalších šestadvaceti pozměňovacích návrzích od A po C, šestnáct jich padlo.",
       "source": "steno",
       "steno_id": "2025_24_02009",
-      "citace": "Jestli mám správně poznámky, tak jsme hlasovali o všech pozměňovacích návrzích. Je to tak?",
-      "link_phrase": "dalších šestadvacet pozměňovacích návrhů, šestnáct jich neprošlo"
+      "citace": "Jestli mám správně poznámky, tak jsme hlasovali o všech pozměňovacích návrzích. Je to tak?"
     },
     {
       "text": "Ondřej Babka po hlasování zjistil, že sjetina zaznamenala jeho hlas obráceně.",
       "source": "steno",
       "steno_id": "2025_24_02012",
-      "citace": "k hlasování číslo 236 jsem hlasoval proti, na sjetině mám pro a nezpochybňuji hlasování",
-      "link_phrase": "Dva poslanci si museli opravit zápis"
+      "citace": "k hlasování číslo 236 jsem hlasoval proti, na sjetině mám pro a nezpochybňuji hlasování"
     },
     {
       "text": "Anežka Nedomová měla stejný problém o dvě hlasování dál, opačným směrem.",
       "source": "steno",
       "steno_id": "2025_24_02016",
-      "citace": "u hlasování číslo 238, na sjetině mám proti, ale byla jsem pro. Nezpochybňuji hlasování.",
-      "link_phrase": "hlasování ale nezpochybnili"
+      "citace": "u hlasování číslo 238, na sjetině mám proti, ale byla jsem pro. Nezpochybňuji hlasování."
     },
     {
       "text": "Zákon nakonec prošel poměrem 110 ku 12, tleskala pravá polovina sálu.",
       "source": "steno",
       "steno_id": "2025_24_02017",
-      "citace": "Návrh zákona byl přijat, byl s ním vysloven souhlas. (Potlesk pravé poloviny sálu.)",
-      "link_phrase": "tleskala pravá polovina sálu"
+      "citace": "Návrh zákona byl přijat, byl s ním vysloven souhlas. (Potlesk pravé poloviny sálu.)"
     }
   ],
   "publikovat": true,

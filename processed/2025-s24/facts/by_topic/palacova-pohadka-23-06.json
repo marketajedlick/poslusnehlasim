@@ -11,51 +11,37 @@
     {
       "text": "Rakušan začal projev pohádkou o panovníkovi ve velkém paláci, kam obyčejní lidé nedostanou.",
       "source": "steno",
-      "steno_id": "2025_24_00017",
+      "steno_id": "2025_24_00016",
       "citace": "Byl jeden takový panovník, který žil ve velkém paláci, ale obyčejní lidé se do tohohle paláce nikdy nedostanou.",
-      "link_phrase": "panovník ve velkém paláci"
+      "link_phrase": "pohádkou o panovníkovi ve velkém paláci"
     },
     {
       "text": "Jeden dvořan měl levný byt na zámeckém panství, druhý označoval protivníky za méněcenné, třetí seděla panovníkovi nejblíž.",
       "source": "steno",
-      "steno_id": "2025_24_00017",
-      "citace": "Jeden dvořan měl třeba levný byt na zámeckém panství. Druhý dvořan si myslel, že je lepší než ti ostatní a každého, kdo se mu znelíbil, označil za méněcenného. Třetí, to byla rádkyně, ta seděla panovníkovi úplně nejblíž a rozhodovala o věcech státu i ve chvíli, kdy o tom sám panovník zjevně nevěděl.",
-      "link_phrase": "levný byt na zámeckém panství"
+      "steno_id": "2025_24_00016",
+      "citace": "Jeden dvořan měl třeba levný byt na zámeckém panství. Druhý dvořan si myslel, že je lepší než ti ostatní a každého, kdo se mu znelíbil, označil za méněcenného.",
+      "link_phrase": "levný byt na panství"
     },
     {
-      "text": "Rakušan pohádku hned rozklíčoval: panovník je Andrej Babiš, styl vlády je palácová vláda.",
+      "text": "Rádkyně seděla panovníkovi nejblíž a rozhodovala i když panovník zjevně nevěděl o čem.",
       "source": "steno",
-      "steno_id": "2025_24_00017",
-      "citace": "Tohle není smyšlený příběh, protože styl vlády panovníka Andreje Babiše je přesně takový. Pan premiér je typickým příkladem toho, jak vypadá právě ta palácová vláda.",
-      "link_phrase": "palácová vláda"
+      "steno_id": "2025_24_00016",
+      "citace": "Třetí, to byla rádkyně, ta seděla panovníkovi úplně nejblíž a rozhodovala o věcech státu i ve chvíli, kdy o tom sám panovník zjevně nevěděl.",
+      "link_phrase": "rádkyně, co rozhoduje i když panovník neví"
     },
     {
-      "text": "Mrázová podle Rakušana symbolizuje levný byt za 42 korun za metr, Macinka dělení lidí na méněcenné.",
+      "text": "Palácová vláda podle Rakušana nesnáší otázky a má ráda loajalitu, mlčení a poslušnost.",
       "source": "steno",
-      "steno_id": "2025_24_00017",
-      "citace": "Paní ministryně Mrázová, odpovědná mimo jiné za dostupné sociální bydlení. Ta, co si užívala obecní byt v Bílině za nájem zhruba 42 korun za metr čtvereční.",
-      "link_phrase": "42 korun za metr čtvereční"
+      "steno_id": "2025_24_00018",
+      "citace": "No a co nemá ráda ta palácová vláda, o které tady mluvím? Nemá ráda žádné otázky, má ráda loajalitu, mlčení a poslušnost",
+      "link_phrase": "Palácová vláda prý nesnáší otázky"
     },
     {
-      "text": "Bartha seděla panovníkovi nejblíž a rozhodovala i když premiér sám nevěděl o čem.",
+      "text": "Schillerová v televizi: ptejte se raději na to, co se nám povedlo.",
       "source": "steno",
-      "steno_id": "2025_24_00017",
-      "citace": "Paní Tünde Bartha – zmíněná už v předchozím projevu kolegyně Richterové – vedoucí Úřadu vlády. Podle všech dostupných informací člověk, který má na rozhodování pana premiéra Babiše obzvlášť velký vliv. A možná mnohokrát dokonce premiér Babiš ani o jejích rozhodnutích neví.",
-      "link_phrase": "premiér Babiš ani o jejích rozhodnutích neví"
-    },
-    {
-      "text": "Palácová vláda podle Rakušana nesnáší otázky, novináře a veřejnoprávní média.",
-      "source": "steno",
-      "steno_id": "2025_24_00017",
-      "citace": "A víte co palácová vláda nesnáší? Co má společný? Jeden společný jmenovatel tady vždycky je. Nesnáší, když ji někdo sleduje, když se jí někdo dívá pod prsty, když ji někdo kontroluje, nedej bože snad kritizuje. Nesnáší nezávislé novináře. Nesnáší veřejnoprávní média.",
-      "link_phrase": "palácová vláda nesnáší"
-    },
-    {
-      "text": "Rakušan navrhl zařadit do pořadu body o destrukci médií a papalášském chování vlády.",
-      "source": "steno",
-      "steno_id": "2025_24_00019",
-      "citace": "Plán Babišovy vlády na destrukci veřejnoprávních médií. A druhý bod zní: Papalášské chování Babišovy vlády, a to jako druhý bod dnešního jednání.",
-      "link_phrase": "destrukci veřejnoprávních médií"
+      "steno_id": "2025_24_00018",
+      "citace": "Ptejte se mě raději na to, co se nám povedlo.",
+      "link_phrase": "Ptejte se mě raději na to, co se nám povedlo"
     }
   ],
   "publikovat": true,

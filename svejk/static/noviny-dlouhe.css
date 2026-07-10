@@ -70,7 +70,7 @@ button{font:inherit;cursor:pointer}
 .edition-main-inner{
   min-width:0;
   /* Čísla sekcí (.article-num) stojí vlevo od sloupce přes záporný margin;
-     overflow-x:clip je schovalo — mezera rail ↔ obsah je na to dimenzovaná. */
+     overflow-x:clip je schovalo, mezera rail ↔ obsah je na to dimenzovaná. */
   overflow-x:visible;
 }
 /* Úzký desktop: rail + obsah; články zůstávají v mobilním layoutu (číslo v hlavičce),
