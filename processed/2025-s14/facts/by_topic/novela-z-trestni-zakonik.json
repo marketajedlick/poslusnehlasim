@@ -2,7 +2,7 @@
   "slug": "novela-z-trestni-zakonik",
   "nazev": "Novela z. - trestní zákoník",
   "datum": "21.04.2026",
-  "verdikt": "schvaleno",
+  "verdikt": "zamiteno",
   "predmet_lidsky": "",
   "koho": [
     "Koho se to týká? Každého, kdo spadá pod trestní zákoník a jeho pravidla."
@@ -30,7 +30,7 @@
   "priorita": 3,
   "nadpis": "Trestní změna spadla",
   "pocet_hlasovani": 3,
-  "proslo": true,
+  "proslo": false,
   "signaly": {
     "proti_max": 89,
     "pritomno_min": 155,

@@ -2,7 +2,7 @@
   "slug": "navrh-zakona-o-statnich-zamestnancich",
   "nazev": "Návrh zákona o státních zaměstnancích",
   "datum": "29.01.2026",
-  "verdikt": "schvaleno",
+  "verdikt": "zamiteno",
   "predmet_lidsky": "státních zaměstnancích",
   "koho": [
     "Koho se to týká? Přes 70 000 lidí ve státní správě a každého, kdo řeší úřady, jde o to, jestli úředníci pracují podle služebního zákona, nebo jako běžní zaměstnanci."
@@ -38,7 +38,7 @@
   "priorita": 3,
   "nadpis": "Úředníci zůstávají",
   "pocet_hlasovani": 6,
-  "proslo": true,
+  "proslo": false,
   "signaly": {
     "proti_max": 96,
     "pritomno_min": 130,

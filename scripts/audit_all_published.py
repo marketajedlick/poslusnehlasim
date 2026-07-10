@@ -247,8 +247,10 @@ def audit_verdikt_vs_votes(report: Report) -> None:
                 continue
             if verdikt == "odlozeno":
                 continue
-            # Zákon mohl projít prvním kolem, ale padnout v závěrečném hlasování (např. zvířata #165 A, #167 R).
+            # Zákon mohl projít dřívějšími koly, ale padnout v závěrečném (R na konci).
             last = group[-1]
+            if verdikt == "zamiteno" and last.get("vysledek") == "R":
+                continue
             if (
                 verdikt == "zamiteno"
                 and proslo

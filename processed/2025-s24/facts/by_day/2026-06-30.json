@@ -16,8 +16,8 @@
     "pocet_hlas": 2,
     "minuty": 527,
     "end_cas": "22:55",
-    "proslo": 0,
-    "zamitnuto": 1,
+    "proslo": 1,
+    "zamitnuto": 0,
     "spor_o_porad": true,
     "dlouha_debata": false
   },
@@ -30,6 +30,6 @@
     "* Hřib (Piráti): banda fracků u summitu NATO, sedm miliard pro Agrofert",
     "* rodičovský příspěvek zvýšen na 400 000 a 800 000 korun, hlasování 129:0"
   ],
-  "proslo": 0,
-  "zamitnuto": 1
+  "proslo": 1,
+  "zamitnuto": 0
 }
