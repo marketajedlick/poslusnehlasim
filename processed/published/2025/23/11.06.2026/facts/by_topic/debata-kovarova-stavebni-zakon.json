@@ -1,0 +1,74 @@
+{
+  "slug": "debata-kovarova-stavebni-zakon",
+  "nazev": "Debata Veroniky Kovářové u stavebního zákona",
+  "datum": "11.06.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "padesátiminutového projevu Veroniky Kovářové u stavebního zákona",
+  "koho": [
+    "Koho se to týká? Každého, kdo staví, bydlí u památky nebo čeká na úřad."
+  ],
+  "fakty": [
+    {
+      "text": "Kovářová mluvila přes padesát minut a hned se omluvila za délku projevu.",
+      "source": "steno",
+      "steno_id": "2025_23_00070",
+      "citace": "Já se nejprve omluvím, že budu trošku delší, ale já jenom představím své pozměňováky.",
+      "link_phrase": "mluvila u novely stavebního zákona přes padesát minut"
+    },
+    {
+      "text": "Kovářová připomněla precedens u EET: rozsáhlá novela musí mít analýzu dopadů, u stavebního zákona koalice vystačí s dokumentem z roku 2020.",
+      "source": "steno",
+      "steno_id": "2025_23_00070",
+      "citace": "EET má RIA, která je, jak řekla, povinnou součástí zákona, a je to tak samozřejmě i u novel.",
+      "link_phrase": "u zákona o elektronické evidenci tržeb byla povinná analýza dopadů"
+    },
+    {
+      "text": "Kovářová vyvrátila srovnání s Nigérií: tvrzení stojí na zrušeném žebříčku Doing Business, kde 246 dní neznamenalo délku stavebního povolení, ale celý proces včetně sítí a katastru.",
+      "source": "steno",
+      "steno_id": "2025_23_00070",
+      "citace": "246 dní neznamenalo délku stavebního povolení, šlo o celkový čas administrativních úkonů od zahájení projektu až po kolaudaci, a to včetně napojení na sítě a",
+      "link_phrase": "povolování staveb je u nás pomalejší než tam"
+    },
+    {
+      "text": "Kovářová se odvolávala na data ministerstva, podle nichž stavební řízení trvá průměrně 98 dní a medián je 78 dní.",
+      "source": "steno",
+      "steno_id": "2025_23_00070",
+      "citace": "Průměrná délka řízení je 98 dní a medián 78 dní.",
+      "link_phrase": "odvolávala na data ministerstva"
+    },
+    {
+      "text": "Kovářová varovala před rušením hygienických limitů a připomněla argument předkladatelů, že jeden decibel prý lidské ucho stejně nerozezná.",
+      "link_phrase": "že jeden decibel"
+    },
+    {
+      "text": "Kovářová spojila novelu s Lex developerem a varovala, že do roku 2029 nebudou existovat ochranná pásma UNESCO památek, což ohrožuje Kutnou Horu a Český Krumlov.",
+      "link_phrase": "že do roku 2029 nebudou existovat ochranná pásma UNESCO památek, což ohrožuje Kutnou Horu"
+    },
+    {
+      "text": "Kovářová připomněla archeologický výzkum keltské vesnice u Hradce Králové.",
+      "link_phrase": "keltské vesnice u Hradce"
+    },
+    {
+      "text": "Kršková po ní slíbila dobrou zprávu: bude stručnější.",
+      "source": "steno",
+      "steno_id": "2025_23_00076",
+      "citace": "Já mám pro vás dobrou zprávu, já budu stručnější.",
+      "link_phrase": "po ní slíbila, že bude stručnější"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Rychlejší stavby, delší řeč",
+  "lead": "Veronika Kovářová mluvila u novely stavebního zákona přes padesát minut. Začala omluvou: „Já se nejprve omluvím, že budu trošku delší… já za to nemůžu.“\n\nTitulní maraton ale nebyl jen výstřel do prázdna. Nejdřív koalici chtěla připomenout precedens, u zákona o elektronické evidenci tržeb byla povinná analýza dopadů na stát a podnikání. Novela stavebního zákona přitom předělává celý systém stavebních úřadů, financování i územní plánování, ale koalice vystačí s analýzou z roku 2020. Ptala se: kdy přijde nová?\n\nDruhý odskok mířil do Nigérie. Autoři novely z koalice argumentují, že povolování staveb je u nás pomalejší než tam. Veronika Kovářová upozornila, že to tvrzení stojí na později zrušeném žebříčku Doing Business: 246 dní v něm neznamenalo délku stavebního povolení, ale celý proces včetně sítí a katastru. Kovářová se odvolávala na data ministerstva, podle nichž stavební řízení trvá průměrně 98 dní a medián je 78 dní.\n\nZbytek projevu už nebyl divoký, ale věcná kritika novely: rušení hygienických limitů (předkladatelé prý argumentují, že „jeden decibel stejně lidské ucho nerozezná“), spojení s Lex developerem a varování, že do roku 2029 nebudou existovat ochranná pásma UNESCO památek, což ohrožuje Kutnou Horu a Český Krumlov včetně možného vyškrtnutí ze seznamu. Připomněla archeologické výzkumy typu keltské vesnice u Hradce a otevřený dopis památkářů.\n\nKršková po ní slíbila, že bude stručnější.",
+  "pointa": "Nejdelší projev dne začal u analýzy dopadů u evidence tržeb, přes debunk srovnání s Nigérií došel k Lex developerovi, památkám UNESCO a keltské vesnici u Hradce. Kršková",
+  "mean": "Nový stavební zákon má stavby povolovat rychleji. Veronika Kovářová varuje, že rychlost nejde zadarmo. Hygienické limity určují, kolik hluku smí u vás doma udělat stavba nebo továrna, novela je chce zrušit s argumentem, že jeden decibel stejně nerozeznáte. U památek se zúží ochranná pásma, tedy pravidla, co smí růst vedle chráněných center. Právě to prý ohrožuje Kutnou Horu a Český Krumlov, kde UNESCO hlídá každou změnu. Nejde tedy jen o rychlejší přístavbu, ale i o větší hluk u domu a méně vazby na památkovou péči.",
+  "pocet_hlasovani": 0,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 102,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  }
+}

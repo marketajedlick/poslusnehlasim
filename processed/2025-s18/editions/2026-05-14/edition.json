@@ -1,0 +1,27 @@
+{
+  "key": "2025/18/14.05.2026",
+  "obdobi": 2025,
+  "schuze": 18,
+  "datum_unl": "14.05.2026",
+  "iso": "2026-05-14",
+  "state": "published",
+  "topic_slugs": [
+    "stanovisko-vladni-koalice-ke-sjezdu-sudetonemeck"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-05-14/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 4,
+    "votes_max_cislo": 4,
+    "steno_count": 17,
+    "steno_last_poradi": 17,
+    "topics_built_at": "2026-07-10T17:50:29.464223+00:00",
+    "fingerprint": "7230915d19595944"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/18/14.05.2026",
+  "supersedes": null
+}

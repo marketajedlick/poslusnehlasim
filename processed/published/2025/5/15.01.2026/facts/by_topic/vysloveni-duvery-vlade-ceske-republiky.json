@@ -1,0 +1,51 @@
+{
+  "slug": "vysloveni-duvery-vlade-ceske-republiky",
+  "nazev": "Vyslovení důvěry vládě České republiky",
+  "datum": "15.01.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "vyslovení důvěry vládě České republiky",
+  "koho": [
+    "Koho se to týká? Celé republiky, od schválené důvěry závisí, zda vláda může normálně vládnout a prosazovat program."
+  ],
+  "fakty": [
+    {
+      "text": "V dnešním hlasování hlasovalo 199 poslanců, 108 poslanců bylo pro návrh, 91 poslanců proti návrhu.",
+      "source": "steno",
+      "steno_id": "2025_5_00801",
+      "citace": "dnešním hlasování hlasovalo 199 poslanců, 108 poslanců bylo pro návrh, 91 poslanců proti",
+      "link_phrase": "V dnešním hlasování hlasovalo 199 poslanců, 108 poslanců bylo pro"
+    },
+    {
+      "text": "My ve skutečnosti hlasujeme dnes o tom, zda věříme, že vládnutí a vláda Andreje Babiše a jeho koaličních partnerů prospěje této zemi, prospěje Česku, prospěje lidem, kteří tady žijí. Jedním slovem nevěříme.",
+      "link_phrase": "My ve skutečnosti hlasujeme dnes o tom, zda věříme, že"
+    },
+    {
+      "text": "Fiala: Rozhodnutí, které má důsledky, dlouhodobé důsledky pro směřování naší země.",
+      "citace": "Rozhodnutí, které má důsledky, dlouhodobé důsledky pro směřování naší země.",
+      "steno_id": "2025_5_00086",
+      "source": "steno",
+      "link_phrase": "Rozhodnutí, které má důsledky, dlouhodobé důsledky pro směřování naší země"
+    },
+    {
+      "text": "Potlesk koaličních poslanců, vzájemné gratulace mezi členy vlády.",
+      "kind": "scene",
+      "link_phrase": "Potlesk koaličních poslanců, vzájemné gratulace mezi členy vlády"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Důvěra těsně prošla",
+  "pocet_hlasovani": 8,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 104,
+    "pritomno_min": 189,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 162552,
+  "lead": "Po třech dnech řečí ministrů a premiéra Sněmovna vyslovila vládě Andreje Babiše důvěru, 108 pro, 91 proti. Střet zájmů z listopadové mimořádné schůze zůstal nevyřešený.",
+  "pointa": "Rakušan řekl jediné slovo: „Nevěříme.“ Koalice stejně přečetla jména a gratulovala ve vestoje. V dnešním hlasování hlasovalo 199 poslanců, 108 poslanců bylo pro. My ve skutečnosti hlasujeme dnes o tom, zda věříme, že. Rozhodnutí, které má důsledky, dlouhodobé důsledky pro směřování naší země. Potlesk koaličních poslanců, vzájemné gratulace mezi členy vlády.",
+  "mean": "Večer rozhodlo jmenovité hlasování: 108 pro, 91 proti. Hned nato koalice po jednotlivých bodech odmítla Jurečkovo usnesení, které kritizovalo vládu za jmenování Filipa Turka zmocněncem pro klima, na samotnou důvěru to už nemělo vliv."
+}

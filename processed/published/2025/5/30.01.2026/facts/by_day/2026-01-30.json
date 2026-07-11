@@ -1,0 +1,26 @@
+{
+  "datum": "30.01.2026",
+  "den": "pátek",
+  "topic_slugs": [
+    "novela-z-stavebni-zakon"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 563,
+    "end_cas": "18:29",
+    "proslo": 0,
+    "zamitnuto": 1,
+    "dlouha_debata": true
+  },
+  "dnesni_ucet": "Dopoledne boj o pořad schůze.\nStavební zákon v prvním kole padl.",
+  "zaver": "že sice o stavebním zákonu poslanci mluvili už od středy, ale v pátek v prvním kole stejně padl.",
+  "vysledek": [
+    "* tři věci schválili",
+    "* šest návrhů neprošlo",
+    "* stavební zákon v prvním kole padl",
+    "* dopoledne dvacet hlasování o pořadu schůze"
+  ],
+  "proslo": 0,
+  "zamitnuto": 1
+}

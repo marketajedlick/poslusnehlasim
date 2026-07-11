@@ -1,0 +1,28 @@
+{
+  "datum": "11.06.2026",
+  "den": "čtvrtek",
+  "topic_slugs": [
+    "debata-turek-stavebni-zakon",
+    "debata-kovarova-stavebni-zakon",
+    "novela-z-stavebni-zakon"
+  ],
+  "steno_zdroje": true,
+  "skore_manual": true,
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 313,
+    "end_cas": "20:14",
+    "proslo": 0,
+    "zamitnuto": 1,
+    "dlouha_debata": true
+  },
+  "dnesni_ucet": "Celý den druhé kolo stavebního zákona, hlučný\nsál, Kovářová přes padesát minut, Turek a kolaps úřadů.",
+  "zaver": "že stavební zákon ve čtvrtek nespadl. Jen se tak dlouho mluvilo, až spadl návrh poslat ho zpátky do výboru.",
+  "vysledek": [
+    "* 0 věcných změn schváleno",
+    "* 1 návrh na vrácení zamítnut",
+    "* jediné hlasování dne: pokus vrátit novelu do výboru neprošel 22:75",
+    "* Stojanová: 626 stavebních úřadů, na nové chce přejít jen třetina zaměstnanců",
+    "* večer ukončili druhé čtení, novela míří do třetího čtení"
+  ]
+}

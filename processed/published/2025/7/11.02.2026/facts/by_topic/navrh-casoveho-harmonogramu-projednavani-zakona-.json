@@ -1,0 +1,39 @@
+{
+  "slug": "navrh-casoveho-harmonogramu-projednavani-zakona-",
+  "nazev": "Návrh časového harmonogramu projednávání zákona o státním rozpočtu ČR",
+  "datum": "11.02.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "návrh časového harmonogramu projednávání zákona o státním rozpočtu ČR",
+  "koho": [
+    "Koho se to týká? Každého, kdo čeká, kolik stát utratí. Harmonogram určuje, kdy se o rozpočtu bude hlasovat."
+  ],
+  "fakty": [
+    {
+      "text": "Okamura: Tento sněmovní dokument uvede zpravodaj rozpočtového výboru, zároveň předseda poslanec Vladimír Pikora, kterého prosím, aby se ujal slova a současně přednesl také návrh usnesení Poslanecké sněmovny.",
+      "source": "steno",
+      "steno_id": "2025_7_00240",
+      "citace": "Tento sněmovní dokument uvede zpravodaj rozpočtového výboru, zároveň předseda poslanec Vladimír Pikora, kterého prosím, aby se ujal slova a současně přednesl také návrh usnesení Poslanecké",
+      "link_phrase": "Tento sněmovní dokument uvede zpravodaj rozpočtového výboru, zároveň předseda poslanec"
+    },
+    {
+      "text": "V hlasování číslo 59 bylo přihlášeno 166 poslanců, pro 127, proti 0. Návrh byl přijat.",
+      "link_phrase": "127 hlasů pro, nikdo proti"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Kalendář rozpočtu",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 166,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 100283,
+  "lead": "Sněmovna schválila harmonogram projednávání rozpočtu na rok 2026, 127 hlasů pro, nikdo proti.",
+  "pointa": "Zpravodaj Pikora představil dvanáctibodové usnesení rozpočtového výboru. Večer pak začala první debata o samotném návrhu. Tento sněmovní dokument uvede zpravodaj rozpočtového výboru, zároveň předseda poslanec.",
+  "mean": "Harmonogram říká, kdy a jak rychle půjde rozpočet výbory a plénem. Bez něj by se o schodku 310 miliard nehlasovalo podle plánu, ale pořád jen o pořadu."
+}

@@ -1,0 +1,33 @@
+{
+  "datum": "02.07.2026",
+  "den": "čtvrtek",
+  "topic_slugs": [
+    "interpelace-babis-ipo-letiste-02-07",
+    "interpelace-babis-odpovedi-02-07",
+    "interpelace-mrazova-bydleni-02-07",
+    "novela-z-o-obalech",
+    "interpelace-kovacik-povodi-02-07",
+    "novela-z-o-podnikani-na-kapitalovem-trhu-eu"
+  ],
+  "stats": {
+    "pocet_hlas": 3,
+    "minuty": 188,
+    "end_cas": "13:29",
+    "proslo": 2,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": false
+  },
+  "dnesni_ucet": "Graf bytů, IPO letiště,\nsuper EKO-KOM, Kováčik u Povodí Ohře.",
+  "zaver": "že schůze proběhla bez ministrů. O bydlení se dvě hodiny hádalo a nic se nevyřešilo. Do dozorčí rady u řeky stačil jeden pohovor. A zákon, který se týká šesti firem a jedné evropské pokuty, prošel rychleji než cokoli jiného za celou schůzi.",
+  "steno_zdroje": true,
+  "vysledek": [
+    "* písemné interpelace: Lipavský (ODS) dvě tisíce osm set osmdesát osm slov, Stojanová (Piráti) dvě tisíce šest set šestnáct, Bartoš (Piráti) dvě tisíce pět set čtyřicet devět",
+    "* Richterová (Piráti): prázdné lavice, návrh počkat na Babiše padl čtyřicet pět proti čtyřicet čtyři",
+    "* Babiš (ANO): graf bytů v sále, sto třicet dvě stran přešlapů nečetl, udavačství, kanály, IPO letiště",
+    "* Bendl (ODS): ministr chybí, téměř pohrdání Sněmovnou, debata pod špatným tématem TAČR",
+    "* Šmída (Piráti): super EKO-KOM, silný hluk v sále",
+    "* Kováčik (KSČM) do Povodí Ohře, ministr citoval zemědělský výbor",
+    "* novela o kapitálovém trhu: první kolo sto šest proti nula, druhé kolo neprošlo"
+  ]
+}

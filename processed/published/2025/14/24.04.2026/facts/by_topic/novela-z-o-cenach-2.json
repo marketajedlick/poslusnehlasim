@@ -1,0 +1,44 @@
+{
+  "slug": "novela-z-o-cenach-2",
+  "nazev": "Novela z. o cenách",
+  "datum": "24.04.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "cenách",
+  "koho": [
+    "Koho se to týká? Motoristy. Zákon má vládě umožnit zasahovat do cen benzínu a nafty."
+  ],
+  "fakty": [
+    {
+      "text": "Jakob připomněl, že Senát zákon zamítl kvůli věcným i právním vadám.",
+      "link_phrase": "Jakob připomněl, že Senát zákon zamítl kvůli věcným i právním"
+    },
+    {
+      "text": "Jakob uvedl, že koalice žádá Senát přehlasovat bez sebereflexe.",
+      "source": "steno",
+      "steno_id": "2025_14_01517",
+      "citace": "Koalice dnes žádá jediné, aby svou většinou Senát přehlasovala.",
+      "link_phrase": "Jakob"
+    },
+    {
+      "text": "Druhé čtení prošlo 102:45, závěrečné hlasování 112:2.",
+      "source": "votes",
+      "link_phrase": "Druhé čtení prošlo 102:45, závěrečné hlasování 112:2"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Benzín prošel přes Senát",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 45,
+    "pritomno_min": 145,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 15863,
+  "lead": "Pátek uzavřel dubnový oblouk o cenách benzínu. Sněmovna ve druhém kole zákon schválila sto dvěma hlasy proti pětačtyřiceti, přestože ho Senát po úterním prvním kole a středeční noci zamítl.",
+  "pointa": "Jakob mluvil o zrychleném projednávání jako o zkratce pro sporný návrh. Koalice zákon znovu protlačila ve zkráceném režimu. Jakob připomněl, že Senát zákon zamítl kvůli věcným i právním. Druhé čtení prošlo 102:45, závěrečné hlasování 112:2.",
+  "mean": "Vláda může dál usilovat o regulaci cen benzínu a nafty. Senát musí zákon znovu posoudit, tentokrát proti vůli horní komory."
+}

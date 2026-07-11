@@ -1,0 +1,58 @@
+{
+  "slug": "palacova-pohadka-23-06",
+  "nazev": "Palácová pohádka",
+  "datum": "23.06.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "Rakušanova pohádková alegorie o palácové vládě Andreje Babiše v debatě o financování ČT a ČRo",
+  "koho": [
+    "Koho se to týká? Každého, kdo platí poplatky za televizi a rozhlas a nechce, aby o nich rozhodovala uzavřená partička kolem premiéra."
+  ],
+  "fakty": [
+    {
+      "text": "Rakušan začal projev pohádkou o panovníkovi ve velkém paláci, kam obyčejní lidé nedostanou.",
+      "source": "steno",
+      "steno_id": "2025_24_00016",
+      "citace": "Byl jeden takový panovník, který žil ve velkém paláci, ale obyčejní lidé se do tohohle paláce nikdy nedostanou. On měl kolem sebe dvořany, kteří byli věrní a za",
+      "link_phrase": "Rakušan (STAN) nejdřív pohádku vyprávěl jako alegorii"
+    },
+    {
+      "text": "Rakušan uvedl, že jeden dvořan měl levný byt na zámeckém panství, druhý označoval protivníky za méněcenné, třetí seděla panovníkovi nejblíž.",
+      "source": "steno",
+      "steno_id": "2025_24_00016",
+      "citace": "Jeden dvořan měl třeba levný byt na zámeckém panství. Druhý dvořan si myslel, že je lepší než ti ostatní a každého, kdo se mu znelíbil, označil za méněcenného.",
+      "link_phrase": "levný byt na panství"
+    },
+    {
+      "text": "Rakušan uvedl, že rádkyně seděla panovníkovi nejblíž a rozhodovala i když panovník zjevně nevěděl o čem.",
+      "source": "steno",
+      "steno_id": "2025_24_00016",
+      "citace": "Třetí, to byla rádkyně, ta seděla panovníkovi úplně nejblíž a rozhodovala o věcech státu i ve chvíli, kdy o tom sám panovník zjevně nevěděl.",
+      "link_phrase": "rádkyně, co rozhoduje i když panovník neví"
+    },
+    {
+      "text": "Rakušan uvedl, že palácová vláda podle Rakušana nesnáší otázky a má ráda loajalitu, mlčení a poslušnost.",
+      "source": "steno",
+      "steno_id": "2025_24_00018",
+      "citace": "Nemá ráda žádné otázky, má ráda loajalitu, mlčení a poslušnost",
+      "link_phrase": "Palácová vláda prý nesnáší otázky"
+    },
+    {
+      "text": "Rakušan uvedl, že schillerová v televizi: ptejte se raději na to, co se nám povedlo.",
+      "source": "steno",
+      "steno_id": "2025_24_00018",
+      "citace": "Ptejte se mě raději na to, co se nám povedlo.",
+      "link_phrase": "Rakušan (STAN) nejdřív pohádku vyprávěl jako alegorii"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 5,
+  "nadpis": "Palácová pohádka",
+  "lead": "Úterý třiadvacátého června, debata o tom, jestli Česká televize a rozhlas budou platit z poplatků, nebo z rozpočtu vlády. Rakušan (STAN) se přihlásil s přednostním právem a začal příběhem skoro pohádkovým:",
+  "pointa": "A pak Rakušan (STAN) pohádku rozbalil jako obžalobu. Panovník je Andrej Babiš (ANO), zavřený ve Strakově akademii. Levný byt na panství? Paní ministryně Mrázová (ANO). Každého méněcenného? Ministr Macinka (Motoristé). Rádkyně, co rozhoduje i když panovník neví o čem? Tünde Bartha z Úřadu vlády. Pohádka prý spíš horor a happyend zatím nevidět. Palácová vláda prý nesnáší otázky, novináře a veřejnoprávní média. Rakušan (STAN) navrhl zařadit do pořadu dva body: plán Babišovy vlády na destrukci ČT a ČRo a papalášské chování kabinetu. Poslanci je zamítli. Pohádka skončila, obstrukce pokračovala.",
+  "mean": "Rakušan (STAN) nejdřív pohádku vyprávěl jako alegorii, hned potom pojmenoval postavy: Babiš (ANO) jako panovník, ministryně Mrázová (ANO) jako dvořan s levným bytem, Macinka (Motoristé) jako ten, kdo dělí lidi na méněcenné, Bartha jako rádkyni u premiéra. Celý projev směřoval proti plánu financovat ČT a ČRo ze státního rozpočtu.",
+  "citace_text": "Byl jeden takový panovník, který žil ve velkém paláci, ale obyčejní lidé se do tohohle…",
+  "citace_autor": "Vít Rakušan (STAN)",
+  "pocet_hlasovani": 0,
+  "proslo": false,
+  "steno_id": "2025_24_00016"
+}

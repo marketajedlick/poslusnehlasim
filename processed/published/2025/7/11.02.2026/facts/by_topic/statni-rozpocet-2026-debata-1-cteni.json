@@ -1,0 +1,38 @@
+{
+  "slug": "statni-rozpocet-2026-debata-1-cteni",
+  "nazev": "Debata o státním rozpočtu 2026 v prvním čtení",
+  "datum": "11.02.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "státním rozpočtu na rok 2026 v prvním čtení",
+  "koho": [
+    "Koho se to týká? Všech. Schodek kolem 310 miliard dělí politiku na dvě poloviny."
+  ],
+  "fakty": [
+    {
+      "text": "Schillerová: po čtyřech letech přichází úplný, pravdivý a reálný rozpočet.",
+      "source": "steno",
+      "steno_id": "2025_7_00247",
+      "citace": "Děkuji za slovo, pane předsedo.",
+      "link_phrase": "Schillerová mluvila o pravdivých číslech"
+    },
+    {
+      "text": "Kupka: rozpočet se schodkem 310 miliard porušuje zákon.",
+      "source": "steno",
+      "steno_id": "2025_7_00251",
+      "citace": "Vážený pane předsedající, vážení členové vlády, milé kolegyně, milí kolegové, Alena Schillerová tady předvedla klasickou figuru, když máte černé svědomí, začněte útočit na všechny ostatní.",
+      "link_phrase": "Kupka"
+    },
+    {
+      "text": "Černochová po dvanácti hodinách jednání konečně dostala slovo k obraně.",
+      "link_phrase": "Černochová po dvanácti hodinách jednání konečně dostala slovo k obraně"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "První kolo rozpočtu",
+  "lead": "Večer sedmé schůze začala maratonská debata o rozpočtu se schodkem 310 miliard. Schillerová mluvila o pravdivých číslech, Kupka o nelegálním schodku.",
+  "pointa": "Dopoledne prošly záchranná smlouva se Slovenskem, závěrečný účet a harmonogram. Odpoledne a večer se sál ponořil do rozpočtu, hlasování mělo přijít až po půlnoci. Černochová po dvanácti hodinách jednání konečně dostala slovo k obraně.",
+  "mean": "První kolo rozpočtu otevírá diskusi o příjmech, výdajích a schodku. Zákon ten den nepadl, šlo o představení parametrů a začátek hádek o každou miliardu.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

@@ -1,0 +1,30 @@
+{
+  "key": "2025/10/03.03.2026",
+  "obdobi": 2025,
+  "schuze": 10,
+  "datum_unl": "03.03.2026",
+  "iso": "2026-03-03",
+  "state": "published",
+  "topic_slugs": [
+    "blizky-vychod-a-porad-10-schuze",
+    "novela-ustav-z-ustava-cr",
+    "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-",
+    "vl-n-z-o-sprave-dat-a-o-rizenem-pristupu-k-datum"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-03-03/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 263,
+    "votes_max_cislo": 263,
+    "steno_count": 1775,
+    "steno_last_poradi": 1775,
+    "topics_built_at": "2026-07-10T17:51:38.114406+00:00",
+    "fingerprint": "de766df145ab219e"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/10/03.03.2026",
+  "supersedes": null
+}

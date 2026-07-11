@@ -120,13 +120,17 @@ def kandidati_z_dne(
     limit: int = 5,
     min_skore: int = 15,
 ) -> list[JazykolamKandidat]:
+    from datetime import datetime
+
+    from svejk.jednaci_den import steno_iso_patří_k_jednacímu_dni
+
+    jednaci_unl = datetime.strptime(iso_date, "%Y-%m-%d").strftime("%d.%m.%Y")
     predsed = detekuj_predsedajici(steno_records)
     cands: list[JazykolamKandidat] = []
     seen: set[str] = set()
 
     for rec in steno_records:
-        datum = (rec.get("datum") or "")[:10]
-        if datum != iso_date:
+        if not steno_iso_patří_k_jednacímu_dni(rec.get("datum") or "", jednaci_unl):
             continue
         if je_organizacni_vstup(rec, predsed_jmena=predsed):
             continue

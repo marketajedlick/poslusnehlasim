@@ -1,0 +1,24 @@
+{
+  "datum": "13.05.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "vl-n-z-verejne-rozpocty-debata-3-cteni"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 0,
+    "end_cas": "09:25",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  },
+  "dnesni_ucet": "Celý den debata o rozpočtových brzdách.\nZávěrečné hlasování až v pátek.",
+  "zaver": "že středa patřila maratonu o rozpočtu v závěrečném hlasování, opozice varovala před zadlužením budoucích generací a večer poslanci schůzi posunuli na pátek.",
+  "vysledek": [
+    "* závěrečné hlasování rozpočtových zákonů od rána do večera",
+    "* Hřib kritizoval Motoristy za podporu Babišovy fiskální politiky",
+    "* večer jednání předsedů klubů o dalším postupu schůze",
+    "* schůze přerušena v 22:27, pokračování v pátek"
+  ]
+}

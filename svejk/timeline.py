@@ -8,6 +8,7 @@ from pathlib import Path
 import re
 
 from psp.schuze import SchuzeAnalyzer, Vote
+from svejk.jednaci_den import jednaci_datum, vote_jednaci_datum
 
 
 @dataclass
@@ -99,8 +100,11 @@ def _years_for_den_v_schuze(paths, d: int, mo: int) -> list[int]:
             datum = (v.get("datum") or "").strip()
             if not datum:
                 continue
+            j = vote_jednaci_datum(v)
+            if not j:
+                continue
             try:
-                parsed = datetime.strptime(datum, "%d.%m.%Y")
+                parsed = datetime.strptime(j, "%d.%m.%Y")
             except ValueError:
                 continue
             if parsed.month == mo and parsed.day == d:
@@ -270,7 +274,11 @@ def _shrnuti_dne(
 
 
 def build_den(votes: list[Vote], datum_unl: str) -> DenSchuze:
-    day_votes = [v for v in votes if v.datum == datum_unl]
+    day_votes = [
+        v
+        for v in votes
+        if jednaci_datum(v.datum, v.cas) == datum_unl
+    ]
     if not day_votes:
         return DenSchuze(datum=datum_unl, den=den_v_tydnu(datum_unl))
 
@@ -465,7 +473,9 @@ def render_fakticke_dny(
     votes = analyzer.load_votes(obdobi, cislo)
     lines: list[str] = []
     for day in dny:
-        day_votes = [v for v in votes if v.datum == day.datum]
+        day_votes = [
+            v for v in votes if jednaci_datum(v.datum, v.cas) == day.datum
+        ]
         lines.append(f"{day.den.capitalize()} {day.datum}:")
         for v in day_votes:
             if v.je_porad_schuze or not v.nazev.strip():
@@ -511,6 +521,9 @@ class SvejkTimelineGenerator:
 
     def for_schuze(self, obdobi: int, cislo_schuze: int) -> SchuzeCasovaOsa:
         votes = self.analyzer.load_votes(obdobi, cislo_schuze)
-        dny = [build_den(votes, d) for d in sorted({v.datum for v in votes})]
+        dny = [
+            build_den(votes, d)
+            for d in sorted({jednaci_datum(v.datum, v.cas) for v in votes})
+        ]
         shrnuti = " ".join(d.shrnuti for d in dny if d.shrnuti)
         return SchuzeCasovaOsa(cislo=cislo_schuze, obdobi=obdobi, dny=dny, shrnuti=shrnuti)

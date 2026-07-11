@@ -1,0 +1,52 @@
+{
+  "slug": "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026",
+  "nazev": "Vl. n. z. o státním rozpočtu ČR na rok 2026",
+  "datum": "26.11.2025",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "o státním rozpočtu ČR na rok 2026",
+  "koho": [
+    "Koho se to týká? Všech. Rozpočet určuje, kolik stát utratí za zdravotnictví, obranu, školství i dávky."
+  ],
+  "fakty": [
+    {
+      "text": "Zbyněk Stanjura hájil rozpočet daty Evropské komise, Schillerová mluvila o opakovaných lžích o stavu země.",
+      "source": "steno",
+      "steno_id": "2025_3_00026",
+      "citace": "stokrát opakovaná lež se nestane pravdou, i kdyby to bylo 101-,102-,105krát řečeno.",
+      "link_phrase": "Stanjura"
+    },
+    {
+      "text": "Stanjura uvedl, že debata o rozpočtu začala ještě před schválením pořadu dne, přestávka od 14 do 15.15 hodin.",
+      "source": "steno",
+      "steno_id": "2025_3_00026",
+      "citace": "rozpočtu už začala před schválením programu, ale to vůbec nevadí.",
+      "link_phrase": "Stanjura"
+    },
+    {
+      "text": "Závěrečné hlasování číslo 8: sto pět pro, šedesát čtyři proti, návrh v prvním čtení prošel.",
+      "source": "votes",
+      "link_phrase": "sto pět pro, šedesát čtyři proti, návrh v prvním čtení prošel"
+    },
+    {
+      "text": "Předtím padly dva návrhy opozice: 67 proti 105 a 39 proti 35 se 80 zdrželými.",
+      "source": "votes",
+      "link_phrase": "67 proti 105 a 39 proti 35 se 80 zdrželými"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Rozpočet na první pokus",
+  "pocet_hlasovani": 4,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 105,
+    "pritomno_min": 180,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 15143,
+  "lead": "Středa patřila maratonu o státním rozpočtu na rok 2026. Od deseti hodin do půlnoci debatovali ministři i opozice, první kolo prošlo sto pěti hlasy proti šedesáti čtyřem.",
+  "pointa": "Schillerová porovnávala schodek 376 miliard z roku 2021 s dnešními čísly, Stanjura odpověděl daty z Bruselu a „stokrát opakovanou lží“. Odcházející Fialova vláda předložila rozpočet v demisi, Babišova vláda ho stejně přepíše, přesto první kolo prošlo 105:64 a dva opoziční návrhy ho chtěly shodit. sto pět pro, šedesát čtyři proti, návrh v prvním čtení prošel. 67 proti 105 a 39 proti 35 se 80 zdrželými.",
+  "mean": "První kolo neukončuje rozpočet, jen ho posílá do výborů k detailnímu projednání. Tentokrát šlo o rozpočet odcházející vlády, kterou stejně nahradí nová koalice s vlastní verzí."
+}

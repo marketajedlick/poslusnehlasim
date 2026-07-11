@@ -1,0 +1,61 @@
+{
+  "slug": "stanovisko-vladni-koalice-ke-sjezdu-sudetonemeck",
+  "nazev": "Stanovisko vládní koalice ke sjezdu Sudetoněmeckého landsmanšaftu v Br",
+  "datum": "14.05.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "stanovisko vládní koalice ke sjezdu Sudetoněmeckého landsmanšaftu v Br",
+  "koho": [
+    "Koho se to týká? Spíš vztahy s Německem. Usnesení odsuzuje sjezd v Brně a odkazuje na česko-německou deklaraci z roku 1997."
+  ],
+  "fakty": [
+    {
+      "text": "Okamura svolal mimořádnou schůzi na žádost padesáti sedmi poslanců.",
+      "source": "steno",
+      "steno_id": "2025_18_00002",
+      "citace": "Vážené paní poslankyně, vážení páni poslanci, vážení členové vlády, zahajuji 18.",
+      "link_phrase": "Okamura svolal mimořádnou schůzi na žádost padesáti sedmi poslanců"
+    },
+    {
+      "text": "Okamura uvedl, že opozice v sále chyběla, Piráti měli transparent o nenávisti a dluzích.",
+      "source": "steno",
+      "steno_id": "2025_18_00002",
+      "citace": "Opoziční poslanci nejsou přítomni.",
+      "link_phrase": "Opozice v sále chyběla,"
+    },
+    {
+      "text": "Šťastný řekl, že sjezd v Brně je politická provokace.",
+      "source": "steno",
+      "steno_id": "2025_18_00006",
+      "citace": "Brně, není nic jiného než politická provokace, kterou bohužel po mnoho hodin ve svých projevech v této Poslanecké sněmovně podporovali opoziční politici.",
+      "link_phrase": "sjezd v Brně"
+    },
+    {
+      "text": "Rajchl přečetl prohlášení spolku Lidice Memory proti sjezdu.",
+      "source": "steno",
+      "steno_id": "2025_18_00010",
+      "citace": "Zásadně odmítáme, aby se tato akce konala na území České republiky.",
+      "link_phrase": "Rajchl"
+    },
+    {
+      "text": "Finální hlasování číslo 4 ve 14:24, sedmdesát tři hlasů pro, nikdo proti.",
+      "source": "votes",
+      "link_phrase": "sedmdesát tři hlasy a nikdo proti"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Sjezd v Brně došel až do noci",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 77,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 6096,
+  "lead": "Ve čtvrtek odpoledne koalice na mimořádné schůzi schválila usnesení proti sjezdu Sudetoněmeckého landsmanšaftu v Brně, sedmdesát tři hlasy a nikdo proti. Opozice v sále chyběla, text navazuje na hlasování 109:1 ze šestnácté schůze 6. května.",
+  "pointa": "Malá mluvila o starých ranách a deklaraci z roku 1997, Rajchl citoval pozůstalé z Lidic. Šafránková řekla, že o opozičních návrzích usnesení kvůli nepřítomnosti nešlo hlasovat. Okamura svolal mimořádnou schůzi na žádost padesáti sedmi poslanců. Finální",
+  "mean": "Sněmovna oficiálně odsoudila sjezd v Brně a vyzývá organizátory, aby akci zrušili. Jde o politické usnesení bez přímého dopadu na práva občanů."
+}

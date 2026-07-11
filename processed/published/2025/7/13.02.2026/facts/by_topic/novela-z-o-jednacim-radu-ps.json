@@ -1,0 +1,43 @@
+{
+  "slug": "novela-z-o-jednacim-radu-ps",
+  "nazev": "Novela z. o jednacím řádu PS",
+  "datum": "13.02.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "jednacím řádu PS",
+  "koho": [
+    "Koho se to týká? Spíš politiku a televizní přenosy. Mění pravidla debaty, faktických poznámek a přednostních práv v sněmovně."
+  ],
+  "fakty": [
+    {
+      "text": "Vondráček: Na tom, jak se tady k sobě budeme chovat, novela jednacího řádu nezmění vůbec nic. Vzájemnému respektu nás nenaučí.",
+      "citace": "novela jednacího řádu nezmění vůbec nic.",
+      "steno_id": "2025_7_00068",
+      "source": "steno",
+      "link_phrase": "Vondráček řekl"
+    },
+    {
+      "text": "Nikdo ty faktické poznámky v takovéto debatě omezovat nebude. Ten jednací řád přijímáme a snažíme se ucpat díru, protože faktické poznámky bývají obstrukčně zneužívány.",
+      "link_phrase": "Nikdo ty faktické poznámky v takovéto debatě omezovat nebude"
+    },
+    {
+      "text": "Hlasování číslo 90, hlasovalo 138 poslanců, pro 57, proti 77. Návrh na prodloužení lhůt nebyl přijat.",
+      "link_phrase": "57 proti 77"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Pravidla hry v sále",
+  "pocet_hlasovani": 4,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 77,
+    "pritomno_min": 137,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 41789,
+  "lead": "Koaliční změna jednacího řádu přežila první kolo a teď čeká kolečko po výborech. Opozice chtěla o dvacet dní delší lhůtu, 57 proti 77 neprošlo.",
+  "pointa": "Debata začala už v úterý při boji o pořad sedmé schůze. Vondráček řekl, že rozprava byla vzorová, Richterová varovala před omezením faktických poznámek, které už při rozjezdu sněmovny kritizovala. Nikdo ty faktické poznámky v takovéto debatě omezovat nebude.",
+  "mean": "Jde o to, kdo a jak dlouho smí mluvit ve sněmovně. Koalice chce omezit obstrukce, opozice se bojí, že většina si pravidla ohně podle sebe. Zákon v prvním kole prošel, detaily se řeší ve výborech."
+}

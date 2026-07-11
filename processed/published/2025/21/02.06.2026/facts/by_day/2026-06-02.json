@@ -1,0 +1,27 @@
+{
+  "datum": "02.06.2026",
+  "den": "úterý",
+  "topic_slugs": [
+    "novela-z-o-statni-socialni-podpore",
+    "novela-z-o-sprave-voleb",
+    "n-z-kterym-se-meni-nektere-zakony-na-useku-vnitr"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 3,
+    "minuty": 210,
+    "end_cas": "17:35",
+    "proslo": 3,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
+  "dnesni_ucet": "Mimořádná schůze: rodičovský příspěvek, volby s QR kódem a Česká pošta.\nTři zákony za tři a půl hodiny, proti skoro nikdo.",
+  "zaver": "že mimořádné úterý dalo rodičům naději na čtyři sta tisíc, nevidomým voličům rovnou schválilo QR kódy na lístcích, poštu poslalo do výboru, a sotva došel program, strhla se hádka, kdo víc obstruuje.",
+  "vysledek": [
+    "* vyšší rodičovský příspěvek poslán do výboru: sto padesát čtyři pro, nikdo proti",
+    "* volby s QR kódem pro nevidomé schváleny rovnou v prvním kole, všech sto padesát pět pro",
+    "* pošta a odklady digitalizace do výboru; spadl jen Bendův nápad na výbor navíc",
+    "* pořad schůze jako jediný rozdělil sál: osmdesát pět pro, čtyřicet osm proti",
+    "* nový poslanec Forman složil slib; po vyčerpání programu hádka o obstrukce a bušení do lavic"
+  ]
+}

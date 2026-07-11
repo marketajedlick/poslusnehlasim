@@ -1,0 +1,48 @@
+{
+  "slug": "novela-z-o-socialnich-sluzbach",
+  "nazev": "Novela z. o sociálních službách",
+  "datum": "06.05.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "sociálních službách",
+  "koho": [
+    "Koho se to týká? Lidi se zdravotním postižením a rodiny, které řeší péči, průkaz OZP nebo příspěvek na péči."
+  ],
+  "fakty": [
+    {
+      "text": "Hendrych uvedl, že juchelka už v dubnu navrhoval posunout převod kompetencí z Úřadu práce na ÚSSZ na červen 2028.",
+      "source": "steno",
+      "note": "citace z 14. schůze (22. 4.), steno 2025_14_01093",
+      "citace": "na územní správy sociálního zabezpečení...",
+      "steno_id": "2025_16_00509",
+      "link_phrase": "z Úřadu práce na"
+    },
+    {
+      "text": "Hlasování číslo 70, sto jedenáct hlasů pro.",
+      "source": "votes",
+      "link_phrase": "sto jedenáct hlasů"
+    },
+    {
+      "text": "7.Návrh poslanců Aleše Juchelky a Jany Pastuchové na vydání zákona, kterým se mění zákon č.",
+      "source": "steno",
+      "steno_id": "2025_16_00508",
+      "citace": "Jany Pastuchové na vydání zákona, kterým se mění zákon č.",
+      "link_phrase": "7.Návrh poslanců Aleše Juchelky a Jany Pastuchové na vydání zákona,"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Péče zůstane na ÚP déle",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 112,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 5245,
+  "lead": "Kolem desáté večer schválili změnu sociálních služeb, sto jedenáct hlasů proti nule. Převod péče pro hendikepované z Úřadu práce na sociální správu se posouvá na rok 2028. Závěrečné hlasování přijde na mimořádné schůzi 15. května.",
+  "pointa": "Jde o navazující změnu k reformě sociálních dávek. Tentokrát prošla až po celodenní blokaci kvůli sudetoněmeckému sjezdu. 7.Návrh poslanců Aleše Juchelky a Jany Pastuchové na vydání zákona,.",
+  "mean": "Lidé s průkazem OZP a příspěvkem na péči zatím zůstanou na Úřadu práce. Velký přesun přijde až za dva roky."
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "debata-bydleni-endal-07-07",
+  "nazev": "Bydlení a smrt náměstka Endala",
+  "datum": "07.07.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "návrh zařadit dostupné bydlení jako první bod večerní schůze",
+  "koho": [
+    "Koho se to týká? Každého, kdo hledá bydlení a čekal, že stát do podpory zase něco dá ze svého."
+  ],
+  "fakty": [
+    {
+      "text": "Niemiec chtěl bydlení jako první bod.",
+      "source": "steno",
+      "steno_id": "2025_24_02183",
+      "citace": "navrhnout zařadit bod, dostupné bydlení a úplně na počátek",
+      "link_phrase": "Niemiec (STAN) navrhl zařadit dostupné bydlení"
+    },
+    {
+      "text": "Endal zemřel v den plánované schůzky o bydlení.",
+      "source": "steno",
+      "steno_id": "2025_24_02183",
+      "citace": "pan náměstek Filip Endal dneska zemřel",
+      "link_phrase": "náměstek Filip Endal ten den zemřel"
+    },
+    {
+      "text": "Niemiec: stát do bydlení z národních peněz skoro nic nedává.",
+      "source": "steno",
+      "steno_id": "2025_24_02183",
+      "citace": "stát poprvé po více než 25 letech fakticky do přímé podpory bydlení z národních prostředků nedává skoro žádné zdroje",
+      "link_phrase": "stát do podpory bydlení z národních peněz skoro nic nedává"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 5,
+  "nadpis": "Bydlení a smrt náměstka",
+  "lead": "Poslušně hlásím, že úterý večer chtěl poslanec Niemiec (STAN) dostat na začátek schůze bod o dostupném bydlení. Nejdřív ale musel říct, proč ho téma zasáhlo víc než obvykle.",
+  "pointa": "Niemiec (STAN) navrhl zařadit dostupné bydlení jako první bod a připomněl, že náměstek Filip Endal ten den zemřel právě před plánovanou schůzkou o bydlení. Poslušně podotýkám, že podle něj stát do podpory bydlení z národních peněz skoro nic nedává už víc než pětadvacet let a spoléhá hlavně na dočasné evropské dotace.",
+  "mean": "Bydlení chtěl někdo dát na začátek programu. Smrt náměstka Endala ten večer připomněla, že debaty o bytech nejsou abstraktní.",
+  "citace_text": "pan náměstek Filip Endal dneska zemřel",
+  "citace_autor": "Bohuslav Niemiec (STAN)",
+  "steno_id": "2025_24_02183",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

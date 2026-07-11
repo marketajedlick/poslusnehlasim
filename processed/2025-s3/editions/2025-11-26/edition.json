@@ -1,0 +1,28 @@
+{
+  "key": "2025/3/26.11.2025",
+  "obdobi": 2025,
+  "schuze": 3,
+  "datum_unl": "26.11.2025",
+  "iso": "2025-11-26",
+  "state": "published",
+  "topic_slugs": [
+    "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026",
+    "novela-z-o-sbirce-zakonu-a-mezinarodnich-smluv"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2025-11-26/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 18,
+    "votes_max_cislo": 18,
+    "steno_count": 327,
+    "steno_last_poradi": 327,
+    "topics_built_at": "2026-07-10T17:51:38.107292+00:00",
+    "fingerprint": "102eab5b3776b631"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/3/26.11.2025",
+  "supersedes": null
+}

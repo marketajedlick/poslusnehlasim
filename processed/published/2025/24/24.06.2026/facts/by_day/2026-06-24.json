@@ -1,0 +1,27 @@
+{
+  "datum": "24.06.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "debata-sluzebni-zakon-richterova-rakusan",
+    "novela-z-o-nekt-opatr-v-souv-s-ozbrojenym-konfli"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 5,
+    "minuty": 525,
+    "end_cas": "18:00",
+    "proslo": 3,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": false
+  },
+  "dnesni_ucet": "Dopoledne debata o služebním zákonu,\nodpoledne Lex Ukrajina, novina o Pavlovi.",
+  "zaver": "že ve středu Richterová (Piráti) chtěla jeden bod v pořadu schůze, místo úředního názvu přejmenovat na Zákon na snazší vyhazování expertů, a odpoledne poslanec místo reakce na řečníka přečetl novinu o Pavlovi a summitu NATO, Lex Ukrajina prošel druhým kolem.",
+  "vysledek": [
+    "* Richterová (Piráti) chtěla v pořadu bod „Zákon na snazší vyhazování expertů“, poslanci zamítli",
+    "* Rakušan (STAN) slíbil, že nebude obzvlášť dlouhý projev, ve středu se o služebním zákonu jen debatovalo",
+    "* u Lex Ukrajina poslanci zvolili Langa zpravodajem, proti třicet jedna",
+    "* Pláteník ve faktické citoval ČTK, Peštová (ANO) protestovala",
+    "* bezpečnostní novela prošla druhým kolem"
+  ]
+}

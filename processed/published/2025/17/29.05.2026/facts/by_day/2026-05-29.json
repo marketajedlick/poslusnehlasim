@@ -1,0 +1,26 @@
+{
+  "datum": "29.05.2026",
+  "den": "pátek",
+  "topic_slugs": [
+    "novela-z-o-podpore-bydleni-debata-3-cteni"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 301,
+    "end_cas": "14:11",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
+  "dnesni_ucet": "Sedmnáctá schůze: bydlení bez finále.\nParalelně dvacátá schůze jen schválila pořad.",
+  "zaver": "že pátek ráno Sněmovna nerozhodla o podpoře bydlení, čtyři návrhy padly a schůzi posunuli na třetí června.",
+  "vysledek": [
+    "* závěrečné hlasování o zákonu o podpoře bydlení bez finálního hlasování",
+    "* Hřib navrhl odložit bod o rok, návrh o pořadu neprošel",
+    "* čtyři hlasování o pozměňovacích návrzích zamítnuto",
+    "* schůze přerušena na 3. 6. v 14:11"
+  ],
+  "proslo": 0,
+  "zamitnuto": 0
+}

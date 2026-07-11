@@ -1,0 +1,27 @@
+{
+  "key": "2025/14/21.04.2026",
+  "obdobi": 2025,
+  "schuze": 14,
+  "datum_unl": "21.04.2026",
+  "iso": "2026-04-21",
+  "state": "published",
+  "topic_slugs": [
+    "novela-z-trestni-zakonik"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-04-21/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 194,
+    "votes_max_cislo": 194,
+    "steno_count": 1635,
+    "steno_last_poradi": 1635,
+    "topics_built_at": "2026-07-10T17:51:38.120260+00:00",
+    "fingerprint": "b1818daeeb5cc116"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/14/21.04.2026",
+  "supersedes": null
+}

@@ -1,0 +1,38 @@
+{
+  "slug": "porad-14-schuze",
+  "nazev": "Boj o pořad čtrnácté schůze",
+  "datum": "14.04.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "pořadu čtrnácté schůze před zákonem o cenách pohonných hmot",
+  "koho": [
+    "Koho se to týká? Spíš pozorovatele politiky. Jde o to, co se kdy projedná, ne o zákon pro občany."
+  ],
+  "fakty": [
+    {
+      "text": "Kupka chtěl zařadit střet zájmů Babiše, návrh padl 54:84.",
+      "link_phrase": "střet zájmů Babiše,"
+    },
+    {
+      "text": "Bureš prosadil zrušení zákona o prodejní době na páteční schůzi.",
+      "link_phrase": "Bureš prosadil zrušení zákona o prodejní době na páteční schůzi"
+    },
+    {
+      "text": "Pořad schválen až po čtyřiceti čtyřech hlasováních o změnách.",
+      "source": "votes",
+      "link_phrase": "Pořad schválen až po čtyřiceti čtyřech hlasováních o změnách"
+    },
+    {
+      "text": "Večer schváleno zkrácené jednání zákona o cenách 79:51.",
+      "source": "votes",
+      "link_phrase": "Večer schváleno zkrácené jednání zákona o cenách 79:51"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Pořad před půlnocí",
+  "lead": "Úterý čtrnácté schůze začalo zrychleným projednáváním kvůli cenám benzínu, večer ale patřilo tabuli. Čtyřicet čtyři hlasování o tom, co se kdy projedná, oddálilo zákony až na pozdní hodinu.",
+  "pointa": "Kupka chtěl střet zájmů Babiše, Bureš prosadil konec nočního zákazu prodeje na pátek. Teprve ve 20:17 schválili zkrácenou debatu o cenách benzínu a v 23:22 padl pokus o druhé kolo. Bureš prosadil zrušení zákona o prodejní době na páteční schůzi. Pořad schválen až po čtyřiceti čtyřech hlasováních o změnách. Večer schváleno zkrácené jednání zákona o cenách 79:51.",
+  "mean": "Sněmovna si nejdřív musela dohodnout pořad. Hodiny hlasování o pořadu oddálily zákon o regulaci cen benzínu a nafty až na noc.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "novela-z-o-zdrav-prostr-a-diagnostickych-zdrav-p",
+  "nazev": "Novela z. o zdrav. prostř. a diagnostických zdrav. prostř. in vitro -",
+  "datum": "26.05.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "hlášení nedostatku zkumavek v nemocnicích",
+  "koho": [
+    "Koho se to týká? Lidí, co chodí na odběry a testy v nemocnici, a personálu v laboratořích."
+  ],
+  "fakty": [
+    {
+      "text": "Výrobci budou muset předem hlásit, když přestanou dodávat prostředek, jehož výpadek by mohl ohrozit péči; hlásí to úřadům i nemocnicím, kterým dodávají.",
+      "link_phrase": "budou muset předem hlásit, když přestanou dodávat"
+    },
+    {
+      "text": "Sněmovna přijala verzi, kterou jí vrátil Senát: 153 pro, 1 proti.",
+      "link_phrase": "153 pro, 1 proti"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Zkumavky budou pod dohledem",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 1,
+    "pritomno_min": 175,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 141,
+  "lead": "Výrobci zdravotnických pomůcek a testovacích souprav budou muset předem hlásit, když přestanou dodávat něco, bez čeho se nemocnice neobejde. Prošla senátní verze, 153 hlasů proti jednomu.",
+  "pointa": "Papírová úprava bez debaty: laboratoře mají dostávat včasné varování před výpadky materiálu, ne novou byrokracii pro pacienty. 153 pro, 1 proti.",
+  "mean": "Když začnou docházet testovací soupravy nebo jiný materiál, laboratoře a úřady se to dozvědí dřív, než dojde úplně. Pro pacienta to znamená menší riziko zrušených odběrů; jinak to doma nepoznáte."
+}

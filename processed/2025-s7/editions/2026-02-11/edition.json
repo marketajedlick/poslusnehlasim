@@ -1,0 +1,31 @@
+{
+  "key": "2025/7/11.02.2026",
+  "obdobi": 2025,
+  "schuze": 7,
+  "datum_unl": "11.02.2026",
+  "iso": "2026-02-11",
+  "state": "published",
+  "topic_slugs": [
+    "sml-mezi-cr-a-sr-o-preshranicni-spol-v-oblasti-z",
+    "navrh-statniho-zaverecneho-uctu-ceske-republiky-",
+    "navrh-casoveho-harmonogramu-projednavani-zakona-",
+    "statni-rozpocet-2026-debata-1-cteni",
+    "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-02-11/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 91,
+    "votes_max_cislo": 91,
+    "steno_count": 980,
+    "steno_last_poradi": 980,
+    "topics_built_at": "2026-07-10T17:50:29.405293+00:00",
+    "fingerprint": "2f2c9649f7b730f5"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/7/11.02.2026",
+  "supersedes": null
+}

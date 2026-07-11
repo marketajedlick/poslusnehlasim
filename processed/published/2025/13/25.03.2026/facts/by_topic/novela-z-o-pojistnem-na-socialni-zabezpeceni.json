@@ -1,0 +1,54 @@
+{
+  "slug": "novela-z-o-pojistnem-na-socialni-zabezpeceni",
+  "nazev": "Novela z. o pojistném na sociální zabezpečení",
+  "datum": "25.03.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky",
+  "koho": [
+    "Koho se to týká? Živnostníků a OSVČ na hlavní činnost. Minimální záloha klesne z 40 na 35 procent průměrné mzdy, úspora zhruba sedm set korun měsíčně."
+  ],
+  "fakty": [
+    {
+      "text": "Juchelka uvedl, že od ledna 2026 vzrostl minimální vyměřovací základ OSVČ na 40 procent průměrné mzdy.",
+      "source": "steno",
+      "steno_id": "2025_13_00202",
+      "citace": "Děkuji, vážený pane předsedo.",
+      "link_phrase": "Juchelka"
+    },
+    {
+      "text": "Juchelka uvedl, že návrh vrací základ na úroveň roku 2025, tedy na 35 procent.",
+      "citace": "Děkuji, vážený pane předsedo."
+    },
+    {
+      "text": "Barták uvedl, že první hlasování o zákonu bylo zmatečné, předsedající nepřečetl celé usnesení.",
+      "source": "steno",
+      "steno_id": "2025_13_00303",
+      "citace": "pánové, já musím prohlásit to předchozí hlasování jako zmatečné, protože je povinností, abych vám přečetl celý návrh usnesení.",
+      "link_phrase": "První hlasování o zákonu bylo zmatečné, předsedající nepřečetl celé usnesení"
+    },
+    {
+      "text": "Hlasování číslo 80, pro 112, proti 9, zákon schválen.",
+      "link_phrase": "sto dvanáct hlasů pro"
+    },
+    {
+      "text": "Doplňující usnesení k nízkým důchodům OSVČ padlo 81:3.",
+      "link_phrase": "Doplňující usnesení k nízkým důchodům OSVČ padlo 81:3"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Živnostníkům klesnou odvody",
+  "pocet_hlasovani": 12,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 108,
+    "pritomno_min": 104,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 18364,
+  "lead": "Sněmovna v závěrečném hlasování schválila snížení minimálních sociálních záloh pro živnostníky, sto dvanáct hlasů pro. Předtím předsedající prohlásil první hlasování za zmatečné.",
+  "pointa": "Juchelka chtěl vrátit základ z 40 na 35 procent průměrné mzdy. Doplňující usnesení o nízkých důchodech OSVČ pak padlo, protože na ně nebylo dost hlasů. První hlasování o zákonu bylo zmatečné, předsedající nepřečetl celé usnesení. Doplňující usnesení k nízkým důchodům OSVČ padlo 81:3.",
+  "mean": "Živnostníci na hlavní činnost zaplatí nižší minimální zálohu na sociálním pojištění, úspora je zhruba sedm set korun měsíčně. Zaměstnance na výplatní pásce se to netýká."
+}

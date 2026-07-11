@@ -1,0 +1,28 @@
+{
+  "key": "2025/19/15.05.2026",
+  "obdobi": 2025,
+  "schuze": 19,
+  "datum_unl": "15.05.2026",
+  "iso": "2026-05-15",
+  "state": "published",
+  "topic_slugs": [
+    "novela-z-o-statni-socialni-podpore",
+    "novela-z-o-socialnich-sluzbach"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-05-15/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 14,
+    "votes_max_cislo": 14,
+    "steno_count": 66,
+    "steno_last_poradi": 66,
+    "topics_built_at": "2026-07-10T17:50:29.465159+00:00",
+    "fingerprint": "56a4f1be877474a9"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/19/15.05.2026",
+  "supersedes": null
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "novela-z-o-doplnkovem-penzijnim-sporeni",
+  "nazev": "Novela z. o doplňkovém penzijním spoření",
+  "datum": "27.05.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "doplňkovém penzijním spoření",
+  "koho": [
+    "Koho se to týká? Seniorů, kterým stát od července 2024 přestal přispívat na penzijní spoření, ale nepustil je ze smlouvy bez sankce."
+  ],
+  "fakty": [
+    {
+      "text": "Schillerová uvedl, že senioři s přiznaným důchodem budou moci ze spoření odejít bez sankce a kdo už odešel a přišel o příspěvky, dostane je zpět; stát to má stát zhruba 60 milionů korun.",
+      "source": "steno",
+      "steno_id": "2025_20_00221",
+      "citace": "Děkuji za slovo, pane předsedo.",
+      "link_phrase": "zhruba 60 milionů"
+    },
+    {
+      "text": "Tři úpravy od Pirátek spadly pod stůl, samotný zákon pak prošel 136:7.",
+      "source": "votes",
+      "link_phrase": "Tři úpravy od Pirátek spadly pod stůl, samotný zákon pak"
+    },
+    {
+      "text": "Poslankyně Schillerová mimo mikrofon: Můžu i v rozpravě?",
+      "kind": "scene",
+      "citace": "Poslankyně Schillerová mimo mikrofon: Můžu i v rozpravě?) Ano, s přednostním právem byste byla první i v rozpravě.",
+      "link_phrase": "Můžu i v rozpravě?"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Seniorům vrátí příspěvky na spoření",
+  "pocet_hlasovani": 4,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 88,
+    "pritomno_min": 152,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 7171,
+  "lead": "Senioři, kterým stát v roce 2024 přestal posílat státní příspěvek na penzijní spoření, budou moci odejít bez pokuty a vrácené peníze dostanou zpět. Prošlo to 136:7, tři pirátské úpravy předtím spadly pod stůl.",
+  "pointa": "Stát si na opravu dá zhruba 60 milionů korun; Piráti chtěli ještě víc, ale jejich tři pozměňovací návrhy před finálem spadly. Tři úpravy od Pirátek spadly pod stůl, samotný zákon pak. Můžu i v rozpravě?.",
+  "mean": "Kdo je v důchodu a zůstal ve spoření bez státního příspěvku, bude moci smlouvu opustit bez sankce; komu už peníze strhli, stát mu je vrátí. Účet pro rozpočet:"
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-",
+  "nazev": "Vl.n.z., kt. se mění některé z. v oblasti veřejných rozpočtů",
+  "datum": "15.04.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": ", kt. se mění některé z. v oblasti veřejných rozpočtů",
+  "koho": [
+    "Koho se to týká? Daňové poplatníky. Zákon určuje, kolik může stát utratit a jaké výjimky platí pro obranu či velké stavby."
+  ],
+  "fakty": [
+    {
+      "text": "Počátek roku ve sněmovně patřil nutnosti zreálnit rozpočet na 2026.",
+      "link_phrase": "Počátek roku ve sněmovně patřil nutnosti zreálnit rozpočet na 2026"
+    },
+    {
+      "text": "Opoziční pozměňovací návrh padl 66:88.",
+      "source": "votes",
+      "link_phrase": "Opoziční pozměňovací návrh"
+    },
+    {
+      "text": "Druhé čtení vládní novely prošlo 93:50.",
+      "source": "votes",
+      "link_phrase": "Druhé čtení vládní novely prošlo 93:50"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Pravidla výdajů prošla",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 88,
+    "pritomno_min": 143,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 29090,
+  "lead": "Odpoledne středy schválili druhé kolo změny rozpočtových zákonů, devadesát tři proti padesáti. Opoziční pozměňovací návrh předtím padl.",
+  "pointa": "Zákon ladí limity státních výdajů a výjimky pro obranu či velké investice. Debata navazovala na zreálnění rozpočtu na rok 2026. Počátek roku ve sněmovně patřil nutnosti zreálnit rozpočet na 2026. Druhé čtení vládní novely prošlo 93:50.",
+  "mean": "Změna zákona upravuje pravidla, kolik může stát utratit a za jakých podmínek. Dotkne se velkých investic i výdajů na obranu."
+}

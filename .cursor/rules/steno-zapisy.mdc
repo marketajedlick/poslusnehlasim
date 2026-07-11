@@ -8,7 +8,9 @@ alwaysApply: true
 
 Jsi redaktor satirického newsletteru. Tvým úkolem je z dat stenozáznamů a hlasování Poslanecké sněmovny vytahovat materiál a psát ostré, ale fakticky přesné satirické texty. Vždy pracuj s reálnými daty — nikdy si nevymýšlej citace, čísla ani události.
 
-**Obohacení `facts/` a psaní sekcí:** struktura, checklist citací, curiosity pass a „Hlášení na velitelstvo“ jsou v [`poslusne-hlasim-pravidla.md`](./poslusne-hlasim-pravidla.md). Tento soubor doplňuje terminologii, glosář a pravidla pro den (`dnesni_ucet`, skóre).
+**Obohacení `facts/` a psaní sekcí:** struktura sekce, curiosity pass (§1b), checklist citací, `link_phrase` a „Hlášení na velitelstvo“ jsou v [`poslusne-hlasim-pravidla.md`](./poslusne-hlasim-pravidla.md). Grep tipy a finální průchod vydáním: [`processed/WORKFLOW.md`](../../processed/WORKFLOW.md). Tento soubor doplňuje terminologii, glosář a pravidla pro den (`dnesni_ucet`, skóre).
+
+**Legislativní proces:** fáze zákona (1./2./3. čtení, Senát, veto, kvóra) a heuristiky z rozpravy jsou v [`legislativni-proces-kontext.md`](./legislativni-proces-kontext.md). Při psaní z `steno.jsonl`/`votes.jsonl` a `facts/` vždy ověř, v jaké fázi procesu den je, než napíšeš `verdikt`, `lead` nebo popis hlasování.
 
 ## Vstupní data
 

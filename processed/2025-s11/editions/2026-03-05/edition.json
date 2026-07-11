@@ -1,0 +1,28 @@
+{
+  "key": "2025/11/05.03.2026",
+  "obdobi": 2025,
+  "schuze": 11,
+  "datum_unl": "05.03.2026",
+  "iso": "2026-03-05",
+  "state": "published",
+  "topic_slugs": [
+    "zadost-o-udeleni-souhlasu-s-trestnim-stihanim-po",
+    "zadost-o-udeleni-souhlasu-s-trestnim-stihanim-po-2"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-03-05/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 9,
+    "votes_max_cislo": 9,
+    "steno_count": 212,
+    "steno_last_poradi": 212,
+    "topics_built_at": "2026-07-10T17:51:38.114851+00:00",
+    "fingerprint": "4d3d16c10d4c1a0d"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/11/05.03.2026",
+  "supersedes": null
+}

@@ -1,0 +1,29 @@
+{
+  "key": "2025/4/27.11.2025",
+  "obdobi": 2025,
+  "schuze": 4,
+  "datum_unl": "27.11.2025",
+  "iso": "2025-11-27",
+  "state": "published",
+  "topic_slugs": [
+    "babis-projev-4-schuze",
+    "transparent-v-jednacim-sale",
+    "opozice-stret-zajmu-agrofert"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2025-11-27/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 1,
+    "votes_max_cislo": 1,
+    "steno_count": 32,
+    "steno_last_poradi": 32,
+    "topics_built_at": "2026-06-15T04:22:59.794845+00:00",
+    "fingerprint": "2380f1ff9e3fe1b3"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/4/27.11.2025",
+  "supersedes": null
+}

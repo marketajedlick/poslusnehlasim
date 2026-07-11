@@ -1,0 +1,43 @@
+{
+  "slug": "novela-z-o-zdrav-prostr-a-diagnostickych-zdrav-p",
+  "nazev": "Novela z. o zdrav. prostř. a diagnostických zdrav. prostř. in vitro -",
+  "datum": "24.03.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "hlášení nedostatku zkumavek v nemocnicích",
+  "koho": [
+    "Koho se to týká? Nemocnic a laboratoří spíš než pacientů doma. Výrobci musí hlásit, když dochází soupravy na odběry."
+  ],
+  "fakty": [
+    {
+      "text": "Vojtěch uvedl, že návrh adaptuje nařízení EU 2024/1860 o dostupnosti zdravotnických prostředků.",
+      "source": "steno",
+      "steno_id": "2025_13_00146",
+      "citace": "Děkuji za slovo, vážený pane předsedající.",
+      "link_phrase": "Návrh adaptuje nařízení EU 2024/1860 o dostupnosti zdravotnických prostředků"
+    },
+    {
+      "text": "Hlasování číslo 52, pro 111, návrh na pokračování v prvním čtení schválen.",
+      "link_phrase": "sto třináct hlasů pro, nikdo proti"
+    },
+    {
+      "text": "Hlasování číslo 53, pro 113, zákon schválen v prvním čtení.",
+      "link_phrase": "sto třináct hlasů pro, nikdo proti"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Zkumavky budou pod dohledem",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 168,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 14227,
+  "lead": "Sněmovna schválila v prvním kole pravidla pro hlášení nedostatku laboratorních souprav, sto třináct hlasů pro, nikdo proti. Obecná rozprava proběhla bez řečníků.",
+  "pointa": "Jde o implementaci EU nařízení, aby nemocnice věděly dopředu, že dochází zkumavky na odběry. Návrh adaptuje nařízení EU 2024/1860 o dostupnosti zdravotnických prostředků.",
+  "mean": "Výrobci budou muset hlásit nedostatek diagnostických prostředků. Na běžného pacienta to dopadne spíš nepřímo, přes kratší čekání na výsledky v nemocnici."
+}

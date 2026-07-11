@@ -860,6 +860,10 @@ def main() -> int:
     p_gloss.add_argument("-o", "--out", type=Path, help="Uložit report")
     p_gloss.set_defaults(func=cmd_glossary_audit)
 
+    from svejk.edition.commands import register_edition_parser
+
+    register_edition_parser(sub)
+
     args = parser.parse_args()
     return args.func(args)
 

@@ -1,0 +1,29 @@
+{
+  "key": "2025/13/25.03.2026",
+  "obdobi": 2025,
+  "schuze": 13,
+  "datum_unl": "25.03.2026",
+  "iso": "2026-03-25",
+  "state": "published",
+  "topic_slugs": [
+    "novela-z-o-pojistnem-na-socialni-zabezpeceni",
+    "novela-z-o-pojistnem-na-verejne-zdravotni-pojist",
+    "navrh-na-zrizeni-vysetrovaci-komise-poslanecke-s"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-03-25/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 111,
+    "votes_max_cislo": 111,
+    "steno_count": 597,
+    "steno_last_poradi": 597,
+    "topics_built_at": "2026-07-10T17:51:38.118530+00:00",
+    "fingerprint": "939c69135f29fb3d"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/13/25.03.2026",
+  "supersedes": null
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "novela-z-o-podpore-bydleni-debata-3-cteni",
+  "nazev": "Debata o podpoře bydlení ve třetím čtení",
+  "datum": "29.05.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "třetím čtení novely zákona o podpoře bydlení",
+  "koho": [
+    "Koho se to týká? Lidi v bytové nouzi, mladé rodiny a obce. Novela upravuje kontaktní místa pro bydlení a podpůrná opatření."
+  ],
+  "fakty": [
+    {
+      "text": "Hřib hned na začátku navrhl odložit bod o rok, hlasování padlo.",
+      "link_phrase": "Hřib hned na začátku navrhl odložit bod o rok, hlasování"
+    },
+    {
+      "text": "Hřib řekl, že vláda vyškrtává definici dostupného bydlení.",
+      "link_phrase": "Hřib řekl, že vláda vyškrtává definici dostupného bydlení"
+    },
+    {
+      "text": "Čtyři ranní hlasování o pozměňovacích návrzích padla nejblíže devětadvacet proti sedmdesáti jedné.",
+      "source": "votes",
+      "link_phrase": "hlasování o pozměňovacích návrzích padla"
+    },
+    {
+      "text": "Skopeček uvedl, že ve čtrnáct hodin jedenáct minut schůze přerušena na třetí června.",
+      "source": "steno",
+      "steno_id": "2025_17_00668",
+      "citace": "návrh na přerušení 17.",
+      "link_phrase": "Ve čtrnáct hodin jedenáct minut schůze přerušena na třetí června"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Bydlení bez finále",
+  "lead": "V pátek ráno Sněmovna začala závěrečné hlasování o zákonu o podpoře bydlení, ale čtyři hlasování o pozměňovacích návrzích padla a schůze byla přerušena do třetího června.",
+  "pointa": "Hřib mluvil o hazardu s budoucností bydlení a chtěl bod odložit o rok. Koalice návrh o pořadu neprosadila, závěrečné hlasování o zákonu přišlo až ve středu. Hřib hned na začátku navrhl odložit bod o rok, hlasování. Hřib řekl, že vláda vyškrtává definici dostupného bydlení. Ve čtrnáct hodin jedenáct minut schůze přerušena na třetí června.",
+  "mean": "Změna zákona upravuje systém podpory v bydlení a práci kontaktních míst obcí. V pátek se nestihlo rozhodnout o celém zákoně, debata pokračovala ve středu 3. června.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

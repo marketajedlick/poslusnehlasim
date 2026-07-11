@@ -1,0 +1,57 @@
+{
+  "key": "2025/24/07.07.2026",
+  "obdobi": 2025,
+  "schuze": 24,
+  "datum_unl": "07.07.2026",
+  "iso": "2026-07-07",
+  "state": "approved",
+  "topic_slugs": [
+    "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-"
+  ],
+  "recommended_slugs": [
+    "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-"
+  ],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-07-07/brief.md",
+  "feedback": [
+    {
+      "at": "2026-07-11T09:42:07.260362+00:00",
+      "field": "",
+      "note": "méně úřednicky"
+    }
+  ],
+  "metrics": {
+    "state": "draft",
+    "stale": false,
+    "link_phrase_coverage": {
+      "total": 22,
+      "linked": 22,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 22,
+      "ok": 21,
+      "percent": 95.5,
+      "bad": [
+        "debata-lidska-prava-stafaz-07-07[0]"
+      ]
+    },
+    "generic_topic_count": 0,
+    "steno_passages": 22,
+    "steno_missing_article_phrase": 0,
+    "ok": true,
+    "errors": []
+  },
+  "inputs": {
+    "votes_count": 286,
+    "votes_max_cislo": 286,
+    "steno_count": 2392,
+    "steno_last_poradi": 2442,
+    "topics_built_at": "2026-07-11T09:37:23.959985+00:00",
+    "fingerprint": "0a0e0d57377f083d"
+  },
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null
+}

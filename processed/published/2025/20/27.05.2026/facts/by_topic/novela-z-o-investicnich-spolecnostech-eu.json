@@ -1,0 +1,46 @@
+{
+  "slug": "novela-z-o-investicnich-spolecnostech-eu",
+  "nazev": "Novela z. o investičních společnostech - EU",
+  "datum": "27.05.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "dohledu nad investičními fondy a společnostmi",
+  "koho": [
+    "Koho se to týká? Hlavně firem a lidí, kteří investují přes fondy, ne běžného účtu v bance."
+  ],
+  "fakty": [
+    {
+      "text": "Pravidla dohledu a povinností vůči klientům se srovnávají podle evropských norem.",
+      "source": "manual",
+      "note": "z glosy / TEMA_PRAVIDLA",
+      "link_phrase": "Pravidla dohledu a povinností vůči klientům se srovnávají podle evropských"
+    },
+    {
+      "text": "Zákon prošel 137:0, nikdo nebyl proti; spor se nekonal ani u čtyř dílčích úprav.",
+      "source": "votes",
+      "link_phrase": "ani u čtyř dílčích"
+    },
+    {
+      "text": "Turek uvedl, že vážený pane předsedající, vážená paní ministryně, kolegyně, kolegové, dovolte mi taky pár poznámek k tomuto sněmovnímu tisku 13, k návrhu zákona, kterým se mění zákon č.",
+      "source": "steno",
+      "steno_id": "2025_20_00262",
+      "citace": "Vážený pane předsedající, vážená paní ministryně, kolegyně, kolegové, dovolte mi taky pár poznámek k tomuto sněmovnímu tisku 13 ,  k návrhu zákona, kterým se mění",
+      "link_phrase": "Vážený pane předsedající, vážená paní ministryně, kolegyně, kolegové, dovolte mi"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Investiční fondy podle Bruselu",
+  "pocet_hlasovani": 5,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 1,
+    "pritomno_min": 148,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 3264,
+  "lead": "Hned po penzijním spoření Sněmovna srovnala pravidla pro investiční fondy s evropskými normami; 137 pro, proti nikdo.",
+  "pointa": "Bruselská harmonizace bez odporu: ani u čtyř dílčích hlasování se nikdo nezvedl proti. Pravidla dohledu a povinností vůči klientům se srovnávají podle evropských. Vážený pane předsedající, vážená paní ministryně, kolegyně, kolegové, dovolte mi.",
+  "mean": "Kdo investuje přes fondy, bude mít dohled a povinnosti správců sjednocené podle evropských pravidel. Běžného účtu v bance se to netýká a ve sněmovně se o tom nikdo ani nepohádal."
+}

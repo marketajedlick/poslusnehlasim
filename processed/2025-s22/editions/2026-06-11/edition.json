@@ -1,0 +1,28 @@
+{
+  "key": "2025/22/11.06.2026",
+  "obdobi": 2025,
+  "schuze": 22,
+  "datum_unl": "11.06.2026",
+  "iso": "2026-06-11",
+  "state": "published",
+  "topic_slugs": [
+    "dopis-dg-regio-dotace-agrofert",
+    "mimoradna-schuze-stret-zajmu-agrofert"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-06-11/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 2,
+    "votes_max_cislo": 2,
+    "steno_count": 23,
+    "steno_last_poradi": 23,
+    "topics_built_at": "2026-06-16T23:09:27.126470+00:00",
+    "fingerprint": "0f8ae2a040345a60"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/22/11.06.2026",
+  "supersedes": null
+}

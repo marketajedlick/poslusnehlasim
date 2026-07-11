@@ -1,0 +1,39 @@
+{
+  "slug": "porad-13-schuze",
+  "nazev": "Boj o pořad třinácté schůze",
+  "datum": "24.03.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "pořadu třinácté schůze před večerními zákony",
+  "koho": [
+    "Koho se to týká? Spíš pozorovatele politiky. Jde o to, co se kdy projedná, ne o zákon pro občany."
+  ],
+  "fakty": [
+    {
+      "text": "Krňanský prosadil bod o přeplatcích Hřiba, 167 hlasů pro, jásot v sále.",
+      "link_phrase": "bod o přeplatcích Hřiba,"
+    },
+    {
+      "text": "Hřib řekl, že přeplatky vrátil a bude hlasovat pro projednání.",
+      "citace": "mi poslali tedy údaje, kam se to má vrátit, tak jsem jim všechno do koruny vrátil.",
+      "steno_id": "2025_13_00081",
+      "source": "steno",
+      "link_phrase": "Hřib přeplatky vrátil a slíbil hlasovat pro"
+    },
+    {
+      "text": "Skopeček řekl: Pořad schválen až po čtyřiceti čtyřech hlasováních o změnách.",
+      "citace": "Přeji vám dobrý večer, vystřídali jsme se v řízení schůze."
+    },
+    {
+      "text": "Foldyna navrhl bod Zaseli jsme Kosovo a sklidili jsme Ukrajinu.",
+      "link_phrase": "Foldyna navrhl bod Zaseli jsme Kosovo a sklidili jsme Ukrajinu"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Pořad před půlnocí",
+  "lead": "Večer třinácté schůze patřil tabuli: čtyřicet čtyři hlasování o tom, co se kdy projedná. ANO prosadilo bod o přeplatcích Hřiba, většina opozičních návrhů padla.",
+  "pointa": "Hřib přeplatky vrátil a slíbil hlasovat pro, Foldyna chtěl Kosovo a Ukrajinu. Teprve po devatenácté hodině přišlo minimum, penze a zkumavky. Pořad schválen až po čtyřiceti čtyřech hlasováních o změnách. Foldyna navrhl bod Zaseli jsme Kosovo a sklidili jsme Ukrajinu.",
+  "mean": "Sněmovna si nejdřív musela dohodnout pořad. Hodiny hlasování o bodech o pořadu oddálily zákony až na pozdní večer.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

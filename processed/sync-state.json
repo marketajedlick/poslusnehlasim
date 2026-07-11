@@ -5,7 +5,11 @@
     "last_modified": "Fri, 10 Jul 2026 23:55:10 GMT",
     "content_length": 2982473,
     "lines": 1931,
+<<<<<<< Updated upstream
     "fetched_at": "2026-07-11T07:15:19.974894+00:00"
+=======
+    "fetched_at": "2026-07-11T09:08:35.701712+00:00"
+>>>>>>> Stashed changes
   },
   "schuze": {
     "18": {
@@ -222,7 +226,11 @@
       "steno_count": 2442,
       "last_steno_poradi": 2442,
       "last_steno_datum": "2026-07-08",
+<<<<<<< Updated upstream
       "synced_at": "2026-07-11T07:15:49.285118+00:00"
+=======
+      "synced_at": "2026-07-11T09:08:36.083009+00:00"
+>>>>>>> Stashed changes
     },
     "25": {
       "count": 4,
@@ -252,7 +260,11 @@
       "synced_at": "2026-07-11T07:21:37.107098+00:00"
     }
   },
+<<<<<<< Updated upstream
   "updated_at": "2026-07-11T07:21:37.107122+00:00",
+=======
+  "updated_at": "2026-07-11T09:08:36.083039+00:00",
+>>>>>>> Stashed changes
   "last_updated_schuze": [
     1,
     2,

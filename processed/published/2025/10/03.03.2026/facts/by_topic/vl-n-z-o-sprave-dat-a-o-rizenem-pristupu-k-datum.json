@@ -1,0 +1,36 @@
+{
+  "slug": "vl-n-z-o-sprave-dat-a-o-rizenem-pristupu-k-datum",
+  "nazev": "Vl. n. z. o správě dat a o řízeném přístupu k datům - EU",
+  "datum": "03.03.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "o správě dat a o řízeném přístupu k datům",
+  "koho": [
+    "Koho se to týká? Úřadů a firem, které pracují se státními daty. Občan to pocítí při digitálních službách."
+  ],
+  "fakty": [
+    {
+      "text": "Hlasování číslo 53, pro 128, proti nikdo. S návrhem zákona byl vysloven souhlas.",
+      "link_phrase": "128 hlasů pro, nikdo proti"
+    },
+    {
+      "text": "Potlesk.",
+      "kind": "scene"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Úřady budou sdílet data",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 1,
+    "pritomno_min": 139,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 5957,
+  "lead": "Poslední bod večerního maratonu: zákon o správě dat prošel v prvním kole, 128 hlasů pro, nikdo proti.",
+  "pointa": "Po hodinách debaty o Blízkém východu a pořadu schůze Sněmovna k zákonům usedla až po osmé hodině večer.",
+  "mean": "Stát chce mít přehled o datech, která sdílí mezi úřady. Cílem je jednodušší digitální služby, ne nová daň pro občana."
+}

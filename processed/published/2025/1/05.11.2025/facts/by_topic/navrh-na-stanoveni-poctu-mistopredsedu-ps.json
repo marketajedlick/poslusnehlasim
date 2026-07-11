@@ -1,0 +1,51 @@
+{
+  "slug": "navrh-na-stanoveni-poctu-mistopredsedu-ps",
+  "nazev": "Návrh na stanovení počtu místopředsedů PS",
+  "datum": "05.11.2025",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "počtu místopředsedů a jejich volbě",
+  "koho": [
+    "Kolik bude místopředsedů sněmovny, kdo zvedá kladívko, když předseda není."
+  ],
+  "fakty": [
+    {
+      "text": "Sněmovna stanovila počet místopředsedů na čtyři, hlasování číslo 9: sto padesát šest pro, jeden proti.",
+      "source": "votes",
+      "link_phrase": "sto padesát šest pro, jeden proti"
+    },
+    {
+      "text": "V prvním kole tajné volby získal Jiří Barták 113 hlasů, Patrik Nacher 98 hlasů.",
+      "link_phrase": "V prvním kole tajné volby získal Jiří Barták 113 hlasů,"
+    },
+    {
+      "text": "Zdeněk Hřib kritizoval, že na lístku není žádná žena, Šebelová protestovala proti označení „polovina populace“.",
+      "source": "steno",
+      "steno_id": "2025_1_00187",
+      "citace": "My jsme tedy za Piráty nominovali do volby místopředsedkyně Sněmovny dosavadní místopředsedkyni Olgu Richterovou.",
+      "link_phrase": "Hřib a Šebelová kritizovali mužskou kandidátku"
+    },
+    {
+      "text": "Nacher slíbil tlumočení do znakového jazyka jako v Senátu a po zvolení ukázal pár znaků u pultu.",
+      "source": "steno",
+      "steno_id": "2025_1_00228",
+      "citace": "já jsem se to naučil za těch 15 minut.",
+      "link_phrase": "Nacher po zvolení předvedl znakovou řeč"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Dva místopředsedové",
+  "lead": "Večer Sněmovna zvolila dva místopředsedy, Jiřího Bartáka a Patrika Nachera. Debata o ženách ve vedení skončila odložením druhého kola na pátek.",
+  "pointa": "Hřib a Šebelová kritizovali mužskou kandidátku, Okamura druhé kolo přerušil, než se kluby dohodnou na termínu. Nacher po zvolení předvedl znakovou řeč, slíbil totiž tlumočení pro neslyšící jako nový místopředseda. sto padesát šest pro, jeden proti. V prvním kole tajné volby získal Jiří Barták 113 hlasů,.",
+  "mean": "Místopředsedové zastupují předsedu při řízení schůzí. Čtyři místa mají odpovídat poměru sil klubů, dvě zůstávají volná a doplní se až v pátek 14. listopadu.",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 1,
+    "pritomno_min": 178,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 6464
+}

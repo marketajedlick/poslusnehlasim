@@ -1,0 +1,41 @@
+{
+  "slug": "novela-z-o-socialnich-sluzbach",
+  "nazev": "Novela z. o sociálních službách",
+  "datum": "22.04.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "sociálních službách",
+  "koho": [
+    "Koho se to týká? Lidi se zdravotním postižením a rodiny, které řeší péči, průkaz OZP nebo příspěvek na péči."
+  ],
+  "fakty": [
+    {
+      "text": "Juchelka posunul převod kompetencí z Úřadu práce na ÚSSZ na červen 2028.",
+      "link_phrase": "z Úřadu práce na"
+    },
+    {
+      "text": "Novela prošla v prvním čtení ve zkráceném režimu podle § 90 odst. 2.",
+      "link_phrase": "ve zkráceném režimu"
+    },
+    {
+      "text": "Hlasování číslo 143, sto dvacet dva hlasů pro.",
+      "source": "votes",
+      "link_phrase": "sto dvacet dva hlasů"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Péče zůstane na ÚP déle",
+  "pocet_hlasovani": 3,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 146,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 9218,
+  "lead": "Ve středu schválili změnu sociálních služeb, sto dvacet dva hlasů proti nule. Převod péče a dávek pro hendikepované z Úřadu práce na sociální správu se posouvá na rok 2028.",
+  "pointa": "Juchelka argumentoval časovou tísní a nutností sladit reformu s digitalizací dávek. První kolo proběhlo ve zkráceném režimu.",
+  "mean": "Lidé s průkazem OZP a příspěvkem na péči zatím zůstanou na Úřadu práce. Velký přesun na územní správy sociálního zabezpečení přijde až za dva roky."
+}

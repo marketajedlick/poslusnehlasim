@@ -1,0 +1,42 @@
+{
+  "slug": "novela-z-o-rostlinolekarske-peci-eu",
+  "nazev": "Novela z. o rostlinolékařské péči - EU",
+  "datum": "27.05.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "rostlinolékařské péči",
+  "koho": [
+    "Koho se to týká? Hlavně farmářů a podnikatelů v zemědělství, běžný občan v bytě to prakticky neřeší."
+  ],
+  "fakty": [
+    {
+      "text": "Nacher uvedl, že sněmovna v pátek poslala pravidla pro postřiky zpátky do druhého kola; návrh Moniky Oborné na opakování prošel 87:46.",
+      "source": "steno",
+      "steno_id": "2025_20_01739",
+      "citace": "této chvíli přečtu omluvu.",
+      "link_phrase": "pravidla pro postřiky"
+    },
+    {
+      "text": "Nacher uvedl, že už ve středu 27. května poslanci projednávání přerušili a odložili na pátek, 90 pro, 15 proti.",
+      "source": "steno",
+      "steno_id": "2025_20_00284",
+      "citace": "procedurálním návrhu, pokud pan předseda nemá jiný, nechávám hlasovat bez rozpravy.",
+      "link_phrase": "Už ve středu 27. května poslanci projednávání přerušili a odložili"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Postřiky se vracejí do druhého kola",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 46,
+    "pritomno_min": 139,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 726,
+  "lead": "Pravidla pro postřiky se do cíle nedostala: poslanci je v pátek poslali zpátky do druhého kola, 87 hlasů pro, 46 proti.",
+  "pointa": "Oborná prosadila opakování druhého čtení; farmáři si na jasná pravidla pro postřiky počkají a celá debata poběží znovu. Už ve středu 27. května poslanci projednávání přerušili a odložili.",
+  "mean": "Farmáři si na nová pravidla pro postřiky počkají. Zákon už jednou poslanci přerušili a teď ho vrátili o kolo zpět, takže celá debata o úpravách poběží znovu."
+}

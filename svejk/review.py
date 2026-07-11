@@ -74,16 +74,6 @@ def _checklist_issues(fact: dict[str, Any]) -> list[ReviewIssue]:
     if not fact.get("publikovat"):
         return issues
 
-    lead = (fact.get("lead") or "").strip()
-    if lead and not lead.lower().startswith("poslušně hlásím"):
-        issues.append(
-            ReviewIssue(
-                "info",
-                "lead_refrain",
-                "Vlastní lead nezačíná 'Poslušně hlásím…' (viz poslusne-hlasim-pravidla.md §2).",
-            )
-        )
-
     mean = (fact.get("mean") or "").strip()
     if not mean:
         issues.append(
@@ -404,7 +394,7 @@ def format_day_review(
         header.append("")
     header.extend(
         [
-            "Pravidla: .cursor/rules/poslusne-hlasim-pravidla.md (curiosity pass, checklist, struktura sekce)",
+            "Pravidla: .cursor/rules/poslusne-hlasim-pravidla.md (§1b curiosity pass, §5 checklist, §4a link_phrase)",
             "Workflow: uprav facts → ./run-svejk.sh build --schuze N --only compose [--den D]",
             "         → export-pages / lokální http.server",
             "Volitelně v by_day JSON: \"zaver\": \"vlastní věta bez Poslušně hlásím\"",

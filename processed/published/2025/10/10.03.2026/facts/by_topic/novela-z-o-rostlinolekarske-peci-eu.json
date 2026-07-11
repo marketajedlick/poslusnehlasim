@@ -1,0 +1,36 @@
+{
+  "slug": "novela-z-o-rostlinolekarske-peci-eu",
+  "nazev": "Novela z. o rostlinolékařské péči - EU",
+  "datum": "10.03.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "rostlinolékařské péči",
+  "koho": [
+    "Koho se to týká? Hlavně farmářů a podnikatelů v zemědělství. Běžný občan v bytě to prakticky neřeší."
+  ],
+  "fakty": [
+    {
+      "text": "Stěžejním cílem návrhu je zajištění souladu s evropskými nařízeními v oblasti statistiky používání přípravků na ochranu rostlin.",
+      "link_phrase": "Stěžejním cílem návrhu je zajištění souladu s evropskými nařízeními v"
+    },
+    {
+      "text": "Hlasování číslo 100, pro 146, proti nikdo. S návrhem zákona byl vysloven souhlas.",
+      "link_phrase": "146 hlasů pro, nikdo proti"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Postřiky mají nová pravidla",
+  "pocet_hlasovani": 4,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 50,
+    "pritomno_min": 162,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 14598,
+  "lead": "Změna zákona o rostlinolékařské péči prošla v prvním kole, 146 hlasů pro, nikdo proti. Farmáři budou lépe evidovat postřiky podle EU.",
+  "pointa": "Předtím opozice chtěla zákon o digitální ekonomice zahodit (7:68), Sněmovna to odmítla a návrh poslala dál. Zemědělský zákon šel hladce. Stěžejním cílem návrhu je zajištění souladu s evropskými nařízeními v.",
+  "mean": "Česko musí sladit pravidla s Bruselem. Stát chce vědět, kde a kolik pesticidů se používá, ne novou daň pro občana."
+}

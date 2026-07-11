@@ -1,0 +1,37 @@
+{
+  "slug": "debata-paliativni-pece-07-07",
+  "nazev": "Paliativní péče jako první bod",
+  "datum": "07.07.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "návrh zařadit informaci o paliativní a hospicové péči jako první bod schůze",
+  "koho": [
+    "Koho se to týká? Rodiny, které pečují o umírající blízké doma a chtějí vědět, co z vládní strategie bude skutečná pomoc."
+  ],
+  "fakty": [
+    {
+      "text": "Hoppe chtěl paliativní péči jako první bod.",
+      "source": "steno",
+      "steno_id": "2025_24_02185",
+      "citace": "Důstojný konec života není luxus, je to základní otázka lidskosti státu.",
+      "link_phrase": "Hoppe (Piráti) chtěl paliativní péči"
+    },
+    {
+      "text": "Hoppe se při čtení strategie přeřekl u roku.",
+      "source": "steno",
+      "steno_id": "2025_24_02185",
+      "citace": "Strategii rozvoje paliativní péče do roku (Poslanec se několikrát přeřekl.) 2035, pardon.",
+      "link_phrase": "při čtení strategie se přeřekl u roku"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 4,
+  "nadpis": "Paliativní péče jako první bod",
+  "lead": "Poslušně hlásím, že poslanec Hoppe (Piráti) chtěl místo bydlení dát na začátek schůze paliativní péči. Vláda prý schválila strategii, ale lidé podle něj potřebují dostupnou péči, ne papír ve skříni.",
+  "pointa": "Hoppe (Piráti) chtěl paliativní péči jako první bod a řekl, že důstojný konec života není luxus. Poslušně hlásím, že při čtení strategie se přeřekl u roku: nejdřív do roku 2035, pak opravil, že mluví o strategii, ne o termínu schůze.",
+  "mean": "Místo bytů chtěl někdo hospic. Strategie už existuje, Hoppe chtěl slyšet, kdo za ni zaplatí a kdy.",
+  "citace_text": "Důstojný konec života není luxus, je to základní otázka lidskosti státu.",
+  "citace_autor": "Libor Hoppe (Piráti)",
+  "steno_id": "2025_24_02185",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

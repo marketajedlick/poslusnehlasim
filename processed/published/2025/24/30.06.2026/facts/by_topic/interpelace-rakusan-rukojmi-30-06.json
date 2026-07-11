@@ -1,0 +1,68 @@
+{
+  "slug": "interpelace-rakusan-rukojmi-30-06",
+  "nazev": "Interpelace Víta Rakušana",
+  "datum": "30.06.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "interpelace Víta Rakušana o koalici nevydávání a premiérovi jako rukojmí partnerů",
+  "koho": [
+    "Koho se to týká? Každého, kdo sleduje, jestli vláda drží pohromadě kvůli programu, nebo kvůli vzájemným ústupkům."
+  ],
+  "fakty": [
+    {
+      "text": "Rakušan: premiér jako rukojmí.",
+      "source": "steno",
+      "steno_id": "2025_24_00887",
+      "citace": "premiér jako rukojmí držen svými koaličními partnery.",
+      "link_phrase": "Rakušan (STAN) popsal vládu jako systém"
+    },
+    {
+      "text": "Rakušan: koalice nevydávání.",
+      "source": "steno",
+      "steno_id": "2025_24_00887",
+      "citace": "Tahle vláda vznikla jako koalice nevydávání.",
+      "link_phrase": "Rakušan (STAN) popsal vládu jako systém"
+    },
+    {
+      "text": "Rakušan: nevydávání předsedů k trestnímu stíhání.",
+      "source": "steno",
+      "steno_id": "2025_24_00887",
+      "citace": "Nevydávání dvou předsedů dvou koaličních stran k trestnímu stíhání.",
+      "link_phrase": "Rakušan (STAN) popsal vládu jako systém"
+    },
+    {
+      "text": "Rakušan: Babiš potřebuje hlasy SPD a Motoristů.",
+      "source": "steno",
+      "steno_id": "2025_24_00887",
+      "citace": "Premiér Babiš prostě potřebuje hlasy SPD a Motoristů k tomu, aby udržel vládní většinu.",
+      "link_phrase": "Rakušan (STAN) popsal vládu jako systém"
+    },
+    {
+      "text": "Rakušan: Macinka označil ÚS za puč.",
+      "source": "steno",
+      "steno_id": "2025_24_00887",
+      "citace": "Ministr zahraničí Macinka označí rozhodnutí Ústavního soudu za puč. Ještě jednou, vicepremiér vlády téhle země, tedy ten, kdo by měl jednoznačně stát za tím, že hájí systém a",
+      "link_phrase": "Rakušan (STAN) popsal vládu jako systém"
+    },
+    {
+      "text": "Rakušan: Motoristé chtějí zrušit Ústavní soud.",
+      "source": "steno",
+      "steno_id": "2025_24_00887",
+      "citace": "typu: Ústavní soud by se měl zrušit.",
+      "link_phrase": "Rakušan (STAN) popsal vládu jako systém"
+    },
+    {
+      "text": "Rakušan: kde je premiér?"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 4,
+  "nadpis": "Koalice nevydávání",
+  "lead": "Rakušan (STAN) popsal vládu jako systém, kde je premiér rukojmí koaličních partnerů. Vznikla prý jako koalice nevydávání: dva předsedové koaličních stran si slíbili, že se navzájem nepošlou k trestnímu stíhání. Babiš (ANO) podle něj potřebuje hlasy SPD a Motoristů, aby udržel většinu, a nemůže si dovolit prudké pohyby.\n\nMacinka (Motoristé) označil rozhodnutí Ústavního soudu za puč a Motoristé prý navrhli Ústavní soud zrušit. Rakušan (STAN) se ptal, kde je premiér, aby udělal manažerské rozhodnutí. Nikde, mlčí.",
+  "pointa": "Když někdo někoho drží v šachu, nemůže podle Rakušana tvrdit, že je silný premiér.",
+  "mean": "Koalice ANO, SPD a Motoristů drží pohromadě i kvůli dohodám o trestním stíhání předáků stran. Když vicepremiér útočí na soud a premiér mlčí, opozice to čte jako vzorec, ne jako ojedinělou chybu.",
+  "citace_text": "premiér jako rukojmí držen svými koaličními partnery.",
+  "citace_autor": "Vít Rakušan (STAN)",
+  "steno_id": "2025_24_00887",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

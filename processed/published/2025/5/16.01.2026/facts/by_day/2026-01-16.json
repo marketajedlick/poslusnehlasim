@@ -1,0 +1,27 @@
+{
+  "datum": "16.01.2026",
+  "den": "pátek",
+  "topic_slugs": [
+    "usneseni-ke-jmenovani-clenu-vlady",
+    "novela-z-o-pojistnem-na-socialni-zabezpeceni"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 259,
+    "end_cas": "13:34",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
+  "dnesni_ucet": "Ráno deset hlasování o Turkovi a ministry,\nodpoledne zálohy pro živnostníky.",
+  "zaver": "že pátek nebyl klidný: hádali se o ministry, ale nižší zálohy pro živnostníky v prvním kole prošly.",
+  "vysledek": [
+    "* osm zákonů a usnesení schválili",
+    "* osm návrhů neprošlo",
+    "* dopoledne deset hlasování o usneseních ke jmenování ministrů, hlavně spor o Filipa Turka",
+    "* odpoledne nižší zálohy OSVČ v prvním kole, u zrychlení 29 poslanců proti"
+  ],
+  "proslo": 1,
+  "zamitnuto": 0
+}

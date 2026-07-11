@@ -1,0 +1,36 @@
+{
+  "slug": "navrh-na-volbu-predsedy-ps",
+  "nazev": "Návrh na volbu předsedy PS",
+  "datum": "05.11.2025",
+  "verdikt": "zvoleno",
+  "predmet_lidsky": "volbě předsedy Poslanecké sněmovny",
+  "koho": [
+    "Kdo sleduje, kdo povede jednání Sněmovny a kdo drží kladívko."
+  ],
+  "fakty": [
+    {
+      "text": "Tomio Okamura získal v prvním kole tajné volby sto šestnáct hlasů, devět proti.",
+      "link_phrase": "v prvním kole"
+    },
+    {
+      "text": "Návrh na Petra Fialu jako předsedu padl sto osmnácti hlasy proti sto třiceti šesti.",
+      "link_phrase": "Návrh na Petra Fialu"
+    },
+    {
+      "text": "Okamura večer převzal kladívko, Barták a Nacher se stali místopředsedy po jeho boku.",
+      "source": "steno",
+      "steno_id": "2025_1_00225",
+      "citace": "prosím, aby oba zaujali místo po mém boku.",
+      "link_phrase": "Barták a Nacher"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Okamura u kladívka",
+  "lead": "Středeční tajná volba přinesla Tomia Okamuru do čela Sněmovny, sto šestnáct hlasů v prvním kole. Samostatný návrh na Petra Fialu padl na osmnáct proti sto třiceti šesti.",
+  "pointa": "Koalice prosadila svého kandidáta, opozice pro Fialu nenašla dost hlasů. Vedení Sněmovny zůstalo v rukou SPD, místopředsedy se stali Barták a Nacher.",
+  "mean": "Předseda řídí schůze, rozděluje slovo a podepisuje usnesení. Volba je tajná, ale výsledek určí tón celého období.",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "steno_slov": 31648
+}

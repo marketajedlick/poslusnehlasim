@@ -1,0 +1,59 @@
+{
+  "slug": "novela-z-o-spotrebitelskem-uveru",
+  "nazev": "Novela z. o spotřebitelském úvěru",
+  "datum": "25.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "spotřebitelském úvěru",
+  "koho": [
+    "Koho se to týká? Každého, kdo někdy řešil půjčku, splátky nebo online smlouvu s bankou."
+  ],
+  "fakty": [
+    {
+      "text": "Dvořák přiznal, že takto rychlý průběh pořadu schůze nečekal.",
+      "source": "steno",
+      "steno_id": "2025_24_00453",
+      "link_phrase": "takto rychlý průběh pořadu schůze",
+      "citace": "takto rychlý průběh pořadu schůze jsem nečekal, určitě to je zásluha předsedajícího, díky za"
+    },
+    {
+      "text": "Metnar u Mongolska mluvil o policejní spolupráci a výměně informací.",
+      "link_phrase": "Metnar u Mongolska mluvil o policejní spolupráci a výměně informací"
+    },
+    {
+      "text": "Schillerová si uprostřed projevu postěžovala předsedajícímu na ruch v sále: To je fakt peklo dneska.",
+      "source": "steno",
+      "steno_id": "2025_24_00507",
+      "kind": "scene",
+      "citace": "(Obrací se na předsedajícího: To je fakt peklo dneska.)",
+      "link_phrase": "na ruch v sále: To je fakt peklo dneska."
+    },
+    {
+      "text": "Schillerová představovala novelu o spotřebitelském úvěru ve druhém čtení.",
+      "source": "steno",
+      "steno_id": "2025_24_00507",
+      "citace": "projednání ve druhém čtení novelu zákona o spotřebitelském úvěru.",
+      "link_phrase": "Schillerová"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "To je fakt\npeklo dneska",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 2,
+    "pritomno_min": 99,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 535,
+  "lead": "Schillerová (ANO) si u novely o spotřebitelském úvěru postěžovala na ruch v sále: To je fakt peklo dneska. Skopeček (ODS) žádal ztišení, novela prošla druhým kolem.\n\nDříve dopoledne Sněmovna odsouhlasila šest ratifikací mezinárodních smluv, rychle jako na páse. Dvořák (STAN) nečekal takto rychlý průběh pořadu schůze.",
+  "mean": "Novela převádí evropskou směrnici o půjčkách online. Ve druhém kole se ladí detaily, závěrečné hlasování přijde později. Metnar u Mongolska mluvil o policejní spolupráci a výměně informací.",
+  "kuriozita_links": [
+    {
+      "label": "Šest ratifikací mezinárodních smluv",
+      "page": "smlouvy"
+    }
+  ]
+}

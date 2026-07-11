@@ -1,0 +1,30 @@
+{
+  "datum": "03.03.2026",
+  "den": "úterý",
+  "topic_slugs": [
+    "blizky-vychod-a-porad-10-schuze",
+    "novela-ustav-z-ustava-cr",
+    "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-",
+    "vl-n-z-o-sprave-dat-a-o-rizenem-pristupu-k-datum"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 4,
+    "minuty": 482,
+    "end_cas": "22:17",
+    "proslo": 3,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
+  "dnesni_ucet": "Odpoledne Blízký východ a boj o pořad,\nvečer tři zákony na první pokus, většinou bez odporu.",
+  "zaver": "že desátá schůze začala krizí na Blízkém východě a večer stihla ústavu, rozpočtová pravidla i data.",
+  "vysledek": [
+    "* dopoledne debata o Blízkém východě a desítky hlasování o pořadu",
+    "* ústavní změna zákona o NKÚ a médiích prošla 159:0",
+    "* pravidla veřejných rozpočtů prošla 149:0, Starostové chtěli veto § 90",
+    "* zákon o správě dat prošel 128:0",
+    "* státní svátky ANO prošly 100:9, mimo hlavní články"
+  ],
+  "proslo": 3,
+  "zamitnuto": 0
+}

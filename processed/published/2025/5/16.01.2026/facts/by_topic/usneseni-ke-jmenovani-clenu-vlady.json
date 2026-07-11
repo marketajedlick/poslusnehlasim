@@ -1,0 +1,39 @@
+{
+  "slug": "usneseni-ke-jmenovani-clenu-vlady",
+  "nazev": "Usnesení ke jmenování členů vlády",
+  "datum": "16.01.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "usneseních, kterými chtěl Marian Jurečka zablokovat jmenování ministrů vlády",
+  "koho": [
+    "Koho se to týká? Spíš politické hry o personální obsazení vlády. Občana to zasáhne jen nepřímo."
+  ],
+  "fakty": [
+    {
+      "text": "Prezident republiky odmítl jmenovat pana Filipa Turka ministrem životního prostředí, a to i přesto, že byl řádně navržen předsedou vlády.",
+      "link_phrase": "Prezident republiky odmítl jmenovat pana Filipa Turka ministrem životního prostředí,"
+    },
+    {
+      "text": "Hladík uvedl, že my už jsme se mohli věnovat věcným věcem, sociálnímu pojištění, jednacímu řádu, stavebnímu zákonu a místo toho tady znova opakovaně, stále donekonečna, řešíme Filipa Turka.",
+      "source": "steno",
+      "steno_id": "2025_5_00870",
+      "citace": "Vážený pane premiére, vážené kolegyně, vážení kolegové.",
+      "link_phrase": "My už jsme se mohli věnovat věcným věcem, sociálnímu pojištění,"
+    },
+    {
+      "text": "V hlasování číslo 54 bylo přihlášeno 183 poslanců, pro hlasovalo 82, proti 101. Návrh byl zamítnut.",
+      "source": "steno",
+      "steno_id": "2025_5_00915",
+      "citace": "ptám se, kdo je pro takové usnesení?",
+      "link_phrase": "Skopeček (ODS) četl výsledky jedno po druhém"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Deset hlasování o Turkovi",
+  "lead": "Ve čtvrtek vládě prošla důvěra, v pátek poslanci ještě desetkrát hlasovali o usneseních ke jmenování ministrů, hlavně kvůli sporu o klimatického zmocněnce Filipa Turka (Motoristé).",
+  "pointa": "Jurečka (KDU-ČSL) zkoušel přes usnesení zablokovat jmenování ministrů, osm návrhů padlo: Jakob (TOP 09), Zuna (TOP 09) dvakrát, Langšádlová (TOP 09) dvakrát, Dvořák (STAN), Jurečka (KDU-ČSL), Pospíšil (TOP 09). Skopeček (ODS) četl výsledky jedno po druhém, koalice obsazování postů pustila dál. Prezident republiky odmítl jmenovat pana Filipa Turka ministrem životního prostředí,. My už jsme se mohli věnovat věcným věcem, sociálnímu pojištění,.",
+  "mean": "Po schválené důvěře ještě deset hlasování o obsazení vlády, důvěra totiž neznamená klid. Prezident odmítl Turka (Motoristé) jako ministra, opozice to kritizovala, většinu Jurečkových (KDU-ČSL) návrhů stejně zamítli.",
+  "pocet_hlasovani": 10,
+  "proslo": false,
+  "steno_slov": 55056
+}

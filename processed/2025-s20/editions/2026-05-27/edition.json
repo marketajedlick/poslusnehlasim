@@ -1,0 +1,28 @@
+{
+  "key": "2025/20/27.05.2026",
+  "obdobi": 2025,
+  "schuze": 20,
+  "datum_unl": "27.05.2026",
+  "iso": "2026-05-27",
+  "state": "published",
+  "topic_slugs": [
+    "novela-z-o-doplnkovem-penzijnim-sporeni",
+    "novela-z-o-investicnich-spolecnostech-eu"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-05-27/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 368,
+    "votes_max_cislo": 368,
+    "steno_count": 1902,
+    "steno_last_poradi": 1902,
+    "topics_built_at": "2026-07-10T17:51:38.122906+00:00",
+    "fingerprint": "e37c5f9f0623d2ec"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/20/27.05.2026",
+  "supersedes": null
+}

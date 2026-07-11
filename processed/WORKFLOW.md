@@ -1,8 +1,10 @@
 # Workflow: zpracování schůze
 
 Playbook pro redakci jedné schůze od stažení dat po newsletter.  
-Obohacení facts a psaní sekcí: [`.cursor/rules/poslusne-hlasim-pravidla.md`](../.cursor/rules/poslusne-hlasim-pravidla.md).  
+Obohacení facts a psaní sekcí (curiosity pass §1b, checklist, `link_phrase`): [`.cursor/rules/poslusne-hlasim-pravidla.md`](../.cursor/rules/poslusne-hlasim-pravidla.md).  
+Grep tipy a finální průchod: tento soubor §2a, §4a, §9.
 Terminologie a den (`dnesni_ucet`, skóre): [`.cursor/rules/steno-zapisy.mdc`](../.cursor/rules/steno-zapisy.mdc).  
+Legislativní proces (čtení, Senát, veto, kvóra): [`processed/legislativni-proces-kontext.md`](../processed/legislativni-proces-kontext.md) (kopie v [`.cursor/rules/`](../.cursor/rules/legislativni-proces-kontext.md) pro agenta).  
 Technické detaily polí a příkazů: [processed/README.md](README.md).
 
 ## Cíl
@@ -351,7 +353,21 @@ Před odesláním v Ecomailu:
 
 ---
 
-## Rychlý workflow
+## Rychlý workflow (edition)
+
+```
+sync
+  → edition brief --schuze N --den D.M.RRRR
+  → Cursor: .cursor/prompts/edition-draft.md (doplň facts/)
+  → edition link-phrases → edition preview → edition review
+  → edition feedback (volitelně, učí další brief)
+  → edition approve → edition publish
+```
+
+Stav vydání: `processed/2025-s{N}/editions/YYYY-MM-DD/edition.json`  
+(`draft` → `approved` → `published`, po publish zmrazeno)
+
+## Rychlý workflow (klasický)
 
 ```
 sync → align → review (vyber dny/témata)

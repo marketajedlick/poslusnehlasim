@@ -1,0 +1,59 @@
+{
+  "slug": "premier-chybi-v-debate-duvery",
+  "nazev": "Nepřítomný premiér v debatě o důvěře",
+  "datum": "14.01.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "přítomnosti premiéra Andreje Babiše při debatě o důvěře jeho vládě",
+  "koho": [
+    "Koho se to týká? Voličů, kteří čekali, že žadatel o důvěru bude u žádosti sedět."
+  ],
+  "fakty": [
+    {
+      "text": "Richterová: Premiér vlády, která žádá o důvěru, tady už od nějakých 11.10 prostě není. Není přítomen na projednávání žádosti o důvěru své vládě.",
+      "source": "steno",
+      "steno_id": "2025_5_00128",
+      "citace": "důvěru, tady už od nějakých 11.10 prostě není.",
+      "link_phrase": "Richterová navrhla pauzu"
+    },
+    {
+      "text": "Richterová: Já tedy poprosím, abychom posečkali a navrhuji tedy pauzu do doby, než se vrátí pan premiér do sálu, neboť to je Andrej Babiš, kdo žádá pro svou vládu o důvěru. On už tady nebyl více než hodinu dvacet předtím.",
+      "citace": "pauzu do doby, než se vrátí pan premiér do sálu, neboť to je Andrej Babiš, kdo žádá pro svou vládu o důvěru.",
+      "steno_id": "2025_5_00154",
+      "source": "steno",
+      "link_phrase": "Richterová navrhla pauzu"
+    },
+    {
+      "text": "Jurečka: Dobré poledne. Vážený nepřítomný pane premiére, vážení členové vlády, já na úvod budu stručný a pak některé věci rozeberu detailu.",
+      "source": "steno",
+      "steno_id": "2025_5_00124",
+      "citace": "Vážený nepřítomný pane premiére, vážení členové vlády, já na úvod budu stručný a pak některé věci rozeberu detailu.",
+      "link_phrase": "Jurečka"
+    },
+    {
+      "text": "Šťastný: Pan premiér tady je a prostřednictvím předsedajícího paní poslankyně Richterová tady nemá také svého předsedu a je vás tam půlka. Takže ono tedy to nevadí, já si myslím, že my jsme rádi, že tady není.",
+      "source": "steno",
+      "steno_id": "2025_5_00160",
+      "citace": "já si myslím, že my jsme rádi, že tady není.",
+      "link_phrase": "Šťastný řekl"
+    },
+    {
+      "text": "Barták: Bylo by tedy dobré, kdyby těch členů vlády tady bylo více. Zahajuji odpolední jednání Poslanecké sněmovny.",
+      "source": "steno",
+      "steno_id": "2025_5_00149",
+      "citace": "bylo by tedy dobré, kdyby těch členů vlády tady bylo více.",
+      "link_phrase": "Barták (Motoristé) po obědě poprosil"
+    },
+    {
+      "text": "Já, když jsem byl první na řadě z nepřednostních poslanců při vyslovování důvěry vládě Petra Fialy v lednu 2022, tak tady seděli tři ministři, z osmnácti, patnáct jich tady nebylo.",
+      "link_phrase": "Já, když jsem byl první na řadě z nepřednostních poslanců"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Premiér v jídelně",
+  "lead": "Andrej Babiš žádal o důvěru, přitom hodinu a půl nebyl v sále. Richterová navrhla pauzu, dokud se nevrátí, Jurečka ho oslovil jako nepřítomného. Šťastný řekl, že jsou rádi, že tady není, Nacher připomněl, že u Fialy chybělo patnáct ministrů z osmnácti.",
+  "pointa": "Barták (Motoristé) po obědě poprosil, ať přijde víc členů vlády. Králíček to označil za pirátskou obstrukci. Pláteník měl dokončit přerušený projev a Barták ho nechal počkat, až v sále sedí víc ministrů. Já, když jsem byl první na řadě z nepřednostních poslanců.",
+  "mean": "Důvěra je formálně žádost premiéra, ne celé vlády. Když žadatel chybí uprostřed debaty, opozice to bere jako nedůstojnost, koalice to brání srovnáním s minulými schůzemi a s tím, že ministři jsou v jídelně nebo na výborech.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

@@ -1,0 +1,28 @@
+{
+  "key": "2025/16/05.05.2026",
+  "obdobi": 2025,
+  "schuze": 16,
+  "datum_unl": "05.05.2026",
+  "iso": "2026-05-05",
+  "state": "published",
+  "topic_slugs": [
+    "sudetonemecky-sjezd-debata",
+    "stanovisko-vladni-koalice-ke-sjezdu-sudetonemeck"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-05-05/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 71,
+    "votes_max_cislo": 71,
+    "steno_count": 544,
+    "steno_last_poradi": 544,
+    "topics_built_at": "2026-07-10T17:50:29.460659+00:00",
+    "fingerprint": "69cd793ed42b11f9"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/16/05.05.2026",
+  "supersedes": null
+}

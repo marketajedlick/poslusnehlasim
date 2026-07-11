@@ -1,0 +1,44 @@
+{
+  "slug": "novela-ustav-z-ustava-cr",
+  "nazev": "Novela ústav. z. - Ústava ČR",
+  "datum": "03.03.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "novela ústav. z. - Ústava ČR",
+  "koho": [
+    "Koho se to týká? Spíš institucí než občana na ulici. Jde o to, kdo kontroluje peníze veřejnoprávních médií."
+  ],
+  "fakty": [
+    {
+      "text": "Urbanová: Hnutí STAN předmětnou ústavní novelu v této chvíli, a to podtrhuji, v této chvíli, nepodpoří.",
+      "source": "steno",
+      "steno_id": "2025_10_00092",
+      "citace": "Hnutí STAN předmětnou ústavní novelu v této chvíli, a to podtrhuji, v této chvíli, nepodpoří.",
+      "link_phrase": "Urbanová ze STAN řekla"
+    },
+    {
+      "text": "Rozšíření působnosti NKÚ proto považuji za jeden z nejdůležitějších protikorupčních návrhů, protože posiluje prevenci.",
+      "link_phrase": "Rozšíření působnosti NKÚ proto považuji za jeden z nejdůležitějších protikorupčních"
+    },
+    {
+      "text": "Hlasování číslo 47, pro 154, proti nikdo. S návrhem ústavního zákona byl vysloven souhlas.",
+      "source": "votes",
+      "link_phrase": "154 hlasy, nikdo proti"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "NKÚ dostane dohled nad financemi veřejných médií",
+  "pocet_hlasovani": 4,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 160,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 462,
+  "lead": "Senát poslal do sněmovny úpravu ústavy, která rozšiřuje kompetence NKÚ vůči České televizi a rozhlasu. V prvním kole prošla 154 hlasy, nikdo proti.",
+  "pointa": "Urbanová ze STAN řekla, že návrh teď nepodpoří. Volpe z Motoristů naopak mluvil o veřejné kontrole peněz v médiích. Rozšíření působnosti NKÚ proto považuji za jeden z nejdůležitějších protikorupčních.",
+  "mean": "Ústava není papírová úprava. Debata je o tom, jestli má kontrolor zasahovat do veřejnoprávních médií, nebo zůstane mimo."
+}

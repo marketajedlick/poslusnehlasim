@@ -1,0 +1,28 @@
+{
+  "key": "2025/24/08.07.2026",
+  "obdobi": 2025,
+  "schuze": 24,
+  "datum_unl": "08.07.2026",
+  "iso": "2026-07-08",
+  "state": "published",
+  "topic_slugs": [
+    "novela-z-o-statni-socialni-podpore",
+    "novela-z-stavebni-zakon"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-07-08/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 286,
+    "votes_max_cislo": 286,
+    "steno_count": 2392,
+    "steno_last_poradi": 2442,
+    "topics_built_at": "2026-07-11T09:37:23.959985+00:00",
+    "fingerprint": "0a0e0d57377f083d"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/24/08.07.2026",
+  "supersedes": null
+}

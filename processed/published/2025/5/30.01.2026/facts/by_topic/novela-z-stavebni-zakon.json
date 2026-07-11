@@ -1,0 +1,46 @@
+{
+  "slug": "novela-z-stavebni-zakon",
+  "nazev": "Novela z. - stavební zákon",
+  "datum": "30.01.2026",
+  "verdikt": "zamiteno",
+  "predmet_lidsky": "stavebním zákoně",
+  "koho": [
+    "Koho se to týká? Stavebníků, obcí i investorů, kteří čekají na povolení domu, haly nebo silnice."
+  ],
+  "fakty": [
+    {
+      "text": "nefunkční novela bývalé vlády Petra Fialy i přes 10 novelizací do roku 2025 nepomohla českému stavebnictví a zpackaná digitalizace stavebního řízení Ivana Bartoše stavebním úřadům",
+      "link_phrase": "nefunkční novela bývalé vlády Petra Fialy i přes 10 novelizací"
+    },
+    {
+      "text": "rychlost ale nesmí být vykoupena ztrátou kvality, právní jistoty a ochrany veřejného zájmu",
+      "citace": "rychlost ale nesmí být vykoupena ztrátou kvality, právní jistoty a důvěry veřejnosti.",
+      "steno_id": "2025_5_01472",
+      "source": "steno",
+      "link_phrase": "Kučera (TOP 09) uznal pomalé řízení"
+    },
+    {
+      "text": "Kučera uvedl, že česká republika dlouhodobě patří mezi státy s nejpomalejšími a nejsložitějšími povolovacími procesy",
+      "citace": "Česká republika dlouhodobě patří mezi státy s nejpomalejšími a nejsložitějšími povolovacími procesy.",
+      "steno_id": "2025_5_01472",
+      "source": "steno",
+      "link_phrase": "Kučera (TOP 09) uznal pomalé řízení"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Stavba si počká",
+  "pocet_hlasovani": 9,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 93,
+    "pritomno_min": 140,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 99686,
+  "lead": "Koaliční změna stavebního zákona v prvním kole padla, třicet jedna proti osmdesáti šesti. Koalice chtěla zrychlit povolování staveb.",
+  "pointa": "Mrázová (ANO) kritizovala Fialovu novelu a Bartošovu digitalizaci, Kučera (TOP 09) uznal pomalé řízení, ale řekl, že rychlost nesmí ztratit právní jistotu. nefunkční novela bývalé vlády Petra Fialy i přes 10 novelizací.",
+  "mean": "Páteční večer patřil poslaneckému návrhu na novou podobu stavebního zákona, který koalice chtěla protlačit zkráceně. Sněmovna ho v prvním kole zamítla a stavební úřady zůstávají u starých pravidel."
+}

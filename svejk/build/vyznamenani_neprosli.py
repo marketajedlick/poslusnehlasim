@@ -210,7 +210,9 @@ def _load_votes_by_cislo(paths: SchuzePaths, datum_unl: str) -> dict[int, dict[s
         if not line.strip():
             continue
         v = json.loads(line)
-        if v.get("datum") != datum_unl:
+        from svejk.jednaci_den import vote_belongs_to_jednaci_den
+
+        if not vote_belongs_to_jednaci_den(v, datum_unl):
             continue
         out[int(v["cislo"])] = {
             "pro": int(v.get("pro") or 0),

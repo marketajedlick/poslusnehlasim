@@ -1,0 +1,29 @@
+{
+  "key": "2025/21/02.06.2026",
+  "obdobi": 2025,
+  "schuze": 21,
+  "datum_unl": "02.06.2026",
+  "iso": "2026-06-02",
+  "state": "published",
+  "topic_slugs": [
+    "novela-z-o-statni-socialni-podpore",
+    "novela-z-o-sprave-voleb",
+    "n-z-kterym-se-meni-nektere-zakony-na-useku-vnitr"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-06-02/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 10,
+    "votes_max_cislo": 10,
+    "steno_count": 147,
+    "steno_last_poradi": 147,
+    "topics_built_at": "2026-07-10T17:50:29.481267+00:00",
+    "fingerprint": "4a30b37079376621"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/21/02.06.2026",
+  "supersedes": null
+}

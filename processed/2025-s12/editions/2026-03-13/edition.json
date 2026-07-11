@@ -1,0 +1,27 @@
+{
+  "key": "2025/12/13.03.2026",
+  "obdobi": 2025,
+  "schuze": 12,
+  "datum_unl": "13.03.2026",
+  "iso": "2026-03-13",
+  "state": "published",
+  "topic_slugs": [
+    "novela-z-o-podpore-bydleni"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-03-13/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 7,
+    "votes_max_cislo": 7,
+    "steno_count": 114,
+    "steno_last_poradi": 114,
+    "topics_built_at": "2026-07-10T17:50:29.433517+00:00",
+    "fingerprint": "427f277b0bece589"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/12/13.03.2026",
+  "supersedes": null
+}

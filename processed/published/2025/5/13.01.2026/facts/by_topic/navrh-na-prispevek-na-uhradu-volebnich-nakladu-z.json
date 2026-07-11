@@ -1,0 +1,39 @@
+{
+  "slug": "navrh-na-prispevek-na-uhradu-volebnich-nakladu-z",
+  "nazev": "Příspěvek na úhradu volebních nákladů",
+  "datum": "13.01.2026",
+  "verdikt": "zvoleno",
+  "predmet_lidsky": "příspěvku stranám a hnutím na volební náklady z říjnových voleb",
+  "koho": [
+    "Koho se to týká? Politických stran a hnutí, která kandidovala do sněmovny. Občana na výplatní pasce to netrefí."
+  ],
+  "fakty": [
+    {
+      "text": "bez schválení toho usnesení Ministerstvo financí nevyplatí příslušné částky, neuhradí politickým stranám, hnutím a koalicím příspěvek na úhradu volebních nákladů",
+      "link_phrase": "bez schválení toho usnesení Ministerstvo financí nevyplatí příslušné částky, neuhradí"
+    },
+    {
+      "text": "Nacher řekl: Konstatuji, že v hlasování číslo 35 bylo přihlášeno 195 poslanců, pro 183, proti nikdo. Usnesení bylo přijato.",
+      "source": "steno",
+      "steno_id": "2025_5_00045",
+      "citace": "této chvíli otvírám podrobnou rozpravu, do které vidím, že se nikdo nehlásí, takže jí končím.",
+      "link_phrase": "nikdo proti"
+    },
+    {
+      "text": "Nacher uvedl, že dostáváme se k dnes hlavnímu bodu, na který asi všichni čekáte, což je 51.Žádost vlády České republiky o vyslovení důvěry",
+      "source": "steno",
+      "steno_id": "2025_5_00045",
+      "citace": "dnes hlavnímu bodu, na který asi všichni čekáte, což je 51.Žádost vlády České republiky o vyslovení důvěry Já předtím, než to zahájím, za prvé poprosím",
+      "link_phrase": "bodu, na který"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Výplata před důvěrou",
+  "lead": "Jediným hlasováním dne byly příspěvky na volební náklady, nikdo proti. Strany si vyúčtovaly říjen, pak začala třídenní debata o vládě.",
+  "pointa": "Válková připomněla, že bez usnesení by finance neposlaly stranám nic. Okamura pak konečně přešel k bodu, na který všichni čekali.",
+  "mean": "Než se začalo mluvit o tom, zda vláda získá důvěru, poslanci si rozdělili peníze za kampaně.",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "steno_slov": 307
+}

@@ -1,0 +1,28 @@
+{
+  "key": "2025/8/04.02.2026",
+  "obdobi": 2025,
+  "schuze": 8,
+  "datum_unl": "04.02.2026",
+  "iso": "2026-02-04",
+  "state": "published",
+  "topic_slugs": [
+    "neduvera-vlade-debata-den-dva",
+    "projednani-navrhu-na-vysloveni-neduvery-vlade-ce"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-02-04/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 4,
+    "votes_max_cislo": 4,
+    "steno_count": 475,
+    "steno_last_poradi": 475,
+    "topics_built_at": "2026-07-10T17:50:29.406528+00:00",
+    "fingerprint": "423c143e5f26132c"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/8/04.02.2026",
+  "supersedes": null
+}

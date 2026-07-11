@@ -1,0 +1,27 @@
+{
+  "datum": "27.05.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "novela-z-o-doplnkovem-penzijnim-sporeni",
+    "novela-z-o-investicnich-spolecnostech-eu"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 5,
+    "minuty": 744,
+    "end_cas": "21:30",
+    "proslo": 2,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
+  "dnesni_ucet": "Ráno dva zákony o penězích, skóre dne 2:0; odpoledne volby.\nVečer u stavebního zákona 21 hlasování jen o tom, kdy jít domů.",
+  "zaver": "že dopoledne prošly dva finanční zákony bez velkých dramat, odpoledne se volilo a večer se Sněmovna u stavebního zákona jednadvacetkrát ujišťovala hlasováním, že ještě nepůjde domů; Jurečka mezitím v sále napočítal osm koaličních poslanců.",
+  "vysledek": [
+    "* seniorům se vrátí příspěvky na penzijní spoření, prošlo 136:7",
+    "* dohled nad investičními fondy podle evropských pravidel prošel 137:0",
+    "* stavební zákon: jednadvacet návrhů na přerušení, neprošel ani jeden",
+    "* pravidla pro postřiky odložena na pátek 90:15"
+  ],
+  "proslo": 2,
+  "zamitnuto": 0
+}

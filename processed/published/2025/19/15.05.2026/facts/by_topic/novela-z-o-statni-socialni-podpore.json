@@ -1,0 +1,52 @@
+{
+  "slug": "novela-z-o-statni-socialni-podpore",
+  "nazev": "Novela z. o státní sociální podpoře",
+  "datum": "15.05.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "státní sociální podpoře",
+  "koho": [
+    "Koho se to týká? Rodiny čekající na příspěvek na bydlení, přídavek na dítě nebo další dávky z Úřadu práce."
+  ],
+  "fakty": [
+    {
+      "text": "Juchelka řekl, že úřad nestihne digitalizaci k 1. červenci kvůli superdávce.",
+      "source": "steno",
+      "steno_id": "2025_19_00014",
+      "citace": "Vážený pane předsedo, vážené paní poslankyně, vážení páni poslanci, dovolte mi, abych úvodem připomenul důvod předložení tohoto návrhu, který byl blíže představen již v prvním",
+      "link_phrase": "Juchelka"
+    },
+    {
+      "text": "Hřib a Richterová chtěli navýšit rodičák na 420 000 a valorizaci.",
+      "source": "steno",
+      "steno_id": "2025_19_00003",
+      "citace": "navrhujeme, aby to bylo 420 000 a hlavně aby se nastavila pravidelná valorizace.",
+      "link_phrase": "rodičák na 420 000"
+    },
+    {
+      "text": "Pozměňovací návrhy Pirátů a Blišťanové k rodičáku padly.",
+      "source": "votes",
+      "link_phrase": "Pozměňovací návrhy Pirátů a Blišťanové k rodičáku padly"
+    },
+    {
+      "text": "Finální hlasování číslo 7 v 09:48, sto dvacet osm hlasů pro.",
+      "source": "votes",
+      "link_phrase": "sto dvacet osm hlasů"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Dávky se digitalizují později",
+  "pocet_hlasovani": 5,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 74,
+    "pritomno_min": 150,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 3554,
+  "lead": "V pátek ráno Sněmovna v závěrečném hlasování schválila odklad digitalizace dávek státní sociální podpory, sto dvacet osm hlasů proti nule. Navazuje na schválení ze 6. května na šestnácté schůzi. Piráti místo toho tlačili rodičák na 420 000, koalice jejich návrhy zamítla.",
+  "pointa": "Juchelka hájil technickou změnu kvůli kapacitám IT po superdávce. Martínková Španihelová mluvila o valorizaci rodičovského příspěvku, Jurečka apeloval na shodu o péči. Pozměňovací návrhy Pirátů a Blišťanové k rodičáku padly.",
+  "mean": "Dávky z Úřadu práce se zatím nebudou převádět do plně digitálního režimu podle původního harmonogramu. Směr digitalizace zůstává, mění se tempo."
+}

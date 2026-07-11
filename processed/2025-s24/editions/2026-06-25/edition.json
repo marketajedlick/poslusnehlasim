@@ -1,0 +1,29 @@
+{
+  "key": "2025/24/25.06.2026",
+  "obdobi": 2025,
+  "schuze": 24,
+  "datum_unl": "25.06.2026",
+  "iso": "2026-06-25",
+  "state": "published",
+  "topic_slugs": [
+    "interpelace-vyborny-macinka-ustavni-soud",
+    "novela-z-o-spotrebitelskem-uveru",
+    "debata-interpelace-hladik-cerveny"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-06-25/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 286,
+    "votes_max_cislo": 286,
+    "steno_count": 2392,
+    "steno_last_poradi": 2442,
+    "topics_built_at": "2026-07-11T09:37:23.959985+00:00",
+    "fingerprint": "0a0e0d57377f083d"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/24/25.06.2026",
+  "supersedes": null
+}

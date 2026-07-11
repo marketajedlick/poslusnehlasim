@@ -914,8 +914,12 @@ def vysledek_radky(content: DenContent, paths: SchuzePaths, day_path: Path) -> l
         **(day.get("stats") or {}),
     }
     if "spor_o_porad" not in stats:
+        from svejk.jednaci_den import vote_belongs_to_jednaci_den
+
         day_votes = [
-            v for v in iter_jsonl(paths.votes_jsonl) if v.get("datum") == content.datum
+            v
+            for v in iter_jsonl(paths.votes_jsonl)
+            if vote_belongs_to_jednaci_den(v, content.datum)
         ]
         stats["spor_o_porad"] = spor_o_porad_schuze(day_votes)
     dummy_day = DenSchuze(datum=content.datum, den=content.den, bloky=[])

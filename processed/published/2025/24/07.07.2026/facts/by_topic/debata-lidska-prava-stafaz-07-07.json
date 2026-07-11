@@ -1,0 +1,37 @@
+{
+  "slug": "debata-lidska-prava-stafaz-07-07",
+  "nazev": "Stafáž ve výborech",
+  "datum": "07.07.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "návrh zřídit komisi pro lidská práva a citace rezignací expertů z vládních výborů",
+  "koho": [
+    "Koho se to týká? Organizace, které roky radily státu zadarmo v oblasti lidských práv a domácího násilí, a teď odcházejí."
+  ],
+  "fakty": [
+    {
+      "text": "Decroix citovala Wünschovou o stafáži ve výborech.",
+      "source": "steno",
+      "steno_id": "2025_24_02189",
+      "citace": "měla jsem pocit, že bych dělala jenom stafáž",
+      "link_phrase": "ve vládních výborech už dělá jen stafáž"
+    },
+    {
+      "text": "Decroix: experti rezignovali, je jich víc než 53.",
+      "source": "steno",
+      "steno_id": "2025_24_02189",
+      "citace": "připomenu, že je jich více než 53",
+      "link_phrase": "víc než padesáti třech expertech, kteří rezignovali"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 4,
+  "nadpis": "Stafáž ve výborech",
+  "lead": "Poslušně hlásím, že poslankyně Decroix (ODS) chtěla zařadit bod o komisi pro lidská práva. Neargumentovala jen svým názorem, ale citáty lidí, kteří pro stát roky pracovali zadarmo a teď odcházejí z vládních výborů.",
+  "pointa": "Decroix (ODS) citovala ředitelku Lociky Wünschovou, že ve vládních výborech už dělá jen stafáž. Poslušně podotýkám, že Decroix mluvila o víc než padesáti třech expertech, kteří rezignovali, a chtěla místo, kde by se o lidských právech dalo znovu jednat ve Sněmovně.",
+  "mean": "Expertka řekla, že ve výborech dělá jen kulisu. Decroix chtěla komisi, kde by se lidská práva nehrály naoko.",
+  "citace_text": "měla jsem pocit, že bych dělala jenom stafáž",
+  "citace_autor": "Eva Decroix (ODS), cituje Wünschovou",
+  "steno_id": "2025_24_02189",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

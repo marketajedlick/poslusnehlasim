@@ -1,0 +1,47 @@
+{
+  "slug": "novela-z-o-pojistnem-na-socialni-zabezpeceni",
+  "nazev": "Novela z. o pojistném na sociální zabezpečení",
+  "datum": "26.05.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky",
+  "koho": [
+    "Koho se to týká? Živnostníků a dalších, kteří si platí zálohy na sociální pojištění sami, ne zaměstnanců na výplatní pásce."
+  ],
+  "fakty": [
+    {
+      "text": "Schillerová uvedl, že minimální záloha, která od ledna činí 5 720 korun, klesne na 5 005 korun měsíčně; živnostník ušetří 715 korun měsíčně a rozdíl zaplacený od ledna stát vrátí.",
+      "source": "steno",
+      "steno_id": "2025_20_00115",
+      "citace": "pánové, dnes tu před vámi znovu stojím s návrhem zákona o pojistném na sociálním pojištění, který byl Senátem Parlamentu České republiky odmítnut.",
+      "link_phrase": "Schillerová počítala úsporu 715 korun měsíčně"
+    },
+    {
+      "text": "Senát zákon zamítl, sněmovna ho přehlasovala 118 hlasy; potřeba bylo 101 a nikdo nebyl proti.",
+      "source": "votes",
+      "link_phrase": "zamítl, sněmovna ho"
+    },
+    {
+      "text": "Lochman uvedl, že schillerová: opozice podle ní zvedla odvody živnostníkům dohromady zhruba o 50 000 korun, senátor Lochman varoval, že nižší zálohy znamenají nižší důchody.",
+      "source": "steno",
+      "steno_id": "2025_20_00121",
+      "citace": "Senát vystoupil ve prospěch dlouhodobé odpovědnosti, stability tohoto státu a v konečném důsledku i ve prospěch samotných osob samostatně výdělečně činných, tedy OSVČ.",
+      "link_phrase": "Lochman ze Senátu varoval"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Živnostníci ušetří na odvodech",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 158,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 8247,
+  "lead": "Živnostníkům klesne minimální záloha na sociální pojištění z 5 720 na 5 005 korun měsíčně. Senát to zamítl, Sněmovna ho ve 22 hodin přehlasovala 118 hlasy, proti nebyl nikdo.",
+  "pointa": "Schillerová počítala úsporu 715 korun měsíčně, Lochman ze Senátu varoval, že nižší zálohy znamenají nižší důchod. Koalice senátorské veto přehlasovala bez jediného hlasu proti.",
+  "mean": "Kdo si platí zálohy sám, ušetří 715 korun měsíčně a rozdíl zaplacený od ledna mu stát vrátí. Háček připomněl Senát: míň odvodů dnes znamená o něco míň důchodu za dvacet let."
+}

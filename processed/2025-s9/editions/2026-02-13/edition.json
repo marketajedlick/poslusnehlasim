@@ -1,0 +1,28 @@
+{
+  "key": "2025/9/13.02.2026",
+  "obdobi": 2025,
+  "schuze": 9,
+  "datum_unl": "13.02.2026",
+  "iso": "2026-02-13",
+  "state": "published",
+  "topic_slugs": [
+    "novela-z-o-zivotnim-a-existencnim-minimu",
+    "novela-z-o-davce-statni-socialni-pomoci"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-02-13/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 6,
+    "votes_max_cislo": 6,
+    "steno_count": 71,
+    "steno_last_poradi": 71,
+    "topics_built_at": "2026-07-10T17:50:29.407478+00:00",
+    "fingerprint": "efac35a763ff58da"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/9/13.02.2026",
+  "supersedes": null
+}

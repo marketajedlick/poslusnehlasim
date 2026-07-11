@@ -1,0 +1,24 @@
+{
+  "datum": "03.06.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "novela-z-o-podpore-bydleni"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 20,
+    "end_cas": "13:01",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  },
+  "dnesni_ucet": "Sedmnáctá schůze: bydlení po přerušení z pátku.\nSto osmnáct hlasů proti dvaceti třem.",
+  "zaver": "že středa dopoledne Sněmovna schválila zákon o podpoře bydlení a tím skončila sedmnáctá mimořádná schůze.",
+  "vysledek": [
+    "* změna zákona o podpoře bydlení schválena 118:23 v 13:01",
+    "* dvacet hlasování o pozměňovacích návrzích, dvanáct prošlo",
+    "* Richterová kritizovala vyškrtnutí definice dostupného bydlení",
+    "* Kovářová mluvila o dopadech bytové nouze na obce"
+  ]
+}

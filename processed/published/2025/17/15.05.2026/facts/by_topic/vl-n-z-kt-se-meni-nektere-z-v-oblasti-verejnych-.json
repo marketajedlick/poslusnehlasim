@@ -1,0 +1,51 @@
+{
+  "slug": "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-",
+  "nazev": "Vl.n.z., kt. se mění některé z. v oblasti veřejných rozpočtů",
+  "datum": "15.05.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": ", kt. se mění některé z. v oblasti veřejných rozpočtů",
+  "koho": [
+    "Koho se to týká? Každého, kdo platí daně. Jde o to, jak moc může stát utrácet nad rámec a jaké výjimky z limitů výdajů platí."
+  ],
+  "fakty": [
+    {
+      "text": "Malá řekla, že debata o tisku 90 trvala přes dvacet hodin na plénu i ve výborech.",
+      "source": "steno",
+      "steno_id": "2025_17_00389",
+      "citace": "Děkuji za slovo, pane předsedo.",
+      "link_phrase": "Malá řekla, že debata o tisku 90 trvala přes dvacet"
+    },
+    {
+      "text": "Jakob varoval před schodkem přes čtyři sta miliard a výjimkami Schillerové.",
+      "link_phrase": "přes čtyři sta miliard"
+    },
+    {
+      "text": "Vlček řekl, že vláda vypíná rozpočtová pravidla a brzdy.",
+      "source": "steno",
+      "steno_id": "2025_17_00401",
+      "citace": "Pane předsedající, já vám děkuji za slovo.",
+      "link_phrase": "Vlček říkal"
+    },
+    {
+      "text": "Finální hlasování číslo 44 v 13:10 padlo šedesát osm proti devadesáti.",
+      "source": "votes",
+      "link_phrase": "devadesát poslanců proti šedesáti osmi"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Rozpočtové brzdy padly",
+  "pocet_hlasovani": 36,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 98,
+    "pritomno_min": 152,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 38268,
+  "lead": "V pátek dopoledne Sněmovna zamítla vládní změnu rozpočtových zákonů, devadesát poslanců proti šedesáti osmi. Koalice chtěla rozvolnit fiskální limity, opozice mluvila o schodku přes čtyři sta miliard.",
+  "pointa": "Jakob obhajoval čtyři opoziční pozměňovací návrhy pro rezervu a silnější roli Národní rozpočtové rady. Vlček říkal, že Schillerová dříve slibovala, že limity nerozvolní, ale ve druhém kole přidala vlastní výjimky. Malá řekla, že debata o tisku 90 trvala přes dvacet. Finální",
+  "mean": "Zákon měl upravit limity výdajů státu podle evropských pravidel. Sněmovna ho v závěrečném hlasování neschválila, rozpočtová pravidla zůstávají v dosavadní podobě."
+}

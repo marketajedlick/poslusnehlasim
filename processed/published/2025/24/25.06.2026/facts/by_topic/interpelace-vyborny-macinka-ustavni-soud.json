@@ -1,0 +1,65 @@
+{
+  "slug": "interpelace-vyborny-macinka-ustavni-soud",
+  "nazev": "Interpelace Marka Výborného",
+  "datum": "25.06.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "interpelace Marka Výborného na ministra zahraničí Macinku kvůli výrokům o Ústavním soudu",
+  "koho": [
+    "Koho se to týká? Každého, kdo sleduje spor o cestu prezidenta Pavla na summit NATO a to, jestli vláda respektuje rozhodnutí Ústavního soudu."
+  ],
+  "fakty": [
+    {
+      "text": "Výborný v leadu citoval výrok o soudruhovi prezidentovi.",
+      "source": "steno",
+      "steno_id": "2025_24_00648",
+      "citace": "panu prezidentu Petru Pavlovi hovoříte jako o soudruhovi prezidentovi nebo dokonce o politickém nájezdníkovi, fakticky vyhrožujete dalším prohlubováním příkopů.",
+      "link_phrase": "Výborný (KDU-ČSL) mu ta slova při interpelaci doslova připomněl"
+    },
+    {
+      "text": "Jakob uvedl, že mean odkaz na ústavní puč.",
+      "source": "steno",
+      "steno_id": "2025_24_00451",
+      "citace": "Macinka označil podání kompetenční žaloby i samotné rozhodnutí Ústavního soudu za pokus o ústavní puč.",
+      "link_phrase": "pokus o ústavní puč"
+    },
+    {
+      "text": "Výborný citoval Macinkovy výroky o ústavním puči a o soudruhovi prezidentovi.",
+      "source": "steno",
+      "steno_id": "2025_24_00648",
+      "citace": "Vážená paní místopředsedkyně, pane ministře, já bych vás rád interpeloval ve věci vašich včerejších reakcí na předběžné opatření Ústavního soudu.",
+      "link_phrase": "Výborný (KDU-ČSL) mu ta slova při interpelaci doslova připomněl"
+    },
+    {
+      "text": "Výborný vyzval Macinku, aby šel k pultu a slova odvolal.",
+      "source": "steno",
+      "steno_id": "2025_24_00648",
+      "citace": "Pojďte sem, tato svoje skandální vyjádření odvolejte a omluvte se!",
+      "link_phrase": "Výborný (KDU-ČSL) mu ta slova při interpelaci doslova připomněl"
+    },
+    {
+      "text": "Macinka místo omluvy citoval Klause o aktivním Ústavním soudu.",
+      "source": "steno",
+      "steno_id": "2025_24_00650",
+      "citace": "Vážená paní předsedající, kolegyně, kolegové, tak teda, pane exministře, stojím tady.",
+      "link_phrase": "Macinka (Motoristé) rozhodnutí novinářům označil za pokus o ústavní puč"
+    },
+    {
+      "text": "Macinka ve druhé odpovědi znovu mluvil o soudruhovi prezidentovi.",
+      "source": "steno",
+      "steno_id": "2025_24_00654",
+      "citace": "aby mohl být vyřešen případ soudruha prezidenta.",
+      "link_phrase": "Macinka (Motoristé) rozhodnutí novinářům označil za pokus o ústavní puč"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 5,
+  "nadpis": "K pultu",
+  "lead": "Výborný (KDU-ČSL) interpeloval ministra zahraničí Macinku (Motoristé) kvůli reakci na předběžné opatření Ústavního soudu. Den předtím Macinka (Motoristé) novinářům ve Sněmovně mluvil o pokusu o ústavní puč a o prezidentu Pavlovi jako o soudruhovi prezidentovi a politickém nájezdníkovi. Výborný (KDU-ČSL) mu ta slova při interpelaci doslova připomněl, řekl, že jsou skandální, a vyzval ministra, aby šel k pultu, výroky odvolal a omluvil se veřejnosti.",
+  "pointa": "Macinka vstoupil k řečnickému pultu, ale místo omluvy citoval Václava Klause: máme prý co do činění s orgánem otevřeně aktivistickým a mocensky zcela nezdrženlivým. Potom se omluvil matkám, které roky čekaly na rozhodnutí Ústavního soudu v jiných věcech. Ministr šel k pultu, omluvu ale adresoval jinam.",
+  "mean": "Ústavní soud nařídil vládě, aby nebránila cestě prezidenta Pavla na červencový summit NATO v Ankaře, dokud spor nevyřeší. Macinka (Motoristé) rozhodnutí novinářům označil za pokus o ústavní puč, ve sněmovně pak místo omluvy citoval Klause. V demokratickém státě se rozhodnutí soudu respektují, i když se vládě nelíbí.",
+  "citace_text": "Pojďte sem, tato svoje skandální vyjádření odvolejte a omluvte se!",
+  "citace_autor": "Marek Výborný (KDU-ČSL)",
+  "pocet_hlasovani": 0,
+  "proslo": false,
+  "steno_id": "2025_24_00648"
+}

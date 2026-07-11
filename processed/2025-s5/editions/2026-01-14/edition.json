@@ -1,0 +1,28 @@
+{
+  "key": "2025/5/14.01.2026",
+  "obdobi": 2025,
+  "schuze": 5,
+  "datum_unl": "14.01.2026",
+  "iso": "2026-01-14",
+  "state": "published",
+  "topic_slugs": [
+    "debata-duvery-streda",
+    "premier-chybi-v-debate-duvery"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-01-14/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 159,
+    "votes_max_cislo": 159,
+    "steno_count": 1850,
+    "steno_last_poradi": 1850,
+    "topics_built_at": "2026-07-10T17:51:38.110138+00:00",
+    "fingerprint": "dfdf8178e495de0d"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/5/14.01.2026",
+  "supersedes": null
+}

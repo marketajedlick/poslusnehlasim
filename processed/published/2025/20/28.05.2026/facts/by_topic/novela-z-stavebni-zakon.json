@@ -1,0 +1,49 @@
+{
+  "slug": "novela-z-stavebni-zakon",
+  "nazev": "Novela z. - stavební zákon",
+  "datum": "28.05.2026",
+  "verdikt": "zamiteno",
+  "predmet_lidsky": "stavebním zákoně",
+  "koho": [
+    "Koho se to týká? Každého, kdo staví dům, dělá přístavbu nebo čeká na úřad."
+  ],
+  "fakty": [
+    {
+      "text": "Vlček uvedl, že změnu stavebního zákona předkládají poslanci vládních klubů v čele s Babišem; opozice jí říká lex developer a žádá stažení.",
+      "source": "steno",
+      "steno_id": "2025_20_00426",
+      "citace": "pánové, vážená paní ministryně, dobrý podvečer.",
+      "link_phrase": "říká lex developer a"
+    },
+    {
+      "text": "Za dva večery padlo 44 hlasování a všechna byla jen o tom, kdy debatu přerušit; o obsahu zákona se nehlasovalo ani jednou.",
+      "source": "votes",
+      "link_phrase": "o tom, kdy"
+    },
+    {
+      "text": "Jurečka ve středu večer spočítal v sále osm poslanců vládní koalice včetně jednoho ministra.",
+      "link_phrase": "Jurečka ve středu večer spočítal v sále osm poslanců vládní"
+    },
+    {
+      "text": "Ve čtvrtek večer kleslo kvorum pod hranici, u jednoho hlasování zbylo přihlášených 62 poslanců a Okamura podezíral kolegy, že si hrají s kartami.",
+      "kind": "scene",
+      "link_phrase": "podezíral kolegy, že"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Stavební zákon: 44 hlasování o ničem",
+  "pocet_hlasovani": 44,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 78,
+    "pritomno_min": 62,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 107681,
+  "lead": "Druhé kolo stavebního zákona se táhlo dva večery a padlo u něj 44 hlasování, jenže ani jedno o stavbách: hlasovalo se hlavně o tom, kdy jít domů. Prošel až čtvrteční návrh přerušit jednání, 64:10 minutu před jedenáctou večer.",
+  "pointa": "Jurečka mezitím v sále napočítal osm koaličních poslanců a jednoho ministra, Okamura zase podezíral kolegy, že vytahováním karet shazují kvorum. (V sále se ozval smích.) Jurečka ve středu večer spočítal v sále osm poslanců vládní.",
+  "mean": "Zákon má zrychlit povolování staveb, opozice mu říká lex developer a varuje před chaosem. Zatím se ale o jeho obsahu vůbec nehlasovalo, debata pokračovala další týden a na konci schůze ji poslanci vyřadili na příště."
+}

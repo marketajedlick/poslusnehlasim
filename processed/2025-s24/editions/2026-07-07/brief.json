@@ -1,0 +1,64 @@
+{
+  "datum_unl": "07.07.2026",
+  "iso": "2026-07-07",
+  "recommended": [
+    {
+      "slug": "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-",
+      "nazev": "Vl.n.z., kt. se mění některé z. v oblasti veřejných rozpočtů",
+      "score": 69,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 132,
+          "pritomno_min": 149,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 5515,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "Velmi silný hluk v sále.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_24_02195",
+          "citace": "(Velmi silný hluk v sále.)"
+        },
+        {
+          "text": "1.Návrh zákona, kterým se mění některé zákony v oblasti veřejných rozpočtů/sněmovní tisk 90/5/ – vráceno Senátem Senát vrátil návrh zákona s pozměňovacími návrhy.",
+          "source": "steno",
+          "steno_id": "2025_24_02195",
+          "citace": "1.Návrh zákona, kterým se mění některé zákony v oblasti veřejných rozpočtů/sněmovní tisk 90/5/ – vráceno Senátem Senát vrátil návrh zákona s pozměňovacími návrhy."
+        },
+        {
+          "text": "(Velmi silný hluk v sále.) Vážené kolegyně, vážení kolegové, odhlasovali jsme program schůze.",
+          "source": "steno",
+          "steno_id": "2025_24_02195",
+          "citace": "(Velmi silný hluk v sále.) Vážené kolegyně, vážení kolegové, odhlasovali jsme program schůze."
+        },
+        {
+          "text": "Stále silný hluk v sále. Obrací se na předsedajícího.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_24_02196",
+          "citace": "(Stále silný hluk v sále. Obrací se na předsedajícího.)"
+        }
+      ]
+    }
+  ],
+  "rejected": [],
+  "day_stats": {
+    "pocet_hlas_zakon": 1,
+    "proslo_vote": 1,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-07-07",
+      "2026-07-08"
+    ]
+  }
+}

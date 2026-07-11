@@ -1,0 +1,51 @@
+{
+  "slug": "novela-z-o-davce-statni-socialni-pomoci",
+  "nazev": "Novela z. o dávce státní sociální pomoci",
+  "datum": "13.02.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "dávce státní sociální pomoci",
+  "koho": [
+    "Koho se to týká? Domácností na sociálních dávkách. Superdávka má čtyři staré příspěvky sloučit do jedné, přechod trvá déle, než se čekalo."
+  ],
+  "fakty": [
+    {
+      "text": "Juchelka: Celkem jich je 413 154. Z toho nových žádostí je 79 593.",
+      "source": "steno",
+      "steno_id": "2025_9_00006",
+      "citace": "toho nových žádostí je 79 593.",
+      "link_phrase": "Juchelka"
+    },
+    {
+      "text": "Brzesková: Přechod na nový systém takzvané superdávky se pro stávající příjemce rušených dávek odkládá. Lidé by tak nynější dávky na bydlení, živobytí a děti pobírali až do července, ne do dubna.",
+      "source": "steno",
+      "steno_id": "2025_9_00050",
+      "citace": "pobírali až do července, ne do dubna.",
+      "link_phrase": "do července, ne do dubna."
+    },
+    {
+      "text": "Hlasování číslo 6, přihlášeno 136 poslanců, pro 130, proti nikdo. Návrh byl přijat.",
+      "link_phrase": "130 hlasů pro, nikdo proti"
+    },
+    {
+      "text": "Potlesk zleva.",
+      "kind": "scene",
+      "link_phrase": "Potlesk zleva"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Superdávka má o tři měsíce déle",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 133,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 3715,
+  "lead": "Mimořádná schůze schválila prodloužení přechodu na superdávku o tři měsíce, 130 hlasů pro, nikdo proti. Stávající příjemci dostanou staré dávky do července, ne do dubna.",
+  "pointa": "Juchelka děkoval koalici i opozici. Piráti a Starostové nevetovali, Richterová ale varovala před dopady na zranitelné domácnosti a chtěla jasná data. Potlesk zleva.",
+  "mean": "Superdávka mění způsob, jak stát vyplácí pomoc v hmotné nouzi. Úřad práce nestíhá převést přes 400 tisíc žádostí, proto vláda posouvá termín. Kapacity IT pak brzdí i digitalizaci dalších dávek na jaře a v létě. Lidé by neměli přijít o peníze, ale musí si v tíživé situaci říct o mimořádnou okamžitou pomoc."
+}

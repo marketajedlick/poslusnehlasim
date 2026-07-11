@@ -1,0 +1,27 @@
+{
+  "key": "2025/7/13.02.2026",
+  "obdobi": 2025,
+  "schuze": 7,
+  "datum_unl": "13.02.2026",
+  "iso": "2026-02-13",
+  "state": "published",
+  "topic_slugs": [
+    "novela-z-o-jednacim-radu-ps"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-02-13/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 91,
+    "votes_max_cislo": 91,
+    "steno_count": 980,
+    "steno_last_poradi": 980,
+    "topics_built_at": "2026-07-10T17:50:29.405293+00:00",
+    "fingerprint": "2f2c9649f7b730f5"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/7/13.02.2026",
+  "supersedes": null
+}

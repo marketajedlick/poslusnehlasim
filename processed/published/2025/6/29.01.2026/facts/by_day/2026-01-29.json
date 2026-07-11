@@ -1,0 +1,27 @@
+{
+  "datum": "29.01.2026",
+  "den": "čtvrtek",
+  "topic_slugs": [
+    "navrh-zakona-o-statnich-zamestnancich",
+    "mimoradna-schuze-statni-zakon"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 470,
+    "end_cas": "16:51",
+    "proslo": 0,
+    "zamitnuto": 1,
+    "dlouha_debata": true
+  },
+  "dnesni_ucet": "Mimořádná schůze místo interpelací.\nVelká reforma úřadů v prvním kole padla.",
+  "zaver": "že na mimořádné schůzi se sice celý den mluvilo o velké reformě úřadů, ale Sněmovna ji v prvním kole zastavila.",
+  "vysledek": [
+    "* oba návrhy o státních zaměstnancích v prvním kole zamítli",
+    "* tři organizační body prošly, osm zákonů padlo",
+    "* mimořádná schůze místo čtvrtečních interpelací",
+    "* debata o přes 70 000 zaměstnancích státu a analýzách dopadů"
+  ],
+  "proslo": 0,
+  "zamitnuto": 1
+}

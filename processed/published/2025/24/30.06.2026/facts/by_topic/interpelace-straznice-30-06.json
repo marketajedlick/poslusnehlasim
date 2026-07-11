@@ -1,0 +1,84 @@
+{
+  "slug": "interpelace-straznice-30-06",
+  "nazev": "Interpelace ke Strážnici",
+  "datum": "30.06.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "víkend na Mezinárodním folklorním festivalu ve Strážnici a reakce ministrů na pískot",
+  "koho": [
+    "Koho se to týká? Návštěvníky kulturních akcí, kde vystoupí politik. A každého, kdo platí koncesionářské poplatky a státní dotace festivalům."
+  ],
+  "fakty": [
+    {
+      "text": "Rakušan: Babiš ke Strážnici řekl, že to nebylo úplně šťastné.",
+      "source": "steno",
+      "steno_id": "2025_24_00887",
+      "citace": "dě. Ke Strážnici řekl, že to nebylo úplně šťastné.",
+      "link_phrase": "že to nebylo úplně šťastné."
+    },
+    {
+      "text": "Jakob: vypískaní ministři a svoboda slova.",
+      "source": "steno",
+      "steno_id": "2025_24_00889",
+      "citace": "víkendu odehrálo ve Strážnici, není jen příběh vypískaných ministrů.",
+      "link_phrase": "Jakob (TOP 09) řekl"
+    },
+    {
+      "text": "Jakob: jde o svobodu slova, ne jen o potlesk.",
+      "source": "steno",
+      "steno_id": "2025_24_00889",
+      "citace": "Tak děkuju, pane předsedo.",
+      "link_phrase": "Jakob (TOP 09) řekl"
+    },
+    {
+      "text": "Kupka se otáčí za Macinku.",
+      "source": "steno",
+      "steno_id": "2025_24_00899",
+      "citace": "tom, co má vlastně současná vládní většina k českým občanům, takto nejlépe dokumentuje poslední hříčka Motoristů na festivalu ve Strážnici.",
+      "link_phrase": "Kupka (ODS) připomněl"
+    },
+    {
+      "text": "Kupka: festival od roku 1946 nikdo nepolitizoval.",
+      "citace": "tom, co má vlastně současná vládní většina k českým občanům, takto nejlépe dokumentuje poslední hříčka Motoristů na festivalu ve Strážnici."
+    },
+    {
+      "text": "Svobodová: Macinka návštěvníkům při odchodu řekl, že se zbláznili.",
+      "source": "steno",
+      "steno_id": "2025_24_00925",
+      "citace": "při odchodu jim sdělil, že se zbláznili. Nevím, co čekal, my od něj jsme však nicméně nečekali trochu drama Queen.",
+      "link_phrase": "Macinka návštěvníkům při odchodu řekl, že se zbláznili"
+    },
+    {
+      "text": "Šrámková: Šťastný navrhl festivalu zrušit dotace.",
+      "source": "steno",
+      "steno_id": "2025_24_00931",
+      "citace": "tomu napsal, že by řešením bylo festivalu zrušit dotace.",
+      "link_phrase": "Šťastný navrhl festivalu zrušit dotace"
+    },
+    {
+      "text": "Bureš uvedl, že šrámková o Okamurovi a Heleně Truchlé z ČT.",
+      "citace": "video na sociální sítě.",
+      "steno_id": "2025_24_00054",
+      "source": "steno",
+      "link_phrase": "Šrámková o Okamurovi a Heleně Truchlé z ČT"
+    },
+    {
+      "text": "Kučera: Klempíř je dobrý performer.",
+      "source": "steno",
+      "steno_id": "2025_24_00921",
+      "citace": "to vystoupení třeba Oty Klempíře bylo poměrně zábavné, Ota je dobrý performer.",
+      "link_phrase": "Klempíř je dobrý performer"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 5,
+  "nadpis": "Pískot ve Strážnici",
+  "lead": "O víkendu na Mezinárodním folklorním festivalu ve Strážnici vypískali ministry Klempíře (Motoristé) a Macinku (Motoristé). O festivalu prý Babiš (ANO) řekl jen, že to nebylo úplně šťastné. Jakob (TOP 09) řekl, že jde o svobodu slova, ne jen o potlesk. Kupka (ODS) připomněl, že festival od roku 1946 nikdo nepolitizoval.",
+  "lead_tail": "Svobodová (Piráti) popsala, že Macinka (Motoristé) návštěvníkům při odchodu řekl, že se zbláznili. Šrámková (Piráti) připomněla, že ministr Šťastný (Motoristé) navrhl festivalu zrušit dotace, a kritizovala reakci předsedy Sněmovny Okamury (SPD) na redaktorku České televize Helenu Truchlou: v rozhovoru o víkendu ve Strážnici ji přirovnal k nacistům a celé video pak vystavil na sítě.",
+  "pointa": "",
+  "mean": "Mezinárodní folklorní festival ve Strážnici dostává i státní podporu. Když politik na pódiu nedostane potlesk, ve sněmovně se z toho stane diskuze o svobodě slova a o dotacích. Macinka návštěvníkům při odchodu řekl, že se zbláznili. Šťastný navrhl festivalu zrušit dotace. Šrámková o Okamurovi a Heleně Truchlé z ČT. Klempíř je dobrý performer.",
+  "citace_text": "Od roku 1946 procházel ten festival jako svátek lidové kultury.",
+  "citace_autor": "Martin Kupka (ODS)",
+  "steno_id": "2025_24_00899",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "novela-z-o-sprave-voleb",
+  "nazev": "Novela z. o správě voleb",
+  "datum": "02.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "správě voleb",
+  "koho": [
+    "Koho se to týká? Hlavně nevidomých a slabozrakých voličů, kteří díky QR kódům rozeznají volební lístky bez cizí pomoci."
+  ],
+  "fakty": [
+    {
+      "text": "Canov uvedl, že senátor Canov: QR kódy mají nevidomým a slabozrakým umožnit volit sami bez asistenta, nebo si asistenta zkontrolovat.",
+      "source": "steno",
+      "steno_id": "2025_21_00102",
+      "citace": "Byl jsem tady přesně před 40 dny, a protože se mi u vás moc líbilo, tak jsem tady zase.",
+      "link_phrase": "Canov se loučil slovy"
+    },
+    {
+      "text": "Metnar uvedl, že ministr vnitra Metnar podpořil odklad ostrého spuštění informačního systému správy voleb, systém prý není plošně otestovaný.",
+      "source": "steno",
+      "steno_id": "2025_21_00112",
+      "citace": "považuji za odpovědné navržení odložení ostrého spuštění voleb, tedy avizovaného informačního systému správy voleb.",
+      "link_phrase": "Ministr vnitra Metnar podpořil odklad ostrého spuštění informačního systému správy"
+    },
+    {
+      "text": "Canov se loučil, že tu byl přesně před čtyřiceti dny a moc se mu tu líbilo; sál se pobavil a tleskal.",
+      "kind": "scene",
+      "citace": "Byl jsem tady přesně před 40 dny, a protože se mi u vás moc líbilo, tak jsem tady zase."
+    },
+    {
+      "text": "Schváleno rovnou v prvním kole: všech 155 přítomných pro, nikdo proti.",
+      "link_phrase": "rovnou v prvním"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Volby s QR kódem",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 155,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 3589,
+  "lead": "Nevidomí a slabozrací voliči si budou moct volební lístky rozeznat sami: nově na nich budou QR kódy. Senátní nápad prošel zrychleně rovnou v prvním kole a pro bylo všech sto padesát pět přítomných.",
+  "pointa": "Senátor Canov se loučil slovy, že tu byl přesně před čtyřiceti dny a protože se mu to líbilo, je tu zase; sál se pobavil a zatleskal mu. Ministr vnitra Metnar podpořil odklad ostrého spuštění informačního systému správy.",
+  "mean": "Kromě QR kódů se k senátním volbám vrací oddělené lístky pro každého kandidáta a stát si dá pauzu se spouštěním nového počítačového systému pro správu voleb, dokud ho pořádně neotestuje. Platit to má už pro podzimní komunální a senátní volby."
+}

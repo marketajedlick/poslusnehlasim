@@ -1,0 +1,23 @@
+{
+  "datum": "14.11.2025",
+  "den": "pátek",
+  "topic_slugs": [
+    "volba-mistopredsedu-2-kolo"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 146,
+    "end_cas": "12:39",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  },
+  "dnesni_ucet": "Skopeček třetím místopředsedou, Richterová 30 hlasů.\nJedno křeslo ve vedení zůstává prázdné.",
+  "zaver": "že pátek doplnil vedení o Skopečka, Richterová ve druhém kole tajné volby neuspěla a jedno křeslo místopředsedy zůstalo prázdné.",
+  "vysledek": [
+    "* Jan Skopeček zvolen místopředsedou 121:30 proti Richterové",
+    "* předsedové výborů potvrzeni",
+    "* návrhy na body o ženách ve vedení zamítnuty"
+  ]
+}

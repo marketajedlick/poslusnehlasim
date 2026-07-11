@@ -1,0 +1,38 @@
+{
+  "slug": "navrh-pravidel-hospodareni-poslaneckych-klubu-pr",
+  "nazev": "Návrh Pravidel hospodaření poslaneckých klubů pro rok 2026",
+  "datum": "12.03.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "návrh Pravidel hospodaření poslaneckých klubů pro rok 2026",
+  "koho": [
+    "Koho se to týká? Politických stran ve sněmovně. Daňový poplatník platí provoz klubů."
+  ],
+  "fakty": [
+    {
+      "text": "Hlasování číslo 251, pro 127, proti nikdo. Návrh byl přijat.",
+      "link_phrase": "127 hlasů pro, nikdo proti"
+    },
+    {
+      "text": "Poslankyně Vesecká žádá kolegu v poslanecké lavici, aby ji odhlásil.",
+      "kind": "scene",
+      "citace": "poslanecké lavici, aby ji odhlásil.), pro 121, proti nikdo.",
+      "link_phrase": "Okamura"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Pravidla pro kluby",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 132,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 509,
+  "lead": "Sněmovna schválila pravidla hospodaření poslaneckých klubů, 127 hlasů pro, nikdo proti.",
+  "pointa": "Okamura vedl hlasování o rezignacích a nominacích do orgánů ještě před zákony.",
+  "mean": "Každý klub dostává z rozpočtu sněmovny peníze na provoz. Pravidla říkají, za co je může utratit."
+}

@@ -1,0 +1,29 @@
+{
+  "key": "2025/23/11.06.2026",
+  "obdobi": 2025,
+  "schuze": 23,
+  "datum_unl": "11.06.2026",
+  "iso": "2026-06-11",
+  "state": "published",
+  "topic_slugs": [
+    "debata-turek-stavebni-zakon",
+    "debata-kovarova-stavebni-zakon",
+    "novela-z-stavebni-zakon"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-06-11/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 4,
+    "votes_max_cislo": 4,
+    "steno_count": 191,
+    "steno_last_poradi": 191,
+    "topics_built_at": "2026-06-15T04:26:57.370484+00:00",
+    "fingerprint": "fe8765ad57c70afd"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/23/11.06.2026",
+  "supersedes": null
+}

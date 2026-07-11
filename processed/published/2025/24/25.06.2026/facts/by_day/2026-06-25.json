@@ -1,0 +1,26 @@
+{
+  "datum": "25.06.2026",
+  "den": "čtvrtek",
+  "topic_slugs": [
+    "interpelace-vyborny-macinka-ustavni-soud",
+    "novela-z-o-spotrebitelskem-uveru",
+    "debata-interpelace-hladik-cerveny"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 8,
+    "minuty": 99,
+    "end_cas": "12:56",
+    "proslo": 7,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": false
+  },
+  "dnesni_ucet": "Šest ratifikací odsouhlaseno jako na páse,\nspor o NZÚ a Macinkův puč u pultu.",
+  "zaver": "že Sněmovna rychle schválila šest ratifikací mezinárodních smluv, dopoledne se Hladík s Červeným přeli o dotace Nové zelené úsporám, a odpoledne Výborný vyzval Macinku, aby u pultu odvolal výroky o ústavním puči a soudruhovi prezidentovi.",
+  "vysledek": [
+    "* Schillerová (ANO): To je fakt peklo dneska, novela prošla druhým kolem",
+    "* Hladík (KDU-ČSL) tvrdil čtyři sta padesát tisíc domácností, Červený (Motoristé) páku padesát miliard a přiznal, že mladé lidovce vyhodili ze sítí resortu, nechtěli opozici u klávesnice",
+    "* Výborný (KDU-ČSL) vyzval Macinku k pultu, ministr místo omluvy citoval Klause"
+  ]
+}

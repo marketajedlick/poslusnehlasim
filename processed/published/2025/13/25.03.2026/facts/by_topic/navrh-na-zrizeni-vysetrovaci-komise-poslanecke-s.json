@@ -1,0 +1,40 @@
+{
+  "slug": "navrh-na-zrizeni-vysetrovaci-komise-poslanecke-s",
+  "nazev": "Návrh na zřízení vyšetřovací komise Poslanecké sněmovny ke kauze Dozim",
+  "datum": "25.03.2026",
+  "verdikt": "zvoleno",
+  "predmet_lidsky": "vyšetřovací komise ke kauze Dozimetr",
+  "koho": [
+    "Koho se to týká? Veřejnosti sledující korupční kauzu kolem Dopravního podniku Prahy, KSS Středočeského kraje a VZP."
+  ],
+  "fakty": [
+    {
+      "text": "Rajchl navrhl komisi k prošetření kauzy Dozimetr v Dopravním podniku hlavního města Prahy.",
+      "source": "steno",
+      "steno_id": "2025_13_00188",
+      "citace": "Děkuji mockrát, pane předsedající, dobré dopoledne všem.",
+      "link_phrase": "Rajchl navrhl komisi k prošetření kauzy Dozimetr v Dopravním podniku"
+    },
+    {
+      "text": "Hřib rozšířil mandát komise o KSS Středočeského kraje a VZP.",
+      "link_phrase": "Hřib rozšířil mandát komise o KSS Středočeského kraje a VZP"
+    },
+    {
+      "text": "Hlasování číslo 110, pro 89, proti 15, komise zřízena.",
+      "link_phrase": "osmdesát devět hlasů pro, patnáct proti"
+    },
+    {
+      "text": "Hřib se zdržel, chybí mu prověření výběrových řízení.",
+      "link_phrase": "Hřib se zdržel, chybí mu prověření výběrových řízení"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Komise ke kauze Dozimetr",
+  "lead": "Sněmovna zřídila vyšetřovací komisi ke kauze Dozimetr, osmdesát devět hlasů pro, patnáct proti. Má prošetřit DPP, středočeskou silničářskou správu i VZP.",
+  "pointa": "Hřib komisi podpořil pozměňovacím návrhem, ale u závěrečného hlasování se zdržel kvůli absenci bodu o výběrových řízeních. Rajchl navrhl komisi k prošetření kauzy Dozimetr v Dopravním podniku. Hřib rozšířil mandát komise o KSS Středočeského kraje a VZP. Hřib se zdržel, chybí mu prověření výběrových řízení.",
+  "mean": "Třináctičlenná komise má do roka předložit zjištění a návrhy opatření. Piráti do ní pošlou zástupce, i když Hřib s mandátem nesouhlasil.",
+  "pocet_hlasovani": 4,
+  "proslo": true,
+  "steno_slov": 22782
+}

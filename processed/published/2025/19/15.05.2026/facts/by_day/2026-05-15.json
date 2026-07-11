@@ -1,0 +1,25 @@
+{
+  "datum": "15.05.2026",
+  "den": "pátek",
+  "topic_slugs": [
+    "novela-z-o-statni-socialni-podpore",
+    "novela-z-o-socialnich-sluzbach"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 57,
+    "end_cas": "09:58",
+    "proslo": 2,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
+  "dnesni_ucet": "Mimořádná devatenáctá schůze, sedmnáctá mezitím řeší rozpočet.\nRanní hodinka dvou sociálních zákonů v závěrečném hlasování.",
+  "zaver": "že pátek ráno Sněmovna schválila odklad digitalizace dávek a posun převodu péče na rok 2028, Piráti místo toho tlačili na rodičák.",
+  "vysledek": [
+    "* digitalizace dávek odložena, schváleno 128:0 v závěrečném hlasování",
+    "* převod péče OZP na 2028 a mobilita na 3000 Kč, schváleno 132:0",
+    "* pozměňovací návrhy Pirátů k rodičáku zamítnuty",
+    "* Jurečkův návrh na navýšení příspěvku na péči padl"
+  ]
+}

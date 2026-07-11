@@ -1,0 +1,44 @@
+{
+  "slug": "debata-porad-hlasovani-07-07",
+  "nazev": "Devět hlasování o pořadu",
+  "datum": "07.07.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "večerní hlasování o tom, v jakém pořadí se budou projednávat body schůze",
+  "koho": [
+    "Koho se to týká? Každého, kdo čekal, jestli se v úterý večer vůbec dostane k zákonům, nebo Sněmovna zase hodiny hlasuje jen o programu."
+  ],
+  "fakty": [
+    {
+      "text": "Malá zavetovala nové body za ANO, SPD a Motoristy.",
+      "source": "steno",
+      "steno_id": "2025_24_02194",
+      "citace": "paní poslankyně jménem poslanců hnutí ANO, SPD a Motoristů zavetovala nově navržené body",
+      "link_phrase": "Malá (ANO) zavetovala nové body"
+    },
+    {
+      "text": "Skopeček odčítal devět hlasování o pořadu.",
+      "source": "steno",
+      "steno_id": "2025_24_02194",
+      "citace": "Tím jsme se vypořádali se všemi hlasovatelnými návrhy, které zazněly ve vašich vystoupeních.",
+      "link_phrase": "devět večerních hlasování o pořadu"
+    },
+    {
+      "text": "Rozpočtová pravidla prošla jako první bod večerního programu.",
+      "source": "steno",
+      "steno_id": "2025_24_02194",
+      "citace": "sněmovní tisk 90, bod číslo 1, oblast veřejných rozpočtů, vrácený zákonem, aby byl projednávaný jako první bod dnes.",
+      "link_phrase": "rozpočtová pravidla zůstala prvním bodem"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Devět hlasování\no pořadu",
+  "lead": "Poslušně hlásím, že po návrzích opozice přišlo veto. Koalice nové body z programu vyškrtla a pak devětkrát hlasovala o tom, co se bude projednávat dřív a co později.",
+  "pointa": "Poslankyně Malá (ANO) zavetovala nové body jménem ANO, SPD a Motoristů. Předsedající Skopeček (ODS) pak odčítal devět večerních hlasování o pořadu, z nichž většina padla. Poslušně hlásím, že rozpočtová pravidla zůstala prvním bodem, ke kterému se Sněmovna v noci dostala.",
+  "mean": "Opozice chtěla bydlení, paliativní péči a lidská práva. Koalice body vetovala a devětkrát hlasovala o pořadu, ne o obsahu.",
+  "citace_text": "paní poslankyně jménem poslanců hnutí ANO, SPD a Motoristů zavetovala nově navržené body",
+  "citace_autor": "Jan Skopeček (ODS)",
+  "steno_id": "2025_24_02194",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

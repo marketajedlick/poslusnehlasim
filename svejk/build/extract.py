@@ -9,6 +9,12 @@ from typing import Any
 
 from svejk.build.io import iter_jsonl, read_json, write_json
 from svejk.build.vote_logic import topic_proslo_from_votes, vote_kategorie
+from svejk.jednaci_den import (
+    jednaci_den_minuty,
+    vote_belongs_to_jednaci_den,
+    vote_chrono_key,
+    vote_jednaci_datum,
+)
 from svejk.listy import (
     KDO_KLIC,
     PREDMET_LIDSKY,
@@ -373,21 +379,19 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
 
     # statistiky dne z votes
     votes = list(iter_jsonl(paths.votes_jsonl))
-    days = sorted({v["datum"] for v in votes if v.get("datum")})
+    days = sorted({vote_jednaci_datum(v) for v in votes if v.get("datum")})
     for datum in days:
-        day_votes = [v for v in votes if v.get("datum") == datum]
+        day_votes = [v for v in votes if vote_belongs_to_jednaci_den(v, datum)]
         vote_proslo, vote_zamitnuto, pocet_hlas = _den_zakon_stats(day_votes)
         from svejk.build.vote_logic import spor_o_porad_schuze
 
         spor_o_porad = spor_o_porad_schuze(day_votes)
-        times = [v.get("cas", "") for v in day_votes if v.get("cas")]
-        start = times[0][:5] if times else ""
-        end = _steno_konec_schuze(paths.steno_jsonl) or (times[-1][:5] if times else "")
-        minuty = 0
-        if start and end:
-            sh, sm = int(start[:2]), int(start[3:5])
-            eh, em = int(end[:2]), int(end[3:5])
-            minuty = max(0, (eh * 60 + em) - (sh * 60 + sm))
+        ordered = sorted(day_votes, key=vote_chrono_key)
+        start = (ordered[0].get("cas") or "")[:5] if ordered else ""
+        end = _steno_konec_schuze(paths.steno_jsonl) or (
+            (ordered[-1].get("cas") or "")[:5] if ordered else ""
+        )
+        minuty = jednaci_den_minuty(day_votes)
 
         slugs = by_day_topics.get(datum, [])
         proslo, zamitnuto = skore_z_verdiktu(slugs, paths)

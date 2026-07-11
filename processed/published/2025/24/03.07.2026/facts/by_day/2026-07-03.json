@@ -1,0 +1,27 @@
+{
+  "datum": "03.07.2026",
+  "den": "pátek",
+  "topic_slugs": [
+    "novela-z-o-jednacim-radu-ps",
+    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 222,
+    "end_cas": "12:56",
+    "proslo": 2,
+    "zamitnuto": 0,
+    "spor_o_porad": false,
+    "dlouha_debata": true
+  },
+  "dnesni_ucet": "Sněmovna si zkrátila řeči u finálního hlasování o zákonech,\na mezi výbory bez debaty vyměnila Turka za poslankyni jiného klubu.",
+  "zaver": "že bojiště zůstává bojištěm, jen se v něm bude méně mluvit, a že výbory si mezi sebou poslanci umí přeskládat rychleji, než stihnete říct rezignace.",
+  "vysledek": [
+    "* jednací řád: první kolo ve středu čtyřikrát padlo, nejhůř tři pro, osmdesát čtyři proti",
+    "* v pátek dalších šestadvacet pozměňovacích návrhů, šestnáct jich neprošlo",
+    "* dva poslanci museli po hlasování opravit zápis, systém jim zaznamenal hlas obráceně",
+    "* zákon nakonec prošel 110:12, tleskala pravá polovina sálu",
+    "* evropský výbor: Turek (Motoristé) odešel, místo něj Majerová (SPD) nominovaná Motoristy sobě, 119:0 a 108:0"
+  ]
+}

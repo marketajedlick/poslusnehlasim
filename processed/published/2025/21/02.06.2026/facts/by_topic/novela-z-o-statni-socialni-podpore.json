@@ -1,0 +1,54 @@
+{
+  "slug": "novela-z-o-statni-socialni-podpore",
+  "nazev": "Novela z. o státní sociální podpoře",
+  "datum": "02.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "státní sociální podpoře",
+  "koho": [
+    "Koho se to týká? Rodičů dětí narozených od ledna 2027. Rodičovský příspěvek se zvedne o padesát tisíc korun, u dvojčat a vícerčat na dvojnásobek."
+  ],
+  "fakty": [
+    {
+      "text": "Juchelka uvedl, že ministr Juchelka: rodičovský příspěvek stoupne na čtyři sta tisíc korun, pro rodiny s vícerčaty na osm set tisíc, pro děti narozené od 1. ledna 2027.",
+      "source": "steno",
+      "steno_id": "2025_21_00021",
+      "citace": "státní sociální podpoře, ve znění pozdějších předpisů.",
+      "link_phrase": "na čtyři sta tisíc korun,"
+    },
+    {
+      "text": "Ančincová: v roce 2025 se narodilo 77 636 dětí, nejméně za více než dvě stě let sledování.",
+      "source": "steno",
+      "steno_id": "2025_21_00043",
+      "citace": "Děkuji za slovo, pane předsedající.",
+      "link_phrase": "se narodilo 77 636 dětí, nejméně za"
+    },
+    {
+      "text": "Havránek uvedl, že debata sklouzla od peněz k urážkám, padlo slovo klerofašisti i opakované nařčení ze lhaní; Havránek odmítl obojí.",
+      "source": "steno",
+      "steno_id": "2025_21_00087",
+      "citace": "Krásné odpoledne, 20 vteřin by mi asi nestačilo, maximálně na to, že gratuluji paní kolegyni Pastuchové ke čtvrtému mandátu.",
+      "link_phrase": "Debata sklouzla od peněz k urážkám, padlo slovo klerofašisti i"
+    },
+    {
+      "text": "Do sociálního výboru posláno 154 hlasy, nikdo proti; lhůta na projednání zkrácena na 25 dnů (155 pro).",
+      "source": "votes",
+      "link_phrase": "Do sociálního výboru posláno 154 hlasy, nikdo proti; lhůta na"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Rodičům chtějí přidat",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 157,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 11774,
+  "lead": "Rodičovský příspěvek má stoupnout z tří set padesáti na čtyři sta tisíc korun, u dvojčat a vícerčat na osm set tisíc. Platit má pro děti narozené od ledna 2027 a v sále se proti tomu nezvedla jediná ruka.",
+  "pointa": "O penězích se nehádal nikdo, zato o slovech ano: rozpravou létaly výrazy „klerofašisti“ a „lhářka“, zatímco příspěvek tiše proplul jednomyslně. Debata sklouzla od peněz k urážkám, padlo slovo klerofašisti i. Do sociálního výboru posláno 154 hlasy, nikdo proti; lhůta na.",
+  "mean": "Zatím jde o první kolo: návrh teď čeká kolečko po sociálním výboru a lhůtu na projednání si poslanci zkrátili na dvacet pět dnů, aby přidání stihli. Pro úplnost, loni se narodilo 77 636 dětí, nejméně za dvě stě let, takže se přidává rodičům, kterých ubývá."
+}

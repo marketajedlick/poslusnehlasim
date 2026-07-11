@@ -1,0 +1,48 @@
+{
+  "slug": "n-z-kterym-se-meni-nektere-zakony-na-useku-vnitr",
+  "nazev": "N. z., kterým se mění některé zákony na úseku vnitřní správy",
+  "datum": "02.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "n. z., kterým se mění některé zákony na úseku vnitřní správy",
+  "koho": [
+    "Koho se to týká? České pošty a jejích zákazníků, a všech, kdo čekají na elektronickou sbírku zákonů a digitální úřady."
+  ],
+  "fakty": [
+    {
+      "text": "Lang: poště se vrací stará pravidla financování, Evropská komise povolila podporu jen do výše miliardy a půl ročně.",
+      "link_phrase": "poště se vrací stará pravidla financování,"
+    },
+    {
+      "text": "Stojanová: odklad eLegislativy nesmí být zároveň odkladem transparentnosti.",
+      "source": "steno",
+      "steno_id": "2025_21_00125",
+      "citace": "Ten technický odklad eLegislativy totiž nesmí být zároveň odkladem transparentnosti.",
+      "link_phrase": "Stojanová varovala"
+    },
+    {
+      "text": "Skopeček varoval, ať se z odkladu nestane nový standard a z termínů bezvýznamná čísla.",
+      "link_phrase": "ať se z odkladu nestane nový standard"
+    },
+    {
+      "text": "Do výboru pro veřejnou správu posláno 145 hlasy; Bendův návrh přibrat ústavně-právní výbor zamítnut (62 pro), zkrácení lhůt na 30 dnů prošlo 91 pro, 7 proti.",
+      "source": "votes",
+      "link_phrase": "Do výboru pro veřejnou správu"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Pošta a věčné odklady",
+  "pocet_hlasovani": 3,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 7,
+    "pritomno_min": 155,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 5957,
+  "lead": "Balík změn pro Českou poštu a státní počítače: poště se vrací stará pravidla financování, aby nenarazila u Bruselu, a elektronická sbírka zákonů se zase odkládá, protože systém pořád není hotový.",
+  "pointa": "Stojanová varovala, že odklad eLegislativy nesmí být odkladem transparentnosti, a Skopeček dodal, ať se z odkladu nestane nový standard.",
+  "mean": "První kolo: návrh jde do výboru pro veřejnou správu a lhůta se zkrátila na třicet dnů. Jediné, co dnes spadlo pod stůl, byl Bendův nápad přibrat k tomu ještě ústavně-právní výbor, pro bylo jen dvaašedesát poslanců."
+}

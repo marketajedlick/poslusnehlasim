@@ -1,0 +1,51 @@
+{
+  "slug": "novela-z-o-podpore-bydleni",
+  "nazev": "Novela z. o podpoře bydlení",
+  "datum": "29.05.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "podpoře bydlení",
+  "koho": [
+    "Koho se to týká? Lidi v bytové nouzi, nájemníky a obce. Novela ladí podpůrná opatření a spolupráci samospráv s úřady."
+  ],
+  "fakty": [
+    {
+      "text": "Richterová řekla, že dostupné bydlení je zásadní pro rodiny i seniory.",
+      "citace": "Krásné dobré ráno, vážené paní poslankyně, vážení páni poslanci, vážení členové a členky vlády, já v tom úvodním slově nebudu dlouhá, ale budu trošičku obecnější,",
+      "steno_id": "2025_17_00671",
+      "source": "steno",
+      "link_phrase": "Richterová kritizovala vyškrtnutí definice dostupného bydlení"
+    },
+    {
+      "text": "Kovářová citovala starostu o dopadech bytové nouze na obce.",
+      "link_phrase": "Kovářová citovala starostu o dopadech bytové nouze na obce"
+    },
+    {
+      "text": "Fialová hájila pojistku proti obchodníkům s chudobou u poskytovatelů.",
+      "citace": "obec, která toho poskytovatele zná, má s ním zkušenosti, nějakým způsobem ho vyhodnotí a ten poskytovatel přece když bude v pořádku, tak nebude nabírat byty,",
+      "steno_id": "2025_17_00701",
+      "source": "steno",
+      "link_phrase": "Fialová"
+    },
+    {
+      "text": "Finální hlasování číslo 70 v 13:01, sto osmnáct proti dvaceti třem.",
+      "source": "votes",
+      "link_phrase": "proti dvaceti třem."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Podpora bydlení prošla",
+  "pocet_hlasovani": 24,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 97,
+    "pritomno_min": 106,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 64787,
+  "lead": "Ve středu dopoledne Sněmovna schválila změnu zákona o podpoře bydlení, sto osmnáct hlasů proti dvaceti třem. Debata pokračovala po pátečním přerušení, koalice protlačila vládní verzi.",
+  "pointa": "Richterová kritizovala vyškrtnutí definice dostupného bydlení, Urbanová zákon obhajovala jako pomoc obcím. Fialová hájila kontrolu poskytovatelů podpůrných opatření. Kovářová citovala starostu o dopadech bytové nouze na obce.",
+  "mean": "Změna zákona upravuje podpůrná opatření v bydlení a práci kontaktních míst obcí. Zákon prošel v závěrečném hlasování po přerušení z pátku 29. května."
+}

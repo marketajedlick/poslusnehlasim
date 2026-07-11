@@ -13,6 +13,7 @@ from svejk.build.vote_logic import (
     topic_proslo_from_votes,
     vote_kategorie,
 )
+from svejk.jednaci_den import vote_jednaci_datum
 from svejk.paths import SchuzePaths
 from svejk.obcansky import tema_z_nazvu
 
@@ -190,7 +191,7 @@ def run_align(paths: SchuzePaths) -> dict[str, Any]:
     for (bod, nazev), group in sorted(by_key.items(), key=lambda x: (x[0][0], x[0][1])):
         group.sort(key=lambda v: (v.get("datum", ""), v.get("cas", "")))
         last = group[-1]
-        datum = last.get("datum", "")
+        datum = vote_jednaci_datum(last)
         cisla = [int(v["cislo"]) for v in group if v.get("cislo") is not None]
         prijato = sum(1 for v in group if v.get("vysledek") == "A")
         zamitnuto = sum(1 for v in group if v.get("vysledek") == "R")

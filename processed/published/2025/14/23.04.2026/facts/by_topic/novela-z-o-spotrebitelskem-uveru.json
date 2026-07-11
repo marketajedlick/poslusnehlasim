@@ -1,0 +1,47 @@
+{
+  "slug": "novela-z-o-spotrebitelskem-uveru",
+  "nazev": "Novela z. o spotřebitelském úvěru",
+  "datum": "23.04.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "spotřebitelském úvěru",
+  "koho": [
+    "Koho se to týká? Lidi, kteří si berou půjčku, splátkový prodej nebo kreditní kartu."
+  ],
+  "fakty": [
+    {
+      "text": "Šťastný prosadil spotřebitelský úvěr jako první bod čtvrteční schůze.",
+      "source": "steno",
+      "steno_id": "2025_14_01236",
+      "citace": "pánové, dovolte, abych předložil návrhy na změnu pořadu dnešní schůze.",
+      "link_phrase": "jako první bod"
+    },
+    {
+      "text": "Hlasování číslo 162, sto třicet čtyři hlasů pro.",
+      "source": "votes",
+      "link_phrase": "sto třicet čtyři hlasů"
+    },
+    {
+      "text": "Schillerová uvedl, že už při přijetí současného zákona v roce 2016 jsme nastavili pravidla poměrně přísně a v řadě oblastí jsme šli nad rámec tehdejší evropské úpravy.",
+      "source": "steno",
+      "steno_id": "2025_14_01119",
+      "citace": "Už při přijetí současného zákona v roce 2016 jsme nastavili pravidla poměrně přísně a v řadě oblastí jsme šli nad rámec tehdejší evropské úpravy.",
+      "link_phrase": "Už při přijetí současného zákona v roce 2016 jsme nastavili"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Úvěry pod novými pravidly",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 34,
+    "pritomno_min": 134,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 23812,
+  "lead": "Čtvrteční dopoledne schválili změnu zákona o spotřebitelském úvěru, sto třicet čtyři hlasů proti nule. ODS prosadila zákon jako první bod dne.",
+  "pointa": "Změna zákona ladí pravidla pro půjčky a splátkové prodeje. Šlo o rychlý bod mezi interpelacemi a dalšími zákony. Už při přijetí současného zákona v roce 2016 jsme nastavili.",
+  "mean": "Změna zákona zpřísňuje informační povinnosti věřitelů a upravuje práva dlužníků u půjček a splátkového prodeje."
+}

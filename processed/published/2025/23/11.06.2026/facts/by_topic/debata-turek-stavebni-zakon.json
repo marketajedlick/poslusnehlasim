@@ -1,0 +1,102 @@
+{
+  "slug": "debata-turek-stavebni-zakon",
+  "nazev": "Debata Filipa Turka u stavebního zákona",
+  "datum": "11.06.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "první řeči Filipa Turka ve Sněmovně u stavebního zákona",
+  "koho": [
+    "Koho se to týká? Každého, kdo sleduje, jak vláda ladí energetiku a stavební řízení."
+  ],
+  "fakty": [
+    {
+      "text": "Filip Turek poprvé mluvil ve Sněmovně a řekl, že kvůli nenávisti k parodii na parlament opustil Evropský parlament, ale tady má podobný pocit.",
+      "source": "steno",
+      "steno_id": "2025_23_00026",
+      "citace": "vážení pánové, toto je má první veřejná řeč zde na půdě Poslanecké sněmovny a čekám na ni patnáct dní.",
+      "link_phrase": "Turek od Motoristů u stavebního zákona nemluvil ani tak o stavebních úřadech"
+    },
+    {
+      "text": "Turek řekl, že instalovaný výkon větrných elektráren je objektivně jen na papíře.",
+      "source": "steno",
+      "steno_id": "2025_23_00026",
+      "citace": "že objektivně jejich instalovaný výkon je pouze na papíře.",
+      "link_phrase": "který je podle něj pouze na papíře"
+    },
+    {
+      "text": "Turek řekl, že větrné elektrárny foukají u nás jen dvacet procent času.",
+      "source": "steno",
+      "steno_id": "2025_23_00026",
+      "citace": "a ještě tak drze, že si nevybereme, kdy.",
+      "link_phrase": "podle něj fouká jen dvacet procent času"
+    },
+    {
+      "text": "Turek řekl, že Brusel hrozí zastavením deseti až dvaceti miliard korun, kdyby obce mohly odmítnout akcelerační zóny.",
+      "source": "steno",
+      "steno_id": "2025_23_00026",
+      "citace": ", stopneme vám 10, možná 20 a možná i více miliard těch vašich korun.",
+      "link_phrase": "zastavením deseti až dvaceti miliard"
+    },
+    {
+      "text": "Adamec uvedl, že turek v faktické poznámce přirovnal emisní povolenku ke zelenému bitcoinu.",
+      "citace": "Emisní povolenka je ideální nástroj, a je to brutální nástroj na prosazování řekl bych bezemisních technologií, a tím, že je to kapitálový derivát, tak se s tím obchoduje.",
+      "steno_id": "2025_23_00036",
+      "source": "steno",
+      "link_phrase": "faktické poznámce přirovnal emisní"
+    },
+    {
+      "text": "Turek zakončil projev větou, že v roce 2050 asi přestaneme dýchat.",
+      "link_phrase": "větou, že v roce 2050 asi přestaneme dýchat."
+    },
+    {
+      "text": "Jurečka si všiml, že po půl roce konečně vidí Turka vystoupit u Motoristů, a opravil předsedajícího Okamuru, který ho omylem přiřadil k SPD.",
+      "source": "steno",
+      "steno_id": "2025_23_00052",
+      "citace": "SPD řekli, že konečně by mohl pan poslanec Turek vystoupit, takže po půl roce ho poprvé tady vidíme dnes hovořit.",
+      "link_phrase": "po půl roce konečně vidí Turka vystoupit za Motoristy"
+    },
+    {
+      "text": "Předsedající Okamura se přeřekl a Turka omylem přiřadil k SPD, Jurečka opravil: Motoristů, pardon.",
+      "kind": "scene",
+      "citace": "Předsedající: SPD?) Motoristů, pardon, pane předsedající, takže u Motoristů, možná i u SPD se něco stalo, ale to nevím.",
+      "link_phrase": "omylem přiřadil ke své SPD"
+    },
+    {
+      "text": "Hřib v faktické poznámce připomněl, že větrné elektrárny pokrývají v Evropě zhruba pětinu spotřeby elektřiny, zatímco u nás z větru zůstává zhruba jedno procento.",
+      "source": "steno",
+      "steno_id": "2025_23_00054",
+      "citace": "dovolením, prostřednictvím pana předsedajícího, bych chtěl upozornit pana zmocněnce přes Green Deal, že větrné elektrárny loni pokryly už pětinu evropské spotřeby elektřiny, konkrétně nějakých 19",
+      "link_phrase": "Hřib v faktické poznámce připomněl, že větrné elektrárny pokrývají v"
+    },
+    {
+      "text": "Svárovská Turkovi řekla, že obce nepotřebují jeho zastání, protože se zastanou samy sebe, a že akcelerační zóna není automatická povolenka pro investora.",
+      "source": "steno",
+      "steno_id": "2025_23_00066",
+      "citace": "obce se zastanou samy sebe.",
+      "link_phrase": "obce se zastanou samy sebe"
+    },
+    {
+      "text": "Svárovská reagovala, že obce se zastanou samy sebe, Piráti tleskali. Turek sál definitivně opustil až při její další faktické poznámce.",
+      "kind": "scene",
+      "citace": "Poslanec Turek opouští sál.)",
+      "link_phrase": "Turek sál opustil"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Parodie na parlament",
+  "lead": "U rozpravy o stavebním zákonu ve druhém čtení si Jurečka všiml, že po půl roce konečně vidí Turka vystoupit za Motoristy. Předsedající Okamura ho mezitím omylem přiřadil ke své SPD.\n\nTurek poprvé mluvil ve Sněmovně a začal takto:",
+  "pointa": "Když Turek říká, že opustil Evropský parlament kvůli parodii na parlament, zní to pěkně do projevu. Papírově mu ale mandát europoslance zanikl proto, že se stal poslancem české Sněmovny, tyto dvě funkce nejdou držet zároveň. Pak přešel k Green Dealu, větru, který u nás podle něj fouká jen dvacet procent času, a instalovanému výkonu, který je podle něj pouze na papíře. Zakončil větou, že v roce 2050 asi přestaneme dýchat. V pozdější faktické poznámce přirovnal emisní povolenky ke zelenému bitcoinu. Brusel podle něj hrozí zastavením deseti až dvaceti miliard, pokud by obce mohly odmítnout akcelerační zóny. Svárovská mu odpověděla, že obce nepotřebují vaše zastání, obce se zastanou samy sebe. Piráti tleskali. Turek sál opustil až při její další faktické poznámce. Zmocněnec pro Green Deal si u stavebního zákona odškrtl debut ve Sněmovně monologem o parodii na parlament a Bruselu, který hrozí miliardami za svobodu obcí. Hřib v faktické poznámce připomněl, že větrné elektrárny pokrývají v.",
+  "citace_text": "Vážený pane předsedající, vážené dámy a vážení pánové, toto je má první veřejná řeč zde…",
+  "citace_autor": "Filip Turek (Motoristé)",
+  "steno_id": "2025_23_00026",
+  "mean": "Turek od Motoristů u stavebního zákona nemluvil ani tak o stavebních úřadech, jako spíš o Green Dealu, větru, povolenkách a akceleračních zónách. Neodbočil k nim úplně náhodou, právě tyhle zóny jsou v novele stavebního zákona a určují, kde se mají rychleji povolovat větrné a solární elektrárny. V jádru tedy řešil spor, kdo bude mít poslední slovo u větrníků: obec, stát, nebo Brusel s kasičkou. Akcelerační zóna neznamená automatickou povolenku, ale ve vybraných místech má povolování obnovitelných zdrojů běžet rychleji. Obce se můžou ozvat, připomínkovat a bránit, ale u celostátních zón nemají vždycky právo říct prosté „tady ne“. Prostě, lid promluví, úřad zapíše, stát rozhodne a Brusel hlídá peněženku.",
+  "pocet_hlasovani": 0,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 102,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  }
+}

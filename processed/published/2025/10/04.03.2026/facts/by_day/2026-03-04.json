@@ -1,0 +1,24 @@
+{
+  "datum": "04.03.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "statni-rozpocet-2026-debata-2-cteni"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 10,
+    "end_cas": "09:50",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  },
+  "dnesni_ucet": "Celý den debata o rozpočtu, bez hlasování.\nTOP 09 chtělo schodek snížit o 64 miliard.",
+  "zaver": "že středa patřila jen rozpočtové debatě, o zákoně se zatím nehlasovalo.",
+  "vysledek": [
+    "* jen hlasování o pořadu",
+    "* debata o státním rozpočtu 2026 ve druhém kole",
+    "* TOP 09 chtělo schodek snížit o 64 miliard",
+    "* žádný zákon ten den nepadl"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "novela-z-o-socialnich-sluzbach",
+  "nazev": "Novela z. o sociálních službách",
+  "datum": "15.05.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "sociálních službách",
+  "koho": [
+    "Koho se to týká? Lidi se zdravotním postižením a rodiny, které řeší péči, průkaz OZP nebo příspěvek na péči."
+  ],
+  "fakty": [
+    {
+      "text": "Juchelka posunul převod kompetencí z Úřadu práce na červen 2028.",
+      "source": "steno",
+      "steno_id": "2025_19_00045",
+      "citace": "Děkuji, vážený pane předsedo.",
+      "link_phrase": "Juchelka posunul převod kompetencí z Úřadu práce na červen 2028"
+    },
+    {
+      "text": "Jurečka chtěl navýšit příspěvek na péči, zejména ve čtvrtém stupni.",
+      "source": "steno",
+      "steno_id": "2025_19_00011",
+      "citace": "tisku 125, já jsem tam za náš klub lidovců dal návrhy, které se týkají příspěvku na péči.",
+      "link_phrase": "Jurečka chtěl navýšit příspěvek na péči, zejména ve čtvrtém stupni"
+    },
+    {
+      "text": "Pozměňovací návrh Pastuchové na příspěvek na mobilitu prošel.",
+      "source": "votes",
+      "link_phrase": "příspěvek na mobilitu"
+    },
+    {
+      "text": "Finální hlasování číslo 14 v 09:58, sto třicet dva hlasů pro.",
+      "source": "votes",
+      "link_phrase": "sto třicet dva hlasů"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Péče zůstane na ÚP déle",
+  "pocet_hlasovani": 7,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 8,
+    "pritomno_min": 151,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 1034,
+  "lead": "Hned po prvním zákonu  Sněmovna v závěrečném hlasování schválila změnu sociálních služeb, sto třicet dva hlasů proti nule. Navazuje na schválení ze 6. května, novinkou je příspěvek na mobilitu tři tisíce korun.",
+  "pointa": "Jurečkův návrh na navýšení příspěvku na péči padl, koalice přijala Pastuchové úpravu příspěvku na mobilitu na tři tisíce korun. Schůzi chtěli stihnout do hodiny. Juchelka posunul převod kompetencí z Úřadu práce na červen 2028. Jurečka chtěl navýšit příspěvek na péči, zejména ve čtvrtém stupni.",
+  "mean": "Lidé s průkazem OZP a příspěvkem na péči zatím zůstanou na Úřadu práce. Velký přesun přijde až za dva roky."
+}

@@ -1,0 +1,28 @@
+{
+  "key": "2025/6/29.01.2026",
+  "obdobi": 2025,
+  "schuze": 6,
+  "datum_unl": "29.01.2026",
+  "iso": "2026-01-29",
+  "state": "published",
+  "topic_slugs": [
+    "navrh-zakona-o-statnich-zamestnancich",
+    "mimoradna-schuze-statni-zakon"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-01-29/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 13,
+    "votes_max_cislo": 13,
+    "steno_count": 196,
+    "steno_last_poradi": 196,
+    "topics_built_at": "2026-07-10T17:51:38.110777+00:00",
+    "fingerprint": "04dbbc6d8975d1ed"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/6/29.01.2026",
+  "supersedes": null
+}

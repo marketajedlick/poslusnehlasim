@@ -1,0 +1,59 @@
+{
+  "slug": "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem-2",
+  "nazev": "Návrh na změny ve složení orgánů Poslanecké sněmovny",
+  "datum": "03.07.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "návrh na změny ve složení orgánů Poslanecké sněmovny",
+  "koho": [
+    "Občana se to netýká přímo, jen ukazuje, jak rychle a bez debaty se ve Sněmovně mění obsazení výborů."
+  ],
+  "fakty": [
+    {
+      "text": "Kolovratník ohlásil jedinou personální změnu: Turek (Motoristé) odchází z výboru pro evropské záležitosti.",
+      "source": "steno",
+      "steno_id": "2025_24_01852",
+      "citace": "výboru pro evropské záležitosti rezignuje Filip Turek za Motoristy a proti tomu do tohoto výboru pro evropské záležitosti je nominována Zuzana Majerová z SPD, ale je nominována Motoristy",
+      "link_phrase": "Kolovratník (ANO) rovnou dodal"
+    },
+    {
+      "text": "Kolovratník uvedl, že na jeho místo nastupuje poslankyně SPD, nominovaná ale klubem Motoristy sobě.",
+      "source": "steno",
+      "steno_id": "2025_24_01852",
+      "citace": "SPD, ale je nominována Motoristy sobě. Postup, který už také jsme si tu vyzkoušeli a je možný.",
+      "link_phrase": "Kolovratník (ANO) rovnou dodal"
+    },
+    {
+      "text": "Kolovratník sám dodal, že podobný přesun klubů už si Sněmovna vyzkoušela.",
+      "source": "steno",
+      "steno_id": "2025_24_01852",
+      "citace": "Postup, který už také jsme si tu vyzkoušeli a je možný.",
+      "link_phrase": "Kolovratník (ANO) rovnou dodal"
+    },
+    {
+      "text": "Debata se neotevřela, nikdo se nepřihlásil.",
+      "kind": "scene",
+      "citace": "Tak já otevírám rozpravu.",
+      "link_phrase": "neotevřela, nikdo se nepřihlásil."
+    },
+    {
+      "text": "Obě hlasování prošla jednomyslně, 119:0 a 108:0.",
+      "link_phrase": "Obě hlasování prošla jednomyslně, 119:0 a 108:0"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Turek pryč, Majerová dovnitř",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 121,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 1158,
+  "lead": "Poslušně hlásím, že v pátek ráno Sněmovna za necelé tři minuty odbavila personální výměnu. Filip Turek (Motoristé) rezignoval na místo ve výboru pro evropské záležitosti. Na jeho místo nastoupila Zuzana Majerová (SPD), nominovaná klubem Motoristé sobě.",
+  "pointa": "Kolovratník (ANO) rovnou dodal, že podobné mezistranické přeskupení už Sněmovna jednou zkusila, takže se nikdo nad ničím nepozastavoval. Debata se ani neotevřela, nikdo se nepřihlásil. Obě hlasování prošla jednomyslně, 119:0 a 108:0.",
+  "mean": "Výbor pro evropské záležitosti dostal nového člena, formálním hlasováním bez debat."
+}

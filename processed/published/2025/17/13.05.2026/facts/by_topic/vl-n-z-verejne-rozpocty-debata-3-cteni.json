@@ -1,0 +1,42 @@
+{
+  "slug": "vl-n-z-verejne-rozpocty-debata-3-cteni",
+  "nazev": "Debata o rozpočtových pravidlech ve třetím čtení",
+  "datum": "13.05.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "třetím čtení vládního návrhu, kterým se mění zákony v oblasti veřejných rozpočtů",
+  "koho": [
+    "Koho se to týká? Každého daňového poplatníka. Jde o limity výdajů státu, výjimky pro obranu a schodek rozpočtu."
+  ],
+  "fakty": [
+    {
+      "text": "Hřib řekl, že vláda chce zadlužit děti a obejít parlamentní kontrolu.",
+      "citace": "snažit přesvědčit, že máme zadlužit naše děti a děti našich dětí způsobem, který bude úplně obcházet jakoukoliv parlamentní kontrolu.",
+      "steno_id": "2025_17_00107",
+      "source": "steno",
+      "link_phrase": "Hřib útočil na Motoristy za podporu Babiše"
+    },
+    {
+      "text": "Murová popsala pozměňovací návrhy Schillerové k rozpočtové odpovědnosti.",
+      "source": "steno",
+      "steno_id": "2025_17_00142",
+      "citace": "Vážený pane předsedající, vážená paní ministryně, vážené kolegyně a kolegové, dovoluji si jako zpravodajka předložit zprávu ke třetímu čtení vládního návrhu zákona, kterým se mění",
+      "link_phrase": "Murová popsala pozměňovací návrhy Schillerové k rozpočtové odpovědnosti"
+    },
+    {
+      "text": "Svobodová řekla, že Piráti zákon nepodpoří kvůli zadlužení.",
+      "link_phrase": "Svobodová řekla, že Piráti zákon nepodpoří kvůli zadlužení"
+    },
+    {
+      "text": "Večer Jurečka navrhl přerušit schůzi, pokračovat až v pátek.",
+      "link_phrase": "až v pátek."
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Maraton o rozpočtových brzdách",
+  "lead": "Ve středu celý den trvala debata o rozpočtových zákonech v závěrečném hlasování. Schillerová hájila rozvolnění fiskálních pravidel, opozice varovala před zadlužením budoucích generací a večer kluby schůzi přesunuly na pátek.",
+  "pointa": "Hřib útočil na Motoristy za podporu Babiše, Kovářová kritizovala výjimky z limitů výdajů. Po večerním jednání předsedů klubů koalice s opozicí dohodla pokračování až patnáctého května. Murová popsala pozměňovací návrhy Schillerové k rozpočtové odpovědnosti. Svobodová řekla, že Piráti zákon nepodpoří kvůli zadlužení.",
+  "mean": "Zákon má upravit limity státních výdajů podle evropských pravidel. V závěrečném hlasování šlo hlavně o pozměňovací návrhy ministryně financí, závěrečné hlasování přišlo až v pátek.",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

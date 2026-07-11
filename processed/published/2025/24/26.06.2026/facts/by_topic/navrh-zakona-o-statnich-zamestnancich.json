@@ -1,0 +1,72 @@
+{
+  "slug": "navrh-zakona-o-statnich-zamestnancich",
+  "nazev": "Návrh zákona o státních zaměstnancích",
+  "datum": "26.06.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "státních zaměstnancích",
+  "koho": [
+    "Koho se to týká? Každého, kdo pracuje na úřadě, nebo čeká ve frontě na rozhodnutí, které má vydat stát."
+  ],
+  "fakty": [
+    {
+      "text": "Stojanová hovořila o destrukci služebního zákona.",
+      "source": "steno",
+      "steno_id": "2025_24_00781",
+      "citace": "Děkuji za slovo, pane předsedající.",
+      "link_phrase": "Stojanová (Piráti) ho označila za úplnou destrukci"
+    },
+    {
+      "text": "Vondráček slíbil, že horší to nebude než doteď.",
+      "source": "steno",
+      "steno_id": "2025_24_00822",
+      "citace": "Můžu všem slíbit, že horší to nebude, než je to teď ve státní správě.",
+      "link_phrase": "Vondráček (ANO) uzavřel rozpravu slibem"
+    },
+    {
+      "text": "Vondráček to řekl doslova při závěru rozpravy.",
+      "citace": "Můžu všem slíbit, že horší to nebude, než je to teď ve státní správě."
+    },
+    {
+      "text": "Richterová řekla, že zákon umožní snazší vyhazování nepohodlných odborníků.",
+      "source": "steno",
+      "steno_id": "2025_24_00812",
+      "citace": "Navrhli jste zákon, který vám umožní snazší vyhazování nepohodlných odborníků.",
+      "link_phrase": "Richterová"
+    },
+    {
+      "text": "Moricová varovala před politizací státní správy.",
+      "source": "steno",
+      "steno_id": "2025_24_00787",
+      "citace": "Protože politizace státní správy většinou nevypadá jako dramatická čistka, ale je mnohem uhlazenější. Vypadá jako reorganizace, systemizace, přesun agend, přejmenování odboru, změna hodnocení nebo zrušení místa.",
+      "link_phrase": "před politizací státní správy."
+    },
+    {
+      "text": "Barták uvedl, že závěrečné hlasování číslo 117 skončilo 84 proti 56.",
+      "source": "steno",
+      "steno_id": "2025_24_00863",
+      "citace": "Tak stanovisko tedy navrhovatele?",
+      "link_phrase": "skončilo osmdesát čtyři proti"
+    },
+    {
+      "text": "Po schválení zazněl potlesk poslanců koalice.",
+      "kind": "scene",
+      "link_phrase": "Po schválení zazněl potlesk poslanců koalice"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Horší to nebude",
+  "pocet_hlasovani": 29,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 95,
+    "pritomno_min": 136,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 3690,
+  "lead": "Sněmovna odpoledne dokončila zákon o státních zaměstnancích, služební zákon, o kterém se ve středu debatovalo celé dopoledne. Stojanová (Piráti) ho označila za úplnou destrukci, koalice za modernizaci. Vondráček (ANO) uzavřel rozpravu slibem, že horší to nebude, než je to teď ve státní správě.",
+  "pointa": "Závěrečné hlasování skončilo osmdesát čtyři proti padesát šest, s potleskem koalice. To je slib. Po schválení zazněl potlesk poslanců koalice.",
+  "mean": "Služební zákon mění pravidla pro úředníky, kdo je zaměstná a kdo odchází. Richterová (Piráti) varovala před snazším vyhazováním nepohodlných odborníků. Koalice slibuje rychlejší personální změny, opozice varuje před politizací státní správy. Přes tyto námitky ho Sněmovna odpoledne v závěrečném hlasování schválila."
+}

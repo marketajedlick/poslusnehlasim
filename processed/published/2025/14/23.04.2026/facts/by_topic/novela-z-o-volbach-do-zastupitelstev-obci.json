@@ -1,0 +1,44 @@
+{
+  "slug": "novela-z-o-volbach-do-zastupitelstev-obci",
+  "nazev": "Novela z. o volbách do zastupitelstev obcí",
+  "datum": "23.04.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "volbách do zastupitelstev obcí",
+  "koho": [
+    "Koho se to týká? Voliče v obcích a kandidáty do komunálních voleb."
+  ],
+  "fakty": [
+    {
+      "text": "Skopeček uvedl, že senátní návrh šel jako třetí bod po přeskládání pořadu.",
+      "source": "steno",
+      "steno_id": "2025_14_01237",
+      "citace": "Tak jenom asi to ještě zrekapituluju.",
+      "link_phrase": "Senátní návrh šel jako třetí bod po přeskládání pořadu"
+    },
+    {
+      "text": "Navrženo první čtení ve zkráceném režimu podle § 90 odst. 2.",
+      "link_phrase": "ve zkráceném režimu"
+    },
+    {
+      "text": "Hlasování číslo 165, sto dvacet jedna hlasů pro.",
+      "source": "votes",
+      "link_phrase": "sto dvacet jedna hlasů"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Volby do obcí se mění",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 123,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 4622,
+  "lead": "Sněmovna schválila senátní návrh změny zákonů volebního zákona pro obce, sto dvacet jedna hlasů proti nule. První kolo proběhlo ve zkráceném režimu.",
+  "pointa": "Zákon upravuje pravidla komunálních voleb. Senát ho poslal zpět se změnami, Sněmovna souhlasila. Senátní návrh šel jako třetí bod po přeskládání pořadu.",
+  "mean": "Senát vrátil úpravy volebního zákona pro obce, Sněmovna je přijala ve zkráceném režimu. Jde hlavně o technické sladění pravidel komunálních voleb."
+}

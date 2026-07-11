@@ -1,0 +1,45 @@
+{
+  "slug": "debata-rakusan-nato-zahranicni-sluzba-01-07",
+  "nazev": "Pomsta prezidentovi",
+  "datum": "01.07.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "Rakušanova reakce na pozměňovací návrh A7 k zákonu o zahraniční službě u souvisejících zákonů ke služebnímu zákonu",
+  "koho": [
+    "Koho se to týká? Každého, kdo nechce, aby se velvyslanci u OSN rozdávali bez podpisu prezidenta."
+  ],
+  "fakty": [
+    {
+      "text": "Rakušan: mise u OSN bez podpisu prezidenta.",
+      "source": "steno",
+      "steno_id": "2025_24_01221",
+      "citace": "Jako mise u OSN v New Yorku, to je myslím docela hezká pozice v diplomatické službě.",
+      "link_phrase": "mise u OSN"
+    },
+    {
+      "text": "Rakušan: Tohle je msta, která se bojí denního světla.",
+      "source": "steno",
+      "steno_id": "2025_24_01221",
+      "citace": "Tohle je msta, která se bojí denního světla, to, co tady předvádíte.",
+      "link_phrase": "nazval pomstou"
+    },
+    {
+      "text": "Rakušan: diplomatické mise jako trafika.",
+      "source": "steno",
+      "steno_id": "2025_24_01221",
+      "citace": "těch mezinárodních organizací, to je myslím si, hezká trafička.",
+      "link_phrase": "Rakušan (STAN) řešil zákon o zahraniční službě a roli prezidenta"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 5,
+  "nadpis": "Pomsta prezidentovi",
+  "lead": "Poslušně hlásím, že Rakušan (STAN) řešil zákon o zahraniční službě a roli prezidenta. Pozměňovací návrh A7 mění pravidla pro mise u mezinárodních organizací tak, aby nepotřebovaly podpis prezidenta. Rakušan (STAN) to nazval pomstou.",
+  "pointa": "Podle pana Rakušana je mise u OSN v New Yorku moc pěkné místečko, zvlášť když se na něj nově nastupuje _bez prezidentova podpisu_.",
+  "mean": "Zákon o zahraniční službě určuje, kdo jmenuje velvyslance. Pozměňovací návrh A7 mění pravidla pro mise u mezinárodních organizací tak, aby nepotřebovaly podpis prezidenta.",
+  "citace_text": "Tohle je msta, která se bojí denního světla, to, co tady předvádíte.",
+  "citace_autor": "Vít Rakušan (STAN)",
+  "steno_id": "2025_24_01221",
+  "citace_href": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024246.htm#r2",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

@@ -1,0 +1,24 @@
+{
+  "datum": "03.11.2025",
+  "den": "pondělí",
+  "topic_slugs": [
+    "nav-na-zrizeni-miv-a-stanoveni-poctu-clenu"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 3,
+    "end_cas": "15:13",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  },
+  "dnesni_ucet": "Hymna, Brabec odešel, mandátový výbor.\nPrvní den jen organizace, bez zákonů.",
+  "zaver": "že pondělí byl jen rozjezd, Brabec odešel, Sněmovna si zřídila mandátový výbor se šestnácti členy.",
+  "vysledek": [
+    "* mandátový a imunitní výbor zřízen, sto devadesát tři pro, nikdo proti",
+    "* volební komise ustavena, sto devadesát jedna pro, nikdo proti"
+  ],
+  "proslo": 1,
+  "zamitnuto": 0
+}

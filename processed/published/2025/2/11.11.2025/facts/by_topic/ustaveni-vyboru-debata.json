@@ -1,0 +1,46 @@
+{
+  "slug": "ustaveni-vyboru-debata",
+  "nazev": "Debata o ustavení výborů Poslanecké sněmovny",
+  "datum": "11.11.2025",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "složení parlamentních výborů",
+  "koho": [
+    "Koho zajímá, kdo bude v jakém výboru rozhodovat o zákonech."
+  ],
+  "fakty": [
+    {
+      "text": "Richterová obvinila koalici, že porušuje třicetiletý zvyk poměrného zastoupení ve vedení výborů.",
+      "source": "steno",
+      "steno_id": "2025_2_00014",
+      "citace": "Odmítáme přístup, kdy má Sněmovna přestat reprezentovat poměrným způsobem voliče a jejich vůli.",
+      "link_phrase": "Richterová"
+    },
+    {
+      "text": "Kolovratník se ptal, kde je férovost: Piráti 4 poslanci, přesto Richterová místopředsedkyně Sněmovny; SPD 20 poslanců a ve vedení Sněmovny nebylo.",
+      "source": "steno",
+      "steno_id": "2025_2_00016",
+      "citace": "Mně to nedá.",
+      "link_phrase": "Kolovratník Hřibovi připomněl zastavené metro D a záměrně ho oslovil Hřibkem"
+    },
+    {
+      "text": "Hubert Lang Hřibovi vyčítal, že mluví jako pražský primátor, ne jako poslanec.",
+      "source": "steno",
+      "steno_id": "2025_2_00024",
+      "citace": "se pořád odkazujete na Magistrát hlavního města Prahy, pane kolego.",
+      "link_phrase": "Lang Hřibovi připomněl"
+    },
+    {
+      "text": "Dvaceti devíti hlasováními sněmovna postupně ustavila všechny výbory, většinou bez jediného proti.",
+      "source": "votes",
+      "link_phrase": "Dvaceti devíti hlasováními sněmovna postupně ustavila všechny výbory, většinou bez"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Výbory na hraně",
+  "lead": "Úterý patřilo maratonu výborů a hlasité debatě. Lang Hřibovi připomněl, že už není primátorem. Přesto všech devětadvacet hlasování o výborech prošlo.",
+  "pointa": "U všech výborů Piráti tvrdili, že koalice jim bere místa ve vedení. Kolovratník Hřibovi připomněl zastavené metro D a záměrně ho oslovil Hřibkem, Richterová mu vyčítala chování jako ze čtvrté třídy. Večer přišly stálé komise a delegace.",
+  "mean": "Výbory připravují zákony před plénem. Kdo v nich sedí, určuje, jaké téma dostane prostor a kdo má většinu při hlasování. Dvaceti devíti hlasováními sněmovna postupně ustavila všechny výbory, většinou bez.",
+  "pocet_hlasovani": 0,
+  "proslo": true
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "zadost-o-udeleni-souhlasu-s-trestnim-stihanim-po-2",
+  "nazev": "Žádost o udělení souhlasu s trestním stíháním poslance Tomia Okamury v",
+  "datum": "05.03.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "žádost o udělení souhlasu s trestním stíháním poslance Tomia Okamury v",
+  "koho": [
+    "Koho se to týká? Spíš politiku a svobodu slova. Soud chtěl posoudit, jestli plakát Stop migračnímu paktu EU podněcuje nenávist vůči migrantům a Romům."
+  ],
+  "fakty": [
+    {
+      "text": "Kohoutek uvedl, že obvodní soud pro Prahu 1 žádá souhlas se stíháním ve věci sp. zn. 1T 95/2025.",
+      "source": "steno",
+      "steno_id": "2025_11_00033",
+      "citace": "Děkuji, vážený pane místopředsedo, vážené kolegyně, vážení kolegové, dobrý den.",
+      "link_phrase": "Obvodní soud pro Prahu 1 žádá souhlas se stíháním ve"
+    },
+    {
+      "text": "Okamura: Hrozí mi kvůli tomu za názor 3 roky vězení.",
+      "source": "steno",
+      "steno_id": "2025_11_00005",
+      "citace": "Hrozí mi kvůli tomu za názor 3 roky vězení.",
+      "link_phrase": "Okamura si tak ponechá imunitu"
+    },
+    {
+      "text": "Okamura uvedl, že plakát nesl název Stop migračnímu paktu EU, trestní oznámení podal Jiří Pospíšil ze SPOLU.",
+      "source": "steno",
+      "steno_id": "2025_11_00005",
+      "citace": "pánové, dnes máme na programu schůze Sněmovny žádost o moje vydání za pravdivý protiimigrační plakát s názvem \"Stop migračnímu paktu EU\", na základě trestního oznámení",
+      "link_phrase": "Okamura si tak ponechá imunitu"
+    },
+    {
+      "text": "Skopeček řekl: Hlasování číslo 9, pro 104, proti 82. Návrh usnesení byl přijat.",
+      "source": "steno",
+      "steno_id": "2025_11_00208",
+      "citace": "ptám se, kdo je pro?",
+      "link_phrase": "104 hlasy pro, 82 proti"
+    },
+    {
+      "text": "Richterová uvedl, že jde o podněcování k nenávisti, aby soud posoudil, zda jde o trestný čin.",
+      "source": "steno",
+      "steno_id": "2025_11_00009",
+      "citace": "Děkuji pěkně, pane předsedající.",
+      "link_phrase": "Richterová připomněla"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Okamuru zatím nevydali",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 136,
+    "pritomno_min": 185,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 7052,
+  "lead": "Stejný výsledek u Okamury, 104 hlasy pro, 82 proti, Sněmovna nevydala předsedu SPD k soudu za plakát Stop migračnímu paktu EU.",
+  "pointa": "Okamura mluvil o třech letech vězení za názor a citoval Johna Boka. Richterová připomněla, že jde o podněcování k nenávisti, ne o běžnou volební kampani. Obvodní soud pro Prahu 1 žádá souhlas se stíháním ve.",
+  "mean": "Bez souhlasu sněmovny soud nemůže posoudit, jestli šlo o trestný čin verbálního charakteru. Okamura si tak ponechá imunitu, dokud Sněmovna nepřistoupí na vydání."
+}

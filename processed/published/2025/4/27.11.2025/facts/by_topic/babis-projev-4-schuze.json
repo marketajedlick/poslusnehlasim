@@ -1,0 +1,54 @@
+{
+  "slug": "babis-projev-4-schuze",
+  "nazev": "Projev Andreje Babiše při zahájení 4. schůze",
+  "datum": "27.11.2025",
+  "verdikt": "debata",
+  "predmet_lidsky": "projev Andreje Babiše při zahájení 4. schůze",
+  "koho": [
+    "Koho se to týká? Každého, kdo čeká, jak nová vláda vyřeší střet zájmů, a každého, kdo kupuje toast."
+  ],
+  "fakty": [
+    {
+      "text": "A toastový chleba jsem vám nepřinesl, ale budu vám o něm povídat.",
+      "source": "steno",
+      "steno_id": "2025_4_00003",
+      "citace": "toastový chleba jsem vám nepřinesl, ale budu vám o něm povídat.",
+      "link_phrase": "Babiš řekl"
+    },
+    {
+      "text": "Babiš: Celková investice do toastové linky byla 617 milionů a dotace byla 100 milionů, jo?",
+      "source": "steno",
+      "steno_id": "2025_4_00003",
+      "citace": "Celková investice do toastové linky byla 617 milionů a dotace byla 100 milionů, jo?",
+      "link_phrase": "Babiš řekl"
+    },
+    {
+      "text": "my jsme dodali uprchlíkům z Ukrajiny 3600 toastů v roce 2022, když byli na hlavním nádraží a neměli co jíst, představte si",
+      "link_phrase": "my jsme dodali uprchlíkům z Ukrajiny 3600 toastů v roce"
+    },
+    {
+      "text": "Z nákupního košíku, který si přinesl k řečništi, vytahuje knihy a ukazuje je přítomným.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_4_00003",
+      "citace": "nákupního košíku, který si přinesl k řečništi, vytahuje knihy a ukazuje je přítomným.) Tohle je kniha o Agrofertu.",
+      "link_phrase": "Babiš řekl"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Košík místo programu",
+  "lead": "Předseda hnutí ANO přišel k řečništi s nákupním košíkem, vytáhl knihy o Agrofertu a slíbil, že toastový chleba zůstane jen v rétorice.",
+  "pointa": "Devadesát poslanců chtělo krátké vysvětlení střetu zájmů, místo toho Babiš hodinu a čtyřicet minut obhajoval toastovou linku v Chebu (617 milionů investice, 100 milionů dotace), 3600 toastů pro Ukrajince v roce 2022 a boj s „polistopadovým kartelem“, tedy starými stranami proti němu. my jsme dodali uprchlíkům z Ukrajiny 3600 toastů v roce.",
+  "mean": "Mimořádnou schůzi svolala opozice, aby Babiš řekl, jak vyřeší střet zájmů s Agrofertem před jmenováním vlády. Místo odpovědi přinesl nákupní košík s knihami a přednesl obhajobu celého holdingu.",
+  "pocet_hlasovani": 0,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 151,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": false
+  },
+  "steno_slov": 0
+}

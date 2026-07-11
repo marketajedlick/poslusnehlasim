@@ -1,0 +1,28 @@
+{
+  "datum": "05.06.2026",
+  "den": "pátek",
+  "topic_slugs": [
+    "navrh-na-volbu-clenu-rady-ceske-televize",
+    "novela-z-o-rostlinolekarske-peci-eu"
+  ],
+  "steno_zdroje": true,
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 135,
+    "end_cas": "12:07",
+    "proslo": 2,
+    "zamitnuto": 0,
+    "dlouha_debata": false
+  },
+  "dnesni_ucet": "Rada ČT doplněna veřejnou volbou, šest jmen včetně Xavera.\nNávrh o postřicích vrátili do druhého kola.",
+  "zaver": "že Sněmovna v pátek obsadila Radu ČT i místopředsednické křeslo, návrh o postřicích vrátila do druhého kola a zbytek programu prostě vyřadila.",
+  "vysledek": [
+    "* Rada ČT: všech šest míst obsazeno, Xaver Veselý dostal 93 hlasů",
+    "* Matocha po kauze s nahrávkou dostal 3 hlasy a stejně dopadla i námitka",
+    "* návrh o postřicích vrácen do druhého kola 87:46",
+    "* Urbanová zvolena místopředsedkyní sněmovny, Rajchl povede komisi k Dozimetru",
+    "* zbylé body schůze vyřazeny 134:5, konec ve 13:37"
+  ],
+  "proslo": 2,
+  "zamitnuto": 0
+}

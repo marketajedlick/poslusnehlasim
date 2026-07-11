@@ -1,0 +1,46 @@
+{
+  "slug": "novela-z-o-sbirce-zakonu-a-mezinarodnich-smluv",
+  "nazev": "Novela z. o Sbírce zákonů a mezinárodních smluv",
+  "datum": "26.11.2025",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "sbírce zákonů a mezinárodních smluv",
+  "koho": [
+    "Právníka a úředníka to zajímá, občan u snídaně spíš ne."
+  ],
+  "fakty": [
+    {
+      "text": "Rakušan uvedl, že novela posouvá povinnost eLegislativy pro novely zákonů na 1. ledna 2027.",
+      "citace": "ů v systému eLegislativa, avšak pouze pro novely zákonů, které jsou logicky náročnější a je jich podstatně větší množství, než je při tvorbě kompletně nových zákonů.",
+      "steno_id": "2025_3_00254",
+      "source": "steno",
+      "link_phrase": "Rakušan řekl"
+    },
+    {
+      "text": "Vondráček uvedl, že rakušan hájil odklad kvůli složitosti novel, ne úplně nových zákonů.",
+      "source": "steno",
+      "steno_id": "2025_3_00256",
+      "citace": "v zásadě upravuje dvě záležitosti, obě se týkají eLegislativy, tedy elektronického systému tvorby právních předpisů, vytvářeného přibližně od roku 2015 v gesci Ministerstva vnitra společností Asseco.",
+      "link_phrase": "Rakušan hájil odklad kvůli složitosti novel, ne úplně nových zákonů"
+    },
+    {
+      "text": "Hlasování číslo 11 ve 22:43: sto sedmdesát dva pro, nikdo proti.",
+      "link_phrase": "sto sedmdesát dva"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "online zákonodárství počká",
+  "pocet_hlasovani": 3,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 173,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": false
+  },
+  "steno_slov": 0,
+  "lead": "Krátce po půlnoci prošla v prvním kole změna zákona o Sbírce zákonů, sto sedmdesát dva hlasů proti nule. Vláda chce o rok odložit povinnost připravovat změny zákonů v systému online zákonodárství.",
+  "pointa": "Rakušan řekl, že změny zákonů jsou složitější než nové zákony, proto dostávají výjimku. Úplná digitalizace legislativy se posouvá na rok 2027. Rakušan hájil odklad kvůli složitosti novel, ne úplně nových zákonů.",
+  "mean": "online zákonodárství má sjednotit tvorbu zákonů v elektronické podobě. Odklad se týká hlavně novel, ne zcela nových předpisů."
+}

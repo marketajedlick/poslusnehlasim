@@ -1,0 +1,46 @@
+{
+  "slug": "novela-z-o-pojistnem-na-socialni-zabezpeceni",
+  "nazev": "Novela z. o pojistném na sociální zabezpečení",
+  "datum": "16.01.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "zálohách na sociálním pojištění pro živnostníky",
+  "koho": [
+    "Koho se to týká? Živnostníků a dalších OSVČ, kteří platí zálohy na sociálním pojištění sami, ne běžných zaměstnanců na výplatní pásce."
+  ],
+  "fakty": [
+    {
+      "text": "náš koaliční návrh, který má živnostníkům vrátit vyměřovací základ pro odvody na sociální pojistné z 40 procent na 35 procent průměrné mzdy",
+      "link_phrase": "vyměřovací základ pro"
+    },
+    {
+      "text": "toto zvýšení je již třetím zvýšením v řadě a představuje zvýšení odvodové zátěže o dalších 715 korun měsíčně, tedy 8 580 korun ročně",
+      "source": "steno",
+      "steno_id": "2025_5_00940",
+      "citace": "Děkuji za slovo, pane místopředsedo.",
+      "link_phrase": "toto zvýšení je již třetím zvýšením v řadě a představuje"
+    },
+    {
+      "text": "Jurečka uvedl, že snížit budoucí důchody osob samostatně výdělečně činných měsíčně o 1 652 korun. To tady Alena Schillerová záměrně neřekla.",
+      "source": "steno",
+      "steno_id": "2025_5_00950",
+      "citace": "Dobré odpoledne, pane předsedo, paní ministryně, pane ministře, kolegyně, kolegové.",
+      "link_phrase": "Jurečka doplnil"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Snížení záloh pro živnostníky",
+  "pocet_hlasovani": 3,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 29,
+    "pritomno_min": 165,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 12080,
+  "lead": "Odpoledne po ranním maratonu o ministry hlasovali o nižších zálohách OSVČ na sociálním pojištění. V prvním kole prošly.",
+  "pointa": "Schillerová slibovala snížení základu o 715 korun měsíčně. Jurečka doplnil, že úleva ubere z důchodu tisíc šest set padesát dva korun, Schillerová to záměrně neřekla. toto zvýšení je již třetím zvýšením v řadě a představuje.",
+  "mean": "Zákon vrací vyměřovací základ pro sociální pojistné z čtyřiceti na třicet pět procent průměrné mzdy. Koalice slibuje úlevu u záloh teď, opozice varuje před nižším budoucím důchodem."
+}

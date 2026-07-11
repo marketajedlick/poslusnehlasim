@@ -1,0 +1,45 @@
+{
+  "slug": "novela-z-trestni-zakonik",
+  "nazev": "Novela z. - trestní zákoník",
+  "datum": "21.04.2026",
+  "verdikt": "zamiteno",
+  "predmet_lidsky": "",
+  "koho": [
+    "Koho se to týká? Každého, kdo spadá pod trestní zákoník a jeho pravidla."
+  ],
+  "fakty": [
+    {
+      "text": "Richterová kritizovala vládu za zástupná témata místo podstatných kauz.",
+      "source": "steno",
+      "steno_id": "2025_14_00735",
+      "citace": "Vážené paní poslankyně, vážení páni poslanci, vážení členové a členky vlády, vážení spoluobčané, tato vláda se v posledních týdnech, v posledních měsících až příliš často",
+      "link_phrase": "Richterová kritizovala vládu za zástupná témata místo podstatných kauz"
+    },
+    {
+      "text": "Druhé čtení novely prošlo 154:0.",
+      "source": "votes",
+      "link_phrase": "Druhé čtení novely prošlo 154:0"
+    },
+    {
+      "text": "Třetí čtení padlo, jen 67 poslanců hlasovalo pro.",
+      "source": "votes",
+      "link_phrase": "Třetí čtení padlo, jen 67 poslanců hlasovalo pro"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Trestní změna spadla",
+  "pocet_hlasovani": 3,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 89,
+    "pritomno_min": 155,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 21874,
+  "lead": "Úterý večer koalice nenatáhla závěrečné hlasování o trestním zákoníku. Druhé kolo sice prošlo sto padesáti čtyřmi hlasy, ale závěrečné hlasování skončilo jen sedmi desítkami pro.",
+  "pointa": "Změna zákona měla projít rychlou kolejí spolu s dalšími zákony čtrnácté schůze. Bez dostatečné podpory v závěrečném hlasování v sále zůstala. Richterová kritizovala vládu za zástupná témata místo podstatných kauz. Druhé čtení novely prošlo 154:0. Třetí čtení padlo, jen 67 poslanců hlasovalo pro.",
+  "mean": "Úpravy trestního zákoníku tentokrát neprošly. Platí dál stávající pravidla, dokud Sněmovna nepředloží nový návrh."
+}

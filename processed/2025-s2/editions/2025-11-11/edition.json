@@ -1,0 +1,28 @@
+{
+  "key": "2025/2/11.11.2025",
+  "obdobi": 2025,
+  "schuze": 2,
+  "datum_unl": "11.11.2025",
+  "iso": "2025-11-11",
+  "state": "published",
+  "topic_slugs": [
+    "ustaveni-vyboru-debata",
+    "zmena-usn-ps-c-13-ze-dne-5-11-2025"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2025-11-11/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 75,
+    "votes_max_cislo": 75,
+    "steno_count": 279,
+    "steno_last_poradi": 279,
+    "topics_built_at": "2026-07-10T17:51:38.106673+00:00",
+    "fingerprint": "15c1d8b7fc7d37f5"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/2/11.11.2025",
+  "supersedes": null
+}

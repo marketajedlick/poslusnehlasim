@@ -1,0 +1,36 @@
+{
+  "slug": "rozpocet-sfzp-na-rok-2026",
+  "nazev": "Rozpočet SFŽP na rok 2026",
+  "datum": "11.03.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "rozpočet SFŽP na rok 2026",
+  "koho": [
+    "Koho se to týká? Projektů na životní prostředí, obcí a firem čerpajících dotace ze SFŽP."
+  ],
+  "fakty": [
+    {
+      "text": "Hlasování číslo 246, pro 90, proti 32. Návrh byl přijat.",
+      "link_phrase": "90 hlasů pro, 32 proti"
+    },
+    {
+      "text": "Předtím hlasování číslo 245 skončilo 58:89, návrh nebyl přijat.",
+      "link_phrase": "90 hlasů pro, 32 proti"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Rozpočet životního prostředí prošel",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 89,
+    "pritomno_min": 169,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 7660,
+  "lead": "Rozpočet fondu životního prostředí v závěrečném hlasování prošel, 90 hlasů pro, 32 proti. Předtím jeden návrh spadl 58:89, ale závěrečné hlasování koalici stačilo.",
+  "pointa": "Den přinesl desítky hlasování k fondům i státnímu rozpočtu. SFŽP nakonec nezůstal sám na ocet, na rozdíl od prvního pokusu.",
+  "mean": "SFŽP platí deštníky, čističky a zelené projekty. Schválený rozpočet fondu na rok 2026 umožní čerpání dotací v plánovaném režimu."
+}

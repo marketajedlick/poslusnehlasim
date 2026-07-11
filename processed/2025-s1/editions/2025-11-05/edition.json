@@ -1,0 +1,29 @@
+{
+  "key": "2025/1/05.11.2025",
+  "obdobi": 2025,
+  "schuze": 1,
+  "datum_unl": "05.11.2025",
+  "iso": "2025-11-05",
+  "state": "published",
+  "topic_slugs": [
+    "navrh-na-volbu-predsedy-ps",
+    "navrh-na-stanoveni-poctu-mistopredsedu-ps",
+    "navrh-terminu-2-schuze-ps"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2025-11-05/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 20,
+    "votes_max_cislo": 20,
+    "steno_count": 254,
+    "steno_last_poradi": 254,
+    "topics_built_at": "2026-07-10T17:51:38.103880+00:00",
+    "fingerprint": "f329b40ffeccaec0"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/1/05.11.2025",
+  "supersedes": null
+}
