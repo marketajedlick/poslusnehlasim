@@ -20,7 +20,7 @@
       "source": "steno",
       "steno_id": "2025_24_02183",
       "citace": "pan náměstek Filip Endal dneska zemřel",
-      "link_phrase": "náměstek Filip Endal ten den zemřel"
+      "link_phrase": "ten den zemřel"
     },
     {
       "text": "Niemiec: stát do bydlení z národních peněz skoro nic nedává.",
@@ -33,9 +33,9 @@
   "publikovat": true,
   "priorita": 5,
   "nadpis": "Bydlení a smrt náměstka",
-  "lead": "Poslušně hlásím, že úterý večer chtěl poslanec Niemiec (STAN) dostat na začátek schůze bod o dostupném bydlení. Nejdřív ale musel říct, proč ho téma zasáhlo víc než obvykle.",
-  "pointa": "Niemiec (STAN) navrhl zařadit dostupné bydlení jako první bod a připomněl, že náměstek Filip Endal ten den zemřel právě před plánovanou schůzkou o bydlení. Poslušně podotýkám, že podle něj stát do podpory bydlení z národních peněz skoro nic nedává už víc než pětadvacet let a spoléhá hlavně na dočasné evropské dotace.",
-  "mean": "Bydlení chtěl někdo dát na začátek programu. Smrt náměstka Endala ten večer připomněla, že debaty o bytech nejsou abstraktní.",
+  "lead": "Poslušně hlásím, že Niemiec (STAN) navrhl zařadit dostupné bydlení na začátek schůze. Nejdřív ale řekl, že náměstek Filip Endal, se kterým měl mít za čtrnáct dní schůzku o bytech, ten den zemřel.",
+  "pointa": "Nešlo o zákon, jen o pořadí bodů. Niemiec (STAN) z toho udělal i výčet, že stát do podpory bydlení z národních peněz skoro nic nedává. Koalice návrh stejně zamítla.",
+  "mean": "Niemiec (STAN) chtěl bydlení jako první bod. Připomněl smrt náměstka Endala a plánovanou schůzku o bytech. Návrh neprošel.",
   "citace_text": "pan náměstek Filip Endal dneska zemřel",
   "citace_autor": "Bohuslav Niemiec (STAN)",
   "steno_id": "2025_24_02183",

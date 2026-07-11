@@ -4,7 +4,7 @@
   "schuze": 24,
   "datum_unl": "07.07.2026",
   "iso": "2026-07-07",
-  "state": "approved",
+  "state": "published",
   "topic_slugs": [
     "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-"
   ],
@@ -51,7 +51,19 @@
     "topics_built_at": "2026-07-11T09:37:23.959985+00:00",
     "fingerprint": "0a0e0d57377f083d"
   },
-  "published_at": null,
-  "snapshot_dir": null,
-  "supersedes": null
+  "published_at": "2026-07-11T10:11:40.470142+00:00",
+  "snapshot_dir": "published/2025/24/07.07.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-07-07/assets/2026-07-07.png",
+    "share": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-07-07/assets/2026-07-07.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png",
+      "carousel/04-citace.png",
+      "carousel/05-skore.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-07-07/assets/caption.txt"
+  }
 }

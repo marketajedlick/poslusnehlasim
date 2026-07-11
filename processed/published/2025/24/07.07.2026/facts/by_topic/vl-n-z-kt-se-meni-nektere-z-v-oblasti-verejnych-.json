@@ -9,14 +9,6 @@
   ],
   "fakty": [
     {
-      "text": "Velmi silný hluk v sále před začátkem.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_24_02195",
-      "citace": "(Velmi silný hluk v sále.)",
-      "link_phrase": "úterý večer hlukem"
-    },
-    {
       "text": "Senát vrátil návrh s pozměňovacími návrhy.",
       "source": "steno",
       "steno_id": "2025_24_02195",
@@ -24,42 +16,38 @@
       "link_phrase": "Senát návrh vrátil s pozměňovacími návrhy"
     },
     {
-      "text": "Schillerová žádala o klid v sále.",
+      "text": "Silný hluk v sále před začátkem bodu.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_02195",
+      "citace": "(Velmi silný hluk v sále.)",
+      "link_phrase": "v sále pořád někdo pokřikoval"
+    },
+    {
+      "text": "Schillerová k pokřikování: vás to nezajímá.",
       "source": "steno",
       "steno_id": "2025_24_02198",
-      "kind": "scene",
-      "citace": "Poslanci stále hlasitě diskutují.",
-      "link_phrase": "Schillerová (ANO) ho pak obhajovala u mikrofonu"
+      "citace": "Vás to nezajímá, dámy a pánové.",
+      "link_phrase": "Schillerová (ANO) obhajovala návrh u mikrofonu"
     },
     {
-      "text": "Goláň: neprojednáváme minulou vládu.",
+      "text": "Munzar chtěl hlasovat až v září.",
       "source": "steno",
-      "steno_id": "2025_24_02202",
-      "citace": "neprojednáváme věci, které se týkají minulé vlády",
-      "link_phrase": "neprojednáváme minulou vládu"
+      "steno_id": "2025_24_02212",
+      "citace": "8. září 2027 v 19 hodin.",
+      "link_phrase": "Munzar (ODS) chtěl hlasování odložit na září"
     },
     {
-      "text": "Goláň: nic takového se nestalo.",
+      "text": "Munzar se přeřekl v datumu.",
       "source": "steno",
-      "steno_id": "2025_24_02202",
-      "citace": "Nic takového se nestalo.",
-      "link_phrase": "Nic takového se nestalo"
-    },
-    {
-      "text": "Munzar: tleskali, že neumožnili rozpravu.",
-      "source": "steno",
-      "steno_id": "2025_24_02210",
-      "citace": "když jste si tak krásně zatleskali tomu, že jste neumožnili ani rozpravu",
-      "link_phrase": "koalice si zatleskala tomu, že neumožnila ani rozpravu"
-    },
-    {
-      "text": "Sedm hlasování, Senátem vrácený návrh prošel.",
-      "link_phrase": "Sedm hlasování, Senátem vrácený návrh prošel"
+      "steno_id": "2025_24_02212",
+      "citace": "Samozřejmě 2026. 8. září 2026 v 19 hodin.",
+      "link_phrase": "se přeřekl v datumu"
     }
   ],
   "publikovat": true,
-  "priorita": 3,
-  "nadpis": "Rozpočtová pravidla\nv nočním hluku",
+  "priorita": 5,
+  "nadpis": "Rozpočtová pravidla\nv noci",
   "pocet_hlasovani": 7,
   "proslo": true,
   "signaly": {
@@ -70,6 +58,10 @@
     "prazdny_sal": true
   },
   "steno_slov": 5515,
-  "lead": "Poslušně hlásím, že změny ve veřejných rozpočtech začaly v úterý večer hlukem, který předsedající několikrát neuměl utišit. Senát návrh vrátil s pozměňovacími návrhy a Schillerová (ANO) ho pak obhajovala u mikrofonu, zatímco v sále pořád někdo pokřikoval.\n\nSenátor Goláň (ODS) řekl, že neprojednáváme minulou vládu, a o rychlém legislativním procesu dodal: „Nic takového se nestalo.“ Munzar (ODS) pak navrhl odložit pevné hlasování na září a připomněl, že koalice si zatleskala tomu, že neumožnila ani rozpravu. Sedm hlasování, Senátem vrácený návrh prošel.",
-  "mean": "Novela upravuje pravidla, kolik může stát utrácet a za jakých podmínek. Senát ji vrátil s pozměňovacími návrhy, Sněmovna je v noci projednávala v hluku. Goláň kritizoval rychlost legislativy. Munzar chtěl hlasování odložit. Návrh po sedmi hlasováních prošel."
+  "lead": "Poslušně hlásím, že večer šlo o rozpočtová pravidla, tedy kolik smí stát, kraje i obce utrácet. Senát návrh vrátil s pozměňovacími návrhy, Schillerová (ANO) obhajovala návrh u mikrofonu a v sále pořád někdo pokřikoval.",
+  "pointa": "Munzar (ODS) chtěl hlasování odložit na září, ale pokřikování ho rozhodilo tak, že se přeřekl v datumu. Poslušně hlásím, že návrh v noci prošel sto devadesát sedm ku padesáti jedné.",
+  "mean": "Rozpočtová pravidla prošla v hluku a po půlnoci. Zákon určuje, kolik smí stát, kraje i obce utrácet a za jakých podmínek mohou rozpočet překročit. Senát návrh vrátil s pozměňovacími návrhy, Sněmovna ho po půlnoci schválila.",
+  "citace_text": "Vás to nezajímá, dámy a pánové.",
+  "citace_autor": "Alena Schillerová (ANO)",
+  "steno_id": "2025_24_02198"
 }

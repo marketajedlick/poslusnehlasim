@@ -40,26 +40,19 @@
       "link_phrase": "Munzar (ODS) chtěl hlasování odložit na září"
     },
     {
-      "text": "Munzar opravil rok na 2026.",
+      "text": "Munzar se přeřekl v datumu.",
       "source": "steno",
       "steno_id": "2025_24_02212",
       "citace": "Samozřejmě 2026. 8. září 2026 v 19 hodin.",
-      "link_phrase": "nejdřív řekl osmého září 2027, pak opravil na 2026"
-    },
-    {
-      "text": "Skopeček popletl Pivoňku Vaňkovou s jinou Pivoňkovou.",
-      "source": "steno",
-      "steno_id": "2025_24_02213",
-      "citace": "Paní poslankyně Pivoňková (správně Pivoňka Vaňková)",
-      "link_phrase": "přiřadil poslankyni Pivoňku Vaňkovou k jiné Pivoňkové"
+      "link_phrase": "se přeřekl v datumu"
     }
   ],
-  "publikovat": true,
+  "publikovat": false,
   "priorita": 5,
   "nadpis": "Rozpočtová pravidla\nv noci",
-  "lead": "Poslušně hlásím, že až když devět hlasování o pořadu skončilo, Sněmovna v deset večer otevřela změny ve veřejných rozpočtech. Senát návrh vrátil s pozměňovacími návrhy a Schillerová (ANO) obhajovala návrh u mikrofonu, zatímco v sále pořád někdo pokřikoval.",
-  "pointa": "Senátor Goláň (ODS) u mikrofonu řekl: „Já tady taky makám.“ Poslanec Munzar (ODS) chtěl hlasování odložit na září, ale pokřikování ho rozhodilo tak, že nejdřív řekl osmého září 2027, pak opravil na 2026. Skopeček (ODS) mezitím přiřadil poslankyni Pivoňku Vaňkovou k jiné Pivoňkové. Poslušně hlásím, že po dvou hlasováních návrh v noci prošel sto devadesát sedm ku padesáti jedné.",
-  "mean": "Rozpočtová pravidla prošla v hluku a po půlnoci. Goláň řekl, že taky maká. Munzar přeřekl rok. Skopeček popletl jména.",
+  "lead": "Poslušně hlásím, že Senát návrh vrátil s pozměňovacími návrhy a Schillerová (ANO) obhajovala návrh u mikrofonu, zatímco v sále pořád někdo pokřikoval.",
+  "pointa": "Senátor Goláň (ODS) u mikrofonu řekl: „Já tady taky makám.“ Poslanec Munzar (ODS) chtěl hlasování odložit na září, ale pokřikování ho rozhodilo tak, že se přeřekl v datumu. Poslušně hlásím, že návrh v noci prošel sto devadesát sedm ku padesáti jedné.",
+  "mean": "Rozpočtová pravidla prošla v hluku a po půlnoci. Zákon určuje, kolik smí stát, kraje i obce utrácet a za jakých podmínek mohou rozpočet překročit. Senát návrh vrátil s pozměňovacími návrhy, Sněmovna ho po půlnoci schválila.",
   "citace_text": "Já tady taky makám.",
   "citace_autor": "Tomáš Goláň (ODS)",
   "steno_id": "2025_24_02204",

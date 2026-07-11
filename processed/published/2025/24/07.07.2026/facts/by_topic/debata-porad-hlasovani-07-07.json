@@ -16,13 +16,6 @@
       "link_phrase": "Malá (ANO) zavetovala nové body"
     },
     {
-      "text": "Skopeček odčítal devět hlasování o pořadu.",
-      "source": "steno",
-      "steno_id": "2025_24_02194",
-      "citace": "Tím jsme se vypořádali se všemi hlasovatelnými návrhy, které zazněly ve vašich vystoupeních.",
-      "link_phrase": "devět večerních hlasování o pořadu"
-    },
-    {
       "text": "Rozpočtová pravidla prošla jako první bod večerního programu.",
       "source": "steno",
       "steno_id": "2025_24_02194",
@@ -33,8 +26,8 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Devět hlasování\no pořadu",
-  "lead": "Poslušně hlásím, že po návrzích opozice přišlo veto. Koalice nové body z programu vyškrtla a pak devětkrát hlasovala o tom, co se bude projednávat dřív a co později.",
-  "pointa": "Poslankyně Malá (ANO) zavetovala nové body jménem ANO, SPD a Motoristů. Předsedající Skopeček (ODS) pak odčítal devět večerních hlasování o pořadu, z nichž většina padla. Poslušně hlásím, že rozpočtová pravidla zůstala prvním bodem, ke kterému se Sněmovna v noci dostala.",
+  "lead": "Poslušně hlásím, že po návrzích opozice přišlo veto. Koalice nové body z programu vyškrtla.",
+  "pointa": "Poslankyně Malá (ANO) zavetovala nové body jménem ANO, SPD a Motoristů. Poslušně hlásím, že rozpočtová pravidla zůstala prvním bodem.",
   "mean": "Opozice chtěla bydlení, paliativní péči a lidská práva. Koalice body vetovala a devětkrát hlasovala o pořadu, ne o obsahu.",
   "citace_text": "paní poslankyně jménem poslanců hnutí ANO, SPD a Motoristů zavetovala nově navržené body",
   "citace_autor": "Jan Skopeček (ODS)",
