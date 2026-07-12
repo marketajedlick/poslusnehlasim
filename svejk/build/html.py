@@ -30,6 +30,7 @@ from svejk.build.nav import (
     dekuju_pages_href,
     podminky_pages_href,
     podpora_pages_href,
+    subscribe_pages_href,
     slovnicek_pages_href,
     slovnicek_term_pages_href,
     soukromi_pages_href,
@@ -2191,6 +2192,52 @@ def render_podpora_html(
             base_path=base_path,
             label="Zákaznická podpora",
         ),
+    )
+
+
+def render_subscribe_html(
+    obdobi: int,
+    *,
+    inline_css: bool = False,
+    css_href: str | None = None,
+    fonts_css_href: str | None = None,
+    base_path: str = "",
+) -> str:
+    """Samostatná stránka pro odběr novinek (bez odkazu z webu)."""
+    from dataclasses import replace
+
+    css = _inline_css_text() if inline_css else ""
+    if css_href is None:
+        css_href = static_css_path(base_path, version=css_asset_version())
+    if fonts_css_href is None:
+        fonts_css_href = static_fonts_css_path(base_path, version=fonts_asset_version())
+    favicons = static_favicon_paths(base_path)
+    cfg = NewsletterConfig.from_env()
+    newsletter = replace(cfg, show_subscribe=True) if cfg.enabled else cfg
+    canonical_url = f"{cfg.site_url.rstrip('/')}{subscribe_pages_href(base_path)}"
+    page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
+    sp = load_strings()["subscribe_page"]
+    og = _og_context(
+        site_url=cfg.site_url,
+        base_path=base_path,
+        title=sp["title"],
+        description=sp["meta"],
+    )
+    tpl = _jinja_env().get_template("subscribe-stranka.html")
+    return tpl.render(
+        newsletter=newsletter,
+        canonical_url=canonical_url,
+        **og,
+        inline_css=inline_css,
+        css=css,
+        css_href=css_href,
+        fonts_css_href=fonts_css_href,
+        cookie_privacy_url=soukromi_pages_href(base_path),
+        **_site_ctx(site_url=cfg.site_url, base_path=base_path, page_path=page_path),
+        **_site_nav_ctx(obdobi, base_path),
+        **_site_footer_ctx(base_path, obdobi=obdobi, closing_seed="subscribe"),
+        **favicons,
+        ph_fav_href=_ph_fav_href(base_path),
     )
 
 

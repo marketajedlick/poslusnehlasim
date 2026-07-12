@@ -193,6 +193,11 @@
     "title": "Zákaznická podpora · Poslušně hlásím",
     "meta": "Kontakt a pomoc s odběrem novinek, platbami a webem Poslušně hlásím."
   },
+  "subscribe_page": {
+    "title": "Odběr novinek · Poslušně hlásím",
+    "meta": "Přihlaste se k odběru satirického deníku z Poslanecké sněmovny.",
+    "heading": "Poslušně odebírat"
+  },
   "about_page": {
     "title": "Poslušně hlásím | denní zpravodaj z Poslanecké sněmovny",
     "meta": "Denní zpravodaj z jednání Poslanecké sněmovny: hlasování poslanců, stenoprotokoly a výsledky hlasování srozumitelně. Satirický deník, ne politický komentář.",

@@ -2226,6 +2226,13 @@ a.potvrzeno-cta:hover{filter:brightness(1.05);border-bottom:none}
   border-top:1px solid var(--border);
 }
 .notfound-wrap .subscribe-gloss{max-width:none}
+.subscribe-body{text-align:center}
+.subscribe-wrap .subscribe{
+  margin-top:8px;
+  padding-top:0;
+  border-top:none;
+}
+.subscribe-wrap .subscribe-gloss{max-width:none}
 /* dekuju */
 .dekuju-page .pivo-body{text-align:center;padding-top:8px}
 .dekuju-page .pivo-quote{max-width:34rem}

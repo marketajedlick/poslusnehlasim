@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+{% set head_noindex = true %}
+{% include "head-noviny.html" %}
+<title>{{ t.subscribe_page.title }}</title>
+<meta name="description" content="{{ t.subscribe_page.meta }}" />
+<link rel="canonical" href="{{ canonical_url }}" />
+<link rel="stylesheet" href="{{ fonts_css_href }}" />
+<link rel="stylesheet" href="{{ css_href }}" />
+</head>
+<body class="static-page archiv-page subscribe-page">
+{% include "skip-link.html" %}
+<div class="archiv-wrap subscribe-wrap" id="main-content">
+  {% set page_title = t.subscribe_page.heading %}
+  {% set page_gloss = t.subscribe.gloss %}
+  {% set page_head_hide_nav = true %}
+  {% include "page-head.html" %}
+
+  <div class="subscribe-body">
+    {% include "subscribe.html" %}
+  </div>
+</div>
+{% include "site-footer.html" %}
+{% include "cookie-consent.html" %}
+{% include "subscribe-script.html" %}
+</body>
+</html>

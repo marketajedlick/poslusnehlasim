@@ -1,15 +1,11 @@
 {
   "obdobi": 2025,
   "unl": {
-    "etag": "6a51865e-2d8249",
-    "last_modified": "Fri, 10 Jul 2026 23:55:10 GMT",
-    "content_length": 2982473,
+    "etag": "6a52d7de-2d7b43",
+    "last_modified": "Sat, 11 Jul 2026 23:55:10 GMT",
+    "content_length": 2980675,
     "lines": 1931,
-<<<<<<< Updated upstream
-    "fetched_at": "2026-07-11T07:15:19.974894+00:00"
-=======
-    "fetched_at": "2026-07-11T09:08:35.701712+00:00"
->>>>>>> Stashed changes
+    "fetched_at": "2026-07-12T09:07:05.591360+00:00"
   },
   "schuze": {
     "18": {
@@ -223,14 +219,10 @@
       "count": 286,
       "max_cislo": 286,
       "last_datum": "30.06.2026",
-      "steno_count": 2442,
+      "steno_count": 2392,
       "last_steno_poradi": 2442,
       "last_steno_datum": "2026-07-08",
-<<<<<<< Updated upstream
-      "synced_at": "2026-07-11T07:15:49.285118+00:00"
-=======
-      "synced_at": "2026-07-11T09:08:36.083009+00:00"
->>>>>>> Stashed changes
+      "synced_at": "2026-07-12T09:07:05.976127+00:00"
     },
     "25": {
       "count": 4,
@@ -239,7 +231,7 @@
       "steno_count": 115,
       "last_steno_poradi": 115,
       "last_steno_datum": "2026-07-07",
-      "synced_at": "2026-07-11T07:15:50.333723+00:00"
+      "synced_at": "2026-07-12T09:09:14.836669+00:00"
     },
     "26": {
       "count": 4,
@@ -260,38 +252,8 @@
       "synced_at": "2026-07-11T07:21:37.107098+00:00"
     }
   },
-<<<<<<< Updated upstream
-  "updated_at": "2026-07-11T07:21:37.107122+00:00",
-=======
-  "updated_at": "2026-07-11T09:08:36.083039+00:00",
->>>>>>> Stashed changes
+  "updated_at": "2026-07-12T09:09:14.836696+00:00",
   "last_updated_schuze": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25,
-    26,
-    27
+    25
   ]
 }

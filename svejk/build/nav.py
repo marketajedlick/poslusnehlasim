@@ -205,6 +205,10 @@ def podpora_pages_href(base_path: str = "") -> str:
     return _join_href_path(base_path, "/podpora/")
 
 
+def subscribe_pages_href(base_path: str = "") -> str:
+    return _join_href_path(base_path, "/subscribe/")
+
+
 def podminky_pages_href(base_path: str = "") -> str:
     return _join_href_path(base_path, "/podminky/")
 

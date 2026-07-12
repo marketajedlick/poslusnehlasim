@@ -112,6 +112,29 @@ def _years_for_den_v_schuze(paths, d: int, mo: int) -> list[int]:
     return years
 
 
+def _default_year_v_schuze(paths) -> int:
+    """Rok schůze z existujících dat (s24 v období 2025 jedná v roce 2026)."""
+    years: list[int] = []
+    if paths.facts_by_day.is_dir():
+        for fp in paths.facts_by_day.glob("*.json"):
+            try:
+                years.append(int(fp.stem.split("-")[0]))
+            except ValueError:
+                continue
+    if paths.votes_jsonl.is_file():
+        from svejk.build.io import iter_jsonl
+
+        for v in iter_jsonl(paths.votes_jsonl):
+            j = vote_jednaci_datum(v)
+            if not j:
+                continue
+            try:
+                years.append(datetime.strptime(j, "%d.%m.%Y").year)
+            except ValueError:
+                continue
+    return max(years) if years else paths.obdobi
+
+
 def resolve_schuze_den(paths, den: str) -> tuple[str, Path]:
     """Datum bez roku doplní z dat schůze (ne z dnešního kalendáře)."""
     partial = _parse_partial_den(den)
@@ -127,7 +150,7 @@ def resolve_schuze_den(paths, den: str) -> tuple[str, Path]:
             path = paths.facts_by_day / f"{year}-{mo:02d}-{d:02d}.json"
             if path.is_file():
                 return date(year, mo, d).strftime("%d.%m.%Y"), path
-        year = paths.obdobi
+        year = _default_year_v_schuze(paths)
     else:
         from collections import Counter
 

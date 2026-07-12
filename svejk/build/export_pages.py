@@ -23,6 +23,7 @@ from svejk.build.html import (
     render_o_webu_html,
     render_podminky_html,
     render_podpora_html,
+    render_subscribe_html,
     render_pivo_html,
     render_potvrzeno_html,
     render_slovnicek_html,
@@ -586,6 +587,7 @@ def run_export_pages(
         ("podminky/index.html", "podminky"),
         ("o-webu/index.html", "o-webu"),
         ("podpora/index.html", "podpora"),
+        ("subscribe/index.html", "subscribe"),
         ("potvrzeno/index.html", "potvrzeno"),
         ("soukromi/index.html", "soukromi"),
     ]
@@ -598,6 +600,7 @@ def run_export_pages(
         "o-webu": render_o_webu_html,
         "podminky": render_podminky_html,
         "podpora": render_podpora_html,
+        "subscribe": render_subscribe_html,
         "potvrzeno": render_potvrzeno_html,
         "soukromi": render_soukromi_html,
     }
