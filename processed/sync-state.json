@@ -5,7 +5,7 @@
     "last_modified": "Sat, 11 Jul 2026 23:55:10 GMT",
     "content_length": 2980675,
     "lines": 1931,
-    "fetched_at": "2026-07-12T09:07:05.591360+00:00"
+    "fetched_at": "2026-07-12T09:31:57.400028+00:00"
   },
   "schuze": {
     "18": {
@@ -231,7 +231,7 @@
       "steno_count": 115,
       "last_steno_poradi": 115,
       "last_steno_datum": "2026-07-07",
-      "synced_at": "2026-07-12T09:09:14.836669+00:00"
+      "synced_at": "2026-07-12T09:31:57.570494+00:00"
     },
     "26": {
       "count": 4,
@@ -240,7 +240,7 @@
       "steno_count": 106,
       "last_steno_poradi": 106,
       "last_steno_datum": "2026-07-08",
-      "synced_at": "2026-07-11T07:15:51.312517+00:00"
+      "synced_at": "2026-07-12T09:31:52.306191+00:00"
     },
     "27": {
       "count": 122,
@@ -249,10 +249,10 @@
       "steno_count": 344,
       "last_steno_poradi": 344,
       "last_steno_datum": "2026-07-10",
-      "synced_at": "2026-07-11T07:21:37.107098+00:00"
+      "synced_at": "2026-07-12T09:31:46.803628+00:00"
     }
   },
-  "updated_at": "2026-07-12T09:09:14.836696+00:00",
+  "updated_at": "2026-07-12T09:31:57.570518+00:00",
   "last_updated_schuze": [
     25
   ]
