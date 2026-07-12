@@ -2,10 +2,12 @@
   "datum": "01.07.2026",
   "den": "středa",
   "topic_slugs": [
-    "debata-rakusan-nato-zahranicni-sluzba-01-07"
+    "navrh-zakona-o-statnich-zamestnancich-souvisejic",
+    "debata-rakusan-nato-zahranicni-sluzba-01-07",
+    "debata-digitalni-ekonomika-01-07"
   ],
   "stats": {
-    "pocet_hlas": 2,
+    "pocet_hlas": 1,
     "minuty": 900,
     "end_cas": "18:27",
     "proslo": 1,
@@ -13,10 +15,13 @@
     "spor_o_porad": false,
     "dlouha_debata": true
   },
-  "dnesni_ucet": "Pomsta prezidentovi.\nNovela o Vločce patří k úterku.",
+  "dnesni_ucet": "Přílepky, pomsta a digitální žumpa.\nNovela o Vločce patří k úterku.",
   "steno_zdroje": true,
-  "zaver": "že středa patřila sporu o velvyslance u OSN bez podpisu prezidenta, novela o ochraně zvířat skončila už v úterý po půlnoci.",
+  "zaver": "že středa dopoledne dořešila související zákony přílepkami a osmnácti hlasováními, Rakušan u toho mluvil o pomstě prezidentovi a odpoledne Sněmovna bez hlasování otevřela digitální ekonomiku.",
   "vysledek": [
-    "* Rakušan (STAN): pomsta pro prezidenta, velvyslanec u OSN bez podpisu prezidenta"
+    "* související zákon ke služebnímu zákonu prošel po osmnácti kolech, nejtvrdší poměr sto dvacet proti padesát šest",
+    "* Rakušan (STAN): pomsta pro prezidenta, velvyslanec u OSN bez podpisu prezidenta",
+    "* zákon o digitální ekonomice ve druhém čtení, Ferčíková Konečná (STČ): digitální žumpa bez pravidel pro platformy",
+    "* novela o ochraně zvířat skončila už v úterý po půlnoci"
   ]
 }

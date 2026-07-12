@@ -1,0 +1,58 @@
+{
+  "slug": "debata-digitalni-ekonomika-01-07",
+  "nazev": "Zákon o digitální ekonomice",
+  "datum": "01.07.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "druhém čtení zákona o digitální ekonomice a implementaci evropských pravidel pro velké on-line platformy",
+  "koho": [
+    "Koho se to týká? Každého, kdo tráví čas na sociálních sítích, e-shopech nebo velkých on-line platformách."
+  ],
+  "fakty": [
+    {
+      "text": "Vlček: stejný text už minulé sněmovně obstruovali, teď je to vlastní gól.",
+      "source": "steno",
+      "steno_id": "2025_24_01448",
+      "citace": "Je to takový pomyslný vlastní gól.",
+      "link_phrase": "vlastní gól"
+    },
+    {
+      "text": "Ferčíková Konečná: bez zákona je z českého internetu digitální žumpa.",
+      "source": "steno",
+      "steno_id": "2025_24_01484",
+      "citace": "z našeho digitálního prostředí se stává digitální žumpa, kdy vůbec nejsme schopni ochránit naše občany a občanky a nejzranitelnější lidi v naší společnosti.",
+      "link_phrase": "digitální žumpa"
+    },
+    {
+      "text": "Moricová: DSA není prázdný formulář pro politické představy.",
+      "source": "steno",
+      "steno_id": "2025_24_01462",
+      "citace": "Není to prázdný formulář, do kterého si každý doplní nějakou svoji představu, jak mají fungovat platformy, moderace obsahu, důvěryhodní oznamovatelé nebo sankce.",
+      "link_phrase": "DSA není prázdný formulář pro politické představy"
+    },
+    {
+      "text": "Adamec: Brusel neposílá předpisy k bezvýhradnému odhlasování.",
+      "source": "steno",
+      "steno_id": "2025_24_01466",
+      "citace": "To nám pošlou každej prd a my jim ho tady odhlasujeme?",
+      "link_phrase": "Adamec (Motoristé) zvedl hlas"
+    },
+    {
+      "text": "Bartošek: nabídl spolupráci na pozměňovacích návrzích, nikdo nereagoval.",
+      "source": "steno",
+      "steno_id": "2025_24_01460",
+      "citace": "k žádné spolupráci nedošlo, přestože jsem to opakovaně připomínal.",
+      "link_phrase": "nabídl spolupráci na pozměňovacích návrzích, nikdo nereagoval"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 4,
+  "nadpis": "Digitální žumpa",
+  "lead": "Poslušně hlásím, že odpoledne šla Sněmovna do druhého čtení zákona o digitální ekonomice, české implementaci evropských pravidel pro velké platformy. Koalice slibuje nezbytný rámec pro ČTÚ, opozice si stěžuje na dvouleté zpoždění a vlastní gól, kdy stejný text už minulé sněmovně zdrželi.",
+  "pointa": "Ferčíková Konečná (STČ) varovala, že bez zákona se z českého internetu stává _digitální žumpa_. Adamec (Motoristé) zvedl hlas, že Brusel neposílá předpisy k bezvýhradnému podpisu. Moricová (Piráti) připomněla, že DSA není prázdný formulář pro politické představy, Bartošek (KDU-ČSL) že nabídl spolupráci na pozměňovacích návrzích, nikdo nereagoval. Ve středu zůstalo jen druhé čtení, hlasovat se nestihlo.",
+  "mean": "Zákon o digitální ekonomice zapracovává evropské nařízení DSA o digitálních službách a částečně nařízení o správě dat. Má určit, kdo v Česku dohlíží na velké on-line platformy a jak se uplatní sankce. Ve středu proběhlo druhé čtení s pozměňovacími návrhy opozice.",
+  "citace_text": "z našeho digitálního prostředí se stává digitální žumpa, kdy vůbec nejsme schopni ochránit naše občany a občanky a nejzranitelnější lidi v naší společnosti.",
+  "citace_autor": "Irena Ferčíková Konečná (STČ)",
+  "steno_id": "2025_24_01484",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}
