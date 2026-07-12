@@ -62,6 +62,7 @@ Schůze má pevnou kostru. Rozeznávej rutinu od odchylky — **odchylky jsou te
 - Sportovní skóre (tabule „stav zápasu") počítej z **publikovaných článků** dne podle `verdikt`: `schvaleno` a `zvoleno` → prošlo, `zamiteno` a `odlozeno` → padlo. Vrácení zákona do druhého kola (`odlozeno`) je pro skóre jako zamítnutí, i když procedurální hlasování skončilo „přijato".
 - Formát `X:Y` ve výsledku dne používej jen u zákonů. U procedury piš „sto X pro, Y proti".
 - Boj o pořad může být samostatný článek (distanc, ukrajina, absurdita), ale ne jako „třicet hlasování za dvě hodiny".
+- Do vět v článku (`lead`, `pointa`, `mean`, `zaver`, `vysledek`) **nepiš skóre hlasování** (`154:0`, `sto padesát osm proti nula`, `osmdesát pět pro, dvě proti`). Stačí verdikt: „schválila“, „zamítla“, „poslala do výboru“, „prošlo jednomyslně“. Poměr hlasů piš jen když je sám o pointě sporu (těsné hlasování, překvapivé proti). **Nepiš, po kolika hlasováních** zákon prošel nebo padl (`po osmnácti kolech`, `po třiceti hlasováních`).
 - **Zákony a usnesení jsou jádro dne.** Procedura je kulisa.
 - `dnesni_ucet`, `zaver`, `lead`, `mean`, `pointa` a `nadpis` piš **vtipně a lidově**: ironie, kontrast, absurdita. Čtenář musí hned pochopit, co se stalo — žádný úřednický žargon (`legislativní nouze`, `ve třetím čtení`, `novela`, `formální kroky`, `personálka`). Radši „první/druhé kolo“, „změna zákona“, „zrychlené projednávání“, „obsazování postů“.
 - **Terminologie hlasování:** drž jeden systém — `první kolo`, `druhé kolo`, `závěrečné hlasování`. Nestřídej s „finální kolo“, „ve finále“ ani „finální hlasování“.
@@ -69,6 +70,7 @@ Schůze má pevnou kostru. Rozeznávej rutinu od odchylky — **odchylky jsou te
 - `zaver` vždy začíná `že …` a shrnuje den jednou větou, kterou pochopí kdokoli mimo sněmovnu.
 - `lead` je úvodní odstavec článku — první věta, kterou čtenář vidí pod nadpisem. Musí být srozumitelná bez znalosti jednacího řádu.
 - `dnesni_ucet` vždy na **dvě řádky** (`\n` v JSON), text rovnoměrně rozdělen mezi první a druhou řádku.
+- Do `dnesni_ucet`, `zaver` ani `vysledek` **nepiš redakční poznámky o přesunu mezi dny** (`noční rozpočty patří k úterku`, `Vločka skončila včera po půlnoci`). Když téma není v článcích dne, prostě ho nezmiňuj. Čtenáři to nepřidá hodnotu.
 
 ## Co NENÍ zajímavé (přeskakuj)
 
@@ -113,9 +115,13 @@ Když uvádíš číslo (počet slov, hlasů, přítomných, poměr k 200 poslan
 
 Cíl není připomínat tiskovou zprávu sněmovny. Preferuj lidovou češtinu, hospodský jazyk, konkrétní slova, aktivní věty a lehkou švejkovskou ironii. Omezuj legislativní formulace, úřednické obraty a abstraktní pojmy (`technická úprava`, `procedurální krok`, `implementace`, `proces`). Test: pokud by věta mohla bez úprav vyjít na webu Poslanecké sněmovny, je pravděpodobně moc úřednická.
 
-**Uzávěrka sekce:** pole `mean` v JSON se exportuje jako `### Hlášení na velitelstvo` (suchý úřední souhrn, ne vysvětlivka pro laika). Detailní šablona sekce je v `poslusne-hlasim-pravidla.md`.
+**Uzávěrka sekce:** pole `mean` v JSON se exportuje jako `### Hlášení na velitelstvo` (první věta, co téma znamená pro občana; zbytek suchý úřední souhrn). Detailní šablona sekce je v `poslusne-hlasim-pravidla.md` §4b.
 
 **Kdy vysvětlovat (a kdy ne):** ne všechno je potřeba vysvětlovat. Když vysvětlíš moc, zabiješ tempo a humor. Pojmy zlidovni **v těle sekce** (`lead`, `pointa`), ne v samostatné publicistické rubrice. Na stejný den stejný pojem znovu nevysvětlovat.
+
+**Test „vyznal se v tom?":** čtenář mimo politiku musí po `lead` vědět, **o čem se hlasovalo** a **proč to má zajímat**. Nezačínej názvem procedury (`ve třetím čtení`, `novela zákona o …`). Začni lidským předmětem (`jak rychle dostanete stavební povolení`, `kolik dostanou rodiče na příspěvku`). Proceduru, pokud je nutná, přelož jednou větou (`poslední hlasování před prezidentem`, `poslanci ještě mohli měnit detaily`). U ministra nebo klíčové postavy při první zmínce uveď funkci, pokud z kontextu není jasná (`místopředseda vlády Havlíček`, `ministryně pro místní rozvoj Mrázová`). Citát a reakce drž v pořadí ze stenozáznamu, ať je jasné, kdo komu co říká a proč. V `mean` jednou větou řekni, **co téma znamená pro občana**, pak suchý průběh dne.
+
+**Návaznost na historii:** když stejné téma už máme v dřívějším vydání (`facts/`, `published/`), navaz v `lead` nebo `pointa` jednou větou (co minule, co se změnilo). Detail §4c v `poslusne-hlasim-pravidla.md`. To není totéž co zakázané „patří k úterku" v `dnesni_ucet`/`zaver`.
 
 **Parlamentní pojmy pro laiky:** čtenář nesleduje politiku. Když se v textu dne poprvé objeví některý z pojmů níže a čtenář by bez vysvětlení nepochopil, co se děje, vysvětli ho **jednou větou v textu sekce** (ne úřednický slovník). Tooltipy v HTML vycházejí z `svejk/glossary.py`.
 
