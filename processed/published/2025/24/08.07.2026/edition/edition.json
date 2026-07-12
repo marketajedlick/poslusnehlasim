@@ -1,0 +1,72 @@
+{
+  "key": "2025/24/08.07.2026",
+  "obdobi": 2025,
+  "schuze": 24,
+  "datum_unl": "08.07.2026",
+  "iso": "2026-07-08",
+  "state": "published",
+  "topic_slugs": [
+    "novela-z-o-statni-socialni-podpore",
+    "novela-z-stavebni-zakon"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-07-08/brief.md",
+  "feedback": [
+    {
+      "at": "2026-07-12T06:06:23.824391+00:00",
+      "field": "",
+      "note": "méně úřednicky"
+    },
+    {
+      "at": "2026-07-12T06:11:14.098448+00:00",
+      "field": "",
+      "note": "méně úřednicky"
+    }
+  ],
+  "metrics": {
+    "state": "published",
+    "stale": true,
+    "link_phrase_coverage": {
+      "total": 17,
+      "linked": 17,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 17,
+      "ok": 17,
+      "percent": 100.0,
+      "bad": []
+    },
+    "generic_topic_count": 2,
+    "steno_passages": 17,
+    "steno_missing_article_phrase": 0,
+    "ok": false,
+    "errors": [
+      "slabá témata: novela-z-o-statni-socialni-podpore, novela-z-stavebni-zakon"
+    ]
+  },
+  "inputs": {
+    "votes_count": 286,
+    "votes_max_cislo": 286,
+    "steno_count": 2392,
+    "steno_last_poradi": 2442,
+    "topics_built_at": "2026-07-11T09:37:23.959985+00:00",
+    "fingerprint": "0a0e0d57377f083d"
+  },
+  "published_at": "2026-07-12T06:50:41.804146+00:00",
+  "snapshot_dir": "published/2025/24/08.07.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-07-08/assets/2026-07-08.png",
+    "share": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-07-08/assets/2026-07-08.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png",
+      "carousel/05-skore.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-07-08/assets/caption.txt"
+  }
+}

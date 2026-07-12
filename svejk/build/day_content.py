@@ -97,6 +97,9 @@ class DenItem:
     citace_text: str = ""
     citace_autor: str = ""
     citace_href: str = ""
+    citace2_text: str = ""
+    citace2_autor: str = ""
+    citace2_href: str = ""
     pointa: str = ""
     lead_tail: str = ""
     variant: str = ""
@@ -579,6 +582,9 @@ def build_den_content(
         citace_text = (fact.get("citace_text") or "").strip()
         citace_autor = (fact.get("citace_autor") or "").strip()
         citace_href = (fact.get("citace_href") or "").strip()
+        citace2_text = (fact.get("citace2_text") or "").strip()
+        citace2_autor = (fact.get("citace2_autor") or "").strip()
+        citace2_href = (fact.get("citace2_href") or "").strip()
         pointa = (fact.get("pointa") or "").strip() if has_custom_lead else ""
         lead_tail = (fact.get("lead_tail") or "").strip()
         items_meta[str(num)] = {"pocet_hlasovani": ph, "slug": slug}
@@ -595,6 +601,9 @@ def build_den_content(
                 citace_text=citace_text,
                 citace_autor=citace_autor,
                 citace_href=citace_href,
+                citace2_text=citace2_text,
+                citace2_autor=citace2_autor,
+                citace2_href=citace2_href,
                 pointa=pointa,
                 dopad=dopad,
                 parliament_lead=parliament_lead,
@@ -893,6 +902,8 @@ def _sanitize_den_content(content: DenContent) -> None:
         item.kuriozita = _sanitize_text_export(item.kuriozita)
         item.citace_text = _sanitize_citace_export(item.citace_text)
         item.citace_autor = _sanitize_text_export(item.citace_autor)
+        item.citace2_text = _sanitize_citace_export(item.citace2_text)
+        item.citace2_autor = _sanitize_text_export(item.citace2_autor)
         item.pointa = _sanitize_text_export(item.pointa)
         item.dopad = _sanitize_text_export(item.dopad)
         item.parliament_lead = _sanitize_text_export(item.parliament_lead)

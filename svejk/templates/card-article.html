@@ -23,6 +23,16 @@
       {% if item.pointa %}
       <p class="p">{{ item.pointa | glossary }}</p>
       {% endif %}
+      {% if item.citace2_text %}
+      <blockquote class="article-quote" id="{{ item.anchor_id }}-citace2" aria-label="{{ t.edition.citace_aria }}">
+        <p class="article-quote-text"><span class="quote-mark">„</span>{% if item.citace2_href %}<a class="steno-link" href="{{ item.citace2_href }}"{% if item.citace2_href.startswith('http') %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ item.citace2_text | glossary }}</a>{% else %}{{ item.citace2_text | glossary }}{% endif %}<span class="quote-mark">”</span></p>
+        <div class="article-quote-foot">
+          {% if item.citace2_autor %}
+          <p class="article-quote-by">{{ item.citace2_autor }}</p>
+          {% endif %}
+        </div>
+      </blockquote>
+      {% endif %}
       {% if item.mean %}
       <p class="p mean"><strong class="mean-label">{{ t.edition.mean_label }}</strong> <strong>{{ item.mean | glossary }}</strong></p>
       {% endif %}

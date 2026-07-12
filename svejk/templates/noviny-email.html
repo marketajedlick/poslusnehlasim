@@ -117,6 +117,14 @@
     {% if item.pointa %}
     <p class="p">{{ item.pointa | safe }}</p>
     {% endif %}
+    {% if item.citace2_text %}
+    <blockquote class="item-quote" style="margin:16px 0 calc(12px + 1.75em);padding:14px 16px 14px 18px;border:1px solid rgba(38,38,38,0.3);border-left:5px solid #ff4411;background:rgba(38,38,38,0.045);text-align:left;">
+      <p class="item-quote-text"><span class="quote-mark">„</span>{% if item.citace2_href %}<a class="steno-link" href="{{ item.citace2_href }}"{% if item.citace2_href.startswith('http') %} target="_blank" rel="noopener noreferrer"{% endif %} style="color:inherit;text-decoration:none;border-bottom:1px dotted rgba(40,60,110,.5);">{{ item.citace2_text | safe }}</a>{% else %}{{ item.citace2_text | safe }}{% endif %}<span class="quote-mark">“</span></p>
+      {% if item.citace2_autor %}
+      <p class="item-quote-by">{{ item.citace2_autor }}</p>
+      {% endif %}
+    </blockquote>
+    {% endif %}
     {% if item.mean %}
     <p class="mean"><strong class="mean-label" style="color:#ff4411;font-weight:700;">{{ t.edition.mean_label }} </strong><strong style="font-weight:700;">{{ item.mean | safe }}</strong></p>
     {% endif %}

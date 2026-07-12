@@ -6,8 +6,8 @@
   "iso": "2026-07-01",
   "state": "published",
   "topic_slugs": [
-    "navrh-zakona-o-statnich-zamestnancich-souvisejic",
     "debata-rakusan-nato-zahranicni-sluzba-01-07",
+    "navrh-zakona-o-statnich-zamestnancich-souvisejic",
     "debata-digitalni-ekonomika-01-07"
   ],
   "recommended_slugs": [],
@@ -23,7 +23,7 @@
     "topics_built_at": "2026-07-11T09:37:23.959985+00:00",
     "fingerprint": "0a0e0d57377f083d"
   },
-  "published_at": "2026-07-12T05:48:24.568984+00:00",
+  "published_at": "2026-07-12T06:09:32.893689+00:00",
   "snapshot_dir": "published/2025/24/01.07.2026",
   "supersedes": null,
   "assets": {

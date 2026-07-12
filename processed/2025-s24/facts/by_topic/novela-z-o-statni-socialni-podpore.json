@@ -3,17 +3,32 @@
   "nazev": "Novela z. o státní sociální podpoře",
   "datum": "08.07.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "státní sociální podpoře",
+  "predmet_lidsky": "zvýšení rodičovského příspěvku ve třetím čtení",
   "koho": [
     "Koho se to týká? Rodiče, kteří čerpají nebo plánují rodičovský příspěvek. Na příspěvek na bydlení se tím den nic neměnilo."
   ],
   "fakty": [
     {
+      "text": "Juchelka: rodičovský čtyři sta tisíc a osm set u dvojčat od ledna 2027.",
+      "source": "steno",
+      "steno_id": "2025_24_02219",
+      "citace": "zvýšit rodičovský příspěvek na celkovou částku 400 000 korun",
+      "link_phrase": "čtyři sta tisíc korun"
+    },
+    {
       "text": "Okamura ukončil rozpravu, nikdo se prý nehlásil.",
       "source": "steno",
       "steno_id": "2025_24_02220",
-      "citace": "do které nemám nikoho přihlášeného, takže se rozhlédnu, nikdo se nehlásí, rozpravu končím.",
-      "link_phrase": "Okamura (SPD) pak otevřel rozpravu"
+      "citace": "nikdo se nehlásí, rozpravu končím.",
+      "link_phrase": "tak ji zase zavřel"
+    },
+    {
+      "text": "Koaliční poslanci v sále: Nikdo se nehlásil.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_24_02220",
+      "citace": "(Hlasy koaličních poslanců: Nikdo se nehlásil.)",
+      "link_phrase": "Koaliční poslanci křičeli, že nikdo nebyl přihlášený"
     },
     {
       "text": "Richterová a Šebelová gestikulovaly, že chtěly mluvit.",
@@ -21,27 +36,20 @@
       "kind": "scene",
       "steno_id": "2025_24_02220",
       "citace": "poslankyně Richterová a poslankyně Šebelová gestikulují, že chtěly vystoupit",
-      "link_phrase": "Richterová (Piráti) a Šebelová (STAN) gestikulovaly"
+      "link_phrase": "gestikulovaly, že chtěly mluvit"
     },
     {
       "text": "Juchelka rozpravu znovu otevřel po dohodě.",
       "source": "steno",
       "steno_id": "2025_24_02221",
       "citace": "já bych si přál, abychom tu rozpravu tedy otevřeli po dohodě samozřejmě s opozicí",
-      "link_phrase": "Juchelka (ANO) rozpravu po dohodě znovu otevřel"
+      "link_phrase": "po dohodě znovu otevřela"
     },
     {
-      "text": "Juchelka: rodičovský 400 000 a 800 000 u dvojčat.",
-      "source": "steno",
-      "steno_id": "2025_24_02219",
-      "citace": "zvýšit rodičovský příspěvek na celkovou částku 400 000 korun",
-      "link_phrase": "Juchelka (ANO) navrhl zvýšit rodičovský na čtyři sta tisíc korun"
-    },
-    {
-      "text": "Richterová: rozdíl 50 000 podle data narození.",
+      "text": "Richterová: dítě z 31. 12. v minusu, z 1. 1. v plusu.",
       "source": "steno",
       "steno_id": "2025_24_02229",
-      "citace": "rozdíl 50 000 korun pro rodiny dětí narozených 31. prosince",
+      "citace": "pro rodiny dětí narozených 31. prosince, ty budou v minusu, a pro rodiny dětí narozených 1. ledna, ty budou v plusu",
       "link_phrase": "dostane o padesát tisíc méně"
     },
     {
@@ -52,20 +60,21 @@
       "link_phrase": "ta nespravedlnost jde čistě za hnutím ANO"
     },
     {
-      "text": "Závěrečné hlasování 158 pro, nikdo proti.",
+      "text": "Závěrečné hlasování schváleno.",
       "source": "steno",
       "steno_id": "2025_24_02290",
-      "citace": "pro 158, proti nikdo",
-      "link_phrase": "závěrečné hlasování skončilo 158:0"
-    },
-    {
-      "text": "Čtyřiadvacet hlasování o pozměňovacích návrzích.",
-      "link_phrase": "Čtyřiadvacet hlasování o pozměňovacích návrzích"
+      "citace": "pro 158, proti nikdo"
     }
   ],
   "publikovat": true,
-  "priorita": 3,
-  "nadpis": "čtyři sta tisíc navíc\nbez přihlášených",
+  "priorita": 4,
+  "nadpis": "Rodičovská\nčtyři sta tisíc",
+  "lead": "Poslušně hlásím, že středa ráno uzavřela dvouměsíční cestu rodičovského příspěvku závěrečným hlasováním. V červnu ho Sněmovna v prvním kole jednomyslně poslala do výboru. Teď Juchelka (ANO) zopakoval, že má jít z tří set padesáti na čtyři sta tisíc korun a osm set u dvojčat, ale jen pro děti narozené od ledna 2027. Okamura (SPD) rozpravu otevřel, nikdo se prý ale nehlásil, tak ji zase zavřel, zatímco Richterová (Piráti) a Šebelová (STAN) gestikulovaly, že chtěly mluvit.",
+  "pointa": "Rozprava se po dohodě znovu otevřela. Richterová (Piráti), která už v květnu tlačila čtyři sta dvacet tisíc a roční valorizaci jako u důchodů, varovala, že dítě narozené třicátého prvního prosince 2026 dostane o padesát tisíc méně než sourozenec o měsíc mladší.",
+  "mean": "Rodičovský příspěvek je dávka pro rodiče doma s malým dítětem. Novela zvedá celkovou částku, kterou si rodič může vybrat, ne přidává novou dávku navíc. První kolo proběhlo v červnu jednomyslně, ve středu Sněmovna zákon schválila. Richterová (Piráti) kritizovala rozdíl podle data narození a chybějící valorizaci.",
+  "citace_text": "Ta obrovská nespravedlnost, která vznikne teď 1. ledna 2027, jde čistě za hnutím ANO. Je to nespravedlnost, která udělá rozdíl 50 000 korun pro rodiny dětí narozených 31. prosince, ty budou v minusu, a pro rodiny dětí narozených 1. ledna, ty budou v plusu.",
+  "citace_autor": "Olga Richterová (Piráti)",
+  "steno_id": "2025_24_02229",
   "pocet_hlasovani": 24,
   "proslo": true,
   "signaly": {
@@ -75,7 +84,5 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 8047,
-  "lead": "Poslušně hlásím, že středa ráno začala rodičovským příspěvkem ve třetím čtení. Juchelka (ANO) navrhl zvýšit rodičovský na čtyři sta tisíc korun pro jedno dítě a osm set tisíc u dvojčat, platné od ledna 2027. Okamura (SPD) pak otevřel rozpravu, nikdo se prý nehlásil, a hned ji zase zavřel. Richterová (Piráti) a Šebelová (STAN) gestikulovaly, že chtěly mluvit, ale předsedající pokračoval k hlasování.\n\nJuchelka (ANO) rozpravu po dohodě znovu otevřel. Richterová (Piráti) varovala, že dítě narozené třicátého prvního prosince 2026 dostane o padesát tisíc méně než sourozenec o měsíc mladší, a řekla, že ta nespravedlnost jde čistě za hnutím ANO. Poslanci pak dvacet čtyři hlasovali o pozměňovacích návrzích a závěrečné hlasování skončilo 158:0.",
-  "mean": "Rodičovský příspěvek je dávka pro rodiče doma s malým dítětem. Novela zvedá celkovou částku, kterou si rodič může vybrat, ne přidává novou dávku navíc. Okamura nejdřív ukončil rozpravu bez řečníků, Juchelka ji pak znovu otevřel. Richterová kritizovala rozdíl podle data narození. Závěrečné hlasování sto padesát osm pro, nikdo proti."
+  "steno_slov": 8047
 }

@@ -3,7 +3,7 @@
   "nazev": "Novela z. - stavební zákon",
   "datum": "08.07.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "stavebním zákoně",
+  "predmet_lidsky": "změně pravidel pro stavění v posledním hlasování",
   "koho": [
     "Koho se to týká? Každého, kdo staví dům, dělá přístavbu nebo čeká na úřad."
   ],
@@ -20,51 +20,42 @@
       "source": "steno",
       "steno_id": "2025_24_02363",
       "citace": "počet zákonů, které měníme touto novelou, je nyní po komplexním pozměňovacím návrhu 50",
-      "link_phrase": "mění padesát zákonů najednou"
+      "link_phrase": "padesát zákonů najednou"
     },
     {
       "text": "Kučera Havlíčkovi: drzé čelo, poplužní dvůr.",
       "source": "steno",
       "steno_id": "2025_24_02299",
       "citace": "drzé čelo, poplužní dvůr, to jste teď přesně předvedl",
-      "link_phrase": "drzé čelo, poplužní dvůr, to jste teď přesně předvedl"
+      "link_phrase": "drzé čelo, poplužní dvůr"
     },
     {
-      "text": "Kučera: ministr mlčel celé třetí čtení.",
+      "text": "Havlíček poprvé promluvil až ve třetím čtení.",
       "source": "steno",
-      "steno_id": "2025_24_02299",
-      "citace": "Ve Sněmovně rozhodně ne. Já jsem vás neviděl ani tady",
-      "link_phrase": "celé třetí čtení v Sněmovně mlčel"
-    },
-    {
-      "text": "Kupka citoval Mrázovou o široké diskusi.",
-      "source": "steno",
-      "steno_id": "2025_24_02295",
-      "citace": "měla být zpracována po předchozí široké celospolečenské diskusi",
-      "link_phrase": "široké celospolečenské diskusi jako vládní návrh"
-    },
-    {
-      "text": "Havránek: ANO hlasovalo pro starý zákon v březnu 2023.",
-      "source": "steno",
-      "steno_id": "2025_24_02331",
-      "citace": "všichni hlasovali pro návrh",
-      "link_phrase": "v březnu 2023 hlasovalo pro předchozí stavební zákon padesát devět poslanců ANO"
+      "steno_id": "2025_24_02297",
+      "citace": "já jsem zde zatím ke stavebnímu zákonu nevystupoval",
+      "link_phrase": "promluvil ve třetím čtení"
     },
     {
       "text": "Adamec si dal sázku, kdy se k zákonu vrátíme.",
       "source": "steno",
       "steno_id": "2025_24_02345",
       "citace": "dám s vámi sázku, v který termín se budeme k tomuto zákonu opět vracet",
-      "link_phrase": "Adamec (KDU-ČSL) si na závěr dal sázku"
-    },
-    {
-      "text": "Závěrečné hlasování 85 pro, 2 proti.",
-      "link_phrase": "Závěrečné hlasování osmdesát pět pro, dvě proti"
+      "link_phrase": "dal sázku"
     }
   ],
   "publikovat": true,
-  "priorita": 3,
-  "nadpis": "Stavba půjde snáz,\nkdyž bůh dá",
+  "priorita": 4,
+  "nadpis": "Stavba půjde snáz\nkdyž bůh dá",
+  "lead": "Poslušně hlásím, že ve sněmovně se řešilo, jak rychle v Česku dostanete stavební povolení. Sněmovna hlasovala o novele stavebního zákona v posledním kole, po kterém může zákon jít k prezidentovi.",
+  "pointa": "Kovářová (Piráti) řekla, že novela jde stejným marketingem jako podomní prodej hrnců, mění padesát zákonů najednou a zkracuje cestu k rychlé výstavbě pro developery. Havlíček (ANO) promluvil ve třetím čtení. Kučera (TOP 09) mu po projevu řekl: „Pane ministře Havlíčku, jak se říká, drzé čelo, poplužní dvůr, to jste teď přesně předvedl, kdy jste, prosím, byl celou dobu projednávání tohoto zákona?“ Adamec (KDU-ČSL) si dal sázku, kdy se k zákonu vrátí, aby ho upravili.",
+  "mean": "Stavební zákon určuje, za jakých podmínek úřady něco smíte postavit. Novela má povolování zrychlit a sjednotit. Kovářová (Piráti) kritizovala rozsah změn a dopad na developery. Sněmovna návrh ve třetím čtení schválila.",
+  "citace_text": "celá novela je vedena tak, jak byla představena na podzim formou roadshow – stejně marketingovým a povrchním způsobem, jakým se podomním prodejem prodávají hrnce. Vyzvednete několik pozitivních detailů, přidáte růžové příběhy, pozvete seniory na výlet a večeři, představíte jim váš úhel pohledu a až se hrnce prodají, přidáte k tomu paklík podrobnějších informací drobným písmem, kde napíšete všechny problémy a rizika.",
+  "citace_autor": "Veronika Kovářová (Piráti)",
+  "steno_id": "2025_24_02363",
+  "citace2_text": "Já jsem říkal nakonec, že v té řeči tady si dám s vámi sázku, v který termín se budeme k tomuto zákonu opět vracet, abychom ho upravili tak, aby v praxi fungoval.",
+  "citace2_autor": "Ivan Adamec (KDU-ČSL)",
+  "citace2_steno_id": "2025_24_02345",
   "pocet_hlasovani": 1,
   "proslo": true,
   "signaly": {
@@ -74,7 +65,5 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 98839,
-  "lead": "Poslušně hlásím, že středa odpoledne patřila stavebnímu zákonu ve třetím čtení. Kovářová (Piráti) řekla, že novela jde stejným marketingem jako podomní prodej hrnců a že mění padesát zákonů najednou. Kučera (TOP 09) Havlíčkovi (ANO) vyčítal, že celé třetí čtení v Sněmovně mlčel, a dodal: „drzé čelo, poplužní dvůr, to jste teď přesně předvedl.“\n\nKupka (ODS) přečetl dopis ministryně Mrázové (ANO), že podobná legislativa má jít po široké celospolečenské diskusi jako vládní návrh. Havránek (ANO) připomněl, že v březnu 2023 hlasovalo pro předchozí stavební zákon padesát devět poslanců ANO. Adamec (KDU-ČSL) si na závěr dal sázku, kdy se k zákonu vrátíme, aby ho upravili. Závěrečné hlasování osmdesát pět pro, dvě proti.",
-  "mean": "Novela má zrychlit povolování staveb. Kovářová ji přirovnala k prodeji hrnců z roadshow. Havlíček v debatě chyběl, Kučera to označil za trapné. Kupka citoval Mrázovou o potřebě diskuse. Havránek připomněl hlasování ANO za starší verzi. Adamec čeká brzy opravy. Závěrečné hlasování osmdesát pět pro, dvě proti."
+  "steno_slov": 98839
 }

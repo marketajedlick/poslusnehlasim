@@ -61,14 +61,17 @@ def run_social_assets(
             continue
         if not first_nadpis:
             first_nadpis = (fact.get("nadpis") or "").strip()
-        cit = (fact.get("citace_text") or "").strip()
-        if not cit:
-            for f in fact.get("fakty") or []:
-                if isinstance(f, dict) and (f.get("citace") or "").strip():
-                    cit = (f.get("citace") or "").strip()
-                    break
-        if cit and len(cit) > 20:
-            quotes.append(cit[:200])
+        for cit_key in ("citace_text", "citace2_text"):
+            cit = (fact.get(cit_key) or "").strip()
+            if not cit and cit_key == "citace_text":
+                for f in fact.get("fakty") or []:
+                    if isinstance(f, dict) and (f.get("citace") or "").strip():
+                        cit = (f.get("citace") or "").strip()
+                        break
+            if cit and len(cit) > 20:
+                quotes.append(cit[:200])
+            if len(quotes) >= 3:
+                break
         if len(quotes) >= 3:
             break
 

@@ -2,8 +2,8 @@
   "datum": "01.07.2026",
   "den": "středa",
   "topic_slugs": [
-    "navrh-zakona-o-statnich-zamestnancich-souvisejic",
     "debata-rakusan-nato-zahranicni-sluzba-01-07",
+    "navrh-zakona-o-statnich-zamestnancich-souvisejic",
     "debata-digitalni-ekonomika-01-07"
   ],
   "stats": {
@@ -15,13 +15,12 @@
     "spor_o_porad": false,
     "dlouha_debata": true
   },
-  "dnesni_ucet": "Přílepky, pomsta a digitální žumpa.\nNovela o Vločce patří k úterku.",
+  "dnesni_ucet": "Pomsta, přílepky a digitální žumpa.\nOd velvyslance v OSN po pravidla pro platformy.",
   "steno_zdroje": true,
-  "zaver": "že středa dopoledne dořešila související zákony přílepkami a osmnácti hlasováními, Rakušan u toho mluvil o pomstě prezidentovi a odpoledne Sněmovna bez hlasování otevřela digitální ekonomiku.",
+  "zaver": "že středa začala pomstou pro prezidenta u velvyslance v OSN, dopoledne koalice dotáhla související zákony přílepkami a odpoledne bez hlasování otevřela digitální ekonomiku, která zatím z internetu nedělá nic jiného než žumpu.",
   "vysledek": [
-    "* související zákon ke služebnímu zákonu prošel po osmnácti kolech, nejtvrdší poměr sto dvacet proti padesát šest",
     "* Rakušan (STAN): pomsta pro prezidenta, velvyslanec u OSN bez podpisu prezidenta",
-    "* zákon o digitální ekonomice ve druhém čtení, Ferčíková Konečná (STČ): digitální žumpa bez pravidel pro platformy",
-    "* novela o ochraně zvířat skončila už v úterý po půlnoci"
+    "* související zákon ke služebnímu zákonu prošel",
+    "* zákon o digitální ekonomice ve druhém čtení, Ferčíková Konečná (STČ): digitální žumpa bez pravidel pro platformy"
   ]
 }

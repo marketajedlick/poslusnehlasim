@@ -530,27 +530,31 @@ def collect_steno_sources(
                     _resolve_article_phrase(passage, article_text)
                 )
                 block.passages.append(passage)
-        ct = (fact.get("citace_text") or "").strip()
-        ct_sid = (fact.get("steno_id") or "").strip()
-        if ct and ct_sid and not find_passage_for_citace(block.passages, citace_text=ct):
-            ct_passage = _passage_from_fact(
-                {
-                    "source": "steno",
-                    "steno_id": ct_sid,
-                    "citace": ct,
-                    "text": (fact.get("citace_autor") or "Citát dne").strip(),
-                },
-                paths=paths,
-                steno_by_id=steno_by_id,
-                topic_slug=slug,
-                topic_title=title,
-                article_num=num,
-                passage_idx=global_passage_idx,
-                psp_resolver=psp_resolver,
-            )
-            global_passage_idx += 1
-            if ct_passage:
-                block.passages.insert(0, ct_passage)
+        for cit_key, sid_key, autor_key in (
+            ("citace_text", "steno_id", "citace_autor"),
+            ("citace2_text", "citace2_steno_id", "citace2_autor"),
+        ):
+            ct = (fact.get(cit_key) or "").strip()
+            ct_sid = (fact.get(sid_key) or "").strip()
+            if ct and ct_sid and not find_passage_for_citace(block.passages, citace_text=ct):
+                ct_passage = _passage_from_fact(
+                    {
+                        "source": "steno",
+                        "steno_id": ct_sid,
+                        "citace": ct,
+                        "text": (fact.get(autor_key) or "Citát dne").strip(),
+                    },
+                    paths=paths,
+                    steno_by_id=steno_by_id,
+                    topic_slug=slug,
+                    topic_title=title,
+                    article_num=num,
+                    passage_idx=global_passage_idx,
+                    psp_resolver=psp_resolver,
+                )
+                global_passage_idx += 1
+                if ct_passage:
+                    block.passages.insert(0, ct_passage)
         if block.passages:
             blocks.append(block)
     num, global_passage_idx = append_smlouvy_steno_block(
@@ -731,10 +735,13 @@ def resolve_item_citace_href(
     item: Any,
     passages: list[StenoPassage],
     page_href: str,
+    *,
+    prefix: str = "citace",
 ) -> None:
     """Citace v článku vede nejdřív na naši stránku se zdroji, ne rovnou na PSP."""
-    text = (getattr(item, "citace_text", None) or "").strip()
-    href = (getattr(item, "citace_href", None) or "").strip()
+    text = (getattr(item, f"{prefix}_text", None) or "").strip()
+    href = (getattr(item, f"{prefix}_href", None) or "").strip()
+    href_attr = f"{prefix}_href"
     if not text and not href:
         return
     if not page_href:
@@ -745,9 +752,9 @@ def resolve_item_citace_href(
         citace_href=href,
     )
     if passage:
-        item.citace_href = passage_href(passage, page_href)
+        setattr(item, href_attr, passage_href(passage, page_href))
     elif href.startswith("https://www.psp.cz/") or text:
-        item.citace_href = page_href
+        setattr(item, href_attr, page_href)
 
 
 def _party_label_gap() -> str:
@@ -936,6 +943,7 @@ def apply_steno_links_to_content(
         item_passages = passages_for_slug(blocks, item.slug)
         if item_passages:
             resolve_item_citace_href(item, item_passages, page_href)
+            resolve_item_citace_href(item, item_passages, page_href, prefix="citace2")
             build_item_steno_links(item_passages, item, page_href)
             for field in ("lead", "mean", "kuriozita", "pointa"):
                 raw = getattr(item, field, None) or ""

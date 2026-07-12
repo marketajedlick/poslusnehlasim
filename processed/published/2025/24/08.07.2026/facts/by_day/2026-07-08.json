@@ -15,14 +15,18 @@
     "dlouha_debata": true
   },
   "dnesni_ucet": "Ráno rodičovský bez přihlášených,\nodpoledne stavební zákon jako prodej hrnců.",
-  "zaver": "že středa ve Sněmovně začala tím, že Okamura ukončil rozpravu o rodičovském, protože se nikdo nehlásil, a skončila stavebním zákonem s dvěma hlasy proti, noční rozpočty patří k úterku.",
+  "zaver": "že středa ráno Sněmovna schválila rodičovský příspěvek poté, co Richterová označila rozdíl podle data narození za vinu hnutí ANO, a odpoledne stavební zákon, který Kovářová přirovnala k podomnímu prodeji hrnců.",
   "vysledek": [
-    "* rodičovský příspěvek: Okamura ukončil rozpravu bez řečníků, Juchelka ji znovu otevřel",
+    "* rodičovský příspěvek: Okamura (SPD) ukončil rozpravu bez řečníků, Juchelka (ANO) ji znovu otevřel",
     "* Richterová (Piráti): rozdíl padesát tisíc podle data narození jde za ANO",
-    "* dvacet čtyři hlasování o pozměňovacích návrzích, závěrečné 158:0",
     "* stavební zákon: Kovářová (Piráti) přirovnala novelu k prodeji hrnců",
     "* Kučera (TOP 09) Havlíčkovi (ANO): drzé čelo, poplužní dvůr",
-    "* závěrečné hlasování o stavebním zákoně 85:2"
+    "* Adamec (KDU-ČSL) si dal sázku, kdy se ke stavebnímu zákonu vrátíme"
   ],
-  "steno_zdroje": true
+  "steno_zdroje": true,
+  "jazykolam": {
+    "text": "Místo toho, abychom se na tuto situaci připravovali, abychom realizovali penzijní reformu, abychom realizovali zdravotní reformu a abychom drželi veřejné finance v nějakém rozumném stavu, tak je tu debata o tom, že penzijní reformu zrušíte.",
+    "autor": "Jan Skopeček",
+    "steno_id": "2025_24_02214"
+  }
 }

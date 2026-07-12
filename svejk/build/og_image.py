@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from datetime import datetime
 from pathlib import Path
 
@@ -24,7 +25,7 @@ _SHARE_BTN_SIZE = 28
 OG_WIDTH = 1200
 OG_HEIGHT = 630
 # Bump při vizuální změně OG — sociální sítě cacheují obrázek podle URL.
-OG_CACHE_VERSION = "hero-card-2"
+OG_CACHE_VERSION = "hero-card-3"
 
 # Čtverec odpovídá hero kartě na mobilu; ruční nahrání na X vypadá lépe než 1200×630.
 # OG zůstává landscape pro twitter:card / og:image u odkazu na vydání.
@@ -237,6 +238,22 @@ def _compose_quote_text(
     return (fallback or "").strip()
 
 
+def _quote_bold_prefix(text: str, zaver_key: str = "") -> str:
+    """Tučný úvod citace — stejně jako card-hero na webu."""
+    ph = "Poslušně hlásím, že "
+    if text.startswith(ph):
+        return ph
+    m = re.match(r"^(Poslušně hlásím,?)\s*", text, re.I)
+    if m:
+        return m.group(0)
+    key = (zaver_key or "").strip()
+    if key and text.startswith(key):
+        if len(text) > len(key) and text[len(key)] == " ":
+            return text[: len(key) + 1]
+        return key
+    return ""
+
+
 def _apply_yellow_card(
     img: Image.Image,
     box: tuple[int, int, int, int],
@@ -284,9 +301,16 @@ def _draw_quote_block(
     font: ImageFont.FreeTypeFont | ImageFont.ImageFont,
     mark_font: ImageFont.FreeTypeFont | ImageFont.ImageFont,
     line_h: int,
+    bold_prefix: str = "",
 ) -> int:
     open_mark = "„"
     close_mark = "“"
+    bold_font = (
+        _load_font(getattr(font, "size", 16), bold=True)
+        if bold_prefix
+        else font
+    )
+    bold_remaining = len(bold_prefix)
     for i, line in enumerate(lines):
         prefix = open_mark if i == 0 else ""
         suffix = close_mark if i == len(lines) - 1 else ""
@@ -294,7 +318,17 @@ def _draw_quote_block(
         if prefix:
             draw.text((cursor, y - 6), prefix, fill=_CHAR, font=mark_font)
             cursor += int(draw.textlength(prefix, font=mark_font) * 0.55)
-        draw.text((cursor, y), f"{line}{suffix}", fill=_CHAR, font=font)
+        idx = 0
+        if bold_remaining > 0:
+            chunk_len = min(len(line) - idx, bold_remaining)
+            chunk = line[idx : idx + chunk_len]
+            draw.text((cursor, y), chunk, fill=_CHAR, font=bold_font)
+            cursor += int(draw.textlength(chunk, font=bold_font))
+            idx += chunk_len
+            bold_remaining -= chunk_len
+        rest = line[idx:]
+        if rest or suffix:
+            draw.text((cursor, y), f"{rest}{suffix}", fill=_CHAR, font=font)
         y += line_h
     return y
 
@@ -360,6 +394,7 @@ def render_og_image(
         quote_body=quote_body,
         fallback=headline,
     )
+    bold_prefix = _quote_bold_prefix(quote_text, zaver_key)
     quote_font, quote_lines = _fit_font_size(
         probe,
         quote_text,
@@ -393,6 +428,7 @@ def render_og_image(
         font=quote_font,
         mark_font=mark_font,
         line_h=line_h,
+        bold_prefix=bold_prefix,
     )
     y += 20
     _draw_card_footer(
@@ -462,6 +498,7 @@ def render_share_hero_image(
     text_x = margin
     text_width = SHARE_HERO_WIDTH - margin * 2
     quote_text = _compose_quote_text(zaver_key=zaver_key, quote_body=quote_body)
+    bold_prefix = _quote_bold_prefix(quote_text, zaver_key)
     quote_font, quote_lines = _fit_font_size(
         draw,
         quote_text,
@@ -489,6 +526,7 @@ def render_share_hero_image(
         font=quote_font,
         mark_font=mark_font,
         line_h=line_h,
+        bold_prefix=bold_prefix,
     )
     y += 20
     _draw_card_footer(

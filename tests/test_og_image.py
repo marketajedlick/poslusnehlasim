@@ -8,6 +8,7 @@ from svejk.build.og_image import (
     OG_WIDTH,
     SHARE_HERO_HEIGHT,
     SHARE_HERO_WIDTH,
+    _quote_bold_prefix,
     og_image_abs_url,
     render_og_image,
     render_share_hero_image,
@@ -35,6 +36,13 @@ def test_render_og_image_dimensions(tmp_path: Path) -> None:
 def test_og_image_abs_url_cache_bust() -> None:
     url = og_image_abs_url("https://poslusnehlasim.cz", "", "13.02.2026")
     assert url.endswith(f"2026-02-13.png?v={OG_CACHE_VERSION}")
+
+
+def test_quote_bold_prefix() -> None:
+    assert _quote_bold_prefix("Poslušně hlásím, že sněmovna dnes") == "Poslušně hlásím, že "
+    assert _quote_bold_prefix("Poslušně hlásím, že něco", "Poslušně hlásím,") == "Poslušně hlásím, že "
+    assert _quote_bold_prefix("Dnešní účet Přílepky", "Dnešní účet") == "Dnešní účet "
+    assert _quote_bold_prefix("Jen obyčejná citace") == ""
 
 
 def test_render_share_hero_dimensions(tmp_path: Path) -> None:

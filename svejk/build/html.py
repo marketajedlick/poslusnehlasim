@@ -1002,6 +1002,11 @@ def plain_text_from_content(
             lines.append(_plain(item.lead_tail))
         if item.pointa:
             lines.append(_plain(item.pointa))
+        if item.citace2_text:
+            cite2 = f"„{_plain(item.citace2_text)}“"
+            if item.citace2_autor:
+                cite2 = f"{cite2} ({item.citace2_autor})"
+            lines.append(cite2)
         if item.mean:
             mean_label = load_strings()["edition"]["mean_label"]
             lines.append(f"{mean_label} {_plain(item.mean)}")
@@ -1071,7 +1076,7 @@ def _apply_email_links_absolute(content: Any, site_url: str) -> None:
     """Po doplnění odkazů udělá všechny interní hrefs absolutní."""
     site = site_url.rstrip("/")
     for item in content.items:
-        for field in ("lead", "lead_tail", "mean", "kuriozita", "citace_text", "pointa"):
+        for field in ("lead", "lead_tail", "mean", "kuriozita", "citace_text", "citace2_text", "pointa"):
             val = getattr(item, field, None)
             if val:
                 val = _make_internal_links_absolute(val, site_url)
@@ -1080,6 +1085,9 @@ def _apply_email_links_absolute(content: Any, site_url: str) -> None:
         citace_href = (getattr(item, "citace_href", None) or "").strip()
         if citace_href.startswith("/"):
             item.citace_href = f"{site}{citace_href}"
+        citace2_href = (getattr(item, "citace2_href", None) or "").strip()
+        if citace2_href.startswith("/"):
+            item.citace2_href = f"{site}{citace2_href}"
         if item.kuriozita_nav:
             item.kuriozita_nav = [
                 (label, f"{site}{href}" if href.startswith("/") else href)
@@ -1102,7 +1110,7 @@ def _prepare_content_for_email(content: DenContent) -> None:
         if val:
             setattr(content, field, strip_glossary_markup(val))
     for item in content.items:
-        for field in ("lead", "lead_tail", "mean", "kuriozita", "citace_text", "pointa"):
+        for field in ("lead", "lead_tail", "mean", "kuriozita", "citace_text", "citace2_text", "pointa"):
             val = getattr(item, field, None)
             if val:
                 setattr(item, field, strip_glossary_markup(val))
