@@ -26,19 +26,7 @@
     "topics_built_at": "2026-07-11T09:37:23.959985+00:00",
     "fingerprint": "0a0e0d57377f083d"
   },
-  "published_at": "2026-07-12T09:47:18.507487+00:00",
+  "published_at": "backfill",
   "snapshot_dir": "published/2025/24/02.07.2026",
-  "supersedes": null,
-  "assets": {
-    "og": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-07-02/assets/2026-07-02.png",
-    "share": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-07-02/assets/2026-07-02.png",
-    "carousel": [
-      "01-ucet.png",
-      "carousel/02-citace.png",
-      "carousel/03-citace.png",
-      "carousel/04-citace.png",
-      "carousel/05-skore.png"
-    ],
-    "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-07-02/assets/caption.txt"
-  }
+  "supersedes": null
 }

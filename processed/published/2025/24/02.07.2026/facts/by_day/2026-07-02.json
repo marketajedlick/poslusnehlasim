@@ -19,7 +19,7 @@
     "dlouha_debata": false
   },
   "dnesni_ucet": "Graf bytů, IPO letiště,\nsuper EKO-KOM, Kováčik u Povodí Ohře.",
-  "zaver": "že schůze proběhla bez ministrů. O bydlení se dvě hodiny hádalo a nic se nevyřešilo. Do dozorčí rady u řeky stačil jeden pohovor. A zákon, který se týká šesti firem a jedné evropské pokuty, prošel rychleji než cokoli jiného za celou schůzi.",
+  "zaver": "že schůze proběhla bez přítomnosti ministrů. O bydlení se dvě hodiny hádalo a nic se nevyřešilo. A zákon, který se týká šesti firem a jedné evropské pokuty, prošel rychleji než cokoli jiného.",
   "steno_zdroje": true,
   "vysledek": [
     "* písemné interpelace: Lipavský (ODS) dvě tisíce osm set osmdesát osm slov, Stojanová (Piráti) dvě tisíce šest set šestnáct, Bartoš (Piráti) dvě tisíce pět set čtyřicet devět",
@@ -29,5 +29,13 @@
     "* Šmída (Piráti): super EKO-KOM, silný hluk v sále",
     "* Kováčik (KSČM) do Povodí Ohře, ministr citoval zemědělský výbor",
     "* novela o kapitálovém trhu: první kolo sto šest proti nula, druhé kolo neprošlo"
-  ]
+  ],
+  "jazykolam": {
+    "text": "Rozumím argumentu obcí, obce nechtějí roztříštěný systém, nechtějí několik různých operátorů, několik různých smluv, několik různých metodik a několik různých míst, kam budou posílat data.",
+    "autor": "Gabriela Svárovská",
+    "steno_id": "2025_24_01511",
+    "poradi": 1511,
+    "psp_stranka": "s024320.htm",
+    "url": "https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024320.htm"
+  }
 }
