@@ -3,8 +3,7 @@
 <section class="card card-yellow card-tilt-l card-hero" id="card-hero" aria-label="Švejkovo hlášení">
   <div class="card-hero-inner">
     <p class="card-hero-text">
-      {% set _ph = 'Poslušně hlásím, že ' %}
-      <span class="q-quote"><span class="q-mark">„</span>{% if content.zaver[:20] == _ph %}<strong><em>{{ _ph }}</em></strong>{{ content.zaver[20:] | glossary }}{% else %}{{ content.zaver | glossary }}{% endif %}<span class="q-mark">“</span></span>
+      <span class="q-quote"><span class="q-mark">„</span>{% if content.zaver_key %}<strong><em>{{ content.zaver_key }}</em></strong> {{ content.zaver_body | glossary }}{% else %}{{ content.zaver | glossary }}{% endif %}<span class="q-mark">“</span></span>
     </p>
     <div class="card-hero-foot">
       {% if ph_fav_href and edition_back_href %}

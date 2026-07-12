@@ -239,18 +239,15 @@ def _compose_quote_text(
 
 
 def _quote_bold_prefix(text: str, zaver_key: str = "") -> str:
-    """Tučný úvod citace — stejně jako card-hero na webu."""
-    ph = "Poslušně hlásím, že "
-    if text.startswith(ph):
-        return ph
+    """Tučný úvod citace — jen „Poslušně hlásím,“ (stejně jako card-hero na webu)."""
     m = re.match(r"^(Poslušně hlásím,?)\s*", text, re.I)
     if m:
-        return m.group(0)
+        return f"{m.group(1).rstrip(',')}, "
     key = (zaver_key or "").strip()
     if key and text.startswith(key):
         if len(text) > len(key) and text[len(key)] == " ":
             return text[: len(key) + 1]
-        return key
+        return f"{key} "
     return ""
 
 

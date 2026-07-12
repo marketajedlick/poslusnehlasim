@@ -39,8 +39,8 @@ def test_og_image_abs_url_cache_bust() -> None:
 
 
 def test_quote_bold_prefix() -> None:
-    assert _quote_bold_prefix("Poslušně hlásím, že sněmovna dnes") == "Poslušně hlásím, že "
-    assert _quote_bold_prefix("Poslušně hlásím, že něco", "Poslušně hlásím,") == "Poslušně hlásím, že "
+    assert _quote_bold_prefix("Poslušně hlásím, že sněmovna dnes") == "Poslušně hlásím, "
+    assert _quote_bold_prefix("Poslušně hlásím, že něco", "Poslušně hlásím,") == "Poslušně hlásím, "
     assert _quote_bold_prefix("Dnešní účet Přílepky", "Dnešní účet") == "Dnešní účet "
     assert _quote_bold_prefix("Jen obyčejná citace") == ""
 
