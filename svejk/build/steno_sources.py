@@ -533,6 +533,8 @@ def collect_steno_sources(
         for cit_key, sid_key, autor_key in (
             ("citace_text", "steno_id", "citace_autor"),
             ("citace2_text", "citace2_steno_id", "citace2_autor"),
+            ("citace3_text", "citace3_steno_id", "citace3_autor"),
+            ("citace4_text", "citace4_steno_id", "citace4_autor"),
         ):
             ct = (fact.get(cit_key) or "").strip()
             ct_sid = (fact.get(sid_key) or "").strip()
@@ -850,7 +852,7 @@ def build_item_steno_links(
         key=lambda p: (-len(p.link_phrase or ""), p.link_phrase is None),
     )
     # citace_text obaluje card-citace — odkaz řeší citace_href, ne inline fráze
-    all_fields = ("lead", "mean", "kuriozita", "pointa", "pointa_tail")
+    all_fields = ("lead", "mean", "kuriozita", "pointa", "pointa_tail", "pointa_end", "pointa_close")
     for p in ordered:
         href = passage_href(p, page_href)
         if p.link_phrase:
@@ -944,8 +946,10 @@ def apply_steno_links_to_content(
         if item_passages:
             resolve_item_citace_href(item, item_passages, page_href)
             resolve_item_citace_href(item, item_passages, page_href, prefix="citace2")
+            resolve_item_citace_href(item, item_passages, page_href, prefix="citace3")
+            resolve_item_citace_href(item, item_passages, page_href, prefix="citace4")
             build_item_steno_links(item_passages, item, page_href)
-            for field in ("lead", "mean", "kuriozita", "pointa", "pointa_tail"):
+            for field in ("lead", "mean", "kuriozita", "pointa", "pointa_tail", "pointa_end", "pointa_close"):
                 raw = getattr(item, field, None) or ""
                 for m in re.finditer(r'class="steno-link"[^>]*>(.*?)</a>', raw, re.I | re.S):
                     used_phrases.add(re.sub(r"<[^>]+>", "", m.group(1)))

@@ -36,6 +36,32 @@
       {% if item.pointa_tail %}
       <p class="p">{{ item.pointa_tail | glossary }}</p>
       {% endif %}
+      {% if item.citace3_text %}
+      <blockquote class="article-quote" id="{{ item.anchor_id }}-citace3" aria-label="{{ t.edition.citace_aria }}">
+        <p class="article-quote-text"><span class="quote-mark">„</span>{% if item.citace3_href %}<a class="steno-link" href="{{ item.citace3_href }}"{% if item.citace3_href.startswith('http') %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ item.citace3_text | glossary }}</a>{% else %}{{ item.citace3_text | glossary }}{% endif %}<span class="quote-mark">”</span></p>
+        <div class="article-quote-foot">
+          {% if item.citace3_autor %}
+          <p class="article-quote-by">{{ item.citace3_autor }}</p>
+          {% endif %}
+        </div>
+      </blockquote>
+      {% endif %}
+      {% if item.pointa_end %}
+      <p class="p">{{ item.pointa_end | glossary }}</p>
+      {% endif %}
+      {% if item.citace4_text %}
+      <blockquote class="article-quote" id="{{ item.anchor_id }}-citace4" aria-label="{{ t.edition.citace_aria }}">
+        <p class="article-quote-text"><span class="quote-mark">„</span>{% if item.citace4_href %}<a class="steno-link" href="{{ item.citace4_href }}"{% if item.citace4_href.startswith('http') %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ item.citace4_text | glossary }}</a>{% else %}{{ item.citace4_text | glossary }}{% endif %}<span class="quote-mark">”</span></p>
+        <div class="article-quote-foot">
+          {% if item.citace4_autor %}
+          <p class="article-quote-by">{{ item.citace4_autor }}</p>
+          {% endif %}
+        </div>
+      </blockquote>
+      {% endif %}
+      {% if item.pointa_close %}
+      <p class="p">{{ item.pointa_close | glossary }}</p>
+      {% endif %}
       {% if item.mean %}
       <p class="p mean"><strong class="mean-label">{{ t.edition.mean_label }}</strong> <strong>{{ item.mean | glossary }}</strong></p>
       {% endif %}

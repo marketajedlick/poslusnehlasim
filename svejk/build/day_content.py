@@ -100,8 +100,16 @@ class DenItem:
     citace2_text: str = ""
     citace2_autor: str = ""
     citace2_href: str = ""
+    citace3_text: str = ""
+    citace3_autor: str = ""
+    citace3_href: str = ""
+    citace4_text: str = ""
+    citace4_autor: str = ""
+    citace4_href: str = ""
     pointa: str = ""
     pointa_tail: str = ""
+    pointa_end: str = ""
+    pointa_close: str = ""
     lead_tail: str = ""
     variant: str = ""
     has_custom_lead: bool = False
@@ -586,8 +594,16 @@ def build_den_content(
         citace2_text = (fact.get("citace2_text") or "").strip()
         citace2_autor = (fact.get("citace2_autor") or "").strip()
         citace2_href = (fact.get("citace2_href") or "").strip()
+        citace3_text = (fact.get("citace3_text") or "").strip()
+        citace3_autor = (fact.get("citace3_autor") or "").strip()
+        citace3_href = (fact.get("citace3_href") or "").strip()
+        citace4_text = (fact.get("citace4_text") or "").strip()
+        citace4_autor = (fact.get("citace4_autor") or "").strip()
+        citace4_href = (fact.get("citace4_href") or "").strip()
         pointa = (fact.get("pointa") or "").strip() if has_custom_lead else ""
         pointa_tail = (fact.get("pointa_tail") or "").strip() if has_custom_lead else ""
+        pointa_end = (fact.get("pointa_end") or "").strip() if has_custom_lead else ""
+        pointa_close = (fact.get("pointa_close") or "").strip() if has_custom_lead else ""
         lead_tail = (fact.get("lead_tail") or "").strip()
         items_meta[str(num)] = {"pocet_hlasovani": ph, "slug": slug}
         content.items.append(
@@ -606,8 +622,16 @@ def build_den_content(
                 citace2_text=citace2_text,
                 citace2_autor=citace2_autor,
                 citace2_href=citace2_href,
+                citace3_text=citace3_text,
+                citace3_autor=citace3_autor,
+                citace3_href=citace3_href,
+                citace4_text=citace4_text,
+                citace4_autor=citace4_autor,
+                citace4_href=citace4_href,
                 pointa=pointa,
                 pointa_tail=pointa_tail,
+                pointa_end=pointa_end,
+                pointa_close=pointa_close,
                 dopad=dopad,
                 parliament_lead=parliament_lead,
                 has_custom_lead=has_custom_lead,
@@ -907,8 +931,14 @@ def _sanitize_den_content(content: DenContent) -> None:
         item.citace_autor = _sanitize_text_export(item.citace_autor)
         item.citace2_text = _sanitize_citace_export(item.citace2_text)
         item.citace2_autor = _sanitize_text_export(item.citace2_autor)
+        item.citace3_text = _sanitize_citace_export(item.citace3_text)
+        item.citace3_autor = _sanitize_text_export(item.citace3_autor)
+        item.citace4_text = _sanitize_citace_export(item.citace4_text)
+        item.citace4_autor = _sanitize_text_export(item.citace4_autor)
         item.pointa = _sanitize_text_export(item.pointa)
         item.pointa_tail = _sanitize_text_export(item.pointa_tail)
+        item.pointa_end = _sanitize_text_export(item.pointa_end)
+        item.pointa_close = _sanitize_text_export(item.pointa_close)
         item.dopad = _sanitize_text_export(item.dopad)
         item.parliament_lead = _sanitize_text_export(item.parliament_lead)
 
