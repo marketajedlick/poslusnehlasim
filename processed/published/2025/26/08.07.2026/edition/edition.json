@@ -1,0 +1,35 @@
+{
+  "key": "2025/26/08.07.2026",
+  "obdobi": 2025,
+  "schuze": 26,
+  "datum_unl": "08.07.2026",
+  "iso": "2026-07-08",
+  "state": "published",
+  "topic_slugs": [],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-07-08/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 4,
+    "votes_max_cislo": 4,
+    "steno_count": 106,
+    "steno_last_poradi": 106,
+    "topics_built_at": "2026-07-13T04:17:26.471349+00:00",
+    "fingerprint": "ab0702833184b0fc"
+  },
+  "published_at": "2026-07-13T05:22:19.990038+00:00",
+  "snapshot_dir": "published/2025/26/08.07.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s26/editions/2026-07-08/assets/2026-07-08.png",
+    "share": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s26/editions/2026-07-08/assets/2026-07-08.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s26/editions/2026-07-08/assets/caption.txt"
+  }
+}
