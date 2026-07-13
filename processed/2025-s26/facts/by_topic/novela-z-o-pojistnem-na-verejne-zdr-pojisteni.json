@@ -1,0 +1,74 @@
+{
+  "slug": "novela-z-o-pojistnem-na-verejne-zdr-pojisteni",
+  "nazev": "Novela z. o pojistném na veřejné zdr. pojištění",
+  "datum": "08.07.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "dvaceti jedné miliardě, kterou stát chce nalít do zdravotních pojišťoven",
+  "koho": [
+    "Koho se to týká? Každého, kdo chodí k lékaři. Zákon řeší, kolik za ně platí stát pojišťovnám, ne vaši výplatu."
+  ],
+  "fakty": [
+    {
+      "text": "Skopeček přerušil Vojtěcha: v sále je ruch, ministr nemůže mluvit.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_26_00006",
+      "citace": "prosím, abyste opustili sál, případně své hovory ztišili, aby mohl pan ministr přednést úvodní slovo.",
+      "link_phrase": "v sále je ruch, ministr nemůže mluvit"
+    },
+    {
+      "text": "Šebelová: veto opozice na zrychlené projednání za 21 miliard.",
+      "source": "steno",
+      "steno_id": "2025_26_00011",
+      "citace": "dávám veto jménem všech opozičních poslaneckých klubů na projednání zákona v § 90.",
+      "link_phrase": "Opozice dala veto"
+    },
+    {
+      "text": "Šrámková: rezerva pojišťoven vydrží necelé dva dny.",
+      "source": "steno",
+      "steno_id": "2025_26_00081",
+      "citace": "necelé dva dny. Tak dlouho by vydrželo české zdravotnictví, kdyby se dnes zastavily jeho příjmy.",
+      "link_phrase": "Šrámková (STAN) řekla"
+    },
+    {
+      "text": "Šrámková: Paralen za 21 miliard bez antibiotik.",
+      "source": "steno",
+      "steno_id": "2025_26_00081",
+      "citace": "o Paralenu za 21 miliard, ke kterému vláda nepředepsala antibiotika.",
+      "link_phrase": "Šrámková (STAN) řekla"
+    },
+    {
+      "text": "Slovák: do děravého hrnce zdravotnictví lejeme další vodu.",
+      "source": "steno",
+      "steno_id": "2025_26_00075",
+      "citace": "do toho děravého hrnce českého zdravotnictví lejeme další vodu a doufáme, že ten hrnec nepoteče.",
+      "link_phrase": "Slovák (ODS) řekl"
+    },
+    {
+      "text": "Munzar: 21 miliard není banální, chce rozpočtový výbor.",
+      "source": "steno",
+      "steno_id": "2025_26_00089",
+      "citace": "21 miliard skutečně není banální částka, je to zásah do rozpočtu, proto navrhuju z logiky věci rozpočtový výbor. Děkuji.",
+      "link_phrase": "Munzar (Motoristé) chtěl k návrhu přibrat i rozpočtový výbor"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 4,
+  "nadpis": "Paralen za 21 miliard",
+  "lead": "Ministr zdravotnictví Vojtěch (ANO) chtěl ve zrychleném režimu prosadit navýšení plateb státu za pojištěnce o zhruba 21 miliard korun ročně. Opozice dala veto, Šrámková (STAN) řekla, že rezervy pojišťoven vydrží necelé dva dny, a Sněmovna návrh v prvním kole poslala jen na zdravotní výbor.",
+  "pointa": "Vojtěch (ANO) mluvil o stabilizaci systému po letech deficitních úhradových vyhlášek. Šebelová (STAN) označila návrh za nesystémové nalití peněz, které si vláda nemá odkud vzít. Slovák (ODS) řekl, že do děravého hrnce zdravotnictví lejeme další vodu. Munzar (Motoristé) chtěl k návrhu přibrat i rozpočtový výbor, to Sněmovna zamítla. Debata pokračuje na zdravotním výboru.",
+  "mean": "Stát platí zdravotní pojišťovnám za děti, důchodce a další státní pojištěnce. Novela má od roku 2027 zvýšit tyto platby o zhruba 21 miliard korun. Ve středu proběhlo první kolo, zákon šel na zdravotní výbor.",
+  "citace_text": "necelé dva dny. Tak dlouho by vydrželo české zdravotnictví, kdyby se dnes zastavily jeho příjmy.",
+  "citace_autor": "Eva Šrámková (STAN)",
+  "steno_id": "2025_26_00081",
+  "pocet_hlasovani": 2,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 69,
+    "pritomno_min": 136,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 26388
+}

@@ -165,6 +165,8 @@ def render_den_markdown(
             if item.citace2_autor:
                 lines.append(f"> {item.citace2_autor}")
             lines.append("")
+        if item.pointa_tail:
+            lines.extend([item.pointa_tail, ""])
         mean_label = load_strings()["edition"]["mean_label"]
         lines.extend([f"**{mean_label}** <strong>{co_znamena}</strong>", ""])
         if item.kuriozita and not item.lead_tail:

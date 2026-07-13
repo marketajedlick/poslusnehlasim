@@ -216,6 +216,7 @@ def _edition_slovnicek(
                 item.mean,
                 item.kuriozita,
                 item.pointa,
+                item.pointa_tail,
                 item.citace_text,
             ]
         )
@@ -1008,6 +1009,8 @@ def plain_text_from_content(
             if item.citace2_autor:
                 cite2 = f"{cite2} ({item.citace2_autor})"
             lines.append(cite2)
+        if item.pointa_tail:
+            lines.append(_plain(item.pointa_tail))
         if item.mean:
             mean_label = load_strings()["edition"]["mean_label"]
             lines.append(f"{mean_label} {_plain(item.mean)}")
@@ -1077,7 +1080,7 @@ def _apply_email_links_absolute(content: Any, site_url: str) -> None:
     """Po doplnění odkazů udělá všechny interní hrefs absolutní."""
     site = site_url.rstrip("/")
     for item in content.items:
-        for field in ("lead", "lead_tail", "mean", "kuriozita", "citace_text", "citace2_text", "pointa"):
+        for field in ("lead", "lead_tail", "mean", "kuriozita", "citace_text", "citace2_text", "pointa", "pointa_tail"):
             val = getattr(item, field, None)
             if val:
                 val = _make_internal_links_absolute(val, site_url)
@@ -1111,7 +1114,7 @@ def _prepare_content_for_email(content: DenContent) -> None:
         if val:
             setattr(content, field, strip_glossary_markup(val))
     for item in content.items:
-        for field in ("lead", "lead_tail", "mean", "kuriozita", "citace_text", "citace2_text", "pointa"):
+        for field in ("lead", "lead_tail", "mean", "kuriozita", "citace_text", "citace2_text", "pointa", "pointa_tail"):
             val = getattr(item, field, None)
             if val:
                 setattr(item, field, strip_glossary_markup(val))

@@ -1,0 +1,58 @@
+{
+  "key": "2025/25/07.07.2026",
+  "obdobi": 2025,
+  "schuze": 25,
+  "datum_unl": "07.07.2026",
+  "iso": "2026-07-07",
+  "state": "published",
+  "topic_slugs": [],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-07-07/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "data_ready",
+    "stale": false,
+    "link_phrase_coverage": {
+      "total": 6,
+      "linked": 6,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 6,
+      "ok": 6,
+      "percent": 100.0,
+      "bad": []
+    },
+    "generic_topic_count": 1,
+    "steno_passages": 6,
+    "steno_missing_article_phrase": 0,
+    "ok": false,
+    "errors": [
+      "slabá témata: vl-n-z-o-evidenci-trzeb"
+    ]
+  },
+  "inputs": {
+    "votes_count": 4,
+    "votes_max_cislo": 4,
+    "steno_count": 115,
+    "steno_last_poradi": 115,
+    "topics_built_at": "2026-07-13T04:36:19.356496+00:00",
+    "fingerprint": "c84e6de955fa25e7"
+  },
+  "published_at": "2026-07-13T04:38:31.172882+00:00",
+  "snapshot_dir": "published/2025/25/07.07.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s25/editions/2026-07-07/assets/2026-07-07.png",
+    "share": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s25/editions/2026-07-07/assets/2026-07-07.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png",
+      "carousel/05-skore.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s25/editions/2026-07-07/assets/caption.txt"
+  }
+}

@@ -101,6 +101,7 @@ class DenItem:
     citace2_autor: str = ""
     citace2_href: str = ""
     pointa: str = ""
+    pointa_tail: str = ""
     lead_tail: str = ""
     variant: str = ""
     has_custom_lead: bool = False
@@ -586,6 +587,7 @@ def build_den_content(
         citace2_autor = (fact.get("citace2_autor") or "").strip()
         citace2_href = (fact.get("citace2_href") or "").strip()
         pointa = (fact.get("pointa") or "").strip() if has_custom_lead else ""
+        pointa_tail = (fact.get("pointa_tail") or "").strip() if has_custom_lead else ""
         lead_tail = (fact.get("lead_tail") or "").strip()
         items_meta[str(num)] = {"pocet_hlasovani": ph, "slug": slug}
         content.items.append(
@@ -605,6 +607,7 @@ def build_den_content(
                 citace2_autor=citace2_autor,
                 citace2_href=citace2_href,
                 pointa=pointa,
+                pointa_tail=pointa_tail,
                 dopad=dopad,
                 parliament_lead=parliament_lead,
                 has_custom_lead=has_custom_lead,
@@ -905,6 +908,7 @@ def _sanitize_den_content(content: DenContent) -> None:
         item.citace2_text = _sanitize_citace_export(item.citace2_text)
         item.citace2_autor = _sanitize_text_export(item.citace2_autor)
         item.pointa = _sanitize_text_export(item.pointa)
+        item.pointa_tail = _sanitize_text_export(item.pointa_tail)
         item.dopad = _sanitize_text_export(item.dopad)
         item.parliament_lead = _sanitize_text_export(item.parliament_lead)
 

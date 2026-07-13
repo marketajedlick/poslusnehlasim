@@ -1,0 +1,24 @@
+{
+  "datum": "08.07.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "novela-z-o-pojistnem-na-verejne-zdr-pojisteni"
+  ],
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 207,
+    "end_cas": "17:48",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "dnesni_ucet": "Vojtěch chtěl nalít 21 miliard\ndo zdravotnictví, opozice dala veto.",
+  "zaver": "že ve středu ministr Vojtěch (ANO) navrhl navýšit platby státu za pojištěnce o 21 miliard korun, Šrámková (STAN) řekla, že rezervy pojišťoven vydrží necelé dva dny, a Sněmovna návrh poslala na zdravotní výbor.",
+  "vysledek": [
+    "* zdravotní pojištění: Šebelová (STAN) dala veto opozice na zrychlené projednání",
+    "* Šrámková (STAN): Paralen za 21 miliard bez antibiotik",
+    "* Slovák (ODS): do děravého hrnce zdravotnictví lejeme další vodu"
+  ],
+  "steno_zdroje": true
+}

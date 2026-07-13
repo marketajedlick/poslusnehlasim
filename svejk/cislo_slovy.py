@@ -341,6 +341,7 @@ _RE_MESIC_ROK = re.compile(
     r"((?:19|20)\d{2})\b",
     re.IGNORECASE,
 )
+_RE_EET_VERZE = re.compile(r"\bEET\s+\d+\.\d+\b", re.IGNORECASE)
 
 
 def _je_kalendarni_rok(n: int) -> bool:
@@ -447,8 +448,27 @@ def _nahrad_zbyla_cisla(text: str) -> str:
     return t
 
 
+def _chran_eet_verze(text: str) -> tuple[str, list[str]]:
+    """EET 2.0 zůstává jako značka verze, ne „dvě.nula“."""
+    ulozeno: list[str] = []
+
+    def _chr(m: re.Match[str]) -> str:
+        ulozeno.append(m.group(0))
+        return f"__EETVERZE{len(ulozeno) - 1}__"
+
+    return _RE_EET_VERZE.sub(_chr, text), ulozeno
+
+
+def _obnov_eet_verze(text: str, ulozeno: list[str]) -> str:
+    for i, orig in enumerate(ulozeno):
+        text = text.replace(f"__EETVERZE{i}__", orig)
+    return text
+
+
 def nahrad_cisla_v_textu(text: str) -> str:
     """Všechna čísla v textu přepíše do slovní podoby."""
     if not text or not re.search(r"\d", text):
         return text
-    return _nahrad_zbyla_cisla(nahrad_hlasovani_v_textu(text))
+    text, eet = _chran_eet_verze(text)
+    text = _nahrad_zbyla_cisla(nahrad_hlasovani_v_textu(text))
+    return _obnov_eet_verze(text, eet)

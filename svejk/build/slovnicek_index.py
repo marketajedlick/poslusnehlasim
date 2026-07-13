@@ -33,7 +33,7 @@ def _edition_plain_text(edition) -> str:
     content = build_den_content(day_path, paths, link_mode="pages")
     chunks: list[str] = [content.dnesni_ucet, content.zaver]
     for item in content.items:
-        chunks.extend([item.nadpis, item.lead, item.mean, item.pointa or ""])
+        chunks.extend([item.nadpis, item.lead, item.mean, item.pointa or "", item.pointa_tail or ""])
     return strip_glossary_markup(" ".join(c for c in chunks if c))
 
 

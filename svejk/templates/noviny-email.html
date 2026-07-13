@@ -125,6 +125,9 @@
       {% endif %}
     </blockquote>
     {% endif %}
+    {% if item.pointa_tail %}
+    <p class="p">{{ item.pointa_tail | safe }}</p>
+    {% endif %}
     {% if item.mean %}
     <p class="mean"><strong class="mean-label" style="color:#ff4411;font-weight:700;">{{ t.edition.mean_label }} </strong><strong style="font-weight:700;">{{ item.mean | safe }}</strong></p>
     {% endif %}

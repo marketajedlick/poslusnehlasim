@@ -1,0 +1,24 @@
+{
+  "datum": "10.07.2026",
+  "den": "pátek",
+  "topic_slugs": [
+    "novela-z-stavebni-zakon"
+  ],
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 264,
+    "end_cas": "13:25",
+    "proslo": 2,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "dnesni_ucet": "Stavební zákon po stovce hlasování,\nKovářová podepsala prázdný papír.",
+  "zaver": "že v pátek Sněmovna po maratonu pozměňovacích návrhů schválila stavební zákon, zatímco Kovářová (Piráti) řekla, že jde o prázdný papír, a Nacher (ANO) přiznal hlasování zkrácené na patnáct vteřin.",
+  "vysledek": [
+    "* stavební zákon: Kovářová (Piráti) podepsat novelu jako prázdný papír",
+    "* Chochelová (Piráti): největší zásah do památkové péče od roku 1989",
+    "* Nacher (ANO): hlasování zkráceno na 15 vteřin, poslanci odhlášeni"
+  ],
+  "steno_zdroje": true
+}

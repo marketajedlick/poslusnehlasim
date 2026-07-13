@@ -1,0 +1,47 @@
+{
+  "key": "2025/25/07.07.2026",
+  "obdobi": 2025,
+  "schuze": 25,
+  "datum_unl": "07.07.2026",
+  "iso": "2026-07-07",
+  "state": "approved",
+  "topic_slugs": [],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-07-07/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "data_ready",
+    "stale": false,
+    "link_phrase_coverage": {
+      "total": 6,
+      "linked": 6,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 6,
+      "ok": 6,
+      "percent": 100.0,
+      "bad": []
+    },
+    "generic_topic_count": 1,
+    "steno_passages": 6,
+    "steno_missing_article_phrase": 0,
+    "ok": false,
+    "errors": [
+      "slabá témata: vl-n-z-o-evidenci-trzeb"
+    ]
+  },
+  "inputs": {
+    "votes_count": 4,
+    "votes_max_cislo": 4,
+    "steno_count": 115,
+    "steno_last_poradi": 115,
+    "topics_built_at": "2026-07-13T04:36:19.356496+00:00",
+    "fingerprint": "c84e6de955fa25e7"
+  },
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null
+}

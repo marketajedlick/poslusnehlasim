@@ -1,0 +1,24 @@
+{
+  "datum": "07.07.2026",
+  "den": "úterý",
+  "topic_slugs": [
+    "vl-n-z-o-evidenci-trzeb"
+  ],
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 319,
+    "end_cas": "14:21",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "spor_o_porad": false,
+    "dlouha_debata": false
+  },
+  "dnesni_ucet": "Mimořádná schůze místo obrany,\nEET se vrací s daňovými dárky navíc.",
+  "zaver": "že úterý Sněmovna na mimořádné schůzi schválila návrat elektronické evidence tržeb, zatímco Hřib mluvil o lži před summitem NATO a Moricová varovala, že EET není účtenka, ale státní datový systém.",
+  "vysledek": [
+    "* EET 2.0: Svobodová (Piráti) varovala před dopadem na nejmenší podnikatele",
+    "* Bendl (ODS) chtěl pojistky proti zneužití dat z evidence tržeb",
+    "* Papajanovský (Motoristé): vládní schizofrenie, EET a školkovné v jednom balíku"
+  ],
+  "steno_zdroje": true
+}

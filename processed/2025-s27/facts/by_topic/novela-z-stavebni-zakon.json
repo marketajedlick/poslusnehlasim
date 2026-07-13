@@ -1,0 +1,74 @@
+{
+  "slug": "novela-z-stavebni-zakon",
+  "nazev": "Novela z. - stavební zákon",
+  "datum": "10.07.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "posledním hlasování o změně pravidel pro stavění",
+  "koho": [
+    "Koho se to týká? Každého, kdo staví dům, dělá přístavbu nebo čeká na úřad."
+  ],
+  "fakty": [
+    {
+      "text": "Kovářová: schválit novelu je jako podepsat prázdný papír.",
+      "source": "steno",
+      "steno_id": "2025_27_00046",
+      "citace": "schválit tuto novelu je jako podepsat se pod prázdný papír.",
+      "link_phrase": "Kovářová (Piráti) řekla"
+    },
+    {
+      "text": "Kučera: místo připomínek byla předvolební roadshow.",
+      "source": "steno",
+      "steno_id": "2025_27_00008",
+      "citace": "kvalitní mezirezortní připomínkové řízení bylo nahrazeno jakousi předvolební roadshow.",
+      "link_phrase": "Kučera (TOP 09) kritizoval předvolební roadshow"
+    },
+    {
+      "text": "Chochelová: největší zásah do památkové péče od roku 1989.",
+      "source": "steno",
+      "steno_id": "2025_27_00014",
+      "citace": "největší zásah do systému státní památkové péče od roku 1989.",
+      "link_phrase": "Chochelová (Piráti) varovala před největším zásahem do památkové péče od roku 1989"
+    },
+    {
+      "text": "Svárovská: zákon se psal jako developerský manuál.",
+      "source": "steno",
+      "steno_id": "2025_27_00022",
+      "citace": "Tento stavební zákon se psal jako developerský manuál.",
+      "link_phrase": "Svárovská (Piráti) označila text za developerský manuál"
+    },
+    {
+      "text": "Adamec cituje Wericha o kvaltování v parlamentu.",
+      "source": "steno",
+      "steno_id": "2025_27_00032",
+      "citace": "všeliké kvaltování dobré pouze pro hovada jest",
+      "link_phrase": "Adamec (KDU-ČSL) citoval Wericha o kvaltování"
+    },
+    {
+      "text": "Nacher: hlasování zkráceno na 15 vteřin, všichni odhlášeni.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_27_00055",
+      "citace": "tak za prvé hlasování bylo zkráceno na 15 vteřin, tudíž jste byli automaticky všichni odhlášeni.",
+      "link_phrase": "Nacher (ANO) přiznal"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 4,
+  "nadpis": "Stavba půjde snáz\nkdyž bůh dá",
+  "lead": "Páteční schůze navázala na středu, kdy Sněmovna stavební zákon ve třetím kole přerušila. Teď o něm znovu hlasovala: opozice chtěla vrátit návrh do druhého kola, koalice tlačila na rychlé schválení a Kovářová (Piráti) řekla, že schválit novelu je jako podepsat prázdný papír.",
+  "pointa": "Kučera (TOP 09) kritizoval předvolební roadshow místo odborného připomínkování. Chochelová (Piráti) varovala před největším zásahem do památkové péče od roku 1989. Svárovská (Piráti) označila text za developerský manuál. Adamec (KDU-ČSL) citoval Wericha o kvaltování. Nacher (ANO) přiznal, že jedno hlasování trvalo patnáct vteřin a poslance automaticky odhlásilo. Po maratonu pozměňovacích návrhů Sněmovna zákon schválila.",
+  "mean": "Stavební zákon určuje, za jakých podmínek úřady něco smíte postavit. Novela má povolování zrychlit. Ve středu proběhlo první kolo hlasování, v pátek Sněmovna návrh ve třetím kole schválila.",
+  "citace_text": "schválit tuto novelu je jako podepsat se pod prázdný papír.",
+  "citace_autor": "Veronika Kovářová (Piráti)",
+  "steno_id": "2025_27_00046",
+  "pocet_hlasovani": 115,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 148,
+    "pritomno_min": 169,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 26596
+}

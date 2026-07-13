@@ -453,7 +453,7 @@ def _passage_from_fact(
 
 def _article_text_from_fact(fact: dict[str, Any]) -> str:
     parts: list[str] = []
-    for key in ("lead", "pointa", "mean", "kuriozita", "citace_text"):
+    for key in ("lead", "pointa", "pointa_tail", "mean", "kuriozita", "citace_text"):
         val = (fact.get(key) or "").strip()
         if val:
             parts.append(val)
@@ -850,7 +850,7 @@ def build_item_steno_links(
         key=lambda p: (-len(p.link_phrase or ""), p.link_phrase is None),
     )
     # citace_text obaluje card-citace — odkaz řeší citace_href, ne inline fráze
-    all_fields = ("lead", "mean", "kuriozita", "pointa")
+    all_fields = ("lead", "mean", "kuriozita", "pointa", "pointa_tail")
     for p in ordered:
         href = passage_href(p, page_href)
         if p.link_phrase:
@@ -945,7 +945,7 @@ def apply_steno_links_to_content(
             resolve_item_citace_href(item, item_passages, page_href)
             resolve_item_citace_href(item, item_passages, page_href, prefix="citace2")
             build_item_steno_links(item_passages, item, page_href)
-            for field in ("lead", "mean", "kuriozita", "pointa"):
+            for field in ("lead", "mean", "kuriozita", "pointa", "pointa_tail"):
                 raw = getattr(item, field, None) or ""
                 for m in re.finditer(r'class="steno-link"[^>]*>(.*?)</a>', raw, re.I | re.S):
                     used_phrases.add(re.sub(r"<[^>]+>", "", m.group(1)))

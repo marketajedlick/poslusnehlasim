@@ -33,7 +33,7 @@ MANUAL: dict[str, dict[int, str]] = {
 
 def article_text(data: dict) -> str:
     parts: list[str] = []
-    for key in ("lead", "pointa", "mean", "kuriozita", "citace_text"):
+    for key in ("lead", "pointa", "pointa_tail", "mean", "kuriozita", "citace_text"):
         val = (data.get(key) or "").strip()
         if val:
             parts.append(val)
