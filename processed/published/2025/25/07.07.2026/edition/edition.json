@@ -4,7 +4,7 @@
   "schuze": 25,
   "datum_unl": "07.07.2026",
   "iso": "2026-07-07",
-  "state": "approved",
+  "state": "published",
   "topic_slugs": [],
   "recommended_slugs": [],
   "rejected_slugs": [],
@@ -41,7 +41,18 @@
     "topics_built_at": "2026-07-13T04:36:19.356496+00:00",
     "fingerprint": "c84e6de955fa25e7"
   },
-  "published_at": null,
-  "snapshot_dir": null,
-  "supersedes": null
+  "published_at": "2026-07-13T04:38:31.172882+00:00",
+  "snapshot_dir": "published/2025/25/07.07.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s25/editions/2026-07-07/assets/2026-07-07.png",
+    "share": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s25/editions/2026-07-07/assets/2026-07-07.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png",
+      "carousel/05-skore.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s25/editions/2026-07-07/assets/caption.txt"
+  }
 }
