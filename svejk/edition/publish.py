@@ -23,6 +23,7 @@ from svejk.edition.state import (
 )
 from svejk.newsletter.notify import run_newsletter_notify
 from svejk.paths import SchuzePaths, processed_root
+from svejk.validate.names import audit_edition_day, format_party_errors
 
 
 def _copy_tree(src: Path, dest: Path) -> None:
@@ -96,6 +97,11 @@ def run_edition_publish(
 
     day = read_json(day_path)
     slugs = day.get("topic_slugs") or doc.get("topic_slugs") or []
+
+    party_issues = audit_edition_day(paths, iso)
+    party_errors = [i for i in party_issues if i.level == "error"]
+    if party_errors:
+        raise RuntimeError(format_party_errors(party_errors))
 
     clear_edition_cache()
     run_compose(paths, den=datum_unl)

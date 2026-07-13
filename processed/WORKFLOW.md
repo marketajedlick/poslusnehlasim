@@ -318,6 +318,17 @@ Po `compose` a lokálním náhledu **ještě jednou projdi celé vydání od prv
 2. **Doplň chybějící steno odkazy.** Každá důležitá věta nebo citát, který nemá `steno-link`, dostane v `fakty[]` vlastní `steno_id` + `link_phrase` (§4a). `link_phrase` piš podle **hotového wordingu** v článku, ne naopak.
 3. **Klikni celý řetězec** u každého odkazu: článek → stránka Zdroje → PSP. Oprav špatné kotvy, duplicity (`všechny linky na jedno místo`) a mrtvé fráze.
 4. **Zkontroluj fakta napříč vydáním:** strany u jmen, typ hlasování (vrácení do výboru ≠ pád novely), skóre vs. text, `dnesni_ucet` / `zaver` vs. tělo článků, doslovnost citací, čísla z dat (hlasy, `pocet_slov`, přítomní).
+
+   **Strany u jmen (tabulka + automatická kontrola):**
+
+   ```bash
+   ./run-svejk.sh poslanci export              # data/poslanci-kluby.csv
+   ./run-svejk.sh poslanci export --format md  # přehledná tabulka
+   ./run-svejk.sh edition review --schuze N --den DD.MM.RRRR
+   ```
+
+   Tabulka vychází z PSP open data (stejný zdroj jako [psp.cz/kluby](https://www.psp.cz/sqw/organy2.sqw?k=1)). Sloupec „Do závorky v článku“ je hodnota, kterou máš psát za jménem. `edition review` vypíše `wrong_party` chyby; `edition publish` je zablokuje. Bulk audit všech approved dnů: `python scripts/audit_published_names.py`.
+
 5. **Oprav v `facts/` → znovu `compose` → znovu projdi krok 1.** Teprve když celé vydání sedí, jdi na publish.
 
 Checklist z §6 a §7 projdi **v kontextu celého dne**, ne izolovaně po sekcích. Typické chyby na konci: chybějící link u silné citace, špatná strana u jména, skóre, které neodpovídá wordingu v leadu.
@@ -347,6 +358,7 @@ Před odesláním v Ecomailu:
 | Hlasování | správný typ hlasování ve wordingu i ve skóre |
 | Tabulka dne | krátké labely + mobil |
 | Steno | unikátní kotvy, `link_phrase` sedí s textem, PSP link funguje |
+| Strany u jmen | `poslanci export` + `edition review` bez `wrong_party` |
 | Styl | lead srozumitelný, `zaver` jednou větou |
 | Finální průchod | celé vydání přečtené; odkazy doplněné; fakta ověřená ve sten/votes (§9) |
 | Publish | `hidden` → `approved` až po §9 |

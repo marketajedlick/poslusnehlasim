@@ -545,6 +545,30 @@ def cmd_glossary_audit(args: argparse.Namespace) -> int:
     return 1 if gaps else 0
 
 
+def cmd_poslanci_export(args: argparse.Namespace) -> int:
+    from svejk.config import ROOT
+    from psp.kluby_table import (
+        build_poslanci_table,
+        export_csv,
+        export_markdown,
+        format_csv,
+        format_markdown,
+    )
+
+    rows = build_poslanci_table(data_dir=ROOT / "data")
+    if args.stdout:
+        text = format_markdown(rows) if args.format == "md" else format_csv(rows)
+        print(text)
+        return 0
+    out = args.out or (ROOT / "data" / f"poslanci-kluby.{args.format}")
+    if args.format == "md":
+        export_markdown(out, data_dir=ROOT / "data")
+    else:
+        export_csv(out, data_dir=ROOT / "data")
+    print(f"Exportováno {len(rows)} poslanců: {out}")
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Poslušně hlásím — build a export")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -859,6 +883,28 @@ def main() -> int:
     p_gloss.add_argument("--limit", type=int, default=40, help="Max. počet pojmů v reportu")
     p_gloss.add_argument("-o", "--out", type=Path, help="Uložit report")
     p_gloss.set_defaults(func=cmd_glossary_audit)
+
+    p_posl = sub.add_parser("poslanci", help="Poslanci a kluby (PSP open data)")
+    posl_sub = p_posl.add_subparsers(dest="poslanci_cmd", required=True)
+    p_posl_export = posl_sub.add_parser("export", help="Tabulka jméno → klub")
+    p_posl_export.add_argument(
+        "--format",
+        choices=("csv", "md"),
+        default="csv",
+        help="csv (default) nebo md",
+    )
+    p_posl_export.add_argument(
+        "-o",
+        "--out",
+        type=Path,
+        help="Výstupní soubor (default data/poslanci-kluby.{csv,md})",
+    )
+    p_posl_export.add_argument(
+        "--stdout",
+        action="store_true",
+        help="Vypsat na stdout místo zápisu do souboru",
+    )
+    p_posl_export.set_defaults(func=cmd_poslanci_export)
 
     from svejk.edition.commands import register_edition_parser
 

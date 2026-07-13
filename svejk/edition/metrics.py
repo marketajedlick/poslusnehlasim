@@ -11,6 +11,7 @@ from svejk.edition.link_phrases import article_text
 from svejk.edition.state import effective_state, fingerprint_stale, load_edition
 from svejk.paths import SchuzePaths
 from svejk.review import audit_weak_facts, format_day_review
+from svejk.validate.names import audit_edition_day, summarize_party_issues
 
 
 def _link_phrase_coverage(paths: SchuzePaths, datum_unl: str, slugs: list[str]) -> dict[str, Any]:
@@ -100,11 +101,15 @@ def run_edition_metrics(
         errors.append("citace nejsou doslovně ve stenozáznamu")
     if weak_slugs:
         errors.append(f"slabá témata: {', '.join(sorted(weak_slugs)[:5])}")
+    party_labels = summarize_party_issues(audit_edition_day(paths, iso))
+    if party_labels["errors"]:
+        errors.append(f"strany u jmen: {party_labels['errors']} chyb")
     metrics = {
         "state": effective_state(doc, paths),
         "stale": fingerprint_stale(doc, paths),
         "link_phrase_coverage": link_cov,
         "citace_in_steno": citace,
+        "party_labels": party_labels,
         "generic_topic_count": len(weak_slugs),
         "steno_passages": steno_blocks,
         "steno_missing_article_phrase": steno_missing,
@@ -136,10 +141,23 @@ def format_edition_review(paths: SchuzePaths, den: str, *, as_json: bool = False
         f"Link coverage: {metrics['link_phrase_coverage']['percent']}% "
         f"({metrics['link_phrase_coverage']['linked']}/{metrics['link_phrase_coverage']['total']})",
         f"Citace ve stenu: {metrics['citace_in_steno']['percent']}%",
+        f"Strany u jmen: {metrics['party_labels']['errors']} chyb, "
+        f"{metrics['party_labels']['warns']} varování",
         f"Slabá témata: {metrics['generic_topic_count']}",
         "",
         day_report,
     ]
     if metrics["errors"]:
         lines.insert(4, "CHYBY: " + "; ".join(metrics["errors"]))
+    party_items = [
+        i for i in metrics["party_labels"]["items"] if i["level"] == "error"
+    ]
+    if party_items:
+        lines.append("")
+        lines.append("Strany u jmen:")
+        for item in party_items[:12]:
+            ctx = f" [{item['context']}]" if item.get("context") else ""
+            lines.append(f"  {item['slug']}{ctx}: {item['message']}")
+        if len(party_items) > 12:
+            lines.append(f"  … +{len(party_items) - 12} dalších")
     return "\n".join(lines)

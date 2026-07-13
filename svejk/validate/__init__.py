@@ -1,0 +1,1 @@
+"""Validace obsahu před publikací."""
