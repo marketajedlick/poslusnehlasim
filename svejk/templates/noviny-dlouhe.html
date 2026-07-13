@@ -51,7 +51,9 @@
         <div class="section-rule" aria-hidden="true"><span>Co se dělo?!</span></div>
 
         {% for item in content.items %}
+        {% with article_heading_tag='h1' if loop.first and not is_homepage else 'h2' %}
         {% include "card-article.html" %}
+        {% endwith %}
         {% if loop.index == 1 and postreh %}
         <div class="divider"></div>
         {% include "card-postreh.html" %}

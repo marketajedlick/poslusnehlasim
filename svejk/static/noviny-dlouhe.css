@@ -1985,16 +1985,7 @@ body.static-page{
   color:var(--char);
 }
 .edition-day-headline{
-  margin:0 0 18px;
-}
-.edition-day-title{
-  font-family:var(--font-serif);
-  font-size:clamp(1.75rem,4.8vw,2.35rem);
-  font-weight:700;
-  line-height:1.12;
-  letter-spacing:-.015em;
-  margin:0 0 6px;
-  color:var(--char);
+  margin:0 0 12px;
 }
 .edition-day-meta{
   margin:0;

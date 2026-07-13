@@ -6,7 +6,7 @@
   <div class="article-content">
     <header class="article-head">
       <div class="article-num article-num--mobile article-num--{{ item.verdikt }}">{{ "%02d"|format(item.num) }}</div>
-      <h2 class="article-title">{% for line in item.nadpis_radky %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</h2>
+      <{{ article_heading_tag | default('h2') }} class="article-title">{% for line in item.nadpis_radky %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</{{ article_heading_tag | default('h2') }}>
       <span class="stamp stamp--mobile {{ item.verdikt }}">{{ item.stamp }}</span>
     </header>
     <div class="article-body">
