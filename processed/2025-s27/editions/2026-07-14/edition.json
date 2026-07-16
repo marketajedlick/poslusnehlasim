@@ -5,19 +5,58 @@
   "datum_unl": "14.07.2026",
   "iso": "2026-07-14",
   "state": "draft",
-  "topic_slugs": [],
-  "recommended_slugs": [],
-  "rejected_slugs": [],
+  "topic_slugs": [
+    "novela-z-o-mezinarodni-spolupraci-pri-sprave-dan",
+    "novela-z-o-dani-z-pridane-hodnoty-eu",
+    "novela-z-o-zadavani-verejnych-zakazek-eu"
+  ],
+  "recommended_slugs": [
+    "novela-z-o-mezinarodni-spolupraci-pri-sprave-dan",
+    "novela-z-o-dani-z-pridane-hodnoty-eu",
+    "novela-z-o-zadavani-verejnych-zakazek-eu"
+  ],
+  "rejected_slugs": [
+    "vl-n-z-o-uhlikovem-vyrovnani-eu",
+    "novela-z-o-podnikani-na-kapitalovem-trhu-eu"
+  ],
   "brief_path": "editions/2026-07-14/brief.md",
   "feedback": [],
-  "metrics": {},
+  "metrics": {
+    "state": "draft",
+    "stale": false,
+    "link_phrase_coverage": {
+      "total": 16,
+      "linked": 16,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 16,
+      "ok": 16,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 3,
+    "steno_passages": 16,
+    "steno_missing_article_phrase": 0,
+    "ok": false,
+    "errors": [
+      "slabá témata: novela-z-o-mezinarodni-spolupraci-pri-sprave-dan, novela-z-o-zadavani-verejnych-zakazek-eu, vl-n-z-o-uhlikovem-vyrovnani-eu"
+    ]
+  },
   "inputs": {
-    "votes_count": 122,
-    "votes_max_cislo": 122,
+    "votes_count": 130,
+    "votes_max_cislo": 130,
     "steno_count": 464,
     "steno_last_poradi": 464,
-    "topics_built_at": "2026-07-16T05:51:53.804228+00:00",
-    "fingerprint": "061a73a29fdc58f8"
+    "topics_built_at": "2026-07-16T05:53:53.855984+00:00",
+    "fingerprint": "a3e5e1ddb8ba7e86"
   },
   "published_at": null,
   "snapshot_dir": null,

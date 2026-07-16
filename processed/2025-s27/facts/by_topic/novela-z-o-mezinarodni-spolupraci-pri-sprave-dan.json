@@ -1,0 +1,73 @@
+{
+  "slug": "novela-z-o-mezinarodni-spolupraci-pri-sprave-dan",
+  "nazev": "Novela z. o mezinárodní spolupráci při správě daní - EU",
+  "datum": "14.07.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "Automatická výměna údajů o kryptoaktivech mezi státy.",
+  "koho": [
+    "Koho se to týká? Každého, kdo obchoduje s kryptem nebo poskytuje krypto služby."
+  ],
+  "fakty": [
+    {
+      "text": "Jakob (TOP 09) jménem TOP 09, ODS a KDU-ČSL zavetoval zrychlené projednání kvůli kryptoaktivům.",
+      "source": "steno",
+      "steno_id": "2025_27_00354",
+      "citace": "hned na úvod si dovolím jménem tří poslaneckých klubů, TOP 09, ODS a KDU-ČSL, zavetovat projednávání tohoto návrhu zákona dle § 90.",
+      "link_phrase": "Jakob (TOP 09) jménem klubů TOP 09"
+    },
+    {
+      "text": "Hřib (Piráti) chtěl přerušit schůzi, dokud Turek nepřijde nebo nerezignuje.",
+      "source": "steno",
+      "steno_id": "2025_27_00356",
+      "citace": "Takže já bych chtěl navrhnout procedurální hlasování k tomu, abychom tedy přerušili tuto schůzi do okamžiku, než se dostaví Filip Turek do sálu, a nebo do té doby, než rezignuje na své politické funkce.",
+      "link_phrase": "Hřib (Piráti) navrhl přerušit schůzi"
+    },
+    {
+      "text": "Potlesk z lavic Pirátů po Hřibově návrhu.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_27_00356",
+      "citace": "(Potlesk z lavic Pirátů.)",
+      "link_phrase": "Piráti tleskali"
+    },
+    {
+      "text": "Kupka (ODS): Turek se večer naoko omlouval a pak si z toho dělal legraci.",
+      "source": "steno",
+      "steno_id": "2025_27_00362",
+      "citace": "včera večer kromě toho, že jsme zaznamenali jeho srdceryvné vyjádření vůči médiím, kdy se naoko omlouval, a večer si z toho dělal legraci sdílením příspěvků.",
+      "link_phrase": "Kupka (ODS) pak chtěl pauzu do přítomnosti Turka bez dalších podmínek a připomněl"
+    },
+    {
+      "text": "Malá (ANO): z jednacího řádu se nemá dělat trhací kalendář.",
+      "source": "steno",
+      "steno_id": "2025_27_00364",
+      "citace": "se snažíte udělat z jednacího řádu trhací kalendář. A to my nedopustíme, protože prostě o přerušení schůze se může hlasovat o přerušení do přítomnosti ministra, ne poslance.",
+      "link_phrase": "Malá (ANO) odpověděla"
+    },
+    {
+      "text": "Schillerová: tahá horké kaštany za bývalou vládu, zákon je o kryptoaktivech.",
+      "source": "steno",
+      "steno_id": "2025_27_00397",
+      "citace": "já tady zase trošku tahám horké kaštany z ohně za bývalou vládu a za bývalou vládní koalici.",
+      "link_phrase": "Schillerová vzala na vědomí veto zrychleného řízení a řekla"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Turek v sále chyběl",
+  "pocet_hlasovani": 3,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 71,
+    "pritomno_min": 115,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 7491,
+  "citace_text": "Takže já bych chtěl navrhnout procedurální hlasování k tomu, abychom tedy přerušili tuto schůzi do okamžiku, než se dostaví Filip Turek do sálu, a nebo do té doby, než rezignuje na své politické funkce.",
+  "citace_autor": "Zdeněk Hřib (Piráti)",
+  "lead": "Úterní pokračování sedmadvacáté schůze mělo začít evropskou změnou zákona o sdílení daňových dat, tentokrát hlavně o kryptu. Jakob (TOP 09) jménem klubů TOP 09, ODS a KDU-ČSL hned na úvod zabránil zrychlenému schválení v prvním kole. Debata se ale rychle stočila jinam: chyběl vládní zmocněnec pro Green Deal Filip Turek (Motoristé), po víkendové jízdě na I. P. Pavlova.",
+  "pointa": "Hřib (Piráti) navrhl přerušit schůzi, dokud Turek nepřijde do sálu, nebo nerezignuje. Piráti tleskali. Předsedající Skopeček nejdřív prohlásil návrh za nehlasovatelný. Po hlasování o námitce Sněmovna o Hřibově přerušení stejně nehlasovala. Kupka (ODS) pak chtěl pauzu do přítomnosti Turka bez dalších podmínek a připomněl, že Turek se večer naoko omlouval a pak si z toho dělal legraci. Malá (ANO) odpověděla, že z jednacího řádu se nemá dělat trhací kalendář, protože pauza se dává do přítomnosti ministra, ne poslance. Jurečka (KDU-ČSL) navrhl přerušit bod do příchodu premiéra, to Sněmovna zamítla. Ministryně financí Schillerová vzala na vědomí veto zrychleného řízení a řekla, že tahá horké kaštany za bývalou vládu. Návrh pak přežil první kolo a šel do rozpočtového výboru.\n\nPoslušně podotýkám, že zákon o výměně daňových dat o kryptu se ten den projednával hlavně proto, aby se v sále řešilo, kdo nepřijel.",
+  "mean": "Zákon má státu usnadnit sledování kryptoobchodů přes hranice. V úterý Sněmovna odmítla zrychlené schválení, návrh poslala do výboru a velkou část rozpravy strávila nepřítomností Filipa Turka."
+}

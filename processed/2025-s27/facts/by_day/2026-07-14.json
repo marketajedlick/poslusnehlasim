@@ -1,0 +1,27 @@
+{
+  "datum": "14.07.2026",
+  "den": "úterý",
+  "topic_slugs": [
+    "novela-z-o-mezinarodni-spolupraci-pri-sprave-dan",
+    "vl-n-z-o-uhlikovem-vyrovnani-eu",
+    "novela-z-o-zadavani-verejnych-zakazek-eu"
+  ],
+  "stats": {
+    "pocet_hlas": 5,
+    "minuty": 133,
+    "end_cas": "18:06",
+    "proslo": 3,
+    "zamitnuto": 0,
+    "spor_o_porad": false,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "dnesni_ucet": "Turek chyběl u Green Dealu i u krypta,\npět evropských zákonů šlo do výboru.",
+  "zaver": "že v úterý Sněmovna poslala do výboru balík evropských zákonů a největší spor nebyl o clo ani o krypto, ale o nepřítomného zmocněnce Filipa Turka.",
+  "vysledek": [
+    "* krypto daňová výměna: Jakob vetoval zrychlení, Hřib chtěl pauzu do příchodu Turka",
+    "* CBAM: Hladík připomněl sliby o zrušení Green Dealu, Munzar mluvil o zeleném clu",
+    "* veřejné zakázky v krizi: Hřib o kreativní matematice a ping-pongu na Palmovce",
+    "* pět zákonů přežilo první kolo a šlo do výborů"
+  ]
+}

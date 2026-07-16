@@ -1,1 +1,6 @@
-errors=0 warns=0
+errors=5 warns=0
+error	wrong_party	2025/24/01.07.2026	navrh-zakona-o-statnich-zamestnancich-souvisejic	«Janda (STAN)» má být (ODS)
+error	wrong_party	2025/24/01.07.2026	navrh-zakona-o-statnich-zamestnancich-souvisejic	«Jakub Janda (STAN)» má být (ODS)
+error	wrong_party	2025/24/01.07.2026	debata-digitalni-ekonomika-01-07	«Adamec (Motoristé)» má být (ODS)
+error	citace_autor_spelling	2025/24/07.07.2026	debata-lidska-prava-stafaz-07-07	citace_autor «Eva Decroix (ODS), cituje Wünschovou» vs steno «Eva Decroix»
+error	citace_autor_spelling	2025/24/07.07.2026	debata-lidska-prava-stafaz-07-07	citace_autor «Eva Decroix (ODS), cituje Wünschovou» vs steno «Eva Decroix»

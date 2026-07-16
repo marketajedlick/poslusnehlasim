@@ -1,0 +1,65 @@
+{
+  "slug": "vl-n-z-o-uhlikovem-vyrovnani-eu",
+  "nazev": "Vl.n.z. o uhlíkovém vyrovnání - EU",
+  "datum": "14.07.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "Kdo v Česku hlídá evropské uhlíkové clo na dovoz.",
+  "koho": [
+    "Koho se to týká? Firmy, které dovážejí ocel, cement, hliník, hnojiva, elektřinu nebo vodík."
+  ],
+  "fakty": [
+    {
+      "text": "Schillerová: zákon CBAM nezavádí, jen dělí kompetence mezi celníky a MŽP.",
+      "source": "steno",
+      "steno_id": "2025_27_00410",
+      "citace": "Návrhem zákona není samotný CBAM zaváděn, ten je již zaveden Evropskou unií na základě takzvaného nařízení CBAM. Samotný návrh zákona nezavádí žádné povinnosti.",
+      "link_phrase": "Schillerová řekla"
+    },
+    {
+      "text": "Hladík: slibovali zrušení Green Dealu, teď hlasují pro jeho součást.",
+      "source": "steno",
+      "steno_id": "2025_27_00416",
+      "citace": "všem těm z vás, kteří jste slibovali, jak zrušíte Green deal, tak teď říct, že prostě hlasujete pro zákon, který je součástí Green Dealu. To je prostě objektivní pravda.",
+      "link_phrase": "Hladík (KDU-ČSL) připomněl těm"
+    },
+    {
+      "text": "Munzar: uhlíkové vyrovnání je zelené clo.",
+      "source": "steno",
+      "steno_id": "2025_27_00424",
+      "citace": "zatímco emisní povolenky jsou umělým finančním derivátem a zelenou daní, tak toto uhlíkové vyrovnání je takovým zeleným clem.",
+      "link_phrase": "Munzar (ODS) to pojmenoval zeleným clem a varoval"
+    },
+    {
+      "text": "Hřib hledal v sále klimatizovaného zmocněnce pro Green Deal.",
+      "source": "steno",
+      "steno_id": "2025_27_00389",
+      "citace": "Tahle vláda má víc zmocněnců než ministrů, tak já se ptám: Kde je zmocněnec pro Green Deal, když tady budeme se bavit o uhlíkovém vyrovnání?",
+      "link_phrase": "Hřib (Piráti) se ptal"
+    },
+    {
+      "text": "Richterová čekala omluvu za Motoristy, zazněly prý jen výmluvy.",
+      "source": "steno",
+      "steno_id": "2025_27_00393",
+      "citace": "v této chvíli tady prostě omluva nezazněla, zaznívají jedině výmluvy a navíc – pan vládní zmocněnec celou situaci bagatelizuje.",
+      "link_phrase": "Richterová (Piráti) čekala aspoň omluvu za Motoristy a řekla"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Zelené clo bez zmocněnce",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 119,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 4500,
+  "citace_text": "všem těm z vás, kteří jste slibovali, jak zrušíte Green deal, tak teď říct, že prostě hlasujete pro zákon, který je součástí Green Dealu. To je prostě objektivní pravda.",
+  "citace_autor": "Petr Hladík (KDU-ČSL)",
+  "lead": "Po krypto-dani přišlo uhlíkové vyrovnání na hranicích, zkratkou CBAM. Ministryně financí Schillerová řekla, že zákon samotné evropské clo nezavádí, jen říká, kdo z českých úřadů ho bude hlídat. Zmocněnec pro Green Deal Filip Turek v sále znovu nebyl.",
+  "pointa": "Hřib (Piráti) se ptal, kde je klimatizovaný zmocněnec, když vláda má víc zmocněnců než ministrů. Richterová (Piráti) čekala aspoň omluvu za Motoristy a řekla, že zaznívají jedině výmluvy. Hladík (KDU-ČSL) připomněl těm, kteří slibovali zrušení Green Dealu, že teď hlasují pro zákon, který je jeho součástí. Munzar (ODS) to pojmenoval zeleným clem a varoval, že dopadne na ocel, stavby i ceny potravin. Sněmovna návrh v prvním kole poslala do výboru.\n\nPoslušně dodávám, že uhlíkové clo už v Evropě běží, české hlasování řešilo hlavně, kdo bude v Česku razítkovat papíry, a kdo se k tomu nedostavil.",
+  "mean": "CBAM je evropské clo na dovoz zboží s vysokou uhlíkovou stopou. Úterní zákon jen rozděluje práci mezi celníky a ministerstvo životního prostředí. Sněmovna ho v prvním kole poslala do výboru."
+}

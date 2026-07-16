@@ -1,0 +1,65 @@
+{
+  "slug": "novela-z-o-zadavani-verejnych-zakazek-eu",
+  "nazev": "Novela z. o zadávání veřejných zakázek - EU",
+  "datum": "14.07.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "Kdo rozhoduje o veřejných zakázkách, když na evropském trhu zavládne krize.",
+  "koho": [
+    "Koho se to týká? Stát, obce a firmy, které soutěží o veřejné peníze."
+  ],
+  "fakty": [
+    {
+      "text": "Hřib: Schillerová z bodu utekla, právě zakázky brzdí utrácení veřejných peněz.",
+      "source": "steno",
+      "steno_id": "2025_27_00459",
+      "citace": "je strašná škoda, že paní ministryně Schillerová utekla a už tady není na tento bod. Protože tento bod je totiž ten důvod, proč se často neutratí veřejné prostředky tak, jak byly naplánovány",
+      "link_phrase": "Schillerová z bodu už utekla"
+    },
+    {
+      "text": "Hřib: ministři financí dělají kreativní matematiku.",
+      "source": "steno",
+      "steno_id": "2025_27_00459",
+      "citace": "Bohužel, paní ministryně dělá úplně stejnou chybu jako všichni ostatní ministři financí, kteří se, bohužel, jakmile dosednou do té funkce, dopouštějí takové jako, řekl bych, kreativní matematiky.",
+      "link_phrase": "dělají kreativní matematiku"
+    },
+    {
+      "text": "Hřib o sídle Evropské vesmírné agentury na Palmovce: ping-pong mezi neúspěšnými uchazeči.",
+      "source": "steno",
+      "steno_id": "2025_27_00459",
+      "citace": "Například co se týče toho sídla Evropské vesmírné agentury, ta, která měla stát tedy na Palmovce, tam také bohužel probíhá ping-pong mezi jednotlivými neúspěšnými uchazeči.",
+      "link_phrase": "ping-pong mezi neúspěšnými uchazeči"
+    },
+    {
+      "text": "Hřib: proto to nejde schválit hned v prvním kole.",
+      "source": "steno",
+      "steno_id": "2025_27_00459",
+      "citace": "To znamená, abychom se tam nedostali, tak proto není možné to schválit v prvním čtení.",
+      "link_phrase": "nejde návrh schválit hned v prvním kole"
+    },
+    {
+      "text": "Jurečka: zákon o krizích na vnitřním trhu chce řešit i ve druhém a třetím kole.",
+      "source": "steno",
+      "steno_id": "2025_27_00457",
+      "citace": "je důležité, abychom opravdu se tomuto tisku věnovali i velmi podrobně ve druhém a ve třetím čtení.",
+      "link_phrase": "Jurečka (KDU-ČSL) chtěl"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Zakázky a kreativní matematika",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 121,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 2682,
+  "citace_text": "Bohužel, paní ministryně dělá úplně stejnou chybu jako všichni ostatní ministři financí, kteří se, bohužel, jakmile dosednou do té funkce, dopouštějí takové jako, řekl bych, kreativní matematiky.",
+  "citace_autor": "Zdeněk Hřib (Piráti)",
+  "lead": "Poslední zákon dne měl upravit, jak stát a obce soutěží o peníze, když na evropském trhu zavládne krize. Vláda chtěla zrychlené schválení, opozice ne. Hřib (Piráti) si všiml, že ministryně financí Schillerová z bodu už utekla.",
+  "pointa": "Hřib řekl, že právě pravidla zakázek jsou důvod, proč se veřejné peníze často neutratí, jak byly naplánované. Ministři financí podle něj po nástupu dělají kreativní matematiku a u sídla Evropské vesmírné agentury na Palmovce běží ping-pong mezi neúspěšnými uchazeči. Proto podle něj nejde návrh schválit hned v prvním kole. Jurečka (KDU-ČSL) chtěl zákon o krizích na vnitřním trhu řešit i ve druhém a třetím kole. Sněmovna návrh poslala do výboru.\n\nPoslušně podotýkám, že evropská krizová pravidla se ten den ve Sněmovně potkala s pražskou stížností na sčítání účtů a s prázdným místem po ministryni.",
+  "mean": "Zákon přepisuje, kdo v Česku řídí veřejné zakázky a nákupy, když Evropa vyhlásí mimořádnou situaci na trhu. V úterý Sněmovna odmítla zrychlené schválení a návrh poslala do výboru."
+}

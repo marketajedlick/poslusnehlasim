@@ -1,0 +1,29 @@
+{
+  "slug": "novela-z-o-dani-z-pridane-hodnoty-eu",
+  "nazev": "Novela z. o dani z přidané hodnoty - EU",
+  "datum": "14.07.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "Úpravy DPH podle evropské směrnice.",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "Předložený návrh představuje především transpoziční novelu, jejíž hlavním účelem je promítnutí části směrnice Rady EU 2025/516 ze dne 11.",
+      "source": "steno",
+      "steno_id": "2025_27_00440",
+      "citace": "Předložený návrh představuje především transpoziční novelu, jejíž hlavním účelem je promítnutí části směrnice Rady EU 2025/516 ze dne 11."
+    }
+  ],
+  "publikovat": false,
+  "priorita": 2,
+  "nadpis": "DPH do výboru",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 122,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 2644
+}

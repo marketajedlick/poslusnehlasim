@@ -1,11 +1,19 @@
 {
   "obdobi": 2025,
   "unl": {
+<<<<<<< HEAD
     "etag": "6a56cc5d-2da022",
     "last_modified": "Tue, 14 Jul 2026 23:55:09 GMT",
     "content_length": 2990114,
     "lines": 1946,
     "fetched_at": "2026-07-15T07:18:57.005503+00:00"
+=======
+    "etag": "6a581ddd-2e47af",
+    "last_modified": "Wed, 15 Jul 2026 23:55:09 GMT",
+    "content_length": 3033007,
+    "lines": 2030,
+    "fetched_at": "2026-07-16T05:53:45.854098+00:00"
+>>>>>>> 9eb669e (kontrola jmen)
   },
   "schuze": {
     "18": {
@@ -249,6 +257,7 @@
       "steno_count": 464,
       "last_steno_poradi": 464,
       "last_steno_datum": "2026-07-14",
+<<<<<<< HEAD
       "synced_at": "2026-07-15T07:21:25.114380+00:00"
     },
     "28": {
@@ -263,4 +272,13 @@
   },
   "updated_at": "2026-07-15T22:04:32.692263+00:00",
   "last_updated_schuze": []
+=======
+      "synced_at": "2026-07-16T05:53:46.038535+00:00"
+    }
+  },
+  "updated_at": "2026-07-16T05:53:46.038552+00:00",
+  "last_updated_schuze": [
+    27
+  ]
+>>>>>>> 9eb669e (kontrola jmen)
 }
