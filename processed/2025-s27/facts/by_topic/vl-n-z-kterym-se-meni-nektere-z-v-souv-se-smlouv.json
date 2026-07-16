@@ -3,15 +3,34 @@
   "nazev": "Vl. n. z., kterým se mění některé z. v souv. se smlouvami o fin. služ",
   "datum": "10.07.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "pravidlech pro finanční smlouvy a investice",
+  "predmet_lidsky": ", kterým se mění některé z. v souv. se smlouvami o fin. služ",
   "koho": [],
   "fakty": [
     {
-      "text": "Výbor k finančním smlouvám: nedoporučující stanovisko.",
+      "text": "Ministryně: Souhlas.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_27_00338",
+      "citace": "(Ministryně: Souhlas.)"
+    },
+    {
+      "text": "Hlasování 119, přihlášeno 147 poslanců, pro 135, proti žádný.",
+      "source": "steno",
+      "steno_id": "2025_27_00338",
+      "citace": "Hlasování 119, přihlášeno 147 poslanců, pro 135, proti žádný."
+    },
+    {
+      "text": "(Ministryně: Souhlas.) Zahajuji hlasování.",
+      "source": "steno",
+      "steno_id": "2025_27_00338",
+      "citace": "(Ministryně: Souhlas.) Zahajuji hlasování."
+    },
+    {
+      "text": "Zpravodaj: Stanovisko výboru – nedoporučující.",
       "source": "steno",
       "kind": "scene",
       "steno_id": "2025_27_00340",
-      "citace": "Stanovisko výboru – nedoporučující."
+      "citace": "(Zpravodaj: Stanovisko výboru – nedoporučující.)"
     }
   ],
   "publikovat": false,
@@ -26,5 +45,5 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 1710
+  "steno_slov": 1868
 }

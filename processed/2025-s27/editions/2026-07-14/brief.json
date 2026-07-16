@@ -1,0 +1,16 @@
+{
+  "datum_unl": "14.07.2026",
+  "iso": "2026-07-14",
+  "recommended": [],
+  "rejected": [],
+  "day_stats": {
+    "pocet_hlas_zakon": 0,
+    "proslo_vote": 0,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": false,
+    "calendar_isos": [
+      "2026-07-14",
+      "2026-07-15"
+    ]
+  }
+}

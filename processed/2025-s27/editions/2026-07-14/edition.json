@@ -1,0 +1,25 @@
+{
+  "key": "2025/27/14.07.2026",
+  "obdobi": 2025,
+  "schuze": 27,
+  "datum_unl": "14.07.2026",
+  "iso": "2026-07-14",
+  "state": "draft",
+  "topic_slugs": [],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-07-14/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 122,
+    "votes_max_cislo": 122,
+    "steno_count": 464,
+    "steno_last_poradi": 464,
+    "topics_built_at": "2026-07-16T05:51:53.804228+00:00",
+    "fingerprint": "061a73a29fdc58f8"
+  },
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null
+}

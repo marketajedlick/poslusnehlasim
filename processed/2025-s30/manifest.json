@@ -1,0 +1,15 @@
+{
+  "obdobi": 2025,
+  "schuze": 30,
+  "steps": {
+    "fetch": {
+      "done": true,
+      "votes": 0,
+      "steno": 0,
+      "hlidac_token_used": true,
+      "psp_steno_used": false,
+      "fetched_at": "2026-07-16T05:45:05.687609+00:00"
+    }
+  },
+  "built_at": "2026-07-16T05:45:05.688315+00:00"
+}

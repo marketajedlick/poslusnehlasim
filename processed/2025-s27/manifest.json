@@ -16,34 +16,34 @@
     "fetch": {
       "done": true,
       "votes": 122,
-      "steno": 344,
+      "steno": 464,
       "hlidac_token_used": true,
       "psp_steno_used": false,
-      "fetched_at": "2026-07-13T04:19:04.352939+00:00"
+      "fetched_at": "2026-07-16T05:43:35.667725+00:00"
     },
     "compose": {
       "done": true,
       "days": 1,
       "files": [
-        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10.md"
+        "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10.md"
       ],
       "html_files": [
-        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10-steno.html",
-        "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10.html"
+        "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10-steno.html",
+        "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10.html"
       ],
       "last_partial_compose": {
         "den": "10.07.2026",
-        "built_at": "2026-07-13T10:59:40.931895+00:00",
+        "built_at": "2026-07-16T05:51:07.973213+00:00",
         "days": 1,
         "files": [
-          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10.md"
+          "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10.md"
         ],
         "html_files": [
-          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10.html",
-          "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10-steno.html"
+          "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10.html",
+          "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10-steno.html"
         ]
       }
     }
   },
-  "built_at": "2026-07-13T10:59:40.932018+00:00"
+  "built_at": "2026-07-16T05:51:53.869929+00:00"
 }

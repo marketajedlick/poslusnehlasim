@@ -12,7 +12,15 @@
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s23/out/noviny-dlouhe/2026-06-11-steno.html",
         "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s23/out/noviny-dlouhe/2026-06-11.html"
       ]
+    },
+    "fetch": {
+      "done": true,
+      "votes": 4,
+      "steno": 193,
+      "hlidac_token_used": true,
+      "psp_steno_used": false,
+      "fetched_at": "2026-07-16T05:44:19.534612+00:00"
     }
   },
-  "built_at": "2026-07-10T20:23:03.057114+00:00"
+  "built_at": "2026-07-16T05:44:19.535053+00:00"
 }
