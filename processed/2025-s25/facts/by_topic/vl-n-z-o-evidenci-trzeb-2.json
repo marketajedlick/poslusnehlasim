@@ -48,7 +48,7 @@
       "source": "steno",
       "steno_id": "2025_25_00138",
       "citace": "Jaký problém roku 2026 nebo 2027 se vláda snaží řešit nástrojem z roku 2016?",
-      "link_phrase": "Jaký problém roku 2026 nebo 2027 se vláda snaží řešit nástrojem z roku 2016?"
+      "link_phrase": "Jaký problém roku 2026 nebo roku 2027 se vláda snaží řešit nástrojem z roku 2016?"
     },
     {
       "text": "Patková: výkupné z EET pro drobný přivýdělek legálně neexistuje.",
@@ -69,8 +69,8 @@
   "priorita": 3,
   "nadpis": "EET bude zpět ve službě",
   "lead": "Středa patřila závěrečnému hlasování o elektronické evidenci tržeb. Poslanci rozhodovali o tom, zda se podnikatelům vrátí povinnost elektronicky hlásit tržby státu. Ministryně financí Schillerová (ANO) přišla s průzkumem STEM o pětašedesáti procentech podpory občanů.",
-  "pointa": "Opozice znovu tvrdila, že jde o zbytečný systém od doby platebních karet.",
-  "pointa_tail": "Poslušně hlásím, že když už každá karta zanechá stopu, bude EET nejspíš dělat hlavně docházku.<br><br>Skopeček namítal, že většina plateb už dnes probíhá kartou, takže stát má o nich přehled i bez EET. Hotovost podle něj tvoří jen menší část plateb a její podíl dlouhodobě klesá. Obával se také, že stát bude zbytečně shromažďovat více dat o podnikatelích.",
+  "pointa": "Skopeček namítal, že většina plateb už dnes probíhá kartou, takže stát má o nich přehled i bez EET. Hotovost podle něj tvoří jen menší část plateb a její podíl dlouhodobě klesá. Obával se také, že stát bude zbytečně shromažďovat více dat o podnikatelích.",
+  "pointa_tail": "Jakob (TOP 09) se ptal: „Jaký problém roku 2026 nebo roku 2027 se vláda snaží řešit nástrojem z roku 2016?“",
   "pointa_end": "Patková (Piráti) varovala, že slavné výkupné z EET pro drobný přivýdělek legálně neexistuje. Haas (ODS) se smíchem četl návrh, který chtěl z evidence vyjmout vánoční stromky vedle kaprů.",
   "mean": "Elektronická evidence tržeb se vrací. Podnikatelé budou státu znovu elektronicky hlásit své tržby.",
   "citace_text": "EET významně posílí výběr daní a omezí šedou ekonomiku.",
@@ -79,9 +79,9 @@
   "citace2_text": "Já ten zákon považuji za špatný, ale především zbytečný.",
   "citace2_autor": "Jan Skopeček (ODS)",
   "citace2_steno_id": "2025_25_00146",
-  "citace3_text": "Jaký problém roku 2026 nebo 2027 se vláda snaží řešit nástrojem z roku 2016?",
-  "citace3_autor": "Jan Jakob (TOP 09)",
-  "citace3_steno_id": "2025_25_00138",
+  "citace3_text": "",
+  "citace3_autor": "",
+  "citace3_steno_id": "",
   "pocet_hlasovani": 84,
   "proslo": true,
   "signaly": {
