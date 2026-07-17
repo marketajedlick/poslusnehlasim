@@ -1,0 +1,63 @@
+{
+  "datum_unl": "14.07.2026",
+  "iso": "2026-07-14",
+  "recommended": [
+    {
+      "slug": "novela-z-o-pozemnich-komunikacich-eu",
+      "nazev": "Novela z. o pozemních komunikacích - EU",
+      "score": 69,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 68,
+          "pritomno_min": 113,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 17761,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "V posledních třech letech totiž cena roční známky vzrostla z 1 500 korun na dnešních 2 570, tedy o více než 71 procent.",
+          "source": "steno",
+          "steno_id": "2025_28_00017",
+          "citace": "V posledních třech letech totiž cena roční známky vzrostla z 1 500 korun na dnešních 2 570, tedy o více než 71 procent."
+        },
+        {
+          "text": "Chcete, aby dálniční známka v České republice stála 3 200 korun za tři roky?",
+          "source": "steno",
+          "steno_id": "2025_28_00017",
+          "citace": "Chcete, aby dálniční známka v České republice stála 3 200 korun za tři roky?"
+        },
+        {
+          "text": "Současně se do předkládaného návrhu pokusíme formou pozměňovacího návrhu připojit návrh, který nyní řeší již předložená senátorská iniciativa – sněmovní tisk číslo 171.",
+          "source": "steno",
+          "steno_id": "2025_28_00017",
+          "citace": "Současně se do předkládaného návrhu pokusíme formou pozměňovacího návrhu připojit návrh, který nyní řeší již předložená senátorská iniciativa – sněmovní tisk číslo 171."
+        },
+        {
+          "text": "Odmlčuje se pro hluk zleva.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_28_00021",
+          "citace": "(Odmlčuje se pro hluk zleva.)"
+        }
+      ]
+    }
+  ],
+  "rejected": [],
+  "day_stats": {
+    "pocet_hlas_zakon": 1,
+    "proslo_vote": 1,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-07-14",
+      "2026-07-15"
+    ]
+  }
+}
