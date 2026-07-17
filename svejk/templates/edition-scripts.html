@@ -218,8 +218,10 @@
   }
 
   function downloadShareImage(url){
+    // Cloudflare/Fastly cacheují /share/*.png podle URL — bez bustu zůstane starý text po změně závěru.
+    var bust = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_=' + Date.now();
     var a = document.createElement('a');
-    a.href = url;
+    a.href = bust;
     a.download = 'poslusne-hlasim.png';
     a.rel = 'noopener';
     document.body.appendChild(a);

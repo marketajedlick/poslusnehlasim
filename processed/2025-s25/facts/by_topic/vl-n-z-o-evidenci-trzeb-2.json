@@ -3,7 +3,7 @@
   "nazev": "Vl.n.z. o evidenci tržeb",
   "datum": "15.07.2026",
   "verdikt": "schvaleno",
-  "predmet_lidsky": "návrat elektronické evidence tržeb, poslední hlasování před Senátem",
+  "predmet_lidsky": "Dávka státní sociální pomoci, pomoc lidem v nouzi.",
   "koho": [
     "Koho se to týká? Živnostníků, provozoven s hotovostí a podnikatelů, kterým stát znovu hlásí každou tržbu."
   ],
@@ -70,15 +70,6 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "EET definitivně",
-  "lead": "Středa patřila závěrečnému hlasování o elektronické evidenci tržeb. Minule návrh v druhém kole přežil s daňovými dárky navíc, teď šlo o to, jestli živnostníkům znovu naskočí povinnost hlásit tržby státu. Ministryně financí Schillerová (ANO) přišla s průzkumem STEM o pětašedesáti procentech podpory a říkala konečně. Opozice znovu tvrdila, že jde o zbytečný systém do doby platebních karet.",
-  "pointa": "Skopeček (ODS) zákon označil za špatný, především zbytečný, a dostal silný potlesk jednoho poslance ODS. Jakob (TOP 09) se ptal, jaký problém roku 2026 řeší nástrojem z roku 2016. Patková (Piráti) varovala, že slavné výkupné z EET pro drobný přivýdělek legálně neexistuje. Haas (ODS) se smíchem četl návrh, který chtěl z evidence vyjmout vánoční stromky vedle kaprů. Sněmovna zákon schválila, koalice tleskala. Řehková pak oznámila, že hlasovala proti, ale na sjetině má pro.",
-  "mean": "Elektronická evidence tržeb má znovu hlásit státu tržby podnikatelů. Sněmovna zákon v závěrečném hlasování schválila.",
-  "citace_text": "Já ten zákon považuji za špatný, ale především zbytečný.",
-  "citace_autor": "Jan Skopeček (ODS)",
-  "steno_id": "2025_25_00146",
-  "citace2_text": "Jaký problém roku 2026 nebo 2027 se vláda snaží řešit nástrojem z roku 2016?",
-  "citace2_autor": "Jan Jakob (TOP 09)",
-  "citace2_steno_id": "2025_25_00138",
   "pocet_hlasovani": 84,
   "proslo": true,
   "signaly": {
@@ -88,5 +79,10 @@
     "spor": true,
     "prazdny_sal": true
   },
-  "steno_slov": 25850
+  "steno_slov": 25850,
+  "pointa": "Skopeček (ODS) zákon označil za špatný, především zbytečný, a dostal silný potlesk jednoho poslance ODS. Jakob (TOP 09) se ptal, jaký problém roku 2026 řeší nástrojem z roku 2016. Patková (Piráti) varovala, že slavné výkupné z EET pro drobný přivýdělek legálně neexistuje. Haas (ODS) se smíchem četl návrh, který chtěl z evidence vyjmout vánoční stromky vedle kaprů. Sněmovna zákon schválila, koalice tleskala. Řehková pak oznámila, že hlasovala proti, ale na sjetině má pro.",
+  "mean": "Elektronická evidence tržeb má znovu hlásit státu tržby podnikatelů. Sněmovna zákon v závěrečném hlasování schválila.",
+  "lead": "Středa patřila závěrečnému hlasování o elektronické evidenci tržeb. Minule návrh v druhém kole přežil s daňovými dárky navíc, teď šlo o to, jestli živnostníkům znovu naskočí povinnost hlásit tržby státu. Ministryně financí Schillerová (ANO) přišla s průzkumem STEM o pětašedesáti procentech podpory a říkala konečně. Opozice znovu tvrdila, že jde o zbytečný systém do doby platebních karet.",
+  "citace_text": "Já ten zákon považuji za špatný, ale především zbytečný.",
+  "citace_autor": "Jan Skopeček (ODS)"
 }

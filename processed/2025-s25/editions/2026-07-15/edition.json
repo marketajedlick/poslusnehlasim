@@ -15,8 +15,8 @@
   "brief_path": "editions/2026-07-15/brief.md",
   "feedback": [],
   "metrics": {
-    "state": "stale",
-    "stale": true,
+    "state": "draft",
+    "stale": false,
     "link_phrase_coverage": {
       "total": 8,
       "linked": 8,
@@ -35,19 +35,21 @@
       "by_code": {},
       "items": []
     },
-    "generic_topic_count": 0,
+    "generic_topic_count": 1,
     "steno_passages": 8,
     "steno_missing_article_phrase": 0,
-    "ok": true,
-    "errors": []
+    "ok": false,
+    "errors": [
+      "slabá témata: vl-n-z-o-evidenci-trzeb-2"
+    ]
   },
   "inputs": {
     "votes_count": 88,
     "votes_max_cislo": 88,
     "steno_count": 344,
     "steno_last_poradi": 344,
-    "topics_built_at": "2026-07-17T11:15:34.666380+00:00",
-    "fingerprint": "31343860f4aeca95"
+    "topics_built_at": "2026-07-17T11:43:12.926420+00:00",
+    "fingerprint": "d4f61dc6c099ea24"
   },
   "published_at": null,
   "snapshot_dir": null,

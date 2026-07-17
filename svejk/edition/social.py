@@ -87,7 +87,6 @@ def run_social_assets(
         assets_dir,
         datum_unl=datum_unl,
         zaver=day.get("zaver") or "",
-        zaver_body=day.get("dnesni_ucet") or "",
     )
     carousel_dir = assets_dir / "carousel"
     carousel_dir.mkdir(parents=True, exist_ok=True)

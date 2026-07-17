@@ -668,6 +668,7 @@ def render_den_html(
         edition_og_headline,
         edition_og_title,
         og_image_abs_url,
+        share_cache_key,
         share_hero_href,
     )
 
@@ -851,9 +852,14 @@ def render_den_html(
     slovnicek_dne = _edition_slovnicek(content, base_path=base_path)
     fav_href = _ph_fav_href(base_path)
     svejk_img_href = f"{base_path.rstrip('/')}/static/svejk-terra.png" if base_path else "/static/svejk-terra.png"
+    zaver_for_share = (content.zaver or "").strip() or (content.zaver_body or "").strip()
     share_hero = (
-        share_hero_href(base_path, content.datum)
-        if link_mode == "pages" and (content.zaver_body or content.zaver)
+        share_hero_href(
+            base_path,
+            content.datum,
+            version=share_cache_key(zaver_for_share),
+        )
+        if link_mode == "pages" and zaver_for_share
         else ""
     )
     tpl = _jinja_env().get_template("noviny-dlouhe.html")

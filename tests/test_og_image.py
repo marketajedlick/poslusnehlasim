@@ -12,6 +12,8 @@ from svejk.build.og_image import (
     og_image_abs_url,
     render_og_image,
     render_share_hero_image,
+    share_cache_key,
+    share_hero_href,
 )
 
 
@@ -36,6 +38,14 @@ def test_render_og_image_dimensions(tmp_path: Path) -> None:
 def test_og_image_abs_url_cache_bust() -> None:
     url = og_image_abs_url("https://poslusnehlasim.cz", "", "13.02.2026")
     assert url.endswith(f"2026-02-13.png?v={OG_CACHE_VERSION}")
+
+
+def test_share_hero_href_cache_bust() -> None:
+    zaver = "Poslušně hlásím, že EET je zpět."
+    url = share_hero_href("", "07.07.2026", version=share_cache_key(zaver))
+    assert url.startswith("/share/2026-07-07.png?v=")
+    assert share_cache_key(zaver) != share_cache_key(zaver + " x")
+    assert share_hero_href("", "07.07.2026") == "/share/2026-07-07.png"
 
 
 def test_quote_bold_prefix() -> None:

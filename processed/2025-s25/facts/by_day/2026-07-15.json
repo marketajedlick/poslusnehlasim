@@ -13,13 +13,13 @@
     "spor_o_porad": false,
     "dlouha_debata": true
   },
+  "steno_zdroje": true,
   "dnesni_ucet": "EET přežilo závěrečné hlasování,\nSkopečkovi tleskal jeden poslanec.",
-  "zaver": "že středa Sněmovna v závěrečném hlasování schválila návrat elektronické evidence tržeb, zatímco Skopeček dostal potlesk jednoho kolegy a Řehková zjistila, že na sjetině má opak toho, co zmáčkla.",
   "vysledek": [
     "* EET 2.0: Skopeček (ODS) zákon označil za zbytečný, tleskal mu jeden poslanec",
     "* Jakob (TOP 09): jaký problém roku 2026 řeší nástrojem z roku 2016?",
     "* Patková (Piráti): výkupné z EET pro drobný přivýdělek legálně neexistuje",
     "* Řehková hlasovala proti, na sjetině měla pro"
   ],
-  "steno_zdroje": true
+  "zaver": "že středa Sněmovna v závěrečném hlasování schválila návrat elektronické evidence tržeb, zatímco Skopeček dostal potlesk jednoho kolegy a Řehková zjistila, že na sjetině má opak toho, co zmáčkla."
 }

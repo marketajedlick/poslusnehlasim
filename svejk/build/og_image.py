@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import re
 from datetime import datetime
 from pathlib import Path
@@ -66,14 +67,35 @@ def share_hero_filename(datum_unl: str) -> str:
     return f"{datum_unl_to_iso(datum_unl)}.png"
 
 
-def share_hero_href(base_path: str, datum_unl: str) -> str:
+def share_cache_key(*parts: str) -> str:
+    """Krátký hash textu na share kartě — při změně závěru se změní URL a edge cache nesedí."""
+    raw = "\0".join(p.strip() for p in parts if (p or "").strip())
+    if not raw:
+        return OG_CACHE_VERSION
+    return hashlib.sha1(raw.encode("utf-8")).hexdigest()[:10]
+
+
+def share_hero_href(
+    base_path: str,
+    datum_unl: str,
+    *,
+    version: str = "",
+) -> str:
     base = base_path.rstrip("/")
     rel = f"/share/{share_hero_filename(datum_unl)}"
+    if version:
+        rel = f"{rel}?v={version}"
     return f"{base}{rel}" if base else rel
 
 
-def share_hero_abs_url(site_url: str, base_path: str, datum_unl: str) -> str:
-    return f"{site_url.rstrip('/')}{share_hero_href(base_path, datum_unl)}"
+def share_hero_abs_url(
+    site_url: str,
+    base_path: str,
+    datum_unl: str,
+    *,
+    version: str = "",
+) -> str:
+    return f"{site_url.rstrip('/')}{share_hero_href(base_path, datum_unl, version=version)}"
 
 
 def edition_og_title(datum_unl: str, den: str = "") -> str:
