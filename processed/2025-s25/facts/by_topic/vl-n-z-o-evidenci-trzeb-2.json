@@ -1,0 +1,92 @@
+{
+  "slug": "vl-n-z-o-evidenci-trzeb-2",
+  "nazev": "Vl.n.z. o evidenci tržeb",
+  "datum": "15.07.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "návrat elektronické evidence tržeb, poslední hlasování před Senátem",
+  "koho": [
+    "Koho se to týká? Živnostníků, provozoven s hotovostí a podnikatelů, kterým stát znovu hlásí každou tržbu."
+  ],
+  "fakty": [
+    {
+      "text": "Schillerová: STEM dává EET podporu pětašedesáti procent občanů.",
+      "source": "steno",
+      "steno_id": "2025_25_00120",
+      "citace": "Podle nedávného průzkumu agentury STEM podporuje znovuzavedení moderní evidence tržeb 65 % občanů",
+      "link_phrase": "Schillerová (ANO) přišla s průzkumem STEM"
+    },
+    {
+      "text": "Skopeček: zákon je špatný, především zbytečný.",
+      "source": "steno",
+      "steno_id": "2025_25_00146",
+      "citace": "Já ten zákon považuji za špatný, ale především zbytečný.",
+      "link_phrase": "Skopeček (ODS) zákon označil za špatný"
+    },
+    {
+      "text": "Po Skopečkově závěru tleskal jeden poslanec ODS.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_25_00146",
+      "citace": "(Silný potlesk jednoho poslance ODS.)",
+      "link_phrase": "silný potlesk jednoho poslance ODS"
+    },
+    {
+      "text": "Jakob: jaký problém roku 2026 řeší nástrojem z roku 2016?",
+      "source": "steno",
+      "steno_id": "2025_25_00138",
+      "citace": "Jaký problém roku 2026 nebo 2027 se vláda snaží řešit nástrojem z roku 2016?",
+      "link_phrase": "Jakob (TOP 09) se ptal"
+    },
+    {
+      "text": "Patková: výkupné z EET pro drobný přivýdělek legálně neexistuje.",
+      "source": "steno",
+      "steno_id": "2025_25_00148",
+      "citace": "výkupné z EET pro stovky tisíc lidí s drobným přivýdělkem prostě legálně neexistuje.",
+      "link_phrase": "Patková (Piráti) varovala"
+    },
+    {
+      "text": "Haas se smíchem o výjimce pro vánoční stromky.",
+      "source": "steno",
+      "steno_id": "2025_25_00152",
+      "citace": "chce z EET vyjmout sezonní prodej vánočních stromků",
+      "link_phrase": "Haas (ODS) se smíchem četl návrh"
+    },
+    {
+      "text": "Po schválení zákona tleskala vládní koalice.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_25_00340",
+      "citace": "(Potlesk poslanců vládní koalice.)",
+      "link_phrase": "koalice tleskala"
+    },
+    {
+      "text": "Řehková: hlasovala proti, na sjetině má pro.",
+      "source": "steno",
+      "steno_id": "2025_25_00343",
+      "citace": "v posledním hlasování jsem hlasovala proti, na sjetině mám pro.",
+      "link_phrase": "Řehková pak oznámila"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "EET definitivně",
+  "lead": "Středa patřila závěrečnému hlasování o elektronické evidenci tržeb. Minule návrh v druhém kole přežil s daňovými dárky navíc, teď šlo o to, jestli živnostníkům znovu naskočí povinnost hlásit tržby státu. Ministryně financí Schillerová (ANO) přišla s průzkumem STEM o pětašedesáti procentech podpory a říkala konečně. Opozice znovu tvrdila, že jde o zbytečný systém do doby platebních karet.",
+  "pointa": "Skopeček (ODS) zákon označil za špatný, především zbytečný, a dostal silný potlesk jednoho poslance ODS. Jakob (TOP 09) se ptal, jaký problém roku 2026 řeší nástrojem z roku 2016. Patková (Piráti) varovala, že slavné výkupné z EET pro drobný přivýdělek legálně neexistuje. Haas (ODS) se smíchem četl návrh, který chtěl z evidence vyjmout vánoční stromky vedle kaprů. Sněmovna zákon schválila, koalice tleskala. Řehková pak oznámila, že hlasovala proti, ale na sjetině má pro.",
+  "mean": "Elektronická evidence tržeb má znovu hlásit státu tržby podnikatelů. Sněmovna zákon v závěrečném hlasování schválila.",
+  "citace_text": "Já ten zákon považuji za špatný, ale především zbytečný.",
+  "citace_autor": "Jan Skopeček (ODS)",
+  "steno_id": "2025_25_00146",
+  "citace2_text": "Jaký problém roku 2026 nebo 2027 se vláda snaží řešit nástrojem z roku 2016?",
+  "citace2_autor": "Jan Jakob (TOP 09)",
+  "citace2_steno_id": "2025_25_00138",
+  "pocet_hlasovani": 84,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 107,
+    "pritomno_min": 149,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 25850
+}

@@ -25,7 +25,7 @@ _SHARE_BTN_SIZE = 28
 OG_WIDTH = 1200
 OG_HEIGHT = 630
 # Bump při vizuální změně OG — sociální sítě cacheují obrázek podle URL.
-OG_CACHE_VERSION = "hero-card-3"
+OG_CACHE_VERSION = "hero-card-4"
 
 # Čtverec odpovídá hero kartě na mobilu; ruční nahrání na X vypadá lépe než 1200×630.
 # OG zůstává landscape pro twitter:card / og:image u odkazu na vydání.

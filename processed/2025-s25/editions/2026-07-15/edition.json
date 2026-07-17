@@ -1,31 +1,31 @@
 {
-  "key": "2025/28/14.07.2026",
+  "key": "2025/25/15.07.2026",
   "obdobi": 2025,
-  "schuze": 28,
-  "datum_unl": "14.07.2026",
-  "iso": "2026-07-14",
+  "schuze": 25,
+  "datum_unl": "15.07.2026",
+  "iso": "2026-07-15",
   "state": "draft",
   "topic_slugs": [
-    "novela-z-o-pozemnich-komunikacich-eu"
+    "vl-n-z-o-evidenci-trzeb-2"
   ],
   "recommended_slugs": [
-    "novela-z-o-pozemnich-komunikacich-eu"
+    "vl-n-z-o-evidenci-trzeb-2"
   ],
   "rejected_slugs": [],
-  "brief_path": "editions/2026-07-14/brief.md",
+  "brief_path": "editions/2026-07-15/brief.md",
   "feedback": [],
   "metrics": {
     "state": "stale",
     "stale": true,
     "link_phrase_coverage": {
-      "total": 5,
-      "linked": 5,
+      "total": 8,
+      "linked": 8,
       "percent": 100.0,
       "missing": []
     },
     "citace_in_steno": {
-      "checked": 5,
-      "ok": 5,
+      "checked": 8,
+      "ok": 8,
       "percent": 100.0,
       "bad": []
     },
@@ -36,18 +36,18 @@
       "items": []
     },
     "generic_topic_count": 0,
-    "steno_passages": 5,
+    "steno_passages": 8,
     "steno_missing_article_phrase": 0,
     "ok": true,
     "errors": []
   },
   "inputs": {
-    "votes_count": 7,
-    "votes_max_cislo": 7,
-    "steno_count": 85,
-    "steno_last_poradi": 85,
-    "topics_built_at": "2026-07-17T10:15:56.391004+00:00",
-    "fingerprint": "d7f60034e11ee5af"
+    "votes_count": 88,
+    "votes_max_cislo": 88,
+    "steno_count": 344,
+    "steno_last_poradi": 344,
+    "topics_built_at": "2026-07-17T11:15:34.666380+00:00",
+    "fingerprint": "31343860f4aeca95"
   },
   "published_at": null,
   "snapshot_dir": null,

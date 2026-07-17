@@ -459,6 +459,26 @@ def _chran_eet_verze(text: str) -> tuple[str, list[str]]:
     return _RE_EET_VERZE.sub(_chr, text), ulozeno
 
 
+_RE_CASTKA_KC = re.compile(r"\d[\d ]*\s*Kč")
+
+
+def _chran_castky_kc(text: str) -> tuple[str, list[str]]:
+    """Ceny v Kč necháváme číslicemi (2570 Kč), ne slovy."""
+    ulozeno: list[str] = []
+
+    def _chr(m: re.Match[str]) -> str:
+        ulozeno.append(m.group(0))
+        return f"__CASTKAKC{len(ulozeno) - 1}__"
+
+    return _RE_CASTKA_KC.sub(_chr, text), ulozeno
+
+
+def _obnov_castky_kc(text: str, ulozeno: list[str]) -> str:
+    for i, orig in enumerate(ulozeno):
+        text = text.replace(f"__CASTKAKC{i}__", orig)
+    return text
+
+
 def _obnov_eet_verze(text: str, ulozeno: list[str]) -> str:
     for i, orig in enumerate(ulozeno):
         text = text.replace(f"__EETVERZE{i}__", orig)
@@ -470,5 +490,13 @@ def nahrad_cisla_v_textu(text: str) -> str:
     if not text or not re.search(r"\d", text):
         return text
     text, eet = _chran_eet_verze(text)
+    text, kc = _chran_castky_kc(text)
     text = _nahrad_zbyla_cisla(nahrad_hlasovani_v_textu(text))
+    text = _obnov_castky_kc(text, kc)
     return _obnov_eet_verze(text, eet)
+
+
+if __name__ == "__main__":
+    assert nahrad_cisla_v_textu("na dnešních 2570 Kč") == "na dnešních 2570 Kč"
+    assert "tři" in nahrad_cisla_v_textu("za tři roky")
+    print("ok")

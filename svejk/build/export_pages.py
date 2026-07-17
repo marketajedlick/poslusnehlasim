@@ -313,16 +313,19 @@ def run_export_pages(
         )
 
     written: list[str] = []
+    # Jedna OG/share karta na datum = kanonické vydání (/vydani/YYYY-MM-DD/),
+    # ne první schůze v seznamu (u více schůzí tentýž den by jinak zůstala stará).
     og_dates: set[str] = set()
     for edition in editions:
         key = edition.datum_unl
         if key in og_dates:
             continue
         og_dates.add(key)
+        og_edition = resolve_edition(obdobi, key) or edition
         snapshot_html = ""
-        if edition_source(edition) == "snapshot":
-            snapshot_html = snapshot_path(edition).read_text(encoding="utf-8")
-        fields = _edition_og_fields(edition, snapshot_html=snapshot_html)
+        if edition_source(og_edition) == "snapshot":
+            snapshot_html = snapshot_path(og_edition).read_text(encoding="utf-8")
+        fields = _edition_og_fields(og_edition, snapshot_html=snapshot_html)
         og_subdir = out / "og"
         og_subdir.mkdir(parents=True, exist_ok=True)
         sign = load_strings().get("edition", {}).get(
@@ -330,7 +333,7 @@ def run_export_pages(
         )
         render_edition_og_image(
             og_subdir,
-            datum_unl=edition.datum_unl,
+            datum_unl=og_edition.datum_unl,
             den=str(fields["den"]),
             dnesni_ucet=str(fields["dnesni_ucet"]),
             nadpis_vydani=str(fields.get("nadpis_vydani") or ""),
@@ -340,19 +343,19 @@ def run_export_pages(
             zaver=str(fields.get("zaver") or ""),
             sign=sign,
         )
-        written.append(f"og/{og_image_filename(edition.datum_unl)}")
+        written.append(f"og/{og_image_filename(og_edition.datum_unl)}")
 
         share_subdir = out / "share"
         share_subdir.mkdir(parents=True, exist_ok=True)
         if render_edition_share_hero_image(
             share_subdir,
-            datum_unl=edition.datum_unl,
+            datum_unl=og_edition.datum_unl,
             zaver_key=str(fields.get("zaver_key") or ""),
             zaver_body=str(fields.get("zaver_body") or ""),
             zaver=str(fields.get("zaver") or ""),
             sign=sign,
         ):
-            written.append(f"share/{share_hero_filename(edition.datum_unl)}")
+            written.append(f"share/{share_hero_filename(og_edition.datum_unl)}")
 
     def _export_edition_page(
         edition,

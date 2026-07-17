@@ -39,6 +39,24 @@ from svejk.build.recnici import has_recnici
 from svejk.build.mezin_smlouvy import has_smlouvy
 
 
+def _md_citace_block(text: str, autor: str = "") -> list[str]:
+    """Markdown blockquote; citace může mít zalomení řádku."""
+    parts = [p.strip() for p in text.splitlines() if p.strip()]
+    if not parts:
+        return []
+    if len(parts) == 1:
+        lines = [f"> „{parts[0]}“", ""]
+    else:
+        lines = [f"> „{parts[0]}"]
+        for mid in parts[1:-1]:
+            lines.append(f"> {mid}")
+        lines.append(f"> {parts[-1]}“")
+        lines.append("")
+    if autor:
+        lines.extend([f"> {autor}", ""])
+    return lines
+
+
 def _listy_markdown(listy: dict) -> list[str]:
     lines = ["## SNĚMOVNÍ LISTY", ""]
     meta = (listy.get("meta") or "").strip()
@@ -149,10 +167,7 @@ def render_den_markdown(
         )
         lines.extend([lead, ""])
         if item.citace_text:
-            lines.extend([f"> „{item.citace_text}“", ""])
-            if item.citace_autor:
-                lines.append(f"> {item.citace_autor}")
-            lines.append("")
+            lines.extend(_md_citace_block(item.citace_text, item.citace_autor))
         if item.lead_tail and item.kuriozita:
             lines.extend([f'<div class="kuriozita-box">{item.kuriozita}</div>', ""])
             lines.extend([item.lead_tail, ""])
@@ -161,24 +176,15 @@ def render_den_markdown(
         if item.pointa:
             lines.extend([item.pointa, ""])
         if item.citace2_text:
-            lines.extend([f"> „{item.citace2_text}“", ""])
-            if item.citace2_autor:
-                lines.append(f"> {item.citace2_autor}")
-            lines.append("")
+            lines.extend(_md_citace_block(item.citace2_text, item.citace2_autor))
         if item.pointa_tail:
             lines.extend([item.pointa_tail, ""])
         if item.citace3_text:
-            lines.extend([f"> „{item.citace3_text}“", ""])
-            if item.citace3_autor:
-                lines.append(f"> {item.citace3_autor}")
-            lines.append("")
+            lines.extend(_md_citace_block(item.citace3_text, item.citace3_autor))
         if item.pointa_end:
             lines.extend([item.pointa_end, ""])
         if item.citace4_text:
-            lines.extend([f"> „{item.citace4_text}“", ""])
-            if item.citace4_autor:
-                lines.append(f"> {item.citace4_autor}")
-            lines.append("")
+            lines.extend(_md_citace_block(item.citace4_text, item.citace4_autor))
         if item.pointa_close:
             lines.extend([item.pointa_close, ""])
         mean_label = load_strings()["edition"]["mean_label"]

@@ -956,6 +956,7 @@ button{font:inherit;cursor:pointer}
   font-weight:800;
   font-size:21px;
   line-height:1.4;
+  white-space:pre-line;
 }
 .quote-mark{
   font-size:1.8em;

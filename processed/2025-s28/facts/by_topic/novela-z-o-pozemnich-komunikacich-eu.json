@@ -16,7 +16,7 @@
       "link_phrase": "cena roční známky vzrostla za tři roky o víc než sedmdesát jedna procent"
     },
     {
-      "text": "Bednárik: Chcete, aby dálniční známka stála 3 200 korun za tři roky?",
+      "text": "Bednárik: Chcete, aby dálniční známka stála 3200 korun za tři roky?",
       "source": "steno",
       "steno_id": "2025_28_00017",
       "citace": "Chcete, aby dálniční známka v České republice stála 3 200 korun za tři roky?",
@@ -30,11 +30,11 @@
       "link_phrase": "nikdo nic nezlevňuje"
     },
     {
-      "text": "Jakob: peníze nevznikají tím, že odhlasujete levnější známku.",
+      "text": "Jakob: výpadek ve fondu silnic a dálnic se zaplatí méně stavbou, ze státního rozpočtu, nebo vyšším dluhem.",
       "source": "steno",
       "steno_id": "2025_28_00023",
-      "citace": "Peníze totiž nevznikají tím, že odhlasujete levnější dálniční známku.",
-      "link_phrase": "peníze nevznikají tím, že odhlasujete levnější dálniční známku"
+      "citace": "Kdo ten výpadek zaplatí? Možnosti jsou pouze tři. Buď se opraví a postaví méně silnic a dálnic. Nebo se peníze vezmou ze státního rozpočtu. A konečně, nebo se stát více zadluží. Žádná čtvrtá jiná možnost neexistuje. Peníze totiž nevznikají tím, že odhlasujete levnější dálniční známku.",
+      "link_phrase": "kdo zaplatí chybějící peníze do fondu silnic a dálnic"
     },
     {
       "text": "Sviták: v roce 2023 byla známka za 2 300 korun zlodějina, dnes je vyšší cena v pořádku.",
@@ -42,14 +42,6 @@
       "steno_id": "2025_28_00027",
       "citace": "V roce 2023 byla podle hnutí ANO cena 2 300 korun za dálniční známku již zmiňovaná zlodějina a nehoráznost. A v roce 2026 je ta samá, respektive ještě vyšší cena najednou v naprostém pořádku.",
       "link_phrase": "Sviták (STAN) připomněl"
-    },
-    {
-      "text": "Nacher: vlevo je hluk, tam skoro nikdo nesedí.",
-      "source": "steno",
-      "kind": "scene",
-      "steno_id": "2025_28_00022",
-      "citace": "Tam skoro taky nikdo nesedí, vlevo je hluk.",
-      "link_phrase": "vlevo je hluk"
     }
   ],
   "publikovat": true,
@@ -65,9 +57,13 @@
     "prazdny_sal": true
   },
   "steno_slov": 17761,
-  "lead": "Babišova vláda chtěla splnit slib, že roční dálniční známka nezdraží. Ministr dopravy Ivan Bednárik představil návrh, kterým se ruší automatické navyšování ceny podle inflace a rozšiřování sítě. Roční známka by zůstala na dnešních dvou tisících pěti stech sedmdesáti korunách. Ve Sněmovně to v úterý vypadalo jako jednoduchá úspora pro řidiče, jenže opozice hned začala počítat, kdo zaplatí chybějící peníze do fondu na silnice.",
-  "citace_text": "Chcete, aby dálniční známka v České republice stála 3 200 korun za tři roky?",
   "citace_autor": "Ivan Bednárik (ministr dopravy)",
-  "pointa": "Bednárik připomněl, že cena roční známky vzrostla za tři roky o víc než sedmdesát jedna procent, a ptal se, jestli chceme za tři roky platit tři tisíce dvě stě korun. Jan Jakob (TOP 09) řekl, že peníze nevznikají tím, že odhlasujete levnější dálniční známku, a varoval, že výpadek zaplatí zdravotní sestra na autobusu i senior bez auta. Jan Bauer (ODS) upozornil, že nikdo nic nezlevňuje, vláda jen zamrazuje cenu, kterou nastavila minulá vláda.\n\nSviták (STAN) připomněl, že v roce dva tisíce třiadvací ANO označovalo známku za dva tisíce tři sta korun zlodějina, dnes je vyšší částka v pořádku. Kučera (TOP 09) navrhoval zákon vrátit k přepracování i zamítnout. Nepadlo to. Návrh šel do hospodářského výboru a koalice si zkrátila lhůtu na další kolo. Debata Jakoba přerušil hluk zleva, předsedající poprosil o klid a poznamenal, že vlevo je hluk a skoro nikdo nesedí.\n\nPoslušně podotýkám, že největší úspora dne byla pro řidiče, kteří známku kupovat nemuseli, protože ve Sněmovně debatovala opozice nad prázdnějšími lavicemi vlevo.",
-  "mean": "Roční dálniční známka by podle vlády neměla automaticky růst s inflací a novými úseky dálnic. V úterý Sněmovna návrh v prvním kole poslala do hospodářského výboru a zamítla návrhy na vrácení i zamítnutí."
+  "citace_text": "Chcete, aby dálniční známka v České republice stála 3200 korun za tři roky?",
+  "citace2_text": "Kdo ten výpadek zaplatí? Možnosti jsou pouze tři. Buď se opraví a postaví méně silnic a dálnic. Nebo se peníze vezmou ze státního rozpočtu. A konečně, nebo se stát více zadluží. Žádná čtvrtá jiná možnost neexistuje. Peníze totiž nevznikají tím, že odhlasujete levnější dálniční známku.",
+  "citace2_autor": "Jan Jakob (TOP 09)",
+  "citace2_steno_id": "2025_28_00023",
+  "mean": "Roční dálniční známka by podle vlády neměla automaticky růst s inflací a novými úseky dálnic. V úterý Sněmovna návrh poslala do hospodářského výboru. Opozice namítala, že výpadek ve fondu silnic a dálnic někdo musí zaplatit.",
+  "pointa": "Vypadalo to jako jednoduchá úspora pro řidiče, jenže opozice hned začala počítat, kdo zaplatí chybějící peníze do fondu silnic a dálnic.",
+  "pointa_tail": "Jan Bauer (ODS) upozornil, že nikdo nic nezlevňuje, vláda jen zamrazuje cenu, kterou nastavila minulá vláda. Sviták (STAN) připomněl, že v roce 2023 ANO označovalo známku za dva tisíce tři sta korun zlodějina, dnes je vyšší částka v pořádku. Kučera (TOP 09) chtěl zákon vrátit k přepracování a pak i zamítnutí. Ani jedno neprošlo. Návrh šel do hospodářského výboru a koalice si zkrátila lhůtu na další kolo.",
+  "lead": "Vláda chce splnit slib, že roční dálniční známka nezdraží. Ministr dopravy Ivan Bednárik představil návrh, kterým se ruší automatické navyšování ceny podle inflace a rozšiřování sítě. Roční známka by zůstala na dnešních 2570 Kč. Bednárik připomněl, že cena roční známky vzrostla za tři roky o víc než sedmdesát jedna procent, a ptal se:"
 }
