@@ -199,7 +199,10 @@ def _edition_slovnicek(
     *,
     base_path: str = "",
 ) -> list[tuple[str, str, str | None]]:
-    from svejk.build.glossary_markup import slovnicek_dne
+    from svejk.build.glossary_markup import slovnicek_dne, slovnicek_from_labels
+
+    if content.slovnicek:
+        return slovnicek_from_labels(content.slovnicek, base_path=base_path)
 
     chunks: list[str] = [
         content.zaver or "",

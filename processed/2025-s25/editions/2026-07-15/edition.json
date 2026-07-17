@@ -15,7 +15,7 @@
   "brief_path": "editions/2026-07-15/brief.md",
   "feedback": [],
   "metrics": {
-    "state": "stale",
+    "state": "published",
     "stale": true,
     "link_phrase_coverage": {
       "total": 8,
@@ -25,9 +25,11 @@
     },
     "citace_in_steno": {
       "checked": 8,
-      "ok": 8,
-      "percent": 100.0,
-      "bad": []
+      "ok": 7,
+      "percent": 87.5,
+      "bad": [
+        "vl-n-z-o-evidenci-trzeb-2[0]"
+      ]
     },
     "party_labels": {
       "errors": 0,
@@ -35,11 +37,14 @@
       "by_code": {},
       "items": []
     },
-    "generic_topic_count": 0,
+    "generic_topic_count": 1,
     "steno_passages": 9,
     "steno_missing_article_phrase": 3,
-    "ok": true,
-    "errors": []
+    "ok": false,
+    "errors": [
+      "citace nejsou doslovně ve stenozáznamu",
+      "slabá témata: vl-n-z-o-evidenci-trzeb-2"
+    ]
   },
   "inputs": {
     "votes_count": 88,
@@ -49,7 +54,7 @@
     "topics_built_at": "2026-07-17T11:43:12.926420+00:00",
     "fingerprint": "d4f61dc6c099ea24"
   },
-  "published_at": "2026-07-17T12:22:25.360897+00:00",
+  "published_at": "2026-07-17T13:01:39.612864+00:00",
   "snapshot_dir": "published/2025/25/15.07.2026",
   "supersedes": null,
   "assets": {

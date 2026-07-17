@@ -147,6 +147,8 @@ class DenContent:
     zaver_body: str = ""
     snemovni_listy: dict[str, Any] | None = None
     jazykolam: dict[str, Any] | None = None
+    # Ruční pojmy pro Slovníček dne (jinak se berou automaticky z textu).
+    slovnicek: list[str] = field(default_factory=list)
 
 
 def lead_z_fact(fact: dict[str, Any]) -> str:
@@ -531,6 +533,11 @@ def build_den_content(
         result_note=result_note,
         snemovni_listy=day.get("snemovni_listy") or None,
         jazykolam=day.get("jazykolam") or None,
+        slovnicek=[
+            str(t).strip()
+            for t in (day.get("slovnicek") or [])
+            if str(t).strip()
+        ],
     )
 
     num = 0

@@ -14,12 +14,25 @@
     "dlouha_debata": true
   },
   "steno_zdroje": true,
+  "slovnicek": [
+    "první čtení",
+    "veto",
+    "legislativní nouze",
+    "pozměňovací návrh",
+    "zkrácení lhůty",
+    "garanční výbor"
+  ],
   "vysledek": [
     "* známka zůstane na dva tisíce pět set sedmdesát, návrh šel do hospodářského výboru",
     "* Bednárik: chcete známku za tři tisíce dvě stě korun za tři roky?",
     "* Bauer (ODS): nikdo nic nezlevňuje, vláda jen zamrazuje cenu",
     "* návrhy na vrácení i zamítnutí padly, pořad schůze prošel se čtyřiceti dvěma hlasy proti"
   ],
-  "zaver": "že vláda zamrazila dálniční známku na dnešní ceně a poslala návrh do výboru, zatímco opozice počítala, kdo zaplatí díru ve fondu silnic a dálnic.",
-  "dnesni_ucet": "Známka zůstane na dva tisíce pět set sedmdesát,\nnávrh přežil první kolo a jde do hospodářského výboru."
+  "zaver": "že vláda zmrazila dálniční známku, opozice spočítala díru v rozpočtu a výbor dostal další práci.",
+  "dnesni_ucet": "Známka zůstane na dva tisíce pět set sedmdesát,\nnávrh přežil první kolo a jde do hospodářského výboru.",
+  "jazykolam": {
+    "text": "Ale vy něco jiného totiž říkáte těm zahraničním partnerům, něco jiného jste říkali před volbami, něco jiného říkáte po volbách a něco jiného se snažíte (část vaší vládní koalice) říkat svým voličům i teď.",
+    "autor": "Marian Jurečka",
+    "steno_id": "2025_28_00012"
+  }
 }

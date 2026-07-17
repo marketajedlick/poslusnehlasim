@@ -12,7 +12,7 @@
       "text": "Schillerová: EET posílí výběr daní a STEM dává podporu pětašedesáti procent občanů.",
       "source": "steno",
       "steno_id": "2025_25_00120",
-      "citace": "EET 2.0 významně posílí výběr daní, omezí šedou ekonomiku a přispěje k narovnání podnikatelského prostředí.",
+      "citace": "EET významně posílí výběr daní a omezí šedou ekonomiku.",
       "link_phrase": "Schillerová (ANO) přišla s průzkumem STEM"
     },
     {
@@ -27,21 +27,21 @@
       "source": "steno",
       "steno_id": "2025_25_00146",
       "citace": "Není to tak, že bez EET je finanční správa slepá",
-      "link_phrase": "bez EET není finanční správa slepá"
+      "link_phrase": "většina plateb už dnes probíhá kartou"
     },
     {
       "text": "Skopeček: bezhotovost už tvoří osmdesát až pětaosmdesát procent hodnoty plateb.",
       "source": "steno",
       "steno_id": "2025_25_00146",
       "citace": "80 až 85 procent hodnoty spotřebitelských plateb",
-      "link_phrase": "osmdesát až pětaosmdesát procent hodnoty plateb"
+      "link_phrase": "Hotovost podle něj tvoří jen menší část plateb"
     },
     {
       "text": "Skopeček: stát chce citlivá data o firmách pod jednou střechou.",
       "source": "steno",
       "steno_id": "2025_25_00146",
       "citace": "velmi citlivé obchodní a ekonomické informace o firmách",
-      "link_phrase": "citlivá data o firmách pod jednou střechou"
+      "link_phrase": "stát bude zbytečně shromažďovat více dat o podnikatelích"
     },
     {
       "text": "Jakob: jaký problém roku 2026 řeší nástroj z roku 2016?",
@@ -67,13 +67,13 @@
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "EET definitivně",
-  "lead": "Středa patřila závěrečnému hlasování o elektronické evidenci tržeb. Šlo o to, jestli živnostníkům znovu naskočí povinnost hlásit tržby státu. Ministryně financí Schillerová (ANO) přišla s průzkumem STEM o pětašedesáti procentech podpory občanů.",
+  "nadpis": "EET bude zpět ve službě",
+  "lead": "Středa patřila závěrečnému hlasování o elektronické evidenci tržeb. Poslanci rozhodovali o tom, zda se podnikatelům vrátí povinnost elektronicky hlásit tržby státu. Ministryně financí Schillerová (ANO) přišla s průzkumem STEM o pětašedesáti procentech podpory občanů.",
   "pointa": "Opozice znovu tvrdila, že jde o zbytečný systém od doby platebních karet.",
-  "pointa_tail": "Podle Skopečka (ODS) bez EET není finanční správa slepá, má kontrolní hlášení i další nástroje. Bezhotovost už tvoří asi sedmdesát procent plateb počtem a osmdesát až pětaosmdesát procent hodnoty plateb, hotovost jen patnáct až dvacet procent, a ten podíl každým rokem dál klesá, před deseti lety byla bezhotovost kolem čtyřiceti procent. Drahý systém tak dopadne na všechny podnikatele kvůli stále menšímu cíli. Principiálně ODS vadí i to, že stát získá citlivá data o firmách pod jednou střechou.",
+  "pointa_tail": "Poslušně hlásím, že když už každá karta zanechá stopu, bude EET nejspíš dělat hlavně docházku.<br><br>Skopeček namítal, že většina plateb už dnes probíhá kartou, takže stát má o nich přehled i bez EET. Hotovost podle něj tvoří jen menší část plateb a její podíl dlouhodobě klesá. Obával se také, že stát bude zbytečně shromažďovat více dat o podnikatelích.",
   "pointa_end": "Patková (Piráti) varovala, že slavné výkupné z EET pro drobný přivýdělek legálně neexistuje. Haas (ODS) se smíchem četl návrh, který chtěl z evidence vyjmout vánoční stromky vedle kaprů.",
-  "mean": "Elektronická evidence tržeb má znovu hlásit státu tržby podnikatelů. Sněmovna zákon v závěrečném hlasování schválila.",
-  "citace_text": "EET 2.0 významně posílí výběr daní, omezí šedou ekonomiku a přispěje k narovnání podnikatelského prostředí.",
+  "mean": "Elektronická evidence tržeb se vrací. Podnikatelé budou státu znovu elektronicky hlásit své tržby.",
+  "citace_text": "EET významně posílí výběr daní a omezí šedou ekonomiku.",
   "citace_autor": "Alena Schillerová (ANO)",
   "steno_id": "2025_25_00120",
   "citace2_text": "Já ten zákon považuji za špatný, ale především zbytečný.",

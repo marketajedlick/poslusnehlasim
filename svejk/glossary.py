@@ -403,6 +403,26 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Výjimečný stav, kdy předseda sněmovny zkrátí lhůty natolik, že zákon může projít velmi rychle.",
     ),
     (
+        "zkrácení lhůty",
+        "Poslanci si zkrátí čas na přípravu dalšího kola, zákon jde dál rychleji.",
+    ),
+    (
+        "zkrácení lhůt",
+        "Poslanci si zkrátí čas na přípravu dalšího kola, zákon jde dál rychleji.",
+    ),
+    (
+        "garanční výbor",
+        "Výbor, který má zákon na starosti a připraví ho na další hlasování.",
+    ),
+    (
+        "garančního výboru",
+        "Výbor, který má zákon na starosti a připraví ho na další hlasování.",
+    ),
+    (
+        "veto",
+        "Když Senát nebo prezident zákon vrátí, aby si ho poslanci ještě jednou rozmysleli.",
+    ),
+    (
         "pozměňovací návrhy",
         "Pokus poslanců přepsat kus zákona, než se o něm definitivně hlasuje.",
     ),
@@ -1118,6 +1138,14 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Každá účtenka hlásila státu, kolik kdo utržil. Mladší generace už často netuší, o co šlo.",
     ),
     (
+        "šedá ekonomika",
+        "Peníze a podnikání, které stát oficiálně nevidí, hlavně kvůli nehlášeným tržbám.",
+    ),
+    (
+        "šedou ekonomiku",
+        "Peníze a podnikání, které stát oficiálně nevidí, hlavně kvůli nehlášeným tržbám.",
+    ),
+    (
         "stavebního zákona",
         "Pravidla pro povolování staveb. Koalice ho chce zrychlit, opozice varuje před oslabením obcí a úřadů.",
     ),
@@ -1480,6 +1508,9 @@ SLOVNIČEK: tuple[tuple[str, str], ...] = (
     ("obstrukce", "Když se dlouze mluví proto, aby se co nejdéle nehlasovalo."),
     ("přerušení schůze", "Poslanci si dali pauzu a slíbili, že se k tomu vrátí."),
     ("legislativní nouze", "Režim, kdy se zákony schvalují rychleji než obvykle."),
+    ("zkrácení lhůty", "Poslanci si zkrátí čas na přípravu dalšího kola, zákon jde dál rychleji."),
+    ("garanční výbor", "Výbor, který má zákon na starosti a připraví ho na další hlasování."),
+    ("veto", "Když Senát nebo prezident zákon vrátí, aby si ho poslanci ještě jednou rozmysleli."),
     ("mimořádná schůze", "Schůze svolaná mimo běžný program, když něco spěchá nebo se někdo hodně rozčílí."),
     ("interpelace", "Čas, kdy se poslanci ptají vlády a vláda odpovídá. Někdy i na položenou otázku."),
     ("důvěra vládě", "Hlasování, jestli má vláda podporu většiny poslanců."),
@@ -1493,6 +1524,9 @@ SLOVNIČEK: tuple[tuple[str, str], ...] = (
     ("fiskální pravidla", "Pravidla, která mají státu připomínat, že kreditka není bezedná."),
     ("schodek", "Když stát utratí víc, než vybere. Něco jako když hospoda jede na sekeru."),
     ("EET", "Elektronická evidence tržeb, každá účtenka hlásila státu, kolik kdo utržil."),
+    ("elektronická evidence tržeb", "Každá účtenka hlásí státu, kolik kdo utržil."),
+    ("šedá ekonomika", "Peníze a podnikání, které stát oficiálně nevidí, hlavně kvůli nehlášeným tržbám."),
+    ("závěrečné hlasování", "Poslední hlasování o zákonu ve sněmovně, pak může jít k prezidentovi."),
     ("usnesení", "Stanovisko nebo rozhodnutí sněmovny. Nejde o zákon."),
     ("ratifikace", "Souhlas parlamentu se smlouvou s cizím státem. Bez něj u nás neplatí."),
     ("Dozimetr", "Korupční kauza spojená s pražským dopravním podnikem, kterou vyšetřuje policie."),

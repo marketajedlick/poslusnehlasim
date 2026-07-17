@@ -14,14 +14,20 @@
     "dlouha_debata": true
   },
   "steno_zdroje": true,
+  "slovnicek": [
+    "šedá ekonomika",
+    "EET",
+    "elektronická evidence tržeb",
+    "závěrečné hlasování"
+  ],
   "dnesni_ucet": "EET přežilo závěrečné hlasování,\nopozice mluvila o kartách a datech.",
   "vysledek": [
-    "* EET 2.0: Skopeček (ODS) bez EET není správa slepá, bezhotovost už dominuje",
-    "* ODS: stát sbírá citlivá data o firmách pod jednou střechou",
+    "* Skopeček (ODS): většina plateb už jde kartou, hotovost klesá",
+    "* ODS: stát bude zbytečně shromažďovat víc dat o podnikatelích",
     "* Jakob (TOP 09): jaký problém roku 2026 řeší nástroj z roku 2016?",
     "* Patková (Piráti): výkupné z EET pro drobný přivýdělek legálně neexistuje"
   ],
-  "zaver": "že středa Sněmovna v závěrečném hlasování schválila návrat elektronické evidence tržeb, zatímco Skopeček tvrdil, že bezhotovost už nese stopu sama.",
+  "zaver": "že návrh nakonec prošel a EET se po několika letech vrací. Spor tak nebyl o tom, jestli stát vybírá daně, ale jestli k tomu potřebuje právě EET.",
   "jazykolam": {
     "text": "Nejen kolik láhví vína se prodá, ale především kolik hroznů se u nás vypěstuje, kolik vinic zůstane osázených a kolik českých a moravských vinohradníků bude schopno pokračovat ve své práci.",
     "autor": "Petr Bendl",

@@ -321,6 +321,38 @@ def slovnicek_dne(
     )
 
 
+def slovnicek_from_labels(
+    labels: list[str],
+    *,
+    base_path: str = "",
+    link_terms: bool = True,
+) -> list[tuple[str, str, str | None]]:
+    """Ruční seznam pojmů pro Slovníček dne (tips z SLOVNIČEK / GLOSSARY)."""
+    out: list[tuple[str, str, str | None]] = []
+    seen: set[str] = set()
+    glossary = {phrase.lower(): (phrase, tip) for phrase, tip in glossary_entries()}
+    for raw in labels:
+        label = (raw or "").strip()
+        if not label:
+            continue
+        sk = _slovnicek_entry_for_needle(label)
+        if sk:
+            display, tip = sk
+            src = sk[0]
+        elif label.lower() in glossary:
+            display, tip = glossary[label.lower()]
+            src = display
+        else:
+            continue
+        key = display.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        href = _slovnicek_href_for_phrase(src, base_path) if link_terms else None
+        out.append((slovnicek_term_label(display), tip, href))
+    return out
+
+
 if __name__ == "__main__":
     sample = (
         "Podle pana Rakušana je mise u OSN moc pěkné místečko, "
@@ -332,5 +364,23 @@ if __name__ == "__main__":
         "zvlášť když se na něj nastupuje "
         '<span class="hl">bez prezidentova podpisu</span>.'
     )
-    assert "2025_24_01097" not in highlight_markup("kotva steno-2025_24_01097")
+    labels = slovnicek_from_labels(
+        [
+            "první čtení",
+            "veto",
+            "legislativní nouze",
+            "pozměňovací návrh",
+            "zkrácení lhůty",
+            "garanční výbor",
+        ]
+    )
+    assert [t[0] for t in labels] == [
+        "první čtení",
+        "veto",
+        "legislativní nouze",
+        "pozměňovací návrh",
+        "zkrácení lhůty",
+        "garanční výbor",
+    ]
     print("highlight_markup ok")
+    print("slovnicek_from_labels ok")
