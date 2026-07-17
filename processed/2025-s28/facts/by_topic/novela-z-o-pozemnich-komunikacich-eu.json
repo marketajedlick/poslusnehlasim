@@ -1,0 +1,73 @@
+{
+  "slug": "novela-z-o-pozemnich-komunikacich-eu",
+  "nazev": "Novela z. o pozemních komunikacích - EU",
+  "datum": "14.07.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "Zmrazení ceny roční dálniční známky a konec automatického navyšování podle inflace a nových úseků.",
+  "koho": [
+    "Koho se to týká? Řidiče osobních aut, kteří jezdí po dálnicích."
+  ],
+  "fakty": [
+    {
+      "text": "Bednárik: cena roční známky vzrostla za tři roky o víc než sedmdesát jedna procent.",
+      "source": "steno",
+      "steno_id": "2025_28_00017",
+      "citace": "V posledních třech letech totiž cena roční známky vzrostla z 1 500 korun na dnešních 2 570, tedy o více než 71 procent.",
+      "link_phrase": "cena roční známky vzrostla za tři roky o víc než sedmdesát jedna procent"
+    },
+    {
+      "text": "Bednárik: Chcete, aby dálniční známka stála 3 200 korun za tři roky?",
+      "source": "steno",
+      "steno_id": "2025_28_00017",
+      "citace": "Chcete, aby dálniční známka v České republice stála 3 200 korun za tři roky?",
+      "link_phrase": "Bednárik představil návrh"
+    },
+    {
+      "text": "Bauer: nikdo nic nezlevňuje, vláda jen zamrazuje cenu z minulé vlády.",
+      "source": "steno",
+      "steno_id": "2025_28_00033",
+      "citace": "Nikdo nic nezlevňuje, nikdo nikomu nic nevrací.",
+      "link_phrase": "nikdo nic nezlevňuje"
+    },
+    {
+      "text": "Jakob: peníze nevznikají tím, že odhlasujete levnější známku.",
+      "source": "steno",
+      "steno_id": "2025_28_00023",
+      "citace": "Peníze totiž nevznikají tím, že odhlasujete levnější dálniční známku.",
+      "link_phrase": "peníze nevznikají tím, že odhlasujete levnější dálniční známku"
+    },
+    {
+      "text": "Sviták: v roce 2023 byla známka za 2 300 korun zlodějina, dnes je vyšší cena v pořádku.",
+      "source": "steno",
+      "steno_id": "2025_28_00027",
+      "citace": "V roce 2023 byla podle hnutí ANO cena 2 300 korun za dálniční známku již zmiňovaná zlodějina a nehoráznost. A v roce 2026 je ta samá, respektive ještě vyšší cena najednou v naprostém pořádku.",
+      "link_phrase": "Sviták (STAN) připomněl"
+    },
+    {
+      "text": "Nacher: vlevo je hluk, tam skoro nikdo nesedí.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_28_00022",
+      "citace": "Tam skoro taky nikdo nesedí, vlevo je hluk.",
+      "link_phrase": "vlevo je hluk"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Zmrazená známka",
+  "pocet_hlasovani": 5,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 68,
+    "pritomno_min": 113,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 17761,
+  "lead": "Babišova vláda chtěla splnit slib, že roční dálniční známka nezdraží. Ministr dopravy Ivan Bednárik představil návrh, kterým se ruší automatické navyšování ceny podle inflace a rozšiřování sítě. Roční známka by zůstala na dnešních dvou tisících pěti stech sedmdesáti korunách. Ve Sněmovně to v úterý vypadalo jako jednoduchá úspora pro řidiče, jenže opozice hned začala počítat, kdo zaplatí chybějící peníze do fondu na silnice.",
+  "citace_text": "Chcete, aby dálniční známka v České republice stála 3 200 korun za tři roky?",
+  "citace_autor": "Ivan Bednárik (ministr dopravy)",
+  "pointa": "Bednárik připomněl, že cena roční známky vzrostla za tři roky o víc než sedmdesát jedna procent, a ptal se, jestli chceme za tři roky platit tři tisíce dvě stě korun. Jan Jakob (TOP 09) řekl, že peníze nevznikají tím, že odhlasujete levnější dálniční známku, a varoval, že výpadek zaplatí zdravotní sestra na autobusu i senior bez auta. Jan Bauer (ODS) upozornil, že nikdo nic nezlevňuje, vláda jen zamrazuje cenu, kterou nastavila minulá vláda.\n\nSviták (STAN) připomněl, že v roce dva tisíce třiadvací ANO označovalo známku za dva tisíce tři sta korun zlodějina, dnes je vyšší částka v pořádku. Kučera (TOP 09) navrhoval zákon vrátit k přepracování i zamítnout. Nepadlo to. Návrh šel do hospodářského výboru a koalice si zkrátila lhůtu na další kolo. Debata Jakoba přerušil hluk zleva, předsedající poprosil o klid a poznamenal, že vlevo je hluk a skoro nikdo nesedí.\n\nPoslušně podotýkám, že největší úspora dne byla pro řidiče, kteří známku kupovat nemuseli, protože ve Sněmovně debatovala opozice nad prázdnějšími lavicemi vlevo.",
+  "mean": "Roční dálniční známka by podle vlády neměla automaticky růst s inflací a novými úseky dálnic. V úterý Sněmovna návrh v prvním kole poslala do hospodářského výboru a zamítla návrhy na vrácení i zamítnutí."
+}

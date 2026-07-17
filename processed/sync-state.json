@@ -1,19 +1,11 @@
 {
   "obdobi": 2025,
   "unl": {
-<<<<<<< HEAD
-    "etag": "6a56cc5d-2da022",
-    "last_modified": "Tue, 14 Jul 2026 23:55:09 GMT",
-    "content_length": 2990114,
-    "lines": 1946,
-    "fetched_at": "2026-07-15T07:18:57.005503+00:00"
-=======
-    "etag": "6a581ddd-2e47af",
-    "last_modified": "Wed, 15 Jul 2026 23:55:09 GMT",
-    "content_length": 3033007,
+    "etag": "6a596f5e-2e4434",
+    "last_modified": "Thu, 16 Jul 2026 23:55:10 GMT",
+    "content_length": 3032116,
     "lines": 2030,
-    "fetched_at": "2026-07-16T05:53:45.854098+00:00"
->>>>>>> 9eb669e (kontrola jmen)
+    "fetched_at": "2026-07-17T09:52:02.826644+00:00"
   },
   "schuze": {
     "18": {
@@ -233,13 +225,13 @@
       "synced_at": "2026-07-15T07:19:22.186161+00:00"
     },
     "25": {
-      "count": 4,
-      "max_cislo": 4,
-      "last_datum": "07.07.2026",
-      "steno_count": 115,
-      "last_steno_poradi": 115,
-      "last_steno_datum": "2026-07-07",
-      "synced_at": "2026-07-15T07:19:23.106839+00:00"
+      "count": 88,
+      "max_cislo": 88,
+      "last_datum": "15.07.2026",
+      "steno_count": 344,
+      "last_steno_poradi": 344,
+      "last_steno_datum": "2026-07-15",
+      "synced_at": "2026-07-17T09:51:30.974959+00:00"
     },
     "26": {
       "count": 4,
@@ -248,7 +240,7 @@
       "steno_count": 106,
       "last_steno_poradi": 106,
       "last_steno_datum": "2026-07-08",
-      "synced_at": "2026-07-15T07:19:24.161234+00:00"
+      "synced_at": "2026-07-17T09:51:46.960212+00:00"
     },
     "27": {
       "count": 130,
@@ -257,8 +249,7 @@
       "steno_count": 464,
       "last_steno_poradi": 464,
       "last_steno_datum": "2026-07-14",
-<<<<<<< HEAD
-      "synced_at": "2026-07-15T07:21:25.114380+00:00"
+      "synced_at": "2026-07-17T09:51:51.300862+00:00"
     },
     "28": {
       "count": 7,
@@ -267,18 +258,9 @@
       "steno_count": 85,
       "last_steno_poradi": 85,
       "last_steno_datum": "2026-07-14",
-      "synced_at": "2026-07-15T07:22:52.140676+00:00"
+      "synced_at": "2026-07-17T09:51:58.182736+00:00"
     }
   },
-  "updated_at": "2026-07-15T22:04:32.692263+00:00",
+  "updated_at": "2026-07-17T10:21:49.385452+00:00",
   "last_updated_schuze": []
-=======
-      "synced_at": "2026-07-16T05:53:46.038535+00:00"
-    }
-  },
-  "updated_at": "2026-07-16T05:53:46.038552+00:00",
-  "last_updated_schuze": [
-    27
-  ]
->>>>>>> 9eb669e (kontrola jmen)
 }

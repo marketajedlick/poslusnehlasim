@@ -19,31 +19,34 @@
       "steno": 464,
       "hlidac_token_used": true,
       "psp_steno_used": false,
-      "fetched_at": "2026-07-16T05:53:47.478751+00:00"
+      "fetched_at": "2026-07-17T10:21:50.167071+00:00"
     },
     "compose": {
       "done": true,
-      "days": 1,
+      "days": 2,
       "files": [
-        "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10.md"
+        "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10.md",
+        "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-14.md"
       ],
       "html_files": [
         "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10-steno.html",
-        "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10.html"
+        "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10.html",
+        "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-14-steno.html",
+        "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-14.html"
       ],
       "last_partial_compose": {
-        "den": "10.07.2026",
-        "built_at": "2026-07-16T05:51:07.973213+00:00",
+        "den": "14.7",
+        "built_at": "2026-07-17T10:28:47.100428+00:00",
         "days": 1,
         "files": [
-          "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10.md"
+          "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-14.md"
         ],
         "html_files": [
-          "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10.html",
-          "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-10-steno.html"
+          "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-14.html",
+          "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-14-steno.html"
         ]
       }
     }
   },
-  "built_at": "2026-07-16T05:53:53.856241+00:00"
+  "built_at": "2026-07-17T10:28:47.100550+00:00"
 }

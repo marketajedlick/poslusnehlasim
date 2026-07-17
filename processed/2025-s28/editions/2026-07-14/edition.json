@@ -1,0 +1,57 @@
+{
+  "key": "2025/28/14.07.2026",
+  "obdobi": 2025,
+  "schuze": 28,
+  "datum_unl": "14.07.2026",
+  "iso": "2026-07-14",
+  "state": "draft",
+  "topic_slugs": [
+    "novela-z-o-pozemnich-komunikacich-eu"
+  ],
+  "recommended_slugs": [
+    "novela-z-o-pozemnich-komunikacich-eu"
+  ],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-07-14/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "draft",
+    "stale": false,
+    "link_phrase_coverage": {
+      "total": 6,
+      "linked": 6,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 6,
+      "ok": 6,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 1,
+    "steno_passages": 6,
+    "steno_missing_article_phrase": 0,
+    "ok": false,
+    "errors": [
+      "slabá témata: novela-z-o-pozemnich-komunikacich-eu"
+    ]
+  },
+  "inputs": {
+    "votes_count": 7,
+    "votes_max_cislo": 7,
+    "steno_count": 85,
+    "steno_last_poradi": 85,
+    "topics_built_at": "2026-07-17T10:15:56.391004+00:00",
+    "fingerprint": "d7f60034e11ee5af"
+  },
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null
+}

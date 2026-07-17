@@ -1,0 +1,57 @@
+{
+  "slug": "debata-filip-turek-14-07",
+  "nazev": "Debata o nepřítomnosti Filipa Turka",
+  "datum": "14.07.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "Reakce Sněmovny na jízdu Filipa Turka a jeho nepřítomnost v sále.",
+  "koho": [
+    "Koho se to týká? Každého, kdo sleduje, jak politici řeší vlastní chyby veřejně."
+  ],
+  "fakty": [
+    {
+      "text": "Hřib chtěl přerušit schůzi, dokud Turek nepřijde nebo nerezignuje.",
+      "source": "steno",
+      "steno_id": "2025_27_00356",
+      "citace": "Takže já bych chtěl navrhnout procedurální hlasování k tomu, abychom tedy přerušili tuto schůzi do okamžiku, než se dostaví Filip Turek do sálu, a nebo do té doby, než rezignuje na své politické funkce."
+    },
+    {
+      "text": "Kupka: Turek se večer naoko omlouval a pak si z toho dělal legraci.",
+      "source": "steno",
+      "steno_id": "2025_27_00362",
+      "citace": "kdy se naoko omlouval, a večer si z toho dělal legraci sdílením příspěvků",
+      "link_phrase": "Kupka (ODS) pak chtěl pauzu do přítomnosti Turka bez dalších podmínek a připomněl"
+    },
+    {
+      "text": "Malá: z jednacího řádu se nemá dělat trhací kalendář.",
+      "source": "steno",
+      "steno_id": "2025_27_00364",
+      "citace": "se snažíte udělat z jednacího řádu trhací kalendář",
+      "link_phrase": "Malá (ANO) odpověděla"
+    },
+    {
+      "text": "Jurečka navrhl přerušit bod do přítomnosti premiéra.",
+      "source": "steno",
+      "steno_id": "2025_27_00366",
+      "citace": "tak já dávám procedurální návrh na přerušení tohoto bodu do přítomnosti pana premiéra Andreje Babiše",
+      "link_phrase": "Jurečka (KDU-ČSL) navrhl přerušit bod do příchodu premiéra"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Turek v sále chyběl",
+  "pocet_hlasovani": 0,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 71,
+    "pritomno_min": 115,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 1200,
+  "lead": "Po víkendové jízdě na I. P. Pavlova chyběl ve Sněmovně vládní zmocněnec pro Green Deal Filip Turek (Motoristé). Opozice chtěla vědět, proč v sále není, a koalice zase, jestli se má schůze kvůli poslanci zastavovat.",
+  "citace_text": "Takže já bych chtěl navrhnout procedurální hlasování k tomu, abychom tedy přerušili tuto schůzi do okamžiku, než se dostaví Filip Turek do sálu, a nebo do té doby, než rezignuje na své politické funkce.",
+  "citace_autor": "Zdeněk Hřib (Piráti)",
+  "pointa": "O Hřibově návrhu na přerušení Sněmovna nakonec nehlasovala. Kupka (ODS) pak chtěl pauzu do přítomnosti Turka bez dalších podmínek a připomněl, že Turek se večer naoko omlouval a pak si z toho dělal legraci. Malá (ANO) odpověděla, že z jednacího řádu se nemá dělat trhací kalendář, protože pauza se dává do přítomnosti ministra, ne poslance. Jurečka (KDU-ČSL) navrhl přerušit bod do příchodu premiéra, to Sněmovna zamítla.\n\nPoslušně podotýkám, že Turek ten den v sále nepromluvil, ale mluvilo se o něm skoro hodinu.",
+  "mean": "Filip Turek je vládní zmocněnec pro Green Deal a poslanec Motoristů. Po incidentu na pražské křižovatce ho opozice chtěla slyšet ve Sněmovně."
+}

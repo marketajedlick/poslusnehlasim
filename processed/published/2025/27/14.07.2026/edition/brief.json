@@ -1,0 +1,167 @@
+{
+  "datum_unl": "14.07.2026",
+  "iso": "2026-07-14",
+  "recommended": [
+    {
+      "slug": "novela-z-o-mezinarodni-spolupraci-pri-sprave-dan",
+      "nazev": "Novela z. o mezinárodní spolupráci při správě daní - EU",
+      "score": 69,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 71,
+          "pritomno_min": 115,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 7491,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "Potlesk z lavic Pirátů.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_27_00356",
+          "citace": "(Potlesk z lavic Pirátů.)"
+        },
+        {
+          "text": "Takže já bych chtěl navrhnout procedurální hlasování k tomu, abychom tedy přerušili tuto schůzi do okamžiku, než se dostaví Filip Turek do sálu, a nebo do té doby, než rezignuje na své politické funkce.",
+          "source": "steno",
+          "steno_id": "2025_27_00356",
+          "citace": "Takže já bych chtěl navrhnout procedurální hlasování k tomu, abychom tedy přerušili tuto schůzi do okamžiku, než se dostaví Filip Turek do sálu, a nebo do té doby, než rezignuje na své politické funkc"
+        },
+        {
+          "text": "A mrzí mě to i z toho důvodu, že když by tady byl, tak by mohl rovnou rezignovat na svůj poslanecký mandát i na ten mandát vládního zmocněnce.",
+          "source": "steno",
+          "steno_id": "2025_27_00356",
+          "citace": "A mrzí mě to i z toho důvodu, že když by tady byl, tak by mohl rovnou rezignovat na svůj poslanecký mandát i na ten mandát vládního zmocněnce."
+        },
+        {
+          "text": "Mnohé reakce v sále.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_27_00361",
+          "citace": "(Mnohé reakce v sále.)"
+        }
+      ]
+    },
+    {
+      "slug": "novela-z-o-dani-z-pridane-hodnoty-eu",
+      "nazev": "Novela z. o dani z přidané hodnoty - EU",
+      "score": 54,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 0,
+          "pritomno_min": 122,
+          "jednomyslne": true,
+          "spor": false,
+          "prazdny_sal": true
+        },
+        "steno_slov": 2644,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "Předložený návrh představuje především transpoziční novelu, jejíž hlavním účelem je promítnutí části směrnice Rady EU 2025/516 ze dne 11.",
+          "source": "steno",
+          "steno_id": "2025_27_00440",
+          "citace": "Předložený návrh představuje především transpoziční novelu, jejíž hlavním účelem je promítnutí části směrnice Rady EU 2025/516 ze dne 11."
+        },
+        {
+          "text": "Návrh zákona vám byl předem odeslán jako sněmovní tisk 218 dne 5.",
+          "source": "steno",
+          "steno_id": "2025_27_00440",
+          "citace": "Návrh zákona vám byl předem odeslán jako sněmovní tisk 218 dne 5."
+        },
+        {
+          "text": "Další rozsáhlejší změny vyplývající z této evropské úpravy budou předmětem samostatné novely s účinnosti od roku 2028 a následně od roku 2030.",
+          "source": "steno",
+          "steno_id": "2025_27_00440",
+          "citace": "Další rozsáhlejší změny vyplývající z této evropské úpravy budou předmětem samostatné novely s účinnosti od roku 2028 a následně od roku 2030."
+        },
+        {
+          "text": "Poznámka z pléna mimo mikrofon.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_27_00450",
+          "citace": "(Poznámka z pléna mimo mikrofon.)"
+        }
+      ]
+    },
+    {
+      "slug": "novela-z-o-zadavani-verejnych-zakazek-eu",
+      "nazev": "Novela z. o zadávání veřejných zakázek - EU",
+      "score": 54,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 0,
+          "pritomno_min": 121,
+          "jednomyslne": true,
+          "spor": false,
+          "prazdny_sal": true
+        },
+        "steno_slov": 2682,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "To znamená, abychom se tam nedostali, tak proto není možné to schválit v prvním čtení.",
+          "source": "steno",
+          "steno_id": "2025_27_00459",
+          "citace": "To znamená, abychom se tam nedostali, tak proto není možné to schválit v prvním čtení."
+        },
+        {
+          "text": "Bohužel, paní ministryně dělá úplně stejnou chybu jako všichni ostatní ministři financí, kteří se, bohužel, jakmile dosednou do té funkce, dopouštějí takové jako, řekl bych, kreativní matematiky.",
+          "source": "steno",
+          "steno_id": "2025_27_00459",
+          "citace": "Bohužel, paní ministryně dělá úplně stejnou chybu jako všichni ostatní ministři financí, kteří se, bohužel, jakmile dosednou do té funkce, dopouštějí takové jako, řekl bych, kreativní matematiky."
+        },
+        {
+          "text": "Například co se týče toho sídla Evropské vesmírné agentury, ta, která měla stát tedy na Palmovce, tam také bohužel probíhá ping-pong mezi jednotlivými neúspěšnými uchazeči.",
+          "source": "steno",
+          "steno_id": "2025_27_00459",
+          "citace": "Například co se týče toho sídla Evropské vesmírné agentury, ta, která měla stát tedy na Palmovce, tam také bohužel probíhá ping-pong mezi jednotlivými neúspěšnými uchazeči."
+        },
+        {
+          "text": "Námitky.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_27_00460",
+          "citace": "(Námitky.)"
+        }
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "slug": "vl-n-z-o-uhlikovem-vyrovnani-eu",
+      "score": 54,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "novela-z-o-podnikani-na-kapitalovem-trhu-eu",
+      "score": 48,
+      "reason": "mimo top 3 pro den"
+    }
+  ],
+  "day_stats": {
+    "pocet_hlas_zakon": 5,
+    "proslo_vote": 5,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": false,
+    "calendar_isos": [
+      "2026-07-14",
+      "2026-07-15"
+    ]
+  }
+}
