@@ -4,7 +4,7 @@
   "schuze": 25,
   "datum_unl": "15.07.2026",
   "iso": "2026-07-15",
-  "state": "published",
+  "state": "approved",
   "topic_slugs": [
     "vl-n-z-o-evidenci-trzeb-2"
   ],
@@ -49,18 +49,7 @@
     "topics_built_at": "2026-07-17T11:43:12.926420+00:00",
     "fingerprint": "d4f61dc6c099ea24"
   },
-  "published_at": "2026-07-17T12:22:25.360897+00:00",
-  "snapshot_dir": "published/2025/25/15.07.2026",
-  "supersedes": null,
-  "assets": {
-    "og": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s25/editions/2026-07-15/assets/2026-07-15.png",
-    "share": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s25/editions/2026-07-15/assets/2026-07-15.png",
-    "carousel": [
-      "01-ucet.png",
-      "carousel/02-citace.png",
-      "carousel/03-citace.png",
-      "carousel/05-skore.png"
-    ],
-    "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s25/editions/2026-07-15/assets/caption.txt"
-  }
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null
 }

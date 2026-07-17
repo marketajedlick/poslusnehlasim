@@ -20,5 +20,10 @@
     "* Bendl (ODS) chtěl pojistky proti zneužití dat z evidence tržeb",
     "* Papajanovský (STAN): vládní schizofrenie, EET a školkovné v jednom balíku"
   ],
-  "steno_zdroje": true
+  "steno_zdroje": true,
+  "jazykolam": {
+    "text": "Je to krok zpět, zpět k plošné administrativě, zpět k presumpci nedůvěry, zpět k politickému symbolu, zpět k představě, že stát má vždy raději sbírat více dat, ukládat více povinností a kontrolovat více lidí.",
+    "autor": "Jan Jakob",
+    "steno_id": "2025_25_00007"
+  }
 }

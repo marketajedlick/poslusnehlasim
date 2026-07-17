@@ -33,7 +33,20 @@ MANUAL: dict[str, dict[int, str]] = {
 
 def article_text(data: dict) -> str:
     parts: list[str] = []
-    for key in ("lead", "pointa", "pointa_tail", "mean", "kuriozita", "citace_text"):
+    for key in (
+        "lead",
+        "lead_tail",
+        "pointa",
+        "pointa_tail",
+        "pointa_end",
+        "pointa_close",
+        "mean",
+        "kuriozita",
+        "citace_text",
+        "citace2_text",
+        "citace3_text",
+        "citace4_text",
+    ):
         val = (data.get(key) or "").strip()
         if val:
             parts.append(val)
@@ -78,11 +91,18 @@ def ensure_phrase_in_article(data: dict, phrase: str, summary: str = "") -> bool
     phrase = phrase.strip().rstrip(".")
     if not phrase or len(phrase) < 8:
         return False
-    body = (data.get("mean") or "").strip()
+    # ponytail: dřív se fráze lepily do mean (Hlášení na velitelstvo); patří do těla článku
+    body = (data.get("pointa_end") or data.get("pointa_tail") or data.get("pointa") or "").strip()
     sent = summary.strip().rstrip(".") if summary else phrase
     if sent and sent[0].islower():
         sent = sent[0].upper() + sent[1:]
-    data["mean"] = f"{body} {sent}." if body else f"{sent}."
+    key = "pointa_end" if (data.get("pointa_end") or data.get("pointa_tail") or data.get("pointa")) else "pointa"
+    if key == "pointa_end" and not (data.get("pointa_end") or "").strip():
+        if (data.get("pointa_tail") or "").strip():
+            key = "pointa_tail"
+        else:
+            key = "pointa"
+    data[key] = f"{body} {sent}." if body else f"{sent}."
     return _find_phrase_in_text(article_text(data), phrase) is not None
 
 
