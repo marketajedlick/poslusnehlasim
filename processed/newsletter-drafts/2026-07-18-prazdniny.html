@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Poslušně hlásím · 18. července 2026</title>
+<style>
+/* Reální webové fonty pro klienty, které je podporují (Apple Mail, iOS). Ostatní použijí fallback. */
+@font-face{font-family:'Archivo';font-style:normal;font-weight:500 900;src:url('https://poslusnehlasim.cz/static/fonts/archivo-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:500 900;src:url('https://poslusnehlasim.cz/static/fonts/archivo-latin.woff2') format('woff2');}
+@font-face{font-family:'Anton';font-style:normal;font-weight:400;src:url('https://poslusnehlasim.cz/static/fonts/anton-400-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'Anton';font-style:normal;font-weight:400;src:url('https://poslusnehlasim.cz/static/fonts/anton-400-latin.woff2') format('woff2');}
+@font-face{font-family:'Old Standard TT';font-style:normal;font-weight:400;src:url('https://poslusnehlasim.cz/static/fonts/oldstandardtt-400-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'Old Standard TT';font-style:normal;font-weight:400;src:url('https://poslusnehlasim.cz/static/fonts/oldstandardtt-400-latin.woff2') format('woff2');}
+@font-face{font-family:'Old Standard TT';font-style:normal;font-weight:700;src:url('https://poslusnehlasim.cz/static/fonts/oldstandardtt-700-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'Old Standard TT';font-style:normal;font-weight:700;src:url('https://poslusnehlasim.cz/static/fonts/oldstandardtt-700-latin.woff2') format('woff2');}
+@font-face{font-family:'Old Standard TT';font-style:italic;font-weight:400;src:url('https://poslusnehlasim.cz/static/fonts/oldstandardtt-400italic-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'Old Standard TT';font-style:italic;font-weight:400;src:url('https://poslusnehlasim.cz/static/fonts/oldstandardtt-400italic-latin.woff2') format('woff2');}
+</style>
+<style>/* E-mailová varianta novin, zjednodušené styly pro inboxy. */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f7f2f0;
+  font-family: 'Old Standard TT', Georgia, 'Times New Roman', serif;
+  color: #262626;
+  -webkit-text-size-adjust: 100%;
+}
+.email-wrap {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f7f2f0;
+  border-radius: 3px;
+}
+.email-pad {
+  padding: 18px 16px 20px;
+}
+
+/* ---------- header ---------- */
+.head {
+  width: 100%;
+}
+.head td {
+  vertical-align: middle;
+}
+.head-cal {
+  width: 88px;
+}
+.head-title {
+  text-align: center;
+}
+.cal {
+  width: 88px;
+  background: #f0e6cf;
+  border: 2px solid #211c14;
+  text-align: center;
+}
+.cal-wd {
+  background: #211c14;
+  color: #f0e6cf;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 10px;
+  padding: 5px 2px 4px;
+}
+.cal-day {
+  font-family: 'Archivo', 'Arial Black', Impact, sans-serif;
+  color: #cf5a31;
+  font-size: 42px;
+  line-height: 0.9;
+  padding: 6px 0 0;
+}
+.cal-mo {
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 10px;
+  color: #211c14;
+  padding: 4px 2px 7px;
+}
+.masthead {
+  text-align: center;
+  padding: 6px 0 2px;
+}
+.eyebrow {
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  color: #6b6355;
+  text-align: center;
+}
+.mast {
+  font-family: 'Archivo', 'Arial Black', Arial, sans-serif;
+  font-weight: 900;
+  text-transform: none;
+  color: #262626;
+  font-size: 48px;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  margin: 6px 0 0;
+  text-align: center;
+}
+.email-mast {
+  text-align: center;
+}
+.pager-line {
+  text-align: center;
+  margin: 12px 0 0;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #262626;
+}
+.email-nav {
+  text-align: center;
+  margin: 10px 0 0;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.email-nav a {
+  color: #ff4411;
+  text-decoration: underline;
+}
+.email-section-rule {
+  text-align: center;
+  margin: 24px 0 4px;
+  border-top: 1px solid rgba(38,38,38,0.25);
+}
+.email-section-rule span {
+  display: inline-block;
+  transform: translateY(-9px);
+  background: #f7f2f0;
+  padding: 0 12px;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6b6355;
+}
+
+/* ---------- verdict (top) ---------- */
+.verdict-top {
+  margin-top: 18px;
+}
+
+/* ---------- items ---------- */
+.item {
+  width: 100%;
+}
+.item-wrap {
+  padding: 18px 0 16px;
+  border-bottom: 1.5px solid rgba(33, 28, 20, 0.25);
+}
+.item-inner {
+  width: 100%;
+}
+.item-head {
+  margin: 0 0 12px;
+  text-align: left;
+}
+.item-body {
+  vertical-align: top;
+  padding: 0;
+  text-align: left;
+}
+.num {
+  display: block;
+  font-family: 'Anton', Impact, 'Arial Black', sans-serif;
+  font-size: 56px;
+  line-height: 0.95;
+  color: #f4c430;
+  margin: 0 0 6px;
+  letter-spacing: 0;
+  text-align: left;
+}
+.item.i2 .num { color: #f4c430; }
+/* rotate() funguje v Apple Mail / iOS; Outlook a část Gmailu ignoruje → rovné razítko. */
+.stamp {
+  display: inline-block;
+  font-family: 'Archivo', 'Arial Black', Impact, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 11px;
+  color: #1f8a5b;
+  padding: 4px 10px 3px;
+  border: 2px solid #1f8a5b;
+  border-radius: 3px;
+  background: transparent;
+  margin: 0;
+  transform: none;
+}
+.stamp--email {
+  box-shadow: none;
+}
+.item.i2 .stamp {
+  transform: none;
+}
+.stamp.zvoleno {
+  color: #1f8a5b;
+  border-color: #1f8a5b;
+}
+.stamp.zamiteno {
+  color: #ff4411;
+  border-color: #ff4411;
+}
+.stamp.odlozeno {
+  color: #ff4411;
+  border-color: #ff4411;
+}
+.stamp.debata {
+  color: #9a7a00;
+  border-color: #f4c430;
+  background: transparent;
+}
+.h {
+  font-family: 'Archivo', 'Arial Black', Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 22px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-align: left;
+}
+/* zvýraznění jen v textu článku, ne v nadpisech */
+.p .hl, .mean .hl { display: inline; }
+.p {
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 12px 0 0;
+  text-align: left;
+}
+.p a.mean-link,
+.p a.steno-link,
+.mean a.mean-link,
+.mean a.steno-link,
+.kuriozita a.steno-link {
+  color: #211c14;
+  font-weight: inherit !important;
+  text-decoration: underline;
+}
+.item.i2 .p a.mean-link,
+.item.i2 .p a.steno-link,
+.item.i2 .mean a.mean-link,
+.item.i2 .mean a.steno-link,
+.item.i2 .kuriozita a.steno-link {
+  color: #211c14;
+}
+.kuriozita a.steno-link,
+.kuriozita a.mean-link {
+  color: #5a5348;
+}
+.kuriozita-links a {
+  color: #cf5a31;
+  font-family: inherit;
+  font-weight: normal !important;
+  text-decoration: underline;
+}
+.kuriozita-links {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.mean {
+  margin-top: 10px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #211c14;
+  font-weight: normal;
+  text-align: left;
+}
+.mean b,
+.mean-label {
+  font-family: inherit;
+  font-weight: bold;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  color: #ff4411;
+}
+.item.i2 .mean b,
+.item.i2 .mean-label { color: #ff4411; }
+
+.kuriozita-box {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border: 2px solid #cf5a31;
+  border-radius: 3px;
+  background: rgba(207, 90, 49, 0.06);
+  font-size: 15px;
+  line-height: 1.45;
+  color: #5a5348;
+  font-style: italic;
+  text-align: left;
+}
+.item.i2 .kuriozita-box {
+  border-color: #283c6e;
+  background: rgba(40, 60, 110, 0.06);
+}
+.item-quote {
+  margin: 16px 0 calc(12px + 1.75em);
+  padding: 14px 16px 14px 18px;
+  border: 1px solid rgba(38, 38, 38, 0.3);
+  border-left: 5px solid #ff4411;
+  border-radius: 0;
+  background: rgba(38, 38, 38, 0.045);
+  text-align: left;
+}
+.item.i2 .item-quote {
+  border-left-color: #ff4411;
+  background: rgba(38, 38, 38, 0.045);
+}
+.item-quote--jazykolam {
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  background: #ffffff;
+  box-shadow: 0 3px 0 rgba(38, 38, 38, 0.1);
+}
+.item.i2 .item-quote--jazykolam {
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  background: #ffffff;
+}
+.quote-mark {
+  font-size: 1.7em;
+  line-height: 0;
+  vertical-align: -0.2em;
+}
+.item-quote-by {
+  margin: 0;
+  font-family: 'Old Standard TT', Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.5;
+  color: #4a453f;
+}
+.item-quote-text {
+  margin: 0 0 8px;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 800;
+  font-style: normal;
+  color: #211c14;
+}
+.kuriozita-links-sep {
+  color: #5a5348;
+}
+.kuriozita {
+  margin-top: 12px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #5a5348;
+  font-style: normal;
+  text-align: left;
+}
+.kuriozita-label {
+  font-weight: 700;
+}
+
+.snemovni-listy {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1.5px solid rgba(33, 28, 20, 0.2);
+  text-align: left;
+}
+.listy-title {
+  font-family: 'Archivo', 'Arial Black', Impact, sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  margin: 0 0 10px;
+  color: #211c14;
+}
+.listy-meta,
+.listy-deck,
+.listy-p,
+.listy-footer {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #211c14;
+}
+.listy-h {
+  margin: 14px 0 8px;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #cf5a31;
+}
+.listy-ul {
+  margin: 0 0 10px;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #211c14;
+}
+
+/* ---------- verdict ---------- */
+.verdict {
+  margin: 22px 4px 24px;
+  padding: 22px 24px 18px;
+  background: #f4c430;
+  color: #211c14;
+  border-radius: 10px;
+}
+.verdict .q {
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.5;
+  margin: 0;
+}
+.verdict .q-quote {
+  font-style: inherit;
+  font-size: 24px;
+}
+.verdict-top .q .key {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 700;
+  text-transform: none;
+  color: #211c14;
+}
+.verdict .q-mark {
+  font-size: 34px;
+  line-height: 0;
+  vertical-align: -7px;
+}
+.verdict .q a.steno-link {
+  color: #211c14;
+  text-decoration: underline;
+}
+.verdict-foot {
+  width: 100%;
+  margin-top: 16px;
+}
+.verdict-head {
+  width: 10px;
+  vertical-align: bottom;
+}
+.verdict .sign {
+  font-family: 'Archivo', Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  color: #211c14;
+  margin: 0;
+}
+.verdict .tagline {
+  font-family: 'Old Standard TT', Georgia, serif;
+  font-style: italic;
+  font-size: 13px;
+  color: #211c14;
+  opacity: 0.72;
+  margin: 4px 0 0;
+}
+.email-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(33, 28, 20, 0.14);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.email-footer a {
+  color: #ff4411;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+.email-footer a:hover { text-decoration: underline; }
+.email-legal {
+  margin-top: 4px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(33, 28, 20, 0.14);
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #5a503e;
+}
+.email-legal a {
+  color: #5a503e;
+  text-decoration: underline;
+}
+
+/* ---------- mobile tweaks (NWL je mobilní layout ve výchozím stavu) ---------- */
+@media only screen and (max-width: 480px) {
+  .email-pad {
+    padding: 14px 12px 18px !important;
+  }
+  .mast {
+    font-size: 36px !important;
+    line-height: 0.95 !important;
+  }
+  .eyebrow {
+    font-size: 11px !important;
+    letter-spacing: 0.14em !important;
+  }
+  .num {
+    font-size: 48px !important;
+  }
+  .h {
+    font-size: 19px !important;
+  }
+}
+
+/* ---------- double opt-in ---------- */
+.doi-head {
+  text-align: center;
+  padding-bottom: 4px;
+}
+.doi-mast {
+  font-size: 46px;
+  line-height: 0.95;
+}
+.doi-body {
+  margin-top: 18px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.doi-intro {
+  margin: 0;
+  font-family: 'Old Standard TT', Georgia, 'Times New Roman', serif;
+  font-size: 17px;
+  line-height: 1.55;
+  color: #262626;
+  text-align: center;
+}
+.doi-quote-wrap {
+  margin-top: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.verdict-doi {
+  margin: 0;
+}
+.verdict-doi .q .key {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 700;
+  text-transform: none;
+  color: #211c14;
+}
+.doi-cta-wrap {
+  margin-top: 24px;
+  text-align: center;
+}
+.email-cta {
+  display: inline-block;
+  background: #ff4411;
+  color: #ffffff;
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 14px;
+  line-height: 1;
+  text-decoration: none;
+  padding: 15px 36px;
+  border-radius: 3px;
+}
+.doi-note {
+  margin: 18px 16px 0;
+  font-family: 'Old Standard TT', Georgia, 'Times New Roman', serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #6b6355;
+  text-align: center;
+}
+.doi-legal {
+  margin-top: 24px;
+}
+</style>
+</head>
+<body>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f7f2f0;">
+<tr>
+<td align="center" style="padding:0;">
+<table role="presentation" class="email-wrap" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px;background:#f7f2f0;border-radius:0;">
+<tr>
+<td class="email-pad">
+
+<div class="masthead" style="text-align:center;padding:6px 0 2px;">
+  <div class="eyebrow" style="font-family:Arial,Helvetica,sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:0.2em;font-size:12px;color:#6b6355;text-align:center;line-height:1.2;">Deník sněmovny</div>
+  <h1 class="mast email-mast" style="margin:6px 0 0;font-family:'Arial Black',Arial,sans-serif;font-weight:900;text-transform:none;color:#262626;font-size:46px;line-height:0.95;letter-spacing:-0.01em;text-align:center;">Poslušně<br>hlásím!</h1>
+  <div class="pager-line" style="text-align:center;margin:12px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;letter-spacing:0.05em;text-transform:uppercase;color:#262626;">V Praze, dne 18. července 2026</div>
+</div>
+
+<div class="verdict verdict-top" style="margin:22px 4px 24px;padding:22px 24px 18px;background:#f4c430;color:#211c14;border-radius:10px;">
+  <p class="q" style="font-family:'Archivo',Arial,Helvetica,sans-serif;font-style:normal;font-size:19px;line-height:1.5;margin:0;"><span class="q-quote" style="font-size:24px;"><span class="q-mark">„</span><span class="key" style="font-weight:700;">Poslušně hlásím,</span> že poslanci mají prázdniny a my s nimi. Další vydání až v týdnu od pětadvacátého srpna.<span class="q-mark">“</span></span></p>
+  <table role="presentation" class="verdict-foot" cellpadding="0" cellspacing="0" border="0" width="100%">
+  <tr>
+    <td class="verdict-head" width="10" valign="bottom" style="width:10px;vertical-align:bottom;"></td>
+    <td valign="bottom" style="vertical-align:bottom;padding-left:12px;">
+      <div class="sign">- Váš dobrý voják Švejk -</div>
+      <p class="tagline">Každý den to nejdůležitější ze Sněmovny.</p>
+    </td>
+  </tr>
+  </table>
+</div>
+
+
+
+<div class="email-section-rule" style="text-align:center;margin:24px 0 4px;border-top:1px solid rgba(38,38,38,0.25);"><span style="display:inline-block;transform:translateY(-9px);background:#f7f2f0;padding:0 12px;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;letter-spacing:0.14em;text-transform:uppercase;color:#6b6355;">Co se dělo?!</span></div>
+
+
+<table role="presentation" class="item" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td class="item-wrap" style="padding:18px 0 16px;border-bottom:1.5px solid rgba(33,28,20,0.25);">
+  <table role="presentation" class="item-inner" cellpadding="0" cellspacing="0" border="0" width="100%">
+  <tr>
+  <td class="item-body" valign="top" style="vertical-align:top;text-align:left;padding:0;">
+    <div class="item-head" style="margin:0 0 12px;text-align:left;">
+      <div class="num" style="display:block;font-family:'Anton',Impact,'Arial Black',sans-serif;font-size:56px;line-height:1;color:#f4c430;margin:0 0 8px;text-align:left;">01</div>
+      <h2 class="h" style="text-align:left;margin:0 0 8px;font-family:'Arial Black',Arial,sans-serif;font-weight:900;text-transform:uppercase;font-size:22px;line-height:1.05;color:#262626;">
+        Poslanecké<br>prázdniny
+      </h2>
+      
+      
+      
+      <span class="stamp stamp--email odlozeno" style="display:inline-block;margin:0;font-family:Arial,Helvetica,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:11px;color:#ff4411;padding:4px 10px 3px;border:2px solid #ff4411;border-radius:3px;background:transparent;">Odloženo</span>
+    </div>
+    <div class="p">Sněmovna si dala volno. Po předprázdninovém závěru s EET a dalšími zákony teď v sále nebude koho citovat, koho počítat ani koho překládat z poslanečtiny.</div>
+    
+    <blockquote class="item-quote" style="margin:16px 0 calc(12px + 1.75em);padding:14px 16px 14px 18px;border:1px solid rgba(38,38,38,0.3);border-left:5px solid #ff4411;background:rgba(38,38,38,0.045);text-align:left;">
+      <p class="item-quote-text"><span class="quote-mark">„</span><a class="steno-link" href="https://www.psp.cz/eknih/2025ps/stenprot/025schuz/s025058.htm" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;border-bottom:1px dotted rgba(40,60,110,.5);">Máme čas si odpočinout. Nevím, jestli v tom horku zchladíme horké hlavy, ale doufám, že jo.</a><span class="quote-mark">“</span></p>
+      
+      <p class="item-quote-by">Jiří Barták, 15. července 2026</p>
+      
+    </blockquote>
+    
+    
+    
+    <p class="p">Poslušně hlásím, že do týdne od pětadvacátého srpna nechodíme do sněmovny ani my. Archiv zůstává na poslusnehlasim.cz, poslední vydání je ze středy patnáctého.</p>
+    
+    
+    
+    
+    <p class="mean"><strong class="mean-label" style="color:#ff4411;font-weight:700;">Hlášení na velitelstvo: </strong><strong style="font-weight:700;">Poslanci mají prázdniny. Další deník až po návratu Sněmovny, v týdnu od 25. srpna.</strong></p>
+    
+    
+    
+  </td>
+  </tr>
+  </table>
+</td>
+</tr>
+</table>
+
+
+
+
+<div class="email-footer">
+  <p style="margin:0 0 10px;"><a href="https://poslusnehlasim.cz/vydani/2026-07-15/" style="color:#ff4411;">Číst vydání</a></p>
+  <p style="margin:0 0 10px;"><a href="https://poslusnehlasim.cz/vydani/" style="color:#ff4411;">Archiv všech vydání</a></p>
+  <p style="margin:0 0 16px;"><a href="https://poslusnehlasim.cz/pivo/#stamgast" style="color:#ff4411;">Kup Švejkovi pivo 🍺</a></p>
+</div>
+<div class="email-legal" style="margin-top:4px;padding-top:14px;border-top:1px solid rgba(33,28,20,0.14);text-align:center;font-size:12px;line-height:1.6;color:#5a503e;">
+  <p style="margin:0 0 8px;font-family:Arial,Helvetica,sans-serif;">Poslušně hlásím · poslusnehlasim.cz · Deník sněmovny</p>
+  <p style="margin:0 0 8px;font-family:Arial,Helvetica,sans-serif;">
+    <a href="*|WEBVERSION|*" style="color:#5a503e;text-decoration:underline;">On-line verze</a>
+  </p>
+  <p style="margin:0;font-family:Arial,Helvetica,sans-serif;">
+    Nechcete už dostávat e-maily?
+    <a href="*|UNSUB|*" style="color:#5a503e;text-decoration:underline;">Odhlásit odběr</a>
+  </p>
+</div>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
