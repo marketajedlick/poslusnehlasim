@@ -19,7 +19,7 @@
       "steno": 464,
       "hlidac_token_used": true,
       "psp_steno_used": false,
-      "fetched_at": "2026-07-17T10:21:50.167071+00:00"
+      "fetched_at": "2026-07-18T07:43:12.986403+00:00"
     },
     "compose": {
       "done": true,
@@ -36,7 +36,7 @@
       ],
       "last_partial_compose": {
         "den": "14.7",
-        "built_at": "2026-07-17T13:34:03.441697+00:00",
+        "built_at": "2026-07-18T07:51:05.258035+00:00",
         "days": 1,
         "files": [
           "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/out/noviny-dlouhe/2026-07-14.md"
@@ -48,5 +48,5 @@
       }
     }
   },
-  "built_at": "2026-07-17T13:34:03.441834+00:00"
+  "built_at": "2026-07-18T07:51:05.258329+00:00"
 }
