@@ -1,11 +1,11 @@
 {
   "obdobi": 2025,
   "unl": {
-    "etag": "6a824de1-2e4851",
-    "last_modified": "Sun, 16 Aug 2026 23:55:13 GMT",
+    "etag": "6a839f5f-2e4851",
+    "last_modified": "Mon, 17 Aug 2026 23:55:11 GMT",
     "content_length": 3033169,
     "lines": 2030,
-    "fetched_at": "2026-08-17T05:39:07.973682+00:00"
+    "fetched_at": "2026-08-18T05:34:22.472041+00:00"
   },
   "schuze": {
     "18": {
@@ -15,7 +15,7 @@
       "steno_count": 17,
       "last_steno_poradi": 17,
       "last_steno_datum": "2026-05-14",
-      "synced_at": "2026-08-17T05:39:31.859949+00:00"
+      "synced_at": "2026-08-18T05:34:43.480371+00:00"
     },
     "4": {
       "count": 1,
@@ -24,7 +24,7 @@
       "steno_count": 32,
       "last_steno_poradi": 32,
       "last_steno_datum": "2025-11-27",
-      "synced_at": "2026-08-17T05:39:14.576830+00:00"
+      "synced_at": "2026-08-18T05:34:28.102018+00:00"
     },
     "5": {
       "count": 159,
@@ -33,7 +33,7 @@
       "steno_count": 1850,
       "last_steno_poradi": 1850,
       "last_steno_datum": "2026-01-30",
-      "synced_at": "2026-08-17T05:39:15.740598+00:00"
+      "synced_at": "2026-08-18T05:34:29.286461+00:00"
     },
     "6": {
       "count": 13,
@@ -42,7 +42,7 @@
       "steno_count": 196,
       "last_steno_poradi": 196,
       "last_steno_datum": "2026-01-29",
-      "synced_at": "2026-08-17T05:39:16.710002+00:00"
+      "synced_at": "2026-08-18T05:34:30.366092+00:00"
     },
     "7": {
       "count": 91,
@@ -51,7 +51,7 @@
       "steno_count": 980,
       "last_steno_poradi": 980,
       "last_steno_datum": "2026-02-13",
-      "synced_at": "2026-08-17T05:39:18.377573+00:00"
+      "synced_at": "2026-08-18T05:34:31.557605+00:00"
     },
     "8": {
       "count": 4,
@@ -60,7 +60,7 @@
       "steno_count": 475,
       "last_steno_poradi": 475,
       "last_steno_datum": "2026-02-04",
-      "synced_at": "2026-08-17T05:39:19.371992+00:00"
+      "synced_at": "2026-08-18T05:34:32.645075+00:00"
     },
     "9": {
       "count": 6,
@@ -69,7 +69,7 @@
       "steno_count": 71,
       "last_steno_poradi": 71,
       "last_steno_datum": "2026-02-13",
-      "synced_at": "2026-08-17T05:39:20.477911+00:00"
+      "synced_at": "2026-08-18T05:34:33.795543+00:00"
     },
     "10": {
       "count": 263,
@@ -78,7 +78,7 @@
       "steno_count": 1775,
       "last_steno_poradi": 1775,
       "last_steno_datum": "2026-03-12",
-      "synced_at": "2026-08-17T05:39:21.637383+00:00"
+      "synced_at": "2026-08-18T05:34:34.808349+00:00"
     },
     "11": {
       "count": 9,
@@ -87,7 +87,7 @@
       "steno_count": 212,
       "last_steno_poradi": 212,
       "last_steno_datum": "2026-03-05",
-      "synced_at": "2026-08-17T05:39:23.423467+00:00"
+      "synced_at": "2026-08-18T05:34:35.740553+00:00"
     },
     "12": {
       "count": 7,
@@ -96,7 +96,7 @@
       "steno_count": 114,
       "last_steno_poradi": 114,
       "last_steno_datum": "2026-03-13",
-      "synced_at": "2026-08-17T05:39:25.209231+00:00"
+      "synced_at": "2026-08-18T05:34:36.740479+00:00"
     },
     "13": {
       "count": 111,
@@ -105,7 +105,7 @@
       "steno_count": 597,
       "last_steno_poradi": 597,
       "last_steno_datum": "2026-03-25",
-      "synced_at": "2026-08-17T05:39:26.223632+00:00"
+      "synced_at": "2026-08-18T05:34:37.917325+00:00"
     },
     "14": {
       "count": 194,
@@ -114,7 +114,7 @@
       "steno_count": 1635,
       "last_steno_poradi": 1635,
       "last_steno_datum": "2026-04-24",
-      "synced_at": "2026-08-17T05:39:27.350417+00:00"
+      "synced_at": "2026-08-18T05:34:38.914810+00:00"
     },
     "15": {
       "count": 1,
@@ -123,7 +123,7 @@
       "steno_count": 56,
       "last_steno_poradi": 56,
       "last_steno_datum": "2026-04-16",
-      "synced_at": "2026-08-17T05:39:28.591080+00:00"
+      "synced_at": "2026-08-18T05:34:40.344721+00:00"
     },
     "16": {
       "count": 71,
@@ -132,7 +132,7 @@
       "steno_count": 544,
       "last_steno_poradi": 544,
       "last_steno_datum": "2026-05-06",
-      "synced_at": "2026-08-17T05:39:29.881185+00:00"
+      "synced_at": "2026-08-18T05:34:41.498138+00:00"
     },
     "17": {
       "count": 70,
@@ -141,7 +141,7 @@
       "steno_count": 836,
       "last_steno_poradi": 836,
       "last_steno_datum": "2026-06-03",
-      "synced_at": "2026-08-17T05:39:30.919630+00:00"
+      "synced_at": "2026-08-18T05:34:42.605456+00:00"
     },
     "19": {
       "count": 14,
@@ -150,7 +150,7 @@
       "steno_count": 66,
       "last_steno_poradi": 66,
       "last_steno_datum": "2026-05-15",
-      "synced_at": "2026-08-17T05:39:32.860648+00:00"
+      "synced_at": "2026-08-18T05:34:44.482443+00:00"
     },
     "20": {
       "count": 368,
@@ -159,7 +159,7 @@
       "steno_count": 1902,
       "last_steno_poradi": 1902,
       "last_steno_datum": "2026-06-05",
-      "synced_at": "2026-08-17T05:39:34.150884+00:00"
+      "synced_at": "2026-08-18T05:34:45.565606+00:00"
     },
     "21": {
       "count": 10,
@@ -168,7 +168,7 @@
       "steno_count": 147,
       "last_steno_poradi": 147,
       "last_steno_datum": "2026-06-02",
-      "synced_at": "2026-08-17T05:39:35.384546+00:00"
+      "synced_at": "2026-08-18T05:34:46.524431+00:00"
     },
     "1": {
       "count": 20,
@@ -177,7 +177,7 @@
       "steno_count": 69,
       "last_steno_poradi": 69,
       "last_steno_datum": "2025-11-05",
-      "synced_at": "2026-08-17T05:39:09.854620+00:00"
+      "synced_at": "2026-08-18T05:34:24.350015+00:00"
     },
     "2": {
       "count": 75,
@@ -186,7 +186,7 @@
       "steno_count": 153,
       "last_steno_poradi": 153,
       "last_steno_datum": "2025-11-14",
-      "synced_at": "2026-08-17T05:39:11.486710+00:00"
+      "synced_at": "2026-08-18T05:34:25.571464+00:00"
     },
     "3": {
       "count": 18,
@@ -195,7 +195,7 @@
       "steno_count": 126,
       "last_steno_poradi": 126,
       "last_steno_datum": "2025-11-26",
-      "synced_at": "2026-08-17T05:39:12.878888+00:00"
+      "synced_at": "2026-08-18T05:34:26.721624+00:00"
     },
     "22": {
       "count": 2,
@@ -204,7 +204,7 @@
       "steno_count": 24,
       "last_steno_poradi": 24,
       "last_steno_datum": "2026-06-11",
-      "synced_at": "2026-08-17T05:39:36.323732+00:00"
+      "synced_at": "2026-08-18T05:34:47.422786+00:00"
     },
     "23": {
       "count": 4,
@@ -213,7 +213,7 @@
       "steno_count": 193,
       "last_steno_poradi": 193,
       "last_steno_datum": "2026-06-11",
-      "synced_at": "2026-08-17T05:39:38.268734+00:00"
+      "synced_at": "2026-08-18T05:34:48.497725+00:00"
     },
     "24": {
       "count": 286,
@@ -222,7 +222,7 @@
       "steno_count": 2442,
       "last_steno_poradi": 2442,
       "last_steno_datum": "2026-07-08",
-      "synced_at": "2026-08-17T05:39:39.944897+00:00"
+      "synced_at": "2026-08-18T05:34:49.534780+00:00"
     },
     "25": {
       "count": 88,
@@ -231,7 +231,7 @@
       "steno_count": 344,
       "last_steno_poradi": 344,
       "last_steno_datum": "2026-07-15",
-      "synced_at": "2026-08-17T05:39:41.474861+00:00"
+      "synced_at": "2026-08-18T05:34:50.708561+00:00"
     },
     "26": {
       "count": 4,
@@ -240,7 +240,7 @@
       "steno_count": 106,
       "last_steno_poradi": 106,
       "last_steno_datum": "2026-07-08",
-      "synced_at": "2026-08-17T05:39:42.877559+00:00"
+      "synced_at": "2026-08-18T05:34:51.591515+00:00"
     },
     "27": {
       "count": 130,
@@ -249,7 +249,7 @@
       "steno_count": 464,
       "last_steno_poradi": 464,
       "last_steno_datum": "2026-07-14",
-      "synced_at": "2026-08-17T05:39:43.868806+00:00"
+      "synced_at": "2026-08-18T05:34:52.612120+00:00"
     },
     "28": {
       "count": 7,
@@ -258,9 +258,38 @@
       "steno_count": 85,
       "last_steno_poradi": 85,
       "last_steno_datum": "2026-07-14",
-      "synced_at": "2026-08-17T05:39:45.178590+00:00"
+      "synced_at": "2026-08-18T05:34:53.586325+00:00"
     }
   },
-  "updated_at": "2026-08-17T21:28:28.882581+00:00",
-  "last_updated_schuze": []
+  "updated_at": "2026-08-18T05:34:53.586357+00:00",
+  "last_updated_schuze": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+  ]
 }
