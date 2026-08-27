@@ -55,3 +55,7 @@
 {"cislo": 55, "bod": "0", "datum": "25.08.2026", "cas": "20:00", "nazev": "Pořad schůze", "vysledek": "R", "pro": 64, "proti": 99, "zdrzel": 6, "nehlasoval": 1, "pritomno": 170, "je_porad_schuze": true}
 {"cislo": 56, "bod": "0", "datum": "25.08.2026", "cas": "20:01", "nazev": "Pořad schůze", "vysledek": "R", "pro": 68, "proti": 101, "zdrzel": 1, "nehlasoval": 0, "pritomno": 170, "je_porad_schuze": true}
 {"cislo": 57, "bod": "0", "datum": "25.08.2026", "cas": "20:02", "nazev": "Pořad schůze", "vysledek": "A", "pro": 100, "proti": 70, "zdrzel": 0, "nehlasoval": 0, "pritomno": 170, "je_porad_schuze": true}
+{"cislo": 58, "bod": "0", "datum": "26.08.2026", "cas": "09:06", "nazev": "Pořad schůze", "vysledek": "A", "pro": 89, "proti": 43, "zdrzel": 0, "nehlasoval": 0, "pritomno": 132, "je_porad_schuze": true}
+{"cislo": 59, "bod": "1", "datum": "26.08.2026", "cas": "13:32", "nazev": "Vl.n.z., kt. se mění některé z. v oblasti veřejných rozpočtů", "vysledek": "A", "pro": 101, "proti": 70, "zdrzel": 1, "nehlasoval": 0, "pritomno": 172, "je_porad_schuze": false}
+{"cislo": 60, "bod": "1", "datum": "26.08.2026", "cas": "13:40", "nazev": "Vl.n.z., kt. se mění některé z. v oblasti veřejných rozpočtů", "vysledek": "A", "pro": 104, "proti": 72, "zdrzel": 0, "nehlasoval": 0, "pritomno": 176, "je_porad_schuze": false}
+{"cislo": 61, "bod": "1", "datum": "26.08.2026", "cas": "13:43", "nazev": "Vl.n.z., kt. se mění některé z. v oblasti veřejných rozpočtů", "vysledek": "A", "pro": 156, "proti": 1, "zdrzel": 14, "nehlasoval": 5, "pritomno": 176, "je_porad_schuze": false}
