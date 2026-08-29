@@ -18,7 +18,7 @@ GitHub Pages na běžných stránkách neposílá HSTS, CSP ani `X-Frame-Options
 | A | `@` | `185.199.111.153` |
 | CNAME | `www` | `marketajedlick.github.io` |
 
-4. **SSL/TLS → Overview:** režim **Full (strict)** (GitHub má platný certifikát).
+4. **SSL/TLS → Overview:** režim **Full (strict)** (GitHub má platný certifikát). **Ne Flexible** — s GitHub „Enforce HTTPS“ vznikne redirect loop (301 na stejnou URL).
 5. V GitHubu **Settings → Pages → Custom domain** nech `poslusnehlasim.cz` — ověření projde i přes proxy. **Obnova certifikátu** ale občas selže (Cloudflare proxy); při chybě dočasně DNS only, viz workflow `site-health.yml`.
 
 ## Monitoring

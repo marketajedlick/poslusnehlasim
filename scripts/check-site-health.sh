@@ -7,12 +7,37 @@ REPO="${GITHUB_REPOSITORY:-marketajedlick/poslusnehlasim}"
 MIN_CERT_DAYS="${MIN_CERT_DAYS:-7}"
 
 echo "=== Homepage: $URL ==="
-status="$(curl -sS -o /dev/null -w '%{http_code}' -L --max-time 30 "$URL")"
-if [ "$status" != "200" ]; then
+headers="$(curl -sSI --max-time 30 "$URL" | tr -d '\r')"
+status="$(echo "$headers" | awk 'toupper($1) ~ /^HTTP/ { code=$2 } END { print code+0 }')"
+location="$(echo "$headers" | awk 'tolower($1)=="location:" { sub(/^[^:]*:[ \t]*/, ""); print; exit }')"
+
+if [ "$status" = "200" ]; then
+  echo "OK  HTTP 200"
+elif [ "$status" = "301" ] || [ "$status" = "302" ] || [ "$status" = "307" ] || [ "$status" = "308" ]; then
+  same_url="$(python3 - "$URL" "$location" <<'PY'
+from urllib.parse import urlparse, urlunparse
+import sys
+
+def norm(raw: str) -> str:
+    u = urlparse(raw.strip())
+    path = u.path or "/"
+    if path != "/" and path.endswith("/"):
+        path = path.rstrip("/")
+    return urlunparse((u.scheme.lower(), u.hostname.lower() if u.hostname else "", path, "", "", ""))
+
+print("yes" if norm(sys.argv[1]) == norm(sys.argv[2]) else "no")
+PY
+)"
+  if [ "$same_url" = "yes" ]; then
+    echo "::error::Redirect loop (HTTP $status → $location). Typicky Cloudflare SSL „Flexible“ + GitHub Enforce HTTPS — nastav Full (strict)."
+    exit 1
+  fi
+  echo "::error::Homepage vrátila HTTP $status → $location (očekáváno 200 bez redirectu)"
+  exit 1
+else
   echo "::error::Homepage vrátila HTTP $status (očekáváno 200)"
   exit 1
 fi
-echo "OK  HTTP 200"
 
 echo
 echo "=== GitHub Pages certifikát ($REPO) ==="
