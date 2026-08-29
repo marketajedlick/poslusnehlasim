@@ -1,0 +1,28 @@
+name: Site health check
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Denně 06:00 UTC (08:00 CET) — při selhání GitHub pošle e-mail watcherům repa
+    - cron: "0 6 * * *"
+
+concurrency:
+  group: site-health
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Homepage + TLS certifikát
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MIN_CERT_DAYS: "7"
+        run: |
+          chmod +x ./scripts/check-site-health.sh
+          ./scripts/check-site-health.sh

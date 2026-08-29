@@ -19,7 +19,11 @@ GitHub Pages na běžných stránkách neposílá HSTS, CSP ani `X-Frame-Options
 | CNAME | `www` | `marketajedlick.github.io` |
 
 4. **SSL/TLS → Overview:** režim **Full (strict)** (GitHub má platný certifikát).
-5. V GitHubu **Settings → Pages → Custom domain** nech `poslusnehlasim.cz` — ověření projde i přes proxy.
+5. V GitHubu **Settings → Pages → Custom domain** nech `poslusnehlasim.cz` — ověření projde i přes proxy. **Obnova certifikátu** ale občas selže (Cloudflare proxy); při chybě dočasně DNS only, viz workflow `site-health.yml`.
+
+## Monitoring
+
+Denní GitHub Actions workflow [`.github/workflows/site-health.yml`](../.github/workflows/site-health.yml) kontroluje HTTP 200 homepage a stav certifikátu v GitHub Pages API. Při selhání (web nedostupný, certifikát ne `approved`, expirace za méně než 7 dní) workflow spadne a GitHub pošle e-mail watcherům repa. Lokálně: `./scripts/check-site-health.sh`.
 
 ## 2. HSTS (doporučeno mimo Transform Rules)
 
