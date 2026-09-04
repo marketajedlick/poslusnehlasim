@@ -1,0 +1,38 @@
+{
+  "datum": "25.08.2026",
+  "den": "úterý",
+  "topic_slugs": [
+    "debata-prezidentske-veto-rozpoctova-odpovednost-25-srpna",
+    "debata-porad-s29-25-srpna"
+  ],
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 600,
+    "end_cas": "20:02",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "slovnicek": [
+    "prezidentské veto",
+    "rozpočtová odpovědnost",
+    "pořad schůze",
+    "fiskální pravidla"
+  ],
+  "dnesni_ucet": "Po prázdninách debata o vetu,\nopozice mluvila o dluhu a bianko šeku.",
+  "zaver": "že poslanci se po prázdninách celý den hádali, jestli stát smí víc utracet a půjčovat si. Do Sněmovny se totiž po prezidentském vetu vrátil zákon o rozpočtové odpovědnosti a Sněmovna debatovala o tom, zda ho přesto schválí.",
+  "vysledek": [
+    "* Hřib (Piráti) ukázal asi kreditku a řekl, že vláda chce zadlužovat bez limitů",
+    "* Havel (TOP 09) trhal kalendář slibů a položil ho před Schillerovou",
+    "* Jakob (TOP 09) připomněl, že o stejném zákonu už Sněmovna hlasovala potřetí",
+    "* Schillerová (ANO) hájila přehlasování veta, prezident si ji podle ní mohl pozvat"
+  ],
+  "jazykolam": {
+    "text": "Plnění předvolebních slibů Motoristů sobě, kteří se identifikují jako pravicová strana, ale přitom otvírají cestu pro neodpovědné rekordní zadlužení naší země bez omezení a kontroly.",
+    "autor": "Zdeněk Hřib (Piráti)",
+    "steno_id": "2025_29_00009",
+    "href": "https://www.psp.cz/eknih/2025ps/stenprot/029schuz/s029003.htm#r2"
+  }
+}

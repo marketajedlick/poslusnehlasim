@@ -312,15 +312,19 @@ class PspUrlResolver:
 
         cache_key = _psp_cache_key(fallback_url, citace)
         self._load_pages()
-        resolved = self._fetcher_lazy().resolve_url_for_citace(
-            self.paths.obdobi,
-            self.paths.schuze,
-            speaker,
-            citace,
-            fallback_url=fallback_url,
-            page_urls=self._page_urls,
-            page_text_cache=self._page_text_cache,
-        )
+        try:
+            resolved = self._fetcher_lazy().resolve_url_for_citace(
+                self.paths.obdobi,
+                self.paths.schuze,
+                speaker,
+                citace,
+                fallback_url=fallback_url,
+                page_urls=self._page_urls,
+                page_text_cache=self._page_text_cache,
+            )
+        except OSError:
+            # ponytail: bez sítě stačí fallback URL ze steno.jsonl
+            return fallback_url
         url_cache[cache_key] = resolved
         self._save_url_cache()
         return resolved

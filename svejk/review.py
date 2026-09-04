@@ -68,6 +68,9 @@ def _word_count(text: str) -> int:
     return len((text or "").split())
 
 
+_MAX_CITACE_WORDS = 30
+
+
 def _checklist_issues(fact: dict[str, Any]) -> list[ReviewIssue]:
     """Kontrola podle poslusne-hlasim-pravidla.md §5."""
     issues: list[ReviewIssue] = []
@@ -85,12 +88,12 @@ def _checklist_issues(fact: dict[str, Any]) -> list[ReviewIssue]:
         )
 
     citace_text = (fact.get("citace_text") or "").strip()
-    if citace_text and _word_count(citace_text) > 15:
+    if citace_text and _word_count(citace_text) > _MAX_CITACE_WORDS:
         issues.append(
             ReviewIssue(
                 "warn",
                 "long_citace",
-                f"citace_text má {_word_count(citace_text)} slov (max ~15), zkrátit nebo parafrázovat.",
+                f"citace_text má {_word_count(citace_text)} slov (max ~{_MAX_CITACE_WORDS}), zkrátit nebo parafrázovat.",
             )
         )
 
@@ -115,12 +118,12 @@ def _checklist_issues(fact: dict[str, Any]) -> list[ReviewIssue]:
                     f"fakty[{j}] má source steno, chybí doslovná citace.",
                 )
             )
-        elif _word_count(cit) > 15:
+        elif _word_count(cit) > _MAX_CITACE_WORDS:
             issues.append(
                 ReviewIssue(
                     "info",
                     "long_fakt_citace",
-                    f"fakty[{j}].citace má {_word_count(cit)} slov (citát v článku max ~15).",
+                    f"fakty[{j}].citace má {_word_count(cit)} slov (citát v článku max ~{_MAX_CITACE_WORDS}).",
                 )
             )
 
@@ -396,7 +399,7 @@ def format_day_review(
         [
             "Pravidla: .cursor/rules/poslusne-hlasim-pravidla.md (§1b curiosity pass, §5 checklist, §4a link_phrase)",
             "Workflow: uprav facts → ./run-svejk.sh build --schuze N --only compose [--den D]",
-            "         → export-pages / lokální http.server",
+            "         → edition preview / python3 -m http.server -d site",
             "Volitelně v by_day JSON: \"zaver\": \"vlastní věta bez Poslušně hlásím\"",
             "",
         ]

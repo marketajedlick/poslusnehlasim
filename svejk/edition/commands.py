@@ -59,6 +59,22 @@ def cmd_edition_link_phrases(args: argparse.Namespace) -> int:
     return 0
 
 
+def _serve_site_dir(site_dir: Path, host: str, port: int) -> None:
+    import functools
+    import http.server
+
+    handler = functools.partial(
+        http.server.SimpleHTTPRequestHandler,
+        directory=str(site_dir),
+    )
+    with http.server.ThreadingHTTPServer((host, port), handler) as httpd:
+        print(f"Server: http://{host}:{port}/", file=sys.stderr)
+        try:
+            httpd.serve_forever()
+        except KeyboardInterrupt:
+            print("\nUkončeno.", file=sys.stderr)
+
+
 def cmd_edition_preview(args: argparse.Namespace) -> int:
     paths = _paths(args)
     datum_unl, iso, _ = resolve_edition_day(paths, args.den)
@@ -68,12 +84,20 @@ def cmd_edition_preview(args: argparse.Namespace) -> int:
     print(f"Compose hotovo: {md}")
     if html.is_file():
         print(f"HTML: {html}")
-    if args.serve:
-        from svejk.build.export_pages import run_export_pages
 
-        run_export_pages(args.obdobi, args.out, base_path=args.base_path, cname="")
-        print(f"Export: {args.out}")
-        print(f"Náhled: http://127.0.0.1:{args.port}/vydani/{iso}/")
+    from svejk.build.export_pages import copy_draft_preview, sync_static_assets
+
+    site_dir = args.out.resolve()
+    sync_static_assets(site_dir)
+    copied = copy_draft_preview(paths, iso, site_dir)
+    for dest in copied:
+        print(f"Preview: {dest.relative_to(site_dir.parent)}")
+    preview_url = f"http://127.0.0.1:{args.port}/preview/{iso}.html"
+    print(f"Náhled: {preview_url}")
+    if not args.serve:
+        print(f"Server: python3 -m http.server -d {site_dir} {args.port}")
+    else:
+        _serve_site_dir(site_dir, args.host, args.port)
     return 0
 
 
@@ -161,9 +185,13 @@ def register_edition_parser(sub: argparse._SubParsersAction) -> None:
 
     p_prev = ed_sub.add_parser("preview", help="Compose + volitelně export náhledu")
     _common(p_prev)
-    p_prev.add_argument("--serve", action="store_true", help="Export do site/ pro náhled")
+    p_prev.add_argument(
+        "--serve",
+        action="store_true",
+        help="Spustit http.server nad site/ (static + site/preview/)",
+    )
     p_prev.add_argument("-o", "--out", type=Path, default=Path("site"))
-    p_prev.add_argument("--base-path", default="")
+    p_prev.add_argument("--host", default="127.0.0.1")
     p_prev.add_argument("--port", type=int, default=8765)
     p_prev.set_defaults(func=cmd_edition_preview)
 

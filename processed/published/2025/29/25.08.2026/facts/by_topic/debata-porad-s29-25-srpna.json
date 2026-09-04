@@ -1,0 +1,59 @@
+{
+  "slug": "debata-porad-s29-25-srpna",
+  "nazev": "Debata o pořadu schůze",
+  "datum": "25.08.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "padesát čtyři návrhů opozice, které do pořadu schůze neprošly, a jediný bod, který zůstal",
+  "koho": [
+    "Koho se to týká? Spíš pozorovatele politiky. Bez schváleného pořadu se k zákonům nedostanou ani poslanci."
+  ],
+  "fakty": [
+    {
+      "text": "Kučera chtěl jako první bod sucho, vláda podle něj nepřišla.",
+      "source": "steno",
+      "steno_id": "2025_29_00027",
+      "citace": "budeme řešit to nejzásadnější, co nás v těch minulých týdnech potkalo, a to katastrofální sucho.",
+      "link_phrase": "Kučera (TOP 09): postup vlády proti suchu"
+    },
+    {
+      "text": "Bureš znovu žádal zrušení zákazu prodeje o svátcích.",
+      "source": "steno",
+      "steno_id": "2025_29_00059",
+      "citace": "předstupuji před vás dnes s pocitem určitého déjà vu",
+      "link_phrase": "zrušit zákaz prodeje o svátcích"
+    },
+    {
+      "text": "Bureš: občan musí zkoumat, jestli je zlý nebo hodný svátek.",
+      "source": "steno",
+      "steno_id": "2025_29_00059",
+      "citace": "jestli je dnes ten zlý svátek, kdy mu stát zakázal koupit si boty nebo lednici"
+    },
+    {
+      "text": "Skopeček večer četl návrhy bodů jeden po druhém, většina padla.",
+      "source": "steno",
+      "steno_id": "2025_29_00102",
+      "citace": "Tím jsme se vypořádali se všemi navrženými změnami nebo doplněními programu.",
+      "link_phrase": "Skopeček (ODS) uzavřel maraton hlasování"
+    },
+    {
+      "text": "Do pořadu zůstal zákon o veřejných rozpočtech, který vrátil prezident.",
+      "source": "steno",
+      "steno_id": "2025_29_00103",
+      "citace": "vráceno prezidentem",
+      "link_phrase": "který prezident vetoval"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 4,
+  "nadpis": "Co do pořadu nedošlo",
+  "lead": "Po prázdninách si opozice připravila vlastní program schůze. Sucho, heřmanická halda, sváteční nákupy, privatizace letiště, kauza osmdesát milionů u práce.",
+  "pointa": "Opozice chtěla do programu jednání poslanecké sněmovny dostat tyto témata:\n\n<strong>Sucho a voda</strong>\n- Hlavatý (STAN): jak zajistit pitnou vodu při suchu\n- Rakušan (STAN): plán kroků vlády proti dopadům sucha\n- Kučera (TOP 09): postup vlády proti suchu\n- Kupka (ODS): bod „Voda pro Česko“\n- Svárovská (Zelení, klub Pirátů): plán sucha a velké vodní stavby\n- Moricová (Piráti): sucho a vláda / sucho a zvířata\n- Turek (Piráti): jak zadržet vodu v krajině\n\n<strong>Heřmanická halda</strong>\n- Hladík (KDU-ČSL), Svárovská (Zelení, klub Pirátů) a Niemiec (KDU-ČSL), každý jiným titulkem",
+  "pointa_tail": "<strong>Silnice a doprava</strong>\n- Šebelová (STAN): proč stát neposílá peníze na silnice v Moravskoslezském kraji\n- Rakušan (STAN): tristní stav krajských silnic\n- Jurečka (KDU-ČSL): financování silnic II. a III. třídy\n- Krainer (Piráti): konec státních příspěvků na opravy silnic\n- Schrek (Piráti): nesplněné sliby vlády v dopravě\n\n<strong>Další návrhy</strong>\n- Bureš (ODS): zrušit zákaz prodeje o svátcích\n- Jurečka (KDU-ČSL): kauza osmdesát milionů na ministerstvu práce a privatizace letiště v Praze\n- Kupka (ODS): letní kauzy vlády / útoky na demokratické instituce\n- Baxa (ODS): kulturní politika ministra Klempíře (Motoristé)\n- Hřib (Piráti): Motoristé a zadlužování\n- Stojanová (Piráti): „Premiér Andrej Babiš utrácí, mladí splácejí“\n\nNic z toho do pořadu neprošlo. Po hodinách hlasování prošel jediný bod: zákon o rozpočtové odpovědnosti, který prezident vetoval a který má vládě usnadnit zadlužování. Tento bod prošel, a tedy to byl bod, o kterém se dnes debatovalo.",
+  "pointa_end": "",
+  "mean": "Pořad určuje, o čem se ten den mluví. Opozice chtěla zařadit sucho, silnice nebo kauzy, ale ani jeden návrh neprošel. Zůstal jen zákon o zadlužování, který se vrátil do sněmovny vetem od prezidenta.",
+  "citace_text": "Tento zákon, vážení přítomní, udělal z českých svátků rébus. Je to zákon, který s metrem v ruce měří plochu prodejen a říká: Ty máš 199 metrů, ty smíš sloužit lidem, ale ty, ty už máš 201 metrů čtverečních, ty jsi pro společnost nebezpečný a musíš mít mříž.",
+  "citace_autor": "Jan Bureš (ODS)",
+  "steno_id": "2025_29_00059",
+  "pocet_hlasovani": 56,
+  "proslo": false
+}

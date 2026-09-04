@@ -24,8 +24,9 @@ Pipeline: **raw** (`votes.jsonl`, volitelně `steno.jsonl`) → **aligned** (`to
 
 # po ruční úpravě facts přegenerovat noviny + lokální náhled
 ./run-svejk.sh build --schuze 20 --only compose --den 28.5
-./run-svejk.sh export-pages --obdobi 2025 --out site --cname ""
+./run-svejk.sh edition preview --schuze 20 --den 28.5
 python3 -m http.server -d site 8765
+# → http://127.0.0.1:8765/preview/2026-05-28.html
 ```
 
 Co typicky upravovat v `facts/by_topic/<slug>.json`:

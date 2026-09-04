@@ -1,0 +1,70 @@
+{
+  "key": "2025/29/25.08.2026",
+  "obdobi": 2025,
+  "schuze": 29,
+  "datum_unl": "25.08.2026",
+  "iso": "2026-08-25",
+  "state": "published",
+  "topic_slugs": [
+    "debata-prezidentske-veto-rozpoctova-odpovednost-25-srpna",
+    "debata-porad-s29-25-srpna"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-08-25/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "stale",
+    "stale": true,
+    "link_phrase_coverage": {
+      "total": 12,
+      "linked": 10,
+      "percent": 83.3,
+      "missing": [
+        "debata-porad-s29-25-srpna[2]",
+        "debata-porad-s29-25-srpna[3]"
+      ]
+    },
+    "citace_in_steno": {
+      "checked": 12,
+      "ok": 12,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 1,
+    "steno_passages": 14,
+    "steno_missing_article_phrase": 2,
+    "ok": false,
+    "errors": [
+      "slabá témata: debata-porad-s29-25-srpna"
+    ]
+  },
+  "inputs": {
+    "votes_count": 61,
+    "votes_max_cislo": 61,
+    "steno_count": 247,
+    "steno_last_poradi": 247,
+    "topics_built_at": "2026-08-28T15:21:55.139411+00:00",
+    "fingerprint": "674dbf32014d0848"
+  },
+  "published_at": "2026-09-04T17:24:24.374288+00:00",
+  "snapshot_dir": "published/2025/29/25.08.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s29/editions/2026-08-25/assets/2026-08-25.png",
+    "share": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s29/editions/2026-08-25/assets/2026-08-25.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png",
+      "carousel/04-citace.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s29/editions/2026-08-25/assets/caption.txt"
+  }
+}

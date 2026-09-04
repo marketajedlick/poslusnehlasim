@@ -1,0 +1,77 @@
+{
+  "slug": "debata-prezidentske-veto-rozpoctova-odpovednost-25-srpna",
+  "nazev": "Debata o prezidentském vetu k rozpočtovým pravidlům",
+  "datum": "25.08.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "prezident Pavlovo veto k zákonu, který má uvolnit pravidla pro státní dluhy a výdaje",
+  "koho": [
+    "Koho se to týká? Každého, kdo platí daně a kdo se bojí, že stát si bude půjčovat víc, než unese."
+  ],
+  "fakty": [
+    {
+      "text": "Malá: veto k rozpočtové odpovědnosti je priorita, chce jednat i po devatenácté a jednadvacáté.",
+      "source": "steno",
+      "steno_id": "2025_29_00003",
+      "citace": "prezidentské veto, které se týká rozpočtové odpovědnosti, je pro nás priorita, chceme jej projednat",
+      "link_phrase": "Malá (ANO) hned ráno navrhla"
+    },
+    {
+      "text": "Hřib ukázal asi kreditku a řekl, že vláda chce zadlužovat bez limitů.",
+      "source": "steno",
+      "steno_id": "2025_29_00009",
+      "citace": "Vláda chce takovouhle kreditku pro Andreje Babiše, tak aby mohla zadlužovat naši zemi bez omezení, bez kontroly, bez jakýchkoliv limitů.",
+      "link_phrase": "Hřib (Piráti) ukázal asi kreditku"
+    },
+    {
+      "text": "Hřib: veto je jedna z posledních brzd.",
+      "source": "steno",
+      "steno_id": "2025_29_00009",
+      "citace": "prezidentovo veto bylo jednou z posledních brzd",
+      "link_phrase": "prezidentovo veto bylo jednou z posledních brzd"
+    },
+    {
+      "text": "Havel trhal kalendář a předal ho Schillerové.",
+      "source": "steno",
+      "steno_id": "2025_29_00013",
+      "citace": "vláda si dělá trhací kalendář z rozpočtu, z veřejných rozpočtů České republiky",
+      "link_phrase": "Havel (TOP 09) si připravil trhací kalendář"
+    },
+    {
+      "text": "Havel: prezident vetoval bianko šek, ne nemocnice.",
+      "source": "steno",
+      "steno_id": "2025_29_00013",
+      "citace": "Prezident vám vetoval bianko šek vystavený na účet občanů",
+      "link_phrase": "prezident vám vetoval bianko šek"
+    },
+    {
+      "text": "Jakob: o zákonu rozhodujeme potřetí.",
+      "source": "steno",
+      "steno_id": "2025_29_00106",
+      "citace": "nerozhodujeme ani podruhé, ale dokonce potřetí",
+      "link_phrase": "Jakob (TOP 09) připomněl"
+    },
+    {
+      "text": "Schillerová: prezident si ji mohl pozvat, nepřišla konzultace.",
+      "source": "steno",
+      "steno_id": "2025_29_00007",
+      "citace": "u tohoto zákona žádná taková konzultace k mé velké lítosti do dnešního dne neproběhla.",
+      "link_phrase": "Schillerová (ANO) řekla"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Trhací kalendář dluhů",
+  "lead": "Po letní pauze se Sněmovna vrátila k zákonu, který má uvolnit pravidla pro státní dluhy. Prezident Pavlovo veto k němu vrátil zákon zpátky, vláda chce veto přehlasovat, opozice říká, že jde o bianko šek na účet daňových poplatníků. Hlasovat se o tom má až druhý den.",
+  "pointa": "Malá (ANO) hned ráno navrhla, aby se jednalo i po devatenácté a jednadvacáté, protože veto k rozpočtové odpovědnosti je pro koalici priorita. Hřib (Piráti) ukázal asi kreditku a řekl, že vláda chce zadlužovat bez limitů, a že prezidentovo veto bylo jednou z posledních brzd. Havel (TOP 09) si připravil trhací kalendář, list po listu trhal sliby o důchodové reformě a jednodušší daňovou reformu, kalendář pak položil před ministryni Schillerovou.",
+  "pointa_tail": "Schillerová (ANO) řekla, že prezident si ji mohl pozvat, konzultace ale neproběhla, a hájila návrh jako nutnost pro obranu i investice. Jakob (TOP 09) připomněl, že o stejném zákonu už Sněmovna hlasovala potřetí, a varoval před méně kontroly a víc výdajů. Prezident vám vetoval bianko šek, ne nemocnice, apeloval Havel. O výsledku se rozhodne až druhý den.",
+  "pointa_end": "",
+  "mean": "Stát si chce ulehčit pravidla, kolik smí utratit nad rámec příjmů. Když zákon projde, bude snazší schvalovat vyšší schodky bez toho, aby vláda musela hned šetřit jinde.",
+  "citace_text": "Vláda chce takovouhle kreditku pro Andreje Babiše, tak aby mohla zadlužovat naši zemi bez omezení, bez kontroly, bez jakýchkoliv limitů.",
+  "citace_autor": "Zdeněk Hřib (Piráti)",
+  "steno_id": "2025_29_00009",
+  "citace2_text": "jsem si tady připravil takový trhací kalendář (Ukazuje materiál.), protože vláda si dělá trhací kalendář z rozpočtu, z veřejných rozpočtů České republiky a možná taky ze svých plánů a ze svých slibů.",
+  "citace2_autor": "Matěj Ondřej Havel (TOP 09)",
+  "steno_id2": "2025_29_00013",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

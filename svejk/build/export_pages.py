@@ -102,6 +102,47 @@ _OG_SHARE = _STATIC / "og-share.png"
 _SVEJK_TERRA = _STATIC / "svejk-terra.png"
 
 
+def sync_static_assets(out_dir: Path) -> None:
+    """CSS, fonty a favicon do site/static/ (bez mazání zbytku site/)."""
+    out = Path(out_dir)
+    static_dir = out / "static"
+    static_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(_CSS, static_dir / "noviny-dlouhe.css")
+    if _SATELLITE_CSS.is_file():
+        shutil.copy2(_SATELLITE_CSS, static_dir / "satellite.css")
+    if _ADMIN_CSS.is_file():
+        shutil.copy2(_ADMIN_CSS, static_dir / "admin.css")
+    shutil.copy2(_FONTS_CSS, static_dir / "fonts.css")
+    fonts_dest = static_dir / "fonts"
+    if fonts_dest.exists():
+        shutil.rmtree(fonts_dest)
+    shutil.copytree(_FONTS_DIR, fonts_dest)
+    if _FAVICON_SVG.is_file():
+        shutil.copy2(_FAVICON_SVG, static_dir / "ph-fav.svg")
+    if _FAVICON_PNG.is_file():
+        shutil.copy2(_FAVICON_PNG, static_dir / "favicon.png")
+        shutil.copy2(_FAVICON_PNG, static_dir / "apple-touch-icon.png")
+        shutil.copy2(_FAVICON_PNG, out / "favicon.ico")
+    if _OG_SHARE.is_file():
+        shutil.copy2(_OG_SHARE, static_dir / "og-share.png")
+    if _SVEJK_TERRA.is_file():
+        shutil.copy2(_SVEJK_TERRA, static_dir / "svejk-terra.png")
+
+
+def copy_draft_preview(paths: SchuzePaths, iso: str, site_dir: Path) -> list[Path]:
+    """Draft HTML z processed/out → site/preview/ (lokální náhled před schválením)."""
+    preview_dir = Path(site_dir) / "preview"
+    preview_dir.mkdir(parents=True, exist_ok=True)
+    copied: list[Path] = []
+    for name in (f"{iso}.html", f"{iso}-steno.html"):
+        src = paths.noviny_dlouhe_dir() / name
+        if src.is_file():
+            dest = preview_dir / name
+            shutil.copy2(src, dest)
+            copied.append(dest)
+    return copied
+
+
 def _write_html(path: Path, html: str) -> None:
     if ma_dlouhou_pomlcku(html):
         raise ValueError(
@@ -280,25 +321,7 @@ def run_export_pages(
     if domain:
         (out / "CNAME").write_text(domain.strip() + "\n", encoding="utf-8")
 
-    static_dir = out / "static"
-    static_dir.mkdir()
-    shutil.copy2(_CSS, static_dir / "noviny-dlouhe.css")
-    if _SATELLITE_CSS.is_file():
-        shutil.copy2(_SATELLITE_CSS, static_dir / "satellite.css")
-    if _ADMIN_CSS.is_file():
-        shutil.copy2(_ADMIN_CSS, static_dir / "admin.css")
-    shutil.copy2(_FONTS_CSS, static_dir / "fonts.css")
-    shutil.copytree(_FONTS_DIR, static_dir / "fonts")
-    if _FAVICON_SVG.is_file():
-        shutil.copy2(_FAVICON_SVG, static_dir / "ph-fav.svg")
-    if _FAVICON_PNG.is_file():
-        shutil.copy2(_FAVICON_PNG, static_dir / "favicon.png")
-        shutil.copy2(_FAVICON_PNG, static_dir / "apple-touch-icon.png")
-        shutil.copy2(_FAVICON_PNG, out / "favicon.ico")
-    if _OG_SHARE.is_file():
-        shutil.copy2(_OG_SHARE, static_dir / "og-share.png")
-    if _SVEJK_TERRA.is_file():
-        shutil.copy2(_SVEJK_TERRA, static_dir / "svejk-terra.png")
+    sync_static_assets(out)
 
     cfg = NewsletterConfig.from_env()
     site = cfg.site_url.rstrip("/")

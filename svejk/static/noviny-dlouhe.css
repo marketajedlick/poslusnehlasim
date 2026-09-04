@@ -806,6 +806,9 @@ button{font:inherit;cursor:pointer}
 }
 .article-body .p:last-child,
 .article-body p:last-child{margin-bottom:0}
+.article-body .p.p--preline{
+  white-space:pre-line;
+}
 .article-body .mean{
   margin:14px 0 0;
   font-weight:400;

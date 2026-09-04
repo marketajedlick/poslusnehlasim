@@ -21,7 +21,7 @@
       <p class="p">{{ item.lead_tail | glossary }}</p>
       {% endif %}
       {% if item.pointa %}
-      <p class="p">{{ item.pointa | glossary }}</p>
+      <p class="p p--preline">{{ item.pointa | glossary }}</p>
       {% endif %}
       {% if item.citace2_text %}
       <blockquote class="article-quote" id="{{ item.anchor_id }}-citace2" aria-label="{{ t.edition.citace_aria }}">
@@ -34,7 +34,7 @@
       </blockquote>
       {% endif %}
       {% if item.pointa_tail %}
-      <p class="p">{{ item.pointa_tail | glossary }}</p>
+      <p class="p p--preline">{{ item.pointa_tail | glossary }}</p>
       {% endif %}
       {% if item.citace3_text %}
       <blockquote class="article-quote" id="{{ item.anchor_id }}-citace3" aria-label="{{ t.edition.citace_aria }}">

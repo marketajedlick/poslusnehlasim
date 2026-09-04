@@ -107,7 +107,7 @@ Pro každý den, který jde do vydání:
 - předčítání paragrafů a formalit
 - dlouhé technické pasáže bez sporu (EET, RIA, transpozice), pokud nejsou jádrem dne
 - seznam deseti řečníků po sobě — radši **2–3 silné linie** s citacemi
-- procedura sama o sobě (`je_porad_schuze`), ledaže je z ní absurdní příběh (s24: boj o pořad)
+- procedura sama o sobě (`je_porad_schuze`), ledaže je z ní absurdní příběh (s24: boj o pořad) — struktura sekce: [`poslusne-hlasim-pravidla.md` §2a](../.cursor/rules/poslusne-hlasim-pravidla.md)
 
 ### Jak poznat, že máš dost materiálu
 
@@ -292,13 +292,30 @@ Projdi tento seznam znovu **u celého vydání najednou** v §9, ne jen po jedno
 
 ## 8. Sestavení a náhled
 
+**Draft (před schválením)** — HTML má cesty `/static/…`, server musí běžet nad `site/`, ne nad `processed/.../out/`:
+
 ```bash
 ./run-svejk.sh build --schuze N --only compose --den D.M
+./run-svejk.sh edition preview --schuze N --den D.M
+python3 -m http.server -d site 8765
+```
+
+URL náhledu: `http://127.0.0.1:8765/preview/2026-08-25.html` (ISO datum z `facts/by_day/`)
+
+Nebo jedním příkazem včetně serveru:
+
+```bash
+./run-svejk.sh edition preview --schuze N --den D.M --serve
+```
+
+**Schválené vydání** (po `edition approve` / v `publish-approved.json`):
+
+```bash
 ./run-svejk.sh export-pages --obdobi 2025 --out site --cname ""
 python3 -m http.server -d site 8765
 ```
 
-URL náhledu: `http://127.0.0.1:8765/vydani/2026-06-11/` (ISO datum z `facts/by_day/`)
+URL: `http://127.0.0.1:8765/vydani/2026-06-11/` (ISO datum)
 
 **Publish gate** (`processed/publish-approved.json`):
 

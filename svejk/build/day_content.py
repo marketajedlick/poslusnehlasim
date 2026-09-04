@@ -904,9 +904,9 @@ def _enrich_jazykolam_href(content: DenContent, paths: SchuzePaths) -> None:
     if steno_id:
         j["steno_id"] = steno_id
     text = (j.get("text") or "").strip()
-    href = resolve_psp_url_for_steno(paths, steno_id, text) if steno_id and text else ""
-    if not href:
-        href = (j.get("url") or "").strip()
+    href = (j.get("href") or j.get("url") or "").strip()
+    if not href and steno_id and text:
+        href = resolve_psp_url_for_steno(paths, steno_id, text)
     if href:
         j["href"] = href
     if steno_id:
