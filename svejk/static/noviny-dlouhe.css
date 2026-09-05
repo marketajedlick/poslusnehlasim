@@ -391,7 +391,7 @@ button{font:inherit;cursor:pointer}
   border:1px solid var(--border);
   border-radius:6px;
   padding:14px 14px 12px;
-  margin-bottom:26px;
+  margin-bottom:10px;
   background:var(--white);
   max-width:250px;
 }
@@ -497,6 +497,16 @@ button{font:inherit;cursor:pointer}
   font-weight:700;
   letter-spacing:.06em;
   text-transform:uppercase;
+}
+.rail-calendar-note{
+  margin:10px 0 16px;
+  max-width:250px;
+  box-sizing:border-box;
+  font-family:var(--font-serif);
+  font-size:12px;
+  font-style:italic;
+  line-height:1.45;
+  color:var(--ink);
 }
 .rail-archiv{
   display:inline-block;
@@ -965,6 +975,7 @@ button{font:inherit;cursor:pointer}
   font-size:1.8em;
   line-height:0;
   vertical-align:-0.18em;
+  pointer-events:none;
 }
 .article-quote-text a.steno-link{
   font-weight:inherit;
