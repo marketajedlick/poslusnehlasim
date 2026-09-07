@@ -1,0 +1,64 @@
+{
+  "datum_unl": "26.08.2026",
+  "iso": "2026-08-26",
+  "recommended": [
+    {
+      "slug": "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-",
+      "nazev": "Vl.n.z., kt. se mění některé z. v oblasti veřejných rozpočtů",
+      "score": 64,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 72,
+          "pritomno_min": 172,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": false
+        },
+        "steno_slov": 40710,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "místů?",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_29_00106",
+          "citace": "(místů?)"
+        },
+        {
+          "text": "Proč má o možném navýšení výdajů o více než 200 miliard korun rozhodovat vláda na návrh vlastního orgánu, a ne Poslanecká sněmovna?",
+          "source": "steno",
+          "steno_id": "2025_29_00106",
+          "citace": "Proč má o možném navýšení výdajů o více než 200 miliard korun rozhodovat vláda na návrh vlastního orgánu, a ne Poslanecká sněmovna?"
+        },
+        {
+          "text": "Proč má vláda získat možnost překročit zákonem stanovené výdaje až o 10 procent bez předchozího souhlasu Poslanecké sněmovny?",
+          "source": "steno",
+          "steno_id": "2025_29_00106",
+          "citace": "Proč má vláda získat možnost překročit zákonem stanovené výdaje až o 10 procent bez předchozího souhlasu Poslanecké sněmovny?"
+        },
+        {
+          "text": "Poznámky z pléna koaličních poslanců: Jó, jó.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_29_00108",
+          "citace": "(Poznámky z pléna koaličních poslanců: Jó, jó.)"
+        }
+      ]
+    }
+  ],
+  "rejected": [],
+  "day_stats": {
+    "pocet_hlas_zakon": 1,
+    "proslo_vote": 1,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-08-26",
+      "2026-08-27"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "datum": "26.08.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-"
+  ],
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 277,
+    "end_cas": "13:43",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "slovnicek": [
+    "prezidentské veto",
+    "rozpočtová odpovědnost",
+    "fiskální pravidla",
+    "schodek"
+  ],
+  "dnesni_ucet": "Sněmovna přehlasovala prezidentské veto,\nzákon uvolňuje pravidla pro státní dluhy.",
+  "zaver": "že vláda si už dřív odhlasovala volnější pravidla pro dluhy, prezident to vetoval, a po včerejší hádce Sněmovna veto přehlasovala a státu uvolnila pravidla, kolik si smí půjčit.",
+  "vysledek": [
+    "* Jakob (TOP 09): dluh žádné veto nemá, účet přijde později",
+    "* Schillerová (ANO) zákon hájila po šesté, Hřibovi vzkázala schovat kreditku",
+    "* Sněmovna veto přehlasovala",
+    "* Kupka (ODS) po hlasování: jste hrobaři rozpočtu, přijde ústavní stížnost"
+  ],
+  "jazykolam": {
+    "text": "Fiskální prostor není kreditka pro vaši vládu k vyčerpání. Fiskální prostor je rezerva pro případné krize.",
+    "autor": "Vojtěch Munzar (ODS)",
+    "steno_id": "2025_29_00198"
+  },
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo"
+}
