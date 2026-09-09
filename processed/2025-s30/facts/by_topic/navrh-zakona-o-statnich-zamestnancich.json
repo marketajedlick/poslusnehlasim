@@ -1,0 +1,78 @@
+{
+  "slug": "navrh-zakona-o-statnich-zamestnancich",
+  "nazev": "Návrh zákona o státních zaměstnancích",
+  "datum": "08.09.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "přehlasování Senátu u zákona, který mění pravidla pro státní úředníky a oslabuje jejich veřejnoprávní ochranu",
+  "koho": [
+    "Koho se to týká? Úředníky na ministerstvech a správních úřadech, a každého, kdo na úřadě něco vyřizuje."
+  ],
+  "fakty": [
+    {
+      "text": "Vondráček obhajuje překlopení do soukromého režimu.",
+      "source": "steno",
+      "steno_id": "2025_30_00069",
+      "citace": "překlopení právních poměrů státních zaměstnanců z veřejnoprávního režimu do soukromoprávního",
+      "link_phrase": "překlopit úředníky do soukromoprávního režimu"
+    },
+    {
+      "text": "Senátorka Šípová: Senát zákon zamítl kvůli zkratce a riziku politizace.",
+      "source": "steno",
+      "steno_id": "2025_30_00073",
+      "citace": "Hlavním důvodem pro zamítnutí je závažný procesní deficit a obcházení standardního legislativního procesu.",
+      "link_phrase": "Senátorka Šípová řekla, že vadila legislativní zkratka"
+    },
+    {
+      "text": "Stojanová: bez odborné debaty, hrozí politizace, chce Ústavní soud.",
+      "source": "steno",
+      "steno_id": "2025_30_00079",
+      "citace": "upozorňovali jsme na rizika politizace státní správy",
+      "link_phrase": "Stojanová (Piráti) varovala před politizací státní správy"
+    },
+    {
+      "text": "Dvořák (STAN): reforma bez analýzy, návrh je protiústavní.",
+      "source": "steno",
+      "steno_id": "2025_30_00081",
+      "citace": "tento návrh je a jsem o tom přesvědčen jak z procesních, tak z věcných důvodů protiústavní",
+      "link_phrase": "Dvořák (STAN) označil návrh za protiústavní"
+    },
+    {
+      "text": "Hřib: místo atraktivity práce armáda kývačů.",
+      "source": "steno",
+      "steno_id": "2025_30_00083",
+      "citace": "Ten problém totiž není jenom o tom, že chcete vytvořit armádu kývačů, kteří vám budou všechno odsouhlasovat, kteří budou bez jakýchkoliv dalších dotazů proplácet dotace Andreji Babišovi, byť to Evropská unie proplácet nebude a my to zaplatíme ze svých daní.",
+      "link_phrase": "mluvil o armádě kývačů"
+    },
+    {
+      "text": "Sněmovna Senát přehlasovala u zákona o státních zaměstnancích.",
+      "source": "votes",
+      "cislo_hlasovani": 32,
+      "citace": "Návrh zákona o státních zaměstnancích",
+      "link_phrase": "Sněmovna Senát přehlasovala"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Senát řekl ne,\núřednický zákon ano",
+  "lead": "Senát v srpnu zamítl zákon o státních zaměstnancích. Večer ho Sněmovna vrátila do hry. Jde o to, jak snadno půjde měnit lidi na úřadech a jestli úředník zůstane pod veřejnými pravidly, nebo spíš pod pracovním právem jako v firmě.",
+  "pointa": "Vondráček (ANO) zákon hájil. Chtěl překlopit úředníky do soukromoprávního režimu a říkal, že Česko potřebuje pružnější státní správu. Senátorka Šípová řekla, že vadila legislativní zkratka a riziko politizace. Stojanová (Piráti) varovala před politizací státní správy a mluvila o Ústavním soudu. Dvořák (STAN) označil návrh za protiústavní. Hřib (Piráti) večer mluvil o armádě kývačů.",
+  "pointa_tail": "Nakonec Sněmovna Senát přehlasovala. Poslušně hlásím, že úřednická pravidla se mění ve znění sněmovny, ne Senátu.",
+  "pointa_end": "",
+  "mean": "Senát zákon o státních úřednících zamítl. Sněmovna ho i související novelu přehlasovala. Mění se právní režim státních zaměstnanců a otevírá se snazší personální výměna na úřadech.",
+  "citace_text": "",
+  "citace_autor": "",
+  "steno_id": "2025_30_00083",
+  "citace2_text": "Ten problém totiž není jenom o tom, že chcete vytvořit armádu kývačů, kteří vám budou všechno odsouhlasovat, kteří budou bez jakýchkoliv dalších dotazů proplácet dotace Andreji Babišovi, byť to Evropská unie proplácet nebude a my to zaplatíme ze svých daní.",
+  "citace2_autor": "Zdeněk Hřib (Piráti)",
+  "citace2_steno_id": "2025_30_00083",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 69,
+    "pritomno_min": 173,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 2267
+}

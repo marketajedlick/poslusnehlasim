@@ -100,89 +100,6 @@ def krat_slovy(n: int) -> str:
     return f"{cislo_slovy(n).replace(' ', '')}krát"
 
 
-_ORD_GEN = (
-    "",
-    "prvního",
-    "druhého",
-    "třetího",
-    "čtvrtého",
-    "pátého",
-    "šestého",
-    "sedmého",
-    "osmého",
-    "devátého",
-    "desátého",
-    "jedenáctého",
-    "dvanáctého",
-    "třináctého",
-    "čtrnáctého",
-    "patnáctého",
-    "šestnáctého",
-    "sedmnáctého",
-    "osmnáctého",
-    "devatenáctého",
-    "dvacátého",
-    "jednadvacátého",
-    "dvaadvacátého",
-    "třiadvacátého",
-    "čtyřiadvacátého",
-    "pětadvacátého",
-    "šestadvacátého",
-    "sedmadvacátého",
-    "osmadvacátého",
-    "devětadvacátého",
-    "třicátého",
-    "třicátého prvního",
-)
-
-_ORD_LOC = (
-    "",
-    "prvnímu",
-    "druhému",
-    "třetímu",
-    "čtvrtému",
-    "pátému",
-    "šestému",
-    "sedmému",
-    "osmému",
-    "devátému",
-    "desátému",
-    "jedenáctému",
-    "dvanáctému",
-    "třináctému",
-    "čtrnáctému",
-    "patnáctému",
-    "šestnáctému",
-    "sedmnáctému",
-    "osmnáctému",
-    "devatenáctému",
-    "dvacátému",
-    "jednadvacátému",
-    "dvaadvacátému",
-    "třiadvacátému",
-    "čtyřiadvacátému",
-    "pětadvacátému",
-    "šestadvacátému",
-    "sedmadvacátému",
-    "osmadvacátému",
-    "devětadvacátému",
-    "třicátému",
-    "třicátému prvnímu",
-)
-
-
-def _poradove_gen(n: int) -> str:
-    if 1 <= n < len(_ORD_GEN):
-        return _ORD_GEN[n]
-    return cislo_slovy(n)
-
-
-def _poradove_loc(n: int) -> str:
-    if 1 <= n < len(_ORD_LOC):
-        return _ORD_LOC[n]
-    return cislo_slovy(n)
-
-
 def _predlozka_v(slovo: str) -> str:
     return "ve" if slovo[:1].lower() in "0123456789dfhlmnrstv" else "v"
 
@@ -324,16 +241,6 @@ _RE_N_HLASOVANI = re.compile(r"\b(\d+)\s+hlasování\b", re.IGNORECASE)
 _RE_CAS = re.compile(r"\b(?:v|ve)\s+(\d{1,2}):(\d{2})\b")
 _RE_KRAT = re.compile(r"\b(\d+)\s*[x×](?!\s*hlasoval)", re.IGNORECASE)
 _RE_TISICE = re.compile(r"\b(\d{1,3}(?:\s\d{3})+)\b")
-_RE_DATUM_GEN = re.compile(
-    r"\b(\d{1,2})\.\s+"
-    r"(ledna|února|března|dubna|května|června|července|srpna|září|října|listopadu|prosince)\b",
-    re.IGNORECASE,
-)
-_RE_DATUM_LOC = re.compile(
-    r"\bk\s+(\d{1,2})\.\s+"
-    r"(lednu|únoru|březnu|dubnu|květnu|červnu|červenci|srpnu|září|říjnu|listopadu|prosinci)\b",
-    re.IGNORECASE,
-)
 _RE_CISLO = re.compile(r"\b(\d+)\b")
 _RE_MESIC_ROK = re.compile(
     r"\b(ledna|února|března|dubna|května|června|července|srpna|září|října|listopadu|prosince|"
@@ -410,14 +317,6 @@ def _nahrad_zbyla_cisla(text: str) -> str:
     def _tis(m: re.Match[str]) -> str:
         return cislo_slovy(int(m.group(1).replace(" ", "")))
 
-    def _datum_gen(m: re.Match[str]) -> str:
-        den = int(m.group(1))
-        return f"{_poradove_gen(den)} {m.group(2).lower()}"
-
-    def _datum_loc(m: re.Match[str]) -> str:
-        den = int(m.group(1))
-        return f"k {_poradove_loc(den)} {m.group(2).lower()}"
-
     def _cislo(m: re.Match[str]) -> str:
         start, end = m.start(), m.end()
         # Skóre hlasování (105:64) necháváme číslicemi, ne jako čas.
@@ -441,8 +340,6 @@ def _nahrad_zbyla_cisla(text: str) -> str:
     t = _RE_CAS.sub(_cas, text)
     t = _RE_KRAT.sub(_krat, t)
     t = _RE_TISICE.sub(_tis, t)
-    t = _RE_DATUM_LOC.sub(_datum_loc, t)
-    t = _RE_DATUM_GEN.sub(_datum_gen, t)
     t = _RE_MESIC_ROK.sub(lambda m: f"{m.group(1).lower()} {m.group(2)}", t)
     t = _RE_CISLO.sub(_cislo, t)
     return t
@@ -460,6 +357,12 @@ def _chran_eet_verze(text: str) -> tuple[str, list[str]]:
 
 
 _RE_CASTKA_KC = re.compile(r"\d[\d ]*\s*Kč")
+_RE_KALENDAR_DATUM = re.compile(
+    r"\b\d{1,2}\.\s+"
+    r"(?:ledna|února|března|dubna|května|června|července|srpna|září|října|listopadu|prosince|"
+    r"lednu|únoru|březnu|dubnu|květnu|červnu|červenci|srpnu|říjnu|listopadu|prosinci)\b",
+    re.IGNORECASE,
+)
 
 
 def _chran_castky_kc(text: str) -> tuple[str, list[str]]:
@@ -473,9 +376,26 @@ def _chran_castky_kc(text: str) -> tuple[str, list[str]]:
     return _RE_CASTKA_KC.sub(_chr, text), ulozeno
 
 
+def _chran_kalendar_data(text: str) -> tuple[str, list[str]]:
+    """Kalendářní data necháváme číslicemi (11. listopadu), ne „jedenáctého“."""
+    ulozeno: list[str] = []
+
+    def _chr(m: re.Match[str]) -> str:
+        ulozeno.append(m.group(0))
+        return f"__KALDATUM{len(ulozeno) - 1}__"
+
+    return _RE_KALENDAR_DATUM.sub(_chr, text), ulozeno
+
+
 def _obnov_castky_kc(text: str, ulozeno: list[str]) -> str:
     for i, orig in enumerate(ulozeno):
         text = text.replace(f"__CASTKAKC{i}__", orig)
+    return text
+
+
+def _obnov_kalendar_data(text: str, ulozeno: list[str]) -> str:
+    for i, orig in enumerate(ulozeno):
+        text = text.replace(f"__KALDATUM{i}__", orig)
     return text
 
 
@@ -491,7 +411,9 @@ def nahrad_cisla_v_textu(text: str) -> str:
         return text
     text, eet = _chran_eet_verze(text)
     text, kc = _chran_castky_kc(text)
+    text, data = _chran_kalendar_data(text)
     text = _nahrad_zbyla_cisla(nahrad_hlasovani_v_textu(text))
+    text = _obnov_kalendar_data(text, data)
     text = _obnov_castky_kc(text, kc)
     return _obnov_eet_verze(text, eet)
 
@@ -499,4 +421,6 @@ def nahrad_cisla_v_textu(text: str) -> str:
 if __name__ == "__main__":
     assert nahrad_cisla_v_textu("na dnešních 2570 Kč") == "na dnešních 2570 Kč"
     assert "tři" in nahrad_cisla_v_textu("za tři roky")
+    assert nahrad_cisla_v_textu("sejít 11. listopadu") == "sejít 11. listopadu"
+    assert nahrad_cisla_v_textu("na 25. listopadu") == "na 25. listopadu"
     print("ok")

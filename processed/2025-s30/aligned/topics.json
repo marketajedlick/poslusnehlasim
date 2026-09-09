@@ -1,0 +1,106 @@
+{
+  "obdobi": 2025,
+  "schuze": 30,
+  "topics": [
+    {
+      "slug": "navrh-casoveho-harmonogramu-projednavani-vladnih",
+      "nazev": "Návrh časového harmonogramu projednávání vládního návrhu zákona o stát",
+      "bod": "186",
+      "datum": "08.09.2026",
+      "vote_cisla": [
+        30
+      ],
+      "steno_ids": [
+        "2025_30_00064",
+        "2025_30_00065",
+        "2025_30_00066",
+        "2025_30_00067",
+        "2025_30_00069",
+        "2025_30_00070"
+      ],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Dávka státní sociální pomoci, pomoc lidem v nouzi.",
+      "tema_vysvetleni": "Novela dávek SSP."
+    },
+    {
+      "slug": "navrh-zakona-o-statnich-zamestnancich",
+      "nazev": "Návrh zákona o státních zaměstnancích",
+      "bod": "2",
+      "datum": "08.09.2026",
+      "vote_cisla": [
+        31,
+        32
+      ],
+      "steno_ids": [
+        "2025_30_00068",
+        "2025_30_00069",
+        "2025_30_00070",
+        "2025_30_00071",
+        "2025_30_00072",
+        "2025_30_00073",
+        "2025_30_00074",
+        "2025_30_00075",
+        "2025_30_00076",
+        "2025_30_00087",
+        "2025_30_00088",
+        "2025_30_00089"
+      ],
+      "proslo": true,
+      "pocet_hlasovani": 2,
+      "pocet_prijato": 2,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Dávka státní sociální pomoci, pomoc lidem v nouzi.",
+      "tema_vysvetleni": "Novela dávek SSP."
+    },
+    {
+      "slug": "navrh-zakona-o-statnich-zamestnancich-souvisejic",
+      "nazev": "Návrh zákona o státních zaměstnancích - související",
+      "bod": "3",
+      "datum": "08.09.2026",
+      "vote_cisla": [
+        33
+      ],
+      "steno_ids": [
+        "2025_30_00061",
+        "2025_30_00062",
+        "2025_30_00063",
+        "2025_30_00064",
+        "2025_30_00065",
+        "2025_30_00066",
+        "2025_30_00067",
+        "2025_30_00069",
+        "2025_30_00070",
+        "2025_30_00071",
+        "2025_30_00072",
+        "2025_30_00073",
+        "2025_30_00074",
+        "2025_30_00075",
+        "2025_30_00076",
+        "2025_30_00077",
+        "2025_30_00078",
+        "2025_30_00079",
+        "2025_30_00080",
+        "2025_30_00081",
+        "2025_30_00082",
+        "2025_30_00083",
+        "2025_30_00084",
+        "2025_30_00085",
+        "2025_30_00086",
+        "2025_30_00088",
+        "2025_30_00089"
+      ],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Dávka státní sociální pomoci, pomoc lidem v nouzi.",
+      "tema_vysvetleni": "Novela dávek SSP."
+    }
+  ]
+}

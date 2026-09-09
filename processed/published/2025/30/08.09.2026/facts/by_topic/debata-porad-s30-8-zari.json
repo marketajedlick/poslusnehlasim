@@ -1,0 +1,67 @@
+{
+  "slug": "debata-porad-s30-8-zari",
+  "nazev": "Debata o pořadu schůze",
+  "datum": "08.09.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "odpolední boj o program schůze, opozice chtěla na pořad střet zájmů, schodek rozpočtu a další body, většina návrhů padla",
+  "koho": [
+    "Koho se to týká? Spíš pozorovatele politiky. Bez schváleného pořadu se k zákonům nedostanou ani poslanci."
+  ],
+  "fakty": [
+    {
+      "text": "Hřib: Komise potvrdila střet zájmů u Agrofertu.",
+      "source": "steno",
+      "steno_id": "2025_30_00007",
+      "citace": "Svěřenský fond situaci dostatečně neřeší.",
+      "link_phrase": "Hřib (Piráti) citoval Evropskou komisi"
+    },
+    {
+      "text": "Hřib navrhl bod proti tunelování přes Agrofert.",
+      "source": "steno",
+      "steno_id": "2025_30_00055",
+      "citace": "Zastavme tunelování ČR Andrejem Babišem přes neoprávněné dotace a nezákonné zakázky pro jeho holding Agrofert na úkor budoucnosti našich dětí.",
+      "link_phrase": "tunelování přes Agrofert"
+    },
+    {
+      "text": "Jakob: schodek 389 miliard, druhý nejvyšší v historii.",
+      "source": "steno",
+      "steno_id": "2025_30_00019",
+      "citace": "Dnes ho známe; 389 miliard korun. Takový schodek navrhlo Ministerstvo financí pro rok 2027.",
+      "link_phrase": "Jakob (TOP 09) mluvil o schodku tři sta osmdesát devět miliard"
+    },
+    {
+      "text": "Kupka nazval návrh rozpočtu Armagedonem.",
+      "source": "steno",
+      "steno_id": "2025_30_00025",
+      "citace": "Takže přátelé, bavíme-li se o splněných slibech, skutek utek, jenom je porušujete. A to, co jste nachystali v podobě rozpočtu na příští rok je reálný rozpočtový Armagedon.",
+      "link_phrase": "rozpočtovému Armagedonu"
+    },
+    {
+      "text": "Hladík navrhl bod Červený miluje Hladíka.",
+      "source": "steno",
+      "steno_id": "2025_30_00047",
+      "citace": "Červený miluje Hladíka aneb Stará ekologická zátěž, součást politického boje.",
+      "link_phrase": "Červený miluje Hladíka"
+    },
+    {
+      "text": "Pořad schůze byl nakonec schválen.",
+      "source": "steno",
+      "steno_id": "2025_30_00061",
+      "citace": "pořad schůze byl schválen",
+      "link_phrase": "pořad schůze nakonec schválili"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 4,
+  "nadpis": "Co do pořadu nedošlo",
+  "lead": "Opozice chtěla na program hned střet zájmů kolem Agrofertu a schodek rozpočtu skoro čtyři sta miliard. Hřib (Piráti) citoval Evropskou komisi, že svěřenský fond nestačí. Jakob (TOP 09) mluvil o schodku tři sta osmdesát devět miliard. Vládní většina body do pořadu nepustila.",
+  "pointa": "Opozice chtěla do programu mimo jiné:\n\n<strong>Střet zájmů a Agrofert</strong>\n- Hřib (Piráti): tunelování přes Agrofert\n- Richterová (Piráti): zastavit peníze pro holding a poslat je rodinám\n- Rakušan (STAN): řešení střetu zájmů Andreje Babiše\n- Kupka (ODS): stát jako kořist Agrofertu\n- Bartoš (Piráti): vraťte peníze a zastavte dotační chobotnici\n\n<strong>Rozpočet a schodek</strong>\n- Jakob (TOP 09): informace vlády k rozpočtu a dluhové brzdě\n- Kupka (ODS): jak zabránit rozpočtovému Armagedonu\n- Hřib (Piráti): proč schodek skoro čtyři sta miliard v době růstu\n- Vojáček: bezradnost vlády při sestavování rozpočtu\n\n<strong>Další návrhy</strong>\n- Havel: školství, církevní školy, Macinka a bezpečnost\n- Blišťanová: peníze na obnovu po povodních\n- Svobodová: rozpočtoví jestřábi z TikToku\n- Hladík (KDU-ČSL): Červený miluje Hladíka, bod o staré zátěži na Šumavě",
+  "pointa_tail": "Skoro nic z toho, co opozice přinesla, se na program nedostalo. Prošel přesun silničního zákona na čtvrtek a pořad schůze nakonec schválili. Zůstaly body o rozpočtovém kalendáři a o státních úřednících.",
+  "pointa_end": "",
+  "mean": "Pořad určuje, o čem se ten den mluví. Opozice chtěla Agrofert, schodek a další kauzy, ale ty body se na program nedostaly. Do programu zůstaly harmonogram státního rozpočtu a zákon o státních zaměstnancích po zamítnutí v Senátu.",
+  "citace_text": "Takže přátelé, bavíme-li se o splněných slibech, skutek utek, jenom je porušujete. A to, co jste nachystali v podobě rozpočtu na příští rok je reálný rozpočtový Armagedon.",
+  "citace_autor": "Martin Kupka (ODS)",
+  "steno_id": "2025_30_00025",
+  "pocet_hlasovani": 28,
+  "proslo": false
+}

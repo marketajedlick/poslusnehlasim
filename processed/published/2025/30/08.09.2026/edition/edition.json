@@ -1,0 +1,68 @@
+{
+  "key": "2025/30/08.09.2026",
+  "obdobi": 2025,
+  "schuze": 30,
+  "datum_unl": "08.09.2026",
+  "iso": "2026-09-08",
+  "state": "approved",
+  "topic_slugs": [
+    "navrh-zakona-o-statnich-zamestnancich",
+    "navrh-zakona-o-statnich-zamestnancich-souvisejic",
+    "navrh-casoveho-harmonogramu-projednavani-vladnih"
+  ],
+  "recommended_slugs": [
+    "navrh-zakona-o-statnich-zamestnancich",
+    "navrh-zakona-o-statnich-zamestnancich-souvisejic",
+    "navrh-casoveho-harmonogramu-projednavani-vladnih"
+  ],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-09-08/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "draft",
+    "stale": false,
+    "link_phrase_coverage": {
+      "total": 13,
+      "linked": 11,
+      "percent": 84.6,
+      "missing": [
+        "navrh-casoveho-harmonogramu-projednavani-vladnih[0]",
+        "navrh-casoveho-harmonogramu-projednavani-vladnih[1]"
+      ]
+    },
+    "citace_in_steno": {
+      "checked": 13,
+      "ok": 11,
+      "percent": 84.6,
+      "bad": [
+        "navrh-zakona-o-statnich-zamestnancich[2]",
+        "navrh-casoveho-harmonogramu-projednavani-vladnih[1]"
+      ]
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 2,
+    "steno_passages": 14,
+    "steno_missing_article_phrase": 0,
+    "ok": false,
+    "errors": [
+      "citace nejsou doslovně ve stenozáznamu",
+      "slabá témata: navrh-casoveho-harmonogramu-projednavani-vladnih, navrh-zakona-o-statnich-zamestnancich"
+    ]
+  },
+  "inputs": {
+    "votes_count": 33,
+    "votes_max_cislo": 33,
+    "steno_count": 89,
+    "steno_last_poradi": 89,
+    "topics_built_at": "2026-09-09T08:09:48.167526+00:00",
+    "fingerprint": "ebcd18ecf51a9127"
+  },
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null
+}

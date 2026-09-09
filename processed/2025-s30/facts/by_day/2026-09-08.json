@@ -1,0 +1,41 @@
+{
+  "datum": "08.09.2026",
+  "den": "úterý",
+  "topic_slugs": [
+    "debata-porad-s30-8-zari",
+    "navrh-zakona-o-statnich-zamestnancich",
+    "navrh-casoveho-harmonogramu-projednavani-vladnih"
+  ],
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 386,
+    "end_cas": "20:28",
+    "proslo": 2,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "slovnicek": [
+    "pořad schůze",
+    "Senát vrátil zákon",
+    "střet zájmů",
+    "Agrofert",
+    "schodek"
+  ],
+  "dnesni_ucet": "Opozice chtěla Agrofert a schodek na pořad,\nvečer Sněmovna přehlasovala Senát u úředníků.",
+  "zaver": "že odpoledne se opoziční body o Agrofertu a rozpočtu na program nedostaly. Sněmovna odhlasovala kdy se bude řešit státní rozpočet a také přehlasovala Senát ohledně zákona o státních úřednících.",
+  "vysledek": [
+    "* Opozice: Agrofert, schodek a další body se na program nedostaly",
+    "* Harmonogram rozpočtu na rok 2027 prošel bez protihlasů",
+    "* Senát zamítl zákon o státních zaměstnancích, Sněmovna ho přehlasovala",
+    "* Stejně dopadla i související novela"
+  ],
+  "jazykolam": {
+    "text": "Červený miluje Hladíka aneb Stará ekologická zátěž, součást politického boje.",
+    "autor": "Petr Hladík (KDU-ČSL)",
+    "steno_id": "2025_30_00047"
+  },
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo"
+}

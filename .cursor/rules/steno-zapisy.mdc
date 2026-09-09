@@ -59,9 +59,9 @@ Schůze má pevnou kostru. Rozeznávej rutinu od odchylky — **odchylky jsou te
 ## Dnešní účet a počty hlasování
 
 - Do `stats.pocet_hlas` počítej jen **zákony** (`kategorie: substantivni`). Výbory, volby funkcí, volební komise a pořad schůze (`je_porad_schuze: true`) **nepočítej**.
-- Sportovní skóre (tabule „stav zápasu") počítej z **publikovaných článků** dne podle `verdikt`: `schvaleno` a `zvoleno` → prošlo, `zamiteno` a `odlozeno` → padlo. Vrácení zákona do druhého kola (`odlozeno`) je pro skóre jako zamítnutí, i když procedurální hlasování skončilo „přijato".
+- Sportovní skóre (tabule „stav zápasu") počítej z **publikovaných článků** dne podle `verdikt`: `schvaleno` a `zvoleno` → prošlo, `zamiteno` a `odlozeno` → padlo. Vrácení zákona do druhého kola (`odlozeno`) je pro skóre jako zamítnutí, i když procedurální hlasování skončilo „přijato". Debata o pořadu (`verdikt: debata`) do skóre **nepatří**.
 - Formát `X:Y` ve výsledku dne používej jen u zákonů. U procedury piš „sto X pro, Y proti".
-- Boj o pořad může být samostatný článek (distanc, ukrajina, absurdita), ale ne jako „třicet hlasování za dvě hodiny".
+- Boj o pořad může být samostatný článek (distanc, ukrajina, absurdita), ale ne jako „třicet hlasování za dvě hodiny". U zamítnutých návrhů bodů **nepiš „padlo“** (to je váha zákona). Piš **„nedostalo se na program“** / „do pořadu“.
 - Do vět v článku (`lead`, `pointa`, `mean`, `zaver`, `vysledek`) **nepiš skóre hlasování** (`154:0`, `sto padesát osm proti nula`, `osmdesát pět pro, dvě proti`). Stačí verdikt: „schválila“, „zamítla“, „poslala do výboru“, „prošlo jednomyslně“. Poměr hlasů piš jen když je sám o pointě sporu (těsné hlasování, překvapivé proti). **Nepiš, po kolika hlasováních** zákon prošel nebo padl (`po osmnácti kolech`, `po třiceti hlasováních`).
 - **Zákony a usnesení jsou jádro dne.** Procedura je kulisa.
 - `dnesni_ucet`, `zaver`, `lead`, `mean`, `pointa` a `nadpis` piš **vtipně a lidově**: ironie, kontrast, absurdita. Čtenář musí hned pochopit, co se stalo — žádný úřednický žargon (`legislativní nouze`, `ve třetím čtení`, `novela`, `formální kroky`, `personálka`). Radši „první/druhé kolo“, „změna zákona“, „zrychlené projednávání“, „obsazování postů“.
