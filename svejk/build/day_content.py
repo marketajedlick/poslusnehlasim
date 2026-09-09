@@ -927,9 +927,16 @@ def _sanitize_den_content(content: DenContent) -> None:
     for item in content.items:
         item.kick = _sanitize_text_export(item.kick)
         item.nadpis = _sanitize_nadpis_export(item.nadpis)
-        item.nadpis_radky = [
-            _sanitize_nadpis_export(x) for x in item.nadpis_radky
-        ]
+        # Pokračování řádku (bez čárky/tečky na konci předchozího) necháváme malé.
+        radky: list[str] = []
+        for i, x in enumerate(item.nadpis_radky):
+            t = bez_dlouhych_pomlc((x or "").strip())
+            if not t:
+                continue
+            if i == 0 or (radky and radky[-1].rstrip().endswith((",", ".", "!", "?"))):
+                t = _kapitalizuj_prvni_pismeno(t)
+            radky.append(t)
+        item.nadpis_radky = radky
         item.lead = _sanitize_text_export(item.lead)
         item.lead_tail = _sanitize_text_export(item.lead_tail)
         item.mean = _sanitize_text_export(item.mean)
