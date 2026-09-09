@@ -4,7 +4,7 @@
   "schuze": 30,
   "datum_unl": "08.09.2026",
   "iso": "2026-09-08",
-  "state": "approved",
+  "state": "published",
   "topic_slugs": [
     "navrh-zakona-o-statnich-zamestnancich",
     "navrh-zakona-o-statnich-zamestnancich-souvisejic",
@@ -62,7 +62,19 @@
     "topics_built_at": "2026-09-09T08:09:48.167526+00:00",
     "fingerprint": "ebcd18ecf51a9127"
   },
-  "published_at": null,
-  "snapshot_dir": null,
-  "supersedes": null
+  "published_at": "2026-09-09T12:26:01.096301+00:00",
+  "snapshot_dir": "published/2025/30/08.09.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s30/editions/2026-09-08/assets/2026-09-08.png",
+    "share": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s30/editions/2026-09-08/assets/2026-09-08.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png",
+      "carousel/04-citace.png",
+      "carousel/05-skore.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s30/editions/2026-09-08/assets/caption.txt"
+  }
 }
