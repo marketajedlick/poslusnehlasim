@@ -31,3 +31,8 @@
 {"cislo": 31, "bod": "2", "datum": "08.09.2026", "cas": "19:26", "nazev": "Návrh zákona o státních zaměstnancích", "vysledek": "A", "pro": 119, "proti": 1, "zdrzel": 59, "nehlasoval": 0, "pritomno": 179, "je_porad_schuze": false}
 {"cislo": 32, "bod": "2", "datum": "08.09.2026", "cas": "20:26", "nazev": "Návrh zákona o státních zaměstnancích", "vysledek": "A", "pro": 104, "proti": 68, "zdrzel": 1, "nehlasoval": 0, "pritomno": 173, "je_porad_schuze": false}
 {"cislo": 33, "bod": "3", "datum": "08.09.2026", "cas": "20:28", "nazev": "Návrh zákona o státních zaměstnancích - související", "vysledek": "A", "pro": 104, "proti": 69, "zdrzel": 0, "nehlasoval": 0, "pritomno": 173, "je_porad_schuze": false}
+{"cislo": 34, "bod": "0", "datum": "09.09.2026", "cas": "09:14", "nazev": "", "vysledek": "A", "pro": 81, "proti": 51, "zdrzel": 2, "nehlasoval": 0, "pritomno": 134, "je_porad_schuze": false}
+{"cislo": 35, "bod": "0", "datum": "09.09.2026", "cas": "12:10", "nazev": "Pořad schůze", "vysledek": "R", "pro": 65, "proti": 89, "zdrzel": 2, "nehlasoval": 5, "pritomno": 161, "je_porad_schuze": true}
+{"cislo": 36, "bod": "1", "datum": "09.09.2026", "cas": "18:47", "nazev": "Novela z. - stavební zákon", "vysledek": "A", "pro": 105, "proti": 52, "zdrzel": 0, "nehlasoval": 11, "pritomno": 168, "je_porad_schuze": false}
+{"cislo": 37, "bod": "4", "datum": "09.09.2026", "cas": "21:24", "nazev": "Vl.n.z. o evidenci tržeb", "vysledek": "R", "pro": 0, "proti": 108, "zdrzel": 11, "nehlasoval": 40, "pritomno": 159, "je_porad_schuze": false}
+{"cislo": 38, "bod": "4", "datum": "09.09.2026", "cas": "21:25", "nazev": "Vl.n.z. o evidenci tržeb", "vysledek": "A", "pro": 104, "proti": 45, "zdrzel": 3, "nehlasoval": 7, "pritomno": 159, "je_porad_schuze": false}
