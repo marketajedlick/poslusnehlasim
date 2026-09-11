@@ -1,0 +1,38 @@
+{
+  "datum": "09.09.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "novela-z-stavebni-zakon",
+    "vl-n-z-o-evidenci-trzeb"
+  ],
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 731,
+    "end_cas": "21:25",
+    "proslo": 2,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "slovnicek": [
+    "Senát vrátil zákon",
+    "EET",
+    "Lex developer",
+    "Pozměňovací návrh"
+  ],
+  "nwl_predmet": "Senát nestačil. EET bez senátních oprav",
+  "dnesni_ucet": "Senát vrátil stavění do sněmovny, Sněmovna veto zlomila.\nU tržeb chtěl evidovat jen hotovost, ne karty.",
+  "zaver": "že Senát vrátil do sněmovny změnu stavebního zákona a u evidence tržeb chtěl, aby se platby kartou nemusely hlásit státu. Sněmovna obojí přehlasovala a nechala své znění.",
+  "vysledek": [
+    "* Senát vrátil změnu stavebního zákona, Sněmovna veto přehlasovala",
+    "* Senát chtěl evidovat jen hotovost, Sněmovna nechala i platby kartou"
+  ],
+  "jazykolam": {
+    "text": "Věříme v malý stát, ne ve šmírovací stát.",
+    "autor": "Karel Haas (ODS)",
+    "steno_id": "2025_30_00275"
+  },
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo"
+}

@@ -1,0 +1,71 @@
+{
+  "key": "2025/30/09.09.2026",
+  "obdobi": 2025,
+  "schuze": 30,
+  "datum_unl": "09.09.2026",
+  "iso": "2026-09-09",
+  "state": "published",
+  "topic_slugs": [
+    "novela-z-stavebni-zakon",
+    "vl-n-z-o-evidenci-trzeb"
+  ],
+  "recommended_slugs": [
+    "novela-z-stavebni-zakon",
+    "vl-n-z-o-evidenci-trzeb"
+  ],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-09-09/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "draft",
+    "stale": false,
+    "link_phrase_coverage": {
+      "total": 16,
+      "linked": 16,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 16,
+      "ok": 16,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 2,
+    "steno_passages": 17,
+    "steno_missing_article_phrase": 0,
+    "ok": false,
+    "errors": [
+      "slabá témata: novela-z-stavebni-zakon, vl-n-z-o-evidenci-trzeb"
+    ]
+  },
+  "inputs": {
+    "votes_count": 38,
+    "votes_max_cislo": 38,
+    "steno_count": 285,
+    "steno_last_poradi": 285,
+    "topics_built_at": "2026-09-10T08:47:59.481800+00:00",
+    "fingerprint": "f7a2bbfb849b641c"
+  },
+  "published_at": "2026-09-11T07:39:31.203701+00:00",
+  "snapshot_dir": "published/2025/30/09.09.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s30/editions/2026-09-09/assets/2026-09-09.png",
+    "share": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s30/editions/2026-09-09/assets/2026-09-09.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png",
+      "carousel/04-citace.png",
+      "carousel/05-skore.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s30/editions/2026-09-09/assets/caption.txt"
+  }
+}

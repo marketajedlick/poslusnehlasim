@@ -36,7 +36,7 @@ _MANUAL_TOPIC_KEYS = frozenset(
     }
 )
 _MANUAL_DAY_KEYS = frozenset(
-    {"dnesni_ucet", "zaver", "vysledek", "topic_slugs", "skore_manual"}
+    {"dnesni_ucet", "zaver", "vysledek", "topic_slugs", "skore_manual", "nwl_predmet"}
 )
 
 

@@ -1,0 +1,97 @@
+{
+  "slug": "novela-z-stavebni-zakon",
+  "nazev": "Novela z. - stavební zákon",
+  "datum": "09.09.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "přehlasování Senátu u změny pravidel, jak rychle dostanete stavební povolení",
+  "koho": [
+    "Koho se to týká? Každého, kdo staví dům, dělá přístavbu nebo čeká na úřad."
+  ],
+  "fakty": [
+    {
+      "text": "Mrázová: Senát není mítink, část kritiky se netýká textu.",
+      "source": "steno",
+      "steno_id": "2025_30_00148",
+      "citace": "Senát není volební mítink."
+    },
+    {
+      "text": "Plevný: návrh je gigantický, poslanecký, bez klasického kolečka.",
+      "source": "steno",
+      "steno_id": "2025_30_00150",
+      "citace": "Předložený návrh zákona je opravdu gigantický a značně nepřehledný",
+      "link_phrase": "gigantický a značně nepřehledný"
+    },
+    {
+      "text": "Kovářová: zákon pro developery, pětapadesát zákonů bez připomínek.",
+      "source": "steno",
+      "steno_id": "2025_30_00195",
+      "citace": "Proto je to zákon pro developery, protože developeři to budou mít jednoduše a rychle.",
+      "link_phrase": "zákon pro developery, protože developeři to budou mít jednoduše a rychle"
+    },
+    {
+      "text": "Kovářová: pětapadesát zákonů bez připomínek, skončily v šuplíku.",
+      "source": "steno",
+      "steno_id": "2025_30_00195",
+      "citace": "nemůžete těchto 55 zákonů předkládat bez připomínkového řízení",
+      "link_phrase": "pětapadesát zákonů"
+    },
+    {
+      "text": "Adamec: takhle velký zákon bez přípravy úřadů nepůjde.",
+      "source": "steno",
+      "steno_id": "2025_30_00199",
+      "citace": "Není možné takhle rozsáhlý návrh zákona udělat touhle podobou, bez přípravy jednotlivých ministerstev",
+      "link_phrase": "bez přípravy úřadů"
+    },
+    {
+      "text": "Vlček: developeři si to v mnoha ohledech napsali sami.",
+      "source": "steno",
+      "steno_id": "2025_30_00183",
+      "citace": "si to ti developeři napsali sami v mnoha ohledech",
+      "link_phrase": "developeři v mnoha ohledech napsali sami"
+    },
+    {
+      "text": "Vlček: Starostové veto přehlasovat nechtěli.",
+      "source": "steno",
+      "steno_id": "2025_30_00183",
+      "citace": "Starostové nepodpoří přehlasování Senátem",
+      "link_phrase": "Starostové veto přehlasovat nechtěli"
+    },
+    {
+      "text": "Bartoš: byty nejsou rohlíky.",
+      "source": "steno",
+      "steno_id": "2025_30_00239",
+      "citace": "Byty se staví, představa, že když jich developeři budou stavět víc, tak jejich cena poletí nějak strmě dolů, tak pokud se bavíme o té komerční výstavbě, je mylná a ukázalo se třeba v sousedním Polsku, že není pravdivá. Takže zda tento zákon bude řešit krize s bydlením, já jsem kolikrát říkal paní Dostálové, že byty nejsou rohlíky."
+    },
+    {
+      "text": "Sněmovna senátní zamítnutí přehlasovala.",
+      "source": "votes",
+      "cislo_hlasovani": 36,
+      "citace": "Návrh zákona, kterým se mění zákon č. 283/2021 Sb., stavební zákon",
+      "link_phrase": "senátní zamítnutí přehlasovala"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Senát nestačil",
+  "lead": "Jde o to, jak rychle v Česku dostanete stavební povolení. V červenci Sněmovna změnu stavebního zákona schválila. Senát ji zamítl.",
+  "pointa": "Senátor Plevný návrh označil za gigantický a značně nepřehledný, podaný jako poslanecký, ne vládní, bez klasického připomínkového kolečka. Kovářová (Piráti) opakovala, že je to zákon pro developery, protože developeři to budou mít jednoduše a rychle. Vadilo jí pětapadesát zákonů najednou, nejen ten stavební. Připomínky z úřadů a obcí podle ní skončily v šuplíku. Adamec (ODS) řekl, že takhle velký zákon bez přípravy úřadů nepůjde a díry vylezou, až se začne stavět.\n\nVlček (STAN) řekl, že se vládní představitelé netají tím, že si to developeři v mnoha ohledech napsali sami. Starostové veto přehlasovat nechtěli. Bartoš (Piráti) připomněl polský lex developer z roku 2018, zákon, který měl byty zlevnit. Ceny šly dál nahoru.",
+  "pointa_tail": "Sněmovna senátní zamítnutí přehlasovala. Pravidla pro stavění jdou dál ve znění sněmovny, ne Senátu.",
+  "pointa_end": "",
+  "mean": "Stavební zákon určuje, za jakých podmínek něco smíte postavit. Senát změnu zamítl. Sněmovna veto přehlasovala, takže platí sněmovní znění.",
+  "citace_text": "Senát není volební mítink. Měl by být váženou pojistkou demokracie, jejímž úkolem je přinést druhé, klidné a hlavně věcné čtení zákona, a to zejména s ohledem na přínosy i rizika pro občany naší země.",
+  "citace_autor": "Zuzana Mrázová (ANO)",
+  "steno_id": "2025_30_00148",
+  "citace2_text": "Byty se staví, představa, že když jich developeři budou stavět víc, tak jejich cena poletí nějak strmě dolů, tak pokud se bavíme o té komerční výstavbě, je mylná a ukázalo se třeba v sousedním Polsku, že není pravdivá. Takže zda tento zákon bude řešit krize s bydlením, já jsem kolikrát říkal paní Dostálové, že byty nejsou rohlíky.",
+  "citace2_autor": "Ivan Bartoš (Piráti)",
+  "citace2_steno_id": "2025_30_00239",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 52,
+    "pritomno_min": 168,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 38694
+}

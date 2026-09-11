@@ -233,6 +233,7 @@ _MANUAL_DAY_KEYS = (
     "vysledek",
     "topic_slugs",
     "skore_manual",
+    "nwl_predmet",
 )
 
 

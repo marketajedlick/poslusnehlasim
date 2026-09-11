@@ -6,7 +6,11 @@ import re
 import unittest
 from pathlib import Path
 
-from svejk.build.html import _inline_email_body_link_styles, render_doi_email_html
+from svejk.build.html import (
+    _inline_email_body_link_styles,
+    newsletter_subject,
+    render_doi_email_html,
+)
 
 _COLOR_IMPORTANT = re.compile(r"color\s*:[^;{]*!important", re.IGNORECASE)
 _REPO = Path(__file__).resolve().parent.parent
@@ -21,6 +25,24 @@ class EmailHtmlTest(unittest.TestCase):
     def test_nwl_css_has_no_color_important(self) -> None:
         css = (_REPO / "svejk/static/noviny-email.css").read_text(encoding="utf-8")
         self.assertIsNone(_COLOR_IMPORTANT.search(css))
+
+    def test_newsletter_subject_uses_nwl_predmet(self) -> None:
+        self.assertEqual(
+            newsletter_subject(
+                {"nwl_predmet": "Senát nestačil. EET bez senátních oprav"},
+                datum_label="středa 9. září 2026",
+            ),
+            "Senát nestačil. EET bez senátních oprav",
+        )
+
+    def test_newsletter_subject_falls_back_to_ucet(self) -> None:
+        self.assertEqual(
+            newsletter_subject(
+                {"dnesni_ucet": "Senát vrátil stavění.\nDruhý řádek."},
+                datum_label="středa 9. září 2026",
+            ),
+            "Senát vrátil stavění.",
+        )
 
     def test_inline_link_styles_have_no_color_important(self) -> None:
         html = '<a class="steno-link" href="https://example.com">odkaz</a>'

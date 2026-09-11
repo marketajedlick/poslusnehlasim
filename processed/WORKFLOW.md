@@ -354,12 +354,15 @@ Checklist z §6 a §7 projdi **v kontextu celého dne**, ne izolovaně po sekcí
 
 ## 10. Newsletter
 
+Do `facts/by_day/` vždy zapiš `nwl_predmet`: úderný předmět kampaně k obsahu dne, ne „Nové vydání · datum“.
+
 ```bash
 ./run-svejk.sh newsletter-notify --obdobi 2025 --schuze N --force
 ```
 
 Před odesláním v Ecomailu:
 
+- předmět = `nwl_predmet`
 - tabulka skóre na mobilu
 - nadpisy v e-mailu
 - **nový koncept** (`--force`), ne starý draft v UI

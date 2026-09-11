@@ -14,6 +14,7 @@ from markupsafe import Markup
 from svejk.build.day_content import DenContent, build_den_content, datum_day_month, datum_design
 from svejk.build.io import read_json
 from svejk.build.seo import SITE_NAME, site_meta_description
+from svejk.build.steno_sources import steno_sources_href
 from svejk.glossary import slovnicek_anchor, slovnicek_display_term, slovnicek_entries, slovnicek_term_label
 from svejk.build.publish import list_site_editions
 from svejk.strings import footer_closings, footer_stats_line, load_strings, schuze_count_label
@@ -441,6 +442,7 @@ def _edition_subpage_breadcrumbs(
     schuze: int,
     datum_unl: str,
     subpage_label: str,
+    edition_href: str | None = None,
 ) -> dict:
     from svejk.build.seo import breadcrumbs_ctx_edition_subpage
 
@@ -451,6 +453,7 @@ def _edition_subpage_breadcrumbs(
         schuze=schuze,
         datum_unl=datum_unl,
         subpage_label=subpage_label,
+        edition_href=edition_href,
     )
 
 
@@ -886,7 +889,9 @@ def render_den_html(
         session_calendar=session_calendar,
         slovnicek_dne=slovnicek_dne,
         jazykolam=content.jazykolam,
-        steno_page_href=steno_sources_pages_href(ob, paths.schuze, content.datum, base_path),
+        steno_page_href=steno_sources_href(
+            ob, paths.schuze, content.datum, link_mode=link_mode, base_path=base_path
+        ),
         newsletter=cfg,
         canonical_url=canonical_url,
         meta_description=meta_description,
@@ -1129,6 +1134,17 @@ def _prepare_content_for_email(content: DenContent) -> None:
                 setattr(item, field, strip_glossary_markup(val))
 
 
+def newsletter_subject(day: dict[str, Any], *, datum_label: str) -> str:
+    """Předmět Ecomail kampaně: redakční `nwl_predmet`, jinak první řádek účtu."""
+    custom = " ".join((day.get("nwl_predmet") or "").split())
+    if custom:
+        return custom
+    ucet = (day.get("dnesni_ucet") or "").split("\n", 1)[0].strip()
+    if ucet:
+        return ucet
+    return f"Nové vydání · {datum_label}"
+
+
 def render_email_html(
     edition: Edition,
     *,
@@ -1154,7 +1170,8 @@ def render_email_html(
     )
     steno_page_url = f"{site}{steno_href}" if steno_href else ""
     datum_label = datum_design(edition.datum_unl, content.den)
-    subject = f"Nové vydání · {datum_label}"
+    day = read_json(day_path) if day_path.is_file() else {}
+    subject = newsletter_subject(day, datum_label=datum_label)
     _apply_content_item_links(
         content,
         paths,
@@ -1622,6 +1639,7 @@ def render_steno_sources_html(
             schuze=schuze,
             datum_unl=datum_unl,
             subpage_label=page_title,
+            edition_href=edition_href,
         ),
     )
 

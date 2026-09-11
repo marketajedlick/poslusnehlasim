@@ -1,0 +1,110 @@
+{
+  "datum_unl": "09.09.2026",
+  "iso": "2026-09-09",
+  "recommended": [
+    {
+      "slug": "novela-z-stavebni-zakon",
+      "nazev": "Novela z. - stavební zákon",
+      "score": 69,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 52,
+          "pritomno_min": 168,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 38694,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "Poznámka posl. Bendy.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_30_00145",
+          "citace": "(Poznámka posl. Bendy.)"
+        },
+        {
+          "text": "283/2021 Sb., stavební zákon, ve znění pozdějších předpisů, a další související zákony/sněmovní tisk 67/14/ – zamítnuto Senátem Usnesení, jímž Senát zamítl tento návrh zákona, bylo doručeno jako sněmovní tisk 67/15.",
+          "source": "steno",
+          "steno_id": "2025_30_00145",
+          "citace": "283/2021 Sb., stavební zákon, ve znění pozdějších předpisů, a další související zákony/sněmovní tisk 67/14/ – zamítnuto Senátem Usnesení, jímž Senát zamítl tento návrh zákona, bylo doručeno jako sněmo"
+        },
+        {
+          "text": "Chtěl jsem uvítat pana senátora, nicméně pan senátor prý není přítomen a dostaví se až za 5 minut, tak já bych asi pokračoval, jestli souhlasíte.",
+          "source": "steno",
+          "steno_id": "2025_30_00145",
+          "citace": "Chtěl jsem uvítat pana senátora, nicméně pan senátor prý není přítomen a dostaví se až za 5 minut, tak já bych asi pokračoval, jestli souhlasíte."
+        },
+        {
+          "text": "Respekt k Senátu však neznamená povinnost přijmout jeho závěr tehdy, jestliže významná část jeho kritiky nevychází z toho, co návrh skutečně říká.",
+          "source": "steno",
+          "steno_id": "2025_30_00146",
+          "citace": "Respekt k Senátu však neznamená povinnost přijmout jeho závěr tehdy, jestliže významná část jeho kritiky nevychází z toho, co návrh skutečně říká."
+        }
+      ]
+    },
+    {
+      "slug": "vl-n-z-o-evidenci-trzeb",
+      "nazev": "Vl.n.z. o evidenci tržeb",
+      "score": 69,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 108,
+          "pritomno_min": 159,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 15464,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "V sále je hluk.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_30_00256",
+          "citace": "(V sále je hluk.)"
+        },
+        {
+          "text": "(V sále je hluk.) Tak paní ministryně, prosím, máte slovo a já požádám Poslaneckou sněmovnu o klid, aby se mohla paní ministryně vyjádřit.",
+          "source": "steno",
+          "steno_id": "2025_30_00256",
+          "citace": "(V sále je hluk.) Tak paní ministryně, prosím, máte slovo a já požádám Poslaneckou sněmovnu o klid, aby se mohla paní ministryně vyjádřit."
+        },
+        {
+          "text": "4.Návrh zákona o evidenci tržeb a o změně některých dalších zákonů/sněmovní tisk 189/5/ – vráceno Senátem Senát vrátil návrh zákona s pozměňovacími návrhy.",
+          "source": "steno",
+          "steno_id": "2025_30_00256",
+          "citace": "4.Návrh zákona o evidenci tržeb a o změně některých dalších zákonů/sněmovní tisk 189/5/ – vráceno Senátem Senát vrátil návrh zákona s pozměňovacími návrhy."
+        },
+        {
+          "text": "Ukazuje čtvercovou brožuru s nápisem EET 2.0.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_30_00257",
+          "citace": "(Ukazuje čtvercovou brožuru s nápisem EET 2.0.)"
+        }
+      ]
+    }
+  ],
+  "rejected": [],
+  "day_stats": {
+    "pocet_hlas_zakon": 2,
+    "proslo_vote": 2,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-09-09",
+      "2026-09-10"
+    ]
+  }
+}
