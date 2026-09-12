@@ -1,0 +1,40 @@
+{
+  "datum": "10.09.2026",
+  "den": "čtvrtek",
+  "topic_slugs": [
+    "novela-z-o-pozemnich-komunikacich-eu",
+    "odpoved-na-pisemnou-interpelaci-p-hladika-na-p-m",
+    "odpoved-na-pisemnou-interpelaci-i-fercikove-kone"
+  ],
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 241,
+    "end_cas": "14:06",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "slovnicek": [
+    "dálniční známka",
+    "mýto",
+    "interpelace",
+    "druhé čtení"
+  ],
+  "nwl_predmet": "Známka bez zdražení. Zálohy bez nové odpovědi",
+  "dnesni_ucet": "Vláda brzdí zdražování dálniční známky, druhé kolo doběhlo.\nHladík chtěl novou odpověď k zálohám, Sněmovna řekla ne.",
+  "zaver": "že Sněmovna poslala zmrazení dálniční známky dál ke krátkému kolečku před závěrečným hlasováním.",
+  "vysledek": [
+    "* Dálniční známka: druhé kolo skončilo, lhůta před finále zkrácena na sedm dní",
+    "* Hladík vs. Červený o zálohování: nesouhlasné usnesení neprošlo",
+    "* Ferčíková (SPD) vs. Metnar o dvojí platbě právní pomoci žadatelům o azyl: souhlas prošel"
+  ],
+  "jazykolam": {
+    "text": "Pak mě asi fakt neposloucháte nebo neumím česky.",
+    "autor": "Ivan Bednárik (ANO)",
+    "steno_id": "2025_30_00460"
+  },
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo"
+}

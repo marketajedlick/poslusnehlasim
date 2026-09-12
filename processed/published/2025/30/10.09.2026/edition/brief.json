@@ -1,0 +1,148 @@
+{
+  "datum_unl": "10.09.2026",
+  "iso": "2026-09-10",
+  "recommended": [
+    {
+      "slug": "novela-z-o-pozemnich-komunikacich-eu",
+      "nazev": "Novela z. o pozemních komunikacích - EU",
+      "score": 61,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 24,
+          "pritomno_min": 91,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 38175,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "13/1997 Sb., o pozemních komunikacích, ve znění pozdějších předpisů/sněmovní tisk 246/ – druhé čtení Z pověření vlády předložený návrh zákona uvede ministr dopravy Ivan Bednárik.",
+          "source": "steno",
+          "steno_id": "2025_30_00421",
+          "citace": "13/1997 Sb., o pozemních komunikacích, ve znění pozdějších předpisů/sněmovní tisk 246/ – druhé čtení Z pověření vlády předložený návrh zákona uvede ministr dopravy Ivan Bednárik."
+        },
+        {
+          "text": "16.Vládní návrh zákona, kterým se mění zákon č.",
+          "source": "steno",
+          "steno_id": "2025_30_00421",
+          "citace": "16.Vládní návrh zákona, kterým se mění zákon č."
+        },
+        {
+          "text": "Je dohoda, co se týče přestávky, že bude vyhlášena poté, co skončíme projednávání tohoto bodu.",
+          "source": "steno",
+          "steno_id": "2025_30_00421",
+          "citace": "Je dohoda, co se týče přestávky, že bude vyhlášena poté, co skončíme projednávání tohoto bodu."
+        },
+        {
+          "text": "Jeden bod, který je novým, nebo který hospodářský výbor u svého projednání zařadil, je další úprava, která se týká také přímo řidičů, a to je, přijatý návrh mění platnost jednodenního časového poplatku za užití, zpoplatnění pozemních komunikací na 24 hodin.",
+          "source": "steno",
+          "steno_id": "2025_30_00422",
+          "citace": "Jeden bod, který je novým, nebo který hospodářský výbor u svého projednání zařadil, je další úprava, která se týká také přímo řidičů, a to je, přijatý návrh mění platnost jednodenního časového poplatk"
+        }
+      ]
+    },
+    {
+      "slug": "odpoved-na-pisemnou-interpelaci-p-hladika-na-p-m",
+      "nazev": "Odpověď na písemnou interpelaci P. Hladíka na P. Macinku",
+      "score": 58,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 49,
+          "pritomno_min": 92,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 261,
+        "pocet_fakty": 3,
+        "proslo": false,
+        "kategorie": "interpelace"
+      },
+      "fakty": [
+        {
+          "text": "Ťukání karet do lavic.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_30_00348",
+          "citace": "(Ťukání karet do lavic.)"
+        },
+        {
+          "text": "V případě přijetí návrhu je interpelovaný člen vlády povinen vypracovat novou odpověď ve lhůtě 30 dnů.",
+          "source": "steno",
+          "steno_id": "2025_30_00348",
+          "citace": "V případě přijetí návrhu je interpelovaný člen vlády povinen vypracovat novou odpověď ve lhůtě 30 dnů."
+        },
+        {
+          "text": "169/2023 Sb., snížení omezující hranice výkonu energetického zdroje z 20 megawattů na 5 megawattů s cílem větší možnosti pro městské teplárny využívat energetickou hodnotu paliv z odpadu vyhovujících evropským technickým normám.",
+          "source": "steno",
+          "steno_id": "2025_30_00348",
+          "citace": "169/2023 Sb., snížení omezující hranice výkonu energetického zdroje z 20 megawattů na 5 megawattů s cílem větší možnosti pro městské teplárny využívat energetickou hodnotu paliv z odpadu vyhovujících "
+        }
+      ]
+    },
+    {
+      "slug": "odpoved-na-pisemnou-interpelaci-i-fercikove-kone",
+      "nazev": "Odpověď na písemnou interpelaci I. Ferčíkové Konečné na L. Metnara",
+      "score": 43,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 0,
+          "pritomno_min": 99,
+          "jednomyslne": true,
+          "spor": false,
+          "prazdny_sal": true
+        },
+        "steno_slov": 331,
+        "pocet_fakty": 3,
+        "proslo": true,
+        "kategorie": "interpelace"
+      },
+      "fakty": [
+        {
+          "text": "Zájem o faktickou poznámku v sále.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_30_00378",
+          "citace": "(Zájem o faktickou poznámku v sále.)"
+        },
+        {
+          "text": "(Zájem o faktickou poznámku v sále.) Faktická už je pryč, ta už padla.",
+          "source": "steno",
+          "steno_id": "2025_30_00378",
+          "citace": "(Zájem o faktickou poznámku v sále.) Faktická už je pryč, ta už padla."
+        },
+        {
+          "text": "Připomínám, že odpoledne se budeme věnovat bodu 190, což jsou ústní interpelace.",
+          "source": "steno",
+          "steno_id": "2025_30_00378",
+          "citace": "Připomínám, že odpoledne se budeme věnovat bodu 190, což jsou ústní interpelace."
+        }
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "slug": "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem",
+      "score": 37,
+      "reason": "mimo top 3 pro den"
+    }
+  ],
+  "day_stats": {
+    "pocet_hlas_zakon": 2,
+    "proslo_vote": 2,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-09-10",
+      "2026-09-11"
+    ]
+  }
+}

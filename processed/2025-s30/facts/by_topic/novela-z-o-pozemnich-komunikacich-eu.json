@@ -1,0 +1,99 @@
+{
+  "slug": "novela-z-o-pozemnich-komunikacich-eu",
+  "nazev": "Novela z. o pozemních komunikacích - EU",
+  "datum": "10.09.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "zmrazení ceny dálniční známky a zkrácení lhůty před závěrečným hlasováním",
+  "koho": [
+    "Koho se to týká? Každého, kdo platí dálniční známku, a krajů, které čekají na peníze na silnice."
+  ],
+  "fakty": [
+    {
+      "text": "Bednárik: cíl je zastavit zdražování dálničních známek.",
+      "source": "steno",
+      "steno_id": "2025_30_00422",
+      "citace": "zastavit zdražování dálničních známek",
+      "link_phrase": "zastavit zdražování dálničních známek"
+    },
+    {
+      "text": "Bednárik: známky +71 %, mýto kamionů +19 %.",
+      "source": "steno",
+      "steno_id": "2025_30_00422",
+      "citace": "Celkový nárůst ceny dálničních známek za posledních pět let 71 procent. Celkový nárůst výběru mýtného, které se týká z větší míry zahraničních kamionů, přesně 19,3 procenta.",
+      "link_phrase": "jedenasedmdesát procent"
+    },
+    {
+      "text": "Kupka: vláda je mistr kulatých čtverců.",
+      "source": "steno",
+      "steno_id": "2025_30_00426",
+      "citace": "vláda Andreje Babiše se stává naprosto regulérně, prokazatelně mistrem kulatých čtverců",
+      "link_phrase": "mistrem kulatých čtverců"
+    },
+    {
+      "text": "Kupka: návrh jak se střelit do vlastní nohy.",
+      "source": "steno",
+      "steno_id": "2025_30_00426",
+      "citace": "návrh na to, jak se střelit do vlastní nohy",
+      "link_phrase": "střelit do vlastní nohy"
+    },
+    {
+      "text": "Zuna: líbivá novela mezi slibem a populismem.",
+      "source": "steno",
+      "steno_id": "2025_30_00434",
+      "citace": "novelu, která je na první pohled velmi líbivá",
+      "link_phrase": "Zuna (TOP 09) viděl novelu na první pohled velmi líbivou a ptal se"
+    },
+    {
+      "text": "Jurečka: ušetříte sedmnáct korun měsíčně.",
+      "source": "steno",
+      "steno_id": "2025_30_00456",
+      "citace": "ušetříme vám 17 korun měsíčně zhruba",
+      "link_phrase": "sedmnáct korun měsíčně"
+    },
+    {
+      "text": "Bednárik: odmítám střílet do nohy občany, chci vyšší mýto.",
+      "source": "steno",
+      "steno_id": "2025_30_00460",
+      "citace": "Já odmítám střílet do nohy občany České republiky a chci vybrat od kamionů vyšší mýto",
+      "link_phrase": "odmítá střílet do nohy občany"
+    },
+    {
+      "text": "Bednárik: pak mě neposloucháte, nebo neumím česky.",
+      "source": "steno",
+      "steno_id": "2025_30_00460",
+      "citace": "Pak mě asi fakt neposloucháte nebo neumím česky",
+      "link_phrase": "neumí česky"
+    },
+    {
+      "text": "Sněmovna zkrátila lhůtu před závěrečným hlasováním na sedm dní.",
+      "source": "votes",
+      "cislo_hlasovani": 58,
+      "citace": "Novela z. o pozemních komunikacích - EU",
+      "link_phrase": "lhůtu před závěrečným hlasováním na sedm dní"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Známka bez zdražení",
+  "lead": "Vláda chce zastavit zdražování dálničních známek. Ve čtvrtek návrh prošel druhým kolem. Ministr dopravy Bednárik (ANO) řekl, že za pět let známky stouply o jedenasedmdesát procent, zatímco mýto od kamionů jen o devatenáct.",
+  "pointa": "Kupka (ODS) označil Babišovu vládu za mistra kulatých čtverců: šetří, a přitom chce zmrazit poplatek, kterým se dálnice platí. Řekl, že je to návrh, jak se střelit do vlastní nohy. Zuna (TOP 09) viděl novelu na první pohled velmi líbivou a ptal se, kde na to vezmou. Jurečka (KDU-ČSL) spočítal, že řidič ušetří zhruba sedmnáct korun měsíčně, a kraje na okresky nedostanou nic.\n\nBednárik se bránil, že odmítá střílet do nohy občany a chce víc z mýta od kamionů. Když mu to sál nepřijímal, dodal, že ho buď neposlouchají, nebo neumí česky. V sále byl smích.",
+  "pointa_tail": "Sněmovna zkrátila lhůtu před závěrečným hlasováním na sedm dní. Cena známky se zatím nemění, o tom se bude hlasovat až naposledy.",
+  "pointa_end": "",
+  "mean": "Dálniční známka má přestat automaticky zdražovat. Druhé kolo doběhlo, Sněmovna zkrátila lhůtu na sedm dní před závěrečným hlasováním.",
+  "citace_text": "Já odmítám střílet do nohy občany České republiky a chci vybrat od kamionů vyšší mýto. Tvrdil jsem to předtím, tvrdil jsem to dnes. Rozdíl 71 procent nárůstu cen dálničních známek versus 19 procent za dálnice od profesionálních řidičů, kteří jsou z větší míry zahraniční a ne čeští, je správné. Tečka.",
+  "citace_autor": "Ivan Bednárik (ANO)",
+  "steno_id": "2025_30_00460",
+  "citace2_text": "Vláda Andreje Babiše se stává naprosto regulérně, prokazatelně mistrem kulatých čtverců, protože říkají, jak musejí dramaticky šetřit, jak musejí zajistit všechny investice a jak předchozí vláda jim předala ten stát vybrakovaný.",
+  "citace2_autor": "Martin Kupka (ODS)",
+  "citace2_steno_id": "2025_30_00426",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 24,
+    "pritomno_min": 91,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 38175
+}

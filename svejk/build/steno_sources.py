@@ -541,7 +541,9 @@ def collect_steno_sources(
             ("citace4_text", "citace4_steno_id", "citace4_autor"),
         ):
             ct = (fact.get(cit_key) or "").strip()
-            ct_sid = (fact.get(sid_key) or "").strip()
+            # ponytail: steno_id2/3/4 aliases still used in some facts
+            alias = {"citace2_steno_id": "steno_id2", "citace3_steno_id": "steno_id3", "citace4_steno_id": "steno_id4"}.get(sid_key)
+            ct_sid = (fact.get(sid_key) or (fact.get(alias) if alias else None) or "").strip()
             if ct and ct_sid and not find_passage_for_citace(block.passages, citace_text=ct):
                 ct_passage = _passage_from_fact(
                     {
@@ -624,7 +626,7 @@ def append_jazykolam_steno_block(
         psp_url = _offline_psp_url(paths, steno_id, text)
 
     num += 1
-    block = StenoTopicBlock(slug="jazykolam-dne", title="Jazykolam dne", num=num)
+    block = StenoTopicBlock(slug="jazykolam-dne", title="Citát dne", num=num)
     block.passages.append(
         StenoPassage(
             steno_id=steno_id,
@@ -632,7 +634,7 @@ def append_jazykolam_steno_block(
             speaker=speaker,
             poradi=poradi,
             topic_slug="jazykolam-dne",
-            topic_title="Jazykolam dne",
+            topic_title="Citát dne",
             article_num=num,
             summary="",
             citace=citace,

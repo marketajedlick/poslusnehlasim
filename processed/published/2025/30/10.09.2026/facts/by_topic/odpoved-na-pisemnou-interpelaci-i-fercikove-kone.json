@@ -1,0 +1,71 @@
+{
+  "slug": "odpoved-na-pisemnou-interpelaci-i-fercikove-kone",
+  "nazev": "Odpověď na písemnou interpelaci I. Ferčíkové Konečné na L. Metnara",
+  "datum": "10.09.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "jak stát platí právní pomoc žadatelům o azyl, jestli jednou, nebo dvakrát",
+  "koho": [
+    "Koho se to týká? Žadatelů o azyl a státu, který za jejich právní pomoc platí."
+  ],
+  "fakty": [
+    {
+      "text": "Ferčíková: dřív dvě cesty, zakázka i evropský grant.",
+      "source": "steno",
+      "steno_id": "2025_30_00363",
+      "citace": "v minulém období tyhle služby byly poskytovány duplicitním způsobem",
+      "link_phrase": "dvakrát najednou"
+    },
+    {
+      "text": "Ferčíková: veřejná zakázka je dražší, unijní peníze na ni nejdou.",
+      "source": "steno",
+      "steno_id": "2025_30_00363",
+      "citace": "cesta veřejné zakázky je dražší. Veřejnou zakázku prostředky Evropské komise z programu AMIF zkrátka podpořit nemohou",
+      "link_phrase": "dražší cestu přes veřejnou zakázku"
+    },
+    {
+      "text": "Metnar: šlo o ukončení duplicity, ne o rušení pomoci.",
+      "source": "steno",
+      "steno_id": "2025_30_00365",
+      "citace": "jde o ukončení duplicity, nikoliv o rušení systému",
+      "link_phrase": "ukončení duplicity, ne o rušení systému"
+    },
+    {
+      "text": "Metnar: výdaje z šestatřiceti na třiadvacet milionů.",
+      "source": "steno",
+      "steno_id": "2025_30_00365",
+      "citace": "Celkové veřejné výdaje klesají z 36 milionů, což byl ten souběh obou systémů, maximálně na 23 milionů korun",
+      "link_phrase": "z šestatřiceti milionů na nejvýš třiadvacet"
+    },
+    {
+      "text": "Usnesení souhlasně prošlo.",
+      "source": "votes",
+      "cislo_hlasovani": 40,
+      "citace": "Odpověď na písemnou interpelaci I. Ferčíkové Konečné na L. Metnara",
+      "link_phrase": "Usnesení souhlasně prošlo"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Pomoc jednou, ne dvakrát",
+  "lead": "O co šlo? Stát platil právní pomoc žadatelům o azyl dvakrát najednou. Jednou advokátní kanceláři ze zakázky, podruhé neziskovkám z evropských peněz. Ferčíková Konečná (SPD) se ptala ministra vnitra Metnara (ANO), proč zvolil dražší cestu přes veřejnou zakázku, když unijní grant by vyšel levněji.",
+  "pointa": "Metnar řekl, že šlo o ukončení duplicity, ne o rušení systému. Podle něj dřív běžely obě cesty vedle sebe a účet šel z šestatřiceti milionů na nejvýš třiadvacet. Ferčíková (SPD) nakonec s jeho odpovědí souhlasila. Usnesení souhlasně prošlo, nikdo nebyl proti.",
+  "pointa_tail": "",
+  "pointa_end": "",
+  "mean": "Stát přestal platit stejnou právní pomoc žadatelům o azyl ze dvou kohoutků najednou. Sněmovna Metnarovu odpověď odsouhlasila.",
+  "citace_text": "Týkala se poskytování právních služeb žadatelům o azyl, protože v minulém období tyhle služby byly poskytovány duplicitním způsobem, byly poskytovány jednak advokátními kancelářemi skrze zakázku a ta druhá cesta byla projekt, který je spolufinancován z prostředků AMIF Evropské unie.",
+  "citace_autor": "Irena Ferčíková Konečná (SPD)",
+  "steno_id": "2025_30_00363",
+  "citace2_text": "Jde o ukončení duplicity, nikoliv o rušení systému. Celkové veřejné výdaje klesají z 36 milionů, což byl ten souběh obou systémů, maximálně na 23 milionů korun u nově uzavřené smlouvy.",
+  "citace2_autor": "Lubomír Metnar (ANO)",
+  "citace2_steno_id": "2025_30_00365",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 99,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 331
+}

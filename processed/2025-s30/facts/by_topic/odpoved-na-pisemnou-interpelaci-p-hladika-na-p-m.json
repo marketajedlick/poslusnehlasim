@@ -1,0 +1,69 @@
+{
+  "slug": "odpoved-na-pisemnou-interpelaci-p-hladika-na-p-m",
+  "nazev": "Odpověď na písemnou interpelaci P. Hladíka na P. Macinku",
+  "datum": "10.09.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "nesouhlas s odpovědí ministra životního prostředí Červeného o zálohování obalů",
+  "koho": [
+    "Koho se to týká? Každého, kdo kupuje nápoje v plechovkách a PET lahvích, a obcí, které třídí odpad."
+  ],
+  "fakty": [
+    {
+      "text": "Hladík se ptal na zálohování nápojových obalů.",
+      "source": "steno",
+      "steno_id": "2025_30_00301",
+      "citace": "Jak Česká republika vlastně přistoupí k tomu systému zálohování obalů",
+      "link_phrase": "zálohování nápojových obalů"
+    },
+    {
+      "text": "Peštová: minulá vláda si vyjednala výjimku na hliník.",
+      "source": "steno",
+      "steno_id": "2025_30_00305",
+      "citace": "vyjednali výjimku na recyklaci hliníku, a to do roku 2029",
+      "link_phrase": "výjimku na recyklaci hliníku"
+    },
+    {
+      "text": "Hladík: ta výjimka je blbost pro hospodářství.",
+      "source": "steno",
+      "steno_id": "2025_30_00307",
+      "citace": "To, co jste si vyjednali za tu výjimku, tak je naprostá blbost pro hospodářství",
+      "link_phrase": "naprostá blbost pro hospodářství"
+    },
+    {
+      "text": "Ťukání karet před hlasováním o nesouhlasu.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_30_00348",
+      "citace": "(Ťukání karet do lavic.)",
+      "link_phrase": "ťukání karet"
+    },
+    {
+      "text": "Nesouhlasné usnesení neprošlo, nová odpověď nebude.",
+      "source": "votes",
+      "cislo_hlasovani": 39,
+      "citace": "Odpověď na písemnou interpelaci P. Hladíka na P. Macinku",
+      "link_phrase": "nesouhlasné usnesení neprošlo"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Zálohy bez nové odpovědi",
+  "lead": "Hladík (KDU-ČSL) ráno tahal ministra životního prostředí Červeného (ANO) za zálohování nápojových obalů. S odpovědí nebyl spokojený, tak navrhl, ať ji Sněmovna oficiálně odmítne. Když to projde, ministr musí do třiceti dnů napsat novou. Peštová (ANO) připomněla, že si minulá vláda vyjednala výjimku na recyklaci hliníku do roku 2029. Hladík jí řekl, že ta výjimka je naprostá blbost pro hospodářství, protože kov končí na skládkách.",
+  "pointa": "Červený mluvil dlouho o sběru a pilotu v Moravskoslezském kraji. Před hlasováním bylo slyšet ťukání karet. Nesouhlasné usnesení neprošlo. Novou odpověď do třiceti dnů nikdo nedostane.",
+  "pointa_tail": "",
+  "pointa_end": "",
+  "mean": "Hladík chtěl novou odpověď k zálohování obalů. Sněmovna nesouhlas odmítla, takže zůstává původní text ministra.",
+  "citace_text": "To, co jste si vyjednali za tu výjimku, tak je naprostá blbost pro hospodářství. Ta vaše výjimka nás jenom poškodila jako Českou republiku.",
+  "citace_autor": "Petr Hladík (KDU-ČSL)",
+  "steno_id": "2025_30_00307",
+  "pocet_hlasovani": 1,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 49,
+    "pritomno_min": 92,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 261
+}

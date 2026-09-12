@@ -1,0 +1,67 @@
+{
+  "key": "2025/30/10.09.2026",
+  "obdobi": 2025,
+  "schuze": 30,
+  "datum_unl": "10.09.2026",
+  "iso": "2026-09-10",
+  "state": "approved",
+  "topic_slugs": [
+    "novela-z-o-pozemnich-komunikacich-eu",
+    "odpoved-na-pisemnou-interpelaci-p-hladika-na-p-m",
+    "odpoved-na-pisemnou-interpelaci-i-fercikove-kone"
+  ],
+  "recommended_slugs": [
+    "novela-z-o-pozemnich-komunikacich-eu",
+    "odpoved-na-pisemnou-interpelaci-p-hladika-na-p-m",
+    "odpoved-na-pisemnou-interpelaci-i-fercikove-kone"
+  ],
+  "rejected_slugs": [
+    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem"
+  ],
+  "brief_path": "editions/2026-09-10/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "stale",
+    "stale": true,
+    "link_phrase_coverage": {
+      "total": 16,
+      "linked": 16,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 16,
+      "ok": 14,
+      "percent": 87.5,
+      "bad": [
+        "odpoved-na-pisemnou-interpelaci-p-hladika-na-p-m[0]",
+        "odpoved-na-pisemnou-interpelaci-p-hladika-na-p-m[2]"
+      ]
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 3,
+    "steno_passages": 18,
+    "steno_missing_article_phrase": 1,
+    "ok": false,
+    "errors": [
+      "citace nejsou doslovně ve stenozáznamu",
+      "slabá témata: novela-z-o-pozemnich-komunikacich-eu, odpoved-na-pisemnou-interpelaci-i-fercikove-kone, odpoved-na-pisemnou-interpelaci-p-hladika-na-p-m"
+    ]
+  },
+  "inputs": {
+    "votes_count": 59,
+    "votes_max_cislo": 59,
+    "steno_count": 662,
+    "steno_last_poradi": 662,
+    "topics_built_at": "2026-09-11T08:21:02.784046+00:00",
+    "fingerprint": "0e3df04302e84dbc"
+  },
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null
+}

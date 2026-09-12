@@ -11,7 +11,7 @@
     {% endif %}
     <div class="card-share">
       {% set jazykolam_share_text = ('„' ~ jazykolam.text ~ '“\n\n' ~ (jazykolam.autor ~ '\n\n' if jazykolam.autor else '') ~ share_page_url) %}
-      <button type="button" class="share-btn" data-share-card="Jazykolam dne" data-share-id="jazykolam-dne" data-share-text="{{ jazykolam_share_text | replace('\n', '\\n') }}" title="Poslat hlášení" aria-label="Sdílet jazykolam">
+      <button type="button" class="share-btn" data-share-card="Citát dne" data-share-id="jazykolam-dne" data-share-text="{{ jazykolam_share_text | replace('\n', '\\n') }}" title="Poslat hlášení" aria-label="Sdílet citát">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.7" x2="15.4" y2="6.3"/><line x1="8.6" y1="13.3" x2="15.4" y2="17.7"/></svg>
       </button>
     </div>
