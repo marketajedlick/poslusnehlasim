@@ -1,0 +1,41 @@
+{
+  "datum": "11.09.2026",
+  "den": "pátek",
+  "topic_slugs": [
+    "novela-z-o-spotrebitelskem-uveru",
+    "vl-n-z-o-vstupu-a-pobytu-cizincu",
+    "vl-n-z-o-ekodesignu-vyrobku-eu"
+  ],
+  "stats": {
+    "pocet_hlas": 5,
+    "minuty": 195,
+    "end_cas": "14:00",
+    "proslo": 3,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "slovnicek": [
+    "spotřebitelský úvěr",
+    "RPSN",
+    "cizinecký zákon",
+    "ekodesign",
+    "třetí čtení"
+  ],
+  "nwl_predmet": "Stropy na půjčky. Pobyty po novém",
+  "dnesni_ucet": "Sněmovna dala stropy půjčkám a nový cizinecký zákon.\nEkodesign prošel skoro bez řečí.",
+  "zaver": "že Sněmovna schválila stropy na půjčky, nový cizinecký zákon i evropský ekodesign.",
+  "vysledek": [
+    "* Spotřebitelské půjčky: stropy a evropská pravidla schválena v závěrečném hlasování",
+    "* Cizinecký zákon: schválen, pirátský pozměňovák k rodinám neprošel",
+    "* Ekodesign výrobků: schválen bez pozměňováků"
+  ],
+  "jazykolam": {
+    "text": "Jsou země kolem nás, které pod rouškou populismu si nastavily stropy nižší. Podívejte se na Slovensko.",
+    "autor": "Karel Haas (ODS)",
+    "steno_id": "2025_29_00311"
+  },
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo"
+}

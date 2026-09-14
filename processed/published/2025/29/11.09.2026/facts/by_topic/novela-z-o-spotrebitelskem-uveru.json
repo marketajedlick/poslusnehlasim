@@ -1,0 +1,95 @@
+{
+  "slug": "novela-z-o-spotrebitelskem-uveru",
+  "nazev": "Novela z. o spotřebitelském úvěru",
+  "datum": "11.09.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "stropy na náklady půjček a přísnější pravidla, kdo a jak smí lidem půjčovat",
+  "koho": [
+    "Koho se to týká? Každého, kdo řeší spotřebitelskou půjčku, splátky nebo smlouvu s nebankovkou."
+  ],
+  "fakty": [
+    {
+      "text": "Schillerová: cíl je převést evropskou směrnici o spotřebitelských úvěrech.",
+      "source": "steno",
+      "steno_id": "2025_29_00305",
+      "citace": "Hlavním cílem tohoto návrhu je převést do českého práva novou evropskou směrnici o spotřebitelských úvěrech.",
+      "link_phrase": "evropská pravidla"
+    },
+    {
+      "text": "Haas: příliš nízké stropy jsou cesta do pekel.",
+      "source": "steno",
+      "steno_id": "2025_29_00311",
+      "citace": "A to je cesta do pekel.",
+      "link_phrase": "cesta do pekel"
+    },
+    {
+      "text": "Haas: nejvíc podporuje dojednaný kompromis se stropy s trhem.",
+      "source": "steno",
+      "steno_id": "2025_29_00311",
+      "citace": "Já nejvíce podporuju ten dojednaný kompromis s trhem, to znamená ty stropy tak, jak jsou nastaveny",
+      "link_phrase": "Haas (ODS) chválil odbornou debatu"
+    },
+    {
+      "text": "Jakob: jak chránit před dluhovou pastí, aniž vytlačíte lidi z legálního trhu.",
+      "source": "steno",
+      "steno_id": "2025_29_00327",
+      "citace": "Jak chránit člověka před dluhovou pastí, aniž bychom ho vytlačili z legálního a kontrolovaného trhu?",
+      "link_phrase": "před dluhovou pastí"
+    },
+    {
+      "text": "Richterová: falešné podnikatelské úvěry kvůli obejití ochrany spotřebitele.",
+      "source": "steno",
+      "steno_id": "2025_29_00333",
+      "citace": "aby ten člověk byl mimo ochranný režim spotřebitelského úvěru",
+      "link_phrase": "živnostenským listem"
+    },
+    {
+      "text": "Schillerová: posun k kompromisnímu návrhu B2.",
+      "source": "steno",
+      "steno_id": "2025_29_00339",
+      "citace": "my jsme se posunuli k tomu kompromisnímu návrhu B2. Bylo to fakt hrozně těžké to dát dohromady.",
+      "link_phrase": "kompromisní návrh B2"
+    },
+    {
+      "text": "Richterová po finále: prošlo konsenzem, zákon je prospěšný pro lidi.",
+      "source": "steno",
+      "steno_id": "2025_29_00398",
+      "citace": "Prošlo to konsenzem, protože to prošlo řádným procesem. Bylo to projednáváno, byla předložena kompromisní řešení a ten zákon je prospěšný pro lidi.",
+      "link_phrase": "prospěšný pro lidi"
+    },
+    {
+      "text": "Sněmovna schválila novelu v závěrečném hlasování.",
+      "source": "votes",
+      "cislo_hlasovani": 104,
+      "citace": "Novela z. o spotřebitelském úvěru",
+      "link_phrase": "Sněmovna novelu schválila"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Stropy na půjčky",
+  "lead": "Novela o spotřebitelských půjčkách došla k závěrečnému hlasování. Zákon má do Česka převést evropská pravidla a nastavit stropy na náklady úvěrů. Haas (ODS) chválil odbornou debatu a varoval, že příliš nízké stropy jsou cesta do pekel: lidi pak zmizí do šedé zóny. Jakob (TOP 09) se ptal, jak chránit člověka před dluhovou pastí.",
+  "pointa": "",
+  "pointa_tail": "Richterová (Piráti) připomněla fígle se živnostenským listem, kdy půjčka vypadá jako podnikatelská, jen aby klient vypadl z ochranného režimu. Schillerová (ANO) hájila kompromisní návrh B2 a řekla, že to bylo fakt hrozně těžké dát dohromady. Po závěrečném hlasování Richterová (Piráti) prohlásila, že zákon je prospěšný pro lidi.",
+  "pointa_end": "Sněmovna novelu schválila. Teď míří dál k Senátu a prezidentovi.",
+  "mean": "Půjčky mají mít stropy na náklady a přísnější pravidla, kdo smí lidem půjčovat. Závěrečné hlasování prošlo po dlouhé debatě o kompromisech a šedé zóně.",
+  "citace_text": "",
+  "citace_autor": "",
+  "steno_id": "",
+  "citace2_text": "Jak chránit člověka před dluhovou pastí, aniž bychom ho vytlačili z legálního a kontrolovaného trhu?",
+  "citace2_autor": "Jan Jakob (TOP 09)",
+  "citace2_steno_id": "2025_29_00327",
+  "citace3_text": "Prošlo to konsenzem, protože to prošlo řádným procesem. Bylo to projednáváno, byla předložena kompromisní řešení a ten zákon je prospěšný pro lidi.",
+  "citace3_autor": "Olga Richterová (Piráti)",
+  "citace3_steno_id": "2025_29_00398",
+  "pocet_hlasovani": 19,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 110,
+    "pritomno_min": 134,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 15499
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "vl-n-z-o-ekodesignu-vyrobku-eu",
+  "nazev": "Vl. n. z. o ekodesignu výrobků - EU",
+  "datum": "11.09.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "evropská pravidla, jak se mají navrhovat a vyrábět výrobky",
+  "koho": [
+    "Koho se to týká? Výrobců a prodejců zboží a každého, kdo kupuje věci, které mají jít spíš opravit než vyhodit."
+  ],
+  "fakty": [
+    {
+      "text": "Havlíček: zákon přebírá evropské nařízení o ekodesignu.",
+      "source": "steno",
+      "steno_id": "2025_29_00435",
+      "citace": "návrh zákona implementuje evropské nařízení a o vytvoření rámce pro stanovení požadavků na ekodesign udržitelných výrobků",
+      "link_phrase": "ekodesignu výrobků"
+    },
+    {
+      "text": "Ve druhém kole ani ve výboru nebyly pozměňovací návrhy.",
+      "source": "steno",
+      "steno_id": "2025_29_00435",
+      "citace": "nebyly vůči němu uplatněny žádné pozměňovací návrhy, stejně tak tomu bylo v rámci hospodářského výboru",
+      "link_phrase": "nikdo nic nepřipisoval"
+    },
+    {
+      "text": "Sněmovna schválila zákon o ekodesignu.",
+      "source": "votes",
+      "cislo_hlasovani": 114,
+      "citace": "Vl. n. z. o ekodesignu výrobků - EU",
+      "link_phrase": "Sněmovna zákon schválila"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Ekodesign bez oprav",
+  "lead": "Místopředseda vlády Havlíček (ANO) přivedl k závěrečnému hlasování zákon o ekodesignu výrobků. Jde o evropská pravidla, jak se mají navrhovat udržitelnější věci. Ve druhém kole ani ve výboru nikdo nic nepřipisoval.",
+  "pointa": "Sněmovna zákon schválila. České znění evropského ekodesignu má tak za sebou závěrečné hlasování ve Sněmovně.",
+  "pointa_tail": "",
+  "mean": "Výrobky mají jít spíš navrhnout tak, aby déle vydržely a šly opravovat. Sněmovna zákon schválila bez pozměňováků.",
+  "citace_text": "návrh zákona implementuje evropské nařízení a o vytvoření rámce pro stanovení požadavků na ekodesign udržitelných výrobků",
+  "citace_autor": "Karel Havlíček (ANO)",
+  "steno_id": "2025_29_00435",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 1,
+    "pritomno_min": 122,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 1652
+}

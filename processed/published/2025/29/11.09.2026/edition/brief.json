@@ -1,0 +1,169 @@
+{
+  "datum_unl": "11.09.2026",
+  "iso": "2026-09-11",
+  "recommended": [
+    {
+      "slug": "novela-z-o-spotrebitelskem-uveru",
+      "nazev": "Novela z. o spotřebitelském úvěru",
+      "score": 69,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 110,
+          "pritomno_min": 134,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 15499,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "Odpověď ministryně mimo mikrofon.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_29_00304",
+          "citace": "(Odpověď ministryně mimo mikrofon.)"
+        },
+        {
+          "text": "Pozměňovací návrhy jsou uvedeny ve sněmovním tisku 145/3, který byl doručen 26.",
+          "source": "steno",
+          "steno_id": "2025_29_00304",
+          "citace": "Pozměňovací návrhy jsou uvedeny ve sněmovním tisku 145/3, který byl doručen 26."
+        },
+        {
+          "text": "257/2016 Sb., o spotřebitelském úvěru, ve znění pozdějších předpisů, a další související zákony/sněmovní tisk 145/ – třetí čtení Prosím, aby místo u stolku zpravodajů zaujala za navrhovatele místopředsedkyně vlády, ministryně financí Alena Schillerová.",
+          "source": "steno",
+          "steno_id": "2025_29_00304",
+          "citace": "257/2016 Sb., o spotřebitelském úvěru, ve znění pozdějších předpisů, a další související zákony/sněmovní tisk 145/ – třetí čtení Prosím, aby místo u stolku zpravodajů zaujala za navrhovatele místopřed"
+        },
+        {
+          "text": "Ministryně se kvůli hluku obrací na předsedajícího se slovy – to je peklo tady.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_29_00305",
+          "citace": "(Ministryně se kvůli hluku obrací na předsedajícího se slovy – to je peklo tady.)"
+        }
+      ]
+    },
+    {
+      "slug": "vl-n-z-o-ekodesignu-vyrobku-eu",
+      "nazev": "Vl. n. z. o ekodesignu výrobků - EU",
+      "score": 69,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 1,
+          "pritomno_min": 122,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 1652,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "zákon o ekodesignu výrobků",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_29_00434",
+          "citace": "(zákon o ekodesignu výrobků)"
+        },
+        {
+          "text": "5.Vládní návrh zákona o ekodesignu výrobků a o výkonu státní správy v oblasti ekodesignu výrobků a o změně souvisejících zákonů (zákon o ekodesignu výrobků)/sněmovní tisk 113/ – třetí čtení Prosím, aby místo u stolku zpravodajů zaujal za navrhovatele místopředseda vlády, ministr průmyslu a obchodu Karel Havlíček a zpra",
+          "source": "steno",
+          "steno_id": "2025_29_00434",
+          "citace": "5.Vládní návrh zákona o ekodesignu výrobků a o výkonu státní správy v oblasti ekodesignu výrobků a o změně souvisejících zákonů (zákon o ekodesignu výrobků)/sněmovní tisk 113/ – třetí čtení Prosím, ab"
+        },
+        {
+          "text": "Návrh na zamítnutí ani pozměňovací návrhy nebyly ve druhém čtení předneseny.",
+          "source": "steno",
+          "steno_id": "2025_29_00434",
+          "citace": "Návrh na zamítnutí ani pozměňovací návrhy nebyly ve druhém čtení předneseny."
+        },
+        {
+          "text": "návrh",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_29_00437",
+          "citace": "(návrh)"
+        }
+      ]
+    },
+    {
+      "slug": "vl-n-z-o-vstupu-a-pobytu-cizincu",
+      "nazev": "Vl. n. z. o vstupu a pobytu cizinců",
+      "score": 69,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 69,
+          "pritomno_min": 134,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 1875,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "cizinecký zákon",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_29_00400",
+          "citace": "(cizinecký zákon)"
+        },
+        {
+          "text": "2.Vládní návrh zákona o vstupu a pobytu cizinců (cizinecký zákon)/sněmovní tisk 144/ – třetí čtení Prosím, aby místo u stolku zpravodajů zaujal za navrhovatele ministr vnitra Lubomír Metnar a za garanční výbor, tedy výbor pro bezpečnost, zpravodaj poslanec Robert Králíček.",
+          "source": "steno",
+          "steno_id": "2025_29_00400",
+          "citace": "2.Vládní návrh zákona o vstupu a pobytu cizinců (cizinecký zákon)/sněmovní tisk 144/ – třetí čtení Prosím, aby místo u stolku zpravodajů zaujal za navrhovatele ministr vnitra Lubomír Metnar a za garan"
+        },
+        {
+          "text": "Pozměňovací návrhy byly uvedeny ve sněmovním tisku 144/2, který byl doručen dne 25.",
+          "source": "steno",
+          "steno_id": "2025_29_00400",
+          "citace": "Pozměňovací návrhy byly uvedeny ve sněmovním tisku 144/2, který byl doručen dne 25."
+        },
+        {
+          "text": "Ministr gestikuluje nesouhlas.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_29_00408",
+          "citace": "(Ministr gestikuluje nesouhlas.)"
+        }
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "slug": "novela-z-o-duchodovem-pojisteni",
+      "score": 60,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "n-z-kterym-se-meni-nektere-zakony-na-useku-vnitr",
+      "score": 54,
+      "reason": "mimo top 3 pro den"
+    }
+  ],
+  "day_stats": {
+    "pocet_hlas_zakon": 5,
+    "proslo_vote": 5,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-09-11",
+      "2026-09-12"
+    ]
+  }
+}

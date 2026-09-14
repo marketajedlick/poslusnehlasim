@@ -1,0 +1,85 @@
+{
+  "slug": "vl-n-z-o-vstupu-a-pobytu-cizincu",
+  "nazev": "Vl. n. z. o vstupu a pobytu cizinců",
+  "datum": "11.09.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "nový cizinecký zákon a digitální vyřizování pobytů",
+  "koho": [
+    "Koho se to týká? Cizinců, kteří u nás chtějí žít, studovat nebo pracovat, a úřadů, které jim razítkují papíry."
+  ],
+  "fakty": [
+    {
+      "text": "Metnar žádá podporu nového cizineckého zákona.",
+      "source": "steno",
+      "steno_id": "2025_29_00401",
+      "citace": "Jsem přesvědčen, že přispěje k efektivnějšímu fungování pobytové agendy a zároveň posílí bezpečnost České republiky",
+      "link_phrase": "pobytovou agendu"
+    },
+    {
+      "text": "Rakušan: zákon potřebujeme, digitalizace pobytové agendy.",
+      "source": "steno",
+      "steno_id": "2025_29_00403",
+      "citace": "Bez ironie říkám, tenhle zákon potřebujeme. Je potřebný.",
+      "link_phrase": "potřebujeme ho"
+    },
+    {
+      "text": "Rakušan: na návrhu sám dva roky pracoval.",
+      "source": "steno",
+      "steno_id": "2025_29_00403",
+      "citace": "jsem v roli opozičního poslance, který vítá předkládaný návrh, na kterém ještě sám dva roky pracoval",
+      "link_phrase": "sám dva roky pracoval"
+    },
+    {
+      "text": "Volpe: pozměňovák má srovnat rodiny Čechů s rodinami jiných Evropanů.",
+      "source": "steno",
+      "steno_id": "2025_29_00405",
+      "citace": "odstranění nejvýraznějších rozdílů mezi postavením rodinných příslušníků občanů České republiky a občanů jiných členských států Evropské unie",
+      "link_phrase": "srovnat postavení rodin Čechů"
+    },
+    {
+      "text": "Metnar u pirátského pozměňováku gestikuluje nesouhlas.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_29_00408",
+      "citace": "(Ministr gestikuluje nesouhlas.)",
+      "link_phrase": "gestikuloval nesouhlas"
+    },
+    {
+      "text": "Pozměňovací návrh Volpeho neprošel.",
+      "source": "votes",
+      "cislo_hlasovani": 106,
+      "citace": "Vl. n. z. o vstupu a pobytu cizinců",
+      "link_phrase": "pozměňovák neprošel"
+    },
+    {
+      "text": "Sněmovna schválila cizinecký zákon v závěrečném hlasování.",
+      "source": "votes",
+      "cislo_hlasovani": 107,
+      "citace": "Vl. n. z. o vstupu a pobytu cizinců",
+      "link_phrase": "Zákon jako celek Sněmovna schválila"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Pobyty po novém",
+  "lead": "Ministr vnitra Metnar (ANO) přivedl k závěrečnému hlasování nový cizinecký zákon. Má zrychlit pobytovou agendu a víc ji digitalizovat. Rakušan (STAN) zákon podpořil bez ironie: potřebujeme ho, na návrhu sám dva roky pracoval, když ještě seděl na vnitru.",
+  "pointa": "Volpe (Piráti) s kolegyněmi chtěl srovnat postavení rodin Čechů, které mají příbuzné ze třetích zemí, s rodinami jiných Evropanů u nás. Metnar (ANO) u hlasování gestikuloval nesouhlas. Pozměňovák neprošel.\n\nZákon jako celek Sněmovna schválila. Rakušan ještě předtím připomněl, že akademiky a lidi, které tu chceme, odrazovala zdlouhavost a kopírování z wordovských dokumentů.",
+  "pointa_tail": "Nový cizinecký zákon má za sebou závěrečné hlasování ve Sněmovně. Teď jde dál legislativní cestou.",
+  "mean": "Pobyty cizinců se mají vyřizovat elektronicky a podle nových pravidel. Sněmovna zákon schválila, pirátský pokus srovnat rodiny Čechů s jinými Evropany neprošel.",
+  "citace_text": "Bez ironie říkám, tenhle zákon potřebujeme. Je potřebný. Jsem rád, že na pana ministra tady konečně došla řada a doufám, že se dneska bude i hlasovat.",
+  "citace_autor": "Vít Rakušan (STAN)",
+  "steno_id": "2025_29_00403",
+  "citace2_text": "Jsem přesvědčen, že přispěje k efektivnějšímu fungování pobytové agendy a zároveň posílí bezpečnost České republiky.",
+  "citace2_autor": "Lubomír Metnar (ANO)",
+  "citace2_steno_id": "2025_29_00401",
+  "pocet_hlasovani": 3,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 69,
+    "pritomno_min": 134,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 1875
+}
