@@ -10,7 +10,7 @@
 {% if website_json_ld %}
 <script type="application/ld+json">{{ website_json_ld | tojson }}</script>
 {% endif %}
-<link rel="stylesheet" href="{{ fonts_css_href }}" />
+{% include "fonts-links.html" %}
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
 <body class="static-page archiv-page">

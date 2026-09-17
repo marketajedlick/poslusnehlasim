@@ -21,14 +21,20 @@ if echo "$BODY" | grep -q "BEGIN Cloudflare Managed content"; then
   errors=$((errors + 1))
 fi
 
-for bot in GPTBot ClaudeBot Google-Extended PerplexityBot Applebot-Extended; do
+# Bez Allow (nebo s Disallow: /) platforma web citovat nemůže.
+for bot in GPTBot ChatGPT-User ClaudeBot Google-Extended PerplexityBot Applebot-Extended; do
+  if ! echo "$BODY" | grep -q "^User-agent: ${bot}$"; then
+    echo "CHYBA  Chybí User-agent: $bot (platforma pak web necitije)"
+    errors=$((errors + 1))
+    continue
+  fi
   if echo "$BODY" | awk -v bot="$bot" '
     $0 ~ "^User-agent: " bot "$" { in_block=1; next }
     in_block && /^User-agent:/ { in_block=0 }
     in_block && /^Disallow: \// { found=1; exit }
     END { exit !found }
   '; then
-    echo "CHYBA  User-agent: $bot má Disallow: / (blokuje crawl)"
+    echo "CHYBA  User-agent: $bot má Disallow: / (blokuje crawl, platforma necitije)"
     errors=$((errors + 1))
   fi
 done

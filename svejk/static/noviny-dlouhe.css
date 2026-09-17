@@ -1248,6 +1248,8 @@ a.steno-link .term-term{
   gap:10px;
   flex-wrap:wrap;
   margin-bottom:6px;
+  /* Rezerva proti CLS, až API doplní čipy (globální [hidden] jinak smaže výšku). */
+  min-height:1.15em;
 }
 .reaction-trigger{
   display:inline-flex;
@@ -1262,7 +1264,11 @@ a.steno-link .term-term{
   border-radius:50%;
   flex-shrink:0;
 }
-.reaction-summary[hidden]{display:none}
+.reaction-summary[hidden]{
+  display:flex!important;
+  visibility:hidden;
+  pointer-events:none;
+}
 .reaction-chip{
   display:inline-flex;
   align-items:center;
@@ -1396,6 +1402,10 @@ a.steno-link .term-term{
 .subscribe-form{
   margin:0;
   text-align:center;
+}
+.subscribe-form:tool-form-active{
+  outline:2px dashed var(--orange);
+  outline-offset:6px;
 }
 .subscribe-row{
   display:inline-grid;

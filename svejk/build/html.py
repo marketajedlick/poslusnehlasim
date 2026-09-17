@@ -269,6 +269,17 @@ def fonts_asset_version() -> str:
     return hashlib.sha256(_FONTS_CSS.read_bytes()).hexdigest()[:10]
 
 
+def fonts_css_inline(fonts_css_href: str) -> str:
+    """fonts.css pro <style> v head. Relativní url(fonts/…) → absolutní pod /static/."""
+    if not fonts_css_href:
+        return ""
+    base = fonts_css_href.split("?", 1)[0].rsplit("/fonts.css", 1)[0]
+    raw = _FONTS_CSS.read_text(encoding="utf-8")
+    return raw.replace("url('fonts/", f"url('{base}/fonts/").replace(
+        'url("fonts/', f'url("{base}/fonts/'
+    )
+
+
 def _split_paragraphs(text: str) -> list[str]:
     parts = re.split(r"(?<=[.!?])\s+", text.strip())
     return [p for p in parts if p]
@@ -401,6 +412,11 @@ def _jinja_env() -> Environment:
         return Markup(highlight_markup(text))
 
     env.filters["kuriozita_display"] = _kuriozita_display_filter
+
+    def _fonts_inline_filter(href: str) -> Markup:
+        return Markup(fonts_css_inline(href or ""))
+
+    env.filters["fonts_inline"] = _fonts_inline_filter
     return env
 
 

@@ -1,0 +1,10 @@
+{# @font-face inline (žádný render-blocking request na fonts.css).
+   Preload body/UI latin + latin-ext; font-display:swap v CSS. #}
+{% if fonts_css_href %}
+{% set _fonts_base = fonts_css_href.split('?')[0].rsplit('/fonts.css', 1)[0] %}
+<link rel="preload" href="{{ _fonts_base }}/fonts/oldstandardtt-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ _fonts_base }}/fonts/oldstandardtt-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ _fonts_base }}/fonts/archivo-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ _fonts_base }}/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>{{ fonts_css_href | fonts_inline }}</style>
+{% endif %}

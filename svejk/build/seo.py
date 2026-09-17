@@ -818,27 +818,36 @@ def write_llms_txt(
         latest.obdobi, latest.schuze, latest.datum_unl, base_path
     )
 
-    static_links = "\n".join(
+    archiv_href = f"{base}{archiv_pages_href(base_path)}"
+    slovnicek_href = f"{base}{slovnicek_pages_href(base_path)}"
+    other_links = "\n".join(
         f"- [{label}]({href})"
         for label, href in _static_page_links(site_url=site_url, base_path=base_path)
+        if href not in (archiv_href, slovnicek_href)
     )
     llms = f"""# {SITE_NAME}
 
 > {SITE_META_DESCRIPTION}
 
-{SITE_NAME} ({SITE_DOMAIN}) publikuje po každém jednacím dni stručné vydání: kolik věcí prošlo, co se schválilo nebo zamítlo a co to znamená v praxi.
+{SITE_NAME} ({SITE_DOMAIN}) je satirický deník z Poslanecké sněmovny. Po každém jednacím dni vyjde stručné vydání: o čem se hlasovalo, co zaznělo v rozpravě a co to znamená v praxi. Satira stojí na faktech, citace jsou doslovné ze stenoprotokolů.
+
+## Zdroj dat
+
+Stenoprotokoly a výsledky hlasování z veřejných open dat Poslanecké sněmovny ([psp.cz](https://www.psp.cz)), doplněné o strukturovaná data z projektu [Hlídač státu](https://www.hlidacstatu.cz). Každé vydání odpovídá konkrétnímu jednacímu dni konkrétní schůze.
 
 ## Hlavní stránky
 
 - [Úvod / nejnovější vydání]({base}/): aktuální deník
 - [Nejnovější vydání ({latest.datum_unl})]({base}{latest_href}): poslední schůze
+- [Archiv vydání]({archiv_href}): všechna vydání podle data
+- [Švejkov slovníček]({slovnicek_href}): parlamentní pojmy lidsky
 - [RSS kanál nových vydání]({base}/feed.xml): odběr nových vydání
 - [Mapa webu]({base}/sitemap.xml): všechna vydání
 - [Podrobný index pro AI]({base}/llms-full.txt): seznam vydání s popisky
 
 ## Ostatní stránky
 
-{static_links}
+{other_links}
 
 ## Odběr
 

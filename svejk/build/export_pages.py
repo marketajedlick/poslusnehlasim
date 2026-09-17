@@ -162,6 +162,14 @@ def _base_path() -> str:
     return os.environ.get("SVEJK_BASE_PATH", "").rstrip("/")
 
 
+def homepage_canonical_url(site_url: str, edition, base_path: str = "") -> str:
+    """Homepage nese plný text vydání; kanonická adresa je stálé /vydani/DATUM/."""
+    href = edition_pages_href(
+        edition.obdobi, edition.schuze, edition.datum_unl, base_path
+    )
+    return f"{site_url.rstrip('/')}{href}"
+
+
 def _redirect_html(target: str) -> str:
     return (
         "<!DOCTYPE html>\n"
@@ -584,7 +592,6 @@ def run_export_pages(
         content = build_den_content(
             day_path, paths, link_mode="pages", base_path=base
         )
-        home_canonical = f"{site}/"
         index_html = render_den_html(
             content,
             paths,
@@ -595,7 +602,7 @@ def run_export_pages(
             link_mode="pages",
             obdobi=obdobi,
             base_path=base,
-            canonical_url=home_canonical,
+            canonical_url=homepage_canonical_url(site, homepage_edition, base),
             is_homepage=True,
         )
         written.append(_write_page_html(out, "index.html", index_html))

@@ -1,6 +1,8 @@
 {% if newsletter.show_corrections %}
 <dialog class="correction-dialog" id="correction-dialog" aria-labelledby="correction-dialog-title">
   <form class="correction-form" id="correction-form" method="post" action="#" novalidate
+    toolname="report_correction"
+    tooldescription="Pošle návrh opravy k článku v Poslušně hlásím. Vyžaduje text návrhu; e-mail je volitelný."
     data-api-url="{{ newsletter.corrections_api_url }}"
     data-edition="{{ obdobi }}/{{ schuze }}/{{ content.datum }}"
     data-page-url="{{ canonical_url }}"
@@ -39,10 +41,11 @@
         minlength="1"
         maxlength="4000"
         placeholder="{{ t.correction.suggestion_placeholder }}"
+        toolparamdescription="Text návrhu opravy nebo vysvětlení chyby"
       ></textarea>
       <p class="correction-error" id="correction-error" hidden role="alert"></p>
     </div>
-    <fieldset class="correction-kinds">
+    <fieldset class="correction-kinds" toolparamdescription="Druh opravy: faktická chyba, překlep, nebo jiné">
       <legend class="correction-label">{{ t.correction.kind_label }}</legend>
       <label class="correction-kind">
         <input type="radio" name="kind" value="factual" checked />
@@ -66,13 +69,15 @@
         name="email"
         autocomplete="email"
         placeholder="{{ t.correction.email_placeholder }}"
+        toolparamdescription="Volitelný e-mail pro odpověď redakce"
       />
     </div>
-    <input type="text" name="_hp" class="correction-hp" tabindex="-1" autocomplete="new-password" aria-hidden="true" />
-    <input type="hidden" name="topic_slug" id="correction-topic-slug" value="" />
-    <input type="hidden" name="article_num" id="correction-article-num" value="" />
-    <input type="hidden" name="article_title" id="correction-article-title" value="" />
-    <input type="hidden" name="quoted" id="correction-quoted-input" value="" />
+    {# bez name=_hp, ať honeypot není WebMCP parametrem #}
+    <input type="text" class="correction-hp" tabindex="-1" autocomplete="new-password" aria-hidden="true" />
+    <input type="hidden" id="correction-topic-slug" value="" />
+    <input type="hidden" id="correction-article-num" value="" />
+    <input type="hidden" id="correction-article-title" value="" />
+    <input type="hidden" id="correction-quoted-input" value="" />
     <footer class="correction-actions">
       <button type="submit" class="correction-submit">{{ t.correction.submit }}</button>
     </footer>

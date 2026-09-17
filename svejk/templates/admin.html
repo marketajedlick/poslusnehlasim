@@ -4,7 +4,7 @@
 {% include "head-noviny.html" %}
 <title>Redakce · {{ t.brand.name }}</title>
 <meta name="robots" content="noindex" />
-<link rel="stylesheet" href="{{ fonts_css_href }}" />
+{% include "fonts-links.html" %}
 <link rel="stylesheet" href="{{ css_href }}" />
 {% if admin_css_href %}<link rel="stylesheet" href="{{ admin_css_href }}" />{% endif %}
 </head>

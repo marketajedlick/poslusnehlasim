@@ -54,6 +54,7 @@ Politika v `headers.txt` počítá s tím, co web reálně používá:
 
 - inline skripty (listování stránek, cookies, odběr) → `'unsafe-inline'`
 - Google Analytics po souhlasu → `googletagmanager.com`, `google-analytics.com`
+- Cloudflare Web Analytics (automatický beacon) → `static.cloudflareinsights.com` v `script-src`; reporty jdou na `/cdn-cgi/rum` (`connect-src 'self'`)
 - odběr → `poslusnehlasim-odebir.pages.dev`, `*.ecomailapp.cz`
 - Stripe jen jako odkaz (žádný iframe) → není v `frame-src`
 
@@ -61,21 +62,36 @@ Nejdřív můžeš nasadit **Report-Only** variantu: v Transform Rule použij hl
 
 **Obrázky v newsletteru:** hlavička `Cross-Origin-Resource-Policy` musí být `cross-origin`, ne `same-site`. Jinak náhled kampaně v Ecomailu neukáže Švejka (URL `/static/favicon.png` sice funguje v prohlížeči, ale z domény `ecomailapp.cz` prohlížeč obrázek zablokuje).
 
+### Cache TTL pro `/static/*` (PageSpeed: „Use efficient cache lifetimes“)
+
+GitHub Pages posílá na assety `Cache-Control: max-age=14400` (4 h). Lighthouse to hlásí u fontů a CSS. CSS má fingerprint `?v=…`, fonty se skoro nemění, takže u edge nastav dlouhou TTL.
+
+**Rules → Transform Rules → Modify response header → Create rule**
+
+| Pole | Hodnota |
+|------|---------|
+| Rule name | `Static cache` |
+| When | `(Hostname equals poslusnehlasim.cz OR Hostname equals www.poslusnehlasim.cz)` **AND** `URI Path starts with /static/` |
+| Then | **Set static** `Cache-Control` = `public, max-age=31536000, immutable` |
+
+HTML stránky nech krátké (GH default / Cloudflare). Po změně fontů bez nového jména souboru: Cloudflare → Caching → Purge `/static/fonts/*`.
+
 ## 4. Alternativa: `_headers` (jen Cloudflare Pages)
 
-Soubor [`_headers`](_headers) platí **jen** když hlavní web hostuješ na **Cloudflare Pages**, ne na GitHub Pages. U GH Pages se `_headers` neaplikuje (zůstane jen jako soubor v repu).
+Soubor [`_headers`](_headers) platí **jen** když hlavní web hostuješ na **Cloudflare Pages**, ne na GitHub Pages. U GH Pages se `_headers` neaplikuje (zůstane jen jako soubor v repu) — cache i security řeš Transform Rules výše.
 
 ## 5. Ověření
 
 ```bash
 ./scripts/check-security-headers.sh
+./scripts/check-static-cache.sh
 # robots.txt (Cloudflare Managed content musí být vypnutý):
 ./scripts/check-robots.sh
 # nebo konkrétní URL:
 ./scripts/check-security-headers.sh https://poslusnehlasim.cz/vydani/2026-07-03/
 ```
 
-Očekávané hlavičky po nasazení: `strict-transport-security`, `content-security-policy`, `x-frame-options`, `x-content-type-options`, `referrer-policy`.
+Očekávané hlavičky po nasazení: `strict-transport-security`, `content-security-policy`, `x-frame-options`, `x-content-type-options`, `referrer-policy`. U `/static/*` navíc `cache-control` s `max-age` ≥ 30 dní (ideálně rok + `immutable`).
 
 Skript akceptuje i `Content-Security-Policy-Report-Only` (varování, ne chyba). Po ověření v prohlížeči přepni na vynucující `Content-Security-Policy`.
 

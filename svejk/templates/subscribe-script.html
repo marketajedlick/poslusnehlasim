@@ -104,6 +104,29 @@
     };
   }
 
+  function successMessage(form) {
+    var el = form.querySelector(".subscribe-success");
+    return (el && el.textContent.trim()) || "Přihlášeno k odběru.";
+  }
+
+  function errorMessage(form, fallback) {
+    var err = form.querySelector(".subscribe-error");
+    if (err && !err.hidden && err.textContent.trim()) return err.textContent.trim();
+    return fallback || formMsgs(form).generic;
+  }
+
+  function agentRespond(submitEvent, value) {
+    if (submitEvent && submitEvent.agentInvoked && typeof submitEvent.respondWith === "function") {
+      submitEvent.respondWith(Promise.resolve(value));
+    }
+  }
+
+  function agentRespondPromise(submitEvent, promise) {
+    if (submitEvent && submitEvent.agentInvoked && typeof submitEvent.respondWith === "function") {
+      submitEvent.respondWith(promise);
+    }
+  }
+
   function submitViaApi(form, apiUrl) {
     var emailInput = form.querySelector('input[name="email"]');
     var email = emailInput?.value?.trim() || "";
@@ -125,23 +148,24 @@
         return res.json().catch(function () { return {}; }).then(function (data) {
           if (res.ok && data.ok !== false) {
             showSuccess(form);
-            return;
+            return successMessage(form);
           }
           if (res.status === 429) {
             showError(form, msgs.rateLimit);
             resetBtn(btn, form);
-            return;
+            return errorMessage(form, msgs.rateLimit);
           }
           showError(form, msgs.send);
           resetBtn(btn, form);
+          return errorMessage(form, msgs.send);
         });
       })
       .catch(function () {
         if (form.dataset.formAction) {
-          submitHosted(form);
-          return;
+          return submitHosted(form);
         }
         showSetupError(form, btn, email);
+        return errorMessage(form, msgs.setup);
       });
   }
 
@@ -160,11 +184,12 @@
 
   function tryWorkerSubscribe(form, email, btn) {
     var apiUrl = form.dataset.subscribeApi;
+    var msgs = formMsgs(form);
     if (!apiUrl) {
       showSetupError(form, btn, email);
-      return;
+      return Promise.resolve(errorMessage(form, msgs.setup));
     }
-    fetch(apiUrl, {
+    return fetch(apiUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(subscribePayload(form)),
@@ -173,18 +198,20 @@
         return res.json().catch(function () { return {}; }).then(function (data) {
           if (res.ok && data.ok !== false) {
             showSuccess(form);
-            return;
+            return successMessage(form);
           }
           if (res.status === 429) {
-            showError(form, formMsgs(form).rateLimit);
+            showError(form, msgs.rateLimit);
             resetBtn(btn, form);
-            return;
+            return errorMessage(form, msgs.rateLimit);
           }
           showSetupError(form, btn, email);
+          return errorMessage(form, msgs.setup);
         });
       })
       .catch(function () {
         showSetupError(form, btn, email);
+        return errorMessage(form, msgs.setup);
       });
   }
 
@@ -193,6 +220,7 @@
     var emailInput = form.querySelector('input[name="email"]');
     var email = emailInput?.value?.trim() || "";
     var btn = form.querySelector(".subscribe-btn");
+    var msgs = formMsgs(form);
 
     if (btn) {
       btn.disabled = true;
@@ -200,7 +228,7 @@
       btn.textContent = "Odesílám…";
     }
 
-    fetch(formAction, {
+    return fetch(formAction, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({ email: email }).toString(),
@@ -208,26 +236,27 @@
     })
       .then(function (res) {
         if (res.type === "opaqueredirect" || res.status === 301 || res.status === 302) {
-          tryWorkerSubscribe(form, email, btn);
-          return;
+          return tryWorkerSubscribe(form, email, btn);
         }
         if (!res.ok) {
-          showError(form, formMsgs(form).send);
+          showError(form, msgs.send);
           resetBtn(btn, form);
-          return;
+          return errorMessage(form, msgs.send);
         }
         return res.text().then(function (html) {
           var parsed = parseEcomailHtml(html);
           if (parsed.ok) {
             showSuccess(form);
-            return;
+            return successMessage(form);
           }
-          showError(form, parsed.message || formMsgs(form).generic);
+          showError(form, parsed.message || msgs.generic);
           resetBtn(btn, form);
+          return errorMessage(form, parsed.message || msgs.generic);
         });
       })
       .catch(function () {
         showSetupError(form, btn, email);
+        return errorMessage(form, msgs.setup);
       });
   }
 
@@ -235,22 +264,25 @@
     const form = e.target.closest(".subscribe-form");
     if (!form || form.classList.contains("subscribe-form--success")) return;
     e.preventDefault();
-    if (form.querySelector(".subscribe-hp")?.value) return;
+    if (form.querySelector(".subscribe-hp")?.value) {
+      agentRespond(e, "ignored");
+      return;
+    }
 
     const emailInput = form.querySelector('input[name="email"]');
     if (!validateEmailInput(form)) {
       emailInput?.focus();
+      agentRespond(e, errorMessage(form));
       return;
     }
-    const email = emailInput?.value?.trim() || "";
 
     var apiUrl = form.dataset.subscribeApi;
     if (apiUrl) {
-      submitViaApi(form, apiUrl);
+      agentRespondPromise(e, submitViaApi(form, apiUrl));
       return;
     }
     if (form.dataset.formAction) {
-      submitHosted(form);
+      agentRespondPromise(e, submitHosted(form));
     }
   });
 

@@ -12,7 +12,7 @@
 {% endif %}
 {% include "breadcrumb-jsonld.html" %}
 <link rel="alternate" type="text/plain" title="Informace pro AI (llms.txt)" href="{{ newsletter.site_url }}/llms.txt" />
-<link rel="stylesheet" href="{{ fonts_css_href }}" />
+{% include "fonts-links.html" %}
 <link rel="alternate" type="application/rss+xml" title="{{ t.brand.name }}, nová vydání" href="{{ newsletter.feed_url }}" />
 {% if inline_css %}
 <style>{{ css | safe }}</style>

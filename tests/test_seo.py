@@ -16,6 +16,7 @@ from svejk.build.seo import (
     site_brand_line,
     site_meta_description,
     website_json_ld,
+    write_llms_txt,
     write_robots_txt,
     write_sitemap_xml,
 )
@@ -184,6 +185,39 @@ def test_write_robots_txt(tmp_path) -> None:
     assert "User-agent: ClaudeBot\nAllow: /" in text
     assert "Disallow: /" not in text
     assert text.index("User-agent: GPTBot") < text.index("User-agent: *")
+    for bot in (
+        "GPTBot",
+        "ChatGPT-User",
+        "PerplexityBot",
+        "ClaudeBot",
+        "Google-Extended",
+    ):
+        assert f"User-agent: {bot}\nAllow: /" in text
+
+
+def test_write_llms_txt(tmp_path) -> None:
+    from datetime import datetime, timezone
+
+    editions = [
+        Edition(
+            obdobi=2025,
+            schuze=29,
+            datum_unl="25.08.2026",
+            when=datetime(2026, 8, 25, tzinfo=timezone.utc),
+        )
+    ]
+    path, _full = write_llms_txt(
+        tmp_path,
+        editions,
+        site_url="https://poslusnehlasim.cz",
+    )
+    text = path.read_text(encoding="utf-8")
+    assert "# Poslušně hlásím" in text
+    assert "## Zdroj dat" in text
+    assert "psp.cz" in text
+    assert "Hlídač státu" in text
+    assert "https://poslusnehlasim.cz/vydani/" in text
+    assert "https://poslusnehlasim.cz/slovnicek/" in text
 
 
 def test_write_sitemap_includes_o_webu(tmp_path) -> None:
@@ -265,6 +299,16 @@ def test_breadcrumbs_ctx_archiv_and_slovnicek() -> None:
     assert len(sub["breadcrumbs"]) == 4
     assert sub["breadcrumbs"][-1].label == "Stenoprotokol"
     assert "/vydani/2026-07-08/" in sub["breadcrumbs"][2].href
+
+    local = breadcrumbs_ctx_edition_subpage(
+        site_url="https://poslusnehlasim.cz",
+        obdobi=2025,
+        schuze=30,
+        datum_unl="09.09.2026",
+        subpage_label="Stenoprotokol",
+        edition_href="2026-09-09.html",
+    )
+    assert local["breadcrumbs"][2].href == "2026-09-09.html"
 
     gloss = breadcrumbs_ctx_slovnicek(site_url="https://poslusnehlasim.cz")
     assert gloss["breadcrumbs"][-1].label == "Švejkův slovníček"
