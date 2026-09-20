@@ -327,6 +327,29 @@ def cmd_newsletter_notify(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_newsletter_slack(args: argparse.Namespace) -> int:
+    from svejk.newsletter.slack import run_newsletter_slack
+
+    try:
+        result = run_newsletter_slack(
+            args.obdobi,
+            schuze=args.schuze or None,
+            den=args.den or None,
+            dry_run=args.dry_run,
+            force=args.force,
+            base_path=(args.base_path or "").rstrip("/"),
+        )
+    except (ValueError, OSError, FileNotFoundError, RuntimeError) as e:
+        print(f"Chyba: {e}", file=sys.stderr)
+        return 1
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    if result.get("posted"):
+        print("Share karta odeslána do Slacku.", file=sys.stderr)
+    elif result.get("skipped"):
+        print(f"Přeskočeno: {result.get('reason', '?')}", file=sys.stderr)
+    return 0
+
+
 def cmd_newsletter_doi_template(args: argparse.Namespace) -> int:
     from svejk.newsletter.doi import export_doi_template
 
@@ -757,6 +780,34 @@ def main() -> int:
         help="Složka z export-pages, ověří, že stránka vydání v exportu existuje",
     )
     p_nwl.set_defaults(func=cmd_newsletter_notify)
+
+    p_slack = sub.add_parser(
+        "newsletter-slack",
+        help="Poslat share kartu + link na vydání do Slacku (Incoming Webhook)",
+    )
+    p_slack.add_argument("--obdobi", type=int, default=2025)
+    p_slack.add_argument(
+        "--schuze",
+        type=int,
+        default=0,
+        help="Číslo schůze; bez něj last_drafted z newsletter-state.json",
+    )
+    p_slack.add_argument(
+        "--den",
+        help="Konkrétní den (DD.MM.RRRR nebo YYYY-MM-DD); vyžaduje --schuze",
+    )
+    p_slack.add_argument(
+        "--base-path",
+        default="",
+        help="Stejný prefix jako při export-pages",
+    )
+    p_slack.add_argument("--dry-run", action="store_true", help="Jen náhled URL, bez odeslání")
+    p_slack.add_argument(
+        "--force",
+        action="store_true",
+        help="Znovu i když už je v newsletter-state.json",
+    )
+    p_slack.set_defaults(func=cmd_newsletter_slack)
 
     p_doi = sub.add_parser(
         "newsletter-doi-template",

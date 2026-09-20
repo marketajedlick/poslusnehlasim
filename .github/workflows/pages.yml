@@ -97,3 +97,43 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Až je /share/… živé na webu — Incoming Webhook + veřejná URL karty.
+  slack:
+    needs: deploy
+    runs-on: ubuntu-latest
+    if: ${{ always() && needs.deploy.result == 'success' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync latest branch
+        run: |
+          # build job mohl mezitím pushnout newsletter-state.json
+          git fetch origin "${{ github.ref_name }}"
+          git reset --hard "origin/${{ github.ref_name }}"
+
+      - uses: ./.github/actions/setup-svejk
+
+      - name: Slack share card
+        continue-on-error: true
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          if [ -z "$SLACK_WEBHOOK_URL" ]; then
+            echo "SLACK_WEBHOOK_URL není nastaven — přeskočeno"
+            exit 0
+          fi
+          ./run-svejk.sh newsletter-slack --obdobi 2025 || echo "Slack notify selhal"
+
+      - name: Commit slack state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add processed/newsletter-state.json
+          if git diff --staged --quiet; then
+            echo "Slack state beze změny."
+            exit 0
+          fi
+          git commit -m "newsletter: slack state po deployi [skip ci]"
+          git push

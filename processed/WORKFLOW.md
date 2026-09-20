@@ -367,6 +367,13 @@ Před odesláním v Ecomailu:
 - nadpisy v e-mailu
 - **nový koncept** (`--force`), ne starý draft v UI
 
+**Slack:** po deployi webu CI pošle share kartu + link (`newsletter-slack`). Secret `SLACK_WEBHOOK_URL` (Incoming Webhook). Lokálně stejně, nebo přes `newsletter-notify` když je webhook v `secrets.env`.
+
+```bash
+./run-svejk.sh newsletter-slack --obdobi 2025 --dry-run
+./run-svejk.sh newsletter-slack --obdobi 2025 --schuze N --den DD.MM.RRRR --force
+```
+
 ---
 
 ## 11. Finální checklist (typicky až na konci)

@@ -217,4 +217,16 @@ def run_newsletter_notify(
         }
     )
     result["drafted"] = True
+
+    # Volitelné: když je SLACK_WEBHOOK_URL (lokálně). V CI Slack až po deployi.
+    try:
+        from svejk.newsletter.slack import notify_edition_slack, webhook_url_from_env
+
+        if webhook_url_from_env():
+            result["slack"] = notify_edition_slack(
+                latest, force=force, base_path=base_path
+            )
+    except Exception as e:  # ponytail: Slack nesmí zabít Ecomail draft
+        result["slack"] = {"error": str(e)}
+
     return result
