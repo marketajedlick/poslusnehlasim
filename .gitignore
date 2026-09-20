@@ -12,7 +12,7 @@ grammer_check/
 hl-2025ps/omluvy.unl
 hl-2025ps/hl2025h1.unl
 hl-2025ps/hl2025h2.unl
-data/psp/poslanci.zip
+# data/psp/poslanci.zip je ve gitu: CI nestahuje z psp.cz (SSL flaky na GHA runners).
 redesign/
 svejk.ipynb
 seo-redesign/

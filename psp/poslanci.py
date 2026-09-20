@@ -21,6 +21,8 @@ def _read_unl_bytes(raw: bytes):
         yield line.split("|")
 
 POSLANCI_ZIP_URL = "https://www.psp.cz/eknih/cdrom/opendata/poslanci.zip"
+# Same UA as psp.steno_web — psp.cz SSL from GHA runners is flaky; prefer vendored zip.
+_USER_AGENT = "poslusnehlasim/1.0"
 OBD_OBI_2025 = "174"  # PSP10 od 4. 10. 2025
 
 _KLUB_LABEL = {
@@ -68,7 +70,13 @@ def _ensure_poslanci_zip(data_dir: Path) -> Path:
     last_err: BaseException | None = None
     for attempt in range(3):
         try:
-            path.write_bytes(get_bytes(POSLANCI_ZIP_URL, timeout=120))
+            path.write_bytes(
+                get_bytes(
+                    POSLANCI_ZIP_URL,
+                    timeout=120,
+                    headers={"User-Agent": _USER_AGENT},
+                )
+            )
             return path
         except OSError as e:
             last_err = e
@@ -76,7 +84,7 @@ def _ensure_poslanci_zip(data_dir: Path) -> Path:
                 time.sleep(5 * (attempt + 1))
     raise OSError(
         f"Nepodařilo se stáhnout poslanci.zip z {POSLANCI_ZIP_URL}. "
-        f"Umísti soubor ručně do {path}."
+        f"Umísti soubor ručně do {path} (nebo commitni data/psp/poslanci.zip)."
     ) from last_err
 
 
