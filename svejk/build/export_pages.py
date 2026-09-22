@@ -544,17 +544,22 @@ def run_export_pages(
                     site_url=site,
                 )
             )
-        if has_smlouvy(paths, edition.datum_unl):
-            written.append(
-                _write_redirect_page(
-                    out,
-                    f"noviny/{edition.obdobi}/{edition.schuze}/{edition.datum_unl}-smlouvy.html",
-                    smlouvy_pages_href(
-                        edition.obdobi, edition.schuze, edition.datum_unl, base
-                    ),
-                    site_url=site,
-                )
+        # Vždy legacy -smlouvy.html: i bez smluv (jinak 404 z mrtvých odkazů → GSC).
+        smlouvy_target = (
+            smlouvy_pages_href(
+                edition.obdobi, edition.schuze, edition.datum_unl, base
             )
+            if has_smlouvy(paths, edition.datum_unl)
+            else target
+        )
+        written.append(
+            _write_redirect_page(
+                out,
+                f"noviny/{edition.obdobi}/{edition.schuze}/{edition.datum_unl}-smlouvy.html",
+                smlouvy_target,
+                site_url=site,
+            )
+        )
 
     seen_short_dates: set[str] = set()
     for edition in editions:
