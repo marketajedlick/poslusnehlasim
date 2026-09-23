@@ -7,7 +7,11 @@ import os
 import unittest
 from unittest.mock import MagicMock, patch
 
-from svejk.newsletter.slack import post_share_card, webhook_url_from_env
+from svejk.newsletter.slack import (
+    _image_reachable,
+    post_share_card,
+    webhook_url_from_env,
+)
 
 
 class SlackWebhookTest(unittest.TestCase):
@@ -45,6 +49,21 @@ class SlackWebhookTest(unittest.TestCase):
             blocks[1]["image_url"],
             "https://poslusnehlasim.cz/share/2026-09-09.png?v=abc",
         )
+
+    def test_image_reachable_rejects_bad_url(self):
+        self.assertFalse(_image_reachable(""))
+        self.assertFalse(_image_reachable("ftp://x"))
+
+    def test_image_reachable_ok_on_head_200(self):
+        def fake_urlopen(req, timeout=15):
+            resp = MagicMock()
+            resp.status = 200
+            resp.__enter__ = lambda s: s
+            resp.__exit__ = MagicMock(return_value=False)
+            return resp
+
+        with patch("svejk.newsletter.slack.urllib.request.urlopen", side_effect=fake_urlopen):
+            self.assertTrue(_image_reachable("https://poslusnehlasim.cz/share/x.png"))
 
 
 if __name__ == "__main__":

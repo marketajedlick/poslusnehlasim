@@ -40,6 +40,27 @@ def webhook_url_from_env() -> str:
     return (os.environ.get("SLACK_WEBHOOK_URL") or "").strip()
 
 
+def _image_reachable(image_url: str, *, timeout: int = 15) -> bool:
+    """Slack image block vyžaduje veřejně stažitelnou URL (jinak invalid_blocks)."""
+    url = (image_url or "").strip()
+    if not url.startswith(("http://", "https://")):
+        return False
+    try:
+        req = urllib.request.Request(url, method="HEAD")
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return 200 <= int(resp.status) < 400
+    except Exception:
+        # některé CDN HEAD neumí — zkus krátký GET
+        try:
+            req = urllib.request.Request(
+                url, method="GET", headers={"Range": "bytes=0-0"}
+            )
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return 200 <= int(resp.status) < 400
+        except Exception:
+            return False
+
+
 def post_share_card(
     *,
     webhook_url: str,
@@ -140,6 +161,14 @@ def notify_edition_slack(
 
     if dry_run:
         return result
+
+    if not _image_reachable(image_url):
+        return {
+            **result,
+            "skipped": True,
+            "reason": "share obrázek ještě není na webu (Slack by vrátil invalid_blocks)",
+            "image_url": image_url,
+        }
 
     posted = post_share_card(
         webhook_url=webhook,

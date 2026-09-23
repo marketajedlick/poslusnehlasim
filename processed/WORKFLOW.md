@@ -367,7 +367,7 @@ Před odesláním v Ecomailu:
 - nadpisy v e-mailu
 - **nový koncept** (`--force`), ne starý draft v UI
 
-**Slack:** po deployi webu CI pošle share kartu + link (`newsletter-slack`). Secret `SLACK_WEBHOOK_URL` (Incoming Webhook). Lokálně stejně, nebo přes `newsletter-notify` když je webhook v `secrets.env`.
+**Slack:** po deployi webu CI pošle share kartu + link (`newsletter-slack`). Secret `SLACK_WEBHOOK_URL` (Incoming Webhook). Lokálně až když je `/share/…` živé na webu — ne při `edition publish` (Ecomail draft ano, Slack ne).
 
 ```bash
 ./run-svejk.sh newsletter-slack --obdobi 2025 --dry-run
