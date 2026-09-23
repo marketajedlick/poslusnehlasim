@@ -1,0 +1,42 @@
+{
+  "datum": "22.09.2026",
+  "den": "úterý",
+  "topic_slugs": [
+    "debata-porad-s31-22-zari",
+    "vyrobky-ukoncena-zivotnost-druhe-kolo-22-zari",
+    "vyzivne-trestni-zakonik-druhe-kolo-22-zari"
+  ],
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 660,
+    "end_cas": "21:02",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "slovnicek": [
+    "mimořádná schůze",
+    "interpelace",
+    "druhé čtení",
+    "výživné",
+    "kolektivní systémy"
+  ],
+  "nwl_predmet": "Mimořádná bez otázek. Alimenty zase trestem",
+  "dnesni_ucet": "Mimořádná schůze bez otázek na ministry, opozice křičela do prázdna.\nRecyklace v druhém kole, alimenty zase jako trest.",
+  "zaver": "že vláda svolala mimořádnou schůzi s pevným programem, opozice přišla o interpelace a Sněmovna do večera zvládla recyklaci i návrat trestu za neplacení výživného.",
+  "vysledek": [
+    "* Mimořádná schůze: pevný program, bez otázek na ministry, opoziční témata se na pořad nedostala",
+    "* Výrobky s ukončenou životností: druhé kolo skončilo, spor o monopoly a tržiště jede dál",
+    "* Ozon a F-plyny: druhé kolo také hotové",
+    "* Výživné v trestním zákoníku: debata přerušena do středy"
+  ],
+  "jazykolam": {
+    "text": "Dokonce si myslím, že budu mluvit tak exaktně přímo k věci, že bych si vysloužil nějaké ocenění, ideálně třeba medaili Táni Malé za hovoření k tématu. Bohužel ta už tady není, takže uvidíme, jestli ji nakonec dostanu.",
+    "autor": "Václav Pláteník (KDU-ČSL)",
+    "steno_id": "2025_31_00208"
+  },
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo"
+}

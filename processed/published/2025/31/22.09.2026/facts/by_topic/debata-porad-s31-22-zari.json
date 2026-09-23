@@ -1,0 +1,89 @@
+{
+  "slug": "debata-porad-s31-22-zari",
+  "nazev": "Debata o pořadu schůze",
+  "datum": "22.09.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "mimořádná schůze s pevným programem, kde opozice nesmí doplňovat body a přichází o právo ptát se ministrů",
+  "koho": [
+    "Koho se to týká? Spíš pozorovatele politiky. Bez schváleného pořadu se k zákonům nedostanou ani poslanci. A bez řádné schůze se opozice nedostane k otázkám na ministry."
+  ],
+  "fakty": [
+    {
+      "text": "Okamura: na mimořádné nelze doplňovat pořad.",
+      "source": "steno",
+      "steno_id": "2025_31_00002",
+      "citace": "Nelze navrhnout žádnou změnu ani doplnění pořadu a rovněž tak nelze rozšiřovat schválený pořad.",
+      "link_phrase": "Další body se přidat nedají"
+    },
+    {
+      "text": "Jakob: na mimořádné odpadají interpelace.",
+      "source": "steno",
+      "steno_id": "2025_31_00026",
+      "citace": "neuplatní se ani ustanovení o písemných a ústních interpelacích",
+      "link_phrase": "interpelace se při mimořádné schůzi nekonají"
+    },
+    {
+      "text": "Jakob: schůze má 15 bodů.",
+      "source": "steno",
+      "steno_id": "2025_31_00026",
+      "citace": "První má 15 bodů, druhá má jediný bod, ale je svolána na čtvrtek.",
+      "link_phrase": "patnáct vládních bodů"
+    },
+    {
+      "text": "Jakob: 15 bodů je program menší řádné schůze bez práv.",
+      "source": "steno",
+      "steno_id": "2025_31_00026",
+      "citace": "15 bodů je v podstatě program menší řádné schůze, jen bez některých práv",
+      "link_phrase": "menší řádnou schůzi"
+    },
+    {
+      "text": "Hřib a Richterová: proč mimořádná místo řádné a kam zmizely interpelace.",
+      "source": "steno",
+      "steno_id": "2025_31_00009",
+      "citace": "ochudili opozici o interpelace",
+      "link_phrase": "Hřib a Richterová (Piráti): proč se místo řádné schůze koná mimořádná a kam zmizely interpelace"
+    },
+    {
+      "text": "Kupka: rozpočet a spor kolem schodku.",
+      "source": "steno",
+      "steno_id": "2025_31_00028",
+      "citace": "Rozpočtový Armagedon, který vláda reálně připravila",
+      "link_phrase": "Kupka (ODS): rozpočet a spor kolem schodku"
+    },
+    {
+      "text": "Rakušan: bezpečnost Evropy a kritika času mimořádné schůze.",
+      "source": "steno",
+      "steno_id": "2025_31_00017",
+      "citace": "považuji ve srovnání s tímto za podružná. Očekával bych vystoupení pana premiéra, jak učinil polský premiér Donald Tusk. Jedná se o bezpečnostní situaci v Evropě",
+      "link_phrase": "Rakušan (STAN): bezpečnost Evropy a kritika času věnovaného mimořádné schůzi"
+    },
+    {
+      "text": "Jurečka: kritika fungování vlády.",
+      "source": "steno",
+      "steno_id": "2025_31_00020",
+      "citace": "spíše chaos než kompetentní vládnutí",
+      "link_phrase": "Jurečka (KDU-ČSL): kritika fungování vlády"
+    },
+    {
+      "text": "Jakob: proč má patnáctibodová schůze režim mimořádného jednání.",
+      "source": "steno",
+      "steno_id": "2025_31_00026",
+      "citace": "15 bodů už není cílená reakce na jednu naléhavou věc",
+      "link_phrase": "Jakob (TOP 09): proč má patnáctibodová schůze režim mimořádného jednání"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 4,
+  "nadpis": "Mimořádná,\nať se neptají",
+  "lead": "Vláda svolala mimořádnou schůzi s pevným programem. A jak už to u pevných věcí bývá, moc se s nimi nehýbe. Další body se přidat nedají a interpelace se při mimořádné schůzi nekonají.\n\nNa stole tak zůstalo patnáct vládních bodů, od recyklace přes ozon až po neplacení výživného. Opozice protestovala, že tak rozsáhlý program už připomíná spíš menší řádnou schůzi, jen bez možnosti pokládat ministrům otázky a přidávat vlastní témata.",
+  "pointa": "A když už opozice nemohla měnit program, využila alespoň přednostní práva, aby řekla, o čem by se jinak mluvilo.\n\n<strong>Co zůstalo přede dveřmi</strong>\n- Hřib a Richterová (Piráti): proč se místo řádné schůze koná mimořádná a kam zmizely interpelace\n- Kupka (ODS): rozpočet a spor kolem schodku\n- Rakušan (STAN): bezpečnost Evropy a kritika času věnovaného mimořádné schůzi\n- Jurečka (KDU-ČSL): kritika fungování vlády\n- Jakob (TOP 09): proč má patnáctibodová schůze režim mimořádného jednání",
+  "pointa_tail": "",
+  "pointa_end": "",
+  "mean": "Schůze byla mimořádná hlavně tím, o čem se na ní mluvit nedalo. Vláda přinesla patnáct bodů, opozice vlastní přidat nemohla a na interpelace tentokrát vůbec nedošlo.",
+  "citace_text": "Vládní koalice na tento týden svolala dvě mimořádné schůze. První má 15 bodů, druhá má jediný bod, ale je svolána na čtvrtek. Mimořádná schůze má být mimořádná nejen podle názvu, má být mimořádná svým důvodem, naléhavostí a rozsahem. 15 bodů už není cílená reakce na jednu naléhavou věc. 15 bodů je v podstatě program menší řádné schůze, jen bez některých práv a bez některých kontrolních mechanismů, které jsou s řádnou schůzí spojeny.",
+  "citace_autor": "Jan Jakob (TOP 09)",
+  "steno_id": "2025_31_00026",
+  "pocet_hlasovani": 2,
+  "proslo": false,
+  "spor_o_porad": true
+}

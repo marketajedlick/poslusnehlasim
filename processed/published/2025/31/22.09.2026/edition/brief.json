@@ -1,0 +1,16 @@
+{
+  "datum_unl": "22.09.2026",
+  "iso": "2026-09-22",
+  "recommended": [],
+  "rejected": [],
+  "day_stats": {
+    "pocet_hlas_zakon": 0,
+    "proslo_vote": 0,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-09-22",
+      "2026-09-23"
+    ]
+  }
+}

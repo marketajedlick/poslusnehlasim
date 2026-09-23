@@ -1503,16 +1503,35 @@ SLOVNIČEK: tuple[tuple[str, str], ...] = (
     ("pozměňovací návrh", "Chvíle, kdy někdo řekne: „Já bych to napsal trochu jinak.“"),
     ("první čtení", "Rozhoduje se, jestli má zákon pokračovat dál, nebo skončit dřív, než začne."),
     ("druhé čtení", "Začíná vrtání v detailech a přepisování jednotlivých částí zákona."),
-    ("třetí čtení", "Poslední zastávka před hlasováním. Pak už padne ano, nebo ne."),
+    (
+        "třetí čtení",
+        "Třetí čtení je závěrečné hlasování o zákonu ve Sněmovně. Poslanci už skoro nemění text, "
+        "jen řeknou ano, nebo ne. Když zákon projde, míří dál k Senátu nebo k prezidentovi.",
+    ),
     ("procedurální návrh", "Neřeší se zákon, ale způsob, jak se o něm bude mluvit."),
-    ("obstrukce", "Když se dlouze mluví proto, aby se co nejdéle nehlasovalo."),
+    (
+        "obstrukce",
+        "Obstrukce znamená zdržování jednání, nejčastěji dlouhými projevy nebo opakovanými "
+        "procedurálními návrhy. Cílem je oddálit hlasování, ne vyhrát debatu argumentem. "
+        "Ve Sněmovně se o ní mluví, když opozice chce zpomalit zákon.",
+    ),
     ("přerušení schůze", "Poslanci si dali pauzu a slíbili, že se k tomu vrátí."),
-    ("legislativní nouze", "Režim, kdy se zákony schvalují rychleji než obvykle."),
+    (
+        "legislativní nouze",
+        "Legislativní nouze je zvláštní režim, ve kterém Sněmovna projednává zákon rychleji "
+        "než obvykle. Předseda zkrátí lhůty, takže se čtení a hlasování stihnou za kratší dobu. "
+        "Používá se, když většina tvrdí, že věc spěchá.",
+    ),
     ("zkrácení lhůty", "Poslanci si zkrátí čas na přípravu dalšího kola, zákon jde dál rychleji."),
     ("garanční výbor", "Výbor, který má zákon na starosti a připraví ho na další hlasování."),
     ("veto", "Když Senát nebo prezident zákon vrátí, aby si ho poslanci ještě jednou rozmysleli."),
     ("mimořádná schůze", "Schůze svolaná mimo běžný program, když něco spěchá nebo se někdo hodně rozčílí."),
-    ("interpelace", "Čas, kdy se poslanci ptají vlády a vláda odpovídá. Někdy i na položenou otázku."),
+    (
+        "interpelace",
+        "Interpelace je část jednání, kdy poslanci kladou otázky ministrům a premiérovi. "
+        "Vláda má odpovídat, i když odpověď někdy míjí položenou otázku. "
+        "Lidsky řečeno: čas na veřejné vysvětlování.",
+    ),
     ("důvěra vládě", "Hlasování, jestli má vláda podporu většiny poslanců."),
     ("nedůvěra vládě", "Pokus vládu poslat do politického důchodu dřív, než odejde sama."),
     ("koalice", "Strany, které spolu vládnou a snaží se najít společnou řeč."),
@@ -1528,12 +1547,21 @@ SLOVNIČEK: tuple[tuple[str, str], ...] = (
     ("šedá ekonomika", "Peníze a podnikání, které stát oficiálně nevidí, hlavně kvůli nehlášeným tržbám."),
     ("závěrečné hlasování", "Poslední hlasování o zákonu ve sněmovně, pak může jít k prezidentovi."),
     ("usnesení", "Stanovisko nebo rozhodnutí sněmovny. Nejde o zákon."),
-    ("ratifikace", "Souhlas parlamentu se smlouvou s cizím státem. Bez něj u nás neplatí."),
+    (
+        "ratifikace",
+        "Ratifikace je souhlas parlamentu se smlouvou s jiným státem. Bez něj smlouva v Česku "
+        "neplatí, i když ji vláda vyjednala. Ve Sněmovně se o ní hlasuje jako o běžném bodu programu.",
+    ),
     ("Dozimetr", "Korupční kauza spojená s pražským dopravním podnikem, kterou vyšetřuje policie."),
     ("superdávka", "Plán na sloučení několika sociálních dávek do jednoho systému."),
     ("NKÚ", "Nejvyšší kontrolní úřad. Kontroluje, jak stát hospodaří s veřejnými penězi."),
     ("VZP", "Největší česká zdravotní pojišťovna."),
-    ("OZP", "Osoba se zdravotním postižením."),
+    (
+        "OZP",
+        "OZP znamená osoba se zdravotním postižením. Ve Sněmovně se zkratka objevuje u dávek, "
+        "průkazů a příspěvků na péči nebo mobilitu. Nejde o Oborovou zdravotní pojišťovnu, "
+        "to je něco jiného.",
+    ),
     ("landsmanšaft", "Organizace sdružující část sudetských Němců a jejich potomků po poválečném vysídlení."),
     ("Rada ČT", "Skupina, která dohlíží na Českou televizi a vybírá její vedení."),
 )
