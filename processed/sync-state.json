@@ -5,7 +5,7 @@
     "last_modified": "Wed, 23 Sep 2026 23:54:25 GMT",
     "content_length": 3148338,
     "lines": 2239,
-    "fetched_at": "2026-09-24T09:48:44.394936+00:00"
+    "fetched_at": "2026-09-24T10:38:39.015616+00:00"
   },
   "schuze": {
     "18": {
@@ -15,7 +15,7 @@
       "steno_count": 17,
       "last_steno_poradi": 17,
       "last_steno_datum": "2026-05-14",
-      "synced_at": "2026-09-24T09:49:10.032193+00:00"
+      "synced_at": "2026-09-24T10:38:56.714787+00:00"
     },
     "4": {
       "count": 1,
@@ -24,7 +24,7 @@
       "steno_count": 32,
       "last_steno_poradi": 32,
       "last_steno_datum": "2025-11-27",
-      "synced_at": "2026-09-24T09:48:51.376340+00:00"
+      "synced_at": "2026-09-24T10:38:42.421411+00:00"
     },
     "5": {
       "count": 159,
@@ -33,7 +33,7 @@
       "steno_count": 1850,
       "last_steno_poradi": 1850,
       "last_steno_datum": "2026-01-30",
-      "synced_at": "2026-09-24T09:48:53.576692+00:00"
+      "synced_at": "2026-09-24T10:38:43.536527+00:00"
     },
     "6": {
       "count": 13,
@@ -42,7 +42,7 @@
       "steno_count": 196,
       "last_steno_poradi": 196,
       "last_steno_datum": "2026-01-29",
-      "synced_at": "2026-09-24T09:48:55.124585+00:00"
+      "synced_at": "2026-09-24T10:38:44.473122+00:00"
     },
     "7": {
       "count": 91,
@@ -51,7 +51,7 @@
       "steno_count": 980,
       "last_steno_poradi": 980,
       "last_steno_datum": "2026-02-13",
-      "synced_at": "2026-09-24T09:48:56.573429+00:00"
+      "synced_at": "2026-09-24T10:38:45.503752+00:00"
     },
     "8": {
       "count": 4,
@@ -60,7 +60,7 @@
       "steno_count": 475,
       "last_steno_poradi": 475,
       "last_steno_datum": "2026-02-04",
-      "synced_at": "2026-09-24T09:48:57.869784+00:00"
+      "synced_at": "2026-09-24T10:38:46.462513+00:00"
     },
     "9": {
       "count": 6,
@@ -69,7 +69,7 @@
       "steno_count": 71,
       "last_steno_poradi": 71,
       "last_steno_datum": "2026-02-13",
-      "synced_at": "2026-09-24T09:48:59.816778+00:00"
+      "synced_at": "2026-09-24T10:38:47.460641+00:00"
     },
     "10": {
       "count": 263,
@@ -78,7 +78,7 @@
       "steno_count": 1775,
       "last_steno_poradi": 1775,
       "last_steno_datum": "2026-03-12",
-      "synced_at": "2026-09-24T09:49:00.894723+00:00"
+      "synced_at": "2026-09-24T10:38:48.543142+00:00"
     },
     "11": {
       "count": 9,
@@ -87,7 +87,7 @@
       "steno_count": 212,
       "last_steno_poradi": 212,
       "last_steno_datum": "2026-03-05",
-      "synced_at": "2026-09-24T09:49:02.298005+00:00"
+      "synced_at": "2026-09-24T10:38:49.489391+00:00"
     },
     "12": {
       "count": 7,
@@ -96,7 +96,7 @@
       "steno_count": 114,
       "last_steno_poradi": 114,
       "last_steno_datum": "2026-03-13",
-      "synced_at": "2026-09-24T09:49:03.629748+00:00"
+      "synced_at": "2026-09-24T10:38:50.485067+00:00"
     },
     "13": {
       "count": 111,
@@ -105,7 +105,7 @@
       "steno_count": 597,
       "last_steno_poradi": 597,
       "last_steno_datum": "2026-03-25",
-      "synced_at": "2026-09-24T09:49:04.571976+00:00"
+      "synced_at": "2026-09-24T10:38:51.677257+00:00"
     },
     "14": {
       "count": 194,
@@ -114,7 +114,7 @@
       "steno_count": 1635,
       "last_steno_poradi": 1635,
       "last_steno_datum": "2026-04-24",
-      "synced_at": "2026-09-24T09:49:05.857636+00:00"
+      "synced_at": "2026-09-24T10:38:52.553640+00:00"
     },
     "15": {
       "count": 1,
@@ -123,7 +123,7 @@
       "steno_count": 56,
       "last_steno_poradi": 56,
       "last_steno_datum": "2026-04-16",
-      "synced_at": "2026-09-24T09:49:06.807029+00:00"
+      "synced_at": "2026-09-24T10:38:53.472995+00:00"
     },
     "16": {
       "count": 71,
@@ -132,7 +132,7 @@
       "steno_count": 544,
       "last_steno_poradi": 544,
       "last_steno_datum": "2026-05-06",
-      "synced_at": "2026-09-24T09:49:07.995073+00:00"
+      "synced_at": "2026-09-24T10:38:54.595373+00:00"
     },
     "17": {
       "count": 70,
@@ -141,7 +141,7 @@
       "steno_count": 836,
       "last_steno_poradi": 836,
       "last_steno_datum": "2026-06-03",
-      "synced_at": "2026-09-24T09:49:08.972343+00:00"
+      "synced_at": "2026-09-24T10:38:55.597733+00:00"
     },
     "19": {
       "count": 14,
@@ -150,7 +150,7 @@
       "steno_count": 66,
       "last_steno_poradi": 66,
       "last_steno_datum": "2026-05-15",
-      "synced_at": "2026-09-24T09:49:10.961813+00:00"
+      "synced_at": "2026-09-24T10:38:57.720478+00:00"
     },
     "20": {
       "count": 368,
@@ -159,7 +159,7 @@
       "steno_count": 1902,
       "last_steno_poradi": 1902,
       "last_steno_datum": "2026-06-05",
-      "synced_at": "2026-09-24T09:49:12.396420+00:00"
+      "synced_at": "2026-09-24T10:38:58.605572+00:00"
     },
     "21": {
       "count": 10,
@@ -168,34 +168,34 @@
       "steno_count": 147,
       "last_steno_poradi": 147,
       "last_steno_datum": "2026-06-02",
-      "synced_at": "2026-09-24T09:49:13.324194+00:00"
+      "synced_at": "2026-09-24T10:38:59.591833+00:00"
     },
     "1": {
       "count": 20,
       "max_cislo": 20,
       "last_datum": "05.11.2025",
-      "steno_count": 69,
-      "last_steno_poradi": 69,
+      "steno_count": 254,
+      "last_steno_poradi": 254,
       "last_steno_datum": "2025-11-05",
-      "synced_at": "2026-09-24T09:48:47.777532+00:00"
+      "synced_at": "2026-09-24T10:38:39.462373+00:00"
     },
     "2": {
       "count": 75,
       "max_cislo": 75,
       "last_datum": "14.11.2025",
-      "steno_count": 153,
-      "last_steno_poradi": 153,
+      "steno_count": 279,
+      "last_steno_poradi": 279,
       "last_steno_datum": "2025-11-14",
-      "synced_at": "2026-09-24T09:48:48.824618+00:00"
+      "synced_at": "2026-09-24T10:38:40.483250+00:00"
     },
     "3": {
       "count": 18,
       "max_cislo": 18,
       "last_datum": "26.11.2025",
-      "steno_count": 126,
-      "last_steno_poradi": 126,
-      "last_steno_datum": "2025-11-26",
-      "synced_at": "2026-09-24T09:48:50.449729+00:00"
+      "steno_count": 327,
+      "last_steno_poradi": 327,
+      "last_steno_datum": "2025-11-27",
+      "synced_at": "2026-09-24T10:38:41.477727+00:00"
     },
     "22": {
       "count": 2,
@@ -204,7 +204,7 @@
       "steno_count": 24,
       "last_steno_poradi": 24,
       "last_steno_datum": "2026-06-11",
-      "synced_at": "2026-09-24T09:49:14.336903+00:00"
+      "synced_at": "2026-09-24T10:39:00.574747+00:00"
     },
     "23": {
       "count": 4,
@@ -213,16 +213,16 @@
       "steno_count": 193,
       "last_steno_poradi": 193,
       "last_steno_datum": "2026-06-11",
-      "synced_at": "2026-09-24T09:49:15.308921+00:00"
+      "synced_at": "2026-09-24T10:39:01.581262+00:00"
     },
     "24": {
       "count": 286,
       "max_cislo": 286,
       "last_datum": "30.06.2026",
-      "steno_count": 2442,
+      "steno_count": 2392,
       "last_steno_poradi": 2442,
       "last_steno_datum": "2026-07-08",
-      "synced_at": "2026-09-24T09:49:16.759167+00:00"
+      "synced_at": "2026-09-24T10:39:02.744393+00:00"
     },
     "25": {
       "count": 88,
@@ -231,7 +231,7 @@
       "steno_count": 344,
       "last_steno_poradi": 344,
       "last_steno_datum": "2026-07-15",
-      "synced_at": "2026-09-24T09:49:17.706159+00:00"
+      "synced_at": "2026-09-24T10:39:03.595669+00:00"
     },
     "26": {
       "count": 4,
@@ -240,7 +240,7 @@
       "steno_count": 106,
       "last_steno_poradi": 106,
       "last_steno_datum": "2026-07-08",
-      "synced_at": "2026-09-24T09:49:19.344731+00:00"
+      "synced_at": "2026-09-24T10:39:04.583393+00:00"
     },
     "27": {
       "count": 130,
@@ -249,7 +249,7 @@
       "steno_count": 464,
       "last_steno_poradi": 464,
       "last_steno_datum": "2026-07-14",
-      "synced_at": "2026-09-24T09:49:20.275631+00:00"
+      "synced_at": "2026-09-24T10:39:05.602513+00:00"
     },
     "28": {
       "count": 7,
@@ -258,7 +258,7 @@
       "steno_count": 85,
       "last_steno_poradi": 85,
       "last_steno_datum": "2026-07-14",
-      "synced_at": "2026-09-24T09:49:21.601772+00:00"
+      "synced_at": "2026-09-24T10:39:06.566918+00:00"
     },
     "29": {
       "count": 115,
@@ -267,7 +267,7 @@
       "steno_count": 450,
       "last_steno_poradi": 450,
       "last_steno_datum": "2026-09-11",
-      "synced_at": "2026-09-24T09:49:22.787474+00:00"
+      "synced_at": "2026-09-24T10:39:07.562636+00:00"
     },
     "30": {
       "count": 59,
@@ -276,7 +276,7 @@
       "steno_count": 662,
       "last_steno_poradi": 662,
       "last_steno_datum": "2026-09-10",
-      "synced_at": "2026-09-24T09:49:24.428692+00:00"
+      "synced_at": "2026-09-24T10:39:08.668833+00:00"
     },
     "31": {
       "count": 35,
@@ -285,10 +285,10 @@
       "steno_count": 630,
       "last_steno_poradi": 630,
       "last_steno_datum": "2026-09-23",
-      "synced_at": "2026-09-24T09:49:25.361787+00:00"
+      "synced_at": "2026-09-24T10:45:51.372389+00:00"
     }
   },
-  "updated_at": "2026-09-24T09:49:25.361827+00:00",
+  "updated_at": "2026-09-24T10:45:51.372529+00:00",
   "last_updated_schuze": [
     1,
     2,

@@ -1,0 +1,41 @@
+{
+  "datum": "23.09.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "novela-z-o-pozemnich-komunikacich",
+    "novela-z-o-silnicnim-provozu",
+    "vl-n-z-ke-snizeni-nakl-na-zavadeni-siti-el-komun"
+  ],
+  "stats": {
+    "pocet_hlas": 4,
+    "minuty": 379,
+    "end_cas": "15:25",
+    "proslo": 3,
+    "zamitnuto": 0,
+    "spor_o_porad": false,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "nwl_predmet": "Známka už sama nezdraží. Taxíky ke zkoušce",
+  "dnesni_ucet": "Dálniční známka přestane sama zdražovat, kraje o benzinovou daň nepřišly.\nU taxíků obce znovu smí zkoušet řidiče, u dat se zkrátila doba uchovávání.",
+  "zaver": "že Sněmovna zamrazila dálniční známku, vrátila obcím zkoušky taxikářů a zkrátila dobu uchovávání dat o komunikaci ze šesti měsíců na čtyři.",
+  "vysledek": [
+    "* Dálniční známka: konec automatického zdražování, jednodenní kupon na čtyřiadvacet hodin",
+    "* Silniční provoz: obce smějí znovu zkoušet řidiče taxislužby",
+    "* Rychlý internet: levnější zavádění sítí, data retention ze šesti na čtyři měsíce"
+  ],
+  "jazykolam": {
+    "text": "Prosím, aby místo u stolku nadále zaujímal za navrhovatele ministr obrany, pardon, ministr dopravy Ivan Bednárik",
+    "autor": "Tomio Okamura (SPD)",
+    "steno_id": "2025_31_00342"
+  },
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo",
+  "slovnicek": [
+    "dálniční známka",
+    "valorizace",
+    "taxislužba",
+    "data retention",
+    "inteligentní dopravní systémy"
+  ]
+}

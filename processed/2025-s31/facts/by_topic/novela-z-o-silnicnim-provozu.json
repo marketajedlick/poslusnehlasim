@@ -1,0 +1,96 @@
+{
+  "slug": "novela-z-o-silnicnim-provozu",
+  "nazev": "Novela z. o silničním provozu",
+  "datum": "23.09.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "přepsat evropská pravidla pro chytré dopravní systémy a vrátit obcím možnost zkoušky pro řidiče taxislužby",
+  "koho": [
+    "Koho se to týká? Obcí, které chtějí regulovat Uber a taxíky, řidičů aplikací i cestujících ve velkých městech."
+  ],
+  "fakty": [
+    {
+      "text": "Bednárik: zákon má převést směrnici o inteligentních dopravních systémech.",
+      "source": "steno",
+      "steno_id": "2025_31_00343",
+      "citace": "jeho cílem je provést do právního řádu České republiky směrnici Evropského parlamentu a Rady, kterou se mění směrnice o rámci pro zavedení inteligentních dopravních systémů",
+      "link_phrase": "Bednárik (ANO) s tím souhlasil"
+    },
+    {
+      "text": "Bednárik souhlasí s návratem obecní zkoušky pro taxikáře.",
+      "source": "steno",
+      "steno_id": "2025_31_00345",
+      "citace": "pozměňovacím návrhem pana poslance Králíčka, který navrací možnost obcí zavést zkoušku pro řidiče taxislužeb",
+      "link_phrase": "vrátila obcím možnost zavést zkoušku"
+    },
+    {
+      "text": "Okamura spletl Bednárika s ministrem obrany.",
+      "source": "steno",
+      "steno_id": "2025_31_00342",
+      "citace": "ministr obrany, pardon, ministr dopravy Ivan Bednárik",
+      "link_phrase": "spletl Bednárika s ministrem obrany"
+    },
+    {
+      "text": "Velmi silný hluk v sále.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_31_00346",
+      "citace": "(Velmi silný hluk v sále.)",
+      "link_phrase": "v sále byl takový hluk"
+    },
+    {
+      "text": "Sviták přerušil projev kvůli hluku.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_31_00349",
+      "citace": "(Hluk v sále přetrvává. Poslanec Sviták přerušuje svůj projev.)",
+      "link_phrase": "Sviták (STAN) chtěl mluvit o samosprávách"
+    },
+    {
+      "text": "Adamec: každá dobrovolnost u regulace taxíků končí povinností.",
+      "source": "steno",
+      "steno_id": "2025_31_00357",
+      "citace": "každá dobrovolnost vždycky někde končí pak povinností, jo",
+      "link_phrase": "Adamec (ODS) varoval"
+    },
+    {
+      "text": "Činčila: výsledkem bude zdražení taxislužby ve velkých městech.",
+      "source": "steno",
+      "steno_id": "2025_31_00380",
+      "citace": "v konečném důsledku, když to shrnu úplně jednoduše, tak tohle bude znamenat zdražení taxislužby ve velkých městech",
+      "link_phrase": "zdražení taxislužby ve velkých městech"
+    },
+    {
+      "text": "Nacher: srovnání s Bémem je mimo.",
+      "source": "steno",
+      "steno_id": "2025_31_00363",
+      "citace": "kdy Pavel Bém jel za tisíce korun z letiště nebo něco takového, tak je fakt mimo",
+      "link_phrase": "Nacher (ANO) s Králíčkem (ANO) návrh hájili"
+    },
+    {
+      "text": "Kučera: ministr má chodit na hospodářský výbor.",
+      "source": "steno",
+      "steno_id": "2025_31_00359",
+      "citace": "Já bych možná tady z tohoto místa požádal pana ministra dopravy, aby chodil na hospodářský výbor",
+      "link_phrase": "ať chodí na hospodářský výbor"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Taxíky zase\nke zkoušce",
+  "lead": "Začínalo to jako suchý přepis evropských pravidel pro chytré dopravní systémy. Skončilo to u taxíků. Sněmovna vrátila obcím možnost zavést zkoušku pro řidiče taxislužby. Ministr dopravy Bednárik (ANO) s tím souhlasil. Okamura (SPD) na startu spletl Bednárika s ministrem obrany.",
+  "pointa": "Sviták (STAN) chtěl mluvit o samosprávách a platformách, ale v sále byl takový hluk, že projev přerušil. Adamec (ODS) varoval, že dobrovolná regulace taxíků vždycky někde skončí povinností.\n\nNacher (ANO) s Králíčkem (ANO) návrh hájili. Srovnání s Pavlem Bémem a drahými jízdami z letiště odmítl. Plénum se mu smálo u počítání let za volantem. Kučera (TOP 09) mezitím ministrovi vzkázal, ať chodí na hospodářský výbor, když jde o politiku, ne o paragrafy.",
+  "mean": "Obce znovu smějí zkoušet řidiče taxislužby. Zákon o silničním provozu prošel závěrečným hlasováním i s evropskou digitalizací dopravy.",
+  "citace_text": "v konečném důsledku, když to shrnu úplně jednoduše, tak tohle bude znamenat zdražení taxislužby ve velkých městech",
+  "citace_autor": "Benjamin Činčila (KDU-ČSL)",
+  "steno_id": "2025_31_00380",
+  "pocet_hlasovani": 8,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 88,
+    "pritomno_min": 145,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 10911
+}

@@ -1,0 +1,102 @@
+{
+  "slug": "vl-n-z-ke-snizeni-nakl-na-zavadeni-siti-el-komun",
+  "nazev": "Vl.n.z.ke snížení nákl.na zavádění sítí el. komunikací-souv.",
+  "datum": "23.09.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "ulehčit stavbu rychlého internetu a zkrátit, jak dlouho operátoři uchovávají data o komunikaci",
+  "koho": [
+    "Koho se to týká? Obcí bez signálu, firem i lidí, jejichž provozní a lokalizační údaje operátoři drží pro stát."
+  ],
+  "fakty": [
+    {
+      "text": "Moricová: čtyři měsíce jsou lepší než šest.",
+      "source": "steno",
+      "steno_id": "2025_31_00406",
+      "citace": "moje vystoupení se týká konkrétního návrhu k data retention, tedy k uchovávání provozních a lokalizačních údajů. Řeknu to hned na začátku. Jasně, čtyři měsíce jsou opravdu lepší než šest.",
+      "link_phrase": "čtyři měsíce jsou lepší než šest"
+    },
+    {
+      "text": "Moricová: zkrácení data retention problém úplně neřeší.",
+      "source": "steno",
+      "steno_id": "2025_31_00406",
+      "citace": "základní problém českého data retention pozměňovací návrh úplně neřeší",
+      "link_phrase": "Moricová (Piráti) zákon o sítích chválila"
+    },
+    {
+      "text": "Novák: nejde o hromadný sběr dat státem na jedno místo.",
+      "source": "steno",
+      "steno_id": "2025_31_00408",
+      "citace": "Jestli jde o hromadný sběr dat na jedno místo státem, musím odpovědět ne, nejde.",
+      "link_phrase": "Novák (ANO) odpovídal"
+    },
+    {
+      "text": "Novák: údaje drží operátoři, stát platí náklady.",
+      "source": "steno",
+      "steno_id": "2025_31_00408",
+      "citace": "Ty provozní lokalizační údaje ukládají operátoři, stát jim hradí náklady.",
+      "link_phrase": "Údaje drží operátoři"
+    },
+    {
+      "text": "Novák: vyšetřovatel potřebuje razítko státního zástupce.",
+      "source": "steno",
+      "steno_id": "2025_31_00408",
+      "citace": "A stát, respektive vyšetřovatel, se k těm údajům dostane pouze poté, co dostane razítko od státního zástupce",
+      "link_phrase": "vyšetřovatel potřebuje razítko státního zástupce"
+    },
+    {
+      "text": "Martínková Španihelová: zkušenost z Vápenného Podola se signálem.",
+      "source": "steno",
+      "steno_id": "2025_31_00410",
+      "citace": "vystupuji jako zastupitelka Vápenného Podola, malé obce na Chrudimsku",
+      "link_phrase": "Martínková Španihelová mluvila jako zastupitelka Vápenného Podola"
+    },
+    {
+      "text": "Martínková: říct, že potřebujeme připojení, je ta jednoduchá část.",
+      "source": "steno",
+      "steno_id": "2025_31_00410",
+      "citace": "říct: potřebujeme lepší připojení je ta jednoduchá část, to složitější je potřebnou infrastrukturu opravdu postavit",
+      "link_phrase": "říct potřebujeme lepší připojení je ta jednoduchá část"
+    },
+    {
+      "text": "Martínková: rychlejší povolování a koordinace stavebních prací.",
+      "source": "steno",
+      "steno_id": "2025_31_00410",
+      "citace": "První je to rychlejší povolování",
+      "link_phrase": "rychlejší povolování a koordinaci výkopů"
+    },
+    {
+      "text": "Ministr poznámka mimo mikrofon.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_31_00410",
+      "citace": "(Obrací se na ministra, který pronesl poznámku mimo mikrofon.)",
+      "link_phrase": "poznámku mimo mikrofon"
+    },
+    {
+      "text": "Novák: dokument o zkrácení lhůty pro uchovávání údajů.",
+      "source": "steno",
+      "steno_id": "2025_31_00436",
+      "citace": "zkrácení lhůty pro uchovávání provozních a lokalizačních údajů",
+      "link_phrase": "jak dlouho mají operátoři uchovávat údaje"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Rychlejší internet,\nkratší uchovávání dat",
+  "lead": "Odpoledne Sněmovna spojila dva zákony o levnějším zavádění rychlého internetu. Prošly skoro jednomyslně. Nejvíc řečí ale nebylo o kabelech, nýbrž o tom, jak dlouho mají operátoři uchovávat údaje o tom, kdo s kým komunikoval a odkud.",
+  "pointa": "Moricová (Piráti) zákon o sítích chválila, u uchovávání dat ale namítla, že čtyři měsíce jsou lepší než šest, základní problém českého uchovávání dat to ale neřeší. Novák (ANO) odpovídal, že nejde o hromadný sběr na jedno státní místo. Údaje drží operátoři, stát jim platí náklady a vyšetřovatel potřebuje razítko státního zástupce.\n\nMartínková Španihelová mluvila jako zastupitelka Vápenného Podola: několik let bojovali o vysílač, a říct potřebujeme lepší připojení je ta jednoduchá část. Složitější je to postavit. Vypíchla rychlejší povolování a koordinaci výkopů, ať se silnice nerozkopává dvakrát. Ministr dopravy k tomu utrousil poznámku mimo mikrofon.\n\nPoslušně podotýkám, že internet má zrychlit a data mizet dřív. Místo šesti měsíců je operátoři budou uchovávat čtyři.",
+  "mean": "Zavádění rychlého internetu má být levnější díky snazšímu povolování a koordinaci výkopů, ať se silnice nerozkopává dvakrát. U dat o hovorech a poloze se lhůta uchovávání zkrátila ze šesti na čtyři měsíce.",
+  "citace_text": "moje vystoupení se týká konkrétního návrhu k data retention, tedy k uchovávání provozních a lokalizačních údajů. Řeknu to hned na začátku. Jasně, čtyři měsíce jsou opravdu lepší než šest.",
+  "citace_autor": "Michaela Moricová (Piráti)",
+  "steno_id": "2025_31_00406",
+  "pocet_hlasovani": 8,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 15,
+    "pritomno_min": 147,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 3562
+}

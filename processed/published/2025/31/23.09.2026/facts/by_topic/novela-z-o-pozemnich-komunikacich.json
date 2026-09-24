@@ -1,0 +1,87 @@
+{
+  "slug": "novela-z-o-pozemnich-komunikacich",
+  "nazev": "Novela z. o pozemních komunikacích",
+  "datum": "23.09.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "zmrazit cenu dálniční známky a zrušit její automatické zdražování podle inflace a nových úseků",
+  "koho": [
+    "Koho se to týká? Každého, kdo platí dálniční známku, a krajů, které z ní nepřímo čekají peníze na silnice druhé a třetí třídy."
+  ],
+  "fakty": [
+    {
+      "text": "Bednárik: cíl je zrušit valorizaci časového poplatku.",
+      "source": "steno",
+      "steno_id": "2025_31_00247",
+      "citace": "Navrhuje se zrušení valorizačního mechanismu každoroční úpravy sazeb časového poplatku",
+      "link_phrase": "Bednárik (ANO) tomu říkal stabilizace poplatku"
+    },
+    {
+      "text": "Smejkalová: proč rušit automatickou valorizaci právě teď.",
+      "source": "steno",
+      "steno_id": "2025_31_00267",
+      "citace": "proč chceme právě teď rušit automatickou valorizaci dálničních známek?",
+      "link_phrase": "Smejkalová se ptala"
+    },
+    {
+      "text": "Hřib: utrácíte peníze, které nemáte.",
+      "source": "steno",
+      "steno_id": "2025_31_00257",
+      "citace": "Vy jenom děláte to, že utrácíte peníze, které nemáte a chcete žít na dluh budoucích generací",
+      "link_phrase": "Hřib (Piráti) Okamurovi vzkázal"
+    },
+    {
+      "text": "Adamec: návrh je blbě a výsledek je předem jasný.",
+      "source": "steno",
+      "steno_id": "2025_31_00315",
+      "citace": "že je blbě, možná někdo si myslí, že to úžasné, já mu to nezastírám, rozhodneme o tom hlasováním jako vždycky a víme, jak to dopadne, bohužel",
+      "link_phrase": "že je blbě"
+    },
+    {
+      "text": "Kučera: chybějící peníze bude muset někdo dohnat zdražením.",
+      "source": "steno",
+      "steno_id": "2025_31_00325",
+      "citace": "nějaká příští vláda bude prostě muset opět dálniční známku navýšit",
+      "link_phrase": "Kučera (TOP 09) řekl"
+    },
+    {
+      "text": "Prošel jednodenní kupon na čtyřiadvacet hodin.",
+      "source": "steno",
+      "steno_id": "2025_31_00333",
+      "citace": "změny jednodenního kuponu z jednoho dne na 24 hodin",
+      "link_phrase": "Prošel jednodenní kupon na čtyřiadvacet hodin"
+    },
+    {
+      "text": "Papajanovského návrh o šesti procentech z daní za minerální oleje.",
+      "source": "steno",
+      "steno_id": "2025_31_00338",
+      "citace": "rozšíření daňových příjmů krajů o 6 procent z vybraných daní za minerální oleje",
+      "link_phrase": "šest procent z daní za minerální oleje"
+    },
+    {
+      "text": "Ministr u krajského návrhu nesouhlasil.",
+      "source": "steno",
+      "steno_id": "2025_31_00339",
+      "citace": "(Ministr: Nesouhlas.)",
+      "link_phrase": "Ministr nesouhlasil, návrh padl"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Známka už\nsama zdražovat nebude",
+  "lead": "Po druhém kole na začátku září došlo na závěrečné hlasování. Sněmovna schválila zmrazení dálniční známky: automatické zdražování podle inflace a nových úseků končí. Ministr dopravy Bednárik (ANO) tomu říkal stabilizace poplatku. Opozice znovu počítala, kdo zaplatí díru v opravách silnic.",
+  "pointa": "Smejkalová se ptala, proč chceme právě teď rušit automatickou valorizaci dálničních známek, když vláda říká, že nechce dál zatěžovat řidiče. Hřib (Piráti) Okamurovi vzkázal, že utrácí peníze, které nemá, a dluh nechává dalším generacím.\n\nDebata se pak stočila ke krajským silnicím. Papajanovský (STAN) proto chtěl krajům šest procent z daní za minerální oleje (benzín/nafta) jako náhradní příjem na okresky. Ministr nesouhlasil, návrh padl. Kučera (TOP 09) řekl, že chybějící stamiliony někdo jednou dožene znovu zdražením známky.\n\nProšel jednodenní kupon na čtyřiadvacet hodin: místo kalendářního dne.",
+  "mean": "Dálniční známka přestane sama zdražovat. Závěrečné hlasování prošlo, krajský přílepek o benzinu ne. Jednodenní kupon nově platí čtyřiadvacet hodin.",
+  "citace_text": "že je blbě, možná někdo si myslí, že to úžasné, já mu to nezastírám, rozhodneme o tom hlasováním jako vždycky a víme, jak to dopadne, bohužel",
+  "citace_autor": "Ivan Adamec (ODS)",
+  "steno_id": "2025_31_00315",
+  "pocet_hlasovani": 5,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 100,
+    "pritomno_min": 153,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 16828
+}
