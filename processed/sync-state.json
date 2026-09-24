@@ -174,28 +174,28 @@
       "count": 20,
       "max_cislo": 20,
       "last_datum": "05.11.2025",
-      "steno_count": 254,
-      "last_steno_poradi": 254,
+      "steno_count": 69,
+      "last_steno_poradi": 69,
       "last_steno_datum": "2025-11-05",
-      "synced_at": "2026-09-24T10:38:39.462373+00:00"
+      "synced_at": "2026-09-24T23:47:30.500258+00:00"
     },
     "2": {
       "count": 75,
       "max_cislo": 75,
       "last_datum": "14.11.2025",
-      "steno_count": 279,
-      "last_steno_poradi": 279,
+      "steno_count": 153,
+      "last_steno_poradi": 153,
       "last_steno_datum": "2025-11-14",
-      "synced_at": "2026-09-24T10:38:40.483250+00:00"
+      "synced_at": "2026-09-24T23:47:31.080787+00:00"
     },
     "3": {
       "count": 18,
       "max_cislo": 18,
       "last_datum": "26.11.2025",
-      "steno_count": 327,
-      "last_steno_poradi": 327,
-      "last_steno_datum": "2025-11-27",
-      "synced_at": "2026-09-24T10:38:41.477727+00:00"
+      "steno_count": 126,
+      "last_steno_poradi": 126,
+      "last_steno_datum": "2025-11-26",
+      "synced_at": "2026-09-24T23:47:31.750331+00:00"
     },
     "22": {
       "count": 2,
@@ -282,44 +282,17 @@
       "count": 35,
       "max_cislo": 35,
       "last_datum": "23.09.2026",
-      "steno_count": 630,
-      "last_steno_poradi": 630,
-      "last_steno_datum": "2026-09-23",
-      "synced_at": "2026-09-24T10:45:51.372389+00:00"
+      "steno_count": 734,
+      "last_steno_poradi": 734,
+      "last_steno_datum": "2026-09-24",
+      "synced_at": "2026-09-24T23:49:44.880374+00:00"
     }
   },
-  "updated_at": "2026-09-24T10:45:51.372529+00:00",
+  "updated_at": "2026-09-24T23:49:44.880394+00:00",
   "last_updated_schuze": [
     1,
     2,
     3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25,
-    26,
-    27,
-    28,
-    29,
-    30,
     31
   ]
 }
