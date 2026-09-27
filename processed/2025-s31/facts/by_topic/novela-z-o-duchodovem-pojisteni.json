@@ -1,0 +1,66 @@
+{
+  "slug": "novela-z-o-duchodovem-pojisteni",
+  "nazev": "Novela z. o důchodovém pojištění",
+  "datum": "24.09.2026",
+  "verdikt": "prvni_cteni",
+  "predmet_lidsky": "přidat k důchodu automatické příplatky podle věku a víc ocenit práci v důchodu",
+  "koho": [
+    "Koho se to týká? Seniorů, kteří se dožijí vysokého věku, lidí pracujících v důchodu a rodin, které pečují o starší rodiče."
+  ],
+  "fakty": [
+    {
+      "text": "Ančincová: zvyšování důchodů nemá být soutěž, kdo přidá víc.",
+      "source": "steno",
+      "steno_id": "2025_31_00646",
+      "citace": "Otázka zvyšování důchodů nesmí být politickou soutěží a soubojem o to, kdo přidá víc.",
+      "link_phrase": "Ančincová (Piráti) varovala"
+    },
+    {
+      "text": "Pivoňka Vaňková: osmdesátiletá paní v obci potřebuje péči, ne jen příplatek.",
+      "source": "steno",
+      "steno_id": "2025_31_00644",
+      "citace": "Představme si osmdesátiletou paní, která dnes žije sama někde v menší obci.",
+      "link_phrase": "Pivoňka Vaňková (STAN) začala u osmdesátileté paní"
+    },
+    {
+      "text": "Bačíková: zákon má dvě tváře, práce v důchodu a věkové příplatky.",
+      "source": "steno",
+      "steno_id": "2025_31_00658",
+      "citace": "já v tomto návrhu zákona vidím dvě poměrně rozdílné tváře",
+      "link_phrase": "Bačíková (ODS) viděla dvě rozdílné tváře"
+    },
+    {
+      "text": "Bačíková: 500 Kč v 80, další v 85, 90, 95 a tisícovka ve 100.",
+      "source": "steno",
+      "steno_id": "2025_31_00658",
+      "citace": "automatických zvýšení důchodů podle věku: 500 korun v 80, dalších 500 korun v 85, 90, 95 a ve 100 letech tisícovka",
+      "link_phrase": "pětistovky podle věku"
+    },
+    {
+      "text": "Havránek navrhuje zamítnutí.",
+      "source": "steno",
+      "steno_id": "2025_31_00654",
+      "citace": "než navrhnu zamítnutí tohoto tisku, dovolím si k panu ministrovi několik otázek",
+      "link_phrase": "Havránek (ODS) chtěl návrh rovnou zamítnout"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Důchod\npodle narozenin",
+  "lead": "Po ranní mimořádné schůzi přišly na řadu důchody. A protože věk přináší zkušenosti, bolesti zad a občas i kulatiny, vláda k nim chce přidat ještě pětistovku. Ančincová (Piráti) varovala, že zvyšování důchodů nesmí být politickou soutěží o to, kdo přidá víc.",
+  "pointa": "Pivoňka Vaňková (STAN) začala u osmdesátileté paní z menší obce: když přijde nemoc, potřebuje pečovatelku, ne jen další kolonku v tabulce. Bačíková (ODS) viděla dvě rozdílné tváře zákona. Jedna má lidem v důchodu pomoct dál vydělávat. Druhá přidává pětistovky podle věku.\n\nHavránek (ODS) chtěl návrh rovnou zamítnout. Neprošlo. Návrh přežil první kolo a míří do výborů.",
+  "mean": "Čím víc svíček na dortu, tím větší příplatek. A kdo pracuje i v penzi, má z toho mít víc než jen dobrý pocit. Návrh prošel prvním kolem.",
+  "citace_text": "Otázka zvyšování důchodů nesmí být politickou soutěží a soubojem o to, kdo přidá víc.",
+  "citace_autor": "Hana Ančincová (Piráti)",
+  "steno_id": "2025_31_00646",
+  "pocet_hlasovani": 3,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 69,
+    "pritomno_min": 106,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 27651
+}

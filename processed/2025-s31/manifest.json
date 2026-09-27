@@ -1,0 +1,18 @@
+{
+  "obdobi": 2025,
+  "schuze": 31,
+  "steps": {
+    "align": {
+      "done": true,
+      "topics": 8
+    },
+    "extract": {
+      "done": true,
+      "topics_written": 8,
+      "with_concrete_facts": 8,
+      "days": 3,
+      "validation_warnings": []
+    }
+  },
+  "built_at": "2026-09-25T15:34:04.358583+00:00"
+}

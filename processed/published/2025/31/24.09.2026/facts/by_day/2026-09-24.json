@@ -1,0 +1,44 @@
+{
+  "datum": "24.09.2026",
+  "den": "čtvrtek",
+  "topic_slugs": [
+    "novela-z-o-platu-predstavitelu-statni-moci",
+    "novela-z-o-duchodovem-pojisteni",
+    "novela-z-o-doplnkovem-penzijnim-sporeni",
+    "novela-z-o-ucetnictvi"
+  ],
+  "stats": {
+    "pocet_hlas": 5,
+    "minuty": 544,
+    "end_cas": "18:13",
+    "proslo": 4,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "nwl_predmet": "Ráno platy. Odpoledne důchody a papíry",
+  "dnesni_ucet": "Ráno si zmrazili platy, odpoledne seniorům přihodili.\nPenzijku ubrali na poplatcích, firmám na papírech.",
+  "zaver": "že ráno si politici zmrazili platy, odpoledne seniorům přihodili, penzijku ubrali na poplatcích a firmám na papírování.",
+  "vysledek": [
+    "* Platy politiků: první čtení přežily, míří do výborů",
+    "* Důchodové pojištění: příplatky podle věku přežily první kolo",
+    "* Doplňkové penzijní spoření: nižší poplatky míří do výborů",
+    "* Účetnictví: méně firem se zprávami o udržitelnosti"
+  ],
+  "jazykolam": {
+    "text": "Já tedy nevím vůbec, co to znamená, ale pan premiér by nám to určitě vysvětlil",
+    "autor": "Jiří Havránek (ODS)",
+    "steno_id": "2025_31_00677"
+  },
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo",
+  "slovnicek": [
+    "mimořádná schůze",
+    "důchodové pojištění",
+    "doplňkové penzijní spoření",
+    "třetí pilíř",
+    "zpráva o udržitelnosti",
+    "první kolo"
+  ]
+}

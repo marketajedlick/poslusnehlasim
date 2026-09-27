@@ -3,6 +3,70 @@
   "schuze": 31,
   "topics": [
     {
+      "slug": "novela-z-trestni-zakonik",
+      "nazev": "Novela z. - trestní zákoník",
+      "bod": "10",
+      "datum": "24.09.2026",
+      "vote_cisla": [
+        45
+      ],
+      "steno_ids": [
+        "2025_31_00708",
+        "2025_31_00709",
+        "2025_31_00710",
+        "2025_31_00711",
+        "2025_31_00712",
+        "2025_31_00713",
+        "2025_31_00714",
+        "2025_31_00715",
+        "2025_31_00716",
+        "2025_31_00717",
+        "2025_31_00718",
+        "2025_31_00719",
+        "2025_31_00720",
+        "2025_31_00721",
+        "2025_31_00722",
+        "2025_31_00723",
+        "2025_31_00724"
+      ],
+      "proslo": true,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Dávka státní sociální pomoci, pomoc lidem v nouzi.",
+      "tema_vysvetleni": "Novela dávek SSP."
+    },
+    {
+      "slug": "novela-z-o-ucetnictvi",
+      "nazev": "Novela z. o účetnictví",
+      "bod": "11",
+      "datum": "24.09.2026",
+      "vote_cisla": [
+        46,
+        47
+      ],
+      "steno_ids": [
+        "2025_31_00725",
+        "2025_31_00726",
+        "2025_31_00727",
+        "2025_31_00728",
+        "2025_31_00729",
+        "2025_31_00730",
+        "2025_31_00731",
+        "2025_31_00732",
+        "2025_31_00733",
+        "2025_31_00734"
+      ],
+      "proslo": true,
+      "pocet_hlasovani": 2,
+      "pocet_prijato": 2,
+      "pocet_zamitnuto": 0,
+      "kategorie": "substantivni",
+      "tema_svejk": "Méně firem musí psát zprávy o udržitelnosti.",
+      "tema_vysvetleni": "Zúžení okruhu účetních jednotek a méně administrativy."
+    },
+    {
       "slug": "novela-z-o-pozemnich-komunikacich",
       "nazev": "Novela z. o pozemních komunikacích",
       "bod": "12",
@@ -117,8 +181,8 @@
       "pocet_prijato": 3,
       "pocet_zamitnuto": 2,
       "kategorie": "substantivni",
-      "tema_svejk": "Zmrazení dálniční známky, konec automatického zdražování.",
-      "tema_vysvetleni": "Zmrazit cenu dálniční známky a zrušit valorizaci podle inflace a nových úseků."
+      "tema_svejk": "Dávka státní sociální pomoci, pomoc lidem v nouzi.",
+      "tema_vysvetleni": "Novela dávek SSP."
     },
     {
       "slug": "novela-z-o-silnicnim-provozu",
@@ -202,8 +266,8 @@
       "pocet_prijato": 5,
       "pocet_zamitnuto": 3,
       "kategorie": "substantivni",
-      "tema_svejk": "Chytrá doprava z EU a obecní zkoušky pro taxikáře.",
-      "tema_vysvetleni": "Přepis evropských pravidel pro ITS a návrat obecní zkoušky řidičů taxislužby."
+      "tema_svejk": "Dávka státní sociální pomoci, pomoc lidem v nouzi.",
+      "tema_vysvetleni": "Novela dávek SSP."
     },
     {
       "slug": "vl-n-z-ke-snizeni-nakladu-na-zavadeni-siti-el-ko",
@@ -237,8 +301,8 @@
       "pocet_prijato": 9,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "Levnější zavádění sítí elektronických komunikací.",
-      "tema_vysvetleni": "Opatření ke snížení nákladů na stavby rychlého internetu."
+      "tema_svejk": "Dávka státní sociální pomoci, pomoc lidem v nouzi.",
+      "tema_vysvetleni": "Novela dávek SSP."
     },
     {
       "slug": "vl-n-z-ke-snizeni-nakl-na-zavadeni-siti-el-komun",
@@ -304,8 +368,118 @@
       "pocet_prijato": 8,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
-      "tema_svejk": "Levnější stavba rychlého internetu a kratší uchovávání dat.",
-      "tema_vysvetleni": "Související změny: sítě s vysokou kapacitou a zkrácení data retention."
+      "tema_svejk": "Dávka státní sociální pomoci, pomoc lidem v nouzi.",
+      "tema_vysvetleni": "Novela dávek SSP."
+    },
+    {
+      "slug": "novela-z-o-duchodovem-pojisteni",
+      "nazev": "Novela z. o důchodovém pojištění",
+      "bod": "8",
+      "datum": "24.09.2026",
+      "vote_cisla": [
+        37,
+        38,
+        39
+      ],
+      "steno_ids": [
+        "2025_31_00643",
+        "2025_31_00644",
+        "2025_31_00645",
+        "2025_31_00646",
+        "2025_31_00647",
+        "2025_31_00648",
+        "2025_31_00649",
+        "2025_31_00650",
+        "2025_31_00651",
+        "2025_31_00652",
+        "2025_31_00653",
+        "2025_31_00654",
+        "2025_31_00655",
+        "2025_31_00656",
+        "2025_31_00657",
+        "2025_31_00658",
+        "2025_31_00659",
+        "2025_31_00660",
+        "2025_31_00661",
+        "2025_31_00662",
+        "2025_31_00663",
+        "2025_31_00664",
+        "2025_31_00665",
+        "2025_31_00666",
+        "2025_31_00667",
+        "2025_31_00668",
+        "2025_31_00669",
+        "2025_31_00670",
+        "2025_31_00671",
+        "2025_31_00672",
+        "2025_31_00673",
+        "2025_31_00674",
+        "2025_31_00675",
+        "2025_31_00676",
+        "2025_31_00677",
+        "2025_31_00678",
+        "2025_31_00679",
+        "2025_31_00680",
+        "2025_31_00681",
+        "2025_31_00682",
+        "2025_31_00683",
+        "2025_31_00684",
+        "2025_31_00685",
+        "2025_31_00686",
+        "2025_31_00687",
+        "2025_31_00688",
+        "2025_31_00689",
+        "2025_31_00690",
+        "2025_31_00691",
+        "2025_31_00692",
+        "2025_31_00693",
+        "2025_31_00694",
+        "2025_31_00695",
+        "2025_31_00696",
+        "2025_31_00697",
+        "2025_31_00698",
+        "2025_31_00699",
+        "2025_31_00700",
+        "2025_31_00701",
+        "2025_31_00702",
+        "2025_31_00703",
+        "2025_31_00704",
+        "2025_31_00705",
+        "2025_31_00706",
+        "2025_31_00707"
+      ],
+      "proslo": true,
+      "pocet_hlasovani": 3,
+      "pocet_prijato": 2,
+      "pocet_zamitnuto": 1,
+      "kategorie": "substantivni",
+      "tema_svejk": "Příplatky k důchodu podle věku a ocenění práce v důchodu.",
+      "tema_vysvetleni": "Automatické příplatky podle věku a lepší podmínky pro práci po odchodu do důchodu."
+    },
+    {
+      "slug": "novela-z-o-doplnkovem-penzijnim-sporeni",
+      "nazev": "Novela z. o doplňkovém penzijním spoření",
+      "bod": "9",
+      "datum": "24.09.2026",
+      "vote_cisla": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "steno_ids": [
+        "2025_31_00694",
+        "2025_31_00703",
+        "2025_31_00707"
+      ],
+      "proslo": true,
+      "pocet_hlasovani": 5,
+      "pocet_prijato": 3,
+      "pocet_zamitnuto": 2,
+      "kategorie": "substantivni",
+      "tema_svejk": "Levnější doplňkové penzijní spoření a konec starých fondů.",
+      "tema_vysvetleni": "Nižší poplatky, podpora mladých a ukončení transformovaných fondů."
     }
   ]
 }

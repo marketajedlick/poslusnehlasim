@@ -795,6 +795,10 @@ button{font:inherit;cursor:pointer}
 }
 .stamp.schvaleno,.stamp.zvoleno{color:var(--green);border-color:var(--green)}
 .stamp.zamiteno,.stamp.odlozeno{color:var(--orange);border-color:var(--orange)}
+.stamp.prvni_cteni{
+  color:var(--orange);
+  border-color:var(--orange);
+}
 .stamp.debata{
   color:var(--yellow);
   border-color:var(--yellow);

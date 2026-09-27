@@ -149,7 +149,7 @@ def _nadpis_fallback(nazev: str, proslo: bool) -> str:
     return _nadpis_bodu(b)
 
 
-_PROSLO_VERDIKTY = frozenset({"schvaleno", "zvoleno"})
+_PROSLO_VERDIKTY = frozenset({"schvaleno", "zvoleno", "prvni_cteni"})
 _ZAMITNUTO_VERDIKTY = frozenset({"zamiteno", "odlozeno"})
 
 

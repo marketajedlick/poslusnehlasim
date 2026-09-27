@@ -1,0 +1,73 @@
+{
+  "slug": "novela-z-o-doplnkovem-penzijnim-sporeni",
+  "nazev": "Novela z. o doplňkovém penzijním spoření",
+  "datum": "24.09.2026",
+  "verdikt": "prvni_cteni",
+  "predmet_lidsky": "zlevnit a zjednodušit dobrovolné spoření na důchod, ať lidem míň ukrajují poplatky",
+  "koho": [
+    "Koho se to týká? Každého, kdo má nebo zvažuje doplňkové penzijní spoření, a mladých, které má stát víc motivovat spořit dřív."
+  ],
+  "fakty": [
+    {
+      "text": "Schillerová: klienti v transformovaných fondech ať na 2036 nečekají.",
+      "source": "steno",
+      "steno_id": "2025_31_00661",
+      "citace": "každému klientu, který dosud v transformovaných fondech je, doporučuji na rok 2036 nečekat a bezplatně své spoření převést do výnosnějších účastnických fondů",
+      "link_phrase": "nečekat na rok 2036"
+    },
+    {
+      "text": "Schillerová: klíčové je snížení poplatků penzijních společností.",
+      "source": "steno",
+      "steno_id": "2025_31_00661",
+      "citace": "Poslední a klíčový prvek je snížení limitu na úplatu, čili snížení poplatků penzijních společností",
+      "link_phrase": "zkrotit poplatky"
+    },
+    {
+      "text": "Havránek: úplněk v Beranu.",
+      "source": "steno",
+      "steno_id": "2025_31_00677",
+      "citace": "mám takový pocit, že dnešek je dnem, kdy se může stát úplně všechno – možná to souvisí s tím, že v sobotu nás čeká úplněk v Beranu",
+      "link_phrase": "úplněk v Beranu"
+    },
+    {
+      "text": "Schillerová: napříč stranami jsme na jedné lodi.",
+      "source": "steno",
+      "steno_id": "2025_31_00693",
+      "citace": "jsme na jedné lodi a že jste tady všichni, ať jste byli z kterékoliv politické strany, řekli, že to je správný směr",
+      "link_phrase": "Schillerová (ANO) říkala, že jsme na jedné lodi"
+    },
+    {
+      "text": "Schillerová: penzijní společnosti vždycky skončí u vyšších poplatků.",
+      "source": "steno",
+      "steno_id": "2025_31_00693",
+      "citace": "objednali se ke mně zástupci penzijních společností. Aniž bych to chtěla shazovat, tak to vždycky skončilo stejně a to u vyšších poplatků",
+      "link_phrase": "zástupců penzijních společností"
+    },
+    {
+      "text": "Havránek přikývl, že návrh míří správným směrem.",
+      "source": "steno",
+      "steno_id": "2025_31_00677",
+      "citace": "tento návrh opravdu míří správným směrem",
+      "link_phrase": "Havránek (ODS) přikývl"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Penzijko\nlevněji",
+  "lead": "Odpoledne se šlo na penzijko. Stát chce zkrotit poplatky, aby fondy z našetřených peněz ukusovaly o něco méně. Ministryně financí Schillerová (ANO) radila nečekat na rok 2036 a převést staré spoření do výnosnějších fondů už teď.",
+  "pointa": "Schillerová (ANO) říkala, že jsme na jedné lodi. Poslušně hlásím, že ve Sněmovně je vždycky dobré nejdřív zjistit, kdo vesluje a kdo vybírá jízdné. U zástupců penzijních společností prý jednání vždycky skončilo u vyšších poplatků.\n\nHavránek (ODS) přikývl, že návrh míří správným směrem. Po zmatečném kole a pauze penzijko přežilo první kolo.",
+  "mean": "Fondy mají z našetřených peněz ukusovat míň. Doplňkové penzijní spoření prošlo prvním kolem.",
+  "citace_text": "mám takový pocit, že dnešek je dnem, kdy se může stát úplně všechno, možná to souvisí s tím, že v sobotu nás čeká úplněk v Beranu",
+  "citace_autor": "Jiří Havránek (ODS)",
+  "steno_id": "2025_31_00677",
+  "pocet_hlasovani": 5,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 60,
+    "pritomno_min": 64,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 12000
+}

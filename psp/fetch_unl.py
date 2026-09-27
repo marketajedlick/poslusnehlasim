@@ -26,18 +26,48 @@ def hl_soubor(data_dir: Path, obdobi: int) -> Path:
 def head_unl_zip(obdobi: int, *, timeout: float = 60.0) -> dict[str, Any]:
     """Metadata ZIPu bez stažení těla (Last-Modified, ETag, Content-Length)."""
     url = unl_zip_url(obdobi)
+
+    def _meta_from_headers(status: int, headers: dict[str, str]) -> dict[str, Any]:
+        # urllib headers are case-insensitive; curl -sI are plain
+        lower = {k.lower(): v for k, v in headers.items()}
+        return {
+            "url": url,
+            "status": status,
+            "etag": lower.get("etag", "").strip().strip('"'),
+            "last_modified": lower.get("last-modified", ""),
+            "content_length": int(lower.get("content-length") or 0),
+        }
+
     req = urllib.request.Request(url, method="HEAD")
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
-            return {
-                "url": url,
-                "status": resp.status,
-                "etag": resp.headers.get("ETag", "").strip('"'),
-                "last_modified": resp.headers.get("Last-Modified", ""),
-                "content_length": int(resp.headers.get("Content-Length") or 0),
-            }
-    except urllib.error.HTTPError as e:
-        raise OSError(f"HEAD {url} → HTTP {e.code}") from e
+            return _meta_from_headers(
+                resp.status, {k: v for k, v in resp.headers.items()}
+            )
+    except (urllib.error.HTTPError, urllib.error.URLError, OSError):
+        # PSP občas urllib odmítne; curl z tohoto prostředí funguje
+        import subprocess
+
+        try:
+            out = subprocess.check_output(
+                ["curl", "-fsSI", "--max-time", str(int(timeout)), url],
+                text=True,
+                stderr=subprocess.STDOUT,
+            )
+        except (subprocess.CalledProcessError, FileNotFoundError) as e:
+            raise OSError(f"HEAD/curl {url} selhalo: {e}") from e
+        status = 0
+        headers: dict[str, str] = {}
+        for i, line in enumerate(out.splitlines()):
+            if i == 0 and line.startswith("HTTP/"):
+                parts = line.split()
+                if len(parts) >= 2 and parts[1].isdigit():
+                    status = int(parts[1])
+                continue
+            if ":" in line:
+                k, _, v = line.partition(":")
+                headers[k.strip()] = v.strip()
+        return _meta_from_headers(status or 200, headers)
 
 
 def _unl_changed(
@@ -122,8 +152,19 @@ def refresh_unl(
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             data = resp.read()
-    except urllib.error.HTTPError as e:
-        raise OSError(f"GET {url} → HTTP {e.code}") from e
+    except (urllib.error.HTTPError, urllib.error.URLError, OSError) as e:
+        # stejný fallback jako HEAD — urllib na PSP občas Connection refused
+        import subprocess
+
+        try:
+            data = subprocess.check_output(
+                ["curl", "-fsSL", "--max-time", str(int(timeout)), url],
+                stderr=subprocess.STDOUT,
+            )
+        except (subprocess.CalledProcessError, FileNotFoundError) as ce:
+            if isinstance(e, urllib.error.HTTPError):
+                raise OSError(f"GET {url} → HTTP {e.code}") from e
+            raise OSError(f"GET/curl {url} selhalo: {ce}") from ce
 
     member = f"hl{obdobi}s.unl"
     with zipfile.ZipFile(io.BytesIO(data)) as zf:

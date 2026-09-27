@@ -1,0 +1,75 @@
+{
+  "key": "2025/31/24.09.2026",
+  "obdobi": 2025,
+  "schuze": 31,
+  "datum_unl": "24.09.2026",
+  "iso": "2026-09-24",
+  "state": "published",
+  "topic_slugs": [
+    "novela-z-o-platu-predstavitelu-statni-moci",
+    "novela-z-o-duchodovem-pojisteni",
+    "novela-z-o-doplnkovem-penzijnim-sporeni",
+    "novela-z-o-ucetnictvi"
+  ],
+  "recommended_slugs": [
+    "novela-z-o-platu-predstavitelu-statni-moci",
+    "novela-z-o-duchodovem-pojisteni",
+    "novela-z-o-doplnkovem-penzijnim-sporeni",
+    "novela-z-o-ucetnictvi"
+  ],
+  "rejected_slugs": [
+    "novela-z-trestni-zakonik"
+  ],
+  "brief_path": "editions/2026-09-24/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "stale",
+    "stale": true,
+    "link_phrase_coverage": {
+      "total": 24,
+      "linked": 24,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 24,
+      "ok": 24,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 0,
+    "steno_passages": 25,
+    "steno_missing_article_phrase": 0,
+    "ok": true,
+    "errors": []
+  },
+  "inputs": {
+    "votes_count": 47,
+    "votes_max_cislo": 47,
+    "steno_count": 779,
+    "steno_last_poradi": 742,
+    "topics_built_at": "2026-09-25T15:36:45.634403+00:00",
+    "fingerprint": "403b566157a2f4c8"
+  },
+  "published_at": "2026-09-27T08:46:27.396600+00:00",
+  "snapshot_dir": "published/2025/31/24.09.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s31/editions/2026-09-24/assets/2026-09-24.png",
+    "share": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s31/editions/2026-09-24/assets/2026-09-24.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png",
+      "carousel/04-citace.png",
+      "carousel/05-skore.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s31/editions/2026-09-24/assets/caption.txt"
+  }
+}

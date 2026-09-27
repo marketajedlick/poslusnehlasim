@@ -435,7 +435,7 @@ def _verdikt_den_clause(
     if zamitnuto > proslo and zamitnuto > 0:
         return "víc návrhů padlo než prošlo"
     if proslo and not zamitnuto and items and all(
-        getattr(it, "verdikt", "") == "schvaleno" for it in items
+        getattr(it, "verdikt", "") in ("schvaleno", "prvni_cteni") for it in items
     ):
         return "co je ve vydání, prošlo"
     if proslo or zamitnuto:

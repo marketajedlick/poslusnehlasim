@@ -200,6 +200,10 @@ body {
   color: #ff4411;
   border-color: #ff4411;
 }
+.stamp.prvni_cteni {
+  color: #ff4411;
+  border-color: #ff4411;
+}
 .stamp.debata {
   color: #9a7a00;
   border-color: #f4c430;

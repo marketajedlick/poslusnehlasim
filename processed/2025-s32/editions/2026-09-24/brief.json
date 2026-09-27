@@ -1,0 +1,63 @@
+{
+  "datum_unl": "24.09.2026",
+  "iso": "2026-09-24",
+  "recommended": [
+    {
+      "slug": "novela-z-o-platu-predstavitelu-statni-moci",
+      "nazev": "Novela z. o platu představitelů státní moci",
+      "score": 69,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 2,
+          "pritomno_min": 116,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 4036,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "Upozorňuji, že tento náš návrh na zmrazení platů politiků přinese v příštím roce úsporu jen ve Sněmovně ve výši 16 089 000 korun, tedy je to téměř 17 milionů korun úspora ve státním rozpočtu pro příští rok.",
+          "source": "steno",
+          "steno_id": "2025_32_00021",
+          "citace": "Upozorňuji, že tento náš návrh na zmrazení platů politiků přinese v příštím roce úsporu jen ve Sněmovně ve výši 16 089 000 korun, tedy je to téměř 17 milionů korun úspora ve státním rozpočtu pro příšt"
+        },
+        {
+          "text": "A k tomu ještě přidejte samozřejmě Senát, kterých je 81, to znamená, ta úspora dohromady se pohybuje kolem 25 milionů korun v rozpočtu pro příští rok.",
+          "source": "steno",
+          "steno_id": "2025_32_00021",
+          "citace": "A k tomu ještě přidejte samozřejmě Senát, kterých je 81, to znamená, ta úspora dohromady se pohybuje kolem 25 milionů korun v rozpočtu pro příští rok."
+        },
+        {
+          "text": "Jenom připomenu, že pro to zvyšování platů v minulé Fialově vládní koalici hlasovalo ODS, STAN, TOP 09, Piráti a KDU-ČSL.",
+          "source": "steno",
+          "steno_id": "2025_32_00021",
+          "citace": "Jenom připomenu, že pro to zvyšování platů v minulé Fialově vládní koalici hlasovalo ODS, STAN, TOP 09, Piráti a KDU-ČSL."
+        },
+        {
+          "text": "K pultíku přichází místopředsedkyně Urbanová, otáčí se a odchází.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_32_00024",
+          "citace": "(K pultíku přichází místopředsedkyně Urbanová, otáčí se a odchází.)"
+        }
+      ]
+    }
+  ],
+  "rejected": [],
+  "day_stats": {
+    "pocet_hlas_zakon": 1,
+    "proslo_vote": 1,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-09-24",
+      "2026-09-25"
+    ]
+  }
+}

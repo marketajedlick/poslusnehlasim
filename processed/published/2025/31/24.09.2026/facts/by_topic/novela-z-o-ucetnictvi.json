@@ -1,0 +1,66 @@
+{
+  "slug": "novela-z-o-ucetnictvi",
+  "nazev": "Novela z. o účetnictví",
+  "datum": "24.09.2026",
+  "verdikt": "prvni_cteni",
+  "predmet_lidsky": "ubrat firmám papírování kolem zpráv o udržitelnosti a zúžit, kdo je musí psát",
+  "koho": [
+    "Koho se to týká? Firem, které dnes musí skládat zprávy o udržitelnosti, a účetních, kteří to papírování drží."
+  ],
+  "fakty": [
+    {
+      "text": "Schillerová chyběla v sále, Malá chtěla pauzu klubu.",
+      "source": "steno",
+      "steno_id": "2025_31_00725",
+      "citace": "Ale já ji v tuhletu chvíli nevidím v sále",
+      "link_phrase": "Schillerovou v sále neviděli"
+    },
+    {
+      "text": "Malá žádá pětiminutovou pauzu klubu ANO.",
+      "source": "steno",
+      "steno_id": "2025_31_00726",
+      "citace": "Pane předsedající, já poprosím jenom o pětiminutovou pauzu na poradu klubu hnutí ANO",
+      "link_phrase": "pětiminutovou pauzu"
+    },
+    {
+      "text": "Schillerová: zúžit okruh firem se zprávami o udržitelnosti.",
+      "source": "steno",
+      "steno_id": "2025_31_00729",
+      "citace": "zúžení okruhu účetních jednotek povinných vyhotovovat zprávy o udržitelnosti a snížení administrativní zátěže účetních jednotek",
+      "link_phrase": "tu povinnost má míň firem"
+    },
+    {
+      "text": "Schillerová: hmyzí hotely jako přirovnání k nesmyslným povinnostem.",
+      "source": "steno",
+      "steno_id": "2025_31_00729",
+      "citace": "Asi si vzpomenete na moje dnes už legendární přirovnání s hmyzími hotely, že si firmy budou muset kupovat hmyzí hotely a podobně, aby splnily nesmyslné, nesmyslné administrativní povinnosti",
+      "link_phrase": "hmyzími hotely"
+    },
+    {
+      "text": "Pařil: ministryně nás vyčerpala informacemi.",
+      "source": "steno",
+      "steno_id": "2025_31_00731",
+      "citace": "Paní ministryně nás vyčerpala úplně všemi informacemi, které... (Smích a potlesk poslanců ANO) novela přináší",
+      "link_phrase": "Podle Pařila (ANO) už byli po výkladu vyčerpaní všichni"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Méně firem,\nméně papírů",
+  "lead": "Na závěr dne šlo o to, kolik firem musí psát dlouhé zprávy o tom, jak jsou „udržitelné“. Schillerovou v sále neviděli, klub ANO si vzal pětiminutovou pauzu. Pak ministryně financí navrhla, ať tu povinnost má míň firem.",
+  "pointa": "Schillerová (ANO) to proložila hmyzími hotely. Firmy prý kvůli evropským pravidlům kupují nesmysly, jen aby měly co napsat do formuláře. Podle Pařila (ANO) už byli po výkladu vyčerpaní všichni. Návrh přesto přežil první kolo.",
+  "mean": "Míň firem má skládat zprávy o udržitelnosti, míň papírování. Zákon o účetnictví prošel prvním kolem.",
+  "citace_text": "Asi si vzpomenete na moje dnes už legendární přirovnání s hmyzími hotely, že si firmy budou muset kupovat hmyzí hotely a podobně, aby splnily nesmyslné, nesmyslné administrativní povinnosti",
+  "citace_autor": "Alena Schillerová (ANO)",
+  "steno_id": "2025_31_00729",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 15,
+    "pritomno_min": 92,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 1128
+}

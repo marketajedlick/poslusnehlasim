@@ -1,0 +1,87 @@
+{
+  "slug": "novela-z-o-platu-predstavitelu-statni-moci",
+  "nazev": "Novela z. o platu představitelů státní moci",
+  "datum": "24.09.2026",
+  "verdikt": "prvni_cteni",
+  "predmet_lidsky": "zmrazení platů politiků na pět let na úrovni roku 2025",
+  "koho": [
+    "Koho se to týká? Poslanců, senátorů a dalších představitelů státu, jejichž plat se odvíjí od zákonné platové základny."
+  ],
+  "fakty": [
+    {
+      "text": "Hřib: premiér na mimořádné schůzi chyběl.",
+      "source": "steno",
+      "steno_id": "2025_32_00003",
+      "citace": "Pan premiér této vlády v době, kdy si tady vládní koaliční poslanci svolali mimořádnou schůzi, nepřišel opět do práce.",
+      "link_phrase": "Hřib (Piráti) připomněl"
+    },
+    {
+      "text": "Šebelová: zmrazení platů je předvolební gesto.",
+      "source": "steno",
+      "steno_id": "2025_32_00009",
+      "citace": "Za nás za Starosty jednoznačně nesmyslné populistické předvolební gesto.",
+      "link_phrase": "Šebelová (STAN) označila návrh"
+    },
+    {
+      "text": "Rakušan: mimořádná schůze vytlačila interpelace.",
+      "source": "steno",
+      "steno_id": "2025_32_00005",
+      "citace": "Je to velká taškařice, kterou tady chystáte",
+      "link_phrase": "Rakušan (STAN) kritizoval"
+    },
+    {
+      "text": "Okamura: úspora skoro sedmnáct milionů ve Sněmovně.",
+      "source": "steno",
+      "steno_id": "2025_32_00021",
+      "citace": "Upozorňuji, že tento náš návrh na zmrazení platů politiků přinese v příštím roce úsporu jen ve Sněmovně ve výši 16 089 000 korun, tedy je to téměř 17 milionů korun úspora ve státním rozpočtu pro příští rok.",
+      "link_phrase": "skoro sedmnáct milionů ve Sněmovně"
+    },
+    {
+      "text": "Okamura: se Senátem kolem pětadvaceti milionů.",
+      "source": "steno",
+      "steno_id": "2025_32_00021",
+      "citace": "A k tomu ještě přidejte samozřejmě Senát, kterých je 81, to znamená, ta úspora dohromady se pohybuje kolem 25 milionů korun v rozpočtu pro příští rok.",
+      "link_phrase": "pětadvacet milionů i se Senátem"
+    },
+    {
+      "text": "Okamura: šetřit u sebe.",
+      "source": "steno",
+      "steno_id": "2025_32_00021",
+      "citace": "A jak jsem říkal, měli bychom šetřit primárně sami na sobě a jít příkladem občanů.",
+      "link_phrase": "začít šetřit u sebe"
+    },
+    {
+      "text": "Pařil: zmrazení na pět let na úrovni 2025.",
+      "source": "steno",
+      "steno_id": "2025_32_00023",
+      "citace": "V návrhu je navrženo zmrazení platové úrovně na 5 let ve výši platové základny pro představitele stanovené pro rok 2025.",
+      "link_phrase": "Zpravodaj Pařil (ANO) pak zopakoval"
+    },
+    {
+      "text": "Urbanová: po pěti letech může přijít skok.",
+      "source": "steno",
+      "steno_id": "2025_32_00027",
+      "citace": "Nikdo z nás nechce vypadat jako papaláš, nikdo z nás nechce našim spoluobčanům říkat, že my se tady máme dobře",
+      "link_phrase": "Urbanová (STAN) varovala"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Platy\nk ledu na pět let",
+  "lead": "Ráno si koalice střihla mimořádnou schůzi o zmrazení platů politiků. Podle návrhu mají na pět let zůstat na úrovni roku 2025. Šebelová (STAN) označila návrh za nesmyslné populistické předvolební gesto. Hřib (Piráti) připomněl, že premiér Babiš na mimořádné schůzi chyběl.",
+  "pointa": "Okamura (SPD) počítal s úsporou skoro sedmnáct milionů ve Sněmovně a asi pětadvacet milionů i se Senátem. Politici mají podle něj začít šetřit u sebe. Zpravodaj Pařil (ANO) pak zopakoval základ návrhu: platy na pět let zamrazit na úrovni roku 2025.\n\nOpozice mluvila o předvolebním divadle. Rakušan (STAN) kritizoval, že mimořádná schůze vytlačila pravidelné čtvrteční interpelace. Urbanová (STAN) varovala, že po pěti letech může přijít skokové navýšení.",
+  "mean": "Koalice chce na pět let zmrazit platy politiků na úrovni roku 2025. Návrh prošel prvním čtením a teď ho čekají výbory.",
+  "citace_text": "Za nás za Starosty jednoznačně nesmyslné populistické předvolební gesto.",
+  "citace_autor": "Michaela Šebelová (STAN)",
+  "steno_id": "2025_32_00009",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 2,
+    "pritomno_min": 116,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 4036
+}

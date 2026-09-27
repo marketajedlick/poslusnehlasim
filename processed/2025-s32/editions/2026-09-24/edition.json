@@ -1,0 +1,55 @@
+{
+  "key": "2025/32/24.09.2026",
+  "obdobi": 2025,
+  "schuze": 32,
+  "datum_unl": "24.09.2026",
+  "iso": "2026-09-24",
+  "state": "draft",
+  "topic_slugs": [
+    "novela-z-o-platu-predstavitelu-statni-moci"
+  ],
+  "recommended_slugs": [
+    "novela-z-o-platu-predstavitelu-statni-moci"
+  ],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-09-24/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "stale",
+    "stale": true,
+    "link_phrase_coverage": {
+      "total": 11,
+      "linked": 11,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 11,
+      "ok": 11,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 0,
+    "steno_passages": 12,
+    "steno_missing_article_phrase": 0,
+    "ok": true,
+    "errors": []
+  },
+  "inputs": {
+    "votes_count": 4,
+    "votes_max_cislo": 4,
+    "steno_count": 37,
+    "steno_last_poradi": 37,
+    "topics_built_at": "2026-09-26T20:03:01.260489+00:00",
+    "fingerprint": "b7699042176a1daf"
+  },
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null
+}

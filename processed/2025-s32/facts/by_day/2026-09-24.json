@@ -1,0 +1,36 @@
+{
+  "datum": "24.09.2026",
+  "den": "čtvrtek",
+  "topic_slugs": [
+    "novela-z-o-platu-predstavitelu-statni-moci"
+  ],
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 204,
+    "end_cas": "12:27",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "nwl_predmet": "Platy na pět let. Premiér nepřišel",
+  "dnesni_ucet": "Mimořádná schůze zmrazila politikům platy na pět let.\nPremiér na ni přitom nepřišel do práce.",
+  "zaver": "že koalice si svolala mimořádnou schůzi ke zmrazení vlastních platů, premiér na ni nepřišel a návrh i tak přežil první kolo.",
+  "vysledek": [
+    "* Platy politiků: zmrazení na pět let přežilo první kolo"
+  ],
+  "jazykolam": {
+    "text": "Je to velká taškařice, kterou tady chystáte",
+    "autor": "Vít Rakušan (STAN)",
+    "steno_id": "2025_32_00005"
+  },
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo",
+  "slovnicek": [
+    "mimořádná schůze",
+    "platová základna",
+    "první kolo",
+    "interpelace"
+  ]
+}

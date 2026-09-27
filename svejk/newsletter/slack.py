@@ -45,15 +45,19 @@ def _image_reachable(image_url: str, *, timeout: int = 15) -> bool:
     url = (image_url or "").strip()
     if not url.startswith(("http://", "https://")):
         return False
+    # GitHub Pages / Cloudflare jinak vrací 403 na urllib bez UA
+    headers = {"User-Agent": "PoslusneHlasim-Slack/1.0"}
     try:
-        req = urllib.request.Request(url, method="HEAD")
+        req = urllib.request.Request(url, method="HEAD", headers=headers)
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             return 200 <= int(resp.status) < 400
     except Exception:
         # některé CDN HEAD neumí — zkus krátký GET
         try:
             req = urllib.request.Request(
-                url, method="GET", headers={"Range": "bytes=0-0"}
+                url,
+                method="GET",
+                headers={**headers, "Range": "bytes=0-0"},
             )
             with urllib.request.urlopen(req, timeout=timeout) as resp:
                 return 200 <= int(resp.status) < 400

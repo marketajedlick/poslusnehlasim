@@ -60,6 +60,7 @@ _VERDIKT_STAMP = {
     "zamiteno": "Zamítnuto",
     "odlozeno": "Odloženo",
     "debata": "Debata",
+    "prvni_cteni": "1. čtení",
 }
 
 
@@ -166,6 +167,12 @@ def lead_z_fact(fact: dict[str, Any]) -> str:
         lead = f"poslanci odložili změny v {predmet}." if predmet else "poslanci změnu odložili."
     elif verdikt == "debata":
         lead = f"poslanci debatovali o {predmet}." if predmet else "poslanci debatovali bez hlasování."
+    elif verdikt == "prvni_cteni":
+        lead = (
+            f"návrh k {predmet} přežil první kolo."
+            if predmet
+            else "návrh přežil první kolo."
+        )
     else:
         lead = f"poslanci řešili {predmet or 'bod programu'}."
 
@@ -317,6 +324,8 @@ def _verdikt_fráze_zaver(item: DenItem, pocet_hlasovani: int) -> str:
         return "věc se odložila"
     if v == "debata":
         return "bez hlasování o zákonu"
+    if v == "prvni_cteni":
+        return "návrh přežil první kolo"
     return "bod je v článku výše rozepsaný"
 
 
