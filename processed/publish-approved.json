@@ -1,6 +1,8 @@
 {
   "comment": "approved = sestavit z lokálních facts. held = zatím jen z publish-snapshots/ (produkce), ne z lokálních dat. hidden = nesmí na web (např. neprošlo review). Po doladění přesuň klíč z hidden/held do approved.",
-  "hidden": [],
+  "hidden": [
+    "2025/32/24.09.2026"
+  ],
   "held": [],
   "approved": [
     "2025/1/03.11.2025",
