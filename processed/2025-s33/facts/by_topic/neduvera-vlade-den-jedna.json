@@ -1,0 +1,84 @@
+{
+  "slug": "neduvera-vlade-den-jedna",
+  "nazev": "Projednání návrhu na vyslovení nedůvěry vládě",
+  "datum": "29.09.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "druhý pokus opozice o vyslovení nedůvěry Babišově vládě, první den dlouhé debaty",
+  "koho": [
+    "Koho se to týká? Celé republiky. Když by vláda padla, prezident sestavuje novou. Zatím jen řeči, hlasování ještě nebylo."
+  ],
+  "fakty": [
+    {
+      "text": "Kupka otevírá: nejde o divadlo, sliby vlády nevyšly.",
+      "source": "steno",
+      "steno_id": "2025_33_00003",
+      "citace": "vyvoláváme hlasování o nedůvěře vládě. V žádném případě to nebereme na lehkou váhu, v žádném případě to není divadlo",
+      "link_phrase": "Kupka (ODS) otevřel den"
+    },
+    {
+      "text": "Kupka: mělo být líp, je hůř, hypotéky i Green Deal.",
+      "source": "steno",
+      "steno_id": "2025_33_00003",
+      "citace": "přestože před volbami lidem slibovala, že bude líp, je ve skutečnosti hůř. Slibovala například levnější hypotéky – úroky na hypotéky významně rostou",
+      "link_phrase": "mělo být líp, je hůř"
+    },
+    {
+      "text": "Babiš: už mu to chybělo.",
+      "source": "steno",
+      "steno_id": "2025_33_00007",
+      "citace": "už mi to chybělo. Dávno jsem tady nemluvil",
+      "link_phrase": "Babiš přiznal"
+    },
+    {
+      "text": "Babiš přeje Kupkovi vydržet do 2029.",
+      "source": "steno",
+      "steno_id": "2025_33_00007",
+      "citace": "pane předsedo, my vám přejeme, abyste nám vydržel aspoň do roku 2029",
+      "link_phrase": "vydržet aspoň do roku 2029"
+    },
+    {
+      "text": "Babiš: opozice kradla budoucnost.",
+      "source": "steno",
+      "steno_id": "2025_33_00013",
+      "citace": "Jestli tady někdo lidem kradl budoucnost, tak jste to samozřejmě vy, co se živíte po politikou",
+      "link_phrase": "kradl budoucnost"
+    },
+    {
+      "text": "Havlíček spočítal prázdný sál.",
+      "source": "steno",
+      "steno_id": "2025_33_00021",
+      "citace": "Budeme tady minimálně dva dny, možná tři, takže nás to vyjde na 12 milionů",
+      "link_phrase": "nikde ani noha"
+    },
+    {
+      "text": "Juchelka: druhé hlasování o nedůvěře ještě před rokem vlády.",
+      "source": "steno",
+      "steno_id": "2025_33_00034",
+      "citace": "neuplynul ani rok od nástupu naší vlády a už tu máme samozřejmě druhé hlasování o vyslovení nedůvěry",
+      "link_phrase": "Juchelka připomněl"
+    },
+    {
+      "text": "Okamura v 21:01 přerušil schůzi do středy.",
+      "source": "steno",
+      "steno_id": "2025_33_00035",
+      "citace": "vzhledem k tomu, že je 21 hodin a protože nepadl návrh na prodloužení dnešního jednání, přerušuji 33. schůzi do zítra",
+      "link_phrase": "v devět večer"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Nedůvěra,\nkolo dvě",
+  "lead": "Opozice znovu žádá pád Babišovy vlády. Naposledy to zkoušela v únoru, teď je na řadě druhé kolo a ještě ani neuplynul rok. Kupka (ODS) otevřel den slovy, že to není divadlo, a že mělo být líp, je hůř. Premiér Babiš přiznal, že už mu to chybělo, a přál Kupkovi vydržet aspoň do roku 2029.",
+  "pointa": "Poslušně podotýkám, že premiér si debatu užíval. Dlouho útočil, že kdo lidem kradl budoucnost, sedí v opozici. Místopředseda vlády Havlíček (ANO) se podíval do lavic a spočítal, že schůze vyjde na dvanáct milionů a nikde ani noha. Juchelka připomněl, že druhé hlasování o nedůvěře ještě před rokem vlády je spíš vizitka opozice.\n\nHlasování o pádu vlády nepadlo. V devět večer Okamura schůzi přerušil do středy, protože nikdo nenavrhl prodloužení.",
+  "mean": "Opozice znovu navrhla vyslovení nedůvěry vládě. První den byla jen debata, hlasování o pádu vlády ještě nepadlo.",
+  "citace_text": "Budeme tady minimálně dva dny, možná tři, takže nás to vyjde na 12 milionů",
+  "citace_autor": "Karel Havlíček (ANO)",
+  "steno_id": "2025_33_00021",
+  "pocet_hlasovani": 0,
+  "proslo": false,
+  "signaly": {
+    "spor": true,
+    "dlouha_debata": true
+  },
+  "steno_slov": 45000
+}

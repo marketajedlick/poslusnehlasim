@@ -1,0 +1,37 @@
+{
+  "datum": "29.09.2026",
+  "den": "úterý",
+  "topic_slugs": [
+    "neduvera-vlade-den-jedna"
+  ],
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 420,
+    "end_cas": "21:01",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "nwl_predmet": "Druhá nedůvěra. Dvanáct milionů",
+  "dnesni_ucet": "Opozice znovu žádá pád vlády, Babiš si to užíval.\nŘeči do večera, hlasování o pádu nikde.",
+  "zaver": "že druhé kolo o nedůvěře začalo dlouhou debatou, premiér se vrátil k řečnickému pultu a rozhodnutí znovu nepadlo.",
+  "vysledek": [
+    "* debata o nedůvěře vládě, první den",
+    "* hlasování o pádu vlády ještě neproběhlo",
+    "* schůze přerušena v 21:01 do středy"
+  ],
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo",
+  "jazykolam": {
+    "text": "Budeme tady minimálně dva dny, možná tři, takže nás to vyjde na 12 milionů",
+    "autor": "Karel Havlíček (ANO)",
+    "steno_id": "2025_33_00021"
+  },
+  "slovnicek": [
+    "nedůvěra vládě",
+    "mimořádná schůze",
+    "opozice",
+    "koalice"
+  ]
+}
