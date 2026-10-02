@@ -1,0 +1,55 @@
+{
+  "key": "2025/33/01.10.2026",
+  "obdobi": 2025,
+  "schuze": 33,
+  "datum_unl": "01.10.2026",
+  "iso": "2026-10-01",
+  "state": "approved",
+  "topic_slugs": [
+    "neduvera-vlade-den-tri"
+  ],
+  "recommended_slugs": [
+    "neduvera-vlade-den-tri"
+  ],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-10-01/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "draft",
+    "stale": false,
+    "link_phrase_coverage": {
+      "total": 11,
+      "linked": 11,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 11,
+      "ok": 11,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 0,
+    "steno_passages": 12,
+    "steno_missing_article_phrase": 0,
+    "ok": true,
+    "errors": []
+  },
+  "inputs": {
+    "votes_count": 3,
+    "votes_max_cislo": 3,
+    "steno_count": 355,
+    "steno_last_poradi": 355,
+    "topics_built_at": "2026-10-02T06:03:54.717240+00:00",
+    "fingerprint": "c26c10bf76aa6526"
+  },
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null
+}

@@ -1,0 +1,38 @@
+{
+  "datum": "01.10.2026",
+  "den": "čtvrtek",
+  "topic_slugs": [
+    "neduvera-vlade-den-tri"
+  ],
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 600,
+    "end_cas": "19:42",
+    "proslo": 0,
+    "zamitnuto": 1,
+    "spor_o_porad": false,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "nwl_predmet": "Zazvonil zvonec. Nedůvěra padla",
+  "dnesni_ucet": "Třetí den jednání o nedůvěře, tentokrát i hlasování.\nPro pád vlády 83, proti 94. Bylo potřeba 101.",
+  "zaver": "že po třech dnech debaty o nedůvěře Sněmovna vládě nedůvěru nevyslovila a Babišova vláda zůstává.",
+  "vysledek": [
+    "* třetí den debaty o nedůvěře vládě",
+    "* jmenné hlasování: návrh na nedůvěru nepřijat",
+    "* vláda pokračuje, schůze skončila v 19:42"
+  ],
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo",
+  "jazykolam": {
+    "text": "Zazvonil zvonec, pohádky je konec",
+    "autor": "Alena Schillerová (ANO)",
+    "steno_id": "2025_33_00339"
+  },
+  "slovnicek": [
+    "nedůvěra vládě",
+    "mimořádná schůze",
+    "schodek",
+    "střet zájmů"
+  ]
+}
