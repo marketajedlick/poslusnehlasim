@@ -1,0 +1,37 @@
+{
+  "datum": "30.09.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "neduvera-vlade-den-dva"
+  ],
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 720,
+    "end_cas": "21:00",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "nwl_predmet": "Ministři na přehlídce. Hlasování zase nikde",
+  "dnesni_ucet": "Ráno ministerská přehlídka, odpoledne opozice.\nV devět večer konec dne, hlasování nikde.",
+  "zaver": "že druhý den o nedůvěře zase skončil bez hlasování. Dopoledne mluvili ministři, odpoledne opozice.",
+  "vysledek": [
+    "* debata o nedůvěře vládě, druhý den",
+    "* hlasování o pádu vlády stále neproběhlo",
+    "* schůze přerušena v 21:00, pokračování další den"
+  ],
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo",
+  "jazykolam": {
+    "text": "Vláda se v tomhle chová jak ožralý milionáři na výletě, ale podle mě takhle se odpovědná rozpočtová politika dělat nemá, takže vláda v tomhle moji důvěru nemá.",
+    "autor": "Štěpán Slovák (ODS)",
+    "steno_id": "2025_33_00112"
+  },
+  "slovnicek": [
+    "nedůvěra vládě",
+    "mimořádná schůze",
+    "veřejnoprávní média",
+    "koalice"
+  ]
+}

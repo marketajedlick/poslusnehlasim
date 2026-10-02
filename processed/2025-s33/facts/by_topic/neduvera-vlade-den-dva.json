@@ -1,0 +1,85 @@
+{
+  "slug": "neduvera-vlade-den-dva",
+  "nazev": "Projednání návrhu na vyslovení nedůvěry vládě, druhý den",
+  "datum": "30.09.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "druhý den debaty o nedůvěře vládě, ministerské přehlídky a večerní stop uprostřed věty",
+  "koho": [
+    "Koho se to týká? Pořád celé republiky. Druhý den pořád jen řeči, hlasování o pádu vlády znovu nepadlo."
+  ],
+  "fakty": [
+    {
+      "text": "Okamura zahájil druhý jednací den.",
+      "source": "steno",
+      "steno_id": "2025_33_00037",
+      "citace": "zahajuji druhý jednací den 33. schůze Poslanecké sněmovny",
+      "link_phrase": "Druhý den jednání"
+    },
+    {
+      "text": "Radim Fiala: vládní klub nedůvěru odmítá.",
+      "source": "steno",
+      "steno_id": "2025_33_00038",
+      "citace": "dovolte mi, abych se také vyjádřil k návrhu opozice na vyslovení nedůvěry naší vládě",
+      "link_phrase": "Radim Fiala (SPD) ráno"
+    },
+    {
+      "text": "Mrázová: opoziční divadlo za čtyři miliony denně.",
+      "source": "steno",
+      "steno_id": "2025_33_00042",
+      "citace": "Občané tak budou opět svědky opozičního divadla, prázdných frází a politických prohlášení. To vše za 4 miliony korun, které stojí jeden jednací den Poslanecké sněmovny",
+      "link_phrase": "Mrázová (ANO) připomněla"
+    },
+    {
+      "text": "Jakob: ministerské defile skončilo, premiér chybí.",
+      "source": "steno",
+      "steno_id": "2025_33_00053",
+      "citace": "Vážený pane, jediný přítomný ministře, nepřítomný, pane premiére, vážené kolegyně, vážení kolegové, tak převážně ministerské defile veskrze mimořádně nudné skončilo",
+      "link_phrase": "Jakob (TOP 09) označil"
+    },
+    {
+      "text": "Rakušan: Babišův ráj na zemi bez zlé opozice.",
+      "source": "steno",
+      "steno_id": "2025_33_00057",
+      "citace": "Naše země vzkvétá a nebýt zlé, zločinné, mafiánské opozice, spiknutí médií, ať už těch soukromých nebo těch veřejnoprávních, nebýt zlovolné justice",
+      "link_phrase": "Rakušan (STAN) připomněl"
+    },
+    {
+      "text": "Skopeček: poloprázdný sál i na vládní straně.",
+      "source": "steno",
+      "steno_id": "2025_33_00114",
+      "citace": "když se dívám na poloprázdný sál, tak včera si vybavím pana vicepremiéra Havlíčka, který se podivoval nad tím, že sál opozičních stran nebo ty lavice opozičních stran jsou poloprázdné",
+      "link_phrase": "Skopeček (ODS) zase upozornil"
+    },
+    {
+      "text": "Zuna musel přerušit kvůli hluku v sále.",
+      "source": "steno",
+      "steno_id": "2025_33_00081",
+      "citace": "kdy Rusko útočí již i na evropské země hybridními útoky. (Silný hluk v sále. Odmlčuje se a obrací se na předsedajícího.)",
+      "link_phrase": "kvůli hluku"
+    },
+    {
+      "text": "Olšáková: důvěra je odpovědnost vůči občanům.",
+      "source": "steno",
+      "steno_id": "2025_33_00160",
+      "citace": "rozhodování o důvěře vládě patří k nejdůležitějším odpovědnostem každého poslance a každé poslankyně",
+      "link_phrase": "Olšáková (STAN) mluvila"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Ministři\nna přehlídce",
+  "lead": "Druhý den jednání o nedůvěře začal hlavně vystoupeními ministrů. Radim Fiala (SPD) ráno vládu hájil, Mrázová (ANO) připomněla, že jeden den ve Sněmovně stojí čtyři miliony korun a zákon se přitom stejně neposune. Jakob (TOP 09) označil dopoledne za mimořádně nudnou přehlídku ministrů a upozornil také na nepřítomnost premiéra.",
+  "pointa": "Poslušně podotýkám, že odpoledne se tón trochu přiostřil. Rakušan (STAN) připomněl Babišův (ANO) včerejší obraz země bez opozice a kritických médií. Skopeček (ODS) zase upozornil, že poloprázdný sál není jen problém opozice. A Michal Zuna (TOP 09) musel kvůli hluku přestat uprostřed svého projevu o hybridních útocích.\n\nVečer Olšáková (STAN) mluvila o nedůvěře jako o otázce odpovědnosti vůči občanům. Jenže přesně v devět hodin přišel konec jednacího dne.",
+  "mean": "Druhý den debaty o nedůvěře skončil opět bez hlasování. Dopoledne patřilo ministrům, odpoledne ostřejší debatě.",
+  "citace_text": "Naše země vzkvétá a nebýt zlé, zločinné, mafiánské opozice, spiknutí médií, ať už těch soukromých nebo těch veřejnoprávních, nebýt zlovolné justice, kde si lze objednat odsouzení člověka, tak by Česko bylo rájem na zemi.",
+  "citace_autor": "Vít Rakušan (STAN)",
+  "steno_id": "2025_33_00057",
+  "pocet_hlasovani": 0,
+  "proslo": false,
+  "signaly": {
+    "spor": true,
+    "prazdny_sal": true,
+    "dlouha_debata": true
+  },
+  "steno_slov": 70000
+}

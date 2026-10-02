@@ -1,5 +1,32 @@
 {
   "obdobi": 2025,
   "schuze": 33,
-  "topics": []
+  "topics": [
+    {
+      "slug": "projednani-navrhu-na-vysloveni-neduvery-vlade-ce",
+      "nazev": "Projednání návrhu na vyslovení nedůvěry vládě České republiky",
+      "bod": "1",
+      "datum": "01.10.2026",
+      "vote_cisla": [
+        2,
+        3
+      ],
+      "steno_ids": [
+        "2025_33_00347",
+        "2025_33_00348",
+        "2025_33_00349",
+        "2025_33_00350",
+        "2025_33_00351",
+        "2025_33_00352",
+        "2025_33_00353"
+      ],
+      "proslo": true,
+      "pocet_hlasovani": 2,
+      "pocet_prijato": 1,
+      "pocet_zamitnuto": 1,
+      "kategorie": "substantivni",
+      "tema_svejk": "Vláda dostala důvěru sněmovny, může vládnout.",
+      "tema_vysvetleni": "Hlasování o důvěře vládě."
+    }
+  ]
 }
