@@ -1,0 +1,71 @@
+{
+  "slug": "novela-z-o-podnikani-na-kapitalovem-trhu-eu",
+  "nazev": "Novela z. o podnikání na kapitálovém trhu - EU",
+  "datum": "13.10.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "snazší cestu menších firem na burzu a varování, že razítko České národní banky u dluhopisů není kontrola splacení",
+  "koho": [
+    "Koho se to týká? Kdo kupuje firemní dluhopisy nebo sleduje, jestli se menší firma dostane na burzu."
+  ],
+  "fakty": [
+    {
+      "text": "Schillerová se otáčí k Juchelkovi, který mluví s Okamurou.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_34_00129",
+      "citace": "(Otáčí se k ministru Juchelkovi, který na svém místě hovoří s předsedou Tomiem Okamurou.)",
+      "link_phrase": "klábosil s předsedou Sněmovny Okamurou"
+    },
+    {
+      "text": "Schillerová: razítko ČNB neznamená, že banka prověřuje, jestli firma dluh splatí.",
+      "source": "steno",
+      "steno_id": "2025_34_00129",
+      "citace": "schválení prospektu ze strany České národní banky neznamená, že Česká národní banka prověřuje bonitu emitenta.",
+      "link_phrase": "razítko České národní banky neznamená"
+    },
+    {
+      "text": "Schillerová v úvodu chtěla zkrátit poslední kolo na sedm dní.",
+      "source": "steno",
+      "steno_id": "2025_34_00129",
+      "citace": "Zároveň v rámci rozpravy navrhnu zkrácení lhůty na projednání návrhu ve třetím čtení na 7 dní, a to z důvodu uplynutí transpoziční lhůty a souvisejících probíhajících řízení u Evropské komise.",
+      "link_phrase": ""
+    },
+    {
+      "text": "Turek: první čtení bylo 14. července, výbor doporučuje schválit.",
+      "source": "steno",
+      "steno_id": "2025_34_00131",
+      "citace": "První čtení proběhlo 14. 7. 2026 na 27. schůzi Poslanecké sněmovny.",
+      "link_phrase": ""
+    },
+    {
+      "text": "Fialová: ať se garanční výbor návrhem už nezabývá.",
+      "source": "steno",
+      "steno_id": "2025_34_00133",
+      "citace": "aby se výbor garanční již tímto návrhem nezabýval.",
+      "link_phrase": ""
+    },
+    {
+      "text": "Schillerová zkrácení stáhla.",
+      "source": "steno",
+      "steno_id": "2025_34_00135",
+      "citace": "já jsem avizovala ve své úvodní řeči, že budu navrhovat zkrácení, nebudu.",
+      "link_phrase": ""
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Razítko\nnení kontrola",
+  "lead": "Večer Sněmovna uzavřela kolo, ve kterém se daly měnit detaily pravidel pro burzu. Menším firmám to má usnadnit cestu na trh. U firemních dluhopisů se má nově povinně uvádět, že razítko České národní banky neznamená, že ČNB prověřila, zda firma dluh splatí. V sále sedělo sotva přes stovku lidí. Ministryně financí Schillerová (ANO) to četla a ministr práce Juchelka (ANO) vedle toho klábosil s předsedou Sněmovny Okamurou (SPD).",
+  "pointa": "",
+  "mean": "Zákon má zjednodušit menším firmám cestu na burzu. U dluhopisů se má povinně uvést, že souhlas České národní banky není kontrola, jestli firma dluh splatí. Kolo na změny skončilo, výbor se k návrhu nevrací.",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 1,
+    "pritomno_min": 107,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 1216
+}

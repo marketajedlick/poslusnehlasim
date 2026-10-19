@@ -1,0 +1,59 @@
+{
+  "key": "2025/34/13.10.2026",
+  "obdobi": 2025,
+  "schuze": 34,
+  "datum_unl": "13.10.2026",
+  "iso": "2026-10-13",
+  "state": "approved",
+  "topic_slugs": [
+    "novela-z-o-danich-z-prijmu",
+    "novela-z-o-podnikani-na-kapitalovem-trhu-eu"
+  ],
+  "recommended_slugs": [
+    "novela-z-o-danich-z-prijmu",
+    "novela-z-o-podnikani-na-kapitalovem-trhu-eu"
+  ],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-10-13/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "stale",
+    "stale": true,
+    "link_phrase_coverage": {
+      "total": 16,
+      "linked": 16,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 16,
+      "ok": 16,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 2,
+    "steno_passages": 17,
+    "steno_missing_article_phrase": 0,
+    "ok": false,
+    "errors": [
+      "slabá témata: novela-z-o-danich-z-prijmu, novela-z-o-podnikani-na-kapitalovem-trhu-eu"
+    ]
+  },
+  "inputs": {
+    "votes_count": 128,
+    "votes_max_cislo": 128,
+    "steno_count": 413,
+    "steno_last_poradi": 413,
+    "topics_built_at": "2026-10-15T09:56:41.113241+00:00",
+    "fingerprint": "573ae6d1b0e5397a"
+  },
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "novela-z-o-danich-z-prijmu",
+  "nazev": "Novela z. o daních z příjmů",
+  "datum": "13.10.2026",
+  "verdikt": "prvni_cteni",
+  "predmet_lidsky": "mimořádnou daň z nárůstu rafinérské marže, která v praxi míří na jednu firmu",
+  "koho": [
+    "Koho se to týká? Řidiče u pumpy a obce. Když rafinérie daň odečte jako náklad, státu přibyde a samosprávám ubyde podíl na běžné dani."
+  ],
+  "fakty": [
+    {
+      "text": "Schillerová v hluku: fakt už to nedám.",
+      "source": "steno",
+      "kind": "scene",
+      "steno_id": "2025_34_00077",
+      "citace": "Pane předsedo, fakt už to nedám.",
+      "link_phrase": "fakt už to nedám."
+    },
+    {
+      "text": "Schillerová: polský vzor, šedesátiprocentní daň z mimořádné marže.",
+      "source": "steno",
+      "steno_id": "2025_34_00077",
+      "citace": "Inspiraci jsme v tomto směru řešení našli v sousedním Polsku, kde byla předložena právní úprava zavádějící šedesátiprocentní daň z mimořádné rafinérské marže.",
+      "link_phrase": "podle polského vzoru"
+    },
+    {
+      "text": "Pařil: sazba padesát procent nárůstu, polovina zůstává firmě.",
+      "source": "steno",
+      "steno_id": "2025_34_00083",
+      "citace": "Sazba činí 50 procent, takže běžná marže i polovina jejího mimořádného nárůstu zůstávají poplatníkovi.",
+      "link_phrase": "stát si z toho nárůstu vezme polovinu"
+    },
+    {
+      "text": "Jakob: slib pět a půl miliardy, zaplatí to jediná společnost.",
+      "source": "steno",
+      "steno_id": "2025_34_00085",
+      "citace": "vláda nám předkládá novou sektorovou daň s příslibem 5,5 miliardy korun pro státní rozpočet.",
+      "link_phrase": ""
+    },
+    {
+      "text": "Jakob: stát v plusu, samosprávy v minusu.",
+      "source": "steno",
+      "steno_id": "2025_34_00089",
+      "citace": "Stát bude v plusu, samosprávy – ty budou v minusu.",
+      "link_phrase": ""
+    },
+    {
+      "text": "Papajanovský: daň má platit i na dovoz, ne jen na české rafinérie.",
+      "source": "steno",
+      "steno_id": "2025_34_00091",
+      "citace": "My proto budeme navrhovat, aby se to zdanění týkalo nejen pouze rafinérií, které vyrábí ta paliva, ty produkty na území České republiky, ale aby právě po vzoru Polska se to zdanění týkalo i dovozu",
+      "link_phrase": ""
+    },
+    {
+      "text": "Benda: jedna firma ve vlastnictví cizího státu, chce zahraniční výbor.",
+      "source": "steno",
+      "steno_id": "2025_34_00125",
+      "citace": "že se jedná o návrh zákona, který postihuje přesně jednu firmu, a to přesně firmu, která je ve vlastnictví cizího státu",
+      "link_phrase": ""
+    },
+    {
+      "text": "Skopeček: první čtení skončilo, lhůty zkráceny.",
+      "source": "steno",
+      "steno_id": "2025_34_00126",
+      "citace": "konstatuji, že jsme schválili zkrácení lhůt k projednání.",
+      "link_phrase": "lhůtu mu zkrátili na třicet dní"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Daň na\njednu firmu",
+  "lead": "Večer přišla daň, která má sáhnout na marži rafinérií. Ministryně financí Schillerová (ANO) ji přinesla podle polského vzoru. Když palivo zdraží víc než ropa, stát si z toho nárůstu vezme polovinu. V praxi to míří na jednu firmu, tu, která v Česku vyrábí benzin a naftu.\n\nNež to stihla doříct, v sále byl takový hluk, že se otočila na předsedajícího. Pane předsedo, fakt už to nedám.",
+  "pointa": "Poslušně podotýkám, že vláda to zdůvodňuje mimořádným ziskem. Rafinérie podle ní vydělaly na okolnostech. Proti tomu stojí, že daň prakticky míří na jednu firmu. Zákon prošel prvním kolem a jde do rozpočtového výboru, lhůtu mu zkrátili na třicet dní.",
+  "mean": "Mimořádná daň má státu vzít polovinu růstu rafinérských marží nad úroveň roku 2025. Prakticky dopadne na jednu firmu, která v Česku vyrábí benzin a naftu. Návrh přežil první kolo.",
+  "citace_text": "My proto budeme navrhovat, aby se to zdanění týkalo nejen pouze rafinérií, které vyrábí ta paliva, ty produkty na území České republiky, ale aby právě po vzoru Polska se to zdanění týkalo i dovozu",
+  "citace_autor": "Jan Papajanovský (STAN)",
+  "steno_id": "2025_34_00091",
+  "pocet_hlasovani": 7,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 96,
+    "pritomno_min": 149,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 14006
+}

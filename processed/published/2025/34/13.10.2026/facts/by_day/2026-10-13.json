@@ -1,0 +1,37 @@
+{
+  "datum": "13.10.2026",
+  "den": "úterý",
+  "topic_slugs": [
+    "novela-z-o-danich-z-prijmu",
+    "novela-z-o-podnikani-na-kapitalovem-trhu-eu"
+  ],
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 371,
+    "end_cas": "20:12",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "nwl_predmet": "Daň na jednu firmu. Burza bez debaty",
+  "dnesni_ucet": "Daň na jednu rafinérii přežila první kolo.\nNa burze stačilo varování, že ČNB dluh nehlídá.",
+  "zaver": "že Sněmovna poslala dál daň z marže rafinérií, která míří na jednu firmu, a změny pravidel pro burzu projednala dřív, než se někteří stihli rozkoukat.",
+  "vysledek": [
+    "* daň z rafinérské marže přežila první kolo a jde do rozpočtového výboru",
+    "* zahraniční výbor ji nedostal",
+    "* pravidla pro burzu: kolo na změny skončilo, výbor se nevrací"
+  ],
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo",
+  "jazykolam": {
+    "text": "Tak tahle daň nezlevní ani jeden litr nafty ani o korunu, ani o 10 haléřů.",
+    "autor": "Benjamin Činčila (KDU-ČSL)",
+    "steno_id": "2025_34_00099"
+  },
+  "slovnicek": [
+    "rafinérská marže",
+    "firemní dluhopis"
+  ]
+}

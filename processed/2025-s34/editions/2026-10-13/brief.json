@@ -1,0 +1,111 @@
+{
+  "datum_unl": "13.10.2026",
+  "iso": "2026-10-13",
+  "recommended": [
+    {
+      "slug": "novela-z-o-danich-z-prijmu",
+      "nazev": "Novela z. o daních z příjmů",
+      "score": 69,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 96,
+          "pritomno_min": 149,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 14006,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "V sále je hluk. Vystupující se obrací na předsedajícího.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_34_00077",
+          "citace": "(V sále je hluk. Vystupující se obrací na předsedajícího.)"
+        },
+        {
+          "text": "(V sále je přetrvávající hluk.) Pane předsedo, fakt už to nedám.",
+          "source": "steno",
+          "steno_id": "2025_34_00077",
+          "citace": "(V sále je přetrvávající hluk.) Pane předsedo, fakt už to nedám."
+        },
+        {
+          "text": "Vystupující se obrací na předsedajícího.) Vážené dámy, vážení pánové, předkládám návrh novely zákona o dani z příjmu, která zavádí novou daň zaměřenou na rafinérský sektor.",
+          "source": "steno",
+          "steno_id": "2025_34_00077",
+          "citace": "Vystupující se obrací na předsedajícího.) Vážené dámy, vážení pánové, předkládám návrh novely zákona o dani z příjmu, která zavádí novou daň zaměřenou na rafinérský sektor."
+        },
+        {
+          "text": "V sále je opět hlučno.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_34_00079",
+          "citace": "(V sále je opět hlučno.)"
+        }
+      ]
+    },
+    {
+      "slug": "novela-z-o-podnikani-na-kapitalovem-trhu-eu",
+      "nazev": "Novela z. o podnikání na kapitálovém trhu - EU",
+      "score": 63,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 1,
+          "pritomno_min": 107,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 1216,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "Otáčí se k ministru Juchelkovi, který na svém místě hovoří s předsedou Tomiem Okamurou.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_34_00129",
+          "citace": "(Otáčí se k ministru Juchelkovi, který na svém místě hovoří s předsedou Tomiem Okamurou.)"
+        },
+        {
+          "text": "(Otáčí se k ministru Juchelkovi, který na svém místě hovoří s předsedou Tomiem Okamurou.) Největší část návrhu se týká implementace balíčku o vydávání cenných papírů.",
+          "source": "steno",
+          "steno_id": "2025_34_00129",
+          "citace": "(Otáčí se k ministru Juchelkovi, který na svém místě hovoří s předsedou Tomiem Okamurou.) Největší část návrhu se týká implementace balíčku o vydávání cenných papírů."
+        },
+        {
+          "text": "Zároveň v rámci rozpravy navrhnu zkrácení lhůty na projednání návrhu ve třetím čtení na 7 dní, a to z důvodu uplynutí transpoziční lhůty a souvisejících probíhajících řízení u Evropské komise.",
+          "source": "steno",
+          "steno_id": "2025_34_00129",
+          "citace": "Zároveň v rámci rozpravy navrhnu zkrácení lhůty na projednání návrhu ve třetím čtení na 7 dní, a to z důvodu uplynutí transpoziční lhůty a souvisejících probíhajících řízení u Evropské komise."
+        },
+        {
+          "text": "Hluk v sále.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_34_00130",
+          "citace": "(Hluk v sále.)"
+        }
+      ]
+    }
+  ],
+  "rejected": [],
+  "day_stats": {
+    "pocet_hlas_zakon": 2,
+    "proslo_vote": 2,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-10-13",
+      "2026-10-14"
+    ]
+  }
+}
