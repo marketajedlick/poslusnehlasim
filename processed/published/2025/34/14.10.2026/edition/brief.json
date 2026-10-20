@@ -1,0 +1,198 @@
+{
+  "datum_unl": "14.10.2026",
+  "iso": "2026-10-14",
+  "recommended": [
+    {
+      "slug": "novela-z-o-latkach-ktere-poskozuji-ozonovou-vrst",
+      "nazev": "Novela z. o látkách, které poškozují ozonovou vrstvu - EU",
+      "score": 69,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 91,
+          "pritomno_min": 160,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 1785,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "oprava chyby v psaní",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_34_00227",
+          "citace": "(oprava chyby v psaní)"
+        },
+        {
+          "text": "IV“ nahrazuje textem „čl.VI“ (oprava chyby v psaní) Za třetí v části první čl.",
+          "source": "steno",
+          "steno_id": "2025_34_00227",
+          "citace": "IV“ nahrazuje textem „čl.VI“ (oprava chyby v psaní) Za třetí v části první čl."
+        },
+        {
+          "text": "2 prováděcího nařízení Komise (EU) 2025/1893“, to jest doplňují se číslo článku „2“ a číslo nařízení „1893“ A za šesté v části třetí čl.",
+          "source": "steno",
+          "steno_id": "2025_34_00227",
+          "citace": "2 prováděcího nařízení Komise (EU) 2025/1893“, to jest doplňují se číslo článku „2“ a číslo nařízení „1893“ A za šesté v části třetí čl."
+        },
+        {
+          "text": "Poslankyně se odmlčela kvůli hluku v sále.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_34_00229",
+          "citace": "(Poslankyně se odmlčela kvůli hluku v sále.)"
+        }
+      ]
+    },
+    {
+      "slug": "novela-z-o-vyrobcich-s-ukoncenou-zivotnosti-eu",
+      "nazev": "Novela z. o výrobcích s ukončenou životností - EU",
+      "score": 69,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 100,
+          "pritomno_min": 155,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 6790,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "Ministr Červený: Ano.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_34_00165",
+          "citace": "(Ministr Červený: Ano.)"
+        },
+        {
+          "text": "Pozměňovací návrhy jsou uvedeny ve sněmovním tisku 58/2, který byl doručen dne 23.",
+          "source": "steno",
+          "steno_id": "2025_34_00165",
+          "citace": "Pozměňovací návrhy jsou uvedeny ve sněmovním tisku 58/2, který byl doručen dne 23."
+        },
+        {
+          "text": "143.Vládní návrh zákona, kterým se mění zákon č.",
+          "source": "steno",
+          "steno_id": "2025_34_00165",
+          "citace": "143.Vládní návrh zákona, kterým se mění zákon č."
+        },
+        {
+          "text": "O slovo se hlásí poslankyně Peštová.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_34_00167",
+          "citace": "(O slovo se hlásí poslankyně Peštová.)"
+        }
+      ]
+    },
+    {
+      "slug": "novela-z-obcansky-soudni-rad-eu",
+      "nazev": "Novela z. - občanský soudní řád - EU",
+      "score": 69,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 75,
+          "pritomno_min": 109,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 2737,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "Krátká prodleva.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_34_00404",
+          "citace": "(Krátká prodleva.)"
+        },
+        {
+          "text": "82/1998 Sb., o odpovědnosti za škodu způsobenou při výkonu veřejné moci rozhodnutím nebo nesprávným úředním postupem, ve znění pozdějších předpisů/sněmovní tisk 162/ – prvé čtení Z pověření vlády předložený návrh uvede ministr spravedlnosti Jeroným Tejc a následně se připraví zpravodajka Kateřina Stojanová.",
+          "source": "steno",
+          "steno_id": "2025_34_00404",
+          "citace": "82/1998 Sb., o odpovědnosti za škodu způsobenou při výkonu veřejné moci rozhodnutím nebo nesprávným úředním postupem, ve znění pozdějších předpisů/sněmovní tisk 162/ – prvé čtení Z pověření vlády před"
+        },
+        {
+          "text": "549/1991 Sb., o soudních poplatcích, ve znění pozdějších předpisů, a zákon č.",
+          "source": "steno",
+          "steno_id": "2025_34_00404",
+          "citace": "549/1991 Sb., o soudních poplatcích, ve znění pozdějších předpisů, a zákon č."
+        },
+        {
+          "text": "Teď si tedy dovolím vystoupit ke sněmovnímu tisku 162, kterým se mění občanský soudní řád.",
+          "source": "steno",
+          "steno_id": "2025_34_00405",
+          "citace": "Teď si tedy dovolím vystoupit ke sněmovnímu tisku 162, kterým se mění občanský soudní řád."
+        }
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "slug": "novela-z-o-ochrane-spotrebitele-eu",
+      "score": 63,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem",
+      "score": 60,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "navrh-na-jmenovani-clenu-kontrolni-rady-grantove",
+      "score": 58,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "vl-n-z-o-nekterych-povinn-souvisejicich-s-opravo",
+      "score": 54,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "navrh-na-jmenovani-clena-kontrolni-rady-technolo",
+      "score": 50,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "navrh-na-volbu-clena-dozorci-rady-vinarskeho-fon",
+      "score": 50,
+      "reason": "procedura / slabý steno signál"
+    },
+    {
+      "slug": "navrh-na-volbu-clenu-rady-ceskeho-rozhlasu",
+      "score": 50,
+      "reason": "procedura / slabý steno signál"
+    },
+    {
+      "slug": "vl-n-z-o-urc-provozoven-za-ucel-shrom-dukazu-v-t",
+      "score": 48,
+      "reason": "mimo top 3 pro den"
+    }
+  ],
+  "day_stats": {
+    "pocet_hlas_zakon": 7,
+    "proslo_vote": 7,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-10-14",
+      "2026-10-15"
+    ]
+  }
+}

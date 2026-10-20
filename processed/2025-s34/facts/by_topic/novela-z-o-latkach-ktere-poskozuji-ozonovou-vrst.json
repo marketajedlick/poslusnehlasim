@@ -1,0 +1,52 @@
+{
+  "slug": "novela-z-o-latkach-ktere-poskozuji-ozonovou-vrst",
+  "nazev": "Novela z. o látkách, které poškozují ozonovou vrstvu - EU",
+  "datum": "14.10.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "plyny v ledničkách, klimatizacích a tepelných čerpadlech, které nahradily staré freony",
+  "koho": [
+    "Koho se to týká? Každého, kdo má ledničku, klimatizaci nebo tepelné čerpadlo, a servisáky, kteří s těmi plyny pracují."
+  ],
+  "fakty": [
+    {
+      "text": "Červený: novela reaguje na evropská pravidla pro F-plyny.",
+      "source": "steno",
+      "steno_id": "2025_34_00225",
+      "citace": "Hlavním důvodem novely je reakce na novou evropskou legislativu, která upravuje nakládání s fluorovanými skleníkovými plyny, F-plyny a látkami poškozujícími ozonovou vrstvu",
+      "link_phrase": "klimatizacích a tepelných čerpadlech"
+    },
+    {
+      "text": "Bendl bude stručný a prosí o podporu svých návrhů.",
+      "source": "steno",
+      "steno_id": "2025_34_00235",
+      "citace": "já budu stručný. Já jsem se poměrně podrobně vyjadřoval k tomuto materiálu v prvním i ve druhém čtení.",
+      "link_phrase": ""
+    },
+    {
+      "text": "Fialová: Bendl chce deset pracovních dnů na dodání papírů.",
+      "source": "steno",
+      "steno_id": "2025_34_00247",
+      "citace": "Tento pozměňovací návrh navrhuje, aby lhůta pro předložení požadovaných informací a dokumentů zpravidla nemohla být kratší než 10 pracovních dnů.",
+      "link_phrase": "dodání papírů"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Plyny\nv čerpadle",
+  "lead": "Šlo o plyny v ledničkách, klimatizacích a tepelných čerpadlech. Ve středu o nich bylo závěrečné hlasování: kdo s nimi smí zacházet a co platí, když z přístroje uniknou. Bendl (ODS) chtěl deset pracovních dnů na dodání papírů, písemnou výzvu a školení na dálku. Neprošly. Zákon schválili ve vládním znění, bez těchto úprav.",
+  "pointa": "",
+  "mean": "Plyny v ledničkách, klimatizacích a tepelných čerpadlech dostanou přísnější pravidla. Sněmovna zákon schválila ve vládním znění. Delší lhůta na papíry neprošla.",
+  "citace_text": "",
+  "citace_autor": "",
+  "steno_id": "",
+  "pocet_hlasovani": 6,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 91,
+    "pritomno_min": 160,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 1785
+}

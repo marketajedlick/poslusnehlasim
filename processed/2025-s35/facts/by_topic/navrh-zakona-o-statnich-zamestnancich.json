@@ -1,0 +1,73 @@
+{
+  "slug": "navrh-zakona-o-statnich-zamestnancich",
+  "nazev": "Návrh zákona o státních zaměstnancích",
+  "datum": "14.10.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "přehlasování prezidentského veta k zákonu, který mění pravidla pro státní úředníky",
+  "koho": [
+    "Koho se to týká? Úředníky na ministerstvech a každého, kdo na úřadě něco vyřizuje."
+  ],
+  "fakty": [
+    {
+      "text": "Jurečka: vykostění zákona o státní službě kvůli Babišovi.",
+      "source": "steno",
+      "steno_id": "2025_35_00003",
+      "citace": "Kdybych to měl říct lidově, vykostění zákona o státní službě a nastavení ho tak, aby celý systém státní služby vyhovoval Andreji Babišovi a současné vládě",
+      "link_phrase": "vykostění zákona o státní službě"
+    },
+    {
+      "text": "Jurečka cituje Schillerovou: zdůvodnění nečetla, přehlasujeme.",
+      "source": "steno",
+      "steno_id": "2025_35_00003",
+      "citace": "No, já jsem to zdůvodnění nečetla, ale určitě to přehlasujeme.",
+      "link_phrase": "zdůvodnění nečetla, ale že se to určitě přehlasuje"
+    },
+    {
+      "text": "Rakušan: svoláte se, šoupnete tlačítko, jede se dál.",
+      "source": "steno",
+      "steno_id": "2025_35_00005",
+      "citace": "potom se svoláte, houknete si, šoupnete tam tlačítko, přehlasujete, jede se dál.",
+      "link_phrase": ""
+    },
+    {
+      "text": "Jakob: v sále má službu jediný ministr, TOP 09 veto nepodpoří.",
+      "source": "steno",
+      "steno_id": "2025_35_00007",
+      "citace": "přehlasování prezidentského veta jednoznačně nepodpoříme.",
+      "link_phrase": "přehlasování prezidentského veta jeho strana nepodpoří"
+    },
+    {
+      "text": "Vondráček: veto bez důvodu ztrácí váhu.",
+      "source": "steno",
+      "steno_id": "2025_35_00016",
+      "citace": "Pokud se prezidentské veto stane jen dalším politickým nesouhlasem s rozhodnutím parlamentní většiny, ztrácí svou mimořádnou váhu a autoritu.",
+      "link_phrase": ""
+    },
+    {
+      "text": "Skopeček nejdřív spletl číslo hlasování, pak zákon prohlásil za vyhlášený.",
+      "source": "steno",
+      "steno_id": "2025_35_00100",
+      "citace": "V hlasování číslo 173 (správně 4) bylo přihlášeno 104 (z tabule 173) poslanců, pro hlasovalo 104, proti hlasovalo 66. Zákon byl přijat.",
+      "link_phrase": "zákon bude vyhlášen"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Veto\nna úředníky",
+  "lead": "Mimořádná schůze měla jeden úkol. Prezident vrátil zákon o státních úřednících a Sněmovna měla říct, jestli na něm trvá. Jde o to, jak snadno půjde měnit lidi na úřadech a jestli úředník zůstane pod veřejnými pravidly, nebo pod pravidly jako ve firmě. V září Senát zákon zamítl a Sněmovna ho přehlasovala. Teď přišlo veto.",
+  "pointa": "Jakob (TOP 09) pozdravil jediného ministra, který měl službu v sále, a přehlasování prezidentského veta jeho strana nepodpoří.\n\nJurečka (KDU-ČSL) to nazval vykostění zákona o státní službě, nastavené tak, aby vyhovovalo Andreji Babišovi. Premiér byl přitom na celý den omluvený z pracovních důvodů. Jurečka připomněl větu ministryně financí Schillerové (ANO) pro média: zdůvodnění nečetla, ale že se to určitě přehlasuje. Sněmovna na zákonu setrvala a zákon bude vyhlášen.",
+  "mean": "Zákon mění pravidla pro státní úředníky a oslabuje pojistky proti politickému vyhazovu. Prezident ho vrátil, Sněmovna na něm setrvala, takže se vyhlásí ve sněmovním znění.",
+  "citace_text": "My víme, že je tady prezidentské veto, které vy si přehlasujete. Do té doby vás bude v sále sedět pár, možná tady nikdo nebude, ministři budou mít služby, potom se svoláte, houknete si, šoupnete tam tlačítko, přehlasujete, jede se dál. Co nám do toho prezident bude mluvit? Mě by zajímalo kolik poslankyň a poslanců, a to je součást naší práce, si přečetlo odůvodnění veta prezidenta republiky.",
+  "citace_autor": "Vít Rakušan (STAN)",
+  "steno_id": "2025_35_00005",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 66,
+    "pritomno_min": 173,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 2183
+}

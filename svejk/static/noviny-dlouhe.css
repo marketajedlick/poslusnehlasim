@@ -580,6 +580,11 @@ button{font:inherit;cursor:pointer}
   font-size:22px;
   line-height:1.5;
 }
+.card-hero-key{
+  font-weight:700;
+  font-style:normal;
+  font-synthesis:none;
+}
 @media(min-width:1024px){
   .card-hero-text{font-size:25px}
 }

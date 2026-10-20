@@ -1,0 +1,59 @@
+{
+  "slug": "novela-z-o-vyrobcich-s-ukoncenou-zivotnosti-eu",
+  "nazev": "Novela z. o výrobcích s ukončenou životností - EU",
+  "datum": "14.10.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "kdo platí zpětný odběr baterií a jak se smí propojit firmy, které je sbírají a zpracovávají",
+  "koho": [
+    "Koho se to týká? Každého, kdo kupuje baterie, elektroniku nebo auto s baterií. Pravidla určují, kdo platí sběr a recyklaci."
+  ],
+  "fakty": [
+    {
+      "text": "Bendl: bližší je mu německý systém bez monopolu.",
+      "source": "steno",
+      "steno_id": "2025_34_00176",
+      "citace": "německý systém, který nestojí čistě na monopolu",
+      "link_phrase": "německý model"
+    },
+    {
+      "text": "Bendl je připravený podpořit Hladíkovo clearingové centrum.",
+      "source": "steno",
+      "steno_id": "2025_34_00178",
+      "citace": "já jsem připravený podpořit návrhy kolegy Hladíka právě v oblasti toho clearingového centra.",
+      "link_phrase": "clearingové centrum"
+    },
+    {
+      "text": "Hladíkovo clearingové centrum výbor nedoporučil.",
+      "source": "steno",
+      "steno_id": "2025_34_00214",
+      "citace": "který zavádí nové centrum, takzvané clearingové centrum.",
+      "link_phrase": "Clearingové centrum neprošlo"
+    },
+    {
+      "text": "Peštová: čínská zeď mezi sběrem a zpracováním.",
+      "source": "steno",
+      "steno_id": "2025_34_00208",
+      "citace": "Jedná se o takzvanou čínskou zeď, to znamená oddělení kolektivního systému od koncových zpracovatelských zařízení.",
+      "link_phrase": "kdo sběr organizuje, nemá zároveň zpracovávat odpad"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Baterie\na čínská zeď",
+  "lead": "Evropská pravidla pro baterie se přepisovala do českých zákonů. Jenže cestou se z papírové úpravy stala bitva o to, kdo bude ovládat zpětný odběr.",
+  "pointa": "Bendl (ODS) chtěl německý model a clearingové centrum, kde by si systémy mezi sebou vyúčtovávaly sběr. Clearingové centrum neprošlo. Stejně jako zákaz majetkového propojení nebo schéma pro textil a boty.\n\nZa to prošlo to, že kdo sběr organizuje, nemá zároveň zpracovávat odpad.",
+  "mean": "Kdo prodá baterii, platí i její sběr a recyklaci. Sněmovna zákon schválila a sběr oddělila od zpracování. Společné vyúčtování, zákaz propojení a schéma pro textil neprošly.",
+  "citace_text": "Jedná se o takzvanou čínskou zeď, to znamená oddělení kolektivního systému od koncových zpracovatelských zařízení.",
+  "citace_autor": "Berenika Peštová (ANO)",
+  "steno_id": "2025_34_00208",
+  "pocet_hlasovani": 14,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 100,
+    "pritomno_min": 155,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 6790
+}

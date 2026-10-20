@@ -1,0 +1,46 @@
+{
+  "datum": "14.10.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "navrh-zakona-o-statnich-zamestnancich",
+    "navrh-zakona-o-statnich-zamestnancich-souvisejic",
+    "novela-z-o-vyrobcich-s-ukoncenou-zivotnosti-eu",
+    "novela-z-o-latkach-ktere-poskozuji-ozonovou-vrst",
+    "novela-z-obcansky-soudni-rad-eu"
+  ],
+  "stats": {
+    "pocet_hlas": 9,
+    "minuty": 720,
+    "end_cas": "21:53",
+    "proslo": 5,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "nwl_predmet": "Úředníky si nechali. Večer ochrana před umlčením",
+  "dnesni_ucet": "Ráno Sněmovna přehlasovala veto k úředníkům.\nOdpoledne prošly baterie a plyny, večer ochrana před umlčením.",
+  "zaver": "že Sněmovna ráno přehlasovala prezidentské veto k úředníkům, odpoledne schválila baterie a plyny v čerpadlech a večer pustila dál zákon, který novináři nebo spolku dá zastoupení, rychlejší soud a zveřejnění rozsudku, když je někdo zažaluje za to, že se ozvali.",
+  "vysledek": [
+    "* zákon o státních úřednících: Sněmovna přehlasovala prezidentské veto",
+    "* doprovodný zákon: taky, včetně sporu o jmenování šéfů misí",
+    "* baterie a zpětný odběr: závěrečné hlasování prošlo, clearingové centrum ne",
+    "* plyny v chlazení a čerpadlech: zákon schválen, delší lhůty pro servis ne",
+    "* ochrana před žalobami na umlčení: první kolo přežila, noc skončila přestávkami"
+  ],
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo",
+  "jazykolam": {
+    "text": "My víme, že je tady prezidentské veto, které vy si přehlasujete. Do té doby vás bude v sále sedět pár, možná tady nikdo nebude, ministři budou mít služby, potom se svoláte, houknete si, šoupnete tam tlačítko, přehlasujete, jede se dál. Co nám do toho prezident bude mluvit?",
+    "autor": "Vít Rakušan (STAN)",
+    "steno_id": "2025_35_00005"
+  },
+  "slovnicek": [
+    "prezidentské veto",
+    "služební zákon",
+    "mimořádná schůze",
+    "závěrečné hlasování",
+    "první kolo",
+    "pozměňovací návrh"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "key": "2025/34/14.10.2026",
+  "obdobi": 2025,
+  "schuze": 34,
+  "datum_unl": "14.10.2026",
+  "iso": "2026-10-14",
+  "state": "published",
+  "topic_slugs": [
+    "navrh-zakona-o-statnich-zamestnancich",
+    "navrh-zakona-o-statnich-zamestnancich-souvisejic",
+    "novela-z-o-vyrobcich-s-ukoncenou-zivotnosti-eu",
+    "novela-z-o-latkach-ktere-poskozuji-ozonovou-vrst",
+    "novela-z-obcansky-soudni-rad-eu"
+  ],
+  "recommended_slugs": [
+    "novela-z-o-latkach-ktere-poskozuji-ozonovou-vrst",
+    "novela-z-o-vyrobcich-s-ukoncenou-zivotnosti-eu",
+    "novela-z-obcansky-soudni-rad-eu"
+  ],
+  "rejected_slugs": [
+    "novela-z-o-ochrane-spotrebitele-eu",
+    "navrh-na-zmeny-ve-slozeni-organu-poslanecke-snem",
+    "navrh-na-jmenovani-clenu-kontrolni-rady-grantove",
+    "vl-n-z-o-nekterych-povinn-souvisejicich-s-opravo",
+    "navrh-na-jmenovani-clena-kontrolni-rady-technolo",
+    "navrh-na-volbu-clena-dozorci-rady-vinarskeho-fon",
+    "navrh-na-volbu-clenu-rady-ceskeho-rozhlasu",
+    "vl-n-z-o-urc-provozoven-za-ucel-shrom-dukazu-v-t"
+  ],
+  "brief_path": "editions/2026-10-14/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "stale",
+    "stale": true,
+    "link_phrase_coverage": {
+      "total": 18,
+      "linked": 18,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 18,
+      "ok": 18,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 3,
+    "steno_passages": 19,
+    "steno_missing_article_phrase": 0,
+    "ok": false,
+    "errors": [
+      "slabá témata: novela-z-o-latkach-ktere-poskozuji-ozonovou-vrst, novela-z-o-vyrobcich-s-ukoncenou-zivotnosti-eu, novela-z-obcansky-soudni-rad-eu"
+    ]
+  },
+  "inputs": {
+    "votes_count": 173,
+    "votes_max_cislo": 173,
+    "steno_count": 893,
+    "steno_last_poradi": 893,
+    "topics_built_at": "2026-10-16T11:45:25.259807+00:00",
+    "fingerprint": "7e8977fca32f259f"
+  },
+  "published_at": "2026-10-20T13:46:53.461381+00:00",
+  "snapshot_dir": "published/2025/34/14.10.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-14/assets/2026-10-14.png",
+    "share": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-14/assets/2026-10-14.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png",
+      "carousel/04-citace.png",
+      "carousel/05-skore.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-14/assets/caption.txt"
+  }
+}
