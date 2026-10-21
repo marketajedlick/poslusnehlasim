@@ -703,14 +703,6 @@ button{font:inherit;cursor:pointer}
   .article.i2 .article-head .stamp--mobile{
     transform:none;
   }
-  .article-body .p,
-  .article-body p{
-    font-size:19px;
-    line-height:1.75;
-  }
-  .article-quote-text{
-    font-size:23px;
-  }
 }
 @media(min-width:1200px){
   .article{
@@ -817,12 +809,16 @@ button{font:inherit;cursor:pointer}
 .article-body .p,
 .article-body p{
   margin:0 0 14px;
-  font-size:0.941rem;
-  line-height:1.75;
+}
+.article-body > .p,
+.article-body > p{
+  font-size:19px;
+  line-height:1.65;
+  color:#1a1814;
 }
 @media(min-width:1024px){
-  .article-body .p,
-  .article-body p{font-size:1rem;line-height:1.8}
+  .article-body > .p,
+  .article-body > p{font-size:1rem;line-height:1.8;color:inherit}
 }
 .article-body .p:last-child,
 .article-body p:last-child{margin-bottom:0}
