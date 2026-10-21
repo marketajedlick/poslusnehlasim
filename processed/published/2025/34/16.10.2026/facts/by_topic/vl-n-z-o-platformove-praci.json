@@ -1,0 +1,73 @@
+{
+  "slug": "vl-n-z-o-platformove-praci",
+  "nazev": "Vl. n. z. o platformové práci",
+  "datum": "16.10.2026",
+  "verdikt": "prvni_cteni",
+  "predmet_lidsky": "práce přes aplikaci a to, jestli je kurýr zaměstnanec, nebo živnostník",
+  "koho": [
+    "Koho se to týká? Řidičů, kurýrů a všech, kdo berou zakázky přes aplikaci. A taky firem, které je tak najímají."
+  ],
+  "fakty": [
+    {
+      "text": "Juchelka: když platforma nechce zaměstnance, ať dokáže, že jde o obchod.",
+      "source": "steno",
+      "steno_id": "2025_34_00959",
+      "citace": "Pokud si to ale daná platforma nemyslí, bude muset nově dokázat opak",
+      "link_phrase": "bude muset nově dokázat opak"
+    },
+    {
+      "text": "Juchelka: švarcsystém zůstává nelegální.",
+      "source": "steno",
+      "steno_id": "2025_34_00987",
+      "citace": "Švarcsystém, prosím vás, zůstává nelegální.",
+      "link_phrase": "Švarcsystém zůstává nelegální"
+    },
+    {
+      "text": "Juchelka: výbory ať to stihnou za třicet dnů.",
+      "source": "steno",
+      "steno_id": "2025_34_00959",
+      "citace": "žádost o zkrácení lhůty pro projednání návrhu ve výborech z 60 na 30 dnů",
+      "link_phrase": "z šedesáti na třicet dnů"
+    },
+    {
+      "text": "Ančincová: přes platformy pracuje až 546 tisíc lidí.",
+      "source": "steno",
+      "steno_id": "2025_34_00971",
+      "citace": "přes digitální platformy pracuje nyní až 546 000 lidí, z nich 139 000 lidí platformovou práci vykonává přes 20 hodin týdně",
+      "link_phrase": "pět set čtyřicet šest tisíc"
+    },
+    {
+      "text": "Ančincová: pro platformu je člověk číslo v tabulce.",
+      "source": "steno",
+      "steno_id": "2025_34_00971",
+      "citace": "Ať vezete jídlo, zákazníka, nebo nákup, pro platformu je ten člověk především číslo v tabulce a výkonnostní jednotka.",
+      "link_phrase": "číslo v tabulce"
+    },
+    {
+      "text": "Jurečka: rodič vypraví děti a algoritmus mu přestane dávat zakázky.",
+      "source": "steno",
+      "steno_id": "2025_34_00975",
+      "citace": "vypravuje děti do školy nebo naopak odpoledne, že zrovna ve školce to dítě vyzvedává, tak to může některá platforma vyhodnotit tak, že tomu člověku nepřidělí ty zákazníky",
+      "link_phrase": "vypravuje děti do školy"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Zaměstnanec\nnebo živnostník?",
+  "lead": "Šlo o lidi, kteří přes aplikaci vozí jídlo, zákazníky nebo nákup. Ministr práce Juchelka (ANO) přinesl zákon, který má říct, kdy je takový člověk zaměstnanec a kdy živnostník. Když to platforma vidí jinak, bude muset nově dokázat opak.",
+  "pointa": "Juchelka (ANO) říká, že jde o povinný přepis evropských pravidel a že se drží minima. Švarcsystém zůstává nelegální. Účinnost chce od ledna 2027 a výborům zkrátil lhůtu z šedesáti na třicet dnů.\n\nAnčincová (Piráti) napočítala až pět set čtyřicet šest tisíc lidí, kteří u nás přes platformy pracují. Sto třicet devět tisíc z nich víc než dvacet hodin týdně. Pro platformu je ten člověk číslo v tabulce.\n\nJurečka (KDU-ČSL) dal příklad rodiče, který ráno vypravuje děti do školy a zakázku odmítne. Platforma mu je pak nemusí dávat ani další den.\n\nPoslušně podotýkám, že zákon o aplikacích první kolo přežil. Teprve výbor ukáže, jestli z toho bude ochrana, nebo kurýr zůstane živnostník.",
+  "mean": "U lidí pracujících přes aplikace se má jasněji určit, kdy jsou zaměstnanci. Pokud platforma tvrdí opak, bude to muset dokázat. Návrh přežil první kolo a jde do výborů.",
+  "citace_text": "Ať vezete jídlo, zákazníka, nebo nákup, pro platformu je ten člověk především číslo v tabulce a výkonnostní jednotka.",
+  "citace_autor": "Hana Ančincová (Piráti)",
+  "steno_id": "2025_34_00971",
+  "pocet_hlasovani": 5,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 82,
+    "pritomno_min": 126,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 15515
+}

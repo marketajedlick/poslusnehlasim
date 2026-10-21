@@ -1,0 +1,36 @@
+{
+  "datum": "16.10.2026",
+  "den": "pátek",
+  "topic_slugs": [
+    "vl-n-z-o-platformove-praci",
+    "pan-ministr-potrebuje-domu"
+  ],
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 160,
+    "end_cas": "13:20",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "nwl_predmet": "Zaměstnanec, nebo živnostník. Zákoník práce čeká",
+  "dnesni_ucet": "Práce přes aplikaci: zaměstnanec, nebo živnostník.\nNávrh první kolo přežil, zákoník práce až v úterý.",
+  "zaver": "že Sněmovna pustila dál pravidla pro práci přes aplikace, která mají říct, jestli je člověk zaměstnanec, nebo živnostník, a výborům na to zkrátila čas z šedesáti na třicet dnů.",
+  "vysledek": [
+    "* práce přes aplikace: první kolo přežila, výbory mají třicet dnů",
+    "* změna zákoníku práce: rozprava začala, hlasování ne, schůze pokračuje v úterý"
+  ],
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo",
+  "jazykolam": {
+    "text": "Pan ministr evidentně potřebuje jít domů.",
+    "autor": "Jan Jakob (TOP 09)",
+    "steno_id": "2025_34_01004"
+  },
+  "slovnicek": [
+    "švarcsystém",
+    "závislá práce"
+  ]
+}

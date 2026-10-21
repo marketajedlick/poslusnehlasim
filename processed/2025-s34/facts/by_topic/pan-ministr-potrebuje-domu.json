@@ -1,0 +1,35 @@
+{
+  "slug": "pan-ministr-potrebuje-domu",
+  "nazev": "Změna zákoníku práce a přestávky",
+  "datum": "16.10.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "změna zákoníku práce, kterou pátek nestihl",
+  "koho": [
+    "Koho se to týká? Zaměstnanců, živnostníků a všech, kdo čekají, jestli se změní pravidla odměňování a podpory v nezaměstnanosti."
+  ],
+  "fakty": [
+    {
+      "text": "Juchelka: tisk 300 je klíčovější než zákon o platformách.",
+      "source": "steno",
+      "steno_id": "2025_34_00987",
+      "citace": "dostaneme k tomu tisku 300, který je opravdu klíčovější",
+      "link_phrase": "nazval klíčovějším"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Zákoník\npráce",
+  "lead": "Pak se otevřel druhý tisk, který ministr práce Juchelka (ANO) sám nazval klíčovějším. Je v něm zákoník práce, stejná odměna žen a mužů a taky nižší podpora v nezaměstnanosti.",
+  "pointa": "Poslušně podotýkám, že k hlasování o zákoníku práce nedošlo. Olšáková a Jakob stihli promluvit, pak přišly přestávky a ty vyhrály. Pokračování v úterý.",
+  "mean": "K hlasování o změně zákoníku práce v pátek nedošlo. Poslanecké přestávky posunuly pokračování schůze na úterý.",
+  "pocet_hlasovani": 0,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 0,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 4000
+}

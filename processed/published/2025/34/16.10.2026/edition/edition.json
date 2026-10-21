@@ -1,0 +1,55 @@
+{
+  "key": "2025/34/16.10.2026",
+  "obdobi": 2025,
+  "schuze": 34,
+  "datum_unl": "16.10.2026",
+  "iso": "2026-10-16",
+  "state": "approved",
+  "topic_slugs": [
+    "vl-n-z-o-platformove-praci"
+  ],
+  "recommended_slugs": [
+    "vl-n-z-o-platformove-praci"
+  ],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-10-16/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "stale",
+    "stale": true,
+    "link_phrase_coverage": {
+      "total": 15,
+      "linked": 15,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 15,
+      "ok": 15,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 0,
+    "steno_passages": 16,
+    "steno_missing_article_phrase": 0,
+    "ok": true,
+    "errors": []
+  },
+  "inputs": {
+    "votes_count": 188,
+    "votes_max_cislo": 188,
+    "steno_count": 1011,
+    "steno_last_poradi": 1011,
+    "topics_built_at": "2026-10-17T13:32:15.765847+00:00",
+    "fingerprint": "9c74b02408bf4616"
+  },
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null
+}

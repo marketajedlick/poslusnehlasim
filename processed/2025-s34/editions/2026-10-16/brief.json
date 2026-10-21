@@ -1,0 +1,62 @@
+{
+  "datum_unl": "16.10.2026",
+  "iso": "2026-10-16",
+  "recommended": [
+    {
+      "slug": "vl-n-z-o-platformove-praci",
+      "nazev": "Vl. n. z. o platformové práci",
+      "score": 61,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 82,
+          "pritomno_min": 126,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 15515,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "48.Vládní návrh zákona o platformové práci/sněmovní tisk 301/ – prvé čtení Z pověření vlády předložený návrh uvede ministr práce a sociální věcí Aleš Juchelka.",
+          "source": "steno",
+          "steno_id": "2025_34_00958",
+          "citace": "48.Vládní návrh zákona o platformové práci/sněmovní tisk 301/ – prvé čtení Z pověření vlády předložený návrh uvede ministr práce a sociální věcí Aleš Juchelka."
+        },
+        {
+          "text": "Já přečtu omluvy: Ondřej Matěj Havel od 11 hodin z pracovních důvodů, Barbora Pipášová od 12 z rodinných důvodů, Michala Šebelová od 10.53 z pracovních důvodů a Jaromír Zůna celý jednací den z pracovních důvodů.",
+          "source": "steno",
+          "steno_id": "2025_34_00958",
+          "citace": "Já přečtu omluvy: Ondřej Matěj Havel od 11 hodin z pracovních důvodů, Barbora Pipášová od 12 z rodinných důvodů, Michala Šebelová od 10.53 z pracovních důvodů a Jaromír Zůna celý jednací den z pracovn"
+        },
+        {
+          "text": "Prosím, aby se ujal slova a prosím, aby se připravil zpravodaj Marek Novák.",
+          "source": "steno",
+          "steno_id": "2025_34_00958",
+          "citace": "Prosím, aby se ujal slova a prosím, aby se připravil zpravodaj Marek Novák."
+        },
+        {
+          "text": "S ohledem na to předložím v podrobné rozpravě taktéž žádost o zkrácení lhůty pro projednání návrhu ve výborech z 60 na 30 dnů.",
+          "source": "steno",
+          "steno_id": "2025_34_00959",
+          "citace": "S ohledem na to předložím v podrobné rozpravě taktéž žádost o zkrácení lhůty pro projednání návrhu ve výborech z 60 na 30 dnů."
+        }
+      ]
+    }
+  ],
+  "rejected": [],
+  "day_stats": {
+    "pocet_hlas_zakon": 1,
+    "proslo_vote": 1,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-10-16",
+      "2026-10-17"
+    ]
+  }
+}
