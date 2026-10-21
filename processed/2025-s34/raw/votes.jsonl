@@ -214,3 +214,5 @@
 {"cislo": 214, "bod": "47", "datum": "20.10.2026", "cas": "22:18", "nazev": "Novela z. - zákoník práce", "vysledek": "R", "pro": 43, "proti": 78, "zdrzel": 1, "nehlasoval": 0, "pritomno": 122, "je_porad_schuze": false}
 {"cislo": 215, "bod": "47", "datum": "20.10.2026", "cas": "22:19", "nazev": "Novela z. - zákoník práce", "vysledek": "A", "pro": 122, "proti": 0, "zdrzel": 1, "nehlasoval": 0, "pritomno": 123, "je_porad_schuze": false}
 {"cislo": 216, "bod": "47", "datum": "20.10.2026", "cas": "22:20", "nazev": "Novela z. - zákoník práce", "vysledek": "A", "pro": 79, "proti": 43, "zdrzel": 1, "nehlasoval": 0, "pritomno": 123, "je_porad_schuze": false}
+{"cislo": 217, "bod": "0", "datum": "21.10.2026", "cas": "09:03", "nazev": "Pořad schůze", "vysledek": "A", "pro": 80, "proti": 34, "zdrzel": 1, "nehlasoval": 1, "pritomno": 116, "je_porad_schuze": true}
+{"cislo": 218, "bod": "0", "datum": "21.10.2026", "cas": "09:18", "nazev": "Pořad schůze", "vysledek": "R", "pro": 41, "proti": 77, "zdrzel": 14, "nehlasoval": 0, "pritomno": 132, "je_porad_schuze": true}
