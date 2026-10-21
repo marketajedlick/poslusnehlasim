@@ -222,9 +222,11 @@ body {
 /* zvýraznění jen v textu článku, ne v nadpisech */
 .p .hl, .mean .hl { display: inline; }
 .p {
-  font-size: 17px;
-  line-height: 1.7;
+  font-family: 'Old Standard TT', Georgia, 'Times New Roman', serif;
+  font-size: 19px;
+  line-height: 1.65;
   margin: 12px 0 0;
+  color: #1a1814;
   text-align: left;
 }
 .p a.mean-link,

@@ -26,6 +26,14 @@ class EmailHtmlTest(unittest.TestCase):
         css = (_REPO / "svejk/static/noviny-email.css").read_text(encoding="utf-8")
         self.assertIsNone(_COLOR_IMPORTANT.search(css))
 
+    def test_nwl_body_is_larger_and_darker(self) -> None:
+        css = (_REPO / "svejk/static/noviny-email.css").read_text(encoding="utf-8")
+        self.assertRegex(css, r"\.p\s*\{[^}]*font-size:\s*19px")
+        self.assertRegex(css, r"\.p\s*\{[^}]*color:\s*#1a1814")
+        tpl = (_REPO / "svejk/templates/noviny-email.html").read_text(encoding="utf-8")
+        self.assertIn("font-size:19px", tpl)
+        self.assertIn("color:#1a1814", tpl)
+
     def test_newsletter_subject_uses_nwl_predmet(self) -> None:
         self.assertEqual(
             newsletter_subject(
