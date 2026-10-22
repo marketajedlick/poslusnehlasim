@@ -1,0 +1,74 @@
+{
+  "slug": "odpoved-na-pisemnou-interpelaci-i-fercikove-kone",
+  "nazev": "Odpověď na písemnou interpelaci I. Ferčíkové Konečné na L. Metnara",
+  "datum": "15.10.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "kdo lidem při povodni nebo výpadku proudu řekne, co dělat, když ministr vnitra krizový tým přesunul do tiskového oddělení",
+  "koho": [
+    "Koho se to týká? Každého, kdo při povodni, výpadku proudu nebo výhrůžce škole čeká, že mu stát srozumitelně řekne, co se děje a co má dělat."
+  ],
+  "fakty": [
+    {
+      "text": "Ferčíková: takový tým už nemáme.",
+      "source": "steno",
+      "kind": "quote",
+      "steno_id": "2025_34_00457",
+      "citace": "A takový tým jsme měli a dnes už ho nemáme.",
+      "link_phrase": "krizový tým ministerstva vnitra už není"
+    },
+    {
+      "text": "Ferčíková: zrušení krizového týmu platí od 1. dubna 2026, práce šla do tisku a PR.",
+      "source": "steno",
+      "steno_id": "2025_34_00453",
+      "citace": "Vaše rozhodnutí, pane ministře, zrušit krizový informační tým a začlenit strategickou komunikaci ministerstva do oddělení tisku a PR nabylo účinnosti 1. dubna 2026.",
+      "link_phrase": "od prvního dubna 2026"
+    },
+    {
+      "text": "Ferčíková: kdo tu komunikaci na ministerstvu dnes dělá.",
+      "source": "steno",
+      "steno_id": "2025_34_00453",
+      "citace": "Kdo dnes na Ministerstvu vnitra reálně zajišťuje odbornou kapacitu pro krizovou strategickou komunikaci státu, pokud byla agenda rozpuštěna, lidé propuštěni a odpovědnost byla fakticky převedena na standardní PR vašeho ministerstva?",
+      "link_phrase": "kdo to na ministerstvu vnitra dělá teď"
+    },
+    {
+      "text": "Metnar: nešlo o zrušení, ale o reorganizaci.",
+      "source": "steno",
+      "steno_id": "2025_34_00459",
+      "citace": "Nešlo opravdu o zrušení krizové komunikace, ale o reorganizaci v rámci Ministerstva vnitra, za kterou si jednoznačně stojím.",
+      "link_phrase": "krizová komunikace neskončila"
+    },
+    {
+      "text": "Metnar: na strategickou komunikaci šlo přes 134 milionů.",
+      "source": "steno",
+      "steno_id": "2025_34_00459",
+      "citace": "v minulosti byly v oblasti aktivit oddělení strategické komunikace vyčleněny veřejné prostředky přesahující 134 milionů a více.",
+      "link_phrase": "sto třicet čtyři milionů"
+    },
+    {
+      "text": "Nesouhlasné usnesení neprošlo, 32 pro, 65 proti.",
+      "source": "steno",
+      "steno_id": "2025_34_00555",
+      "citace": "V hlasování číslo 129 bylo přihlášeno 97, pro 32, proti 65. Tento návrh nebyl přijat.",
+      "link_phrase": "Sněmovna její nesouhlas odmítla"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Krizový tým\nuž není.",
+  "lead": "Šlo o to, kdo lidem při povodni, výpadku proudu nebo výhrůžce škole řekne, co se děje a co mají dělat. Ferčíková Konečná (Piráti) říká, že od prvního dubna 2026 krizový tým ministerstva vnitra už není. Ministr vnitra Metnar (ANO) odpovídá, že stačí tiskové oddělení a krizový štáb. Sněmovna její nesouhlas odmítla.",
+  "pointa": "Od roku 2022 podle ní ten tým sjednocoval, co stát řekne při povodni nebo bombové výhrůžce škole, a pak tahle práce sedla do oddělení tisku. Ferčíková Konečná se ptala, kdo to na ministerstvu vnitra dělá teď.\n\nMetnar stál na tom, že krizová komunikace neskončila a šlo o reorganizaci. Název krizový informační tým prý nikdy nebyl samostatný útvar. Na strategickou komunikaci předtím šlo přes sto třicet čtyři milionů, které považuje za těžko obhajitelné.\n\nPoslušně podotýkám, že odpověď ministra platí dál.",
+  "mean": "Když přijde povodeň nebo výpadek proudu, má někdo na státu lidem říct, co dělat. Ministr vnitra od dubna 2026 nechává krizovou komunikaci tiskovému oddělení a krizovému štábu. Sněmovna nesouhlas s jeho odpovědí nepřijala.",
+  "citace_text": "Nešlo opravdu o zrušení krizové komunikace, ale o reorganizaci v rámci Ministerstva vnitra, za kterou si jednoznačně stojím.",
+  "citace_autor": "Lubomír Metnar (ANO)",
+  "steno_id": "2025_34_00459",
+  "pocet_hlasovani": 1,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 65,
+    "pritomno_min": 97,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 624
+}

@@ -1,0 +1,263 @@
+{
+  "datum_unl": "15.10.2026",
+  "iso": "2026-10-15",
+  "recommended": [
+    {
+      "slug": "novela-z-o-evidenci-skutecnych-majitelu-ei",
+      "nazev": "Novela z. o evidenci skutečných majitelů - EI",
+      "score": 61,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 1,
+          "pritomno_min": 145,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 26467,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "37/2021 Sb., o evidenci skutečných majitelů, ve znění pozdějších předpisů/sněmovní tisk 260/ – prvé čtení Z pověření vlády předložený návrh uvede místo pana ministra spravedlnosti opět pan ministr Boris Šťastný.",
+          "source": "steno",
+          "steno_id": "2025_34_00710",
+          "citace": "37/2021 Sb., o evidenci skutečných majitelů, ve znění pozdějších předpisů/sněmovní tisk 260/ – prvé čtení Z pověření vlády předložený návrh uvede místo pana ministra spravedlnosti opět pan ministr Bor"
+        },
+        {
+          "text": "36.Vládní návrh zákona, kterým se mění zákon č.",
+          "source": "steno",
+          "steno_id": "2025_34_00710",
+          "citace": "36.Vládní návrh zákona, kterým se mění zákon č."
+        },
+        {
+          "text": "S ohledem na tuto skutečnost i na potřebu včasné přípravy technických změn informačního systému evidence skutečných majitelů si dovoluji požádat Poslaneckou sněmovnu o podporu návrhu a co možná nejpružnější projednání.",
+          "source": "steno",
+          "steno_id": "2025_34_00711",
+          "citace": "S ohledem na tuto skutečnost i na potřebu včasné přípravy technických změn informačního systému evidence skutečných majitelů si dovoluji požádat Poslaneckou sněmovnu o podporu návrhu a co možná nejpru"
+        },
+        {
+          "text": "Hlavním cílem návrhu je transpozice požadavků k části nové evropské AML směrnice, které se týkají především přístupu veřejnosti k údajům o skutečných majitelích na základě takzvaného oprávněného zájmu.",
+          "source": "steno",
+          "steno_id": "2025_34_00711",
+          "citace": "Hlavním cílem návrhu je transpozice požadavků k části nové evropské AML směrnice, které se týkají především přístupu veřejnosti k údajům o skutečných majitelích na základě takzvaného oprávněného zájmu"
+        }
+      ]
+    },
+    {
+      "slug": "odpoved-na-pisemnou-interpelaci-i-fercikove-kone",
+      "nazev": "Odpověď na písemnou interpelaci I. Ferčíkové Konečné na L. Metnara",
+      "score": 58,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 65,
+          "pritomno_min": 97,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 624,
+        "pocet_fakty": 3,
+        "proslo": false,
+        "kategorie": "interpelace"
+      },
+      "fakty": [
+        {
+          "text": "Ťukáním kartami do lavic žádají poslanci odhlášení.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_34_00555",
+          "citace": "(Ťukáním kartami do lavic žádají poslanci odhlášení.)"
+        },
+        {
+          "text": "(Z pléna: Není Hladík.) Projednávání této odpovědi bylo opakovaně přerušeno, naposledy dne 2.",
+          "source": "steno",
+          "steno_id": "2025_34_00555",
+          "citace": "(Z pléna: Není Hladík.) Projednávání této odpovědi bylo opakovaně přerušeno, naposledy dne 2."
+        },
+        {
+          "text": "(Čekání na potřebný počet poslanců v sále.) Takže já vyhlašuju dvě minuty pauzu.",
+          "source": "steno",
+          "steno_id": "2025_34_00555",
+          "citace": "(Čekání na potřebný počet poslanců v sále.) Takže já vyhlašuju dvě minuty pauzu."
+        }
+      ]
+    },
+    {
+      "slug": "umluva-o-uznavani-kvalifikace-tykajicich-se-vyso",
+      "nazev": "Úmluva o uznávání kvalifikace týkajících se vysokoškolského vzděláván",
+      "score": 52,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 13,
+          "pritomno_min": 144,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 583,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "135.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Globální úmluva o uznávání kvalifikací týkajících se vysokoškolského vzdělávání, přijatá v Paříži dne 25.",
+          "source": "steno",
+          "steno_id": "2025_34_00670",
+          "citace": "135.Vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Globální úmluva o uznávání kvalifikací týkajících se vysokoškolského vzdělávání, přijatá v Paříži dne"
+        },
+        {
+          "text": "listopadu 2019/sněmovní tisk 266/ – prvé čtení Předložený návrh uvede v zastoupení pana ministra Plagy pan ministr Boris Šťastný.",
+          "source": "steno",
+          "steno_id": "2025_34_00670",
+          "citace": "listopadu 2019/sněmovní tisk 266/ – prvé čtení Předložený návrh uvede v zastoupení pana ministra Plagy pan ministr Boris Šťastný."
+        },
+        {
+          "text": "Závěrem bych chtěl uvést, že Senát Parlamentu České republiky návrh projednal dne 30.",
+          "source": "steno",
+          "steno_id": "2025_34_00671",
+          "citace": "Závěrem bych chtěl uvést, že Senát Parlamentu České republiky návrh projednal dne 30."
+        },
+        {
+          "text": "Vážená paní předsedající, vážená sněmovno, dovolte, abych v zastoupení ministra školství, mládeže a tělovýchovy představil vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souhlasu s ratifikací Globální úmluva o uznávání kvalifikací týkajících se vysokoškolského vzdělávání, přijatá v Paříži dne ",
+          "source": "steno",
+          "steno_id": "2025_34_00671",
+          "citace": "Vážená paní předsedající, vážená sněmovno, dovolte, abych v zastoupení ministra školství, mládeže a tělovýchovy představil vládní návrh, kterým se předkládá Parlamentu České republiky k vyslovení souh"
+        }
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "slug": "vl-navrh-k-vysl-souhlasu-s-vystoupenim-cr-z-mez-",
+      "score": 52,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "umluva-o-zrizeni-mezinarodni-komise-pro-posuzova",
+      "score": 50,
+      "reason": "procedura / slabý steno signál"
+    },
+    {
+      "slug": "sml-mezi-cr-a-slovenskou-republikou-o-policejni-",
+      "score": 48,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "akta-svetove-postovni-unie",
+      "score": 45,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "sml-o-vydavani-mezi-cr-a-kanadou",
+      "score": 45,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "novela-z-trestni-zakonik-eu",
+      "score": 30,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "sml-mezi-cr-a-srn-o-statnich-hranicich",
+      "score": 30,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "doh-mezi-cr-a-gambijskou-republikou-o-letecke-do",
+      "score": 27,
+      "reason": "jednomyslné hlasování, krátká debata"
+    },
+    {
+      "slug": "doh-mezi-cr-a-ghanskou-republikou-o-letecke-dopr",
+      "score": 27,
+      "reason": "jednomyslné hlasování, krátká debata"
+    },
+    {
+      "slug": "doh-mezi-cr-a-senegalskou-republikou-o-letecke-d",
+      "score": 27,
+      "reason": "jednomyslné hlasování, krátká debata"
+    },
+    {
+      "slug": "doh-mezi-cr-a-vladou-iracke-republiky-o-letecke-",
+      "score": 27,
+      "reason": "jednomyslné hlasování, krátká debata"
+    },
+    {
+      "slug": "doh-o-posilenem-partnerstvi-a-spol-mezi-eu-a-rep",
+      "score": 27,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "sml-cr-malta-o-zamezeni-dvojimu-zdaneni",
+      "score": 27,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "sml-mezi-cr-a-argentinskou-rep-o-zamezeni-dvojim",
+      "score": 27,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "sml-mezi-cr-a-kenskou-republikou-o-zamezeni-dvoj",
+      "score": 27,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "sml-mezi-cr-a-mongolskem-o-policejni-spolupraci",
+      "score": 27,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "sml-mezi-cr-a-polskem-hranicni-dokumenty",
+      "score": 27,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "sml-mezi-cr-a-tanzanskou-repub-o-zamezeni-dvojim",
+      "score": 27,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "uml-o-ochrane-rostlin-a-zivocichu",
+      "score": 27,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "vl-n-z-kt-se-meni-z-v-oblasti-ochrany-obchodniho",
+      "score": 27,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "zmeny-pril-2-a-3-dohody-o-ochrane-afr-euroas-vod",
+      "score": 27,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "zmeny-priloh-i-a-ii-uml-o-ochr-steh-druhu-volne-",
+      "score": 27,
+      "reason": "mimo top 3 pro den"
+    },
+    {
+      "slug": "zmeny-prilohy-i-mezinarodni-uml-proti-dopingu-ve",
+      "score": 27,
+      "reason": "mimo top 3 pro den"
+    }
+  ],
+  "day_stats": {
+    "pocet_hlas_zakon": 24,
+    "proslo_vote": 24,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-10-15",
+      "2026-10-16"
+    ]
+  }
+}

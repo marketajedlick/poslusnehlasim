@@ -1,0 +1,59 @@
+{
+  "slug": "umluva-o-uznavani-kvalifikace-tykajicich-se-vyso",
+  "nazev": "Úmluva o uznávání kvalifikace týkajících se vysokoškolského vzděláván",
+  "datum": "15.10.2026",
+  "verdikt": "prvni_cteni",
+  "predmet_lidsky": "mezinárodní úmluva, podle které se mají uznávat vysokoškolské diplomy mezi státy",
+  "koho": [
+    "Koho se to týká? Lidí s diplomem ze zahraničí a vysokých škol, které ho mají uznat."
+  ],
+  "fakty": [
+    {
+      "text": "Šťastný zastupuje ministra školství Plagu.",
+      "source": "steno",
+      "steno_id": "2025_34_00671",
+      "citace": "dovolte, abych v zastoupení ministra školství, mládeže a tělovýchovy představil vládní návrh",
+      "link_phrase": "Ministr školství Plaga"
+    },
+    {
+      "text": "Senát s ratifikací souhlasil třicátého září.",
+      "source": "steno",
+      "steno_id": "2025_34_00671",
+      "citace": "Senát Parlamentu České republiky návrh projednal dne 30. září 2026 a vyslovil souhlas s ratifikací",
+      "link_phrase": "Senát už souhlasil"
+    },
+    {
+      "text": "Berki: školský výbor, ne zahraniční.",
+      "source": "steno",
+      "steno_id": "2025_34_00675",
+      "citace": "aby to šlo školskému výboru, nikoliv zahraničnímu.",
+      "link_phrase": "školskému výboru, ne zahraničnímu"
+    },
+    {
+      "text": "Urbanová: zahraniční výbor neprošel.",
+      "source": "steno",
+      "steno_id": "2025_34_00676",
+      "citace": "Hlasování číslo 161, přihlášeno 144 poslanců, pro 15, proti 13. Proto byl návrh zamítnut.",
+      "link_phrase": "zahraniční výbor neprošel"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Diplom\ndo špatného výboru",
+  "lead": "Na řadu přišla mezinárodní úmluva o tom, jak si státy uznávají vysokoškolské diplomy. Česko ji pomáhalo psát v UNESCO a Senát už souhlasil. Do rozpravy se nepřihlásil nikdo. Spor byl o to, který výbor si ji vezme.",
+  "pointa": "Ministr školství Plaga (ANO) v sále nebyl. Zastoupil ho ministr Šťastný (Motoristé). Zpravodaj Doksanský (ANO) řekl, že ratifikace sjednotí, jak se diplomy uznávají mezi evropskými státy UNESCO a zbytkem světa, a posílá ji školskému výboru.\n\nPředseda Sněmovny ji navrhl zahraničnímu výboru. Berki (STAN) řekl, ať jde školskému výboru, ne zahraničnímu. Urbanová (STAN) nejdřív nechala hlasovat zahraniční výbor, protože tak velí postup. Zahraniční výbor neprošel. Školský prošel.\n\nPoslušně podotýkám, že úmluva první kolo přežila a čeká na školský výbor.",
+  "mean": "Úmluva sjednocuje uznávání vysokoškolských diplomů mezi státy. Sněmovna ji poslala školskému výboru, zahraniční neprošel.",
+  "citace_text": "Já bych navrhnul a myslím, že to bylo v souladu s tím, co říkal pan zpravodaj, aby to šlo školskému výboru, nikoliv zahraničnímu.",
+  "citace_autor": "Jan Berki (STAN)",
+  "steno_id": "2025_34_00675",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 13,
+    "pritomno_min": 144,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": false
+  },
+  "steno_slov": 583
+}

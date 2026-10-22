@@ -1,0 +1,59 @@
+{
+  "slug": "novela-z-o-evidenci-skutecnych-majitelu-ei",
+  "nazev": "Novela z. o evidenci skutečných majitelů - EI",
+  "datum": "15.10.2026",
+  "verdikt": "prvni_cteni",
+  "predmet_lidsky": "zavření veřejného náhledu do evidence lidí, kteří firmy opravdu ovládají",
+  "koho": [
+    "Koho se to týká? Novináře, obce a každého, kdo si chtěl ověřit, kdo se schovává za firmu. Banky a úřady se k údajům dostanou dál, ale na požádání."
+  ],
+  "fakty": [
+    {
+      "text": "Šťastný: veřejný náhled končí, nahradí ho oprávněný zájem.",
+      "source": "steno",
+      "steno_id": "2025_34_00711",
+      "citace": "novela omezuje veřejnou dostupnost informací o skutečných majitelích a nahrazuje ji kontrolovaným přístupem na základě oprávněného zájmu",
+      "link_phrase": "veřejný náhled končí"
+    },
+    {
+      "text": "Stojanová: ministerstvo evidenci zavřelo už sedmnáctého prosince.",
+      "source": "steno",
+      "steno_id": "2025_34_00713",
+      "citace": "Ministerstvo spravedlnosti evidenci právě v reakci na tyto rozsudky fakticky uzavřelo už 17. prosince 2025",
+      "link_phrase": "sedmnáctého prosince 2025"
+    },
+    {
+      "text": "Stojanová: neveřejnost sníží průhlednost firem.",
+      "source": "steno",
+      "steno_id": "2025_34_00713",
+      "citace": "neveřejnost evidence povede ke snížení transparentnosti právnických osob",
+      "link_phrase": "sníží průhlednost firem"
+    },
+    {
+      "text": "Stojanová: dohoda s Tejcem, ať se okruh žadatelů zase rozšíří.",
+      "source": "steno",
+      "steno_id": "2025_34_00715",
+      "citace": "povedlo dohodnout na pozměňovacím návrhu, který k tomuto tisku bude předložen, který nějakým způsobem zase rozšíří okruh oprávněných žadatelů",
+      "link_phrase": "okruh lidí s přístupem se má ve výboru zase rozšířit"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Majitel\nzmizí z webu",
+  "lead": "Šlo o to, jestli si dál vyhledáte, kdo firmu opravdu ovládá, i když je schovaná za jinými firmami. Ministerstvo spravedlnosti evidenci fakticky zavřelo už sedmnáctého prosince 2025. Ve čtvrtek Sněmovna ten stav začala zapisovat do zákona.",
+  "pointa": "Šťastný (Motoristé) řekl, že veřejný náhled končí a nahradí ho přístup po prokázání důvodu. Stojanová (Piráti) připomněla, že neveřejnost sníží průhlednost firem, a s ministrem spravedlnosti Tejcem (ANO) se dohodla, že okruh lidí s přístupem se má ve výboru zase rozšířit.\n\nPoslušně podotýkám, že návrh první kolo přežil.",
+  "mean": "Evidence má ukázat člověka, který firmu skutečně ovládá. Veřejný náhled se zavírá a přístup bude jen po prokázání důvodu. Ministerstvo evidenci zavřelo už loni, zákon teď tento stav zapisuje do pravidel.",
+  "citace_text": "Zjednodušeně řečeno, novela omezuje veřejnou dostupnost informací o skutečných majitelích a nahrazuje ji kontrolovaným přístupem na základě oprávněného zájmu",
+  "citace_autor": "Boris Šťastný (Motoristé)",
+  "steno_id": "2025_34_00711",
+  "pocet_hlasovani": 2,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 1,
+    "pritomno_min": 145,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 26467
+}

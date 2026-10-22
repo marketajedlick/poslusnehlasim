@@ -1,0 +1,85 @@
+{
+  "key": "2025/34/15.10.2026",
+  "obdobi": 2025,
+  "schuze": 34,
+  "datum_unl": "15.10.2026",
+  "iso": "2026-10-15",
+  "state": "approved",
+  "topic_slugs": [
+    "novela-z-o-evidenci-skutecnych-majitelu-ei",
+    "odpoved-na-pisemnou-interpelaci-i-fercikove-kone",
+    "umluva-o-uznavani-kvalifikace-tykajicich-se-vyso"
+  ],
+  "recommended_slugs": [
+    "novela-z-o-evidenci-skutecnych-majitelu-ei",
+    "odpoved-na-pisemnou-interpelaci-i-fercikove-kone",
+    "umluva-o-uznavani-kvalifikace-tykajicich-se-vyso"
+  ],
+  "rejected_slugs": [
+    "vl-navrh-k-vysl-souhlasu-s-vystoupenim-cr-z-mez-",
+    "umluva-o-zrizeni-mezinarodni-komise-pro-posuzova",
+    "sml-mezi-cr-a-slovenskou-republikou-o-policejni-",
+    "akta-svetove-postovni-unie",
+    "sml-o-vydavani-mezi-cr-a-kanadou",
+    "novela-z-trestni-zakonik-eu",
+    "sml-mezi-cr-a-srn-o-statnich-hranicich",
+    "doh-mezi-cr-a-gambijskou-republikou-o-letecke-do",
+    "doh-mezi-cr-a-ghanskou-republikou-o-letecke-dopr",
+    "doh-mezi-cr-a-senegalskou-republikou-o-letecke-d",
+    "doh-mezi-cr-a-vladou-iracke-republiky-o-letecke-",
+    "doh-o-posilenem-partnerstvi-a-spol-mezi-eu-a-rep",
+    "sml-cr-malta-o-zamezeni-dvojimu-zdaneni",
+    "sml-mezi-cr-a-argentinskou-rep-o-zamezeni-dvojim",
+    "sml-mezi-cr-a-kenskou-republikou-o-zamezeni-dvoj",
+    "sml-mezi-cr-a-mongolskem-o-policejni-spolupraci",
+    "sml-mezi-cr-a-polskem-hranicni-dokumenty",
+    "sml-mezi-cr-a-tanzanskou-repub-o-zamezeni-dvojim",
+    "uml-o-ochrane-rostlin-a-zivocichu",
+    "vl-n-z-kt-se-meni-z-v-oblasti-ochrany-obchodniho",
+    "zmeny-pril-2-a-3-dohody-o-ochrane-afr-euroas-vod",
+    "zmeny-priloh-i-a-ii-uml-o-ochr-steh-druhu-volne-",
+    "zmeny-prilohy-i-mezinarodni-uml-proti-dopingu-ve"
+  ],
+  "brief_path": "editions/2026-10-15/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "draft",
+    "stale": false,
+    "link_phrase_coverage": {
+      "total": 16,
+      "linked": 16,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 16,
+      "ok": 16,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 3,
+    "steno_passages": 17,
+    "steno_missing_article_phrase": 0,
+    "ok": false,
+    "errors": [
+      "slabá témata: novela-z-o-evidenci-skutecnych-majitelu-ei, odpoved-na-pisemnou-interpelaci-i-fercikove-kone, umluva-o-uznavani-kvalifikace-tykajicich-se-vyso"
+    ]
+  },
+  "inputs": {
+    "votes_count": 173,
+    "votes_max_cislo": 173,
+    "steno_count": 893,
+    "steno_last_poradi": 893,
+    "topics_built_at": "2026-10-16T11:45:25.259807+00:00",
+    "fingerprint": "7e8977fca32f259f"
+  },
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null
+}

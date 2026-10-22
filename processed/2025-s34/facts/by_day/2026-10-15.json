@@ -1,0 +1,39 @@
+{
+  "datum": "15.10.2026",
+  "den": "čtvrtek",
+  "topic_slugs": [
+    "novela-z-o-evidenci-skutecnych-majitelu-ei",
+    "odpoved-na-pisemnou-interpelaci-i-fercikove-kone",
+    "umluva-o-uznavani-kvalifikace-tykajicich-se-vyso"
+  ],
+  "stats": {
+    "pocet_hlas": 24,
+    "minuty": 159,
+    "end_cas": "13:35",
+    "proslo": 2,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "nwl_predmet": "Majitel firmy zmizí z webu. Krizový tým vnitra se nevrátí",
+  "dnesni_ucet": "Veřejný náhled na majitele firem jde zavřít.\nKrizovou komunikaci nechali tiskovému oddělení.",
+  "zaver": "že Sněmovna pustila dál zavření veřejné evidence majitelů firem, úmluvu o diplomech poslala školskému výboru a nesouhlas s odpovědí ministra vnitra ke krizové komunikaci neprošel.",
+  "vysledek": [
+    "* evidence skutečných majitelů: první kolo přežila, veřejný náhled se zavírá",
+    "* uznávání vysokoškolských diplomů: jde do školského výboru",
+    "* nesouhlas s odpovědí ministra vnitra ke krizové komunikaci neprošel"
+  ],
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo",
+  "jazykolam": {
+    "kicker": "Moment dne",
+    "text": "Experti varují před kombinací kybernetického útoku, výpadku elektřiny, sabotáží a masivního šíření dezinformací, která by mohla rychle narušit běžné fungování státu. To je přesně ten typ situace, který nezvládne vaše tiskové oddělení, jehož úkolem je primárně chránit váš obraz a obraz ministerstva. Zvládne to právě ten tým, který koordinuje desítky institucí tak, aby stát mluvil jedním hlasem, jedním hlasem v okamžicích, kdy na rychlosti a přesnosti informací závisí bezpečnost a zdraví lidí. A takový tým jsme měli a dnes už ho nemáme.",
+    "autor": "Irena Ferčíková Konečná (Piráti)",
+    "steno_id": "2025_34_00457"
+  },
+  "slovnicek": [
+    "skutečný majitel",
+    "oprávněný zájem"
+  ]
+}
