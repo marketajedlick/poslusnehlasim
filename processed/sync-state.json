@@ -309,10 +309,10 @@
       "count": 240,
       "max_cislo": 240,
       "last_datum": "22.10.2026",
-      "steno_count": 1871,
-      "last_steno_poradi": 1871,
-      "last_steno_datum": "2026-10-22",
-      "synced_at": "2026-10-23T00:03:20.011877+00:00"
+      "steno_count": 2036,
+      "last_steno_poradi": 2036,
+      "last_steno_datum": "2026-10-23",
+      "synced_at": "2026-10-23T23:50:00.950801+00:00"
     },
     "35": {
       "count": 5,
@@ -324,6 +324,8 @@
       "synced_at": "2026-10-23T00:03:21.125677+00:00"
     }
   },
-  "updated_at": "2026-10-23T09:52:18.307066+00:00",
-  "last_updated_schuze": []
+  "updated_at": "2026-10-23T23:50:01.385394+00:00",
+  "last_updated_schuze": [
+    34
+  ]
 }
