@@ -92,6 +92,8 @@ Volitelně: `./run-svejk.sh review --schuze N --den DD.MM.RRRR`
 
 **Agent dopíše:** `dnesni_ucet` (2 řádky, `\n`), `zaver` (začíná „že …"), volitelně `vysledek`, `jazykolam`, `slovnicek`
 
+`jazykolam` (citát dne) musí být jiná věta než citát v článku (`citace_text` i `fakty[].citace`).
+
 ---
 
 ## 4. Curiosity pass (brief to neudělá)

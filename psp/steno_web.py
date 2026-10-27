@@ -7,6 +7,7 @@ import re
 import time
 import unicodedata
 import urllib.error
+import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 from html.parser import HTMLParser
@@ -127,16 +128,22 @@ class PspStenoFetcher:
         self._last_request = time.monotonic()
 
     def fetch_html(self, url: str) -> str:
-        self._wait()
-        req = urllib.request.Request(url, headers={"User-Agent": _USER_AGENT})
-        try:
-            with urllib.request.urlopen(req, timeout=90) as resp:
-                raw = resp.read()
-        except urllib.error.HTTPError as e:
-            if e.code == 404:
-                return ""
-            raise
-        return raw.decode(_CHARSET, errors="replace")
+        last_err: Exception | None = None
+        for _attempt in range(3):
+            self._wait()
+            req = urllib.request.Request(url, headers={"User-Agent": _USER_AGENT})
+            try:
+                with urllib.request.urlopen(req, timeout=90) as resp:
+                    raw = resp.read()
+                return raw.decode(_CHARSET, errors="replace")
+            except urllib.error.HTTPError as e:
+                if e.code == 404:
+                    return ""
+                raise
+            except urllib.error.URLError as e:
+                last_err = e
+        assert last_err is not None
+        raise last_err
 
     def _resolve_url(self, base: str, href: str) -> str:
         if href.startswith("http"):
@@ -367,12 +374,19 @@ class PspStenoFetcher:
         s = re.sub(r"\s+", " ", s).strip().lower()
         return s
 
+    def _body_start(self, html_text: str) -> int:
+        """Začátek projevu, až za horní navigací (ta obsahuje slovo Minulý a _html_to_text by text uřízl)."""
+        for marker in ("<!-- ex -->", "<!-- sttm -->", "<!-- Body"):
+            idx = html_text.find(marker)
+            if idx != -1:
+                return idx
+        return 0
+
     def _page_plain_text(self, html_text: str) -> str:
-        first = _ANCHOR_START.search(html_text)
-        if not first:
-            return ""
-        start = first.start()
+        start = self._body_start(html_text)
         end = self._page_content_end(html_text, after=start)
+        if end <= start:
+            return ""
         return self._html_to_text(html_text[start:end])
 
     @staticmethod
@@ -396,12 +410,20 @@ class PspStenoFetcher:
     ) -> str:
         """Vrátí kotvu rN na stránce PSP, v jejíž řeči je citace."""
         matches = list(_ANCHOR_START.finditer(html_text))
-        if not matches:
-            return default
-        page_end = self._page_content_end(html_text, after=matches[0].start())
         needle = self._norm_search(citace)
         if not needle:
             return default
+        if not matches:
+            page = self._norm_search(self._page_plain_text(html_text))
+            if self._citace_in_text(page, needle):
+                return ""
+            return default
+        preamble = self._norm_search(
+            self._html_to_text(html_text[self._body_start(html_text) : matches[0].start()])
+        )
+        if self._citace_in_text(preamble, needle):
+            return ""
+        page_end = self._page_content_end(html_text, after=matches[0].start())
         for i, m in enumerate(matches):
             start = m.start()
             end = matches[i + 1].start() if i + 1 < len(matches) else page_end
@@ -490,5 +512,15 @@ class PspStenoFetcher:
             )
             if page_anchor:
                 return f"{page_url}#{page_anchor}"
-            return page_url
+            return self._url_with_text_fragment(page_url, citace)
         return base
+
+    @staticmethod
+    def _url_with_text_fragment(url: str, citace: str) -> str:
+        """Stránka bez kotvy rN: prohlížeč sjedí na větu. Starší prohlížeč otevře aspoň tu stránku."""
+        snippet = re.sub(r"\s+", " ", citace or "").strip().strip("„“\"")
+        if len(snippet) > 80:
+            snippet = snippet[:80].rsplit(" ", 1)[0]
+        if len(snippet) < 8:
+            return url
+        return f"{url}#:~:text={urllib.parse.quote(snippet)}"

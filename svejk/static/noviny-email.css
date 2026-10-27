@@ -167,25 +167,28 @@ body {
   text-align: left;
 }
 .item.i2 .num { color: #f4c430; }
-/* rotate() funguje v Apple Mail / iOS; Outlook a část Gmailu ignoruje → rovné razítko. */
+/* V NWL bez rotate: Outlook/Gmail stejně ignorují, Apple Mail by jinak naklonil. */
 .stamp {
   display: inline-block;
   font-family: 'Archivo', 'Arial Black', Impact, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 11px;
+  line-height: 1;
   color: #1f8a5b;
-  padding: 4px 10px 3px;
+  padding: 5px 10px;
   border: 2px solid #1f8a5b;
   border-radius: 3px;
   background: transparent;
   margin: 0;
+  -webkit-transform: none;
   transform: none;
 }
 .stamp--email {
   box-shadow: none;
 }
 .item.i2 .stamp {
+  -webkit-transform: none;
   transform: none;
 }
 .stamp.zvoleno {

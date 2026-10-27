@@ -109,6 +109,44 @@ def _load_steno_index(paths: SchuzePaths) -> dict[str, dict[str, Any]]:
     return {}
 
 
+_STENO_SITTING = re.compile(r"^(\d+)_(\d+)_")
+_OTHER_SITTING_INDEX: dict[tuple[int, int], dict[str, dict[str, Any]]] = {}
+
+
+def _sitting_of_steno(steno_id: str) -> tuple[int, int] | None:
+    m = _STENO_SITTING.match(steno_id or "")
+    if not m:
+        return None
+    return int(m.group(1)), int(m.group(2))
+
+
+def _paths_for_steno(paths: SchuzePaths, steno_id: str) -> SchuzePaths:
+    """Citace z jiné schůze téhož dne (mimořádná + řádná) žije v její složce."""
+    sitting = _sitting_of_steno(steno_id)
+    if not sitting or sitting == (paths.obdobi, paths.schuze):
+        return paths
+    return SchuzePaths.create(*sitting)
+
+
+def steno_record(
+    paths: SchuzePaths,
+    steno_id: str,
+    local: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
+    if not steno_id:
+        return {}
+    rec = local.get(steno_id)
+    if rec:
+        return rec
+    other = _paths_for_steno(paths, steno_id)
+    if other is paths or other.schuze == paths.schuze and other.obdobi == paths.obdobi:
+        return {}
+    key = (other.obdobi, other.schuze)
+    if key not in _OTHER_SITTING_INDEX:
+        _OTHER_SITTING_INDEX[key] = _load_steno_index(other)
+    return _OTHER_SITTING_INDEX[key].get(steno_id) or {}
+
+
 def _poradi_from_steno_id(steno_id: str) -> int | None:
     if not steno_id:
         return None
@@ -325,6 +363,13 @@ class PspUrlResolver:
         except OSError:
             # ponytail: bez sítě stačí fallback URL ze steno.jsonl
             return fallback_url
+        page = resolved.split("#", 1)[0]
+        page_text = self._page_text_cache.get(page) or ""
+        needle = self._fetcher_lazy()._norm_search(citace)
+        if needle and page_text and not self._fetcher_lazy()._citace_in_text(page_text, needle):
+            # citace na stránce není (projev pokračuje dál, přepis ještě nebyl).
+            # Necachovat, ať se příště zkusí znovu.
+            return resolved
         url_cache[cache_key] = resolved
         self._save_url_cache()
         return resolved
@@ -395,7 +440,10 @@ def _passage_from_fact(
         # ponytail: redakční poznámky bez kotvy ve stenozáznamu nepatří na stránku zdrojů
         return None
 
-    rec = steno_by_id.get(steno_id) if steno_id else None
+    own_paths = _paths_for_steno(paths, steno_id) if steno_id else paths
+    rec = steno_record(paths, steno_id, steno_by_id) if steno_id else None
+    if psp_resolver is not None and own_paths is not paths:
+        psp_resolver = PspUrlResolver(own_paths)
     speaker = (rec or {}).get("cele_jmeno") or ""
     poradi = (rec or {}).get("poradi")
     if poradi is None and steno_id:
@@ -416,7 +464,7 @@ def _passage_from_fact(
             psp_url = psp_resolver.resolve(speaker, psp_url, citace)
         elif not psp_url:
             psp_url = _offline_psp_url(
-                paths,
+                own_paths,
                 steno_id,
                 citace,
                 url_cache=cache,
@@ -611,7 +659,10 @@ def append_jazykolam_steno_block(
     if not steno_id:
         return num
 
-    rec = steno_by_id.get(steno_id) or {}
+    own_paths = _paths_for_steno(paths, steno_id)
+    rec = steno_record(paths, steno_id, steno_by_id)
+    if psp_resolver is not None and own_paths is not paths:
+        psp_resolver = PspUrlResolver(own_paths)
     speaker = (j.get("autor") or rec.get("cele_jmeno") or "").strip()
     poradi = rec.get("poradi") if rec.get("poradi") is not None else j.get("poradi")
     full_text = (rec.get("text") or "").strip()
@@ -623,7 +674,7 @@ def append_jazykolam_steno_block(
     if psp_resolver and psp_url:
         psp_url = psp_resolver.resolve(speaker, psp_url, text)
     elif steno_id and not psp_url:
-        psp_url = _offline_psp_url(paths, steno_id, text)
+        psp_url = _offline_psp_url(own_paths, steno_id, text)
 
     num += 1
     block = StenoTopicBlock(slug="jazykolam-dne", title="Citát dne", num=num)

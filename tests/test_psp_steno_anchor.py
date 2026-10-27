@@ -17,6 +17,35 @@ def test_anchor_for_citace_in_page_finds_later_speech_block():
     assert anchor == "r12"
 
 
+def test_anchor_for_citace_before_first_anchor_is_page_top():
+    html = """
+    <!-- Body --><div class="document-nav"><a class="prev">Minulý</a></div>
+    <!-- ex -->
+    <p>Králíček to není. Pokračování dlouhého projevu.</p>
+    <p><b><a id="r1">Jiný řečník</a></b>: Něco jiného.</p>
+    """
+    fetcher = PspStenoFetcher(rate_limit_s=0)
+    assert "králíček to není" in fetcher._norm_search(fetcher._page_plain_text(html))
+    anchor = fetcher._anchor_for_citace_in_page(
+        html,
+        "Králíček to není.",
+        default="r3",
+    )
+    assert anchor == ""
+
+
+def test_page_without_anchors_still_searchable():
+    html = "<!-- ex --><p>Ve výsledku tak bude snazší zbavit se nejen úředníka.</p>"
+    fetcher = PspStenoFetcher(rate_limit_s=0)
+    assert "snazší zbavit se" in fetcher._norm_search(fetcher._page_plain_text(html))
+    anchor = fetcher._anchor_for_citace_in_page(
+        html,
+        "snazší zbavit se nejen úředníka",
+        default="r3",
+    )
+    assert anchor == ""
+
+
 def test_anchor_for_citace_in_page_keeps_default_when_missing():
     html = """
     <p><b><a id="r4">Filip Turek</a></b>: Jen úvod.</p>

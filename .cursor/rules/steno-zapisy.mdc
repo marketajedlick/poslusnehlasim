@@ -101,7 +101,7 @@ Schůze má pevnou kostru. Rozeznávej rutinu od odchylky — **odchylky jsou te
 
 - **Reportáž z prázdného sálu** — vášnivá debata, kde druhá strana nepřišla
 - **Skóre dne** — sportovní zpravodajství z jednomyslných hlasování
-- **Citát dne** — nejšťavnatější doslovná věta + kontext z dat
+- **Citát dne** — nejšťavnatější doslovná věta + kontext z dat. Nesmí to být stejná věta jako citát v článku (`citace_text` ani `fakty[].citace`). Pole je `jazykolam` ve `facts/by_day`.
 - **Historický kvíz** — když si řečníci protiřečí ve faktech
 - **Graf hlasitosti** — eskalace tónu napříč projevy jednoho dne
 - **Host na galerii** — absurdní vsuvky ze scénických poznámek

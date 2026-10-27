@@ -26,6 +26,17 @@ class EmailHtmlTest(unittest.TestCase):
         css = (_REPO / "svejk/static/noviny-email.css").read_text(encoding="utf-8")
         self.assertIsNone(_COLOR_IMPORTANT.search(css))
 
+    def test_nwl_stamp_prvni_cteni_is_orange(self) -> None:
+        # Inline styly v mailu musí sedět s CSS: jinak zelený text + oranžový rámeček.
+        tpl = (_REPO / "svejk/templates/noviny-email.html").read_text(encoding="utf-8")
+        self.assertIn("('zamiteno', 'odlozeno', 'prvni_cteni')", tpl)
+        css = (_REPO / "svejk/static/noviny-email.css").read_text(encoding="utf-8")
+        self.assertIn(".stamp.prvni_cteni", css)
+        self.assertRegex(
+            css,
+            r"\.stamp\.prvni_cteni\s*\{[^}]*color:\s*#ff4411",
+        )
+
     def test_nwl_body_is_larger_and_darker(self) -> None:
         css = (_REPO / "svejk/static/noviny-email.css").read_text(encoding="utf-8")
         self.assertRegex(css, r"\.p\s*\{[^}]*font-size:\s*19px")

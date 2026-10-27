@@ -661,6 +661,14 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
         "Část jednání, kdy poslanci pokládají otázky členům vlády.",
     ),
     (
+        "oprávněný zájem",
+        "Důvod, který musíte prokázat, když chcete nahlédnout do údajů, které už nejsou veřejné.",
+    ),
+    (
+        "skutečný majitel",
+        "Člověk, který firmu opravdu ovládá, i když na papíře stojí někdo jiný nebo další firma.",
+    ),
+    (
         "ústavní zákon",
         "Zákon na nejvyšší úrovni; ke schválení potřebuje většinu poslanců a souhlas Senátu.",
     ),
@@ -1442,6 +1450,8 @@ SLOVNIK_BOX: tuple[tuple[str, str], ...] = (
     ("Výbor", "výbor"),
     ("EET", "EET"),
     ("Lex developer", "lex developer"),
+    ("Švarcsystém", "švarcsystém"),
+    ("Závislá práce", "závislá práce"),
     ("Rada ČT", "Rada ČT"),
     ("Landsmanšaft", "landsmanšaft"),
     ("Harmonizace s EU", "harmonizac"),
@@ -1523,6 +1533,22 @@ SLOVNIČEK: tuple[tuple[str, str], ...] = (
         "Používá se, když většina tvrdí, že věc spěchá.",
     ),
     ("zkrácení lhůty", "Poslanci si zkrátí čas na přípravu dalšího kola, zákon jde dál rychleji."),
+    (
+        "švarcsystém",
+        "Když člověk dělá práci jako zaměstnanec, ale na papíře je živnostník. Firma šetří na odvodech, člověk přijde o jistoty.",
+    ),
+    (
+        "závislá práce",
+        "Práce, která vypadá jako zaměstnání: někdo řídí, kontroluje a určuje, co a kdy se dělá.",
+    ),
+    (
+        "rafinérská marže",
+        "Rozdíl mezi cenou ropy, kterou rafinérie koupí, a cenou paliva, které prodá. Když palivo zdraží víc než ropa, marže roste.",
+    ),
+    (
+        "firemní dluhopis",
+        "Půjčka firmě. Koupíte papír, firma slíbí vrátit peníze i s úrokem. Když nesplatí, o peníze přijdete.",
+    ),
     ("garanční výbor", "Výbor, který má zákon na starosti a připraví ho na další hlasování."),
     ("veto", "Když Senát nebo prezident zákon vrátí, aby si ho poslanci ještě jednou rozmysleli."),
     ("mimořádná schůze", "Schůze svolaná mimo běžný program, když něco spěchá nebo se někdo hodně rozčílí."),
@@ -1531,6 +1557,15 @@ SLOVNIČEK: tuple[tuple[str, str], ...] = (
         "Interpelace je část jednání, kdy poslanci kladou otázky ministrům a premiérovi. "
         "Vláda má odpovídat, i když odpověď někdy míjí položenou otázku. "
         "Lidsky řečeno: čas na veřejné vysvětlování.",
+    ),
+    (
+        "oprávněný zájem",
+        "Důvod, který musíte prokázat, když chcete nahlédnout do údajů, které už nejsou veřejné. "
+        "Nestačí zvědavost, potřebujete věcný důvod.",
+    ),
+    (
+        "skutečný majitel",
+        "Člověk, který firmu opravdu ovládá, i když na papíře stojí někdo jiný nebo další firma.",
     ),
     ("důvěra vládě", "Hlasování, jestli má vláda podporu většiny poslanců."),
     ("nedůvěra vládě", "Pokus vládu poslat do politického důchodu dřív, než odejde sama."),
@@ -1545,6 +1580,14 @@ SLOVNIČEK: tuple[tuple[str, str], ...] = (
     ("EET", "Elektronická evidence tržeb, každá účtenka hlásila státu, kolik kdo utržil."),
     ("elektronická evidence tržeb", "Každá účtenka hlásí státu, kolik kdo utržil."),
     ("šedá ekonomika", "Peníze a podnikání, které stát oficiálně nevidí, hlavně kvůli nehlášeným tržbám."),
+    (
+        "švarcsystém",
+        "Když člověk dělá práci jako zaměstnanec, ale na papíře je živnostník. Firma šetří na odvodech, člověk přijde o jistoty.",
+    ),
+    (
+        "závislá práce",
+        "Práce, která vypadá jako zaměstnání: někdo řídí, kontroluje a určuje, co a kdy se dělá. Od toho se odvíjí, jestli jste zaměstnanec.",
+    ),
     ("závěrečné hlasování", "Poslední hlasování o zákonu ve sněmovně, pak může jít k prezidentovi."),
     ("usnesení", "Stanovisko nebo rozhodnutí sněmovny. Nejde o zákon."),
     (

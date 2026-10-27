@@ -92,11 +92,11 @@
         {% for line in item.nadpis_radky %}{% if not loop.first %}<br>{% endif %}{{ line }}{% endfor %}
       </h2>
       {% if item.verdikt == 'debata' %}
-      {% set _stamp_style = "display:inline-block;margin:0;font-family:Arial,Helvetica,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:11px;color:#9a7a00;padding:4px 10px 3px;border:2px solid #f4c430;border-radius:3px;background:transparent;" %}
-      {% elif item.verdikt in ('zamiteno', 'odlozeno') %}
-      {% set _stamp_style = "display:inline-block;margin:0;font-family:Arial,Helvetica,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:11px;color:#ff4411;padding:4px 10px 3px;border:2px solid #ff4411;border-radius:3px;background:transparent;" %}
+      {% set _stamp_style = "display:inline-block;margin:0;font-family:Arial,Helvetica,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:11px;line-height:1;color:#9a7a00;padding:5px 10px;border:2px solid #f4c430;border-radius:3px;background:transparent;-webkit-transform:none;transform:none;" %}
+      {% elif item.verdikt in ('zamiteno', 'odlozeno', 'prvni_cteni') %}
+      {% set _stamp_style = "display:inline-block;margin:0;font-family:Arial,Helvetica,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:11px;line-height:1;color:#ff4411;padding:5px 10px;border:2px solid #ff4411;border-radius:3px;background:transparent;-webkit-transform:none;transform:none;" %}
       {% else %}
-      {% set _stamp_style = "display:inline-block;margin:0;font-family:Arial,Helvetica,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:11px;color:#1f8a5b;padding:4px 10px 3px;border:2px solid #1f8a5b;border-radius:3px;background:transparent;" %}
+      {% set _stamp_style = "display:inline-block;margin:0;font-family:Arial,Helvetica,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:11px;line-height:1;color:#1f8a5b;padding:5px 10px;border:2px solid #1f8a5b;border-radius:3px;background:transparent;-webkit-transform:none;transform:none;" %}
       {% endif %}
       <span class="stamp stamp--email{% if item.verdikt != 'schvaleno' %} {{ item.verdikt }}{% endif %}" style="{{ _stamp_style }}">{{ item.stamp }}</span>
     </div>
@@ -155,7 +155,7 @@
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="item item-jazykolam">
 <tr>
 <td class="item-body stack-col" style="padding:18px 0 8px;text-align:left;">
-  <p class="email-citanka-kicker" style="margin:0 0 14px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#262626;">{{ t.edition.jazykolam_kicker }}</p>
+  <p class="email-citanka-kicker" style="margin:0 0 14px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#262626;">{{ content.jazykolam.kicker or t.edition.jazykolam_kicker }}</p>
   <div class="jazykolam-tape-wrap" style="text-align:center;line-height:0;position:relative;z-index:2;">
     <span class="jazykolam-tape" style="display:inline-block;width:78px;height:22px;background:rgba(244,196,48,.9);box-shadow:0 1px 2px rgba(20,15,8,.14);-webkit-transform:rotate(-3deg);transform:rotate(-3deg);"></span>
   </div>

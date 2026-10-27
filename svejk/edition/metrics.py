@@ -40,6 +40,64 @@ def _link_phrase_coverage(paths: SchuzePaths, datum_unl: str, slugs: list[str]) 
     return {"total": total, "linked": linked, "percent": pct, "missing": missing}
 
 
+def _norm_citace(text: str) -> str:
+    import re
+
+    t = (text or "").lower().replace("\n", " ")
+    for ch in "„“\"'":
+        t = t.replace(ch, "")
+    t = re.sub(r"\s+", " ", t).strip(" .,;:!?")
+    return t
+
+
+def _same_quote(a: str, b: str) -> bool:
+    """Stejná věta, nebo jedna je v druhé a kratší má aspoň 40 znaků."""
+    if not a or not b:
+        return False
+    if a == b:
+        return True
+    short, long = (a, b) if len(a) <= len(b) else (b, a)
+    return len(short) >= 40 and short in long
+
+
+def jazykolam_duplicates(jazykolam: str, quotes: list[str]) -> list[str]:
+    """Citát dne, který už je citátem v článku."""
+    needle = _norm_citace(jazykolam)
+    if not needle:
+        return []
+    hit: list[str] = []
+    for quote in quotes:
+        if _same_quote(needle, _norm_citace(quote)):
+            hit.append(quote)
+    return hit
+
+
+def _jazykolam_duplicate_quotes(
+    paths: SchuzePaths,
+    day: dict[str, Any],
+    slugs: list[str],
+) -> list[str]:
+    j = day.get("jazykolam") or {}
+    text = (j.get("text") or "").strip() if isinstance(j, dict) else ""
+    if not text:
+        return []
+    quotes: list[str] = []
+    for slug in slugs:
+        fp = paths.facts_by_topic / f"{slug}.json"
+        if not fp.is_file():
+            continue
+        data = read_json(fp)
+        if not data.get("publikovat", True):
+            continue
+        citace_text = (data.get("citace_text") or "").strip()
+        if citace_text:
+            quotes.append(citace_text)
+        for f in data.get("fakty") or []:
+            if isinstance(f, dict) and (f.get("citace") or "").strip():
+                quotes.append(f["citace"].strip())
+    return jazykolam_duplicates(text, quotes)
+
+
 def _citace_in_steno(paths: SchuzePaths, slugs: list[str]) -> dict[str, Any]:
     steno_by_id: dict[str, dict] = {}
     if paths.steno_jsonl.is_file():
@@ -104,6 +162,9 @@ def run_edition_metrics(
     party_labels = summarize_party_issues(audit_edition_day(paths, iso))
     if party_labels["errors"]:
         errors.append(f"strany u jmen: {party_labels['errors']} chyb")
+    quote_dupes = _jazykolam_duplicate_quotes(paths, day, slugs)
+    if quote_dupes:
+        errors.append("citát dne je stejný jako citát v článku")
     metrics = {
         "state": effective_state(doc, paths),
         "stale": fingerprint_stale(doc, paths),
@@ -113,6 +174,7 @@ def run_edition_metrics(
         "generic_topic_count": len(weak_slugs),
         "steno_passages": steno_blocks,
         "steno_missing_article_phrase": steno_missing,
+        "jazykolam_duplicates": quote_dupes,
         "ok": not errors,
         "errors": errors,
     }
