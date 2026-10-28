@@ -788,7 +788,9 @@ def _filter_allowed_html_tag(tag: str) -> str:
     return ""
 
 
-def _sanitize_html_segments(text: str, plain_chunk) -> str:
+def _sanitize_html_segments(
+    text: str, plain_chunk, tag_filter=_filter_allowed_html_tag
+) -> str:
     if "<" not in text:
         return plain_chunk(text)
 
@@ -798,7 +800,7 @@ def _sanitize_html_segments(text: str, plain_chunk) -> str:
         if not part:
             continue
         if part.startswith("<"):
-            filtered = _filter_allowed_html_tag(part)
+            filtered = tag_filter(part)
             if filtered:
                 out.append(filtered)
             continue
@@ -848,13 +850,26 @@ def _sanitize_text_export(text: str) -> str:
     return result
 
 
+def _filter_citace_tag(tag: str) -> str:
+    """Citace je v šabloně uvnitř <a class="steno-link"> — jen inline tagy, žádné odkazy."""
+    filtered = _filter_allowed_html_tag(tag)
+    m = re.match(r"^</?(\w+)", filtered)
+    if not m or m.group(1) in _ALLOWED_INLINE_TAGS or m.group(1) == "span":
+        return filtered
+    return ""
+
+
 def _sanitize_citace_export(text: str) -> str:
     """Citace ze stenoprotokolu — bez přepisu číslic do slov."""
     if not (text or "").strip():
         return text
     from svejk.build.glossary_markup import highlight_markup
 
-    return highlight_markup(bez_dlouhych_pomlc(text))
+    return _sanitize_html_segments(
+        text,
+        lambda chunk: highlight_markup(bez_dlouhych_pomlc(chunk)),
+        _filter_citace_tag,
+    )
 
 
 def _sanitize_mean_export(text: str) -> str:

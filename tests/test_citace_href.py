@@ -108,7 +108,10 @@ def test_collect_steno_sources_adds_citace_text_passage(tmp_path, monkeypatch):
     from svejk.build.steno_sources import collect_steno_sources, find_passage_for_citace
     from svejk.paths import SchuzePaths
 
+    # vše pod tmp_path, ne do skutečného processed/2025-s99/
+    monkeypatch.setenv("SVEJK_PROCESSED_DIR", str(tmp_path))
     paths = SchuzePaths.create(2025, 99)
+    assert paths.root.is_relative_to(tmp_path)
     monkeypatch.setattr(
         "svejk.build.steno_sources.SchuzePaths.create",
         lambda ob, sch: paths,

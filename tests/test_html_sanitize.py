@@ -42,3 +42,16 @@ def test_sanitize_strips_javascript_href():
 def test_filter_rejects_inline_tag_attributes():
     assert _filter_allowed_html_tag('<strong class="x">') == ""
     assert _filter_allowed_html_tag("<strong>") == "<strong>"
+
+
+def test_sanitize_citace_strips_html_and_nested_links():
+    from svejk.build.day_content import _sanitize_citace_export
+
+    text = (
+        'Řekl <script>alert(1)</script><img src=x onerror="x()"> '
+        '<strong>ano</strong> <a class="steno-link" href="/x">tady</a>'
+    )
+    out = _sanitize_citace_export(text)
+    assert "<script" not in out and "<img" not in out and "<a" not in out
+    assert "<strong>ano</strong>" in out
+    assert "tady" in out

@@ -13,7 +13,7 @@ from markupsafe import Markup
 
 from svejk.build.day_content import DenContent, build_den_content, datum_day_month, datum_design
 from svejk.build.io import read_json
-from svejk.build.seo import SITE_NAME, site_meta_description
+from svejk.build.seo import SITE_NAME, edition_published_iso, site_meta_description
 from svejk.build.steno_sources import steno_sources_href
 from svejk.glossary import slovnicek_anchor, slovnicek_display_term, slovnicek_entries, slovnicek_term_label
 from svejk.build.publish import list_site_editions
@@ -101,7 +101,11 @@ from svejk.build.vyznamenani_neprosli import (
     vyznamenani_href,
     _load_votes_by_cislo,
 )
-from svejk.build.steno_sources import apply_steno_links_to_content, collect_steno_sources
+from svejk.build.steno_sources import (
+    apply_steno_links_to_content,
+    collect_steno_sources,
+    has_steno_sources,
+)
 from svejk.build.recnici import (
     load_recnici,
     recnici_datum_label,
@@ -718,9 +722,7 @@ def render_den_html(
         datum_unl=content.datum,
         den=content.den,
     )
-    og_published = datetime.strptime(content.datum, "%d.%m.%Y").strftime(
-        "%Y-%m-%dT00:00:00+01:00"
-    )
+    og_published = edition_published_iso(content.datum)
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
@@ -786,11 +788,11 @@ def render_den_html(
         )
     if content.zaver:
         body_chunks.append(_plain(content.zaver))
-    from svejk.build.seo import mtime_iso as _mtime_iso
+    from svejk.build.seo import edition_modified_iso as _edition_modified_iso
     from svejk.build.seo import publisher_logo_url as _publisher_logo_url
     from svejk.build.seo import website_json_ld as _website_json_ld
 
-    date_modified = _mtime_iso(day_path) if day_path.is_file() else None
+    date_modified = _edition_modified_iso(paths, content.datum)
     website_ld = (
         _website_json_ld(
             site_url=cfg.site_url,
@@ -905,8 +907,13 @@ def render_den_html(
         session_calendar=session_calendar,
         slovnicek_dne=slovnicek_dne,
         jazykolam=content.jazykolam,
-        steno_page_href=steno_sources_href(
-            ob, paths.schuze, content.datum, link_mode=link_mode, base_path=base_path
+        # bez steno stránky Citát dne odkazuje rovnou na PSP (jazykolam.href)
+        steno_page_href=(
+            steno_sources_href(
+                ob, paths.schuze, content.datum, link_mode=link_mode, base_path=base_path
+            )
+            if has_steno_sources(paths, content.datum)
+            else ""
         ),
         newsletter=cfg,
         canonical_url=canonical_url,
@@ -1184,7 +1191,11 @@ def render_email_html(
     steno_href = steno_sources_pages_href(
         edition.obdobi, paths.schuze, edition.datum_unl, base_path
     )
-    steno_page_url = f"{site}{steno_href}" if steno_href else ""
+    steno_page_url = (
+        f"{site}{steno_href}"
+        if steno_href and has_steno_sources(paths, edition.datum_unl)
+        else ""
+    )
     datum_label = datum_design(edition.datum_unl, content.den)
     day = read_json(day_path) if day_path.is_file() else {}
     subject = newsletter_subject(day, datum_label=datum_label)

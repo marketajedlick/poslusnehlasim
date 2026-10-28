@@ -87,7 +87,11 @@ if [[ -z "$KV_ID" ]]; then
   exit 1
 fi
 
-sed -i "s/$PLACEHOLDER/$KV_ID/g" wrangler.toml
+# sed -i se na macOS (BSD) a v CI (GNU) chová jinak; přes dočasný soubor funguje všude.
+# Původní wrangler.toml po skončení vrátíme, ať v pracovní kopii nezůstane KV ID.
+cp wrangler.toml wrangler.toml.orig
+trap 'mv -f "$WORKERS_DIR/wrangler.toml.orig" "$WORKERS_DIR/wrangler.toml"' EXIT
+sed "s/$PLACEHOLDER/$KV_ID/g" wrangler.toml.orig > wrangler.toml
 
 cp subscribe.js public/_worker.js
 

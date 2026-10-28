@@ -54,40 +54,126 @@ _STOVKY = (
 )
 
 
-def cislo_slovy(n: int) -> str:
-    """Kardinální číslovka (ženský/mužský neutrální tvar pro skládání)."""
+def cislo_slovy(n: int, rod: str = "ž") -> str:
+    """Kardinální číslovka; ``rod`` (m/ž/s) mění jen „jeden/jedna/jedno“ a „dva/dvě“."""
     if n < 0:
         return str(n)
     if n < 20:
+        if n == 1:
+            return {"m": "jeden", "s": "jedno"}.get(rod, "jedna")
+        if n == 2 and rod == "m":
+            return "dva"
         return _JEDNOTKY[n]
     if n < 100:
         des, jed = divmod(n, 10)
         if jed == 0:
             return _DESITKY[des]
-        return f"{_DESITKY[des]} {_JEDNOTKY[jed]}"
+        jednotky = "dva" if jed == 2 and rod == "m" else _JEDNOTKY[jed]
+        return f"{_DESITKY[des]} {jednotky}"
     if n < 1000:
         sto, rest = divmod(n, 100)
         if rest == 0:
             return _STOVKY[sto]
-        return f"{_STOVKY[sto]} {cislo_slovy(rest)}"
+        return f"{_STOVKY[sto]} {cislo_slovy(rest, _rod_slozene(rest, rod))}"
     if n < 1_000_000:
         tis, rest = divmod(n, 1000)
         if rest == 0:
             return _tisice(tis)
-        return f"{_tisice(tis)} {cislo_slovy(rest)}"
+        return f"{_tisice(tis)} {cislo_slovy(rest, _rod_slozene(rest, rod))}"
     return str(n)
 
 
+def _rod_slozene(rest: int, rod: str) -> str:
+    # ve složené číslovce zůstává „jedna“ (sto jedna, dvacet jedna)
+    return "ž" if rest == 1 else rod
+
+
 def _tisice(n: int) -> str:
+    # „tisíc“ je mužského rodu: dva tisíce, dvacet dva tisíc
     if n == 1:
         return "tisíc"
     if 2 <= n <= 4:
-        return f"{cislo_slovy(n)} tisíce"
-    return f"{cislo_slovy(n)} tisíc"
+        return f"{cislo_slovy(n, 'm')} tisíce"
+    return f"{cislo_slovy(n, 'm')} tisíc"
+
+
+# Podstatná jména za číslem, u kterých záleží na rodu (jeden/dva × jedno/dvě).
+_MUZSKY_ROD = frozenset(
+    {
+        "hlas", "hlasy", "bod", "body", "den", "dny", "rok", "roky", "týden", "týdny",
+        "měsíc", "měsíce", "milion", "miliony", "milión", "milióny", "tisíc", "tisíce",
+        "poslanec", "poslanci", "ministr", "ministři", "člen", "členové", "řečník", "řečníci",
+        "klub", "kluby", "zákon", "zákony", "návrh", "návrhy", "tisk", "tisky",
+        "článek", "články", "řádek", "řádky", "odstavec", "odstavce", "paragraf", "paragrafy",
+        "výbor", "výbory", "případ", "případy", "pokus", "pokusy", "dotaz", "dotazy",
+        "metr", "metry", "kilometr", "kilometry", "stupeň", "stupně", "člověk", "lidé",
+        "haléř", "haléře", "megawatt", "megawatty", "podpis", "podpisy", "termín", "termíny",
+        # 2. pád množného čísla (dvacet dva hlasů)
+        "hlasů", "bodů", "dnů", "roků", "let", "týdnů", "měsíců", "milionů", "miliónů",
+        "poslanců", "ministrů", "členů", "řečníků", "klubů", "zákonů", "návrhů", "tisků",
+        "článků", "řádků", "odstavců", "paragrafů", "výborů", "případů", "pokusů", "dotazů",
+        "metrů", "kilometrů", "stupňů", "haléřů", "megawattů", "podpisů", "termínů",
+    }
+)
+_STREDNI_ROD = frozenset(
+    {
+        "hlasování", "procento", "vydání", "místo", "slovo", "usnesení", "čtení",
+        "kolo", "jednání", "euro", "dítě", "pracoviště", "vystoupení", "číslo",
+    }
+)
+_RE_SLOVO = re.compile(r"\s+([^\W\d_]+)")
+
+
+def _rod_za_cislem(text: str, end: int) -> str:
+    """Rod podstatného jména za číslem; přeskočí až dvě přídavná jména (-í/-é)."""
+    pos = end
+    for _ in range(3):
+        m = _RE_SLOVO.match(text, pos)
+        if not m:
+            return "ž"
+        slovo = m.group(1).lower()
+        if slovo in _MUZSKY_ROD:
+            return "m"
+        if slovo in _STREDNI_ROD:
+            return "s"
+        if not slovo.endswith(("í", "é")):
+            return "ž"
+        pos = m.end()
+    return "ž"
+
+
+_KRAT_JEDNOTKY = (
+    "",
+    "jeden",
+    "dva",
+    "tři",
+    "čtyři",
+    "pět",
+    "šest",
+    "sedm",
+    "osm",
+    "devět",
+)
+
+
+def _krat_zaklad(n: int) -> str:
+    """Kmen před „-krát“: 22 → „dvaadvacet“, 165 → „stopětašedesát“."""
+    if n < 20:
+        return cislo_slovy(n)
+    if n < 100:
+        des, jed = divmod(n, 10)
+        if jed == 0:
+            return _DESITKY[des]
+        return f"{_KRAT_JEDNOTKY[jed]}a{_DESITKY[des]}"
+    if n < 1000:
+        sto, rest = divmod(n, 100)
+        stovky = _STOVKY[sto].replace(" ", "")
+        return stovky + (_krat_zaklad(rest) if rest else "")
+    return cislo_slovy(n).replace(" ", "")
 
 
 def krat_slovy(n: int) -> str:
-    """„jednou“, „dvakrát“, „čtyřicetčtyřikrát“."""
+    """„jednou“, „dvakrát“, „dvaadvacetkrát“."""
     n = int(n)
     if n == 1:
         return "jednou"
@@ -97,7 +183,7 @@ def krat_slovy(n: int) -> str:
         return "třikrát"
     if n == 4:
         return "čtyřikrát"
-    return f"{cislo_slovy(n).replace(' ', '')}krát"
+    return f"{_krat_zaklad(n)}krát"
 
 
 def _predlozka_v(slovo: str) -> str:
@@ -163,9 +249,11 @@ def _po_tvarem(n: int) -> str:
         return f"{_LOC_DESITKY[des]} {_LOC_JEDNOTKY[jed]}"
     if n < 1000:
         sto, rest = divmod(n, 100)
+        stovky = "stu" if sto == 1 else f"{_LOC_JEDNOTKY[sto]} stech"
         if rest == 0:
-            return "stu" if sto == 1 else f"{_LOC_JEDNOTKY[sto]} stech"
-        return f"{_LOC_JEDNOTKY[sto] if sto < 20 else cislo_slovy(sto)} {_po_tvarem(rest)}"
+            return stovky
+        # „po sto šedesáti pěti“ — ve složené číslovce zůstává „sto“ nesklonné
+        return f"{'sto' if sto == 1 else stovky} {_po_tvarem(rest)}"
     return cislo_slovy(n)
 
 
@@ -191,30 +279,14 @@ def krat_se_hlasovalo(n: int) -> str:
     n = int(n)
     if n <= 0:
         return ""
-    if n == 1:
-        return "jednou se hlasovalo"
-    if n == 2:
-        return "dvakrát se hlasovalo"
-    if n == 3:
-        return "třikrát se hlasovalo"
-    if n == 4:
-        return "čtyřikrát se hlasovalo"
-    return f"{cislo_slovy(n).replace(' ', '')}krát se hlasovalo"
+    return f"{krat_slovy(n)} se hlasovalo"
 
 
 def krat_hlasovali(n: int) -> str:
     n = int(n)
     if n <= 0:
         return ""
-    if n == 1:
-        return "jednou hlasovali"
-    if n == 2:
-        return "dvakrát hlasovali"
-    if n == 3:
-        return "třikrát hlasovali"
-    if n == 4:
-        return "čtyřikrát hlasovali"
-    return f"{cislo_slovy(n).replace(' ', '')}krát hlasovali"
+    return f"{krat_slovy(n)} hlasovali"
 
 
 def n_hlasovani(n: int) -> str:
@@ -232,7 +304,7 @@ def n_hlasovani(n: int) -> str:
 
 
 _RE_PO_HLAS = re.compile(
-    r"\b[Pp]o\s+(\d+)\s*(?:×\s*)?hlasován[ií]",
+    r"\b(po)\s+(\d+)\s*(?:×\s*)?hlasován(?:ích|í)\b",
     re.IGNORECASE,
 )
 _RE_KRAT_HLASOVALI = re.compile(r"\b(\d+)\s*[x×]\s*hlasovali\b", re.IGNORECASE)
@@ -259,13 +331,14 @@ def _rok_nebo_cislo(m: re.Match[str], text: str) -> str:
     n = int(m.group(1))
     start = m.start()
     end = m.end()
+    rod = _rod_za_cislem(text, end)
     if start > 0 and text[start - 1] == "/":
         return str(n)
     if end < len(text) and text[end] == "/":
         return str(n)
 
     if not _je_kalendarni_rok(n):
-        return cislo_slovy(n)
+        return cislo_slovy(n, rod)
 
     prefix = text[max(0, start - 20) : start].lower()
     if re.search(r"(?:\brok[u]?\s|\broce\s|\bna\s+)$", prefix):
@@ -286,7 +359,8 @@ def nahrad_hlasovani_v_textu(text: str) -> str:
         return text
 
     def _po(m: re.Match[str]) -> str:
-        return po_hlasovanich_cap(int(m.group(1)))
+        n = int(m.group(2))
+        return po_hlasovanich_cap(n) if m.group(1)[0].isupper() else po_hlasovanich(n)
 
     def _krat_ali(m: re.Match[str]) -> str:
         return krat_hlasovali(int(m.group(1)))
@@ -315,7 +389,7 @@ def _nahrad_zbyla_cisla(text: str) -> str:
         return krat_slovy(int(m.group(1)))
 
     def _tis(m: re.Match[str]) -> str:
-        return cislo_slovy(int(m.group(1).replace(" ", "")))
+        return cislo_slovy(int(m.group(1).replace(" ", "")), _rod_za_cislem(t, m.end()))
 
     def _cislo(m: re.Match[str]) -> str:
         start, end = m.start(), m.end()

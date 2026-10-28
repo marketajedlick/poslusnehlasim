@@ -797,14 +797,18 @@ async function notifyCorrection(env, payload) {
 
   const htmlParts = lines.map((line) => `<p>${esc(line)}</p>`).join("");
 
-  return sendResendEmail(env, {
-    to,
-    subject,
-    text: lines.join("\n"),
-    html: htmlParts,
-    replyTo: payload.replyEmail || undefined,
-  }).then((r) => r?.ok === true);
+  const message = { to, subject, text: lines.join("\n"), html: htmlParts };
+  const replyTo = REPLY_EMAIL_RE.test(payload.replyEmail || "") ? payload.replyEmail : undefined;
+  let sent = await sendResendEmail(env, { ...message, replyTo });
+  if (sent && !sent.ok && replyTo && String(sent.error).startsWith("422")) {
+    // Resend odmítne nevalidní reply_to; kontakt je i v textu, takže návrh neztrácíme.
+    console.error("correction_reply_to_rejected", sent.error);
+    sent = await sendResendEmail(env, message);
+  }
+  return sent?.ok === true;
 }
+
+const REPLY_EMAIL_RE = /^[^\s@<>,;"]+@[^\s@<>,;"]+\.[^\s@<>,;"]{2,}$/;
 
 function clientIp(request) {
   const cf = request.headers.get("CF-Connecting-IP");

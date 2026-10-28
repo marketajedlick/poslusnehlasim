@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 from xml.etree.ElementTree import Element, SubElement, tostring
 
 from svejk.build.nav import (
@@ -113,10 +114,43 @@ def publisher_logo_url(site_url: str, base_path: str = "") -> str:
     return f"{base}{prefix}/apple-touch-icon.png"
 
 
-def mtime_iso(path: Path) -> str:
-    """ISO 8601 UTC z času poslední změny souboru (pro dateModified)."""
-    ts = path.stat().st_mtime
-    return datetime.fromtimestamp(ts, tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+PRAGUE_TZ = ZoneInfo("Europe/Prague")
+
+
+def edition_published_iso(date_unl: str) -> str:
+    """Půlnoc jednacího dne v Praze se správným posunem (+01:00 v zimě, +02:00 v létě)."""
+    day = datetime.strptime(date_unl, "%d.%m.%Y")
+    return day.replace(tzinfo=PRAGUE_TZ).isoformat()
+
+
+def _utc_iso(raw: object) -> str | None:
+    if not isinstance(raw, str):
+        return None
+    try:
+        when = datetime.fromisoformat(raw)
+    except ValueError:
+        return None  # např. "backfill"
+    if when.tzinfo is None:
+        when = when.replace(tzinfo=timezone.utc)
+    return when.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def edition_modified_iso(paths: SchuzePaths, date_unl: str) -> str | None:
+    """Čas vydání z edition.json, jinak `frozen_at` snapshotu — nezávisí na mtime po checkoutu."""
+    from svejk.build.io import read_json
+    from svejk.edition.state import edition_json_path, published_snapshot_dir
+
+    doc_path = edition_json_path(paths, datum_unl_to_iso(date_unl))
+    if doc_path.is_file():
+        when = _utc_iso(read_json(doc_path).get("published_at"))
+        if when:
+            return when
+    meta_path = (
+        published_snapshot_dir(f"{paths.obdobi}/{paths.schuze}/{date_unl}") / "meta.json"
+    )
+    if meta_path.is_file():
+        return _utc_iso(read_json(meta_path).get("frozen_at"))
+    return None
 
 
 def _edition_date_label(datum_unl: str, den: str = "") -> str:
@@ -320,8 +354,7 @@ def article_json_ld(
     parts: list[dict[str, str | int]] | None = None,
     base_path: str = "",
 ) -> dict:
-    published_date = datetime.strptime(date_unl, "%d.%m.%Y").strftime("%Y-%m-%d")
-    published = f"{published_date}T00:00:00+02:00"
+    published = edition_published_iso(date_unl)
     modified = date_modified or published
     org_id = _org_id(site_url)
     logo = logo_url or publisher_logo_url(site_url, base_path)
@@ -765,9 +798,11 @@ def write_sitemap_xml(
     def add_url(loc: str, lastmod: datetime) -> None:
         url = SubElement(urlset, "url")
         SubElement(url, "loc").text = loc
-        SubElement(url, "lastmod").text = lastmod.astimezone(timezone.utc).strftime(
-            "%Y-%m-%d"
-        )
+        # Naivní `when` je kalendářní den vydání — astimezone() by ho vyložil
+        # v pásmu stroje (v Praze by vyšel o den dřív než v CI).
+        if lastmod.tzinfo is not None:
+            lastmod = lastmod.astimezone(PRAGUE_TZ)
+        SubElement(url, "lastmod").text = lastmod.strftime("%Y-%m-%d")
 
     add_url(f"{base}/", editions[-1].when if editions else datetime.now(timezone.utc))
     if editions:

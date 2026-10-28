@@ -7,7 +7,9 @@ from svejk.build.seo import (
     breadcrumbs_ctx_slovnicek,
     breadcrumbs_ctx_slovnicek_term,
     edition_meta_description,
+    edition_modified_iso,
     edition_page_title,
+    edition_published_iso,
     faq_json_ld,
     homepage_og_title,
     homepage_page_title,
@@ -340,3 +342,56 @@ def test_slovnicek_term_page_title() -> None:
     assert slovnicek_term_page_title("Obstrukce") == (
         "Co je Obstrukce? Švejkov slovníček | Poslušně hlásím"
     )
+
+
+def test_edition_published_iso_follows_prague_dst() -> None:
+    assert edition_published_iso("02.07.2026") == "2026-07-02T00:00:00+02:00"
+    assert edition_published_iso("28.10.2026") == "2026-10-28T00:00:00+01:00"
+
+
+def test_edition_modified_iso_from_edition_json(tmp_path, monkeypatch) -> None:
+    import json
+
+    from svejk.paths import SchuzePaths
+
+    monkeypatch.setenv("SVEJK_PROCESSED_DIR", str(tmp_path))
+    paths = SchuzePaths.create(2025, 34)
+    doc = paths.root / "editions" / "2026-10-22" / "edition.json"
+    doc.parent.mkdir(parents=True)
+    doc.write_text(json.dumps({"published_at": "backfill"}), encoding="utf-8")
+    assert edition_modified_iso(paths, "22.10.2026") is None
+
+    meta = tmp_path / "published" / "2025" / "34" / "22.10.2026" / "meta.json"
+    meta.parent.mkdir(parents=True)
+    meta.write_text(json.dumps({"frozen_at": "2026-10-22T19:00:00+00:00"}), encoding="utf-8")
+    assert edition_modified_iso(paths, "22.10.2026") == "2026-10-22T19:00:00Z"
+
+    doc.write_text(
+        json.dumps({"published_at": "2026-10-23T06:24:35.25+00:00"}), encoding="utf-8"
+    )
+    assert edition_modified_iso(paths, "22.10.2026") == "2026-10-23T06:24:35Z"
+
+
+def test_sitemap_lastmod_ignores_machine_timezone(tmp_path, monkeypatch) -> None:
+    import time
+    from datetime import datetime
+
+    monkeypatch.setenv("TZ", "Pacific/Kiritimati")  # UTC+14
+    time.tzset()
+    try:
+        editions = [
+            Edition(
+                obdobi=2025,
+                schuze=24,
+                datum_unl="26.06.2026",
+                when=datetime(2026, 6, 26),
+            )
+        ]
+        xml = write_sitemap_xml(
+            tmp_path, editions, site_url="https://poslusnehlasim.cz"
+        ).read_text(encoding="utf-8")
+    finally:
+        monkeypatch.delenv("TZ")
+        time.tzset()
+    assert "<lastmod>2026-06-26</lastmod>" in xml
+    assert "2026-06-25" not in xml

@@ -9,8 +9,17 @@ on:
       - ".github/workflows/subscribe-worker.yml"
   workflow_dispatch:
 
+concurrency:
+  group: subscribe-worker
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
 jobs:
   deploy:
+    # Ruční spuštění z jiné větve nesmí nasadit worker na produkci.
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

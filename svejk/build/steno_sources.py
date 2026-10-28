@@ -577,7 +577,8 @@ def collect_steno_sources(
             continue
         fact = fact_raw
         num += 1
-        title = (fact.get("nadpis") or "").strip() or slug
+        # nadpis jde do <h2> steno stránky; export-pages dlouhé pomlčky odmítne
+        title = bez_dlouhych_pomlc((fact.get("nadpis") or "").strip()) or slug
         block = StenoTopicBlock(slug=slug, title=title, num=num)
         article_text = _article_text_from_fact(fact)
         for f in fact.get("fakty") or []:

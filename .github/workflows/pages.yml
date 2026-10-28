@@ -32,6 +32,8 @@ env:
 
 jobs:
   build:
+    # Ruční spuštění z jiné větve nesmí nasadit na produkci ani poslat newsletter.
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -59,13 +61,15 @@ jobs:
           ECOMAIL_API_KEY: ${{ secrets.ECOMAIL_API_KEY }}
           ECOMAIL_LIST_ID: "3"
           ECOMAIL_FROM_EMAIL: ${{ secrets.ECOMAIL_FROM_EMAIL }}
+          EVENT_NAME: ${{ github.event_name }}
+          NEWSLETTER_FORCE: ${{ inputs.newsletter_force }}
         run: |
           if [ -z "$ECOMAIL_API_KEY" ]; then
             echo "ECOMAIL_API_KEY není nastaven — přeskočeno"
             exit 0
           fi
           FORCE_FLAG=""
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.newsletter_force }}" = "true" ]; then
+          if [ "$EVENT_NAME" = "workflow_dispatch" ] && [ "$NEWSLETTER_FORCE" = "true" ]; then
             FORCE_FLAG="--force"
           fi
           ./run-svejk.sh newsletter-notify --obdobi 2025 --out site $FORCE_FLAG || echo "Newsletter notify selhal — deploy pokračuje"
@@ -107,10 +111,12 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Sync latest branch
+        env:
+          REF_NAME: ${{ github.ref_name }}
         run: |
           # build job mohl mezitím pushnout newsletter-state.json
-          git fetch origin "${{ github.ref_name }}"
-          git reset --hard "origin/${{ github.ref_name }}"
+          git fetch origin "$REF_NAME"
+          git reset --hard "origin/$REF_NAME"
 
       - uses: ./.github/actions/setup-svejk
 

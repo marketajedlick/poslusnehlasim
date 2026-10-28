@@ -16,3 +16,5 @@ hl-2025ps/hl2025h2.unl
 redesign/
 svejk.ipynb
 seo-redesign/
+# Kopie raw/steno.jsonl v kořeni (patří do processed/*/raw/, cache v CI)
+/steno*.jsonl
