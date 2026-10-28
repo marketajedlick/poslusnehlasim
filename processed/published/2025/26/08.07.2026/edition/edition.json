@@ -34,13 +34,18 @@
     ],
     "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s26/editions/2026-07-08/assets/caption.txt"
   },
-  "republished_at": "2026-10-28T08:38:57.457194+00:00",
+  "republished_at": "2026-10-28T14:10:18.396841+00:00",
   "revisions": [
     {
       "at": "2026-10-28T08:38:57.457201+00:00",
       "reason": "Oprava strany: Munzar (ODS), ne Motoristé.",
       "content_hash": "c3aca270ee48e530"
+    },
+    {
+      "at": "2026-10-28T14:10:18.396849+00:00",
+      "reason": "Doplněné krátké věty k citacím ze stena, které článek dosud nezmiňoval, s odkazem na steno (ověřeno: řečník, strana, znění).",
+      "content_hash": "d21ffbacf2c2056c"
     }
   ],
-  "published_hash": "c3aca270ee48e530"
+  "published_hash": "d21ffbacf2c2056c"
 }

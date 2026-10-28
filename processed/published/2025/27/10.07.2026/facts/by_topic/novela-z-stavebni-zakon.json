@@ -34,14 +34,14 @@
       "source": "steno",
       "steno_id": "2025_27_00022",
       "citace": "Je to zákon pro velké investory. Omezí práva veřejnosti, zvýší korupční riziko, oslabí ochranu přírody a kvalitu života, vezme kompetence odborným orgánům, umožní rychlejší kácení stromů, ohrozí vlastnická práva lidí v území a predátorskému developmentu dá do ruky další nástroj. Tento stavební zákon se psal jako developerský manuál. Je neopravitelný a proto ho nepodpořím.",
-      "link_phrase": "Svárovská (Piráti) řekla"
+      "link_phrase": "se stavební zákon psal jako developerský manuál"
     },
     {
       "text": "Adamec cituje Wericha o kvaltování v parlamentu.",
       "source": "steno",
       "steno_id": "2025_27_00032",
       "citace": "Já si myslím, že Werich měl krásné přísloví, že „všeliké kvaltování dobré pouze pro hovada jest“",
-      "link_phrase": "Adamec (ODS) citoval Wericha"
+      "link_phrase": "Adamec (ODS) připomněl Werichovo"
     },
     {
       "text": "Nacher: hlasování zkráceno na 15 vteřin, všichni odhlášeni.",
@@ -49,7 +49,7 @@
       "kind": "scene",
       "steno_id": "2025_27_00055",
       "citace": "tak za prvé hlasování bylo zkráceno na 15 vteřin, tudíž jste byli automaticky všichni odhlášeni.",
-      "link_phrase": "Nacher (ANO) přiznal"
+      "link_phrase": "hlasování bylo zkrácené na 15 vteřin"
     }
   ],
   "publikovat": true,
@@ -66,6 +66,6 @@
   },
   "steno_slov": 26596,
   "lead": "Páteční schůze navázala na středu, kdy Sněmovna stavební zákon ve třetím kole přerušila. Teď o něm znovu hlasovala: opozice chtěla vrátit návrh do druhého kola, koalice tlačila na rychlé schválení a Kovářová (Piráti) řekla, že schválit novelu je jako podepsat prázdný papír.",
-  "pointa": "Kučera (TOP 09) kritizoval předvolební roadshow místo odborného připomínkování. Chochelová (STAN) varovala, že novela je největší zásah do památkové péče od roku 1989.",
+  "pointa": "Kučera (TOP 09) kritizoval předvolební roadshow místo odborného připomínkování. Chochelová (STAN) varovala, že novela je největší zásah do památkové péče od roku 1989. Svárovská (Zelení, klub Pirátů) řekla, že se stavební zákon psal jako developerský manuál. Adamec (ODS) připomněl Werichovo „všeliké kvaltování dobré pouze pro hovada jest“. Při hlasování předsedající Nacher (ANO) vysvětlil, že hlasování bylo zkrácené na 15 vteřin, a tak byli všichni odhlášeni.",
   "mean": "Stavební zákon určuje, za jakých podmínek úřady něco smíte postavit. Novela má povolování zrychlit. Ve středu proběhlo první kolo hlasování, v pátek Sněmovna návrh ve třetím kole schválila."
 }

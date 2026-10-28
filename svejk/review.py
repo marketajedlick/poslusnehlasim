@@ -68,7 +68,7 @@ def _word_count(text: str) -> int:
     return len((text or "").split())
 
 
-_MAX_CITACE_WORDS = 30
+_MAX_CITACE_WORDS = 60
 
 
 def _checklist_issues(fact: dict[str, Any]) -> list[ReviewIssue]:

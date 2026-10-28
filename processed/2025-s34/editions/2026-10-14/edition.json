@@ -81,13 +81,18 @@
     ],
     "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-14/assets/caption.txt"
   },
-  "republished_at": "2026-10-28T09:46:14.101454+00:00",
+  "republished_at": "2026-10-28T14:10:19.115124+00:00",
   "revisions": [
     {
       "at": "2026-10-28T09:46:14.101460+00:00",
       "reason": "Doplněné odkazy na steno (link_phrase) u citací, které článek zmiňuje.",
       "content_hash": "ac84ff2178941fc7"
+    },
+    {
+      "at": "2026-10-28T14:10:19.115130+00:00",
+      "reason": "Doplněné krátké věty k citacím ze stena, které článek dosud nezmiňoval, s odkazem na steno (ověřeno: řečník, strana, znění).",
+      "content_hash": "17d3ef76b8ef6107"
     }
   ],
-  "published_hash": "ac84ff2178941fc7"
+  "published_hash": "17d3ef76b8ef6107"
 }

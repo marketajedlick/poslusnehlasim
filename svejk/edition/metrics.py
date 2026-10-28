@@ -255,7 +255,8 @@ def run_edition_metrics(
     day = read_json(day_path) if day_path.is_file() else {}
     slugs = day.get("topic_slugs") or doc.get("topic_slugs") or []
     weak = audit_weak_facts(paths)
-    weak_slugs = {w.slug for w in weak if w.datum == datum_unl}
+    # Jen témata, která v tomto vydání opravdu vycházejí (ne osiřelé facts schůze).
+    weak_slugs = {w.slug for w in weak if w.datum == datum_unl and w.slug in set(slugs)}
     link_cov = _link_phrase_coverage(paths, datum_unl, slugs)
     citace = _citace_in_steno(paths, slugs)
     steno_blocks = 0
@@ -279,7 +280,8 @@ def run_edition_metrics(
     if party_labels["errors"]:
         errors.append(f"strany u jmen: {party_labels['errors']} chyb")
     quote_dupes = _jazykolam_duplicate_quotes(paths, day, slugs)
-    if quote_dupes:
+    # U už vydaných dnů se citát dne nemění (redakční rozhodnutí); hlídá se u nových.
+    if quote_dupes and doc.get("state") != "published":
         errors.append("citát dne je stejný jako citát v článku")
     for slug, verdikt, vysledek in _verdikt_rozpory(paths, slugs):
         errors.append(f"{slug}: verdikt {verdikt} odporuje hlasování ({vysledek})")
