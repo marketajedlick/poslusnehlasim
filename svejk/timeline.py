@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 
 from psp.schuze import SchuzeAnalyzer, Vote
-from svejk.jednaci_den import jednaci_datum, vote_jednaci_datum
+from svejk.jednaci_den import datum_unl_key, jednaci_datum, vote_jednaci_datum
 
 
 @dataclass
@@ -546,7 +546,7 @@ class SvejkTimelineGenerator:
         votes = self.analyzer.load_votes(obdobi, cislo_schuze)
         dny = [
             build_den(votes, d)
-            for d in sorted({jednaci_datum(v.datum, v.cas) for v in votes})
+            for d in sorted({jednaci_datum(v.datum, v.cas) for v in votes}, key=datum_unl_key)
         ]
         shrnuti = " ".join(d.shrnuti for d in dny if d.shrnuti)
         return SchuzeCasovaOsa(cislo=cislo_schuze, obdobi=obdobi, dny=dny, shrnuti=shrnuti)

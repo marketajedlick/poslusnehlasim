@@ -9,7 +9,6 @@
 {"cislo": 9, "bod": "0", "datum": "10.02.2026", "cas": "17:37", "nazev": "Pořad schůze", "vysledek": "A", "pro": 112, "proti": 1, "zdrzel": 10, "nehlasoval": 35, "pritomno": 158, "je_porad_schuze": true}
 {"cislo": 10, "bod": "0", "datum": "10.02.2026", "cas": "17:38", "nazev": "Pořad schůze", "vysledek": "A", "pro": 116, "proti": 0, "zdrzel": 8, "nehlasoval": 34, "pritomno": 158, "je_porad_schuze": true}
 {"cislo": 11, "bod": "0", "datum": "10.02.2026", "cas": "17:38", "nazev": "Pořad schůze", "vysledek": "A", "pro": 134, "proti": 1, "zdrzel": 2, "nehlasoval": 21, "pritomno": 158, "je_porad_schuze": true}
-{"cislo": 12, "bod": "0", "datum": "10.02.2026", "cas": "17:39", "nazev": "Pořad schůze", "vysledek": "A", "pro": 115, "proti": 0, "zdrzel": 24, "nehlasoval": 20, "pritomno": 159, "je_porad_schuze": true}
 {"cislo": 13, "bod": "0", "datum": "10.02.2026", "cas": "17:40", "nazev": "Pořad schůze", "vysledek": "A", "pro": 139, "proti": 0, "zdrzel": 1, "nehlasoval": 19, "pritomno": 159, "je_porad_schuze": true}
 {"cislo": 14, "bod": "0", "datum": "10.02.2026", "cas": "17:41", "nazev": "Pořad schůze", "vysledek": "A", "pro": 131, "proti": 0, "zdrzel": 3, "nehlasoval": 24, "pritomno": 158, "je_porad_schuze": true}
 {"cislo": 15, "bod": "0", "datum": "10.02.2026", "cas": "17:42", "nazev": "Pořad schůze", "vysledek": "A", "pro": 138, "proti": 3, "zdrzel": 1, "nehlasoval": 16, "pritomno": 158, "je_porad_schuze": true}
@@ -27,7 +26,6 @@
 {"cislo": 27, "bod": "0", "datum": "10.02.2026", "cas": "17:52", "nazev": "Pořad schůze", "vysledek": "R", "pro": 69, "proti": 86, "zdrzel": 2, "nehlasoval": 1, "pritomno": 158, "je_porad_schuze": true}
 {"cislo": 28, "bod": "0", "datum": "10.02.2026", "cas": "17:53", "nazev": "Pořad schůze", "vysledek": "R", "pro": 68, "proti": 86, "zdrzel": 1, "nehlasoval": 3, "pritomno": 158, "je_porad_schuze": true}
 {"cislo": 29, "bod": "0", "datum": "10.02.2026", "cas": "17:54", "nazev": "Pořad schůze", "vysledek": "R", "pro": 67, "proti": 89, "zdrzel": 2, "nehlasoval": 0, "pritomno": 158, "je_porad_schuze": true}
-{"cislo": 30, "bod": "0", "datum": "10.02.2026", "cas": "17:55", "nazev": "Pořad schůze", "vysledek": "R", "pro": 15, "proti": 56, "zdrzel": 87, "nehlasoval": 0, "pritomno": 158, "je_porad_schuze": true}
 {"cislo": 31, "bod": "0", "datum": "10.02.2026", "cas": "17:55", "nazev": "Pořad schůze", "vysledek": "R", "pro": 51, "proti": 75, "zdrzel": 22, "nehlasoval": 10, "pritomno": 158, "je_porad_schuze": true}
 {"cislo": 32, "bod": "0", "datum": "10.02.2026", "cas": "17:56", "nazev": "Pořad schůze", "vysledek": "R", "pro": 68, "proti": 89, "zdrzel": 1, "nehlasoval": 0, "pritomno": 158, "je_porad_schuze": true}
 {"cislo": 33, "bod": "0", "datum": "10.02.2026", "cas": "17:57", "nazev": "Pořad schůze", "vysledek": "R", "pro": 68, "proti": 85, "zdrzel": 3, "nehlasoval": 2, "pritomno": 158, "je_porad_schuze": true}
@@ -67,7 +65,6 @@
 {"cislo": 67, "bod": "64", "datum": "12.02.2026", "cas": "13:33", "nazev": "Návrh usnesení Poslanecké sněmovny k odsouzení týrání zvířat", "vysledek": "A", "pro": 139, "proti": 0, "zdrzel": 0, "nehlasoval": 1, "pritomno": 140, "je_porad_schuze": false}
 {"cislo": 68, "bod": "64", "datum": "12.02.2026", "cas": "13:34", "nazev": "Návrh usnesení Poslanecké sněmovny k odsouzení týrání zvířat", "vysledek": "R", "pro": 60, "proti": 0, "zdrzel": 61, "nehlasoval": 19, "pritomno": 140, "je_porad_schuze": false}
 {"cislo": 69, "bod": "64", "datum": "12.02.2026", "cas": "13:35", "nazev": "Návrh usnesení Poslanecké sněmovny k odsouzení týrání zvířat", "vysledek": "R", "pro": 38, "proti": 3, "zdrzel": 62, "nehlasoval": 37, "pritomno": 140, "je_porad_schuze": false}
-{"cislo": 70, "bod": "64", "datum": "12.02.2026", "cas": "13:36", "nazev": "Návrh usnesení Poslanecké sněmovny k odsouzení týrání zvířat", "vysledek": "R", "pro": 33, "proti": 13, "zdrzel": 70, "nehlasoval": 24, "pritomno": 140, "je_porad_schuze": false}
 {"cislo": 71, "bod": "64", "datum": "12.02.2026", "cas": "13:37", "nazev": "Návrh usnesení Poslanecké sněmovny k odsouzení týrání zvířat", "vysledek": "R", "pro": 36, "proti": 13, "zdrzel": 65, "nehlasoval": 26, "pritomno": 140, "je_porad_schuze": false}
 {"cislo": 72, "bod": "64", "datum": "12.02.2026", "cas": "13:38", "nazev": "Návrh usnesení Poslanecké sněmovny k odsouzení týrání zvířat", "vysledek": "R", "pro": 45, "proti": 17, "zdrzel": 57, "nehlasoval": 22, "pritomno": 141, "je_porad_schuze": false}
 {"cislo": 73, "bod": "64", "datum": "12.02.2026", "cas": "13:39", "nazev": "Návrh usnesení Poslanecké sněmovny k odsouzení týrání zvířat", "vysledek": "A", "pro": 127, "proti": 6, "zdrzel": 5, "nehlasoval": 2, "pritomno": 140, "je_porad_schuze": false}

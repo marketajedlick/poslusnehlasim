@@ -10,6 +10,7 @@ from typing import Any
 from svejk.build.io import iter_jsonl, read_json, write_json
 from svejk.build.vote_logic import topic_proslo_from_votes, vote_kategorie
 from svejk.jednaci_den import (
+    datum_unl_key,
     jednaci_den_minuty,
     vote_belongs_to_jednaci_den,
     vote_chrono_key,
@@ -380,7 +381,7 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
 
     # statistiky dne z votes
     votes = list(iter_jsonl(paths.votes_jsonl))
-    days = sorted({vote_jednaci_datum(v) for v in votes if v.get("datum")})
+    days = sorted({vote_jednaci_datum(v) for v in votes if v.get("datum")}, key=datum_unl_key)
     for datum in days:
         day_votes = [v for v in votes if vote_belongs_to_jednaci_den(v, datum)]
         vote_proslo, vote_zamitnuto, pocet_hlas = _den_zakon_stats(day_votes)

@@ -4437,7 +4437,6 @@
       "datum": "10.03.2026",
       "vote_cisla": [
         94,
-        95,
         96,
         97,
         98,
@@ -4579,9 +4578,9 @@
         "2025_10_00993"
       ],
       "proslo": true,
-      "pocet_hlasovani": 6,
+      "pocet_hlasovani": 5,
       "pocet_prijato": 4,
-      "pocet_zamitnuto": 2,
+      "pocet_zamitnuto": 1,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Vl.n.z. o digitální ekonomice - EU",
       "tema_vysvetleni": "Hlasování o pozměňovacích návrzích ke stavebnímu zákonu. Dlouhodobě se týká každého, kdo staví nebo rekonstruuje."

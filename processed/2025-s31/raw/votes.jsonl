@@ -1,4 +1,3 @@
-{"cislo": 1, "bod": "0", "datum": "22.09.2026", "cas": "10:01", "nazev": "", "vysledek": "A", "pro": 107, "proti": 0, "zdrzel": 5, "nehlasoval": 1, "pritomno": 113, "je_porad_schuze": false}
 {"cislo": 2, "bod": "0", "datum": "22.09.2026", "cas": "10:08", "nazev": "", "vysledek": "A", "pro": 122, "proti": 1, "zdrzel": 5, "nehlasoval": 1, "pritomno": 129, "je_porad_schuze": false}
 {"cislo": 3, "bod": "0", "datum": "22.09.2026", "cas": "10:14", "nazev": "Pořad schůze", "vysledek": "A", "pro": 73, "proti": 54, "zdrzel": 8, "nehlasoval": 1, "pritomno": 136, "je_porad_schuze": true}
 {"cislo": 4, "bod": "0", "datum": "22.09.2026", "cas": "13:57", "nazev": "Pořad schůze", "vysledek": "A", "pro": 75, "proti": 44, "zdrzel": 2, "nehlasoval": 2, "pritomno": 123, "je_porad_schuze": true}
@@ -37,7 +36,6 @@
 {"cislo": 37, "bod": "8", "datum": "24.09.2026", "cas": "14:21", "nazev": "Novela z. o důchodovém pojištění", "vysledek": "R", "pro": 33, "proti": 69, "zdrzel": 2, "nehlasoval": 2, "pritomno": 106, "je_porad_schuze": false}
 {"cislo": 38, "bod": "8", "datum": "24.09.2026", "cas": "14:22", "nazev": "Novela z. o důchodovém pojištění", "vysledek": "A", "pro": 104, "proti": 0, "zdrzel": 2, "nehlasoval": 0, "pritomno": 106, "je_porad_schuze": false}
 {"cislo": 39, "bod": "8", "datum": "24.09.2026", "cas": "14:23", "nazev": "Novela z. o důchodovém pojištění", "vysledek": "A", "pro": 71, "proti": 34, "zdrzel": 1, "nehlasoval": 0, "pritomno": 106, "je_porad_schuze": false}
-{"cislo": 40, "bod": "9", "datum": "24.09.2026", "cas": "17:03", "nazev": "Novela z. o doplňkovém penzijním spoření", "vysledek": "R", "pro": 51, "proti": 0, "zdrzel": 13, "nehlasoval": 0, "pritomno": 64, "je_porad_schuze": false}
 {"cislo": 41, "bod": "9", "datum": "24.09.2026", "cas": "17:36", "nazev": "Novela z. o doplňkovém penzijním spoření", "vysledek": "A", "pro": 97, "proti": 0, "zdrzel": 0, "nehlasoval": 0, "pritomno": 97, "je_porad_schuze": false}
 {"cislo": 42, "bod": "9", "datum": "24.09.2026", "cas": "17:38", "nazev": "Novela z. o doplňkovém penzijním spoření", "vysledek": "A", "pro": 96, "proti": 0, "zdrzel": 0, "nehlasoval": 1, "pritomno": 97, "je_porad_schuze": false}
 {"cislo": 43, "bod": "9", "datum": "24.09.2026", "cas": "17:38", "nazev": "Novela z. o doplňkovém penzijním spoření", "vysledek": "R", "pro": 30, "proti": 60, "zdrzel": 6, "nehlasoval": 1, "pritomno": 97, "je_porad_schuze": false}

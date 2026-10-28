@@ -82,11 +82,11 @@
   "citace3_text": "",
   "citace3_autor": "",
   "citace3_steno_id": "",
-  "pocet_hlasovani": 84,
+  "pocet_hlasovani": 82,
   "proslo": true,
   "signaly": {
     "proti_max": 107,
-    "pritomno_min": 149,
+    "pritomno_min": 158,
     "jednomyslne": false,
     "spor": true,
     "prazdny_sal": true

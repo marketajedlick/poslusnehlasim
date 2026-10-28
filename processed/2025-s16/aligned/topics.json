@@ -527,7 +527,6 @@
       "bod": "6",
       "datum": "06.05.2026",
       "vote_cisla": [
-        68,
         69
       ],
       "steno_ids": [
@@ -668,8 +667,8 @@
         "2025_16_00507"
       ],
       "proslo": true,
-      "pocet_hlasovani": 2,
-      "pocet_prijato": 2,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
       "pocet_zamitnuto": 0,
       "kategorie": "substantivni",
       "tema_svejk": "Posun digitalizace dávek státní sociální podpory, úřady nestihly systém k 1. 7. 2026.",

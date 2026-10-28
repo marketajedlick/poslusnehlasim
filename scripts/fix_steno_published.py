@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Auto-oprava steno_id a citací ve všech publikovaných vydáních (kromě ručních patchů s24)."""
+"""Auto-oprava steno_id a citací ve všech publikovaných vydáních (kromě ručních patchů s24).
+
+Bez --apply jen vypíše, co by změnil. Schůze bez lokálního raw/steno.jsonl (gitignored)
+přeskočí — jinak by citace nenašel a odkazy na steno z publikovaných vydání smazal.
+"""
 from __future__ import annotations
 
 import json
@@ -14,7 +18,7 @@ APPROVED_PATH = ROOT / "processed/publish-approved.json"
 
 def norm(s: str) -> str:
     s = (s or "").strip()
-    for old, new in (("„", '"'), (""", '"'), (""", '"')):
+    for old, new in (("„", '"'), ("\u201c", '"'), ("\u201d", '"')):
         s = s.replace(old, new)
     return re.sub(r"\s+", " ", s).lower()
 
@@ -120,6 +124,9 @@ def fix_fact(
     if not hits:
         hits = find_steno_ids(steno_rows, cit, None, all_days=True)
     sid = (f.get("steno_id") or "").strip()
+    if not hits and sid and sid not in steno_by_id:
+        # záznam v lokálním stenu chybí (neúplné stažení) — nelze ověřit, neměnit
+        return False
     if sid and sid in hits and citace_in_text(cit, steno_by_id[sid].get("text", "")):
         f["steno_id"] = sid
         f["source"] = "steno"
@@ -164,6 +171,7 @@ def parse_key(key: str) -> tuple[int, int, str, str]:
 
 
 def main() -> int:
+    apply = "--apply" in sys.argv
     skip_schuze = {24}
     if "--include-s24" in sys.argv:
         skip_schuze = set()
@@ -183,7 +191,11 @@ def main() -> int:
             continue
         if schuze not in steno_loaded:
             steno_loaded[schuze] = load_steno(base / "raw/steno.jsonl")
+            if not steno_loaded[schuze][0]:
+                print(f"  s{schuze}: chybí nebo je prázdný raw/steno.jsonl, přeskakuji", file=sys.stderr)
         steno_rows, steno_by_id = steno_loaded[schuze]
+        if not steno_rows:
+            continue
         day = json.loads(day_path.read_text(encoding="utf-8"))
         topic_dir = base / "facts/by_topic"
 
@@ -198,11 +210,13 @@ def main() -> int:
             fix_topic(data, steno_rows, steno_by_id)
             after = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
             if after != before:
-                tpath.write_text(after, encoding="utf-8")
+                if apply:
+                    tpath.write_text(after, encoding="utf-8")
                 changed_days.add((obdobi, schuze, datum_cz))
                 files += 1
 
-    print(f"Updated {files} topic files across {len(changed_days)} days")
+    verb = "Updated" if apply else "Would update (dry run, --apply zapíše)"
+    print(f"{verb} {files} topic files across {len(changed_days)} days")
     for obdobi, schuze, datum_cz in sorted(changed_days, key=lambda x: (x[1], x[2])):
         print(f"  {obdobi}/s{schuze}/{datum_cz}")
     return 0

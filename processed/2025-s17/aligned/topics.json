@@ -20,8 +20,6 @@
         18,
         19,
         20,
-        21,
-        22,
         23,
         24,
         25,
@@ -244,9 +242,9 @@
         "2025_17_00538"
       ],
       "proslo": true,
-      "pocet_hlasovani": 36,
+      "pocet_hlasovani": 34,
       "pocet_prijato": 8,
-      "pocet_zamitnuto": 28,
+      "pocet_zamitnuto": 26,
       "kategorie": "substantivni",
       "tema_svejk": "Veřejné rozpočty, limity výdajů, výjimky pro obranu a velké stavby.",
       "tema_vysvetleni": "Novela rozpočtových zákonů, pravidla pro státní výdaje."
@@ -257,6 +255,10 @@
       "bod": "2",
       "datum": "29.05.2026",
       "vote_cisla": [
+        46,
+        47,
+        48,
+        49,
         51,
         52,
         53,
@@ -276,11 +278,7 @@
         67,
         68,
         69,
-        70,
-        46,
-        47,
-        48,
-        49
+        70
       ],
       "steno_ids": [
         "2025_17_00539",

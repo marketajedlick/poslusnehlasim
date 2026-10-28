@@ -65,7 +65,6 @@
 {"cislo": 65, "bod": "0", "datum": "06.05.2026", "cas": "19:43", "nazev": "Pořad schůze", "vysledek": "R", "pro": 53, "proti": 73, "zdrzel": 5, "nehlasoval": 2, "pritomno": 133, "je_porad_schuze": true}
 {"cislo": 66, "bod": "63", "datum": "06.05.2026", "cas": "20:14", "nazev": "Novela z. - stavební zákon", "vysledek": "A", "pro": 110, "proti": 0, "zdrzel": 23, "nehlasoval": 0, "pritomno": 133, "je_porad_schuze": false}
 {"cislo": 67, "bod": "63", "datum": "06.05.2026", "cas": "20:16", "nazev": "Novela z. - stavební zákon", "vysledek": "A", "pro": 123, "proti": 0, "zdrzel": 11, "nehlasoval": 0, "pritomno": 134, "je_porad_schuze": false}
-{"cislo": 68, "bod": "6", "datum": "06.05.2026", "cas": "21:17", "nazev": "Novela z. o státní sociální podpoře", "vysledek": "A", "pro": 63, "proti": 0, "zdrzel": 11, "nehlasoval": 1, "pritomno": 75, "je_porad_schuze": false}
 {"cislo": 69, "bod": "6", "datum": "06.05.2026", "cas": "21:18", "nazev": "Novela z. o státní sociální podpoře", "vysledek": "A", "pro": 100, "proti": 1, "zdrzel": 0, "nehlasoval": 2, "pritomno": 103, "je_porad_schuze": false}
 {"cislo": 70, "bod": "7", "datum": "06.05.2026", "cas": "21:55", "nazev": "Novela z. o sociálních službách", "vysledek": "A", "pro": 111, "proti": 0, "zdrzel": 0, "nehlasoval": 1, "pritomno": 112, "je_porad_schuze": false}
 {"cislo": 71, "bod": "0", "datum": "06.05.2026", "cas": "22:00", "nazev": "", "vysledek": "A", "pro": 101, "proti": 9, "zdrzel": 3, "nehlasoval": 0, "pritomno": 113, "je_porad_schuze": false}

@@ -526,7 +526,6 @@
         95,
         96,
         97,
-        98,
         99,
         100,
         101,
@@ -609,9 +608,9 @@
         "2025_24_00866"
       ],
       "proslo": true,
-      "pocet_hlasovani": 29,
+      "pocet_hlasovani": 28,
       "pocet_prijato": 18,
-      "pocet_zamitnuto": 11,
+      "pocet_zamitnuto": 10,
       "kategorie": "substantivni",
       "tema_svejk": "Dávka státní sociální pomoci, pomoc lidem v nouzi.",
       "tema_vysvetleni": "Novela dávek SSP."
@@ -958,16 +957,15 @@
       "bod": "153",
       "datum": "02.07.2026",
       "vote_cisla": [
-        197,
         198
       ],
       "steno_ids": [
         "2025_24_01589"
       ],
       "proslo": false,
-      "pocet_hlasovani": 2,
+      "pocet_hlasovani": 1,
       "pocet_prijato": 0,
-      "pocet_zamitnuto": 2,
+      "pocet_zamitnuto": 1,
       "kategorie": "interpelace",
       "tema_svejk": "Dávka státní sociální pomoci, pomoc lidem v nouzi.",
       "tema_vysvetleni": "Novela dávek SSP."
@@ -1225,7 +1223,6 @@
       "bod": "90",
       "datum": "02.07.2026",
       "vote_cisla": [
-        203,
         204,
         205,
         206,
@@ -1240,9 +1237,9 @@
         "2025_24_01654"
       ],
       "proslo": true,
-      "pocet_hlasovani": 7,
+      "pocet_hlasovani": 6,
       "pocet_prijato": 2,
-      "pocet_zamitnuto": 5,
+      "pocet_zamitnuto": 4,
       "kategorie": "substantivni",
       "tema_svejk": "Dávka státní sociální pomoci, pomoc lidem v nouzi.",
       "tema_vysvetleni": "Novela dávek SSP."

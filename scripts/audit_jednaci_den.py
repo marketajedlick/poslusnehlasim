@@ -14,7 +14,7 @@ APPROVED_PATH = ROOT / "processed/publish-approved.json"
 sys.path.insert(0, str(ROOT))
 
 from svejk.build.io import iter_jsonl, read_json  # noqa: E402
-from svejk.jednaci_den import je_noc_po_pulnoci, vote_jednaci_datum  # noqa: E402
+from svejk.jednaci_den import je_noc_po_pulnoci, vote_chrono_key, vote_jednaci_datum  # noqa: E402
 from svejk.paths import SchuzePaths  # noqa: E402
 
 
@@ -73,10 +73,7 @@ def expected_published_slugs(paths: SchuzePaths, jednaci_unl: str) -> set[str]:
         cisla = [int(c) for c in (t.get("vote_cisla") or []) if int(c) in votes_by_cislo]
         if not cisla:
             continue
-        group = sorted(
-            (votes_by_cislo[c] for c in cisla),
-            key=lambda v: (v.get("datum", ""), v.get("cas", "")),
-        )
+        group = sorted((votes_by_cislo[c] for c in cisla), key=vote_chrono_key)
         if vote_jednaci_datum(group[-1]) == jednaci_unl:
             out.add(slug)
     return out

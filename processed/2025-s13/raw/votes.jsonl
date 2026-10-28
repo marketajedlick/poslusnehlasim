@@ -55,7 +55,6 @@
 {"cislo": 55, "bod": "0", "datum": "25.03.2026", "cas": "10:51", "nazev": "Pořad schůze", "vysledek": "R", "pro": 73, "proti": 88, "zdrzel": 15, "nehlasoval": 0, "pritomno": 176, "je_porad_schuze": true}
 {"cislo": 56, "bod": "0", "datum": "25.03.2026", "cas": "10:52", "nazev": "Pořad schůze", "vysledek": "R", "pro": 74, "proti": 90, "zdrzel": 12, "nehlasoval": 0, "pritomno": 176, "je_porad_schuze": true}
 {"cislo": 57, "bod": "0", "datum": "25.03.2026", "cas": "10:53", "nazev": "Pořad schůze", "vysledek": "R", "pro": 74, "proti": 83, "zdrzel": 17, "nehlasoval": 1, "pritomno": 175, "je_porad_schuze": true}
-{"cislo": 58, "bod": "0", "datum": "25.03.2026", "cas": "10:53", "nazev": "Pořad schůze", "vysledek": "R", "pro": 59, "proti": 64, "zdrzel": 53, "nehlasoval": 0, "pritomno": 176, "je_porad_schuze": true}
 {"cislo": 59, "bod": "0", "datum": "25.03.2026", "cas": "10:54", "nazev": "Pořad schůze", "vysledek": "R", "pro": 74, "proti": 87, "zdrzel": 14, "nehlasoval": 1, "pritomno": 176, "je_porad_schuze": true}
 {"cislo": 60, "bod": "0", "datum": "25.03.2026", "cas": "10:55", "nazev": "Pořad schůze", "vysledek": "R", "pro": 69, "proti": 88, "zdrzel": 13, "nehlasoval": 6, "pritomno": 176, "je_porad_schuze": true}
 {"cislo": 61, "bod": "0", "datum": "25.03.2026", "cas": "10:56", "nazev": "Pořad schůze", "vysledek": "R", "pro": 76, "proti": 86, "zdrzel": 14, "nehlasoval": 0, "pritomno": 176, "je_porad_schuze": true}
@@ -76,7 +75,6 @@
 {"cislo": 76, "bod": "55", "datum": "25.03.2026", "cas": "13:23", "nazev": "Novela z. o pojistném na sociální zabezpečení", "vysledek": "R", "pro": 60, "proti": 108, "zdrzel": 1, "nehlasoval": 3, "pritomno": 172, "je_porad_schuze": false}
 {"cislo": 77, "bod": "55", "datum": "25.03.2026", "cas": "13:24", "nazev": "Novela z. o pojistném na sociální zabezpečení", "vysledek": "R", "pro": 66, "proti": 101, "zdrzel": 1, "nehlasoval": 4, "pritomno": 172, "je_porad_schuze": false}
 {"cislo": 78, "bod": "55", "datum": "25.03.2026", "cas": "13:25", "nazev": "Novela z. o pojistném na sociální zabezpečení", "vysledek": "R", "pro": 78, "proti": 81, "zdrzel": 12, "nehlasoval": 2, "pritomno": 173, "je_porad_schuze": false}
-{"cislo": 79, "bod": "55", "datum": "25.03.2026", "cas": "13:26", "nazev": "Novela z. o pojistném na sociální zabezpečení", "vysledek": "A", "pro": 110, "proti": 16, "zdrzel": 16, "nehlasoval": 29, "pritomno": 171, "je_porad_schuze": false}
 {"cislo": 80, "bod": "55", "datum": "25.03.2026", "cas": "13:29", "nazev": "Novela z. o pojistném na sociální zabezpečení", "vysledek": "A", "pro": 112, "proti": 9, "zdrzel": 18, "nehlasoval": 32, "pritomno": 171, "je_porad_schuze": false}
 {"cislo": 81, "bod": "55", "datum": "25.03.2026", "cas": "13:31", "nazev": "Novela z. o pojistném na sociální zabezpečení", "vysledek": "R", "pro": 81, "proti": 3, "zdrzel": 58, "nehlasoval": 32, "pritomno": 174, "je_porad_schuze": false}
 {"cislo": 82, "bod": "56", "datum": "25.03.2026", "cas": "13:50", "nazev": "Novela z. o pojistném na veřejné zdravotní pojištění", "vysledek": "A", "pro": 154, "proti": 0, "zdrzel": 1, "nehlasoval": 1, "pritomno": 156, "je_porad_schuze": false}
