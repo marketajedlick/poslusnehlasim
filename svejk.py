@@ -166,6 +166,11 @@ def cmd_sync(args: argparse.Namespace) -> int:
         )
     if summary.get("errors"):
         return 1
+    if getattr(args, "fail_if_new_steno", False):
+        schuze = [r["schuze"] for r in summary.get("vysledky", []) if r.get("steno_published")]
+        if schuze:
+            print(f"Nové stenozáznamy na Hlídači: schůze={schuze}", file=sys.stderr)
+            return 1
     if getattr(args, "fail_if_pending", False):
         if summary.get("check_only"):
             pending = int(summary.get("would_update") or 0)
@@ -683,6 +688,11 @@ def main() -> int:
         "--fail-if-pending",
         action="store_true",
         help="Ukončit s chybou, pokud jsou nová data (pro CI notifikace)",
+    )
+    p_sync.add_argument(
+        "--fail-if-new-steno",
+        action="store_true",
+        help="Ukončit s chybou jen při nových stenozáznamech na Hlídači (pro CI notifikace)",
     )
     p_sync.add_argument("-q", "--quiet", action="store_true")
     p_sync.set_defaults(func=cmd_sync)
