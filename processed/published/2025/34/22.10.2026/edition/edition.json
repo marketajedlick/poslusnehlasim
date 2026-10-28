@@ -1,0 +1,65 @@
+{
+  "key": "2025/34/22.10.2026",
+  "obdobi": 2025,
+  "schuze": 34,
+  "datum_unl": "22.10.2026",
+  "iso": "2026-10-22",
+  "state": "approved",
+  "topic_slugs": [
+    "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2027",
+    "odpoved-na-pisemnou-interpelaci-e-olsakove-na-a-",
+    "odpoved-na-pisemnou-interpelaci-m-jurecky-na-a-b"
+  ],
+  "recommended_slugs": [
+    "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2027",
+    "odpoved-na-pisemnou-interpelaci-e-olsakove-na-a-",
+    "odpoved-na-pisemnou-interpelaci-m-jurecky-na-a-b"
+  ],
+  "rejected_slugs": [
+    "odpoved-na-pisemnou-interpelaci-m-jurecky-na-i-b",
+    "novela-z-o-nekt-opatr-v-souv-s-ozbrojenym-konfli"
+  ],
+  "brief_path": "editions/2026-10-22/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "stale",
+    "stale": true,
+    "link_phrase_coverage": {
+      "total": 15,
+      "linked": 15,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 15,
+      "ok": 15,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 1,
+    "steno_passages": 16,
+    "steno_missing_article_phrase": 0,
+    "jazykolam_duplicates": [],
+    "ok": false,
+    "errors": [
+      "slabá témata: odpoved-na-pisemnou-interpelaci-e-olsakove-na-a-"
+    ]
+  },
+  "inputs": {
+    "votes_count": 282,
+    "votes_max_cislo": 282,
+    "steno_count": 2036,
+    "steno_last_poradi": 2036,
+    "topics_built_at": "2026-10-24T08:55:09.691905+00:00",
+    "fingerprint": "b2c88fb6203b8661"
+  },
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null
+}

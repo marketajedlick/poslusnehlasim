@@ -1,0 +1,159 @@
+{
+  "datum_unl": "22.10.2026",
+  "iso": "2026-10-22",
+  "recommended": [
+    {
+      "slug": "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2027",
+      "nazev": "Vl.n.z. o státním rozpočtu ČR na rok 2027",
+      "score": 69,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 95,
+          "pritomno_min": 153,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 160409,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "1.Vládní návrh zákona o státním rozpočtu České republiky na rok 2027/sněmovní tisk 324/ – prvé čtení Z pověření vlády návrh uvede místopředsedkyně vlády a ministryně financí, Alena Schillerová.",
+          "source": "steno",
+          "steno_id": "2025_34_01240",
+          "citace": "1.Vládní návrh zákona o státním rozpočtu České republiky na rok 2027/sněmovní tisk 324/ – prvé čtení Z pověření vlády návrh uvede místopředsedkyně vlády a ministryně financí, Alena Schillerová."
+        },
+        {
+          "text": "Prosím, ujmete se slova a připraví se následně také zpravodaj rozpočtového výboru, poslanec Vladimír Pikora.",
+          "source": "steno",
+          "steno_id": "2025_34_01240",
+          "citace": "Prosím, ujmete se slova a připraví se následně také zpravodaj rozpočtového výboru, poslanec Vladimír Pikora."
+        },
+        {
+          "text": "Přečtu pořadí řečníků s přednostním právem, protože stejně se mě na to budete pořád ptát nebo dokola spoustu lidí.",
+          "source": "steno",
+          "steno_id": "2025_34_01240",
+          "citace": "Přečtu pořadí řečníků s přednostním právem, protože stejně se mě na to budete pořád ptát nebo dokola spoustu lidí."
+        },
+        {
+          "text": "Gestikuluje.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_34_01243",
+          "citace": "(Gestikuluje.)"
+        }
+      ]
+    },
+    {
+      "slug": "odpoved-na-pisemnou-interpelaci-e-olsakove-na-a-",
+      "nazev": "Odpověď na písemnou interpelaci E. Olšákové na A. Schillerovou",
+      "score": 58,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 71,
+          "pritomno_min": 108,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 235,
+        "pocet_fakty": 3,
+        "proslo": false,
+        "kategorie": "interpelace"
+      },
+      "fakty": [
+        {
+          "text": "poslanec Berki reaguje ze sálu.",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_34_01508",
+          "citace": "(poslanec Berki reaguje ze sálu.)"
+        },
+        {
+          "text": "(Jednání přerušeno v 10.59 hodin.) *** Neprošlo jazykovou korekturou, neautorizováno!",
+          "source": "steno",
+          "steno_id": "2025_34_01508",
+          "citace": "(Jednání přerušeno v 10.59 hodin.) *** Neprošlo jazykovou korekturou, neautorizováno!"
+        },
+        {
+          "text": "Ještě počkáme, já mezitím přečtu omluvy aspoň částečně: Adamec Ivan celý jednací den – osobní důvody, Bauer Jan celý jednací jen – zdravotní důvody, Demetrashvili Katerina zdravotní důvody, Tak (nesrozumitelné) jsem aspoň něco.",
+          "source": "steno",
+          "steno_id": "2025_34_01508",
+          "citace": "Ještě počkáme, já mezitím přečtu omluvy aspoň částečně: Adamec Ivan celý jednací den – osobní důvody, Bauer Jan celý jednací jen – zdravotní důvody, Demetrashvili Katerina zdravotní důvody, Tak (nesro"
+        }
+      ]
+    },
+    {
+      "slug": "odpoved-na-pisemnou-interpelaci-m-jurecky-na-a-b",
+      "nazev": "Odpověď na písemnou interpelaci M. Jurečky na A. Babiše",
+      "score": 50,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 14,
+          "pritomno_min": 110,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 246,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "interpelace"
+      },
+      "fakty": [
+        {
+          "text": "V hlasování číslo 220 přihlášeno 110 poslanců, pro 34, proti 14.",
+          "source": "steno",
+          "steno_id": "2025_34_01482",
+          "citace": "V hlasování číslo 220 přihlášeno 110 poslanců, pro 34, proti 14."
+        },
+        {
+          "text": "Já se omlouvám, protože tohle je úplně první řízení, které je tady v tomto bodě, a nemám to zatím úplně uložené, nechám si poradit.",
+          "source": "steno",
+          "steno_id": "2025_34_01482",
+          "citace": "Já se omlouvám, protože tohle je úplně první řízení, které je tady v tomto bodě, a nemám to zatím úplně uložené, nechám si poradit."
+        },
+        {
+          "text": "Takže rozprava ještě není ukončena a hlásí se do ní paní poslankyně Kovářová.",
+          "source": "steno",
+          "steno_id": "2025_34_01482",
+          "citace": "Takže rozprava ještě není ukončena a hlásí se do ní paní poslankyně Kovářová."
+        },
+        {
+          "text": "Ministr práce a sociálních věcí Aleš Juchelka odpověděl na interpelaci poslankyně Barbory Urbanové ve věci úlohy Kobry 26 ve věci postihování práce načerno, pracovního vykořisťování, netransparentního agenturního zaměstnávání a odpovědnosti koncových zaměstnavatelů.",
+          "source": "steno",
+          "steno_id": "2025_34_01488",
+          "citace": "Ministr práce a sociálních věcí Aleš Juchelka odpověděl na interpelaci poslankyně Barbory Urbanové ve věci úlohy Kobry 26 ve věci postihování práce načerno, pracovního vykořisťování, netransparentního"
+        }
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "slug": "odpoved-na-pisemnou-interpelaci-m-jurecky-na-i-b",
+      "score": 50,
+      "reason": "procedura / slabý steno signál"
+    },
+    {
+      "slug": "novela-z-o-nekt-opatr-v-souv-s-ozbrojenym-konfli",
+      "score": 22,
+      "reason": "mimo top 3 pro den"
+    }
+  ],
+  "day_stats": {
+    "pocet_hlas_zakon": 2,
+    "proslo_vote": 2,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-10-22",
+      "2026-10-23"
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "slug": "odpoved-na-pisemnou-interpelaci-e-olsakove-na-a-",
+  "nazev": "Odpověď na písemnou interpelaci E. Olšákové na A. Schillerovou",
+  "datum": "22.10.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "kolik bude stát nová úprava stavebních úřadů a jestli s tím počítá rozpočet",
+  "koho": [
+    "Koho se to týká? Každého, kdo čeká na stavební povolení. Nový úřad se musí z něčeho zaplatit."
+  ],
+  "fakty": [
+    {
+      "text": "Olšáková: na devět otázek nedostala odpověď.",
+      "source": "steno",
+      "steno_id": "2025_34_01493",
+      "citace": "Já jsem z vaší odpovědi v podstatě nedostala odpověď na žádnou z devíti položených otázek",
+      "link_phrase": "na žádnou z devíti položených otázek"
+    },
+    {
+      "text": "Schillerová: opozice poprvé obstruuje rozpočet.",
+      "source": "steno",
+      "steno_id": "2025_34_01497",
+      "citace": "vaše opozice se poprvé v historii této země rozhodla obstruovat rozpočet.",
+      "link_phrase": "poprvé v historii této země rozhodla obstruovat rozpočet"
+    },
+    {
+      "text": "Schillerová: v sále se baví hloučky.",
+      "source": "steno",
+      "steno_id": "2025_34_01497",
+      "citace": "Tak asi to nikoho nezajímá.",
+      "link_phrase": "to asi nikoho nezajímá"
+    },
+    {
+      "text": "Olšáková: čísla už jsou v návrhu rozpočtu.",
+      "source": "steno",
+      "steno_id": "2025_34_01499",
+      "citace": "že jsme slyšeli nějaká čísla, která tady uvedla a která jsou zapracována v návrhu státního rozpočtu.",
+      "link_phrase": "čísla jsou v návrhu rozpočtu"
+    },
+    {
+      "text": "Olšáková: nesouhlas s odpovědí ministryně.",
+      "source": "steno",
+      "steno_id": "2025_34_01507",
+      "citace": "nesouhlasí s odpovědí ministryně (místopředsedkyně) vlády a ministryně financí Aleny Schillerové",
+      "link_phrase": "s odpovědí ministryně nesouhlasí"
+    },
+    {
+      "text": "Okamura: nesouhlasné usnesení nebylo přijato.",
+      "source": "steno",
+      "steno_id": "2025_34_01508",
+      "citace": "ovšem nesouhlasné usnesení nebylo přijato.",
+      "link_phrase": "nesouhlas neprošel"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Devět otázek\nbez odpovědi",
+  "lead": "Eliška Olšáková (STAN) se ptala ministryně financí Schillerové (ANO), kolik bude stát reforma stavebních úřadů. V písemné odpovědi prý nedostala odpověď na žádnou z devíti položených otázek. Ve čtvrtek to zkusila znovu, protože náklady mají být v rozpočtu na rok 2027.",
+  "pointa": "Schillerová začala jinde. Opozice se podle ní poprvé v historii této země rozhodla obstruovat rozpočet. V sále se bavily hloučky. Řekla, že to asi nikoho nezajímá.\n\nOlšáková poděkovala, že tentokrát zazněla čísla a že ta čísla jsou v návrhu rozpočtu. Připomněla, že když se o reformě hlasovalo, náklady na stole nebyly. Na počet úředníků a na peníze se už dřív ptala ministryně pro místní rozvoj Mrázové, která zákon obhajovala.\n\nPak načetla usnesení, že Sněmovna s odpovědí ministryně nesouhlasí. Předseda Sněmovny Okamura (SPD) nechal hlasovat. Nesouhlas neprošel. Novou odpověď Schillerová psát nemusí.",
+  "mean": "Jde o to, kolik bude stát nová úprava stavebních úřadů a jestli s tím počítá rozpočet na rok 2027. Sněmovna nesouhlas s odpovědí ministryně financí neschválila.",
+  "citace_text": "vaše opozice se poprvé v historii této země rozhodla obstruovat rozpočet.",
+  "citace_autor": "Alena Schillerová (ANO)",
+  "steno_id": "2025_34_01497",
+  "pocet_hlasovani": 1,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 71,
+    "pritomno_min": 108,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 235
+}

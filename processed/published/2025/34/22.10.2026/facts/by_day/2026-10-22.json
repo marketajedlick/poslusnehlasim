@@ -1,0 +1,37 @@
+{
+  "datum": "22.10.2026",
+  "den": "čtvrtek",
+  "topic_slugs": [
+    "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2027",
+    "odpoved-na-pisemnou-interpelaci-e-olsakove-na-a-"
+  ],
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 779,
+    "end_cas": "23:12",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "nwl_predmet": "Rozpočet od mimozemšťanů. Prošel prvním kolem",
+  "dnesni_ucet": "Skopeček říká, že rozpočet na rok 2027 psali mimozemšťané.\nPozdě večer stejně prošel prvním kolem.",
+  "zaver": "že Sněmovna ve čtvrtek dobrala rozpočet na rok 2027, odmítla všech šest návrhů opozice na jeho vrácení a pustila ho do dalšího kola se schodkem tři sta osmdesát šest miliard.",
+  "vysledek": [
+    "* rozpočet na rok 2027: prošel prvním kolem, devadesát dva pro, šedesát proti",
+    "* šest návrhů opozice na vrácení rozpočtu: všechny padly",
+    "* odpověď ministryně financí ke stavební reformě: nesouhlas neprošel"
+  ],
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo",
+  "jazykolam": {
+    "text": "Musí na tom být politická shoda, musí to mít hlavu a patu a nebudeme to tady porcovat jako medvěda.",
+    "autor": "Alena Schillerová (ANO)",
+    "steno_id": "2025_34_01705"
+  },
+  "slovnicek": [
+    "schodek",
+    "obstrukce"
+  ]
+}
