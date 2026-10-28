@@ -21,3 +21,15 @@ def test_zenske_tvary_s_pohlavim_z_psp():
 def test_pad_poslankyne_dostane_stranu():
     reg = poslanec_registry()
     assert "Pošarovou (" in reg.annotate("Jednal s Pošarovou o rozpočtu.")
+
+
+def test_klub_k_datu_platnost():
+    from datetime import date
+
+    from psp.poslanci import _platne_k
+
+    assert _platne_k("2025-10-04 00", "", None)
+    assert not _platne_k("2025-10-04 00", "2026-01-01 00", None)
+    assert _platne_k("2025-10-04 00", "2026-01-01 00", date(2025, 12, 1))
+    assert not _platne_k("2025-10-04 00", "2026-01-01 00", date(2026, 2, 1))
+    assert not _platne_k("2026-06-24 00", "", date(2026, 6, 1))

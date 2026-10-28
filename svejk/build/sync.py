@@ -10,7 +10,7 @@ from psp.fetch_unl import refresh_unl, unl_needs_refresh
 from psp.hlidac import HlidacClient
 from psp.schuze import SchuzeAnalyzer
 
-from svejk.build.fetch import run_fetch
+from svejk.build.fetch import refresh_steno_rows, run_fetch
 from svejk.build.io import iter_jsonl, read_json, write_json
 from svejk.config import HLIDAC_TOKEN, PSP_DATA_DIR, PSP_ORGAN_ID
 from svejk.paths import SchuzePaths, processed_root
@@ -94,6 +94,26 @@ def _votes_need_update(unl_stats: dict[str, Any], stored: dict[str, Any]) -> boo
         or unl_stats["max_cislo"] != stored["max_cislo"]
         or unl_stats["last_datum"] != stored["last_datum"]
     )
+
+
+def _votes_rows_changed(obdobi: int, cislo: int, analyzer: SchuzeAnalyzer, paths: SchuzePaths) -> bool:
+    """Obsah hlasování z UNL ≠ uložený votes.jsonl (dřív každá změna UNL přepsala všech 35 schůzí)."""
+    from svejk.build.fetch import _vote_row
+
+    try:
+        votes = analyzer.load_votes(obdobi, cislo)
+    except FileNotFoundError:
+        return False
+    return [_vote_row(v) for v in votes] != list(iter_jsonl(paths.votes_jsonl))
+
+
+def _steno_sitting_closed(paths: SchuzePaths) -> bool:
+    """Poslední stažený záznam obsahuje „Schůze skončila“: Hlídač už nic nového nemá."""
+    last: dict | None = None
+    for row in iter_jsonl(paths.steno_jsonl):
+        if last is None or int(row.get("poradi") or 0) >= int(last.get("poradi") or 0):
+            last = row
+    return bool(last) and "schůze skončila" in (last.get("text") or "").lower()
 
 
 def _steno_probe_has_new(
@@ -219,6 +239,7 @@ def run_sync(
 
     vysledky: list[dict[str, Any]] = []
     errors: list[str] = []
+    refresh_budget = 0 if check_only else int(os.environ.get("STENO_REFRESH_MAX", "150"))
 
     for cislo in cisla:
         paths = SchuzePaths.create(obdobi, cislo)
@@ -229,14 +250,19 @@ def run_sync(
         stored_votes = _stored_vote_stats(paths)
         steno_stats = _steno_stats(paths, state, cislo)
 
-        votes_changed = _votes_need_update(unl_stats, stored_votes) or unl_result.get("changed")
+        votes_changed = _votes_need_update(unl_stats, stored_votes) or (
+            unl_result.get("changed") and _votes_rows_changed(obdobi, cislo, analyzer, paths)
+        )
         steno_missing = _steno_cache_missing(paths, state, cislo)
         steno_incomplete = _steno_download_incomplete(paths, state, cislo)
         # Za posledním známým záznamem (soubor nebo sync-state, i po lokálním PSP fetchi)
         known_poradi = max(steno_stats["last_poradi"], _saved_steno_poradi(state, cislo))
         probe_error = ""
         try:
-            steno_published = _steno_probe_has_new(client, obdobi, cislo, known_poradi)
+            if not steno_missing and _steno_sitting_closed(paths):
+                steno_published = False  # uzavřená schůze: Hlídač se neptáme
+            else:
+                steno_published = _steno_probe_has_new(client, obdobi, cislo, known_poradi)
         except (OSError, ValueError, RuntimeError) as e:
             # Výpadek Hlídače nesmí shodit sync hlasování ostatních schůzí.
             steno_published = False
@@ -267,6 +293,29 @@ def run_sync(
         vysledky.append(entry)
 
         if action != "update":
+            if action == "skip" and not check_only:
+                # Stav ze souborů (dřív zůstávaly staré počty, např. před vyřazením zmatečných).
+                saved = state["schuze"].setdefault(str(cislo), {})
+                saved.update(stored_votes)
+            if action == "skip" and client is not None and refresh_budget > 0:
+                # Uzavřená schůze: postupně dotáhnout autorizované verze projevů.
+                try:
+                    n = refresh_steno_rows(
+                        client,
+                        paths.steno_jsonl,
+                        max_records=min(refresh_budget, 25),
+                        verbose=verbose,
+                    )
+                except (OSError, ValueError, RuntimeError) as e:
+                    warnings.append(f"schůze {cislo}: obnova stena: {e}")
+                    n = 0
+                refresh_budget -= 25
+                if n:
+                    entry["steno_refreshed"] = n
+                    # změní hash sync-state → CI uloží novou steno cache
+                    state["schuze"].setdefault(str(cislo), {})["steno_refreshed_at"] = (
+                        datetime.now(timezone.utc).isoformat()
+                    )
             continue
 
         paths.ensure_dirs()

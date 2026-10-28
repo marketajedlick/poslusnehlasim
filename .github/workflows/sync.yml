@@ -14,6 +14,10 @@ concurrency:
 permissions:
   contents: write
 
+env:
+  # Volební období (PSP10 = 2025); při novém období stačí změnit tady.
+  OBDOBI: "2025"
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -37,8 +41,12 @@ jobs:
           fi
           # Chyba u jedné schůze nesmí zablokovat commit hlasování ostatních; selžeme až na konci.
           rc=0
-          ./run-svejk.sh sync --obdobi 2025 -q || rc=$?
+          ./run-svejk.sh sync --obdobi "$OBDOBI" -q || rc=$?
           echo "rc=$rc" >> "$GITHUB_OUTPUT"
+
+      - name: Aktualizovat poslance a kluby (poslanci.zip)
+        continue-on-error: true
+        run: ./run-svejk.sh poslanci refresh || echo "::warning::poslanci.zip se nepodařilo stáhnout (SSL psp.cz), zůstává stará verze"
 
       - name: Save steno cache
         uses: actions/cache/save@v4
@@ -54,7 +62,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add hl-2025ps/hl2025s.unl hl-2025ps/zmatecne.unl processed/sync-state.json
-          git add processed/2025-s*/raw/votes.jsonl
+          git add "processed/${OBDOBI}"-s*/raw/votes.jsonl data/psp/poslanci.zip
           if git diff --staged --quiet; then
             echo "Žádné změny k commitu."
             echo "committed=false" >> "$GITHUB_OUTPUT"

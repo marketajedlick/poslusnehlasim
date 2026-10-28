@@ -32,13 +32,19 @@ class StenoRecord:
             obdobi=int(data.get("obdobi") or 0),
             schuze=int(data.get("schuze") or 0),
             datum=data.get("datum"),
-            cele_jmeno=data.get("celeJmeno") or "",
+            # U hlaviček bodu vrací Hlídač místo jména číslo tisku („189“), ne řečníka.
+            cele_jmeno=_clean_speaker(data.get("celeJmeno") or ""),
             tema=data.get("tema") or "",
             text=data.get("text") or "",
             pocet_slov=int(data.get("pocetSlov") or 0),
             url=data.get("url"),
             cislo_hlasovani=data.get("cisloHlasovani"),
         )
+
+
+def _clean_speaker(name: str) -> str:
+    name = (name or "").strip()
+    return "" if name and not any(ch.isalpha() for ch in name) else name
 
 
 def normalize_hlidac_token(token: str) -> str:

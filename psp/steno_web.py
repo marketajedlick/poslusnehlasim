@@ -180,7 +180,8 @@ class PspStenoFetcher:
             "<!-- sy -->",
             "<script",
             "tippy(",
-            "Minulý",
+            # Jen odkaz v navigaci, ne slovo v projevu („Minulý týden…“ uřízlo text).
+            ">Minulý<",
             "Nahoru Další",
             '<div class="document-nav no-print">',
         ):
@@ -330,6 +331,8 @@ class PspStenoFetcher:
     ) -> Iterator[StenoRecord]:
         tema_map = self._parse_tema_map(obdobi, schuze)
         poradi = 0
+        emitted = 0
+        pending: dict | None = None
         last_tema = "Zahájení schůze"
         current_datum: str | None = None
 
@@ -339,6 +342,13 @@ class PspStenoFetcher:
             if page_datum:
                 current_datum = page_datum
             page_file = page_url.rsplit("/", 1)[-1]
+
+            # Projev přetékající ze předchozí stránky („(pokračuje Jan Jakob) …“) je
+            # před první kotvou; dřív se zahodil (1,7k–17k znaků na stránku).
+            continuation = self._page_continuation(html_text)
+            if continuation and pending is not None:
+                pending["text"] = f"{pending['text']}\n{continuation}".strip()
+                pending["pocet_slov"] = self._pocet_slov(pending["text"])
 
             for speech in self._parse_speeches(page_url, html_text, current_datum):
                 poradi += 1
@@ -352,7 +362,12 @@ class PspStenoFetcher:
                 )
                 last_tema = tema
                 record_url = f"{speech.page_url}#{speech.anchor}"
-                yield StenoRecord(
+                if pending is not None:
+                    yield StenoRecord(**pending)
+                    emitted += 1
+                    if max_records is not None and emitted >= max_records:
+                        return
+                pending = dict(
                     id=HlidacClient.steno_id(obdobi, schuze, poradi),
                     poradi=poradi,
                     obdobi=obdobi,
@@ -365,14 +380,28 @@ class PspStenoFetcher:
                     url=record_url,
                     cislo_hlasovani=None,
                 )
-                if max_records is not None and poradi - start + 1 >= max_records:
-                    return
+        if pending is not None and (max_records is None or emitted < max_records):
+            yield StenoRecord(**pending)
 
     @staticmethod
     def _norm_search(text: str) -> str:
         s = unicodedata.normalize("NFKC", text or "")
         s = re.sub(r"\s+", " ", s).strip().lower()
         return s
+
+    def _page_continuation(self, html_text: str) -> str:
+        """Text na začátku stránky před první kotvou projevu (pokračování z minulé stránky)."""
+        first = _ANCHOR_START.search(html_text)
+        if not first:
+            return ""
+        start = self._body_start(html_text)
+        if start >= first.start():
+            return ""
+        text = self._html_to_text(html_text[start : first.start()])
+        # Jen skutečné pokračování projevu, ne „(Jednání zahájeno v 9.00 hodin.)“ nového dne.
+        if "(pokračuje" not in text[:300].lower():
+            return ""
+        return text
 
     def _body_start(self, html_text: str) -> int:
         """Začátek projevu, až za horní navigací (ta obsahuje slovo Minulý a _html_to_text by text uřízl)."""

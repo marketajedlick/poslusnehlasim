@@ -82,14 +82,15 @@ def party_matches(expected: str, given: str) -> bool:
 class PoslanecIndex:
     """Rychlé vyhledávání poslance podle jména (včetně pádů příjmení)."""
 
-    def __init__(self, *, data_dir: Path | None = None) -> None:
+    def __init__(self, *, data_dir: Path | None = None, k_datu=None) -> None:
         from psp.poslanci import _display_klub, _prijmeni_tvary, load_poslanci
 
         self._display_klub = _display_klub
         self._by_full: dict[str, object] = {}
         self._by_surname: dict[str, list] = defaultdict(list)
 
-        for p in load_poslanci(data_dir=data_dir or ROOT / "data"):
+        # Klub k datu vydání: přestup mezi kluby nesmí zpětně „opravit“ starší články.
+        for p in load_poslanci(data_dir=data_dir or ROOT / "data", k_datu=k_datu):
             fn = f"{p.jmeno} {p.prijmeni}".lower()
             self._by_full[fn] = p
             self._by_surname[p.prijmeni.lower()].append(p)
@@ -114,6 +115,15 @@ class PoslanecIndex:
 
     def expected_party(self, poslanec) -> str:
         return self._display_klub(poslanec)
+
+
+_INDEX_CACHE: dict = {}
+
+
+def _poslanec_index_k(k_datu) -> "PoslanecIndex":
+    if k_datu not in _INDEX_CACHE:
+        _INDEX_CACHE[k_datu] = PoslanecIndex(k_datu=k_datu)
+    return _INDEX_CACHE[k_datu]
 
 
 def iter_topic_texts(topic: dict) -> list[tuple[str, str]]:
@@ -240,7 +250,11 @@ def audit_edition_day(
     *,
     index: PoslanecIndex | None = None,
 ) -> list[PartyIssue]:
-    idx = index or PoslanecIndex()
+    if index is None:
+        from datetime import date as _date
+
+        index = _poslanec_index_k(_date.fromisoformat(iso))
+    idx = index
     day_path = paths.facts_by_day / f"{iso}.json"
     if not day_path.is_file():
         return []

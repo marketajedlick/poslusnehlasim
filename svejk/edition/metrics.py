@@ -14,6 +14,40 @@ from svejk.review import audit_weak_facts, format_day_review
 from svejk.validate.names import audit_edition_day, summarize_party_issues
 
 
+def _verdikt_rozpory(paths: SchuzePaths, slugs: list[str]) -> list[tuple[str, str, str]]:
+    """Verdikt článku proti výsledku hlasování (typ hlasování ze stena).
+
+    Chytá „vrácení do výboru ≠ zamítnutí“ a „první čtení ≠ zamítnutí“ z WORKFLOW §5.
+    """
+    from svejk.build.io import iter_jsonl
+    from svejk.build.vote_logic import topic_vysledek, verdikt_odporuje, vote_motions_from_steno
+
+    if not paths.topics_json.is_file():
+        return []
+    topics = {t["slug"]: t for t in read_json(paths.topics_json).get("topics") or []}
+    votes = {int(v["cislo"]): v for v in iter_jsonl(paths.votes_jsonl) if v.get("cislo") is not None}
+    motions: dict[int, str] | None = None
+    out: list[tuple[str, str, str]] = []
+    for slug in slugs:
+        fp = paths.facts_by_topic / f"{slug}.json"
+        topic = topics.get(slug)
+        if not fp.is_file() or not topic:
+            continue
+        fact = read_json(fp)
+        if not fact.get("publikovat", True):
+            continue
+        vysledek = topic.get("vysledek")
+        if "vysledek" not in topic and paths.steno_jsonl.is_file():
+            if motions is None:
+                motions = vote_motions_from_steno(list(iter_jsonl(paths.steno_jsonl)))
+            group = [votes[c] for c in topic.get("vote_cisla") or [] if c in votes]
+            vysledek = topic_vysledek(group, motions)
+        verdikt = (fact.get("verdikt") or "").strip()
+        if verdikt_odporuje(verdikt, vysledek):
+            out.append((slug, verdikt, vysledek))
+    return out
+
+
 def _shared_topic_days(paths: SchuzePaths, iso: str, slugs: list[str]) -> dict[str, list[str]]:
     """Témata dne, která má v topic_slugs i jiný den téže schůze."""
     out: dict[str, list[str]] = {}
@@ -218,6 +252,8 @@ def run_edition_metrics(
     quote_dupes = _jazykolam_duplicate_quotes(paths, day, slugs)
     if quote_dupes:
         errors.append("citát dne je stejný jako citát v článku")
+    for slug, verdikt, vysledek in _verdikt_rozpory(paths, slugs):
+        errors.append(f"{slug}: verdikt {verdikt} odporuje hlasování ({vysledek})")
     shared = _shared_topic_days(paths, iso, slugs)
     for slug, days in sorted(shared.items()):
         errors.append(f"téma {slug} je i ve vydání {', '.join(days)} (úprava změní oba dny)")

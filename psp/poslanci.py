@@ -6,6 +6,7 @@ import re
 import time
 import zipfile
 from dataclasses import dataclass
+from datetime import date, datetime
 from functools import lru_cache
 from pathlib import Path
 
@@ -96,12 +97,57 @@ def _display_klub(p: Poslanec) -> str:
     return _KLUB_DISPLAY.get((p.jmeno, p.prijmeni), p.klub)
 
 
+def _parse_unl_date(raw: str) -> date | None:
+    raw = (raw or "").strip()
+    if not raw:
+        return None
+    for fmt, n in (("%Y-%m-%d", 10), ("%d.%m.%Y", 10)):
+        try:
+            return datetime.strptime(raw[:n], fmt).date()
+        except ValueError:
+            continue
+    return None
+
+
+def _platne_k(od: str, do: str, k_datu: date | None) -> bool:
+    """Bez data = dnes platné (prázdné „do“); s datem = platné v ten den."""
+    if k_datu is None:
+        return not do
+    d_od = _parse_unl_date(od)
+    d_do = _parse_unl_date(do)
+    if d_od and d_od > k_datu:
+        return False
+    return not d_do or d_do >= k_datu
+
+
+def refresh_poslanci_zip(data_dir: Path | None = None) -> bool:
+    """Stáhne aktuální poslanci.zip; True, když se obsah změnil (CI ho pak commitne)."""
+    base = data_dir or PSP_DATA_DIR
+    path = _cache_zip_path(base)
+    raw = get_bytes(POSLANCI_ZIP_URL, timeout=120, headers={"User-Agent": _USER_AGENT})
+    import io
+
+    with zipfile.ZipFile(io.BytesIO(raw)) as zf:
+        missing = {"organy.unl", "osoby.unl", "zarazeni.unl", "poslanec.unl"} - set(zf.namelist())
+        if missing:
+            raise OSError(f"poslanci.zip bez {sorted(missing)}")
+    if path.is_file() and path.read_bytes() == raw:
+        return False
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(raw)
+    return True
+
+
 def load_poslanci(
     *,
     obdobi_id: str = OBD_OBI_2025,
     data_dir: Path | None = None,
+    k_datu: date | None = None,
 ) -> list[Poslanec]:
-    """Načte aktivní poslance a jejich aktuální klub z poslanci.zip."""
+    """Načte poslance a jejich klub z poslanci.zip.
+
+    k_datu: klub platný v den vydání (přestupy mezi kluby), jinak aktuální.
+    """
     base = data_dir or PSP_DATA_DIR
     zip_path = _ensure_poslanci_zip(base)
     with zipfile.ZipFile(zip_path) as zf:
@@ -131,14 +177,14 @@ def load_poslanci(
         klub_ids = {
             oid
             for oid, o in organy.items()
-            if o["id_typ"] == "1" and not o["do"]
+            if o["id_typ"] == "1" and _platne_k(o["od"], o["do"], k_datu)
         }
         osoba_klub: dict[str, str] = {}
         for row in _read_unl_bytes(zf.read("zarazeni.unl")):
             if len(row) < 5:
                 continue
-            id_osoba, id_of, cl_funkce, do_o = row[0], row[1], row[2], row[4]
-            if cl_funkce != "0" or do_o or id_of not in klub_ids:
+            id_osoba, id_of, cl_funkce, od_o, do_o = row[0], row[1], row[2], row[3], row[4]
+            if cl_funkce != "0" or id_of not in klub_ids or not _platne_k(od_o, do_o, k_datu):
                 continue
             osoba_klub[id_osoba] = _klub_label(organy[id_of]["zkr"])
 

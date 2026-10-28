@@ -201,7 +201,7 @@ def _write_topic_skeleton(
         "slug": topic["slug"],
         "nazev": nazev,
         "datum": topic.get("datum", ""),
-        "verdikt": _verdikt(proslo, nazev, vysv),
+        "verdikt": _verdikt(proslo, nazev, vysv, topic.get("vysledek")),
         "predmet_lidsky": topic.get("tema_svejk") or "",
         "koho": koho,
         "fakty": fakty,

@@ -17,6 +17,7 @@ from psp.steno_web import PspStenoFetcher
 
 def _vote_row(v: Vote) -> dict[str, Any]:
     return {
+        "id_hlasovani": int(v.id_hlasovani) if str(v.id_hlasovani).isdigit() else v.id_hlasovani,
         "cislo": v.cislo,
         "bod": v.bod,
         "datum": v.datum,
@@ -185,6 +186,93 @@ def _fetch_steno_psp_to_jsonl(
     return existing + count
 
 
+_NEAUTORIZOVANO = "neautorizováno"
+
+
+def _clean_steno_rows(path) -> int:
+    """Jednorázově vyčistí číselná „jména“ řečníků v už staženém stenu."""
+    from psp.hlidac import _clean_speaker
+
+    if not path.is_file():
+        return 0
+    rows = list(iter_jsonl(path))
+    fixed = 0
+    for row in rows:
+        clean = _clean_speaker(row.get("cele_jmeno") or "")
+        if clean != (row.get("cele_jmeno") or ""):
+            row["cele_jmeno"] = clean
+            fixed += 1
+    if fixed:
+        write_jsonl(path, rows)
+    return fixed
+
+
+def refresh_steno_rows(
+    client: HlidacClient,
+    path,
+    *,
+    max_records: int,
+    min_age_days: int = 3,
+    verbose: bool = True,
+) -> int:
+    """Znovu stáhne neautorizované záznamy a poslední (možná useknutý) projev.
+
+    Steno se jinak jen doplňuje od posledního pořadí, takže citace zůstávaly
+    z neautorizovaných verzí a poslední projev běžící schůze navždy useknutý.
+    Za běh max. `max_records` dotazů, nejstarší první.
+    """
+    import sys
+    from datetime import timedelta
+
+    if max_records <= 0 or not path.is_file():
+        return 0
+    rows = list(iter_jsonl(path))
+    if not rows:
+        return 0
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=min_age_days)).date().isoformat()
+    last_poradi = max(int(r.get("poradi") or 0) for r in rows)
+    recheck = (datetime.now(timezone.utc) - timedelta(days=7)).date().isoformat()
+    candidates = [
+        i
+        for i, r in enumerate(rows)
+        if (r.get("refreshed_at") or "") < recheck
+        and (
+            int(r.get("poradi") or 0) == last_poradi
+            or (
+                _NEAUTORIZOVANO in (r.get("text") or "").lower()
+                and (r.get("datum") or "")[:10] <= cutoff
+            )
+        )
+    ]
+    candidates.sort(key=lambda i: (int(rows[i].get("poradi") or 0) != last_poradi, rows[i].get("datum") or ""))
+    changed = 0
+    touched = False
+    for i in candidates[:max_records]:
+        rid = rows[i].get("id")
+        if not rid:
+            continue
+        try:
+            rec = client.fetch_steno(rid)
+        except (OSError, ValueError, RuntimeError) as e:
+            if verbose:
+                print(f"  refresh {rid}: {e}", file=sys.stderr, flush=True)
+            break
+        touched = True
+        if rec is None:
+            rows[i]["refreshed_at"] = datetime.now(timezone.utc).date().isoformat()
+            continue
+        new_row = _steno_row(rec)
+        new_row["refreshed_at"] = datetime.now(timezone.utc).date().isoformat()
+        if new_row.get("text") != rows[i].get("text") or new_row.get("pocet_slov") != rows[i].get("pocet_slov"):
+            changed += 1
+        rows[i] = new_row
+    if touched:
+        write_jsonl(path, rows)
+        if verbose:
+            print(f"Steno: obnoveno {changed} záznamů (autorizace / dokončený projev).", file=sys.stderr, flush=True)
+    return changed
+
+
 def run_fetch(
     paths: SchuzePaths,
     *,
@@ -199,6 +287,7 @@ def run_fetch(
     write_jsonl(paths.votes_jsonl, vote_rows)
 
     steno_count = 0
+    steno_refreshed = 0
     hlidac_used = False
     psp_steno_used = False
     if skip_steno:
@@ -220,6 +309,14 @@ def run_fetch(
             verbose=verbose,
         )
         hlidac_used = True
+        if steno_count:
+            _clean_steno_rows(paths.steno_jsonl)
+            steno_refreshed = refresh_steno_rows(
+                client,
+                paths.steno_jsonl,
+                max_records=int(os.environ.get("STENO_REFRESH_MAX", "150")),
+                verbose=verbose,
+            )
         if steno_count == 0:
             psp_rate = float(os.environ.get("PSP_STENO_RATE_LIMIT_S", "0.25"))
             fetcher = PspStenoFetcher(rate_limit_s=psp_rate)
@@ -254,6 +351,7 @@ def run_fetch(
     return {
         "votes": len(vote_rows),
         "steno": steno_count,
+        "steno_refreshed": steno_refreshed,
         "hlidac_token_used": hlidac_used,
         "psp_steno_used": psp_steno_used,
         "fetched_at": datetime.now(timezone.utc).isoformat(),

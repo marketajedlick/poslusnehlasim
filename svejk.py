@@ -615,6 +615,19 @@ def cmd_poslanci_export(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_poslanci_refresh(_args: argparse.Namespace) -> int:
+    from psp.poslanci import refresh_poslanci_zip
+    from svejk.config import ROOT
+
+    try:
+        changed = refresh_poslanci_zip(ROOT / "data")
+    except OSError as e:
+        print(f"Chyba: {e}", file=sys.stderr)
+        return 1
+    print("poslanci.zip aktualizován" if changed else "poslanci.zip beze změny")
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Poslušně hlásím — build a export")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -984,6 +997,10 @@ def main() -> int:
         help="Vypsat na stdout místo zápisu do souboru",
     )
     p_posl_export.set_defaults(func=cmd_poslanci_export)
+    p_posl_refresh = posl_sub.add_parser(
+        "refresh", help="Stáhnout aktuální poslanci.zip z PSP (kluby, náhradníci)"
+    )
+    p_posl_refresh.set_defaults(func=cmd_poslanci_refresh)
 
     from svejk.edition.commands import register_edition_parser
 
