@@ -1,8 +1,8 @@
 {
   "slug": "novela-z-o-rostlinolekarske-peci-eu",
   "nazev": "Novela z. o rostlinolékařské péči - EU",
-  "datum": "27.05.2026",
-  "verdikt": "schvaleno",
+  "datum": "05.06.2026",
+  "verdikt": "odlozeno",
   "predmet_lidsky": "rostlinolékařské péči",
   "koho": [
     "Koho se to týká? Hlavně farmářů a podnikatelů v zemědělství, běžný občan v bytě to prakticky neřeší."
@@ -27,7 +27,7 @@
   "priorita": 3,
   "nadpis": "Postřiky se vracejí do druhého kola",
   "pocet_hlasovani": 2,
-  "proslo": true,
+  "proslo": false,
   "signaly": {
     "proti_max": 46,
     "pritomno_min": 139,

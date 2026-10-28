@@ -1,0 +1,73 @@
+{
+  "slug": "odpoved-na-pisemnou-interpelaci-m-jurecky-na-a-b",
+  "nazev": "Odpověď na písemnou interpelaci M. Jurečky na A. Babiše",
+  "datum": "22.10.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "měřitelné cíle vlády na roky 2026 až 2029, na které se poslanec ptá premiéra",
+  "koho": [
+    "Koho se to týká? Každého, kdo chce vědět, podle čeho vláda pozná, že svůj slib splnila."
+  ],
+  "fakty": [
+    {
+      "text": "Jurečka: přerušit, dokud nepřijde premiér.",
+      "source": "steno",
+      "steno_id": "2025_34_01481",
+      "citace": "já navrhuji přerušení této interpelace do doby přítomnosti pana premiéra.",
+      "link_phrase": "dokud nepřijde premiér"
+    },
+    {
+      "text": "Barták: první řízení v tomhle bodě.",
+      "source": "steno",
+      "steno_id": "2025_34_01482",
+      "citace": "tohle je úplně první řízení, které je tady v tomto bodě, a nemám to zatím úplně uložené, nechám si poradit.",
+      "link_phrase": "úplně první řízení"
+    },
+    {
+      "text": "Okleštěk: hlasoval pro, na sjetině má zdržel se.",
+      "source": "steno",
+      "steno_id": "2025_34_01487",
+      "citace": "já chci zpochybnit hlasování, protože jsem hlasoval pro a na sjetině mám zdržel se.",
+      "link_phrase": "na sjetině má zdržel se"
+    },
+    {
+      "text": "Barták: přerušení do přítomnosti premiéra přijato.",
+      "source": "steno",
+      "steno_id": "2025_34_01488",
+      "citace": "Přerušení do přítomnosti premiéra bylo přijato.",
+      "link_phrase": "Přerušení do přítomnosti premiéra bylo přijato"
+    },
+    {
+      "text": "Jurečka: tvoříme precedent.",
+      "source": "steno",
+      "steno_id": "2025_34_01485",
+      "citace": "v tom případě tvoříme precedent, který tady nikdy nebyl.",
+      "link_phrase": "precedent, který tady nikdy nebyl"
+    },
+    {
+      "text": "Kovářová: premiér na písemné interpelace dva roky nepřišel.",
+      "source": "steno",
+      "steno_id": "2025_34_01483",
+      "citace": "pan premiér, myslím, že tu nebyl dva roky.",
+      "link_phrase": "dva roky nepřišel"
+    }
+  ],
+  "publikovat": false,
+  "priorita": 2,
+  "nadpis": "Počkáme\naž přijde premiér",
+  "lead": "Dopoledne měla přijít na řadu písemná otázka Mariana Jurečky (KDU-ČSL) premiérovi Babišovi. Šlo o měřitelné cíle vlády na roky 2026 až 2029. Premiér byl omluvený. Jurečka navrhl počkat, dokud nepřijde premiér.",
+  "pointa": "Místopředseda Sněmovny Barták řekl, že tohle je úplně první řízení v tom bodě a nechá si poradit. První hlasování o přestávce neprošlo. Ladislav Okleštěk (ANO) ho zpochybnil. Hlasoval pro a na sjetině má zdržel se. Sál zpochybnění přijal a hlasoval znovu. Přerušení do přítomnosti premiéra bylo přijato.\n\nJurečka k tomu řekl, že tak vzniká precedent, který tady nikdy nebyl. Dřív se podle něj přerušovalo samo, když člen vlády v sále chyběl.\n\nVěra Kovářová (STAN) podotkla, že na písemné otázky ministři nedocházeli a premiér podle ní dva roky nepřišel.\n\nPoslušně podotýkám, že otázka na cíle vlády počká, až premiér přijde osobně.",
+  "mean": "Poslanec se ptá premiéra na měřitelné cíle vlády do roku 2029. Sněmovna projednávání přerušila do doby, než bude premiér v sále.",
+  "citace_text": "já navrhuji přerušení této interpelace do doby přítomnosti pana premiéra.",
+  "citace_autor": "Marian Jurečka (KDU-ČSL)",
+  "steno_id": "2025_34_01481",
+  "pocet_hlasovani": 3,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 14,
+    "pritomno_min": 110,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 246
+}

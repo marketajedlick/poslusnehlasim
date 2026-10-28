@@ -24,3 +24,8 @@ seo-redesign/
 
 # Cache vykreslených OG/share PNG (export-pages)
 .cache/
+
+# Pracovní soubory mimo git (IG karusely, screenshoty, rozbalený export poslanců)
+carousels/
+tmp/
+data/psp/poslanci/
