@@ -2,7 +2,7 @@
   "slug": "projednani-navrhu-na-vysloveni-neduvery-vlade-ce",
   "nazev": "Projednání návrhu na vyslovení nedůvěry vládě České republiky",
   "datum": "04.02.2026",
-  "verdikt": "schvaleno",
+  "verdikt": "zamiteno",
   "predmet_lidsky": "projednání návrhu na vyslovení nedůvěry vládě České republiky",
   "koho": [
     "Koho se to týká? Celé republiky. Když nedůvěra neprojde, vláda dál řídí stát a prosazuje svůj program."
@@ -39,7 +39,7 @@
   "priorita": 3,
   "nadpis": "Nedůvěra neprošla",
   "pocet_hlasovani": 2,
-  "proslo": true,
+  "proslo": false,
   "signaly": {
     "proti_max": 99,
     "pritomno_min": 123,
