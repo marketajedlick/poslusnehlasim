@@ -226,7 +226,16 @@ def run_sync(
         steno_incomplete = _steno_download_incomplete(paths, state, cislo)
         # Za posledním známým záznamem (soubor nebo sync-state, i po lokálním PSP fetchi)
         known_poradi = max(steno_stats["last_poradi"], _saved_steno_poradi(state, cislo))
-        steno_published = _steno_probe_has_new(client, obdobi, cislo, known_poradi)
+        probe_error = ""
+        try:
+            steno_published = _steno_probe_has_new(client, obdobi, cislo, known_poradi)
+        except (OSError, ValueError, RuntimeError) as e:
+            # Výpadek Hlídače nesmí shodit sync hlasování ostatních schůzí.
+            steno_published = False
+            probe_error = f"schůze {cislo}: Hlídač steno probe: {e}"
+            errors.append(probe_error)
+            if verbose:
+                print(f"CHYBA {probe_error}", flush=True)
         steno_new = steno_missing or steno_incomplete or steno_published
         pipeline_missing = _needs_pipeline(paths)
 
@@ -245,6 +254,8 @@ def run_sync(
             "steno_download_incomplete": steno_incomplete,
             "pipeline_missing": pipeline_missing,
         }
+        if probe_error:
+            entry["steno_probe_error"] = probe_error
         vysledky.append(entry)
 
         if action != "update":
@@ -269,7 +280,7 @@ def run_sync(
                 "last_steno_datum": steno_after["last_datum"],
                 "synced_at": datetime.now(timezone.utc).isoformat(),
             }
-        except (OSError, ValueError, FileNotFoundError) as e:
+        except (OSError, ValueError, RuntimeError) as e:
             msg = f"schůze {cislo}: {e}"
             errors.append(msg)
             entry["error"] = str(e)

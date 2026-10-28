@@ -268,6 +268,8 @@ def _psp_url_cache_path(paths: SchuzePaths):
 # Citace, které se na PSP nenašly (nebo nešla síť): drží se jen po dobu běhu procesu.
 _UNRESOLVED_THIS_RUN: dict[tuple[int, int, str], str] = {}
 _OTHER_SITTING_RESOLVERS: dict[tuple[int, int], "PspUrlResolver"] = {}
+# Seznam stránek stenoprotokolu stažený z PSP v tomto běhu (obnovuje se nejvýš jednou).
+_PAGE_URLS_THIS_RUN: dict[tuple[int, int], list[str]] = {}
 
 
 def _resolver_for_other_sitting(paths: SchuzePaths) -> "PspUrlResolver":
@@ -317,6 +319,10 @@ class PspUrlResolver:
     def _load_pages(self) -> None:
         if self._page_urls is not None:
             return
+        key = (self.paths.obdobi, self.paths.schuze)
+        if key in _PAGE_URLS_THIS_RUN:
+            self._page_urls = list(_PAGE_URLS_THIS_RUN[key])
+            return
         cache_path = _psp_index_path(self.paths)
         if cache_path.is_file():
             data = read_json(cache_path)
@@ -327,16 +333,73 @@ class PspUrlResolver:
             ):
                 self._page_urls = list(data["page_urls"])
                 return
+        self._fetch_pages()
+
+    def _fetch_pages(self, *, full: bool = True) -> bool:
+        """Stáhne seznam stránek stenoprotokolu z PSP; True, pokud se změnil.
+
+        full=False jen doplní stránky za poslední známou (levné, běžící schůze).
+        """
+        key = (self.paths.obdobi, self.paths.schuze)
+        old = list(self._page_urls or [])
         fetcher = self._fetcher_lazy()
-        self._page_urls = fetcher.list_steno_page_urls(self.paths.obdobi, self.paths.schuze)
-        self.paths.aligned.mkdir(parents=True, exist_ok=True)
-        write_json(
-            cache_path,
-            {
-                "obdobi": self.paths.obdobi,
-                "schuze": self.paths.schuze,
-                "page_urls": self._page_urls,
-            },
+        if old and not full:
+            fetched = fetcher.extend_steno_page_urls(self.paths.obdobi, self.paths.schuze, old)
+        else:
+            fetched = fetcher.list_steno_page_urls(self.paths.obdobi, self.paths.schuze)
+        _PAGE_URLS_THIS_RUN[key] = list(fetched)
+        self._page_urls = list(fetched)
+        if fetched and fetched != old:
+            self.paths.aligned.mkdir(parents=True, exist_ok=True)
+            index_path = _psp_index_path(self.paths)
+            data = read_json(index_path) if index_path.is_file() else {}
+            if data.get("obdobi") != self.paths.obdobi or data.get("schuze") != self.paths.schuze:
+                data = {}
+            # Ostatní klíče (poradi_urls) zachovat.
+            data.update(
+                {
+                    "obdobi": self.paths.obdobi,
+                    "schuze": self.paths.schuze,
+                    "page_urls": self._page_urls,
+                }
+            )
+            write_json(index_path, data)
+        return fetched != old
+
+    def _refresh_pages(self, fallback_url: str) -> bool:
+        """U běžící schůze přibývají stránky: seznam z disku obnovit (jednou za běh).
+
+        Má smysl, jen když projev začíná mimo známý seznam (ten bývá děravý i uprostřed,
+        PSP zveřejňuje stránky postupně → stáhnout celý), nebo hledání (12 stránek od
+        začátku projevu) narazilo na jeho konec (→ stačí doplnit konec).
+        """
+        key = (self.paths.obdobi, self.paths.schuze)
+        if key in _PAGE_URLS_THIS_RUN:
+            return False
+        pages = self._page_urls or []
+        start_page = fallback_url.split("#", 1)[0]
+        if start_page not in pages:
+            return self._fetch_pages(full=True)
+        if pages.index(start_page) + 12 < len(pages):
+            return False
+        return self._fetch_pages(full=False)
+
+    def _found_on_page(self, resolved: str, citace: str) -> bool:
+        needle = self._fetcher_lazy()._norm_search(citace)
+        if not needle:
+            return True
+        page_text = self._page_text_cache.get(resolved.split("#", 1)[0]) or ""
+        return bool(page_text) and self._fetcher_lazy()._citace_in_text(page_text, needle)
+
+    def _resolve_online(self, speaker: str, fallback_url: str, citace: str) -> str:
+        return self._fetcher_lazy().resolve_url_for_citace(
+            self.paths.obdobi,
+            self.paths.schuze,
+            speaker,
+            citace,
+            fallback_url=fallback_url,
+            page_urls=self._page_urls,
+            page_text_cache=self._page_text_cache,
         )
 
     def resolve(self, speaker: str, fallback_url: str, citace: str) -> str:
@@ -364,28 +427,20 @@ class PspUrlResolver:
         run_key = (self.paths.obdobi, self.paths.schuze, cache_key)
         if run_key in _UNRESOLVED_THIS_RUN:
             return _UNRESOLVED_THIS_RUN[run_key]
-        self._load_pages()
         try:
-            resolved = self._fetcher_lazy().resolve_url_for_citace(
-                self.paths.obdobi,
-                self.paths.schuze,
-                speaker,
-                citace,
-                fallback_url=fallback_url,
-                page_urls=self._page_urls,
-                page_text_cache=self._page_text_cache,
-            )
+            self._load_pages()
+            resolved = self._resolve_online(speaker, fallback_url, citace)
+            if not self._found_on_page(resolved, citace) and self._refresh_pages(fallback_url):
+                resolved = self._resolve_online(speaker, fallback_url, citace)
         except OSError:
             # ponytail: bez sítě stačí fallback URL ze steno.jsonl
             _UNRESOLVED_THIS_RUN[run_key] = fallback_url
             return fallback_url
-        page = resolved.split("#", 1)[0]
-        page_text = self._page_text_cache.get(page) or ""
-        needle = self._fetcher_lazy()._norm_search(citace)
-        if needle and page_text and not self._fetcher_lazy()._citace_in_text(page_text, needle):
-            # citace na stránce není (projev pokračuje dál, přepis ještě nebyl).
-            # Na disk necachovat, ať se příští build zkusí znovu; v tomhle běhu už ale
-            # stránky PSP znovu nestahovat (export volá resolve pro každý výstup dne).
+        if not self._found_on_page(resolved, citace):
+            # citace na žádné známé stránce není (projev pokračuje dál, přepis ještě
+            # nebyl, nebo stránka chybí v seznamu). Na disk necachovat, ať se příští
+            # build zkusí znovu; v tomhle běhu už ale stránky PSP znovu nestahovat
+            # (export volá resolve pro každý výstup dne).
             _UNRESOLVED_THIS_RUN[run_key] = resolved
             return resolved
         url_cache[cache_key] = resolved

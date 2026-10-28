@@ -161,10 +161,14 @@ def load_poslanci(
     return out
 
 
+# osoby.unl PSP značí ženy "Ž" (někdy bez diakritiky "Z"); "F" kvůli starším datům/testům.
+_ZENSKE_POHLAVI = frozenset({"Ž", "Z", "F"})
+
+
 def _prijmeni_tvary(prijmeni: str, pohlavi: str) -> set[str]:
     """Běžné tvary příjmení ve zpravodajském stylu (nominativ + pád)."""
     tvary = {prijmeni}
-    if pohlavi == "F":
+    if pohlavi.strip().upper() in _ZENSKE_POHLAVI:
         if prijmeni.endswith("ová"):
             kmen = prijmeni[:-1]
             tvary.update(kmen + s for s in ("á", "é", "ou", "ým"))

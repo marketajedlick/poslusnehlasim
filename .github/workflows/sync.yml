@@ -58,7 +58,18 @@ jobs:
           git commit \
             -m "sync: aktualizace dat PSP (UNL + processed)" \
             -m "Automatický sync z workflow Sync PSP data."
-          git push
+          # Build a sync můžou pushnout současně: před push dorovnat main (jiné soubory → bez konfliktu).
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              break
+            fi
+            git rebase --abort 2>/dev/null || true
+            if [ "$attempt" = 5 ]; then
+              echo "::error::git push selhal i po 5 pokusech"
+              exit 1
+            fi
+            sleep $((attempt * 5))
+          done
           echo "committed=true" >> "$GITHUB_OUTPUT"
 
       - name: Notifikace — nová data stažena

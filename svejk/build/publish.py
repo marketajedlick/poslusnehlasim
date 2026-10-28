@@ -92,7 +92,9 @@ def load_held_keys() -> frozenset[str]:
 
 
 def is_edition_approved(edition: Edition) -> bool:
-    return edition_key(edition.obdobi, edition.schuze, edition.datum_unl) in load_approved_keys()
+    """Schválené a zároveň ne skryté (hidden má přednost, stejně jako v edition_source)."""
+    key = edition_key(edition.obdobi, edition.schuze, edition.datum_unl)
+    return key in load_approved_keys() and key not in load_hidden_keys()
 
 
 def edition_source(edition: Edition) -> Literal["facts", "snapshot"] | None:

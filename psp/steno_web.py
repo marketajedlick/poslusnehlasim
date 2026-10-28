@@ -436,6 +436,17 @@ class PspStenoFetcher:
         base = self.schuze_base_url(obdobi, schuze)
         return [url for url, _ in self._walk_pages(base, self.first_steno_page(schuze))]
 
+    def extend_steno_page_urls(self, obdobi: int, schuze: int, known: list[str]) -> list[str]:
+        """Doplní seznam stránek o nové (běžící schůze): projde jen od poslední známé dál."""
+        if not known:
+            return self.list_steno_page_urls(obdobi, schuze)
+        base = self.schuze_base_url(obdobi, schuze)
+        out = list(known)
+        for url, _ in self._walk_pages(base, known[-1]):
+            if url not in out:
+                out.append(url)
+        return out
+
     def find_speech_url(self, page_url: str, speaker: str) -> str:
         """Najde kotvu řečníka na dané stránce PSP."""
         if not page_url or not speaker:

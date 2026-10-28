@@ -16,6 +16,10 @@ RATE_LIMIT_IP_WINDOW = "3600"
 RATE_LIMIT_EMAIL_MAX = "3"
 RATE_LIMIT_EMAIL_WINDOW = "86400"
 NOTIFY_DEDUPE_WINDOW = "86400"
+# Strop potvrzovacích mailů (Resend) za den přes všechny adresy
+DOI_DAILY_MAX = "300"
+# Cache GET /reactions (s)
+REACTIONS_CACHE_TTL = "60"
 # Korektury: 20 POST/hod z IP
 CORRECTIONS_RATE_LIMIT_IP_MAX = "20"
 CORRECTIONS_RATE_LIMIT_IP_WINDOW = "3600"
@@ -33,3 +37,11 @@ id = "00000000000000000000000000000000"
 # RESEND_API_KEY — potvrzovací mail (DOI) + korektury; volitelně CORRECTIONS_NOTIFY_EMAIL
 # RESEND_FROM_EMAIL / RESEND_FROM_NAME — odesílatel korektur (fallback ECOMAIL_FROM_EMAIL)
 # ECOMAIL_SUBSCRIBE_LIST_ID je v [vars] výše (dev/test = seznam 3)
+# TURNSTILE_SECRET_KEY — volitelně; pak odběr vyžaduje Turnstile token (web: SVEJK_TURNSTILE_SITE_KEY)
+#
+# Volitelně atomický rate limit (binding Rate Limiting) místo KV — worker ho použije,
+# když binding SUBSCRIBE_LIMITER / REACTIONS_LIMITER existuje (jinak zůstává KV):
+# [[ratelimits]]
+# name = "SUBSCRIBE_LIMITER"
+# namespace_id = "1001"
+# simple = { limit = 10, period = 60 }

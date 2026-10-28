@@ -20,6 +20,7 @@
     data-label-submitting="{{ t.subscribe.submitting }}"
     {% if newsletter.subscribe_api_url %}data-subscribe-api="{{ newsletter.subscribe_api_url }}"{% endif %}
     {% if newsletter.form_action %}data-form-action="{{ newsletter.form_action }}"{% endif %}
+    {% if newsletter.turnstile_site_key %}data-turnstile-sitekey="{{ newsletter.turnstile_site_key }}"{% endif %}
   >
     {# bez name=_hp, ať honeypot není WebMCP parametrem #}
     <input type="text" tabindex="-1" autocomplete="new-password" class="subscribe-hp" aria-hidden="true">

@@ -59,6 +59,8 @@ class NewsletterConfig:
     show_corrections: bool
     reactions_api_url: str
     show_reactions: bool
+    # Cloudflare Turnstile u odběru (worker ho vyžaduje, jakmile má TURNSTILE_SECRET_KEY).
+    turnstile_site_key: str = ""
 
     @property
     def confirm_redirect_url(self) -> str:
@@ -147,4 +149,5 @@ class NewsletterConfig:
             show_corrections=show_corrections,
             reactions_api_url=reactions_api_url,
             show_reactions=show_reactions,
+            turnstile_site_key=(os.environ.get("SVEJK_TURNSTILE_SITE_KEY") or "").strip(),
         )

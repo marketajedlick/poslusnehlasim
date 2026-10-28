@@ -91,6 +91,7 @@
   }
 
   function resetBtn(btn, form) {
+    if (form) resetTurnstile(form);
     if (!btn) return;
     const msgs = form ? formMsgs(form) : { submit: "Poslušně odebírat" };
     btn.disabled = false;
@@ -98,11 +99,47 @@
   }
 
   function subscribePayload(form) {
-    return {
+    var payload = {
       email: form.querySelector('input[name="email"]')?.value?.trim() || "",
       hp: form.querySelector(".subscribe-hp")?.value || "",
     };
+    if (form.dataset.turnstileId && window.turnstile) {
+      payload.turnstile = window.turnstile.getResponse(form.dataset.turnstileId) || "";
+    }
+    return payload;
   }
+
+  function resetTurnstile(form) {
+    if (form.dataset.turnstileId && window.turnstile) {
+      window.turnstile.reset(form.dataset.turnstileId);
+    }
+  }
+
+  // Turnstile (ochrana odběru proti botům): jen když build zná site key.
+  function initTurnstile() {
+    var forms = Array.prototype.slice.call(
+      document.querySelectorAll(".subscribe-form[data-turnstile-sitekey]")
+    );
+    if (!forms.length) return;
+    window.__phTurnstileReady = function () {
+      forms.forEach(function (form) {
+        var box = document.createElement("div");
+        box.className = "subscribe-turnstile";
+        form.appendChild(box);
+        form.dataset.turnstileId = window.turnstile.render(box, {
+          sitekey: form.dataset.turnstileSitekey,
+          appearance: "interaction-only",
+          language: "cs",
+        });
+      });
+    };
+    var s = document.createElement("script");
+    s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=__phTurnstileReady";
+    s.async = true;
+    s.defer = true;
+    document.head.appendChild(s);
+  }
+  initTurnstile();
 
   function successMessage(form) {
     var el = form.querySelector(".subscribe-success");

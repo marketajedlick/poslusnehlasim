@@ -217,6 +217,22 @@ def dekuju_pages_href(base_path: str = "") -> str:
     return _join_href_path(base_path, "/dekuju.html")
 
 
+def _edition_subpage_href(
+    obdobi: int,
+    schuze: int,
+    datum_unl: str,
+    kind: str,
+    base_path: str = "",
+) -> str:
+    """Podstránka vydání; u dne se dvěma schůzemi leží pod /vydani/DATUM/sN/… (viz export)."""
+    dup = len(_editions_on_day(list_site_editions(obdobi), datum_unl)) > 1
+    if dup:
+        return vydani_subpage_href(
+            datum_unl, f"{edition_schuze_subpage(schuze)}/{kind}", base_path
+        )
+    return vydani_subpage_href(datum_unl, kind, base_path)
+
+
 def vyznamenani_pages_href(
     obdobi: int,
     schuze: int,
@@ -224,8 +240,7 @@ def vyznamenani_pages_href(
     kind: str,
     base_path: str = "",
 ) -> str:
-    _ = obdobi, schuze
-    return vydani_subpage_href(datum_unl, kind, base_path)
+    return _edition_subpage_href(obdobi, schuze, datum_unl, kind, base_path)
 
 
 def steno_sources_pages_href(
@@ -234,13 +249,7 @@ def steno_sources_pages_href(
     datum_unl: str,
     base_path: str = "",
 ) -> str:
-    _ = obdobi
-    dup = len(_editions_on_day(list_site_editions(obdobi), datum_unl)) > 1
-    if dup:
-        return vydani_subpage_href(
-            datum_unl, f"{edition_schuze_subpage(schuze)}/steno", base_path
-        )
-    return vydani_subpage_href(datum_unl, "steno", base_path)
+    return _edition_subpage_href(obdobi, schuze, datum_unl, "steno", base_path)
 
 
 def smlouvy_pages_href(
@@ -249,8 +258,7 @@ def smlouvy_pages_href(
     datum_unl: str,
     base_path: str = "",
 ) -> str:
-    _ = obdobi, schuze
-    return vydani_subpage_href(datum_unl, "smlouvy", base_path)
+    return _edition_subpage_href(obdobi, schuze, datum_unl, "smlouvy", base_path)
 
 
 def recnici_pages_href(
@@ -259,8 +267,7 @@ def recnici_pages_href(
     datum_unl: str,
     base_path: str = "",
 ) -> str:
-    _ = obdobi, schuze
-    return vydani_subpage_href(datum_unl, "recnici", base_path)
+    return _edition_subpage_href(obdobi, schuze, datum_unl, "recnici", base_path)
 
 
 def vyznamenani_neprosli_pages_href(

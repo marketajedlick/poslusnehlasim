@@ -108,6 +108,10 @@ fi
 if [[ -n "${CORRECTIONS_NOTIFY_EMAIL:-}" ]]; then
   printf '%s' "$CORRECTIONS_NOTIFY_EMAIL" | npx wrangler@4 pages secret put CORRECTIONS_NOTIFY_EMAIL --project-name="$PROJECT"
 fi
+if [[ -n "${TURNSTILE_SECRET_KEY:-}" ]]; then
+  # Od té chvíle worker odběr bez Turnstile tokenu odmítne: web musí mít SVEJK_TURNSTILE_SITE_KEY.
+  printf '%s' "$TURNSTILE_SECRET_KEY" | npx wrangler@4 pages secret put TURNSTILE_SECRET_KEY --project-name="$PROJECT"
+fi
 
 set +e
 DEPLOY_OUTPUT=$(npx wrangler@4 pages deploy public --project-name="$PROJECT" --branch=main 2>&1)
