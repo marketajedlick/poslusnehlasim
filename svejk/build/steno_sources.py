@@ -265,6 +265,18 @@ def _psp_url_cache_path(paths: SchuzePaths):
     return paths.aligned / "psp_url_cache.json"
 
 
+# Citace, které se na PSP nenašly (nebo nešla síť): drží se jen po dobu běhu procesu.
+_UNRESOLVED_THIS_RUN: dict[tuple[int, int, str], str] = {}
+_OTHER_SITTING_RESOLVERS: dict[tuple[int, int], "PspUrlResolver"] = {}
+
+
+def _resolver_for_other_sitting(paths: SchuzePaths) -> "PspUrlResolver":
+    key = (paths.obdobi, paths.schuze)
+    if key not in _OTHER_SITTING_RESOLVERS:
+        _OTHER_SITTING_RESOLVERS[key] = PspUrlResolver(paths)
+    return _OTHER_SITTING_RESOLVERS[key]
+
+
 class PspUrlResolver:
     """Obohacuje URL z Hlídače o kotvy a stránku, kde je citace.
 
@@ -349,6 +361,9 @@ class PspUrlResolver:
             return offline
 
         cache_key = _psp_cache_key(fallback_url, citace)
+        run_key = (self.paths.obdobi, self.paths.schuze, cache_key)
+        if run_key in _UNRESOLVED_THIS_RUN:
+            return _UNRESOLVED_THIS_RUN[run_key]
         self._load_pages()
         try:
             resolved = self._fetcher_lazy().resolve_url_for_citace(
@@ -362,13 +377,16 @@ class PspUrlResolver:
             )
         except OSError:
             # ponytail: bez sítě stačí fallback URL ze steno.jsonl
+            _UNRESOLVED_THIS_RUN[run_key] = fallback_url
             return fallback_url
         page = resolved.split("#", 1)[0]
         page_text = self._page_text_cache.get(page) or ""
         needle = self._fetcher_lazy()._norm_search(citace)
         if needle and page_text and not self._fetcher_lazy()._citace_in_text(page_text, needle):
             # citace na stránce není (projev pokračuje dál, přepis ještě nebyl).
-            # Necachovat, ať se příště zkusí znovu.
+            # Na disk necachovat, ať se příští build zkusí znovu; v tomhle běhu už ale
+            # stránky PSP znovu nestahovat (export volá resolve pro každý výstup dne).
+            _UNRESOLVED_THIS_RUN[run_key] = resolved
             return resolved
         url_cache[cache_key] = resolved
         self._save_url_cache()
@@ -443,7 +461,7 @@ def _passage_from_fact(
     own_paths = _paths_for_steno(paths, steno_id) if steno_id else paths
     rec = steno_record(paths, steno_id, steno_by_id) if steno_id else None
     if psp_resolver is not None and own_paths is not paths:
-        psp_resolver = PspUrlResolver(own_paths)
+        psp_resolver = _resolver_for_other_sitting(own_paths)
     speaker = (rec or {}).get("cele_jmeno") or ""
     poradi = (rec or {}).get("poradi")
     if poradi is None and steno_id:
@@ -662,7 +680,7 @@ def append_jazykolam_steno_block(
     own_paths = _paths_for_steno(paths, steno_id)
     rec = steno_record(paths, steno_id, steno_by_id)
     if psp_resolver is not None and own_paths is not paths:
-        psp_resolver = PspUrlResolver(own_paths)
+        psp_resolver = _resolver_for_other_sitting(own_paths)
     speaker = (j.get("autor") or rec.get("cele_jmeno") or "").strip()
     poradi = rec.get("poradi") if rec.get("poradi") is not None else j.get("poradi")
     full_text = (rec.get("text") or "").strip()
