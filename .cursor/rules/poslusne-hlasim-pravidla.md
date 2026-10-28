@@ -19,7 +19,7 @@ Cíl: kvalita na první pokus, bez toho, aby to člověk musel dohledávat a opr
 |---|---|---|
 | Titulek sekce | `nadpis` | `## …` |
 | Úvodní odstavec | `lead` | první odstavec pod nadpisem |
-| Citát (~30 slov) | `fakty[].citace` (+ volitelně `citace_text` / `citace_autor`) | blockquote |
+| Citát (~60 slov) | `fakty[].citace` (+ volitelně `citace_text` / `citace_autor`) | blockquote |
 | Tělo / glosa | `pointa` | pokračování sekce |
 | Hlášení na velitelstvo | `mean` | `**Hlášení na velitelstvo:** …` |
 | Odkaz na steno | `fakty[].steno_id`, `fakty[].link_phrase` | `<a class="steno-link">` |
@@ -279,7 +279,7 @@ Pro každou sekci:
 - [ ] Jméno řečníka odpovídá `cele_jmeno` u konkrétního `id` v steno.jsonl —
       nezaměnil jsem podobná jména (např. Šenda vs. Šmída, Šebestyán vs. Šmída)?
 - [ ] Citát je doslovný výňatek z pole `text`, ne parafráze vydávaná za citát.
-- [ ] Citát je kratší než ~30 slov. Delší myšlenku parafrázuj vlastními slovy.
+- [ ] Citát je kratší než ~60 slov. Delší myšlenku parafrázuj vlastními slovy.
 - [ ] Číslo, procento nebo částka se dá dohledat v `text` nebo `votes.jsonl` —
       nevymyslel jsem si ho ani nezaokrouhlil bez poznámku.
 - [ ] V redakčním textu (`lead`, `pointa`, `mean`, `link_phrase`, `dnesni_ucet`,

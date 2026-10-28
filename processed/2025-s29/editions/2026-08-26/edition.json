@@ -67,5 +67,14 @@
       "carousel/05-skore.png"
     ],
     "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s29/editions/2026-08-26/assets/caption.txt"
-  }
+  },
+  "republished_at": "2026-10-28T14:10:18.682580+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T14:10:18.682585+00:00",
+      "reason": "Doplněné krátké věty k citacím ze stena, které článek dosud nezmiňoval, s odkazem na steno (ověřeno: řečník, strana, znění).",
+      "content_hash": "ac69a9a19bfc7b16"
+    }
+  ],
+  "published_hash": "ac69a9a19bfc7b16"
 }
