@@ -2032,6 +2032,12 @@ body.static-page{
   font-size:.95rem;
   color:var(--ink);
 }
+h1.edition-day-meta{
+  font:inherit;
+  font-size:.95rem;
+  letter-spacing:inherit;
+  text-transform:none;
+}
 .homepage-archive-more{
   margin:12px 0 0;
   font-size:.9rem;

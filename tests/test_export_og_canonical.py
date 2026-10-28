@@ -12,7 +12,10 @@ def test_duplicate_date_og_uses_canonical_schuze() -> None:
     assert matches[0].schuze == 24
     canonical = resolve_edition(2025, day)
     assert canonical is not None
-    assert canonical.schuze == matches[-1].schuze == 25
+    # s24 má ten den pět článků, s25 jeden: kanonické je vydání s víc články.
+    assert canonical.schuze == 24
+    assert edition_pages_href(2025, 24, day) == "/vydani/2026-07-07/"
+    assert edition_pages_href(2025, 25, day) == "/vydani/2026-07-07/s25/"
 
 
 def test_homepage_canonical_points_to_edition_not_root() -> None:

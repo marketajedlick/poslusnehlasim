@@ -105,6 +105,7 @@ def test_edition_nav_siblings_june_3(mock_list) -> None:
     assert nav17.next.short_label == "s20"
 
 
+@patch("svejk.build.nav._edition_weight", lambda e: (0, 1))
 @patch("svejk.build.nav.list_site_editions")
 def test_edition_nav_siblings_may_6(mock_list) -> None:
     editions = (
@@ -150,7 +151,9 @@ def test_edition_nav_all_published_editions_avoid_self_links() -> None:
 def test_edition_pages_href_sibling_subpath() -> None:
     from svejk.build.nav import edition_pages_href
 
-    with patch("svejk.build.nav.list_site_editions") as mock_list:
+    with patch("svejk.build.nav.list_site_editions") as mock_list, patch(
+        "svejk.build.nav._edition_weight", lambda e: (0, 1)
+    ):
         mock_list.return_value = (
             _edition_on("06.05.2026", schuze=16),
             _edition_on("06.05.2026", schuze=17),
@@ -182,3 +185,24 @@ def test_session_calendar_bridges_empty_december(mock_list) -> None:
     assert nov.next_month is not None
     assert nov.next_month.title == "leden 2026"
     assert nov.next_month.href == "/vydani/2026-01-13/"
+
+
+def test_canonical_prefers_edition_with_more_articles() -> None:
+    from svejk.build.nav import edition_pages_href, resolve_edition
+
+    weights = {16: (0, 3), 17: (0, 1)}
+    with patch("svejk.build.nav.list_site_editions") as mock_list, patch(
+        "svejk.build.nav._edition_weight", lambda e: weights[e.schuze]
+    ):
+        mock_list.return_value = (
+            _edition_on("06.05.2026", schuze=16),
+            _edition_on("06.05.2026", schuze=17),
+        )
+        assert resolve_edition(2025, "06.05.2026").schuze == 16
+        assert edition_pages_href(2025, 16, "06.05.2026") == "/vydani/2026-05-06/"
+        assert edition_pages_href(2025, 17, "06.05.2026") == "/vydani/2026-05-06/s17/"
+        weights[17] = (1, 0)  # "kanonicka": true ve facts/by_day
+        from svejk.build.nav import _edition_weight_key
+
+        _edition_weight_key.cache_clear()
+        assert resolve_edition(2025, "06.05.2026").schuze == 17

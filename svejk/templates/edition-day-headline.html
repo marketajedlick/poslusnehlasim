@@ -1,5 +1,7 @@
 <header class="edition-day-headline">
-  <p class="edition-day-meta">
+  {# Vydání bez článků: datum je jediný nadpis stránky, jinak by chybělo <h1>. #}
+  {% set _day_tag = 'h1' if (content is defined and not content.items and not is_homepage) else 'p' %}
+  <{{ _day_tag }} class="edition-day-meta">
     <time datetime="{{ edition_iso_date }}">{{ edition_day_meta }}</time>
-  </p>
+  </{{ _day_tag }}>
 </header>

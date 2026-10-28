@@ -1120,19 +1120,19 @@ def _inline_email_body_link_styles(text: str, *, field: str = "lead") -> str:
 def _apply_email_links_absolute(content: Any, site_url: str) -> None:
     """Po doplnění odkazů udělá všechny interní hrefs absolutní."""
     site = site_url.rstrip("/")
+    from svejk.build.article_fields import ARTICLE_CITACE_PREFIXES, ARTICLE_TEXT_FIELDS
+
     for item in content.items:
-        for field in ("lead", "lead_tail", "mean", "kuriozita", "citace_text", "citace2_text", "pointa", "pointa_tail"):
+        for field in ARTICLE_TEXT_FIELDS:
             val = getattr(item, field, None)
             if val:
                 val = _make_internal_links_absolute(val, site_url)
                 val = _inline_email_body_link_styles(val, field=field)
                 setattr(item, field, val)
-        citace_href = (getattr(item, "citace_href", None) or "").strip()
-        if citace_href.startswith("/"):
-            item.citace_href = f"{site}{citace_href}"
-        citace2_href = (getattr(item, "citace2_href", None) or "").strip()
-        if citace2_href.startswith("/"):
-            item.citace2_href = f"{site}{citace2_href}"
+        for prefix in ARTICLE_CITACE_PREFIXES:
+            href = (getattr(item, f"{prefix}_href", None) or "").strip()
+            if href.startswith("/"):
+                setattr(item, f"{prefix}_href", f"{site}{href}")
         if item.kuriozita_nav:
             item.kuriozita_nav = [
                 (label, f"{site}{href}" if href.startswith("/") else href)
@@ -1154,8 +1154,10 @@ def _prepare_content_for_email(content: DenContent) -> None:
         val = getattr(content, field, None)
         if val:
             setattr(content, field, strip_glossary_markup(val))
+    from svejk.build.article_fields import ARTICLE_TEXT_FIELDS
+
     for item in content.items:
-        for field in ("lead", "lead_tail", "mean", "kuriozita", "citace_text", "citace2_text", "pointa", "pointa_tail"):
+        for field in ARTICLE_TEXT_FIELDS:
             val = getattr(item, field, None)
             if val:
                 setattr(item, field, strip_glossary_markup(val))

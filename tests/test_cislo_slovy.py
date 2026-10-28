@@ -36,3 +36,19 @@ def test_krat_slovy():
     assert krat_slovy(165) == "stopětašedesátkrát"
     assert krat_hlasovali(22) == "dvaadvacetkrát hlasovali"
     assert krat_se_hlasovalo(44) == "čtyřiačtyřicetkrát se hlasovalo"
+
+
+def test_radove_desetinne_procenta_paragrafy_zustavaji():
+    assert nahrad_cisla_v_textu("po 21. hodině") == "po 21. hodině"
+    assert nahrad_cisla_v_textu("ve 3. čtení") == "ve 3. čtení"
+    assert nahrad_cisla_v_textu("pod 1,5 procenta") == "pod 1,5 procenta"
+    assert nahrad_cisla_v_textu("25 % poslanců") == "25 % poslanců"
+    assert nahrad_cisla_v_textu("podle § 5 odst. 2") == "podle § 5 odst. 2"
+    assert nahrad_cisla_v_textu("Přišlo jich 5. Pak") == "Přišlo jich pět. Pak"
+
+
+def test_letopocet_bez_vlozeneho_rok():
+    assert nahrad_cisla_v_textu("1. března 2026 hlasovali") == "1. března 2026 hlasovali"
+    assert nahrad_cisla_v_textu("V letech 2017 až 2021") == "V letech 2017 až 2021"
+    assert nahrad_cisla_v_textu("na červen 2028") == "na červen 2028"
+    assert nahrad_cisla_v_textu("Středa 9. září 2026") == "Středa 9. září 2026"

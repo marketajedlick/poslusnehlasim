@@ -426,6 +426,21 @@ def run_export_pages(
         rel_written = _export_edition_page(edition, rel)
         if rel_written:
             written.append(rel_written)
+        if len(siblings) > 1 and canonical and edition.schuze == canonical.schuze:
+            # Kanonické vydání dne se dvěma schůzemi má i /sN/ (staré sdílené odkazy).
+            alias = edition_export_relpath(edition.datum_unl, edition.schuze)
+            if alias not in exported_rels:
+                exported_rels.add(alias)
+                written.append(
+                    _write_redirect_page(
+                        out,
+                        alias,
+                        edition_pages_href(
+                            edition.obdobi, edition.schuze, edition.datum_unl, base
+                        ),
+                        site_url=site,
+                    )
+                )
 
         if edition_source(edition) == "snapshot":
             continue
@@ -584,6 +599,10 @@ def run_export_pages(
     approved = list_approved_editions(obdobi)
     latest = editions[-1]
     homepage_edition = approved[-1] if approved else latest
+    # Poslední den má dvě schůze: homepage ukáže kanonické vydání (víc článků).
+    same_day = resolve_edition(obdobi, homepage_edition.datum_unl)
+    if same_day is not None and (not approved or same_day in approved):
+        homepage_edition = same_day
     paths = SchuzePaths.create(homepage_edition.obdobi, homepage_edition.schuze)
     d = datetime.strptime(homepage_edition.datum_unl, "%d.%m.%Y")
     day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"

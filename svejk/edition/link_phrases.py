@@ -6,6 +6,7 @@ import json
 import re
 from typing import Any
 
+from svejk.build.article_fields import ARTICLE_TEXT_FIELDS
 from svejk.build.io import read_json, write_json
 from svejk.build.steno_sources import (
     StenoPassage,
@@ -33,20 +34,7 @@ MANUAL: dict[str, dict[int, str]] = {
 
 def article_text(data: dict) -> str:
     parts: list[str] = []
-    for key in (
-        "lead",
-        "lead_tail",
-        "pointa",
-        "pointa_tail",
-        "pointa_end",
-        "pointa_close",
-        "mean",
-        "kuriozita",
-        "citace_text",
-        "citace2_text",
-        "citace3_text",
-        "citace4_text",
-    ):
+    for key in ARTICLE_TEXT_FIELDS:
         val = (data.get(key) or "").strip()
         if val:
             parts.append(val)

@@ -122,7 +122,14 @@ def _canonical_on_day(
     editions: tuple[Edition, ...], datum_unl: str
 ) -> Edition | None:
     siblings = _editions_on_day(editions, datum_unl)
-    return siblings[-1] if siblings else None
+    if not siblings:
+        return None
+    if len(siblings) == 1:
+        return siblings[0]
+    # Den se dvěma schůzemi: kanonická adresa ukazuje vydání s víc články
+    # (dřív vždy vyšší číslo schůze, takže /vydani/2026-05-29/ bylo bez článku).
+    # Ruční přednost: "kanonicka": true ve facts/by_day.
+    return max(enumerate(siblings), key=lambda ie: (_edition_weight(ie[1]), ie[0]))[1]
 
 
 def _edition_public_href(
@@ -288,9 +295,30 @@ def resolve_edition(obdobi: int, datum_unl: str, schuze: int | None = None) -> E
             if e.schuze == schuze:
                 return e
         return None
-    if len(matches) == 1:
-        return matches[0]
-    return matches[-1]
+    return _canonical_on_day(matches, datum_unl)
+
+
+@lru_cache(maxsize=512)
+def _edition_weight_key(obdobi: int, schuze: int, datum_unl: str) -> tuple[int, int]:
+    paths = SchuzePaths.create(obdobi, schuze)
+    try:
+        iso = datetime.strptime(datum_unl, "%d.%m.%Y").strftime("%Y-%m-%d")
+    except ValueError:
+        return (0, 0)
+    day_path = paths.facts_by_day / f"{iso}.json"
+    if not day_path.is_file():
+        return (0, 0)
+    day = read_json(day_path)
+    count = 0
+    for slug in day.get("topic_slugs") or []:
+        fp = paths.facts_by_topic / f"{slug}.json"
+        if fp.is_file() and read_json(fp).get("publikovat", True) is not False:
+            count += 1
+    return (1 if day.get("kanonicka") else 0, count)
+
+
+def _edition_weight(edition: Edition) -> tuple[int, int]:
+    return _edition_weight_key(edition.obdobi, edition.schuze, edition.datum_unl)
 
 
 def _edition_headline(edition: Edition, *, max_len: int = 80) -> str:

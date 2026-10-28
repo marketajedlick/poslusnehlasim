@@ -339,18 +339,33 @@ def _rok_nebo_cislo(m: re.Match[str], text: str) -> str:
 
     if not _je_kalendarni_rok(n):
         return cislo_slovy(n, rod)
+    # Letopočet zůstává číslicemi. Dřív se doplňovalo „rok 2026“, což dávalo
+    # „1. března rok 2026“ nebo „v letech rok 2017 až rok 2021“.
+    return str(n)
 
-    prefix = text[max(0, start - 20) : start].lower()
-    if re.search(r"(?:\brok[u]?\s|\broce\s|\bna\s+)$", prefix):
-        return str(n)
-    if re.search(
-        r"(ledna|února|března|dubna|května|června|července|srpna|září|října|listopadu|prosince|"
-        r"lednu|únoru|březnu|dubnu|květnu|červnu|červenci|srpnu|říjnu|prosinci)\s+$",
-        prefix,
-    ):
-        return str(n)
 
-    return f"rok {n}"
+_RE_RADOVA = re.compile(r"\.\s+[a-záčďéěíňóřšťúůýž]")
+_RE_PRED_PARAGRAF = re.compile(r"(?:§|§§|\bodst\.|\bčl\.|\bpísm\.|\bbod(?:u|ě)?)\s*$", re.IGNORECASE)
+
+
+def _cislo_zustava_cislici(t: str, start: int, end: int) -> bool:
+    """Řadové číslovky, desetinná čísla, procenta a paragrafy necháváme číslicemi."""
+    after = t[end:]
+    # „po 21. hodině“, „ve 3. čtení“ – ne „dvacet jedna. hodině“
+    if _RE_RADOVA.match(after):
+        return True
+    # „1,5“ – ne „jedna,pět“
+    if after[:1] == "," and after[1:2].isdigit():
+        return True
+    if start >= 2 and t[start - 1] == "," and t[start - 2].isdigit():
+        return True
+    # „25 %“ – ne „dvacet pět %“
+    if re.match(r"\s?%", after):
+        return True
+    # „§ 5“, „odst. 2“
+    if _RE_PRED_PARAGRAF.search(t[max(0, start - 8) : start]):
+        return True
+    return False
 
 
 def nahrad_hlasovani_v_textu(text: str) -> str:
@@ -400,6 +415,8 @@ def _nahrad_zbyla_cisla(text: str) -> str:
             return m.group(1)
         # TOP 09 – strana, ne slovní číslo
         if start >= 4 and t[start - 4 : start].upper() == "TOP ":
+            return m.group(1)
+        if _cislo_zustava_cislici(t, start, end):
             return m.group(1)
         # ponytail: očíslovaný seznam (01 - NATO) necháváme; upgrade = širší whitelist v compose
         if (

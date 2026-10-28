@@ -92,6 +92,12 @@
     if (window.__phInitCorrections) window.__phInitCorrections();
     if (window.__phInitReactions) window.__phInitReactions();
     scrollToEditionStart();
+    // Čtečka obrazovky: po přechodu přesunout fokus na nadpis nového vydání.
+    var heading = contentEl && contentEl.querySelector('h1, h2');
+    if (heading) {
+      if (!heading.hasAttribute('tabindex')) heading.setAttribute('tabindex', '-1');
+      heading.focus({ preventScroll: true });
+    }
   }
 
   function navigate(href){
@@ -114,6 +120,8 @@
   document.addEventListener('click', function(e){
     var a = e.target.closest('.pager-tag[href], .session-cal-cell a, .session-cal-nav[href]');
     if (!a || !a.href) return;
+    // Cmd/Ctrl/Shift/prostřední tlačítko = nový panel, ne SPA přechod.
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
     navigate(a.href);
   });
