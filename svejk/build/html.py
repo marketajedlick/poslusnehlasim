@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import copy
 import os
 import re
 from datetime import datetime
@@ -624,6 +625,9 @@ def render_den_html(
     is_homepage: bool = False,
 ) -> str:
     _ = day_path
+    # build_den_content vrací sdílený objekt z cache; odkazy níž se do něj vkládají,
+    # takže druhé vykreslení (homepage) by jinak vnořilo <a> do <a>.
+    content = copy.deepcopy(content)
     css = _CSS.read_text(encoding="utf-8") if inline_css else ""
     if css_href is None:
         css_href = static_css_path(base_path)
@@ -1179,7 +1183,10 @@ def render_email_html(
     d = datetime.strptime(edition.datum_unl, "%d.%m.%Y")
     day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
     site = site_url.rstrip("/")
-    content = build_den_content(day_path, paths, link_mode="pages", base_path=base_path)
+    # Kopie: níž se do obsahu vkládají odkazy, cache musí zůstat čistá pro web.
+    content = copy.deepcopy(
+        build_den_content(day_path, paths, link_mode="pages", base_path=base_path)
+    )
     edition_href = edition_pages_href(
         edition.obdobi, edition.schuze, edition.datum_unl, base_path
     )

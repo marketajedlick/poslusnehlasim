@@ -202,7 +202,11 @@ def run_fetch(
     hlidac_used = False
     psp_steno_used = False
     if skip_steno:
-        write_jsonl(paths.steno_jsonl, [])
+        # Steno nechat, jak je (sync bez HLIDAC_TOKEN nesmí smazat stažené záznamy).
+        if paths.steno_jsonl.is_file():
+            steno_count = sum(1 for _ in iter_jsonl(paths.steno_jsonl))
+        else:
+            write_jsonl(paths.steno_jsonl, [])
     elif HLIDAC_TOKEN:
         rate = float(os.environ.get("HLIDAC_RATE_LIMIT_S", "1.0"))
         client = HlidacClient(HLIDAC_TOKEN, rate_limit_s=rate)

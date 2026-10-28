@@ -13,8 +13,19 @@ Projekt `poslusnehlasim-odebir` na Cloudflare Pages.
 1. Formulář na webu pošle e-mail na worker (`POST /`).
 2. Worker zapíše kontakt do Ecomailu jako **nepotvrzený** (`status: 6`, `skip_confirmation: true`).
 3. Worker načte HTML šablonu z Ecomailu (`conf_message` seznamu), nahradí `*|SUBCONFIRM|*` vlastním odkazem a pošle mail přes **Resend**.
-4. Uživatel klikne na odkaz (`GET /confirm?token=…`).
-5. Worker potvrdí odběr v Ecomailu (`status: 1`) a přesměruje na `/potvrzeno/`.
+4. Uživatel klikne na odkaz (`GET /confirm?token=…`) — worker ukáže stránku s tlačítkem **Potvrdit odběr**. Samotný GET nic nepotvrdí (skenery odkazů v pošte jako Safe Links dělají GET).
+5. Po kliknutí na tlačítko (`POST /confirm?token=…`) worker potvrdí odběr v Ecomailu (`status: 1`) a přesměruje na `/potvrzeno/`.
+
+Když se nepodaří zjistit stav kontaktu v Ecomailu, worker kontakt nemění (jinak by potvrzeného odběratele shodil na nepotvrzeného) a vrátí 503.
+
+## Ochrana proti spamu
+
+- honeypot, kontrola formátu e-mailu, limity z IP a na e-mail (KV, jen přibližné),
+- denní strop potvrzovacích mailů `DOI_DAILY_MAX` (chrání kvótu Resendu),
+- **Turnstile** (doporučeno): vytvoř widget v Cloudflare → Turnstile, secret ulož jako GitHub secret `TURNSTILE_SECRET_KEY` (deploy ho nahraje do workeru) a site key jako GitHub variable `SVEJK_TURNSTILE_SITE_KEY` (export webu). V CSP webu (Cloudflare Transform Rule, viz `infra/cloudflare/`) musí být `https://challenges.cloudflare.com` ve `script-src` i `frame-src`. Nejdřív nasaď web se site key, až potom secret do workeru.
+- volitelně binding Rate Limiting `SUBSCRIBE_LIMITER` / `REACTIONS_LIMITER` (atomický, nežere KV) — příklad ve `wrangler.toml`.
+
+Reakce (`/reactions`) mají jeden KV klíč na vydání (`rxe:DATUM`), GET je jedno čtení bez `kv.list` a krátce se cachuje. Výpadek KV reakce jen vypne, odběr kvůli nim nespadne.
 
 Šablona mailu se synchronizuje do Ecomailu příkazem `./run-svejk.sh newsletter-doi-sync --apply` (worker ji odtud čte).
 

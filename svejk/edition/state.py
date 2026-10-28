@@ -231,6 +231,10 @@ def sync_publish_approved(key: str, *, add: bool = True) -> None:
     elif not add and key in approved:
         approved.remove(key)
     data["approved"] = approved
+    if add:
+        # Publish = vydání má být vidět; jinak by hidden dál blokoval web,
+        # ale homepage/newsletter by ho braly jako schválené.
+        data["hidden"] = [k for k in (data.get("hidden") or []) if k != key]
     write_json(path, data)
     from svejk.build.publish import clear_publish_cache
 

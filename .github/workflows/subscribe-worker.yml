@@ -37,4 +37,5 @@ jobs:
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           CORRECTIONS_NOTIFY_EMAIL: ${{ secrets.CORRECTIONS_NOTIFY_EMAIL }}
+          TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}
         run: ./scripts/deploy-subscribe-worker.sh

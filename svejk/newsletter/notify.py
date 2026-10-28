@@ -92,6 +92,47 @@ def _build_email_body(edition: Edition, *, site_url: str, base_path: str) -> tup
     return render_email_html(edition, site_url=site_url, base_path=base_path)
 
 
+_DRAFTED_KEEP = 60
+# Bezpečnostní strop: při výpadku stavu nezaplavit Ecomail koncepty celé historie.
+_MAX_PENDING = 5
+
+
+def _id_sort_key(eid: str) -> tuple[datetime, int]:
+    """Chronologické pořadí edition_id "obdobi/schuze/DD.MM.RRRR"."""
+    try:
+        _, schuze_s, datum = eid.split("/", 2)
+        return datetime.strptime(datum, "%d.%m.%Y"), int(schuze_s)
+    except ValueError:
+        return datetime.min, 0
+
+
+def _drafted_ids(state: dict[str, Any]) -> list[str]:
+    ids = [str(x) for x in (state.get("drafted_ids") or [])]
+    last = (state.get("last_drafted_id") or "").strip()
+    if last and last not in ids:
+        ids.append(last)
+    return ids
+
+
+def _pending_editions(obdobi: int, state: dict[str, Any]) -> list[Edition]:
+    """Schválená vydání po posledním konceptu, která koncept ještě nemají.
+
+    Publikace více dnů najednou (např. 20. a 21. 10.) musí dát koncept každému dni,
+    ne jen poslednímu.
+    """
+    editions = list(list_approved_editions(obdobi))
+    if not editions:
+        return []
+    drafted = set(_drafted_ids(state))
+    last = (state.get("last_drafted_id") or "").strip()
+    ids = [edition_id(e) for e in editions]
+    if last in ids:
+        pending = [e for e in editions[ids.index(last) + 1 :] if edition_id(e) not in drafted]
+    else:
+        pending = [editions[-1]] if edition_id(editions[-1]) not in drafted else []
+    return pending[-_MAX_PENDING:]
+
+
 def run_newsletter_notify(
     obdobi: int,
     *,
@@ -107,6 +148,7 @@ def run_newsletter_notify(
     Odeslání vždy ručně v Ecomailu — API nikdy nerozešle.
     Stav v newsletter-state.json brání duplicitám při opakovaném deployi.
     E-maily odběratelů nejsou v repozitáři — drží je Ecomail (GDPR, double opt-in).
+    Bez --schuze projde všechna schválená vydání od posledního konceptu (chronologicky).
     Při --schuze se cílí konkrétní schůze místo nejnovějšího vydání.
     Při --den (s --schuze) konkrétní den schůze.
     """
@@ -126,7 +168,6 @@ def run_newsletter_notify(
             missing.append("ECOMAIL_FROM_EMAIL")
         return {"skipped": True, "reason": f"chybí: {', '.join(missing)}"}
 
-    cfg = NewsletterConfig.from_env()
     if den is not None:
         if schuze is None:
             return {"skipped": True, "reason": "u --den uveď --schuze"}
@@ -136,29 +177,74 @@ def run_newsletter_notify(
                 "skipped": True,
                 "reason": f"schůze {schuze} nemá schválené vydání pro {den}",
             }
+        targets = [latest]
     elif schuze is not None:
         latest = _find_edition(obdobi, schuze)
         if not latest:
             return {"skipped": True, "reason": f"schůze {schuze} nemá schválené vydání"}
+        targets = [latest]
+    elif force:
+        latest = _latest_edition(obdobi)
+        targets = [latest] if latest else []
     else:
         latest = _latest_edition(obdobi)
-    if not latest:
+        targets = _pending_editions(obdobi, load_state())
+        if latest and not targets:
+            return {"skipped": True, "reason": "už vytvořeno", "edition_id": edition_id(latest)}
+    if not targets:
         return {"skipped": True, "reason": "žádné vydání"}
 
-    eid = edition_id(latest)
-    state = load_state()
-    if state.get("last_drafted_id") == eid and not force:
-        return {"skipped": True, "reason": "už vytvořeno", "edition_id": eid}
-    if state.get("last_attempted_id") == eid and not force:
-        return {
-            "skipped": True,
-            "reason": "už zkoušeno — použij --force pro nový pokus",
-            "edition_id": eid,
-        }
+    results = [
+        _notify_one(
+            edition,
+            dry_run=dry_run,
+            force=force,
+            base_path=base_path,
+            out_dir=out_dir,
+            api_key=api_key,
+            list_id=list_id,
+            from_name=from_name,
+            from_email=from_email,
+            reply_to=reply_to,
+        )
+        for edition in targets
+    ]
+    if len(results) == 1:
+        return results[0]
+    drafted = [r["edition_id"] for r in results if r.get("drafted")]
+    return {
+        "drafted": bool(drafted),
+        "drafted_ids": drafted,
+        "skipped": not drafted and not dry_run,
+        "reason": "; ".join(
+            f"{r.get('edition_id')}: {r['reason']}" for r in results if r.get("reason")
+        ),
+        "editions": results,
+    }
 
-    if not _edition_ready(latest):
+
+def _notify_one(
+    edition: Edition,
+    *,
+    dry_run: bool,
+    force: bool,
+    base_path: str,
+    out_dir: str | Path | None,
+    api_key: str,
+    list_id: Any,
+    from_name: str,
+    from_email: str,
+    reply_to: str,
+) -> dict[str, Any]:
+    cfg = NewsletterConfig.from_env()
+    eid = edition_id(edition)
+    state = load_state()
+    if eid in _drafted_ids(state) and not force:
+        return {"skipped": True, "reason": "už vytvořeno", "edition_id": eid}
+
+    if not _edition_ready(edition):
         return {"skipped": True, "reason": "vydání nemá data pro web", "edition_id": eid}
-    if not is_edition_approved(latest):
+    if not is_edition_approved(edition):
         return {
             "skipped": True,
             "reason": "vydání není v publish-approved.json",
@@ -167,7 +253,7 @@ def run_newsletter_notify(
 
     export_dir = Path(out_dir) if out_dir else None
     if export_dir is not None:
-        page_path = _edition_export_path(latest, export_dir, base_path)
+        page_path = _edition_export_path(edition, export_dir, base_path)
         if not page_path.is_file():
             return {
                 "skipped": True,
@@ -176,7 +262,7 @@ def run_newsletter_notify(
                 "expected": str(page_path),
             }
 
-    subject, plain, html = _build_email_body(latest, site_url=cfg.site_url, base_path=base_path)
+    subject, plain, html = _build_email_body(edition, site_url=cfg.site_url, base_path=base_path)
     result: dict[str, Any] = {
         "edition_id": eid,
         "subject": subject,
@@ -197,23 +283,45 @@ def run_newsletter_notify(
         }
     )
 
-    created = create_campaign(
-        api_key=api_key,
-        list_id=list_id,
-        subject=subject,
-        html_body=html,
-        plain_body=plain,
-        from_name=from_name,
-        from_email=from_email,
-        reply_to=reply_to,
-    )
+    try:
+        created = create_campaign(
+            api_key=api_key,
+            list_id=list_id,
+            subject=subject,
+            html_body=html,
+            plain_body=plain,
+            from_name=from_name,
+            from_email=from_email,
+            reply_to=reply_to,
+        )
+    except Exception as e:
+        # Nezablokovat vydání: příští běh to zkusí znovu; chybu nechat ve stavu
+        # a vyhodit, ať CLI skončí nenulově (CI z toho udělá ::error::).
+        save_state(
+            {
+                **load_state(),
+                "last_error_id": eid,
+                "last_error_at": datetime.now(timezone.utc).isoformat(),
+                "last_error": str(e)[:500],
+            }
+        )
+        raise
     result["ecomail"] = created
+    now_state = load_state()
+    drafted_ids = [x for x in _drafted_ids(now_state) if x != eid] + [eid]
+    if now_state.get("last_error_id") == eid:
+        for k in ("last_error_id", "last_error_at", "last_error"):
+            now_state.pop(k, None)
+    prev_last = (now_state.get("last_drafted_id") or "").strip()
     save_state(
         {
-            **load_state(),
-            "last_drafted_id": eid,
+            **now_state,
+            # Jen dopředu: ruční --schuze na staré vydání nesmí vrátit značku zpět
+            # (jinak by další běh draftoval všechno od té doby znovu).
+            "last_drafted_id": max(prev_last, eid, key=_id_sort_key) if prev_last else eid,
             "last_drafted_at": datetime.now(timezone.utc).isoformat(),
             "last_subject": subject,
+            "drafted_ids": drafted_ids[-_DRAFTED_KEEP:],
         }
     )
     result["drafted"] = True
