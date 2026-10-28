@@ -24,7 +24,7 @@
   "published_at": "backfill",
   "snapshot_dir": "published/2025/17/15.05.2026",
   "supersedes": null,
-  "republished_at": "2026-10-28T09:31:03.000676+00:00",
+  "republished_at": "2026-10-28T09:37:42.536391+00:00",
   "revisions": [
     {
       "at": "2026-10-28T08:38:54.122350+00:00",
@@ -35,7 +35,12 @@
       "at": "2026-10-28T09:31:03.000682+00:00",
       "reason": "Zmrazení po merge main: opravy publikovaných článků z PR #3 (c0244781: verdikty, rozbité věty, počty a data)",
       "content_hash": "b55eb45e4b7b4766"
+    },
+    {
+      "at": "2026-10-28T09:37:42.536396+00:00",
+      "reason": "Oprava verdiktu: zákon o veřejných rozpočtech (tisk 90) byl schválen v závěrečném hlasování č. 43, 91:68; 68:90 bylo doprovodné usnesení (č. 44). PR #3 verdikt chybně přepsal na zamítnuto.",
+      "content_hash": "2ceb922c1ddc933b"
     }
   ],
-  "published_hash": "b55eb45e4b7b4766"
+  "published_hash": "2ceb922c1ddc933b"
 }

@@ -24,13 +24,18 @@
   "published_at": "backfill",
   "snapshot_dir": "published/2025/5/30.01.2026",
   "supersedes": null,
-  "republished_at": "2026-10-28T09:31:05.300539+00:00",
+  "republished_at": "2026-10-28T09:37:43.032930+00:00",
   "revisions": [
     {
       "at": "2026-10-28T09:31:05.300544+00:00",
       "reason": "Zmrazení po merge main: opravy publikovaných článků z PR #3 (c0244781: verdikty, rozbité věty, počty a data)",
       "content_hash": "7e95b410f3631c54"
+    },
+    {
+      "at": "2026-10-28T09:37:43.032935+00:00",
+      "reason": "Oprava verdiktu: stavební zákon prošel prvním čtením do tří výborů (vrácení 34:93 neprošlo); 31:86 bylo prodloužení lhůty o 20 dnů.",
+      "content_hash": "0bbee97df210fcf9"
     }
   ],
-  "published_hash": "7e95b410f3631c54"
+  "published_hash": "0bbee97df210fcf9"
 }

@@ -2,10 +2,10 @@
   "slug": "n-z-kterym-se-zrusuje-nominacni-zakon",
   "nazev": "N. z., kterým se zrušuje nominační zákon",
   "datum": "22.04.2026",
-  "verdikt": "zamiteno",
+  "verdikt": "prvni_cteni",
   "predmet_lidsky": "n. z., kterým se zrušuje nominační zákon",
   "koho": [
-    "Koho se to týká? Firmy, které soutěží o veřejné zakázky, a daňové poplatníky sledující transparentnost státu."
+    "Koho se to týká? Státních a polostátních firem, kde se podle Richterové ročně protočí zhruba bilion korun, a lidí, kteří míří do jejich vedení a dozorčích rad."
   ],
   "fakty": [
     {
@@ -20,16 +20,16 @@
       "link_phrase": "návrh na zrušení"
     },
     {
-      "text": "Závěrečné hlasování o zamítnutí návrhu, 66 proti 88.",
+      "text": "Rozpočtový výbor návrh nedostal, 66:88.",
       "source": "votes",
-      "link_phrase": "Závěrečné hlasování o zamítnutí návrhu, 66 proti 88"
+      "link_phrase": "rozpočtový výbor ho nedostal, 66:88"
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Zákon o zakázkách zůstává",
+  "nadpis": "Nominační zákon jde na odstřel",
   "pocet_hlasovani": 4,
-  "proslo": false,
+  "proslo": true,
   "signaly": {
     "proti_max": 88,
     "pritomno_min": 162,
@@ -38,7 +38,7 @@
     "prazdny_sal": true
   },
   "steno_slov": 53298,
-  "lead": "Středa odpoledne Sněmovna zamítla návrh na zrušení zákona o veřejných zakázkách, osmdesát osm hlasů proti. Piráti mluvili o návratu kamarádíčkování, Havránek chtěl spíš změnu než zrušení.",
-  "pointa": "Koalice chtěla zákon zrušit rovnou. Opozice i část koalice argumentovala, že pravidla pro transparentní zakázky je lepší upravit než zahodit. Piráti varovali, že zrušení nominačního zákona je součást snahy o. Závěrečné hlasování o zamítnutí návrhu, 66 proti 88.",
-  "mean": "Zákon o veřejných zakázkách dál platí a stát musí u velkých zakázek zveřejňovat vazby na politicky exponované osoby."
+  "lead": "Středa odpoledne Sněmovna v prvním kole poslala dál návrh na zrušení nominačního zákona, který od roku 2019 hlídá výběr lidí do vedení a dozorčích rad státních firem. Návrh na zamítnutí neprošel, sedmdesát dva pro a osmdesát osm proti. Piráti mluvili o návratu kamarádíčkování, Havránek chtěl spíš změnu než zrušení.",
+  "pointa": "Koalice chtěla zákon zrušit rovnou. Opozice argumentovala, že pravidla pro výběr lidí do státních firem je lepší upravit než zahodit. Piráti varovali, že zrušení nominačního zákona je součást snahy o návrat kamarádíčkování. Návrh šel do hospodářského výboru 139:22, rozpočtový výbor ho nedostal, 66:88.",
+  "mean": "Nominační zákon zatím platí: vedení a dozorčí rady firem se státní účastí se obsazují přes průhledný výběr. Návrh na jeho zrušení prošel prvním čtením a teď ho projedná hospodářský výbor."
 }

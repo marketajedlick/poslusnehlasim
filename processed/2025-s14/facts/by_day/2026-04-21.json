@@ -13,12 +13,12 @@
     "zamitnuto": 1,
     "dlouha_debata": true
   },
-  "dnesni_ucet": "Dopoledne harmonogram závěrečného účtu, večer trestní zákoník.\nZávěrečné hlasování o trestním zákoníku padlo, sedmi desítkami hlasů.",
-  "zaver": "že úterý večer Sněmovna nerozhodla o závěrečném hlasování o trestním zákoníku, přestože druhé kolo předtím prošlo hladce.",
+  "dnesni_ucet": "Dopoledne harmonogram závěrečného účtu, večer trestní zákoník.\nNovela trestního zákoníku prošla prvním kolem do výboru.",
+  "zaver": "že úterý večer novela trestního zákoníku přežila první kolo a míří do ústavně-právního výboru, jen sociální výbor ji nedostal.",
   "vysledek": [
     "* harmonogram státního závěrečného účtu schválen 142:0",
-    "* trestní zákoník ve druhém kole 154:0",
-    "* závěrečné hlasování o trestním zákoníku zamítnuto, jen 67 hlasů pro",
+    "* trestní zákoník v prvním čtení přikázán ústavně-právnímu výboru 154:0",
+    "* návrh na zamítnutí trestního zákoníku neprošel, 57:89",
     "* 37 hlasování o pořadu před zákony"
   ],
   "proslo": 0,
