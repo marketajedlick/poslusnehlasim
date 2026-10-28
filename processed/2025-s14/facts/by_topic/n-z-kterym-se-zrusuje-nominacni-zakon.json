@@ -2,7 +2,7 @@
   "slug": "n-z-kterym-se-zrusuje-nominacni-zakon",
   "nazev": "N. z., kterým se zrušuje nominační zákon",
   "datum": "22.04.2026",
-  "verdikt": "schvaleno",
+  "verdikt": "zamiteno",
   "predmet_lidsky": "n. z., kterým se zrušuje nominační zákon",
   "koho": [
     "Koho se to týká? Firmy, které soutěží o veřejné zakázky, a daňové poplatníky sledující transparentnost státu."
@@ -29,7 +29,7 @@
   "priorita": 3,
   "nadpis": "Zákon o zakázkách zůstává",
   "pocet_hlasovani": 4,
-  "proslo": true,
+  "proslo": false,
   "signaly": {
     "proti_max": 88,
     "pritomno_min": 162,
