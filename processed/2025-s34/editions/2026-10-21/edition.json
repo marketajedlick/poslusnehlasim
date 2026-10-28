@@ -61,5 +61,14 @@
       "carousel/02-citace.png"
     ],
     "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-21/assets/caption.txt"
-  }
+  },
+  "republished_at": "2026-10-28T09:31:04.695623+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T09:31:04.695628+00:00",
+      "reason": "Zmrazení po merge main: data s34 z 0a40e57e (Kovářová v článku 21. 10.)",
+      "content_hash": "84bb9a43ccd3bfbb"
+    }
+  ],
+  "published_hash": "84bb9a43ccd3bfbb"
 }

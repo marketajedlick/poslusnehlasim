@@ -3,7 +3,10 @@ secrets.env
 __pycache__/
 *.py[cod]
 .DS_Store
-.cursor/
+# Pravidla a prompty pro agenta patří do repa (WORKFLOW.md na ně odkazuje); zbytek .cursor/ lokálně.
+.cursor/*
+!.cursor/rules/
+!.cursor/prompts/
 svejk.db
 site/
 psp/poslanci.zip
@@ -18,6 +21,9 @@ svejk.ipynb
 seo-redesign/
 # Kopie raw/steno.jsonl v kořeni (patří do processed/*/raw/, cache v CI)
 /steno*.jsonl
+
+# Cache vykreslených OG/share PNG (export-pages)
+.cache/
 
 # Pracovní soubory mimo git (IG karusely, screenshoty, rozbalený export poslanců)
 carousels/

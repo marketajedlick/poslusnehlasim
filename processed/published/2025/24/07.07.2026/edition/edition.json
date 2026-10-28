@@ -6,6 +6,10 @@
   "iso": "2026-07-07",
   "state": "published",
   "topic_slugs": [
+    "debata-bydleni-endal-07-07",
+    "debata-paliativni-pece-07-07",
+    "debata-lidska-prava-stafaz-07-07",
+    "debata-porad-hlasovani-07-07",
     "vl-n-z-kt-se-meni-nektere-z-v-oblasti-verejnych-"
   ],
   "recommended_slugs": [
@@ -51,7 +55,7 @@
     "topics_built_at": "2026-07-11T09:37:23.959985+00:00",
     "fingerprint": "0a0e0d57377f083d"
   },
-  "published_at": "2026-07-11T10:11:40.470142+00:00",
+  "published_at": "2026-07-11T10:13:42.275851+00:00",
   "snapshot_dir": "published/2025/24/07.07.2026",
   "supersedes": null,
   "assets": {
@@ -65,5 +69,14 @@
       "carousel/05-skore.png"
     ],
     "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-07-07/assets/caption.txt"
-  }
+  },
+  "republished_at": "2026-10-28T08:38:56.904485+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T08:38:56.904491+00:00",
+      "reason": "Zmrazení stavu po opravách z review (zmatečná hlasování, datová pole hlasování, citát dne, kotvy PSP); změny byly v repu už před zavedením kontroly driftu.",
+      "content_hash": "ca284b3823eb93fd"
+    }
+  ],
+  "published_hash": "ca284b3823eb93fd"
 }

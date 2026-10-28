@@ -16,9 +16,13 @@ from svejk.build.html import (
     css_asset_version,
     fonts_asset_version,
     inject_site_footer,
+    render_den_html,
+    static_css_path,
+    static_fonts_css_path,
+)
+from svejk.build.static_pages_html import (
     render_archiv_html,
     render_404_html,
-    render_den_html,
     render_dekuju_html,
     render_o_webu_html,
     render_podminky_html,
@@ -26,15 +30,15 @@ from svejk.build.html import (
     render_subscribe_html,
     render_pivo_html,
     render_potvrzeno_html,
+    render_soukromi_html,
+)
+from svejk.build.subpages_html import (
     render_slovnicek_html,
     render_slovnicek_term_html,
-    render_soukromi_html,
     render_vyznamenani_table_html,
     render_steno_sources_html,
     render_smlouvy_html,
     render_recnici_table_html,
-    static_css_path,
-    static_fonts_css_path,
 )
 from svejk.build.og_image import (
     OG_HEIGHT,
@@ -113,6 +117,12 @@ def sync_static_assets(out_dir: Path) -> None:
     if _ADMIN_CSS.is_file():
         shutil.copy2(_ADMIN_CSS, static_dir / "admin.css")
     shutil.copy2(_FONTS_CSS, static_dir / "fonts.css")
+    js_src = _STATIC / "js"
+    if js_src.is_dir():
+        js_dest = static_dir / "js"
+        if js_dest.exists():
+            shutil.rmtree(js_dest)
+        shutil.copytree(js_src, js_dest)
     fonts_dest = static_dir / "fonts"
     if fonts_dest.exists():
         shutil.rmtree(fonts_dest)
@@ -426,6 +436,21 @@ def run_export_pages(
         rel_written = _export_edition_page(edition, rel)
         if rel_written:
             written.append(rel_written)
+        if len(siblings) > 1 and canonical and edition.schuze == canonical.schuze:
+            # Kanonické vydání dne se dvěma schůzemi má i /sN/ (staré sdílené odkazy).
+            alias = edition_export_relpath(edition.datum_unl, edition.schuze)
+            if alias not in exported_rels:
+                exported_rels.add(alias)
+                written.append(
+                    _write_redirect_page(
+                        out,
+                        alias,
+                        edition_pages_href(
+                            edition.obdobi, edition.schuze, edition.datum_unl, base
+                        ),
+                        site_url=site,
+                    )
+                )
 
         if edition_source(edition) == "snapshot":
             continue
@@ -584,6 +609,10 @@ def run_export_pages(
     approved = list_approved_editions(obdobi)
     latest = editions[-1]
     homepage_edition = approved[-1] if approved else latest
+    # Poslední den má dvě schůze: homepage ukáže kanonické vydání (víc článků).
+    same_day = resolve_edition(obdobi, homepage_edition.datum_unl)
+    if same_day is not None and (not approved or same_day in approved):
+        homepage_edition = same_day
     paths = SchuzePaths.create(homepage_edition.obdobi, homepage_edition.schuze)
     d = datetime.strptime(homepage_edition.datum_unl, "%d.%m.%Y")
     day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"

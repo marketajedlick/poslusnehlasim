@@ -7,6 +7,7 @@ import unicodedata
 from dataclasses import dataclass, field
 from typing import Any
 
+from svejk.build.article_fields import ARTICLE_PROSE_FIELDS, ARTICLE_TEXT_FIELDS
 from svejk.build.io import iter_jsonl, read_json, write_json
 from svejk.build.nav import steno_sources_pages_href
 from svejk.paths import SchuzePaths
@@ -98,15 +99,31 @@ def write_steno_refs(paths: SchuzePaths):
     return out
 
 
+_STENO_INDEX_CACHE: dict[tuple[str, int, int], dict[str, dict[str, Any]]] = {}
+
+
 def _load_steno_index(paths: SchuzePaths) -> dict[str, dict[str, Any]]:
-    if paths.steno_jsonl.is_file():
-        return {r["id"]: r for r in iter_jsonl(paths.steno_jsonl) if r.get("id")}
-    refs_path = _steno_refs_path(paths)
-    if refs_path.is_file():
-        data = read_json(refs_path)
-        if isinstance(data, dict):
-            return data
-    return {}
+    """Index stena podle id. Cache podle (soubor, mtime, velikost): export dřív četl
+    steno.jsonl ~980× (16–21 s). Záznamy ber jako read-only."""
+    src = paths.steno_jsonl if paths.steno_jsonl.is_file() else _steno_refs_path(paths)
+    if not src.is_file():
+        return {}
+    st = src.stat()
+    key = (str(src), st.st_mtime_ns, st.st_size)
+    cached = _STENO_INDEX_CACHE.get(key)
+    if cached is not None:
+        return cached
+    if src == paths.steno_jsonl:
+        data: dict[str, dict[str, Any]] = {
+            r["id"]: r for r in iter_jsonl(paths.steno_jsonl) if r.get("id")
+        }
+    else:
+        raw = read_json(src)
+        data = raw if isinstance(raw, dict) else {}
+    if len(_STENO_INDEX_CACHE) > 64:
+        _STENO_INDEX_CACHE.clear()
+    _STENO_INDEX_CACHE[key] = data
+    return data
 
 
 _STENO_SITTING = re.compile(r"^(\d+)_(\d+)_")
@@ -267,6 +284,49 @@ def _psp_url_cache_path(paths: SchuzePaths):
 
 # Citace, které se na PSP nenašly (nebo nešla síť): drží se jen po dobu běhu procesu.
 _UNRESOLVED_THIS_RUN: dict[tuple[int, int, str], str] = {}
+# Mezi běhy: nenalezené citace se na PSP zkusí znovu nejdřív po _UNRESOLVED_TTL
+# (dřív každý export stahoval desítky stránek PSP kvůli týmž citacím, ~6 s).
+_UNRESOLVED_TTL_S = 24 * 3600
+
+
+def _psp_unresolved_path(paths: SchuzePaths):
+    return paths.aligned / "psp_url_unresolved.json"
+
+
+def _recently_unresolved(paths: SchuzePaths, cache_key: str) -> str | None:
+    """Odhad URL z posledního neúspěšného dohledání, pokud je čerstvý."""
+    import time
+
+    path = _psp_unresolved_path(paths)
+    if not path.is_file():
+        return None
+    try:
+        data = read_json(path)
+    except ValueError:
+        return None
+    entry = data.get(cache_key)
+    if not isinstance(entry, dict) or not isinstance(entry.get("at"), (int, float)):
+        return None
+    if time.time() - entry["at"] >= _UNRESOLVED_TTL_S:
+        return None
+    return str(entry.get("url") or "") or None
+
+
+def _mark_unresolved(paths: SchuzePaths, cache_key: str, url: str) -> None:
+    import time
+
+    path = _psp_unresolved_path(paths)
+    data: dict[str, dict] = {}
+    if path.is_file():
+        try:
+            data = read_json(path)
+        except ValueError:
+            data = {}
+    data[cache_key] = {"at": time.time(), "url": url}
+    try:
+        write_json(path, data)
+    except OSError:
+        pass
 _OTHER_SITTING_RESOLVERS: dict[tuple[int, int], "PspUrlResolver"] = {}
 # Seznam stránek stenoprotokolu stažený z PSP v tomto běhu (obnovuje se nejvýš jednou).
 _PAGE_URLS_THIS_RUN: dict[tuple[int, int], list[str]] = {}
@@ -427,6 +487,10 @@ class PspUrlResolver:
         run_key = (self.paths.obdobi, self.paths.schuze, cache_key)
         if run_key in _UNRESOLVED_THIS_RUN:
             return _UNRESOLVED_THIS_RUN[run_key]
+        recent = _recently_unresolved(self.paths, cache_key)
+        if recent:
+            _UNRESOLVED_THIS_RUN[run_key] = recent
+            return recent
         try:
             self._load_pages()
             resolved = self._resolve_online(speaker, fallback_url, citace)
@@ -442,6 +506,7 @@ class PspUrlResolver:
             # build zkusí znovu; v tomhle běhu už ale stránky PSP znovu nestahovat
             # (export volá resolve pro každý výstup dne).
             _UNRESOLVED_THIS_RUN[run_key] = resolved
+            _mark_unresolved(self.paths, cache_key, resolved)
             return resolved
         url_cache[cache_key] = resolved
         self._save_url_cache()
@@ -578,7 +643,7 @@ def _passage_from_fact(
 
 def _article_text_from_fact(fact: dict[str, Any]) -> str:
     parts: list[str] = []
-    for key in ("lead", "pointa", "pointa_tail", "mean", "kuriozita", "citace_text"):
+    for key in ARTICLE_TEXT_FIELDS:
         val = (fact.get(key) or "").strip()
         if val:
             parts.append(val)
@@ -785,7 +850,7 @@ def _speaker_clause(speaker: str, article_text: str) -> str | None:
     if len(surname) < 3:
         return None
     pattern = re.compile(
-        rf"\b{re.escape(surname)}\b[^,.]*?(?=,\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]|\.$|$)",
+        rf"\b{re.escape(surname)}\b[^,.<]*?(?=,\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]|\.$|$)",
         re.IGNORECASE,
     )
     matches = [m.group(0).strip() for m in pattern.finditer(article_text)]
@@ -895,7 +960,66 @@ def _party_label_gap() -> str:
     return r"(?:\s*(?:\([^)]+\))?\s*)*"
 
 
-def _find_phrase_relaxed(text: str, phrase: str) -> str | None:
+_RE_A_BLOCK = re.compile(r"<a\b[^>]*>.*?</a\s*>", re.I | re.S)
+_RE_TAG = re.compile(r"<[^>]*>")
+
+
+def _blocked_spans(text: str) -> list[tuple[int, int]]:
+    """Úseky, do kterých odkaz vložit nesmíme: existující <a>…</a> a samotné tagy."""
+    spans = [m.span() for m in _RE_A_BLOCK.finditer(text)]
+    spans.extend(m.span() for m in _RE_TAG.finditer(text))
+    return spans
+
+
+def _span_ok(
+    text: str,
+    start: int,
+    end: int,
+    blocked: list[tuple[int, int]],
+    *,
+    word_bounds: bool = True,
+) -> bool:
+    if start >= end:
+        return False
+    chunk = text[start:end]
+    # Shoda nesmí obsahovat ani protínat existující odkaz (jinak vznikne vnořené <a>).
+    if re.search(r"</?a\b", chunk, re.I):
+        return False
+    for b_start, b_end in blocked:
+        if start < b_end and b_start < end:
+            # Shoda smí obsahovat celé neodkazové tagy (term-tip span), ne do nich zasahovat.
+            if not (start <= b_start and b_end <= end and not text.startswith("<a", b_start)):
+                return False
+    if not word_bounds:
+        return True
+    # Hranice slov: „zákon“ nesmí chytit uvnitř „Nezákonný“.
+    if chunk[:1].isalnum() and start > 0 and text[start - 1].isalnum():
+        return False
+    if chunk[-1:].isalnum() and end < len(text) and text[end].isalnum():
+        return False
+    return True
+
+
+def _first_ok(text: str, pattern: re.Pattern[str]) -> tuple[int, int] | None:
+    blocked = _blocked_spans(text) if "<" in text else []
+    for m in pattern.finditer(text):
+        if _span_ok(text, m.start(), m.end(), blocked):
+            return m.span()
+    # Fráze useknutá uprostřed slova („Rakušan“ v „Rakušanův“): rozšířit na celé slovo.
+    for m in pattern.finditer(text):
+        start, end = m.span()
+        if not _span_ok(text, start, end, blocked, word_bounds=False):
+            continue
+        while start > 0 and text[start - 1].isalnum() and text[start].isalnum():
+            start -= 1
+        while end < len(text) and text[end].isalnum() and text[end - 1].isalnum():
+            end += 1
+        if _span_ok(text, start, end, blocked):
+            return start, end
+    return None
+
+
+def _find_phrase_relaxed_span(text: str, phrase: str) -> tuple[int, int] | None:
     """Fráze ve větě i s (ANO)/(Piráti) mezi slovy link_phrase."""
     words = phrase.split()
     if len(words) < 2:
@@ -905,22 +1029,50 @@ def _find_phrase_relaxed(text: str, phrase: str) -> str | None:
         pat = gap.join(_word_in_html_pattern(w) for w in words)
     else:
         pat = gap.join(rf"\b{re.escape(w)}" for w in words)
-    m = re.search(pat, text, re.I | re.S)
-    return m.group(0) if m else None
+    return _first_ok(text, re.compile(pat, re.I | re.S))
+
+
+def _find_phrase_span(text: str, phrase: str) -> tuple[int, int] | None:
+    if not text or not phrase:
+        return None
+    exact = _first_ok(text, re.compile(re.escape(phrase)))
+    if exact:
+        return exact
+    loose = _first_ok(text, re.compile(re.escape(phrase), re.I))
+    if loose:
+        return loose
+    return _find_phrase_relaxed_span(text, phrase)
+
+
+def _find_phrase_relaxed(text: str, phrase: str) -> str | None:
+    span = _find_phrase_relaxed_span(text, phrase)
+    return text[span[0] : span[1]] if span else None
+
+
+def _phrase_variants(phrase: str) -> list[str]:
+    """Text článku má čísla už slovy („sto třicet devět pro“), fráze z facts číslicemi."""
+    out = [phrase]
+    if re.search(r"\d", phrase):
+        from svejk.cislo_slovy import nahrad_cisla_v_textu
+
+        converted = nahrad_cisla_v_textu(phrase)
+        if converted != phrase:
+            out.append(converted)
+    return out
+
+
+def _locate_phrase(text: str, phrase: str) -> tuple[int, int] | None:
+    for variant in _phrase_variants(phrase):
+        span = _find_phrase_span(text, variant)
+        if span:
+            return span
+    return None
 
 
 def _find_phrase_in_text(text: str, phrase: str) -> str | None:
-    """Vrátí přesnou podmnožinu textu odpovídající frázi (case-insensitive)."""
-    if not text or not phrase:
-        return None
-    if phrase in text:
-        return phrase
-    low_text = text.lower()
-    low_phrase = phrase.lower()
-    pos = low_text.find(low_phrase)
-    if pos >= 0:
-        return text[pos : pos + len(phrase)]
-    return _find_phrase_relaxed(text, phrase)
+    """Vrátí přesnou podmnožinu textu odpovídající frázi (mimo existující odkazy)."""
+    span = _locate_phrase(text, phrase)
+    return text[span[0] : span[1]] if span else None
 
 
 def _word_in_html_pattern(word: str) -> str:
@@ -944,18 +1096,16 @@ def _find_phrase_in_html(text: str, phrase: str) -> str | None:
 def inject_steno_link(text: str, phrase: str, href: str) -> str:
     if not text or not phrase or not href:
         return text
-    match = _find_phrase_in_text(text, phrase)
-    if not match:
+    span = _locate_phrase(text, phrase)
+    if not span:
         return text
-    for m in re.finditer(r"<a\b[^>]*>.*?</a>", text, re.I | re.S):
-        if match in m.group(0):
-            return text
+    start, end = span
     external = href.startswith("http://") or href.startswith("https://")
     attrs = ' class="steno-link" href="{href}"'
     if external:
         attrs += ' target="_blank" rel="noopener"'
-    repl = f"<a{attrs.format(href=href)}>{match}</a>"
-    return text.replace(match, repl, 1)
+    repl = f"<a{attrs.format(href=href)}>{text[start:end]}</a>"
+    return text[:start] + repl + text[end:]
 
 
 def inject_steno_links(text: str, links: list[tuple[str, str]]) -> str:
@@ -983,7 +1133,7 @@ def build_item_steno_links(
         key=lambda p: (-len(p.link_phrase or ""), p.link_phrase is None),
     )
     # citace_text obaluje card-citace — odkaz řeší citace_href, ne inline fráze
-    all_fields = ("lead", "mean", "kuriozita", "pointa", "pointa_tail", "pointa_end", "pointa_close")
+    all_fields = tuple(f for f in ARTICLE_PROSE_FIELDS if f != "lead_tail")
     for p in ordered:
         href = passage_href(p, page_href)
         if p.link_phrase:
@@ -1080,7 +1230,7 @@ def apply_steno_links_to_content(
             resolve_item_citace_href(item, item_passages, page_href, prefix="citace3")
             resolve_item_citace_href(item, item_passages, page_href, prefix="citace4")
             build_item_steno_links(item_passages, item, page_href)
-            for field in ("lead", "mean", "kuriozita", "pointa", "pointa_tail", "pointa_end", "pointa_close"):
+            for field in tuple(f for f in ARTICLE_PROSE_FIELDS if f != "lead_tail"):
                 raw = getattr(item, field, None) or ""
                 for m in re.finditer(r'class="steno-link"[^>]*>(.*?)</a>', raw, re.I | re.S):
                     used_phrases.add(re.sub(r"<[^>]+>", "", m.group(1)))

@@ -23,5 +23,19 @@
   },
   "published_at": "backfill",
   "snapshot_dir": "published/2025/20/28.05.2026",
-  "supersedes": null
+  "supersedes": null,
+  "republished_at": "2026-10-28T09:31:03.410189+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T08:38:54.291746+00:00",
+      "reason": "Zmrazení stavu po opravách z review (zmatečná hlasování, datová pole hlasování, citát dne, kotvy PSP); změny byly v repu už před zavedením kontroly driftu.",
+      "content_hash": "7d6e8c66a7158aea"
+    },
+    {
+      "at": "2026-10-28T09:31:03.410194+00:00",
+      "reason": "Zmrazení po merge main: opravy publikovaných článků z PR #3 (c0244781: verdikty, rozbité věty, počty a data)",
+      "content_hash": "9cfb66bce47633c1"
+    }
+  ],
+  "published_hash": "9cfb66bce47633c1"
 }

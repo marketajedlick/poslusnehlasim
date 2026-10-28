@@ -143,6 +143,7 @@ def create_campaign(
     api_key: str,
     list_id: int,
     subject: str,
+    title: str = "",
     html_body: str,
     plain_body: str = "",
     from_name: str,
@@ -150,7 +151,8 @@ def create_campaign(
     reply_to: str,
 ) -> dict[str, Any]:
     payload: dict[str, Any] = {
-        "title": subject,
+        # Klíč vydání v názvu: koncepty v Ecomailu jdou rozlišit (předmět bývá podobný).
+        "title": title or subject,
         "from_name": from_name,
         "from_email": from_email,
         "reply_to": reply_to,
@@ -170,31 +172,4 @@ def create_campaign(
     if not campaign_id:
         raise RuntimeError(f"Ecomail API: chybí id kampaně v odpovědi: {created!r}")
     return {"id": campaign_id, "created": created}
-
-
-def send_campaign(
-    *,
-    api_key: str,
-    list_id: int,
-    subject: str,
-    html_body: str,
-    plain_body: str = "",
-    from_name: str,
-    from_email: str,
-    reply_to: str,
-) -> dict[str, Any]:
-    created = create_campaign(
-        api_key=api_key,
-        list_id=list_id,
-        subject=subject,
-        html_body=html_body,
-        plain_body=plain_body,
-        from_name=from_name,
-        from_email=from_email,
-        reply_to=reply_to,
-    )
-    campaign_id = created["id"]
-    sent = api_request(api_key, "POST", f"/campaigns/{campaign_id}/send")
-    return {"id": campaign_id, "send": sent}
-
 

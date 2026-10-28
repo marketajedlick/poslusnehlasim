@@ -1,0 +1,30 @@
+name: Tests
+
+on:
+  push:
+    paths-ignore:
+      - processed/newsletter-state.json
+  pull_request:
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/actions/setup-svejk
+
+      - name: pytest
+        run: |
+          pip install pytest
+          python -m pytest -q
+
+      - name: Publish gate (drift publikovaných vydání, sdílená témata)
+        run: ./run-svejk.sh publish-check --obdobi 2025

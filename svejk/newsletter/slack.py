@@ -21,8 +21,10 @@ from svejk.newsletter.notify import (
     _edition_day_path,
     _find_edition,
     _find_edition_by_den,
+    _id_sort_key,
     _latest_edition,
 )
+from svejk.build.publish import list_approved_editions
 
 
 def _subject(day: dict[str, Any], *, datum_label: str) -> str:
@@ -132,6 +134,18 @@ def _slack_payload_for_edition(
     return subject, edition_url, image_url
 
 
+def _pending_slack(obdobi: int, state: dict[str, Any], limit: int = 5) -> list[Edition]:
+    editions = list(list_approved_editions(obdobi))
+    sent = set(state.get("slack_ids") or [])
+    last = (state.get("last_slack_id") or "").strip()
+    if last:
+        sent.add(last)
+        newer = [e for e in editions if _id_sort_key(edition_id(e)) > _id_sort_key(last)]
+    else:
+        newer = editions[-1:]
+    return [e for e in newer if edition_id(e) not in sent][-limit:]
+
+
 def notify_edition_slack(
     edition: Edition,
     *,
@@ -148,7 +162,7 @@ def notify_edition_slack(
         return {**result, "skipped": True, "reason": "chybí SLACK_WEBHOOK_URL"}
 
     state = load_state()
-    if state.get("last_slack_id") == eid and not force:
+    if (state.get("last_slack_id") == eid or eid in (state.get("slack_ids") or [])) and not force:
         return {**result, "skipped": True, "reason": "už ve Slacku", "edition_id": eid}
 
     cfg = NewsletterConfig.from_env()
@@ -180,10 +194,14 @@ def notify_edition_slack(
         edition_url=edition_url,
         image_url=image_url,
     )
+    now = load_state()
+    slack_ids = [x for x in (now.get("slack_ids") or []) if x != eid] + [eid]
+    prev = (now.get("last_slack_id") or "").strip()
     save_state(
         {
-            **load_state(),
-            "last_slack_id": eid,
+            **now,
+            "slack_ids": slack_ids[-60:],
+            "last_slack_id": max(prev, eid, key=_id_sort_key) if prev else eid,
             "last_slack_at": datetime.now(timezone.utc).isoformat(),
             "last_slack_subject": subject,
         }
@@ -220,18 +238,24 @@ def run_newsletter_slack(
         if not edition:
             return {"skipped": True, "reason": f"schůze {schuze} nemá schválené vydání"}
     else:
-        state = load_state()
-        drafted = (state.get("last_drafted_id") or "").strip()
-        edition = None
-        if drafted:
-            # last_drafted_id = "2025/30/09.09.2026"
-            parts = drafted.split("/")
-            if len(parts) == 3 and parts[0].isdigit() and parts[1].isdigit():
-                edition = _find_edition_by_den(int(parts[0]), int(parts[1]), parts[2])
-        if edition is None:
-            edition = _latest_edition(obdobi)
-        if not edition:
-            return {"skipped": True, "reason": "žádné vydání"}
+        # Každé nové schválené vydání od posledního ve Slacku (publikace dvou dnů
+        # najednou nebo výpadek Ecomailu dřív poslaly do Slacku jen jedno).
+        pending = _pending_slack(obdobi, load_state())
+        if not pending:
+            latest = _latest_edition(obdobi)
+            return {
+                "skipped": True,
+                "reason": "už ve Slacku" if latest else "žádné vydání",
+                "edition_id": edition_id(latest) if latest else "",
+            }
+        results = [
+            notify_edition_slack(e, dry_run=dry_run, force=force, base_path=base_path)
+            for e in pending
+            if _edition_day_path(e).is_file()
+        ]
+        if len(results) == 1:
+            return results[0]
+        return {"posted": any(r.get("posted") for r in results), "editions": results}
 
     day_path = _edition_day_path(edition)
     if not day_path.is_file():

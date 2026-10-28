@@ -1,0 +1,36 @@
+{
+  "key": "2025/20/03.06.2026",
+  "obdobi": 2025,
+  "schuze": 20,
+  "datum_unl": "03.06.2026",
+  "iso": "2026-06-03",
+  "state": "published",
+  "topic_slugs": [
+    "vl-n-z-o-evidenci-trzeb-eu"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-06-03/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 368,
+    "votes_max_cislo": 368,
+    "steno_count": 1902,
+    "steno_last_poradi": 1902,
+    "topics_built_at": "2026-07-10T17:51:38.122906+00:00",
+    "fingerprint": "e37c5f9f0623d2ec"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/20/03.06.2026",
+  "supersedes": null,
+  "republished_at": "2026-10-28T09:31:03.474482+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T09:31:03.474487+00:00",
+      "reason": "Zmrazení po merge main: opravy publikovaných článků z PR #3 (c0244781: verdikty, rozbité věty, počty a data)",
+      "content_hash": "382eb7e7b8e740e8"
+    }
+  ],
+  "published_hash": "382eb7e7b8e740e8"
+}

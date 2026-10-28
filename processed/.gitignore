@@ -3,3 +3,6 @@
 
 # Lokální HTML z compose — do produkce jde export do site/
 */out/**/*.html
+
+# Negativní cache dohledávání kotev PSP (lokální, 24 h)
+*/aligned/psp_url_unresolved.json

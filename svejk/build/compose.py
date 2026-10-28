@@ -16,8 +16,8 @@ from svejk.build.day_content import (
 from svejk.cislo_slovy import nahrad_cisla_v_textu
 from svejk.strings import load_strings
 from svejk.text_norm import bez_dlouhych_pomlc, lcfirst_preserve_proper, ma_dlouhou_pomlcku
-from svejk.build.html import (
-    render_den_html,
+from svejk.build.html import render_den_html
+from svejk.build.subpages_html import (
     render_steno_sources_html,
     render_smlouvy_html,
     render_vyznamenani_table_html,

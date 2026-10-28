@@ -30,6 +30,6 @@ def test_muted_text_meets_wcag_aa_on_cream() -> None:
 def test_edition_spa_updates_head_meta() -> None:
     from pathlib import Path
 
-    scripts = Path("svejk/templates/edition-scripts.html").read_text(encoding="utf-8")
+    scripts = Path("svejk/static/js/edition.js").read_text(encoding="utf-8")
     assert "applyHeadMeta" in scripts
     assert "headMetaFromDoc" in scripts

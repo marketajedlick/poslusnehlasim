@@ -23,5 +23,14 @@
   },
   "published_at": "backfill",
   "snapshot_dir": "published/2025/14/21.04.2026",
-  "supersedes": null
+  "supersedes": null,
+  "republished_at": "2026-10-28T09:37:42.334775+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T09:37:42.334939+00:00",
+      "reason": "Oprava verdiktu: novela trestního zákoníku v prvním čtení neprošla zamítnutím, byla přikázána ústavně-právnímu výboru 154:0 (zamítnutí 57:89 neprošlo); 67 hlasů pro bylo přikázání výboru pro sociální politiku, ne závěrečné hlasování.",
+      "content_hash": "d046a8af0979b786"
+    }
+  ],
+  "published_hash": "d046a8af0979b786"
 }

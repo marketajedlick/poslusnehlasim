@@ -14,6 +14,7 @@ if sys.version_info < (3, 10):
 
 import argparse
 import json
+import os
 from pathlib import Path
 
 
@@ -164,6 +165,10 @@ def cmd_sync(args: argparse.Namespace) -> int:
             f"./run-svejk.sh build --schuze N --only align,extract,compose",
             file=sys.stderr,
         )
+    for w in summary.get("warnings") or []:
+        # Výpadek Hlídače / psp.cz u jedné schůze: varování, ne chyba (CI pak commitne hlasování).
+        prefix = "::warning::" if os.environ.get("GITHUB_ACTIONS") else "Varování: "
+        print(f"{prefix}{w}", file=sys.stderr)
     if summary.get("errors"):
         return 1
     if getattr(args, "fail_if_new_steno", False):
@@ -269,6 +274,19 @@ def cmd_publish_check(args: argparse.Namespace) -> int:
             print(f"  blocked: {item['key']}", file=sys.stderr)
         for item in held:
             print(f"  held bez snapshotu: {item['key']}", file=sys.stderr)
+        for item in result.get("published_drift") or []:
+            print(
+                f"  publikované vydání se změnilo: {item['key']}: {', '.join(item['files'])}\n"
+                f"    → {item['hint']}",
+                file=sys.stderr,
+            )
+        for item in result.get("shared_topic_slugs") or []:
+            print(
+                f"  téma ve více dnech: s{item['schuze']} {item['slug']} ({', '.join(item['days'])})",
+                file=sys.stderr,
+            )
+        for key in result.get("approved_not_published") or []:
+            print(f"  approved bez edition publish: {key}", file=sys.stderr)
         return 1
     print("Publish gate: OK.", file=sys.stderr)
     return 0
@@ -594,6 +612,19 @@ def cmd_poslanci_export(args: argparse.Namespace) -> int:
     else:
         export_csv(out, data_dir=ROOT / "data")
     print(f"Exportováno {len(rows)} poslanců: {out}")
+    return 0
+
+
+def cmd_poslanci_refresh(_args: argparse.Namespace) -> int:
+    from psp.poslanci import refresh_poslanci_zip
+    from svejk.config import ROOT
+
+    try:
+        changed = refresh_poslanci_zip(ROOT / "data")
+    except OSError as e:
+        print(f"Chyba: {e}", file=sys.stderr)
+        return 1
+    print("poslanci.zip aktualizován" if changed else "poslanci.zip beze změny")
     return 0
 
 
@@ -966,6 +997,10 @@ def main() -> int:
         help="Vypsat na stdout místo zápisu do souboru",
     )
     p_posl_export.set_defaults(func=cmd_poslanci_export)
+    p_posl_refresh = posl_sub.add_parser(
+        "refresh", help="Stáhnout aktuální poslanci.zip z PSP (kluby, náhradníci)"
+    )
+    p_posl_refresh.set_defaults(func=cmd_poslanci_refresh)
 
     from svejk.edition.commands import register_edition_parser
 

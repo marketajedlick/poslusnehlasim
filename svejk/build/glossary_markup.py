@@ -13,6 +13,7 @@ from svejk.glossary import (
     slovnicek_term_label,
     slovnicek_term_slug,
 )
+from svejk.build.article_fields import ARTICLE_TEXT_FIELDS
 from svejk.build.nav import slovnicek_term_pages_href
 
 
@@ -218,7 +219,7 @@ def apply_glossary_to_content(
         if val:
             setattr(content, field, _mark(val))
     for item in getattr(content, "items", []) or []:
-        for field in ("lead", "mean", "kuriozita", "citace_text", "pointa", "pointa_tail"):
+        for field in ARTICLE_TEXT_FIELDS:
             val = getattr(item, field, None)
             if val:
                 setattr(item, field, _mark(val))

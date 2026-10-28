@@ -788,23 +788,28 @@ def _filter_allowed_html_tag(tag: str) -> str:
     return ""
 
 
+_RE_HTML_TAG = re.compile(r"(</?[A-Za-z][^<>]*>)")
+
+
 def _sanitize_html_segments(
     text: str, plain_chunk, tag_filter=_filter_allowed_html_tag
 ) -> str:
     if "<" not in text:
         return plain_chunk(text)
 
-    parts = re.split(r"(<[^>]+>)", text)
+    # Tag = „<“ + písmeno nebo „/“. Dřív „pod <5 % a <strong>ministr“ spolklo
+    # „<5 % a <strong>“ jako jeden tag a text zmizel.
+    parts = _RE_HTML_TAG.split(text)
     out: list[str] = []
     for part in parts:
         if not part:
             continue
-        if part.startswith("<"):
+        if _RE_HTML_TAG.fullmatch(part):
             filtered = tag_filter(part)
             if filtered:
                 out.append(filtered)
             continue
-        out.append(plain_chunk(part))
+        out.append(plain_chunk(part.replace("<", "&lt;").replace(">", "&gt;")))
     return "".join(out)
 
 
@@ -979,6 +984,30 @@ def _sanitize_den_content(content: DenContent) -> None:
         item.pointa_close = _sanitize_text_export(item.pointa_close)
         item.dopad = _sanitize_text_export(item.dopad)
         item.parliament_lead = _sanitize_text_export(item.parliament_lead)
+    if content.snemovni_listy:
+        content.snemovni_listy = _sanitize_listy(content.snemovni_listy)
+
+
+def _sanitize_listy(listy: dict[str, Any]) -> dict[str, Any]:
+    """Sněmovní listy z facts/by_day jdou do šablony jako |safe: projít sanitizerem."""
+
+    def _s(val: Any) -> Any:
+        return _sanitize_text_export(val) if isinstance(val, str) else val
+
+    out = dict(listy)
+    for key in ("meta", "deck", "footer"):
+        out[key] = _s(out.get(key))
+    sections = []
+    for section in out.get("sections") or []:
+        if not isinstance(section, dict):
+            continue
+        sec = dict(section)
+        sec["heading"] = _s(sec.get("heading"))
+        sec["paragraphs"] = [_s(p) for p in sec.get("paragraphs") or []]
+        sec["bullets"] = [_s(b) for b in sec.get("bullets") or []]
+        sections.append(sec)
+    out["sections"] = sections
+    return out
 
 
 def vysledek_radky(content: DenContent, paths: SchuzePaths, day_path: Path) -> list[str]:

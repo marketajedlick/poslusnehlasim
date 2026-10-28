@@ -2,6 +2,9 @@
 
 from __future__ import annotations
 
+import re
+from typing import Literal
+
 from svejk.noviny import _law_kategorie
 from svejk.jednaci_den import vote_chrono_key
 from svejk.timeline import BlokDne
@@ -30,8 +33,113 @@ def topic_proslo_druhe_cteni_ukonceno(steno_texts: list[str]) -> bool:
     return False
 
 
-def topic_proslo_from_votes(group: list[dict]) -> bool:
-    """Prošlo, pokud existuje rozhodující A (pro > proti); u maratonů přerušení ne."""
+# Typ hlasování ze stena. UNL typ návrhu nemá; předsedající ho ale ohlašuje
+# („vyslovuje souhlas s návrhem zákona“, „přikázán k projednání výboru“, …).
+_HLASOVANI_CISLO_RE = re.compile(r"hlasování(?:\s+pořadové)?\s+číslo\s+(\d+)", re.I)
+_RE_FINAL = re.compile(
+    r"(?:vyslovuje|vyslovila|vyslovit)\s+souhlas\s+s\s+(?:\w+\s+){0,3}návrhem\s+(?:ústavního\s+)?zákona"
+    r"|schvaluje\s+(?:\w+\s+){0,2}návrh\s+zákona"
+    r"|návrh\w*\s+zákona\s+jako\s+celku"
+    r"|jsme\s+(?:tento\s+)?návrh\s+zákona[^.]{0,80}?\s(?:ne)?(?:přijali|schválili)"
+    r"|s\s+návrhem\s+(?:ústavního\s+)?zákona\s+(?:byl\s+|nebyl\s+)?vysloven\s+souhlas"
+    r"|návrh\s+zákona[^.]{0,80}?\s(?:nebyl|byl)\s+přijat",
+    re.I,
+)
+_RE_REJECT = re.compile(
+    r"návrh\w*\s+na\s+zamítnutí|zamítnout\s+(?:tento\s+)?návrh\s+zákona|návrh\s+zákona\s+zamít", re.I
+)
+_RE_RETURN = re.compile(
+    r"(?:vrácení|vrátit|vrací)\s+(?:\w+\s+){0,6}(?:výbor|k\s+novému\s+projednání|do\s+druhého)", re.I
+)
+_RE_REFER = re.compile(r"přikáz\w*|přikazuje", re.I)
+_RE_PAUSE = re.compile(r"přeruš\w*", re.I)
+_RE_AMEND = re.compile(
+    r"pozměňovací|legislativně\s+technick|návrh\s+(?:pana|paní)\s+poslan|zkrácení\s+lhůty|lhůt", re.I
+)
+
+VoteMotion = Literal[
+    "zaverecne", "zamitnuti", "vraceni", "prikazani", "preruseni", "pozmenovak", "jine"
+]
+TopicVysledek = Literal["schvaleno", "zamitnuto", "vraceno_vyboru", "postup", "preruseno"]
+
+
+def classify_vote_motion(pre: str, post: str) -> VoteMotion:
+    """Typ hlasování z textu před ohlášením (návrh) a po něm (konstatování)."""
+    # Návrh usnesení o celém zákoně předsedající čte těsně před hlasováním; ve
+    # vzdálenějším textu bývá jiný bod (ukončení rozpravy po závěrečném slově).
+    if _RE_FINAL.search(post) or _RE_FINAL.search(pre[-350:]):
+        return "zaverecne"
+    if _RE_REFER.search(post):
+        return "prikazani"
+    if _RE_REJECT.search(pre):
+        return "zamitnuti"
+    if _RE_RETURN.search(pre):
+        return "vraceni"
+    if _RE_AMEND.search(pre):
+        return "pozmenovak"
+    if _RE_REFER.search(pre):
+        return "prikazani"
+    if _RE_PAUSE.search(pre):
+        return "preruseni"
+    return "jine"
+
+
+def vote_motions_from_steno(steno: list[dict]) -> dict[int, VoteMotion]:
+    """{číslo hlasování ve schůzi: typ} podle ohlášení „Hlasování číslo N“ ve stenu."""
+    out: dict[int, VoteMotion] = {}
+    recs = sorted(steno, key=lambda r: int(r.get("poradi") or 0))
+    texts = [r.get("text") or "" for r in recs]
+    for i, text in enumerate(texts):
+        matches = list(_HLASOVANI_CISLO_RE.finditer(text))
+        for j, m in enumerate(matches):
+            start = matches[j - 1].end() if j else 0
+            pre = text[start : m.start()]
+            if not j and len(pre) < 300 and i:
+                pre = texts[i - 1][-(450 - len(pre)) :] + " " + pre
+            pre = pre[-450:]
+            end = matches[j + 1].start() if j + 1 < len(matches) else len(text)
+            post = text[m.end() : end][:300]
+            cut = re.search(r"Zahajuji hlasování|Přednesu|návrh usnesení zní", post, re.I)
+            if cut:
+                post = post[: cut.start()]
+            out.setdefault(int(m.group(1)), classify_vote_motion(pre, post))
+    return out
+
+
+def topic_vysledek(group: list[dict], motions: dict[int, str] | None) -> TopicVysledek | None:
+    """Výsledek bodu podle typu hlasování; None = ze stena nejde určit.
+
+    Závěrečné hlasování rozhoduje vždy (poslední, kvůli přehlasování veta).
+    Jinak poslední přijatý procedurální krok; přerušení jen když je úplně poslední.
+    """
+    if not motions:
+        return None
+    group = sorted(group, key=vote_chrono_key)
+    final = [v for v in group if motions.get(int(v.get("cislo") or 0)) == "zaverecne"]
+    if final:
+        return "schvaleno" if final[-1].get("vysledek") == "A" else "zamitnuto"
+    events = {"zamitnuti": "zamitnuto", "vraceni": "vraceno_vyboru", "prikazani": "postup"}
+    last: TopicVysledek | None = None
+    for v in group:
+        kind = motions.get(int(v.get("cislo") or 0))
+        if kind in events and v.get("vysledek") == "A":
+            last = events[kind]  # type: ignore[assignment]
+    if last:
+        return last
+    if group and motions.get(int(group[-1].get("cislo") or 0)) == "preruseni" and group[-1].get("vysledek") == "A":
+        return "preruseno"
+    return None
+
+
+def topic_proslo_from_votes(group: list[dict], motions: dict[int, str] | None = None) -> bool:
+    """Prošlo bod? Se stenem podle typu hlasování, jinak heuristika z výsledků.
+
+    Heuristika: stačí rozhodující A (pro > proti), u maratonů přerušení ne.
+    Bez typu hlasování ale „prošlo“ i téma, kde prošel jen pozměňovák.
+    """
+    vysledek = topic_vysledek(group, motions)
+    if vysledek is not None:
+        return vysledek in ("schvaleno", "postup")
     group = sorted(group, key=vote_chrono_key)
     if not group:
         return False
@@ -77,3 +185,25 @@ def debata_vysledek_radek(stats: dict) -> str:
             return "* celé odpoledne se mluvilo o jednom bodu"
         return "* dlouhá debata u jednoho bodu"
     return "* nikdo se nepohádal tak, aby to stálo za zmínku"
+
+
+# Verdikt článku, který přímo odporuje výsledku hlasování.
+_VERDIKT_ROZPOR: dict[str, frozenset[str]] = {
+    "schvaleno": frozenset({"zamitnuto", "vraceno_vyboru"}),
+    "zvoleno": frozenset({"zamitnuto"}),
+    "zamiteno": frozenset({"schvaleno", "postup"}),
+}
+
+
+def verdikt_odporuje(verdikt: str, vysledek: str | None) -> bool:
+    return bool(vysledek) and vysledek in _VERDIKT_ROZPOR.get(verdikt or "", frozenset())
+
+
+def verdikt_z_vysledku(vysledek: str | None) -> str | None:
+    return {
+        "schvaleno": "schvaleno",
+        "zamitnuto": "zamiteno",
+        "vraceno_vyboru": "odlozeno",
+        "preruseno": "odlozeno",
+        "postup": "prvni_cteni",
+    }.get(vysledek or "")

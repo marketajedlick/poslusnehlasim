@@ -1,0 +1,47 @@
+---
+description: Postup zpracování schůze od sync po newsletter (playbook)
+globs: processed/**/*
+alwaysApply: false
+---
+
+# Workflow zpracování schůze
+
+Plný playbook: [`processed/WORKFLOW.md`](../../processed/WORKFLOW.md).  
+Facts a sekce ze stena: [`poslusne-hlasim-pravidla.md`](./poslusne-hlasim-pravidla.md).  
+Terminologie a den: `steno-zapisy.mdc`.
+
+## Pořadí kroků
+
+**Edition workflow (doporučeno):**
+
+1. **Data:** `sync` → `edition brief --den`
+2. **Generování:** Cursor prompt `.cursor/prompts/edition-draft.md` → doplň `facts/`
+3. **Odkazy:** `edition link-phrases` → `edition preview` → `edition review`
+4. **Feedback:** `edition feedback --note "…"` (učí další brief)
+5. **Publish:** do `facts/by_day/` zapiš `nwl_predmet` (úderný předmět NWL k obsahu dne, ne „Nové vydání · datum“) → `edition approve` → `edition publish`
+
+**Klasický postup:**
+
+1. **Data:** `sync --check-only` → `build --only fetch` → `build --only align`
+2. **Výběr:** `review --den`, `review --audit` — ne všechno jde do novin; ignoruj `je_porad_schuze`
+3. **Curiosity pass:** `poslusne-hlasim-pravidla.md` §1b + `WORKFLOW.md` §2a — projdi steno, najdi `id` rozsah, obohať `fakty[]` (pipeline nevidí celý kontext)
+4. **Facts:** `by_topic` (`nadpis`, `lead` reportážní bez refrénu, `fakty` + citace, `steno_id`, `link_phrase`, `pointa`, `mean` = Hlášení na velitelstvo) + `by_day` (skóre, zaver, `steno_zdroje: true`)
+5. **Odkazy:** `link_phrase` = přesná fráze z článku → compose vloží steno-link → stránka Zdroje → PSP (viz WORKFLOW §4a)
+6. **Audit:** hlasování vs. wording, strany u jmen, unikátní steno kotvy, každý link jinam než ostatní
+7. **Build:** `build --only compose --den` → `export-pages` → lokální náhled
+8. **Finální průchod (§9):** celé vydání od začátku do konce, doplnit chybějící steno linky, ověřit fakta ve sten/votes, znovu `compose` dokud sedí
+9. **Publish:** klíč v `publish-approved.json` (`hidden` → `approved`) → push
+10. **NWL:** `newsletter-notify --force`
+
+## Časté chyby (kontroluj vždy)
+
+- Návrh na **vrácení do výboru** ≠ pád novely; druhé kolo ≠ závěrečné hlasování
+- Skóre dne jen u **zákonů**, ne u procedury a výborů
+- `board_*_label` krátké, aby tabule na mobilu dávala smysl s čísly
+- `dnesni_ucet` na 2 řádky; `zaver` začíná „že …“
+- **`link_phrase` musí sedět s wordingem v článku**, jinak odkaz nevznikne nebo vede špatně
+- Po každé úpravě `facts/` spusť `compose`
+
+## Signály materiálu (curiosity ve stenozáznamu)
+
+Vysoký `pocet_slov`, `proti` > 0, scénické poznámky v závorkách, poloprázdný sál, rozpor v koalici, „budu stručný“ u dlouhého projevu = priorita. Grep: `(Potlesk|Hluk|opouští|budu stručn)`. Jednomyslná hlasování = spíš skóre, ne celý článek.

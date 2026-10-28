@@ -2,7 +2,7 @@
   "slug": "novela-z-trestni-zakonik",
   "nazev": "Novela z. - trestní zákoník",
   "datum": "21.04.2026",
-  "verdikt": "zamiteno",
+  "verdikt": "prvni_cteni",
   "predmet_lidsky": "",
   "koho": [
     "Koho se to týká? Každého, kdo spadá pod trestní zákoník a jeho pravidla."
@@ -16,21 +16,21 @@
       "link_phrase": "Richterová kritizovala vládu za zástupná témata místo podstatných kauz"
     },
     {
-      "text": "Druhé čtení novely prošlo 154:0.",
+      "text": "Přikázání ústavně-právnímu výboru prošlo 154:0.",
       "source": "votes",
-      "link_phrase": "Druhé čtení novely prošlo 154:0"
+      "link_phrase": "Přikázání ústavně-právnímu výboru prošlo 154:0"
     },
     {
-      "text": "Třetí čtení padlo, jen 67 poslanců hlasovalo pro.",
+      "text": "Výbor pro sociální politiku: 67 pro, 0 proti, na schválení to nestačilo.",
       "source": "votes",
-      "link_phrase": "Třetí čtení padlo, jen 67 poslanců hlasovalo pro"
+      "link_phrase": "67 hlasů pro na schválení nestačilo"
     }
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Trestní změna spadla",
+  "nadpis": "Trestní změna jde do výboru",
   "pocet_hlasovani": 3,
-  "proslo": false,
+  "proslo": true,
   "signaly": {
     "proti_max": 89,
     "pritomno_min": 155,
@@ -39,7 +39,7 @@
     "prazdny_sal": true
   },
   "steno_slov": 21874,
-  "lead": "Úterý večer koalice nenatáhla závěrečné hlasování o trestním zákoníku. Druhé kolo sice prošlo sto padesáti čtyřmi hlasy, ale závěrečné hlasování skončilo jen sedmi desítkami pro.",
-  "pointa": "Změna zákona měla projít rychlou kolejí spolu s dalšími zákony čtrnácté schůze. Bez dostatečné podpory v závěrečném hlasování v sále zůstala. Richterová kritizovala vládu za zástupná témata místo podstatných kauz. Druhé čtení novely prošlo 154:0. Třetí čtení padlo, jen 67 poslanců hlasovalo pro.",
-  "mean": "Úpravy trestního zákoníku tentokrát neprošly. Platí dál stávající pravidla, dokud Sněmovna nepředloží nový návrh."
+  "lead": "Úterý večer Sněmovna v prvním kole poslala dál novelu trestního zákoníku. Návrh na zamítnutí neprošel, padesát sedm pro a osmdesát devět proti, a novela míří do ústavně-právního výboru sto padesáti čtyřmi hlasy bez jediného proti.",
+  "pointa": "Změna zákona měla projít rychlou kolejí spolu s dalšími zákony čtrnácté schůze. Richterová kritizovala vládu za zástupná témata místo podstatných kauz. Přikázání ústavně-právnímu výboru prošlo 154:0. Přidat ještě výbor pro sociální politiku se nepodařilo, i když proti nebyl nikdo: 67 hlasů pro na schválení nestačilo.",
+  "mean": "Novela trestního zákoníku prošla prvním čtením a teď ji projedná ústavně-právní výbor. Dokud neprojde dalšími koly, platí stávající pravidla."
 }

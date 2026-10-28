@@ -4,9 +4,10 @@ from __future__ import annotations
 
 import re
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Any
 
+from svejk.build.facts_merge import merge_day, merge_topic
 from svejk.build.io import iter_jsonl, read_json, write_json
 from svejk.build.vote_logic import topic_proslo_from_votes, vote_kategorie
 from svejk.jednaci_den import (
@@ -32,19 +33,41 @@ from svejk.obcansky import glosa_pro_obcana
 from svejk.paths import SchuzePaths
 
 
-def _steno_konec_schuze(steno_path) -> str:
-    """Čas ukončení ze scénické poznámky ve stenoprotokolu (HH:MM)."""
+_RE_KONEC_JEDNANI = re.compile(
+    r"(?:Jednání\s+skončilo|Schůze\s+skončila)\s+ve?\s+(\d{1,2})\.(\d{2})\s*hodin", re.I
+)
+
+
+def _steno_konec_dne(steno_path, datum_unl: str) -> str:
+    """Čas konce jednacího dne ze scénické poznámky (HH:MM).
+
+    Dřív se brala první „Schůze skončila…“ v celém stenu, takže všechny dny
+    schůze dostaly čas konce posledního dne. Jednací den po půlnoci končí
+    poznámkou s datem dalšího dne (jen do 6:00).
+    """
     if not steno_path.is_file():
         return ""
-    pat = re.compile(r"Schůze skončila v (\d{1,2})\.(\d{2})\s*hodin", re.I)
+    d = datetime.strptime(datum_unl, "%d.%m.%Y")
+    day_iso = d.strftime("%Y-%m-%d")
+    next_iso = (d + timedelta(days=1)).strftime("%Y-%m-%d")
+    same_day = ""
+    after_midnight = ""
     for rec in iter_jsonl(steno_path):
-        m = pat.search(rec.get("text") or "")
-        if m:
-            return f"{int(m.group(1)):02d}:{m.group(2)}"
-    return ""
+        datum = (rec.get("datum") or "")[:10]
+        if datum not in (day_iso, next_iso):
+            continue
+        for m in _RE_KONEC_JEDNANI.finditer(rec.get("text") or ""):
+            cas = f"{int(m.group(1)):02d}:{m.group(2)}"
+            if datum == day_iso:
+                same_day = cas
+            elif int(m.group(1)) < 6 and not after_midnight:
+                after_midnight = cas
+    return after_midnight or same_day
 
 
-def _verdikt(proslo: bool, nazev: str, vysvetleni: str) -> str:
+def _verdikt(proslo: bool, nazev: str, vysvetleni: str, vysledek: str | None = None) -> str:
+    """Razítko článku. vysledek = typ výsledku ze stena (align), přesnější než proslo:
+    první čtení (přikázáno výboru) ≠ schválený zákon, vrácení výboru ≠ zamítnutí."""
     t = (f"{nazev} {vysvetleni}").lower()
     if any(
         w in t
@@ -63,7 +86,9 @@ def _verdikt(proslo: bool, nazev: str, vysvetleni: str) -> str:
         )
     ):
         return "odlozeno"
-    return "schvaleno" if proslo else "zamiteno"
+    from svejk.build.vote_logic import verdikt_z_vysledku
+
+    return verdikt_z_vysledku(vysledek) or ("schvaleno" if proslo else "zamiteno")
 
 
 def _lead_predmet(nazev: str) -> str:
@@ -191,15 +216,17 @@ def _den_zakon_stats(day_votes: list[dict]) -> tuple[int, int, int]:
     return proslo, zamitnuto, proslo + zamitnuto
 
 
-def _validate_fact_votes(fact: dict[str, Any], votes_by_cislo: dict[int, dict], schuze: int) -> list[str]:
+def _validate_fact_votes(
+    fact: dict[str, Any], votes_by_cislo: dict[int, dict], schuze: int, obdobi: int = 2025
+) -> list[str]:
     """Kontrola citací hlasování a steno_id před zápisem."""
     import re
 
     warnings: list[str] = []
-    prefix = f"2025_{schuze}_"
+    prefix = f"{obdobi}_{schuze}_"
     for f in fact.get("fakty") or []:
         sid = (f.get("steno_id") or "").strip()
-        if sid and f.get("source") == "steno" and sid.startswith("2025_") and not sid.startswith(prefix):
+        if sid and f.get("source") == "steno" and sid.startswith(f"{obdobi}_") and not sid.startswith(prefix):
             warnings.append(f"steno_id {sid} není ze schůze s{schuze}")
         cit = f.get("citace") or ""
         for m in re.finditer(
@@ -214,70 +241,6 @@ def _validate_fact_votes(fact: dict[str, Any], votes_by_cislo: dict[int, dict], 
                     f"#{c} citace {pro}:{proti} vs raw {rv.get('pro')}:{rv.get('proti')}"
                 )
     return warnings
-
-
-_MANUAL_TOPIC_KEYS = (
-    "lead",
-    "lead_tail",
-    "pointa",
-    "mean",
-    "kuriozita",
-    "kuriozita_links",
-    "nadpis",
-    "publikovat",
-    "koho",
-    "fakty",
-)
-_MANUAL_DAY_KEYS = (
-    "dnesni_ucet",
-    "zaver",
-    "vysledek",
-    "topic_slugs",
-    "skore_manual",
-    "nwl_predmet",
-)
-
-
-def _topic_manually_edited(existing: dict[str, Any]) -> bool:
-    if any(existing.get(k) for k in ("lead", "pointa", "mean")):
-        return True
-    if existing.get("fakty") and any(
-        f.get("source") in ("votes", "manual") for f in existing.get("fakty") or []
-    ):
-        return True
-    nadpis = (existing.get("nadpis") or "").strip()
-    if nadpis and nadpis not in ("Prošlo to", "Prošlo"):
-        return True
-    return False
-
-
-def _merge_manual_fact(existing: dict[str, Any], fresh: dict[str, Any]) -> dict[str, Any]:
-    if not existing:
-        return fresh
-    if not _topic_manually_edited(existing):
-        return fresh
-    out = dict(fresh)
-    for key in _MANUAL_TOPIC_KEYS:
-        if key in existing and existing[key] not in (None, "", []):
-            out[key] = existing[key]
-    return out
-
-
-def _merge_manual_day(existing: dict[str, Any], fresh: dict[str, Any]) -> dict[str, Any]:
-    if not existing:
-        return fresh
-    if not any(existing.get(k) for k in ("dnesni_ucet", "zaver", "vysledek")):
-        return fresh
-    out = dict(fresh)
-    for key in _MANUAL_DAY_KEYS:
-        if key in existing and existing[key] not in (None, "", []):
-            out[key] = existing[key]
-    if existing.get("skore_manual") and existing.get("stats"):
-        out.setdefault("stats", {})
-        for key in ("proslo", "zamitnuto"):
-            if key in existing["stats"]:
-                out["stats"][key] = existing["stats"][key]
-    return out
 
 
 def run_extract(paths: SchuzePaths) -> dict[str, Any]:
@@ -351,13 +314,13 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
 
         fact_path = paths.facts_by_topic / f"{topic['slug']}.json"
         existing_fact = read_json(fact_path) if fact_path.is_file() else {}
-        fact = _merge_manual_fact(
+        fact = merge_topic(
             existing_fact,
             {
                 "slug": topic["slug"],
                 "nazev": nazev,
                 "datum": topic.get("datum", ""),
-                "verdikt": _verdikt(proslo, nazev, vysv),
+                "verdikt": _verdikt(proslo, nazev, vysv, topic.get("vysledek")),
                 "predmet_lidsky": _lead_predmet(nazev),
                 "koho": koho,
                 "fakty": fakty,
@@ -390,7 +353,7 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
         spor_o_porad = spor_o_porad_schuze(day_votes)
         ordered = sorted(day_votes, key=vote_chrono_key)
         start = (ordered[0].get("cas") or "")[:5] if ordered else ""
-        end = _steno_konec_schuze(paths.steno_jsonl) or (
+        end = _steno_konec_dne(paths.steno_jsonl, datum) or (
             (ordered[-1].get("cas") or "")[:5] if ordered else ""
         )
         minuty = jednaci_den_minuty(day_votes)
@@ -412,7 +375,7 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
         d = datetime.strptime(datum, "%d.%m.%Y")
         day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
         existing_day = read_json(day_path) if day_path.is_file() else {}
-        day_doc = _merge_manual_day(
+        day_doc = merge_day(
             existing_day,
             {
                 "datum": datum,
@@ -442,7 +405,7 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
         fact = read_json(fp)
         if not fact.get("publikovat"):
             continue
-        for w in _validate_fact_votes(fact, votes_by_cislo, paths.schuze):
+        for w in _validate_fact_votes(fact, votes_by_cislo, paths.schuze, paths.obdobi):
             validation.append(f"{fact.get('slug')}: {w}")
 
     return {

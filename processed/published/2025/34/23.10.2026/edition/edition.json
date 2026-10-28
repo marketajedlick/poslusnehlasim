@@ -4,7 +4,7 @@
   "schuze": 34,
   "datum_unl": "23.10.2026",
   "iso": "2026-10-23",
-  "state": "approved",
+  "state": "published",
   "topic_slugs": [
     "novela-z-o-ceske-televizi-a-o-ceskem-rozhlasu"
   ],
@@ -50,7 +50,26 @@
     "topics_built_at": "2026-10-27T18:12:45.776598+00:00",
     "fingerprint": "48a21c42f39b9b2c"
   },
-  "published_at": null,
-  "snapshot_dir": null,
-  "supersedes": null
+  "published_at": "2026-10-28T06:51:20.156349+00:00",
+  "snapshot_dir": "published/2025/34/23.10.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-23/assets/2026-10-23.png",
+    "share": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-23/assets/2026-10-23.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/05-skore.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-23/assets/caption.txt"
+  },
+  "republished_at": "2026-10-28T09:31:04.805607+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T09:31:04.805613+00:00",
+      "reason": "Zmrazení po merge main: opravy publikovaných článků z PR #3 (c0244781: verdikty, rozbité věty, počty a data)",
+      "content_hash": "349641772a52365b"
+    }
+  ],
+  "published_hash": "349641772a52365b"
 }

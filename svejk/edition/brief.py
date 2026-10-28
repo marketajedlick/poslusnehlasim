@@ -25,6 +25,7 @@ from svejk.edition.state import (
     assert_editable,
     compute_input_fingerprint,
     edition_dir,
+    is_published,
     load_edition,
     merge_day_skeleton,
     merge_topic_skeleton,
@@ -200,7 +201,7 @@ def _write_topic_skeleton(
         "slug": topic["slug"],
         "nazev": nazev,
         "datum": topic.get("datum", ""),
-        "verdikt": _verdikt(proslo, nazev, vysv),
+        "verdikt": _verdikt(proslo, nazev, vysv, topic.get("vysledek")),
         "predmet_lidsky": topic.get("tema_svejk") or "",
         "koho": koho,
         "fakty": fakty,
@@ -429,7 +430,9 @@ def run_edition_brief(
         encoding="utf-8",
     )
 
-    doc["state"] = "draft"
+    # Publikované vydání zůstává published i po brief --force; změny jdou přes republish.
+    if not is_published(doc):
+        doc["state"] = "draft"
     doc["topic_slugs"] = slugs
     doc["recommended_slugs"] = slugs
     doc["rejected_slugs"] = [e["slug"] for e in rejected]

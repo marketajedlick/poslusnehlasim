@@ -1,0 +1,14 @@
+---
+description: Předmět newsletteru musí sedět s obsahem dne
+alwaysApply: true
+---
+
+# Předmět newsletteru
+
+Při vydání čísla (`edition publish`, „vydej“, NWL) vždy zapiš `nwl_predmet` do `facts/by_day/*.json`.
+
+- Úderný inboxový předmět k tomu, o čem den je. Ne „Nové vydání · datum“.
+- Krátce, lidově, bez úředničiny. Dvě věci dne může spojit tečka.
+- Pole jde do předmětu Ecomail kampaně. Chybí-li, spadne to na první řádek `dnesni_ucet`.
+
+Příklad: stavební zákon + EET, Sněmovna zlomila Senát → `Senát nestačil. EET bez senátních oprav`.

@@ -1,0 +1,43 @@
+{
+  "key": "2025/16/06.05.2026",
+  "obdobi": 2025,
+  "schuze": 16,
+  "datum_unl": "06.05.2026",
+  "iso": "2026-05-06",
+  "state": "published",
+  "topic_slugs": [
+    "novela-z-stavebni-zakon",
+    "novela-z-o-statni-socialni-podpore",
+    "novela-z-o-socialnich-sluzbach"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-05-06/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 71,
+    "votes_max_cislo": 71,
+    "steno_count": 544,
+    "steno_last_poradi": 544,
+    "topics_built_at": "2026-07-10T17:50:29.460659+00:00",
+    "fingerprint": "69cd793ed42b11f9"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/16/06.05.2026",
+  "supersedes": null,
+  "republished_at": "2026-10-28T09:31:02.919617+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T08:38:53.978017+00:00",
+      "reason": "Zmrazení stavu po opravách z review (zmatečná hlasování, datová pole hlasování, citát dne, kotvy PSP); změny byly v repu už před zavedením kontroly driftu.",
+      "content_hash": "e2ba20c68ef253f1"
+    },
+    {
+      "at": "2026-10-28T09:31:02.919742+00:00",
+      "reason": "Zmrazení po merge main: opravy publikovaných článků z PR #3 (c0244781: verdikty, rozbité věty, počty a data)",
+      "content_hash": "66035ab749001131"
+    }
+  ],
+  "published_hash": "66035ab749001131"
+}

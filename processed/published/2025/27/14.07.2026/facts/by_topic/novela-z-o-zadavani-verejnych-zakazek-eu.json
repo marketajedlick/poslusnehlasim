@@ -2,7 +2,7 @@
   "slug": "novela-z-o-zadavani-verejnych-zakazek-eu",
   "nazev": "Novela z. o zadávání veřejných zakázek - EU",
   "datum": "14.07.2026",
-  "verdikt": "schvaleno",
+  "verdikt": "prvni_cteni",
   "predmet_lidsky": "Kdo řídí veřejné zakázky, když na evropském trhu zavládne krize.",
   "koho": [
     "Koho se to týká? Stát, obce a firmy, které soutěží o veřejné peníze."
@@ -32,7 +32,7 @@
   ],
   "publikovat": true,
   "priorita": 3,
-  "nadpis": "Zakázky a kreativní matematika",
+  "nadpis": "Zakázky v době krize",
   "pocet_hlasovani": 1,
   "proslo": true,
   "signaly": {

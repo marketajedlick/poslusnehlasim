@@ -1,0 +1,38 @@
+---
+description: Obohacení facts a psaní sekcí ze stenozáznamu (Švejk, Hlášení na velitelstvo)
+globs: **/facts/**,**/noviny-dlouhe/**,**/steno.jsonl,**/votes.jsonl
+alwaysApply: false
+---
+
+# Poslušně hlásím — pravidla pro facts a články
+
+Při úpravě `facts/` nebo psaní sekcí do `noviny-dlouhe/` **vždy dodržuj celý playbook**:
+
+→ [`.cursor/rules/poslusne-hlasim-pravidla.md`](./poslusne-hlasim-pravidla.md)
+
+Terminologie, glosář, skóre dne a typografie: [`steno-zapisy.mdc`](./steno-zapisy.mdc).
+Curiosity pass (grep, signály): [`processed/WORKFLOW.md`](../../processed/WORKFLOW.md) §2a.
+
+## Rychlá připomínka
+
+**Curiosity pass (§1b):** pipeline nevidí celý kontext debaty. Projdi `steno.jsonl` pro den,
+doplň `fakty[]` (doslovná `citace`, `steno_id`, později `link_phrase`).
+
+**Struktura sekce:** `nadpis` → `lead` (reportážní úvod, bez refrénu) → citace v `fakty[]` →
+`pointa` → `mean` (Hlášení na velitelstvo). Refrén „Poslušně hlásím" doplní compose
+u prvního článku dne.
+
+**Debata o pořadu (§2a):** dvě části — co se **nedostalo** do pořadu (padlé návrhy +
+shrnutí) a co se **dostalo** (schválený program + shrnutí). Ne počet hlasování jako pointa.
+
+**Checklist před compose:** jméno u správného `steno_id`, citát doslovný a krátký,
+hlasování z `votes.jsonl`, strana jen když jistá, `link_phrase` sedí s textem,
+`lead` srozumitelný bez jednacího řádu (§4b), návaznost na dřívější článek o stejném tématu (§4c).
+Citát dne (`jazykolam`) nesmí být stejná věta jako citát v článku.
+
+**Čísla:** v `lead`/`pointa`/`link_phrase` piš slovně (`sto dvacet tři`, ne `123`).
+Číslice jen v `citace` (doslovně ze stena). Ve větách článku nepiš skóre hlasování
+(`154:0`, `X pro, Y proti`), jen verdikt (schváleno/zamítnuto). Skóre `X:Y` jen v tabuli
+dne. Roky `2026` nech číslice. Viz §5b v playbooku.
+
+**Příkazy:** `./run-svejk.sh review --schuze N --den D.M` · `build --only compose --den D.M`

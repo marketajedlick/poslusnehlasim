@@ -1,0 +1,380 @@
+(function () {
+  var configEl = document.getElementById("reactions-config");
+  if (!configEl) return;
+
+  var apiUrl = (configEl.dataset.apiUrl || "").trim();
+  var storageKey = "ph_reaction_v1";
+  var reactionOrder = ["absurdni", "tosnadne", "libi", "potlesk", "nojo"];
+  var reactionEmoji = {
+    absurdni: "😂",
+    tosnadne: "🤦",
+    libi: "💛",
+    potlesk: "👏",
+    nojo: "😅",
+  };
+  var reactionLabels = {
+    absurdni: configEl.dataset.labelAbsurdni || "Absurdní",
+    tosnadne: configEl.dataset.labelTosnadne || "To snad ne",
+    libi: configEl.dataset.labelLibi || "Líbí se mi",
+    potlesk: configEl.dataset.labelPotlesk || "Potlesk",
+    nojo: configEl.dataset.labelNojo || "No jo",
+  };
+  var openMenu = null;
+  var countsBySlug = {};
+  var online = false;
+
+  function isLocalPreview() {
+    var host = location.hostname;
+    return (
+      location.protocol === "file:" ||
+      host === "localhost" ||
+      host === "127.0.0.1"
+    );
+  }
+
+  function pageEdition() {
+    var node = document.querySelector(".reactions[data-edition]");
+    return (node && node.dataset.edition) || (configEl.dataset.edition || "").trim();
+  }
+
+  function voteKey(edition, slug) {
+    return edition + ":" + slug;
+  }
+
+  function loadVotes() {
+    try {
+      var raw = localStorage.getItem(storageKey);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function saveVote(edition, slug, reaction) {
+    var votes = loadVotes();
+    var key = voteKey(edition, slug);
+    if (reaction) votes[key] = reaction;
+    else delete votes[key];
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(votes));
+    } catch (e) {}
+  }
+
+  function userVote(edition, slug) {
+    return loadVotes()[voteKey(edition, slug)] || "";
+  }
+
+  function closeMenu(menu) {
+    if (!menu) return;
+    menu.hidden = true;
+    var wrap = menu.closest(".reactions");
+    var trigger = wrap && wrap.querySelector(".reaction-trigger");
+    if (trigger) trigger.setAttribute("aria-expanded", "false");
+    if (openMenu === menu) openMenu = null;
+  }
+
+  function closeAllMenus() {
+    document.querySelectorAll(".reaction-menu:not([hidden])").forEach(closeMenu);
+  }
+
+  function renderSummary(wrap, edition, slug) {
+    var summary = wrap.querySelector(".reaction-summary");
+    if (!summary) return;
+
+    var counts = countsBySlug[slug] || {};
+    var picked = userVote(edition, slug);
+    var html = "";
+    var any = false;
+
+    reactionOrder.forEach(function (id) {
+      var count = Number(counts[id]) || 0;
+      var isPicked = picked === id;
+      if (count <= 0 && !isPicked) return;
+      any = true;
+      if (count <= 0 && isPicked) count = 1;
+      var cls = "reaction-chip" + (isPicked ? " is-picked" : "");
+      html +=
+        '<button type="button" class="' +
+        cls +
+        '" data-reaction="' +
+        id +
+        '" aria-label="' +
+        reactionLabels[id] +
+        '"><span class="reaction-emoji" aria-hidden="true">' +
+        reactionEmoji[id] +
+        '</span> <span class="reaction-count">' +
+        count +
+        "</span></button>";
+    });
+
+    summary.innerHTML = html;
+    summary.hidden = !any;
+  }
+
+  function syncMenu(wrap, edition, slug) {
+    var picked = userVote(edition, slug);
+    wrap.querySelectorAll(".reaction-option").forEach(function (btn) {
+      var active = btn.dataset.reaction === picked;
+      btn.setAttribute("aria-checked", active ? "true" : "false");
+    });
+    var clearBtn = wrap.querySelector(".reaction-clear");
+    if (clearBtn) clearBtn.hidden = !picked;
+  }
+
+  function syncTrigger(wrap, edition, slug) {
+    var dot = wrap.querySelector(".reaction-dot");
+    if (!dot) return;
+    var picked = userVote(edition, slug);
+    dot.textContent = "";
+    dot.classList.toggle("is-picked", !!picked);
+  }
+
+  function applyArticle(edition, slug) {
+    document.querySelectorAll('.reactions[data-slug="' + slug + '"]').forEach(function (wrap) {
+      var ed = wrap.dataset.edition || edition;
+      renderSummary(wrap, ed, slug);
+      syncMenu(wrap, ed, slug);
+      syncTrigger(wrap, ed, slug);
+    });
+  }
+
+  function applyAll() {
+    document.querySelectorAll(".reactions[data-slug]").forEach(function (wrap) {
+      var slug = wrap.dataset.slug || "";
+      var edition = wrap.dataset.edition || "";
+      if (!slug || !edition) return;
+      renderSummary(wrap, edition, slug);
+      syncMenu(wrap, edition, slug);
+      syncTrigger(wrap, edition, slug);
+    });
+  }
+
+  function reactionsOnline() {
+    if (!apiUrl || isLocalPreview()) return Promise.resolve(false);
+    var url = apiUrl.replace(/\/+$/, "");
+    return fetch(url, { method: "GET", mode: "cors", cache: "no-store" })
+      .then(function (res) {
+        if (!res.ok) return false;
+        return res.json().catch(function () { return {}; }).then(function (body) {
+          return body && body.ok !== false;
+        });
+      })
+      .catch(function () { return false; });
+  }
+
+  function fetchCounts() {
+    var edition = pageEdition();
+    if (!apiUrl || !edition || isLocalPreview()) {
+      return Promise.resolve();
+    }
+    var url = apiUrl.replace(/\/+$/, "") + "?edition=" + encodeURIComponent(edition);
+    return fetch(url, { method: "GET", mode: "cors", cache: "no-store" })
+      .then(function (res) {
+        if (!res.ok) throw new Error("fetch");
+        return res.json();
+      })
+      .then(function (body) {
+        if (!body || !body.articles) return;
+        countsBySlug = body.articles;
+        applyAll();
+      })
+      .catch(function () {});
+  }
+
+  function postReaction(slug, reaction, previous, edition, clear) {
+    if (!apiUrl || isLocalPreview()) {
+      return Promise.resolve(null);
+    }
+    var payload = {
+      edition: edition,
+      slug: slug,
+      previous: previous || "",
+      hp: "",
+    };
+    if (clear) {
+      payload.clear = true;
+      payload.reaction = "clear";
+    } else {
+      payload.reaction = reaction;
+    }
+    return fetch(apiUrl.replace(/\/+$/, ""), {
+      method: "POST",
+      mode: "cors",
+      cache: "no-store",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    })
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (body) {
+          if (!res.ok || !body || !body.ok) throw new Error("post");
+          return body;
+        });
+      });
+  }
+
+  function optimisticBump(slug, reaction, previous) {
+    var counts = Object.assign(
+      { absurdni: 0, tosnadne: 0, libi: 0, potlesk: 0, nojo: 0 },
+      countsBySlug[slug] || {}
+    );
+    if (previous && previous !== reaction) {
+      counts[previous] = Math.max(0, (counts[previous] || 0) - 1);
+    }
+    if (!previous || previous !== reaction) {
+      counts[reaction] = (counts[reaction] || 0) + 1;
+    }
+    countsBySlug[slug] = counts;
+  }
+
+  function chooseReaction(wrap, reaction) {
+    var slug = wrap.dataset.slug || "";
+    var edition = wrap.dataset.edition || "";
+    if (!slug || !edition || !reactionEmoji[reaction]) return;
+
+    var previous = userVote(edition, slug);
+    if (previous === reaction) {
+      closeMenu(wrap.querySelector(".reaction-menu"));
+      return;
+    }
+
+    var snapshot = JSON.stringify(countsBySlug[slug] || {});
+    var prevVote = previous;
+
+    optimisticBump(slug, reaction, previous);
+    saveVote(edition, slug, reaction);
+    applyArticle(edition, slug);
+    closeMenu(wrap.querySelector(".reaction-menu"));
+
+    if (!online) return;
+
+    postReaction(slug, reaction, previous, edition, false)
+      .then(function (body) {
+        if (body && body.counts) {
+          countsBySlug[slug] = body.counts;
+          applyArticle(edition, slug);
+        }
+      })
+      .catch(function () {
+        countsBySlug[slug] = JSON.parse(snapshot);
+        if (prevVote) saveVote(edition, slug, prevVote);
+        else saveVote(edition, slug, "");
+        applyArticle(edition, slug);
+      });
+  }
+
+  function clearReaction(wrap) {
+    var slug = wrap.dataset.slug || "";
+    var edition = wrap.dataset.edition || "";
+    if (!slug || !edition) return;
+
+    var previous = userVote(edition, slug);
+    if (!previous) {
+      closeMenu(wrap.querySelector(".reaction-menu"));
+      return;
+    }
+
+    var snapshot = JSON.stringify(countsBySlug[slug] || {});
+    var counts = Object.assign(
+      { absurdni: 0, tosnadne: 0, libi: 0, potlesk: 0, nojo: 0 },
+      countsBySlug[slug] || {}
+    );
+    counts[previous] = Math.max(0, (counts[previous] || 0) - 1);
+    countsBySlug[slug] = counts;
+    saveVote(edition, slug, "");
+    applyArticle(edition, slug);
+    closeMenu(wrap.querySelector(".reaction-menu"));
+
+    if (!online) return;
+
+    postReaction(slug, "", previous, edition, true)
+      .then(function (body) {
+        if (body && body.counts) {
+          countsBySlug[slug] = body.counts;
+          applyArticle(edition, slug);
+        }
+      })
+      .catch(function () {
+        countsBySlug[slug] = JSON.parse(snapshot);
+        saveVote(edition, slug, previous);
+        applyArticle(edition, slug);
+      });
+  }
+
+  function openReactionMenu(trigger) {
+    var wrap = trigger.closest(".reactions");
+    if (!wrap) return;
+    var menu = wrap.querySelector(".reaction-menu");
+    if (!menu) return;
+
+    closeAllMenus();
+    menu.hidden = false;
+    trigger.setAttribute("aria-expanded", "true");
+    openMenu = menu;
+  }
+
+  function initReactions() {
+    closeAllMenus();
+    countsBySlug = {};
+    applyAll();
+
+    reactionsOnline().then(function (ok) {
+      online = ok;
+      if (!ok) return;
+      return fetchCounts();
+    });
+  }
+
+  document.addEventListener("click", function (e) {
+    var trigger = e.target.closest(".reaction-trigger");
+    if (trigger) {
+      e.preventDefault();
+      e.stopPropagation();
+      var wrap = trigger.closest(".reactions");
+      var menu = wrap && wrap.querySelector(".reaction-menu");
+      if (menu && !menu.hidden) {
+        closeMenu(menu);
+      } else {
+        openReactionMenu(trigger);
+      }
+      return;
+    }
+
+    var option = e.target.closest(".reaction-option");
+    if (option) {
+      e.preventDefault();
+      e.stopPropagation();
+      var wrap = option.closest(".reactions");
+      if (wrap) chooseReaction(wrap, option.dataset.reaction || "");
+      return;
+    }
+
+    var chip = e.target.closest(".reaction-chip");
+    if (chip) {
+      e.preventDefault();
+      e.stopPropagation();
+      var wrap = chip.closest(".reactions");
+      if (wrap) chooseReaction(wrap, chip.dataset.reaction || "");
+      return;
+    }
+
+    var clearBtn = e.target.closest(".reaction-clear");
+    if (clearBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      var wrap = clearBtn.closest(".reactions");
+      if (wrap) clearReaction(wrap);
+      return;
+    }
+
+    if (!e.target.closest(".reactions")) {
+      closeAllMenus();
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeAllMenus();
+  });
+
+  window.__phInitReactions = initReactions;
+  initReactions();
+})();

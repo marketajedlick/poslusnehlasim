@@ -13,8 +13,17 @@ env:
   ECOMAIL_FROM_NAME: Poslušně hlásím
   SVEJK_SITE_URL: https://poslusnehlasim.cz
 
+concurrency:
+  group: doi-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
 jobs:
   sync:
+    # Šablonu v Ecomailu měnit jen z main (ruční spuštění z větve by přepsalo produkci).
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

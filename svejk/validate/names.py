@@ -17,10 +17,19 @@ TEXT_FIELDS = (
     "lead",
     "lead_tail",
     "pointa",
+    "pointa_tail",
+    "pointa_end",
+    "pointa_close",
     "mean",
     "kuriozita",
     "citace_text",
     "citace_autor",
+    "citace2_text",
+    "citace2_autor",
+    "citace3_text",
+    "citace3_autor",
+    "citace4_text",
+    "citace4_autor",
 )
 
 DAY_TEXT_FIELDS = ("dnesni_ucet", "zaver")
@@ -57,25 +66,35 @@ def speaker_match(autor: str, jmeno: str) -> bool:
 
 
 def is_vote_score(party: str) -> bool:
-    return bool(re.match(r"^\d+:\d+$", party.strip()))
+    """Závorka, která není strana: skóre (105:64), bod/tisk pořadu („bod 63“)."""
+    p = party.strip()
+    if re.match(r"^\d+:\d+$", p):
+        return True
+    return bool(re.match(r"^(?:bod|body|tisk|sněmovní\s+tisk|č\.|čl\.|§)\s*\d", p, re.I))
 
 
 def party_matches(expected: str, given: str) -> bool:
-    given = given.split(",")[0].strip()
-    return given == expected or given in expected or expected in given
+    """Přesná shoda klubu, nebo jedna z částí („Zelení, klub Pirátů“ → „Zelení“).
+
+    Dřív stačil podřetězec, takže prošlo i „ANO“ uvnitř delšího názvu.
+    """
+    g = given.split(",")[0].strip().casefold()
+    e = expected.strip().casefold()
+    return g == e or g in [part.strip() for part in e.split(",")]
 
 
 class PoslanecIndex:
     """Rychlé vyhledávání poslance podle jména (včetně pádů příjmení)."""
 
-    def __init__(self, *, data_dir: Path | None = None) -> None:
+    def __init__(self, *, data_dir: Path | None = None, k_datu=None) -> None:
         from psp.poslanci import _display_klub, _prijmeni_tvary, load_poslanci
 
         self._display_klub = _display_klub
         self._by_full: dict[str, object] = {}
         self._by_surname: dict[str, list] = defaultdict(list)
 
-        for p in load_poslanci(data_dir=data_dir or ROOT / "data"):
+        # Klub k datu vydání: přestup mezi kluby nesmí zpětně „opravit“ starší články.
+        for p in load_poslanci(data_dir=data_dir or ROOT / "data", k_datu=k_datu):
             fn = f"{p.jmeno} {p.prijmeni}".lower()
             self._by_full[fn] = p
             self._by_surname[p.prijmeni.lower()].append(p)
@@ -102,6 +121,15 @@ class PoslanecIndex:
         return self._display_klub(poslanec)
 
 
+_INDEX_CACHE: dict = {}
+
+
+def _poslanec_index_k(k_datu) -> "PoslanecIndex":
+    if k_datu not in _INDEX_CACHE:
+        _INDEX_CACHE[k_datu] = PoslanecIndex(k_datu=k_datu)
+    return _INDEX_CACHE[k_datu]
+
+
 def iter_topic_texts(topic: dict) -> list[tuple[str, str]]:
     out: list[tuple[str, str]] = []
     for field in TEXT_FIELDS:
@@ -126,6 +154,12 @@ def iter_day_texts(day: dict) -> list[tuple[str, str]]:
         raw = (bullet or "").strip()
         if raw:
             out.append((f"vysledek[{i}]", raw))
+    jazykolam = day.get("jazykolam")
+    if isinstance(jazykolam, dict):
+        for key in ("text", "autor"):
+            raw = (jazykolam.get(key) or "").strip()
+            if raw:
+                out.append((f"jazykolam.{key}", raw))
     return out
 
 
@@ -220,7 +254,11 @@ def audit_edition_day(
     *,
     index: PoslanecIndex | None = None,
 ) -> list[PartyIssue]:
-    idx = index or PoslanecIndex()
+    if index is None:
+        from datetime import date as _date
+
+        index = _poslanec_index_k(_date.fromisoformat(iso))
+    idx = index
     day_path = paths.facts_by_day / f"{iso}.json"
     if not day_path.is_file():
         return []

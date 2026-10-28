@@ -1,0 +1,326 @@
+(function () {
+  if (location.protocol === "file:") return;
+
+  function hideError(form) {
+    const errorEl = form.querySelector(".subscribe-error");
+    const emailInput = form.querySelector('input[name="email"]');
+    if (errorEl) {
+      errorEl.textContent = "";
+      errorEl.hidden = true;
+    }
+    if (emailInput) emailInput.removeAttribute("aria-invalid");
+  }
+
+  function showError(form, message) {
+    const errorEl = form.querySelector(".subscribe-error");
+    const emailInput = form.querySelector('input[name="email"]');
+    if (!errorEl) return;
+    errorEl.textContent = message;
+    errorEl.hidden = false;
+    if (emailInput) emailInput.setAttribute("aria-invalid", "true");
+  }
+
+  function formMsgs(form) {
+    return {
+      required: form.dataset.msgRequired || "Zadej e-mail.",
+      invalid: form.dataset.msgInvalid || "Tohle nevypadá jako e-mail.",
+      rateLimit: form.dataset.msgRateLimit || "Moc pokusů. Zkus to znovu za chvíli.",
+      send: form.dataset.msgSend || "Odběr se nepodařil odeslat. Zkus to znovu za chvíli.",
+      setup: form.dataset.msgSetup || "Odběr se právě nastavuje, zkus to za pár minut znovu.",
+      generic: form.dataset.msgGeneric || "Odběr se nepodařil. Zkontroluj e-mail a zkus to znovu.",
+      submit: form.dataset.labelSubmit || "Poslušně odebírat",
+      submitting: form.dataset.labelSubmitting || "Odesílám…",
+    };
+  }
+
+  function validateEmailInput(form) {
+    const input = form.querySelector('input[name="email"]');
+    const msgs = formMsgs(form);
+    if (!input) return false;
+    if (input.validity.valueMissing) {
+      showError(form, msgs.required);
+      return false;
+    }
+    if (!input.validity.valid) {
+      showError(form, msgs.invalid);
+      return false;
+    }
+    hideError(form);
+    return true;
+  }
+
+  function bindEmailValidation(form) {
+    const input = form.querySelector('input[name="email"]');
+    if (!input || input.dataset.validated) return;
+    input.dataset.validated = "1";
+
+    input.addEventListener("blur", function () {
+      const msgs = formMsgs(form);
+      if (!input.value.trim()) {
+        hideError(form);
+        return;
+      }
+      if (!input.validity.valid) {
+        showError(form, msgs.invalid);
+        return;
+      }
+      hideError(form);
+    });
+
+    input.addEventListener("input", function () {
+      if (input.validity.valid) hideError(form);
+    });
+  }
+
+  function showSuccess(form) {
+    const row = form.querySelector(".subscribe-row");
+    const emailInput = form.querySelector('input[name="email"]');
+    const successEl = form.querySelector(".subscribe-success");
+    const errorEl = form.querySelector(".subscribe-error");
+    if (emailInput) {
+      emailInput.value = "";
+      emailInput.disabled = true;
+      emailInput.removeAttribute("aria-invalid");
+    }
+    if (row) row.hidden = true;
+    if (errorEl) errorEl.hidden = true;
+    form.classList.add("subscribe-form--success");
+    form.closest(".subscribe")?.classList.add("subscribe--success");
+    if (successEl) successEl.hidden = false;
+  }
+
+  function resetBtn(btn, form) {
+    if (form) resetTurnstile(form);
+    if (!btn) return;
+    const msgs = form ? formMsgs(form) : { submit: "Poslušně odebírat" };
+    btn.disabled = false;
+    btn.textContent = btn.dataset.label || msgs.submit;
+  }
+
+  function subscribePayload(form) {
+    var payload = {
+      email: form.querySelector('input[name="email"]')?.value?.trim() || "",
+      hp: form.querySelector(".subscribe-hp")?.value || "",
+    };
+    if (form.dataset.turnstileId && window.turnstile) {
+      payload.turnstile = window.turnstile.getResponse(form.dataset.turnstileId) || "";
+    }
+    return payload;
+  }
+
+  function resetTurnstile(form) {
+    if (form.dataset.turnstileId && window.turnstile) {
+      window.turnstile.reset(form.dataset.turnstileId);
+    }
+  }
+
+  // Turnstile (ochrana odběru proti botům): jen když build zná site key.
+  function initTurnstile() {
+    var forms = Array.prototype.slice.call(
+      document.querySelectorAll(".subscribe-form[data-turnstile-sitekey]")
+    );
+    if (!forms.length) return;
+    window.__phTurnstileReady = function () {
+      forms.forEach(function (form) {
+        var box = document.createElement("div");
+        box.className = "subscribe-turnstile";
+        form.appendChild(box);
+        form.dataset.turnstileId = window.turnstile.render(box, {
+          sitekey: form.dataset.turnstileSitekey,
+          appearance: "interaction-only",
+          language: "cs",
+        });
+      });
+    };
+    var s = document.createElement("script");
+    s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=__phTurnstileReady";
+    s.async = true;
+    s.defer = true;
+    document.head.appendChild(s);
+  }
+  initTurnstile();
+
+  function successMessage(form) {
+    var el = form.querySelector(".subscribe-success");
+    return (el && el.textContent.trim()) || "Přihlášeno k odběru.";
+  }
+
+  function errorMessage(form, fallback) {
+    var err = form.querySelector(".subscribe-error");
+    if (err && !err.hidden && err.textContent.trim()) return err.textContent.trim();
+    return fallback || formMsgs(form).generic;
+  }
+
+  function agentRespond(submitEvent, value) {
+    if (submitEvent && submitEvent.agentInvoked && typeof submitEvent.respondWith === "function") {
+      submitEvent.respondWith(Promise.resolve(value));
+    }
+  }
+
+  function agentRespondPromise(submitEvent, promise) {
+    if (submitEvent && submitEvent.agentInvoked && typeof submitEvent.respondWith === "function") {
+      submitEvent.respondWith(promise);
+    }
+  }
+
+  function submitViaApi(form, apiUrl) {
+    var emailInput = form.querySelector('input[name="email"]');
+    var email = emailInput?.value?.trim() || "";
+    var btn = form.querySelector(".subscribe-btn");
+    var msgs = formMsgs(form);
+
+    if (btn) {
+      btn.disabled = true;
+      btn.dataset.label = btn.textContent;
+      btn.textContent = msgs.submitting;
+    }
+
+    return fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(subscribePayload(form)),
+    })
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (data) {
+          if (res.ok && data.ok !== false) {
+            showSuccess(form);
+            return successMessage(form);
+          }
+          if (res.status === 429) {
+            showError(form, msgs.rateLimit);
+            resetBtn(btn, form);
+            return errorMessage(form, msgs.rateLimit);
+          }
+          showError(form, msgs.send);
+          resetBtn(btn, form);
+          return errorMessage(form, msgs.send);
+        });
+      })
+      .catch(function () {
+        if (form.dataset.formAction) {
+          return submitHosted(form);
+        }
+        showSetupError(form, btn, email);
+        return errorMessage(form, msgs.setup);
+      });
+  }
+
+  function parseEcomailHtml(html) {
+    if (/registrov[aá]n/i.test(html)) return { ok: true };
+    if (/D[eě]kujeme|alert-success|subscribeForm .success/i.test(html)) return { ok: true };
+    var m = html.match(/alert-danger[^>]*>([^<]+)/i);
+    if (m) return { ok: false, message: m[1].trim() };
+    return { ok: false, message: "" };
+  }
+
+  function showSetupError(form, btn, email) {
+    showError(form, formMsgs(form).setup);
+    resetBtn(btn, form);
+  }
+
+  function tryWorkerSubscribe(form, email, btn) {
+    var apiUrl = form.dataset.subscribeApi;
+    var msgs = formMsgs(form);
+    if (!apiUrl) {
+      showSetupError(form, btn, email);
+      return Promise.resolve(errorMessage(form, msgs.setup));
+    }
+    return fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(subscribePayload(form)),
+    })
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (data) {
+          if (res.ok && data.ok !== false) {
+            showSuccess(form);
+            return successMessage(form);
+          }
+          if (res.status === 429) {
+            showError(form, msgs.rateLimit);
+            resetBtn(btn, form);
+            return errorMessage(form, msgs.rateLimit);
+          }
+          showSetupError(form, btn, email);
+          return errorMessage(form, msgs.setup);
+        });
+      })
+      .catch(function () {
+        showSetupError(form, btn, email);
+        return errorMessage(form, msgs.setup);
+      });
+  }
+
+  function submitHosted(form) {
+    var formAction = form.dataset.formAction || form.action;
+    var emailInput = form.querySelector('input[name="email"]');
+    var email = emailInput?.value?.trim() || "";
+    var btn = form.querySelector(".subscribe-btn");
+    var msgs = formMsgs(form);
+
+    if (btn) {
+      btn.disabled = true;
+      btn.dataset.label = btn.textContent;
+      btn.textContent = "Odesílám…";
+    }
+
+    return fetch(formAction, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ email: email }).toString(),
+      redirect: "manual",
+    })
+      .then(function (res) {
+        if (res.type === "opaqueredirect" || res.status === 301 || res.status === 302) {
+          return tryWorkerSubscribe(form, email, btn);
+        }
+        if (!res.ok) {
+          showError(form, msgs.send);
+          resetBtn(btn, form);
+          return errorMessage(form, msgs.send);
+        }
+        return res.text().then(function (html) {
+          var parsed = parseEcomailHtml(html);
+          if (parsed.ok) {
+            showSuccess(form);
+            return successMessage(form);
+          }
+          showError(form, parsed.message || msgs.generic);
+          resetBtn(btn, form);
+          return errorMessage(form, parsed.message || msgs.generic);
+        });
+      })
+      .catch(function () {
+        showSetupError(form, btn, email);
+        return errorMessage(form, msgs.setup);
+      });
+  }
+
+  document.addEventListener("submit", function (e) {
+    const form = e.target.closest(".subscribe-form");
+    if (!form || form.classList.contains("subscribe-form--success")) return;
+    e.preventDefault();
+    if (form.querySelector(".subscribe-hp")?.value) {
+      agentRespond(e, "ignored");
+      return;
+    }
+
+    const emailInput = form.querySelector('input[name="email"]');
+    if (!validateEmailInput(form)) {
+      emailInput?.focus();
+      agentRespond(e, errorMessage(form));
+      return;
+    }
+
+    var apiUrl = form.dataset.subscribeApi;
+    if (apiUrl) {
+      agentRespondPromise(e, submitViaApi(form, apiUrl));
+      return;
+    }
+    if (form.dataset.formAction) {
+      agentRespondPromise(e, submitHosted(form));
+    }
+  });
+
+  document.querySelectorAll(".subscribe-form").forEach(bindEmailValidation);
+})();

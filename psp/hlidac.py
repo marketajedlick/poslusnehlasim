@@ -32,13 +32,19 @@ class StenoRecord:
             obdobi=int(data.get("obdobi") or 0),
             schuze=int(data.get("schuze") or 0),
             datum=data.get("datum"),
-            cele_jmeno=data.get("celeJmeno") or "",
+            # U hlaviček bodu vrací Hlídač místo jména číslo tisku („189“), ne řečníka.
+            cele_jmeno=_clean_speaker(data.get("celeJmeno") or ""),
             tema=data.get("tema") or "",
             text=data.get("text") or "",
             pocet_slov=int(data.get("pocetSlov") or 0),
             url=data.get("url"),
             cislo_hlasovani=data.get("cisloHlasovani"),
         )
+
+
+def _clean_speaker(name: str) -> str:
+    name = (name or "").strip()
+    return "" if name and not any(ch.isalpha() for ch in name) else name
 
 
 def normalize_hlidac_token(token: str) -> str:
@@ -72,7 +78,8 @@ class HlidacClient:
         self._last_request = time.monotonic()
 
     def _request(self, url: str, *, max_retries: int = 8) -> dict[str, Any]:
-        last_err: urllib.error.HTTPError | None = None
+        last_err: Exception | None = None
+        transient_left = 3
         for attempt in range(max_retries):
             self._wait()
             req = urllib.request.Request(
@@ -93,6 +100,18 @@ class HlidacClient:
                     if wait <= 0:
                         wait = min(120.0, 5.0 * (2**attempt))
                     time.sleep(wait)
+                    continue
+                if e.code >= 500 and transient_left > 0:
+                    transient_left -= 1
+                    time.sleep(min(60.0, 5.0 * (2**attempt)))
+                    continue
+                raise
+            except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
+                # Timeout / spojení: krátký výpadek Hlídače zkusit znovu, ne shodit celou schůzi.
+                last_err = e
+                if transient_left > 0:
+                    transient_left -= 1
+                    time.sleep(min(60.0, 5.0 * (2**attempt)))
                     continue
                 raise
         if last_err:

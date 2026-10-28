@@ -17,6 +17,7 @@ from svejk.edition.publish import (
     run_edition_approve,
     run_edition_backfill,
     run_edition_publish,
+    run_edition_republish,
 )
 from svejk.edition.state import EditionFrozenError, load_edition, save_edition
 from svejk.paths import SchuzePaths
@@ -103,10 +104,15 @@ def cmd_edition_preview(args: argparse.Namespace) -> int:
 
 def cmd_edition_review(args: argparse.Namespace) -> int:
     paths = _paths(args)
-    text = format_edition_review(paths, args.den, as_json=args.json)
+    strict = getattr(args, "strict", False)
+    text, metrics = format_edition_review(
+        paths, args.den, as_json=args.json, save=not strict, with_metrics=True
+    )
     print(text)
     if args.out:
         args.out.write_text(text + "\n", encoding="utf-8")
+    if strict and not metrics.get("ok"):
+        return 1
     return 0
 
 
@@ -131,8 +137,8 @@ def cmd_edition_feedback(args: argparse.Namespace) -> int:
 def cmd_edition_approve(args: argparse.Namespace) -> int:
     paths = _paths(args)
     try:
-        summary = run_edition_approve(paths, args.den)
-    except EditionFrozenError as e:
+        summary = run_edition_approve(paths, args.den, force=args.force)
+    except (EditionFrozenError, RuntimeError) as e:
         print(f"Chyba: {e}", file=sys.stderr)
         return 1
     print(json.dumps(summary, ensure_ascii=False, indent=2))
@@ -146,10 +152,24 @@ def cmd_edition_publish(args: argparse.Namespace) -> int:
             paths,
             args.den,
             force=args.force,
-            skip_newsletter=args.skip_newsletter,
+            # Koncept newsletteru dělá CI po deployi; lokálně jen na vyžádání (jinak dva koncepty).
+            skip_newsletter=not args.newsletter,
             dry_run=args.dry_run,
         )
     except (EditionFrozenError, RuntimeError, FileNotFoundError) as e:
+        print(f"Chyba: {e}", file=sys.stderr)
+        return 1
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    return 0
+
+
+def cmd_edition_republish(args: argparse.Namespace) -> int:
+    paths = _paths(args)
+    try:
+        summary = run_edition_republish(
+            paths, args.den, reason=args.reason, dry_run=args.dry_run
+        )
+    except (RuntimeError, FileNotFoundError) as e:
         print(f"Chyba: {e}", file=sys.stderr)
         return 1
     print(json.dumps(summary, ensure_ascii=False, indent=2))
@@ -199,6 +219,11 @@ def register_edition_parser(sub: argparse._SubParsersAction) -> None:
     _common(p_rev)
     p_rev.add_argument("--json", action="store_true")
     p_rev.add_argument("-o", "--out", type=Path)
+    p_rev.add_argument(
+        "--strict",
+        action="store_true",
+        help="Exit 1 při chybách, nic nezapisuje do edition.json (pro CI / před approve)",
+    )
     p_rev.set_defaults(func=cmd_edition_review)
 
     p_fb = ed_sub.add_parser("feedback", help="Zapsat feedback pro další brief")
@@ -214,8 +239,22 @@ def register_edition_parser(sub: argparse._SubParsersAction) -> None:
     p_pub = ed_sub.add_parser("publish", help="Zmrazit snapshot + assety + approved")
     _common(p_pub)
     p_pub.add_argument("--dry-run", action="store_true")
-    p_pub.add_argument("--skip-newsletter", action="store_true")
+    p_pub.add_argument(
+        "--newsletter",
+        action="store_true",
+        help="Hned vytvořit koncept v Ecomailu (jinak ho udělá CI po deployi)",
+    )
+    p_pub.add_argument("--skip-newsletter", action="store_true", help=argparse.SUPPRESS)
     p_pub.set_defaults(func=cmd_edition_publish)
+
+    p_rep = ed_sub.add_parser(
+        "republish",
+        help="Oprava publikovaného vydání: revize + nový snapshot (bez newsletteru)",
+    )
+    _common(p_rep)
+    p_rep.add_argument("--reason", required=True, help="Co a proč se opravilo")
+    p_rep.add_argument("--dry-run", action="store_true")
+    p_rep.set_defaults(func=cmd_edition_republish)
 
     p_bf = ed_sub.add_parser("backfill-published", help="Backfill edition state pro approved")
     p_bf.add_argument("--obdobi", type=int, default=2025)

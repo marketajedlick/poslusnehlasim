@@ -4,7 +4,7 @@
   "schuze": 34,
   "datum_unl": "21.10.2026",
   "iso": "2026-10-21",
-  "state": "approved",
+  "state": "published",
   "topic_slugs": [
     "rozpocet-2027-prvni-kolo"
   ],
@@ -15,7 +15,7 @@
   "brief_path": "editions/2026-10-21/brief.md",
   "feedback": [],
   "metrics": {
-    "state": "stale",
+    "state": "published",
     "stale": true,
     "link_phrase_coverage": {
       "total": 6,
@@ -38,13 +38,9 @@
     "generic_topic_count": 0,
     "steno_passages": 7,
     "steno_missing_article_phrase": 0,
-    "jazykolam_duplicates": [
-      "Po deseti a půl hodinách první přihlášený v rozpravě, ale o tom je demokracie, tak to prostě chodí."
-    ],
-    "ok": false,
-    "errors": [
-      "citát dne je stejný jako citát v článku"
-    ]
+    "jazykolam_duplicates": [],
+    "ok": true,
+    "errors": []
   },
   "inputs": {
     "votes_count": 282,
@@ -54,7 +50,25 @@
     "topics_built_at": "2026-10-24T08:55:09.691905+00:00",
     "fingerprint": "b2c88fb6203b8661"
   },
-  "published_at": null,
-  "snapshot_dir": null,
-  "supersedes": null
+  "published_at": "2026-10-28T05:37:05.989846+00:00",
+  "snapshot_dir": "published/2025/34/21.10.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-21/assets/2026-10-21.png",
+    "share": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-21/assets/2026-10-21.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-21/assets/caption.txt"
+  },
+  "republished_at": "2026-10-28T09:31:04.695623+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T09:31:04.695628+00:00",
+      "reason": "Zmrazení po merge main: data s34 z 0a40e57e (Kovářová v článku 21. 10.)",
+      "content_hash": "84bb9a43ccd3bfbb"
+    }
+  ],
+  "published_hash": "84bb9a43ccd3bfbb"
 }

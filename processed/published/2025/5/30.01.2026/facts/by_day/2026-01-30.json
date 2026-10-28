@@ -13,12 +13,12 @@
     "zamitnuto": 1,
     "dlouha_debata": true
   },
-  "dnesni_ucet": "Dopoledne boj o pořad schůze.\nStavební zákon v prvním kole padl.",
-  "zaver": "že sice o stavebním zákonu poslanci mluvili už od středy, ale v pátek v prvním kole stejně padl.",
+  "dnesni_ucet": "Dopoledne boj o pořad schůze.\nStavební zákon prošel prvním kolem.",
+  "zaver": "že o stavebním zákonu poslanci mluvili už od středy a v pátek ho v prvním kole poslali do tří výborů.",
   "vysledek": [
     "* tři věci schválili",
     "* šest návrhů neprošlo",
-    "* stavební zákon v prvním kole padl",
+    "* stavební zákon v prvním kole prošel do tří výborů",
     "* dopoledne dvacet hlasování o pořadu schůze"
   ],
   "proslo": 0,

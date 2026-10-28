@@ -5,7 +5,9 @@
   "datum_unl": "07.07.2026",
   "iso": "2026-07-07",
   "state": "published",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "vl-n-z-o-evidenci-trzeb"
+  ],
   "recommended_slugs": [],
   "rejected_slugs": [],
   "brief_path": "editions/2026-07-07/brief.md",
@@ -54,5 +56,14 @@
       "carousel/05-skore.png"
     ],
     "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s25/editions/2026-07-07/assets/caption.txt"
-  }
+  },
+  "republished_at": "2026-10-28T08:38:57.082166+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T08:38:57.082173+00:00",
+      "reason": "Zmrazení stavu po opravách z review (zmatečná hlasování, datová pole hlasování, citát dne, kotvy PSP); změny byly v repu už před zavedením kontroly driftu.",
+      "content_hash": "1d86fde86b52eb42"
+    }
+  ],
+  "published_hash": "1d86fde86b52eb42"
 }

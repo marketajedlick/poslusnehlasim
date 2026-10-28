@@ -138,17 +138,14 @@ async function handleSubscribe(request, env, headers) {
   if (current.status === 1) {
     return json({ ok: true }, 200, headers);
   }
-
-  let subscribed = await subscribeToEcomail(env, listId, email, { resubscribe: true });
-  if (!subscribed.ok) {
-    await notifyAdminSubscribe(env, email);
-    return json({ ok: false, error: "subscribe_failed" }, 502, headers);
-  }
-
-  // Už potvrzený odběratel — formulář ukáže stejnou zprávu, mail znovu neposíláme.
-  if (subscribed.status === 1) {
+  // 4 = hard bounce, 5 = stížnost na spam: žádný mail, žádná změna v Ecomailu.
+  // Odpověď stejná jako u úspěchu, ať formulář neprozrazuje stav adresy.
+  if (BLOCKED_SUBSCRIBER_STATUSES.has(current.status)) {
+    console.warn("subscribe_blocked_status", current.status);
     return json({ ok: true }, 200, headers);
   }
+  // Do Ecomailu se zapisuje až v /confirm (dřív se každá adresa z formuláře hned
+  // přepsala na „nepotvrzený“ s resubscribe, i odhlášená).
 
   const daily = await enforceDoiDailyCap(env);
   if (!daily.ok) {
@@ -207,34 +204,6 @@ async function getSubscriberStatus(env, listId, email) {
     data.subscriber && typeof data.subscriber === "object" ? data.subscriber : null;
   const status = Number(data.status ?? nested?.status);
   return Number.isFinite(status) ? { ok: true, status } : { ok: false };
-}
-
-async function subscribeToEcomail(env, listId, email, { resubscribe }) {
-  const res = await fetch(`https://api2.ecomailapp.cz/lists/${listId}/subscribe`, {
-    method: "POST",
-    headers: ecomailHeaders(env),
-    body: JSON.stringify({
-      subscriber_data: { email, source: "poslusnehlasim", status: 6 },
-      trigger_autoresponders: false,
-      update_existing: true,
-      resubscribe,
-      skip_confirmation: true,
-    }),
-  });
-  if (!res.ok) {
-    return { ok: false };
-  }
-  let data = {};
-  try {
-    data = await res.json();
-  } catch {
-    data = {};
-  }
-  return {
-    ok: true,
-    status: Number(data.status),
-    already_subscribed: Boolean(data.already_subscribed),
-  };
 }
 
 function confirmRedirectUrl(env) {
@@ -436,7 +405,15 @@ async function sendDoiViaResend(env, { listId, email, workerOrigin }) {
   });
 }
 
+const BLOCKED_SUBSCRIBER_STATUSES = new Set([4, 5]);
+
 async function confirmSubscriber(env, listId, email) {
+  const before = await getSubscriberStatus(env, listId, email);
+  if (before.ok && BLOCKED_SUBSCRIBER_STATUSES.has(before.status)) {
+    console.error("confirm_blocked_status", before.status);
+    return false;
+  }
+  if (before.ok && before.status === 1) return true;
   const res = await fetch(`https://api2.ecomailapp.cz/lists/${listId}/subscribe`, {
     method: "POST",
     headers: ecomailHeaders(env),
@@ -616,6 +593,10 @@ async function handleCorrections(request, env, headers) {
     return json({ ok: false }, 400, headers);
   }
 
+  if (!(await verifyTurnstile(request, env, body, { optional: true }))) {
+    return json({ ok: false, error: "captcha_failed" }, 403, headers);
+  }
+
   const rate = await enforceCorrectionRateLimit(request, env);
   if (!rate.ok) {
     return json(
@@ -653,7 +634,13 @@ async function enforceCorrectionRateLimit(request, env) {
   const ip = clientIp(request);
   const ipMax = parseInt(env.CORRECTIONS_RATE_LIMIT_IP_MAX || "20", 10);
   const ipWindow = parseInt(env.CORRECTIONS_RATE_LIMIT_IP_WINDOW || "3600", 10);
-  return await consumeRateLimit(kv, `corr-ip:${ip}`, ipMax, ipWindow);
+  const perIp = await consumeRateLimit(kv, `corr-ip:${ip}`, ipMax, ipWindow);
+  if (!perIp.ok) return perIp;
+  // Globální denní strop: korektury sdílí kvótu Resendu s potvrzovacími maily,
+  // útok z rotujících IP nesmí zastavit DOI.
+  const dailyMax = parseInt(env.CORRECTIONS_DAILY_MAX || "50", 10);
+  if (!(dailyMax > 0)) return { ok: true };
+  return await consumeRateLimit(kv, "corr-global", dailyMax, 86400);
 }
 
 function parseReactionCounts(raw) {
@@ -830,19 +817,34 @@ async function handleReactionsPost(request, env, headers) {
 
   let counts;
   try {
+    // Snížit jde jen vlastní hlas: dřív stačilo poslat clear/previous a kdokoli
+    // ubíral cizí reakce. Hlas klienta (hash IP) je v KV u článku.
+    const voteKey = await reactionVoteKey(env, request, edition, slug);
+    const stored = (await kv.get(voteKey)) || "";
+    const own = REACTION_TYPES.has(stored) ? stored : "";
+    if ((clear && own !== previous) || (!clear && own === reaction)) {
+      // Nic k odebrání / hlas už je započtený: vrátit aktuální stav, bez zápisu.
+      const { articles } = await loadEditionReactions(kv, edition);
+      counts = articles[slug] || { ...REACTION_DEFAULTS };
+      return json({ ok: true, edition, slug, counts }, 200, headers);
+    }
+
     const { articles } = await loadEditionReactions(kv, edition);
     counts = articles[slug] || { ...REACTION_DEFAULTS };
 
-    if (clear) {
-      counts[previous] = Math.max(0, (counts[previous] || 0) - 1);
-    } else {
-      if (previous) {
-        counts[previous] = Math.max(0, (counts[previous] || 0) - 1);
-      }
+    if (own) {
+      counts[own] = Math.max(0, (counts[own] || 0) - 1);
+    }
+    if (!clear) {
       counts[reaction] = (counts[reaction] || 0) + 1;
     }
     articles[slug] = counts;
     await kv.put(reactionEditionKey(edition), JSON.stringify(articles));
+    if (clear) {
+      await kv.delete(voteKey);
+    } else {
+      await kv.put(voteKey, reaction, { expirationTtl: 60 * 60 * 24 * 365 });
+    }
   } catch (err) {
     console.error("reactions_post_kv_failed", String(err));
     return json({ ok: false, error: "unavailable" }, 503, headers);
@@ -852,6 +854,15 @@ async function handleReactionsPost(request, env, headers) {
   }
 
   return json({ ok: true, edition, slug, counts }, 200, headers);
+}
+
+async function reactionVoteKey(env, request, edition, slug) {
+  // Hash IP se solí (secret nebo ALLOWED_ORIGIN), v KV není čitelná IP adresa.
+  const salt = (env.REACTIONS_SALT || env.ALLOWED_ORIGIN || "ph").trim();
+  const data = new TextEncoder().encode(`${salt}|${clientIp(request)}`);
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  const hex = [...new Uint8Array(digest)].slice(0, 12).map((b) => b.toString(16).padStart(2, "0")).join("");
+  return `rx-vote:${edition}:${slug}:${hex}`;
 }
 
 async function enforceReactionRateLimit(request, env) {
@@ -1058,12 +1069,13 @@ function validSubscribeEmail(email) {
   return email.length <= 254 && SUBSCRIBE_EMAIL_RE.test(email);
 }
 
-/** Turnstile: povinné, jakmile je nastaven secret TURNSTILE_SECRET_KEY. */
-async function verifyTurnstile(request, env, body) {
+/** Turnstile: povinné, jakmile je nastaven secret TURNSTILE_SECRET_KEY.
+ * optional: token se ověří, když ho formulář pošle (korektury zatím widget nemají). */
+async function verifyTurnstile(request, env, body, { optional = false } = {}) {
   const secret = (env.TURNSTILE_SECRET_KEY || "").trim();
   if (!secret) return true;
   const token = String(body.turnstile || body["cf-turnstile-response"] || "").trim();
-  if (!token) return false;
+  if (!token) return optional;
   const form = new FormData();
   form.append("secret", secret);
   form.append("response", token);

@@ -1,0 +1,37 @@
+{
+  "key": "2025/3/26.11.2025",
+  "obdobi": 2025,
+  "schuze": 3,
+  "datum_unl": "26.11.2025",
+  "iso": "2025-11-26",
+  "state": "published",
+  "topic_slugs": [
+    "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026",
+    "novela-z-o-sbirce-zakonu-a-mezinarodnich-smluv"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2025-11-26/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 18,
+    "votes_max_cislo": 18,
+    "steno_count": 327,
+    "steno_last_poradi": 327,
+    "topics_built_at": "2026-07-10T17:51:38.107292+00:00",
+    "fingerprint": "102eab5b3776b631"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/3/26.11.2025",
+  "supersedes": null,
+  "republished_at": "2026-10-28T09:31:04.507986+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T09:31:04.507990+00:00",
+      "reason": "Zmrazení po merge main: opravy publikovaných článků z PR #3 (c0244781: verdikty, rozbité věty, počty a data)",
+      "content_hash": "ca34da29f0a8ae20"
+    }
+  ],
+  "published_hash": "ca34da29f0a8ae20"
+}

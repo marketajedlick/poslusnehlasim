@@ -5,7 +5,9 @@
   "datum_unl": "08.07.2026",
   "iso": "2026-07-08",
   "state": "published",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "novela-z-o-pojistnem-na-verejne-zdr-pojisteni"
+  ],
   "recommended_slugs": [],
   "rejected_slugs": [],
   "brief_path": "editions/2026-07-08/brief.md",
@@ -31,5 +33,14 @@
       "carousel/03-citace.png"
     ],
     "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s26/editions/2026-07-08/assets/caption.txt"
-  }
+  },
+  "republished_at": "2026-10-28T08:38:57.457194+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T08:38:57.457201+00:00",
+      "reason": "Oprava strany: Munzar (ODS), ne Motoristé.",
+      "content_hash": "c3aca270ee48e530"
+    }
+  ],
+  "published_hash": "c3aca270ee48e530"
 }

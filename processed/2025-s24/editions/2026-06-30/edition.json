@@ -12,7 +12,7 @@
     "interpelace-hrib-agrofert-novela-30-06",
     "interpelace-rakusan-rukojmi-30-06",
     "interpelace-decroix-lidska-prava-30-06",
-    "novela-z-o-statni-socialni-podpore",
+    "novela-z-o-statni-socialni-podpore-2",
     "novela-z-na-ochranu-zvirat-proti-tyrani"
   ],
   "recommended_slugs": [],
@@ -42,5 +42,29 @@
       "carousel/05-skore.png"
     ],
     "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-06-30/assets/caption.txt"
-  }
+  },
+  "republished_at": "2026-10-28T09:38:13.555955+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T08:38:55.963971+00:00",
+      "reason": "Vrácen původní článek o rodičovském (téma -2, steno z 30. 6.); sdílený soubor tématu ho přepsal textem z 8. 7.",
+      "content_hash": "aa46b27aadaea4ce"
+    },
+    {
+      "at": "2026-10-28T09:31:03.980369+00:00",
+      "reason": "Zmrazení po merge main: opravy publikovaných článků z PR #3 (c0244781: verdikty, rozbité věty, počty a data)",
+      "content_hash": "417e1e2e6402e420"
+    },
+    {
+      "at": "2026-10-28T09:37:42.907193+00:00",
+      "reason": "Oprava verdiktu: novela o ochraně zvířat prošla prvním čtením (vrácení 27:68 neprošlo, výbor pro životní prostředí 95:0); 22:62 bylo přikázání výboru pro veřejnou správu, ne třetí čtení.",
+      "content_hash": "150cb95f7035305a"
+    },
+    {
+      "at": "2026-10-28T09:38:13.556073+00:00",
+      "reason": "Skóre hlasování ve tvaru 27:68 / 66:88 (číslovky slovy byly ve špatném pádě).",
+      "content_hash": "2d4379dbe4f71e58"
+    }
+  ],
+  "published_hash": "2d4379dbe4f71e58"
 }
