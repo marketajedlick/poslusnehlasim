@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Literal
 
+from svejk.build.facts_merge import merge_day, merge_topic
 from svejk.build.io import read_json, write_json
 from svejk.build.publish import edition_key, load_approved_keys
 from svejk.paths import SchuzePaths, processed_root
@@ -19,26 +20,6 @@ EditionState = Literal[
 _EDITION_STATES: frozenset[str] = frozenset(
     {"data_ready", "draft", "in_review", "approved", "published", "stale"}
 )
-_MANUAL_TOPIC_KEYS = frozenset(
-    {
-        "lead",
-        "lead_tail",
-        "pointa",
-        "mean",
-        "kuriozita",
-        "kuriozita_links",
-        "nadpis",
-        "publikovat",
-        "koho",
-        "fakty",
-        "citace_text",
-        "citace_autor",
-    }
-)
-_MANUAL_DAY_KEYS = frozenset(
-    {"dnesni_ucet", "zaver", "vysledek", "topic_slugs", "skore_manual", "nwl_predmet"}
-)
-
 
 class EditionFrozenError(RuntimeError):
     pass
@@ -189,34 +170,15 @@ def merge_topic_skeleton(
     existing: dict[str, Any],
     fresh: dict[str, Any],
 ) -> dict[str, Any]:
-    """Zachová ruční lead/pointa/mean/fakty od agenta."""
-    if not existing:
-        return fresh
-    edited = any(existing.get(k) for k in ("lead", "pointa", "mean", "citace_text"))
-    if not edited and not (existing.get("fakty") and any(
-        f.get("link_phrase") for f in existing.get("fakty") or [] if isinstance(f, dict)
-    )):
-        return fresh
-    out = dict(fresh)
-    for key in _MANUAL_TOPIC_KEYS:
-        if key in existing and existing[key] not in (None, "", []):
-            out[key] = existing[key]
-    return out
+    """Zachová ruční práci redakce; kostra jen doplní chybějící klíče."""
+    return merge_topic(existing, fresh)
 
 
 def merge_day_skeleton(
     existing: dict[str, Any],
     fresh: dict[str, Any],
 ) -> dict[str, Any]:
-    if not existing:
-        return fresh
-    if not any(existing.get(k) for k in ("dnesni_ucet", "zaver", "vysledek")):
-        return fresh
-    out = dict(fresh)
-    for key in _MANUAL_DAY_KEYS:
-        if key in existing and existing[key] not in (None, "", []):
-            out[key] = existing[key]
-    return out
+    return merge_day(existing, fresh)
 
 
 def sync_publish_approved(key: str, *, add: bool = True) -> None:

@@ -174,6 +174,7 @@ def run_sync(
     state.setdefault("unl", {})
     state.setdefault("schuze", {})
 
+    warnings: list[str] = []
     if check_only:
         remote, unl_would_change = unl_needs_refresh(
             obdobi, PSP_DATA_DIR, state.get("unl"), force=force_unl
@@ -184,13 +185,20 @@ def run_sync(
             "check_only": True,
         }
     else:
-        unl_result = refresh_unl(
-            obdobi,
-            PSP_DATA_DIR,
-            local_meta=state.get("unl"),
-            force=force_unl,
-            verbose=verbose,
-        )
+        try:
+            unl_result = refresh_unl(
+                obdobi,
+                PSP_DATA_DIR,
+                local_meta=state.get("unl"),
+                force=force_unl,
+                verbose=verbose,
+            )
+        except OSError as e:
+            # Výpadek psp.cz nesmí zastavit stahování stena z Hlídače; jedeme s lokálním UNL.
+            unl_result = {"changed": False, "error": str(e)}
+            warnings.append(f"PSP UNL: {e}")
+            if verbose:
+                print(f"VAROVÁNÍ PSP UNL: {e}", flush=True)
         if unl_result.get("changed"):
             state["unl"] = {
                 k: unl_result[k]
@@ -233,9 +241,9 @@ def run_sync(
             # Výpadek Hlídače nesmí shodit sync hlasování ostatních schůzí.
             steno_published = False
             probe_error = f"schůze {cislo}: Hlídač steno probe: {e}"
-            errors.append(probe_error)
+            warnings.append(probe_error)
             if verbose:
-                print(f"CHYBA {probe_error}", flush=True)
+                print(f"VAROVÁNÍ {probe_error}", flush=True)
         steno_new = steno_missing or steno_incomplete or steno_published
         pipeline_missing = _needs_pipeline(paths)
 
@@ -305,6 +313,7 @@ def run_sync(
         "updated_schuze": would_schuze if check_only else updated_schuze,
         "vysledky": vysledky,
         "errors": errors,
+        "warnings": warnings,
         "check_only": check_only,
     }
     if verbose:

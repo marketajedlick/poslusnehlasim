@@ -7,6 +7,7 @@ from collections import defaultdict
 from datetime import datetime
 from typing import Any
 
+from svejk.build.facts_merge import merge_day, merge_topic
 from svejk.build.io import iter_jsonl, read_json, write_json
 from svejk.build.vote_logic import topic_proslo_from_votes, vote_kategorie
 from svejk.jednaci_den import (
@@ -216,70 +217,6 @@ def _validate_fact_votes(fact: dict[str, Any], votes_by_cislo: dict[int, dict], 
     return warnings
 
 
-_MANUAL_TOPIC_KEYS = (
-    "lead",
-    "lead_tail",
-    "pointa",
-    "mean",
-    "kuriozita",
-    "kuriozita_links",
-    "nadpis",
-    "publikovat",
-    "koho",
-    "fakty",
-)
-_MANUAL_DAY_KEYS = (
-    "dnesni_ucet",
-    "zaver",
-    "vysledek",
-    "topic_slugs",
-    "skore_manual",
-    "nwl_predmet",
-)
-
-
-def _topic_manually_edited(existing: dict[str, Any]) -> bool:
-    if any(existing.get(k) for k in ("lead", "pointa", "mean")):
-        return True
-    if existing.get("fakty") and any(
-        f.get("source") in ("votes", "manual") for f in existing.get("fakty") or []
-    ):
-        return True
-    nadpis = (existing.get("nadpis") or "").strip()
-    if nadpis and nadpis not in ("Prošlo to", "Prošlo"):
-        return True
-    return False
-
-
-def _merge_manual_fact(existing: dict[str, Any], fresh: dict[str, Any]) -> dict[str, Any]:
-    if not existing:
-        return fresh
-    if not _topic_manually_edited(existing):
-        return fresh
-    out = dict(fresh)
-    for key in _MANUAL_TOPIC_KEYS:
-        if key in existing and existing[key] not in (None, "", []):
-            out[key] = existing[key]
-    return out
-
-
-def _merge_manual_day(existing: dict[str, Any], fresh: dict[str, Any]) -> dict[str, Any]:
-    if not existing:
-        return fresh
-    if not any(existing.get(k) for k in ("dnesni_ucet", "zaver", "vysledek")):
-        return fresh
-    out = dict(fresh)
-    for key in _MANUAL_DAY_KEYS:
-        if key in existing and existing[key] not in (None, "", []):
-            out[key] = existing[key]
-    if existing.get("skore_manual") and existing.get("stats"):
-        out.setdefault("stats", {})
-        for key in ("proslo", "zamitnuto"):
-            if key in existing["stats"]:
-                out["stats"][key] = existing["stats"][key]
-    return out
-
-
 def run_extract(paths: SchuzePaths) -> dict[str, Any]:
     paths.ensure_dirs()
     aligned = read_json(paths.topics_json)
@@ -351,7 +288,7 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
 
         fact_path = paths.facts_by_topic / f"{topic['slug']}.json"
         existing_fact = read_json(fact_path) if fact_path.is_file() else {}
-        fact = _merge_manual_fact(
+        fact = merge_topic(
             existing_fact,
             {
                 "slug": topic["slug"],
@@ -412,7 +349,7 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
         d = datetime.strptime(datum, "%d.%m.%Y")
         day_path = paths.facts_by_day / f"{d.strftime('%Y-%m-%d')}.json"
         existing_day = read_json(day_path) if day_path.is_file() else {}
-        day_doc = _merge_manual_day(
+        day_doc = merge_day(
             existing_day,
             {
                 "datum": datum,

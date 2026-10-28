@@ -14,6 +14,7 @@ if sys.version_info < (3, 10):
 
 import argparse
 import json
+import os
 from pathlib import Path
 
 
@@ -164,6 +165,10 @@ def cmd_sync(args: argparse.Namespace) -> int:
             f"./run-svejk.sh build --schuze N --only align,extract,compose",
             file=sys.stderr,
         )
+    for w in summary.get("warnings") or []:
+        # Výpadek Hlídače / psp.cz u jedné schůze: varování, ne chyba (CI pak commitne hlasování).
+        prefix = "::warning::" if os.environ.get("GITHUB_ACTIONS") else "Varování: "
+        print(f"{prefix}{w}", file=sys.stderr)
     if summary.get("errors"):
         return 1
     if getattr(args, "fail_if_new_steno", False):

@@ -72,7 +72,8 @@ class HlidacClient:
         self._last_request = time.monotonic()
 
     def _request(self, url: str, *, max_retries: int = 8) -> dict[str, Any]:
-        last_err: urllib.error.HTTPError | None = None
+        last_err: Exception | None = None
+        transient_left = 3
         for attempt in range(max_retries):
             self._wait()
             req = urllib.request.Request(
@@ -93,6 +94,18 @@ class HlidacClient:
                     if wait <= 0:
                         wait = min(120.0, 5.0 * (2**attempt))
                     time.sleep(wait)
+                    continue
+                if e.code >= 500 and transient_left > 0:
+                    transient_left -= 1
+                    time.sleep(min(60.0, 5.0 * (2**attempt)))
+                    continue
+                raise
+            except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
+                # Timeout / spojení: krátký výpadek Hlídače zkusit znovu, ne shodit celou schůzi.
+                last_err = e
+                if transient_left > 0:
+                    transient_left -= 1
+                    time.sleep(min(60.0, 5.0 * (2**attempt)))
                     continue
                 raise
         if last_err:

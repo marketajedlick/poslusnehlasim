@@ -27,6 +27,7 @@ jobs:
       - uses: ./.github/actions/restore-steno-cache
 
       - name: Sync UNL + Hlídač → processed/
+        id: sync
         env:
           HLIDAC_TOKEN: ${{ secrets.HLIDAC_TOKEN }}
           HLIDAC_RATE_LIMIT_S: "1.0"
@@ -34,7 +35,10 @@ jobs:
           if [ -z "$HLIDAC_TOKEN" ]; then
             echo "::warning::HLIDAC_TOKEN není nastaven — sync stáhne jen UNL hlasování."
           fi
-          ./run-svejk.sh sync --obdobi 2025 -q || exit 1
+          # Chyba u jedné schůze nesmí zablokovat commit hlasování ostatních; selžeme až na konci.
+          rc=0
+          ./run-svejk.sh sync --obdobi 2025 -q || rc=$?
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
 
       - name: Save steno cache
         uses: actions/cache/save@v4
@@ -45,10 +49,11 @@ jobs:
 
       - name: Commit synced data
         id: commit
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add hl-2025ps/hl2025s.unl processed/sync-state.json
+          git add hl-2025ps/hl2025s.unl hl-2025ps/zmatecne.unl processed/sync-state.json
           git add processed/2025-s*/raw/votes.jsonl
           if git diff --staged --quiet; then
             echo "Žádné změny k commitu."
@@ -76,3 +81,9 @@ jobs:
         if: steps.commit.outputs.committed == 'true'
         run: |
           echo "::notice::Sync stáhl nová data PSP (UNL + raw/). Doplň facts ručně, pak align/extract/compose lokálně."
+
+      - name: Sync skončil chybou
+        if: always() && steps.sync.outputs.rc != '0'
+        run: |
+          echo "::error::sync skončil s kódem ${{ steps.sync.outputs.rc }} (data, která se stáhla, jsou commitnutá)"
+          exit 1
