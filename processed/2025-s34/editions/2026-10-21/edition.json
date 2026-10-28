@@ -15,7 +15,7 @@
   "brief_path": "editions/2026-10-21/brief.md",
   "feedback": [],
   "metrics": {
-    "state": "stale",
+    "state": "published",
     "stale": true,
     "link_phrase_coverage": {
       "total": 6,
@@ -38,13 +38,9 @@
     "generic_topic_count": 0,
     "steno_passages": 7,
     "steno_missing_article_phrase": 0,
-    "jazykolam_duplicates": [
-      "Po deseti a půl hodinách první přihlášený v rozpravě, ale o tom je demokracie, tak to prostě chodí."
-    ],
-    "ok": false,
-    "errors": [
-      "citát dne je stejný jako citát v článku"
-    ]
+    "jazykolam_duplicates": [],
+    "ok": true,
+    "errors": []
   },
   "inputs": {
     "votes_count": 282,

@@ -18,3 +18,8 @@ svejk.ipynb
 seo-redesign/
 # Kopie raw/steno.jsonl v kořeni (patří do processed/*/raw/, cache v CI)
 /steno*.jsonl
+
+# Pracovní soubory mimo git (IG karusely, screenshoty, rozbalený export poslanců)
+carousels/
+tmp/
+data/psp/poslanci/
