@@ -95,6 +95,11 @@ Editorial pravidla (satira, terminologie, formát článků): [`.cursor/rules/st
 | `./run-svejk.sh timeline --schuze 20 --den 26.5` | Náhled vydání v terminálu |
 | `./run-svejk.sh export-pages --obdobi 2025 --out site` | Statický web do `site/` |
 | `./run-svejk.sh review --schuze 20 --audit` | Slabá témata bez dostatečné glosy |
+| `./run-svejk.sh edition review --schuze N --den D.M --strict` | Kontroly vydání (odkazy, citace, strany, verdikt vs. hlasování); exit 1 při chybě |
+| `./run-svejk.sh edition republish --schuze N --den D.M --reason "…"` | Oprava už publikovaného vydání (revize + nový snapshot) |
+| `./run-svejk.sh publish-check --obdobi 2025` | Gate před deployem: drift publikovaných vydání, téma ve dvou dnech |
+| `./run-svejk.sh poslanci refresh` | Aktualizace `data/psp/poslanci.zip` (kluby, náhradníci) |
+| `python scripts/lint_site.py site` | Kontrola hotového webu (vnořené odkazy, `<h1>`, převod čísel) |
 
 Úplný seznam: `./run-svejk.sh --help`.
 
@@ -107,6 +112,8 @@ Editorial pravidla (satira, terminologie, formát článků): [`.cursor/rules/st
 | `data-check.yml` | cron | Upozornění, že na PSP jsou data ještě nesyncnutá |
 | `subscribe-worker.yml` | push | Deploy Cloudflare workeru pro odběr |
 | `doi-sync.yml` | ručně | Šablona double opt-in e-mailu v Ecomailu |
+| `tests.yml` | push, PR | pytest + `publish-check` |
+| `site-health.yml` | denně | Homepage, TLS, nejnovější schválené vydání je na webu |
 
 Push na `main` s hotovými `facts/` typicky jen exportuje web (~1 min). Stahování sten z Hlídače běží v cronu nebo ručně přes `workflow_dispatch`.
 

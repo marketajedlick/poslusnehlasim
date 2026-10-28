@@ -26,3 +26,25 @@ jobs:
         run: |
           chmod +x ./scripts/check-site-health.sh
           ./scripts/check-site-health.sh
+
+      - name: Čerstvost webu (nejnovější schválené vydání je nasazené)
+        run: |
+          # Deploy mohl selhat potichu: vydání je v publish-approved.json, ale web ho nemá.
+          iso="$(python3 - <<'PY'
+          import json
+          from datetime import datetime
+          data = json.load(open("processed/publish-approved.json"))
+          hidden = set(data.get("hidden") or [])
+          keys = [k for k in data.get("approved") or [] if k not in hidden]
+          latest = max(keys, key=lambda k: datetime.strptime(k.split("/")[2], "%d.%m.%Y"))
+          print(datetime.strptime(latest.split("/")[2], "%d.%m.%Y").strftime("%Y-%m-%d"))
+          PY
+          )"
+          url="https://poslusnehlasim.cz/vydani/${iso}/"
+          code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "$url")"
+          echo "nejnovější schválené vydání: $url → HTTP $code"
+          if [ "$code" != "200" ]; then
+            echo "::error::Nejnovější schválené vydání ($iso) na webu chybí (HTTP $code). Zkontroluj workflow Build and deploy GitHub Pages."
+            exit 1
+          fi
+

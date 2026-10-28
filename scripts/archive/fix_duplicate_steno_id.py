@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from scripts.audit_published_steno import citace_in_text, find_correct_ids, steno_by_id  # noqa: E402
-from scripts.fix_published_citace import (  # noqa: E402
+from scripts.archive.fix_published_citace import (  # noqa: E402
     GREETING_RE,
     find_excerpt,
     is_vote_summary,
