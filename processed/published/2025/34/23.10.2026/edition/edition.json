@@ -1,0 +1,56 @@
+{
+  "key": "2025/34/23.10.2026",
+  "obdobi": 2025,
+  "schuze": 34,
+  "datum_unl": "23.10.2026",
+  "iso": "2026-10-23",
+  "state": "approved",
+  "topic_slugs": [
+    "novela-z-o-ceske-televizi-a-o-ceskem-rozhlasu"
+  ],
+  "recommended_slugs": [
+    "novela-z-o-ceske-televizi-a-o-ceskem-rozhlasu"
+  ],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-10-23/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "stale",
+    "stale": true,
+    "link_phrase_coverage": {
+      "total": 9,
+      "linked": 9,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 9,
+      "ok": 9,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 0,
+    "steno_passages": 10,
+    "steno_missing_article_phrase": 0,
+    "jazykolam_duplicates": [],
+    "ok": true,
+    "errors": []
+  },
+  "inputs": {
+    "votes_count": 302,
+    "votes_max_cislo": 302,
+    "steno_count": 2499,
+    "steno_last_poradi": 2499,
+    "topics_built_at": "2026-10-27T18:12:45.776598+00:00",
+    "fingerprint": "48a21c42f39b9b2c"
+  },
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null
+}

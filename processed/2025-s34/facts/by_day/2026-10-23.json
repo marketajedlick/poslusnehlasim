@@ -1,0 +1,35 @@
+{
+  "datum": "23.10.2026",
+  "den": "pátek",
+  "topic_slugs": [
+    "novela-z-o-ceske-televizi-a-o-ceskem-rozhlasu"
+  ],
+  "stats": {
+    "pocet_hlas": 1,
+    "minuty": 1150,
+    "end_cas": "04:58",
+    "proslo": 1,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "nwl_predmet": "Poplatek za televizi ve čtyři ráno",
+  "dnesni_ucet": "Sobota ráno, čtyři třicet šest. Debata o televizi a rozhlasu končí.\nPoplatek má nahradit státní kasa. Ministr výboru čas navíc nedal.",
+  "zaver": "že Sněmovna nechala projít první kolo změny, která ruší poplatek za televizi a rozhlas a chce je platit ze státního rozpočtu, a debatu o tom utnula v sobotu ve čtyři třicet šest ráno.",
+  "vysledek": [
+    "* poplatek za televizi a rozhlas: první kolo přežilo, jde do výboru pro média",
+    "* pevný čas hlasování v sobotu ráno: napodruhé vydržel"
+  ],
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo",
+  "jazykolam": {
+    "text": "Nejenom povodně, ale i sucho a tornáda jsou problém, a proto navrhuji výbor pro životní prostředí.",
+    "autor": "Bohuslav Niemiec",
+    "steno_id": "2025_34_02486"
+  },
+  "slovnicek": [
+    "koncesionářské poplatky",
+    "veřejnoprávní média"
+  ]
+}
