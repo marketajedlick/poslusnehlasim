@@ -4,7 +4,7 @@
   "schuze": 30,
   "datum_unl": "10.09.2026",
   "iso": "2026-09-10",
-  "state": "approved",
+  "state": "published",
   "topic_slugs": [
     "novela-z-o-pozemnich-komunikacich-eu",
     "odpoved-na-pisemnou-interpelaci-p-hladika-na-p-m",
@@ -61,7 +61,28 @@
     "topics_built_at": "2026-09-11T08:21:02.784046+00:00",
     "fingerprint": "0e3df04302e84dbc"
   },
-  "published_at": null,
-  "snapshot_dir": null,
-  "supersedes": null
+  "published_at": "2026-09-12T09:24:26.557731+00:00",
+  "snapshot_dir": "published/2025/30/10.09.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s30/editions/2026-09-10/assets/2026-09-10.png",
+    "share": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s30/editions/2026-09-10/assets/2026-09-10.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png",
+      "carousel/04-citace.png",
+      "carousel/05-skore.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s30/editions/2026-09-10/assets/caption.txt"
+  },
+  "republished_at": "2026-10-28T09:58:28.059311+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T09:58:28.059316+00:00",
+      "reason": "Citace doslovně podle stena: „co jste si vy vyjednali“.",
+      "content_hash": "f6537fe412418db6"
+    }
+  ],
+  "published_hash": "f6537fe412418db6"
 }

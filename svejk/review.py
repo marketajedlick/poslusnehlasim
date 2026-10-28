@@ -150,7 +150,9 @@ def _issues_for_topic(
 
     if not fakty:
         issues.append(ReviewIssue("warn", "no_fakty", "Chybí konkrétní věty ve fakty[], doplnit z tema_vysvetleni nebo stena."))
-    if vysv and _glosa_je_nedostatecna(vysv):
+    has_manual_text = bool((fact.get("lead") or "").strip() and (fact.get("mean") or "").strip())
+    if vysv and _glosa_je_nedostatecna(vysv) and not has_manual_text:
+        # Obecné tema_vysvetleni vadí jen jako záložní text; s ručním lead + mean se nezobrazí.
         issues.append(ReviewIssue("warn", "generic_tema", "tema_vysvetleni je obecné, přepsat v aligned nebo doplnit facts."))
     elif vysv and not fakty:
         issues.append(ReviewIssue("info", "tema_ready", "V aligned je použitelné tema_vysvetleni, zkopíruj do fakty[]."))

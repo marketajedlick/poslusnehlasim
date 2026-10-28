@@ -75,5 +75,14 @@
       "carousel/05-skore.png"
     ],
     "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s30/editions/2026-09-10/assets/caption.txt"
-  }
+  },
+  "republished_at": "2026-10-28T09:58:28.059311+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T09:58:28.059316+00:00",
+      "reason": "Citace doslovně podle stena: „co jste si vy vyjednali“.",
+      "content_hash": "f6537fe412418db6"
+    }
+  ],
+  "published_hash": "f6537fe412418db6"
 }

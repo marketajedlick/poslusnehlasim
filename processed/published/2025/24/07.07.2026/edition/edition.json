@@ -70,13 +70,18 @@
     ],
     "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-07-07/assets/caption.txt"
   },
-  "republished_at": "2026-10-28T08:38:56.904485+00:00",
+  "republished_at": "2026-10-28T09:58:27.866433+00:00",
   "revisions": [
     {
       "at": "2026-10-28T08:38:56.904491+00:00",
       "reason": "Zmrazení stavu po opravách z review (zmatečná hlasování, datová pole hlasování, citát dne, kotvy PSP); změny byly v repu už před zavedením kontroly driftu.",
       "content_hash": "ca284b3823eb93fd"
+    },
+    {
+      "at": "2026-10-28T09:58:27.866439+00:00",
+      "reason": "Citace doslovně podle stena: „jsem ale měla pocit…“.",
+      "content_hash": "c8fd7ced3aa572dc"
     }
   ],
-  "published_hash": "ca284b3823eb93fd"
+  "published_hash": "c8fd7ced3aa572dc"
 }

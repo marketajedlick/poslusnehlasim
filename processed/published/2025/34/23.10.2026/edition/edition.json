@@ -63,13 +63,18 @@
     ],
     "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-23/assets/caption.txt"
   },
-  "republished_at": "2026-10-28T09:31:04.805607+00:00",
+  "republished_at": "2026-10-28T09:58:28.207796+00:00",
   "revisions": [
     {
       "at": "2026-10-28T09:31:04.805613+00:00",
       "reason": "Zmrazení po merge main: opravy publikovaných článků z PR #3 (c0244781: verdikty, rozbité věty, počty a data)",
       "content_hash": "349641772a52365b"
+    },
+    {
+      "at": "2026-10-28T09:58:28.207801+00:00",
+      "reason": "Citace doslovně podle stena: doplněna scénická poznámka „(Potlesk a smích zprava.)“.",
+      "content_hash": "3c14ae7d2e5aad61"
     }
   ],
-  "published_hash": "349641772a52365b"
+  "published_hash": "3c14ae7d2e5aad61"
 }

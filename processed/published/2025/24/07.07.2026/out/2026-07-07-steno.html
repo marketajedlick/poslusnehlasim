@@ -521,13 +521,13 @@
         
         <div class="steno-quote-wrap">
           <p class="steno-field-label">Citace</p>
-          <blockquote class="steno-quote">„měla jsem pocit, že bych dělala jenom stafáž“</blockquote>
+          <blockquote class="steno-quote">„jsem ale měla pocit, že bych dělala jenom stafáž“</blockquote>
         </div>
         
         
         <div class="steno-excerpt-wrap">
           <p class="steno-field-label">Okolí v projevu</p>
-          <div class="steno-excerpt">Já vám děkuji, pane předsedající. Vážení kolegové, vážené kolegyně, asi vás nepřekvapím, s čím dnes budu vystupovat, avizovala jsem to už na minulém jednání. Já se pokusím a použiju velmi cíleně slovo požádat vás. Požádat Vás o to, aby vámi deklarovaný zájem a důraz na lidská práva byl zohledněn i v jednání této Poslanecké sněmovny. A ne proto, že si to myslí nějaká poslankyně paní Decroix, ale protože si to myslí experti. Protože mnozí z těch, kteří posledních 30 let pracovali pro stát a podotýkám, pracovali pro něj zadarmo, dokonce mnozí z těch, se kterými jsme zde, koukám na některé kolegy, alespoň ty přítomné, i někteří, se kterými jsme pracovali v minulém volebním období a kteří nám zásadním způsobem pomohli třeba k tomu, abychom byli schopni změnit legislativu v oblasti domácího násilí nebo třeba legislativu v oblasti redefinice znásilnění, tak přesně tito experti nyní říkají, že kroky vlády, kterými byl rozprášen lidskoprávní odbor, jsou kroky chybné. A aby to nebylo tak, že zde vystupuji a žádám vás o něco a znovu opakuji, žádám, protože já věřím, že lidská práva i pro vás, vzhledem k tomu, že je máme v ústavě, jsou pro vás důležitá, tak si stále myslím, že vznik Komise pro…</div>
+          <div class="steno-excerpt">… překvapí, paní Wünschová, ředitelka Lociky. Jedna z těch, která nyní rezignovala hned ze tří výborů - výboru pro práva dětí, výboru pro prevenci domácího násilí, výboru pro práva obětí. A na veřejný dotaz rozhlasu, proč rezignovala, odpovídá, je to jednoduché, už to nedávalo smysl. Ve výborech jsem byla proto, že jsem chtěla chránit práva dětí, velmi zranitelných dětí, které doma zažívají násilí. V novém uspořádání jsem ale měla pocit, že bych dělala jenom stafáž. Opakuji, jenom stafáž věcem, které už nechrání lidská práva a naopak přispívají k demontáži institucí, které mají chránit demokracii. Prosím to neříkám já, to říká někdo, kdo pracoval zdarma pro stát. A velmi konkrétní příklad. A vrátíme se tady zase k obecné tématice a k tomu, co jsme zde řešili mnohokrát. Konkrétní příklad, který uvádí paní ředitelka Lociková (?) proč nebude fungovat převod lidskoprávní agendy t …</div>
         </div>
         
       </div>
@@ -1080,102 +1080,6 @@ v noci</h2>
     </div>
   </div>
 </div>
-<script>
-(function () {
-  var STORAGE_KEY = "ph_cookie_consent";
-  var GA_ID = "G-DV9Y4JXX05";
-
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-
-  function loadGA() {
-    if (window.__phGaLoaded) return;
-    window.__phGaLoaded = true;
-    gtag("consent", "update", {
-      ad_storage: "denied",
-      ad_user_data: "denied",
-      ad_personalization: "denied",
-      analytics_storage: "granted"
-    });
-    var s = document.createElement("script");
-    s.async = true;
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
-    document.head.appendChild(s);
-    gtag("js", new Date());
-    gtag("config", GA_ID);
-  }
-
-  function denyConsent() {
-    gtag("consent", "update", {
-      ad_storage: "denied",
-      ad_user_data: "denied",
-      ad_personalization: "denied",
-      analytics_storage: "denied"
-    });
-  }
-
-  function saveChoice(value) {
-    try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
-  }
-
-  function getChoice() {
-    try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
-  }
-
-  function banner() {
-    return document.getElementById("cookie-consent");
-  }
-
-  function showBanner() {
-    var el = banner();
-    if (el) el.hidden = false;
-  }
-
-  function hideBanner() {
-    var el = banner();
-    if (el) el.hidden = true;
-  }
-
-  function applyStoredChoice() {
-    var choice = getChoice();
-    if (choice === "granted") {
-      loadGA();
-      hideBanner();
-      return true;
-    }
-    if (choice === "denied") {
-      denyConsent();
-      hideBanner();
-      return true;
-    }
-    return false;
-  }
-
-  window.phOpenCookieSettings = function () {
-    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
-    denyConsent();
-    window.__phGaLoaded = false;
-    showBanner();
-  };
-
-  document.addEventListener("DOMContentLoaded", function () {
-    if (applyStoredChoice()) return;
-    showBanner();
-
-    document.getElementById("cookie-accept")?.addEventListener("click", function () {
-      saveChoice("granted");
-      loadGA();
-      hideBanner();
-    });
-
-    document.getElementById("cookie-reject")?.addEventListener("click", function () {
-      saveChoice("denied");
-      denyConsent();
-      hideBanner();
-    });
-  });
-})();
-</script>
+<script src="/static/js/cookie-consent.js?v=3ad8ed3777" defer></script>
 </body>
 </html>
