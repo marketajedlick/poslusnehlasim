@@ -5,7 +5,8 @@ from __future__ import annotations
 import html
 import re
 from dataclasses import dataclass, field
-from datetime import datetime
+from contextvars import ContextVar
+from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 
@@ -820,7 +821,7 @@ def _sanitize_text_export(text: str) -> str:
     from svejk.build.glossary_markup import highlight_markup
 
     def _plain_chunk(chunk: str) -> str:
-        out = poslanec_registry().annotate(bez_dlouhych_pomlc(chunk)) if chunk.strip() else chunk
+        out = _registry().annotate(bez_dlouhych_pomlc(chunk)) if chunk.strip() else chunk
         out = nahrad_cisla_v_textu(out)
         return highlight_markup(out)
 
@@ -905,7 +906,7 @@ def _sanitize_vysledek_export(text: str) -> str:
     text = bez_dlouhych_pomlc(text)
     if not text.strip():
         return text
-    return poslanec_registry().annotate(nahrad_cisla_v_textu(text))
+    return _registry().annotate(nahrad_cisla_v_textu(text))
 
 
 def _resolve_jazykolam_steno_id(paths: SchuzePaths, j: dict[str, Any]) -> str:
@@ -942,7 +943,27 @@ def _enrich_jazykolam_href(content: DenContent, paths: SchuzePaths) -> None:
         j["steno_anchor"] = steno_anchor(steno_id)
 
 
+# Den vydání, ke kterému se doplňují strany u jmen (nastavuje _sanitize_den_content).
+_REGISTRY_DATE: ContextVar[date | None] = ContextVar("_REGISTRY_DATE", default=None)
+
+
+def _registry():
+    return poslanec_registry(_REGISTRY_DATE.get())
+
+
 def _sanitize_den_content(content: DenContent) -> None:
+    try:
+        k_datu = datetime.strptime(content.datum, "%d.%m.%Y").date()
+    except (TypeError, ValueError):
+        k_datu = None
+    token = _REGISTRY_DATE.set(k_datu)
+    try:
+        _sanitize_den_content_inner(content)
+    finally:
+        _REGISTRY_DATE.reset(token)
+
+
+def _sanitize_den_content_inner(content: DenContent) -> None:
     content.result_note = _kapitalizuj_prvni_pismeno(
         _sanitize_text_export(content.result_note)
     )

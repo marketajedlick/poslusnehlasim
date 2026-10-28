@@ -270,8 +270,8 @@ class PoslanecRegistry:
         self._rules = self._build_rules(poslanci)
 
     @classmethod
-    def from_psp(cls, *, data_dir: Path | None = None) -> PoslanecRegistry:
-        return cls(load_poslanci(data_dir=data_dir))
+    def from_psp(cls, *, data_dir: Path | None = None, k_datu: date | None = None) -> PoslanecRegistry:
+        return cls(load_poslanci(data_dir=data_dir, k_datu=k_datu))
 
     def _build_rules(self, poslanci: list[Poslanec]) -> list[_MatchRule]:
         by_prijmeni: dict[str, list[Poslanec]] = {}
@@ -391,6 +391,8 @@ class PoslanecRegistry:
         return out
 
 
-@lru_cache(maxsize=1)
-def poslanec_registry() -> PoslanecRegistry:
-    return PoslanecRegistry.from_psp(data_dir=ROOT / "data")
+@lru_cache(maxsize=64)
+def poslanec_registry(k_datu: date | None = None) -> PoslanecRegistry:
+    """Strany k jménům v textu. k_datu = den vydání: přestup mezi kluby (nový
+    poslanci.zip ze syncu) nesmí přepsat závorky ve starších článcích."""
+    return PoslanecRegistry.from_psp(data_dir=ROOT / "data", k_datu=k_datu)

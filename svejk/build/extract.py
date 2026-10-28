@@ -34,16 +34,25 @@ from svejk.paths import SchuzePaths
 
 
 _RE_KONEC_JEDNANI = re.compile(
-    r"(?:Jednání\s+skončilo|Schůze\s+skončila)\s+ve?\s+(\d{1,2})\.(\d{2})\s*hodin", re.I
+    r"(?:Jednání\s+skončilo|Schůze\s+skončila|Schůze\s+přerušena)\s+ve?\s+(\d{1,2})\.(\d{2})\s*hodin",
+    re.I,
 )
 
 
-def _steno_konec_dne(steno_path, datum_unl: str) -> str:
+def _steno_konec_dne(
+    steno_path,
+    datum_unl: str,
+    *,
+    schuze: int | None = None,
+    prvni_hlas: str = "",
+    posledni_hlas: str = "",
+) -> str:
     """Čas konce jednacího dne ze scénické poznámky (HH:MM).
 
-    Dřív se brala první „Schůze skončila…“ v celém stenu, takže všechny dny
-    schůze dostaly čas konce posledního dne. Jednací den po půlnoci končí
-    poznámkou s datem dalšího dne (jen do 6:00).
+    - jen záznamy vlastní schůze (steno souběžné schůze bývá ve stejném souboru),
+    - poznámka z rána před prvním hlasováním dne patří k předchozí noci,
+    - jednací den po půlnoci končí poznámkou s datem dalšího dne (jen do 6:00).
+    Dřív se brala první „Schůze skončila…“ v celém stenu pro všechny dny.
     """
     if not steno_path.is_file():
         return ""
@@ -53,12 +62,22 @@ def _steno_konec_dne(steno_path, datum_unl: str) -> str:
     same_day = ""
     after_midnight = ""
     for rec in iter_jsonl(steno_path):
+        if schuze is not None and rec.get("schuze") not in (None, schuze, str(schuze)):
+            continue
         datum = (rec.get("datum") or "")[:10]
         if datum not in (day_iso, next_iso):
             continue
         for m in _RE_KONEC_JEDNANI.finditer(rec.get("text") or ""):
             cas = f"{int(m.group(1)):02d}:{m.group(2)}"
             if datum == day_iso:
+                if prvni_hlas and cas < prvni_hlas:
+                    # Ranní čas: konec tohoto dne po půlnoci (Hlídač datuje dnem zahájení),
+                    # jen když se ten den hlasovalo pozdě do noci; jinak patří předchozí noci.
+                    late = posledni_hlas and (posledni_hlas >= "20:00" or posledni_hlas < "06:00")
+                    if not (late and int(m.group(1)) < 6):
+                        continue
+                    after_midnight = after_midnight or cas
+                    continue
                 same_day = cas
             elif int(m.group(1)) < 6 and not after_midnight:
                 after_midnight = cas
@@ -353,7 +372,13 @@ def run_extract(paths: SchuzePaths) -> dict[str, Any]:
         spor_o_porad = spor_o_porad_schuze(day_votes)
         ordered = sorted(day_votes, key=vote_chrono_key)
         start = (ordered[0].get("cas") or "")[:5] if ordered else ""
-        end = _steno_konec_dne(paths.steno_jsonl, datum) or (
+        end = _steno_konec_dne(
+            paths.steno_jsonl,
+            datum,
+            schuze=paths.schuze,
+            prvni_hlas=start,
+            posledni_hlas=(ordered[-1].get("cas") or "")[:5] if ordered else "",
+        ) or (
             (ordered[-1].get("cas") or "")[:5] if ordered else ""
         )
         minuty = jednaci_den_minuty(day_votes)

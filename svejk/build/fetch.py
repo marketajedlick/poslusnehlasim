@@ -214,8 +214,10 @@ def refresh_steno_rows(
     max_records: int,
     min_age_days: int = 3,
     verbose: bool = True,
-) -> int:
+) -> tuple[int, int]:
     """Znovu stáhne neautorizované záznamy a poslední (možná useknutý) projev.
+
+    Vrací (změněno, dotazů na Hlídač).
 
     Steno se jinak jen doplňuje od posledního pořadí, takže citace zůstávaly
     z neautorizovaných verzí a poslední projev běžící schůze navždy useknutý.
@@ -225,10 +227,10 @@ def refresh_steno_rows(
     from datetime import timedelta
 
     if max_records <= 0 or not path.is_file():
-        return 0
+        return 0, 0
     rows = list(iter_jsonl(path))
     if not rows:
-        return 0
+        return 0, 0
     cutoff = (datetime.now(timezone.utc) - timedelta(days=min_age_days)).date().isoformat()
     last_poradi = max(int(r.get("poradi") or 0) for r in rows)
     recheck = (datetime.now(timezone.utc) - timedelta(days=7)).date().isoformat()
@@ -246,11 +248,13 @@ def refresh_steno_rows(
     ]
     candidates.sort(key=lambda i: (int(rows[i].get("poradi") or 0) != last_poradi, rows[i].get("datum") or ""))
     changed = 0
+    attempted = 0
     touched = False
     for i in candidates[:max_records]:
         rid = rows[i].get("id")
         if not rid:
             continue
+        attempted += 1
         try:
             rec = client.fetch_steno(rid)
         except (OSError, ValueError, RuntimeError) as e:
@@ -270,7 +274,7 @@ def refresh_steno_rows(
         write_jsonl(path, rows)
         if verbose:
             print(f"Steno: obnoveno {changed} záznamů (autorizace / dokončený projev).", file=sys.stderr, flush=True)
-    return changed
+    return changed, attempted
 
 
 def run_fetch(
@@ -279,6 +283,7 @@ def run_fetch(
     max_steno: int | None = None,
     skip_steno: bool = False,
     verbose: bool = True,
+    refresh_max: int | None = None,
 ) -> dict[str, Any]:
     paths.ensure_dirs()
     analyzer = SchuzeAnalyzer(PSP_DATA_DIR, PSP_ORGAN_ID)
@@ -288,6 +293,7 @@ def run_fetch(
 
     steno_count = 0
     steno_refreshed = 0
+    steno_refresh_queries = 0
     hlidac_used = False
     psp_steno_used = False
     if skip_steno:
@@ -311,10 +317,14 @@ def run_fetch(
         hlidac_used = True
         if steno_count:
             _clean_steno_rows(paths.steno_jsonl)
-            steno_refreshed = refresh_steno_rows(
+            steno_refreshed, steno_refresh_queries = refresh_steno_rows(
                 client,
                 paths.steno_jsonl,
-                max_records=int(os.environ.get("STENO_REFRESH_MAX", "150")),
+                max_records=(
+                    refresh_max
+                    if refresh_max is not None
+                    else int(os.environ.get("STENO_REFRESH_MAX", "150"))
+                ),
                 verbose=verbose,
             )
         if steno_count == 0:
@@ -352,6 +362,7 @@ def run_fetch(
         "votes": len(vote_rows),
         "steno": steno_count,
         "steno_refreshed": steno_refreshed,
+        "steno_refresh_queries": steno_refresh_queries,
         "hlidac_token_used": hlidac_used,
         "psp_steno_used": psp_steno_used,
         "fetched_at": datetime.now(timezone.utc).isoformat(),

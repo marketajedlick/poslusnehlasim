@@ -124,7 +124,9 @@ def _link_phrase_coverage(paths: SchuzePaths, datum_unl: str, slugs: list[str]) 
             phrase = (f.get("link_phrase") or "").strip()
             variants = [_norm_link_text(v) for v in _phrase_variants(phrase)] if phrase else []
             quote = _norm_citace(f.get("citace") or "")
-            if any(v in t or t in v for v in variants for t in links if t):
+            # Odkaz musí frázi obsahovat; kratší cizí odkaz uvnitř fráze („Babiš řekl“
+            # v „Babiš řekl, že nikdy…“) se nepočítá, leda pokrývá většinu fráze.
+            if any(v in t or (t in v and len(t) >= 0.8 * len(v)) for v in variants for t in links if t):
                 linked += 1
             elif quote and any(_same_quote(quote, c) or (len(quote) >= 15 and quote in c) for c in cards if c):
                 linked += 1  # citace v kartě článku má vlastní odkaz na steno
