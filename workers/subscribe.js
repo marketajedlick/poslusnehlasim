@@ -819,7 +819,7 @@ async function handleReactionsPost(request, env, headers) {
   try {
     // Snížit jde jen vlastní hlas: dřív stačilo poslat clear/previous a kdokoli
     // ubíral cizí reakce. Hlas klienta (hash IP) je v KV u článku.
-    const voteKey = await reactionVoteKey(env, request, edition, slug);
+    const voteKey = await reactionVoteKey(env, request, edition, slug, String(body.client || "").trim());
     const stored = (await kv.get(voteKey)) || "";
     const own = REACTION_TYPES.has(stored) ? stored : "";
     if ((clear && own !== previous) || (!clear && own === reaction)) {
@@ -856,10 +856,13 @@ async function handleReactionsPost(request, env, headers) {
   return json({ ok: true, edition, slug, counts }, 200, headers);
 }
 
-async function reactionVoteKey(env, request, edition, slug) {
-  // Hash IP se solí (secret nebo ALLOWED_ORIGIN), v KV není čitelná IP adresa.
+async function reactionVoteKey(env, request, edition, slug, client) {
+  // Hlas patří ID prohlížeče (localStorage), ne IP: za jednou IP (CGNAT, kancelář)
+  // je víc lidí a mobilu se IP mění. Bez ID (starý skript) záloha na hash IP.
+  // Hash se solí (secret nebo ALLOWED_ORIGIN), v KV není čitelná IP ani ID.
   const salt = (env.REACTIONS_SALT || env.ALLOWED_ORIGIN || "ph").trim();
-  const data = new TextEncoder().encode(`${salt}|${clientIp(request)}`);
+  const who = /^[a-z0-9]{16,40}$/.test(client || "") ? `c:${client}` : `ip:${clientIp(request)}`;
+  const data = new TextEncoder().encode(`${salt}|${who}`);
   const digest = await crypto.subtle.digest("SHA-256", data);
   const hex = [...new Uint8Array(digest)].slice(0, 12).map((b) => b.toString(16).padStart(2, "0")).join("");
   return `rx-vote:${edition}:${slug}:${hex}`;

@@ -68,3 +68,11 @@ def test_bod_v_zavorce_neni_strana():
     assert is_vote_score("sněmovní tisk 77")
     assert not is_vote_score("ANO")
     assert not is_vote_score("TOP 09")
+
+
+def test_citace_autor_s_poznamkou_neni_chyba():
+    from svejk.validate.names import audit_topic
+
+    topic = {"slug": "x", "citace_autor": "Eva Decroix (ODS), cituje Wünschovou", "steno_id": "s1"}
+    issues = audit_topic(topic, steno_by_id={"s1": {"cele_jmeno": "Eva Decroix"}})
+    assert not [i for i in issues if i.code == "citace_autor_spelling"]

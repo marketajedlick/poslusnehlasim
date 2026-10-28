@@ -43,7 +43,7 @@
     ],
     "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-06-30/assets/caption.txt"
   },
-  "republished_at": "2026-10-28T09:46:13.189098+00:00",
+  "republished_at": "2026-10-28T09:58:27.558872+00:00",
   "revisions": [
     {
       "at": "2026-10-28T08:38:55.963971+00:00",
@@ -69,7 +69,12 @@
       "at": "2026-10-28T09:46:13.189225+00:00",
       "reason": "Doplněné odkazy na steno (link_phrase) u citací, které článek zmiňuje.",
       "content_hash": "84b849dfe4771030"
+    },
+    {
+      "at": "2026-10-28T09:58:27.558998+00:00",
+      "reason": "Rodičovský příspěvek: steno_id posunuté o 23 (Hlídač přečísloval) opraveny na záznamy s doslovnou citací a správným řečníkem; 129:0 bylo zkrácení lhůty na konci druhého čtení, ne závěrečné hlasování (verdikt debata, souhrn a závěr dne opraveny).",
+      "content_hash": "d30cb1551dc63174"
     }
   ],
-  "published_hash": "84b849dfe4771030"
+  "published_hash": "d30cb1551dc63174"
 }

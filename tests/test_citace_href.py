@@ -116,6 +116,12 @@ def test_collect_steno_sources_adds_citace_text_passage(tmp_path, monkeypatch):
         "svejk.build.steno_sources.SchuzePaths.create",
         lambda ob, sch: paths,
     )
+
+    # Test nesmí stahovat stránky z psp.cz (dřív desítky sekund podle rychlosti sítě).
+    def _offline(*_a, **_k):
+        raise OSError("offline test")
+
+    monkeypatch.setattr("svejk.build.steno_sources.PspUrlResolver._load_pages", _offline)
     paths.raw.mkdir(parents=True, exist_ok=True)
     paths.aligned.mkdir(parents=True, exist_ok=True)
     paths.facts_by_day.mkdir(parents=True, exist_ok=True)

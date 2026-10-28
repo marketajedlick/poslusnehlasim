@@ -300,7 +300,7 @@ def run_sync(
             if action == "skip" and client is not None and refresh_budget > 0:
                 # Uzavřená schůze: postupně dotáhnout autorizované verze projevů.
                 try:
-                    n = refresh_steno_rows(
+                    n, asked = refresh_steno_rows(
                         client,
                         paths.steno_jsonl,
                         max_records=min(refresh_budget, 25),
@@ -308,8 +308,8 @@ def run_sync(
                     )
                 except (OSError, ValueError, RuntimeError) as e:
                     warnings.append(f"schůze {cislo}: obnova stena: {e}")
-                    n = 0
-                refresh_budget -= 25
+                    n, asked = 0, 0
+                refresh_budget -= asked
                 if n:
                     entry["steno_refreshed"] = n
                     # změní hash sync-state → CI uloží novou steno cache
@@ -324,10 +324,12 @@ def run_sync(
                 print(f"→ sync schůze {cislo}/{obdobi}", flush=True)
             fetch_info = run_fetch(
                 paths,
+                refresh_max=max(0, refresh_budget),
                 skip_steno=not use_steno,
                 verbose=verbose,
             )
             entry["fetch"] = fetch_info
+            refresh_budget -= int(fetch_info.get("steno_refresh_queries") or 0)
             steno_after = _steno_stats(paths, state, cislo)
             votes_after = _stored_vote_stats(paths)
             state["schuze"][str(cislo)] = {

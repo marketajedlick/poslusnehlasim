@@ -124,7 +124,9 @@ def _link_phrase_coverage(paths: SchuzePaths, datum_unl: str, slugs: list[str]) 
             phrase = (f.get("link_phrase") or "").strip()
             variants = [_norm_link_text(v) for v in _phrase_variants(phrase)] if phrase else []
             quote = _norm_citace(f.get("citace") or "")
-            if any(v in t or t in v for v in variants for t in links if t):
+            # Odkaz musí frázi obsahovat; kratší cizí odkaz uvnitř fráze („Babiš řekl“
+            # v „Babiš řekl, že nikdy…“) se nepočítá, leda pokrývá většinu fráze.
+            if any(v in t or (t in v and len(t) >= 0.8 * len(v)) for v in variants for t in links if t):
                 linked += 1
             elif quote and any(_same_quote(quote, c) or (len(quote) >= 15 and quote in c) for c in cards if c):
                 linked += 1  # citace v kartě článku má vlastní odkaz na steno
@@ -194,16 +196,26 @@ def _jazykolam_duplicate_quotes(
     return jazykolam_duplicates(text, quotes)
 
 
-def _citace_in_steno(paths: SchuzePaths, slugs: list[str]) -> dict[str, Any]:
-    steno_by_id: dict[str, dict] = {}
-    if paths.steno_jsonl.is_file():
-        import json
+def _citace_norm(text: str) -> str:
+    import re
 
-        for line in paths.steno_jsonl.read_text(encoding="utf-8").splitlines():
-            if line.strip():
-                r = json.loads(line)
-                if r.get("id"):
-                    steno_by_id[r["id"]] = r
+    t = (text or "").replace("\u00a0", " ")
+    t = re.sub(r"[„“”\"'‚‘’]", "", t)
+    # Dlouhé pomlčky ze stena se v citacích nahrazují čárkou (build je zakazuje).
+    t = re.sub(r"\s*(?:[\u2013\u2014]|\s-\s|,)\s*", " , ", t)
+    t = re.sub(r"\*\*\* Neprošlo jazykovou korekturou, neautorizováno!", " ", t)
+    return " ".join(t.split()).lower().strip(" .,;:")
+
+
+def _citace_in_steno(paths: SchuzePaths, slugs: list[str]) -> dict[str, Any]:
+    """Citace ve facts je doslovně ve stenozáznamu (i z jiné schůze téhož dne).
+
+    Porovnává se bez rozdílu v mezerách, uvozovkách a pomlčkách; dřív hlásila
+    nedoslovné citace jen kvůli „–“ vs „-“ nebo kvůli steno_id z jiné schůze.
+    """
+    from svejk.build.steno_sources import _load_steno_index, _paths_for_steno
+
+    indexes: dict[tuple[int, int], dict[str, dict]] = {}
     checked = ok = 0
     bad: list[str] = []
     for slug in slugs:
@@ -216,9 +228,15 @@ def _citace_in_steno(paths: SchuzePaths, slugs: list[str]) -> dict[str, Any]:
             sid = (f.get("steno_id") or "").strip()
             if not cit or not sid:
                 continue
+            sp = _paths_for_steno(paths, sid)
+            key = (sp.obdobi, sp.schuze)
+            if key not in indexes:
+                indexes[key] = _load_steno_index(sp)
+            rec = indexes[key].get(sid)
+            if rec is None:
+                continue  # záznam lokálně není (CI bez stena): nehodnotit
             checked += 1
-            text = (steno_by_id.get(sid) or {}).get("text") or ""
-            if cit in text or cit.replace("\n", " ") in text.replace("\n", " "):
+            if _citace_norm(cit) in _citace_norm(rec.get("text") or ""):
                 ok += 1
             else:
                 bad.append(f"{slug}[{i}]")

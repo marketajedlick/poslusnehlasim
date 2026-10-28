@@ -48,3 +48,11 @@ def test_link_metric_ignores_party_labels_and_dashes():
 
     assert _norm_link_text("Richterová (Piráti) kritizovala vládu.") == "richterová kritizovala vládu"
     assert _norm_citace("všechno – možná") == _norm_citace("všechno, možná")
+
+
+def test_citace_norm_dash_vs_comma():
+    from svejk.edition.metrics import _citace_norm
+
+    steno = "cash flow státního fondu je peněz dost – a zda je ochoten"
+    citace = "cash flow státního fondu je peněz dost ,  a zda je ochoten"
+    assert _citace_norm(citace) in _citace_norm(steno)

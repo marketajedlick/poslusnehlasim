@@ -208,7 +208,8 @@ def audit_topic(
     sid = (topic.get("steno_id") or "").strip()
     if autor and sid and sid in steno_by_id:
         steno_name = steno_by_id[sid].get("cele_jmeno") or ""
-        name = strip_party(autor)
+        # „Eva Decroix (ODS), cituje Wünschovou“: jméno je před závorkou/čárkou
+        name = strip_party(re.split(r"\s*\(|,", autor, maxsplit=1)[0])
         if name and steno_name:
             if name.split()[-1].lower() != steno_name.split()[-1].lower():
                 issues.append(

@@ -181,6 +181,24 @@
       .catch(function () {});
   }
 
+  // Náhodné ID prohlížeče: hlas se váže k němu, ne k IP (lidé za jednou IP
+  // u mobilního operátora nebo v kanceláři si jinak přepisovali reakce).
+  function clientId() {
+    var key = "ph_rx_client";
+    try {
+      var id = localStorage.getItem(key);
+      if (!id || !/^[a-z0-9]{16,40}$/.test(id)) {
+        var bytes = new Uint8Array(12);
+        (window.crypto || window.msCrypto).getRandomValues(bytes);
+        id = Array.prototype.map.call(bytes, function (b) { return ("0" + b.toString(16)).slice(-2); }).join("");
+        localStorage.setItem(key, id);
+      }
+      return id;
+    } catch (e) {
+      return "";
+    }
+  }
+
   function postReaction(slug, reaction, previous, edition, clear) {
     if (!apiUrl || isLocalPreview()) {
       return Promise.resolve(null);
@@ -189,6 +207,7 @@
       edition: edition,
       slug: slug,
       previous: previous || "",
+      client: clientId(),
       hp: "",
     };
     if (clear) {
