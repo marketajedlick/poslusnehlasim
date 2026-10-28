@@ -61,6 +61,15 @@ def _shared_topic_days(paths: SchuzePaths, iso: str, slugs: list[str]) -> dict[s
     return out
 
 
+def _norm_link_text(text: str) -> str:
+    """Web doplňuje k jménům stranu („Richterová (Piráti)“) a číslovky slovy;
+    pro porovnání fráze s odkazem závorky vynech."""
+    import re
+
+    t = re.sub(r"\s*\([^)]*\)", "", text or "")
+    return " ".join(t.split()).lower().strip(" .,;:")
+
+
 def _rendered_link_texts(paths: SchuzePaths, datum_unl: str) -> dict[str, list[str]]:
     """Text uvnitř steno-link odkazů ve vykresleném článku, podle slugu."""
     import re
@@ -81,7 +90,7 @@ def _rendered_link_texts(paths: SchuzePaths, datum_unl: str) -> dict[str, list[s
             for m in re.finditer(
                 r'<a\b[^>]*class="steno-link"[^>]*>(.*?)</a>', getattr(item, field, "") or "", re.S
             ):
-                texts.append(" ".join(re.sub(r"<[^>]+>", "", m.group(1)).split()).lower())
+                texts.append(_norm_link_text(re.sub(r"<[^>]+>", "", m.group(1))))
         out[item.slug] = texts
     return out
 
@@ -113,11 +122,11 @@ def _link_phrase_coverage(paths: SchuzePaths, datum_unl: str, slugs: list[str]) 
                 continue
             total += 1
             phrase = (f.get("link_phrase") or "").strip()
-            variants = [" ".join(v.split()).lower() for v in _phrase_variants(phrase)] if phrase else []
+            variants = [_norm_link_text(v) for v in _phrase_variants(phrase)] if phrase else []
             quote = _norm_citace(f.get("citace") or "")
             if any(v in t or t in v for v in variants for t in links if t):
                 linked += 1
-            elif quote and any(_same_quote(quote, c) for c in cards if c):
+            elif quote and any(_same_quote(quote, c) or (len(quote) >= 15 and quote in c) for c in cards if c):
                 linked += 1  # citace v kartě článku má vlastní odkaz na steno
             else:
                 missing.append(f"{slug}[{i}]")
@@ -131,6 +140,8 @@ def _norm_citace(text: str) -> str:
     t = (text or "").lower().replace("\n", " ")
     for ch in "„“\"'":
         t = t.replace(ch, "")
+    # citace ve facts mívá pomlčku, karta na webu čárku
+    t = re.sub(r"\s*[\u2013\u2014-]\s+", ", ", t)
     t = re.sub(r"\s+", " ", t).strip(" .,;:!?")
     return t
 

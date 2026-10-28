@@ -35,3 +35,16 @@ def test_sanitizer_keeps_text_with_lone_lt():
         "pod &lt;5 % a <strong>ministr</strong>"
     )
     assert "script" not in _sanitize_mean_export("a <script>x</script>")
+
+
+def test_party_label_before_punctuation():
+    text = "Při hlasování chyběl Andrej Babiš (ANO), premiér, a Macinka."
+    out = inject_steno_link(text, "chyběl Andrej Babiš, premiér, a", "#x")
+    assert '<a class="steno-link" href="#x">chyběl Andrej Babiš (ANO), premiér, a</a>' in out
+
+
+def test_link_metric_ignores_party_labels_and_dashes():
+    from svejk.edition.metrics import _norm_citace, _norm_link_text
+
+    assert _norm_link_text("Richterová (Piráti) kritizovala vládu.") == "richterová kritizovala vládu"
+    assert _norm_citace("všechno – možná") == _norm_citace("všechno, možná")

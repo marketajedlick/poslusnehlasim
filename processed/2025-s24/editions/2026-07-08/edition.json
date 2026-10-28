@@ -69,5 +69,14 @@
       "carousel/05-skore.png"
     ],
     "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-07-08/assets/caption.txt"
-  }
+  },
+  "republished_at": "2026-10-28T09:46:13.512658+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T09:46:13.512663+00:00",
+      "reason": "Doplněné odkazy na steno (link_phrase) u citací, které článek zmiňuje.",
+      "content_hash": "c308ba2ea03195f3"
+    }
+  ],
+  "published_hash": "c308ba2ea03195f3"
 }

@@ -4,7 +4,7 @@
   "schuze": 34,
   "datum_unl": "13.10.2026",
   "iso": "2026-10-13",
-  "state": "approved",
+  "state": "published",
   "topic_slugs": [
     "novela-z-o-danich-z-prijmu",
     "novela-z-o-podnikani-na-kapitalovem-trhu-eu"
@@ -53,7 +53,27 @@
     "topics_built_at": "2026-10-15T09:56:41.113241+00:00",
     "fingerprint": "573ae6d1b0e5397a"
   },
-  "published_at": null,
-  "snapshot_dir": null,
-  "supersedes": null
+  "published_at": "2026-10-19T21:07:50.093620+00:00",
+  "snapshot_dir": "published/2025/34/13.10.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-13/assets/2026-10-13.png",
+    "share": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-13/assets/2026-10-13.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png",
+      "carousel/05-skore.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-13/assets/caption.txt"
+  },
+  "republished_at": "2026-10-28T09:46:13.925217+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T09:46:13.925222+00:00",
+      "reason": "Doplněné odkazy na steno (link_phrase) u citací, které článek zmiňuje.",
+      "content_hash": "56f0cbbf86a88fc0"
+    }
+  ],
+  "published_hash": "56f0cbbf86a88fc0"
 }
