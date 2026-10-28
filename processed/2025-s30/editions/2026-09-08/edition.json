@@ -6,8 +6,8 @@
   "iso": "2026-09-08",
   "state": "published",
   "topic_slugs": [
+    "debata-porad-s30-8-zari",
     "navrh-zakona-o-statnich-zamestnancich",
-    "navrh-zakona-o-statnich-zamestnancich-souvisejic",
     "navrh-casoveho-harmonogramu-projednavani-vladnih"
   ],
   "recommended_slugs": [
@@ -76,5 +76,14 @@
       "carousel/05-skore.png"
     ],
     "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s30/editions/2026-09-08/assets/caption.txt"
-  }
+  },
+  "republished_at": "2026-10-28T09:46:13.768492+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T09:46:13.768498+00:00",
+      "reason": "Doplněné odkazy na steno (link_phrase) u citací, které článek zmiňuje.",
+      "content_hash": "b053eea29188f8ae"
+    }
+  ],
+  "published_hash": "b053eea29188f8ae"
 }

@@ -28,7 +28,7 @@
       "kind": "scene",
       "steno_id": "2025_24_02220",
       "citace": "(Hlasy koaličních poslanců: Nikdo se nehlásil.)",
-      "link_phrase": "Koaliční poslanci křičeli, že nikdo nebyl přihlášený"
+      "link_phrase": "nikdo se prý ale nehlásil"
     },
     {
       "text": "Richterová a Šebelová gestikulovaly, že chtěly mluvit.",
@@ -63,7 +63,8 @@
       "text": "Závěrečné hlasování schváleno.",
       "source": "steno",
       "steno_id": "2025_24_02290",
-      "citace": "pro 158, proti nikdo"
+      "citace": "pro 158, proti nikdo",
+      "link_phrase": "závěrečným hlasováním"
     }
   ],
   "publikovat": true,

@@ -43,7 +43,7 @@
     ],
     "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-06-30/assets/caption.txt"
   },
-  "republished_at": "2026-10-28T09:38:13.555955+00:00",
+  "republished_at": "2026-10-28T09:46:13.189098+00:00",
   "revisions": [
     {
       "at": "2026-10-28T08:38:55.963971+00:00",
@@ -64,7 +64,12 @@
       "at": "2026-10-28T09:38:13.556073+00:00",
       "reason": "Skóre hlasování ve tvaru 27:68 / 66:88 (číslovky slovy byly ve špatném pádě).",
       "content_hash": "2d4379dbe4f71e58"
+    },
+    {
+      "at": "2026-10-28T09:46:13.189225+00:00",
+      "reason": "Doplněné odkazy na steno (link_phrase) u citací, které článek zmiňuje.",
+      "content_hash": "84b849dfe4771030"
     }
   ],
-  "published_hash": "2d4379dbe4f71e58"
+  "published_hash": "84b849dfe4771030"
 }

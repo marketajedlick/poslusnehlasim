@@ -55,7 +55,7 @@
     "topics_built_at": "2026-07-11T09:37:23.959985+00:00",
     "fingerprint": "0a0e0d57377f083d"
   },
-  "published_at": "2026-07-12T06:50:41.804146+00:00",
+  "published_at": "2026-07-12T08:56:45.470710+00:00",
   "snapshot_dir": "published/2025/24/08.07.2026",
   "supersedes": null,
   "assets": {
@@ -65,8 +65,18 @@
       "01-ucet.png",
       "carousel/02-citace.png",
       "carousel/03-citace.png",
+      "carousel/04-citace.png",
       "carousel/05-skore.png"
     ],
     "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-07-08/assets/caption.txt"
-  }
+  },
+  "republished_at": "2026-10-28T09:46:13.512658+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T09:46:13.512663+00:00",
+      "reason": "Doplněné odkazy na steno (link_phrase) u citací, které článek zmiňuje.",
+      "content_hash": "c308ba2ea03195f3"
+    }
+  ],
+  "published_hash": "c308ba2ea03195f3"
 }

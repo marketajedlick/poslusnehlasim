@@ -167,8 +167,8 @@
 }
 </style>
 
-<link rel="stylesheet" href="/static/noviny-dlouhe.css?v=362c9f51aa" />
-<link rel="stylesheet" href="/static/satellite.css?v=362c9f51aa" />
+<link rel="stylesheet" href="/static/noviny-dlouhe.css?v=b5090f9cb8" />
+<link rel="stylesheet" href="/static/satellite.css?v=b5090f9cb8" />
 
 </head>
 <body class="steno-page">
@@ -210,7 +210,7 @@
   <header class="page-head page-head--steno">
   
   
-  <a class="page-head-fav-link" href="/vydani/2026-10-01/" aria-label="Nejnovější vydání">
+  <a class="page-head-fav-link" href="/vydani/2026-10-23/" aria-label="Nejnovější vydání">
     <img class="page-head-fav" src="/static/ph-fav.svg" alt="" width="72" height="72">
   </a>
   
@@ -587,6 +587,11 @@ jednu firmu</h2>
       </header>
 
       
+      <div class="steno-block steno-block--article steno-block--article-quote">
+        <h3 class="steno-block-label">Přesné znění z článku</h3>
+        <blockquote class="steno-article-quote">„daň prakticky míří na jednu firmu“</blockquote>
+      </div>
+      
 
       
       <div class="steno-block steno-block--article steno-block--article-detail">
@@ -907,6 +912,11 @@ není kontrola</h2>
       </header>
 
       
+      <div class="steno-block steno-block--article steno-block--article-quote">
+        <h3 class="steno-block-label">Přesné znění z článku</h3>
+        <blockquote class="steno-article-quote">„výbor se k návrhu nevrací“</blockquote>
+      </div>
+      
 
       
       <div class="steno-block steno-block--article steno-block--article-detail">
@@ -1046,7 +1056,7 @@ není kontrola</h2>
       
 
       
-      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/034schuz/s034031.htm" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
+      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/034schuz/s034031.htm#r2" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
       
     </article>
     
@@ -1073,7 +1083,7 @@ není kontrola</h2>
 </script>
 <footer class="site-footer" aria-label="Patička webu">
   <div class="site-footer-inner">
-    <p class="site-footer-stats">85 vydání • 32 schůzí • 100 % veřejná data</p>
+    <p class="site-footer-stats">93 vydání • 33 schůzí • 100 % veřejná data</p>
 <nav class="site-footer-links" aria-label="Právní informace a podpora">
   <a href="/podminky/">Podmínky používání</a>
   <a href="/soukromi/">Ochrana údajů</a>
@@ -1094,102 +1104,6 @@ není kontrola</h2>
     </div>
   </div>
 </div>
-<script>
-(function () {
-  var STORAGE_KEY = "ph_cookie_consent";
-  var GA_ID = "G-DV9Y4JXX05";
-
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-
-  function loadGA() {
-    if (window.__phGaLoaded) return;
-    window.__phGaLoaded = true;
-    gtag("consent", "update", {
-      ad_storage: "denied",
-      ad_user_data: "denied",
-      ad_personalization: "denied",
-      analytics_storage: "granted"
-    });
-    var s = document.createElement("script");
-    s.async = true;
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
-    document.head.appendChild(s);
-    gtag("js", new Date());
-    gtag("config", GA_ID);
-  }
-
-  function denyConsent() {
-    gtag("consent", "update", {
-      ad_storage: "denied",
-      ad_user_data: "denied",
-      ad_personalization: "denied",
-      analytics_storage: "denied"
-    });
-  }
-
-  function saveChoice(value) {
-    try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
-  }
-
-  function getChoice() {
-    try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
-  }
-
-  function banner() {
-    return document.getElementById("cookie-consent");
-  }
-
-  function showBanner() {
-    var el = banner();
-    if (el) el.hidden = false;
-  }
-
-  function hideBanner() {
-    var el = banner();
-    if (el) el.hidden = true;
-  }
-
-  function applyStoredChoice() {
-    var choice = getChoice();
-    if (choice === "granted") {
-      loadGA();
-      hideBanner();
-      return true;
-    }
-    if (choice === "denied") {
-      denyConsent();
-      hideBanner();
-      return true;
-    }
-    return false;
-  }
-
-  window.phOpenCookieSettings = function () {
-    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
-    denyConsent();
-    window.__phGaLoaded = false;
-    showBanner();
-  };
-
-  document.addEventListener("DOMContentLoaded", function () {
-    if (applyStoredChoice()) return;
-    showBanner();
-
-    document.getElementById("cookie-accept")?.addEventListener("click", function () {
-      saveChoice("granted");
-      loadGA();
-      hideBanner();
-    });
-
-    document.getElementById("cookie-reject")?.addEventListener("click", function () {
-      saveChoice("denied");
-      denyConsent();
-      hideBanner();
-    });
-  });
-})();
-</script>
+<script src="/static/js/cookie-consent.js?v=3ad8ed3777" defer></script>
 </body>
 </html>

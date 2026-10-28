@@ -1025,10 +1025,15 @@ def _find_phrase_relaxed_span(text: str, phrase: str) -> tuple[int, int] | None:
     if len(words) < 2:
         return None
     gap = _party_label_gap()
-    if "<" in text:
-        pat = gap.join(_word_in_html_pattern(w) for w in words)
-    else:
-        pat = gap.join(rf"\b{re.escape(w)}" for w in words)
+
+    def _word(w: str) -> str:
+        # „Babiš,“ ve frázi vs. „Babiš (ANO),“ v textu: strana i před interpunkcí.
+        m = re.match(r"^(.*?\w)([,.;:!?]+)$", w)
+        core, punct = (m.group(1), m.group(2)) if m else (w, "")
+        base = _word_in_html_pattern(core) if "<" in text else rf"\b{re.escape(core)}"
+        return base + (gap + re.escape(punct) if punct else "")
+
+    pat = gap.join(_word(w) for w in words)
     return _first_ok(text, re.compile(pat, re.I | re.S))
 
 

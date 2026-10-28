@@ -4,7 +4,7 @@
   "schuze": 34,
   "datum_unl": "14.10.2026",
   "iso": "2026-10-14",
-  "state": "approved",
+  "state": "published",
   "topic_slugs": [
     "navrh-zakona-o-statnich-zamestnancich",
     "navrh-zakona-o-statnich-zamestnancich-souvisejic",
@@ -66,7 +66,28 @@
     "topics_built_at": "2026-10-16T11:45:25.259807+00:00",
     "fingerprint": "7e8977fca32f259f"
   },
-  "published_at": null,
-  "snapshot_dir": null,
-  "supersedes": null
+  "published_at": "2026-10-20T13:46:53.461381+00:00",
+  "snapshot_dir": "published/2025/34/14.10.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-14/assets/2026-10-14.png",
+    "share": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-14/assets/2026-10-14.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png",
+      "carousel/04-citace.png",
+      "carousel/05-skore.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-14/assets/caption.txt"
+  },
+  "republished_at": "2026-10-28T09:46:14.101454+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T09:46:14.101460+00:00",
+      "reason": "Doplněné odkazy na steno (link_phrase) u citací, které článek zmiňuje.",
+      "content_hash": "ac84ff2178941fc7"
+    }
+  ],
+  "published_hash": "ac84ff2178941fc7"
 }
