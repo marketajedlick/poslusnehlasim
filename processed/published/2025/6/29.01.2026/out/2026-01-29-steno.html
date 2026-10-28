@@ -59,11 +59,116 @@
 
 <meta name="twitter:card" content="summary" />
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://poslusnehlasim.cz/", "name": "Poslu\u0161n\u011b hl\u00e1s\u00edm", "position": 1}, {"@type": "ListItem", "item": "https://poslusnehlasim.cz/vydani/", "name": "Archiv vyd\u00e1n\u00ed", "position": 2}, {"@type": "ListItem", "item": "https://poslusnehlasim.cz/vydani/2026-01-29/", "name": "29. 1. 2026", "position": 3}, {"@type": "ListItem", "name": "Stenoprotokol", "position": 4}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://poslusnehlasim.cz/", "name": "Poslu\u0161n\u011b hl\u00e1s\u00edm", "position": 1}, {"@type": "ListItem", "item": "https://poslusnehlasim.cz/vydani/", "name": "Archiv vyd\u00e1n\u00ed", "position": 2}, {"@type": "ListItem", "item": "https://poslusnehlasim.cz/2026-01-29.html", "name": "29. 1. 2026", "position": 3}, {"@type": "ListItem", "name": "Stenoprotokol", "position": 4}]}</script>
 
-<link rel="stylesheet" href="/static/fonts.css?v=eb23ceb2fc" />
-<link rel="stylesheet" href="/static/noviny-dlouhe.css?v=8f5c8a769b" />
-<link rel="stylesheet" href="/static/satellite.css?v=8f5c8a769b" />
+
+
+
+<link rel="preload" href="/static/fonts/oldstandardtt-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/oldstandardtt-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/archivo-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>/* Lokálně hostované fonty (původně Google Fonts).
+   Archivo 500-900 · Anton 400 · Old Standard TT 400/700/kurzíva.
+   Subsety: latin + latin-ext (čeština). Cesty relativní k /static/. */
+
+/* Archivo, latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500 900;
+  font-display: optional;
+  src: url('/static/fonts/archivo-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* Archivo, latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500 900;
+  font-display: optional;
+  src: url('/static/fonts/archivo-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Anton, latin-ext */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('/static/fonts/anton-400-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* Anton, latin */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('/static/fonts/anton-400-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Old Standard TT 400, latin-ext */
+@font-face {
+  font-family: 'Old Standard TT';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('/static/fonts/oldstandardtt-400-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* Old Standard TT 400, latin */
+@font-face {
+  font-family: 'Old Standard TT';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('/static/fonts/oldstandardtt-400-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Old Standard TT 700, latin-ext */
+@font-face {
+  font-family: 'Old Standard TT';
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url('/static/fonts/oldstandardtt-700-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* Old Standard TT 700, latin */
+@font-face {
+  font-family: 'Old Standard TT';
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url('/static/fonts/oldstandardtt-700-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Old Standard TT kurzíva 400, latin-ext */
+@font-face {
+  font-family: 'Old Standard TT';
+  font-style: italic;
+  font-weight: 400;
+  font-display: optional;
+  src: url('/static/fonts/oldstandardtt-400italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* Old Standard TT kurzíva 400, latin */
+@font-face {
+  font-family: 'Old Standard TT';
+  font-style: italic;
+  font-weight: 400;
+  font-display: optional;
+  src: url('/static/fonts/oldstandardtt-400italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+
+<link rel="stylesheet" href="/static/noviny-dlouhe.css?v=b5090f9cb8" />
+<link rel="stylesheet" href="/static/satellite.css?v=b5090f9cb8" />
 
 </head>
 <body class="steno-page">
@@ -87,7 +192,7 @@
     
     <li class="breadcrumbs-item">
       
-      <a href="/vydani/2026-01-29/">29. 1. 2026</a>
+      <a href="2026-01-29.html">29. 1. 2026</a>
       
     </li>
     
@@ -105,7 +210,7 @@
   <header class="page-head page-head--steno">
   
   
-  <a class="page-head-fav-link" href="/vydani/2026-07-03/" aria-label="Nejnovější vydání">
+  <a class="page-head-fav-link" href="/vydani/2026-10-23/" aria-label="Nejnovější vydání">
     <img class="page-head-fav" src="/static/ph-fav.svg" alt="" width="72" height="72">
   </a>
   
@@ -433,8 +538,9 @@
 </div>
 <script>
 (function () {
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
   function scrollToHash() {
-    var id = location.hash.slice(1);
+    var id = decodeURIComponent((location.hash || "").slice(1));
     if (!id) return;
     var el = document.getElementById(id);
     if (el) el.scrollIntoView({ block: "start" });
@@ -444,11 +550,13 @@
   } else {
     scrollToHash();
   }
+  window.addEventListener("load", scrollToHash);
+  window.addEventListener("hashchange", scrollToHash);
 })();
 </script>
 <footer class="site-footer" aria-label="Patička webu">
   <div class="site-footer-inner">
-    <p class="site-footer-stats">65 vydání • 24 schůzí • 100 % veřejná data</p>
+    <p class="site-footer-stats">93 vydání • 33 schůzí • 100 % veřejná data</p>
 <nav class="site-footer-links" aria-label="Právní informace a podpora">
   <a href="/podminky/">Podmínky používání</a>
   <a href="/soukromi/">Ochrana údajů</a>
@@ -469,102 +577,6 @@
     </div>
   </div>
 </div>
-<script>
-(function () {
-  var STORAGE_KEY = "ph_cookie_consent";
-  var GA_ID = "G-DV9Y4JXX05";
-
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-
-  function loadGA() {
-    if (window.__phGaLoaded) return;
-    window.__phGaLoaded = true;
-    gtag("consent", "update", {
-      ad_storage: "denied",
-      ad_user_data: "denied",
-      ad_personalization: "denied",
-      analytics_storage: "granted"
-    });
-    var s = document.createElement("script");
-    s.async = true;
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
-    document.head.appendChild(s);
-    gtag("js", new Date());
-    gtag("config", GA_ID);
-  }
-
-  function denyConsent() {
-    gtag("consent", "update", {
-      ad_storage: "denied",
-      ad_user_data: "denied",
-      ad_personalization: "denied",
-      analytics_storage: "denied"
-    });
-  }
-
-  function saveChoice(value) {
-    try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
-  }
-
-  function getChoice() {
-    try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
-  }
-
-  function banner() {
-    return document.getElementById("cookie-consent");
-  }
-
-  function showBanner() {
-    var el = banner();
-    if (el) el.hidden = false;
-  }
-
-  function hideBanner() {
-    var el = banner();
-    if (el) el.hidden = true;
-  }
-
-  function applyStoredChoice() {
-    var choice = getChoice();
-    if (choice === "granted") {
-      loadGA();
-      hideBanner();
-      return true;
-    }
-    if (choice === "denied") {
-      denyConsent();
-      hideBanner();
-      return true;
-    }
-    return false;
-  }
-
-  window.phOpenCookieSettings = function () {
-    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
-    denyConsent();
-    window.__phGaLoaded = false;
-    showBanner();
-  };
-
-  document.addEventListener("DOMContentLoaded", function () {
-    if (applyStoredChoice()) return;
-    showBanner();
-
-    document.getElementById("cookie-accept")?.addEventListener("click", function () {
-      saveChoice("granted");
-      loadGA();
-      hideBanner();
-    });
-
-    document.getElementById("cookie-reject")?.addEventListener("click", function () {
-      saveChoice("denied");
-      denyConsent();
-      hideBanner();
-    });
-  });
-})();
-</script>
+<script src="/static/js/cookie-consent.js?v=3ad8ed3777" defer></script>
 </body>
 </html>

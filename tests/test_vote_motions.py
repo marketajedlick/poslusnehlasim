@@ -51,3 +51,12 @@ def test_final_vote_decides_even_after_amendments():
 def test_veto_override_last_final_wins():
     group = [_v(37, "R", 0, 108), _v(38, "A", 104, 45)]
     assert topic_vysledek(group, {37: "zaverecne", 38: "zaverecne"}) == "schvaleno"
+
+
+def test_konstatovani_zaverecneho_hlasovani():
+    assert classify_vote_motion("", ", pro 92 proti 40. Konstatuji, že s návrhem zákona byl vysloven souhlas.") == "zaverecne"
+    assert classify_vote_motion("", ", pro 54. Konstatuji, že jsme návrh zákona ve znění schváleném Senátem nepřijali.") == "zaverecne"
+    assert classify_vote_motion("", " a návrh usnesení nebyl schválen. A já konstatuju, že návrh zákona nebyl přijat.") == "zaverecne"
+    # ukončení rozpravy po textu o jiném bodu není závěrečné hlasování
+    pre = "Poslanecká sněmovna vyslovuje souhlas s návrhem zákona" + " x" * 300 + " hlasujeme o ukončení rozpravy."
+    assert classify_vote_motion(pre, " Návrh byl přijat. Rozprava je ukončena.") == "jine"

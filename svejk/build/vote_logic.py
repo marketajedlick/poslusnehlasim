@@ -40,7 +40,9 @@ _RE_FINAL = re.compile(
     r"(?:vyslovuje|vyslovila|vyslovit)\s+souhlas\s+s\s+(?:\w+\s+){0,3}návrhem\s+(?:ústavního\s+)?zákona"
     r"|schvaluje\s+(?:\w+\s+){0,2}návrh\s+zákona"
     r"|návrh\w*\s+zákona\s+jako\s+celku"
-    r"|jsme\s+(?:tento\s+)?návrh\s+zákona\s+(?:přijali|schválili)",
+    r"|jsme\s+(?:tento\s+)?návrh\s+zákona[^.]{0,80}?\s(?:ne)?(?:přijali|schválili)"
+    r"|s\s+návrhem\s+(?:ústavního\s+)?zákona\s+(?:byl\s+|nebyl\s+)?vysloven\s+souhlas"
+    r"|návrh\s+zákona[^.]{0,80}?\s(?:nebyl|byl)\s+přijat",
     re.I,
 )
 _RE_REJECT = re.compile(
@@ -63,7 +65,9 @@ TopicVysledek = Literal["schvaleno", "zamitnuto", "vraceno_vyboru", "postup", "p
 
 def classify_vote_motion(pre: str, post: str) -> VoteMotion:
     """Typ hlasování z textu před ohlášením (návrh) a po něm (konstatování)."""
-    if _RE_FINAL.search(post) or _RE_FINAL.search(pre):
+    # Návrh usnesení o celém zákoně předsedající čte těsně před hlasováním; ve
+    # vzdálenějším textu bývá jiný bod (ukončení rozpravy po závěrečném slově).
+    if _RE_FINAL.search(post) or _RE_FINAL.search(pre[-350:]):
         return "zaverecne"
     if _RE_REFER.search(post):
         return "prikazani"
@@ -95,7 +99,7 @@ def vote_motions_from_steno(steno: list[dict]) -> dict[int, VoteMotion]:
             pre = pre[-450:]
             end = matches[j + 1].start() if j + 1 < len(matches) else len(text)
             post = text[m.end() : end][:300]
-            cut = re.search(r"Zahajuji hlasování|Přednesu|návrh usnesení", post)
+            cut = re.search(r"Zahajuji hlasování|Přednesu|návrh usnesení zní", post, re.I)
             if cut:
                 post = post[: cut.start()]
             out.setdefault(int(m.group(1)), classify_vote_motion(pre, post))

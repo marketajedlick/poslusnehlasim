@@ -35,13 +35,18 @@
     ],
     "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s27/editions/2026-07-10/assets/caption.txt"
   },
-  "republished_at": "2026-10-28T08:38:57.681494+00:00",
+  "republished_at": "2026-10-28T09:31:04.348192+00:00",
   "revisions": [
     {
       "at": "2026-10-28T08:38:57.681508+00:00",
       "reason": "Zmrazení stavu po opravách z review (zmatečná hlasování, datová pole hlasování, citát dne, kotvy PSP); změny byly v repu už před zavedením kontroly driftu.",
       "content_hash": "d43bf24349653350"
+    },
+    {
+      "at": "2026-10-28T09:31:04.348198+00:00",
+      "reason": "Zmrazení po merge main: opravy publikovaných článků z PR #3 (c0244781: verdikty, rozbité věty, počty a data)",
+      "content_hash": "8fea0178b7f95cd4"
     }
   ],
-  "published_hash": "d43bf24349653350"
+  "published_hash": "8fea0178b7f95cd4"
 }

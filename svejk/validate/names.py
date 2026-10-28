@@ -66,7 +66,11 @@ def speaker_match(autor: str, jmeno: str) -> bool:
 
 
 def is_vote_score(party: str) -> bool:
-    return bool(re.match(r"^\d+:\d+$", party.strip()))
+    """Závorka, která není strana: skóre (105:64), bod/tisk pořadu („bod 63“)."""
+    p = party.strip()
+    if re.match(r"^\d+:\d+$", p):
+        return True
+    return bool(re.match(r"^(?:bod|body|tisk|sněmovní\s+tisk|č\.|čl\.|§)\s*\d", p, re.I))
 
 
 def party_matches(expected: str, given: str) -> bool:

@@ -24,5 +24,14 @@
   },
   "published_at": "backfill",
   "snapshot_dir": "published/2025/8/04.02.2026",
-  "supersedes": null
+  "supersedes": null,
+  "republished_at": "2026-10-28T09:31:05.697666+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T09:31:05.697672+00:00",
+      "reason": "Zmrazení po merge main: opravy publikovaných článků z PR #3 (c0244781: verdikty, rozbité věty, počty a data)",
+      "content_hash": "aec4f94258d4fe95"
+    }
+  ],
+  "published_hash": "aec4f94258d4fe95"
 }

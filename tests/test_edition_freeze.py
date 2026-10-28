@@ -58,3 +58,13 @@ def test_party_matches_strict():
     assert party_matches("Zelení, klub Pirátů", "Zelení")
     assert not party_matches("STAN", "Piráti")
     assert not party_matches("KDU-ČSL", "KDU")
+
+
+def test_bod_v_zavorce_neni_strana():
+    from svejk.validate.names import is_vote_score
+
+    assert is_vote_score("105:64")
+    assert is_vote_score("bod 63")
+    assert is_vote_score("sněmovní tisk 77")
+    assert not is_vote_score("ANO")
+    assert not is_vote_score("TOP 09")

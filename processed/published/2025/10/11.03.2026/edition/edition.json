@@ -1,0 +1,37 @@
+{
+  "key": "2025/10/11.03.2026",
+  "obdobi": 2025,
+  "schuze": 10,
+  "datum_unl": "11.03.2026",
+  "iso": "2026-03-11",
+  "state": "published",
+  "topic_slugs": [
+    "vl-n-z-o-statnim-rozpoctu-cr-na-rok-2026",
+    "rozpocet-sfzp-na-rok-2026"
+  ],
+  "recommended_slugs": [],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-03-11/brief.md",
+  "feedback": [],
+  "metrics": {},
+  "inputs": {
+    "votes_count": 263,
+    "votes_max_cislo": 263,
+    "steno_count": 1775,
+    "steno_last_poradi": 1775,
+    "topics_built_at": "2026-07-10T17:51:38.114406+00:00",
+    "fingerprint": "de766df145ab219e"
+  },
+  "published_at": "backfill",
+  "snapshot_dir": "published/2025/10/11.03.2026",
+  "supersedes": null,
+  "republished_at": "2026-10-28T09:30:46.767378+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T09:30:46.767382+00:00",
+      "reason": "Zmrazení po merge main: opravy publikovaných článků z PR #3 (c0244781: verdikty, rozbité věty, počty a data)",
+      "content_hash": "11b7bbe7331d162c"
+    }
+  ],
+  "published_hash": "11b7bbe7331d162c"
+}
