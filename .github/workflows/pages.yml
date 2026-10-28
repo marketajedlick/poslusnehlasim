@@ -40,6 +40,11 @@ jobs:
 
       - uses: ./.github/actions/setup-svejk
 
+      - name: Tests
+        run: |
+          pip install pytest
+          python -m pytest -q
+
       - name: Publish gate check
         run: ./run-svejk.sh publish-check --obdobi 2025
 
@@ -55,6 +60,9 @@ jobs:
             echo "::warning::SVEJK_SUBSCRIBE_API_URL chybí — odběr na webu nemusí fungovat. Nasaz worker: workflow Deploy subscribe worker."
           fi
           ./run-svejk.sh export-pages --obdobi 2025 --out site --cname poslusnehlasim.cz
+
+      - name: Lint exported site
+        run: python scripts/lint_site.py site
 
       - name: Notify newsletter (Ecomail)
         continue-on-error: true

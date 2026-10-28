@@ -11,6 +11,7 @@ from svejk.build.compose import run_compose
 from svejk.build.io import read_json, write_json
 from svejk.build.nav import clear_edition_cache
 from svejk.edition.dates import resolve_edition_day
+from svejk.edition.freeze import edition_content_hash, edition_drift, record_revision
 from svejk.edition.social import run_social_assets
 from svejk.edition.state import (
     assert_editable,
@@ -83,17 +84,28 @@ def run_edition_publish(
     if not day_path.is_file():
         raise FileNotFoundError(f"Chybí {day_path}")
 
-    if dry_run:
-        return {"key": key, "dry_run": True, "state": doc.get("state"), "would_publish": True}
+    if doc.get("state") == "published":
+        raise RuntimeError(
+            f"Vydání {key} už je published. Změnu publikovaného vydání dělej přes "
+            "edition republish --reason \"…\" (zapíše revizi, newsletter se znovu nepošle)."
+        )
 
-    if doc.get("state") == "published" and not force:
-        raise RuntimeError(f"Vydání {key} už je published. Použij --force pro republish.")
-
-    if doc.get("state") not in ("approved", "published") and not force:
+    if doc.get("state") != "approved" and not force:
         raise RuntimeError(
             f"Vydání {key} není approved (stav: {doc.get('state')}). "
             "Nejdřív: edition approve"
         )
+
+    current_hash = edition_content_hash(paths, iso)
+    approved_hash = doc.get("approved_hash")
+    if approved_hash and approved_hash != current_hash and not force:
+        raise RuntimeError(
+            f"Facts vydání {key} se od schválení změnily. Spusť znovu edition review "
+            "a edition approve (nebo --force)."
+        )
+
+    if dry_run:
+        return {"key": key, "dry_run": True, "state": doc.get("state"), "would_publish": True}
 
     day = read_json(day_path)
     slugs = day.get("topic_slugs") or doc.get("topic_slugs") or []
@@ -113,6 +125,7 @@ def run_edition_publish(
 
     doc["state"] = "published"
     doc["published_at"] = datetime.now(timezone.utc).isoformat()
+    doc["published_hash"] = current_hash
     doc["snapshot_dir"] = str(snap.relative_to(processed_root()))
     doc["assets"] = assets
     save_edition(paths, iso, doc)
@@ -140,13 +153,69 @@ def run_edition_publish(
     }
 
 
-def run_edition_approve(paths: SchuzePaths, den: str) -> dict[str, Any]:
+def run_edition_republish(
+    paths: SchuzePaths,
+    den: str,
+    *,
+    reason: str,
+    dry_run: bool = False,
+) -> dict[str, Any]:
+    """Vědomá oprava publikovaného vydání: revize + nový snapshot, bez newsletteru.
+
+    published_at zůstává (og:published_time / JSON-LD se nemění), přibude
+    revisions[] a dateModified.
+    """
+    reason = (reason or "").strip()
+    if not reason:
+        raise RuntimeError("edition republish potřebuje --reason (co a proč se opravilo).")
+    datum_unl, iso, day_path = resolve_edition_day(paths, den)
+    doc = load_edition(paths, iso)
+    key = doc.get("key") or f"{paths.obdobi}/{paths.schuze}/{datum_unl}"
+    if doc.get("state") != "published":
+        raise RuntimeError(f"Vydání {key} není published (stav: {doc.get('state')}). Použij edition publish.")
+    if not day_path.is_file():
+        raise FileNotFoundError(f"Chybí {day_path}")
+
+    snap_dir = published_snapshot_dir(key)
+    drift = edition_drift(paths, iso, snap_dir) if snap_dir.is_dir() else ["snapshot chybí"]
+    current_hash = edition_content_hash(paths, iso)
+    if dry_run:
+        return {"key": key, "dry_run": True, "drift": drift, "content_hash": current_hash}
+
+    day = read_json(day_path)
+    slugs = day.get("topic_slugs") or []
+    party_errors = [i for i in audit_edition_day(paths, iso) if i.level == "error"]
+    if party_errors:
+        raise RuntimeError(format_party_errors(party_errors))
+
+    clear_edition_cache()
+    run_compose(paths, den=datum_unl)
+    doc["topic_slugs"] = slugs
+    doc["republished_at"] = datetime.now(timezone.utc).isoformat()
+    record_revision(doc, reason=reason, content_hash=current_hash)
+    save_edition(paths, iso, doc)
+    snap = _freeze_snapshot(paths, key, iso, datum_unl, slugs)
+    return {"key": key, "state": "published", "drift": drift, "snapshot_dir": str(snap)}
+
+
+def run_edition_approve(paths: SchuzePaths, den: str, *, force: bool = False) -> dict[str, Any]:
+    """Schválení jen s čistým edition review; otisk obsahu hlídá publish."""
+    from svejk.edition.metrics import run_edition_metrics
+
     datum_unl, iso, _ = resolve_edition_day(paths, den)
     doc = load_edition(paths, iso)
     assert_editable(doc, action="schvalovat")
+    metrics = run_edition_metrics(paths, den)
+    if not metrics.get("ok") and not force:
+        raise RuntimeError(
+            "edition review hlásí chyby, vydání nejde schválit (--force jen vědomě):\n  "
+            + "\n  ".join(metrics.get("errors") or [])
+        )
+    doc = load_edition(paths, iso)  # metrics ukládá do edition.json
     doc["state"] = "approved"
+    doc["approved_hash"] = edition_content_hash(paths, iso)
     save_edition(paths, iso, doc)
-    return {"key": doc.get("key"), "state": "approved"}
+    return {"key": doc.get("key"), "state": "approved", "approved_hash": doc["approved_hash"]}
 
 
 def run_edition_backfill(obdobi: int) -> dict[str, Any]:

@@ -59,11 +59,116 @@
 
 <meta name="twitter:card" content="summary" />
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://poslusnehlasim.cz/", "name": "Poslu\u0161n\u011b hl\u00e1s\u00edm", "position": 1}, {"@type": "ListItem", "item": "https://poslusnehlasim.cz/vydani/", "name": "Archiv vyd\u00e1n\u00ed", "position": 2}, {"@type": "ListItem", "item": "https://poslusnehlasim.cz/vydani/2026-06-30/", "name": "30. 6. 2026", "position": 3}, {"@type": "ListItem", "name": "Stenoprotokol", "position": 4}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "item": "https://poslusnehlasim.cz/", "name": "Poslu\u0161n\u011b hl\u00e1s\u00edm", "position": 1}, {"@type": "ListItem", "item": "https://poslusnehlasim.cz/vydani/", "name": "Archiv vyd\u00e1n\u00ed", "position": 2}, {"@type": "ListItem", "item": "https://poslusnehlasim.cz/2026-06-30.html", "name": "30. 6. 2026", "position": 3}, {"@type": "ListItem", "name": "Stenoprotokol", "position": 4}]}</script>
 
-<link rel="stylesheet" href="/static/fonts.css?v=eb23ceb2fc" />
-<link rel="stylesheet" href="/static/noviny-dlouhe.css?v=8f5c8a769b" />
-<link rel="stylesheet" href="/static/satellite.css?v=8f5c8a769b" />
+
+
+
+<link rel="preload" href="/static/fonts/oldstandardtt-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/oldstandardtt-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/archivo-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>/* Lokálně hostované fonty (původně Google Fonts).
+   Archivo 500-900 · Anton 400 · Old Standard TT 400/700/kurzíva.
+   Subsety: latin + latin-ext (čeština). Cesty relativní k /static/. */
+
+/* Archivo, latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500 900;
+  font-display: optional;
+  src: url('/static/fonts/archivo-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* Archivo, latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500 900;
+  font-display: optional;
+  src: url('/static/fonts/archivo-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Anton, latin-ext */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('/static/fonts/anton-400-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* Anton, latin */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('/static/fonts/anton-400-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Old Standard TT 400, latin-ext */
+@font-face {
+  font-family: 'Old Standard TT';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('/static/fonts/oldstandardtt-400-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* Old Standard TT 400, latin */
+@font-face {
+  font-family: 'Old Standard TT';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('/static/fonts/oldstandardtt-400-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Old Standard TT 700, latin-ext */
+@font-face {
+  font-family: 'Old Standard TT';
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url('/static/fonts/oldstandardtt-700-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* Old Standard TT 700, latin */
+@font-face {
+  font-family: 'Old Standard TT';
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url('/static/fonts/oldstandardtt-700-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Old Standard TT kurzíva 400, latin-ext */
+@font-face {
+  font-family: 'Old Standard TT';
+  font-style: italic;
+  font-weight: 400;
+  font-display: optional;
+  src: url('/static/fonts/oldstandardtt-400italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* Old Standard TT kurzíva 400, latin */
+@font-face {
+  font-family: 'Old Standard TT';
+  font-style: italic;
+  font-weight: 400;
+  font-display: optional;
+  src: url('/static/fonts/oldstandardtt-400italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+
+<link rel="stylesheet" href="/static/noviny-dlouhe.css?v=b5090f9cb8" />
+<link rel="stylesheet" href="/static/satellite.css?v=b5090f9cb8" />
 
 </head>
 <body class="steno-page">
@@ -87,7 +192,7 @@
     
     <li class="breadcrumbs-item">
       
-      <a href="/vydani/2026-06-30/">30. 6. 2026</a>
+      <a href="2026-06-30.html">30. 6. 2026</a>
       
     </li>
     
@@ -105,7 +210,7 @@
   <header class="page-head page-head--steno">
   
   
-  <a class="page-head-fav-link" href="/vydani/2026-07-07/" aria-label="Nejnovější vydání">
+  <a class="page-head-fav-link" href="/vydani/2026-10-23/" aria-label="Nejnovější vydání">
     <img class="page-head-fav" src="/static/ph-fav.svg" alt="" width="72" height="72">
   </a>
   
@@ -415,7 +520,7 @@ to neodvolám</h2>
       
 
       
-      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024199.htm#r2" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
+      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024199.htm#r4" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
       
     </article>
     
@@ -523,7 +628,7 @@ to neodvolám</h2>
       
 
       
-      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024193.htm#r2" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
+      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024193.htm#r6" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
       
     </article>
     
@@ -739,7 +844,7 @@ to neodvolám</h2>
       
 
       
-      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024193.htm#r2" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
+      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024193.htm#r6" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
       
     </article>
     
@@ -847,7 +952,7 @@ to neodvolám</h2>
       
 
       
-      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024202.htm#r6" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
+      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024202.htm#r8" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
       
     </article>
     
@@ -1732,34 +1837,29 @@ to neodvolám</h2>
     
   </section>
   
-  <section class="steno-topic" id="topic-novela-z-o-statni-socialni-podpore">
-    <h2 class="steno-topic-title"><span class="steno-topic-num">07</span> čtyři sta tisíc navíc
-bez přihlášených</h2>
+  <section class="steno-topic" id="topic-novela-z-o-statni-socialni-podpore-2">
+    <h2 class="steno-topic-title"><span class="steno-topic-num">07</span> 400 tisíc navíc
+rodičovský bez debaty</h2>
     
-    <article class="steno-passage" id="steno-2025_24_02220-p46">
+    <article class="steno-passage" id="steno-2025_24_00963-p46">
       <header class="steno-passage-head">
         
         <a class="steno-back steno-passage-back" href="2026-06-30.html">← zpět</a>
         
         
-        <span class="steno-speaker">Tomio Okamura</span>
+        <span class="steno-speaker">Karin Gajdová</span>
         
         
-        <span class="steno-poradi">Projev č. 2220</span>
+        <span class="steno-poradi">Projev č. 963</span>
         
       </header>
 
-      
-      <div class="steno-block steno-block--article steno-block--article-quote">
-        <h3 class="steno-block-label">Přesné znění z článku</h3>
-        <blockquote class="steno-article-quote">„Okamura (SPD) pak otevřel rozpravu“</blockquote>
-      </div>
       
 
       
       <div class="steno-block steno-block--article steno-block--article-detail">
         <h3 class="steno-block-label">Podrobněji</h3>
-        <p class="steno-article-text">Okamura ukončil rozpravu, nikdo se prý nehlásil.</p>
+        <p class="steno-article-text">Silný hluk před přednesením návrhu.</p>
       </div>
       
 
@@ -1773,148 +1873,44 @@ bez přihlášených</h2>
         
         <div class="steno-quote-wrap">
           <p class="steno-field-label">Citace</p>
-          <blockquote class="steno-quote">„do které nemám nikoho přihlášeného, takže se rozhlédnu, nikdo se nehlásí, rozpravu končím.“</blockquote>
+          <blockquote class="steno-quote">„(Silný hluk v sále.)“</blockquote>
         </div>
         
         
         <div class="steno-excerpt-wrap">
           <p class="steno-field-label">Okolí v projevu</p>
-          <div class="steno-excerpt">Nyní otevírám rozpravu, do které nemám nikoho přihlášeného, takže se rozhlédnu, nikdo se nehlásí, rozpravu končím. *** Neprošlo jazykovou korekturou, neautorizováno! Táži se, zdali máte zájem o závěrečné slovo? Zájem o závěrečné slovo není. Přikročíme k hlasování. (Neklid v sále, poslankyně Richterová a poslankyně Šebelová gestikulují, že chtěly vystoupit.) Počkejte. No tak nikdo se nehlásil do rozpravy. (Hlasy koaličních poslanců: Nikdo se nehlásil.) Počkejte, rozpravu jsme ukončili. Nehlásil se nikdo do rozpravy. Ptal jsem se, …</div>
+          <div class="steno-excerpt">Děkuji za slovo. Vážený pane předsedající, vážený pane ministře, vážené kolegyně, vážení kolegové, dovolte mi, abych se také zapojila do dnešní rozpravy. Zaměřím se především na navržené zvýšení rodičovského příspěvku. 
+Když se bavíme o rodičovském příspěvku, nebavíme se jen o jedné sociální dávce. Bavíme se o tom, jakou hodnotu má pro Českou republiku rodina a jaké podmínky vytváříme lidem, kteří se rozhodnou přivést na svět děti. 
+V posledních letech mladé rodiny čelily mimořádně náročnému období. Vysoká inflace, zdražování potravin, energií i bydlení zasáhly právě domácnosti s malými dětmi velmi citelně. 
+Každý rodič ví, že výdaje spojené s péčí o dítě nejsou malé a inflace je ještě zvýšila. Proto považuji navržené zvýšení rodičovského příspěvku za správný krok. Nevyřeší všechny problémy mladých rodin, ale pomůže jim lépe zvládnout období, kdy jeden z rodičů pečuje o dítě a příjmy domácnosti jsou zpravidla nižší.
+Současně bych ale byla nerada, kdybychom si mysleli, že tím naše práce končí. Podpora rodin totiž není jen o jedné dávce, je také o dostupném bydlení, je o dostatku míst v mateřských školách a dětských skupinách, je o možnosti vracet se postupně do zaměstnání, jeho flex…</div>
         </div>
         
       </div>
       
 
       
-      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024450.htm#r1" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
+      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024211.htm#r2" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
       
     </article>
     
-    <article class="steno-passage" id="steno-2025_24_02220-p47">
+    <article class="steno-passage" id="steno-2025_24_00964-p47">
       <header class="steno-passage-head">
         
         <a class="steno-back steno-passage-back" href="2026-06-30.html">← zpět</a>
         
         
-        <span class="steno-speaker">Tomio Okamura</span>
+        <span class="steno-speaker">Jan Skopeček</span>
         
         
-        <span class="steno-poradi">Projev č. 2220</span>
+        <span class="steno-poradi">Projev č. 964</span>
         
       </header>
 
       
       <div class="steno-block steno-block--article steno-block--article-quote">
         <h3 class="steno-block-label">Přesné znění z článku</h3>
-        <blockquote class="steno-article-quote">„Richterová (Piráti) a Šebelová (STAN) gestikulovaly“</blockquote>
-      </div>
-      
-
-      
-      <div class="steno-block steno-block--article steno-block--article-detail">
-        <h3 class="steno-block-label">Podrobněji</h3>
-        <p class="steno-article-text">Richterová a Šebelová gestikulovaly, že chtěly mluvit.</p>
-      </div>
-      
-
-      
-      <div class="steno-block steno-block--verbatim">
-        <h3 class="steno-block-label">
-          
-          Doslovně ze stenoprotokolu
-          
-        </h3>
-        
-        <div class="steno-quote-wrap">
-          <p class="steno-field-label">Citace</p>
-          <blockquote class="steno-quote">„poslankyně Richterová a poslankyně Šebelová gestikulují, že chtěly vystoupit“</blockquote>
-        </div>
-        
-        
-        <div class="steno-excerpt-wrap">
-          <p class="steno-field-label">Okolí v projevu</p>
-          <div class="steno-excerpt">Nyní otevírám rozpravu, do které nemám nikoho přihlášeného, takže se rozhlédnu, nikdo se nehlásí, rozpravu končím. *** Neprošlo jazykovou korekturou, neautorizováno! Táži se, zdali máte zájem o závěrečné slovo? Zájem o závěrečné slovo není. Přikročíme k hlasování. (Neklid v sále, poslankyně Richterová a poslankyně Šebelová gestikulují, že chtěly vystoupit.) Počkejte. No tak nikdo se nehlásil do rozpravy. (Hlasy koaličních poslanců: Nikdo se nehlásil.) Počkejte, rozpravu jsme ukončili. Nehlásil se nikdo do rozpravy. Ptal jsem se, ještě jsem se rozhlížel po sále. Takže tak. Takže přikročíme k hlasování. (Nesouhlasné poznámky opozice z pléna.) Prosím zpravodajku... Ano? (Poslankyně Richterová se hlásí o slovo.) No tak přikračujeme k hlasování. Já jsem to řekl. Já jsem s …</div>
-        </div>
-        
-      </div>
-      
-
-      
-      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024450.htm#r1" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
-      
-    </article>
-    
-    <article class="steno-passage" id="steno-2025_24_02221-p48">
-      <header class="steno-passage-head">
-        
-        <a class="steno-back steno-passage-back" href="2026-06-30.html">← zpět</a>
-        
-        
-        <span class="steno-speaker">Aleš Juchelka</span>
-        
-        
-        <span class="steno-poradi">Projev č. 2221</span>
-        
-      </header>
-
-      
-      <div class="steno-block steno-block--article steno-block--article-quote">
-        <h3 class="steno-block-label">Přesné znění z článku</h3>
-        <blockquote class="steno-article-quote">„Juchelka (ANO) rozpravu po dohodě znovu otevřel“</blockquote>
-      </div>
-      
-
-      
-      <div class="steno-block steno-block--article steno-block--article-detail">
-        <h3 class="steno-block-label">Podrobněji</h3>
-        <p class="steno-article-text">Juchelka rozpravu znovu otevřel po dohodě.</p>
-      </div>
-      
-
-      
-      <div class="steno-block steno-block--verbatim">
-        <h3 class="steno-block-label">
-          
-          Doslovně ze stenoprotokolu
-          
-        </h3>
-        
-        <div class="steno-quote-wrap">
-          <p class="steno-field-label">Citace</p>
-          <blockquote class="steno-quote">„já bych si přál, abychom tu rozpravu tedy otevřeli po dohodě samozřejmě s opozicí“</blockquote>
-        </div>
-        
-        
-        <div class="steno-excerpt-wrap">
-          <p class="steno-field-label">Okolí v projevu</p>
-          <div class="steno-excerpt">Vážené kolegyně, vážení kolegové, já samozřejmě jako rozumím tomu, že tady chtěli kolegové z opozice vystupovat. My sami jsme se divili s paní zpravodajkou, že se nikdo nepřihlásil i přesto, že pan předsedající to několikrát hlásil a ptal se, zdali je tady tento zájem. A právě proto, že došlo k takovémuto nedorozumění, tak já bych si přál, abychom tu rozpravu tedy otevřeli po dohodě samozřejmě s opozicí. A prosím, aby opoziční poslanci dávali pozor, tedy na to, co říká předsedající, tak aby se samozřejmě mohli tady k tomuto tisku vyjádřit i ve třetím čtení. A nějaká dohoda s panem předsedajícím je, že já tedy tuto rozpravu otevírám a pojďme se tady o tom bavit a diskutovat. (Souhlasný potlesk většinou opozičních poslanců.)</div>
-        </div>
-        
-      </div>
-      
-
-      
-      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024451.htm#r1" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
-      
-    </article>
-    
-    <article class="steno-passage" id="steno-2025_24_02219-p49">
-      <header class="steno-passage-head">
-        
-        <a class="steno-back steno-passage-back" href="2026-06-30.html">← zpět</a>
-        
-        
-        <span class="steno-speaker">Aleš Juchelka</span>
-        
-        
-        <span class="steno-poradi">Projev č. 2219</span>
-        
-      </header>
-
-      
-      <div class="steno-block steno-block--article steno-block--article-quote">
-        <h3 class="steno-block-label">Přesné znění z článku</h3>
-        <blockquote class="steno-article-quote">„Juchelka (ANO) navrhl zvýšit rodičovský na čtyři sta tisíc korun“</blockquote>
+        <blockquote class="steno-article-quote">„400 000 korun“</blockquote>
       </div>
       
 
@@ -1935,47 +1931,42 @@ bez přihlášených</h2>
         
         <div class="steno-quote-wrap">
           <p class="steno-field-label">Citace</p>
-          <blockquote class="steno-quote">„zvýšit rodičovský příspěvek na celkovou částku 400 000 korun“</blockquote>
+          <blockquote class="steno-quote">„zvýšení rodičovského příspěvku, a to na celkovou částku 400 000 korun pro domácnost s jedním nejmladším dítětem a na celkovou částku 800 000 korun pro rodinu, v níž jsou dvě nebo více dětí narozených současně“</blockquote>
         </div>
         
         
         <div class="steno-excerpt-wrap">
           <p class="steno-field-label">Okolí v projevu</p>
-          <div class="steno-excerpt">Já děkuji, vážený pane předsedo. Dovolte mi jenom stručně připomenout obsah vládního návrhu zákona, kterým se mění zákon č. 117/1995 Sb., o státní sociální podpoře. Navrhuje se zvýšit rodičovský příspěvek na celkovou částku 400 000 korun pro domácnost s jedním nejmladším dítětem a potom na celkovou částku 800 000 korun pro rodiny, v níž jsou dvě anebo více dětí narozených současně. Toto zvýšení celkové částky rodičovského příspěvku se bude týkat dětí narozených od 1. ledna 2027. Cílem této navrhované změny je snížení dopadů inflace a následné zlepšení situace rodin s dětmi a to jak z hlediska ekonomického, tak z hlediska možnosti sladění osobního a …</div>
+          <div class="steno-excerpt">Ano a nyní vystoupí pan poslanec Činčila Benjamin a připraví se pan poslanec Vojáček. Tak vaše třičtvrtěhodinka, prosím.</div>
         </div>
         
       </div>
       
 
       
-      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024450.htm#r4" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
+      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024212.htm#:~:text=zv%C3%BD%C5%A1en%C3%AD%20rodi%C4%8Dovsk%C3%A9ho%20p%C5%99%C3%ADsp%C4%9Bvku%2C%20a%20to%20na%20celkovou%20%C4%8D%C3%A1stku%20400%20000%20korun%20pro" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
       
     </article>
     
-    <article class="steno-passage" id="steno-2025_24_02229-p50">
+    <article class="steno-passage" id="steno-2025_24_00988-p48">
       <header class="steno-passage-head">
         
         <a class="steno-back steno-passage-back" href="2026-06-30.html">← zpět</a>
         
         
-        <span class="steno-speaker">Olga Richterová</span>
+        <span class="steno-speaker">Jan Skopeček</span>
         
         
-        <span class="steno-poradi">Projev č. 2229</span>
+        <span class="steno-poradi">Projev č. 988</span>
         
       </header>
 
-      
-      <div class="steno-block steno-block--article steno-block--article-quote">
-        <h3 class="steno-block-label">Přesné znění z článku</h3>
-        <blockquote class="steno-article-quote">„dostane o padesát tisíc méně“</blockquote>
-      </div>
       
 
       
       <div class="steno-block steno-block--article steno-block--article-detail">
         <h3 class="steno-block-label">Podrobněji</h3>
-        <p class="steno-article-text">Richterová: rozdíl 50 000 podle data narození.</p>
+        <p class="steno-article-text">Činčila: lidovci navrhli, vláda se přidala.</p>
       </div>
       
 
@@ -1989,47 +1980,47 @@ bez přihlášených</h2>
         
         <div class="steno-quote-wrap">
           <p class="steno-field-label">Citace</p>
-          <blockquote class="steno-quote">„rozdíl 50 000 korun pro rodiny dětí narozených 31. prosince“</blockquote>
+          <blockquote class="steno-quote">„lidovci navrhli navýšení rodičovského příspěvku ve svém balíčku Rodiče+ a já jsem moc rád, že vláda se k tomu připojila“</blockquote>
         </div>
         
         
         <div class="steno-excerpt-wrap">
           <p class="steno-field-label">Okolí v projevu</p>
-          <div class="steno-excerpt">… ovskou podporu veřejnosti. Lidé to považují za zcela logické, že když podporujeme lidi, kteří už vzhledem ke svému věku nemohou pracovat, takže budeme obdobným způsobem podporovat i lidi, kteří kvůli péči o nejmenší děti nemohou pracovat. A ten apel je jednoduchý. Nevznikaly by pak nespravedlnosti. Ta obrovská nespravedlnost, která vznikne teď 1. ledna 2027, jde čistě za hnutím ANO. Je to nespravedlnost, která udělá rozdíl 50 000 korun pro rodiny dětí narozených 31. prosince, ty budou v minusu, a pro rodiny dětí narozených 1. ledna, ty budou v plusu. A tenhle rozdíl nemá žádný jiný důvod, než že se pravidelně o rozumné peníze, v praxi by to vzhledem k té inflaci, jaká je, vycházelo třeba na 12 000 korun, ta celková suma v tom rámci roku, pravidelně nenavyšuje, nevalorizuje rodičovský příspěvek. Zaznívají tady různé nepravdivé argumenty ohledně toho, proč by bylo složité ho navyšovat. …</div>
+          <div class="steno-excerpt">Tak další s faktickou poznámkou vystoupí paní poslankyně Richterová, připraví se pan poslanec Juchelka. Tak prosím, paní poslankyně, vaše 2 minuty. ***</div>
         </div>
         
       </div>
       
 
       
-      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024453.htm#r2" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
+      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024215.htm#r1" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
       
     </article>
     
-    <article class="steno-passage" id="steno-2025_24_02229-p51">
+    <article class="steno-passage" id="steno-2025_24_01036-p49">
       <header class="steno-passage-head">
         
         <a class="steno-back steno-passage-back" href="2026-06-30.html">← zpět</a>
         
         
-        <span class="steno-speaker">Olga Richterová</span>
+        <span class="steno-speaker">Místopředsedkyně PSP Barbora Urbanová</span>
         
         
-        <span class="steno-poradi">Projev č. 2229</span>
+        <span class="steno-poradi">Projev č. 1036</span>
         
       </header>
 
       
       <div class="steno-block steno-block--article steno-block--article-quote">
         <h3 class="steno-block-label">Přesné znění z článku</h3>
-        <blockquote class="steno-article-quote">„ta nespravedlnost jde čistě za hnutím ANO“</blockquote>
+        <blockquote class="steno-article-quote">„dostane o 50 000“</blockquote>
       </div>
       
 
       
       <div class="steno-block steno-block--article steno-block--article-detail">
         <h3 class="steno-block-label">Podrobněji</h3>
-        <p class="steno-article-text">Richterová: nespravedlnost jde za hnutím ANO.</p>
+        <p class="steno-article-text">Richterová: dítě ve špatném roce dostane o 50 000 méně.</p>
       </div>
       
 
@@ -2043,47 +2034,47 @@ bez přihlášených</h2>
         
         <div class="steno-quote-wrap">
           <p class="steno-field-label">Citace</p>
-          <blockquote class="steno-quote">„jde čistě za hnutím ANO“</blockquote>
+          <blockquote class="steno-quote">„že jeho dítě dostane o 50 000 méně prostě proto, že je narozené ve špatném roce, v roce 2026“</blockquote>
         </div>
         
         
         <div class="steno-excerpt-wrap">
           <p class="steno-field-label">Okolí v projevu</p>
-          <div class="steno-excerpt">… sti na růst cen, zčásti na růst mezd. Je to něco, co má obrovskou podporu veřejnosti. Lidé to považují za zcela logické, že když podporujeme lidi, kteří už vzhledem ke svému věku nemohou pracovat, takže budeme obdobným způsobem podporovat i lidi, kteří kvůli péči o nejmenší děti nemohou pracovat. A ten apel je jednoduchý. Nevznikaly by pak nespravedlnosti. Ta obrovská nespravedlnost, která vznikne teď 1. ledna 2027, jde čistě za hnutím ANO. Je to nespravedlnost, která udělá rozdíl 50 000 korun pro rodiny dětí narozených 31. prosince, ty budou v minusu, a pro rodiny dětí narozených 1. ledna, ty budou v plusu. A tenhle rozdíl nemá žádný jiný důvod, než že se pravidelně o rozumné peníze, v praxi by to vzhledem k té inflaci, jaká je, vycházelo třeba na 12 000 korun, ta celková suma v tom rámci roku, pravidelně nenavyšuje, nevalorizuje rodičovský příspěv …</div>
+          <div class="steno-excerpt">Pardon, pardon. Pardon, paní poslankyně, můžete pokračovat, nezlobte se.</div>
         </div>
         
       </div>
       
 
       
-      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024453.htm#r2" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
+      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024222.htm#r1" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
       
     </article>
     
-    <article class="steno-passage" id="steno-2025_24_02290-p52">
+    <article class="steno-passage" id="steno-2025_24_01036-p50">
       <header class="steno-passage-head">
         
         <a class="steno-back steno-passage-back" href="2026-06-30.html">← zpět</a>
         
         
-        <span class="steno-speaker">Tomio Okamura</span>
+        <span class="steno-speaker">Místopředsedkyně PSP Barbora Urbanová</span>
         
         
-        <span class="steno-poradi">Projev č. 2290</span>
+        <span class="steno-poradi">Projev č. 1036</span>
         
       </header>
 
       
       <div class="steno-block steno-block--article steno-block--article-quote">
         <h3 class="steno-block-label">Přesné znění z článku</h3>
-        <blockquote class="steno-article-quote">„závěrečné hlasování skončilo 158:0“</blockquote>
+        <blockquote class="steno-article-quote">„dítě narozené v prosinci 2026 dostane o 50 000 méně než sourozenec o měsíc mladší, a výsledek nazvala hořkosladkým“</blockquote>
       </div>
       
 
       
       <div class="steno-block steno-block--article steno-block--article-detail">
         <h3 class="steno-block-label">Podrobněji</h3>
-        <p class="steno-article-text">Závěrečné hlasování 158 pro, nikdo proti.</p>
+        <p class="steno-article-text">Richterová: výsledek hořkosladký.</p>
       </div>
       
 
@@ -2097,20 +2088,140 @@ bez přihlášených</h2>
         
         <div class="steno-quote-wrap">
           <p class="steno-field-label">Citace</p>
-          <blockquote class="steno-quote">„pro 158, proti nikdo“</blockquote>
+          <blockquote class="steno-quote">„ten výsledek je hořkosladký, protože tahle nespravedlnost tady bude“</blockquote>
         </div>
         
         
         <div class="steno-excerpt-wrap">
           <p class="steno-field-label">Okolí v projevu</p>
-          <div class="steno-excerpt">… návrzích bylo hlasováno, přikročíme tedy k hlasování o celém návrhu zákona. Přednesu návrh usnesení: „Poslanecká sněmovna vyslovuje souhlas s vládním návrhem zákona, kterým se mění zákon č. 117/1995 Sb., o státní sociální podpoře, ve znění pozdějších předpisů, podle sněmovního tisku 198, ve znění schváleném Poslaneckou sněmovnou.“ Zahajuji hlasování. Kdo je pro? Kdo je proti? Hlasování 285, přihlášeno 162 poslanců, pro 158, proti nikdo. Konstatuji, že s návrhem zákona byl vysloven souhlas. A tímto tedy projednávání zákona končí. Přečtu omluvy. Omlouvá se Králíček Robert celý jednací den, rodinné důvody, Němečková Crkvenjaš Zdenka celý jednací den, osobní důvody, Ratiborský Michal celý jednací den, pracovní důvody, Sedmihradská Lucie celý jednací den, osobní důvody, Slovák Štěpán od 9.45 do 11.15, pracovní důvody, Šebelová Michaela od 10.15 do …</div>
+          <div class="steno-excerpt">Pardon, pardon. Pardon, paní poslankyně, můžete pokračovat, nezlobte se.</div>
         </div>
         
       </div>
       
 
       
-      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024457.htm#r2" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
+      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024222.htm#r1" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
+      
+    </article>
+    
+    <article class="steno-passage" id="steno-2025_24_01034-p51">
+      <header class="steno-passage-head">
+        
+        <a class="steno-back steno-passage-back" href="2026-06-30.html">← zpět</a>
+        
+        
+        <span class="steno-speaker">Místopředsedkyně PSP Barbora Urbanová</span>
+        
+        
+        <span class="steno-poradi">Projev č. 1034</span>
+        
+      </header>
+
+      
+      <div class="steno-block steno-block--article steno-block--article-quote">
+        <h3 class="steno-block-label">Přesné znění z článku</h3>
+        <blockquote class="steno-article-quote">„velikost auta“</blockquote>
+      </div>
+      
+
+      
+      <div class="steno-block steno-block--article steno-block--article-detail">
+        <h3 class="steno-block-label">Podrobněji</h3>
+        <p class="steno-article-text">Juchelka: brzda druhého dítěte je velikost auta.</p>
+      </div>
+      
+
+      
+      <div class="steno-block steno-block--verbatim">
+        <h3 class="steno-block-label">
+          
+          Doslovně ze stenoprotokolu
+          
+        </h3>
+        
+        <div class="steno-quote-wrap">
+          <p class="steno-field-label">Citace</p>
+          <blockquote class="steno-quote">„Třetina současných rodičů si další dítě nemůže dovolit z finančních nebo prostorových důvodů. Hraje v tom roli například i velikost auta“</blockquote>
+        </div>
+        
+        
+        <div class="steno-excerpt-wrap">
+          <p class="steno-field-label">Okolí v projevu</p>
+          <div class="steno-excerpt">Děkuji paní předsedkyni, za špatnou výslovnost se omlouvám. (Poslankyně Richterová mimo mikrofon: Výslovnost byla v pořádku.) A nyní budeme končit podrobnou rozpravu. Ptám se, zda je zájem o závěrečná slova? Nevidím. Nyní tedy budeme hlasovat o návrhu pana ministra na zkrácení lhůty pro třetí čtení na sedm dnů.
+Takže já vás odhlásím. Ano, pochopila jsem to správně. Takže se všichni přihlásíme. Nyní už se ustálil počet přihlášených v sále. Děkuji.
+ 
+Zahájila jsem hlasování. Kdo je pro návrh na zkrácení lhůty pro třetí čtení na sedm dnů? Je někdo proti? Já vám děkuji.
+Hlasování číslo 160, přihlášeno 140 poslanců, pro bylo 129, proti 0. Děkuji a návrh byl přijat. Končím druhé čtení tohoto návrhu.
+ 
+Ještě načtu omluvy, než otevřu další bod. Omlouvá se paní poslankyně Hoffmannová od 19 hodin ze zdravotních důvodů a paní poslankyně Kovářová Věra od 20 hodin z pracovních důvodů.
+A nyní otevírám bod číslo
+
+ 
+86.
+Návrh poslanců Andreje Babiše, Tomia Okamury, Lucie Šafránkové, Petra Macinky, Borise Šťastného, Taťány Malé, Radima Fialy, Renaty Vesecké a Jany Hanzlíkové na vydání zákona, kterým se mění zákon č. 40/2009 Sb., trestní zákoník, ve znění pozdějších předpisů
+/sněmovní tisk 173/, pr…</div>
+        </div>
+        
+      </div>
+      
+
+      
+      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024222.htm#r1" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
+      
+    </article>
+    
+    <article class="steno-passage" id="steno-2025_24_01038-p52">
+      <header class="steno-passage-head">
+        
+        <a class="steno-back steno-passage-back" href="2026-06-30.html">← zpět</a>
+        
+        
+        <span class="steno-speaker">Místopředsedkyně PSP Barbora Urbanová</span>
+        
+        
+        <span class="steno-poradi">Projev č. 1038</span>
+        
+      </header>
+
+      
+      <div class="steno-block steno-block--article steno-block--article-quote">
+        <h3 class="steno-block-label">Přesné znění z článku</h3>
+        <blockquote class="steno-article-quote">„Pan ministr Juchelka je skutečně kabrňák“</blockquote>
+      </div>
+      
+
+      
+      <div class="steno-block steno-block--article steno-block--article-detail">
+        <h3 class="steno-block-label">Podrobněji</h3>
+        <p class="steno-article-text">Výborný: Juchelka je kabrňák.</p>
+      </div>
+      
+
+      
+      <div class="steno-block steno-block--verbatim">
+        <h3 class="steno-block-label">
+          
+          Doslovně ze stenoprotokolu
+          
+        </h3>
+        
+        <div class="steno-quote-wrap">
+          <p class="steno-field-label">Citace</p>
+          <blockquote class="steno-quote">„Pan ministr Juchelka je skutečně kabrňák a teď to říkám naprosto v kladném pozitivním slova smyslu“</blockquote>
+        </div>
+        
+        
+        <div class="steno-excerpt-wrap">
+          <p class="steno-field-label">Okolí v projevu</p>
+          <div class="steno-excerpt">Poprosím o klid v sále. Pane předsedo, děkuju.</div>
+        </div>
+        
+      </div>
+      
+
+      
+      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024222.htm#r1" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
       
     </article>
     
@@ -2119,7 +2230,7 @@ bez přihlášených</h2>
   <section class="steno-topic" id="topic-novela-z-na-ochranu-zvirat-proti-tyrani">
     <h2 class="steno-topic-title"><span class="steno-topic-num">08</span> Kočka Vločka</h2>
     
-    <article class="steno-passage" id="steno-2025_24_01149-p54">
+    <article class="steno-passage" id="steno-2025_24_01149-p53">
       <header class="steno-passage-head">
         
         <a class="steno-back steno-passage-back" href="2026-06-30.html">← zpět</a>
@@ -2173,7 +2284,7 @@ bez přihlášených</h2>
       
     </article>
     
-    <article class="steno-passage" id="steno-2025_24_01149-p55">
+    <article class="steno-passage" id="steno-2025_24_01149-p54">
       <header class="steno-passage-head">
         
         <a class="steno-back steno-passage-back" href="2026-06-30.html">← zpět</a>
@@ -2227,7 +2338,7 @@ bez přihlášených</h2>
       
     </article>
     
-    <article class="steno-passage" id="steno-2025_24_01039-p56">
+    <article class="steno-passage" id="steno-2025_24_01039-p55">
       <header class="steno-passage-head">
         
         <a class="steno-back steno-passage-back" href="2026-06-30.html">← zpět</a>
@@ -2277,11 +2388,11 @@ bez přihlášených</h2>
       
 
       
-      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024222.htm#r2" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
+      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024222.htm#r6" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
       
     </article>
     
-    <article class="steno-passage" id="steno-2025_24_01039-p57">
+    <article class="steno-passage" id="steno-2025_24_01039-p56">
       <header class="steno-passage-head">
         
         <a class="steno-back steno-passage-back" href="2026-06-30.html">← zpět</a>
@@ -2331,7 +2442,61 @@ bez přihlášených</h2>
       
 
       
-      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024222.htm#r2" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
+      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024222.htm#r6" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
+      
+    </article>
+    
+  </section>
+  
+  <section class="steno-topic" id="topic-jazykolam-dne">
+    <h2 class="steno-topic-title"><span class="steno-topic-num">09</span> Citát dne</h2>
+    
+    <article class="steno-passage" id="steno-2025_24_00913">
+      <header class="steno-passage-head">
+        
+        <a class="steno-back steno-passage-back" href="2026-06-30.html">← zpět</a>
+        
+        
+        <span class="steno-speaker">Petr Hladík</span>
+        
+        
+        <span class="steno-poradi">Projev č. 913</span>
+        
+      </header>
+
+      
+      <div class="steno-block steno-block--article steno-block--article-quote">
+        <h3 class="steno-block-label">Přesné znění z článku</h3>
+        <blockquote class="steno-article-quote">„Pomiňme to, že Ústavní soud vydal pouze předběžné opatření a pomiňme to, že Ústavní soud neodsuzuje, Ústavní soud pouze vykládá, zpřesňuje a jasně říká, jaký je výklad ústavy za předpokladu, že se na Ústavní soud někdo obrátí.“</blockquote>
+      </div>
+      
+
+      
+
+      
+      <div class="steno-block steno-block--verbatim">
+        <h3 class="steno-block-label">
+          
+          Doslovně ze stenoprotokolu
+          
+        </h3>
+        
+        <div class="steno-quote-wrap">
+          <p class="steno-field-label">Citace</p>
+          <blockquote class="steno-quote">„Pomiňme to, že Ústavní soud vydal pouze předběžné opatření a pomiňme to, že Ústavní soud neodsuzuje, Ústavní soud pouze vykládá, zpřesňuje a jasně říká, jaký je výklad ústavy za předpokladu, že se na Ústavní soud někdo obrátí.“</blockquote>
+        </div>
+        
+        
+        <div class="steno-excerpt-wrap">
+          <p class="steno-field-label">Okolí v projevu</p>
+          <div class="steno-excerpt">Děkuji, pane předsedající. Já když tady slyším, že mě Piráti vyzývají, ať něco odvolám, tak jsem si vzpomněl, že historie si pamatuje různé inkvizice, které se snažily donutit různé osobnosti k tomu, aby něco odvolaly. Takže já tedy té dnešní pirátské inkvizici odpovím stejně nebo podobně, jako někteří velikáni v minulosti. Takže si půjčím slova z roku 1415 z Kostnice jednoho velikána, který řekl: neodvolám před tím, než uhořel, ne tedy na globální oteplování. Ale možná, když tady vidím to hysterické klimatické náboženství Pirátů a zelených, tak bych řekl, že se daleko více ještě hodí výrok, také slavný, který byl pronesen o dvě století později, zhruba tedy aspoň podle dobové literatury, a ten zněl: eppur si muove, neboli a přece se točí. Takže děkuji za pozornost. Samozřejmě zase musím říci, že v důsledku klimatických změn jsem zapomněl návrh, který bych chtěl navrhnout, a proto zatím nic nenavrhuji. Děkuji. ***</div>
+        </div>
+        
+      </div>
+      
+
+      
+      <p class="steno-psp"><a href="https://www.psp.cz/eknih/2025ps/stenprot/024schuz/s024199.htm#r6" target="_blank" rel="noopener">Celý projev na webu Sněmovny →</a></p>
       
     </article>
     
@@ -2340,8 +2505,9 @@ bez přihlášených</h2>
 </div>
 <script>
 (function () {
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
   function scrollToHash() {
-    var id = location.hash.slice(1);
+    var id = decodeURIComponent((location.hash || "").slice(1));
     if (!id) return;
     var el = document.getElementById(id);
     if (el) el.scrollIntoView({ block: "start" });
@@ -2351,11 +2517,13 @@ bez přihlášených</h2>
   } else {
     scrollToHash();
   }
+  window.addEventListener("load", scrollToHash);
+  window.addEventListener("hashchange", scrollToHash);
 })();
 </script>
 <footer class="site-footer" aria-label="Patička webu">
   <div class="site-footer-inner">
-    <p class="site-footer-stats">66 vydání • 24 schůzí • 100 % veřejná data</p>
+    <p class="site-footer-stats">93 vydání • 33 schůzí • 100 % veřejná data</p>
 <nav class="site-footer-links" aria-label="Právní informace a podpora">
   <a href="/podminky/">Podmínky používání</a>
   <a href="/soukromi/">Ochrana údajů</a>

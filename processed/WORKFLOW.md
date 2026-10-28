@@ -319,8 +319,11 @@ URL: `http://127.0.0.1:8765/vydani/2026-06-11/` (ISO datum)
 
 **Publish gate** (`processed/publish-approved.json`):
 
-- nové vydání nejdřív do `hidden` (nebo mimo `approved`)
-- po review přesuň klíč `2025/N/DD.MM.RRRR` do `approved`
+- klíč do `approved` **nepřesouvej ručně**. Zapíše ho `edition publish`, jinak `publish-check` v CI selže (`approved bez edition publish`).
+- `edition approve` projde jen s čistým `edition review` (`--force` jen vědomě) a uloží otisk obsahu; když se facts po schválení změní, `edition publish` odmítne.
+- `edition publish` zmrazí snapshot do `processed/published/…`. Koncept newsletteru udělá CI po deployi (lokálně jen s `--newsletter`).
+- **Oprava publikovaného vydání:** uprav facts, pak `edition republish --schuze N --den D.M.RRRR --reason "co a proč"`. Zapíše revizi a obnoví snapshot; `published_at` se nemění a newsletter se znovu neposílá. Bez republishe `publish-check` v CI zablokuje deploy (živá facts ≠ snapshot).
+- Každý den má **vlastní soubor tématu**. Stejný slug ve dvou dnech = úprava jednoho dne tiše přepíše druhý (`publish-check` i `edition review` hlásí chybu).
 - teprve pak push na `main` (deploy webu)
 
 ---
@@ -388,7 +391,7 @@ Před odesláním v Ecomailu:
 | Strany u jmen | `poslanci export` + `edition review` bez `wrong_party` |
 | Styl | lead srozumitelný, `zaver` jednou větou |
 | Finální průchod | celé vydání přečtené; odkazy doplněné; fakta ověřená ve sten/votes (§9) |
-| Publish | `hidden` → `approved` až po §9 |
+| Publish | `edition review --strict` čisté → `edition approve` → `edition publish` až po §9 |
 
 ---
 
@@ -401,10 +404,11 @@ sync
   → edition link-phrases → edition preview → edition review
   → edition feedback (volitelně, učí další brief)
   → edition approve → edition publish
+  → (oprava po vydání) edition republish --reason "…"
 ```
 
 Stav vydání: `processed/2025-s{N}/editions/YYYY-MM-DD/edition.json`  
-(`draft` → `approved` → `published`, po publish zmrazeno)
+(`draft` → `approved` → `published`, po publish zmrazeno; `publish-check` v CI hlídá, že se publikovaná facts nezměnila bez republishe)
 
 ## Rychlý workflow (klasický)
 

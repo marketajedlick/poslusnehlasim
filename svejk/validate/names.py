@@ -17,10 +17,19 @@ TEXT_FIELDS = (
     "lead",
     "lead_tail",
     "pointa",
+    "pointa_tail",
+    "pointa_end",
+    "pointa_close",
     "mean",
     "kuriozita",
     "citace_text",
     "citace_autor",
+    "citace2_text",
+    "citace2_autor",
+    "citace3_text",
+    "citace3_autor",
+    "citace4_text",
+    "citace4_autor",
 )
 
 DAY_TEXT_FIELDS = ("dnesni_ucet", "zaver")
@@ -61,8 +70,13 @@ def is_vote_score(party: str) -> bool:
 
 
 def party_matches(expected: str, given: str) -> bool:
-    given = given.split(",")[0].strip()
-    return given == expected or given in expected or expected in given
+    """Přesná shoda klubu, nebo jedna z částí („Zelení, klub Pirátů“ → „Zelení“).
+
+    Dřív stačil podřetězec, takže prošlo i „ANO“ uvnitř delšího názvu.
+    """
+    g = given.split(",")[0].strip().casefold()
+    e = expected.strip().casefold()
+    return g == e or g in [part.strip() for part in e.split(",")]
 
 
 class PoslanecIndex:
@@ -126,6 +140,12 @@ def iter_day_texts(day: dict) -> list[tuple[str, str]]:
         raw = (bullet or "").strip()
         if raw:
             out.append((f"vysledek[{i}]", raw))
+    jazykolam = day.get("jazykolam")
+    if isinstance(jazykolam, dict):
+        for key in ("text", "autor"):
+            raw = (jazykolam.get(key) or "").strip()
+            if raw:
+                out.append((f"jazykolam.{key}", raw))
     return out
 
 

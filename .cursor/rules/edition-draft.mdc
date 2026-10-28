@@ -1,0 +1,21 @@
+---
+description: Workflow generování vydání přes edition brief
+globs:
+  - processed/**/editions/**
+  - processed/**/facts/**
+---
+
+# Edition draft (Cursor agent)
+
+Když uživatel řekne „vygeneruj vydání“, „edition draft“, nebo po `edition brief`:
+
+1. Přečti `.cursor/prompts/edition-draft.md`
+2. Otevři `editions/{YYYY-MM-DD}/brief.md` pro daný den
+3. Doplň `facts/by_topic` a `facts/by_day` podle briefu
+4. Na konci navrhni spustit:
+   - `./run-svejk.sh edition link-phrases --schuze N --den D`
+   - `./run-svejk.sh edition review --schuze N --den D`
+
+Stav vydání: `editions/{ISO}/edition.json` (`draft` → `in_review` → `approved` → `published`).
+
+**Published** vydání neměň — guard v `edition brief` to zablokuje.

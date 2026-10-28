@@ -12,7 +12,7 @@
     "interpelace-hrib-agrofert-novela-30-06",
     "interpelace-rakusan-rukojmi-30-06",
     "interpelace-decroix-lidska-prava-30-06",
-    "novela-z-o-statni-socialni-podpore",
+    "novela-z-o-statni-socialni-podpore-2",
     "novela-z-na-ochranu-zvirat-proti-tyrani"
   ],
   "recommended_slugs": [],
@@ -42,5 +42,14 @@
       "carousel/05-skore.png"
     ],
     "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s24/editions/2026-06-30/assets/caption.txt"
-  }
+  },
+  "republished_at": "2026-10-28T08:38:55.963963+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T08:38:55.963971+00:00",
+      "reason": "Vrácen původní článek o rodičovském (téma -2, steno z 30. 6.); sdílený soubor tématu ho přepsal textem z 8. 7.",
+      "content_hash": "aa46b27aadaea4ce"
+    }
+  ],
+  "published_hash": "aa46b27aadaea4ce"
 }

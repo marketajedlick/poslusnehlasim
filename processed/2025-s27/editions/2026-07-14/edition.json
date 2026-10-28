@@ -6,6 +6,7 @@
   "iso": "2026-07-14",
   "state": "published",
   "topic_slugs": [
+    "debata-filip-turek-14-07",
     "novela-z-o-mezinarodni-spolupraci-pri-sprave-dan",
     "novela-z-o-dani-z-pridane-hodnoty-eu",
     "novela-z-o-zadavani-verejnych-zakazek-eu"
@@ -75,5 +76,14 @@
       "carousel/05-skore.png"
     ],
     "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s27/editions/2026-07-14/assets/caption.txt"
-  }
+  },
+  "republished_at": "2026-10-28T08:38:57.978428+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T08:38:57.978433+00:00",
+      "reason": "Zmrazení stavu po opravách z review (zmatečná hlasování, datová pole hlasování, citát dne, kotvy PSP); změny byly v repu už před zavedením kontroly driftu.",
+      "content_hash": "a8cbbbb1b9d00b6e"
+    }
+  ],
+  "published_hash": "a8cbbbb1b9d00b6e"
 }

@@ -33,11 +33,11 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Stavební zákon: 44 hlasování o ničem",
-  "pocet_hlasovani": 44,
+  "pocet_hlasovani": 42,
   "proslo": false,
   "signaly": {
     "proti_max": 78,
-    "pritomno_min": 62,
+    "pritomno_min": 91,
     "jednomyslne": false,
     "spor": true,
     "prazdny_sal": true

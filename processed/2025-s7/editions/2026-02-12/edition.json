@@ -23,5 +23,14 @@
   },
   "published_at": "backfill",
   "snapshot_dir": "published/2025/7/12.02.2026",
-  "supersedes": null
+  "supersedes": null,
+  "republished_at": "2026-10-28T08:38:58.893065+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T08:38:58.893071+00:00",
+      "reason": "Zmrazení stavu po opravách z review (zmatečná hlasování, datová pole hlasování, citát dne, kotvy PSP); změny byly v repu už před zavedením kontroly driftu.",
+      "content_hash": "62b2a069ce22a124"
+    }
+  ],
+  "published_hash": "62b2a069ce22a124"
 }

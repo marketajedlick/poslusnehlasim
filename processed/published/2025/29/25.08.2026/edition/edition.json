@@ -4,7 +4,7 @@
   "schuze": 29,
   "datum_unl": "25.08.2026",
   "iso": "2026-08-25",
-  "state": "approved",
+  "state": "published",
   "topic_slugs": [
     "debata-prezidentske-veto-rozpoctova-odpovednost-25-srpna",
     "debata-porad-s29-25-srpna"
@@ -53,7 +53,27 @@
     "topics_built_at": "2026-08-28T15:21:55.139411+00:00",
     "fingerprint": "674dbf32014d0848"
   },
-  "published_at": null,
-  "snapshot_dir": null,
-  "supersedes": null
+  "published_at": "2026-09-04T17:24:24.374288+00:00",
+  "snapshot_dir": "published/2025/29/25.08.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s29/editions/2026-08-25/assets/2026-08-25.png",
+    "share": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s29/editions/2026-08-25/assets/2026-08-25.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png",
+      "carousel/04-citace.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s29/editions/2026-08-25/assets/caption.txt"
+  },
+  "republished_at": "2026-10-28T08:38:58.413171+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T08:38:58.413177+00:00",
+      "reason": "Oprava stran: Krainer (STAN), Schrek (ODS), ne Piráti.",
+      "content_hash": "29bc4340f8bd6713"
+    }
+  ],
+  "published_hash": "29bc4340f8bd6713"
 }

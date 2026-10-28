@@ -5,7 +5,9 @@
   "datum_unl": "10.07.2026",
   "iso": "2026-07-10",
   "state": "published",
-  "topic_slugs": [],
+  "topic_slugs": [
+    "novela-z-stavebni-zakon"
+  ],
   "recommended_slugs": [],
   "rejected_slugs": [],
   "brief_path": "editions/2026-07-10/brief.md",
@@ -32,5 +34,14 @@
       "carousel/05-skore.png"
     ],
     "caption": "/Users/marketa/Desktop/poslusnehlasim/processed/2025-s27/editions/2026-07-10/assets/caption.txt"
-  }
+  },
+  "republished_at": "2026-10-28T08:38:57.681494+00:00",
+  "revisions": [
+    {
+      "at": "2026-10-28T08:38:57.681508+00:00",
+      "reason": "Zmrazení stavu po opravách z review (zmatečná hlasování, datová pole hlasování, citát dne, kotvy PSP); změny byly v repu už před zavedením kontroly driftu.",
+      "content_hash": "d43bf24349653350"
+    }
+  ],
+  "published_hash": "d43bf24349653350"
 }

@@ -274,6 +274,19 @@ def cmd_publish_check(args: argparse.Namespace) -> int:
             print(f"  blocked: {item['key']}", file=sys.stderr)
         for item in held:
             print(f"  held bez snapshotu: {item['key']}", file=sys.stderr)
+        for item in result.get("published_drift") or []:
+            print(
+                f"  publikované vydání se změnilo: {item['key']}: {', '.join(item['files'])}\n"
+                f"    → {item['hint']}",
+                file=sys.stderr,
+            )
+        for item in result.get("shared_topic_slugs") or []:
+            print(
+                f"  téma ve více dnech: s{item['schuze']} {item['slug']} ({', '.join(item['days'])})",
+                file=sys.stderr,
+            )
+        for key in result.get("approved_not_published") or []:
+            print(f"  approved bez edition publish: {key}", file=sys.stderr)
         return 1
     print("Publish gate: OK.", file=sys.stderr)
     return 0

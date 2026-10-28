@@ -218,7 +218,17 @@ def run_publish_check(obdobi: int) -> dict:
         }
         for key in missing_held
     ]
-    ok = (not items and not held_items) or not publish_gate_enabled()
+    from svejk.edition.freeze import (
+        check_approved_not_published,
+        check_published_drift,
+        check_shared_topic_slugs,
+    )
+
+    drift = check_published_drift(obdobi)
+    shared = check_shared_topic_slugs(obdobi)
+    bypassed = check_approved_not_published(obdobi)
+    gate_ok = (not items and not held_items) or not publish_gate_enabled()
+    ok = gate_ok and not drift and not shared and not bypassed
     return {
         "obdobi": obdobi,
         "gate_enabled": publish_gate_enabled(),
@@ -228,5 +238,8 @@ def run_publish_check(obdobi: int) -> dict:
         "site_editions": len(list_site_editions(obdobi)),
         "blocked": items,
         "held_missing_snapshots": held_items,
+        "published_drift": drift,
+        "shared_topic_slugs": shared,
+        "approved_not_published": bypassed,
         "ok": ok,
     }

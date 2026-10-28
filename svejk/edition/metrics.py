@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Any
 
 from svejk.build.io import read_json
-from svejk.build.steno_sources import _find_phrase_in_text, collect_steno_sources
+from svejk.build.steno_sources import collect_steno_sources
 from svejk.edition.dates import resolve_edition_day
 from svejk.edition.link_phrases import article_text
 from svejk.edition.state import effective_state, fingerprint_stale, load_edition
@@ -14,7 +14,50 @@ from svejk.review import audit_weak_facts, format_day_review
 from svejk.validate.names import audit_edition_day, summarize_party_issues
 
 
+def _shared_topic_days(paths: SchuzePaths, iso: str, slugs: list[str]) -> dict[str, list[str]]:
+    """Témata dne, která má v topic_slugs i jiný den téže schůze."""
+    out: dict[str, list[str]] = {}
+    wanted = set(slugs)
+    for other in sorted(paths.facts_by_day.glob("*.json")):
+        if other.stem == iso:
+            continue
+        for slug in read_json(other).get("topic_slugs") or []:
+            if slug in wanted:
+                out.setdefault(slug, []).append(other.stem)
+    return out
+
+
+def _rendered_link_texts(paths: SchuzePaths, datum_unl: str) -> dict[str, list[str]]:
+    """Text uvnitř steno-link odkazů ve vykresleném článku, podle slugu."""
+    import re
+    from datetime import datetime
+
+    from svejk.build.article_fields import ARTICLE_PROSE_FIELDS
+    from svejk.build.day_content import build_den_content
+
+    iso = datetime.strptime(datum_unl, "%d.%m.%Y").strftime("%Y-%m-%d")
+    day_path = paths.facts_by_day / f"{iso}.json"
+    if not day_path.is_file():
+        return {}
+    content = build_den_content(day_path, paths, link_mode="pages")
+    out: dict[str, list[str]] = {}
+    for item in content.items:
+        texts: list[str] = []
+        for field in ARTICLE_PROSE_FIELDS:
+            for m in re.finditer(
+                r'<a\b[^>]*class="steno-link"[^>]*>(.*?)</a>', getattr(item, field, "") or "", re.S
+            ):
+                texts.append(" ".join(re.sub(r"<[^>]+>", "", m.group(1)).split()).lower())
+        out[item.slug] = texts
+    return out
+
+
 def _link_phrase_coverage(paths: SchuzePaths, datum_unl: str, slugs: list[str]) -> dict[str, Any]:
+    """Kolik citací se steno_id má ve *vykresleném* článku odkaz (dřív se měřilo
+    proti surovým facts, takže fráze s číslicemi hlásily 100 % a na webu chyběly)."""
+    from svejk.build.steno_sources import _phrase_variants
+
+    rendered = _rendered_link_texts(paths, datum_unl)
     total = linked = 0
     missing: list[str] = []
     for slug in slugs:
@@ -24,7 +67,11 @@ def _link_phrase_coverage(paths: SchuzePaths, datum_unl: str, slugs: list[str]) 
         data = read_json(fp)
         if not data.get("publikovat", True):
             continue
-        article = article_text(data)
+        links = rendered.get(slug, [])
+        cards = [
+            _norm_citace(data.get(f"{prefix}_text") or "")
+            for prefix in ("citace", "citace2", "citace3", "citace4")
+        ]
         for i, f in enumerate(data.get("fakty") or []):
             if not isinstance(f, dict):
                 continue
@@ -32,8 +79,12 @@ def _link_phrase_coverage(paths: SchuzePaths, datum_unl: str, slugs: list[str]) 
                 continue
             total += 1
             phrase = (f.get("link_phrase") or "").strip()
-            if phrase and _find_phrase_in_text(article, phrase):
+            variants = [" ".join(v.split()).lower() for v in _phrase_variants(phrase)] if phrase else []
+            quote = _norm_citace(f.get("citace") or "")
+            if any(v in t or t in v for v in variants for t in links if t):
                 linked += 1
+            elif quote and any(_same_quote(quote, c) for c in cards if c):
+                linked += 1  # citace v kartě článku má vlastní odkaz na steno
             else:
                 missing.append(f"{slug}[{i}]")
     pct = round(100 * linked / total, 1) if total else 100.0
@@ -133,6 +184,8 @@ def _citace_in_steno(paths: SchuzePaths, slugs: list[str]) -> dict[str, Any]:
 def run_edition_metrics(
     paths: SchuzePaths,
     den: str,
+    *,
+    save: bool = True,
 ) -> dict[str, Any]:
     datum_unl, iso, day_path = resolve_edition_day(paths, den)
     doc = load_edition(paths, iso)
@@ -165,6 +218,9 @@ def run_edition_metrics(
     quote_dupes = _jazykolam_duplicate_quotes(paths, day, slugs)
     if quote_dupes:
         errors.append("citát dne je stejný jako citát v článku")
+    shared = _shared_topic_days(paths, iso, slugs)
+    for slug, days in sorted(shared.items()):
+        errors.append(f"téma {slug} je i ve vydání {', '.join(days)} (úprava změní oba dny)")
     metrics = {
         "state": effective_state(doc, paths),
         "stale": fingerprint_stale(doc, paths),
@@ -175,28 +231,38 @@ def run_edition_metrics(
         "steno_passages": steno_blocks,
         "steno_missing_article_phrase": steno_missing,
         "jazykolam_duplicates": quote_dupes,
+        "shared_topics": shared,
         "ok": not errors,
         "errors": errors,
     }
-    doc["metrics"] = metrics
-    from svejk.edition.state import save_edition
+    if save:
+        doc["metrics"] = metrics
+        from svejk.edition.state import save_edition
 
-    save_edition(paths, iso, doc)
+        save_edition(paths, iso, doc)
     return metrics
 
 
-def format_edition_review(paths: SchuzePaths, den: str, *, as_json: bool = False) -> str:
+def format_edition_review(
+    paths: SchuzePaths,
+    den: str,
+    *,
+    as_json: bool = False,
+    save: bool = True,
+    with_metrics: bool = False,
+):
     import json
 
     datum_unl, iso, _ = resolve_edition_day(paths, den)
-    metrics = run_edition_metrics(paths, den)
+    metrics = run_edition_metrics(paths, den, save=save)
     day_report = format_day_review(paths, den)
     if as_json:
-        return json.dumps(
+        out = json.dumps(
             {"metrics": metrics, "review": day_report},
             ensure_ascii=False,
             indent=2,
         )
+        return (out, metrics) if with_metrics else out
     lines = [
         f"\nEDITION REVIEW  {paths.obdobi}-s{paths.schuze}  {datum_unl}",
         f"Stav: {metrics['state']}" + (" (stale data)" if metrics.get("stale") else ""),
@@ -222,4 +288,5 @@ def format_edition_review(paths: SchuzePaths, den: str, *, as_json: bool = False
             lines.append(f"  {item['slug']}{ctx}: {item['message']}")
         if len(party_items) > 12:
             lines.append(f"  … +{len(party_items) - 12} dalších")
-    return "\n".join(lines)
+    out = "\n".join(lines)
+    return (out, metrics) if with_metrics else out
