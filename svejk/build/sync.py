@@ -224,10 +224,10 @@ def run_sync(
         votes_changed = _votes_need_update(unl_stats, stored_votes) or unl_result.get("changed")
         steno_missing = _steno_cache_missing(paths, state, cislo)
         steno_incomplete = _steno_download_incomplete(paths, state, cislo)
-        if steno_missing or steno_incomplete:
-            steno_new = True
-        else:
-            steno_new = _steno_probe_has_new(client, obdobi, cislo, steno_stats["last_poradi"])
+        # Za posledním známým záznamem (soubor nebo sync-state, i po lokálním PSP fetchi)
+        known_poradi = max(steno_stats["last_poradi"], _saved_steno_poradi(state, cislo))
+        steno_published = _steno_probe_has_new(client, obdobi, cislo, known_poradi)
+        steno_new = steno_missing or steno_incomplete or steno_published
         pipeline_missing = _needs_pipeline(paths)
 
         needs_work = votes_changed or steno_new or steno_missing or steno_incomplete
@@ -240,6 +240,7 @@ def run_sync(
             "votes_stored": stored_votes,
             "steno_stored": steno_stats,
             "steno_new_available": steno_new,
+            "steno_published": steno_published,
             "steno_cache_missing": steno_missing,
             "steno_download_incomplete": steno_incomplete,
             "pipeline_missing": pipeline_missing,

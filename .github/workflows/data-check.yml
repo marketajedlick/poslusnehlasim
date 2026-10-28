@@ -1,4 +1,4 @@
-name: Check new PSP data
+name: Check new PSP steno
 
 on:
   workflow_dispatch:
@@ -23,12 +23,14 @@ jobs:
 
       - uses: ./.github/actions/restore-steno-cache
 
-      - name: Check for new PSP data
+      - name: Check for new steno (Hlídač)
         env:
           HLIDAC_TOKEN: ${{ secrets.HLIDAC_TOKEN }}
           HLIDAC_RATE_LIMIT_S: "1.0"
         run: |
           if [ -z "$HLIDAC_TOKEN" ]; then
-            echo "::warning::HLIDAC_TOKEN není nastaven — kontrola uvidí jen změny v UNL hlasování."
+            echo "::error::HLIDAC_TOKEN není nastaven — nové steno nejde zjistit."
+            exit 1
           fi
-          ./run-svejk.sh sync --obdobi 2025 --check-only --fail-if-pending -q
+          # Červená jen při nových stenozáznamech; změny UNL/hlasování neřeší (stáhne je sync)
+          ./run-svejk.sh sync --obdobi 2025 --check-only --fail-if-new-steno -q
