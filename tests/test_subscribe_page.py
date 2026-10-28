@@ -1,6 +1,6 @@
 """Samostatná subscribe stránka."""
 
-from svejk.build.html import render_subscribe_html
+from svejk.build.static_pages_html import render_subscribe_html
 
 
 def test_subscribe_page_has_form():

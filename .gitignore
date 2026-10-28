@@ -21,3 +21,6 @@ svejk.ipynb
 seo-redesign/
 # Kopie raw/steno.jsonl v kořeni (patří do processed/*/raw/, cache v CI)
 /steno*.jsonl
+
+# Cache vykreslených OG/share PNG (export-pages)
+.cache/

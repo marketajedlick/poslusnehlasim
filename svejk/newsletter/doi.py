@@ -29,7 +29,7 @@ def _doi_sender() -> tuple[str, str, str]:
 
 
 def _doi_content(*, base_path: str = "") -> tuple[str, str, str]:
-    from svejk.build.html import render_doi_email_html
+    from svejk.build.email_html import render_doi_email_html
 
     cfg = NewsletterConfig.from_env()
     return render_doi_email_html(

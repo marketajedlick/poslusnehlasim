@@ -259,6 +259,8 @@ def _prijmeni_tvary(prijmeni: str, pohlavi: str) -> set[str]:
 class _MatchRule:
     pattern: re.Pattern[str]
     klub: str
+    # Literál, který v textu musí být, aby měl regex smysl (rychlý předfiltr).
+    needle: str = ""
 
 
 class PoslanecRegistry:
@@ -288,6 +290,7 @@ class PoslanecRegistry:
                             _MatchRule(
                                 self._surname_pattern(tvar, block_jmeno=p.jmeno),
                                 _display_klub(p),
+                                tvar,
                             ),
                         )
                     )
@@ -297,6 +300,7 @@ class PoslanecRegistry:
                         _MatchRule(
                             self._full_name_pattern(p.jmeno, p.prijmeni, p.pohlavi),
                             _display_klub(p),
+                            p.jmeno,
                         ),
                     )
                 )
@@ -309,6 +313,7 @@ class PoslanecRegistry:
                         _MatchRule(
                             self._full_name_pattern(p.jmeno, p.prijmeni, p.pohlavi),
                             _display_klub(p),
+                            p.jmeno,
                         ),
                     )
                 )
@@ -322,6 +327,7 @@ class PoslanecRegistry:
                             _MatchRule(
                                 self._surname_pattern(tvar, block_jmeno=p0.jmeno),
                                 _display_klub(p0),
+                                tvar,
                             ),
                         )
                     )
@@ -361,6 +367,9 @@ class PoslanecRegistry:
 
         matches: list[tuple[int, int, str, str]] = []
         for rule in self._rules:
+            # ~200 regexů na každý kus textu stálo 9–24 s exportu; většina jmen v textu není.
+            if rule.needle and rule.needle not in text:
+                continue
             for m in rule.pattern.finditer(text):
                 matches.append((m.start(), m.end(), m.group(0), rule.klub))
 

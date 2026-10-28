@@ -99,15 +99,31 @@ def write_steno_refs(paths: SchuzePaths):
     return out
 
 
+_STENO_INDEX_CACHE: dict[tuple[str, int, int], dict[str, dict[str, Any]]] = {}
+
+
 def _load_steno_index(paths: SchuzePaths) -> dict[str, dict[str, Any]]:
-    if paths.steno_jsonl.is_file():
-        return {r["id"]: r for r in iter_jsonl(paths.steno_jsonl) if r.get("id")}
-    refs_path = _steno_refs_path(paths)
-    if refs_path.is_file():
-        data = read_json(refs_path)
-        if isinstance(data, dict):
-            return data
-    return {}
+    """Index stena podle id. Cache podle (soubor, mtime, velikost): export dřív četl
+    steno.jsonl ~980× (16–21 s). Záznamy ber jako read-only."""
+    src = paths.steno_jsonl if paths.steno_jsonl.is_file() else _steno_refs_path(paths)
+    if not src.is_file():
+        return {}
+    st = src.stat()
+    key = (str(src), st.st_mtime_ns, st.st_size)
+    cached = _STENO_INDEX_CACHE.get(key)
+    if cached is not None:
+        return cached
+    if src == paths.steno_jsonl:
+        data: dict[str, dict[str, Any]] = {
+            r["id"]: r for r in iter_jsonl(paths.steno_jsonl) if r.get("id")
+        }
+    else:
+        raw = read_json(src)
+        data = raw if isinstance(raw, dict) else {}
+    if len(_STENO_INDEX_CACHE) > 64:
+        _STENO_INDEX_CACHE.clear()
+    _STENO_INDEX_CACHE[key] = data
+    return data
 
 
 _STENO_SITTING = re.compile(r"^(\d+)_(\d+)_")
@@ -268,6 +284,49 @@ def _psp_url_cache_path(paths: SchuzePaths):
 
 # Citace, které se na PSP nenašly (nebo nešla síť): drží se jen po dobu běhu procesu.
 _UNRESOLVED_THIS_RUN: dict[tuple[int, int, str], str] = {}
+# Mezi běhy: nenalezené citace se na PSP zkusí znovu nejdřív po _UNRESOLVED_TTL
+# (dřív každý export stahoval desítky stránek PSP kvůli týmž citacím, ~6 s).
+_UNRESOLVED_TTL_S = 24 * 3600
+
+
+def _psp_unresolved_path(paths: SchuzePaths):
+    return paths.aligned / "psp_url_unresolved.json"
+
+
+def _recently_unresolved(paths: SchuzePaths, cache_key: str) -> str | None:
+    """Odhad URL z posledního neúspěšného dohledání, pokud je čerstvý."""
+    import time
+
+    path = _psp_unresolved_path(paths)
+    if not path.is_file():
+        return None
+    try:
+        data = read_json(path)
+    except ValueError:
+        return None
+    entry = data.get(cache_key)
+    if not isinstance(entry, dict) or not isinstance(entry.get("at"), (int, float)):
+        return None
+    if time.time() - entry["at"] >= _UNRESOLVED_TTL_S:
+        return None
+    return str(entry.get("url") or "") or None
+
+
+def _mark_unresolved(paths: SchuzePaths, cache_key: str, url: str) -> None:
+    import time
+
+    path = _psp_unresolved_path(paths)
+    data: dict[str, dict] = {}
+    if path.is_file():
+        try:
+            data = read_json(path)
+        except ValueError:
+            data = {}
+    data[cache_key] = {"at": time.time(), "url": url}
+    try:
+        write_json(path, data)
+    except OSError:
+        pass
 _OTHER_SITTING_RESOLVERS: dict[tuple[int, int], "PspUrlResolver"] = {}
 # Seznam stránek stenoprotokolu stažený z PSP v tomto běhu (obnovuje se nejvýš jednou).
 _PAGE_URLS_THIS_RUN: dict[tuple[int, int], list[str]] = {}
@@ -428,6 +487,10 @@ class PspUrlResolver:
         run_key = (self.paths.obdobi, self.paths.schuze, cache_key)
         if run_key in _UNRESOLVED_THIS_RUN:
             return _UNRESOLVED_THIS_RUN[run_key]
+        recent = _recently_unresolved(self.paths, cache_key)
+        if recent:
+            _UNRESOLVED_THIS_RUN[run_key] = recent
+            return recent
         try:
             self._load_pages()
             resolved = self._resolve_online(speaker, fallback_url, citace)
@@ -443,6 +506,7 @@ class PspUrlResolver:
             # build zkusí znovu; v tomhle běhu už ale stránky PSP znovu nestahovat
             # (export volá resolve pro každý výstup dne).
             _UNRESOLVED_THIS_RUN[run_key] = resolved
+            _mark_unresolved(self.paths, cache_key, resolved)
             return resolved
         url_cache[cache_key] = resolved
         self._save_url_cache()

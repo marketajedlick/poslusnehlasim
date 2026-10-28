@@ -1,0 +1,326 @@
+(function(){
+  var desktop = window.matchMedia('(min-width: 768px)');
+  var canFetch = location.protocol !== 'file:';
+  var contentEl = document.getElementById('edition-content');
+  var mainEl = document.getElementById('edition-main');
+  var turning = false;
+
+  function headMetaFromDoc(doc){
+    var meta = {
+      title: doc.querySelector('title')?.textContent || '',
+      description: doc.querySelector('meta[name="description"]')?.getAttribute('content') || '',
+      canonical: doc.querySelector('link[rel="canonical"]')?.getAttribute('href') || '',
+      social: [],
+      jsonLd: []
+    };
+    doc.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]').forEach(function(el){
+      meta.social.push({
+        property: el.getAttribute('property'),
+        name: el.getAttribute('name'),
+        content: el.getAttribute('content') || ''
+      });
+    });
+    doc.querySelectorAll('script[type="application/ld+json"]').forEach(function(el){
+      meta.jsonLd.push(el.textContent || '');
+    });
+    return meta;
+  }
+
+  function applyHeadMeta(meta){
+    if (meta.title) document.title = meta.title;
+    var desc = document.querySelector('meta[name="description"]');
+    if (desc && meta.description) desc.setAttribute('content', meta.description);
+    var canon = document.querySelector('link[rel="canonical"]');
+    if (canon && meta.canonical) canon.setAttribute('href', meta.canonical);
+    document.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]').forEach(function(el){
+      el.remove();
+    });
+    var insertBefore = document.querySelector('script[type="application/ld+json"]');
+    meta.social.forEach(function(tag){
+      var el = document.createElement('meta');
+      if (tag.property) el.setAttribute('property', tag.property);
+      if (tag.name) el.setAttribute('name', tag.name);
+      el.setAttribute('content', tag.content);
+      if (insertBefore) document.head.insertBefore(el, insertBefore);
+      else document.head.appendChild(el);
+    });
+    document.querySelectorAll('script[type="application/ld+json"]').forEach(function(el){
+      el.remove();
+    });
+    meta.jsonLd.forEach(function(text){
+      var script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.textContent = text;
+      document.head.appendChild(script);
+    });
+  }
+
+  function fetchEdition(href){
+    return fetch(new URL(href, location.href).href, { credentials: 'same-origin' })
+      .then(function(res){
+        if (!res.ok) throw new Error('fetch');
+        return res.text();
+      })
+      .then(function(html){
+        var doc = new DOMParser().parseFromString(html, 'text/html');
+        var inner = doc.getElementById('edition-content');
+        var rail = doc.querySelector('.edition-rail');
+        if (!inner) throw new Error('no content');
+        return {
+          title: doc.querySelector('title')?.textContent || document.title,
+          head: headMetaFromDoc(doc),
+          inner: inner.innerHTML,
+          rail: rail ? rail.innerHTML : null
+        };
+      });
+  }
+
+  function scrollToEditionStart(){
+    if (mainEl) mainEl.scrollIntoView({ block: 'start' });
+    else window.scrollTo(0, 0);
+  }
+
+  function applyEdition(page, href){
+    if (contentEl) contentEl.innerHTML = page.inner;
+    var railEl = document.querySelector('.edition-rail');
+    if (railEl && page.rail) railEl.innerHTML = page.rail;
+    document.title = page.title;
+    if (page.head) applyHeadMeta(page.head);
+    history.pushState({ href: href }, '', new URL(href, location.href).pathname);
+    bindInteractions();
+    if (window.__phInitCorrections) window.__phInitCorrections();
+    if (window.__phInitReactions) window.__phInitReactions();
+    scrollToEditionStart();
+    // Čtečka obrazovky: po přechodu přesunout fokus na nadpis nového vydání.
+    var heading = contentEl && contentEl.querySelector('h1, h2');
+    if (heading) {
+      if (!heading.hasAttribute('tabindex')) heading.setAttribute('tabindex', '-1');
+      heading.focus({ preventScroll: true });
+    }
+  }
+
+  function navigate(href){
+    if (!href || turning || !canFetch) {
+      if (href) location.href = href;
+      return;
+    }
+    turning = true;
+    document.body.classList.add('is-navigating');
+    fetchEdition(href).then(function(page){
+      applyEdition(page, href);
+    }).catch(function(){
+      location.href = href;
+    }).finally(function(){
+      turning = false;
+      document.body.classList.remove('is-navigating');
+    });
+  }
+
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('.pager-tag[href], .session-cal-cell a, .session-cal-nav[href]');
+    if (!a || !a.href) return;
+    // Cmd/Ctrl/Shift/prostřední tlačítko = nový panel, ne SPA přechod.
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    navigate(a.href);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.target && ['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)) return;
+    var prev = document.querySelector('.pager-tag[href]');
+    var links = document.querySelectorAll('.pager-tag[href]');
+    var prevLink = null, nextLink = null;
+    links.forEach(function(el){
+      if (el.textContent.trim().startsWith('←')) prevLink = el;
+      if (el.textContent.trim().endsWith('→')) nextLink = el;
+    });
+    if (e.key === 'ArrowLeft' && prevLink){ e.preventDefault(); navigate(prevLink.href); }
+    if (e.key === 'ArrowRight' && nextLink){ e.preventDefault(); navigate(nextLink.href); }
+  });
+
+  window.addEventListener('popstate', function(){
+    if (!canFetch || turning) return;
+    fetchEdition(history.state?.href || location.href).then(function(page){
+      applyEdition(page, history.state?.href || location.href);
+    }).catch(function(){ location.reload(); });
+  });
+
+  if (canFetch) history.replaceState({ href: location.href }, '', location.href);
+
+  var termRoot = document.getElementById('term-sheet-root');
+  var termOverlay = document.getElementById('term-sheet-overlay');
+  var termPanel = document.getElementById('term-sheet-panel');
+  var termLabel = document.getElementById('term-sheet-label');
+  var termDef = document.getElementById('term-sheet-def');
+  var termClose = document.getElementById('term-sheet-close');
+
+  var shareRoot = document.getElementById('share-sheet-root');
+  var shareOverlay = document.getElementById('share-sheet-overlay');
+  var sharePanel = document.getElementById('share-sheet-panel');
+  var shareLabel = document.getElementById('share-sheet-label');
+  var shareTwitter = document.getElementById('share-twitter');
+  var shareDownload = document.getElementById('share-download');
+  var shareCopy = document.getElementById('share-copy');
+  var shareClose = document.getElementById('share-sheet-close');
+  var shareTarget = null;
+
+  function sharePageUrlPlain(){
+    var root = document.getElementById('edition-page');
+    var domain = (root && root.getAttribute('data-share-domain')) || 'poslusnehlasim.cz';
+    return domain + location.pathname;
+  }
+
+  function sharePageUrlFull(){
+    var plain = sharePageUrlPlain();
+    if (/^https?:\/\//i.test(plain)) return plain;
+    return 'https://' + plain;
+  }
+
+  function shareTweetText(btn){
+    var custom = btn.getAttribute('data-share-text');
+    if (custom) return custom.replace(/\\n/g, '\n');
+    var title = btn.getAttribute('data-share-card') || '';
+    var url = sharePageUrlPlain();
+    return title ? title + '\n\n' + url : url;
+  }
+
+  function twitterIntentUrl(text, url){
+    var params = new URLSearchParams();
+    var body = (text || '').trim();
+    var link = (url || '').trim();
+    if (body && link){
+      var plain = sharePageUrlPlain();
+      if (body.endsWith(link)) body = body.slice(0, -link.length).trim();
+      else if (body.endsWith(plain)) body = body.slice(0, -plain.length).trim();
+    }
+    if (body) params.set('text', body);
+    if (link) params.set('url', link);
+    return 'https://twitter.com/intent/tweet?' + params.toString();
+  }
+
+  function copyToClipboard(text, btn, doneLabel){
+    function done(){
+      if (!btn) return;
+      var orig = btn.textContent;
+      btn.textContent = doneLabel || '✓ Zkopírováno';
+      setTimeout(function(){ btn.textContent = orig; }, 2000);
+    }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+      return;
+    }
+    fallback();
+  }
+
+  function downloadShareImage(url){
+    // Cloudflare/Fastly cacheují /share/*.png podle URL. Bez bustu zůstane starý text po změně závěru.
+    var bust = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_=' + Date.now();
+    var a = document.createElement('a');
+    a.href = bust;
+    a.download = 'poslusne-hlasim.png';
+    a.rel = 'noopener';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  function closeSheets(){
+    if (termRoot) termRoot.hidden = true;
+    if (shareRoot) shareRoot.hidden = true;
+    if (shareTwitter){
+      shareTwitter.disabled = true;
+      shareTwitter.onclick = null;
+    }
+    if (shareCopy){
+      shareCopy.disabled = true;
+      shareCopy.onclick = null;
+    }
+    if (shareDownload){
+      shareDownload.hidden = true;
+      shareDownload.disabled = true;
+      shareDownload.onclick = null;
+    }
+    shareTarget = null;
+  }
+
+  function openTerm(btn){
+    if (!termRoot || !termLabel || !termDef) return;
+    termLabel.textContent = btn.getAttribute('data-term') || '';
+    termDef.textContent = btn.getAttribute('data-def') || '';
+    termRoot.hidden = false;
+    if (desktop.matches && termPanel){
+      termPanel.classList.add('sheet-popover');
+    } else if (termPanel) {
+      termPanel.classList.remove('sheet-popover');
+    }
+    termClose?.focus();
+  }
+
+  function openShare(btn){
+    if (!shareRoot || !shareLabel) return;
+    shareTarget = btn;
+    shareLabel.textContent = btn.getAttribute('data-share-card') || '';
+    var text = shareTweetText(btn);
+    var imageUrl = btn.getAttribute('data-share-image');
+    if (shareTwitter){
+      shareTwitter.disabled = false;
+      shareTwitter.onclick = function(){
+        window.open(twitterIntentUrl(text, sharePageUrlFull()), '_blank', 'noopener,noreferrer');
+      };
+    }
+    if (shareDownload){
+      if (imageUrl){
+        shareDownload.hidden = false;
+        shareDownload.disabled = false;
+        shareDownload.onclick = function(){
+          downloadShareImage(imageUrl);
+        };
+      } else {
+        shareDownload.hidden = true;
+        shareDownload.disabled = true;
+        shareDownload.onclick = null;
+      }
+    }
+    if (shareCopy){
+      shareCopy.disabled = false;
+      shareCopy.onclick = function(){
+        copyToClipboard(sharePageUrlFull(), shareCopy, '✓ Zkopírováno');
+      };
+    }
+    shareRoot.hidden = false;
+    if (desktop.matches && sharePanel) sharePanel.classList.add('sheet-popover');
+    else if (sharePanel) sharePanel.classList.remove('sheet-popover');
+    shareTwitter?.focus();
+  }
+
+  function bindInteractions(){
+    document.querySelectorAll('.term-term').forEach(function(btn){
+      btn.onclick = function(e){ e.preventDefault(); openTerm(btn); };
+    });
+    document.querySelectorAll('.share-btn').forEach(function(btn){
+      btn.onclick = function(e){ e.preventDefault(); openShare(btn); };
+    });
+  }
+
+  termOverlay?.addEventListener('click', closeSheets);
+  termClose?.addEventListener('click', closeSheets);
+  shareOverlay?.addEventListener('click', closeSheets);
+  shareClose?.addEventListener('click', closeSheets);
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeSheets();
+  });
+
+  bindInteractions();
+})();

@@ -75,9 +75,15 @@ class ReactionsScriptTemplateTest(unittest.TestCase):
             t=load_strings(),
         )
         self.assertIn('id="reactions-config"', html)
-        self.assertLess(html.index('id="reactions-config"'), html.index("<script>"))
+        self.assertLess(html.index('id="reactions-config"'), html.index("<script"))
         self.assertIn("https://worker.example/reactions", html)
-        self.assertIn("__phInitReactions", html)
+        self.assertIn("/js/reactions.js?v=", html)
+        from pathlib import Path
+
+        self.assertIn(
+            "__phInitReactions",
+            Path("svejk/static/js/reactions.js").read_text(encoding="utf-8"),
+        )
 
 
 if __name__ == "__main__":

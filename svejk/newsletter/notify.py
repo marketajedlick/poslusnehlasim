@@ -87,7 +87,7 @@ def _edition_export_path(edition: Edition, out_dir: Path, base_path: str) -> Pat
 
 
 def _build_email_body(edition: Edition, *, site_url: str, base_path: str) -> tuple[str, str, str]:
-    from svejk.build.html import render_email_html
+    from svejk.build.email_html import render_email_html
 
     return render_email_html(edition, site_url=site_url, base_path=base_path)
 

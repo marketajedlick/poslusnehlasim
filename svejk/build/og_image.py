@@ -383,6 +383,36 @@ def _draw_card_footer(
         _draw_share_icon(draw, share_cx, share_cy)
 
 
+_PNG_CACHE_DIR = Path(__file__).resolve().parents[2] / ".cache" / "og"
+
+
+def _png_cache_path(kind: str, **params: str) -> Path:
+    """PNG se kreslí ~170× za export (8 s, 10 MB); stejné vstupy = stejný obrázek.
+    Klíč zahrnuje i zdroják tohoto modulu, takže změna designu cache zneplatní."""
+    h = hashlib.sha256()
+    h.update(Path(__file__).read_bytes())
+    h.update(kind.encode())
+    for key in sorted(params):
+        h.update(f"\0{key}={params[key]}".encode())
+    return _PNG_CACHE_DIR / f"{kind}-{h.hexdigest()[:24]}.png"
+
+
+def _from_png_cache(cache: Path, out: Path) -> bool:
+    if not cache.is_file():
+        return False
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_bytes(cache.read_bytes())
+    return True
+
+
+def _to_png_cache(out: Path, cache: Path) -> None:
+    try:
+        cache.parent.mkdir(parents=True, exist_ok=True)
+        cache.write_bytes(out.read_bytes())
+    except OSError:
+        pass
+
+
 def render_og_image(
     dest: Path | str,
     *,
@@ -394,6 +424,16 @@ def render_og_image(
 ) -> Path:
     """Vykreslí 1200×630 PNG ve stylu card-hero (krémové pozadí, žlutá karta)."""
     out = Path(dest)
+    cache = _png_cache_path(
+        "og",
+        date_label=date_label,
+        headline=headline,
+        zaver_key=zaver_key,
+        quote_body=quote_body,
+        sign=sign,
+    )
+    if _from_png_cache(cache, out):
+        return out
     out.parent.mkdir(parents=True, exist_ok=True)
 
     img = Image.new("RGB", (OG_WIDTH, OG_HEIGHT), _CREAM)
@@ -469,6 +509,7 @@ def render_og_image(
     draw.text((OG_WIDTH - outer_x - date_w, footer_y), date_label, fill=_INK, font=footer_font)
 
     img.save(out, format="PNG", optimize=True)
+    _to_png_cache(out, cache)
     return out
 
 
@@ -504,6 +545,9 @@ def render_share_hero_image(
 ) -> Path:
     """Vykreslí 1080×1080 žlutou hero kartu (card-hero na webu)."""
     out = Path(dest)
+    cache = _png_cache_path("share", zaver_key=zaver_key, quote_body=quote_body, sign=sign)
+    if _from_png_cache(cache, out):
+        return out
     out.parent.mkdir(parents=True, exist_ok=True)
 
     img = Image.new("RGB", (SHARE_HERO_WIDTH, SHARE_HERO_HEIGHT), _YELLOW)
@@ -561,6 +605,7 @@ def render_share_hero_image(
     )
 
     img.save(out, format="PNG", optimize=True)
+    _to_png_cache(out, cache)
     return out
 
 

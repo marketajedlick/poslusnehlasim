@@ -321,6 +321,7 @@ def _edition_weight(edition: Edition) -> tuple[int, int]:
     return _edition_weight_key(edition.obdobi, edition.schuze, edition.datum_unl)
 
 
+@lru_cache(maxsize=1024)
 def _edition_headline(edition: Edition, *, max_len: int = 80) -> str:
     from svejk.build.day_content import build_den_content
     from svejk.build.seo import article_headline
@@ -837,6 +838,8 @@ def archive_text_list(
 
 def clear_edition_cache() -> None:
     list_obdobi_editions.cache_clear()
+    _edition_headline.cache_clear()
+    _edition_weight_key.cache_clear()
     from svejk.build.publish import clear_publish_cache
 
     clear_publish_cache()

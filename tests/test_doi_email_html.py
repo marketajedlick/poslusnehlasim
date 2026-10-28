@@ -6,7 +6,7 @@ import re
 import unittest
 from pathlib import Path
 
-from svejk.build.html import (
+from svejk.build.email_html import (
     _inline_email_body_link_styles,
     newsletter_subject,
     render_doi_email_html,
