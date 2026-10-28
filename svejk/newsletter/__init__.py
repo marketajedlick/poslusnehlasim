@@ -5,7 +5,6 @@ from svejk.newsletter.api import (
     add_subscriber,
     list_id_from_env,
     list_subscribers,
-    send_campaign,
     subscribe_list_id_from_env,
     update_list,
 )
@@ -22,7 +21,6 @@ __all__ = [
     "list_id_from_env",
     "subscribe_list_id_from_env",
     "list_subscribers",
-    "send_campaign",
     "sync_doi_to_ecomail",
     "update_list",
     "write_feed_xml",

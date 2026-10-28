@@ -97,6 +97,11 @@ _DRAFTED_KEEP = 60
 _MAX_PENDING = 5
 
 
+def _keep_last(mapping: dict[str, Any], n: int) -> dict[str, Any]:
+    keys = sorted(mapping, key=lambda k: _id_sort_key(k))[-n:]
+    return {k: mapping[k] for k in keys}
+
+
 def _id_sort_key(eid: str) -> tuple[datetime, int]:
     """Chronologické pořadí edition_id "obdobi/schuze/DD.MM.RRRR"."""
     try:
@@ -288,6 +293,7 @@ def _notify_one(
             api_key=api_key,
             list_id=list_id,
             subject=subject,
+            title=f"{subject} [{eid}]",
             html_body=html,
             plain_body=plain,
             from_name=from_name,
@@ -322,6 +328,10 @@ def _notify_one(
             "last_drafted_at": datetime.now(timezone.utc).isoformat(),
             "last_subject": subject,
             "drafted_ids": drafted_ids[-_DRAFTED_KEEP:],
+            # ID konceptu v Ecomailu pro každé vydání (dohledání duplicit / ruční úklid).
+            "campaigns": _keep_last(
+                {**(now_state.get("campaigns") or {}), eid: created.get("id")}, _DRAFTED_KEEP
+            ),
         }
     )
     result["drafted"] = True

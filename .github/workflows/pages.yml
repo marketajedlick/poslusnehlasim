@@ -18,7 +18,9 @@ on:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  # Nerušit rozběhnutý build: zrušení mezi konceptem v Ecomailu a commitem stavu
+  # vedlo ke druhému konceptu stejného vydání. Další push jen počká.
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -72,11 +74,16 @@ jobs:
           ECOMAIL_FROM_EMAIL: ${{ secrets.ECOMAIL_FROM_EMAIL }}
           EVENT_NAME: ${{ github.event_name }}
           NEWSLETTER_FORCE: ${{ inputs.newsletter_force }}
+          REF_NAME: ${{ github.ref_name }}
         run: |
           if [ -z "$ECOMAIL_API_KEY" ]; then
             echo "ECOMAIL_API_KEY není nastaven — přeskočeno"
             exit 0
           fi
+          # Stav z aktuálního main (jiný běh mohl mezitím vytvořit koncept), ne ze SHA tohoto buildu.
+          git fetch --depth=1 origin "$REF_NAME" \
+            && git checkout FETCH_HEAD -- processed/newsletter-state.json \
+            || echo "::warning::newsletter-state.json z origin se nepodařilo načíst"
           FORCE_FLAG=""
           if [ "$EVENT_NAME" = "workflow_dispatch" ] && [ "$NEWSLETTER_FORCE" = "true" ]; then
             FORCE_FLAG="--force"

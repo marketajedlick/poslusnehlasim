@@ -20,9 +20,10 @@ NOTIFY_DEDUPE_WINDOW = "86400"
 DOI_DAILY_MAX = "300"
 # Cache GET /reactions (s)
 REACTIONS_CACHE_TTL = "60"
-# Korektury: 20 POST/hod z IP
+# Korektury: 20 POST/hod z IP, 50/den celkem (sdílí kvótu Resendu s potvrzovacími maily)
 CORRECTIONS_RATE_LIMIT_IP_MAX = "20"
 CORRECTIONS_RATE_LIMIT_IP_WINDOW = "3600"
+CORRECTIONS_DAILY_MAX = "50"
 # Reakce: 60 POST/hod z IP
 REACTIONS_RATE_LIMIT_IP_MAX = "60"
 REACTIONS_RATE_LIMIT_IP_WINDOW = "3600"
@@ -38,6 +39,7 @@ id = "00000000000000000000000000000000"
 # RESEND_FROM_EMAIL / RESEND_FROM_NAME — odesílatel korektur (fallback ECOMAIL_FROM_EMAIL)
 # ECOMAIL_SUBSCRIBE_LIST_ID je v [vars] výše (dev/test = seznam 3)
 # TURNSTILE_SECRET_KEY — volitelně; pak odběr vyžaduje Turnstile token (web: SVEJK_TURNSTILE_SITE_KEY)
+# REACTIONS_SALT — volitelně; sůl pro hash IP u hlasů reakcí (jinak ALLOWED_ORIGIN)
 #
 # Volitelně atomický rate limit (binding Rate Limiting) místo KV — worker ho použije,
 # když binding SUBSCRIBE_LIMITER / REACTIONS_LIMITER existuje (jinak zůstává KV):
