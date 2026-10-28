@@ -11,6 +11,9 @@ from pathlib import Path
 from typing import Any
 
 
+ZMATECNE_MEMBER = "zmatecne.unl"
+
+
 def unl_zip_url(obdobi: int) -> str:
     return f"https://www.psp.cz/eknih/cdrom/opendata/hl-{obdobi}ps.zip"
 
@@ -126,7 +129,8 @@ def refresh_unl(
     verbose: bool = True,
 ) -> dict[str, Any]:
     """
-    Stáhne hl-{obdobi}ps.zip a rozbalí jen hl{obdobi}s.unl (souhrnné hlasování schůzí).
+    Stáhne hl-{obdobi}ps.zip a rozbalí hl{obdobi}s.unl (souhrnné hlasování schůzí)
+    a zmatecne.unl (zmatečná hlasování), pokud je v ZIPu.
     Vrací metadata včetně changed=True/False.
     """
     remote_head = head_unl_zip(obdobi, timeout=timeout)
@@ -173,6 +177,9 @@ def refresh_unl(
             raise OSError(f"V ZIPu chybí {member}, obsah: {names[:8]}")
         out_dir.mkdir(parents=True, exist_ok=True)
         hl_path.write_bytes(zf.read(member))
+        # seznam zmatečných hlasování — load_votes je vyřazuje
+        if ZMATECNE_MEMBER in names:
+            (out_dir / ZMATECNE_MEMBER).write_bytes(zf.read(ZMATECNE_MEMBER))
 
     lines = _count_unl_lines(hl_path)
     if verbose:

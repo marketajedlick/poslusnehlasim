@@ -1448,7 +1448,6 @@
         67,
         68,
         69,
-        70,
         71,
         72,
         73,
@@ -1986,9 +1985,9 @@
         "2025_7_00980"
       ],
       "proslo": true,
-      "pocet_hlasovani": 10,
+      "pocet_hlasovani": 9,
       "pocet_prijato": 3,
-      "pocet_zamitnuto": 7,
+      "pocet_zamitnuto": 6,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Návrh usnesení Poslanecké sněmovny k odsouzení týrání zvířat",
       "tema_vysvetleni": "Sněmovna schválila koaliční usnesení proti týrání zvířat, 139 hlasů pro, nikdo proti."

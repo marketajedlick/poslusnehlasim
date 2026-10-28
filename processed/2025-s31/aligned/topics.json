@@ -462,7 +462,6 @@
       "bod": "9",
       "datum": "24.09.2026",
       "vote_cisla": [
-        40,
         41,
         42,
         43,
@@ -474,9 +473,9 @@
         "2025_31_00707"
       ],
       "proslo": true,
-      "pocet_hlasovani": 5,
+      "pocet_hlasovani": 4,
       "pocet_prijato": 3,
-      "pocet_zamitnuto": 2,
+      "pocet_zamitnuto": 1,
       "kategorie": "substantivni",
       "tema_svejk": "Levnější doplňkové penzijní spoření a konec starých fondů.",
       "tema_vysvetleni": "Nižší poplatky, podpora mladých a ukončení transformovaných fondů."

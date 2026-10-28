@@ -238,7 +238,6 @@ def audit_verdikt_vs_votes(report: Report) -> None:
             group = [votes[int(c)] for c in (topic.get("vote_cisla") or []) if int(c) in votes]
             if not group:
                 continue
-            group = sorted(group, key=lambda v: (v.get("datum", ""), v.get("cas", "")))
             proslo = topic_proslo_from_votes(group)
             expected = "schvaleno" if proslo else "zamiteno"
             if verdikt in ("zvoleno",):

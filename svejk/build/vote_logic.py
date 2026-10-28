@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from svejk.noviny import _law_kategorie
+from svejk.jednaci_den import vote_chrono_key
 from svejk.timeline import BlokDne
 
 
@@ -31,7 +32,7 @@ def topic_proslo_druhe_cteni_ukonceno(steno_texts: list[str]) -> bool:
 
 def topic_proslo_from_votes(group: list[dict]) -> bool:
     """Prošlo, pokud existuje rozhodující A (pro > proti); u maratonů přerušení ne."""
-    group = sorted(group, key=lambda v: (v.get("datum", ""), v.get("cas", "")))
+    group = sorted(group, key=vote_chrono_key)
     if not group:
         return False
     prijato = sum(1 for v in group if v.get("vysledek") == "A")

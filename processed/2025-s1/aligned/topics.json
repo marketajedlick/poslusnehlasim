@@ -8,7 +8,6 @@
       "bod": "10",
       "datum": "05.11.2025",
       "vote_cisla": [
-        9,
         10
       ],
       "steno_ids": [
@@ -16,8 +15,8 @@
         "2025_1_00013"
       ],
       "proslo": true,
-      "pocet_hlasovani": 2,
-      "pocet_prijato": 2,
+      "pocet_hlasovani": 1,
+      "pocet_prijato": 1,
       "pocet_zamitnuto": 0,
       "kategorie": "personalka",
       "tema_svejk": "Hlasovali o: Návrh na stanovení počtu místopředsedů PS",

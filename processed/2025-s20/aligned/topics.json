@@ -1897,7 +1897,6 @@
         243,
         244,
         245,
-        246,
         247,
         248,
         249,
@@ -2403,9 +2402,9 @@
         "2025_20_01893"
       ],
       "proslo": true,
-      "pocet_hlasovani": 165,
+      "pocet_hlasovani": 164,
       "pocet_prijato": 139,
-      "pocet_zamitnuto": 26,
+      "pocet_zamitnuto": 25,
       "kategorie": "substantivni",
       "tema_svejk": "Hlasovali o: Návrhy Poslanecké sněmovny na propůjčení nebo udělení státní…",
       "tema_vysvetleni": "Sněmovna posílá prezidentovi doporučení, koho vyznamenat 28."
@@ -2480,8 +2479,8 @@
       "bod": "140",
       "datum": "28.05.2026",
       "vote_cisla": [
-        180,
-        111
+        111,
+        180
       ],
       "steno_ids": [
         "2025_20_00519",
@@ -3469,8 +3468,6 @@
         142,
         143,
         144,
-        145,
-        146,
         147,
         148,
         149
@@ -3918,9 +3915,9 @@
         "2025_20_00977"
       ],
       "proslo": false,
-      "pocet_hlasovani": 44,
+      "pocet_hlasovani": 42,
       "pocet_prijato": 1,
-      "pocet_zamitnuto": 43,
+      "pocet_zamitnuto": 41,
       "kategorie": "substantivni",
       "tema_svejk": "Stavební zákon, další kolo.",
       "tema_vysvetleni": "Hlasování o pozměňovacích návrzích ke stavebnímu zákonu. Dlouhodobě se týká každého, kdo staví nebo rekonstruuje."
@@ -4036,8 +4033,8 @@
       "bod": "91",
       "datum": "27.05.2026",
       "vote_cisla": [
-        346,
-        72
+        72,
+        346
       ],
       "steno_ids": [
         "2025_20_00282",

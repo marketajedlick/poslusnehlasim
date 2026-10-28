@@ -59,6 +59,11 @@ def vote_belongs_to_jednaci_den(vote: dict, jednaci_unl: str) -> bool:
     return vote_jednaci_datum(vote) == jednaci_unl
 
 
+def datum_unl_key(datum: str) -> datetime:
+    """Řadicí klíč pro DD.MM.YYYY (textově by 29.05 bylo po 03.06)."""
+    return _parse_datum_cas(datum) or datetime.min
+
+
 def vote_chrono_key(vote: dict) -> tuple[datetime, int]:
     dt = _parse_datum_cas(vote.get("datum") or "", vote.get("cas") or "")
     cislo = int(vote.get("cislo") or 0)

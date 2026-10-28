@@ -13,7 +13,7 @@
       "link_phrase": "dávek státní sociální"
     },
     {
-      "text": "Hlasování číslo 68 a 69, sto hlasů pro při závěrečném hlasování.",
+      "text": "Hlasování číslo 69, sto hlasů pro při závěrečném hlasování.",
       "source": "votes",
       "link_phrase": "schválila technickou novelu"
     },
@@ -25,11 +25,11 @@
   "publikovat": true,
   "priorita": 3,
   "nadpis": "Dávky se digitalizují později",
-  "pocet_hlasovani": 2,
+  "pocet_hlasovani": 1,
   "proslo": true,
   "signaly": {
     "proti_max": 1,
-    "pritomno_min": 75,
+    "pritomno_min": 103,
     "jednomyslne": false,
     "spor": true,
     "prazdny_sal": true

@@ -137,11 +137,9 @@
       "bod": "2",
       "datum": "15.07.2026",
       "vote_cisla": [
-        5,
         6,
         7,
         8,
-        9,
         10,
         11,
         12,
@@ -451,9 +449,9 @@
         "2025_25_00344"
       ],
       "proslo": true,
-      "pocet_hlasovani": 84,
-      "pocet_prijato": 10,
-      "pocet_zamitnuto": 74,
+      "pocet_hlasovani": 82,
+      "pocet_prijato": 9,
+      "pocet_zamitnuto": 73,
       "kategorie": "substantivni",
       "tema_svejk": "Dávka státní sociální pomoci, pomoc lidem v nouzi.",
       "tema_vysvetleni": "Novela dávek SSP."

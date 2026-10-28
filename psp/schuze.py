@@ -41,6 +41,18 @@ class Vote:
     def datetime_str(self) -> str:
         return f"{self.datum} {self.cas}"
 
+    @property
+    def chrono_key(self) -> tuple[datetime, int]:
+        """Řazení podle skutečného času — datum v UNL je DD.MM.YYYY, textově se řadit nedá."""
+        try:
+            dt = datetime.strptime(f"{self.datum[:10]} {self.cas[:5]}", "%d.%m.%Y %H:%M")
+        except ValueError:
+            try:
+                dt = datetime.strptime(self.datum[:10], "%d.%m.%Y")
+            except ValueError:
+                dt = datetime.min
+        return (dt, self.cislo)
+
 
 @dataclass
 class SchuzeMeta:
@@ -139,6 +151,13 @@ class SchuzeAnalyzer:
     def _hl_soubor(self, obdobi: int) -> Path:
         return self.data_dir / f"hl-{obdobi}ps" / f"hl{obdobi}s.unl"
 
+    def load_zmatecne_ids(self, obdobi: int) -> set[str]:
+        """id_hlasovani prohlášená za zmatečná (zmatecne.unl z téhož ZIPu PSP)."""
+        path = self.data_dir / f"hl-{obdobi}ps" / "zmatecne.unl"
+        if not path.exists():
+            return set()
+        return {row[0].strip() for row in read_unl(path) if row and row[0].strip()}
+
     def load_schuze_meta(self, cislo_schuze: int) -> SchuzeMeta | None:
         path = self.data_dir / "schuze" / "schuze.unl"
         if not path.exists():
@@ -173,11 +192,15 @@ class SchuzeAnalyzer:
         if not path.exists():
             raise FileNotFoundError(f"Chybí soubor hlasování: {path}")
 
+        zmatecne = self.load_zmatecne_ids(obdobi)
         votes: list[Vote] = []
         for row in read_unl(path):
             if len(row) < 15:
                 continue
             if row[1] != self.id_organ or row[2] != str(cislo_schuze):
+                continue
+            # zmatečné hlasování se opakuje, v hl{obdobi}s.unl má ale normální výsledek A/R
+            if row[0] in zmatecne:
                 continue
             nazev = row[15].replace("**", " ").strip() if len(row) > 15 else ""
             votes.append(
@@ -199,7 +222,7 @@ class SchuzeAnalyzer:
                     nazev=nazev,
                 )
             )
-        votes.sort(key=lambda v: (v.datum, v.cas, v.cislo))
+        votes.sort(key=lambda v: v.chrono_key)
         return votes
 
     def list_schuze_cisla(self, obdobi: int) -> list[int]:
@@ -255,7 +278,7 @@ class SchuzeAnalyzer:
 
         summaries: list[TopicSummary] = []
         for (bod, nazev), group in groups.items():
-            group.sort(key=lambda x: (x.datum, x.cas, x.cislo))
+            group.sort(key=lambda x: x.chrono_key)
             summaries.append(
                 TopicSummary(
                     bod=bod,
@@ -266,12 +289,7 @@ class SchuzeAnalyzer:
                     zamitnuto=sum(1 for g in group if g.vysledek == "R"),
                 )
             )
-        summaries.sort(
-            key=lambda t: (
-                t.posledni_hlasovani.datum,
-                t.posledni_hlasovani.cas,
-            )
-        )
+        summaries.sort(key=lambda t: t.posledni_hlasovani.chrono_key)
         return summaries
 
     @staticmethod
@@ -294,7 +312,7 @@ class SchuzeAnalyzer:
             hlasovani=votes,
             temata=self._summarize_topics(votes),
             porad_stats=self._porad_stats(votes),
-            dny=dict(sorted(dny.items())),
+            dny=dict(sorted(dny.items(), key=lambda kv: kv[0][6:10] + kv[0][3:5] + kv[0][:2])),
         )
 
     def load_poslanec_jmena(self) -> dict[str, str]:
