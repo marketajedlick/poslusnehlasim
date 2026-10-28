@@ -1,0 +1,107 @@
+{
+  "datum_unl": "20.10.2026",
+  "iso": "2026-10-20",
+  "recommended": [
+    {
+      "slug": "novela-z-zakonik-prace",
+      "nazev": "Novela z. - zákoník práce",
+      "score": 61,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 78,
+          "pritomno_min": 122,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 20322,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "262/2006 Sb., zákoník práce, ve znění pozdějších předpisů a některé další zákony v souvislosti s přijetím zákona o platformové práci a v souvislosti s posílením uplatňování zásady stejné odměny mužů a žen za stejnou práci nebo práci stejné hodnoty/sněmovní tisk 300/ – prvé čtení Z pověření vlády předložený návrh uvede ",
+          "source": "steno",
+          "steno_id": "2025_34_00991",
+          "citace": "262/2006 Sb., zákoník práce, ve znění pozdějších předpisů a některé další zákony v souvislosti s přijetím zákona o platformové práci a v souvislosti s posílením uplatňování zásady stejné odměny mužů a"
+        },
+        {
+          "text": "47.Vládní návrh zákona, kterým se mění zákon č.",
+          "source": "steno",
+          "steno_id": "2025_34_00991",
+          "citace": "47.Vládní návrh zákona, kterým se mění zákon č."
+        },
+        {
+          "text": "A já prosím Poslaneckou sněmovnu, aby vytvořila takovou hladinu hluku, anebo ticha, aby pan ministr se svým vystoupením byl vnímán.",
+          "source": "steno",
+          "steno_id": "2025_34_00991",
+          "citace": "A já prosím Poslaneckou sněmovnu, aby vytvořila takovou hladinu hluku, anebo ticha, aby pan ministr se svým vystoupením byl vnímán."
+        },
+        {
+          "text": "Pokud se jedná o transpozici směrnice o platformové práci, tak k té uvádím, že tato transpozice je prováděna především vládním návrhem zákona o platformové práci, který je projednáván jako sněmovní tisk číslo 301.",
+          "source": "steno",
+          "steno_id": "2025_34_00992",
+          "citace": "Pokud se jedná o transpozici směrnice o platformové práci, tak k té uvádím, že tato transpozice je prováděna především vládním návrhem zákona o platformové práci, který je projednáván jako sněmovní ti"
+        }
+      ]
+    },
+    {
+      "slug": "vl-n-z-o-registrech-ve-vzdelavani",
+      "nazev": "Vl.n.z. o registrech ve vzdělávání",
+      "score": 36,
+      "meta": {
+        "priorita": 2,
+        "signaly": {
+          "proti_max": 0,
+          "pritomno_min": 129,
+          "jednomyslne": true,
+          "spor": false,
+          "prazdny_sal": true
+        },
+        "steno_slov": 5592,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "33.Vládní návrh zákona o registrech ve vzdělávání a o změně některých souvisejících zákonů/sněmovní tisk 228/ – prvé čtení Z pověření vlády předložený návrh uvede ministr školství, mládeže a tělovýchovy pan Robert Plaga.",
+          "source": "steno",
+          "steno_id": "2025_34_01179",
+          "citace": "33.Vládní návrh zákona o registrech ve vzdělávání a o změně některých souvisejících zákonů/sněmovní tisk 228/ – prvé čtení Z pověření vlády předložený návrh uvede ministr školství, mládeže a tělovýcho"
+        },
+        {
+          "text": "Vážené poslankyně, vážení poslanci, dovolte mi, abych jménem Ministerstva školství, mládeže a tělovýchovy představil vládní návrh zákona o registrech ve vzdělávání a o změně některých souvisejících zákonů, který máte jako sněmovní tisk 228.",
+          "source": "steno",
+          "steno_id": "2025_34_01180",
+          "citace": "Vážené poslankyně, vážení poslanci, dovolte mi, abych jménem Ministerstva školství, mládeže a tělovýchovy představil vládní návrh zákona o registrech ve vzdělávání a o změně některých souvisejících zá"
+        },
+        {
+          "text": "Služby spojené se vzděláváním tak budou dostupnější, jejich vyřízení jednodušší a občané budou mít přístup k údajům o svém vzdělání a vzdělávání a k výpisům, které toto vzdělávání dokládají.",
+          "source": "steno",
+          "steno_id": "2025_34_01180",
+          "citace": "Služby spojené se vzděláváním tak budou dostupnější, jejich vyřízení jednodušší a občané budou mít přístup k údajům o svém vzdělání a vzdělávání a k výpisům, které toto vzdělávání dokládají."
+        },
+        {
+          "text": "Ten návrh vychází z jednoduchého předpokladu, který ve školství platí víc než možná kdekoliv jinde, ale myslím, že je i obecný – základem správného rozhodování jsou kvalitní informace.",
+          "source": "steno",
+          "steno_id": "2025_34_01180",
+          "citace": "Ten návrh vychází z jednoduchého předpokladu, který ve školství platí víc než možná kdekoliv jinde, ale myslím, že je i obecný – základem správného rozhodování jsou kvalitní informace."
+        }
+      ]
+    }
+  ],
+  "rejected": [],
+  "day_stats": {
+    "pocet_hlas_zakon": 2,
+    "proslo_vote": 2,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-10-20",
+      "2026-10-21"
+    ]
+  }
+}

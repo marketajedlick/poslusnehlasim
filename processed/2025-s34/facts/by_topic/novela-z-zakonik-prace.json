@@ -1,0 +1,73 @@
+{
+  "slug": "novela-z-zakonik-prace",
+  "nazev": "Novela z. - zákoník práce",
+  "datum": "20.10.2026",
+  "verdikt": "prvni_cteni",
+  "predmet_lidsky": "změna zákoníku práce, hlavně nižší podpora v nezaměstnanosti",
+  "koho": [
+    "Koho se to týká? Lidí, kteří přijdou o práci a čekají podporu. A taky zaměstnanců s pohyblivou pracovní dobou, u kterých se má znovu řešit, jestli jsou ještě zaměstnanci."
+  ],
+  "fakty": [
+    {
+      "text": "Ferčíková Konečná: na první pohled nenápadná technická úprava.",
+      "source": "steno",
+      "steno_id": "2025_34_01209",
+      "citace": "A tahle změna, která souvisí s tímhle zákonem, se na první pohled tváří jako nenápadná technická úprava zákoníku práce.",
+      "link_phrase": "nenápadná technická úprava zákoníku práce"
+    },
+    {
+      "text": "Richterová: tři interpelace a žádná data k vyšší podpoře.",
+      "source": "steno",
+      "steno_id": "2025_34_01211",
+      "citace": "já jsem k tomu posílala tři interpelace (ukazuje): na pana ministra Juchelku, na pana premiéra Babiše a také na paní ministryni Schillerovou",
+      "link_phrase": "tři interpelace"
+    },
+    {
+      "text": "Blišťanová: zamítnout už v prvním kole, podpora z 80 na 65 procent.",
+      "source": "steno",
+      "steno_id": "2025_34_01213",
+      "citace": "Budu navrhovat zamítnutí předloženého návrhu zákona v prvním čtení",
+      "link_phrase": "zamítnout hned v prvním kole"
+    },
+    {
+      "text": "Blišťanová: analýza ministerstva, chudoba domácností.",
+      "source": "steno",
+      "steno_id": "2025_34_01213",
+      "citace": "spadlo pod hranici příjmové chudoby 18 procent domácností a 36 procent domácností s dětmi",
+      "link_phrase": "pod hranici příjmové chudoby"
+    },
+    {
+      "text": "Schrek: Okamura řekl, že zásah trestá pracující lidi.",
+      "source": "steno",
+      "steno_id": "2025_34_01215",
+      "citace": "Jeho předseda pan Tomio Okamura se vyjádřil, že takový zásah do podpory v nezaměstnanosti trestá pracující lidi.",
+      "link_phrase": "trestá pracující lidi"
+    },
+    {
+      "text": "Juchelka v pátek: zkrácení lhůty ze 60 na 30 dnů.",
+      "source": "steno",
+      "steno_id": "2025_34_00996",
+      "citace": "Jenom bych chtěl nahlásit zkrácení lhůt z 60 na 30 dnů o 30 dnů.",
+      "link_phrase": "nahlásit zkrácení lhůt"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Přilepili k tomu\nškrty",
+  "lead": "Vedle pravidel z Evropy, stejné odměny žen a mužů a práce přes aplikaci, je v návrhu nižší podpora pro lidi, kteří přijdou o místo.",
+  "pointa": "Ferčíková Konečná (Piráti) řekla, že to, co vypadá jako nenápadná technická úprava zákoníku práce, může z člověka s pohyblivou směnou na papíře udělat podnikatele. A netýká se to jen lidí na platformách.\n\nRichterová (Piráti) se ptala, proč vláda podporu mění po pouhém půl roce. Poslala kvůli tomu tři interpelace: ministrovi Juchelkovi, premiérovi Babišovi a ministryni Schillerové. Data v odpovědích nenašla.\n\nBlišťanová (TOP 09) chtěla návrh zamítnout hned v prvním kole. Podpora má první dva měsíce klesnout z osmdesáti na pětašedesát procent dřívější čisté mzdy a sníží se i její strop. Když v rodině přijde o práci ten, kdo vydělává nejvíc, propadne se s takovou podporou pod hranici příjmové chudoby osmnáct procent domácností, ukazuje analýza samotného ministerstva práce. U rodin s dětmi třicet šest procent. Úsporu dvou celých čtyř miliard korun má vláda už v rozpočtu na rok 2027.\n\nSchrek (ODS) připomněl, že současná pravidla platí teprve od ledna a hlasovalo pro ně i ANO, včetně dnešního premiéra. A proti je i koaliční partner: Okamura podle Schreka řekl, že takový zásah trestá pracující lidi.\n\nZamítnutí neprošlo a návrh jde do výboru. Juchelka si předem stihl nahlásit zkrácení lhůt ze šedesáti na třicet dnů a to prošlo.",
+  "mean": "Podpora v nezaměstnanosti má v prvních dvou měsících klesnout z osmdesáti na pětašedesát procent. Sněmovna návrh v prvním kole nezamítla a poslala ho do výboru se zkrácenou lhůtou.",
+  "citace_text": "A chtěla jsem se pověnovat tomu, co dalšího přilepila vláda Andreje Babiše a pan ministr Aleš Juchelka k tomu návrhu, který přišel v základu z Evropy.",
+  "citace_autor": "Olga Richterová (Piráti)",
+  "steno_id": "2025_34_01211",
+  "pocet_hlasovani": 3,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 78,
+    "pritomno_min": 122,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 20322
+}

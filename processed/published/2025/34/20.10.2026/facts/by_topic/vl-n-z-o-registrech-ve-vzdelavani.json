@@ -1,0 +1,66 @@
+{
+  "slug": "vl-n-z-o-registrech-ve-vzdelavani",
+  "nazev": "Vl.n.z. o registrech ve vzdělávání",
+  "datum": "20.10.2026",
+  "verdikt": "prvni_cteni",
+  "predmet_lidsky": "dva státní seznamy školáků a učitelů, aby školy neposílaly stejné tabulky pořád dokola",
+  "koho": [
+    "Koho se to týká? Rodičů, školáků a ředitelů, kteří pořád dokola vyplňují tabulky. A škol, které o dítěti nemají údaje, když se rodina přestěhuje."
+  ],
+  "fakty": [
+    {
+      "text": "Plaga: zákon z minulé vlády, kvalitní informace.",
+      "source": "steno",
+      "steno_id": "2025_34_01180",
+      "citace": "základem správného rozhodování jsou kvalitní informace.",
+      "link_phrase": "základem správného rozhodování jsou kvalitní informace"
+    },
+    {
+      "text": "Havel: ať rodiče neobíhají školy s papírem.",
+      "source": "steno",
+      "steno_id": "2025_34_01186",
+      "citace": "obíhat školy s papírem v ruce a třeba ten prospěch dokládat na školu skutečně ručně a takzvaně nohama.",
+      "link_phrase": "obíhat školy s papírem v ruce"
+    },
+    {
+      "text": "Zajíčková: 11 500 škol a deset až dvacet člověkodnů.",
+      "source": "steno",
+      "steno_id": "2025_34_01196",
+      "citace": "Důvodová zpráva počítá právě s 11 500 školami a s tím, že každá z nich dnes stráví sběrem a přípravou dat 10 až 20 člověkodnů.",
+      "link_phrase": "sběrem a přípravou dat"
+    },
+    {
+      "text": "Zajíčková: při stěhování se informace o pomoci dítěti ztratí.",
+      "source": "steno",
+      "steno_id": "2025_34_01196",
+      "citace": "informace o tom, co tomuto dítěti pomáhalo a jakou podporu potřebuje, se cestou mezi těmi školami, tyto informace se cestou ztratí",
+      "link_phrase": "co tomuto dítěti pomáhalo"
+    },
+    {
+      "text": "Skopeček: návrh na zamítnutí nezazněl, přikázáno školskému výboru.",
+      "source": "steno",
+      "steno_id": "2025_34_01205",
+      "citace": "Návrhy na vrácení předloženého návrhu ani návrh na zamítnutí nezazněly.",
+      "link_phrase": "poslala do výboru"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Data ať obíhají\nsama",
+  "lead": "Ministr školství Plaga (ANO) přinesl zákon, který připravila už minulá vláda, jenže do Sněmovny se tehdy nedostal. Zakládá dva seznamy: jeden se všemi dětmi, žáky a studenty, druhý s učiteli, včetně těch z vysokých škol. Školy pak nemusí posílat stejné tabulky pořád dokola a lidé nebudou úřadům dokládat, co stát už dávno ví. Ministr to shrnul tak, že základem správného rozhodování jsou kvalitní informace.",
+  "pointa": "Havel (TOP 09) návrh jako zpravodaj chválil. Slibuje si, že rodiče nebudou u přijímaček obíhat školy s papírem v ruce a prospěch nosit nohama. Data mají obíhat sama.\n\nZajíčková (ODS) počítala z důvodové zprávy. Jedenáct tisíc pět set škol, každá dnes stráví sběrem a přípravou dat deset až dvacet člověkodnů. A dala příklad žáka, který potřebuje ve škole pomoc navíc. Rodina se přestěhuje, dítě změní školu a informace o tom, co tomuto dítěti pomáhalo, se cestou ztratí.\n\nSněmovna zákon poslala do výboru, který má na starosti školy.",
+  "mean": "Školy mají přestat posílat stejné údaje pořád dokola a stát chce mít přehled o školácích i učitelích. Návrh přežil první kolo a jde do výboru pro školy.",
+  "citace_text": "Není to příslib odstranění veškeré administrativy, ale zásadní změna toho principu.",
+  "citace_autor": "Robert Plaga (ANO)",
+  "steno_id": "2025_34_01180",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 129,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 5592
+}

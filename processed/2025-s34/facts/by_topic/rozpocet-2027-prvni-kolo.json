@@ -1,0 +1,72 @@
+{
+  "slug": "rozpocet-2027-prvni-kolo",
+  "nazev": "Vládní návrh zákona o státním rozpočtu na rok 2027",
+  "datum": "21.10.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "kolik stát příští rok vybere a o kolik víc utratí",
+  "koho": [
+    "Koho se to týká? Každého, kdo platí daně nebo bere důchod, školu či nemocnici. Rozpočet říká, kolik stát příští rok vybere a o kolik víc utratí."
+  ],
+  "fakty": [
+    {
+      "text": "Schillerová: rozpočet je poctivý, bez fixlování.",
+      "source": "steno",
+      "steno_id": "2025_34_01243",
+      "citace": "Je to rozpočet poctivý, bez fixlování, bez krytých mimorozpočtových půjček, bez nadhodnocených příjmů a bez uměle podhodnocených výdajů.",
+      "link_phrase": "poctivý rozpočet bez fixlování"
+    },
+    {
+      "text": "Schillerová: příjmy, výdaje a schodek 386 miliard.",
+      "source": "steno",
+      "steno_id": "2025_34_01243",
+      "citace": "Základní parametry návrhu státního rozpočtu na rok 2027 jsou navrženy v miliardách takto: Příjmy 2 198,6 miliardy korun, výdaje 2 584,6 miliardy korun, saldo 386 miliard korun.",
+      "link_phrase": "tři sta osmdesát šest miliard víc"
+    },
+    {
+      "text": "Kovářová: slib pod 3 procenty rozpočet porušuje.",
+      "source": "steno",
+      "steno_id": "2025_34_01247",
+      "citace": "Pokud tedy vláda ve svém programu hovoří o tom, že schodek veřejných financí bude bezpečně pod 3 procenty hrubého domácího produktu, pak tento rozpočet to porušuje.",
+      "link_phrase": "bezpečně pod třemi procenty"
+    },
+    {
+      "text": "Babiš: zkomplikovali mu den.",
+      "source": "steno",
+      "steno_id": "2025_34_01255",
+      "citace": "Hlavně vám děkuju za to, že jste mi zkomplikovali dnešní den, kdy jsem musel komisaři Kubiliusovi, který nás dnes navštívil, třikrát měnit termín",
+      "link_phrase": "zkomplikovali dnešní den"
+    },
+    {
+      "text": "Haas: po deseti a půl hodinách první v rozpravě.",
+      "source": "steno",
+      "steno_id": "2025_34_01392",
+      "citace": "Po deseti a půl hodinách první přihlášený v rozpravě, ale o tom je demokracie, tak to prostě chodí.",
+      "link_phrase": "po deseti a půl hodinách"
+    },
+    {
+      "text": "Svobodová: Piráti chtějí schodek pod 350 miliard.",
+      "source": "steno",
+      "steno_id": "2025_34_01386",
+      "citace": "navrhneme vrácení k přepracování a zadáme vládě úkol, aby snížila schodek pod 350 miliard korun",
+      "link_phrase": "pod tři sta padesát miliard"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Poctivý rozpočet\nschodek 386 miliard",
+  "lead": "Příští rok má stát utratit o tři sta osmdesát šest miliard víc, než vybere. Ministryně financí Schillerová (ANO) tomu říká poctivý rozpočet bez fixlování. Sněmovna ho ve středu otevřela a mluvila o něm až do noci. Hlasování ještě nebylo.",
+  "pointa": "Schillerová otevřela rozpočet na rok 2027. Sama by prý chtěla díru menší. Za necelých dvanáct měsíců prý nešlo smazat, co vláda zdědila. Tři a půl procenta výkonu ekonomiky bude podle ní jeden z lepších výsledků v Unii.\n\nVěra Kovářová (STAN), zpravodajka menšiny rozpočtového výboru, to otočila. Podle ní rozpočet porušuje slib držet schodek veřejných financí bezpečně pod třemi procenty. A proto ho chce vrátit vládě k přepracování.\n\nPředseda vlády Babiš poděkoval, že mu zkomplikovali dnešní den. Měl na návštěvě komisaře Kubiliuse a jednání o protivzdušné obraně.\n\nPiráti návrh neberou a schodek by stáhli pod tři sta padesát miliard. TOP 09 takovou díru nepodpoří. ODS mu říká druhý nejhorší nominální schodek v historii.\n\nKarel Haas (ODS) se jako první přihlášený v rozpravě dostal ke slovu až po deseti a půl hodinách. Po něm ve středu mluvili ještě další. O schodku se ten den nehlasovalo.\n\nPoslušně podotýkám, že zákon roku první kolo ve středu ještě nedohral.",
+  "mean": "Občan z toho zatím nemá nový rozpočet, jen spor o to, jak velkou díru stát příští rok připustí. Sněmovna otevřela návrh na rok 2027 se schodkem tři sta osmdesát šest miliard a do noci o něm mluvila. Ve středu se o něm nehlasovalo.",
+  "citace_text": "Je to rozpočet poctivý, bez fixlování, bez krytých mimorozpočtových půjček, bez nadhodnocených příjmů a bez uměle podhodnocených výdajů.",
+  "citace_autor": "Alena Schillerová (ANO)",
+  "steno_id": "2025_34_01243",
+  "pocet_hlasovani": 0,
+  "proslo": false,
+  "spor_o_porad": true,
+  "signaly": {
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 79665
+}

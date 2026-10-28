@@ -1,0 +1,60 @@
+{
+  "key": "2025/34/21.10.2026",
+  "obdobi": 2025,
+  "schuze": 34,
+  "datum_unl": "21.10.2026",
+  "iso": "2026-10-21",
+  "state": "approved",
+  "topic_slugs": [
+    "rozpocet-2027-prvni-kolo"
+  ],
+  "recommended_slugs": [
+    "rozpocet-2027-prvni-kolo"
+  ],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-10-21/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "stale",
+    "stale": true,
+    "link_phrase_coverage": {
+      "total": 6,
+      "linked": 6,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 6,
+      "ok": 6,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 0,
+    "steno_passages": 7,
+    "steno_missing_article_phrase": 0,
+    "jazykolam_duplicates": [
+      "Po deseti a půl hodinách první přihlášený v rozpravě, ale o tom je demokracie, tak to prostě chodí."
+    ],
+    "ok": false,
+    "errors": [
+      "citát dne je stejný jako citát v článku"
+    ]
+  },
+  "inputs": {
+    "votes_count": 282,
+    "votes_max_cislo": 282,
+    "steno_count": 2036,
+    "steno_last_poradi": 2036,
+    "topics_built_at": "2026-10-24T08:55:09.691905+00:00",
+    "fingerprint": "b2c88fb6203b8661"
+  },
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null
+}

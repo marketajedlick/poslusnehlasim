@@ -1,0 +1,33 @@
+{
+  "datum": "21.10.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "rozpocet-2027-prvni-kolo"
+  ],
+  "stats": {
+    "pocet_hlas": 0,
+    "proslo": 0,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "nwl_predmet": "Poctivý rozpočet. Schodek 386 miliard",
+  "dnesni_ucet": "Rozpočet na rok 2027 má schodek tři sta osmdesát šest miliard.\nSněmovna o něm do noci mluvila a ještě nehlasovala.",
+  "zaver": "že Sněmovna otevřela rozpočet na rok 2027 se schodkem tři sta osmdesát šest miliard a do noci ho probírala, aniž by o něm hlasovala.",
+  "vysledek": [
+    "* rozpočet na rok 2027: první kolo otevřené, schodek tři sta osmdesát šest miliard, hlasování nebylo",
+    "* jednání i po sedmé a deváté večer",
+    "* bod o slibech SPD se na program nedostal"
+  ],
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo",
+  "jazykolam": {
+    "text": "V době konjunktury spořte, v době krize to zalévejte.",
+    "autor": "Karel Haas (ODS)",
+    "steno_id": "2025_34_01392"
+  },
+  "slovnicek": [
+    "schodek"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "key": "2025/34/20.10.2026",
+  "obdobi": 2025,
+  "schuze": 34,
+  "datum_unl": "20.10.2026",
+  "iso": "2026-10-20",
+  "state": "published",
+  "topic_slugs": [
+    "novela-z-zakonik-prace",
+    "vl-n-z-o-registrech-ve-vzdelavani"
+  ],
+  "recommended_slugs": [
+    "novela-z-zakonik-prace",
+    "vl-n-z-o-registrech-ve-vzdelavani"
+  ],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-10-20/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "stale",
+    "stale": true,
+    "link_phrase_coverage": {
+      "total": 11,
+      "linked": 11,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 11,
+      "ok": 11,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 2,
+    "steno_passages": 14,
+    "steno_missing_article_phrase": 2,
+    "jazykolam_duplicates": [],
+    "ok": false,
+    "errors": [
+      "slabá témata: novela-z-zakonik-prace, vl-n-z-o-registrech-ve-vzdelavani"
+    ]
+  },
+  "inputs": {
+    "votes_count": 282,
+    "votes_max_cislo": 282,
+    "steno_count": 2036,
+    "steno_last_poradi": 2036,
+    "topics_built_at": "2026-10-24T08:55:09.691905+00:00",
+    "fingerprint": "b2c88fb6203b8661"
+  },
+  "published_at": "2026-10-28T05:31:39.796464+00:00",
+  "snapshot_dir": "published/2025/34/20.10.2026",
+  "supersedes": null,
+  "assets": {
+    "og": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-20/assets/2026-10-20.png",
+    "share": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-20/assets/2026-10-20.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png",
+      "carousel/05-skore.png"
+    ],
+    "caption": "/Users/marketa/Desktop/poslusne_hlasim/processed/2025-s34/editions/2026-10-20/assets/caption.txt"
+  }
+}

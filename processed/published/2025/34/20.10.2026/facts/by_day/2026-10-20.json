@@ -1,0 +1,32 @@
+{
+  "datum": "20.10.2026",
+  "den": "úterý",
+  "topic_slugs": [
+    "novela-z-zakonik-prace",
+    "vl-n-z-o-registrech-ve-vzdelavani"
+  ],
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 492,
+    "end_cas": "22:20",
+    "proslo": 2,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "nwl_predmet": "Škrty v podpoře přežily. Registry taky",
+  "dnesni_ucet": "Zákoník práce přežil první kolo, škrty v podpoře taky.\nŠkolní registry šly dál, papírování má ubýt.",
+  "zaver": "že Sněmovna pustila dál změnu zákoníku práce, ve které má klesnout podpora v nezaměstnanosti, a školní registry, které mají nahradit tabulky, co školy vyplňují pořád dokola.",
+  "vysledek": [
+    "* změna zákoníku práce: první kolo přežila, výbory mají třicet dnů",
+    "* školní registry: první kolo přežily, jdou do výboru pro školy"
+  ],
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo",
+  "jazykolam": {
+    "text": "To znamená méně ručního zpracování, méně opakování, méně opakovaného zadávání, méně ručních kontrol, ideálně méně chyb.",
+    "autor": "Robert Plaga (ANO)",
+    "steno_id": "2025_34_01180"
+  }
+}
