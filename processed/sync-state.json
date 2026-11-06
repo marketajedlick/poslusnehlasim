@@ -1,11 +1,11 @@
 {
   "obdobi": 2025,
   "unl": {
-    "etag": "6aebd3c0-33aaf3",
-    "last_modified": "Thu, 05 Nov 2026 00:54:24 GMT",
-    "content_length": 3386099,
-    "lines": 2680,
-    "fetched_at": "2026-11-05T01:21:22.909768+00:00"
+    "etag": "6aed2540-33bc27",
+    "last_modified": "Fri, 06 Nov 2026 00:54:24 GMT",
+    "content_length": 3390503,
+    "lines": 2684,
+    "fetched_at": "2026-11-06T01:25:05.555854+00:00"
   },
   "schuze": {
     "18": {
@@ -306,13 +306,13 @@
       "synced_at": "2026-10-28T13:46:58.592899+00:00"
     },
     "34": {
-      "count": 417,
-      "max_cislo": 417,
-      "last_datum": "04.11.2026",
-      "steno_count": 3049,
-      "last_steno_poradi": 3049,
-      "last_steno_datum": "2026-11-04",
-      "synced_at": "2026-11-05T01:28:50.509355+00:00"
+      "count": 421,
+      "max_cislo": 421,
+      "last_datum": "05.11.2026",
+      "steno_count": 3390,
+      "last_steno_poradi": 3390,
+      "last_steno_datum": "2026-11-05",
+      "synced_at": "2026-11-06T01:33:33.594586+00:00"
     },
     "35": {
       "count": 5,
@@ -324,6 +324,8 @@
       "synced_at": "2026-10-28T13:49:53.338311+00:00"
     }
   },
-  "updated_at": "2026-11-05T13:02:19.690156+00:00",
-  "last_updated_schuze": []
+  "updated_at": "2026-11-06T01:33:33.611105+00:00",
+  "last_updated_schuze": [
+    34
+  ]
 }
