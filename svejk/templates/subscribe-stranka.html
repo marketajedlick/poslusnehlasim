@@ -18,6 +18,8 @@
   {% include "page-head.html" %}
 
   <div class="subscribe-body">
+    {# gloss už je v page-head, ve formuláři by byl podruhé #}
+    {% set subscribe_hide_gloss = true %}
     {% include "subscribe.html" %}
   </div>
 </div>
