@@ -4,7 +4,7 @@
   "schuze": 34,
   "datum_unl": "03.11.2026",
   "iso": "2026-11-03",
-  "state": "approved",
+  "state": "published",
   "topic_slugs": [
     "odvolani-okamury-3-listopadu",
     "debata-porad-s34-3-listopadu",
@@ -19,17 +19,17 @@
   "brief_path": "editions/2026-11-03/brief.md",
   "feedback": [],
   "metrics": {
-    "state": "draft",
+    "state": "published",
     "stale": false,
     "link_phrase_coverage": {
-      "total": 12,
-      "linked": 12,
+      "total": 22,
+      "linked": 22,
       "percent": 100.0,
       "missing": []
     },
     "citace_in_steno": {
-      "checked": 12,
-      "ok": 12,
+      "checked": 22,
+      "ok": 22,
       "percent": 100.0,
       "bad": []
     },
@@ -40,7 +40,7 @@
       "items": []
     },
     "generic_topic_count": 0,
-    "steno_passages": 14,
+    "steno_passages": 24,
     "steno_missing_article_phrase": 1,
     "jazykolam_duplicates": [],
     "shared_topics": {},
@@ -55,8 +55,28 @@
     "topics_built_at": "2026-11-07T21:53:02.702587+00:00",
     "fingerprint": "4986caad519b4f30"
   },
-  "published_at": null,
-  "snapshot_dir": null,
+  "published_at": "2026-11-08T13:14:01.776476+00:00",
+  "snapshot_dir": "published/2025/34/03.11.2026",
   "supersedes": null,
-  "approved_hash": "a53bcdc5afbc5234"
+  "approved_hash": "a53bcdc5afbc5234",
+  "published_hash": "b2029f2b46df89c7",
+  "assets": {
+    "og": "/Users/marketa/conductor/workspaces/poslusne_hlasim/dublin/processed/2025-s34/editions/2026-11-03/assets/2026-11-03.png",
+    "share": "/Users/marketa/conductor/workspaces/poslusne_hlasim/dublin/processed/2025-s34/editions/2026-11-03/assets/2026-11-03.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png",
+      "carousel/04-citace.png"
+    ],
+    "caption": "/Users/marketa/conductor/workspaces/poslusne_hlasim/dublin/processed/2025-s34/editions/2026-11-03/assets/caption.txt"
+  },
+  "republished_at": "2026-11-08T13:26:02.235365+00:00",
+  "revisions": [
+    {
+      "at": "2026-11-08T13:26:02.236918+00:00",
+      "reason": "Doplněné odkazy na steno u tvrzení bez zdroje (pořad, Okamura, penzijko), text beze změny.",
+      "content_hash": "b2029f2b46df89c7"
+    }
+  ]
 }
