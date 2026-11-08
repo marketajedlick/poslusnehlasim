@@ -1,0 +1,67 @@
+{
+  "slug": "vl-n-z-o-digitalni-ekonomice-eu",
+  "nazev": "Vl.n.z. o digitální ekonomice - EU",
+  "datum": "04.11.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "kdo v Česku hlídá velké sociální sítě a e-shopy a kam si stěžovat na podvodnou reklamu nebo smazaný příspěvek",
+  "koho": [
+    "Koho se to týká? Každého, kdo nakupuje na internetu nebo píše na sociální sítě, a rodičů dětí, na které míří reklama."
+  ],
+  "fakty": [
+    {
+      "text": "Kovářová: koordinátorem bude ČTÚ.",
+      "source": "steno",
+      "steno_id": "2025_34_02869",
+      "citace": "kterým se u nás stane Český telekomunikační úřad",
+      "link_phrase": "Dohled dostane Český telekomunikační úřad"
+    },
+    {
+      "text": "Kovářová: ČTÚ nebude nařizovat mazání obsahu.",
+      "source": "steno",
+      "steno_id": "2025_34_02869",
+      "citace": "ČTÚ zároveň nebude mít pravomoc nařizovat mazání obsahu.",
+      "link_phrase": "Mazat příspěvky nařizovat nebude"
+    },
+    {
+      "text": "Kovářová k Havlíčkovi a zpravodaji: Hoši, promiňte.",
+      "source": "steno",
+      "steno_id": "2025_34_02867",
+      "citace": "Hoši, promiňte, já se nemohu soustředit.",
+      "link_phrase": "Hoši, promiňte, já se nemohu soustředit"
+    },
+    {
+      "text": "Havlíček: minimalistická úprava bez povinností navíc.",
+      "source": "steno",
+      "steno_id": "2025_34_02883",
+      "citace": "Já jsem rád, že přijímáme a to je zásadní, minimalistickou adaptační úpravu, opravdu minimalistickou a nezavádí žádné povinnosti nad rámec těch použitelných evropských předpisů.",
+      "link_phrase": "opravdu minimalistickou úpravu"
+    },
+    {
+      "text": "Hlasování 416: zákon schválen.",
+      "source": "steno",
+      "steno_id": "2025_34_02929",
+      "citace": "Hlasování číslo 416, přihlášeno 146 poslanců, pro 142, proti 1. Návrh byl přijat.",
+      "link_phrase": "jen jeden poslanec byl proti"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Kdysi totalita,\ndnes zákon",
+  "lead": "Sněmovna schválila česká pravidla k evropskému nařízení o digitálních službách. Řeší dohled nad platformami i stížnosti na podvodnou reklamu nebo smazaný legální příspěvek. Dohled dostane Český telekomunikační úřad. Mazat příspěvky nařizovat nebude.",
+  "pointa": "V létě návrh prošel druhým kolem, teď přišlo závěrečné hlasování a jen jeden poslanec byl proti. Věra Kovářová (STAN) připomněla dřívější odpor ANO. Uprostřed projevu okřikla ministra průmyslu Karla Havlíčka (ANO) a zpravodaje, kteří si povídali: Hoši, promiňte, já se nemohu soustředit.\n\nKarel Haas (ODS) vyčetl koalici přidávání povinností nad evropský rámec. Havlíček naopak chválil opravdu minimalistickou úpravu.\n\nPoslušně podotýkám, že cesta od totality k souhlasu trvala hnutí ANO jedno přesednutí do vládních lavic.",
+  "pointa_tail": "",
+  "pointa_end": "",
+  "mean": "Zákon má určit český dohled nad digitálními službami. Po schválení Sněmovnou míří do Senátu.",
+  "citace_text": "Ano, bylo to to samé hnutí ANO, které tady ve Sněmovně projednávání zákona o digitální ekonomice v minulém volebním období blokovalo se slovy, že se jedná o totalitu.",
+  "citace_autor": "Věra Kovářová (STAN)",
+  "steno_id": "2025_34_02867",
+  "pocet_hlasovani": 14,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 107,
+    "pritomno_min": 146,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  }
+}

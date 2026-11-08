@@ -1,0 +1,146 @@
+{
+  "datum_unl": "04.11.2026",
+  "iso": "2026-11-04",
+  "recommended": [
+    {
+      "slug": "novela-z-o-pojistnem-na-verejne-zdr-pojisteni",
+      "nazev": "Novela z. o pojistném na veřejné zdr. pojištění",
+      "nadpis": "Rezerva\nna jednu hodinu",
+      "score": null,
+      "meta": {
+        "vyber": "redakcni",
+        "kategorie": "zakon",
+        "verdikt": "schvaleno",
+        "proslo": true,
+        "vysledek": "Sněmovna schválila navýšení plateb na příští rok; zákon míří do Senátu.",
+        "pocet_fakty": 3
+      },
+      "fakty": [
+        {
+          "text": "Hlavní citát: Eva Šrámková (Piráti)",
+          "source": "steno",
+          "steno_id": "2025_34_02835",
+          "citace": "Ministr zdravotnictví původně navrhl 21 miliard, ministryně financí napsala do rozpočtu 18 a ministr Šťastný chce 13. Tři ministři, tři čísla a jedna vláda.",
+          "datum": "2026-11-04",
+          "autor": "Eva Šrámková"
+        },
+        {
+          "text": "Šťastný: pozměňovací návrh snižuje platbu z 21 na 13 miliard.",
+          "source": "steno",
+          "steno_id": "2025_34_02827",
+          "citace": "snižuje platbu za státní pojištěnce směrem ze státního rozpočtu do základních fondů zdravotních pojišťoven z 21 na 13 miliard",
+          "link_phrase": "Škrt přinesl ministr sportu",
+          "datum": "2026-11-04",
+          "autor": "Boris Šťastný"
+        },
+        {
+          "text": "Vojtěch škrt podporuje kvůli lepší predikci výběru.",
+          "source": "steno",
+          "steno_id": "2025_34_02821",
+          "citace": "Tento krok mohu v tuto chvíli podpořit proto, že samozřejmě v průběhu přípravy návrhu se zpřesňovaly makroekonomické predikce pro příští rok z hlediska výběru pojistného",
+          "link_phrase": "škrt podpořil",
+          "datum": "2026-11-04",
+          "autor": "Adam Vojtěch"
+        }
+      ]
+    },
+    {
+      "slug": "vl-n-z-o-digitalni-ekonomice-eu",
+      "nazev": "Vl.n.z. o digitální ekonomice - EU",
+      "nadpis": "Kdysi totalita,\ndnes zákon",
+      "score": null,
+      "meta": {
+        "vyber": "redakcni",
+        "kategorie": "zakon",
+        "verdikt": "schvaleno",
+        "proslo": true,
+        "vysledek": "Zákon schválen Sněmovnou v závěrečném hlasování, míří do Senátu.",
+        "pocet_fakty": 3
+      },
+      "fakty": [
+        {
+          "text": "Hlavní citát: Věra Kovářová (STAN)",
+          "source": "steno",
+          "steno_id": "2025_34_02867",
+          "citace": "Ano, bylo to to samé hnutí ANO, které tady ve Sněmovně projednávání zákona o digitální ekonomice v minulém volebním období blokovalo se slovy, že se jedná o totalitu.",
+          "datum": "2026-11-04",
+          "autor": "Věra Kovářová"
+        },
+        {
+          "text": "Kovářová: koordinátorem bude ČTÚ.",
+          "source": "steno",
+          "steno_id": "2025_34_02869",
+          "citace": "kterým se u nás stane Český telekomunikační úřad",
+          "link_phrase": "Dohled dostane Český telekomunikační úřad",
+          "datum": "2026-11-04",
+          "autor": "Věra Kovářová"
+        },
+        {
+          "text": "Kovářová: ČTÚ nebude nařizovat mazání obsahu.",
+          "source": "steno",
+          "steno_id": "2025_34_02869",
+          "citace": "ČTÚ zároveň nebude mít pravomoc nařizovat mazání obsahu.",
+          "link_phrase": "Mazat příspěvky nařizovat nebude",
+          "datum": "2026-11-04",
+          "autor": "Věra Kovářová"
+        }
+      ]
+    },
+    {
+      "slug": "novela-z-o-duchodovem-pojisteni",
+      "nazev": "Novela z. o důchodovém pojištění",
+      "nadpis": "Dvě tisícovky,\nnebo postel",
+      "score": null,
+      "meta": {
+        "vyber": "redakcni",
+        "kategorie": "zakon",
+        "verdikt": "debata",
+        "proslo": false,
+        "vysledek": "Druhé kolo skončilo. O zákonu ani jednorázovém příspěvku se ještě závěrečně nehlasovalo.",
+        "pocet_fakty": 3
+      },
+      "fakty": [
+        {
+          "text": "Hlavní citát: Václav Pláteník (KDU-ČSL)",
+          "source": "steno",
+          "steno_id": "2025_34_02961",
+          "citace": "Mně to došlo až někdy v půlce, ale chtěl jsem se zapojit, tak to taky zkusím, když už na mě nezbyly žádné kraje.",
+          "datum": "2026-11-04",
+          "autor": "Václav Pláteník"
+        },
+        {
+          "text": "Juchelka: jednorázový příspěvek 2 000 Kč v roce 2027.",
+          "source": "steno",
+          "steno_id": "2025_34_02933",
+          "citace": "jímž se navrhuje vyplatit důchodci v roce 2027 jednorázový příspěvek ve výši 2 000 korun",
+          "link_phrase": "jednorázové dva tisíce korun",
+          "datum": "2026-11-04",
+          "autor": "Aleš Juchelka"
+        },
+        {
+          "text": "Olšáková: příspěvek stojí 5,9 miliardy.",
+          "source": "steno",
+          "steno_id": "2025_34_03001",
+          "citace": "výdaje spojené s tímto příspěvkem se zvýší o 5,9 miliardy korun",
+          "link_phrase": "skoro šest miliard",
+          "datum": "2026-11-04",
+          "autor": "Eliška Olšáková"
+        }
+      ]
+    }
+  ],
+  "rejected": [],
+  "day_stats": {
+    "pocet_hlas_zakon": 2,
+    "proslo_vote": 2,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-11-04",
+      "2026-11-05"
+    ],
+    "schvalena_usneseni": 0,
+    "poznamka": "Počty zákonů zahrnují závěrečná rozhodnutí, nikoli ukončení druhého kola nebo hlasování o pořadu."
+  },
+  "editorial_note": "Redakčně opravený výběr podle facts/by_day. Citace jsou z daného dne; výsledky rozlišují zákony, usnesení a debaty. Automatické skóre nebylo použito."
+}

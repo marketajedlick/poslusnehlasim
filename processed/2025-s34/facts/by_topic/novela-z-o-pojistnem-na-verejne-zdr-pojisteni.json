@@ -1,0 +1,74 @@
+{
+  "slug": "novela-z-o-pojistnem-na-verejne-zdr-pojisteni",
+  "nazev": "Novela z. o pojistném na veřejné zdr. pojištění",
+  "datum": "04.11.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "kolik stát příští rok pošle zdravotním pojišťovnám za děti, studenty a důchodce",
+  "koho": [
+    "Koho se to týká? Každého, kdo půjde k lékaři. Z peněz za státní pojištěnce platí pojišťovny nemocnice, praktiky i hospice."
+  ],
+  "fakty": [
+    {
+      "text": "Šťastný: pozměňovací návrh snižuje platbu z 21 na 13 miliard.",
+      "source": "steno",
+      "steno_id": "2025_34_02827",
+      "citace": "snižuje platbu za státní pojištěnce směrem ze státního rozpočtu do základních fondů zdravotních pojišťoven z 21 na 13 miliard",
+      "link_phrase": "Škrt přinesl ministr sportu"
+    },
+    {
+      "text": "Vojtěch škrt podporuje kvůli lepší predikci výběru.",
+      "source": "steno",
+      "steno_id": "2025_34_02821",
+      "citace": "Tento krok mohu v tuto chvíli podpořit proto, že samozřejmě v průběhu přípravy návrhu se zpřesňovaly makroekonomické predikce pro příští rok z hlediska výběru pojistného",
+      "link_phrase": "škrt podpořil"
+    },
+    {
+      "text": "Šťastný: osm miliard zůstává ve státním rozpočtu na jiné výdaje.",
+      "source": "steno",
+      "steno_id": "2025_34_02827",
+      "citace": "Ale ty peníze zůstaly ve státním rozpočtu, těch 8 miliard, a samozřejmě je potřeba si uvědomit, že bylo možné je v rámci toho rozpočtu využít na jiné smysluplné věci",
+      "link_phrase": "osm miliard zůstane ve státním rozpočtu na jiné výdaje"
+    },
+    {
+      "text": "Šrámková: rezerva 100 milionů = hodina provozu.",
+      "source": "steno",
+      "steno_id": "2025_34_02835",
+      "citace": "Příjmy 605 miliard, výdaje 604,9, rezerva 100 milionů. Náměstek VZP minulý týden v rozhlase řekl, že je to zhruba hodina provozu celého systému.",
+      "link_phrase": "zhruba hodině provozu celého zdravotnictví"
+    },
+    {
+      "text": "Vojtěch: není to dlouhodobé řešení.",
+      "source": "steno",
+      "steno_id": "2025_34_02849",
+      "citace": "že toto není dlouhodobé řešení. S tím souhlasím.",
+      "link_phrase": "jednorázové přidávání peněz není dlouhodobé řešení"
+    },
+    {
+      "text": "Vojtěch: automatická valorizace se pozastavuje na rok 2028.",
+      "source": "steno",
+      "steno_id": "2025_34_02849",
+      "citace": "On se pouze pozastavuje na rok 2028, ale pro rok 2029 se opět obnoví.",
+      "link_phrase": "V roce 2028 se platby za tyto pojištěnce nemají automaticky zvýšit"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Rezerva\nna jednu hodinu",
+  "lead": "Za děti, studenty a důchodce platí zdravotní pojištění stát. Vláda chtěla na příští rok přidat jednadvacet miliard, Sněmovna schválila třináct. Škrt přinesl ministr sportu Boris Šťastný (Motoristé), který návrh podal jako poslanec.",
+  "pointa": "Ministr zdravotnictví Adam Vojtěch (ANO) škrt podpořil: podle nového odhadu pojišťovny vyberou víc na zdravotním pojistném, takže stát může přidat méně. Šťastný vysvětlil, že osm miliard zůstane ve státním rozpočtu na jiné výdaje.\n\nEva Šrámková (Piráti) namítla, že po zaplacení plánovaných výdajů má pojišťovnám za celý příští rok zbýt jen sto milionů korun. Podle náměstka VZP to odpovídá zhruba hodině provozu celého zdravotnictví. Vojtěch sám uznal, že jednorázové přidávání peněz není dlouhodobé řešení.\n\nPoslušně podotýkám, že hodina rezervy na celý rok je slušný výkon.",
+  "pointa_tail": "",
+  "pointa_end": "",
+  "mean": "Stát má v roce 2027 přidat pojišťovnám třináct miliard za děti, studenty a důchodce. V roce 2028 se platby za tyto pojištěnce nemají automaticky zvýšit. Zákon ještě míří do Senátu.",
+  "citace_text": "Ministr zdravotnictví původně navrhl 21 miliard, ministryně financí napsala do rozpočtu 18 a ministr Šťastný chce 13. Tři ministři, tři čísla a jedna vláda.",
+  "citace_autor": "Eva Šrámková (Piráti)",
+  "steno_id": "2025_34_02835",
+  "pocet_hlasovani": 5,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 95,
+    "pritomno_min": 146,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  }
+}

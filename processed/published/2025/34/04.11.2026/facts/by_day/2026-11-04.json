@@ -1,0 +1,41 @@
+{
+  "datum": "04.11.2026",
+  "den": "středa",
+  "topic_slugs": [
+    "novela-z-o-pojistnem-na-verejne-zdr-pojisteni",
+    "vl-n-z-o-digitalni-ekonomice-eu",
+    "novela-z-o-duchodovem-pojisteni"
+  ],
+  "stats": {
+    "pocet_hlas": 2,
+    "minuty": 602,
+    "end_cas": "19:02",
+    "proslo": 2,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "slovnicek": [
+    "Třetí čtení",
+    "Druhé čtení",
+    "Pozměňovací návrh",
+    "Harmonizace s EU",
+    "Schodek"
+  ],
+  "nwl_predmet": "Hodina rezervy a dvě tisícovky pro každého",
+  "dnesni_ucet": "Sněmovna schválila pojišťovnám na příští rok třináct miliard navíc.\nZákon o internetu prošel skoro jednomyslně, dvě tisícovky pro důchodce ještě čekají na hlasování.",
+  "zaver": "že Sněmovna schválila menší navýšení plateb pojišťovnám, než vláda slibovala, schválila pravidla pro internet, kterým hnutí ANO kdysi říkalo totalita, a opozice spočítala, kolik postelí pro seniory by vyšlo místo dvou tisícovek pro každého.",
+  "vysledek": [
+    "* Platby za státní pojištěnce: Sněmovna schválila na příští rok třináct miliard navíc místo dvaceti jedna, zákon míří do Senátu",
+    "* Zákon o digitální ekonomice: schváleno, dohled nad platformami dostane ČTÚ",
+    "* Důchody a dvě tisícovky navíc: druhé kolo skončilo, závěrečné hlasování může přijít za deset dní"
+  ],
+  "jazykolam": {
+    "text": "Jenom jsme tady s panem ministrem tak dumali nad tím, kolik finančních prostředků je připraveno na výstavbu domovů pro seniory či dalších zařízení. Zatím jsme to nevydumali. Je to tak. Kdybyste náhodou to jaksi vydumal, tak budu ráda, když mi to do ouška pošeptáte.",
+    "autor": "Věra Kovářová (STAN)",
+    "steno_id": "2025_34_02953"
+  },
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo"
+}

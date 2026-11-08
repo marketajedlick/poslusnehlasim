@@ -1,0 +1,62 @@
+{
+  "key": "2025/34/04.11.2026",
+  "obdobi": 2025,
+  "schuze": 34,
+  "datum_unl": "04.11.2026",
+  "iso": "2026-11-04",
+  "state": "approved",
+  "topic_slugs": [
+    "novela-z-o-pojistnem-na-verejne-zdr-pojisteni",
+    "vl-n-z-o-digitalni-ekonomice-eu",
+    "novela-z-o-duchodovem-pojisteni"
+  ],
+  "recommended_slugs": [
+    "novela-z-o-pojistnem-na-verejne-zdr-pojisteni",
+    "vl-n-z-o-digitalni-ekonomice-eu",
+    "novela-z-o-duchodovem-pojisteni"
+  ],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-11-04/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "draft",
+    "stale": false,
+    "link_phrase_coverage": {
+      "total": 19,
+      "linked": 19,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 19,
+      "ok": 19,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 0,
+    "steno_passages": 22,
+    "steno_missing_article_phrase": 2,
+    "jazykolam_duplicates": [],
+    "shared_topics": {},
+    "ok": true,
+    "errors": []
+  },
+  "inputs": {
+    "votes_count": 436,
+    "votes_max_cislo": 436,
+    "steno_count": 3475,
+    "steno_last_poradi": 3475,
+    "topics_built_at": "2026-11-07T21:53:02.702587+00:00",
+    "fingerprint": "4986caad519b4f30"
+  },
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null,
+  "approved_hash": "0ef33f37628abf1a"
+}

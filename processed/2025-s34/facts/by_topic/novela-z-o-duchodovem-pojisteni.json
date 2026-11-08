@@ -1,0 +1,88 @@
+{
+  "slug": "novela-z-o-duchodovem-pojisteni",
+  "nazev": "Novela z. o důchodovém pojištění",
+  "datum": "04.11.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "příplatky k důchodu od osmdesáti let, víc pro pracující důchodce a jednorázové dva tisíce korun pro každého důchodce",
+  "koho": [
+    "Koho se to týká? Všech důchodců, hlavně těch nad osmdesát, a rodin, které marně shánějí místo v domově pro seniory."
+  ],
+  "fakty": [
+    {
+      "text": "Juchelka: jednorázový příspěvek 2 000 Kč v roce 2027.",
+      "source": "steno",
+      "steno_id": "2025_34_02933",
+      "citace": "jímž se navrhuje vyplatit důchodci v roce 2027 jednorázový příspěvek ve výši 2 000 korun",
+      "link_phrase": "jednorázové dva tisíce korun"
+    },
+    {
+      "text": "Olšáková: příspěvek stojí 5,9 miliardy.",
+      "source": "steno",
+      "steno_id": "2025_34_03001",
+      "citace": "výdaje spojené s tímto příspěvkem se zvýší o 5,9 miliardy korun",
+      "link_phrase": "skoro šest miliard"
+    },
+    {
+      "text": "Olšáková: za 5,9 miliardy 2 500 lůžek.",
+      "source": "steno",
+      "steno_id": "2025_34_02939",
+      "citace": "z této částky 5,9 miliardy jsme schopni postavit až 2 500 lůžek v pobytových zařízeních",
+      "link_phrase": "dva a půl tisíce lůžek"
+    },
+    {
+      "text": "Pláteník: za 6 miliard by pečující dostal 8 307 Kč měsíčně celý rok.",
+      "source": "steno",
+      "steno_id": "2025_34_02961",
+      "citace": "tak by mohl měsíčně dostávat celý rok 8 307 korun",
+      "link_phrase": "přes osm tisíc korun měsíčně"
+    },
+    {
+      "text": "Pláteník: místo toho se to rozdá plošně všem.",
+      "source": "steno",
+      "steno_id": "2025_34_02961",
+      "citace": "Místo toho my to rozdáme plošně po dvou tisícovkách všem. I těm kteří to nepotřebují, a zbytečně se o tyto peníze připravíme.",
+      "link_phrase": "místo plošných dvou tisícovek pro všechny"
+    },
+    {
+      "text": "Ožanová: kolik stojí madlo.",
+      "source": "steno",
+      "steno_id": "2025_34_02971",
+      "citace": "Protože víte, kolik stojí madlo, když ho potřebujete nainstalovat?",
+      "link_phrase": "kolik stojí madlo"
+    },
+    {
+      "text": "Jakob: ministr nereagoval na dotazy.",
+      "source": "steno",
+      "steno_id": "2025_34_03031",
+      "citace": "celou dobu jsem čekal, jestli pan ministr zareaguje na tu diskusi v obecné rozpravě",
+      "link_phrase": "neodpověděl"
+    },
+    {
+      "text": "Hlasování 417: lhůta zkrácena na 10 dnů.",
+      "source": "steno",
+      "steno_id": "2025_34_03046",
+      "citace": "Hlasování číslo 417, přihlášeno 108 poslanců, pro 67, proti 38. Návrh byl přijat. Lhůta byla zkrácená na 10 dnů.",
+      "link_phrase": "kratší čekání na závěrečné hlasování"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Dvě tisícovky,\nnebo postel",
+  "lead": "Ministr práce Aleš Juchelka (ANO) přidal k návrhu změn důchodů jednorázové dva tisíce korun pro každého důchodce v roce 2027. Stojí to skoro šest miliard. V září návrh přežil první kolo, teď poslanci navrhovali úpravy.",
+  "pointa": "Starostové (STAN) spočítali, že za stejné peníze by šlo postavit až dva a půl tisíce lůžek v domovech pro seniory. Pak jeden po druhém hlásili, kolik míst chybí v jejich kraji. Václav Pláteník (KDU-ČSL) přidal vlastní počty: za stejné peníze by každý, kdo doma pečuje o člověka v nejtěžším stupni závislosti, mohl celý rok dostávat přes osm tisíc korun měsíčně, místo plošných dvou tisícovek pro všechny.\n\nZuzana Ožanová (ANO) oponovala otázkou, kolik stojí madlo do bytu. Juchelka na otázky svého předchůdce Jurečky neodpověděl, prosadil ale kratší čekání na závěrečné hlasování.\n\nPoslušně podotýkám, že opozice nabízela postele, koalice peníze na madlo. Důchodce zatím čeká.",
+  "pointa_tail": "",
+  "pointa_end": "",
+  "mean": "Dva tisíce navíc zatím schválené nejsou. Druhé kolo skončilo, závěrečné hlasování může přijít za deset dní.",
+  "citace_text": "Místo toho my to rozdáme plošně po dvou tisícovkách všem. I těm kteří to nepotřebují, a zbytečně se o tyto peníze připravíme.",
+  "citace_autor": "Václav Pláteník (KDU-ČSL)",
+  "steno_id": "2025_34_02961",
+  "pocet_hlasovani": 1,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 38,
+    "pritomno_min": 108,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  }
+}
