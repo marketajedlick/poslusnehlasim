@@ -1,0 +1,46 @@
+{
+  "slug": "nepritomni-ministri-interpelace-5-listopadu",
+  "nazev": "Ústní interpelace na členy vlády",
+  "datum": "05.11.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "poslanci se chtěli ptát ministrů, ale víc než polovina z těch, na které otázky mířily, nepřišla",
+  "koho": [
+    "Koho se to týká? Každého, kdo čeká, že se ministr ve Sněmovně postaví a vysvětlí, co dělá."
+  ],
+  "fakty": [
+    {
+      "text": "Hladík: ministři nemusí chodit do práce?",
+      "source": "steno",
+      "steno_id": "2025_34_03243",
+      "citace": "Ale jinak vaši ministři nemusí chodit do práce?",
+      "link_phrase": "jestli ministři nemusí chodit do práce"
+    },
+    {
+      "text": "Činčila: vážená nepřítomná paní ministryně, už máte plán?",
+      "source": "steno",
+      "steno_id": "2025_34_03313",
+      "citace": "vážená nepřítomná paní ministryně, před 14 dny jsem se vás ptal, jestli už máte plán, jakým způsobem zkonsolidujete veřejné finance v České republice",
+      "link_phrase": "jestli už má plán, jak srovnat státní finance"
+    },
+    {
+      "text": "Berki: přerušit do přítomnosti ministra.",
+      "source": "steno",
+      "steno_id": "2025_34_03150",
+      "citace": "Vzhledem k tomu, že pan ministr tu ale není, tak ctěnou Sněmovnu žádám o přerušení projednávání této písemné interpelace",
+      "link_phrase": "dokud nepřijde ministr školství Robert Plaga"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Vážený\nnepřítomný ministře",
+  "lead": "Ve čtvrtečních otázkách pro ministry zaznělo dvaadvacet dotazů. Ve dvanácti případech chyběl člen vlády, kterému byly určené. Petr Hladík (KDU-ČSL) se už u premiéra ptal, jestli ministři nemusí chodit do práce.",
+  "pointa": "Ministryně financí Alena Schillerová (ANO) dopoledne obhajovala penzijko, ale z otázek poslanců se omluvila od šestnácti padesáti. Benjamin Činčila (KDU-ČSL) se jí na dálku ptal, jestli už má plán, jak srovnat státní finance.\n\nDopoledne zase Jan Berki (STAN) žádal přerušení své otázky, dokud nepřijde ministr školství Robert Plaga (ANO).\n\nPoslušně podotýkám, že na ministry se pořád dá dovolat. Jen písemně a do třiceti dnů.",
+  "pointa_tail": "",
+  "pointa_end": "",
+  "mean": "Dvanáct otázek na nepřítomné ministry čeká na písemnou odpověď do třiceti dnů.",
+  "citace_text": "Tak protože nejste na interpelacích, nejste v práci, tak se vás zeptám takhle na dálku a doufám, že dostanu písemnou odpověď.",
+  "citace_autor": "Benjamin Činčila (KDU-ČSL)",
+  "steno_id": "2025_34_03313",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

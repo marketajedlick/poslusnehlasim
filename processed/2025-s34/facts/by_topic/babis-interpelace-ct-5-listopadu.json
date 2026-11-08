@@ -1,0 +1,60 @@
+{
+  "slug": "babis-interpelace-ct-5-listopadu",
+  "nazev": "Ústní interpelace na předsedu vlády: poplatky za ČT a ČRo, demonstrace",
+  "datum": "05.11.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "premiér odpovídal na otázky o zrušení poplatku za televizi a rozhlas a o lidech, kteří proti tomu demonstrují",
+  "koho": [
+    "Koho se to týká? Každého, kdo platí poplatek za televizi a rozhlas, a lidí, kteří kvůli jeho zrušení chodí do ulic."
+  ],
+  "fakty": [
+    {
+      "text": "Zajíčková: sedne si premiér se studenty?",
+      "source": "steno",
+      "steno_id": "2025_34_03219",
+      "citace": "jestli jste připravený na to usednout se zástupci protestujících studentů v přímé a veřejné debatě",
+      "link_phrase": "zda si sedne se studenty k veřejné debatě"
+    },
+    {
+      "text": "Babiš: rád přijme lidi, kteří chtějí mluvit.",
+      "source": "steno",
+      "steno_id": "2025_34_03221",
+      "citace": "Já rád přijmu lidi, kteří by chtěli se mnou mluvit.",
+      "link_phrase": "rád přijme lidi, kteří s ním chtějí mluvit"
+    },
+    {
+      "text": "Rakušan: 4.36 vyvolalo atmosféru.",
+      "source": "steno",
+      "steno_id": "2025_34_03231",
+      "citace": "4.36 pane premiére, to vyvolalo tu atmosféru, to vyvolalo to, že lidé přišli na ulici.",
+      "link_phrase": "Právě to podle něj poslalo lidi do ulic"
+    },
+    {
+      "text": "Babiš: demonstrace nejsou o poplatcích.",
+      "source": "steno",
+      "steno_id": "2025_34_03233",
+      "citace": "Ale ty demonstrace nejsou o poplatcích přece. To je demonstrace proti naší vládě.",
+      "link_phrase": "demonstrace podle něj nejsou o poplatcích"
+    },
+    {
+      "text": "Babiš: v pondělí se zeptá koaliční rady.",
+      "source": "steno",
+      "steno_id": "2025_34_03279",
+      "citace": "Já tady nerozhoduju sám, já se zeptám naší koaliční rady příští pondělí, jak teda budeme postupovat, jestli ten návrh, tak jak je, zůstane.",
+      "link_phrase": "v pondělí se zeptá koaliční rady"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Naši chodí\nk volbám",
+  "lead": "Premiér Andrej Babiš (ANO) ve čtvrtek odpovídal poslancům na otázky o televizních poplatcích a demonstracích. Renáta Zajíčková (ODS) chtěla vědět, zda si sedne se studenty k veřejné debatě. Řekl, že rád přijme lidi, kteří s ním chtějí mluvit. Pak porovnal voliče.",
+  "pointa": "Vít Rakušan (STAN) připomněl hlasování o poplatcích, které se protáhlo z pátku na sobotu do čtyř třiceti šesti ráno. Právě to podle něj poslalo lidi do ulic. Babiš oponoval: demonstrace podle něj nejsou o poplatcích, ale proti jeho vládě.\n\nMartin Baxa (ODS) se ptal na televizní daň. Premiér řekl, že v pondělí se zeptá koaliční rady, zda návrh zůstane, nebo přijde jiný.",
+  "pointa_tail": "",
+  "pointa_end": "",
+  "mean": "Čím se poplatky nahradí, zůstává otevřené. Další postup má probrat pondělní koaliční rada.",
+  "citace_text": "Rozdíl mezi vašimi voliči a našimi je velký, naši nechodí demonstrovat, naši chodí k volbám a my jim za to děkujeme.",
+  "citace_autor": "Andrej Babiš (ANO)",
+  "steno_id": "2025_34_03221",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}

@@ -1,0 +1,41 @@
+{
+  "datum": "05.11.2026",
+  "den": "čtvrtek",
+  "topic_slugs": [
+    "babis-interpelace-ct-5-listopadu",
+    "cerveny-krnap-halda-5-listopadu",
+    "nepritomni-ministri-interpelace-5-listopadu",
+    "tejc-tabulka-interpelace-5-listopadu"
+  ],
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 537,
+    "end_cas": "17:57",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "spor_o_porad": false,
+    "dlouha_debata": false
+  },
+  "steno_zdroje": true,
+  "slovnicek": [
+    "interpelace",
+    "veřejnoprávní média",
+    "koncesionářské poplatky",
+    "Usnesení"
+  ],
+  "nwl_predmet": "Naši chodí k volbám. Ministři na interpelace ne",
+  "dnesni_ucet": "Premiér odkazoval u televizních poplatků na pondělní poradu koalice.\nDvanáct otázek čekalo na ministry, kteří nepřišli.",
+  "zaver": "že premiér přišel odpovídat na otázky o televizi a demonstracích, zatímco víc než polovina otázek pro ministry skončila u prázdné lavice.",
+  "vysledek": [
+    "* Interpelace na premiéra: o náhradě poplatku za televizi se v pondělí poradí koaliční rada",
+    "* Interpelace na ministry: dvanáct z dvaadvaceti otázek čeká na písemnou odpověď",
+    "* Tabulka k plnění vládního programu: zůstává interní"
+  ],
+  "jazykolam": {
+    "text": "Co se tady děje? Já nevím. Já sem moc ani nechodím.",
+    "autor": "Andrej Babiš (ANO)",
+    "steno_id": "2025_34_03259"
+  },
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo"
+}

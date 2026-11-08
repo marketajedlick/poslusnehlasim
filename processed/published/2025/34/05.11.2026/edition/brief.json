@@ -1,0 +1,188 @@
+{
+  "datum_unl": "05.11.2026",
+  "iso": "2026-11-05",
+  "recommended": [
+    {
+      "slug": "babis-interpelace-ct-5-listopadu",
+      "nazev": "Ústní interpelace na předsedu vlády: poplatky za ČT a ČRo, demonstrace",
+      "nadpis": "Naši chodí\nk volbám",
+      "score": null,
+      "meta": {
+        "vyber": "redakcni",
+        "kategorie": "interpelace",
+        "verdikt": "debata",
+        "proslo": false,
+        "vysledek": "Premiér odkázal další postup u televizních poplatků na pondělní koaliční radu.",
+        "pocet_fakty": 3
+      },
+      "fakty": [
+        {
+          "text": "Hlavní citát: Andrej Babiš (ANO)",
+          "source": "steno",
+          "steno_id": "2025_34_03221",
+          "citace": "Rozdíl mezi vašimi voliči a našimi je velký, naši nechodí demonstrovat, naši chodí k volbám a my jim za to děkujeme.",
+          "datum": "2026-11-05",
+          "autor": "ČR Andrej Babiš"
+        },
+        {
+          "text": "Zajíčková: sedne si premiér se studenty?",
+          "source": "steno",
+          "steno_id": "2025_34_03219",
+          "citace": "jestli jste připravený na to usednout se zástupci protestujících studentů v přímé a veřejné debatě",
+          "link_phrase": "zda si sedne se studenty k veřejné debatě",
+          "datum": "2026-11-05",
+          "autor": "Renáta Zajíčková"
+        },
+        {
+          "text": "Babiš: rád přijme lidi, kteří chtějí mluvit.",
+          "source": "steno",
+          "steno_id": "2025_34_03221",
+          "citace": "Já rád přijmu lidi, kteří by chtěli se mnou mluvit.",
+          "link_phrase": "rád přijme lidi, kteří s ním chtějí mluvit",
+          "datum": "2026-11-05",
+          "autor": "ČR Andrej Babiš"
+        }
+      ]
+    },
+    {
+      "slug": "cerveny-krnap-halda-5-listopadu",
+      "nazev": "Ústní interpelace: ministr životního prostředí, Krkonošský národní park a Heřmanická halda",
+      "nadpis": "Bla bla bla\nza ministra",
+      "score": null,
+      "meta": {
+        "vyber": "redakcni",
+        "kategorie": "interpelace",
+        "verdikt": "debata",
+        "proslo": false,
+        "vysledek": "Premiér četl stanoviska ministerstva; nepřítomný ministr má odpovědět písemně.",
+        "pocet_fakty": 3
+      },
+      "fakty": [
+        {
+          "text": "Hlavní citát: Michal Kučera (TOP 09)",
+          "source": "steno",
+          "steno_id": "2025_34_03235",
+          "citace": "Kolik institucí ještě musí ministr Igor Červený rozvrátit, než přestanete být spokojený s jeho prací?",
+          "datum": "2026-11-05",
+          "autor": "Michal Kučera"
+        },
+        {
+          "text": "Hladík: interpeluje premiéra, protože Červený tu není.",
+          "source": "steno",
+          "steno_id": "2025_34_03243",
+          "citace": "Já vás interpeluji proto, že tady není váš ministr Červený.",
+          "link_phrase": "Otázky na něj tak dostal premiér",
+          "datum": "2026-11-05",
+          "autor": "Petr Hladík"
+        },
+        {
+          "text": "Babiš čte zřizovací listinu: Krnovský národní park.",
+          "source": "steno",
+          "steno_id": "2025_34_03237",
+          "citace": "ochrana přírody na území Krnovského národního parku",
+          "link_phrase": "přečetl jako Krnovský národní park",
+          "datum": "2026-11-05",
+          "autor": "ČR Andrej Babiš"
+        }
+      ]
+    },
+    {
+      "slug": "nepritomni-ministri-interpelace-5-listopadu",
+      "nazev": "Ústní interpelace na členy vlády",
+      "nadpis": "Vážený\nnepřítomný ministře",
+      "score": null,
+      "meta": {
+        "vyber": "redakcni",
+        "kategorie": "interpelace",
+        "verdikt": "debata",
+        "proslo": false,
+        "vysledek": "Dvanáct z dvaadvaceti otázek čeká na písemnou odpověď nepřítomných ministrů.",
+        "pocet_fakty": 3
+      },
+      "fakty": [
+        {
+          "text": "Hlavní citát: Benjamin Činčila (KDU-ČSL)",
+          "source": "steno",
+          "steno_id": "2025_34_03313",
+          "citace": "Tak protože nejste na interpelacích, nejste v práci, tak se vás zeptám takhle na dálku a doufám, že dostanu písemnou odpověď.",
+          "datum": "2026-11-05",
+          "autor": "Benjamin Činčila"
+        },
+        {
+          "text": "Hladík: ministři nemusí chodit do práce?",
+          "source": "steno",
+          "steno_id": "2025_34_03243",
+          "citace": "Ale jinak vaši ministři nemusí chodit do práce?",
+          "link_phrase": "jestli ministři nemusí chodit do práce",
+          "datum": "2026-11-05",
+          "autor": "Petr Hladík"
+        },
+        {
+          "text": "Činčila: vážená nepřítomná paní ministryně, už máte plán?",
+          "source": "steno",
+          "steno_id": "2025_34_03313",
+          "citace": "vážená nepřítomná paní ministryně, před 14 dny jsem se vás ptal, jestli už máte plán, jakým způsobem zkonsolidujete veřejné finance v České republice",
+          "link_phrase": "jestli už má plán, jak srovnat státní finance",
+          "datum": "2026-11-05",
+          "autor": "Benjamin Činčila"
+        }
+      ]
+    },
+    {
+      "slug": "tejc-tabulka-interpelace-5-listopadu",
+      "nazev": "Odpověď ministra spravedlnosti na písemnou interpelaci P. Hladíka ve věci plánu legislativních prací vlády",
+      "nadpis": "Tabulka\nnení pro vás",
+      "score": null,
+      "meta": {
+        "vyber": "redakcni",
+        "kategorie": "interpelace",
+        "verdikt": "debata",
+        "proslo": false,
+        "vysledek": "Ministr tabulku neposkytl, debata skončila bez usnesení.",
+        "pocet_fakty": 3
+      },
+      "fakty": [
+        {
+          "text": "Hlavní citát: Jeroným Tejc, ministr spravedlnosti",
+          "source": "steno",
+          "steno_id": "2025_34_03060",
+          "citace": "Škoda, že jste se nezajímali o to vaše programové prohlášení, to byste možná dnes nemuseli sedět v opozici",
+          "datum": "2026-11-05",
+          "autor": "Jeroným Tejc"
+        },
+        {
+          "text": "Hladík: ministr o dokumentu mluvil na brífinku vlády.",
+          "source": "steno",
+          "steno_id": "2025_34_03058",
+          "citace": "Vzhledem k tomu, že na oficiálním tiskovém brífinku vlády ministr vlády o takovém dokumentu hovořil, pak mně připadá logické, že tento dokument bychom jako Parlament pro kontrolu vlády",
+          "link_phrase": "mluvil na tiskovce vlády",
+          "datum": "2026-11-05",
+          "autor": "Petr Hladík"
+        },
+        {
+          "text": "Tejc: interní dokument.",
+          "source": "steno",
+          "steno_id": "2025_34_03060",
+          "citace": "To, co k dispozici nemáte a co já jsem přesvědčen, že ani nepotřebujete, je interní dokument",
+          "link_phrase": "je to prý interní dokument",
+          "datum": "2026-11-05",
+          "autor": "Jeroným Tejc"
+        }
+      ]
+    }
+  ],
+  "rejected": [],
+  "day_stats": {
+    "pocet_hlas_zakon": 0,
+    "proslo_vote": 0,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": false,
+    "calendar_isos": [
+      "2026-11-05",
+      "2026-11-06"
+    ],
+    "schvalena_usneseni": 0,
+    "poznamka": "Počty zákonů zahrnují závěrečná rozhodnutí, nikoli ukončení druhého kola nebo hlasování o pořadu."
+  },
+  "editorial_note": "Redakčně opravený výběr podle facts/by_day. Citace jsou z daného dne; výsledky rozlišují zákony, usnesení a debaty. Automatické skóre nebylo použito."
+}

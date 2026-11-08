@@ -1,0 +1,60 @@
+{
+  "slug": "tejc-tabulka-interpelace-5-listopadu",
+  "nazev": "Odpověď ministra spravedlnosti na písemnou interpelaci P. Hladíka ve věci plánu legislativních prací vlády",
+  "datum": "05.11.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "jestli opozice smí vidět tabulku, podle které vláda kontroluje plnění svého programu",
+  "koho": [
+    "Koho se to týká? Každého, kdo chce vědět, jak vláda plní, co slíbila."
+  ],
+  "fakty": [
+    {
+      "text": "Hladík: ministr o dokumentu mluvil na brífinku vlády.",
+      "source": "steno",
+      "steno_id": "2025_34_03058",
+      "citace": "Vzhledem k tomu, že na oficiálním tiskovém brífinku vlády ministr vlády o takovém dokumentu hovořil, pak mně připadá logické, že tento dokument bychom jako Parlament pro kontrolu vlády",
+      "link_phrase": "mluvil na tiskovce vlády"
+    },
+    {
+      "text": "Tejc: interní dokument.",
+      "source": "steno",
+      "steno_id": "2025_34_03060",
+      "citace": "To, co k dispozici nemáte a co já jsem přesvědčen, že ani nepotřebujete, je interní dokument",
+      "link_phrase": "je to prý interní dokument"
+    },
+    {
+      "text": "Tejc: můžete využít i umělou inteligenci.",
+      "source": "steno",
+      "steno_id": "2025_34_03060",
+      "citace": "samozřejmě můžete k tomu třeba využít i umělou inteligenci",
+      "link_phrase": "třeba s pomocí umělé inteligence"
+    },
+    {
+      "text": "Hladík: měl jsem vás za lepšího kabrňáka.",
+      "source": "steno",
+      "steno_id": "2025_34_03062",
+      "citace": "To jsem vás měl za lepšího kabrňáka, omlouvám se.",
+      "link_phrase": "ho měl za lepšího kabrňáka"
+    },
+    {
+      "text": "Činčila: Lang sdílí jeho příspěvky.",
+      "source": "steno",
+      "steno_id": "2025_34_03074",
+      "citace": "protože jsem zjistil, že on rád sdílí moje facebookové příspěvky",
+      "link_phrase": "kdo komu sdílí příspěvky na Facebooku"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 4,
+  "nadpis": "Tabulka\nnení pro vás",
+  "lead": "Petr Hladík (KDU-ČSL) chtěl tabulku, podle které vláda sleduje plnění svých slibů. Ministr spravedlnosti Jeroným Tejc o ní mluvil na tiskovce vlády, poslanci ji ale dát odmítl: je to prý interní dokument.",
+  "pointa": "Tejc doporučil dohledat si údaje na internetu, třeba s pomocí umělé inteligence. Hladík mu řekl, že ho měl za lepšího kabrňáka.\n\nPak se debata rozběhla přes noční hlasování o televizi, alimenty i to, kdo komu sdílí příspěvky na Facebooku. Předsedající Jiří Barták (Motoristé) prosil o návrat k tématu.\n\nPoslušně podotýkám, že tabulka zůstala interní. Hádka o ní byla veřejná.",
+  "pointa_tail": "",
+  "pointa_end": "",
+  "mean": "Vládní přehled plnění slibů ministr neposkytl. Debata skončila bez usnesení.",
+  "citace_text": "Škoda, že jste se nezajímali o to vaše programové prohlášení, to byste možná dnes nemuseli sedět v opozici",
+  "citace_autor": "Jeroným Tejc, ministr spravedlnosti",
+  "steno_id": "2025_34_03060",
+  "pocet_hlasovani": 0,
+  "proslo": false
+}
