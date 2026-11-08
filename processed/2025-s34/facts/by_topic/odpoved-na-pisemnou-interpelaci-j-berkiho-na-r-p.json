@@ -1,0 +1,35 @@
+{
+  "slug": "odpoved-na-pisemnou-interpelaci-j-berkiho-na-r-p",
+  "nazev": "Odpověď na písemnou interpelaci J. Berkiho na R. Plagu",
+  "datum": "05.11.2026",
+  "verdikt": "odlozeno",
+  "predmet_lidsky": "Podpora změn odkladů školní docházky.",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "Poslanec žádá přerušení do přítomnosti ministra.",
+      "source": "steno",
+      "steno_id": "2025_34_03150",
+      "citace": "Vzhledem k tomu, že pan ministr tu ale není, tak ctěnou Sněmovnu žádám o přerušení projednávání této písemné interpelace, respektive odpovědi na písemnou interpelaci do doby přítomnosti pana ministra."
+    },
+    {
+      "text": "Hlasování číslo 418, přihlášeno 112 poslanců, pro 84, proti nikdo.",
+      "source": "steno",
+      "steno_id": "2025_34_03151",
+      "citace": "Hlasování číslo 418, přihlášeno 112 poslanců, pro 84, proti nikdo."
+    }
+  ],
+  "publikovat": false,
+  "priorita": 3,
+  "nadpis": "Otázka čeká na ministra",
+  "pocet_hlasovani": 1,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 112,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 115
+}

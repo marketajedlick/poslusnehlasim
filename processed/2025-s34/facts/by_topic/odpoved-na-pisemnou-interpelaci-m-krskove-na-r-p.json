@@ -1,0 +1,35 @@
+{
+  "slug": "odpoved-na-pisemnou-interpelaci-m-krskove-na-r-p",
+  "nazev": "Odpověď na písemnou interpelaci M. Krškové na R. Plagu",
+  "datum": "05.11.2026",
+  "verdikt": "odlozeno",
+  "predmet_lidsky": "Stabilita financování malých a malotřídních škol.",
+  "koho": [],
+  "fakty": [
+    {
+      "text": "Poslanec žádá přerušení do přítomnosti ministra.",
+      "source": "steno",
+      "steno_id": "2025_34_03152",
+      "citace": "Vzhledem k nepřítomnosti pana ministra a vzhledem k tomu, že opravdu to téma mně přijde důležité, aby pokračovalo se v diskusi tady na půdě Poslanecké sněmovny, tak žádám o přerušení do přítomnosti pana ministra."
+    },
+    {
+      "text": "Hlasování číslo 419, přihlášeno 112 poslanců, pro 77, proti nikdo.",
+      "source": "steno",
+      "steno_id": "2025_34_03153",
+      "citace": "Hlasování číslo 419, přihlášeno 112 poslanců, pro 77, proti nikdo."
+    }
+  ],
+  "publikovat": false,
+  "priorita": 2,
+  "nadpis": "Otázka čeká na ministra",
+  "pocet_hlasovani": 1,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 0,
+    "pritomno_min": 112,
+    "jednomyslne": true,
+    "spor": false,
+    "prazdny_sal": true
+  },
+  "steno_slov": 107
+}
