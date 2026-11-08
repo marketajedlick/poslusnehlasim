@@ -29,6 +29,7 @@ def build_ig_caption(
     tail = (zaver or "").strip()
     if tail.lower().startswith("že "):
         tail = tail[3:].strip()
+        tail = tail[:1].upper() + tail[1:]
     lines = ["Poslušně hlásím"]
     if ucet:
         lines.append(ucet)
