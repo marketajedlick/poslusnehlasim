@@ -1,0 +1,75 @@
+{
+  "slug": "zdravotne-pojistne-plany-zdravotnich-pojistoven-",
+  "nazev": "Zdravotně pojistné plány zdravotních pojišťoven na rok 2026",
+  "datum": "06.11.2026",
+  "verdikt": "schvaleno",
+  "predmet_lidsky": "rozpočty zdravotních pojišťoven na rok 2026, tedy kolik vyberou a kolik zaplatí za péči",
+  "koho": [
+    "Koho se to týká? Každého pojištěnce. Z těchto peněz pojišťovny platí nemocnice, lékaře a léky."
+  ],
+  "fakty": [
+    {
+      "text": "Vojtěch: schodek 15 miliard.",
+      "source": "steno",
+      "steno_id": "2025_34_03419",
+      "citace": "Zdravotně pojistné plány jsou sestavené jako deficitní v souhrnné hodnotě -15 miliard korun",
+      "link_phrase": "se schodkem patnáct miliard korun"
+    },
+    {
+      "text": "Hlasování 435: plány schváleny.",
+      "source": "steno",
+      "steno_id": "2025_34_03430",
+      "citace": "Hlasování číslo 435, bylo přihlášeno 152 poslanců, pro 110, proti 1. Návrh usnesení byl schválen.",
+      "link_phrase": "téměř bez odporu"
+    },
+    {
+      "text": "Šrámková: epikríza se píše, když pacient odchází.",
+      "source": "steno",
+      "steno_id": "2025_34_03425",
+      "citace": "Píše se, když pacient odchází. Shrnuje se, co se stalo, a už se nic nezmění.",
+      "link_phrase": "píše se, když pacient odchází"
+    },
+    {
+      "text": "Šrámková: schodek zaplatí z rezerv.",
+      "source": "steno",
+      "steno_id": "2025_34_03425",
+      "citace": "Pojišťovny ho zaplatí z rezerv.",
+      "link_phrase": "rozdíl doplatí z rezerv"
+    },
+    {
+      "text": "Vojtěch: čistá formalita.",
+      "source": "steno",
+      "steno_id": "2025_34_03427",
+      "citace": "A už je to čistá formalita.",
+      "link_phrase": "Je to podle něj čistá formalita"
+    },
+    {
+      "text": "Vojtěch: stačilo by, kdyby plány schválila vláda.",
+      "source": "steno",
+      "steno_id": "2025_34_03427",
+      "citace": "že podle mě by zcela stačilo, kdyby ty zdravotně pojistné plány schválila vláda a nemusely by jít tady do Poslanecké sněmovny",
+      "link_phrase": "plány by klidně mohla schvalovat jen vláda"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Epikríza\nmísto plánu",
+  "pocet_hlasovani": 1,
+  "proslo": true,
+  "signaly": {
+    "proti_max": 1,
+    "pritomno_min": 152,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 3830,
+  "lead": "Šestého listopadu schválila Sněmovna zdravotním pojišťovnám plány na rok 2026. Tedy rozpočty, podle kterých utrácejí už od ledna. Počítají se schodkem patnáct miliard korun, poslanci je přijali téměř bez odporu.",
+  "pointa": "Lékařka Eva Šrámková (Piráti) přirovnala plány k závěrečné zprávě o pacientovi: píše se, když pacient odchází. Připomněla, že ministr zdravotnictví Adam Vojtěch (ANO) chtěl už v roce 2019 schvalovat plány před začátkem roku.\n\nVojtěch jí dal za pravdu. Je to podle něj čistá formalita a plány by klidně mohla schvalovat jen vláda.\n\nPoslušně podotýkám, že plán na rok se nejlíp schvaluje, když už víme, jak skoro celý dopadl.",
+  "pointa_tail": "",
+  "pointa_end": "",
+  "mean": "Pojišťovny mají letos utratit víc, než vyberou, a rozdíl doplatí z rezerv. Sněmovna jejich plány schválila až nyní.",
+  "citace_text": "My lékaři máme pro takový dokument přesné slovo, neříkáme mu plán, říkáme mu epikríza.",
+  "citace_autor": "Eva Šrámková (Piráti)",
+  "steno_id": "2025_34_03425"
+}

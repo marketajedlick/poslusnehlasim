@@ -1,0 +1,74 @@
+{
+  "key": "2025/34/06.11.2026",
+  "obdobi": 2025,
+  "schuze": 34,
+  "datum_unl": "06.11.2026",
+  "iso": "2026-11-06",
+  "state": "published",
+  "topic_slugs": [
+    "debata-porad-s34-6-listopadu",
+    "zdravotne-pojistne-plany-zdravotnich-pojistoven-",
+    "novela-z-o-doplnkovem-penzijnim-sporeni"
+  ],
+  "recommended_slugs": [
+    "debata-porad-s34-6-listopadu",
+    "zdravotne-pojistne-plany-zdravotnich-pojistoven-",
+    "novela-z-o-doplnkovem-penzijnim-sporeni"
+  ],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-11-06/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "draft",
+    "stale": false,
+    "link_phrase_coverage": {
+      "total": 18,
+      "linked": 18,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 18,
+      "ok": 18,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 0,
+    "steno_passages": 21,
+    "steno_missing_article_phrase": 2,
+    "jazykolam_duplicates": [],
+    "shared_topics": {},
+    "ok": true,
+    "errors": []
+  },
+  "inputs": {
+    "votes_count": 436,
+    "votes_max_cislo": 436,
+    "steno_count": 3475,
+    "steno_last_poradi": 3475,
+    "topics_built_at": "2026-11-07T21:53:02.702587+00:00",
+    "fingerprint": "4986caad519b4f30"
+  },
+  "published_at": "2026-11-08T19:00:19.487416+00:00",
+  "snapshot_dir": "published/2025/34/06.11.2026",
+  "supersedes": null,
+  "approved_hash": "f4a722036e88b1e8",
+  "published_hash": "f4a722036e88b1e8",
+  "assets": {
+    "og": "/Users/marketa/conductor/workspaces/poslusne_hlasim/dublin/processed/2025-s34/editions/2026-11-06/assets/2026-11-06.png",
+    "share": "/Users/marketa/conductor/workspaces/poslusne_hlasim/dublin/processed/2025-s34/editions/2026-11-06/assets/2026-11-06.png",
+    "carousel": [
+      "01-ucet.png",
+      "carousel/02-citace.png",
+      "carousel/03-citace.png",
+      "carousel/04-citace.png"
+    ],
+    "caption": "/Users/marketa/conductor/workspaces/poslusne_hlasim/dublin/processed/2025-s34/editions/2026-11-06/assets/caption.txt"
+  }
+}

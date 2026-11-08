@@ -1,0 +1,96 @@
+{
+  "slug": "novela-z-o-doplnkovem-penzijnim-sporeni",
+  "nazev": "Vládní návrh zákona o doplňkovém penzijním spoření, druhé čtení",
+  "datum": "06.11.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "levnější a výnosnější dobrovolné spoření na důchod, druhé kolo s pozměňovacími návrhy",
+  "koho": [
+    "Koho se to týká? Skoro čtyř milionů lidí, kteří si spoří na penzijko, a mladých s hypotékou, kterým má stát dovolit odečíst z daní víc úroků."
+  ],
+  "fakty": [
+    {
+      "text": "Schillerová: 46 pozměňovacích návrhů.",
+      "source": "steno",
+      "steno_id": "2025_34_03448",
+      "citace": "46 pozměňovacích návrhů si prostuduju se svými kolegy.",
+      "link_phrase": "čtyřicet šest pozměňovacích návrhů"
+    },
+    {
+      "text": "Zuna: bitcoin přímo v DIP.",
+      "source": "steno",
+      "steno_id": "2025_34_03454",
+      "citace": "A ten rozdíl, který my navrhujeme, je, aby se dalo investovat přímo do toho podkladového aktiva.",
+      "link_phrase": "koupit přímo bitcoin"
+    },
+    {
+      "text": "Schillerová: bitcoin může růst i se náhle propadnout.",
+      "source": "steno",
+      "steno_id": "2025_34_03448",
+      "citace": "Může hodně růst, ale také se může náhle propadnout.",
+      "link_phrase": "může hodně růst, ale také se náhle propadnout"
+    },
+    {
+      "text": "Zuna: návrh na investice do bitcoinu v DIP.",
+      "source": "steno",
+      "steno_id": "2025_34_03454",
+      "citace": "který se týká právě možnosti investovat do bitcoinu v rámci dlouhodobého investičního produktu",
+      "link_phrase": "Návrh s bitcoinem hájili"
+    },
+    {
+      "text": "Havránek: ať si lidé vyberou.",
+      "source": "steno",
+      "steno_id": "2025_34_03452",
+      "citace": "Pojďme to tedy umožnit do bitcoinu jako takového. Nechť si ti lidé vyberou.",
+      "link_phrase": "Jiří Havránek"
+    },
+    {
+      "text": "Jurečka: kdyby se stal zázrak.",
+      "source": "steno",
+      "steno_id": "2025_34_03434",
+      "citace": "Kdyby se tady na půdě Sněmovny stal zázrak, tak myslím si, že i to kladné stanovisko někde by mohlo taky zaznít.",
+      "link_phrase": "si přál zázrak"
+    },
+    {
+      "text": "Schillerová: k návrhům se vyjádří ve třetím čtení.",
+      "source": "steno",
+      "steno_id": "2025_34_03448",
+      "citace": "budu tady v rámci třetího čtení, než dojde na hlasování jako takové, zdůvodňovat, jak a proč jsem se k některým postavila",
+      "link_phrase": "se k návrhům vyjádří před závěrečným hlasováním"
+    },
+    {
+      "text": "Malá: vyřadit zbývající body a ukončit schůzi.",
+      "source": "steno",
+      "steno_id": "2025_34_03474",
+      "citace": "Já dávám návrh, abychom vyřadili zbývající body této schůze a tuto schůzi dnes ukončili.",
+      "link_phrase": "vyškrtnout všechny zbývající body a schůzi ukončit"
+    },
+    {
+      "text": "Hlasování 436: zbývající body vyřazeny.",
+      "source": "steno",
+      "steno_id": "2025_34_03475",
+      "citace": "Hlasování číslo 436, bylo přihlášeno 88 poslanců, pro hlasovalo 82, proti 3. Návrh byl přijat.",
+      "link_phrase": "Sněmovna to schválila"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 3,
+  "nadpis": "Bitcoin\nna důchod?",
+  "pocet_hlasovani": 0,
+  "proslo": false,
+  "signaly": {
+    "proti_max": 3,
+    "pritomno_min": 88,
+    "jednomyslne": false,
+    "spor": true,
+    "prazdny_sal": true
+  },
+  "steno_slov": 81341,
+  "lead": "Druhé kolo Lepšího penzijka skončilo po čtyřech dnech. Ministryně financí Alena Schillerová (ANO) má před sebou čtyřicet šest pozměňovacích návrhů. Patří mezi ně i možnost koupit přímo bitcoin v dlouhodobém investičním produktu, tedy v jiném způsobu spoření na stáří než v penzijku.",
+  "pointa": "Návrh s bitcoinem hájili Michal Zuna (TOP 09) a Jiří Havránek (ODS). Schillerová ho odmítla, protože bitcoin prý může hodně růst, ale také se náhle propadnout. Marian Jurečka (KDU-ČSL) si přál zázrak, při kterém by ministryně aspoň některé opoziční úpravě řekla ano. Schillerová slíbila, že se k návrhům vyjádří před závěrečným hlasováním.\n\nHned potom Taťána Malá (ANO) navrhla vyškrtnout všechny zbývající body a schůzi ukončit. Sněmovna to schválila. Změna Ústavy ani lex Ukrajina tak na řadu nepřišly.\n\nPoslušně podotýkám, že čtyři dny debaty o spoření skončily nejrychlejší úsporou týdne. Škrtl se zbytek schůze.",
+  "pointa_tail": "",
+  "pointa_end": "",
+  "mean": "O změnách penzijka se ještě nehlasovalo. Druhé kolo skončilo, návrhy čekají na závěrečné hlasování.",
+  "citace_text": "Pojďme to tedy umožnit do bitcoinu jako takového. Nechť si ti lidé vyberou.",
+  "citace_autor": "Jiří Havránek (ODS)",
+  "steno_id": "2025_34_03452"
+}

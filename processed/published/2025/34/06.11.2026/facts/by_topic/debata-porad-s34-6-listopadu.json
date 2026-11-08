@@ -1,0 +1,47 @@
+{
+  "slug": "debata-porad-s34-6-listopadu",
+  "nazev": "Debata o pořadu schůze",
+  "datum": "06.11.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "o čem se bude poslední den schůze jednat: dva koaliční body proti opozičním návrhům, uprostřed výpadek proudu",
+  "koho": [
+    "Koho se to týká? Každého, kdo čeká, jestli se Sněmovna bude zabývat cenami energií, hypotékami nebo chystanou sektorovou daní. Pořad rozhoduje, o čem se vůbec mluví."
+  ],
+  "fakty": [
+    {
+      "text": "Malá: plány pojišťoven a penzijko, ať se to čtvrtý den dodělá.",
+      "source": "steno",
+      "steno_id": "2025_34_03392",
+      "citace": "Myslím si, že by bylo fajn, abychom to už čtvrtý den dodělali.",
+      "link_phrase": "aby se podle ní už čtvrtý den dodělalo"
+    },
+    {
+      "text": "[scéna] Výpadek proudu v 9.35.",
+      "source": "steno",
+      "steno_id": "2025_34_03408",
+      "citace": "(Jednání přerušeno v 9.35 hodin kvůli výpadku proudu v budově.)",
+      "link_phrase": "vypadl ve Sněmovně proud"
+    },
+    {
+      "text": "Richterová: je Parlament připraven na krize?",
+      "source": "steno",
+      "steno_id": "2025_34_03414",
+      "citace": "Takže nový bod: Je Parlament skutečně připraven na krizové situace?",
+      "link_phrase": "jestli je Parlament připraven na krizové situace"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Proud vypadl,\nprogram zůstal",
+  "lead": "V pátek ráno vypadl ve Sněmovně proud.",
+  "pointa": "<strong>Co se na program nedostalo</strong>\nBenda (ODS) chtěl odvolání Okamury (SPD), Jurečka (KDU-ČSL) energie a hypotéky, Hladík (KDU-ČSL) Krkonoše. Richterová (Piráti) po výpadku přidala otázku, jestli je Parlament připraven na krizové situace. Ani s ní neuspěla.\n\n<strong>Co se na program dostalo</strong>\nNávrh předsedkyně klubu ANO Taťány Malé: plány zdravotních pojišťoven a penzijko, aby se podle ní už čtvrtý den dodělalo.\n\nPoslušně podotýkám, že jediné, co ve Sněmovně vypadlo mimo program, byl proud.",
+  "pointa_tail": "",
+  "pointa_end": "",
+  "mean": "Nová opoziční témata se na program nedostala. Poslanci řešili plány pojišťoven a penzijko.",
+  "citace_text": "Já doufám, že to nikoho nezaskočilo ve výtahu a všichni se dostali tam, kam chtěli a měli.",
+  "citace_autor": "Patrik Nacher (ANO)",
+  "steno_id": "2025_34_03409",
+  "pocet_hlasovani": 13,
+  "proslo": false,
+  "spor_o_porad": true
+}

@@ -1,0 +1,42 @@
+{
+  "datum": "06.11.2026",
+  "den": "pátek",
+  "topic_slugs": [
+    "debata-porad-s34-6-listopadu",
+    "zdravotne-pojistne-plany-zdravotnich-pojistoven-",
+    "novela-z-o-doplnkovem-penzijnim-sporeni"
+  ],
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 307,
+    "end_cas": "14:07",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": false
+  },
+  "steno_zdroje": true,
+  "slovnicek": [
+    "Penzijní spoření",
+    "Pozměňovací návrh",
+    "Druhé čtení",
+    "Usnesení"
+  ],
+  "nwl_predmet": "Tma ve Sněmovně a plán na rok, který končí",
+  "dnesni_ucet": "Ve Sněmovně vypadl proud, pojišťovny dostaly plán na rok, který končí.\nPenzijko dokončilo druhé kolo, zbytek schůze se vyškrtl.",
+  "zaver": "že Sněmovna v pátek schválila zdravotním pojišťovnám plán na rok, ze kterého zbývají dva měsíce, dokončila druhé kolo penzijka a zbytek schůze vyškrtla.",
+  "vysledek": [
+    "* Plány zdravotních pojišťoven na rok 2026: schváleno, v listopadu",
+    "* Lepší penzijko: druhé kolo skončilo, čtyřicet šest návrhů čeká na závěrečné hlasování",
+    "* Zbytek schůze: vyškrtnut, změna Ústavy a lex Ukrajina na této schůzi na řadu nepřišly"
+  ],
+  "jazykolam": {
+    "text": "Plán léčby píšeme při příjmu, ne při propuštění.",
+    "autor": "Eva Šrámková (Piráti)",
+    "steno_id": "2025_34_03425"
+  },
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo",
+  "skore_manual": true,
+  "skore_poznamka": "Skóre počítá jen zákony. Schválené plány zdravotních pojišťoven jsou usnesení; penzijko dokončilo druhé kolo."
+}

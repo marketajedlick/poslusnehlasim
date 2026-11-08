@@ -1,0 +1,146 @@
+{
+  "datum_unl": "06.11.2026",
+  "iso": "2026-11-06",
+  "recommended": [
+    {
+      "slug": "debata-porad-s34-6-listopadu",
+      "nazev": "Debata o pořadu schůze",
+      "nadpis": "Proud vypadl,\nprogram zůstal",
+      "score": null,
+      "meta": {
+        "vyber": "redakcni",
+        "kategorie": "porad",
+        "verdikt": "debata",
+        "proslo": false,
+        "vysledek": "Na programu zůstaly plány pojišťoven a penzijko.",
+        "pocet_fakty": 3
+      },
+      "fakty": [
+        {
+          "text": "Hlavní citát: Patrik Nacher (ANO)",
+          "source": "steno",
+          "steno_id": "2025_34_03409",
+          "citace": "Já doufám, že to nikoho nezaskočilo ve výtahu a všichni se dostali tam, kam chtěli a měli.",
+          "datum": "2026-11-06",
+          "autor": "Patrik Nacher"
+        },
+        {
+          "text": "Malá: plány pojišťoven a penzijko, ať se to čtvrtý den dodělá.",
+          "source": "steno",
+          "steno_id": "2025_34_03392",
+          "citace": "Myslím si, že by bylo fajn, abychom to už čtvrtý den dodělali.",
+          "link_phrase": "aby se podle ní už čtvrtý den dodělalo",
+          "datum": "2026-11-06",
+          "autor": "Taťána Malá"
+        },
+        {
+          "text": "[scéna] Výpadek proudu v 9.35.",
+          "source": "steno",
+          "steno_id": "2025_34_03408",
+          "citace": "(Jednání přerušeno v 9.35 hodin kvůli výpadku proudu v budově.)",
+          "link_phrase": "vypadl ve Sněmovně proud",
+          "datum": "2026-11-06",
+          "autor": "Vojtěch Munzar"
+        }
+      ]
+    },
+    {
+      "slug": "zdravotne-pojistne-plany-zdravotnich-pojistoven-",
+      "nazev": "Zdravotně pojistné plány zdravotních pojišťoven na rok 2026",
+      "nadpis": "Epikríza\nmísto plánu",
+      "score": null,
+      "meta": {
+        "vyber": "redakcni",
+        "kategorie": "usneseni",
+        "verdikt": "schvaleno",
+        "proslo": true,
+        "vysledek": "Schváleny plány pojišťoven na rok 2026. Jde o usnesení, nikoli zákon.",
+        "pocet_fakty": 3
+      },
+      "fakty": [
+        {
+          "text": "Hlavní citát: Eva Šrámková (Piráti)",
+          "source": "steno",
+          "steno_id": "2025_34_03425",
+          "citace": "My lékaři máme pro takový dokument přesné slovo, neříkáme mu plán, říkáme mu epikríza.",
+          "datum": "2026-11-06",
+          "autor": "Eva Šrámková"
+        },
+        {
+          "text": "Vojtěch: schodek 15 miliard.",
+          "source": "steno",
+          "steno_id": "2025_34_03419",
+          "citace": "Zdravotně pojistné plány jsou sestavené jako deficitní v souhrnné hodnotě -15 miliard korun",
+          "link_phrase": "se schodkem patnáct miliard korun",
+          "datum": "2026-11-06",
+          "autor": "Adam Vojtěch"
+        },
+        {
+          "text": "Hlasování 435: plány schváleny.",
+          "source": "steno",
+          "steno_id": "2025_34_03430",
+          "citace": "Hlasování číslo 435, bylo přihlášeno 152 poslanců, pro 110, proti 1. Návrh usnesení byl schválen.",
+          "link_phrase": "téměř bez odporu",
+          "datum": "2026-11-06",
+          "autor": "Patrik Nacher"
+        }
+      ]
+    },
+    {
+      "slug": "novela-z-o-doplnkovem-penzijnim-sporeni",
+      "nazev": "Vládní návrh zákona o doplňkovém penzijním spoření, druhé čtení",
+      "nadpis": "Bitcoin\nna důchod?",
+      "score": null,
+      "meta": {
+        "vyber": "redakcni",
+        "kategorie": "zakon",
+        "verdikt": "debata",
+        "proslo": false,
+        "vysledek": "Druhé kolo skončilo, pozměňovací návrhy čekají na závěrečné hlasování. Zákon nebyl schválen.",
+        "pocet_fakty": 3
+      },
+      "fakty": [
+        {
+          "text": "Hlavní citát: Marian Jurečka (KDU-ČSL)",
+          "source": "steno",
+          "steno_id": "2025_34_03434",
+          "citace": "Kdyby se tady na půdě Sněmovny stal zázrak, tak myslím si, že i to kladné stanovisko někde by mohlo taky zaznít.",
+          "datum": "2026-11-06",
+          "autor": "Marian Jurečka"
+        },
+        {
+          "text": "Schillerová: 46 pozměňovacích návrhů.",
+          "source": "steno",
+          "steno_id": "2025_34_03448",
+          "citace": "46 pozměňovacích návrhů si prostuduju se svými kolegy.",
+          "link_phrase": "čtyřicet šest pozměňovacích návrhů",
+          "datum": "2026-11-06",
+          "autor": "Alena Schillerová"
+        },
+        {
+          "text": "Zuna: bitcoin přímo v DIP.",
+          "source": "steno",
+          "steno_id": "2025_34_03454",
+          "citace": "A ten rozdíl, který my navrhujeme, je, aby se dalo investovat přímo do toho podkladového aktiva.",
+          "link_phrase": "koupit přímo bitcoin",
+          "datum": "2026-11-06",
+          "autor": "Michal Zuna"
+        }
+      ]
+    }
+  ],
+  "rejected": [],
+  "day_stats": {
+    "pocet_hlas_zakon": 0,
+    "proslo_vote": 0,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-11-06",
+      "2026-11-07"
+    ],
+    "schvalena_usneseni": 1,
+    "poznamka": "Počty zákonů zahrnují závěrečná rozhodnutí, nikoli ukončení druhého kola nebo hlasování o pořadu."
+  },
+  "editorial_note": "Redakčně opravený výběr podle facts/by_day. Citace jsou z daného dne; výsledky rozlišují zákony, usnesení a debaty. Automatické skóre nebylo použito."
+}
