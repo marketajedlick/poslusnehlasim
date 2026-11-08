@@ -1,0 +1,40 @@
+{
+  "datum": "03.11.2026",
+  "den": "úterý",
+  "topic_slugs": [
+    "odvolani-okamury-3-listopadu",
+    "debata-porad-s34-3-listopadu",
+    "lepsi-penzijko-druhe-kolo-3-listopadu"
+  ],
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 301,
+    "end_cas": "19:01",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "spor_o_porad": true,
+    "dlouha_debata": false
+  },
+  "steno_zdroje": true,
+  "slovnicek": [
+    "veřejnoprávní média",
+    "Penzijní spoření",
+    "Druhé čtení",
+    "Pozměňovací návrh",
+    "Přerušení schůze"
+  ],
+  "nwl_predmet": "Televize v černém, Okamura v křesle",
+  "dnesni_ucet": "Televize stávkovala v černém, opozice chtěla odvolat Okamuru.\nVečer přišlo penzijko i s hypotékou, v sedm se šlo domů.",
+  "zaver": "že v den, kdy stávkovala Česká televize i Český rozhlas, chtěla opozice odvolat Okamuru a ministryně financí slibovala o milion víc na důchod, stačí spořit 35 let.",
+  "vysledek": [
+    "* Lepší penzijko: druhé kolo začalo, změny z výborů neprošly, debata přerušena v sedm večer",
+    "* Odpočet úroků z hypotéky pro mladé do třiceti šesti: ministryně ho přilepila k penzijku"
+  ],
+  "jazykolam": {
+    "text": "Jenže hlasovací zařízení není umyvadlo. Stisknutím tlačítka se odpovědnosti nezbavíte.",
+    "autor": "Jan Jakob (TOP 09)",
+    "steno_id": "2025_34_02656"
+  },
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo"
+}

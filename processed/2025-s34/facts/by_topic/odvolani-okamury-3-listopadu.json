@@ -1,0 +1,54 @@
+{
+  "slug": "odvolani-okamury-3-listopadu",
+  "nazev": "Návrh na zařazení bodu Odvolání Tomia Okamury z funkce předsedy Poslanecké sněmovny",
+  "datum": "03.11.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "opozice chtěla v den stávky veřejnoprávních médií odvolat předsedu Sněmovny Tomia Okamuru",
+  "koho": [
+    "Koho se to týká? Všech, kdo chtějí, aby Sněmovnu řídil někdo, kdo pustí ke slovu obě strany. A diváků a posluchačů České televize a Českého rozhlasu, kteří ten den viděli a slyšeli stávku."
+  ],
+  "fakty": [
+    {
+      "text": "Kupka: stávka v ČT a ČRo, moderátoři v černém.",
+      "source": "steno",
+      "steno_id": "2025_34_02658",
+      "citace": "moderátoři ČT24 čtou zprávy v černém a za zády mají zhasnutý newsroom. Živé pořady nahradila hudba.",
+      "link_phrase": "Moderátoři ČT24 četli zprávy v černém"
+    },
+    {
+      "text": "Hřib cituje Okamurův slib před zvolením.",
+      "source": "steno",
+      "steno_id": "2025_34_02646",
+      "citace": "budu nestranným předsedou všech bez ohledu, zda jsem jejich hlasy dostal či nedostal",
+      "link_phrase": "že bude nestranným předsedou všech"
+    },
+    {
+      "text": "Hřib: návrh na odvolání s 92 podpisy pěti klubů.",
+      "source": "steno",
+      "steno_id": "2025_34_02646",
+      "citace": "navrhnout na základě 92 podpisů pěti poslaneckých klubů ODS, STAN, Pirátů, KDU-ČSL a TOP 09 společné zařazení bodu Odvolání Tomia Okamury z funkce předsedy Poslanecké sněmovny",
+      "link_phrase": "s podpisy devadesáti dvou poslanců"
+    },
+    {
+      "text": "Hlasování 325: odvolání se na program nedostalo.",
+      "source": "steno",
+      "steno_id": "2025_34_02739",
+      "citace": "Hlasování číslo 325, přihlášeno 160 poslanců, pro 72, proti 85. Návrh byl zamítnut.",
+      "link_phrase": "Poslanci odmítli zařadit Okamurovo odvolání na program"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 1,
+  "nadpis": "Zprávy v černém,\nOkamura v křesle",
+  "lead": "V úterý stávkovali lidé z České televize a Českého rozhlasu. Moderátoři ČT24 četli zprávy v černém. Opozice chtěla odvolat předsedu Sněmovny Tomia Okamuru (SPD), který řídil noční jednání o zrušení poplatků za obě média.",
+  "pointa": "Zdeněk Hřib (Piráti) připomněl Okamurův slib, že bude nestranným předsedou všech, a přinesl návrh s podpisy devadesáti dvou poslanců. Schůzi právě řídil Okamura.\n\nPoslanci odmítli zařadit Okamurovo odvolání na program.",
+  "pointa_tail": "",
+  "pointa_end": "",
+  "mean": "Okamura zůstává předsedou. Sněmovna se k hlasování o jeho odvolání vůbec nedostala.",
+  "citace_text": "Sněmovna potřebuje předsedu, za jehož vedení se dá normálně a spravedlivě pracovat.",
+  "citace_autor": "Zdeněk Hřib (Piráti)",
+  "steno_id": "2025_34_02646",
+  "pocet_hlasovani": 3,
+  "proslo": false,
+  "spor_o_porad": true
+}

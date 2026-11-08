@@ -1,0 +1,61 @@
+{
+  "slug": "debata-porad-s34-3-listopadu",
+  "nazev": "Debata o pořadu schůze",
+  "datum": "03.11.2026",
+  "verdikt": "debata",
+  "predmet_lidsky": "o čem bude Sněmovna celý týden jednat: koaliční program proti desítkám opozičních návrhů",
+  "koho": [
+    "Koho se to týká? Každého, kdo čeká na konkrétní zákon. Pořad rozhoduje, jestli se o penězích za státní pojištěnce, obnově po povodních nebo krajských silnicích bude vůbec mluvit."
+  ],
+  "fakty": [
+    {
+      "text": "Malá: grémium se nedohodlo, pořad přednáší za koalici.",
+      "source": "steno",
+      "steno_id": "2025_34_02644",
+      "citace": "Vzhledem k tomu, že z politického grémia dnes nevzešla dohoda ani na jednom z bodů, tak ten návrh na projednání jednotlivých bodů přednesu já.",
+      "link_phrase": "na programu týdne nedohodli"
+    },
+    {
+      "text": "Havel: usnesení školského výboru proti ruským hokejistům.",
+      "source": "steno",
+      "steno_id": "2025_34_02654",
+      "citace": "Školský výbor odmítá účast ruské reprezentace na mistrovství světa a zároveň doporučuje Sněmovně, aby vyzvala Německo k neudělení víz ruským hokejistům.",
+      "link_phrase": "s usnesením školského výboru"
+    },
+    {
+      "text": "Jakob: bod Stručné církevní dějiny pro Motoristy.",
+      "source": "steno",
+      "steno_id": "2025_34_02656",
+      "citace": "navrhuji zařadit nový bod s názvem Stručné církevní dějiny a základy Nového zákona",
+      "link_phrase": "stručnými církevními dějinami pro Motoristy"
+    },
+    {
+      "text": "Jakob: protestanti vs. protestující.",
+      "source": "steno",
+      "steno_id": "2025_34_02656",
+      "citace": "Protestant je příslušník křesťanské tradice vzešlý z reformace. Protestující je člověk, který nesouhlasí například s vámi a nemusí kvůli tomu zakládat novou církev.",
+      "link_phrase": "mluvil o protestantech místo o protestujících"
+    },
+    {
+      "text": "Philipp: pojišťovny nevědí, s čím počítat.",
+      "source": "steno",
+      "steno_id": "2025_34_02714",
+      "citace": "Jak mají zdravotní pojišťovny sestavovat zdravotně pojistné plány, když se stále neví, jaké budou příjmy veřejného zdravotního pojištění?",
+      "link_phrase": "uspěl s přesunem plateb pojišťovnám na středeční ráno"
+    }
+  ],
+  "publikovat": true,
+  "priorita": 2,
+  "nadpis": "Opozice uspěla.\nS koaličním bodem",
+  "lead": "Šéfové klubů se na programu týdne nedohodli. Za koalici ho přednesla předsedkyně klubu ANO Taťána Malá. Opozice pak nosila vlastní návrhy, většinou bez úspěchu.",
+  "pointa": "<strong>Co se na program nedostalo</strong>\n- Havel (TOP 09) s usnesením školského výboru proti ruským hokejistům a Urbanová (STAN) s pomocí uneseným ukrajinským dětem\n- Patková (Piráti) a Svárovská (Zelení, klub Pirátů) s Krkonošemi, Blišťanová (TOP 09) s povodněmi a Sviták (STAN) s krajskými silnicemi\n- Bureš (ODS) a Výborný (KDU-ČSL) s prodejem o svátcích, Jakob (TOP 09) se stručnými církevními dějinami pro Motoristy\n\n<strong>Co se na program dostalo</strong>\nKoaliční plán: penzijko, mobily ve školách, střet zájmů, peníze pojišťovnám, digitální služby, důchody a další vládní body.\n\nJakob reagoval na Filipa Turka (Motoristé), který mluvil o protestantech místo o protestujících. Rozdíl mu vysvětlil zdarma. Tom Philipp (KDU-ČSL) uspěl s přesunem plateb pojišťovnám na středeční ráno. Koalice je už měla v plánu, jen jako druhý bod.\n\nPoslušně dodávám, že nejjistější cesta, jak dostat opoziční bod na program, je navrhnout koaliční bod.",
+  "pointa_tail": "",
+  "pointa_end": "",
+  "mean": "Nová opoziční témata se na program nedostala.",
+  "citace_text": "Protestant je příslušník křesťanské tradice vzešlý z reformace. Protestující je člověk, který nesouhlasí například s vámi a nemusí kvůli tomu zakládat novou církev.",
+  "citace_autor": "Jan Jakob (TOP 09)",
+  "steno_id": "2025_34_02656",
+  "pocet_hlasovani": 78,
+  "proslo": false,
+  "spor_o_porad": true
+}

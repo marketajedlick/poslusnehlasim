@@ -1,0 +1,146 @@
+{
+  "datum_unl": "03.11.2026",
+  "iso": "2026-11-03",
+  "recommended": [
+    {
+      "slug": "odvolani-okamury-3-listopadu",
+      "nazev": "Návrh na zařazení bodu Odvolání Tomia Okamury z funkce předsedy Poslanecké sněmovny",
+      "nadpis": "Zprávy v černém,\nOkamura v křesle",
+      "score": null,
+      "meta": {
+        "vyber": "redakcni",
+        "kategorie": "porad",
+        "verdikt": "debata",
+        "proslo": false,
+        "vysledek": "Odvolání předsedy Sněmovny se na program nedostalo.",
+        "pocet_fakty": 3
+      },
+      "fakty": [
+        {
+          "text": "Hlavní citát: Zdeněk Hřib (Piráti)",
+          "source": "steno",
+          "steno_id": "2025_34_02646",
+          "citace": "Sněmovna potřebuje předsedu, za jehož vedení se dá normálně a spravedlivě pracovat.",
+          "datum": "2026-11-03",
+          "autor": "Zdeněk Hřib"
+        },
+        {
+          "text": "Kupka: stávka v ČT a ČRo, moderátoři v černém.",
+          "source": "steno",
+          "steno_id": "2025_34_02658",
+          "citace": "moderátoři ČT24 čtou zprávy v černém a za zády mají zhasnutý newsroom. Živé pořady nahradila hudba.",
+          "link_phrase": "Moderátoři ČT24 četli zprávy v černém",
+          "datum": "2026-11-03",
+          "autor": "Martin Kupka"
+        },
+        {
+          "text": "Hřib cituje Okamurův slib před zvolením.",
+          "source": "steno",
+          "steno_id": "2025_34_02646",
+          "citace": "budu nestranným předsedou všech bez ohledu, zda jsem jejich hlasy dostal či nedostal",
+          "link_phrase": "že bude nestranným předsedou všech",
+          "datum": "2026-11-03",
+          "autor": "Zdeněk Hřib"
+        }
+      ]
+    },
+    {
+      "slug": "debata-porad-s34-3-listopadu",
+      "nazev": "Debata o pořadu schůze",
+      "nadpis": "Opozice uspěla.\nS koaličním bodem",
+      "score": null,
+      "meta": {
+        "vyber": "redakcni",
+        "kategorie": "porad",
+        "verdikt": "debata",
+        "proslo": false,
+        "vysledek": "Nová opoziční témata se na program nedostala; přesun bodu o platbách pojišťovnám uspěl.",
+        "pocet_fakty": 3
+      },
+      "fakty": [
+        {
+          "text": "Hlavní citát: Jan Jakob (TOP 09)",
+          "source": "steno",
+          "steno_id": "2025_34_02656",
+          "citace": "Protestant je příslušník křesťanské tradice vzešlý z reformace. Protestující je člověk, který nesouhlasí například s vámi a nemusí kvůli tomu zakládat novou církev.",
+          "datum": "2026-11-03",
+          "autor": "Jan Jakob"
+        },
+        {
+          "text": "Malá: grémium se nedohodlo, pořad přednáší za koalici.",
+          "source": "steno",
+          "steno_id": "2025_34_02644",
+          "citace": "Vzhledem k tomu, že z politického grémia dnes nevzešla dohoda ani na jednom z bodů, tak ten návrh na projednání jednotlivých bodů přednesu já.",
+          "link_phrase": "na programu týdne nedohodli",
+          "datum": "2026-11-03",
+          "autor": "Taťána Malá"
+        },
+        {
+          "text": "Havel: usnesení školského výboru proti ruským hokejistům.",
+          "source": "steno",
+          "steno_id": "2025_34_02654",
+          "citace": "Školský výbor odmítá účast ruské reprezentace na mistrovství světa a zároveň doporučuje Sněmovně, aby vyzvala Německo k neudělení víz ruským hokejistům.",
+          "link_phrase": "s usnesením školského výboru",
+          "datum": "2026-11-03",
+          "autor": "Matěj Ondřej Havel"
+        }
+      ]
+    },
+    {
+      "slug": "lepsi-penzijko-druhe-kolo-3-listopadu",
+      "nazev": "Vládní návrh zákona o doplňkovém penzijním spoření, druhé čtení",
+      "nadpis": "Hypotéka\nv penzijku",
+      "score": null,
+      "meta": {
+        "vyber": "redakcni",
+        "kategorie": "zakon",
+        "verdikt": "debata",
+        "proslo": false,
+        "vysledek": "Druhé kolo začalo a bylo přerušeno. Zákon nebyl schválen.",
+        "pocet_fakty": 3
+      },
+      "fakty": [
+        {
+          "text": "Hlavní citát: Alena Schillerová (ANO)",
+          "source": "steno",
+          "steno_id": "2025_34_02752",
+          "citace": "díky Lepšímu penzijku si průměrný Čech úspory na důchod zvýší o celý 1 milion korun. Místo současných 600 tisíc korun bude mít za 35 let uspořeno 1 640 000 korun.",
+          "datum": "2026-11-03",
+          "autor": "Alena Schillerová"
+        },
+        {
+          "text": "Schillerová: milion korun navíc za 35 let.",
+          "source": "steno",
+          "steno_id": "2025_34_02752",
+          "citace": "díky Lepšímu penzijku si průměrný Čech úspory na důchod zvýší o celý 1 milion korun",
+          "link_phrase": "o milion korun víc",
+          "datum": "2026-11-03",
+          "autor": "Alena Schillerová"
+        },
+        {
+          "text": "Schillerová: vyšší odpočet úroků z hypotéky do 36 let.",
+          "source": "steno",
+          "steno_id": "2025_34_02754",
+          "citace": "bude možné uplatnit zvýšený limit ve výši 50 procent zaplacených úroků, nejvýše však 50 000 korun za zdaňovací období",
+          "link_phrase": "vyšší odpočet úroků z hypotéky",
+          "datum": "2026-11-03",
+          "autor": "Alena Schillerová"
+        }
+      ]
+    }
+  ],
+  "rejected": [],
+  "day_stats": {
+    "pocet_hlas_zakon": 0,
+    "proslo_vote": 0,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": true,
+    "calendar_isos": [
+      "2026-11-03",
+      "2026-11-04"
+    ],
+    "schvalena_usneseni": 0,
+    "poznamka": "Počty zákonů zahrnují závěrečná rozhodnutí, nikoli ukončení druhého kola nebo hlasování o pořadu."
+  },
+  "editorial_note": "Redakčně opravený výběr podle facts/by_day. Citace jsou z daného dne; výsledky rozlišují zákony, usnesení a debaty. Automatické skóre nebylo použito."
+}
