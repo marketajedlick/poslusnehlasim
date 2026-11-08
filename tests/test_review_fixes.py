@@ -298,6 +298,23 @@ def test_newsletter_drafts_every_new_edition(tmp_path, monkeypatch) -> None:
     assert out["drafted_ids"] == ["2025/34/20.10.2026", "2025/34/21.10.2026"]
     st = notify.load_state()
     assert st["last_drafted_id"] == "2025/34/21.10.2026"
+
+
+def test_newsletter_finds_exported_edition_page(tmp_path, monkeypatch) -> None:
+    editions = (_ed("03.11.2026", 34),)
+    notify = _nwl_env(monkeypatch, tmp_path, editions, {"last_drafted_id": "2025/34/23.10.2026"})
+    site = tmp_path / "site"
+    page = site / "vydani" / "2026-11-03" / "index.html"
+    page.parent.mkdir(parents=True)
+    page.write_text("<html></html>", encoding="utf-8")
+    created = []
+    monkeypatch.setattr(notify, "create_campaign", lambda **kw: created.append(kw["subject"]) or {"id": 1})
+
+    out = notify.run_newsletter_notify(2025, out_dir=site)
+
+    assert created == ["S 03.11.2026"]
+    assert out.get("reason") != "stránka vydání není v exportu"
+    assert notify.load_state()["last_drafted_id"] == "2025/34/03.11.2026"
     assert notify.run_newsletter_notify(2025)["skipped"]
 
 

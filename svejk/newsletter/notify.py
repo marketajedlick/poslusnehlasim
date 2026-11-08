@@ -83,7 +83,11 @@ def _edition_export_path(edition: Edition, out_dir: Path, base_path: str) -> Pat
         edition.obdobi, edition.schuze, edition.datum_unl, base_path
     )
     rel = href.lstrip("/")
-    return out_dir / rel
+    path = out_dir / rel
+    # Hezká URL /vydani/YYYY-MM-DD/ je v exportu složka s index.html.
+    if href.endswith("/") or path.is_dir():
+        path = path / "index.html"
+    return path
 
 
 def _build_email_body(edition: Edition, *, site_url: str, base_path: str) -> tuple[str, str, str]:
