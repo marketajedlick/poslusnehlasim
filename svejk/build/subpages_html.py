@@ -561,7 +561,9 @@ def render_slovnicek_html(
     canonical_url = f"{cfg.site_url.rstrip('/')}{slovnicek_pages_href(base_path)}"
     page_path = _page_path_from_canonical(canonical_url, cfg.site_url)
     gp = load_strings()["glossary_page"]
-    entries = list(slovnicek_entries())
+    from svejk.glossary import slovnicek_pages
+
+    entries = list(slovnicek_pages())
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
@@ -609,11 +611,14 @@ def render_slovnicek_term_html(
     answer: str,
     slug: str,
     mentions: tuple[Any, ...] = (),
+    mention_count: int = 0,
     inline_css: bool = False,
     css_href: str | None = None,
     fonts_css_href: str | None = None,
     base_path: str = "",
 ) -> str:
+    from svejk.glossary import slovnicek_detail, slovnicek_pages, slovnicek_term_slug
+
     css = _inline_css_text() if inline_css else ""
     if css_href is None:
         css_href = static_css_path(base_path, version=css_asset_version())
@@ -633,11 +638,29 @@ def render_slovnicek_term_html(
     from svejk.build.seo import (
         breadcrumbs_ctx_slovnicek_term,
         slovnicek_term_json_ld,
+        slovnicek_term_meta_description,
         slovnicek_term_page_title,
     )
 
-    title = slovnicek_term_page_title(term_label)
-    description = answer
+    detail = slovnicek_detail(slug)
+    sections = tuple(detail.get("sections", ()))
+    page_terms = {slovnicek_term_slug(t): t for t, _ in slovnicek_pages()}
+    related = []
+    for rel in detail.get("related", ()):
+        rel_slug = slovnicek_term_slug(rel)
+        if rel_slug == slug or rel_slug not in page_terms:
+            continue
+        related.append(
+            {
+                "label": slovnicek_term_label(slovnicek_display_term(page_terms[rel_slug])),
+                "href": slovnicek_term_pages_href(rel_slug, base_path),
+            }
+        )
+    title = slovnicek_term_page_title(term_label, custom=detail.get("title", ""))
+    description = slovnicek_term_meta_description(
+        term=term_label, answer=answer, custom=detail.get("meta", "")
+    )
+    latest_mention = mentions[0].date_label if mentions else ""
     og = _og_context(
         site_url=cfg.site_url,
         base_path=base_path,
@@ -649,12 +672,19 @@ def render_slovnicek_term_html(
         term=term_label,
         answer=answer,
         glossary_url=f"{cfg.site_url.rstrip('/')}{glossary_href}",
+        sections=sections,
     )
     tpl = _jinja_env().get_template("slovnicek-pojem.html")
     return tpl.render(
         term=term_label,
         answer=answer,
+        meta_description=description,
+        sections=sections,
+        related=related,
         mentions=mentions,
+        mention_count=mention_count,
+        latest_mention=latest_mention,
+        newsletter=cfg,
         canonical_url=canonical_url,
         schema_json_ld=schema_ld,
         slovnicek_index_href=glossary_href,

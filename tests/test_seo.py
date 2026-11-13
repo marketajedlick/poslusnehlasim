@@ -152,7 +152,7 @@ def test_edition_page_title() -> None:
         datum_unl="02.07.2026",
         den="čtvrtek",
     )
-    assert title == "Sněmovna 2. 7. 2026: Titulek na počkání | Poslušně hlásím"
+    assert title == "Titulek na počkání · Sněmovna 2. 7. 2026 | Poslušně hlásím"
 
 
 def test_homepage_share_og_title() -> None:
@@ -164,8 +164,8 @@ def test_homepage_share_og_title() -> None:
         datum_unl="23.06.2026",
         den="úterý",
     )
-    assert title.startswith("Sněmovna 23. 6. 2026: ")
-    assert "Fiktivní zpravodajství" in title
+    assert title.startswith("Fiktivní zpravodajství")
+    assert "· Sněmovna 23. 6. 2026" in title
     assert title.endswith("| Poslušně hlásím")
 
 
@@ -339,9 +339,36 @@ def test_slovnicek_term_json_ld() -> None:
 
 
 def test_slovnicek_term_page_title() -> None:
-    assert slovnicek_term_page_title("Obstrukce") == (
-        "Co je Obstrukce? Švejkov slovníček | Poslušně hlásím"
+    assert slovnicek_term_page_title("obstrukce") == (
+        "Obstrukce: co to je a co znamená | Poslušně hlásím"
     )
+    assert slovnicek_term_page_title("OZP", custom="OZP: zkratka") == (
+        "OZP: zkratka | Poslušně hlásím"
+    )
+
+
+def test_slovnicek_term_meta_description() -> None:
+    from svejk.build.seo import slovnicek_term_meta_description
+
+    desc = slovnicek_term_meta_description(term="veto", answer="Senát zákon vrátí.")
+    assert desc == "Senát zákon vrátí. A kdy to naposledy řešila Sněmovna."
+    assert slovnicek_term_meta_description(
+        term="veto", answer="x", custom="Vlastní popis."
+    ) == "Vlastní popis."
+    long = slovnicek_term_meta_description(term="x", answer="slovo " * 60)
+    assert len(long) <= 158
+
+
+def test_slovnicek_term_json_ld_includes_sections() -> None:
+    data = slovnicek_term_json_ld(
+        url="https://poslusnehlasim.cz/slovnicek/veto/",
+        term="veto",
+        answer="Vrácení zákona.",
+        glossary_url="https://poslusnehlasim.cz/slovnicek/",
+        sections=(("Kolik hlasů je potřeba?", "101."),),
+    )
+    questions = data["@graph"][1]["mainEntity"]
+    assert [q["name"] for q in questions] == ["Co je veto?", "Kolik hlasů je potřeba?"]
 
 
 def test_edition_published_iso_follows_prague_dst() -> None:

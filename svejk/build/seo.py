@@ -37,14 +37,14 @@ from svejk.build.vyznamenani_neprosli import (
     vyznamenani_datum_label,
 )
 from svejk.paths import SchuzePaths
-from svejk.glossary import slovnicek_entries, slovnicek_term_slug
+from svejk.glossary import slovnicek_pages, slovnicek_term_slug
 
 _VYZNAMENANI_KINDS: tuple[VyznamenaniKind, ...] = ("neprosli", "prosli", "zvoleni")
 
 _STATIC_PAGES: tuple[tuple[str, str], ...] = (
     ("O webu", "o-webu"),
     ("Archiv vydání", "archiv"),
-    ("Švejkov slovníček", "slovnicek"),
+    ("Švejkův slovníček", "slovnicek"),
     ("Kup Švejkovi pivo", "pivo"),
     ("Podmínky odběru", "podminky"),
     ("Podpořte projekt", "podpora"),
@@ -279,15 +279,15 @@ def edition_page_title(
     datum_design: str = "",
     max_len: int = 90,
 ) -> str:
-    """<title> pro vydání: Sněmovna datum: téma | značka."""
+    """<title> pro vydání: téma · Sněmovna datum | značka.
+
+    Téma jde dopředu: lidé hledají podle obsahu (zákon, kauza), ne podle data.
+    """
     _ = meta_description, den, datum_design
     date_label = _edition_date_label_short(datum_unl) if datum_unl else ""
     suffix = f" | {SITE_NAME}"
-    if date_label:
-        prefix = f"Sněmovna {date_label}: "
-    else:
-        prefix = "Sněmovna: "
-    budget = max(12, max_len - len(prefix) - len(suffix))
+    date_part = f" · Sněmovna {date_label}" if date_label else ""
+    budget = max(12, max_len - len(date_part) - len(suffix))
     headline = article_headline(
         dnesni_ucet=dnesni_ucet,
         nadpis_vydani=nadpis_vydani,
@@ -296,9 +296,9 @@ def edition_page_title(
         max_len=budget,
     )
     if not headline.strip():
-        core = f"{prefix.rstrip(': ')}{suffix}" if date_label else f"Sněmovna{suffix}"
+        core = f"Sněmovna {date_label}{suffix}" if date_label else f"Sněmovna{suffix}"
         return _truncate_text(core, max_len=max_len)
-    title = f"{prefix}{headline}{suffix}"
+    title = f"{headline}{date_part}{suffix}"
     return title if len(title) <= max_len else _truncate_text(title, max_len=max_len)
 
 
@@ -472,8 +472,31 @@ def faq_json_ld(
     }
 
 
-def slovnicek_term_page_title(term: str) -> str:
-    return f"Co je {term}? Švejkov slovníček | {SITE_NAME}"
+def _ucfirst(text: str) -> str:
+    return text[:1].upper() + text[1:] if text else text
+
+
+def slovnicek_term_page_title(term: str, *, custom: str = "") -> str:
+    """<title> stránky pojmu podle toho, jak lidé hledají („X význam“, „co to je X“)."""
+    core = custom.strip() or f"{_ucfirst(term)}: co to je a co znamená"
+    return f"{core} | {SITE_NAME}"
+
+
+def slovnicek_term_meta_description(
+    *,
+    term: str,
+    answer: str,
+    custom: str = "",
+    max_len: int = 158,
+) -> str:
+    """Meta description pojmu: vlastní text, jinak definice + háček na zmínky ve Sněmovně."""
+    if custom.strip():
+        return _truncate_text(custom, max_len=max_len)
+    hook = " A kdy to naposledy řešila Sněmovna."
+    base = _truncate_text(answer, max_len=max_len - len(hook))
+    if base.endswith("…"):
+        return base
+    return base + hook
 
 
 def defined_term_json_ld(
@@ -502,9 +525,18 @@ def slovnicek_term_json_ld(
     term: str,
     answer: str,
     glossary_url: str,
+    sections: tuple[tuple[str, str], ...] = (),
 ) -> dict:
-    """DefinedTerm + jedna FAQ otázka pro stránku pojmu."""
+    """DefinedTerm + FAQ (definice a případné rozšiřující otázky) pro stránku pojmu."""
     question = f"Co je {term}?"
+    extra = [
+        {
+            "@type": "Question",
+            "name": q,
+            "acceptedAnswer": {"@type": "Answer", "text": a},
+        }
+        for q, a in sections
+    ]
     return {
         "@context": "https://schema.org",
         "@graph": [
@@ -526,7 +558,8 @@ def slovnicek_term_json_ld(
                             "text": answer,
                         },
                     }
-                ],
+                ]
+                + extra,
             },
         ],
     }
@@ -810,7 +843,7 @@ def write_sitemap_xml(
         add_url(f"{base}{archiv_pages_href(base_path)}", last)
         add_url(f"{base}{o_webu_pages_href(base_path)}", last)
         add_url(f"{base}{slovnicek_pages_href(base_path)}", last)
-        for term, _ in slovnicek_entries():
+        for term, _ in slovnicek_pages():
             slug = slovnicek_term_slug(term)
             add_url(f"{base}{slovnicek_term_pages_href(slug, base_path)}", last)
         add_url(f"{base}{pivo_pages_href(base_path)}", last)
@@ -875,7 +908,7 @@ Stenoprotokoly a výsledky hlasování z veřejných open dat Poslanecké sněmo
 - [Úvod / nejnovější vydání]({base}/): aktuální deník
 - [Nejnovější vydání ({latest.datum_unl})]({base}{latest_href}): poslední schůze
 - [Archiv vydání]({archiv_href}): všechna vydání podle data
-- [Švejkov slovníček]({slovnicek_href}): parlamentní pojmy lidsky
+- [Švejkův slovníček]({slovnicek_href}): parlamentní pojmy lidsky
 - [RSS kanál nových vydání]({base}/feed.xml): odběr nových vydání
 - [Mapa webu]({base}/sitemap.xml): všechna vydání
 - [Podrobný index pro AI]({base}/llms-full.txt): seznam vydání s popisky
