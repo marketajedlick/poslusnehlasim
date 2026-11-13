@@ -76,6 +76,7 @@ from svejk.build.urls import (
     edition_schuze_subpage,
     edition_subpage_export_relpath,
     steno_export_relpath,
+    vydani_subpage_href,
 )
 from svejk.build.publish import (
     clear_publish_cache,
@@ -199,6 +200,42 @@ def _redirect_html(target: str) -> str:
 def _write_redirect_page(out: Path, rel_path: str, target_href: str, *, site_url: str) -> str:
     target = target_href if target_href.startswith("http") else f"{site_url}{target_href}"
     return _write_page_html(out, rel_path, _redirect_html(target))
+
+
+EDITION_SUBPAGE_KINDS = ("steno", "smlouvy", "recnici", "neprosli", "prosli", "zvoleni")
+
+
+def dup_day_bare_subpage_redirects(
+    editions,
+    written: set[str],
+    canonical_schuze,
+) -> list[tuple[str, str, str]]:
+    """Den se dvěma schůzemi má podstránky pod /vydani/DATUM/sN/<druh>/.
+
+    Holé /vydani/DATUM/<druh>/ vzniklo, dokud měl den jen jednu schůzi, a Google ho
+    má zaindexované (GSC: 404). Vrací (relpath, datum_unl, "sN/<druh>") pro přesměrování
+    na podstránku kanonické schůze, jinak na tu, která ji má.
+    """
+    by_day: dict[str, list] = {}
+    for e in editions:
+        by_day.setdefault(e.datum_unl, []).append(e)
+    out: list[tuple[str, str, str]] = []
+    for datum, siblings in by_day.items():
+        schuze_list = sorted({e.schuze for e in siblings})
+        if len(schuze_list) < 2:
+            continue
+        canon = canonical_schuze(datum)
+        ordered = sorted(schuze_list, key=lambda s: s != canon)
+        for kind in EDITION_SUBPAGE_KINDS:
+            bare = edition_subpage_export_relpath(datum, kind)
+            if bare in written:
+                continue
+            for sch in ordered:
+                sub = f"{edition_schuze_subpage(sch)}/{kind}"
+                if edition_subpage_export_relpath(datum, sub) in written:
+                    out.append((bare, datum, sub))
+                    break
+    return out
 
 
 def _edition_day_path(edition) -> Path | None:
@@ -518,6 +555,21 @@ def run_export_pages(
             )
             if smlouvy_html:
                 written.append(_write_page_html(out, smlouvy_rel, smlouvy_html))
+
+    def _canonical_schuze(datum_unl: str) -> int | None:
+        resolved = resolve_edition(obdobi, datum_unl)
+        return resolved.schuze if resolved else None
+
+    for bare_rel, datum_unl, sub in dup_day_bare_subpage_redirects(
+        [e for e in editions if edition_source(e) is not None],
+        set(written),
+        _canonical_schuze,
+    ):
+        written.append(
+            _write_redirect_page(
+                out, bare_rel, vydani_subpage_href(datum_unl, sub, base), site_url=site
+            )
+        )
 
     for edition in editions:
         if edition_source(edition) is None:
