@@ -144,7 +144,13 @@
     "heading_prefix": "Co je",
     "mentions_heading": "Kde se o tom psalo",
     "mentions_empty": "Zatím jsme o tom ve vydáních nic nenapsali. Sněmovna se zřejmě věnuje jiným věcem.",
-    "back_to_index": "Celý slovníček"
+    "back_to_index": "Celý slovníček",
+    "detail_aria": "Podrobněji",
+    "related_heading": "Souvisí s tím",
+    "stats_lead": "Ve vydáních Poslušně hlásím jsme o tom psali",
+    "stats_latest": "naposledy",
+    "subscribe_heading": "Co Sněmovna dělá, lidsky, každý den do mailu",
+    "subscribe_gloss": "Žádné úřední hantýrky. Jen co se ve Sněmovně stalo a co to znamená pro vás."
   },
   "beer_page": {
     "title": "Kup Švejkovi pivo · Poslušně hlásím",

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import html
 import re
 from dataclasses import dataclass
 
@@ -34,7 +35,15 @@ def _edition_plain_text(edition) -> str:
     chunks: list[str] = [content.dnesni_ucet, content.zaver]
     for item in content.items:
         chunks.extend([item.nadpis, item.lead, item.mean, item.pointa or "", item.pointa_tail or ""])
-    return strip_glossary_markup(" ".join(c for c in chunks if c))
+    return _plain(strip_glossary_markup(" ".join(c for c in chunks if c)))
+
+
+_HTML_TAG = re.compile(r"<[^>]+>")
+
+
+def _plain(text: str) -> str:
+    """Čistý text bez zbylých HTML odkazů (steno, hlasování) a entit — pro úryvky."""
+    return html.unescape(_HTML_TAG.sub("", text))
 
 
 def _excerpt(text: str, start: int, end: int, *, radius: int = 70) -> str:
@@ -48,16 +57,29 @@ def _excerpt(text: str, start: int, end: int, *, radius: int = 70) -> str:
     return snippet
 
 
-def build_slovnicek_mentions_index(
+@dataclass(frozen=True)
+class SlovnicekMentionsData:
+    """Zmínky pojmů ve vydáních: posledních N na pojem + celkový počet vydání."""
+
+    index: dict[str, tuple[SlovnicekMention, ...]]
+    counts: dict[str, int]
+
+
+def build_slovnicek_mentions_data(
     obdobi: int,
     *,
     base_path: str = "",
     limit_per_term: int = 8,
-) -> dict[str, tuple[SlovnicekMention, ...]]:
-    """Pro každý pojem ze SLOVNIČEK najde až `limit_per_term` nejnovějších vydání."""
-    terms = slovnicek_entries()
-    patterns = {slovnicek_term_slug(term): (term, _pattern(term)) for term, _ in terms}
+) -> SlovnicekMentionsData:
+    """Pro každou stránku pojmu najde až `limit_per_term` nejnovějších vydání a spočítá všechna.
+
+    Pojmy sdílející stránku (alias → kanonický slug, např. EET) se hledají společně.
+    """
+    patterns: dict[str, list[re.Pattern[str]]] = {}
+    for term, _ in slovnicek_entries():
+        patterns.setdefault(slovnicek_term_slug(term), []).append(_pattern(term))
     index: dict[str, list[SlovnicekMention]] = {slug: [] for slug in patterns}
+    seen_hrefs: dict[str, set[str]] = {slug: set() for slug in patterns}
     for edition in reversed(list_site_editions(obdobi)):
         text = _edition_plain_text(edition)
         if not text:
@@ -68,11 +90,14 @@ def build_slovnicek_mentions_index(
         href = edition_pages_href(
             edition.obdobi, edition.schuze, edition.datum_unl, base_path
         )
-        for slug, (term, pat) in patterns.items():
-            if len(index[slug]) >= limit_per_term:
+        for slug, pats in patterns.items():
+            if href in seen_hrefs[slug]:
                 continue
-            m = pat.search(text)
+            m = next((hit for pat in pats if (hit := pat.search(text))), None)
             if not m:
+                continue
+            seen_hrefs[slug].add(href)
+            if len(index[slug]) >= limit_per_term:
                 continue
             index[slug].append(
                 SlovnicekMention(
@@ -82,7 +107,22 @@ def build_slovnicek_mentions_index(
                     excerpt=_excerpt(text, m.start(), m.end()),
                 )
             )
-    return {slug: tuple(rows) for slug, rows in index.items()}
+    return SlovnicekMentionsData(
+        index={slug: tuple(rows) for slug, rows in index.items()},
+        counts={slug: len(hrefs) for slug, hrefs in seen_hrefs.items()},
+    )
+
+
+def build_slovnicek_mentions_index(
+    obdobi: int,
+    *,
+    base_path: str = "",
+    limit_per_term: int = 8,
+) -> dict[str, tuple[SlovnicekMention, ...]]:
+    """Pro každý pojem ze SLOVNIČEK najde až `limit_per_term` nejnovějších vydání."""
+    return build_slovnicek_mentions_data(
+        obdobi, base_path=base_path, limit_per_term=limit_per_term
+    ).index
 
 
 def term_mentions(

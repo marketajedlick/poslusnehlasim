@@ -10,8 +10,8 @@ from typing import Any
 
 from svejk.text_norm import ma_dlouhou_pomlcku
 from svejk.build.day_content import build_den_content, clear_den_content_cache
-from svejk.glossary import slovnicek_entries, slovnicek_term_slug
-from svejk.build.slovnicek_index import build_slovnicek_mentions_index, term_mentions
+from svejk.glossary import SLOVNICEK_SLUG_ALIASES, slovnicek_pages, slovnicek_term_slug
+from svejk.build.slovnicek_index import build_slovnicek_mentions_data
 from svejk.build.html import (
     css_asset_version,
     fonts_asset_version,
@@ -65,6 +65,7 @@ from svejk.build.nav import (
     recnici_pages_href,
     resolve_edition,
     slovnicek_pages_href,
+    slovnicek_term_pages_href,
     smlouvy_pages_href,
     steno_sources_pages_href,
     vyznamenani_pages_href,
@@ -680,20 +681,30 @@ def run_export_pages(
         )
         written.append(_write_page_html(out, rel_path, html))
 
-    mentions_index = build_slovnicek_mentions_index(obdobi, base_path=base)
-    for term, answer in slovnicek_entries():
+    mentions_data = build_slovnicek_mentions_data(obdobi, base_path=base)
+    for term, answer in slovnicek_pages():
         slug = slovnicek_term_slug(term)
         term_html = render_slovnicek_term_html(
             obdobi,
             term=term,
             answer=answer,
             slug=slug,
-            mentions=term_mentions(term, mentions_index),
+            mentions=mentions_data.index.get(slug, ()),
+            mention_count=mentions_data.counts.get(slug, 0),
             css_href=css_href,
             fonts_css_href=fonts_css_href,
             base_path=base,
         )
         written.append(_write_page_html(out, f"slovnicek/{slug}/index.html", term_html))
+    for alias_slug, target_slug in SLOVNICEK_SLUG_ALIASES.items():
+        written.append(
+            _write_redirect_page(
+                out,
+                f"slovnicek/{alias_slug}/index.html",
+                slovnicek_term_pages_href(target_slug, base),
+                site_url=site,
+            )
+        )
 
     written.append(
         _write_redirect_page(

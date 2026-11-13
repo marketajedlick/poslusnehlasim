@@ -3,7 +3,7 @@
 <head>
 {% include "head-noviny.html" %}
 <title>{{ title }}</title>
-<meta name="description" content="{{ answer }}" />
+<meta name="description" content="{{ meta_description or answer }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
 {% include "og-meta.html" %}
 {% if schema_json_ld %}
@@ -27,6 +27,32 @@
   {% set site_nav_hide_glossary = true %}
   {% include "site-nav.html" %}
 
+  {% if sections %}
+  <section class="slovnicek-detail" aria-label="{{ t.glossary_term.detail_aria }}">
+    {% for heading, body in sections %}
+    <h2 class="slovnicek-detail-heading">{{ heading }}</h2>
+    <p class="slovnicek-detail-text">{{ body }}</p>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if mention_count %}
+  <p class="slovnicek-stats">
+    {{ t.glossary_term.stats_lead }} {{ mention_count }}×{% if latest_mention %}, {{ t.glossary_term.stats_latest }} {{ latest_mention }}{% endif %}.
+  </p>
+  {% endif %}
+
+  {% if related %}
+  <nav class="slovnicek-related" aria-label="{{ t.glossary_term.related_heading }}">
+    <h2 class="slovnicek-related-title">{{ t.glossary_term.related_heading }}</h2>
+    <ul class="slovnicek-related-list">
+      {% for row in related %}
+      <li><a class="slovnicek-related-link" href="{{ row.href }}">{{ row.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  {% endif %}
+
   <section class="slovnicek-mentions" aria-label="{{ t.glossary_term.mentions_heading }}">
     <h2 class="slovnicek-mentions-title">{{ t.glossary_term.mentions_heading }}</h2>
     {% if mentions %}
@@ -45,8 +71,18 @@
     <p class="slovnicek-mentions-empty">{{ t.glossary_term.mentions_empty }}</p>
     {% endif %}
   </section>
+
+  {% if newsletter and newsletter.show_subscribe %}
+  <div class="slovnicek-subscribe">
+    <h2 class="slovnicek-subscribe-title">{{ t.glossary_term.subscribe_heading }}</h2>
+    <p class="slovnicek-subscribe-gloss">{{ t.glossary_term.subscribe_gloss }}</p>
+    {% set subscribe_hide_gloss = true %}
+    {% include "subscribe.html" %}
+  </div>
+  {% endif %}
 </div>
 {% include "site-footer.html" %}
 {% include "cookie-consent.html" %}
+{% if newsletter and newsletter.show_subscribe %}{% include "subscribe-script.html" %}{% endif %}
 </body>
 </html>

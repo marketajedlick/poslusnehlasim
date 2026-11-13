@@ -396,11 +396,11 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "legislativní nouze",
-        "Výjimečný stav, kdy předseda sněmovny zkrátí lhůty natolik, že zákon může projít velmi rychle.",
+        "Zrychlený režim pro spěšné zákony. Vyhlašuje ho předseda Sněmovny na návrh vlády, jen za mimořádných okolností. Zákon pak může projít velmi rychle.",
     ),
     (
         "legislativní nouzi",
-        "Výjimečný stav, kdy předseda sněmovny zkrátí lhůty natolik, že zákon může projít velmi rychle.",
+        "Zrychlený režim pro spěšné zákony. Vyhlašuje ho předseda Sněmovny na návrh vlády, jen za mimořádných okolností. Zákon pak může projít velmi rychle.",
     ),
     (
         "zkrácení lhůty",
@@ -476,11 +476,11 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "třetím čtení",
-        "Finální hlasování o zákonu, pak může jít k prezidentovi k podpisu.",
+        "Závěrečné hlasování o zákonu ve Sněmovně. Pak jde zákon do Senátu a potom k prezidentovi.",
     ),
     (
         "třetí čtení",
-        "Finální hlasování o zákonu, pak může jít k prezidentovi k podpisu.",
+        "Závěrečné hlasování o zákonu ve Sněmovně. Pak jde zákon do Senátu a potom k prezidentovi.",
     ),
     (
         "druhém čtení",
@@ -553,11 +553,11 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "závěrečné hlasování",
-        "Poslední hlasování o zákonu ve sněmovně (třetí čtení), pak může jít k prezidentovi k podpisu.",
+        "Poslední hlasování o zákonu ve Sněmovně (třetí čtení). Pak jde zákon do Senátu a potom k prezidentovi.",
     ),
     (
         "finální hlasování",
-        "Poslední hlasování o zákonu ve sněmovně (třetí čtení), pak může jít k prezidentovi k podpisu.",
+        "Poslední hlasování o zákonu ve Sněmovně (třetí čtení). Pak jde zákon do Senátu a potom k prezidentovi.",
     ),
     # --- politické instituce a procedury ---
     (
@@ -800,13 +800,13 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "superdávka",
-        "Plán spojit několik sociálních dávek do jednoho systému s jednou žádostí. "
-        "Nejde o novou dávku navíc, ale o sjednocení stávajících.",
+        "Jedna sociální dávka, která od října 2025 spojila čtyři dřívější dávky do jedné žádosti. "
+        "Nejde o dávku navíc, ale o sjednocení těch starých.",
     ),
     (
         "superdávky",
-        "Plán spojit několik sociálních dávek do jednoho systému s jednou žádostí. "
-        "Nejde o novou dávku navíc, ale o sjednocení stávajících.",
+        "Jedna sociální dávka, která od října 2025 spojila čtyři dřívější dávky do jedné žádosti. "
+        "Nejde o dávku navíc, ale o sjednocení těch starých.",
     ),
     (
         "Čapí hnízdo",
@@ -1011,11 +1011,11 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "ratifikací",
-        "Souhlas Sněmovny se smlouvou s jiným státem. Teprve po něm smlouva v Česku platí.",
+        "Konečné potvrzení mezinárodní smlouvy prezidentem. U důležitých smluv k tomu potřebuje souhlas Sněmovny i Senátu.",
     ),
     (
         "ratifikace",
-        "Souhlas Sněmovny se smlouvou s jiným státem. Teprve po ratifikaci smlouva v Česku platí.",
+        "Konečné potvrzení mezinárodní smlouvy prezidentem. U důležitých smluv k tomu potřebuje souhlas Sněmovny i Senátu.",
     ),
     (
         "transparenty",
@@ -1043,11 +1043,11 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "Dozimetr",
-        "Korupční kauza spojená s pražským dopravním podnikem, kterou vyšetřuje policie.",
+        "Korupční kauza v pražském dopravním podniku. Policie ji odhalila v roce 2022, od roku 2025 ji řeší soud.",
     ),
     (
         "dozimetr",
-        "Korupční kauza spojená s pražským dopravním podnikem, kterou vyšetřuje policie.",
+        "Korupční kauza v pražském dopravním podniku. Policie ji odhalila v roce 2022, od roku 2025 ji řeší soud.",
     ),
     (
         "Agrofertu",
@@ -1139,11 +1139,11 @@ GLOSSARY: tuple[tuple[str, str], ...] = (
     ),
     (
         "EET",
-        "Elektronická evidence tržeb. Každá účtenka hlásila státu, kolik kdo utržil.",
+        "Elektronická evidence tržeb: podnikatelé hlásí státu, kolik utržili. Původní EET běžela v letech 2016 až 2020, nová verze platí od ledna 2027.",
     ),
     (
         "elektronická evidence tržeb",
-        "Každá účtenka hlásila státu, kolik kdo utržil. Mladší generace už často netuší, o co šlo.",
+        "Systém, kterým podnikatelé hlásí státu své tržby. Původní EET běžela v letech 2016 až 2020, nová verze platí od ledna 2027.",
     ),
     (
         "šedá ekonomika",
@@ -1504,8 +1504,8 @@ def slovnicek_anchor(question: str) -> str:
 
 
 def slovnicek_term_slug(term: str) -> str:
-    """Slug pro `/slovnicek/{slug}/` — stejný algoritmus jako `slovnicek_anchor`."""
-    return slovnicek_anchor(term)
+    """Slug pro `/slovnicek/{slug}/` — jako `slovnicek_anchor`, aliasy míří na kanonickou stránku."""
+    return slovnicek_canonical_slug(slovnicek_anchor(term))
 
 
 # Švejkův slovníček: panel vpravo na webu (pojem → vysvětlení).
@@ -1515,8 +1515,9 @@ SLOVNIČEK: tuple[tuple[str, str], ...] = (
     ("druhé čtení", "Začíná vrtání v detailech a přepisování jednotlivých částí zákona."),
     (
         "třetí čtení",
-        "Třetí čtení je závěrečné hlasování o zákonu ve Sněmovně. Poslanci už skoro nemění text, "
-        "jen řeknou ano, nebo ne. Když zákon projde, míří dál k Senátu nebo k prezidentovi.",
+        "Třetí čtení je závěrečné hlasování o zákonu ve Sněmovně. Nové změny už navrhovat nejde, "
+        "poslanci hlasují o pozměňovacích návrzích z druhého čtení a pak o celém zákonu. "
+        "Když projde, míří do Senátu a potom k prezidentovi.",
     ),
     ("procedurální návrh", "Neřeší se zákon, ale způsob, jak se o něm bude mluvit."),
     (
@@ -1528,26 +1529,18 @@ SLOVNIČEK: tuple[tuple[str, str], ...] = (
     ("přerušení schůze", "Poslanci si dali pauzu a slíbili, že se k tomu vrátí."),
     (
         "legislativní nouze",
-        "Legislativní nouze je zvláštní režim, ve kterém Sněmovna projednává zákon rychleji "
-        "než obvykle. Předseda zkrátí lhůty, takže se čtení a hlasování stihnou za kratší dobu. "
-        "Používá se, když většina tvrdí, že věc spěchá.",
+        "Legislativní nouze je zvláštní režim pro opravdu spěšné zákony. Vyhlašuje ji předseda "
+        "Sněmovny na návrh vlády, a jen za mimořádných okolností, třeba když hrozí velké škody "
+        "nebo je ohrožena bezpečnost. Zákon pak přeskočí první čtení a třetí může přijít hned po druhém.",
     ),
     ("zkrácení lhůty", "Poslanci si zkrátí čas na přípravu dalšího kola, zákon jde dál rychleji."),
-    (
-        "švarcsystém",
-        "Když člověk dělá práci jako zaměstnanec, ale na papíře je živnostník. Firma šetří na odvodech, člověk přijde o jistoty.",
-    ),
-    (
-        "závislá práce",
-        "Práce, která vypadá jako zaměstnání: někdo řídí, kontroluje a určuje, co a kdy se dělá.",
-    ),
     (
         "rafinérská marže",
         "Rozdíl mezi cenou ropy, kterou rafinérie koupí, a cenou paliva, které prodá. Když palivo zdraží víc než ropa, marže roste.",
     ),
     (
         "firemní dluhopis",
-        "Půjčka firmě. Koupíte papír, firma slíbí vrátit peníze i s úrokem. Když nesplatí, o peníze přijdete.",
+        "Půjčka firmě. Koupíte papír, firma slíbí vrátit peníze i s úrokem. Když nesplatí, můžete o peníze přijít, klidně o všechny.",
     ),
     ("garanční výbor", "Výbor, který má zákon na starosti a připraví ho na další hlasování."),
     ("veto", "Když Senát nebo prezident zákon vrátí, aby si ho poslanci ještě jednou rozmysleli."),
@@ -1565,20 +1558,24 @@ SLOVNIČEK: tuple[tuple[str, str], ...] = (
     ),
     (
         "skutečný majitel",
-        "Člověk, který firmu opravdu ovládá, i když na papíře stojí někdo jiný nebo další firma.",
+        "Člověk, který firmu ve skutečnosti vlastní nebo ovládá, i když na papíře stojí někdo jiný nebo další firma.",
     ),
     ("důvěra vládě", "Hlasování, jestli má vláda podporu většiny poslanců."),
     ("nedůvěra vládě", "Pokus vládu poslat do politického důchodu dřív, než odejde sama."),
     ("koalice", "Strany, které spolu vládnou a snaží se najít společnou řeč."),
     ("opozice", "Strany, které nevládnou a hlídají, jestli vláda nevaří z cizích peněz příliš odvážně."),
     ("Senát", "Druhá komora Parlamentu. Kontroluje zákony, které schválila Sněmovna."),
-    ("veto Senátu", "Senát zákon vrátí nebo navrhne změny. Poslanci ale mohou jeho nesouhlas přehlasovat."),
+    (
+        "veto Senátu",
+        "Senát zákon zamítne, nebo ho vrátí se změnami. U běžných zákonů ho poslanci můžou "
+        "přehlasovat 101 hlasy, u ústavních ne.",
+    ),
     ("veto prezidenta", "Když prezident zákon vrátí poslancům s tím, aby si ho ještě jednou rozmysleli."),
-    ("rozpočtové brzdy", "Zákon, který státu připomíná šlápnout na brzdu, když utrácí moc rychle."),
+    ("rozpočtové brzdy", "Pravidla v zákoně o rozpočtové odpovědnosti, která státu připomínají šlápnout na brzdu, když se moc zadlužuje."),
     ("fiskální pravidla", "Pravidla, která mají státu připomínat, že kreditka není bezedná."),
     ("schodek", "Když stát utratí víc, než vybere. Něco jako když hospoda jede na sekeru."),
-    ("EET", "Elektronická evidence tržeb, každá účtenka hlásila státu, kolik kdo utržil."),
-    ("elektronická evidence tržeb", "Každá účtenka hlásí státu, kolik kdo utržil."),
+    ("EET", "Elektronická evidence tržeb: podnikatelé hlásí státu, kolik utržili. Původní EET běžela v letech 2016 až 2020, nová verze platí od ledna 2027."),
+    ("elektronická evidence tržeb", "Systém, kterým podnikatelé hlásí státu své tržby. Původní EET běžela v letech 2016 až 2020, nová verze platí od ledna 2027."),
     ("šedá ekonomika", "Peníze a podnikání, které stát oficiálně nevidí, hlavně kvůli nehlášeným tržbám."),
     (
         "švarcsystém",
@@ -1588,15 +1585,16 @@ SLOVNIČEK: tuple[tuple[str, str], ...] = (
         "závislá práce",
         "Práce, která vypadá jako zaměstnání: někdo řídí, kontroluje a určuje, co a kdy se dělá. Od toho se odvíjí, jestli jste zaměstnanec.",
     ),
-    ("závěrečné hlasování", "Poslední hlasování o zákonu ve sněmovně, pak může jít k prezidentovi."),
+    ("závěrečné hlasování", "Poslední hlasování o zákonu ve Sněmovně. Pak jde zákon do Senátu a potom k prezidentovi."),
     ("usnesení", "Stanovisko nebo rozhodnutí sněmovny. Nejde o zákon."),
     (
         "ratifikace",
-        "Ratifikace je souhlas parlamentu se smlouvou s jiným státem. Bez něj smlouva v Česku "
-        "neplatí, i když ji vláda vyjednala. Ve Sněmovně se o ní hlasuje jako o běžném bodu programu.",
+        "Ratifikace je konečné potvrzení mezinárodní smlouvy prezidentem. U důležitých smluv "
+        "k tomu potřebuje souhlas Sněmovny i Senátu, bez něj ji ratifikovat nesmí. Poslanci "
+        "o souhlasu hlasují podobně jako o zákonu, jen bez pozměňovacích návrhů.",
     ),
-    ("Dozimetr", "Korupční kauza spojená s pražským dopravním podnikem, kterou vyšetřuje policie."),
-    ("superdávka", "Plán na sloučení několika sociálních dávek do jednoho systému."),
+    ("Dozimetr", "Korupční kauza v pražském dopravním podniku. Policie ji odhalila v roce 2022, od roku 2025 ji řeší soud."),
+    ("superdávka", "Jedna sociální dávka, která spojila čtyři dřívější dávky pro lidi s nízkými příjmy. Platí od října 2025."),
     ("NKÚ", "Nejvyšší kontrolní úřad. Kontroluje, jak stát hospodaří s veřejnými penězi."),
     ("VZP", "Největší česká zdravotní pojišťovna."),
     (
@@ -1646,3 +1644,344 @@ def poslaneciny_entries() -> tuple[tuple[str, str], ...]:
 
 def glossary_entries() -> tuple[tuple[str, str], ...]:
     return GLOSSARY
+
+
+# ---------------------------------------------------------------------------
+# Stránky pojmů /slovnicek/{slug}/ — SEO rozšíření
+# ---------------------------------------------------------------------------
+
+# Pojmy, které sdílí jednu stránku: alias slug → kanonický slug.
+# Alias zůstává v SLOVNIČEK kvůli značkování textů, ale vlastní stránku nemá
+# (na staré URL se exportuje přesměrování).
+SLOVNICEK_SLUG_ALIASES: dict[str, str] = {
+    "elektronicka-evidence-trzeb": "eet",
+}
+
+
+# Rozšířený obsah pro nejhledanější pojmy (podle Google Search Console, 11/2026).
+# Klíč = kanonický slug. Pole:
+#   title    – volitelný vlastní <title> (bez „| Poslušně hlásím“)
+#   meta     – meta description (≤ ~155 znaků), jasná odpověď + háček
+#   sections – (nadpis-otázka, odstavec); jdou i do FAQ JSON-LD
+#   related  – pojmy ze SLOVNIČEK pro „Souvisí s tím“
+SLOVNICEK_DETAIL: dict[str, dict] = {
+    "ozp": {
+        "title": "OZP: co znamená zkratka, průkaz TP, ZTP a ZTP/P",
+        "meta": (
+            "OZP znamená osoba se zdravotním postižením. Co je průkaz TP, ZTP a ZTP/P, "
+            "co znamená „vhodné pro OZP“ v inzerátu a co k tomu řeší Sněmovna."
+        ),
+        "sections": (
+            (
+                "Co znamená zkratka OZP?",
+                "OZP je osoba se zdravotním postižením. Zkratku uvidíte v inzerátech práce, "
+                "na úřadech, u dávek i ve sněmovních tiscích. Stejnou zkratku používá i Oborová "
+                "zdravotní pojišťovna, ale ve Sněmovně a v pracovních inzerátech jde skoro vždy "
+                "o osobu se zdravotním postižením.",
+            ),
+            (
+                "Jaký je rozdíl mezi TP, ZTP a ZTP/P?",
+                "Jsou to tři stupně průkazu osoby se zdravotním postižením, který vydává Úřad práce. "
+                "TP je pro těžce postižené, ZTP pro zvlášť těžce postižené a ZTP/P pro zvlášť těžce "
+                "postižené, kteří potřebují průvodce. Podle stupně má držitel nárok například na "
+                "vyhrazené místo k sezení (už od TP), MHD zdarma a slevu na jízdném (od ZTP). "
+                "Parkovací průkaz nevydává Úřad práce, ale obec, a jen držitelům ZTP a ZTP/P.",
+            ),
+            (
+                "Co znamená „vhodné pro OZP“ v inzerátu?",
+                "Že práci zvládne i člověk se zdravotním omezením. Pro zaměstnání se za OZP považují "
+                "lidé uznaní invalidními (v kterémkoli ze tří stupňů) a lidé, které úřad uznal za "
+                "zdravotně znevýhodněné. Firmy s více než 25 zaměstnanci musí zaměstnávat aspoň 4 % "
+                "lidí se zdravotním postižením, nebo místo toho odebírat výrobky a služby od firem, "
+                "kde lidé se zdravotním postižením tvoří většinu zaměstnanců, případně zaplatit "
+                "odvod státu. Způsoby jde kombinovat.",
+            ),
+            (
+                "Jaké dávky se OZP týkají?",
+                "Nejčastěji příspěvek na mobilitu, příspěvek na zvláštní pomůcku a příspěvek na péči. "
+                "O jejich výši a podmínkách rozhoduje zákon, takže se k nim Sněmovna pravidelně vrací, "
+                "typicky při valorizaci nebo při změnách sociálních dávek.",
+            ),
+        ),
+        "related": ("superdávka",),
+    },
+    "interpelace": {
+        "title": "Interpelace: co to je a co znamená interpelovat",
+        "meta": (
+            "Interpelace je otázka poslance ministrovi nebo premiérovi, na kterou musí odpovědět. "
+            "Jak probíhají ústní a písemné interpelace a co znamená interpelovat."
+        ),
+        "sections": (
+            (
+                "Co znamená interpelovat?",
+                "Interpelovat znamená veřejně se zeptat člena vlády na něco, co spadá do jeho "
+                "práce. Právo interpelovat má podle Ústavy každý poslanec a ministr musí odpovědět. "
+                "Je to jeden z hlavních nástrojů, kterými Sněmovna kontroluje vládu.",
+            ),
+            (
+                "Jak probíhají ústní interpelace?",
+                "Ve Sněmovně mají vyhrazený čas, ve čtvrtek odpoledne. Nejdřív přijdou na řadu "
+                "otázky na premiéra, potom na ostatní ministry. Pořadí poslanců se losuje, takže se často stane, "
+                "že na dotaz nedojde, nebo že ministr zrovna chybí a odpoví písemně.",
+            ),
+            (
+                "Co je písemná interpelace?",
+                "Poslanec pošle otázku ministrovi písemně a ten má na odpověď 30 dní. Když poslance "
+                "odpověď neuspokojí, může ji dát Sněmovně k projednání a ta může s odpovědí vyslovit "
+                "nesouhlas. Ministr pak musí do 30 dní napsat novou odpověď. Jiný trest nehrozí, "
+                "ale je to veřejná výtka.",
+            ),
+        ),
+        "related": ("opozice", "koalice", "nedůvěra vládě"),
+    },
+    "ratifikace": {
+        "title": "Ratifikace: co to je a co znamená ratifikovat smlouvu",
+        "meta": (
+            "Ratifikace je konečné potvrzení mezinárodní smlouvy. Kdo ji ratifikuje, proč k tomu "
+            "potřebuje souhlas Sněmovny a Senátu a co znamená ratifikovat."
+        ),
+        "sections": (
+            (
+                "Co znamená ratifikovat?",
+                "Ratifikovat znamená definitivně potvrdit mezinárodní smlouvu, kterou vláda "
+                "vyjednala a podepsala. Teprve po ratifikaci je pro Česko závazná. Samotný podpis "
+                "ministra je jen slib, že se o smlouvě bude doma rozhodovat.",
+            ),
+            (
+                "Kdo smlouvu ratifikuje?",
+                "Prezident. U důležitých smluv, třeba když upravují práva a povinnosti lidí, jde "
+                "o spojenectví nebo mír, o členství v mezinárodní organizaci, o obecná hospodářská "
+                "pravidla nebo o věci, které jinak musí řešit zákon, ale smí ratifikovat jen se "
+                "souhlasem obou komor Parlamentu. Proto o nich hlasuje Sněmovna i Senát.",
+            ),
+            (
+                "Jak o ratifikaci hlasuje Sněmovna?",
+                "Poslanci smlouvu nemůžou přepsat, protože ji vyjednaly dva nebo víc států. Můžou jen "
+                "souhlasit, nesouhlasit nebo rozhodnutí odložit. Obvykle stačí většina přítomných "
+                "poslanců. Smlouvy, které přenášejí pravomoci na mezinárodní organizaci, potřebují "
+                "tři pětiny všech poslanců, tedy 120, a tři pětiny přítomných senátorů.",
+            ),
+        ),
+        "related": ("Senát", "usnesení"),
+    },
+    "prvni-cteni": {
+        "meta": (
+            "První čtení je první kolo projednávání zákona ve Sněmovně. Poslanci rozhodnou, "
+            "jestli zákon zamítnou, vrátí, nebo pošlou do výborů. Jak to probíhá."
+        ),
+        "sections": (
+            (
+                "Co se v prvním čtení děje?",
+                "Navrhovatel zákon představí a poslanci debatují o jeho smyslu, ne o detailech. "
+                "Pozměňovací návrhy se v prvním čtení podávat nedají. Na konci Sněmovna hlasuje, "
+                "jestli zákon zamítne, vrátí k dopracování, nebo ho přikáže výborům.",
+            ),
+            (
+                "Co následuje po prvním čtení?",
+                "Zákon jde do garančního výboru, případně i do dalších výborů. Ty mají na jeho "
+                "projednání obvykle 60 dní a mohou navrhnout změny. Pak přichází druhé čtení.",
+            ),
+            (
+                "Může zákon projít už v prvním čtení?",
+                "Ano. Když spěchá nebo je jednoduchý, může Sněmovna souhlasit s tím, že ho schválí "
+                "hned v prvním čtení. Stačí ale, aby proti tomu do konce obecné rozpravy vznesly "
+                "námitku dva poslanecké kluby nebo 50 poslanců. U ústavních zákonů a státního "
+                "rozpočtu tahle zkratka vůbec nejde.",
+            ),
+        ),
+        "related": ("druhé čtení", "třetí čtení", "garanční výbor", "zkrácení lhůty"),
+    },
+    "druhe-cteni": {
+        "meta": (
+            "Druhé čtení je fáze, kdy poslanci zákon upravují pozměňovacími návrhy. "
+            "Jak druhé čtení probíhá a proč se v něm často zdržuje."
+        ),
+        "sections": (
+            (
+                "Co se ve druhém čtení děje?",
+                "Navrhovatel zákon znovu představí a zpravodaj řekne, jaké změny doporučil výbor. "
+                "Pak proběhne obecná rozprava a podrobná, ve které můžou poslanci podávat další "
+                "pozměňovací návrhy. Ve druhém čtení se o nich ještě nehlasuje, jen se sbírají.",
+            ),
+            (
+                "Proč druhé čtení trvá dlouho?",
+                "Protože do podrobné rozpravy se může přihlásit kdokoli a návrhů může být desítky. "
+                "Opozice tu často zdržuje, aby se zákon nedostal ke hlasování. Druhé čtení je proto "
+                "jedním z oblíbených míst obstrukce.",
+            ),
+            (
+                "Co následuje po druhém čtení?",
+                "Garanční výbor posoudí všechny pozměňovací návrhy a doporučí, jak o nich hlasovat. "
+                "Třetí čtení může začít obvykle nejdřív 14 dní poté, co poslanci návrhy dostanou.",
+            ),
+        ),
+        "related": ("první čtení", "třetí čtení", "pozměňovací návrh", "obstrukce"),
+    },
+    "treti-cteni": {
+        "meta": (
+            "Třetí čtení je závěrečné hlasování o zákonu ve Sněmovně. Co se v něm ještě "
+            "smí měnit, kolik hlasů je potřeba a kam zákon jde potom."
+        ),
+        "sections": (
+            (
+                "Co se ve třetím čtení ještě smí měnit?",
+                "Skoro nic. Jde jen opravit chyby, posunout datum účinnosti, sladit text s už "
+                "podanými pozměňovacími návrhy, nebo navrhnout, ať se druhé čtení zopakuje. Hlasuje "
+                "se o pozměňovacích návrzích z druhého čtení a nakonec o zákonu jako celku.",
+            ),
+            (
+                "Kolik hlasů zákon potřebuje?",
+                "Běžný zákon potřebuje většinu přítomných poslanců. Ústavní zákon potřebuje tři "
+                "pětiny všech poslanců, tedy aspoň 120 hlasů.",
+            ),
+            (
+                "Kam jde zákon po třetím čtení?",
+                "Do Senátu, který má 30 dní. Senát ho může schválit, zamítnout, vrátit s úpravami, "
+                "nebo se nevyjádřit (pak platí, že souhlasí). Potom zákon podepisuje prezident, "
+                "který ho může vetovat.",
+            ),
+        ),
+        "related": ("druhé čtení", "závěrečné hlasování", "Senát", "veto"),
+    },
+    "obstrukce": {
+        "title": "Obstrukce: co to je a co znamená obstruovat",
+        "meta": (
+            "Obstrukce je záměrné zdržování jednání, aby se nehlasovalo. Jak poslanci obstruují, "
+            "co znamená obstruovat a jak se s tím Sněmovna vypořádává."
+        ),
+        "sections": (
+            (
+                "Co znamená obstruovat?",
+                "Obstruovat znamená zdržovat. Ve Sněmovně jde o to, aby se o zákonu nehlasovalo, "
+                "nebo aby se hlasovalo co nejpozději. Je to legální nástroj, hlavně opozice, který "
+                "nepotřebuje většinu. Stačí čas a vytrvalost.",
+            ),
+            (
+                "Jak obstrukce vypadá?",
+                "Nejčastěji jsou to dlouhé projevy. Přednostní právo mají hlavně ministři, předsedové "
+                "klubů a vedení Sněmovny. Od září 2026 ale předsedové klubů můžou mimo rozpravu mluvit "
+                "nanejvýš 30 minut a jen jednou za bod, bez limitu zůstali jen členové vlády. Dalšími "
+                "prostředky jsou opakované procedurální návrhy, žádosti o přestávku na poradu klubu "
+                "nebo spory o program schůze.",
+            ),
+            (
+                "Jak se dá obstrukce ukončit?",
+                "Většina může omezit délku a počet vystoupení, pevně zařadit bod na konkrétní čas "
+                "nebo jednat déle do noci (třetí čtení ale ani tak ne po 21. hodině). Od září 2026 "
+                "může výjimečně určit i čas hlasování, rozprava pak skončí, i když jsou přihlášení "
+                "další řečníci. Každý takový krok se ale musí odhlasovat, a to zase stojí čas.",
+            ),
+        ),
+        "related": ("procedurální návrh", "legislativní nouze", "opozice", "druhé čtení"),
+    },
+    "veto": {
+        "title": "Veto: co to je a co znamená vetovat zákon",
+        "meta": (
+            "Veto znamená, že Senát nebo prezident vrátí zákon Sněmovně. Co znamená vetovat, "
+            "kolik hlasů je potřeba k přehlasování veta a jak dlouho to trvá."
+        ),
+        "sections": (
+            (
+                "Co znamená vetovat zákon?",
+                "Vetovat znamená odmítnout podepsat nebo schválit zákon a vrátit ho zpět. "
+                "U běžných zákonů je veto jen odkladné. Zákon tím nekončí, jen se o něm musí ve Sněmovně "
+                "hlasovat znovu. Výjimkou jsou ústavní a volební zákony, ty bez souhlasu Senátu "
+                "neprojdou.",
+            ),
+            (
+                "Kolik hlasů je potřeba k přehlasování veta?",
+                "Nadpoloviční většina všech poslanců, tedy aspoň 101 hlasů. Nezáleží na tom, kolik "
+                "poslanců je zrovna v sále. Proto je přehlasování veta pro vládu těžší než běžné "
+                "schválení zákona.",
+            ),
+            (
+                "Jak se liší veto Senátu a veto prezidenta?",
+                "Senát může zákon zamítnout, nebo ho vrátit s pozměňovacími návrhy. Ty může "
+                "Sněmovna přijmout běžnou většinou. Prezident může zákon vrátit do 15 dnů od "
+                "doručení, ale ústavní zákony vetovat nesmí.",
+            ),
+        ),
+        "related": ("veto Senátu", "veto prezidenta", "Senát", "třetí čtení"),
+    },
+    "superdavka": {
+        "title": "Superdávka: co to je, které dávky slučuje a jaký je zákon",
+        "meta": (
+            "Superdávka je jedna sociální dávka místo čtyř, platí od října 2025. Které dávky "
+            "nahradila, jak se úředně jmenuje a co s ní dělá Sněmovna."
+        ),
+        "sections": (
+            (
+                "Které dávky superdávka slučuje?",
+                "Příspěvek na živobytí, doplatek na bydlení, příspěvek na bydlení a přídavek na "
+                "dítě. Místo čtyř různých žádostí a čtyř výpočtů je jedna žádost a jeden výpočet "
+                "podle příjmů a nákladů celé domácnosti. Vyplácí ji Úřad práce.",
+            ),
+            (
+                "Jak se superdávka úředně jmenuje?",
+                "Dávka státní sociální pomoci, podle zákona č. 151/2025 Sb. „Superdávka“ je "
+                "novinářská přezdívka, kterou dnes používají i politici.",
+            ),
+            (
+                "Jaký je stav zákona o superdávce?",
+                "Zákon schválila ještě Fialova vláda a platí od října 2025. Přechod lidí, kteří "
+                "dostávali staré dávky, se odložil na červenec 2026. Podoba superdávky se ale mění "
+                "podle toho, kdo vládne, a další úpravy, o kterých Sněmovna jedná, sledujeme ve "
+                "vydáních níže.",
+            ),
+        ),
+        "related": ("OZP", "schodek", "fiskální pravidla"),
+    },
+    "eet": {
+        "title": "EET: co je elektronická evidence tržeb a koho se týká",
+        "meta": (
+            "EET, elektronická evidence tržeb, posílá údaje o tržbách finanční správě. Jak "
+            "fungovala, proč skončila a co přináší EET 2.0 od ledna 2027."
+        ),
+        "sections": (
+            (
+                "Jak EET fungovala?",
+                "Pokladna při každé platbě poslala údaje o tržbě finanční správě a na účtenku "
+                "se vytiskl kód, kterým šlo účtenku ověřit. Cílem bylo omezit neevidované tržby "
+                "a šedou ekonomiku.",
+            ),
+            (
+                "Koho se EET týkala?",
+                "Od prosince 2016 restaurací a hotelů, od března 2017 obchodů. Další vlny pro "
+                "řemeslníky, stánkaře a ostatní podnikatele se odkládaly, nejdřív kvůli Ústavnímu "
+                "soudu, pak kvůli covidu. V roce 2020 byla evidence pozastavena a od roku 2023 "
+                "zrušena.",
+            ),
+            (
+                "Vrací se EET?",
+                "Ano. Sněmovna v roce 2026 schválila EET 2.0 (zákon č. 180/2026 Sb.), platí od "
+                "ledna 2027. Evidují se jen platby při osobním kontaktu: hotově, kartou nebo QR "
+                "kódem. Převody na účet a platby faktur ne. Povinná papírová účtenka se nevrací. "
+                "Kdo má výjimku, stanoví zákon, a co se na něm ještě mění, sledujeme ve vydáních níže.",
+            ),
+        ),
+        "related": ("šedá ekonomika", "švarcsystém"),
+    },
+}
+
+
+def slovnicek_canonical_slug(slug: str) -> str:
+    """Slug stránky, na které pojem skutečně žije (aliasy → kanonický slug)."""
+    return SLOVNICEK_SLUG_ALIASES.get(slug, slug)
+
+
+def slovnicek_pages() -> tuple[tuple[str, str], ...]:
+    """Pojmy, které mají vlastní stránku: bez aliasů a bez duplicitních slugů."""
+    seen: set[str] = set()
+    out: list[tuple[str, str]] = []
+    for term, answer in SLOVNIČEK:
+        slug = slovnicek_anchor(term)
+        if slug in SLOVNICEK_SLUG_ALIASES or slug in seen:
+            continue
+        seen.add(slug)
+        out.append((term, answer))
+    return tuple(out)
+
+
+def slovnicek_detail(slug: str) -> dict:
+    """Rozšířený obsah stránky pojmu (prázdný dict, když není)."""
+    return SLOVNICEK_DETAIL.get(slovnicek_canonical_slug(slug), {})
