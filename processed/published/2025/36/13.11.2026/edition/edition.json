@@ -1,0 +1,58 @@
+{
+  "key": "2025/36/13.11.2026",
+  "obdobi": 2025,
+  "schuze": 36,
+  "datum_unl": "13.11.2026",
+  "iso": "2026-11-13",
+  "state": "approved",
+  "topic_slugs": [
+    "novela-z-o-danich-z-prijmu"
+  ],
+  "recommended_slugs": [
+    "novela-z-o-danich-z-prijmu"
+  ],
+  "rejected_slugs": [],
+  "brief_path": "editions/2026-11-13/brief.md",
+  "feedback": [],
+  "metrics": {
+    "state": "draft",
+    "stale": false,
+    "link_phrase_coverage": {
+      "total": 16,
+      "linked": 16,
+      "percent": 100.0,
+      "missing": []
+    },
+    "citace_in_steno": {
+      "checked": 16,
+      "ok": 16,
+      "percent": 100.0,
+      "bad": []
+    },
+    "party_labels": {
+      "errors": 0,
+      "warns": 0,
+      "by_code": {},
+      "items": []
+    },
+    "generic_topic_count": 0,
+    "steno_passages": 17,
+    "steno_missing_article_phrase": 0,
+    "jazykolam_duplicates": [],
+    "shared_topics": {},
+    "ok": true,
+    "errors": []
+  },
+  "inputs": {
+    "votes_count": 3,
+    "votes_max_cislo": 3,
+    "steno_count": 69,
+    "steno_last_poradi": 69,
+    "topics_built_at": "2026-11-15T20:22:13.205612+00:00",
+    "fingerprint": "bd1374b1c0a9ddf2"
+  },
+  "published_at": null,
+  "snapshot_dir": null,
+  "supersedes": null,
+  "approved_hash": "2933d2f79fb8c509"
+}

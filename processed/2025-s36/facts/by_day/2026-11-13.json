@@ -1,0 +1,38 @@
+{
+  "datum": "13.11.2026",
+  "den": "pátek",
+  "topic_slugs": [
+    "rafinerska-dan-druhe-kolo-13-listopadu"
+  ],
+  "stats": {
+    "pocet_hlas": 0,
+    "minuty": 239,
+    "end_cas": "13:17",
+    "proslo": 0,
+    "zamitnuto": 0,
+    "spor_o_porad": false,
+    "dlouha_debata": true
+  },
+  "steno_zdroje": true,
+  "nwl_predmet": "Vlastní schůze bez kvora, daň s jedním adresátem",
+  "dnesni_ucet": "Koalice si svolala mimořádnou schůzi a ráno na ni nedorazilo kvorum.\nDaň na jednu rafinérii má za sebou druhé kolo a třicet opozičních návrhů změn.",
+  "zaver": "že koalice svolala mimořádnou schůzi kvůli dani, která míří na jedinou firmu, ráno na ni nepřišlo dost poslanců k hlasování a opozice pak k zákonu nahrála třicet změn, o kterých se rozhodne až v závěrečném kole.",
+  "vysledek": [
+    "* daň z rafinérské marže: druhé kolo skončilo, o třiceti opozičních změnách se hlasuje až v závěrečném kole",
+    "* čekání na závěrečné hlasování Sněmovna zkrátila ze čtrnácti na sedm dní"
+  ],
+  "board_left_label": "prošlo",
+  "board_right_label": "padlo",
+  "jazykolam": {
+    "text": "Vy jste slíbili svým voličům, že žádné daně nebudete zvyšovat, tak nové daně nejsou zvyšování daní, to jsou nové daně, tak to asi není ono.",
+    "autor": "Michaela Šebelová (STAN)",
+    "steno_id": "2025_36_00014"
+  },
+  "slovnicek": [
+    "rafinérská marže",
+    "Druhé čtení",
+    "Pozměňovací návrh",
+    "Kvorum",
+    "Mimořádná schůze"
+  ]
+}
