@@ -1,0 +1,63 @@
+{
+  "datum_unl": "13.11.2026",
+  "iso": "2026-11-13",
+  "recommended": [
+    {
+      "slug": "novela-z-o-danich-z-prijmu",
+      "nazev": "Novela z. o daních z příjmů",
+      "score": 69,
+      "meta": {
+        "priorita": 3,
+        "signaly": {
+          "proti_max": 23,
+          "pritomno_min": 100,
+          "jednomyslne": false,
+          "spor": true,
+          "prazdny_sal": true
+        },
+        "steno_slov": 14873,
+        "pocet_fakty": 4,
+        "proslo": true,
+        "kategorie": "substantivni"
+      },
+      "fakty": [
+        {
+          "text": "Ve vztahu k roku 2026 představuje návrh odlišný přístup oproti takzvané Windfall tax, dani z neočekávaných zisků, která byla konstruována pouze pro budoucí zdaňovací období.",
+          "source": "steno",
+          "steno_id": "2025_36_00029",
+          "citace": "Ve vztahu k roku 2026 představuje návrh odlišný přístup oproti takzvané Windfall tax, dani z neočekávaných zisků, která byla konstruována pouze pro budoucí zdaňovací období."
+        },
+        {
+          "text": "Stejně jako polské řešení vychází i český návrh z principu zdanění navýšení marže oproti referenčnímu období, kterým je rok 2025.",
+          "source": "steno",
+          "steno_id": "2025_36_00029",
+          "citace": "Stejně jako polské řešení vychází i český návrh z principu zdanění navýšení marže oproti referenčnímu období, kterým je rok 2025."
+        },
+        {
+          "text": "Vzhledem k tomu, že se má daň stahovat již na zdaňovací období roku 2026 a je tedy žádoucí, aby návrh nabyl účinnosti před koncem roku 2026, bych chtěla požádat o zkrácení lhůty pro projednávání návrhu ve výborech ze 14 dnů na 7 dní, a ještě v obecné rozpravě se k tomuto svému návrhu přihlásím.",
+          "source": "steno",
+          "steno_id": "2025_36_00029",
+          "citace": "Vzhledem k tomu, že se má daň stahovat již na zdaňovací období roku 2026 a je tedy žádoucí, aby návrh nabyl účinnosti před koncem roku 2026, bych chtěla požádat o zkrácení lhůty pro projednávání návrh"
+        },
+        {
+          "text": "Tolik?",
+          "source": "steno",
+          "kind": "scene",
+          "steno_id": "2025_36_00031",
+          "citace": "(Tolik?)"
+        }
+      ]
+    }
+  ],
+  "rejected": [],
+  "day_stats": {
+    "pocet_hlas_zakon": 1,
+    "proslo_vote": 1,
+    "zamitnuto_vote": 0,
+    "spor_o_porad": false,
+    "calendar_isos": [
+      "2026-11-13",
+      "2026-11-14"
+    ]
+  }
+}
