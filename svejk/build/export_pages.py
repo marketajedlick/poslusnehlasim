@@ -791,6 +791,9 @@ def run_export_pages(
 
     feed_path = write_feed_xml(obdobi, out / "feed.xml", config=cfg, base_path=base)
     robots_path = write_robots_txt(out, site_url=site)
+    from svejk.build.seo import INDEXNOW_KEY
+
+    (out / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
     # Bing Webmaster Tools: ověření souborem (záloha k meta msvalidate.01 v head-noviny.html)
     (out / "BingSiteAuth.xml").write_text(
         '<?xml version="1.0"?>\n<users>\n\t<user>083DDC963304430B3B836F9B0C188D9E</user>\n</users>\n',

@@ -130,6 +130,20 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 
+  # Bing, Seznam & spol.: ohlásit čerstvé stránky (IndexNow). Selhání nevadí.
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    if: ${{ needs.deploy.result == 'success' }}
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: IndexNow ping
+        run: python scripts/indexnow.py --days 2
+
   # Až je /share/… živé na webu — Incoming Webhook + veřejná URL karty.
   slack:
     needs: deploy

@@ -90,6 +90,9 @@ ORGANIZATION_DESCRIPTION = (
     "Srozumitelné shrnutí rozprav a hlasování za každý jednací den."
 )
 WEBSITE_SCHEMA_NAME = f"{SITE_NAME}, deník Poslanecké sněmovny"
+# IndexNow (Bing, Seznam, Yandex…): klíč je veřejný, leží na webu jako /{klíč}.txt.
+# Odesílá scripts/indexnow.py po deployi (pages.yml).
+INDEXNOW_KEY = "0a540c2f0b8a2f2dfbb179773b2f25c4"
 
 
 def site_meta_description() -> str:
@@ -234,9 +237,28 @@ def edition_meta_description(
     perex_clean = perex.rstrip(".")
     date_label = _edition_date_label_short(datum_unl) if datum_unl else ""
     if date_label:
-        raw = f"{perex_clean}. Denní přehled z Poslanecké sněmovny, {date_label}."
+        tail = f"Denní přehled z Poslanecké sněmovny, {date_label}."
     else:
-        raw = f"{perex_clean}. Denní přehled z Poslanecké sněmovny."
+        tail = "Denní přehled z Poslanecké sněmovny."
+    raw = f"{perex_clean}. {tail}"
+    # Krátký nadpis dne (Bing: popis pod ~70 znaků je „too short“) → doplnit
+    # větami z hlášení dne, dokud se vejdou celé.
+    ucet = " ".join(_strip_html(dnesni_ucet).split())
+    perex_z_nadpisu = bool(nadpis_vydani.strip() or first_item_nadpis.strip())
+    if len(raw) < 110 and ucet and perex_z_nadpisu:
+        body = f"{perex_clean}."
+        for veta in re.split(r"(?<=[.!?])\s+", ucet):
+            veta = veta.strip()
+            if not veta or veta.rstrip(".") == perex_clean:
+                continue
+            if len(f"{body} {veta} {tail}") > max_len:
+                break
+            body = f"{body} {veta}"
+        if body == f"{perex_clean}.":
+            # ani jedna celá věta se s datem nevešla → hlášení bez data, zkrátí se
+            raw = f"{perex_clean}. {ucet}"
+        else:
+            raw = f"{body} {tail}"
     return meta_description(raw, max_len=max_len)
 
 
