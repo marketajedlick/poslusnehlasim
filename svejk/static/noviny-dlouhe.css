@@ -2771,10 +2771,35 @@ a.potvrzeno-cta:hover{filter:brightness(1.05);border-bottom:none}
 .zakon-head .site-nav{margin-top:10px}
 
 .zakon-jump{
-  display:flex;justify-content:center;gap:8px;margin:-8px 0 22px;
-  font-family:var(--font-sans);font-size:13px;font-weight:700;
+  position:sticky;top:0;z-index:20;
+  display:flex;gap:0;margin:-8px -16px 22px;padding:8px 16px;
+  background:var(--cream);border-bottom:1px solid var(--border);
+  font-family:var(--font-sans);font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
 }
-.zakon-jump a{color:var(--orange);text-decoration:none}
+.zakon-jump-tab{
+  flex:1 1 0;text-align:center;padding:10px 4px;min-height:44px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--char);text-decoration:none;border:2px solid var(--char);background:var(--white);
+}
+.zakon-jump-tab + .zakon-jump-tab{border-left:none}
+.zakon-jump-tab.is-active{background:var(--char);color:var(--cream)}
+.zakon-jump-tab--opo.is-active{background:var(--zk-opo,var(--steno));border-color:var(--char)}
+.zakon-jump-tab--vla.is-active{background:var(--zk-vla,var(--terra));border-color:var(--char)}
+.zakon-grid > [hidden]{display:none !important}
+@media(max-width:1099px){
+  .zakon-meta{
+    display:grid;grid-template-columns:auto 1fr;gap:6px 12px;text-align:left;
+    max-width:420px;margin:0 auto 18px;
+  }
+  .zakon-meta div{display:contents}
+  .zakon-meta dt{white-space:nowrap}
+  .zakon-krok-src,.zakon-krok-ed,.zakon-quote-src,.zakon-vote-link{
+    display:inline-block;font-size:13px;padding:6px 0;min-height:32px;
+  }
+  .zakon-krok-src + .zakon-krok-src,.zakon-krok-src + .zakon-krok-ed{margin-left:8px}
+  .zakon-vote-group > summary,.zakon-more > summary{display:inline-block;padding:8px 0;font-size:13.5px}
+  .zakon-side-head{margin-top:4px}
+}
 
 /* 3 sloupce: opozice | průběh | vláda */
 .zakon-grid{
