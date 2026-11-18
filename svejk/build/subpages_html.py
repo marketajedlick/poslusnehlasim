@@ -617,7 +617,12 @@ def render_slovnicek_term_html(
     fonts_css_href: str | None = None,
     base_path: str = "",
 ) -> str:
-    from svejk.glossary import slovnicek_detail, slovnicek_pages, slovnicek_term_slug
+    from svejk.glossary import (
+        slovnicek_detail,
+        slovnicek_meta,
+        slovnicek_pages,
+        slovnicek_term_slug,
+    )
 
     css = _inline_css_text() if inline_css else ""
     if css_href is None:
@@ -658,7 +663,7 @@ def render_slovnicek_term_html(
         )
     title = slovnicek_term_page_title(term_label, custom=detail.get("title", ""))
     description = slovnicek_term_meta_description(
-        term=term_label, answer=answer, custom=detail.get("meta", "")
+        term=term_label, answer=answer, custom=slovnicek_meta(slug)
     )
     latest_mention = mentions[0].date_label if mentions else ""
     og = _og_context(

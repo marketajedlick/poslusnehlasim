@@ -38,7 +38,9 @@ def test_site_meta_description() -> None:
             datum_unl="02.07.2026",
             proslo=1,
         )
-        == "Skóre dne 1:0. Denní přehled z Poslanecké sněmovny, 2. 7. 2026."
+        == "Skóre dne 1:0. Denní přehled z Poslanecké sněmovny, 2. 7. 2026. "
+        "O čem se hlasovalo a co zaznělo v rozpravě. Bez stenoprotokolové mlhy. "
+        "Se Švejkovým komentářem."
     )
     assert edition_meta_description(dnesni_ucet="") == site_meta_description()
     assert (
@@ -49,16 +51,18 @@ def test_site_meta_description() -> None:
                 'Česká pirátská strana.</span></span> dorazil.'
             ),
             datum_unl="08.07.2026",
+        ).startswith(
+            "Hřib (Piráti) dorazil. Denní přehled z Poslanecké sněmovny, 8. 7. 2026. "
         )
-        == "Hřib (Piráti) dorazil. Denní přehled z Poslanecké sněmovny, 8. 7. 2026."
     )
     assert (
         edition_meta_description(
             dnesni_ucet="",
             first_item_nadpis="Titulek na počkání",
             datum_unl="02.07.2026",
+        ).startswith(
+            "Titulek na počkání. Denní přehled z Poslanecké sněmovny, 2. 7. 2026. "
         )
-        == "Titulek na počkání. Denní přehled z Poslanecké sněmovny, 2. 7. 2026."
     )
     assert (
         edition_meta_description(
@@ -66,9 +70,15 @@ def test_site_meta_description() -> None:
             nadpis_vydani="Svačina pro prezidenta",
             first_item_nadpis="Jiný první článek",
             datum_unl="30.06.2026",
+        ).startswith(
+            "Svačina pro prezidenta. Denní přehled z Poslanecké sněmovny, 30. 6. 2026. "
         )
-        == "Svačina pro prezidenta. Denní přehled z Poslanecké sněmovny, 30. 6. 2026."
     )
+    for kw in (
+        {"dnesni_ucet": "Krátce.", "datum_unl": "02.07.2026"},
+        {"dnesni_ucet": "", "nadpis_vydani": "Svačina pro prezidenta", "datum_unl": "30.06.2026"},
+    ):
+        assert 150 <= len(edition_meta_description(**kw)) <= 160, kw
     assert site_brand_line() == (
         "Poslušně hlásím · poslusnehlasim.cz · Deník sněmovny"
     )
@@ -379,7 +389,7 @@ def test_slovnicek_term_meta_description() -> None:
         term="veto", answer="x", custom="Vlastní popis."
     ) == "Vlastní popis."
     long = slovnicek_term_meta_description(term="x", answer="slovo " * 60)
-    assert len(long) <= 158
+    assert len(long) <= 160
 
 
 def test_slovnicek_term_json_ld_includes_sections() -> None:

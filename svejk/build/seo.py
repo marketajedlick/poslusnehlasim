@@ -82,6 +82,9 @@ SITE_TAGLINE = "Deník sněmovny"
 SITE_TITLE_TAGLINE = "denní zpravodaj z Poslanecké sněmovny"
 # Bing Site Scan: <title> nad 70 znaků hlásí jako „Title too long“.
 TITLE_MAX_LEN = 70
+# Bing Site Scan: meta description pod 150 znaků je „too short“, nad 160 se ořízne.
+META_DESCRIPTION_MIN_LEN = 150
+META_DESCRIPTION_MAX_LEN = 160
 SITE_META_DESCRIPTION = (
     "Satirický deník z Poslanecké sněmovny. Každý jednací den srozumitelně: "
     "o čem poslanci hlasovali, co zaznělo v rozpravě a co to znamená. "
@@ -217,10 +220,9 @@ def edition_meta_description(
     datum_unl: str = "",
     proslo: int = 0,
     zamitnuto: int = 0,
-    max_len: int = 155,
+    max_len: int = META_DESCRIPTION_MAX_LEN,
 ) -> str:
     """Unikátní meta popis pro Google: perex dne + kontext sněmovny a datum."""
-    _ = proslo, zamitnuto
     import re
 
     from svejk.build.glossary_markup import strip_glossary_markup
@@ -261,7 +263,34 @@ def edition_meta_description(
             raw = f"{perex_clean}. {ucet}"
         else:
             raw = f"{body} {tail}"
+    if len(raw) < META_DESCRIPTION_MIN_LEN:
+        raw = _pad_edition_description(raw, hlasovalo=bool(proslo or zamitnuto), max_len=max_len)
     return meta_description(raw, max_len=max_len)
+
+
+def _pad_edition_description(text: str, *, hlasovalo: bool, max_len: int) -> str:
+    """Doplní krátký popis obecnými větami o vydání, aby se blížil `max_len`.
+
+    Vybere tu kombinaci (v pevném pořadí), která je nejdelší a pořád se vejde.
+    """
+    from itertools import combinations
+
+    extras = (
+        "O čem se hlasovalo a co zaznělo v rozpravě."
+        if hlasovalo
+        else "Co zaznělo v rozpravě a co to znamená.",
+        "Bez stenoprotokolové mlhy.",
+        "Se Švejkovým komentářem.",
+        "Srozumitelně.",
+        "Lidsky.",
+    )
+    best = text
+    for k in range(1, len(extras) + 1):
+        for combo in combinations(extras, k):
+            cand = " ".join((text, *combo))
+            if len(best) < len(cand) <= max_len:
+                best = cand
+    return best
 
 
 def homepage_page_title(**_kwargs: object) -> str:
@@ -645,9 +674,9 @@ def slovnicek_term_meta_description(
     term: str,
     answer: str,
     custom: str = "",
-    max_len: int = 158,
+    max_len: int = 160,
 ) -> str:
-    """Meta description pojmu: vlastní text, jinak definice + háček na zmínky ve Sněmovně."""
+    """Meta description pojmu: vlastní text (SLOVNICEK_META), jinak definice + háček."""
     if custom.strip():
         return _truncate_text(custom, max_len=max_len)
     hook = " A kdy to naposledy řešila Sněmovna."
