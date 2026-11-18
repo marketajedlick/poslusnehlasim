@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+{% include "head-noviny.html" %}
+<title>{{ title }}</title>
+<meta name="description" content="{{ meta_description }}" />
+<link rel="canonical" href="{{ canonical_url }}" />
+{% include "og-meta.html" %}
+{% include "breadcrumb-jsonld.html" %}
+{% include "fonts-links.html" %}
+<link rel="stylesheet" href="{{ css_href }}" />
+</head>
+<body class="static-page archiv-page zakony-page">
+{% include "skip-link.html" %}
+<div class="archiv-wrap" id="main-content">
+  {% include "breadcrumbs.html" %}
+  {% set page_title = page_heading %}
+  {% set page_gloss = page_intro %}
+  {% set site_nav_hide_laws = true %}
+  {% include "page-head.html" %}
+
+  {% if zakony %}
+  <ul class="zakony-list">
+    {% for z in zakony %}
+    <li class="zakony-card">
+      <a class="zakony-card-link" href="{{ z.href }}">
+        <p class="zakony-card-eyebrow">{{ z.eyebrow }}</p>
+        <h2 class="zakony-card-title">{{ z.nazev }}</h2>
+        {% if z.perex %}<p class="zakony-card-perex">{{ z.perex }}</p>{% endif %}
+        <ol class="zakon-track zakon-track--mini" aria-hidden="true">
+          {% for f in z.faze %}<li class="zakon-track-step zakon-track-step--{{ f.stav }}"><span class="zakon-track-dot"></span></li>{% endfor %}
+        </ol>
+        {% if z.faze_aktualni %}<p class="zakony-card-now">Teď: {{ z.faze_aktualni }}</p>{% endif %}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="zakony-empty">Zatím tu nic není.</p>
+  {% endif %}
+</div>
+{% include "site-footer.html" %}
+{% include "cookie-consent.html" %}
+</body>
+</html>

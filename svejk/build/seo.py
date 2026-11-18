@@ -817,6 +817,13 @@ def edition_subpage_hrefs(
     return out
 
 
+def _zakon_lastmod(zakon: dict, fallback: datetime) -> datetime:
+    try:
+        return datetime.strptime(zakon.get("aktualizovano", ""), "%d.%m.%Y")
+    except ValueError:
+        return fallback
+
+
 def write_sitemap_xml(
     out_dir: Path,
     editions: list[Edition],
@@ -846,6 +853,13 @@ def write_sitemap_xml(
             slug = slovnicek_term_slug(term)
             add_url(f"{base}{slovnicek_term_pages_href(slug, base_path)}", last)
         add_url(f"{base}{pivo_pages_href(base_path)}", last)
+        from svejk.build.zakony import list_zakony, zakony_pages_href
+
+        zakony = list_zakony(base_path)
+        if zakony:
+            add_url(f"{base}{zakony_pages_href(base_path)}", last)
+        for z in zakony:
+            add_url(f"{base}{z['href']}", _zakon_lastmod(z, last))
         add_url(f"{base}{podminky_pages_href(base_path)}", last)
         add_url(f"{base}{podpora_pages_href(base_path)}", last)
         add_url(f"{base}{soukromi_pages_href(base_path)}", last)

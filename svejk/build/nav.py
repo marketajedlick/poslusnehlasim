@@ -200,6 +200,15 @@ def slovnicek_term_pages_href(slug: str, base_path: str = "") -> str:
     return _join_href_path(base_path, f"/slovnicek/{slug}/")
 
 
+def zakony_pages_href(base_path: str = "") -> str:
+    return _join_href_path(base_path, "/zakony/")
+
+
+def zakon_pages_href(slug: str, base_path: str = "") -> str:
+    slug = slug.strip("/")
+    return _join_href_path(base_path, f"/zakony/{slug}/")
+
+
 def pivo_pages_href(base_path: str = "") -> str:
     return _join_href_path(base_path, "/pivo/")
 

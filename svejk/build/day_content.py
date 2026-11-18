@@ -120,6 +120,8 @@ class DenItem:
     kuriozita_nav: list[tuple[str, str]] = field(default_factory=list)
     steno_nav: list[tuple[str, str]] = field(default_factory=list)
     slug: str = ""
+    zakon_href: str = ""
+    zakon_label: str = ""
 
     @property
     def stamp(self) -> str:
@@ -479,6 +481,17 @@ def _topics_by_slug(paths: SchuzePaths) -> dict[str, dict[str, Any]]:
 _DEN_CONTENT_CACHE: dict[tuple, "DenContent"] = {}
 
 
+def _zakon_link_fields(slug: str, base_path: str) -> dict[str, str]:
+    """Článek patří k zákonu se stránkou /zakony/{slug}/ → odkaz pod článkem."""
+    from svejk.build.zakony import zakon_for_topic
+
+    hit = zakon_for_topic(slug, base_path)
+    if not hit:
+        return {}
+    href, label = hit
+    return {"zakon_href": href, "zakon_label": label}
+
+
 def clear_den_content_cache() -> None:
     _DEN_CONTENT_CACHE.clear()
 
@@ -657,6 +670,7 @@ def build_den_content(
                 mean_links=mean_links,
                 kuriozita_links=kuriozita_links,
                 slug=slug,
+                **_zakon_link_fields(slug, base_path),
             )
         )
 

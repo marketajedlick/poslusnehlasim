@@ -1,0 +1,184 @@
+{%- macro vote(h) -%}
+<div class="zakon-vote {{ 'zakon-vote--ano' if h.prijato else 'zakon-vote--ne' }}">
+  <p class="zakon-vote-what">
+    <span class="zakon-vote-verdict">{{ 'Prošlo' if h.prijato else 'Neprošlo' }}</span>
+    {{ h.co }}{% if h.kdo_navrhl %} <span class="zakon-vote-who">Navrhl{{ 'a' if h.navrhla }} {{ h.kdo_navrhl }}.</span>{% endif %}
+  </p>
+  <div class="zakon-vote-bar" role="img" aria-label="pro {{ h.pro }}, proti {{ h.proti }}">
+    <span class="zakon-vote-pro" style="width:{{ h.pro_pct }}%"></span><span class="zakon-vote-proti" style="width:{{ h.proti_pct }}%"></span>
+  </div>
+  <p class="zakon-vote-nums">
+    <span><b>{{ h.pro }}</b> pro</span>
+    <span><b>{{ h.proti }}</b> proti</span>
+    {% if h.zdrzel %}<span>{{ h.zdrzel }} se zdrželo</span>{% endif %}
+    {% if h.href %}<a class="zakon-vote-link" href="{{ h.href }}" target="_blank" rel="noopener">hlasování č. {{ h.cislo }} ↗</a>{% elif h.cislo %}<span>hlasování č. {{ h.cislo }}</span>{% endif %}
+  </p>
+</div>
+{%- endmacro -%}
+{%- macro quote(c) -%}
+<figure class="zakon-quote">
+  <blockquote class="zakon-quote-text"><p>„{{ c.citace }}“</p></blockquote>
+  <figcaption class="zakon-quote-by">
+    <span class="zakon-quote-name">{{ c.jmeno }}</span>
+    {% if c.strana %}<span class="zakon-quote-party">{{ c.strana }}</span>{% endif %}
+    {% if c.funkce %}<span class="zakon-quote-role">{{ c.funkce }}</span>{% endif %}
+  </figcaption>
+  {% if c.kontext %}<p class="zakon-quote-ctx">{{ c.kontext }}</p>{% endif %}
+  {% if c.href %}<a class="zakon-quote-src" href="{{ c.href }}" target="_blank" rel="noopener">stenozáznam ↗</a>{% endif %}
+</figure>
+{%- endmacro -%}
+{%- macro side(s, kind, anchor) -%}
+<aside class="zakon-side zakon-side--{{ kind }}" id="{{ anchor }}" aria-labelledby="{{ anchor }}-h">
+  <header class="zakon-side-head">
+    <p class="zakon-side-eyebrow">{{ s.eyebrow }}</p>
+    <h2 class="zakon-side-title" id="{{ anchor }}-h">{{ s.nadpis }}</h2>
+    {% if s.strany %}
+    <ul class="zakon-side-parties">
+      {% for st in s.strany %}<li>{{ st }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </header>
+  {% if s.shrnuti %}<p class="zakon-side-summary">{{ s.shrnuti }}</p>{% endif %}
+  {% if s.argumenty %}
+  <h3 class="zakon-side-sub">Hlavní argumenty</h3>
+  <ul class="zakon-args">
+    {% for a in s.argumenty %}
+    <li><strong>{{ a.titulek }}.</strong> {{ a.text }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% if s.navrhy %}
+  <h3 class="zakon-side-sub">Co navrhli</h3>
+  <ul class="zakon-args zakon-args--plain">
+    {% for n in s.navrhy %}<li>{{ n }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+  {% if s.citace %}
+  <h3 class="zakon-side-sub">Řekli v sále</h3>
+  {% set top = s.citace_nahore | default(6) %}
+  {% for c in s.citace[:top] %}{{ quote(c) }}{% endfor %}
+  {% if s.citace | length > top %}
+  <details class="zakon-more">
+    <summary>Další citace ({{ s.citace | length - top }})</summary>
+    {% for c in s.citace[top:] %}{{ quote(c) }}{% endfor %}
+  </details>
+  {% endif %}
+  {% endif %}
+</aside>
+{%- endmacro -%}
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+{% include "head-noviny.html" %}
+<title>{{ title }}</title>
+<meta name="description" content="{{ meta_description }}" />
+<link rel="canonical" href="{{ canonical_url }}" />
+{% include "og-meta.html" %}
+{% include "breadcrumb-jsonld.html" %}
+{% include "fonts-links.html" %}
+<link rel="stylesheet" href="{{ css_href }}" />
+</head>
+<body class="static-page zakon-page">
+{% include "skip-link.html" %}
+<div class="zakon-stage" id="main-content">
+  {% include "breadcrumbs.html" %}
+  <header class="zakon-head">
+    <h1 class="zakon-title">{{ z.nazev }}</h1>
+    {% if z.perex %}<p class="zakon-perex">{{ z.perex }}</p>{% endif %}
+
+    <ol class="zakon-track" aria-label="Kde je zákon teď">
+      {% for f in z.faze %}
+      <li class="zakon-track-step zakon-track-step--{{ f.stav }}"{% if f.stav == 'probiha' %} aria-current="step"{% endif %}>
+        <a href="#faze-{{ f.id }}"><span class="zakon-track-dot" aria-hidden="true"></span><span class="zakon-track-label">{{ f.kratce | default(f.nazev) }}</span></a>
+      </li>
+      {% endfor %}
+    </ol>
+    {% if z.stav %}<p class="zakon-now"><span class="zakon-now-label">Teď</span> {{ z.stav }}</p>{% endif %}
+
+    <dl class="zakon-meta">
+      {% if z.tisk %}<div><dt>Sněmovní tisk</dt><dd>{% if z.psp_href %}<a href="{{ z.psp_href }}" target="_blank" rel="noopener">{{ z.tisk }} ↗</a>{% else %}{{ z.tisk }}{% endif %}</dd></div>{% endif %}
+      {% if z.predkladatel %}<div><dt>Předkládá</dt><dd>{{ z.predkladatel }}</dd></div>{% endif %}
+      {% if z.zpravodaj %}<div><dt>Zpravodaj</dt><dd>{{ z.zpravodaj }}</dd></div>{% endif %}
+      {% if z.garancni_vybor %}<div><dt>Garanční výbor</dt><dd>{{ z.garancni_vybor }}</dd></div>{% endif %}
+      {% if z.aktualizovano_label %}<div><dt>Aktualizováno</dt><dd>{{ z.aktualizovano_label }}</dd></div>{% endif %}
+    </dl>
+    {% set site_nav_hide_laws = false %}
+    {% include "site-nav.html" %}
+  </header>
+
+  <nav class="zakon-jump" aria-label="Části stránky">
+    <a href="#prubeh">Průběh</a><span aria-hidden="true">·</span><a href="#opozice">Opozice</a><span aria-hidden="true">·</span><a href="#vlada">Vláda</a>
+  </nav>
+
+  <div class="zakon-grid">
+    <main class="zakon-flow" id="prubeh" aria-labelledby="prubeh-h">
+      <h2 class="zakon-flow-title" id="prubeh-h">Cesta zákona</h2>
+
+      {% if z.zneni %}
+      <section class="zakon-zneni" aria-labelledby="zneni-h">
+        <p class="zakon-zneni-eyebrow">{{ z.zneni.eyebrow | default('Znění na stole') }}</p>
+        <h3 class="zakon-zneni-title" id="zneni-h">{{ z.zneni.nadpis }}</h3>
+        {% if z.zneni.text %}<p>{{ z.zneni.text }}</p>{% endif %}
+        {% if z.zneni.body %}
+        <ul class="zakon-zneni-list">
+          {% for b in z.zneni.body %}<li>{{ b }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+        {% if z.zneni.zmeny %}<p class="zakon-zneni-changes">{{ z.zneni.zmeny }}</p>{% endif %}
+      </section>
+      {% endif %}
+
+      <ol class="zakon-faze">
+        {% for f in z.faze %}
+        <li class="zakon-faze-item zakon-faze-item--{{ f.stav }}" id="faze-{{ f.id }}">
+          <span class="zakon-faze-dot" aria-hidden="true"></span>
+          <div class="zakon-faze-body">
+            <p class="zakon-faze-meta">
+              {% if f.stav_label %}<span class="zakon-faze-chip">{{ f.stav_label }}</span>{% endif %}
+              {% if f.datum %}<span class="zakon-faze-date">{{ f.datum }}</span>{% endif %}
+            </p>
+            <h3 class="zakon-faze-title">{{ f.nazev }}</h3>
+            {% if f.text %}<p class="zakon-faze-text">{{ f.text }}</p>{% endif %}
+            {% if f.vysledek %}<p class="zakon-faze-result">{{ f.vysledek }}</p>{% endif %}
+
+            {% if f.kroky %}
+            {% if f.sbalit %}<details class="zakon-vote-group zakon-faze-more"><summary>{{ f.sbalit_label | default('Podrobnosti') }} ({{ f.kroky | length }})</summary>{% endif %}
+            <ol class="zakon-kroky">
+              {% for k in f.kroky %}
+              <li class="zakon-krok{% if k.dulezite %} zakon-krok--key{% endif %}">
+                {% if k.cas or k.datum %}<p class="zakon-krok-time">{{ [k.datum, k.cas] | select | join(' · ') }}</p>{% endif %}
+                {% if k.text %}<p class="zakon-krok-text">{{ k.text }}{% if k.steno_href %} <a class="zakon-krok-src" href="{{ k.steno_href }}" target="_blank" rel="noopener">steno ↗</a>{% endif %}{% if k.vydani %} <a class="zakon-krok-ed" href="{{ k.vydani.href }}">{{ k.vydani.label | default('Psali jsme →') }}</a>{% endif %}</p>{% endif %}
+                {% if k.hlasovani %}{{ vote(k.hlasovani) }}{% endif %}
+                {% if k.hlasovani_skupina %}
+                <details class="zakon-vote-group">
+                  <summary>{{ k.skupina_label | default('Všechna hlasování') }} ({{ k.hlasovani_skupina | length }})</summary>
+                  {% for h in k.hlasovani_skupina %}{{ vote(h) }}{% endfor %}
+                </details>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ol>
+            {% if f.sbalit %}</details>{% endif %}
+            {% endif %}
+
+            {% if f.vydani %}
+            <p class="zakon-faze-links">
+              Psali jsme:
+              {% for v in f.vydani %}<a href="{{ v.href }}">{{ v.label }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+            </p>
+            {% endif %}
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+      {% if z.poznamka %}<p class="zakon-note">{{ z.poznamka }}</p>{% endif %}
+    </main>
+
+    {{ side(z.opozice, 'opozice', 'opozice') }}
+    {{ side(z.vlada, 'vlada', 'vlada') }}
+  </div>
+</div>
+{% include "site-footer.html" %}
+{% include "cookie-consent.html" %}
+</body>
+</html>

@@ -31,6 +31,7 @@ from svejk.build.nav import (
     edition_pages_href,
     o_webu_pages_href,
     pivo_pages_href,
+    zakony_pages_href,
     dekuju_pages_href,
     podminky_pages_href,
     podpora_pages_href,
@@ -618,6 +619,7 @@ def _site_nav_ctx(
         "edition_back_label": edition_back_label,
         "slovnicek_href": slovnicek_pages_href(base_path),
         "pivo_href": pivo_pages_href(base_path),
+        "zakony_href": zakony_pages_href(base_path),
     }
 
 

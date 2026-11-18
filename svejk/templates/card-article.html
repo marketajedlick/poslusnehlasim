@@ -68,6 +68,9 @@
       {% if item.kuriozita and not item.lead_tail and item.num != postreh_item_num %}
       <p class="kuriozita">{{ item.kuriozita | kuriozita_display }}</p>
       {% endif %}
+      {% if item.zakon_href %}
+      <a class="zakon-article-link" href="{{ item.zakon_href }}">Celá cesta zákona →</a>
+      {% endif %}
       {% if item.kuriozita_nav %}
       <nav class="kuriozita-links" aria-label="{{ t.edition.kuriozita_aria }}">
         {% for label, href in item.kuriozita_nav %}
