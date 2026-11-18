@@ -55,6 +55,9 @@
   {% if archive_href %}
   <a class="rail-archiv" href="{{ archive_href }}">Archiv →</a>
   {% endif %}
+  {% if zakony_href %}
+  <a class="rail-archiv rail-zakony" href="{{ zakony_href }}">Zákony →</a>
+  {% endif %}
 
   <footer class="site-footer site-footer--rail" aria-label="{{ t.footer.aria }}">
     {% include "site-footer-inner.html" %}

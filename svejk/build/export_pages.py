@@ -733,6 +733,13 @@ def run_export_pages(
         )
         written.append(_write_page_html(out, rel_path, html))
 
+    from svejk.build.zakony_html import export_zakony_pages
+
+    for rel_path, html in export_zakony_pages(
+        obdobi, css_href=css_href, fonts_css_href=fonts_css_href, base_path=base
+    ):
+        written.append(_write_page_html(out, rel_path, html))
+
     mentions_data = build_slovnicek_mentions_data(obdobi, base_path=base)
     for term, answer in slovnicek_pages():
         slug = slovnicek_term_slug(term)

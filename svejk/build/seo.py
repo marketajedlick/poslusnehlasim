@@ -18,6 +18,7 @@ from svejk.build.nav import (
     podpora_pages_href,
     recnici_pages_href,
     slovnicek_pages_href,
+    zakony_pages_href,
     slovnicek_term_pages_href,
     soukromi_pages_href,
     smlouvy_pages_href,
@@ -44,6 +45,7 @@ _STATIC_PAGES: tuple[tuple[str, str], ...] = (
     ("O webu", "o-webu"),
     ("Archiv vydání", "archiv"),
     ("Švejkův slovníček", "slovnicek"),
+    ("Zákony", "zakony"),
     ("Kup Švejkovi pivo", "pivo"),
     ("Podmínky odběru", "podminky"),
     ("Podpořte projekt", "podpora"),
@@ -54,6 +56,7 @@ _STATIC_HREF_FN = {
     "o-webu": o_webu_pages_href,
     "archiv": archiv_pages_href,
     "slovnicek": slovnicek_pages_href,
+    "zakony": zakony_pages_href,
     "pivo": pivo_pages_href,
     "podminky": podminky_pages_href,
     "podpora": podpora_pages_href,
@@ -471,6 +474,121 @@ def faq_json_ld(
     }
 
 
+def _iso_from_unl(datum: str) -> str | None:
+    try:
+        return datetime.strptime(datum, "%d.%m.%Y").strftime("%Y-%m-%d")
+    except (TypeError, ValueError):
+        return None
+
+
+def zakon_json_ld(
+    zakon: dict,
+    *,
+    url: str,
+    site_url: str,
+    base_path: str = "",
+    description: str = "",
+) -> dict:
+    """Article o zákonu + Legislation (návrh zákona) + mluvčí citací."""
+    base = site_url.rstrip("/")
+    org_id = _org_id(site_url)
+    logo = publisher_logo_url(site_url, base_path)
+    modified = _iso_from_unl(zakon.get("aktualizovano", ""))
+    published = _iso_from_unl(zakon.get("publikovano", "")) or modified
+    legislation_id = f"{url}#zakon"
+    legislation: dict = {
+        "@type": "Legislation",
+        "@id": legislation_id,
+        "name": zakon.get("nazev_oficialni") or zakon.get("nazev", ""),
+        "alternateName": [
+            n for n in (zakon.get("nazev"), zakon.get("nazev_kratky")) if n
+        ],
+        "legislationJurisdiction": {"@type": "Country", "name": "Česká republika"},
+        "legislationType": zakon.get("typ_predpisu", "návrh zákona"),
+        "inLanguage": "cs",
+    }
+    if zakon.get("tisk"):
+        legislation["legislationIdentifier"] = f"sněmovní tisk {zakon['tisk']}"
+    if zakon.get("psp_href"):
+        legislation["sameAs"] = zakon["psp_href"]
+        legislation["url"] = zakon["psp_href"]
+    if zakon.get("meni_predpisy"):
+        legislation["legislationChanges"] = [
+            {"@type": "Legislation", "name": n} for n in zakon["meni_predpisy"]
+        ]
+    if zakon.get("stav"):
+        legislation["description"] = zakon["stav"]
+
+    speakers: dict[str, dict] = {}
+    for side in ("vlada", "opozice"):
+        for c in (zakon.get(side) or {}).get("citace") or []:
+            name = c.get("jmeno")
+            if not name or name in speakers:
+                continue
+            person: dict = {"@type": "Person", "name": name}
+            if c.get("strana"):
+                person["affiliation"] = {"@type": "PoliticalParty", "name": c["strana"]}
+            if c.get("funkce"):
+                person["jobTitle"] = c["funkce"]
+            speakers[name] = person
+
+    article: dict = {
+        "@type": "Article",
+        "@id": f"{url}#clanek",
+        "mainEntityOfPage": url,
+        "url": url,
+        "headline": zakon.get("nazev", ""),
+        "description": description or zakon.get("perex", ""),
+        "inLanguage": "cs",
+        "isAccessibleForFree": True,
+        "articleSection": "Zákony",
+        "author": {"@type": "Organization", "@id": org_id},
+        "publisher": _publisher_block(site_url=site_url, logo_url=logo, org_id=org_id),
+        "image": [logo],
+        "about": [
+            {"@id": legislation_id},
+            {"@type": "Organization", "name": "Česká televize"},
+            {"@type": "Organization", "name": "Český rozhlas"},
+            {"@type": "GovernmentOrganization", "name": "Poslanecká sněmovna Parlamentu České republiky"},
+        ],
+        "mentions": list(speakers.values()),
+        "isPartOf": {"@type": "WebSite", "name": WEBSITE_SCHEMA_NAME, "url": f"{base}/"},
+    }
+    if zakon.get("klicova_slova"):
+        article["keywords"] = ", ".join(zakon["klicova_slova"])
+    if published:
+        article["datePublished"] = published
+    if modified:
+        article["dateModified"] = modified
+    return {"@context": "https://schema.org", "@graph": [article, legislation]}
+
+
+def zakony_index_json_ld(zakony: list[dict], *, url: str, site_url: str, name: str, description: str) -> dict:
+    base = site_url.rstrip("/")
+    return {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": url,
+        "url": url,
+        "name": name,
+        "description": description,
+        "inLanguage": "cs",
+        "isPartOf": {"@type": "WebSite", "name": WEBSITE_SCHEMA_NAME, "url": f"{base}/"},
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": i,
+                    "url": f"{base}{z['href']}",
+                    "name": z.get("nazev", ""),
+                }
+                for i, z in enumerate(zakony, 1)
+            ],
+        },
+    }
+
+
 def _ucfirst(text: str) -> str:
     return text[:1].upper() + text[1:] if text else text
 
@@ -817,6 +935,13 @@ def edition_subpage_hrefs(
     return out
 
 
+def _zakon_lastmod(zakon: dict, fallback: datetime) -> datetime:
+    try:
+        return datetime.strptime(zakon.get("aktualizovano", ""), "%d.%m.%Y")
+    except ValueError:
+        return fallback
+
+
 def write_sitemap_xml(
     out_dir: Path,
     editions: list[Edition],
@@ -846,6 +971,13 @@ def write_sitemap_xml(
             slug = slovnicek_term_slug(term)
             add_url(f"{base}{slovnicek_term_pages_href(slug, base_path)}", last)
         add_url(f"{base}{pivo_pages_href(base_path)}", last)
+        from svejk.build.zakony import list_zakony
+
+        zakony = list_zakony(base_path)
+        if zakony:
+            add_url(f"{base}{zakony_pages_href(base_path)}", last)
+        for z in zakony:
+            add_url(f"{base}{z['href']}", _zakon_lastmod(z, last))
         add_url(f"{base}{podminky_pages_href(base_path)}", last)
         add_url(f"{base}{podpora_pages_href(base_path)}", last)
         add_url(f"{base}{soukromi_pages_href(base_path)}", last)
@@ -890,7 +1022,14 @@ def write_llms_txt(
     other_links = "\n".join(
         f"- [{label}]({href})"
         for label, href in _static_page_links(site_url=site_url, base_path=base_path)
-        if href not in (archiv_href, slovnicek_href)
+        if href not in (archiv_href, slovnicek_href, f"{base}{zakony_pages_href(base_path)}")
+    )
+    from svejk.build.zakony import list_zakony
+
+    zakony = list_zakony(base_path)
+    zakony_links = "".join(
+        f"  - [{z.get('nazev', '')}]({base}{z['href']}): {z.get('stav') or z.get('perex', '')}\n"
+        for z in zakony
     )
     llms = f"""# {SITE_NAME}
 
@@ -908,7 +1047,8 @@ Stenoprotokoly a výsledky hlasování z veřejných open dat Poslanecké sněmo
 - [Nejnovější vydání ({latest.datum_unl})]({base}{latest_href}): poslední schůze
 - [Archiv vydání]({archiv_href}): všechna vydání podle data
 - [Švejkův slovníček]({slovnicek_href}): parlamentní pojmy lidsky
-- [RSS kanál nových vydání]({base}/feed.xml): odběr nových vydání
+- [Zákony]({base}{zakony_pages_href(base_path)}): celá cesta vybraných zákonů Sněmovnou, hlasování a co k nim řekla vláda a opozice
+{zakony_links}- [RSS kanál nových vydání]({base}/feed.xml): odběr nových vydání
 - [Mapa webu]({base}/sitemap.xml): všechna vydání
 - [Podrobný index pro AI]({base}/llms-full.txt): seznam vydání s popisky
 
@@ -942,6 +1082,24 @@ Stenoprotokoly a výsledky hlasování z veřejných open dat Poslanecké sněmo
     ]
     for label, href in _static_page_links(site_url=site_url, base_path=base_path):
         full_lines.append(f"- [{label}]({href})")
+    if zakony:
+        full_lines.extend(["", "## Zákony", ""])
+        for z in zakony:
+            full_lines.append(f"- [{z.get('nazev', '')}]({base}{z['href']}): {z.get('perex', '')}")
+            if z.get("stav"):
+                full_lines.append(f"  - Stav ({z.get('aktualizovano_label', '')}): {z['stav']}")
+            for f in z.get("faze") or []:
+                bits = [f.get("nazev", ""), f.get("stav_label", "")]
+                if f.get("datum"):
+                    bits.append(f["datum"])
+                line = f"  - {' · '.join(b for b in bits if b)}"
+                if f.get("vysledek"):
+                    line += f": {f['vysledek']}"
+                full_lines.append(line)
+            for side, label in (("vlada", "Vláda"), ("opozice", "Opozice")):
+                sh = (z.get(side) or {}).get("shrnuti")
+                if sh:
+                    full_lines.append(f"  - {label}: {sh}")
     full_lines.extend(["", "## Vydání", ""])
     for edition in editions:
         href = edition_pages_href(
