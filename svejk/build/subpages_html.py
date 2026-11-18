@@ -674,8 +674,11 @@ def render_slovnicek_term_html(
         glossary_url=f"{cfg.site_url.rstrip('/')}{glossary_href}",
         sections=sections,
     )
+    from svejk.build.zakony import zakony_for_slovnicek
+
     tpl = _jinja_env().get_template("slovnicek-pojem.html")
     return tpl.render(
+        zakony_priklady=zakony_for_slovnicek(slug, base_path),
         term=term_label,
         answer=answer,
         meta_description=description,

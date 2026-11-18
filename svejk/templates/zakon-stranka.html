@@ -73,8 +73,15 @@
 <title>{{ title }}</title>
 <meta name="description" content="{{ meta_description }}" />
 <link rel="canonical" href="{{ canonical_url }}" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
 {% include "og-meta.html" %}
 {% include "breadcrumb-jsonld.html" %}
+{% if schema_json_ld %}
+<script type="application/ld+json">{{ schema_json_ld | tojson }}</script>
+{% endif %}
+{% if og_modified_time %}
+<meta property="article:modified_time" content="{{ og_modified_time }}" />
+{% endif %}
 {% include "fonts-links.html" %}
 <link rel="stylesheet" href="{{ css_href }}" />
 </head>
@@ -100,7 +107,7 @@
       {% if z.predkladatel %}<div><dt>Předkládá</dt><dd>{{ z.predkladatel }}</dd></div>{% endif %}
       {% if z.zpravodaj %}<div><dt>Zpravodaj</dt><dd>{{ z.zpravodaj }}</dd></div>{% endif %}
       {% if z.garancni_vybor %}<div><dt>Garanční výbor</dt><dd>{{ z.garancni_vybor }}</dd></div>{% endif %}
-      {% if z.aktualizovano_label %}<div><dt>Aktualizováno</dt><dd>{{ z.aktualizovano_label }}</dd></div>{% endif %}
+      {% if z.aktualizovano_label %}<div><dt>Aktualizováno</dt><dd><time datetime="{{ z.aktualizovano_iso }}">{{ z.aktualizovano_label }}</time></dd></div>{% endif %}
     </dl>
     {% set site_nav_hide_laws = false %}
     {% include "site-nav.html" %}
@@ -138,6 +145,7 @@
               {% if f.datum %}<span class="zakon-faze-date">{{ f.datum }}</span>{% endif %}
             </p>
             <h3 class="zakon-faze-title">{{ f.nazev }}</h3>
+            {% if f.slovnicek_href %}<p class="zakon-faze-gloss"><a href="{{ f.slovnicek_href }}">{{ f.slovnicek_label }}</a></p>{% endif %}
             {% if f.text %}<p class="zakon-faze-text">{{ f.text }}</p>{% endif %}
             {% if f.vysledek %}<p class="zakon-faze-result">{{ f.vysledek }}</p>{% endif %}
 
@@ -145,9 +153,9 @@
             {% if f.sbalit %}<details class="zakon-vote-group zakon-faze-more"><summary>{{ f.sbalit_label | default('Podrobnosti') }} ({{ f.kroky | length }})</summary>{% endif %}
             <ol class="zakon-kroky">
               {% for k in f.kroky %}
-              <li class="zakon-krok{% if k.dulezite %} zakon-krok--key{% endif %}">
-                {% if k.cas or k.datum %}<p class="zakon-krok-time">{{ [k.datum, k.cas] | select | join(' · ') }}</p>{% endif %}
-                {% if k.text %}<p class="zakon-krok-text">{{ k.text }}{% if k.steno_href %} <a class="zakon-krok-src" href="{{ k.steno_href }}" target="_blank" rel="noopener">steno ↗</a>{% endif %}{% if k.vydani %} <a class="zakon-krok-ed" href="{{ k.vydani.href }}">{{ k.vydani.label | default('Psali jsme →') }}</a>{% endif %}</p>{% endif %}
+              <li class="zakon-krok{% if k.dulezite %} zakon-krok--key{% endif %}{% if k.ulice %} zakon-krok--ulice{% endif %}">
+                {% if k.cas or k.datum %}<p class="zakon-krok-time">{{ [k.datum, k.cas] | select | join(' · ') }}{% if k.ulice %} <span class="zakon-krok-tag">Mimo Sněmovnu</span>{% endif %}</p>{% endif %}
+                {% if k.text %}<p class="zakon-krok-text">{{ k.text }}{% if k.steno_href %} <a class="zakon-krok-src" href="{{ k.steno_href }}" target="_blank" rel="noopener">steno ↗</a>{% endif %}{% for zd in k.zdroje or [] %} <a class="zakon-krok-src" href="{{ zd.href }}" target="_blank" rel="noopener">{{ zd.label }} ↗</a>{% endfor %}{% if k.vydani %} <a class="zakon-krok-ed" href="{{ k.vydani.href }}">{{ k.vydani.label | default('Psali jsme →') }}</a>{% endif %}</p>{% endif %}
                 {% if k.hlasovani %}{{ vote(k.hlasovani) }}{% endif %}
                 {% if k.hlasovani_skupina %}
                 <details class="zakon-vote-group">

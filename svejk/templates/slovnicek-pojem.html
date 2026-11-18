@@ -42,6 +42,17 @@
   </p>
   {% endif %}
 
+  {% if zakony_priklady %}
+  <nav class="slovnicek-related" aria-label="Příklad z praxe">
+    <h2 class="slovnicek-related-title">Příklad z praxe</h2>
+    <ul class="slovnicek-related-list">
+      {% for row in zakony_priklady %}
+      <li><a class="slovnicek-related-link" href="{{ row.href }}">{{ row.label }}: {{ row.faze | lower }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  {% endif %}
+
   {% if related %}
   <nav class="slovnicek-related" aria-label="{{ t.glossary_term.related_heading }}">
     <h2 class="slovnicek-related-title">{{ t.glossary_term.related_heading }}</h2>

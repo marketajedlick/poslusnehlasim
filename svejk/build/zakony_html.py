@@ -19,7 +19,14 @@ from svejk.build.html import (
     static_fonts_css_path,
 )
 from svejk.build.nav import soukromi_pages_href, zakony_pages_href
-from svejk.build.seo import SITE_NAME, breadcrumb_page_ctx, _home_href
+from svejk.build.seo import (
+    SITE_NAME,
+    _home_href,
+    breadcrumb_page_ctx,
+    meta_description,
+    zakon_json_ld,
+    zakony_index_json_ld,
+)
 from svejk.build.zakony import list_zakony
 from svejk.newsletter.config import NewsletterConfig
 from svejk.strings import load_strings
@@ -41,6 +48,7 @@ def _common_ctx(
     fonts_css_href: str | None,
     base_path: str,
     closing_seed: str,
+    og_type: str = "website",
 ) -> dict[str, Any]:
     if css_href is None:
         css_href = static_css_path(base_path, version=css_asset_version())
@@ -58,6 +66,7 @@ def _common_ctx(
             base_path=base_path,
             title=title,
             description=description,
+            og_type=og_type,
         ),
         "inline_css": False,
         "css": "",
@@ -97,11 +106,19 @@ def render_zakony_index_html(
             items=((SITE_NAME, _home_href(base_path)), (INDEX_TITLE, None)),
         )
     )
+    zakony = list_zakony(base_path)
+    ctx["schema_json_ld"] = zakony_index_json_ld(
+        zakony,
+        url=ctx["canonical_url"],
+        site_url=cfg.site_url,
+        name=f"{INDEX_TITLE} · {SITE_NAME}",
+        description=INDEX_GLOSS,
+    )
     return (
         _jinja_env()
         .get_template("zakony-stranka.html")
         .render(
-            zakony=list_zakony(base_path),
+            zakony=zakony,
             page_heading=INDEX_TITLE,
             page_intro=INDEX_GLOSS,
             **ctx,
@@ -118,12 +135,14 @@ def render_zakon_html(
     base_path: str = "",
 ) -> str:
     cfg = NewsletterConfig.from_env()
-    title = f"{zakon.get('nazev', '')} · {SITE_NAME}"
+    title = f"{zakon.get('seo_title') or zakon.get('nazev', '')} · {SITE_NAME}"
+    description = meta_description(zakon.get("meta") or zakon.get("perex", ""))
     ctx = _common_ctx(
         obdobi,
         canonical_href=zakon["href"],
         title=title,
-        description=zakon.get("meta") or zakon.get("perex", ""),
+        description=description,
+        og_type="article",
         css_href=css_href,
         fonts_css_href=fonts_css_href,
         base_path=base_path,
@@ -139,6 +158,14 @@ def render_zakon_html(
             ),
         )
     )
+    ctx["schema_json_ld"] = zakon_json_ld(
+        zakon,
+        url=ctx["canonical_url"],
+        site_url=cfg.site_url,
+        base_path=base_path,
+        description=description,
+    )
+    ctx["og_modified_time"] = zakon.get("aktualizovano_iso", "")
     return (
         _jinja_env()
         .get_template("zakon-stranka.html")

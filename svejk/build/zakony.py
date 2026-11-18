@@ -17,7 +17,12 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
-from svejk.build.nav import edition_pages_href, zakon_pages_href, zakony_pages_href
+from svejk.build.nav import (
+    edition_pages_href,
+    slovnicek_term_pages_href,
+    zakon_pages_href,
+    zakony_pages_href,
+)
 from svejk.paths import SchuzePaths, processed_root
 from svejk.text_norm import bez_dlouhych_pomlc
 
@@ -126,6 +131,9 @@ def _enrich_hlasovani(h: dict[str, Any], *, obdobi: int, schuze: int | None) -> 
 def _enrich_faze(faze: dict[str, Any], *, obdobi: int, base_path: str) -> dict[str, Any]:
     out = dict(faze)
     out["stav_label"] = STAV_LABEL.get(faze.get("stav", ""), "")
+    if faze.get("slovnicek"):
+        out["slovnicek_href"] = slovnicek_term_pages_href(faze["slovnicek"], base_path)
+        out["slovnicek_label"] = faze.get("slovnicek_label") or "Co to je? →"
     schuze = faze.get("schuze")
     existing = _site_edition_keys(obdobi)
 
@@ -242,6 +250,23 @@ def _topic_index() -> dict[str, tuple[str, str]]:
         for topic_slug in raw.get("temata") or []:
             idx[topic_slug] = (slug, raw.get("nazev_kratky") or raw.get("nazev", ""))
     return idx
+
+
+def zakony_for_slovnicek(term_slug: str, base_path: str = "") -> list[dict[str, str]]:
+    """Zákony, na jejichž stránce je fáze s odkazem na daný pojem slovníčku."""
+    out = []
+    for z in list_zakony(base_path):
+        faze = next((f for f in z["faze"] if f.get("slovnicek") == term_slug), None)
+        if faze:
+            out.append(
+                {
+                    "href": f"{z['href']}#faze-{faze['id']}",
+                    "label": z.get("nazev", ""),
+                    "faze": faze.get("nazev", ""),
+                    "stav": faze.get("stav_label", ""),
+                }
+            )
+    return out
 
 
 def zakon_for_topic(topic_slug: str, base_path: str = "") -> tuple[str, str] | None:

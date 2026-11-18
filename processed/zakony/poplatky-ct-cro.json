@@ -6,14 +6,14 @@
   "eyebrow": "Sněmovní tisk 231 · vládní návrh",
   "nazev": "Konec poplatků za Českou televizi a Český rozhlas",
   "nazev_kratky": "Poplatky za ČT a ČRo",
-  "perex": "Vláda chce zrušit poplatek za televizi a rozhlas. Českou televizi a Český rozhlas by místo toho platil stát ze svého rozpočtu. Sněmovna návrh pustila dál v sobotu ve 4.36 ráno.",
-  "meta": "Celá cesta zákona o zrušení poplatků za ČT a ČRo: co prošlo, v jakém znění, co říká vláda a co opozice. Hlasování a citace ze stenozáznamů.",
+  "perex": "Vláda chce zrušit poplatek za televizi a rozhlas. Českou televizi a Český rozhlas by místo toho platil stát ze svého rozpočtu. Sněmovna návrh pustila dál v sobotu krátce po půl páté ráno.",
+  "meta": "Zrušení televizních a rozhlasových poplatků (tisk 231) krok po kroku: hlasování z 1. čtení, znění návrhu a citace vlády i opozice ze stenozáznamů.",
   "aktualizovano": "18.11.2026",
   "aktualizovano_iso": "2026-11-18",
   "temata": [
     "novela-z-o-ceske-televizi-a-o-ceskem-rozhlasu"
   ],
-  "stav": "Prošel prvním čtením 24. 10. ve 4.36 ráno a leží ve výboru pro média a kulturu. Premiér 5. 11. připustil, že koalice může přijít s jiným návrhem.",
+  "stav": "Prošel prvním čtením 24. 10. ráno (rozprava utnuta ve 4.36) a leží ve výboru pro média a kulturu. Premiér 5. 11. připustil, že koalice může přijít s jiným návrhem.",
   "predkladatel": "vláda, ministr kultury Oto Klempíř (Motoristé)",
   "zpravodaj": "Gabriela Sedláčková (Motoristé)",
   "garancni_vybor": "výbor pro média a kulturu",
@@ -22,14 +22,14 @@
     "nadpis": "Vládní návrh, zatím beze změny",
     "text": "Prvním čtením prošel zákon přesně tak, jak ho poslala vláda. V prvním čtení se o obsahu nehlasuje, jen o tom, jestli zákon půjde dál.",
     "body": [
-      "Zákon o rozhlasových a televizních poplatcích se celý ruší. Poplatek za televizi (150 Kč měsíčně) ani za rozhlas (55 Kč) už nebude.",
+      "Zákon o rozhlasových a televizních poplatcích by se celý zrušil. Poplatek za televizi (150 Kč měsíčně) ani za rozhlas (55 Kč) by už nebyl.",
       "Českou televizi a Český rozhlas bude platit stát. Výši příspěvku stanoví přímo zákon jako povinný výdaj, takže ho nejde změnit jen rozpočtem na další rok.",
       "Pro rok 2027 koalice počítá asi s 5,74 miliardy pro ČT a 2,07 miliardy pro ČRo, vyplácenými po měsících.",
       "Příspěvek se zvýší o 10 procent, až průměrná roční inflace přeleze 10 procent.",
       "Když stát nezaplatí včas, můžou se média soudit.",
       "Rady ČT a ČRo i příjmy z reklamy zůstávají, jak jsou."
     ],
-    "zmeny": "Pozměňovací návrhy se podávají až ve druhém čtení. Zatím žádný nepadl. Den účinnosti v rozpravě nezazněl, koalice mluvila o penězích pro rok 2027."
+    "zmeny": "Pozměňovací návrhy se podávají až ve druhém čtení. Zatím žádný nepadl. Den účinnosti v návrhu ve Sněmovně nezazněl, koalice mluvila o penězích pro rok 2027 a opozice tvrdí, že 1. leden 2027 se nestihne."
   },
   "faze": [
     {
@@ -40,7 +40,7 @@
       "datum": "únor až říjen 2026",
       "sbalit": true,
       "sbalit_label": "Co se dělo předtím",
-      "text": "Spor o peníze pro Českou televizi a Český rozhlas běžel ve Sněmovně celý rok. Zákon sám se na program dostal až v říjnu.",
+      "text": "Spor o peníze pro Českou televizi a Český rozhlas běžel ve Sněmovně i na ulici celý rok. Zákon sám se na program dostal až v říjnu.",
       "kroky": [
         {
           "datum": "10. 2. 2026",
@@ -66,7 +66,7 @@
         },
         {
           "datum": "16. 4. 2026",
-          "text": "Opozice svolala mimořádnou schůzi, mimo jiné kvůli ohrožení nezávislosti ČT a ČRo.",
+          "text": "Opozice si vyžádala mimořádnou schůzi, mimo jiné kvůli ohrožení nezávislosti ČT a ČRo.",
           "steno_id": null,
           "vydani": {
             "schuze": 15,
@@ -76,15 +76,21 @@
           }
         },
         {
+          "datum": "duben 2026",
+          "ulice": true,
+          "text": "Ministr Klempíř představil plán, jak platit ČT a ČRo ze státního rozpočtu. Odbory a zaměstnanci obou médií vyhlásili stávkovou pohotovost, studenti po celé republice demonstrovali za veřejnoprávní média.",
+          "steno_id": "2025_14_00915",
+          "zdroje": [
+            {
+              "href": "https://cs.wikipedia.org/wiki/V%C3%BDstra%C5%BEn%C3%A1_st%C3%A1vka_zam%C4%9Bstnanc%C5%AF_ve%C5%99ejnopr%C3%A1vn%C3%ADch_m%C3%A9di%C3%AD",
+              "label": "Wikipedie"
+            }
+          ]
+        },
+        {
           "datum": "6. 5. 2026",
-          "text": "Sněmovna schválila novelu Ústavy, podle níž může NKÚ kontrolovat hospodaření ČT a ČRo.",
-          "steno_id": "2025_17_00041",
-          "vydani": {
-            "schuze": 17,
-            "datum_unl": "06.05.2026",
-            "slug": "novela-ustav-z-ustava-cr",
-            "label": "Psali jsme →"
-          }
+          "text": "Senátní novela Ústavy, která má dát NKÚ kontrolu nad hospodařením ČT a ČRo, se ve Sněmovně dostala do druhého čtení. Schválená zatím není.",
+          "steno_id": "2025_17_00041"
         },
         {
           "datum": "5. 6. 2026",
@@ -98,8 +104,20 @@
           }
         },
         {
+          "datum": "22. 6. 2026",
+          "ulice": true,
+          "text": "Zaměstnanci ČT a ČRo drželi celodenní výstražnou stávku pod heslem „Pro vás. Ne pro politiky“. Přišli do práce v černém, některé pořady začínaly o minutu později a kolem budovy rozhlasu na Vinohradech vytvořili živý řetěz. Jindřich Rajchl (SPD) ve Sněmovně tvrdil, že stávka porušila etický kodex ČT.",
+          "steno_id": "2025_24_00159",
+          "zdroje": [
+            {
+              "href": "https://www.irozhlas.cz/zpravy-domov/pracovnici-ceskeho-rozhlasu-a-ceske-televize-stavkuji-reaguji-tak-na-navrh_2606220000_zko",
+              "label": "iROZHLAS"
+            }
+          ]
+        },
+        {
           "datum": "23. 6. 2026",
-          "text": "Babišova vláda představila plán, jak platit ČT a ČRo ze státního rozpočtu. Piráti v sále předvedli, jak by podle nich zněly zprávy televize závislé na vládě.",
+          "text": "Do Sněmovny dorazil vládní návrh na financování médií veřejné služby, tisk 231. Piráti v sále předvedli, jak by podle nich zněly zprávy televize závislé na vládě.",
           "steno_id": "2025_24_00024",
           "vydani": {
             "schuze": 24,
@@ -111,13 +129,7 @@
         {
           "datum": "13. 10. 2026",
           "text": "Martin Baxa (ODS) chtěl, aby ministr Klempíř vysvětlil, co čeká média veřejné služby a kdy má tisk 231 platit. Bod se na program nedostal (hlasování 58: 68 pro, 90 proti).",
-          "steno_id": "2025_34_00035",
-          "vydani": {
-            "schuze": 34,
-            "datum_unl": "13.10.2026",
-            "slug": null,
-            "label": "Psali jsme →"
-          }
+          "steno_id": "2025_34_00035"
         }
       ]
     },
@@ -126,7 +138,8 @@
       "nazev": "Vláda poslala návrh do Sněmovny",
       "kratce": "Návrh",
       "stav": "hotovo",
-      "text": "Vláda Andreje Babiše (ANO, SPD, Motoristé) poslala Sněmovně novelu zákonů o České televizi a o Českém rozhlasu. Zároveň ruší celý zákon o poplatcích. Předkládá ministr kultury Oto Klempíř (Motoristé). Sněmovna ji vede jako tisk 231."
+      "text": "Vláda Andreje Babiše (ANO, SPD, Motoristé) poslala Sněmovně novelu zákonů o České televizi a o Českém rozhlasu. Zároveň ruší celý zákon o poplatcích. Předkládá ministr kultury Oto Klempíř (Motoristé). Sněmovna ji vede jako tisk 231.",
+      "datum": "červen 2026"
     },
     {
       "id": "1-cteni",
@@ -141,7 +154,7 @@
         {
           "datum": "23. 10.",
           "cas": "10:25",
-          "text": "Ráno Radim Fiala (SPD) jménem SPD, ANO a Motoristů navrhl dát tisk 231 jako první bod dne, jednat i v sobotu a hlasovat i po 19., 21. a 24. hodině. Všechno prošlo.",
+          "text": "Ráno Radim Fiala (SPD) navrhl dát tisk 231 jako první bod dne. Jménem SPD, ANO a Motoristů prosadil i jednání v sobotu a hlasování po 19., 21. a 24. hodině. Všechno prošlo.",
           "steno_id": "2025_34_01883",
           "hlasovani": {
             "cislo": 255,
@@ -158,19 +171,14 @@
               "cislo": 242,
               "co": "Jednat a hlasovat i po 19., 21. a 24. hodině.",
               "kdo_navrhl": "Radim Fiala (SPD)"
-            },
-            {
-              "cislo": 256,
-              "co": "Přerušit schůzi do 3. 11.",
-              "kdo_navrhl": "Jan Jakob (TOP 09)"
             }
           ],
-          "skupina_label": "Další hlasování o programu"
+          "skupina_label": "Sobota a noční hlasování (9.48)"
         },
         {
           "datum": "",
           "cas": "16:04",
-          "text": "Opoziční kluby (ODS, TOP 09, Piráti, STAN, KDU-ČSL) si vzaly pauzy na poradu, dohromady skoro devět hodin. Na návrh Borise Šťastného (Motoristé) o nich Sněmovna hlasovala a žádnou nepovolila. Podle Marka Bendy (ODS) se o pauzách klubů nikdy dřív nehlasovalo. Rakušanova námitka proti postupu předsedajícího neprošla (261), dvě hlasování se kvůli zpochybnění opakovala. Celkem hlasování 257 až 272, z toho 258 a 270 zmatečná.",
+          "text": "Opoziční kluby (ODS, TOP 09, Piráti, STAN, KDU-ČSL) požádaly o navazující pauzy na poradu, dohromady skoro devět hodin. Na návrh Borise Šťastného (Motoristé) o nich Sněmovna hlasovala a žádnou nepovolila. Podle Marka Bendy (ODS) se o pauzách klubů nikdy dřív nehlasovalo. Rakušanova námitka proti postupu předsedajícího neprošla. Celkem šlo o hlasování 257 až 272, některá předsedající prohlásil za zmatečná.",
           "steno_id": "2025_34_01938"
         },
         {
@@ -228,7 +236,7 @@
           "hlasovani_skupina": [
             {
               "cislo": 278,
-              "co": "Projev 20 minut místo 10.",
+              "co": "Projev 20 minut místo 10, tři vystoupení, přednostní práva hodina místo půl.",
               "kdo_navrhl": "Marek Benda (ODS)"
             }
           ],
@@ -237,7 +245,7 @@
         {
           "datum": "",
           "cas": "23:29",
-          "text": "Karel Haas (ODS) chtěl termín 4.36 zrušit, aby se dostalo na všechny přihlášené. Napoprvé to prošlo 80:75 a sál zajásal. Tři koaliční poslanci pak řekli, že hlasovali jinak, než ukazuje sjetina. Napodruhé návrh padl o čtyři hlasy.",
+          "text": "Karel Haas (ODS) chtěl termín 4.36 zrušit, aby se dostalo na všechny přihlášené. Napoprvé to prošlo 80:75 a opozice se radovala. Tři koaliční poslanci pak hlasování zpochybnili, že hlasovali jinak, než ukazuje sjetina. Napodruhé návrh padl 78:82.",
           "steno_id": "2025_34_02155",
           "hlasovani": {
             "cislo": 282,
@@ -253,7 +261,7 @@
             },
             {
               "cislo": 281,
-              "co": "Námitka proti hlasování 280, které se tím opakovalo.",
+              "co": "Zpochybnění hlasování 280. Prošlo a hlasovalo se znovu.",
               "kdo_navrhl": "Radim Fiala (SPD), František Bureš (ANO), Matěj Gregor (Motoristé)"
             }
           ],
@@ -281,7 +289,7 @@
         {
           "datum": "",
           "cas": "04:36",
-          "text": "Okamura ukončil rozpravu. Na řadu nepřišlo 65 přihlášených poslanců.",
+          "text": "Okamura ukončil rozpravu. Podle tabule přihlášených nepřišlo na řadu 65 poslanců.",
           "dulezite": true
         },
         {
@@ -329,7 +337,7 @@
         {
           "datum": "",
           "cas": "04:51",
-          "text": "Opozice pak čtrnáctkrát navrhla poslat zákon ještě do dalšího výboru, od sociálního po životní prostředí kvůli suchu a tornádům. Všechno padlo. Pro bylo víc lidí než proti, ale koalice se zdržela, a k přijetí je potřeba většina přítomných (89 ze 177).",
+          "text": "Opozice pak čtrnáctkrát navrhla poslat zákon ještě do dalšího výboru, od sociálního po kontrolní, včetně výboru pro životní prostředí kvůli suchu a tornádům. Všechno padlo. Pro bylo vždy víc poslanců než proti, ale koalice se zdržela nebo nehlasovala, a k přijetí je potřeba většina přítomných (89 ze 177).",
           "steno_id": "2025_34_02491",
           "hlasovani_skupina": [
             {
@@ -424,7 +432,8 @@
           "slug": "novela-z-o-ceske-televizi-a-o-ceskem-rozhlasu",
           "label": "Krade se potmě (23. 10.)"
         }
-      ]
+      ],
+      "slovnicek": "prvni-cteni"
     },
     {
       "id": "vybor",
@@ -432,18 +441,25 @@
       "kratce": "Výbor",
       "stav": "probiha",
       "datum": "od 24. 10. 2026, lhůta 60 dní",
-      "text": "Výbor má na zákon 60 dní, tedy zhruba do 23. prosince. Delší lhůtu ministr odmítl. Výbor může navrhnout změny, ty se pak hlasují ve třetím čtení.",
+      "text": "Výbor má na zákon 60 dní, tedy zhruba do 23. prosince. Delší lhůtu ministr odmítl. Výbor může navrhnout změny, ty se pak hlasují ve třetím čtení. Mezitím se proti zákonu stávkovalo a demonstrovalo.",
       "kroky": [
         {
           "datum": "3. 11. 2026",
-          "text": "Zaměstnanci ČT a ČRo stávkovali. Opozice chtěla zařadit na program odvolání Tomia Okamury kvůli tomu, jak řídil noční jednání. Neprošlo (hlasování 325).",
-          "steno_id": "2025_34_02646",
+          "text": "Zaměstnanci ČT a ČRo celý den stávkovali. Stávku vyhlásila iniciativa Veřejnoprávně hned 23. 10., v den prvního čtení. Moderátoři ČT24 četli zprávy v černém, živé pořady nahradila hudba a reprízy. Přidali se studenti a v řadě měst se demonstrovalo. Ve Sněmovně opozice chtěla zařadit odvolání Tomia Okamury kvůli tomu, jak řídil noční jednání. Neprošlo.",
+          "steno_id": "2025_34_02658",
           "vydani": {
             "schuze": 34,
             "datum_unl": "03.11.2026",
             "slug": "odvolani-okamury-3-listopadu",
             "label": "Psali jsme →"
-          }
+          },
+          "ulice": true,
+          "zdroje": [
+            {
+              "href": "https://www.mediaguru.cz/ceska-televize-a-cesky-rozhlas-vstoupi-v-utery-3-listopadu-do-stavky",
+              "label": "MediaGuru"
+            }
+          ]
         },
         {
           "datum": "5. 11. 2026",
@@ -466,43 +482,79 @@
             "slug": "debata-porad-s34-6-listopadu",
             "label": "Psali jsme →"
           }
+        },
+        {
+          "datum": "15. 11. 2026",
+          "ulice": true,
+          "text": "Milion chvilek pro demokracii svolal na Letnou demonstraci „Letná proti 4:36“. Podle organizátorů přišlo 350 až 450 tisíc lidí, iROZHLAS ji označil za největší protest v dějinách samostatné republiky. Požadavky: stáhnout zákon, omluvit se za způsob projednání a zahájit dialog vlády s veřejností. Mluvili mimo jiné Zdeněk Svěrák, Ivan Trojan a Tomáš Halík.",
+          "zdroje": [
+            {
+              "href": "https://cs.wikipedia.org/wiki/Letn%C3%A1_proti_4:36",
+              "label": "Wikipedie"
+            },
+            {
+              "href": "https://irozhlas.cz/zpravy-domov/zive-na-prazske-letne-se-lide-schazeji-k-protestu-za-nezavislost-verejnopravnich_2611151349_vdv",
+              "label": "iROZHLAS"
+            }
+          ]
+        },
+        {
+          "datum": "17. 11. 2026",
+          "ulice": true,
+          "text": "Iniciativa Díky, že můžem pořádala na Národní třídě oslavy 17. listopadu, Korzo Národní. Ministerstvo kultury jí letos nedalo dotaci, lidé ve sbírce poslali skoro 10 milionů. Prezident Petr Pavel na Národní řekl k Letné: „Samotný fakt, že je něco v programovém prohlášení, ještě neznamená, že je to správně.“",
+          "zdroje": [
+            {
+              "href": "https://www.aktu.news/cesko-si-pripomnelo-37-vyroci-sametove-revoluce-narodni-tridu-zaplnily-tisice-lidi-i-pres-vytrvaly-dest",
+              "label": "Aktu.news"
+            },
+            {
+              "href": "https://www.irozhlas.cz/zpravy-domov/korzo-narodni-na-sve-oslavy-vybralo-uz-temer-10-milionu-akci-financne-podpori-i_2611051240_jos",
+              "label": "iROZHLAS"
+            }
+          ]
         }
-      ]
+      ],
+      "slovnicek": "garancni-vybor"
     },
     {
       "id": "2-cteni",
       "nazev": "Druhé čtení",
       "kratce": "2. čtení",
       "stav": "ceka",
-      "text": "Podrobná debata nad jednotlivými paragrafy. Tady poslanci podávají pozměňovací návrhy. Premiér Babiš 5. listopadu mluvil o lednu nebo únoru."
+      "text": "Podrobná debata nad jednotlivými paragrafy. Tady poslanci podávají pozměňovací návrhy. Premiér Babiš 5. listopadu mluvil o lednu nebo únoru.",
+      "slovnicek": "druhe-cteni"
     },
     {
       "id": "3-cteni",
       "nazev": "Třetí čtení",
       "kratce": "3. čtení",
       "stav": "ceka",
-      "text": "Hlasuje se o pozměňovacích návrzích a pak o zákonu jako celku. Stačí většina přítomných poslanců."
+      "text": "Hlasuje se o pozměňovacích návrzích a pak o zákonu jako celku. Stačí většina přítomných poslanců.",
+      "slovnicek": "treti-cteni"
     },
     {
       "id": "senat",
       "nazev": "Senát",
       "kratce": "Senát",
       "stav": "ceka",
-      "text": "Senát má 30 dní. Může zákon schválit, zamítnout, vrátit se změnami, nebo nechat lhůtu uplynout. Když ho zamítne nebo vrátí, Sněmovna ho přehlasuje 101 hlasy."
+      "text": "Senát má 30 dní. Může zákon schválit, zamítnout, vrátit se změnami, nebo nechat lhůtu uplynout. Senátní verzi může Sněmovna přijmout prostou většinou. Setrvat na své verzi nebo přehlasovat zamítnutí může jen 101 hlasy.",
+      "slovnicek": "senat"
     },
     {
       "id": "prezident",
       "nazev": "Prezident",
       "kratce": "Prezident",
       "stav": "ceka",
-      "text": "Prezident má 15 dní. Zákon podepíše, nebo ho vrátí. Veto Sněmovna přehlasuje 101 hlasy."
+      "text": "Prezident má 15 dní. Zákon podepíše, nebo ho vrátí. Veto může Sněmovna přehlasovat 101 hlasy.",
+      "slovnicek": "veto-prezidenta",
+      "slovnicek_label": "Co je veto prezidenta? →"
     },
     {
       "id": "ucinnost",
       "nazev": "Platí",
       "kratce": "Účinnost",
       "stav": "ceka",
-      "text": "Zákon začne platit po vyhlášení ve Sbírce zákonů. Konkrétní datum v rozpravě nezaznělo. Opozice tvrdí, že od 1. ledna 2027 to koalice nestihne."
+      "text": "Zákon nabude platnosti vyhlášením ve Sbírce zákonů a účinnosti dnem, který v něm bude stát. Koalice mluvila o penězích pro rok 2027. Opozice (Talíř, Baxa) tvrdí, že od 1. ledna 2027 to koalice nestihne."
     }
   ],
   "poznamka": "Hlasování a citace jsou ze stenozáznamů a hlasovacích záznamů Sněmovny. Čísla u hlasování vedou na psp.cz.",
@@ -517,7 +569,7 @@
       "Piráti",
       "Zelení"
     ],
-    "shrnuti": "Opozice tvrdí, že když Česká televize a Český rozhlas dostanou peníze ze státního rozpočtu, bude o nich každý rok rozhodovat vláda. Varovala Slovenskem, kde po zrušení poplatku vláda hned další rok vzala médiím zhruba třetinu peněz. Podle opozice návrh obě média připraví asi o 1,7 miliardy korun a lidé stejně zaplatí víc, jen přes daně a dluh s úroky. Vadil jí i postup. Zákon se na program dostal bez ohlášení, projevy se zkrátily na deset minut a hlasovalo se v sobotu ve 4.36, kdy 65 přihlášených poslanců ještě nepromluvilo.",
+    "shrnuti": "Opozice tvrdí, že když Česká televize a Český rozhlas dostanou peníze ze státního rozpočtu, bude o nich každý rok rozhodovat vláda. Jako varování uváděla Slovensko, kde po zrušení poplatku vláda hned další rok vzala médiím zhruba třetinu peněz. Podle opozice návrh obě média připraví o 1,4 až 1,7 miliardy korun ročně a lidé stejně zaplatí víc, jen přes daně a dluh s úroky. Vadil jí i postup. Koalice zákon bez ohlášení předřadila na začátek jednání, projevy se zkrátily na deset minut a hlasovalo se v sobotu ve 4.36, kdy 65 přihlášených poslanců ještě nepromluvilo.",
     "argumenty": [
       {
         "titulek": "Vláda dostane páku na média",
@@ -529,11 +581,11 @@
       },
       {
         "titulek": "Lidé zaplatí stejně, přes daně",
-        "text": "Poplatek nezmizí, jen se přesune do daní, které platí i lidé bez televize. Rozpočet je ve schodku, takže se peníze půjčí a úroky budou stát podle opozice 350 až 400 milionů ročně."
+        "text": "Poplatek nezmizí, jen se přesune do daní, které platí i lidé bez televize. Rozpočet je ve schodku, takže se peníze půjčí a úroky budou stát podle opozice zhruba 320 až 400 milionů ročně."
       },
       {
         "titulek": "Hlasování ve 4.36 ráno",
-        "text": "Zákon se objevil na programu bez předchozí dohody, koalice zkrátila projevy a určila pevný čas hlasování dřív, než debata začala. K pultu se nedostalo 65 přihlášených poslanců a opoziční místopředsedové nesměli schůzi řídit."
+        "text": "Koalice zákon bez předchozí dohody předřadila na první místo programu, zkrátila projevy a určila pevný čas hlasování hned po prvním projevu v rozpravě, ještě než promluvil kdokoli z opozice. K pultu se nedostalo 65 přihlášených poslanců a opoziční místopředsedové nesměli schůzi řídit."
       },
       {
         "titulek": "Sever má pojistky, my ne",
@@ -541,15 +593,15 @@
       },
       {
         "titulek": "Co navrhovala opozice místo toho",
-        "text": "Odbornou debatu všech stran, kterou KDU-ČSL žádala už v červnu, kontrolu hospodaření přes NKÚ a interní audit. Hřib radil zpoplatnit i obsah na internetu, jako to umí Netflix."
+        "text": "Odbornou debatu všech stran, kterou KDU-ČSL žádala už v červnu. Piráti nabídli podporu kontrole hospodaření přes NKÚ a navrhli interní audit místo škrtů. Hřib radil zpoplatnit i obsah na internetu, jako to umí Netflix."
       }
     ],
     "navrhy": [
-      "zamítnout zákon v prvním čtení (Jan Jakob, Petr Hladík)",
-      "vrátit zákon ministrovi k přepracování (Marie Kršková, Petr Hladík)",
+      "zamítnout zákon v prvním čtení (Jan Jakob, Petr Hladík, Martin Baxa, Marie Kršková)",
+      "vrátit zákon ministrovi k přepracování (Martin Baxa, Marie Kršková, Petr Hladík)",
       "prodloužit lhůtu pro výbor na 90 až 210 dní (Petr Hladík); ministr Klempíř nesouhlasil",
       "poslat zákon kromě mediálního výboru i do dalších 14 výborů, od sociálního a rozpočtového přes zemědělský až po kontrolní",
-      "posunout pevné hlasování až po vyčerpání všech přihlášených, nejdřív 6. 11. (Marek Benda), 18. 11. (Olga Richterová) nebo 3. 5. 2029 (Petr Hladík)",
+      "posunout pevné hlasování až po vyčerpání všech přihlášených, nejdřív 6. 11. (Marek Benda) nebo 18. 11. (Olga Richterová), případně pevně na 3. 5. 2029, Světový den médií (Petr Hladík)",
       "přerušit projednávání do 18. května 2027 kvůli odborné debatě (Marian Jurečka)",
       "prodloužit řečnickou dobu na 20 minut místo 10 (Marek Benda)",
       "zrušit usnesení o hlasování v sobotu ve 4.36 (Karel Haas)"
@@ -610,14 +662,14 @@
         "jmeno": "Bohuslav Niemiec",
         "strana": "KDU-ČSL",
         "citace": "Dámy a pánové, já budu krátký. Nejenom povodně, ale i sucho a tornáda jsou problém, a proto navrhuji výbor pro životní prostředí.",
-        "kontext": "Jeden ze čtrnácti návrhů poslat zákon do dalšího výboru, nad ránem po hlasování."
+        "kontext": "Jeden ze čtrnácti návrhů poslat zákon do dalšího výboru, nad ránem po neúspěšném hlasování o zamítnutí."
       },
       {
         "steno_id": "2025_34_02009",
         "jmeno": "Jan Jakob",
         "strana": "TOP 09",
         "citace": "Takže jaký bude výsledek? Média okradete, dáte jim méně a lidé za to zaplatí více. Blahopřeju, skvělý model jste vymysleli!",
-        "kontext": "Jakob spočítal, že peníze půjdou na dluh a s úroky z úroků."
+        "kontext": "Jakob spočítal, že peníze půjdou na dluh: schodek vzroste zhruba o 8 miliard a jen na úrocích to bude stát 320 až 400 milionů ročně."
       },
       {
         "steno_id": "2025_34_02161",
@@ -645,7 +697,7 @@
         "jmeno": "Olga Richterová",
         "strana": "Piráti",
         "citace": "Nápis na textilu, který nemůže nikoho zranit, maximálně, že zraní city vládní koalice.",
-        "kontext": "O transparentu „Svobodu médiím“, kvůli kterému ochranka vyváděla lidi z galerie."
+        "kontext": "O transparentu „Svobodu médiím“ na galerii. Podle opozice kvůli němu ochranka vyváděla lidi, předsedající Barták mluvil o pískání."
       },
       {
         "steno_id": "2025_34_02005",
@@ -665,7 +717,7 @@
       "SPD",
       "Motoristé"
     ],
-    "shrnuti": "Koalice tvrdí, že poplatek za přijímač patří do doby, kdy v kuchyni hrálo jedno rádio, a dnes dopadá i na lidi, kteří mají jen telefon nebo počítač. Českou televizi a Český rozhlas má podle návrhu platit státní rozpočet částkou pevně danou zákonem, kterou vláda nemůže každý rok měnit podle nálady. Ministr kultury Oto Klempíř i další řečníci opakovali, že o výši poplatku rozhodovali politici i dosud a že rozpočtové peníze nezávislost neberou, stejně jako ji neberou soudům nebo NKÚ. Koalice dál slibuje konec upomínek a exekucí kvůli poplatku, úsporu 2 460 korun ročně pro domácnost a úlevu pro firmy. Opakovaně také chtěla, aby hospodaření obou médií kontroloval Nejvyšší kontrolní úřad.",
+    "shrnuti": "Ministr Klempíř řekl, že poplatek za přijímač patří do doby, kdy v kuchyni hrálo jedno rádio. Koalice dodávala, že dnes dopadá i na lidi, kteří mají jen telefon nebo počítač. Českou televizi a Český rozhlas má podle návrhu platit státní rozpočet částkou pevně danou zákonem, kterou vláda nemůže každý rok měnit podle nálady. Ministr kultury Oto Klempíř i další řečníci opakovali, že o výši poplatku rozhodovali politici i dosud a že rozpočtové peníze nezávislost neberou, stejně jako ji neberou soudům nebo NKÚ. Koalice dál slibuje konec upomínek a exekucí kvůli poplatku, úsporu 2 460 korun ročně pro domácnost a úlevu pro firmy. Opakovaně také chtěla, aby hospodaření obou médií kontroloval Nejvyšší kontrolní úřad.",
     "argumenty": [
       {
         "titulek": "Poplatek za přístroj nedává smysl",
@@ -673,19 +725,19 @@
       },
       {
         "titulek": "Částku určí zákon, ne vláda",
-        "text": "Příspěvek má být povinný výdaj státu, pro rok 2027 asi 5,74 miliardy pro ČT a 2,07 miliardy pro ČRo, s pravidlem pro zvyšování podle inflace. Změnit ho půjde jen změnou zákona, stejně jako dosud poplatek."
+        "text": "Příspěvek má být povinný výdaj státu, pro rok 2027 asi 5,74 miliardy pro ČT a 2,07 miliardy pro ČRo. Zvýší se o 10 procent, až průměrná roční inflace překročí 10 procent. Změnit ho půjde jen změnou zákona, stejně jako dosud poplatek."
       },
       {
         "titulek": "Peníze ze státu neberou nezávislost",
-        "text": "Ze státního rozpočtu žijí soudy, Ústavní soud i NKÚ a nikdo je nepovažuje za vládní. Koalice uvádí, že poplatky už nemá 17 z 27 zemí EU a v Dánsku či Norsku mají veřejná média vysokou důvěru."
+        "text": "Ze státního rozpočtu žijí soudy, Ústavní soud i NKÚ a nikdo je nepovažuje za vládní. Ministr Klempíř uvedl, že poplatky už nemá 17 z 27 zemí EU (platí média z rozpočtu nebo z vyhrazené daně) a že v Dánsku či Norsku mají veřejná média placená z rozpočtu vysokou důvěru."
       },
       {
         "titulek": "Konec upomínek a exekucí",
-        "text": "Okamura uvedl, že ČT za tři roky poslala do exekuce přes 41 000 domácností a firem a inkaso a vymáhání poplatků stálo v letech 2023 a 2024 skoro 150 milionů ročně. Zrušením zmizí celý aparát evidence a vymáhání."
+        "text": "Okamura uvedl, že ČT za tři roky poslala do exekuce přes 41 000 domácností a firem. Česká televize podle něj jen na inkaso a vymáhání televizních poplatků vydala 149,6 milionu v roce 2023 a 142,2 milionu v roce 2024. Zrušením zmizí celý aparát evidence a vymáhání."
       },
       {
         "titulek": "Úleva domácnostem i firmám",
-        "text": "Domácnost, která platí oba poplatky, ušetří 2 460 korun ročně. Firmy přestanou platit násobky podle počtu zaměstnanců, což ministr Klempíř nazval trestem za úspěch."
+        "text": "Domácnost, která platí oba poplatky, ušetří 2 460 korun ročně. Firmy přestanou platit násobky podle počtu zaměstnanců, což ministr Klempíř označil za trestání firem za úspěch."
       },
       {
         "titulek": "Víc kontroly, kde se dá šetřit",
@@ -722,14 +774,14 @@
         "jmeno": "Denis Doksanský",
         "strana": "ANO",
         "citace": "Vy moc dobře víte, že nejde o demokracii, že nikdo nepřebírá média, že jim neubírá svobodu. Jde pouze o změnu financování, což je víceméně formalita.",
-        "kontext": "Reagoval na Olgu Richterovou (Piráti) a na demonstraci před Sněmovnou."
+        "kontext": "Reagoval na Olgu Richterovou (Piráti), která koalici vyčítala vyklizení galerie pro veřejnost, a na napětí kolem protestů u Sněmovny."
       },
       {
         "steno_id": "2025_34_02134",
         "jmeno": "Josef Váňa",
         "strana": "ANO",
         "citace": "Jeden člověk vyleze z embéčka, má na zádech kameru, připne na mě tady nějaké nějaké to kecátko nebo co, dá mi před pusu mikrofon a natáčí.",
-        "kontext": "Srovnával štáb Novy před Velkou pardubickou se štábem ČT, který prý přijel dvěma auty."
+        "kontext": "Srovnával jednočlenný štáb Novy před Velkou pardubickou se štábem ČT, který podle něj přijíždí i dvěma auty a se zvukařem."
       },
       {
         "steno_id": "2025_34_02124",
@@ -742,7 +794,7 @@
         "steno_id": "2025_34_02167",
         "jmeno": "Petr Macinka",
         "strana": "Motoristé",
-        "funkce": "předseda Motoristů",
+        "funkce": "místopředseda vlády a předseda Motoristů",
         "citace": "No, tehdy to asi bylo nějaké liberálně demokratické šlápnutí médiím veřejné služby za krk, zatímco dnes je to samozřejmě otřesné, špatné a tak dál.",
         "kontext": "Četl článek Lidových novin z roku 2009, podle kterého ODS sama navrhovala zrušit poplatky a platit ČT ze státního rozpočtu."
       },
@@ -759,7 +811,8 @@
         "jmeno": "Boris Šťastný",
         "strana": "Motoristé",
         "citace": "Takže ono se to prostě nedá dopočítat. NKÚ jste tam nepustili. Smlouvy jsou začerněné. My nemáme naprosto žádná data.",
-        "kontext": "Baxa chtěl po vládě vyčíslit dopady a úspory, Šťastný odpověděl utajenými smlouvami ČT."
+        "kontext": "Baxa chtěl po vládě vyčíslit dopady a úspory, Šťastný odpověděl utajenými smlouvami ČT.",
+        "funkce": "ministr pro sport, prevenci a zdraví"
       },
       {
         "steno_id": "2025_34_02275",
@@ -773,7 +826,7 @@
         "jmeno": "Jindřich Rajchl",
         "strana": "SPD",
         "citace": "A to už vůbec nemluvím o tom, že daleko férovější by byly dobrovolné koncesionářské poplatky, protože ten váš model těch povinných poplatků je stejný, jako kdybyste nutili majitele každého auta v České republice, aby platil dálniční známku.",
-        "kontext": "Tvrdil, že povinný poplatek dává ČT menší jistotu než rozpočet."
+        "kontext": "Odpovídal Václavu Pláteníkovi (KDU-ČSL) na nizozemský model. Tvrdil, že rozpočet dává ČT větší jistotu než poplatky, a povinný poplatek přirovnal k dálniční známce."
       },
       {
         "steno_id": "2025_34_02444",
@@ -784,5 +837,26 @@
       }
     ],
     "citace_nahore": 6
-  }
+  },
+  "seo_title": "Zrušení poplatků za ČT a ČRo: cesta zákona, hlasování a co říká vláda a opozice",
+  "nazev_oficialni": "Vládní návrh zákona, kterým se mění zákon č. 483/1991 Sb., o České televizi, ve znění pozdějších předpisů, a zákon č. 484/1991 Sb., o Českém rozhlasu, ve znění pozdějších předpisů, a kterým se zrušuje zákon č. 348/2005 Sb., o rozhlasových a televizních poplatcích",
+  "typ_predpisu": "vládní návrh zákona",
+  "meni_predpisy": [
+    "Zákon č. 483/1991 Sb., o České televizi",
+    "Zákon č. 484/1991 Sb., o Českém rozhlasu",
+    "Zákon č. 348/2005 Sb., o rozhlasových a televizních poplatcích (ruší se)"
+  ],
+  "klicova_slova": [
+    "zrušení poplatků",
+    "televizní poplatek",
+    "rozhlasový poplatek",
+    "koncesionářské poplatky",
+    "Česká televize",
+    "Český rozhlas",
+    "veřejnoprávní média",
+    "financování ze státního rozpočtu",
+    "sněmovní tisk 231",
+    "Oto Klempíř"
+  ],
+  "publikovano": "18.11.2026"
 }
