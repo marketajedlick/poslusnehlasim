@@ -80,6 +80,8 @@ SITE_NAME = "Poslušně hlásím"
 SITE_DOMAIN = "poslusnehlasim.cz"
 SITE_TAGLINE = "Deník sněmovny"
 SITE_TITLE_TAGLINE = "denní zpravodaj z Poslanecké sněmovny"
+# Bing Site Scan: <title> nad 70 znaků hlásí jako „Title too long“.
+TITLE_MAX_LEN = 70
 SITE_META_DESCRIPTION = (
     "Satirický deník z Poslanecké sněmovny. Každý jednací den srozumitelně: "
     "o čem poslanci hlasovali, co zaznělo v rozpravě a co to znamená. "
@@ -306,24 +308,41 @@ def edition_page_title(
     """<title> pro vydání: téma · Sněmovna datum | značka.
 
     Téma jde dopředu: lidé hledají podle obsahu (zákon, kauza), ne podle data.
+    Když se téma se značkou nevejde do `max_len`, značka odpadne dřív než
+    zkracování tématu (vyhledávač název webu ukazuje stejně zvlášť).
     """
     _ = meta_description, den, datum_design
     date_label = _edition_date_label_short(datum_unl) if datum_unl else ""
     suffix = f" | {SITE_NAME}"
     date_part = f" · Sněmovna {date_label}" if date_label else ""
-    budget = max(12, max_len - len(date_part) - len(suffix))
-    headline = article_headline(
-        dnesni_ucet=dnesni_ucet,
-        nadpis_vydani=nadpis_vydani,
-        first_item_nadpis=first_item_nadpis,
-        edition_title=datum_design,
-        max_len=budget,
-    )
+
+    def _headline(budget: int) -> str:
+        return article_headline(
+            dnesni_ucet=dnesni_ucet,
+            nadpis_vydani=nadpis_vydani,
+            first_item_nadpis=first_item_nadpis,
+            edition_title=datum_design,
+            max_len=max(12, budget),
+        )
+
+    headline = _headline(10_000)  # bez zkracování
     if not headline.strip():
         core = f"Sněmovna {date_label}{suffix}" if date_label else f"Sněmovna{suffix}"
         return _truncate_text(core, max_len=max_len)
     title = f"{headline}{date_part}{suffix}"
+    if len(title) <= max_len:
+        return title
+    title = f"{_headline(max_len - len(date_part))}{date_part}"
     return title if len(title) <= max_len else _truncate_text(title, max_len=max_len)
+
+
+def page_title_with_brand(core: str, *, sep: str = " | ", max_len: int = TITLE_MAX_LEN) -> str:
+    """`core{sep}značka`; když je to přes `max_len`, značka odpadne a core se zkrátí."""
+    core = " ".join(core.split())
+    title = f"{core}{sep}{SITE_NAME}"
+    if len(title) <= max_len:
+        return title
+    return _truncate_text(core, max_len=max_len)
 
 
 def _truncate_text(text: str, *, max_len: int) -> str:
@@ -618,7 +637,7 @@ def _ucfirst(text: str) -> str:
 def slovnicek_term_page_title(term: str, *, custom: str = "") -> str:
     """<title> stránky pojmu podle toho, jak lidé hledají („X význam“, „co to je X“)."""
     core = custom.strip() or f"{_ucfirst(term)}: co to je a co znamená"
-    return f"{core} | {SITE_NAME}"
+    return page_title_with_brand(core)
 
 
 def slovnicek_term_meta_description(

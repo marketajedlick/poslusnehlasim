@@ -114,7 +114,9 @@
   </header>
 
   <nav class="zakon-jump" aria-label="Části stránky">
-    <a href="#prubeh">Průběh</a><span aria-hidden="true">·</span><a href="#opozice">Opozice</a><span aria-hidden="true">·</span><a href="#vlada">Vláda</a>
+    <a class="zakon-jump-tab zakon-jump-tab--flow is-active" href="#prubeh">Průběh</a>
+    <a class="zakon-jump-tab zakon-jump-tab--opo" href="#opozice">Opozice</a>
+    <a class="zakon-jump-tab zakon-jump-tab--vla" href="#vlada">Vláda</a>
   </nav>
 
   <div class="zakon-grid">
@@ -188,5 +190,50 @@
 </div>
 {% include "site-footer.html" %}
 {% include "cookie-consent.html" %}
+<script>
+/* Mobil: přepínač Průběh / Opozice / Vláda (bez JS zůstane vše pod sebou). */
+(function () {
+  var mq = window.matchMedia("(max-width: 1099px)");
+  var nav = document.querySelector(".zakon-jump");
+  var grid = document.querySelector(".zakon-grid");
+  if (!nav || !grid) return;
+  var tabs = Array.prototype.slice.call(nav.querySelectorAll("a"));
+  var panes = tabs.map(function (a) { return document.querySelector(a.getAttribute("href")); });
+  var current = 0;
+  function show(i, scroll) {
+    current = i;
+    panes.forEach(function (p, j) { if (p) p.hidden = mq.matches && j !== i; });
+    tabs.forEach(function (a, j) {
+      a.classList.toggle("is-active", j === i);
+      if (j === i) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+    });
+    if (scroll && mq.matches) {
+      var top = grid.getBoundingClientRect().top + window.pageYOffset - nav.offsetHeight - 8;
+      if (window.pageYOffset > top) window.scrollTo(0, top);
+    }
+  }
+  tabs.forEach(function (a, i) {
+    a.addEventListener("click", function (e) {
+      if (!mq.matches) return;
+      e.preventDefault();
+      show(i, true);
+      history.replaceState(null, "", a.hash);
+    });
+  });
+  function fromHash() {
+    var h = location.hash;
+    var i = h === "#opozice" ? 1 : h === "#vlada" ? 2 : 0;
+    if (h && i === 0) {
+      var el = document.querySelector(h);
+      panes.forEach(function (p, j) { if (p && el && p.contains(el)) i = j; });
+    }
+    show(i, false);
+  }
+  window.addEventListener("hashchange", fromHash);
+  (mq.addEventListener ? mq.addEventListener("change", function () { show(current, false); }) : mq.addListener(function () { show(current, false); }));
+  document.documentElement.classList.add("zakon-tabs-js");
+  fromHash();
+})();
+</script>
 </body>
 </html>

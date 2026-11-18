@@ -22,7 +22,7 @@ from svejk.build.seo import (
     write_robots_txt,
     write_sitemap_xml,
 )
-from svejk.build.seo import BreadcrumbCrumb, SITE_NAME
+from svejk.build.seo import BreadcrumbCrumb, SITE_NAME, TITLE_MAX_LEN
 from svejk.build.nav import Edition
 
 
@@ -154,6 +154,27 @@ def test_edition_page_title() -> None:
     )
     assert title == "Titulek na počkání · Sněmovna 2. 7. 2026 | Poslušně hlásím"
 
+
+
+def test_edition_page_title_drops_brand_before_truncating() -> None:
+    title = edition_page_title(
+        dnesni_ucet="",
+        first_item_nadpis="Seniorům vrátí příspěvky na spoření",
+        datum_unl="27.05.2026",
+        max_len=TITLE_MAX_LEN,
+    )
+    assert title == "Seniorům vrátí příspěvky na spoření · Sněmovna 27. 5. 2026"
+
+
+def test_edition_page_title_truncates_long_headline() -> None:
+    title = edition_page_title(
+        dnesni_ucet="",
+        first_item_nadpis="Sněmovna se sešla ve dvě odpoledne a za osmnáct minut se zase rozešla domů",
+        datum_unl="29.05.2026",
+        max_len=TITLE_MAX_LEN,
+    )
+    assert len(title) <= TITLE_MAX_LEN
+    assert title.endswith("… · Sněmovna 29. 5. 2026")
 
 def test_homepage_share_og_title() -> None:
     from svejk.build.seo import homepage_share_og_title
@@ -345,6 +366,8 @@ def test_slovnicek_term_page_title() -> None:
     assert slovnicek_term_page_title("OZP", custom="OZP: zkratka") == (
         "OZP: zkratka | Poslušně hlásím"
     )
+    long_custom = "Superdávka: co to je, které dávky slučuje a jaký je zákon"
+    assert slovnicek_term_page_title("superdávka", custom=long_custom) == long_custom
 
 
 def test_slovnicek_term_meta_description() -> None:

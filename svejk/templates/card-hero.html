@@ -7,11 +7,11 @@
     </p>
     <div class="card-hero-foot">
       {% if ph_fav_href and edition_back_href %}
-      <a class="card-hero-svejk-link" href="{{ edition_back_href }}" aria-label="{{ t.nav.latest }}">
-        <img class="card-hero-svejk" src="{{ ph_fav_href }}" alt="" aria-hidden="true" width="56" height="56">
+      <a class="card-hero-svejk-link" href="{{ edition_back_href }}">
+        <img class="card-hero-svejk" src="{{ ph_fav_href }}" alt="{{ t.nav.latest }}" width="56" height="56">
       </a>
       {% elif ph_fav_href %}
-      <img class="card-hero-svejk" src="{{ ph_fav_href }}" alt="" aria-hidden="true" width="56" height="56">
+      <img class="card-hero-svejk" src="{{ ph_fav_href }}" alt="Švejk" aria-hidden="true" width="56" height="56">
       {% endif %}
       <div class="card-sign">{{ t.edition.sign }}</div>
       <div class="card-share">

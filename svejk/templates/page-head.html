@@ -3,8 +3,8 @@
   <p class="notfound-code" aria-hidden="true">404</p>
   {% endif %}
   {% if ph_fav_href %}
-  <a class="page-head-fav-link" href="{{ page_head_home_href | default(latest_href, true) }}" aria-label="{{ t.nav.latest }}">
-    <img class="page-head-fav" src="{{ ph_fav_href }}" alt="" width="72" height="72">
+  <a class="page-head-fav-link" href="{{ page_head_home_href | default(latest_href, true) }}">
+    <img class="page-head-fav" src="{{ ph_fav_href }}" alt="{{ t.nav.latest }}" width="72" height="72">
   </a>
   {% endif %}
   {% if page_eyebrow %}<div class="page-eyebrow">{{ page_eyebrow }}</div>{% endif %}

@@ -24,6 +24,7 @@ from svejk.build.seo import (
     _home_href,
     breadcrumb_page_ctx,
     meta_description,
+    page_title_with_brand,
     zakon_json_ld,
     zakony_index_json_ld,
 )
@@ -135,7 +136,7 @@ def render_zakon_html(
     base_path: str = "",
 ) -> str:
     cfg = NewsletterConfig.from_env()
-    title = f"{zakon.get('seo_title') or zakon.get('nazev', '')} · {SITE_NAME}"
+    title = page_title_with_brand(zakon.get("seo_title") or zakon.get("nazev", ""), sep=" · ")
     description = meta_description(zakon.get("meta") or zakon.get("perex", ""))
     ctx = _common_ctx(
         obdobi,
