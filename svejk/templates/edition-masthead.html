@@ -1,7 +1,7 @@
 <div class="masthead{% if rail %} edition-rail-mast{% endif %}">
   {% if edition_back_href %}
-  <a class="masthead-fav-link" href="{{ edition_back_href }}" aria-label="{{ t.nav.latest }}">
-    <img class="masthead-fav" src="{{ ph_fav_href }}" alt="" width="96" height="96">
+  <a class="masthead-fav-link" href="{{ edition_back_href }}">
+    <img class="masthead-fav" src="{{ ph_fav_href }}" alt="{{ t.nav.latest }}" width="96" height="96">
   </a>
   {% else %}
   <img class="masthead-fav" src="{{ ph_fav_href }}" alt="Švejk" width="96" height="96">

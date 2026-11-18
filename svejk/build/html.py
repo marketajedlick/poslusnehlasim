@@ -713,6 +713,7 @@ def render_den_html(
     from svejk.build.seo import edition_page_title as _edition_page_title
     from svejk.build.seo import homepage_page_title as _homepage_page_title
     from svejk.build.seo import homepage_share_og_title as _homepage_share_og_title
+    from svejk.build.seo import TITLE_MAX_LEN
 
     # Homepage: stabilní <title> s klíčovými slovy; vydání: datum + téma dne.
     page_title = (
@@ -726,6 +727,7 @@ def render_den_html(
             datum_unl=content.datum,
             den=content.den,
             datum_design=datum_label,
+            max_len=TITLE_MAX_LEN,
         )
     )
     from svejk.build.og_image import (
