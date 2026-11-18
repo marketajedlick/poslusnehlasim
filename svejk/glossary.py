@@ -1659,18 +1659,13 @@ SLOVNICEK_SLUG_ALIASES: dict[str, str] = {
 
 
 # Rozšířený obsah pro nejhledanější pojmy (podle Google Search Console, 11/2026).
-# Klíč = kanonický slug. Pole:
+# Klíč = kanonický slug (meta description je zvlášť v SLOVNICEK_META). Pole:
 #   title    – volitelný vlastní <title> (bez „| Poslušně hlásím“)
-#   meta     – meta description (≤ ~155 znaků), jasná odpověď + háček
 #   sections – (nadpis-otázka, odstavec); jdou i do FAQ JSON-LD
 #   related  – pojmy ze SLOVNIČEK pro „Souvisí s tím“
 SLOVNICEK_DETAIL: dict[str, dict] = {
     "ozp": {
         "title": "OZP: co znamená zkratka, průkaz TP, ZTP a ZTP/P",
-        "meta": (
-            "OZP znamená osoba se zdravotním postižením. Co je průkaz TP, ZTP a ZTP/P, "
-            "co znamená „vhodné pro OZP“ v inzerátu a co k tomu řeší Sněmovna."
-        ),
         "sections": (
             (
                 "Co znamená zkratka OZP?",
@@ -1707,10 +1702,6 @@ SLOVNICEK_DETAIL: dict[str, dict] = {
     },
     "interpelace": {
         "title": "Interpelace: co to je a co znamená interpelovat",
-        "meta": (
-            "Interpelace je otázka poslance ministrovi nebo premiérovi, na kterou musí odpovědět. "
-            "Jak probíhají ústní a písemné interpelace a co znamená interpelovat."
-        ),
         "sections": (
             (
                 "Co znamená interpelovat?",
@@ -1736,10 +1727,6 @@ SLOVNICEK_DETAIL: dict[str, dict] = {
     },
     "ratifikace": {
         "title": "Ratifikace: co to je a co znamená ratifikovat smlouvu",
-        "meta": (
-            "Ratifikace je konečné potvrzení mezinárodní smlouvy. Kdo ji ratifikuje, proč k tomu "
-            "potřebuje souhlas Sněmovny a Senátu a co znamená ratifikovat."
-        ),
         "sections": (
             (
                 "Co znamená ratifikovat?",
@@ -1765,10 +1752,6 @@ SLOVNICEK_DETAIL: dict[str, dict] = {
         "related": ("Senát", "usnesení"),
     },
     "prvni-cteni": {
-        "meta": (
-            "První čtení je první kolo projednávání zákona ve Sněmovně. Poslanci rozhodnou, "
-            "jestli zákon zamítnou, vrátí, nebo pošlou do výborů. Jak to probíhá."
-        ),
         "sections": (
             (
                 "Co se v prvním čtení děje?",
@@ -1792,10 +1775,6 @@ SLOVNICEK_DETAIL: dict[str, dict] = {
         "related": ("druhé čtení", "třetí čtení", "garanční výbor", "zkrácení lhůty"),
     },
     "druhe-cteni": {
-        "meta": (
-            "Druhé čtení je fáze, kdy poslanci zákon upravují pozměňovacími návrhy. "
-            "Jak druhé čtení probíhá a proč se v něm často zdržuje."
-        ),
         "sections": (
             (
                 "Co se ve druhém čtení děje?",
@@ -1818,10 +1797,6 @@ SLOVNICEK_DETAIL: dict[str, dict] = {
         "related": ("první čtení", "třetí čtení", "pozměňovací návrh", "obstrukce"),
     },
     "treti-cteni": {
-        "meta": (
-            "Třetí čtení je závěrečné hlasování o zákonu ve Sněmovně. Co se v něm ještě "
-            "smí měnit, kolik hlasů je potřeba a kam zákon jde potom."
-        ),
         "sections": (
             (
                 "Co se ve třetím čtení ještě smí měnit?",
@@ -1845,10 +1820,6 @@ SLOVNICEK_DETAIL: dict[str, dict] = {
     },
     "obstrukce": {
         "title": "Obstrukce: co to je a co znamená obstruovat",
-        "meta": (
-            "Obstrukce je záměrné zdržování jednání, aby se nehlasovalo. Jak poslanci obstruují, "
-            "co znamená obstruovat a jak se s tím Sněmovna vypořádává."
-        ),
         "sections": (
             (
                 "Co znamená obstruovat?",
@@ -1876,10 +1847,6 @@ SLOVNICEK_DETAIL: dict[str, dict] = {
     },
     "veto": {
         "title": "Veto: co to je a co znamená vetovat zákon",
-        "meta": (
-            "Veto znamená, že Senát nebo prezident vrátí zákon Sněmovně. Co znamená vetovat, "
-            "kolik hlasů je potřeba k přehlasování veta a jak dlouho to trvá."
-        ),
         "sections": (
             (
                 "Co znamená vetovat zákon?",
@@ -1905,10 +1872,6 @@ SLOVNICEK_DETAIL: dict[str, dict] = {
     },
     "superdavka": {
         "title": "Superdávka: co to je, které dávky slučuje a jaký je zákon",
-        "meta": (
-            "Superdávka je jedna sociální dávka místo čtyř, platí od října 2025. Které dávky "
-            "nahradila, jak se úředně jmenuje a co s ní dělá Sněmovna."
-        ),
         "sections": (
             (
                 "Které dávky superdávka slučuje?",
@@ -1933,10 +1896,6 @@ SLOVNICEK_DETAIL: dict[str, dict] = {
     },
     "eet": {
         "title": "EET: co je elektronická evidence tržeb a koho se týká",
-        "meta": (
-            "EET, elektronická evidence tržeb, posílá údaje o tržbách finanční správě. Jak "
-            "fungovala, proč skončila a co přináší EET 2.0 od ledna 2027."
-        ),
         "sections": (
             (
                 "Jak EET fungovala?",
@@ -1964,6 +1923,203 @@ SLOVNICEK_DETAIL: dict[str, dict] = {
 }
 
 
+# Meta description každé stránky pojmu (kanonický slug → text).
+# Bing Site Scan chce 150–160 znaků: kratší hlásí jako „too short“, delší
+# vyhledávač ořízne. Hlídá to test v tests/test_slovnicek_pages.py.
+SLOVNICEK_META: dict[str, str] = {
+    "pozmenovaci-navrh": (
+        "Pozměňovací návrh je úprava zákona, se kterou poslanec nebo výbor přijde ve "
+        "druhém čtení: „Já bych to napsal trochu jinak.“ A kdy to naposledy řešila "
+        "Sněmovna."
+    ),
+    "prvni-cteni": (
+        "První čtení je první kolo projednávání zákona ve Sněmovně. Poslanci rozhodnou, "
+        "jestli zákon zamítnou, vrátí, nebo pošlou do výborů. Jak to probíhá a co je "
+        "dál."
+    ),
+    "druhe-cteni": (
+        "Druhé čtení je fáze, kdy poslanci zákon upravují pozměňovacími návrhy. Jak "
+        "druhé čtení probíhá, proč se v něm často zdržuje a kdy může přijít třetí "
+        "čtení."
+    ),
+    "treti-cteni": (
+        "Třetí čtení je závěrečné hlasování o zákonu ve Sněmovně. Co se v něm ještě smí "
+        "měnit, kolik hlasů zákon potřebuje a proč pak míří do Senátu a k prezidentovi."
+    ),
+    "proceduralni-navrh": (
+        "Procedurální návrh neřeší obsah zákona, ale způsob, jak se o něm bude mluvit: "
+        "pořadí bodů, přestávky, délku projevů. A kdy to naposledy řešila Sněmovna."
+    ),
+    "obstrukce": (
+        "Obstrukce je záměrné zdržování jednání, aby se nehlasovalo. Jak poslanci "
+        "obstruují, co znamená obstruovat a jak se s tím Sněmovna vypořádává od září "
+        "2026."
+    ),
+    "preruseni-schuze": (
+        "Přerušení schůze znamená, že si poslanci dali pauzu a slíbili, že se k "
+        "rozjednaným bodům vrátí. Co to znamená pro zákony a kdy to naposledy řešila "
+        "Sněmovna."
+    ),
+    "legislativni-nouze": (
+        "Legislativní nouze je zvláštní režim pro spěšné zákony. Vyhlašuje ji předseda "
+        "Sněmovny na návrh vlády a zákon přeskočí první čtení. Kdy se smí použít."
+    ),
+    "zkraceni-lhuty": (
+        "Zkrácení lhůty: poslanci si zkrátí čas na přípravu dalšího kola projednávání a "
+        "zákon jde dál rychleji. Proč se to dělá a kdy to naposledy řešila Sněmovna."
+    ),
+    "rafinerska-marze": (
+        "Rafinérská marže je rozdíl mezi cenou ropy, kterou rafinérie koupí, a cenou "
+        "paliva, které prodá. Když palivo zdraží víc než ropa, marže roste. A co "
+        "Sněmovna."
+    ),
+    "firemni-dluhopis": (
+        "Firemní dluhopis je půjčka firmě: koupíte papír a firma slíbí vrátit peníze i "
+        "s úrokem. Když nesplatí, můžete přijít o všechno. A kdy to řešila Sněmovna."
+    ),
+    "garancni-vybor": (
+        "Garanční výbor je sněmovní výbor, který má zákon na starosti: posoudí "
+        "pozměňovací návrhy a připraví ho na další hlasování. Kdy ho naposledy řešila "
+        "Sněmovna."
+    ),
+    "veto": (
+        "Veto znamená, že Senát nebo prezident vrátí zákon Sněmovně. Co znamená "
+        "vetovat, kolik hlasů je třeba k přehlasování veta a čím se liší veto Senátu a "
+        "prezidenta."
+    ),
+    "mimoradna-schuze": (
+        "Mimořádná schůze je schůze Sněmovny svolaná mimo běžný program, když něco "
+        "spěchá nebo se někdo hodně rozčílí. Co to znamená a kdy ji poslanci naposledy "
+        "měli."
+    ),
+    "interpelace": (
+        "Interpelace je otázka poslance ministrovi nebo premiérovi, na kterou musí "
+        "odpovědět. Jak probíhají ústní a písemné interpelace a co znamená "
+        "interpelovat."
+    ),
+    "opravneny-zajem": (
+        "Oprávněný zájem je důvod, který musíte prokázat, když chcete nahlédnout do "
+        "údajů, které už nejsou veřejné. Zvědavost nestačí. A kdy to řešila Sněmovna."
+    ),
+    "skutecny-majitel": (
+        "Skutečný majitel je člověk, který firmu ve skutečnosti vlastní nebo ovládá, i "
+        "když na papíře stojí někdo jiný. Co to znamená a proč to řeší i Sněmovna."
+    ),
+    "duvera-vlade": (
+        "Důvěra vládě: hlasování ve Sněmovně, jestli má vláda podporu většiny poslanců. "
+        "Nová vláda o ni musí požádat do 30 dnů. Kdy to naposledy řešili poslanci."
+    ),
+    "neduvera-vlade": (
+        "Vyslovení nedůvěry vládě je pokus poslat vládu do politického důchodu dřív, "
+        "než odejde sama. Co to znamená a kdy o nedůvěře vládě naposledy jednala "
+        "Sněmovna."
+    ),
+    "koalice": (
+        "Koalice jsou strany, které spolu vládnou a snaží se najít společnou řeč. Proti "
+        "nim stojí opozice. Co znamená vládní koalice a kdy to naposledy řešila "
+        "Sněmovna."
+    ),
+    "opozice": (
+        "Opozice jsou strany, které nevládnou a hlídají, jestli vláda nevaří z cizích "
+        "peněz příliš odvážně. Co opozice ve Sněmovně dělá a kdy se o ní naposledy "
+        "mluvilo."
+    ),
+    "senat": (
+        "Senát je druhá komora Parlamentu ČR. Kontroluje zákony, které schválila "
+        "Sněmovna, a může je vrátit nebo zamítnout. Co dělá a kdy ho naposledy řešili "
+        "poslanci."
+    ),
+    "veto-senatu": (
+        "Veto Senátu: Senát zákon zamítne, nebo ho vrátí se změnami. U běžných zákonů "
+        "ho poslanci můžou přehlasovat 101 hlasy, u ústavních ne. Kdy to řešila "
+        "Sněmovna."
+    ),
+    "veto-prezidenta": (
+        "Veto prezidenta: prezident zákon vrátí poslancům, aby si ho ještě jednou "
+        "rozmysleli. Sněmovna ho může přehlasovat 101 hlasy. Kdy to naposledy řešili "
+        "poslanci."
+    ),
+    "rozpoctove-brzdy": (
+        "Rozpočtové brzdy jsou pravidla v zákoně o rozpočtové odpovědnosti, která státu "
+        "připomínají šlápnout na brzdu, když se moc zadlužuje. Co s nimi dělá Sněmovna."
+    ),
+    "fiskalni-pravidla": (
+        "Fiskální pravidla mají státu připomínat, že kreditka není bezedná. Hlídají, "
+        "kolik smí stát utratit a zadlužit se. Co znamenají a co s nimi dělá Sněmovna."
+    ),
+    "schodek": (
+        "Schodek rozpočtu znamená, že stát utratí víc, než vybere. Něco jako když "
+        "hospoda jede na sekeru. Proč na schodku záleží a kdy ho naposledy řešila "
+        "Sněmovna."
+    ),
+    "eet": (
+        "EET, elektronická evidence tržeb, posílá údaje o tržbách finanční správě. Jak "
+        "fungovala, proč skončila a co přináší EET 2.0 od ledna 2027, včetně plateb "
+        "kartou."
+    ),
+    "seda-ekonomika": (
+        "Šedá ekonomika jsou peníze a podnikání, které stát oficiálně nevidí, hlavně "
+        "kvůli nehlášeným tržbám. Jak s ní souvisí EET a kdy ji naposledy řešila "
+        "Sněmovna."
+    ),
+    "svarcsystem": (
+        "Švarcsystém: člověk dělá práci jako zaměstnanec, ale na papíře je živnostník. "
+        "Firma šetří na odvodech, člověk přijde o jistoty. A kdy to řešila Sněmovna."
+    ),
+    "zavisla-prace": (
+        "Závislá práce vypadá jako zaměstnání: někdo řídí, kontroluje a určuje, co a "
+        "kdy se dělá. Od toho se odvíjí, jestli jste zaměstnanec. A co na to Sněmovna."
+    ),
+    "zaverecne-hlasovani": (
+        "Závěrečné hlasování je poslední hlasování o zákonu ve Sněmovně, na konci "
+        "třetího čtení. Pak jde zákon do Senátu a k prezidentovi. Kdy se naposledy "
+        "hlasovalo."
+    ),
+    "usneseni": (
+        "Usnesení je stanovisko nebo rozhodnutí Sněmovny. Nejde o zákon: poslanci jím "
+        "něco vyjádří, uloží nebo schválí. Jaká usnesení Sněmovna přijímá a kdy "
+        "naposledy."
+    ),
+    "ratifikace": (
+        "Ratifikace je konečné potvrzení mezinárodní smlouvy. Kdo smlouvu ratifikuje, "
+        "proč k tomu potřebuje souhlas Sněmovny a Senátu a kolik hlasů poslanců je "
+        "potřeba."
+    ),
+    "dozimetr": (
+        "Dozimetr je korupční kauza v pražském dopravním podniku. Policie ji odhalila v "
+        "roce 2022, od roku 2025 ji řeší soud. A kdy ji naposledy řešila Sněmovna."
+    ),
+    "superdavka": (
+        "Superdávka je jedna sociální dávka místo čtyř, platí od října 2025. Které "
+        "dávky nahradila, jak se úředně jmenuje, jaký je zákon a co s ní teď dělá "
+        "Sněmovna."
+    ),
+    "nku": (
+        "NKÚ, Nejvyšší kontrolní úřad, kontroluje, jak stát hospodaří s veřejnými "
+        "penězi. Co znamená zkratka NKÚ, co úřad dělá a kdy ho naposledy řešila "
+        "Sněmovna."
+    ),
+    "vzp": (
+        "VZP, Všeobecná zdravotní pojišťovna, je největší česká zdravotní pojišťovna. "
+        "Co znamená zkratka VZP a kdy se o pojišťovně naposledy mluvilo ve Sněmovně."
+    ),
+    "ozp": (
+        "OZP znamená osoba se zdravotním postižením. Co je průkaz TP, ZTP a ZTP/P, co "
+        "znamená „vhodné pro OZP“ v inzerátu a jaké dávky a příspěvky k tomu řeší "
+        "Sněmovna."
+    ),
+    "landsmansaft": (
+        "Landsmanšaft je organizace sdružující část sudetských Němců a jejich potomků "
+        "po poválečném vysídlení. Co to slovo znamená a kdy ho naposledy řešila "
+        "Sněmovna."
+    ),
+    "rada-ct": (
+        "Rada ČT dohlíží na Českou televizi a vybírá její vedení. Všech 15 členů rady "
+        "volí Poslanecká sněmovna. Co Rada ČT dělá a kdy ji poslanci naposledy řešili."
+    ),
+}
+
+
 def slovnicek_canonical_slug(slug: str) -> str:
     """Slug stránky, na které pojem skutečně žije (aliasy → kanonický slug)."""
     return SLOVNICEK_SLUG_ALIASES.get(slug, slug)
@@ -1985,3 +2141,8 @@ def slovnicek_pages() -> tuple[tuple[str, str], ...]:
 def slovnicek_detail(slug: str) -> dict:
     """Rozšířený obsah stránky pojmu (prázdný dict, když není)."""
     return SLOVNICEK_DETAIL.get(slovnicek_canonical_slug(slug), {})
+
+
+def slovnicek_meta(slug: str) -> str:
+    """Meta description stránky pojmu (prázdný řetězec, když chybí)."""
+    return SLOVNICEK_META.get(slovnicek_canonical_slug(slug), "")

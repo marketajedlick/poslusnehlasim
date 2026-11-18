@@ -189,6 +189,9 @@ def _redirect_html(target: str) -> str:
         '<head>\n'
         '<meta charset="utf-8" />\n'
         f'<meta http-equiv="refresh" content="0;url={target}" />\n'
+        # Bing Site Scan jinak stránku hodnotí jako obsahovou (chybí popis…);
+        # indexovat se má jen cíl přesměrování.
+        '<meta name="robots" content="noindex, follow" />\n'
         f'<link rel="canonical" href="{target}" />\n'
         "<title>Přesměrování…</title>\n"
         "</head>\n"

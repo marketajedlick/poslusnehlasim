@@ -2,6 +2,7 @@
 
 from svejk.glossary import (
     SLOVNICEK_DETAIL,
+    SLOVNICEK_META,
     SLOVNICEK_SLUG_ALIASES,
     slovnicek_anchor,
     slovnicek_detail,
@@ -29,7 +30,6 @@ def test_detail_entries_are_valid() -> None:
     page_slugs = {slovnicek_anchor(t) for t, _ in slovnicek_pages()}
     for slug, detail in SLOVNICEK_DETAIL.items():
         assert slug in page_slugs, slug
-        assert 100 <= len(detail["meta"]) <= 158, slug
         assert len(detail.get("title", "")) <= 60, slug
         assert detail["sections"], slug
         for heading, body in detail["sections"]:
@@ -37,6 +37,19 @@ def test_detail_entries_are_valid() -> None:
             assert len(body) > 60
         for rel in detail.get("related", ()):
             assert slovnicek_term_slug(rel) in page_slugs, (slug, rel)
+
+
+def test_every_page_has_meta_of_bing_length() -> None:
+    """Bing Site Scan: meta description pod 150 znaků je „too short“, nad 160 se ořízne."""
+    from svejk.glossary import slovnicek_meta
+
+    page_slugs = {slovnicek_anchor(t) for t, _ in slovnicek_pages()}
+    assert set(SLOVNICEK_META) == page_slugs
+    for slug in page_slugs:
+        meta = slovnicek_meta(slug)
+        assert 150 <= len(meta) <= 160, (slug, len(meta))
+        assert meta == " ".join(meta.split()), slug
+    assert slovnicek_meta("elektronicka-evidence-trzeb") == slovnicek_meta("eet")
 
 
 def test_plain_strips_leftover_links() -> None:
@@ -51,8 +64,9 @@ def test_no_long_dashes_in_glossary_texts() -> None:
     from svejk.glossary import GLOSSARY, SLOVNIČEK
 
     texts = [t for pair in (*GLOSSARY, *SLOVNIČEK) for t in pair]
+    texts += list(SLOVNICEK_META.values())
     for d in SLOVNICEK_DETAIL.values():
-        texts += [d.get("title", ""), d["meta"]]
+        texts.append(d.get("title", ""))
         texts += [t for pair in d["sections"] for t in pair]
     bad = [t for t in texts if "—" in t or "–" in t]
     assert not bad, bad
