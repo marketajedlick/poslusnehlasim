@@ -1,11 +1,11 @@
 {
   "obdobi": 2025,
   "unl": {
-    "etag": "6b038ec1-33e271",
-    "last_modified": "Mon, 23 Nov 2026 00:54:25 GMT",
-    "content_length": 3400305,
+    "etag": "6b04e040-33e2f6",
+    "last_modified": "Tue, 24 Nov 2026 00:54:24 GMT",
+    "content_length": 3400438,
     "lines": 2702,
-    "fetched_at": "2026-11-23T15:48:01.074408+00:00"
+    "fetched_at": "2026-11-24T05:10:22.056239+00:00"
   },
   "schuze": {
     "18": {
@@ -333,6 +333,6 @@
       "synced_at": "2026-11-14T01:23:57.673800+00:00"
     }
   },
-  "updated_at": "2026-11-23T15:50:40.413648+00:00",
+  "updated_at": "2026-11-24T05:13:00.589012+00:00",
   "last_updated_schuze": []
 }
